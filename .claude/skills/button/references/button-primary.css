@@ -1,0 +1,84 @@
+/* ─────────────────────────────────────────────────
+   Button Base — добавь один раз в глобальный CSS
+   ───────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--_gap, 6px);
+  padding: var(--_pv, 10px) var(--_ph, 16px);
+  border: 1px solid var(--_border);
+  border-radius: var(--_rounded, 8px);
+  background: linear-gradient(to right, var(--_chroma, var(--_bg)), var(--_bg));
+  color: var(--_color);
+  font-size: var(--_fs, 14px);
+  line-height: var(--_lh, 20px);
+  font-weight: 600;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-surface-on-highest);
+  outline-offset: 2px;
+}
+
+.btn svg {
+  width: var(--_icon, 20px);
+  height: var(--_icon, 20px);
+  flex-shrink: 0;
+}
+
+.btn--icon-only {
+  aspect-ratio: 1;
+  padding: var(--_pv);
+}
+
+/* ─────────────────────────────────────────────────
+   Sizes — высоты: 52 / 48 / 40 / 36 / 32 / 24 / 20 px
+   ───────────────────────────────────────────────── */
+.btn--600 { --_pv:16px; --_ph:24px; --_gap:8px;  --_rounded:var(--rounded-600,10px); --_fs:16px; --_lh:20px; --_icon:20px; }
+.btn--500 { --_pv:14px; --_ph:20px; --_gap:6px;  --_rounded:var(--rounded-500,8px);  --_fs:16px; --_lh:20px; --_icon:20px; }
+.btn--400 { --_pv:10px; --_ph:16px; --_gap:6px;  --_rounded:var(--rounded-400,8px);  --_fs:14px; --_lh:20px; --_icon:20px; }
+.btn--300 { --_pv:8px;  --_ph:14px; --_gap:6px;  --_rounded:var(--rounded-300,6px);  --_fs:14px; --_lh:20px; --_icon:20px; }
+.btn--200 { --_pv:8px;  --_ph:12px; --_gap:4px;  --_rounded:var(--rounded-200,6px);  --_fs:13px; --_lh:16px; --_icon:16px; }
+.btn--100 { --_pv:4px;  --_ph:6px;  --_gap:2px;  --_rounded:var(--rounded-100,6px);  --_fs:13px; --_lh:16px; --_icon:16px; }
+.btn--50  { --_pv:2px;  --_ph:4px;  --_gap:2px;  --_rounded:var(--rounded-50,4px);   --_fs:12px; --_lh:16px; --_icon:16px; }
+
+/* ─────────────────────────────────────────────────
+   Button / Primary
+   Figma: rRCDPR2SJ90wJZCr5rsXAd → node 1:757
+   ───────────────────────────────────────────────── */
+.btn-primary {
+  --_bg:     var(--color-primary-core);
+  --_chroma: var(--color-primary-chroma);
+  --_border: var(--color-primary-core);
+  --_color:  var(--color-primary-on);
+}
+
+.btn-primary:hover {
+  --_bg:     var(--color-primary-dim);
+  --_border: var(--color-primary-dim);
+}
+
+.btn-primary:active {
+  --_chroma: var(--color-primary-core);
+}
+
+/* Loading spinner */
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+.btn__spinner {
+  animation: btn-spin 0.8s linear infinite;
+}
