@@ -52,5 +52,18 @@
   "snapshot_hash": "sha256:d2468c88eecac76906adbabbc2a3d94b08296483a060f4d835d20f05ab16fec7",
   "map_source": "arrow-design-system/references/component-token-map.json",
   "map_snapshot_hash": "sha256:3ca32031358c5db389ea9ea55cb5117791795792db9e2a59d586ace20e18625f",
-  "published": null
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "f15fe655a63f67ab04fe26c92578d23bb6910d49",
+    "pushed_at": "2026-05-31T15:51:01Z",
+    "github_urls": {
+      "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-button/references/button-primary.md"
+    },
+    "dev_resources_status": {
+      "primary": {
+        "status": "manual_fallback",
+        "reason": "Figma PAT lacks file_dev_resources:write scope (has file_dev_resources:read only)"
+      }
+    }
+  }
 }
