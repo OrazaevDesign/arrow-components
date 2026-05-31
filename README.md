@@ -6,9 +6,9 @@
 
 ## Компоненты
 
-| Компонент | Варианты | Figma node |
+| Компонент | Варианты | Figma link |
 |---|---|---|
-| [ads-component-button](ads-component-button/) | primary | `1:757` |
+| [ads-component-button](ads-component-button/) | primary | [open](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757) |
 
 _(список пополняется по мере публикации новых компонентов)_
 

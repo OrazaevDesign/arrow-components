@@ -61,8 +61,11 @@
     },
     "dev_resources_status": {
       "primary": {
-        "status": "manual_fallback",
-        "reason": "Figma PAT lacks file_dev_resources:write scope (has file_dev_resources:read only)"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "1:757",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-button/SKILL.md",
+        "note": "PRO plan: Dev Resources REST (file_dev_resources:write) и MCP Code Connect недоступны (Org/Enterprise). Ссылка вписана в descriptionMarkdown COMPONENT_SET через use_figma — видна в get_design_context/Dev Mode."
       }
     }
   }
