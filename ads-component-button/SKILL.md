@@ -1,0 +1,72 @@
+---
+name: ads-component-button
+description: >
+  Верстка кнопок ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
+  Используй ВСЕГДА при: добавлении любой кнопки в разметку или PageCraft-блок,
+  выборе варианта кнопки из Figma-дизайна, вопросах о стилях btn-primary / btn-secondary и т.д.,
+  получении Figma-ссылки на компонент кнопки.
+---
+
+# Кнопки ArrowDS
+
+Кнопка ничего не хардкодит: размеры, цвета и шрифт — токены из дизайн-системы. Cм. скилл `arrow-design-system` для общей картины токенов.
+
+## Откуда берутся значения
+
+**Inline-модель ACB**: и цвета, и размеры ссылаются на базовые токены / роли прямо в селекторах — никаких компонентных прослоек (`--ads-button-*`, `--ads-rectangle-*` не существуют). Скилл ACB-managed — CSS/snapshot/preview генерируются из Figma, маппинг из `component-token-map.json`.
+
+| Что | Источник | Где живёт |
+|---|---|---|
+| Цвета вариантов (bg/border/color/chroma) | `var(--color-{role}-*)` inline в `.btn-{variant}` и его `:hover/:focus-visible/:active` | `references/{variant}.css` (+ палитра в `css-variables.css` сайта) |
+| Цвет фокус-обводки | `var(--color-surface-on-highest)` inline | `references/{variant}.css` |
+| Размеры (padding/gap/icon/rounded/font) | `var(--ads-space-*)` / `var(--ads-rounded-*)` / `var(--ads-control-*)` inline в `.btn--{N}` | базовые шкалы в `blocks/arrowds-css/style.css` |
+| `opacity` для disabled | `var(--ads-opacity-40)` | там же |
+| Шрифт (family/weight) | `--ads-font-family-system`, `--ads-font-weight-semibold` | там же |
+
+Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление под Figma — через скилл `arrow-components-builder` («обнови ads-component-button»), не руками.
+
+## Варианты
+
+| Вариант | Reference | Когда использовать |
+|---|---|---|
+| **Primary** | `references/button-primary.md` ✅ | Главный CTA — одно главное действие на экране/секции |
+| Secondary | *(в разработке)* | Второстепенное действие рядом с Primary |
+| Tertiary | *(в разработке)* | Третичное, менее заметное — навигация |
+| Ghost | *(в разработке)* | Текстовая кнопка без фона, минимальный визуальный вес |
+| Addition | *(в разработке)* | Финальные действия: корзина, оплата |
+| Contrast | *(в разработке)* | Тёмная кнопка / инверсия на светлом фоне |
+| Clean | *(в разработке)* | Белая кнопка для цветных секций |
+
+Новые варианты добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта): он вытащит роли каждого состояния и сгенерирует `references/{variant}.css` с inline-ссылками `var(--color-{role}-*)`. Вручную блок `.btn-primary` не копируем.
+
+## Размерные модификаторы
+
+Добавь к кнопке класс `.btn--{size}`. Размер задаёт padding, gap, border-radius, font-size, line-height и letter-spacing — inline через базовые шкалы `--ads-space-*` / `--ads-rounded-*` / `--ads-control-*` (маппинг из `component-token-map.json`).
+
+| Класс | Когда |
+|---|---|
+| `btn--600` | Крупные CTA, hero-секции |
+| `btn--500` | Главные действия в блоках |
+| `btn--400` | Стандартный размер (используй по умолчанию) |
+| `btn--300` | Компактные блоки |
+| `btn--200` | Карточки, плотные списки |
+| `btn--100` | Inline-действия |
+| `btn--50`  | Самые компактные контролы |
+
+Конкретные значения каждого размера — в `tokens-components-size.md` скилла `arrow-design-system`, секция `rectangle`.
+
+## CSS-файлы
+
+| Вариант | CSS | Что внутри |
+|---|---|---|
+| Primary | `references/button-primary.css` | `.btn` base + все размеры + `.btn-primary` со всеми состояниями (inline `var(--color-primary-*)`) |
+
+Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
+
+## Алгоритм
+
+1. Определи вариант (обычно Primary если один CTA, Secondary если рядом с Primary).
+2. Прочитай reference MD варианта — там HTML-разметка и описание состояний.
+3. Подключи соответствующий CSS-файл из таблицы выше (один раз глобально).
+4. Убедись, что на странице есть блок `arrowds-css` (даёт базовые шкалы `--ads-font-*`, `--ads-opacity-*`, `--ads-space-*`, `--ads-rounded-*`, `--ads-control-*`, `--ads-shadow-*`) и подключён сайтовый `css-variables.css` (даёт `--color-*` под брендом сайта — кнопка ссылается на роли и базовые шкалы напрямую).
+5. Добавь размерный модификатор `.btn--{size}` (если не указан — `btn--400`).

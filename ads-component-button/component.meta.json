@@ -1,0 +1,56 @@
+{
+  "component": "button",
+  "figma": {
+    "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
+    "file_name": "💠 Comp ↪ ² Buttons",
+    "primary_node_id": "1:757",
+    "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757"
+  },
+  "variants": {
+    "primary": {
+      "node_id": "1:757",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757",
+      "figma_label": "Button / Primary"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [50, 100, 200, 300, 400, 500, 600],
+  "states": ["rest", "hover", "focus", "active", "disabled"],
+  "color_tokens": ["bg", "chroma", "border", "color"],
+  "preview": {
+    "base_class": "btn",
+    "default_size": 400,
+    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
+    "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["primary"] },
+      { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
+    ],
+    "html_samples": [
+      { "label": "Только текст", "html": "<button class=\"btn btn-primary btn--400\" type=\"button\">Купить</button>" },
+      { "label": "Иконка слева", "html": "<button class=\"btn btn-primary btn--400\" type=\"button\"><svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg>Добавить</button>" },
+      { "label": "Иконка справа", "html": "<button class=\"btn btn-primary btn--400\" type=\"button\">Дальше<svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg></button>" },
+      { "label": "Только иконка", "html": "<button class=\"btn btn-primary btn--400 btn--icon-only\" type=\"button\" aria-label=\"Опции\"><svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg></button>" },
+      { "label": "Загрузка", "html": "<button class=\"btn btn-primary btn--400 btn--loading\" type=\"button\" disabled aria-busy=\"true\"><span class=\"btn__content\">Загрузка…</span><svg class=\"btn__progress\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-dasharray=\"40 60\" stroke-linecap=\"round\"/></svg></button>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-primary-core",
+    "--color-primary-chroma",
+    "--color-primary-dim",
+    "--color-primary-on",
+    "--color-surface-on-highest",
+    "--ads-space-*",
+    "--ads-rounded-*",
+    "--ads-control-*",
+    "--ads-opacity-40",
+    "--ads-font-family-system",
+    "--ads-font-weight-semibold"
+  ],
+  "last_synced": "2026-05-31T12:53:23Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:d2468c88eecac76906adbabbc2a3d94b08296483a060f4d835d20f05ab16fec7",
+  "map_source": "arrow-design-system/references/component-token-map.json",
+  "map_snapshot_hash": "sha256:3ca32031358c5db389ea9ea55cb5117791795792db9e2a59d586ace20e18625f",
+  "published": null
+}

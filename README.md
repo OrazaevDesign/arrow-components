@@ -1,32 +1,32 @@
-# Arrow Components
+# arrow-components
 
-HTML+CSS компоненты дизайн-системы OrazaevDesign.
+Опубликованные **компонент-скиллы ArrowDS** — самодостаточные инструкции «как сверстать компонент 1‑в‑1 по Figma» на базовых токенах дизайн‑системы (`--ads-space-*`, `--ads-rounded-*`, `--ads-control-*`, …) и цветовых ролях сайта (`--color-*` из `css-variables.css`).
 
-**Токены:** https://github.com/OrazaevDesign/tokens  
-**Figma:** https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/Buttons
-
-## Структура
-
-```
-tokens/
-  variables.css       — все CSS custom properties из токенов
-src/
-  buttons/
-    Button.html       — примеры разметки
-    Button.css        — стили
-```
-
-## Использование
-
-Подключи `tokens/variables.css` на странице, затем нужный компонент:
-
-```html
-<link rel="stylesheet" href="tokens/variables.css">
-<link rel="stylesheet" href="src/buttons/Button.css">
-```
+Генерируются и обновляются через `arrow-components-builder` (ACB) из Figma. Никаких компонентных прослоек (`--ads-button-*` / `--ads-rectangle-*`) — значения инлайнятся напрямую через карту `component-token-map.json`.
 
 ## Компоненты
 
-| Компонент | Figma | Статус |
+| Компонент | Варианты | Figma node |
 |---|---|---|
-| Button / Primary | [ссылка](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/Buttons?node-id=1-757) | ✅ готов |
+| [ads-component-button](ads-component-button/) | primary | `1:757` |
+
+_(список пополняется по мере публикации новых компонентов)_
+
+## Структура компонент-скилла
+
+Каждый компонент — отдельная папка `ads-component-{name}/`:
+
+```
+ads-component-{name}/
+├── SKILL.md                       — как применять компонент
+├── component.meta.json            — контракт: Figma-ссылка, размеры, состояния, зависимости от токенов
+├── references/
+│   ├── {name}-{variant}.css       — CSS варианта (base + размеры + состояния)
+│   ├── {name}-{variant}.md        — разметка и состояния
+│   └── preview.html               — storybook (нужен контекст DS-токенов для рендера)
+└── snapshot/
+    ├── figma.json                 — сырой дамп Figma + резолв в токены
+    └── fetched-at.txt             — отметка времени синхронизации
+```
+
+Raw‑база: `https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/`
