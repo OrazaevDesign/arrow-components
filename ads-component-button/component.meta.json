@@ -35,18 +35,18 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-primary-core",
-    "--color-primary-chroma",
-    "--color-primary-dim",
-    "--color-primary-on",
-    "--color-surface-on-highest",
-    "--ads-space-*",
-    "--ads-rounded-*",
-    "--ads-control-*",
+    "--primary-core",
+    "--primary-chroma",
+    "--primary-dim",
+    "--primary-on",
+    "--surface-on-highest",
+    "--ads-rectangle-*",
     "--ads-opacity-40",
     "--ads-font-family-system",
     "--ads-font-weight-semibold"
   ],
+  "color_scheme": "rgb-triplet",
+  "color_scheme_note": "Роли — RGB-триплеты в переменных без префикса --color- (--primary-core: 246 202 70), под .theme-default.theme-light. В CSS — rgb(var(--primary-core)). surface-transparent → литерал transparent.",
   "last_synced": "2026-05-31T12:53:23Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:d2468c88eecac76906adbabbc2a3d94b08296483a060f4d835d20f05ab16fec7",
@@ -54,8 +54,8 @@
   "map_snapshot_hash": "sha256:3ca32031358c5db389ea9ea55cb5117791795792db9e2a59d586ace20e18625f",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "f15fe655a63f67ab04fe26c92578d23bb6910d49",
-    "pushed_at": "2026-05-31T15:51:01Z",
+    "commit": "pending",
+    "pushed_at": null,
     "github_urls": {
       "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-button/references/button-primary.md"
     },

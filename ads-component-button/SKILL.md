@@ -13,13 +13,13 @@ description: >
 
 ## Откуда берутся значения
 
-**Inline-модель ACB**: и цвета, и размеры ссылаются на базовые токены / роли прямо в селекторах — никаких компонентных прослоек (`--ads-button-*`, `--ads-rectangle-*` не существуют). Скилл ACB-managed — CSS/snapshot/preview генерируются из Figma, маппинг из `component-token-map.json`.
+**Модель ACB**: размеры ссылаются на семантические shape-токены css-global (`--ads-rectangle-{N}-*`), цвета/state инлайнятся ролями прямо в селекторах (компонентных цветовых прослоек `--ads-button-*-bg` нет). Скилл ACB-managed — CSS/snapshot/preview генерируются из Figma, маппинг из `component-token-map.json`.
 
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета вариантов (bg/border/color/chroma) | `var(--color-{role}-*)` inline в `.btn-{variant}` и его `:hover/:focus-visible/:active` | `references/{variant}.css` (+ палитра в `css-variables.css` сайта) |
 | Цвет фокус-обводки | `var(--color-surface-on-highest)` inline | `references/{variant}.css` |
-| Размеры (padding/gap/icon/rounded/font) | `var(--ads-space-*)` / `var(--ads-rounded-*)` / `var(--ads-control-*)` inline в `.btn--{N}` | базовые шкалы в `blocks/arrowds-css/style.css` |
+| Размеры (padding/gap/icon/rounded/font) | `var(--ads-rectangle-{N}-*)` (семантические shape-токены) в `.btn--{N}` | `blocks/arrowds-css/style.css` (там же резолвятся в базовые шкалы) |
 | `opacity` для disabled | `var(--ads-opacity-40)` | там же |
 | Шрифт (family/weight) | `--ads-font-family-system`, `--ads-font-weight-semibold` | там же |
 
@@ -41,7 +41,7 @@ description: >
 
 ## Размерные модификаторы
 
-Добавь к кнопке класс `.btn--{size}`. Размер задаёт padding, gap, border-radius, font-size, line-height и letter-spacing — inline через базовые шкалы `--ads-space-*` / `--ads-rounded-*` / `--ads-control-*` (маппинг из `component-token-map.json`).
+Добавь к кнопке класс `.btn--{size}`. Размер задаёт padding, gap, border-radius, font-size, line-height и letter-spacing — через семантические shape-токены `--ads-rectangle-{N}-*` (маппинг из `component-token-map.json`, определены в css-global).
 
 | Класс | Когда |
 |---|---|
@@ -68,5 +68,5 @@ description: >
 1. Определи вариант (обычно Primary если один CTA, Secondary если рядом с Primary).
 2. Прочитай reference MD варианта — там HTML-разметка и описание состояний.
 3. Подключи соответствующий CSS-файл из таблицы выше (один раз глобально).
-4. Убедись, что на странице есть блок `arrowds-css` (даёт базовые шкалы `--ads-font-*`, `--ads-opacity-*`, `--ads-space-*`, `--ads-rounded-*`, `--ads-control-*`, `--ads-shadow-*`) и подключён сайтовый `css-variables.css` (даёт `--color-*` под брендом сайта — кнопка ссылается на роли и базовые шкалы напрямую).
+4. Убедись, что на странице есть блок `arrowds-css` (даёт базовые шкалы `--ads-font-*`, `--ads-opacity-*`, `--ads-space-*`, `--ads-rounded-*`, `--ads-control-*`, `--ads-shadow-*` **и семантические shape size-токены `--ads-rectangle-*`**) и подключён сайтовый `css-variables.css` (даёт `--color-*` под брендом сайта — кнопка ссылается на роли и токены `arrowds-css`).
 5. Добавь размерный модификатор `.btn--{size}` (если не указан — `btn--400`).

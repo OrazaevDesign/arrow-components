@@ -4,7 +4,7 @@
 
 Главный призыв к действию. На экране/секции — только одна Primary-кнопка.
 
-Всё на токенах, **inline в селекторах** (модель ACB, без компонентных прослоек). Цвета → роли `var(--color-primary-*)`; размеры → базовые шкалы `var(--ads-space-*)`/`var(--ads-rounded-*)`/`var(--ads-control-*)` (маппинг из `component-token-map.json`); фокус → `var(--color-surface-on-highest)`; disabled → `var(--ads-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт — блок `arrowds-css`.
+Всё на токенах. Цвета → роли `rgb(var(--primary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--ads-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--ads-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт — блок `arrowds-css`.
 
 ---
 
@@ -65,7 +65,7 @@
 
 ## CSS — модель токенов
 
-Полный код — `references/button-primary.css`. Три уровня: site colors / базовые шкалы → приватные аккумуляторы `--ads-btn-*` → CSS-свойства в `.btn`.
+Полный код — `references/button-primary.css`. Три уровня: site colors / семантические shape size-токены → приватные аккумуляторы `--ads-btn-*` → CSS-свойства в `.btn`.
 
 ### Base (`.btn`)
 Аккумуляторы заполняются дефолтами размера 400; size-класс и вариант переопределяют их:
@@ -73,8 +73,8 @@
 ```css
 .btn {
   /* size-дефолты (= 400) */
-  --ads-btn-padding: var(--ads-space-2-5);
-  --ads-btn-fs:      var(--ads-control-400-font-size);
+  --ads-btn-padding: var(--ads-rectangle-400-padding);
+  --ads-btn-fs:      var(--ads-rectangle-400-typography-font-size);
   /* … */
   padding-block: var(--ads-btn-padding);
   padding-inline: calc(var(--ads-btn-padding) + var(--ads-btn-gap));
@@ -87,21 +87,21 @@
   font-weight: var(--ads-font-weight-semibold);
 }
 .btn:disabled       { opacity: var(--ads-opacity-40); }
-.btn:focus-visible  { outline: 2px solid var(--color-surface-on-highest); outline-offset: 2px; }
+.btn:focus-visible  { outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px; }
 ```
 
 ### Size (`.btn--{N}`)
-Заполняет size-аккумуляторы базовыми токенами (inline из `map.size.rectangle.{N}`):
+Заполняет size-аккумуляторы семантическими shape-токенами (`map.size.rectangle.{N}`, определены в css-global):
 
 ```css
 .btn--400 {
-  --ads-btn-padding: var(--ads-space-2-5);
-  --ads-btn-gap:     var(--ads-space-1-5);
-  --ads-btn-rounded: var(--ads-rounded-400);
-  --ads-btn-icon:    var(--ads-space-5);
-  --ads-btn-fs:      var(--ads-control-400-font-size);
-  --ads-btn-lh:      var(--ads-control-400-line-height);
-  --ads-btn-ls:      var(--ads-control-400-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-400-padding);
+  --ads-btn-gap:     var(--ads-rectangle-400-gap);
+  --ads-btn-rounded: var(--ads-rectangle-400-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-400-icon);
+  --ads-btn-fs:      var(--ads-rectangle-400-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-400-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-400-typography-letter-spacing);
 }
 ```
 
@@ -109,10 +109,10 @@
 Заполняет цветовые аккумуляторы inline-ролями, по состоянию:
 
 ```css
-.btn-primary               { --ads-btn-bg: var(--color-primary-core); /* chroma/border/color */ }
-.btn-primary:hover         { --ads-btn-bg: var(--color-primary-dim);  --ads-btn-border: var(--color-primary-dim); }
-.btn-primary:focus-visible { --ads-btn-bg: var(--color-primary-core); }
-.btn-primary:active        { --ads-btn-bg: var(--color-primary-core); --ads-btn-chroma: var(--color-primary-core); /* плоский */ }
+.btn-primary               { --ads-btn-bg: rgb(var(--primary-core)); /* chroma/border/color */ }
+.btn-primary:hover         { --ads-btn-bg: rgb(var(--primary-dim));  --ads-btn-border: rgb(var(--primary-dim)); }
+.btn-primary:focus-visible { --ads-btn-bg: rgb(var(--primary-core)); }
+.btn-primary:active        { --ads-btn-bg: rgb(var(--primary-core)); --ads-btn-chroma: rgb(var(--primary-core)); /* плоский */ }
 ```
 
 ---
@@ -135,16 +135,16 @@
 
 | Состояние | `--ads-btn-bg` | `--ads-btn-chroma` | `--ads-btn-border` | `--ads-btn-color` |
 |---|---|---|---|---|
-| Rest    | `--color-primary-core` | `--color-primary-chroma` | `--color-primary-core` | `--color-primary-on` |
-| Hover   | `--color-primary-dim`  | `--color-primary-chroma` | `--color-primary-dim`  | `--color-primary-on` |
-| Focus   | `--color-primary-core` | `--color-primary-chroma` | `--color-primary-core` | `--color-primary-on` |
-| Active  | `--color-primary-core` | `--color-primary-core`   | `--color-primary-core` | `--color-primary-on` |
+| Rest    | `--primary-core` | `--primary-chroma` | `--primary-core` | `--primary-on` |
+| Hover   | `--primary-dim`  | `--primary-chroma` | `--primary-dim`  | `--primary-on` |
+| Focus   | `--primary-core` | `--primary-chroma` | `--primary-core` | `--primary-on` |
+| Active  | `--primary-core` | `--primary-core`   | `--primary-core` | `--primary-on` |
 | Disabled| Rest + `opacity: var(--ads-opacity-40)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--ads-btn-icon` | | | |
 
-Фокус-обводка: `outline: 2px solid var(--color-surface-on-highest); outline-offset: 2px` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
+Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 
-В Figma на `Active` `chroma` = `bg` (`--color-primary-core`) — градиент схлопывается в плоский цвет (сигнал «нажато»).
+В Figma на `Active` `chroma` = `bg` (`--primary-core`) — градиент схлопывается в плоский цвет (сигнал «нажато»).
 
 ---
 

@@ -1,8 +1,8 @@
 # arrow-components
 
-Опубликованные **компонент-скиллы ArrowDS** — самодостаточные инструкции «как сверстать компонент 1‑в‑1 по Figma» на базовых токенах дизайн‑системы (`--ads-space-*`, `--ads-rounded-*`, `--ads-control-*`, …) и цветовых ролях сайта (`--color-*` из `css-variables.css`).
+Опубликованные **компонент-скиллы ArrowDS** — самодостаточные инструкции «как сверстать компонент 1‑в‑1 по Figma». Размеры берутся из семантических shape-токенов css-global (`--ads-rectangle-{N}-*`, …), цвета/состояния инлайнятся ролями как RGB-триплеты (`rgb(var(--primary-*))`, под `.theme-default.theme-light`).
 
-Генерируются и обновляются через `arrow-components-builder` (ACB) из Figma. Никаких компонентных прослоек (`--ads-button-*` / `--ads-rectangle-*`) — значения инлайнятся напрямую через карту `component-token-map.json`.
+Генерируются и обновляются через `arrow-components-builder` (ACB) из Figma. Компонентной прослойки (`--ads-button-*` / `--ads-form-*` / …) нет — значения мапятся напрямую через карту `component-token-map.json`: размеры на shape-слой `--ads-rectangle-*`, цвета на роли `rgb(var(--…))`.
 
 ## Компоненты
 

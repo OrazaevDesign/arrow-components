@@ -5,16 +5,16 @@
 /* =============================================================================
    Button — Primary
    =============================================================================
-   Inline-модель ACB: значения ссылаются на базовые шкалы и роли ПРЯМО в
-   селекторах — без компонентных прослоек (--ads-button-* , --ads-rectangle-*
-   не существуют). Маппинг Figma → базовый/цветовой токен взят из
+   Модель ACB: размеры ссылаются на семантические shape-токены css-global
+   (--ads-rectangle-{N}-*); цвета/state инлайнятся ролями ПРЯМО в селекторах
+   (без --ads-button-*-bg прослойки). Маппинг Figma → значение взят из
    arrow-design-system/references/component-token-map.json.
 
    Источники:
-     — размеры:  var(--ads-space-*) / var(--ads-rounded-*) / var(--ads-control-*)
-                 (map.size.rectangle.{N})
-     — цвета:    var(--color-primary-*)            (map.state.*.button.primary, css-variables.css сайта)
-     — фокус:    var(--color-surface-on-highest)   (map.state.focus.focus-selection.outline)
+     — размеры:  var(--ads-rectangle-{N}-padding | -gap | -rounded | -icon |
+                 -typography-font-size | …)   (map.size.rectangle.{N}; определены в css-global)
+     — цвета:    rgb(var(--primary-*))            (map.state.*.button.primary, css-variables.css сайта)
+     — фокус:    rgb(var(--surface-on-highest))   (map.state.focus.focus-selection.outline)
      — disabled: var(--ads-opacity-40)             (map.state.rest.opacity.control.disabled)
      — шрифт:    var(--ads-font-family-system), var(--ads-font-weight-semibold)
 
@@ -53,14 +53,14 @@
    ============================================================================= */
 
 .btn {
-  /* size accumulator defaults (default_size = 400, из map.size.rectangle.400) */
-  --ads-btn-padding: var(--ads-space-2-5);
-  --ads-btn-gap:     var(--ads-space-1-5);
-  --ads-btn-rounded: var(--ads-rounded-400);
-  --ads-btn-icon:    var(--ads-space-5);
-  --ads-btn-fs:      var(--ads-control-400-font-size);
-  --ads-btn-lh:      var(--ads-control-400-line-height);
-  --ads-btn-ls:      var(--ads-control-400-letter-spacing);
+  /* size accumulator defaults (default_size = 400, семантические shape-токены map.size.rectangle.400) */
+  --ads-btn-padding: var(--ads-rectangle-400-padding);
+  --ads-btn-gap:     var(--ads-rectangle-400-gap);
+  --ads-btn-rounded: var(--ads-rectangle-400-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-400-icon);
+  --ads-btn-fs:      var(--ads-rectangle-400-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-400-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-400-typography-letter-spacing);
 
   position: relative;
   display: inline-flex;
@@ -94,7 +94,7 @@
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--color-surface-on-highest);
+  outline: 2px solid rgb(var(--surface-on-highest));
   outline-offset: 2px;
 }
 
@@ -141,77 +141,77 @@
 }
 
 /* =============================================================================
-   Sizes  →  базовые токены inline (map.size.rectangle.{N})
+   Sizes  →  семантические shape-токены (map.size.rectangle.{N}, определены в css-global)
    ============================================================================= */
 
 .btn--600 {
-  --ads-btn-padding: var(--ads-space-4);
-  --ads-btn-gap:     var(--ads-space-2);
-  --ads-btn-rounded: var(--ads-rounded-600);
-  --ads-btn-icon:    var(--ads-space-5);
-  --ads-btn-fs:      var(--ads-control-600-font-size);
-  --ads-btn-lh:      var(--ads-control-600-line-height);
-  --ads-btn-ls:      var(--ads-control-600-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-600-padding);
+  --ads-btn-gap:     var(--ads-rectangle-600-gap);
+  --ads-btn-rounded: var(--ads-rectangle-600-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-600-icon);
+  --ads-btn-fs:      var(--ads-rectangle-600-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-600-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-600-typography-letter-spacing);
 }
 
 .btn--500 {
-  --ads-btn-padding: var(--ads-space-3-5);
-  --ads-btn-gap:     var(--ads-space-1-5);
-  --ads-btn-rounded: var(--ads-rounded-500);
-  --ads-btn-icon:    var(--ads-space-5);
-  --ads-btn-fs:      var(--ads-control-600-font-size);
-  --ads-btn-lh:      var(--ads-control-600-line-height);
-  --ads-btn-ls:      var(--ads-control-600-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-500-padding);
+  --ads-btn-gap:     var(--ads-rectangle-500-gap);
+  --ads-btn-rounded: var(--ads-rectangle-500-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-500-icon);
+  --ads-btn-fs:      var(--ads-rectangle-500-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-500-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-500-typography-letter-spacing);
 }
 
 .btn--400 {
-  --ads-btn-padding: var(--ads-space-2-5);
-  --ads-btn-gap:     var(--ads-space-1-5);
-  --ads-btn-rounded: var(--ads-rounded-400);
-  --ads-btn-icon:    var(--ads-space-5);
-  --ads-btn-fs:      var(--ads-control-400-font-size);
-  --ads-btn-lh:      var(--ads-control-400-line-height);
-  --ads-btn-ls:      var(--ads-control-400-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-400-padding);
+  --ads-btn-gap:     var(--ads-rectangle-400-gap);
+  --ads-btn-rounded: var(--ads-rectangle-400-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-400-icon);
+  --ads-btn-fs:      var(--ads-rectangle-400-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-400-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-400-typography-letter-spacing);
 }
 
 .btn--300 {
-  --ads-btn-padding: var(--ads-space-2);
-  --ads-btn-gap:     var(--ads-space-1-5);
-  --ads-btn-rounded: var(--ads-rounded-300);
-  --ads-btn-icon:    var(--ads-space-5);
-  --ads-btn-fs:      var(--ads-control-400-font-size);
-  --ads-btn-lh:      var(--ads-control-400-line-height);
-  --ads-btn-ls:      var(--ads-control-400-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-300-padding);
+  --ads-btn-gap:     var(--ads-rectangle-300-gap);
+  --ads-btn-rounded: var(--ads-rectangle-300-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-300-icon);
+  --ads-btn-fs:      var(--ads-rectangle-300-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-300-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-300-typography-letter-spacing);
 }
 
 .btn--200 {
-  --ads-btn-padding: var(--ads-space-2);
-  --ads-btn-gap:     var(--ads-space-1);
-  --ads-btn-rounded: var(--ads-rounded-200);
-  --ads-btn-icon:    var(--ads-space-4);
-  --ads-btn-fs:      var(--ads-control-300-font-size);
-  --ads-btn-lh:      var(--ads-control-300-line-height);
-  --ads-btn-ls:      var(--ads-control-300-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-200-padding);
+  --ads-btn-gap:     var(--ads-rectangle-200-gap);
+  --ads-btn-rounded: var(--ads-rectangle-200-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-200-icon);
+  --ads-btn-fs:      var(--ads-rectangle-200-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-200-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-200-typography-letter-spacing);
 }
 
 .btn--100 {
-  --ads-btn-padding: var(--ads-space-1);
-  --ads-btn-gap:     var(--ads-space-0-5);
-  --ads-btn-rounded: var(--ads-rounded-100);
-  --ads-btn-icon:    var(--ads-space-4);
-  --ads-btn-fs:      var(--ads-control-300-font-size);
-  --ads-btn-lh:      var(--ads-control-300-line-height);
-  --ads-btn-ls:      var(--ads-control-300-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-100-padding);
+  --ads-btn-gap:     var(--ads-rectangle-100-gap);
+  --ads-btn-rounded: var(--ads-rectangle-100-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-100-icon);
+  --ads-btn-fs:      var(--ads-rectangle-100-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-100-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-100-typography-letter-spacing);
 }
 
 .btn--50 {
-  --ads-btn-padding: var(--ads-space-0-5);
-  --ads-btn-gap:     var(--ads-space-0-5);
-  --ads-btn-rounded: var(--ads-rounded-50);
-  --ads-btn-icon:    var(--ads-space-4);
-  --ads-btn-fs:      var(--ads-control-200-font-size);
-  --ads-btn-lh:      var(--ads-control-200-line-height);
-  --ads-btn-ls:      var(--ads-control-200-letter-spacing);
+  --ads-btn-padding: var(--ads-rectangle-50-padding);
+  --ads-btn-gap:     var(--ads-rectangle-50-gap);
+  --ads-btn-rounded: var(--ads-rectangle-50-rounded);
+  --ads-btn-icon:    var(--ads-rectangle-50-icon);
+  --ads-btn-fs:      var(--ads-rectangle-50-typography-font-size);
+  --ads-btn-lh:      var(--ads-rectangle-50-typography-line-height);
+  --ads-btn-ls:      var(--ads-rectangle-50-typography-letter-spacing);
 }
 
 /* =============================================================================
@@ -219,30 +219,30 @@
    ============================================================================= */
 
 .btn-primary {
-  --ads-btn-bg:     var(--color-primary-core);
-  --ads-btn-chroma: var(--color-primary-chroma);
-  --ads-btn-border: var(--color-primary-core);
-  --ads-btn-color:  var(--color-primary-on);
+  --ads-btn-bg:     rgb(var(--primary-core));
+  --ads-btn-chroma: rgb(var(--primary-chroma));
+  --ads-btn-border: rgb(var(--primary-core));
+  --ads-btn-color:  rgb(var(--primary-on));
 }
 
 .btn-primary:hover {
-  --ads-btn-bg:     var(--color-primary-dim);
-  --ads-btn-chroma: var(--color-primary-chroma);
-  --ads-btn-border: var(--color-primary-dim);
-  --ads-btn-color:  var(--color-primary-on);
+  --ads-btn-bg:     rgb(var(--primary-dim));
+  --ads-btn-chroma: rgb(var(--primary-chroma));
+  --ads-btn-border: rgb(var(--primary-dim));
+  --ads-btn-color:  rgb(var(--primary-on));
 }
 
 .btn-primary:focus-visible {
-  --ads-btn-bg:     var(--color-primary-core);
-  --ads-btn-chroma: var(--color-primary-chroma);
-  --ads-btn-border: var(--color-primary-core);
-  --ads-btn-color:  var(--color-primary-on);
+  --ads-btn-bg:     rgb(var(--primary-core));
+  --ads-btn-chroma: rgb(var(--primary-chroma));
+  --ads-btn-border: rgb(var(--primary-core));
+  --ads-btn-color:  rgb(var(--primary-on));
 }
 
 /* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-primary:active {
-  --ads-btn-bg:     var(--color-primary-core);
-  --ads-btn-chroma: var(--color-primary-core);
-  --ads-btn-border: var(--color-primary-core);
-  --ads-btn-color:  var(--color-primary-on);
+  --ads-btn-bg:     rgb(var(--primary-core));
+  --ads-btn-chroma: rgb(var(--primary-core));
+  --ads-btn-border: rgb(var(--primary-core));
+  --ads-btn-color:  rgb(var(--primary-on));
 }
