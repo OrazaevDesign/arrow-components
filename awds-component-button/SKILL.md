@@ -1,5 +1,5 @@
 ---
-name: ads-component-button
+name: awds-component-button
 description: >
   Верстка кнопок ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
   Используй ВСЕГДА при: добавлении любой кнопки в разметку или PageCraft-блок,
@@ -13,17 +13,17 @@ description: >
 
 ## Откуда берутся значения
 
-**Модель ACB**: размеры ссылаются на семантические shape-токены css-global (`--ads-rectangle-{N}-*`), цвета/state инлайнятся ролями прямо в селекторах (компонентных цветовых прослоек `--ads-button-*-bg` нет). Скилл ACB-managed — CSS/snapshot/preview генерируются из Figma, маппинг из `component-token-map.json`.
+**Модель ACB**: размеры ссылаются на семантические shape-токены css-global (`--awds-rectangle-{N}-*`), цвета/state инлайнятся ролями прямо в селекторах (компонентных цветовых прослоек `--awds-button-*-bg` нет). Скилл ACB-managed — CSS/snapshot/preview генерируются из Figma, маппинг из `component-token-map.json`.
 
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета вариантов (bg/border/color/chroma) | `var(--color-{role}-*)` inline в `.btn-{variant}` и его `:hover/:focus-visible/:active` | `references/{variant}.css` (+ палитра в `css-variables.css` сайта) |
 | Цвет фокус-обводки | `var(--color-surface-on-highest)` inline | `references/{variant}.css` |
-| Размеры (padding/gap/icon/rounded/font) | `var(--ads-rectangle-{N}-*)` (семантические shape-токены) в `.btn--{N}` | `blocks/arrowds-css/style.css` (там же резолвятся в базовые шкалы) |
-| `opacity` для disabled | `var(--ads-opacity-40)` | там же |
-| Шрифт (family/weight) | `--ads-font-family-system`, `--ads-font-weight-semibold` | там же |
+| Размеры (padding/gap/icon/rounded/font) | `var(--awds-rectangle-{N}-*)` (семантические shape-токены) в `.btn--{N}` | `blocks/arrowds-css/style.css` (там же резолвятся в базовые шкалы) |
+| `opacity` для disabled | `var(--awds-opacity-40)` | там же |
+| Шрифт (family/weight) | `--awds-font-family-system`, `--awds-font-weight-semibold` | там же |
 
-Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление под Figma — через скилл `arrow-components-builder` («обнови ads-component-button»), не руками.
+Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление под Figma — через скилл `arrow-components-builder` («обнови awds-component-button»), не руками.
 
 ## Варианты
 
@@ -41,7 +41,7 @@ description: >
 
 ## Размерные модификаторы
 
-Добавь к кнопке класс `.btn--{size}`. Размер задаёт padding, gap, border-radius, font-size, line-height и letter-spacing — через семантические shape-токены `--ads-rectangle-{N}-*` (маппинг из `component-token-map.json`, определены в css-global).
+Добавь к кнопке класс `.btn--{size}`. Размер задаёт padding, gap, border-radius, font-size, line-height и letter-spacing — через семантические shape-токены `--awds-rectangle-{N}-*` (маппинг из `component-token-map.json`, определены в css-global).
 
 | Класс | Когда |
 |---|---|
@@ -68,5 +68,5 @@ description: >
 1. Определи вариант (обычно Primary если один CTA, Secondary если рядом с Primary).
 2. Прочитай reference MD варианта — там HTML-разметка и описание состояний.
 3. Подключи соответствующий CSS-файл из таблицы выше (один раз глобально).
-4. Убедись, что на странице есть блок `arrowds-css` (даёт базовые шкалы `--ads-font-*`, `--ads-opacity-*`, `--ads-space-*`, `--ads-rounded-*`, `--ads-control-*`, `--ads-shadow-*` **и семантические shape size-токены `--ads-rectangle-*`**) и подключён сайтовый `css-variables.css` (даёт `--color-*` под брендом сайта — кнопка ссылается на роли и токены `arrowds-css`).
+4. Убедись, что на странице есть блок `arrowds-css` (даёт базовые шкалы `--awds-font-*`, `--awds-opacity-*`, `--awds-space-*`, `--awds-rounded-*`, `--awds-control-*`, `--awds-shadow-*` **и семантические shape size-токены `--awds-rectangle-*`**) и подключён сайтовый `css-variables.css` (даёт `--color-*` под брендом сайта — кнопка ссылается на роли и токены `arrowds-css`).
 5. Добавь размерный модификатор `.btn--{size}` (если не указан — `btn--400`).

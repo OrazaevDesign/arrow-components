@@ -40,10 +40,10 @@
     "--primary-dim",
     "--primary-on",
     "--surface-on-highest",
-    "--ads-rectangle-*",
-    "--ads-opacity-40",
-    "--ads-font-family-system",
-    "--ads-font-weight-semibold"
+    "--awds-rectangle-*",
+    "--awds-opacity-40",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
   ],
   "color_scheme": "rgb-triplet",
   "color_scheme_note": "Роли — RGB-триплеты в переменных без префикса --color- (--primary-core: 246 202 70), под .theme-default.theme-light. В CSS — rgb(var(--primary-core)). surface-transparent → литерал transparent.",
@@ -57,14 +57,14 @@
     "commit": "3dc4453569b1278ccad4416f99584982914189a1",
     "pushed_at": "2026-06-02T16:46:31Z",
     "github_urls": {
-      "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-button/references/button-primary.md"
+      "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-primary.md"
     },
     "dev_resources_status": {
       "primary": {
         "status": "linked",
         "method": "component_description",
         "node_id": "1:757",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-button/SKILL.md",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
         "note": "PRO plan: Dev Resources REST (file_dev_resources:write) и MCP Code Connect недоступны (Org/Enterprise). Ссылка вписана в descriptionMarkdown COMPONENT_SET через use_figma — видна в get_design_context/Dev Mode."
       }
     }
