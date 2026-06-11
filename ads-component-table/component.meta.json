@@ -1,0 +1,65 @@
+{
+  "component": "table",
+  "figma": {
+    "file_key": "MzbIinUK3d5C31yhl6TKmB",
+    "file_name": "💠 Comp ↪ ³ Cell",
+    "primary_node_id": "2038:1350",
+    "primary_url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2038-1350"
+  },
+  "variants": {
+    "light":   { "node_id": "74:21636", "url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=74-21636", "figma_label": "сell-light" },
+    "head":    { "node_id": "2019:929", "url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2019-929", "figma_label": "cell-head" },
+    "default": { "node_id": "2027:433", "url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2027-433", "figma_label": "cell-default" }
+  },
+  "table_variants": {
+    "light":   { "node_id": "2038:1351", "class": "ads-table--light",   "label": "Безрамочная (разделители строк)" },
+    "default": { "node_id": "2038:1390", "class": "ads-table--default", "label": "Сетка (залитая шапка)" }
+  },
+  "shape": null,
+  "size_scale": null,
+  "states": ["rest", "hover", "focus", "active", "disabled"],
+  "color_tokens": ["bg", "border", "color", "description"],
+  "preview": {
+    "base_class": "cell",
+    "default_size": null,
+    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
+    "matrix_sizes": null,
+    "toggles": [
+      { "id": "variant", "label": "Вариант ячейки", "options": ["light", "head", "default"] }
+    ],
+    "html_samples": [
+      { "label": "Ячейка-призрак (light)", "html": "<td class=\"cell cell-light\">List</td>" },
+      { "label": "Заголовок (head, semibold)", "html": "<th class=\"cell cell-head\" scope=\"col\">Название</th>" },
+      { "label": "Тельная ячейка (default)", "html": "<td class=\"cell cell-default\">List</td>" },
+      { "label": "С описанием", "html": "<td class=\"cell cell-default\">Иван Иванов<span class=\"cell__description\">ivan@example.com</span></td>" },
+      { "label": "Числовая колонка", "html": "<td class=\"cell cell-default cell--numeric\">1 240,00 ₽</td>" },
+      { "label": "Таблица — сетка (default)", "html": "<div class=\"ads-table-scroll\"><table class=\"ads-table ads-table--default\"><thead><tr><th class=\"cell cell-head\" scope=\"col\">Имя</th><th class=\"cell cell-head cell--numeric\" scope=\"col\">Сумма</th></tr></thead><tbody><tr><td class=\"cell cell-default\">Иван</td><td class=\"cell cell-default cell--numeric\">1 240,00 ₽</td></tr></tbody></table></div>" },
+      { "label": "Таблица — безрамочная (light)", "html": "<div class=\"ads-table-scroll\"><table class=\"ads-table ads-table--light\"><tbody><tr><td class=\"cell cell-light\">Typography / Body</td><td class=\"cell cell-light\">Small</td></tr><tr><td class=\"cell cell-light\">600</td><td class=\"cell cell-light\">24</td></tr></tbody></table></div>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-surface-surface",
+    "--color-surface-bright",
+    "--color-surface-dim",
+    "--color-surface-on-lowest",
+    "--color-surface-on-high",
+    "--color-surface-on-highest",
+    "--ads-space-1",
+    "--ads-space-3",
+    "--ads-space-20",
+    "--ads-space-px",
+    "--ads-typography-font-size-200",
+    "--ads-typography-line-height-200",
+    "--ads-typography-font-size-400",
+    "--ads-typography-line-height-400",
+    "--ads-typography-letter-spacing-400",
+    "--ads-opacity-40",
+    "--ads-font-family-system",
+    "--ads-font-weight-regular",
+    "--ads-font-weight-semibold"
+  ],
+  "last_synced": "2026-06-11T09:32:32Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:882de90f253d76df4f923153b8ee61d3330b2d995d508713b36709767d4412e5",
+  "published": null
+}

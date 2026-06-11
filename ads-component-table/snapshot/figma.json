@@ -1,0 +1,78 @@
+{
+  "file_key": "MzbIinUK3d5C31yhl6TKmB",
+  "file_name": "💠 Comp ↪ ³ Cell",
+  "fetched_at": "2026-06-11T09:32:32Z",
+  "frames": {
+    "cell-light": {
+      "node_id": "74:21636",
+      "states": {
+        "rest":     { "node_id": "74:21645" },
+        "hover":    { "node_id": "74:21757" },
+        "focus":    { "node_id": "360:17774" },
+        "active":   { "node_id": "74:22037" },
+        "disabled": { "node_id": "74:21661" }
+      }
+    },
+    "cell-head": {
+      "node_id": "2019:929",
+      "states": {
+        "rest":     { "node_id": "2019:930" },
+        "hover":    { "node_id": "2019:934" },
+        "focus":    { "node_id": "2019:938" },
+        "active":   { "node_id": "2019:943" },
+        "disabled": { "node_id": "2019:947" }
+      }
+    },
+    "cell-default": {
+      "node_id": "2027:433",
+      "states": {
+        "rest":     { "node_id": "2027:434" },
+        "hover":    { "node_id": "2027:436" },
+        "focus":    { "node_id": "2027:438" },
+        "active":   { "node_id": "2027:441" },
+        "disabled": { "node_id": "2027:443" }
+      }
+    },
+    "tabel": {
+      "node_id": "2038:1350",
+      "table_variants": {
+        "light":   { "node_id": "2038:1351", "layout": "borderless, row-separators (surface-on-lowest), transparent cells, flush-left first column, bottom scrollbar" },
+        "default": { "node_id": "2038:1390", "layout": "full bordered grid, header = cell-head (surface-surface, semibold), body = cell-default (surface-bright/white), bottom scrollbar" }
+      }
+    }
+  },
+  "variable_defs": {
+    "cell-light/rest (74:21645)": {
+      "cell/light/bg": "#ffffff00",
+      "cell/light/border": "#ffffff00",
+      "font-weight": "regular"
+    },
+    "cell-head/rest (2019:930)": {
+      "cell/default-head/bg": "#f7f7f7",
+      "cell/default-head/border": "#ededed",
+      "cell/default-head/color": "#080808",
+      "font-weight": "semibold"
+    },
+    "tabel (2038:1350)": {
+      "cell/light/bg": "#ffffff00",
+      "cell/light/border": "#ffffff00",
+      "cell/default-head/bg": "#f7f7f7",
+      "cell/default-head/border": "#ededed",
+      "cell/default-head/color": "#080808",
+      "cell/default/bg": "#ffffff",
+      "cell/default/border": "#ededed",
+      "cell/default/color": "#080808",
+      "WYSIWYG/font-size/body": "14",
+      "WYSIWYG/line-height/body": "22",
+      "WYSIWYG/letter-spacing/body": "0",
+      "WYSIWYG/gap/li-top": "12",
+      "WYSIWYG/gap/block-top": "32",
+      "space/px": "1",
+      "role/surface/on": "#8e8e8e",
+      "role/surface/transparent": "#ffffff00",
+      "border-radius/full": "600",
+      "opacity/40": "40"
+    }
+  },
+  "_note": "Нода таблицы 2038:1350 подтвердила cell/default/bg = #ffffff (= surface-bright): отдельный фрейм cell-default (2027:433) мис-привязан к cell/light, но реальный токен cell/default белый. Заголовочные ячейки (cell-head) в таблице — Inter Semi_Bold. Таблица имеет 2 раскладки: light (безрамочная) и default (сетка). Декоративный скроллбар реализован как нативный overflow-x:auto враппер .ads-table-scroll."
+}
