@@ -1,13 +1,13 @@
 ---
-name: ads-component-table
+name: awds-component-table
 description: Верстка таблиц ArrowDS — HTML-разметка и CSS на токенах дизайн-системы. Используй ВСЕГДА при: добавлении таблицы или ячейки в разметку или PageCraft-блок, выборе варианта ячейки (cell-light / cell-head / cell-default), вопросах о стилях табличных ячеек, получении Figma-ссылки на компонент Cell/Table.
 ---
 
-# Таблица ArrowDS (`ads-component-table`)
+# Таблица ArrowDS (`awds-component-table`)
 
-HTML-разметка и CSS таблицы дизайн-системы ArrowDS. Компонент состоит из **обёртки-таблицы** (`.ads-table`) и **ячеек** трёх вариантов. Цвета инлайнятся ролями `rgb(var(--surface-*))` напрямую, типографика и отступы — базовые шкалы `--ads-*`. Никакого хардкода.
+HTML-разметка и CSS таблицы дизайн-системы ArrowDS. Компонент состоит из **обёртки-таблицы** (`.awds-table`) и **ячеек** трёх вариантов. Цвета инлайнятся ролями `rgb(var(--surface-*))` напрямую, типографика и отступы — базовые шкалы `--awds-*`. Никакого хардкода.
 
-Сгенерирован через `arrow-components-builder` из Figma. **Не правь `references/*.css` и `preview.html` руками** — затрётся при следующем refresh. Правки — через Figma → «обнови ads-component-table».
+Сгенерирован через `arrow-components-builder` из Figma. **Не правь `references/*.css` и `preview.html` руками** — затрётся при следующем refresh. Правки — через Figma → «обнови awds-component-table».
 
 ## Когда использовать
 
@@ -19,10 +19,10 @@ HTML-разметка и CSS таблицы дизайн-системы ArrowDS.
 
 | Класс | Что это |
 |---|---|
-| `.ads-table` | Обёртка `<table>`: `border-collapse`, `width: 100%`. Общая база двух раскладок. |
-| `.ads-table--default` | **Сетка** (Figma Var=Default): полные границы у всех ячеек, залитая шапка. |
-| `.ads-table--light` | **Безрамочная** (Figma Var=Light): только горизонтальные разделители строк, прозрачные ячейки, первый столбец flush-влево. |
-| `.ads-table-scroll` | Враппер `<div>` для горизонтального скролла широкой таблицы (`overflow-x:auto`) — замена декоративного скроллбара из макета. |
+| `.awds-table` | Обёртка `<table>`: `border-collapse`, `width: 100%`. Общая база двух раскладок. |
+| `.awds-table--default` | **Сетка** (Figma Var=Default): полные границы у всех ячеек, залитая шапка. |
+| `.awds-table--light` | **Безрамочная** (Figma Var=Light): только горизонтальные разделители строк, прозрачные ячейки, первый столбец flush-влево. |
+| `.awds-table-scroll` | Враппер `<div>` для горизонтального скролла широкой таблицы (`overflow-x:auto`) — замена декоративного скроллбара из макета. |
 | `.cell` | Базовый класс ячейки (`<th>` / `<td>`): padding, типографика, фокус, transition, `min-width` 80px в таблице. |
 | `.cell-light` | Ячейка-«призрак»: прозрачная, фон/граница появляются только на hover. |
 | `.cell-head` | Заголовочная: заполнена `surface-surface` + граница, **semibold**, на hover темнеет до `surface-dim`. |
@@ -39,8 +39,8 @@ HTML-разметка и CSS таблицы дизайн-системы ArrowDS.
 **Сетка (default):**
 
 ```html
-<div class="ads-table-scroll">
-  <table class="ads-table ads-table--default">
+<div class="awds-table-scroll">
+  <table class="awds-table awds-table--default">
     <thead>
       <tr>
         <th class="cell cell-head" scope="col">Имя</th>
@@ -57,9 +57,9 @@ HTML-разметка и CSS таблицы дизайн-системы ArrowDS.
 </div>
 ```
 
-**Безрамочная (light):** замени модификатор на `ads-table--light`, ячейки — `cell cell-light` (разделители строк рисует сама раскладка).
+**Безрамочная (light):** замени модификатор на `awds-table--light`, ячейки — `cell cell-light` (разделители строк рисует сама раскладка).
 
-Подключение CSS: всегда нужен `table.css` (база + раскладки) + файл(ы) используемых вариантов ячеек. `.ads-table-scroll` опционален — для таблиц шире контейнера.
+Подключение CSS: всегда нужен `table.css` (база + раскладки) + файл(ы) используемых вариантов ячеек. `.awds-table-scroll` опционален — для таблиц шире контейнера.
 
 ## Варианты ячеек
 
@@ -73,7 +73,7 @@ HTML-разметка и CSS таблицы дизайн-системы ArrowDS.
 
 ## Размеры
 
-У ячейки **нет размерной шкалы** (`shape: null`): единственная фиксированная геометрия — padding `--ads-space-3` (12px), типографика `--ads-typography-*-400` (14/22px). Размерных классов `.cell--{N}` нет.
+У ячейки **нет размерной шкалы** (`shape: null`): единственная фиксированная геометрия — padding `--awds-space-3` (12px), типографика `--awds-typography-*-400` (14/22px). Размерных классов `.cell--{N}` нет.
 
 ## Заметка по cell-default
 
@@ -82,6 +82,6 @@ HTML-разметка и CSS таблицы дизайн-системы ArrowDS.
 ## Источники значений
 
 - **Цвета:** `rgb(var(--surface-*))` — `map.state.*.cell.*`, реальная палитра из `css-variables.css` сайта.
-- **Отступы / типографика:** `--ads-space-3`, `--ads-typography-*-400` — базовые шкалы css-global.
-- **Фокус:** `rgb(var(--surface-on-highest))`; **disabled:** `var(--ads-opacity-40)`.
-- **Шрифт:** `--ads-font-family-system`, `--ads-font-weight-regular`.
+- **Отступы / типографика:** `--awds-space-3`, `--awds-typography-*-400` — базовые шкалы css-global.
+- **Фокус:** `rgb(var(--surface-on-highest))`; **disabled:** `var(--awds-opacity-40)`.
+- **Шрифт:** `--awds-font-family-system`, `--awds-font-weight-regular`.

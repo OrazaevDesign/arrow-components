@@ -12,8 +12,8 @@
     "default": { "node_id": "2027:433", "url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2027-433", "figma_label": "cell-default" }
   },
   "table_variants": {
-    "light":   { "node_id": "2038:1351", "class": "ads-table--light",   "label": "Безрамочная (разделители строк)" },
-    "default": { "node_id": "2038:1390", "class": "ads-table--default", "label": "Сетка (залитая шапка)" }
+    "light":   { "node_id": "2038:1351", "class": "awds-table--light",   "label": "Безрамочная (разделители строк)" },
+    "default": { "node_id": "2038:1390", "class": "awds-table--default", "label": "Сетка (залитая шапка)" }
   },
   "shape": null,
   "size_scale": null,
@@ -33,8 +33,8 @@
       { "label": "Тельная ячейка (default)", "html": "<td class=\"cell cell-default\">List</td>" },
       { "label": "С описанием", "html": "<td class=\"cell cell-default\">Иван Иванов<span class=\"cell__description\">ivan@example.com</span></td>" },
       { "label": "Числовая колонка", "html": "<td class=\"cell cell-default cell--numeric\">1 240,00 ₽</td>" },
-      { "label": "Таблица — сетка (default)", "html": "<div class=\"ads-table-scroll\"><table class=\"ads-table ads-table--default\"><thead><tr><th class=\"cell cell-head\" scope=\"col\">Имя</th><th class=\"cell cell-head cell--numeric\" scope=\"col\">Сумма</th></tr></thead><tbody><tr><td class=\"cell cell-default\">Иван</td><td class=\"cell cell-default cell--numeric\">1 240,00 ₽</td></tr></tbody></table></div>" },
-      { "label": "Таблица — безрамочная (light)", "html": "<div class=\"ads-table-scroll\"><table class=\"ads-table ads-table--light\"><tbody><tr><td class=\"cell cell-light\">Typography / Body</td><td class=\"cell cell-light\">Small</td></tr><tr><td class=\"cell cell-light\">600</td><td class=\"cell cell-light\">24</td></tr></tbody></table></div>" }
+      { "label": "Таблица — сетка (default)", "html": "<div class=\"awds-table-scroll\"><table class=\"awds-table awds-table--default\"><thead><tr><th class=\"cell cell-head\" scope=\"col\">Имя</th><th class=\"cell cell-head cell--numeric\" scope=\"col\">Сумма</th></tr></thead><tbody><tr><td class=\"cell cell-default\">Иван</td><td class=\"cell cell-default cell--numeric\">1 240,00 ₽</td></tr></tbody></table></div>" },
+      { "label": "Таблица — безрамочная (light)", "html": "<div class=\"awds-table-scroll\"><table class=\"awds-table awds-table--light\"><tbody><tr><td class=\"cell cell-light\">Typography / Body</td><td class=\"cell cell-light\">Small</td></tr><tr><td class=\"cell cell-light\">600</td><td class=\"cell cell-light\">24</td></tr></tbody></table></div>" }
     ]
   },
   "ds_token_dependencies": [
@@ -44,19 +44,19 @@
     "--color-surface-on-lowest",
     "--color-surface-on-high",
     "--color-surface-on-highest",
-    "--ads-space-1",
-    "--ads-space-3",
-    "--ads-space-20",
-    "--ads-space-px",
-    "--ads-typography-font-size-200",
-    "--ads-typography-line-height-200",
-    "--ads-typography-font-size-400",
-    "--ads-typography-line-height-400",
-    "--ads-typography-letter-spacing-400",
-    "--ads-opacity-40",
-    "--ads-font-family-system",
-    "--ads-font-weight-regular",
-    "--ads-font-weight-semibold"
+    "--awds-space-1",
+    "--awds-space-3",
+    "--awds-space-20",
+    "--awds-space-px",
+    "--awds-typography-font-size-200",
+    "--awds-typography-line-height-200",
+    "--awds-typography-font-size-400",
+    "--awds-typography-line-height-400",
+    "--awds-typography-letter-spacing-400",
+    "--awds-opacity-40",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-font-weight-semibold"
   ],
   "last_synced": "2026-06-11T09:32:32Z",
   "last_synced_by": "claude",
@@ -66,13 +66,13 @@
     "commit": "86393a8baf3b4a7d7e5b7d1f100c9fd8f4cd7af8",
     "pushed_at": "2026-06-11T09:42:59Z",
     "github_urls": {
-      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-table/SKILL.md"
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-table/SKILL.md"
     },
     "dev_resources_status": {
-      "light":   { "status": "linked", "method": "component_description", "node_id": "74:21636", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-table/SKILL.md" },
-      "head":    { "status": "linked", "method": "component_description", "node_id": "2019:929", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-table/SKILL.md" },
-      "default": { "status": "linked", "method": "component_description", "node_id": "2027:433", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-table/SKILL.md" },
-      "table":   { "status": "linked", "method": "component_description", "node_id": "2038:1350", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/ads-component-table/SKILL.md" }
+      "light":   { "status": "linked", "method": "component_description", "node_id": "74:21636", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-table/SKILL.md" },
+      "head":    { "status": "linked", "method": "component_description", "node_id": "2019:929", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-table/SKILL.md" },
+      "default": { "status": "linked", "method": "component_description", "node_id": "2027:433", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-table/SKILL.md" },
+      "table":   { "status": "linked", "method": "component_description", "node_id": "2038:1350", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-table/SKILL.md" }
     }
   }
 }

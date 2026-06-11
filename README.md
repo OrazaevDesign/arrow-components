@@ -1,24 +1,24 @@
 # arrow-components
 
-Опубликованные **компонент-скиллы ArrowDS** — самодостаточные инструкции «как сверстать компонент 1‑в‑1 по Figma». Размеры берутся из семантических shape-токенов css-global (`--ads-rectangle-{N}-*`, …), цвета/состояния инлайнятся ролями как RGB-триплеты (`rgb(var(--primary-*))`, под `.theme-default.theme-light`).
+Опубликованные **компонент-скиллы ArrowDS** — самодостаточные инструкции «как сверстать компонент 1‑в‑1 по Figma». Размеры берутся из семантических shape-токенов css-global (`--awds-rectangle-{N}-*`, …), цвета/состояния инлайнятся ролями как RGB-триплеты (`rgb(var(--primary-*))`, под `.theme-default.theme-light`).
 
-Генерируются и обновляются через `arrow-components-builder` (ACB) из Figma. Компонентной прослойки (`--ads-button-*` / `--ads-form-*` / …) нет — значения мапятся напрямую через карту `component-token-map.json`: размеры на shape-слой `--ads-rectangle-*`, цвета на роли `rgb(var(--…))`.
+Генерируются и обновляются через `arrow-components-builder` (ACB) из Figma. Компонентной прослойки (`--awds-button-*` / `--awds-form-*` / …) нет — значения мапятся напрямую через карту `component-token-map.json`: размеры на shape-слой `--awds-rectangle-*`, цвета на роли `rgb(var(--…))`.
 
 ## Компоненты
 
 | Компонент | Варианты | Figma link |
 |---|---|---|
-| [ads-component-button](ads-component-button/) | primary | [open](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757) |
-| [ads-component-table](ads-component-table/) | cell light / head / default · таблица light / default | [open](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2038-1350) |
+| [awds-component-button](awds-component-button/) | primary | [open](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757) |
+| [awds-component-table](awds-component-table/) | cell light / head / default · таблица light / default | [open](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2038-1350) |
 
 _(список пополняется по мере публикации новых компонентов)_
 
 ## Структура компонент-скилла
 
-Каждый компонент — отдельная папка `ads-component-{name}/`:
+Каждый компонент — отдельная папка `awds-component-{name}/`:
 
 ```
-ads-component-{name}/
+awds-component-{name}/
 ├── SKILL.md                       — как применять компонент
 ├── component.meta.json            — контракт: Figma-ссылка, размеры, состояния, зависимости от токенов
 ├── references/
