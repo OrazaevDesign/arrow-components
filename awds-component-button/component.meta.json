@@ -193,8 +193,16 @@
         }
       },
       "pills": {
-        "status": "not_published",
-        "note": "Собран ACB 2026-06-16 (точно по токенам: Secondary + accent hover-текст). Ещё не публиковался. Публикация — /arrow-components-publisher button."
+        "commit": "b4448f066c1317c4eb70898df494a3f117878eba",
+        "pushed_at": "2026-06-16T13:48:26+03:00",
+        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-pills.md",
+        "dev_resources": {
+          "status": "linked",
+          "method": "component_description",
+          "node_id": "811:30987",
+          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Pills через use_figma — видна в get_design_context/Dev Mode."
+        }
       }
     }
   }
