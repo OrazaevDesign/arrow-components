@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="./button-addition.css">
   <link rel="stylesheet" href="./button-contrast.css">
   <link rel="stylesheet" href="./button-tertiary.css">
+  <link rel="stylesheet" href="./button-ghost.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
@@ -134,6 +135,29 @@
       --awds-btn-chroma: rgb(var(--tertiary-core));
       --awds-btn-border: rgb(var(--tertiary-core));
       --awds-btn-color:  rgb(var(--tertiary-on));
+    }
+
+    /* ─── Зеркала псевдо-классов для Ghost (копия :hover/:focus-visible/:active
+       из button-ghost.css). Фон/обводка прозрачны, меняется только цвет текста. ─── */
+    .btn-ghost.is-hover {
+      --awds-btn-bg:     transparent;
+      --awds-btn-chroma: transparent;
+      --awds-btn-border: transparent;
+      --awds-btn-color:  rgb(var(--surface-on-highest));
+    }
+    .btn-ghost.is-focus {
+      --awds-btn-bg:     transparent;
+      --awds-btn-chroma: transparent;
+      --awds-btn-border: transparent;
+      --awds-btn-color:  rgb(var(--surface-on-highest));
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .btn-ghost.is-active {
+      --awds-btn-bg:     transparent;
+      --awds-btn-chroma: transparent;
+      --awds-btn-border: transparent;
+      --awds-btn-color:  rgb(var(--surface-on-highest));
     }
 
     /* ─── Preview-shell ─── */
@@ -290,6 +314,7 @@
         <option value="addition">addition</option>
         <option value="contrast">contrast</option>
         <option value="tertiary">tertiary</option>
+        <option value="ghost">ghost</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -447,6 +472,12 @@
         focus:  { bg: '--tertiary-core', chroma: '--tertiary-chroma', border: '--tertiary-core', color: '--tertiary-on' },
         active: { bg: '--tertiary-core', chroma: '--tertiary-core',   border: '--tertiary-core', color: '--tertiary-on' },
       },
+      ghost: {
+        rest:   { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-high' },
+        hover:  { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-highest' },
+        focus:  { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-highest' },
+        active: { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-highest' },
+      },
     };
     const activeVariant = () => document.querySelector('#variant').value;
 
@@ -524,6 +555,13 @@
       dl.innerHTML = '';
       const cs = getComputedStyle(document.documentElement);
       entries.forEach(([label, name, kind]) => {
+        const isVar = name.startsWith('--');
+        // Литералы (например transparent у Ghost) показываем как есть, без getComputedStyle.
+        if (!isVar) {
+          const sw = kind === 'color' ? `<span class="swatch" style="background:${name}"></span>` : '';
+          dl.insertAdjacentHTML('beforeend', `<dt title="${name}">${label}</dt><dd>${sw}${name}</dd>`);
+          return;
+        }
         const raw = cs.getPropertyValue(name).trim();
         let val = raw || '—';
         let swatch = '';
@@ -540,8 +578,10 @@
 
     function refreshTokens() {
       const roleMap = ROLE_MAPS[activeVariant()];
-      // Семейство ролей берём из фактического маппинга rest.bg (Contrast — surface, не --contrast-*).
-      const family = roleMap.rest.bg.replace(/-(core|on-highest|surface)$/, '-*');
+      // Семейство ролей: берём первое var-значение среди bg/color (Ghost — bg прозрачный,
+      // семейство несёт цвет текста --surface-*; Contrast — surface, не --contrast-*).
+      const famSrc = roleMap.rest.bg.startsWith('--') ? roleMap.rest.bg : roleMap.rest.color;
+      const family = famSrc.replace(/-(core|on-highest|on-high|surface|bright|dim|on)$/, '-*');
       document.querySelector('[data-group="rest"] h3').textContent = `rest — rgb(var(${family}))`;
       fillGroup('size', SIZE_400.map(([label, name]) => [`${label} → ${name.replace('--awds-', '')}`, name, 'value']));
       ['rest', 'hover', 'focus', 'active'].forEach(state => {

@@ -32,7 +32,7 @@ description: >
 | **Primary** | `references/button-primary.md` ✅ | Главный CTA — одно главное действие на экране/секции |
 | **Secondary** | `references/button-secondary.md` ✅ | Второстепенное действие рядом с Primary |
 | **Tertiary** | `references/button-tertiary.md` ✅ | Третичное, менее заметное — навигация |
-| Ghost | *(в разработке)* | Текстовая кнопка без фона, минимальный визуальный вес |
+| **Ghost** | `references/button-ghost.md` ✅ | Текстовая кнопка без фона, минимальный визуальный вес |
 | **Addition** | `references/button-addition.md` ✅ | Финальные действия: корзина, оплата |
 | **Contrast** | `references/button-contrast.md` ✅ | Тёмная кнопка / инверсия на светлом фоне |
 | Clean | *(в разработке)* | Белая кнопка для цветных секций |
@@ -64,6 +64,7 @@ description: >
 | Addition | `references/button-addition.css` | `.btn` base + все размеры + `.btn-addition` со всеми состояниями (inline `rgb(var(--addition-*))`) |
 | Contrast | `references/button-contrast.css` | `.btn` base + все размеры + `.btn-contrast` со всеми состояниями (inline `rgb(var(--surface-*))`) |
 | Tertiary | `references/button-tertiary.css` | `.btn` base + все размеры + `.btn-tertiary` со всеми состояниями (inline `rgb(var(--tertiary-*))`) |
+| Ghost | `references/button-ghost.css` | `.btn` base + все размеры + `.btn-ghost` (фон/обводка `transparent`, текст `rgb(var(--surface-on-high/-highest))`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
 

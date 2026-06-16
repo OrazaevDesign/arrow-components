@@ -2,7 +2,7 @@
   "component": "button",
   "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
   "file_name": "💠 Comp ↪ ² Buttons",
-  "fetched_at": "2026-06-16T09:38:01Z",
+  "fetched_at": "2026-06-16T10:02:00Z",
   "note": "Мультивариантный снапшот. get_variable_defs возвращает резолвленные значения, не alias-пути — маппинг в базовые/цветовые токены сделан через arrow-design-system/references/component-token-map.json (snapshot sha256:3ca32031358c…). Ключи Figma (button/{variant}/{bg,chroma,border,color}, rectangle/{N}/*, focus-selection/outline, opacity/control/disabled) ищутся в карте, hex не используется.",
   "metadata_variant_axes": {
     "Type": ["Text", "Icon"],
@@ -68,6 +68,16 @@
         "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
         "disabled": {"opacity/control/disabled":"40"}
       }
+    },
+    "ghost": {
+      "node_id": "489:94401",
+      "figma_label": "Button / Ghost",
+      "fetch_note": "489:94401 — фрейм Component Set (Type×Size×State×Progress symbols). bg/chroma/border = #ffffff00 → резолвятся по карте в литерал transparent; цвет текста button/ghost/color → surface-on-high (rest) / surface-on-highest (hover/focus/active). Текстовая кнопка без фона.",
+      "variable_defs": {
+        "rest": {"button/ghost/color":"#646464","button/ghost/bg":"#ffffff00","button/ghost/chroma":"#ffffff00","button/ghost/border":"#ffffff00","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
+        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
+        "disabled": {"opacity/control/disabled":"40"}
+      }
     }
   },
   "resolved_via_map": {
@@ -119,6 +129,14 @@
       "hover":    {"bg":"--tertiary-dim", "chroma":"--tertiary-chroma","border":"--tertiary-dim", "color":"--tertiary-on"},
       "focus":    {"bg":"--tertiary-core","chroma":"--tertiary-chroma","border":"--tertiary-core","color":"--tertiary-on","outline":"--surface-on-highest"},
       "active":   {"bg":"--tertiary-core","chroma":"--tertiary-core", "border":"--tertiary-core","color":"--tertiary-on"},
+      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    },
+    "state_button_ghost": {
+      "_source": "component-token-map.json → state.{state}.button.ghost (фон/обводка — transparent)",
+      "rest":     {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-high"},
+      "hover":    {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest"},
+      "focus":    {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest","outline":"--surface-on-highest"},
+      "active":   {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest"},
       "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
     }
   }
