@@ -138,8 +138,16 @@
         }
       },
       "tertiary": {
-        "status": "not_published",
-        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
+        "commit": "ab5f2e761cb11e0d99ea3ecc3be342211355e5d2",
+        "pushed_at": "2026-06-16T12:41:46+03:00",
+        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-tertiary.md",
+        "dev_resources": {
+          "status": "linked",
+          "method": "component_description",
+          "node_id": "489:89007",
+          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Tertiary через use_figma — видна в get_design_context/Dev Mode."
+        }
       }
     }
   }
