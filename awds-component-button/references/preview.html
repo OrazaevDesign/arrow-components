@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="./button-secondary.css">
   <link rel="stylesheet" href="./button-addition.css">
   <link rel="stylesheet" href="./button-contrast.css">
+  <link rel="stylesheet" href="./button-tertiary.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
@@ -110,6 +111,29 @@
       --awds-btn-chroma: rgb(var(--surface-on-highest));
       --awds-btn-border: rgb(var(--surface-on-highest));
       --awds-btn-color:  rgb(var(--surface-bright));
+    }
+
+    /* ─── Зеркала псевдо-классов для Tertiary (копия :hover/:focus-visible/:active
+       из button-tertiary.css). ─── */
+    .btn-tertiary.is-hover {
+      --awds-btn-bg:     rgb(var(--tertiary-dim));
+      --awds-btn-chroma: rgb(var(--tertiary-chroma));
+      --awds-btn-border: rgb(var(--tertiary-dim));
+      --awds-btn-color:  rgb(var(--tertiary-on));
+    }
+    .btn-tertiary.is-focus {
+      --awds-btn-bg:     rgb(var(--tertiary-core));
+      --awds-btn-chroma: rgb(var(--tertiary-chroma));
+      --awds-btn-border: rgb(var(--tertiary-core));
+      --awds-btn-color:  rgb(var(--tertiary-on));
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .btn-tertiary.is-active {
+      --awds-btn-bg:     rgb(var(--tertiary-core));
+      --awds-btn-chroma: rgb(var(--tertiary-core));
+      --awds-btn-border: rgb(var(--tertiary-core));
+      --awds-btn-color:  rgb(var(--tertiary-on));
     }
 
     /* ─── Preview-shell ─── */
@@ -265,6 +289,7 @@
         <option value="secondary">secondary</option>
         <option value="addition">addition</option>
         <option value="contrast">contrast</option>
+        <option value="tertiary">tertiary</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -415,6 +440,12 @@
         hover:  { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
         focus:  { bg: '--surface-on-highest', chroma: '--surface-on-high',    border: '--surface-on-highest', color: '--surface-bright' },
         active: { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
+      },
+      tertiary: {
+        rest:   { bg: '--tertiary-core', chroma: '--tertiary-chroma', border: '--tertiary-core', color: '--tertiary-on' },
+        hover:  { bg: '--tertiary-dim',  chroma: '--tertiary-chroma', border: '--tertiary-dim',  color: '--tertiary-on' },
+        focus:  { bg: '--tertiary-core', chroma: '--tertiary-chroma', border: '--tertiary-core', color: '--tertiary-on' },
+        active: { bg: '--tertiary-core', chroma: '--tertiary-core',   border: '--tertiary-core', color: '--tertiary-on' },
       },
     };
     const activeVariant = () => document.querySelector('#variant').value;
