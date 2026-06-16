@@ -2,7 +2,7 @@
   "component": "button",
   "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
   "file_name": "💠 Comp ↪ ² Buttons",
-  "fetched_at": "2026-06-16T10:10:11Z",
+  "fetched_at": "2026-06-16T10:45:29Z",
   "note": "Мультивариантный снапшот. get_variable_defs возвращает резолвленные значения, не alias-пути — маппинг в базовые/цветовые токены сделан через arrow-design-system/references/component-token-map.json (snapshot sha256:3ca32031358c…). Ключи Figma (button/{variant}/{bg,chroma,border,color}, rectangle/{N}/*, focus-selection/outline, opacity/control/disabled) ищутся в карте, hex не используется.",
   "metadata_variant_axes": {
     "Type": ["Text", "Icon"],
@@ -88,6 +88,17 @@
         "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
         "disabled": {"opacity/control/disabled":"40"}
       }
+    },
+    "pills": {
+      "node_id": "811:30987",
+      "figma_label": "Button / Pills",
+      "fetch_note": "811:30987 — фрейм Component Set (Type×Size×State×Progress symbols). Цвета и геометрия = Secondary (rectangle rounding, НЕ пилюля — rounded:10); отличие подтверждено на hover-ноде 811:31002: button/pills/color=#cc4033 = accent-container-on (текст краснеет). Имя «Pills» формы в токенах не несёт (по решению пользователя собрано точно по токенам).",
+      "variable_defs": {
+        "rest":  {"button/pills/color":"#555555","button/pills/bg":"#f2f2f2","button/pills/chroma":"#f7f7f7","button/pills/border":"#f2f2f2","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
+        "hover": {"button/pills/color":"#cc4033","button/pills/bg":"#ededed","button/pills/chroma":"#f7f7f7","button/pills/border":"#ededed"},
+        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
+        "disabled": {"opacity/control/disabled":"40"}
+      }
     }
   },
   "resolved_via_map": {
@@ -155,6 +166,14 @@
       "hover":    {"bg":"--surface-surface","chroma":"--surface-surface","border":"--surface-dim","color":"--surface-on-highest"},
       "focus":    {"bg":"--surface-bright", "chroma":"--surface-bright", "border":"--surface-dim","color":"--surface-on-high","outline":"--surface-on-highest"},
       "active":   {"bg":"--surface-surface","chroma":"--surface-surface","border":"--surface-dim","color":"--surface-on-highest"},
+      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    },
+    "state_button_pills": {
+      "_source": "component-token-map.json → state.{state}.button.pills (= Secondary, но hover-текст accent-container-on)",
+      "rest":     {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on"},
+      "hover":    {"bg":"--secondary-dim", "chroma":"--secondary-chroma","border":"--secondary-dim", "color":"--accent-container-on"},
+      "focus":    {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on","outline":"--surface-on-highest"},
+      "active":   {"bg":"--secondary-core","chroma":"--secondary-core", "border":"--secondary-core","color":"--secondary-on"},
       "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
     }
   }

@@ -41,6 +41,11 @@
       "node_id": "489:119060",
       "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-119060",
       "figma_label": "Button / Clean"
+    },
+    "pills": {
+      "node_id": "811:30987",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=811-30987",
+      "figma_label": "Button / Pills"
     }
   },
   "shape": "rectangle",
@@ -53,7 +58,7 @@
     "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
     "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary", "addition", "contrast", "tertiary", "ghost", "clean"] },
+      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary", "addition", "contrast", "tertiary", "ghost", "clean", "pills"] },
       { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
     ],
     "html_samples": [
@@ -86,6 +91,7 @@
     "--surface-bright",
     "--surface-surface",
     "--surface-dim",
+    "--accent-container-on",
     "transparent (ghost bg/border)",
     "--awds-rectangle-*",
     "--awds-opacity-40",
@@ -94,9 +100,9 @@
   ],
   "color_scheme": "rgb-triplet",
   "color_scheme_note": "Роли — RGB-триплеты в переменных без префикса --color- (--primary-core: 246 202 70), под .theme-default.theme-light. В CSS — rgb(var(--primary-core)). surface-transparent → литерал transparent.",
-  "last_synced": "2026-06-16T10:10:11Z",
+  "last_synced": "2026-06-16T10:45:29Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:e03314f82de7301d82de1a9f5a8d0d5996945e31dcff36c5fa4d35dbf942e10c",
+  "snapshot_hash": "sha256:1e670e1ba360a3f5a56ba1ea081b1fb118ed50b02a81e1f38207dffd2bc2ff0b",
   "map_source": "arrow-design-system/references/component-token-map.json",
   "map_snapshot_hash": "sha256:c80e5a80742e563b72540d69fb4196e2cff84f9984e2fae870f03e6c7019c1e1",
   "published": {
@@ -185,6 +191,10 @@
           "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
           "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Clean через use_figma — видна в get_design_context/Dev Mode."
         }
+      },
+      "pills": {
+        "status": "not_published",
+        "note": "Собран ACB 2026-06-16 (точно по токенам: Secondary + accent hover-текст). Ещё не публиковался. Публикация — /arrow-components-publisher button."
       }
     }
   }

@@ -36,6 +36,7 @@ description: >
 | **Addition** | `references/button-addition.md` ✅ | Финальные действия: корзина, оплата |
 | **Contrast** | `references/button-contrast.md` ✅ | Тёмная кнопка / инверсия на светлом фоне |
 | **Clean** | `references/button-clean.md` ✅ | Белая кнопка для цветных секций |
+| **Pills** | `references/button-pills.md` ✅ | Как Secondary, но текст краснеет (accent) на hover — для чипов/фильтров |
 
 Новые варианты добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта): он вытащит роли каждого состояния и сгенерирует `references/{variant}.css` с inline-ссылками `var(--color-{role}-*)`. Вручную блок `.btn-primary` не копируем.
 
@@ -66,6 +67,7 @@ description: >
 | Tertiary | `references/button-tertiary.css` | `.btn` base + все размеры + `.btn-tertiary` со всеми состояниями (inline `rgb(var(--tertiary-*))`) |
 | Ghost | `references/button-ghost.css` | `.btn` base + все размеры + `.btn-ghost` (фон/обводка `transparent`, текст `rgb(var(--surface-on-high/-highest))`) |
 | Clean | `references/button-clean.css` | `.btn` base + все размеры + `.btn-clean` (белый фон `surface-bright`, видимая обводка `surface-dim`, текст `surface-on-high/-highest`) |
+| Pills | `references/button-pills.css` | `.btn` base + все размеры + `.btn-pills` (= Secondary; на hover текст `rgb(var(--accent-container-on))`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
 

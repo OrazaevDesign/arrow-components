@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="./button-tertiary.css">
   <link rel="stylesheet" href="./button-ghost.css">
   <link rel="stylesheet" href="./button-clean.css">
+  <link rel="stylesheet" href="./button-pills.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
@@ -184,6 +185,29 @@
       --awds-btn-color:  rgb(var(--surface-on-highest));
     }
 
+    /* ─── Зеркала псевдо-классов для Pills (копия из button-pills.css).
+       Цвета = Secondary; на hover текст краснеет (accent-container-on). ─── */
+    .btn-pills.is-hover {
+      --awds-btn-bg:     rgb(var(--secondary-dim));
+      --awds-btn-chroma: rgb(var(--secondary-chroma));
+      --awds-btn-border: rgb(var(--secondary-dim));
+      --awds-btn-color:  rgb(var(--accent-container-on));
+    }
+    .btn-pills.is-focus {
+      --awds-btn-bg:     rgb(var(--secondary-core));
+      --awds-btn-chroma: rgb(var(--secondary-chroma));
+      --awds-btn-border: rgb(var(--secondary-core));
+      --awds-btn-color:  rgb(var(--secondary-on));
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .btn-pills.is-active {
+      --awds-btn-bg:     rgb(var(--secondary-core));
+      --awds-btn-chroma: rgb(var(--secondary-core));
+      --awds-btn-border: rgb(var(--secondary-core));
+      --awds-btn-color:  rgb(var(--secondary-on));
+    }
+
     /* ─── Preview-shell ─── */
     body {
       margin: 0;
@@ -340,6 +364,7 @@
         <option value="tertiary">tertiary</option>
         <option value="ghost">ghost</option>
         <option value="clean">clean</option>
+        <option value="pills">pills</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -508,6 +533,12 @@
         hover:  { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-dim', color: '--surface-on-highest' },
         focus:  { bg: '--surface-bright',  chroma: '--surface-bright',  border: '--surface-dim', color: '--surface-on-high' },
         active: { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-dim', color: '--surface-on-highest' },
+      },
+      pills: {
+        rest:   { bg: '--secondary-core', chroma: '--secondary-chroma', border: '--secondary-core', color: '--secondary-on' },
+        hover:  { bg: '--secondary-dim',  chroma: '--secondary-chroma', border: '--secondary-dim',  color: '--accent-container-on' },
+        focus:  { bg: '--secondary-core', chroma: '--secondary-chroma', border: '--secondary-core', color: '--secondary-on' },
+        active: { bg: '--secondary-core', chroma: '--secondary-core',   border: '--secondary-core', color: '--secondary-on' },
       },
     };
     const activeVariant = () => document.querySelector('#variant').value;
