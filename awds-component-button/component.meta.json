@@ -156,8 +156,16 @@
         }
       },
       "ghost": {
-        "status": "not_published",
-        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
+        "commit": "da45b1570cbc3980eb6fcfdef5983860d46f6087",
+        "pushed_at": "2026-06-16T13:05:01+03:00",
+        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-ghost.md",
+        "dev_resources": {
+          "status": "linked",
+          "method": "component_description",
+          "node_id": "489:94401",
+          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Ghost через use_figma — видна в get_design_context/Dev Mode."
+        }
       }
     }
   }
