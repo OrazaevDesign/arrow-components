@@ -117,8 +117,16 @@
         }
       },
       "contrast": {
-        "status": "not_published",
-        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
+        "commit": "be79b9b0f1ed493db1d3a0be14394ff4eabda050",
+        "pushed_at": "2026-06-16T12:11:01+03:00",
+        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-contrast.md",
+        "dev_resources": {
+          "status": "linked",
+          "method": "component_description",
+          "node_id": "489:83105",
+          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Contrast через use_figma — видна в get_design_context/Dev Mode."
+        }
       }
     }
   }
