@@ -34,7 +34,7 @@ description: >
 | Tertiary | *(в разработке)* | Третичное, менее заметное — навигация |
 | Ghost | *(в разработке)* | Текстовая кнопка без фона, минимальный визуальный вес |
 | **Addition** | `references/button-addition.md` ✅ | Финальные действия: корзина, оплата |
-| Contrast | *(в разработке)* | Тёмная кнопка / инверсия на светлом фоне |
+| **Contrast** | `references/button-contrast.md` ✅ | Тёмная кнопка / инверсия на светлом фоне |
 | Clean | *(в разработке)* | Белая кнопка для цветных секций |
 
 Новые варианты добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта): он вытащит роли каждого состояния и сгенерирует `references/{variant}.css` с inline-ссылками `var(--color-{role}-*)`. Вручную блок `.btn-primary` не копируем.
@@ -62,6 +62,7 @@ description: >
 | Primary | `references/button-primary.css` | `.btn` base + все размеры + `.btn-primary` со всеми состояниями (inline `rgb(var(--primary-*))`) |
 | Secondary | `references/button-secondary.css` | `.btn` base + все размеры + `.btn-secondary` со всеми состояниями (inline `rgb(var(--secondary-*))`) |
 | Addition | `references/button-addition.css` | `.btn` base + все размеры + `.btn-addition` со всеми состояниями (inline `rgb(var(--addition-*))`) |
+| Contrast | `references/button-contrast.css` | `.btn` base + все размеры + `.btn-contrast` со всеми состояниями (inline `rgb(var(--surface-*))`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
 

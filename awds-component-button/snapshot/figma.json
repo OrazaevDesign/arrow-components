@@ -2,7 +2,7 @@
   "component": "button",
   "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
   "file_name": "💠 Comp ↪ ² Buttons",
-  "fetched_at": "2026-06-16T08:59:58Z",
+  "fetched_at": "2026-06-16T09:07:32Z",
   "note": "Мультивариантный снапшот. get_variable_defs возвращает резолвленные значения, не alias-пути — маппинг в базовые/цветовые токены сделан через arrow-design-system/references/component-token-map.json (snapshot sha256:3ca32031358c…). Ключи Figma (button/{variant}/{bg,chroma,border,color}, rectangle/{N}/*, focus-selection/outline, opacity/control/disabled) ищутся в карте, hex не используется.",
   "metadata_variant_axes": {
     "Type": ["Text", "Icon"],
@@ -48,6 +48,16 @@
         "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
         "disabled": {"opacity/control/disabled":"40"}
       }
+    },
+    "contrast": {
+      "node_id": "489:83105",
+      "figma_label": "Button / Contrast",
+      "fetch_note": "489:83105 — фрейм Component Set (Type×Size×State×Progress symbols). get_variable_defs по фрейму вернул резолвленный rest-набор + геометрию всех size; цветовые ключи button/contrast/* резолвятся по карте на роли surface (НЕ отдельное семейство --contrast-*). Особенность: chroma схлопывается в bg уже на Hover.",
+      "variable_defs": {
+        "rest": {"button/contrast/color":"#ffffff","button/contrast/bg":"#080808","button/contrast/chroma":"#646464","button/contrast/border":"#080808","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
+        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
+        "disabled": {"opacity/control/disabled":"40"}
+      }
     }
   },
   "resolved_via_map": {
@@ -83,6 +93,14 @@
       "hover":    {"bg":"--addition-dim", "chroma":"--addition-chroma","border":"--addition-dim", "color":"--addition-on"},
       "focus":    {"bg":"--addition-core","chroma":"--addition-chroma","border":"--addition-core","color":"--addition-on","outline":"--surface-on-highest"},
       "active":   {"bg":"--addition-core","chroma":"--addition-core", "border":"--addition-core","color":"--addition-on"},
+      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    },
+    "state_button_contrast": {
+      "_source": "component-token-map.json → state.{state}.button.contrast (роли surface)",
+      "rest":     {"bg":"--surface-on-highest","chroma":"--surface-on-high",   "border":"--surface-on-highest","color":"--surface-bright"},
+      "hover":    {"bg":"--surface-on-highest","chroma":"--surface-on-highest","border":"--surface-on-highest","color":"--surface-bright"},
+      "focus":    {"bg":"--surface-on-highest","chroma":"--surface-on-high",   "border":"--surface-on-highest","color":"--surface-bright","outline":"--surface-on-highest"},
+      "active":   {"bg":"--surface-on-highest","chroma":"--surface-on-highest","border":"--surface-on-highest","color":"--surface-bright"},
       "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
     }
   }

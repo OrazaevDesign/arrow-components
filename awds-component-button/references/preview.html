@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="./button-primary.css">
   <link rel="stylesheet" href="./button-secondary.css">
   <link rel="stylesheet" href="./button-addition.css">
+  <link rel="stylesheet" href="./button-contrast.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
@@ -86,6 +87,29 @@
       --awds-btn-chroma: rgb(var(--addition-core));
       --awds-btn-border: rgb(var(--addition-core));
       --awds-btn-color:  rgb(var(--addition-on));
+    }
+
+    /* ─── Зеркала псевдо-классов для Contrast (копия :hover/:focus-visible/:active
+       из button-contrast.css). chroma схлопывается уже на hover. ─── */
+    .btn-contrast.is-hover {
+      --awds-btn-bg:     rgb(var(--surface-on-highest));
+      --awds-btn-chroma: rgb(var(--surface-on-highest));
+      --awds-btn-border: rgb(var(--surface-on-highest));
+      --awds-btn-color:  rgb(var(--surface-bright));
+    }
+    .btn-contrast.is-focus {
+      --awds-btn-bg:     rgb(var(--surface-on-highest));
+      --awds-btn-chroma: rgb(var(--surface-on-high));
+      --awds-btn-border: rgb(var(--surface-on-highest));
+      --awds-btn-color:  rgb(var(--surface-bright));
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .btn-contrast.is-active {
+      --awds-btn-bg:     rgb(var(--surface-on-highest));
+      --awds-btn-chroma: rgb(var(--surface-on-highest));
+      --awds-btn-border: rgb(var(--surface-on-highest));
+      --awds-btn-color:  rgb(var(--surface-bright));
     }
 
     /* ─── Preview-shell ─── */
@@ -233,6 +257,7 @@
         <option value="primary">primary</option>
         <option value="secondary">secondary</option>
         <option value="addition">addition</option>
+        <option value="contrast">contrast</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -378,6 +403,12 @@
         focus:  { bg: '--addition-core', chroma: '--addition-chroma', border: '--addition-core', color: '--addition-on' },
         active: { bg: '--addition-core', chroma: '--addition-core',   border: '--addition-core', color: '--addition-on' },
       },
+      contrast: {
+        rest:   { bg: '--surface-on-highest', chroma: '--surface-on-high',    border: '--surface-on-highest', color: '--surface-bright' },
+        hover:  { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
+        focus:  { bg: '--surface-on-highest', chroma: '--surface-on-high',    border: '--surface-on-highest', color: '--surface-bright' },
+        active: { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
+      },
     };
     const activeVariant = () => document.querySelector('#variant').value;
 
@@ -465,7 +496,8 @@
 
     function refreshTokens() {
       const roleMap = ROLE_MAPS[activeVariant()];
-      const family = `--${activeVariant()}-*`;
+      // Семейство ролей берём из фактического маппинга rest.bg (Contrast — surface, не --contrast-*).
+      const family = roleMap.rest.bg.replace(/-(core|on-highest|surface)$/, '-*');
       document.querySelector('[data-group="rest"] h3').textContent = `rest — rgb(var(${family}))`;
       fillGroup('size', SIZE_400.map(([label, name]) => [`${label} → ${name.replace('--awds-', '')}`, name, 'value']));
       ['rest', 'hover', 'focus', 'active'].forEach(state => {
