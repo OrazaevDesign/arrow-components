@@ -16,6 +16,11 @@
       "node_id": "489:59661",
       "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-59661",
       "figma_label": "Button / Secondary"
+    },
+    "addition": {
+      "node_id": "489:74776",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-74776",
+      "figma_label": "Button / Addition"
     }
   },
   "shape": "rectangle",
@@ -28,7 +33,7 @@
     "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
     "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary"] },
+      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary", "addition"] },
       { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
     ],
     "html_samples": [
@@ -48,6 +53,10 @@
     "--secondary-chroma",
     "--secondary-dim",
     "--secondary-on",
+    "--addition-core",
+    "--addition-chroma",
+    "--addition-dim",
+    "--addition-on",
     "--surface-on-highest",
     "--awds-rectangle-*",
     "--awds-opacity-40",
@@ -56,9 +65,9 @@
   ],
   "color_scheme": "rgb-triplet",
   "color_scheme_note": "Роли — RGB-триплеты в переменных без префикса --color- (--primary-core: 246 202 70), под .theme-default.theme-light. В CSS — rgb(var(--primary-core)). surface-transparent → литерал transparent.",
-  "last_synced": "2026-06-16T08:47:10Z",
+  "last_synced": "2026-06-16T08:59:58Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:ab6c76ce7f23ee11f471e40dec2798c71a81429b6dbd82a2c49d20aab8cf2032",
+  "snapshot_hash": "sha256:4c404f0e47c077c3af8aefb0455a11ff1b50f0c2b8eb25e19e3122a5b85da044",
   "map_source": "arrow-design-system/references/component-token-map.json",
   "map_snapshot_hash": "sha256:c80e5a80742e563b72540d69fb4196e2cff84f9984e2fae870f03e6c7019c1e1",
   "published": {
@@ -87,6 +96,10 @@
           "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
           "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Secondary через use_figma — видна в get_design_context/Dev Mode."
         }
+      },
+      "addition": {
+        "status": "not_published",
+        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
       }
     }
   }

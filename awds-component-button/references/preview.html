@@ -15,6 +15,7 @@
   <!-- 3. Варианты этого скилла -->
   <link rel="stylesheet" href="./button-primary.css">
   <link rel="stylesheet" href="./button-secondary.css">
+  <link rel="stylesheet" href="./button-addition.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
@@ -62,6 +63,29 @@
       --awds-btn-chroma: rgb(var(--secondary-core));
       --awds-btn-border: rgb(var(--secondary-core));
       --awds-btn-color:  rgb(var(--secondary-on));
+    }
+
+    /* ─── Зеркала псевдо-классов для Addition (копия :hover/:focus-visible/:active
+       из button-addition.css). ─── */
+    .btn-addition.is-hover {
+      --awds-btn-bg:     rgb(var(--addition-dim));
+      --awds-btn-chroma: rgb(var(--addition-chroma));
+      --awds-btn-border: rgb(var(--addition-dim));
+      --awds-btn-color:  rgb(var(--addition-on));
+    }
+    .btn-addition.is-focus {
+      --awds-btn-bg:     rgb(var(--addition-core));
+      --awds-btn-chroma: rgb(var(--addition-chroma));
+      --awds-btn-border: rgb(var(--addition-core));
+      --awds-btn-color:  rgb(var(--addition-on));
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .btn-addition.is-active {
+      --awds-btn-bg:     rgb(var(--addition-core));
+      --awds-btn-chroma: rgb(var(--addition-core));
+      --awds-btn-border: rgb(var(--addition-core));
+      --awds-btn-color:  rgb(var(--addition-on));
     }
 
     /* ─── Preview-shell ─── */
@@ -208,6 +232,7 @@
       <select id="variant">
         <option value="primary">primary</option>
         <option value="secondary">secondary</option>
+        <option value="addition">addition</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -347,6 +372,12 @@
         focus:  { bg: '--secondary-core', chroma: '--secondary-chroma', border: '--secondary-core', color: '--secondary-on' },
         active: { bg: '--secondary-core', chroma: '--secondary-core',   border: '--secondary-core', color: '--secondary-on' },
       },
+      addition: {
+        rest:   { bg: '--addition-core', chroma: '--addition-chroma', border: '--addition-core', color: '--addition-on' },
+        hover:  { bg: '--addition-dim',  chroma: '--addition-chroma', border: '--addition-dim',  color: '--addition-on' },
+        focus:  { bg: '--addition-core', chroma: '--addition-chroma', border: '--addition-core', color: '--addition-on' },
+        active: { bg: '--addition-core', chroma: '--addition-core',   border: '--addition-core', color: '--addition-on' },
+      },
     };
     const activeVariant = () => document.querySelector('#variant').value;
 
@@ -434,7 +465,7 @@
 
     function refreshTokens() {
       const roleMap = ROLE_MAPS[activeVariant()];
-      const family = activeVariant() === 'secondary' ? '--secondary-*' : '--primary-*';
+      const family = `--${activeVariant()}-*`;
       document.querySelector('[data-group="rest"] h3').textContent = `rest — rgb(var(${family}))`;
       fillGroup('size', SIZE_400.map(([label, name]) => [`${label} → ${name.replace('--awds-', '')}`, name, 'value']));
       ['rest', 'hover', 'focus', 'active'].forEach(state => {

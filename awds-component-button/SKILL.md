@@ -33,7 +33,7 @@ description: >
 | **Secondary** | `references/button-secondary.md` ✅ | Второстепенное действие рядом с Primary |
 | Tertiary | *(в разработке)* | Третичное, менее заметное — навигация |
 | Ghost | *(в разработке)* | Текстовая кнопка без фона, минимальный визуальный вес |
-| Addition | *(в разработке)* | Финальные действия: корзина, оплата |
+| **Addition** | `references/button-addition.md` ✅ | Финальные действия: корзина, оплата |
 | Contrast | *(в разработке)* | Тёмная кнопка / инверсия на светлом фоне |
 | Clean | *(в разработке)* | Белая кнопка для цветных секций |
 
@@ -61,6 +61,7 @@ description: >
 |---|---|---|
 | Primary | `references/button-primary.css` | `.btn` base + все размеры + `.btn-primary` со всеми состояниями (inline `rgb(var(--primary-*))`) |
 | Secondary | `references/button-secondary.css` | `.btn` base + все размеры + `.btn-secondary` со всеми состояниями (inline `rgb(var(--secondary-*))`) |
+| Addition | `references/button-addition.css` | `.btn` base + все размеры + `.btn-addition` со всеми состояниями (inline `rgb(var(--addition-*))`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
 
