@@ -98,8 +98,16 @@
         }
       },
       "addition": {
-        "status": "not_published",
-        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
+        "commit": "957d851bf142a2994b866a48c4cee1d4ccec60a9",
+        "pushed_at": "2026-06-16T12:02:06+03:00",
+        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-addition.md",
+        "dev_resources": {
+          "status": "linked",
+          "method": "component_description",
+          "node_id": "489:74776",
+          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Addition через use_figma — видна в get_design_context/Dev Mode."
+        }
       }
     }
   }
