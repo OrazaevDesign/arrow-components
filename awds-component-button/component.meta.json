@@ -175,8 +175,16 @@
         }
       },
       "clean": {
-        "status": "not_published",
-        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
+        "commit": "05a6703a3bb7063ad65dfb83422ff4e909754029",
+        "pushed_at": "2026-06-16T13:13:08+03:00",
+        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-clean.md",
+        "dev_resources": {
+          "status": "linked",
+          "method": "component_description",
+          "node_id": "489:119060",
+          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Clean через use_figma — видна в get_design_context/Dev Mode."
+        }
       }
     }
   }
