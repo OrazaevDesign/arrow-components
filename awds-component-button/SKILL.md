@@ -35,7 +35,7 @@ description: >
 | **Ghost** | `references/button-ghost.md` ✅ | Текстовая кнопка без фона, минимальный визуальный вес |
 | **Addition** | `references/button-addition.md` ✅ | Финальные действия: корзина, оплата |
 | **Contrast** | `references/button-contrast.md` ✅ | Тёмная кнопка / инверсия на светлом фоне |
-| Clean | *(в разработке)* | Белая кнопка для цветных секций |
+| **Clean** | `references/button-clean.md` ✅ | Белая кнопка для цветных секций |
 
 Новые варианты добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта): он вытащит роли каждого состояния и сгенерирует `references/{variant}.css` с inline-ссылками `var(--color-{role}-*)`. Вручную блок `.btn-primary` не копируем.
 
@@ -65,6 +65,7 @@ description: >
 | Contrast | `references/button-contrast.css` | `.btn` base + все размеры + `.btn-contrast` со всеми состояниями (inline `rgb(var(--surface-*))`) |
 | Tertiary | `references/button-tertiary.css` | `.btn` base + все размеры + `.btn-tertiary` со всеми состояниями (inline `rgb(var(--tertiary-*))`) |
 | Ghost | `references/button-ghost.css` | `.btn` base + все размеры + `.btn-ghost` (фон/обводка `transparent`, текст `rgb(var(--surface-on-high/-highest))`) |
+| Clean | `references/button-clean.css` | `.btn` base + все размеры + `.btn-clean` (белый фон `surface-bright`, видимая обводка `surface-dim`, текст `surface-on-high/-highest`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
 

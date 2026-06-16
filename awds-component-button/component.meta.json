@@ -36,6 +36,11 @@
       "node_id": "489:94401",
       "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-94401",
       "figma_label": "Button / Ghost"
+    },
+    "clean": {
+      "node_id": "489:119060",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-119060",
+      "figma_label": "Button / Clean"
     }
   },
   "shape": "rectangle",
@@ -48,7 +53,7 @@
     "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
     "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary", "addition", "contrast", "tertiary", "ghost"] },
+      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary", "addition", "contrast", "tertiary", "ghost", "clean"] },
       { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
     ],
     "html_samples": [
@@ -79,6 +84,8 @@
     "--surface-on-highest",
     "--surface-on-high",
     "--surface-bright",
+    "--surface-surface",
+    "--surface-dim",
     "transparent (ghost bg/border)",
     "--awds-rectangle-*",
     "--awds-opacity-40",
@@ -87,9 +94,9 @@
   ],
   "color_scheme": "rgb-triplet",
   "color_scheme_note": "Роли — RGB-триплеты в переменных без префикса --color- (--primary-core: 246 202 70), под .theme-default.theme-light. В CSS — rgb(var(--primary-core)). surface-transparent → литерал transparent.",
-  "last_synced": "2026-06-16T10:02:00Z",
+  "last_synced": "2026-06-16T10:10:11Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:e0cf7bb7addf9268e27229dac1de7503b663d82d6393549f2d5cc65185caef07",
+  "snapshot_hash": "sha256:e03314f82de7301d82de1a9f5a8d0d5996945e31dcff36c5fa4d35dbf942e10c",
   "map_source": "arrow-design-system/references/component-token-map.json",
   "map_snapshot_hash": "sha256:c80e5a80742e563b72540d69fb4196e2cff84f9984e2fae870f03e6c7019c1e1",
   "published": {
@@ -166,6 +173,10 @@
           "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
           "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Ghost через use_figma — видна в get_design_context/Dev Mode."
         }
+      },
+      "clean": {
+        "status": "not_published",
+        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
       }
     }
   }

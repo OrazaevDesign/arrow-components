@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="./button-contrast.css">
   <link rel="stylesheet" href="./button-tertiary.css">
   <link rel="stylesheet" href="./button-ghost.css">
+  <link rel="stylesheet" href="./button-clean.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
@@ -157,6 +158,29 @@
       --awds-btn-bg:     transparent;
       --awds-btn-chroma: transparent;
       --awds-btn-border: transparent;
+      --awds-btn-color:  rgb(var(--surface-on-highest));
+    }
+
+    /* ─── Зеркала псевдо-классов для Clean (копия :hover/:focus-visible/:active
+       из button-clean.css). border ≠ bg (видимая обводка surface-dim). ─── */
+    .btn-clean.is-hover {
+      --awds-btn-bg:     rgb(var(--surface-surface));
+      --awds-btn-chroma: rgb(var(--surface-surface));
+      --awds-btn-border: rgb(var(--surface-dim));
+      --awds-btn-color:  rgb(var(--surface-on-highest));
+    }
+    .btn-clean.is-focus {
+      --awds-btn-bg:     rgb(var(--surface-bright));
+      --awds-btn-chroma: rgb(var(--surface-bright));
+      --awds-btn-border: rgb(var(--surface-dim));
+      --awds-btn-color:  rgb(var(--surface-on-high));
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .btn-clean.is-active {
+      --awds-btn-bg:     rgb(var(--surface-surface));
+      --awds-btn-chroma: rgb(var(--surface-surface));
+      --awds-btn-border: rgb(var(--surface-dim));
       --awds-btn-color:  rgb(var(--surface-on-highest));
     }
 
@@ -315,6 +339,7 @@
         <option value="contrast">contrast</option>
         <option value="tertiary">tertiary</option>
         <option value="ghost">ghost</option>
+        <option value="clean">clean</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -477,6 +502,12 @@
         hover:  { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-highest' },
         focus:  { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-highest' },
         active: { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-highest' },
+      },
+      clean: {
+        rest:   { bg: '--surface-bright',  chroma: '--surface-bright',  border: '--surface-dim', color: '--surface-on-high' },
+        hover:  { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-dim', color: '--surface-on-highest' },
+        focus:  { bg: '--surface-bright',  chroma: '--surface-bright',  border: '--surface-dim', color: '--surface-on-high' },
+        active: { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-dim', color: '--surface-on-highest' },
       },
     };
     const activeVariant = () => document.querySelector('#variant').value;

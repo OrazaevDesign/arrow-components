@@ -2,7 +2,7 @@
   "component": "button",
   "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
   "file_name": "💠 Comp ↪ ² Buttons",
-  "fetched_at": "2026-06-16T10:02:00Z",
+  "fetched_at": "2026-06-16T10:10:11Z",
   "note": "Мультивариантный снапшот. get_variable_defs возвращает резолвленные значения, не alias-пути — маппинг в базовые/цветовые токены сделан через arrow-design-system/references/component-token-map.json (snapshot sha256:3ca32031358c…). Ключи Figma (button/{variant}/{bg,chroma,border,color}, rectangle/{N}/*, focus-selection/outline, opacity/control/disabled) ищутся в карте, hex не используется.",
   "metadata_variant_axes": {
     "Type": ["Text", "Icon"],
@@ -78,6 +78,16 @@
         "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
         "disabled": {"opacity/control/disabled":"40"}
       }
+    },
+    "clean": {
+      "node_id": "489:119060",
+      "figma_label": "Button / Clean",
+      "fetch_note": "489:119060 — фрейм Component Set (Type×Size×State×Progress symbols). Роли surface; ЕДИНСТВЕННЫЙ вариант с border ≠ bg (border=surface-dim, видимая обводка), chroma=bg (плоский фон). Цвет текста и фон темнеют на hover/active.",
+      "variable_defs": {
+        "rest": {"button/clean/color":"#646464","button/clean/bg":"#ffffff","button/clean/chroma":"#ffffff","button/clean/border":"#f2f2f2","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
+        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
+        "disabled": {"opacity/control/disabled":"40"}
+      }
     }
   },
   "resolved_via_map": {
@@ -137,6 +147,14 @@
       "hover":    {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest"},
       "focus":    {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest","outline":"--surface-on-highest"},
       "active":   {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest"},
+      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    },
+    "state_button_clean": {
+      "_source": "component-token-map.json → state.{state}.button.clean (роли surface; border ≠ bg)",
+      "rest":     {"bg":"--surface-bright", "chroma":"--surface-bright", "border":"--surface-dim","color":"--surface-on-high"},
+      "hover":    {"bg":"--surface-surface","chroma":"--surface-surface","border":"--surface-dim","color":"--surface-on-highest"},
+      "focus":    {"bg":"--surface-bright", "chroma":"--surface-bright", "border":"--surface-dim","color":"--surface-on-high","outline":"--surface-on-highest"},
+      "active":   {"bg":"--surface-surface","chroma":"--surface-surface","border":"--surface-dim","color":"--surface-on-highest"},
       "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
     }
   }
