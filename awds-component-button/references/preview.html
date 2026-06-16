@@ -9,11 +9,12 @@
   <!-- 1. Цвета сайта (RGB-триплеты --{role}, класс .theme-default.theme-light / .theme-dark) -->
   <link rel="stylesheet" href="../../arrow-design-system/references/css-variables.css">
 
-  <!-- 2. Базовые шкалы DS (--awds-space-*, --awds-rounded-*, --awds-control-*, --awds-opacity-*, --awds-font-*) -->
-  <link rel="stylesheet" href="../../../../blocks/arrowds-css/style.css">
+  <!-- 2. Базовые шкалы + семантические shape-токены DS (--awds-space-*, --awds-rounded-*, --awds-control-*, --awds-opacity-*, --awds-font-*, --awds-rectangle-*) -->
+  <link rel="stylesheet" href="../../arrow-design-system/references/css-global.css">
 
   <!-- 3. Варианты этого скилла -->
   <link rel="stylesheet" href="./button-primary.css">
+  <link rel="stylesheet" href="./button-secondary.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
@@ -38,6 +39,29 @@
       --awds-btn-chroma: rgb(var(--primary-core));
       --awds-btn-border: rgb(var(--primary-core));
       --awds-btn-color:  rgb(var(--primary-on));
+    }
+
+    /* ─── Зеркала псевдо-классов для Secondary (копия :hover/:focus-visible/:active
+       из button-secondary.css). ─── */
+    .btn-secondary.is-hover {
+      --awds-btn-bg:     rgb(var(--secondary-dim));
+      --awds-btn-chroma: rgb(var(--secondary-chroma));
+      --awds-btn-border: rgb(var(--secondary-dim));
+      --awds-btn-color:  rgb(var(--secondary-on));
+    }
+    .btn-secondary.is-focus {
+      --awds-btn-bg:     rgb(var(--secondary-core));
+      --awds-btn-chroma: rgb(var(--secondary-chroma));
+      --awds-btn-border: rgb(var(--secondary-core));
+      --awds-btn-color:  rgb(var(--secondary-on));
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .btn-secondary.is-active {
+      --awds-btn-bg:     rgb(var(--secondary-core));
+      --awds-btn-chroma: rgb(var(--secondary-core));
+      --awds-btn-border: rgb(var(--secondary-core));
+      --awds-btn-color:  rgb(var(--secondary-on));
     }
 
     /* ─── Preview-shell ─── */
@@ -171,7 +195,7 @@
 <body>
 
   <h1>button / storybook</h1>
-  <p class="sub">Матрица размеров × состояний. Размеры — семантические shape-токены <code>var(--awds-rectangle-{N}-*)</code>, цвета — <code>rgb(var(--primary-*))</code> (RGB-триплеты из <code>css-variables.css</code> сайта). Переключи тему — палитра подтянется.</p>
+  <p class="sub">Матрица размеров × состояний. Размеры — семантические shape-токены <code>var(--awds-rectangle-{N}-*)</code>, цвета — роли <code>rgb(var(--{variant}-*))</code> (RGB-триплеты из <code>css-variables.css</code> сайта). Переключи вариант / тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -183,6 +207,7 @@
     <label>Вариант:
       <select id="variant">
         <option value="primary">primary</option>
+        <option value="secondary">secondary</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -308,13 +333,22 @@
     const STATES  = ['rest', 'hover', 'focus', 'active', 'disabled'];
     const BASE_CLASS = 'btn';
 
-    /* Резолв роли для каждого состояния (зеркало button-primary.css) — для sidebar. */
-    const ROLE_MAP = {
-      rest:   { bg: '--primary-core', chroma: '--primary-chroma', border: '--primary-core', color: '--primary-on' },
-      hover:  { bg: '--primary-dim',  chroma: '--primary-chroma', border: '--primary-dim',  color: '--primary-on' },
-      focus:  { bg: '--primary-core', chroma: '--primary-chroma', border: '--primary-core', color: '--primary-on' },
-      active: { bg: '--primary-core', chroma: '--primary-core',   border: '--primary-core', color: '--primary-on' },
+    /* Резолв роли для каждого состояния по варианту (зеркало button-{variant}.css) — для sidebar. */
+    const ROLE_MAPS = {
+      primary: {
+        rest:   { bg: '--primary-core', chroma: '--primary-chroma', border: '--primary-core', color: '--primary-on' },
+        hover:  { bg: '--primary-dim',  chroma: '--primary-chroma', border: '--primary-dim',  color: '--primary-on' },
+        focus:  { bg: '--primary-core', chroma: '--primary-chroma', border: '--primary-core', color: '--primary-on' },
+        active: { bg: '--primary-core', chroma: '--primary-core',   border: '--primary-core', color: '--primary-on' },
+      },
+      secondary: {
+        rest:   { bg: '--secondary-core', chroma: '--secondary-chroma', border: '--secondary-core', color: '--secondary-on' },
+        hover:  { bg: '--secondary-dim',  chroma: '--secondary-chroma', border: '--secondary-dim',  color: '--secondary-on' },
+        focus:  { bg: '--secondary-core', chroma: '--secondary-chroma', border: '--secondary-core', color: '--secondary-on' },
+        active: { bg: '--secondary-core', chroma: '--secondary-core',   border: '--secondary-core', color: '--secondary-on' },
+      },
     };
+    const activeVariant = () => document.querySelector('#variant').value;
 
     /* size 400 → базовые токены (зеркало .btn--400, map.size.rectangle.400). */
     const SIZE_400 = [
@@ -359,7 +393,16 @@
       refreshTokens();
     });
     document.querySelector('#icons').addEventListener('change', renderMatrix);
-    document.querySelector('#variant').addEventListener('change', () => { renderMatrix(); refreshTokens(); });
+    document.querySelector('#variant').addEventListener('change', () => { renderMatrix(); syncSamples(); refreshTokens(); });
+
+    /* Блок «Варианты разметки» переключает variant-класс под активный вариант. */
+    function syncSamples() {
+      const variant = activeVariant();
+      document.querySelectorAll('.samples .btn').forEach(el => {
+        el.classList.remove('btn-primary', 'btn-secondary');
+        el.classList.add(`btn-${variant}`);
+      });
+    }
 
     /* ── Панель токенов ── */
     const COLOR_KEYS = ['bg', 'chroma', 'border', 'color'];
@@ -390,14 +433,18 @@
     }
 
     function refreshTokens() {
+      const roleMap = ROLE_MAPS[activeVariant()];
+      const family = activeVariant() === 'secondary' ? '--secondary-*' : '--primary-*';
+      document.querySelector('[data-group="rest"] h3').textContent = `rest — rgb(var(${family}))`;
       fillGroup('size', SIZE_400.map(([label, name]) => [`${label} → ${name.replace('--awds-', '')}`, name, 'value']));
       ['rest', 'hover', 'focus', 'active'].forEach(state => {
-        fillGroup(state, COLOR_KEYS.map(k => [`${k} → ${ROLE_MAP[state][k].replace(/^--/, '')}`, ROLE_MAP[state][k], 'color']));
+        fillGroup(state, COLOR_KEYS.map(k => [`${k} → ${roleMap[state][k].replace(/^--/, '')}`, roleMap[state][k], 'color']));
       });
       fillGroup('other', OTHER.map(([name, kind]) => [name.replace(/^--/, ''), name, kind]));
     }
 
     renderMatrix();
+    syncSamples();
     refreshTokens();
   </script>
 </body>

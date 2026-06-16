@@ -30,7 +30,7 @@ description: >
 | Вариант | Reference | Когда использовать |
 |---|---|---|
 | **Primary** | `references/button-primary.md` ✅ | Главный CTA — одно главное действие на экране/секции |
-| Secondary | *(в разработке)* | Второстепенное действие рядом с Primary |
+| **Secondary** | `references/button-secondary.md` ✅ | Второстепенное действие рядом с Primary |
 | Tertiary | *(в разработке)* | Третичное, менее заметное — навигация |
 | Ghost | *(в разработке)* | Текстовая кнопка без фона, минимальный визуальный вес |
 | Addition | *(в разработке)* | Финальные действия: корзина, оплата |
@@ -59,7 +59,8 @@ description: >
 
 | Вариант | CSS | Что внутри |
 |---|---|---|
-| Primary | `references/button-primary.css` | `.btn` base + все размеры + `.btn-primary` со всеми состояниями (inline `var(--color-primary-*)`) |
+| Primary | `references/button-primary.css` | `.btn` base + все размеры + `.btn-primary` со всеми состояниями (inline `rgb(var(--primary-*))`) |
+| Secondary | `references/button-secondary.css` | `.btn` base + все размеры + `.btn-secondary` со всеми состояниями (inline `rgb(var(--secondary-*))`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
 

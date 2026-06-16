@@ -8,7 +8,7 @@
 
 | Компонент | Варианты | Figma link |
 |---|---|---|
-| [awds-component-button](awds-component-button/) | primary | [open](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757) |
+| [awds-component-button](awds-component-button/) | primary · secondary | [primary](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757) · [secondary](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-59661) |
 | [awds-component-table](awds-component-table/) | cell light / head / default · таблица light / default | [open](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2038-1350) |
 
 _(список пополняется по мере публикации новых компонентов)_

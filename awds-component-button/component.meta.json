@@ -11,6 +11,11 @@
       "node_id": "1:757",
       "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757",
       "figma_label": "Button / Primary"
+    },
+    "secondary": {
+      "node_id": "489:59661",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-59661",
+      "figma_label": "Button / Secondary"
     }
   },
   "shape": "rectangle",
@@ -23,7 +28,7 @@
     "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
     "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["primary"] },
+      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary"] },
       { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
     ],
     "html_samples": [
@@ -39,6 +44,10 @@
     "--primary-chroma",
     "--primary-dim",
     "--primary-on",
+    "--secondary-core",
+    "--secondary-chroma",
+    "--secondary-dim",
+    "--secondary-on",
     "--surface-on-highest",
     "--awds-rectangle-*",
     "--awds-opacity-40",
@@ -47,25 +56,29 @@
   ],
   "color_scheme": "rgb-triplet",
   "color_scheme_note": "Роли — RGB-триплеты в переменных без префикса --color- (--primary-core: 246 202 70), под .theme-default.theme-light. В CSS — rgb(var(--primary-core)). surface-transparent → литерал transparent.",
-  "last_synced": "2026-05-31T12:53:23Z",
+  "last_synced": "2026-06-16T08:47:10Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:d2468c88eecac76906adbabbc2a3d94b08296483a060f4d835d20f05ab16fec7",
+  "snapshot_hash": "sha256:ab6c76ce7f23ee11f471e40dec2798c71a81429b6dbd82a2c49d20aab8cf2032",
   "map_source": "arrow-design-system/references/component-token-map.json",
-  "map_snapshot_hash": "sha256:3ca32031358c5db389ea9ea55cb5117791795792db9e2a59d586ace20e18625f",
+  "map_snapshot_hash": "sha256:c80e5a80742e563b72540d69fb4196e2cff84f9984e2fae870f03e6c7019c1e1",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "3dc4453569b1278ccad4416f99584982914189a1",
-    "pushed_at": "2026-06-02T16:46:31Z",
-    "github_urls": {
-      "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-primary.md"
-    },
-    "dev_resources_status": {
+    "variants": {
       "primary": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "1:757",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-        "note": "PRO plan: Dev Resources REST (file_dev_resources:write) и MCP Code Connect недоступны (Org/Enterprise). Ссылка вписана в descriptionMarkdown COMPONENT_SET через use_figma — видна в get_design_context/Dev Mode."
+        "commit": "643b91e2c7de2bf7bb68684c3e9eea982a9a15d9",
+        "pushed_at": "2026-06-11T00:00:00Z",
+        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-primary.md",
+        "dev_resources": {
+          "status": "linked",
+          "method": "component_description",
+          "node_id": "1:757",
+          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+          "note": "PRO plan: Dev Resources REST (file_dev_resources:write) и MCP Code Connect недоступны (Org/Enterprise). Ссылка вписана в descriptionMarkdown COMPONENT_SET через use_figma — видна в get_design_context/Dev Mode."
+        }
+      },
+      "secondary": {
+        "status": "not_published",
+        "note": "Собран ACB 2026-06-16, ещё не публиковался. Публикация — отдельный скилл arrow-components-publisher (/arrow-components-publisher button)."
       }
     }
   }

@@ -1,11 +1,9 @@
 {
   "component": "button",
-  "variant": "primary",
   "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
   "file_name": "💠 Comp ↪ ² Buttons",
-  "primary_node_id": "1:757",
-  "fetched_at": "2026-05-31T12:53:23Z",
-  "note": "Re-bootstrap с нуля. get_variable_defs возвращает резолвленные значения, не alias-пути — маппинг в базовые/цветовые токены сделан через arrow-design-system/references/component-token-map.json (snapshot sha256:3ca32031358c…). Сэмплированы Size=600/Type=Text ноды по каждому состоянию.",
+  "fetched_at": "2026-06-16T08:47:10Z",
+  "note": "Мультивариантный снапшот. get_variable_defs возвращает резолвленные значения, не alias-пути — маппинг в базовые/цветовые токены сделан через arrow-design-system/references/component-token-map.json (snapshot sha256:3ca32031358c…). Ключи Figma (button/{variant}/{bg,chroma,border,color}, rectangle/{N}/*, focus-selection/outline, opacity/control/disabled) ищутся в карте, hex не используется.",
   "metadata_variant_axes": {
     "Type": ["Text", "Icon"],
     "Size": [600, 500, 400, 300, 200, 100, 50],
@@ -13,26 +11,38 @@
     "Progress": [false, true]
   },
   "structure": {
-    "note": "get_design_context(1:758): контейнер flex items-center justify-center, горизонтальный padding = rectangle/600/padding; три ячейки Prefix|Text|Suffix, у каждой py = padding, pl/pr = rectangle/600/gap. Фон — linear-gradient chroma→bg, border 1px. Плоский flex-эквивалент: padding-block=padding, padding-inline=padding+gap, gap=gap.",
+    "note": "Контейнер flex items-center justify-center, горизонтальный padding = rectangle/{N}/padding; три ячейки Prefix|Text|Suffix, у каждой py = padding, pl/pr = rectangle/{N}/gap. Фон — linear-gradient chroma→bg, border 1px. Плоский flex-эквивалент: padding-block=padding, padding-inline=padding+gap, gap=gap.",
     "layers": ["Prefix (. / Prefix)", "Text (. / Text)", "Suffix (. / Suffix)"]
   },
-  "state_nodes_sampled": {
-    "rest":     "1:758",
-    "hover":    "1:800",
-    "focus":    "1:889",
-    "active":   "1:842",
-    "disabled": "1:946"
-  },
-  "variable_defs": {
-    "rest": {"button/primary/color":"#19110a","rectangle/600/icon":"20","rectangle/600/gap":"8","rectangle/600/padding":"16","opacity/color":"100","letter-spacing/600":"0","font-size/600":"16","font-weight":"semibold","font-family":"Inter","line-height/600":"20","border-radius/500":"8","rectangle/600/rounded":"10","opacity/control/enabled":"100","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
-    "hover": {"button/primary/color":"#19110a","rectangle/600/icon":"20","rectangle/600/gap":"8","rectangle/600/padding":"16","opacity/color":"100","letter-spacing/600":"0","font-size/600":"16","font-weight":"semibold","font-family":"Inter","line-height/600":"20","border-radius/500":"8","rectangle/600/rounded":"10","opacity/control/enabled":"100","button/primary/chroma":"#fce279","button/primary/bg":"#fad046","button/primary/border":"#fad046"},
-    "active": {"button/primary/color":"#19110a","rectangle/600/icon":"20","rectangle/600/gap":"8","rectangle/600/padding":"16","opacity/color":"100","letter-spacing/600":"0","font-size/600":"16","font-weight":"semibold","font-family":"Inter","line-height/600":"20","border-radius/500":"8","rectangle/600/rounded":"10","opacity/control/enabled":"100","button/primary/chroma":"#fad646","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
-    "focus": {"button/primary/color":"#19110a","rectangle/600/icon":"20","rectangle/600/gap":"8","rectangle/600/padding":"16","opacity/color":"100","letter-spacing/600":"0","font-size/600":"16","font-weight":"semibold","font-family":"Inter","line-height/600":"20","border-radius/500":"8","focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808","rectangle/600/rounded":"10","opacity/control/enabled":"100","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
-    "disabled": {"button/primary/color":"#19110a","rectangle/600/icon":"20","rectangle/600/gap":"8","rectangle/600/padding":"16","opacity/color":"100","letter-spacing/600":"0","font-size/600":"16","font-weight":"semibold","font-family":"Inter","line-height/600":"20","border-radius/500":"8","rectangle/600/rounded":"10","opacity/control/disabled":"40","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"}
+  "variants": {
+    "primary": {
+      "node_id": "1:757",
+      "figma_label": "Button / Primary",
+      "state_nodes_sampled": {
+        "rest": "1:758", "hover": "1:800", "focus": "1:889", "active": "1:842", "disabled": "1:946"
+      },
+      "variable_defs": {
+        "rest": {"button/primary/color":"#19110a","rectangle/600/icon":"20","rectangle/600/gap":"8","rectangle/600/padding":"16","opacity/color":"100","letter-spacing/600":"0","font-size/600":"16","font-weight":"semibold","font-family":"Inter","line-height/600":"20","border-radius/500":"8","rectangle/600/rounded":"10","opacity/control/enabled":"100","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
+        "hover": {"button/primary/color":"#19110a","button/primary/chroma":"#fce279","button/primary/bg":"#fad046","button/primary/border":"#fad046"},
+        "active": {"button/primary/color":"#19110a","button/primary/chroma":"#fad646","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
+        "focus": {"button/primary/color":"#19110a","focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
+        "disabled": {"button/primary/color":"#19110a","opacity/control/disabled":"40","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"}
+      }
+    },
+    "secondary": {
+      "node_id": "489:59661",
+      "figma_label": "Button / Secondary",
+      "fetch_note": "489:59661 — фрейм Component Set (Type×Size×State×Progress symbols). get_variable_defs по фрейму вернул резолвленный rest-набор + геометрию всех size; цветовые ключи button/secondary/* резолвятся по карте на все состояния (структура идентична primary).",
+      "variable_defs": {
+        "rest": {"button/secondary/color":"#555555","button/secondary/bg":"#f2f2f2","button/secondary/chroma":"#f7f7f7","button/secondary/border":"#f2f2f2","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
+        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
+        "disabled": {"opacity/control/disabled":"40"}
+      }
+    }
   },
   "resolved_via_map": {
     "size_rectangle": {
-      "_source": "component-token-map.json → size.rectangle.{N}",
+      "_source": "component-token-map.json → size.rectangle.{N} (общая геометрия для всех вариантов)",
       "50":  {"padding":"--awds-space-0-5","gap":"--awds-space-0-5","rounded":"--awds-rounded-50","icon":"--awds-space-4","typography":"--awds-control-200-*"},
       "100": {"padding":"--awds-space-1","gap":"--awds-space-0-5","rounded":"--awds-rounded-100","icon":"--awds-space-4","typography":"--awds-control-300-*"},
       "200": {"padding":"--awds-space-2","gap":"--awds-space-1","rounded":"--awds-rounded-200","icon":"--awds-space-4","typography":"--awds-control-300-*"},
@@ -43,10 +53,18 @@
     },
     "state_button_primary": {
       "_source": "component-token-map.json → state.{state}.button.primary",
-      "rest":     {"bg":"--color-primary-core","chroma":"--color-primary-chroma","border":"--color-primary-core","color":"--color-primary-on"},
-      "hover":    {"bg":"--color-primary-dim", "chroma":"--color-primary-chroma","border":"--color-primary-dim", "color":"--color-primary-on"},
-      "focus":    {"bg":"--color-primary-core","chroma":"--color-primary-chroma","border":"--color-primary-core","color":"--color-primary-on","outline":"--color-surface-on-highest"},
-      "active":   {"bg":"--color-primary-core","chroma":"--color-primary-core", "border":"--color-primary-core","color":"--color-primary-on"},
+      "rest":     {"bg":"--primary-core","chroma":"--primary-chroma","border":"--primary-core","color":"--primary-on"},
+      "hover":    {"bg":"--primary-dim", "chroma":"--primary-chroma","border":"--primary-dim", "color":"--primary-on"},
+      "focus":    {"bg":"--primary-core","chroma":"--primary-chroma","border":"--primary-core","color":"--primary-on","outline":"--surface-on-highest"},
+      "active":   {"bg":"--primary-core","chroma":"--primary-core", "border":"--primary-core","color":"--primary-on"},
+      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    },
+    "state_button_secondary": {
+      "_source": "component-token-map.json → state.{state}.button.secondary",
+      "rest":     {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on"},
+      "hover":    {"bg":"--secondary-dim", "chroma":"--secondary-chroma","border":"--secondary-dim", "color":"--secondary-on"},
+      "focus":    {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on","outline":"--surface-on-highest"},
+      "active":   {"bg":"--secondary-core","chroma":"--secondary-core", "border":"--secondary-core","color":"--secondary-on"},
       "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
     }
   }
