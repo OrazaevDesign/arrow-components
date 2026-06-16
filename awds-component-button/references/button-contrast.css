@@ -70,6 +70,7 @@
   --awds-btn-lh:      var(--awds-rectangle-400-typography-line-height);
   --awds-btn-ls:      var(--awds-rectangle-400-typography-letter-spacing);
 
+  box-sizing: border-box;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -77,8 +78,14 @@
   gap: var(--awds-btn-gap);
   padding-block: var(--awds-btn-padding);
   padding-inline: calc(var(--awds-btn-padding) + var(--awds-btn-gap));
-  border: 1px solid var(--awds-btn-border);
+  /* border: 0 — гасим дефолтный бордер нативного <button> (иначе вылезает UA-обводка
+     ~1.7px и даёт дробную высоту). Обводку рисуем inset box-shadow: border при
+     auto-height добавляет к размеру, box-shadow не влияет на лейаут — inside-stroke
+     как в Figma; размер кнопки = padding*2 + контент. */
+  appearance: none;
+  border: 0;
   border-radius: var(--awds-btn-rounded);
+  box-shadow: inset 0 0 0 1px var(--awds-btn-border);
   background: linear-gradient(to right, var(--awds-btn-chroma, var(--awds-btn-bg)), var(--awds-btn-bg));
   color: var(--awds-btn-color);
   font-family: var(--awds-font-family-system);
@@ -97,7 +104,7 @@
      0.15s ease-out (arrow-design-system/references/motion.md). */
   transition: --awds-btn-bg 0.15s ease-out,
               --awds-btn-chroma 0.15s ease-out,
-              border-color 0.15s ease-out,
+              box-shadow 0.15s ease-out,
               color 0.15s ease-out;
 }
 
@@ -119,8 +126,11 @@
 }
 
 .btn--icon-only {
-  aspect-ratio: 1;
+  /* Детерминированный квадрат от токенов (box-sizing: border-box): размер не зависит
+     от контента → появление лоадера не меняет геометрию. aspect-ratio не используем. */
   padding: var(--awds-btn-padding);
+  width:  calc(var(--awds-btn-icon) + 2 * var(--awds-btn-padding));
+  height: calc(var(--awds-btn-icon) + 2 * var(--awds-btn-padding));
 }
 
 /* =============================================================================

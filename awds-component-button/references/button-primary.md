@@ -76,12 +76,18 @@
   --awds-btn-padding: var(--awds-rectangle-400-padding);
   --awds-btn-fs:      var(--awds-rectangle-400-typography-font-size);
   /* … */
+  box-sizing: border-box;
   padding-block: var(--awds-btn-padding);
   padding-inline: calc(var(--awds-btn-padding) + var(--awds-btn-gap));
   gap: var(--awds-btn-gap);
   border-radius: var(--awds-btn-rounded);
   background: linear-gradient(to right, var(--awds-btn-chroma, var(--awds-btn-bg)), var(--awds-btn-bg));
-  border: 1px solid var(--awds-btn-border);
+  /* border: 0 гасит дефолтный бордер нативного <button> (иначе вылезает UA-обводка
+     ~1.7px → дробная высота). Обводку рисуем inset box-shadow — не влияет на размер
+     (border при auto-height добавляет к нему). Inside-stroke как в Figma. */
+  appearance: none;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--awds-btn-border);
   color: var(--awds-btn-color);
   font-family: var(--awds-font-family-system);
   font-weight: var(--awds-font-weight-semibold);
@@ -156,7 +162,7 @@ Figma раскладывает кнопку на контейнер + 3 ячей
 - `padding-inline: calc(--awds-btn-padding + --awds-btn-gap)`
 - `gap: --awds-btn-gap`
 
-Для `.btn--icon-only` — квадрат с `padding: --awds-btn-padding` со всех сторон.
+Для `.btn--icon-only` — детерминированный квадрат `width = height = icon + 2*padding` (от токенов, `box-sizing: border-box`). Размер не зависит от контента, поэтому появление лоадера (`.btn__progress` поверх) не меняет геометрию. `aspect-ratio` не используем — он с content-box даёт плавающий размер.
 
 ---
 
