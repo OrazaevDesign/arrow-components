@@ -3,6 +3,7 @@
   "file_name": "💠 Comp ↪ ² Buttons",
   "primary_node_id": "145:30637",
   "frame_name": "Button Overhung / Primary",
+  "variant_node_ids": { "primary": "145:30637", "secondary": "490:231905" },
   "variant_properties": {
     "Type": ["Text", "Icon"],
     "Size": [600, 500, 400, 300, 200, 100, 50],
@@ -59,7 +60,25 @@
       "overhung/primary/color": "#8e8e8e",
       "opacity/control/disabled": "40",
       "elevation": "same as rest (elevation-1)"
+    },
+    "frame_490:231905_secondary_rest": {
+      "overhung/secondary/bg": "#f7f7f7",
+      "overhung/secondary/chroma": "#ffffff",
+      "overhung/secondary/border": "#f7f7f7",
+      "overhung/secondary/color": "#8e8e8e",
+      "opacity/overhung/secondary": "60",
+      "focus-selection/outline": "#080808",
+      "focus-selection/outlineShow": "true",
+      "elevation": "same as primary (elevation-1)"
+    },
+    "node_490:232362_secondary_hovered_600": {
+      "overhung/secondary/bg": "#f7f7f7",
+      "overhung/secondary/chroma": "#f2f2f2",
+      "overhung/secondary/border": "#f7f7f7",
+      "overhung/secondary/color": "#080808",
+      "opacity/overhung/secondary": "90",
+      "elevation": "same as primary (elevation-1)"
     }
   },
-  "_note": "Сырые ответы Figma MCP get_metadata + get_variable_defs (frame + по-state ноды). Elevation одинакова во всех состояниях, маппится на --awds-shadow-elevation-1. Шкала теней DS обновлена 2026-06-17: чёрная база #00000014/0f/08 (раньше #1c1c1c26/1a/0d), третий слой — хайрлайн 0 0 0 1px. Резолв ролей — через arrow-design-system/references/component-token-map.json (секция overhung)."
+  "_note": "Сырые ответы Figma MCP get_metadata + get_variable_defs (фреймы primary 145:30637 и secondary 490:231905 + по-state ноды). Elevation одинакова во всех состояниях и вариантах, маппится на --awds-shadow-elevation-1. Шкала теней DS обновлена 2026-06-17: чёрная база #00000014/0f/08 (раньше #1c1c1c26/1a/0d), третий слой — хайрлайн 0 0 0 1px. Secondary = те же роли surface-*, что primary, но вся кнопка приглушена opacity/overhung/secondary: 60% rest → 90% hover/focus/active. Резолв ролей — через arrow-design-system/references/component-token-map.json (секция overhung)."
 }

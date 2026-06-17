@@ -14,10 +14,11 @@
 
   <!-- 3. Варианты этого скилла -->
   <link rel="stylesheet" href="./button-overhung-primary.css">
+  <link rel="stylesheet" href="./button-overhung-secondary.css">
 
   <style>
     /* ─── Зеркала псевдо-классов через .is-* — копия :hover / :focus-visible /
-       :active правил из button-overhung-primary.css, чтобы матрица показывала все
+       :active правил из button-overhung-{variant}.css, чтобы матрица показывала все
        состояния без интерактива. Тень elevation постоянна (в .obtn base). ─── */
     .obtn-primary.is-hover {
       --awds-obtn-bg:     rgb(var(--surface-surface));
@@ -38,6 +39,32 @@
       --awds-obtn-chroma: rgb(var(--surface-bright));
       --awds-obtn-border: rgb(var(--surface-surface));
       --awds-obtn-color:  rgb(var(--surface-on));
+    }
+
+    /* ─── Secondary: те же роли, но кнопка приглушена opacity 60% → 90% на hover/focus/active.
+       Rest (60%) задаёт сам .obtn-secondary; зеркала уплотняют до 90%. ─── */
+    .obtn-secondary.is-hover {
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-dim));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on-highest));
+      opacity: var(--awds-opacity-90);
+    }
+    .obtn-secondary.is-focus {
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-bright));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on));
+      opacity: var(--awds-opacity-90);
+      outline: 2px solid rgb(var(--surface-on-highest));
+      outline-offset: 2px;
+    }
+    .obtn-secondary.is-active {
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-bright));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on));
+      opacity: var(--awds-opacity-90);
     }
 
     /* ─── Preview-shell ─── */
@@ -191,6 +218,7 @@
     <label>Вариант:
       <select id="variant">
         <option value="primary">primary</option>
+        <option value="secondary">secondary</option>
       </select>
     </label>
     <label>Иконки в матрице:
@@ -315,6 +343,13 @@
         focus:  { bg: '--surface-surface', chroma: '--surface-bright', border: '--surface-surface', color: '--surface-on' },
         active: { bg: '--surface-surface', chroma: '--surface-bright', border: '--surface-surface', color: '--surface-on' },
       },
+      // Secondary = те же роли, отличается только непрозрачностью (rest 60% → hover/focus/active 90%).
+      secondary: {
+        rest:   { bg: '--surface-surface', chroma: '--surface-bright', border: '--surface-surface', color: '--surface-on' },
+        hover:  { bg: '--surface-surface', chroma: '--surface-dim',    border: '--surface-surface', color: '--surface-on-highest' },
+        focus:  { bg: '--surface-surface', chroma: '--surface-bright', border: '--surface-surface', color: '--surface-on' },
+        active: { bg: '--surface-surface', chroma: '--surface-bright', border: '--surface-surface', color: '--surface-on' },
+      },
     };
     const activeVariant = () => document.querySelector('#variant').value;
 
@@ -375,6 +410,8 @@
       ['--awds-shadow-elevation-1', 'value'],
       ['--surface-on-highest', 'color'],
       ['--awds-opacity-40', 'value'],
+      ['--awds-opacity-60', 'value'],
+      ['--awds-opacity-90', 'value'],
       ['--awds-font-family-system', 'value'],
       ['--awds-font-weight-semibold', 'value'],
     ];

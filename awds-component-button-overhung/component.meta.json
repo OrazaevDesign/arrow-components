@@ -11,6 +11,11 @@
       "node_id": "145:30637",
       "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=145-30637",
       "figma_label": "Button Overhung / Primary"
+    },
+    "secondary": {
+      "node_id": "490:231905",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=490-231905",
+      "figma_label": "Button Overhung / Secondary"
     }
   },
   "shape": "rectangle",
@@ -23,7 +28,7 @@
     "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
     "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["primary"] },
+      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary"] },
       { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
     ],
     "html_samples": [
@@ -40,12 +45,14 @@
     "--awds-rectangle-*",
     "--awds-shadow-elevation-1",
     "--awds-opacity-40",
+    "--awds-opacity-60",
+    "--awds-opacity-90",
     "--awds-font-family-system",
     "--awds-font-weight-semibold"
   ],
-  "last_synced": "2026-06-17T12:36:47Z",
+  "last_synced": "2026-06-17T12:48:52Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:b4553c801d67fd1e245ad7e45515599979847435be605aa8c780c356858f7965",
+  "snapshot_hash": "sha256:3dfb22886176bf2388ff4999e1b0f805b8f36e56b9c8250f65719a487b53f623",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "259833e644dfd2a86e48a3f791d36f00c6cebb08",

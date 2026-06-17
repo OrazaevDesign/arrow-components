@@ -34,8 +34,9 @@ description: >
 | Вариант | Reference | Когда использовать |
 |---|---|---|
 | **Primary** | `references/button-overhung-primary.md` ✅ | Нейтральная приподнятая кнопка на светлой поверхности — вторичные действия, карточки, тулбары, где нужен объём без яркого бренд-акцента |
+| **Secondary** | `references/button-overhung-secondary.md` ✅ | Приглушённая версия Primary (те же роли + тень, но кнопка прозрачнее: 60% в покое → 90% на hover). Тише по весу — для менее приоритетных действий рядом с overhung-primary |
 
-Новые варианты (например Secondary — в Figma уже есть `overhung/secondary/*`) добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта).
+Новые варианты добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта).
 
 ## Размерные модификаторы
 
@@ -66,6 +67,7 @@ description: >
 | Вариант | CSS | Что внутри |
 |---|---|---|
 | Primary | `references/button-overhung-primary.css` | `.obtn` base (с elevation-тенью) + все размеры + `.obtn-primary` со всеми состояниями (inline `rgb(var(--surface-*))`) |
+| Secondary | `references/button-overhung-secondary.css` | `.obtn` base + все размеры + `.obtn-secondary` (те же роли, плюс `opacity` 60%→90% по состояниям) |
 
 Визуальный QA — `references/preview.html` (storybook, открывается через `file://`).
 
