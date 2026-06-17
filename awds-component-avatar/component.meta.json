@@ -1,0 +1,50 @@
+{
+  "component": "avatar",
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2001:81",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-81"
+  },
+  "variants": {
+    "initials":    { "node_id": "2001:82",  "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-82",  "figma_label": "Type=Initials" },
+    "placeholder": { "node_id": "2001:102", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-102", "figma_label": "Type=Placeholder" },
+    "picture":     { "node_id": "2001:122", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-122", "figma_label": "Type=Picture" }
+  },
+  "shape": null,
+  "size_scale": [50, 100, 150, 200, 250, 300, 400, 500, 600, 700],
+  "states": ["rest"],
+  "color_tokens": ["bg", "chroma", "border", "color"],
+  "css_files": ["avatar.css"],
+  "preview": {
+    "base_class": "avatar",
+    "default_size": 400,
+    "matrix_states": ["rest"],
+    "matrix_sizes": [700, 600, 500, 400, 300, 250, 200, 150, 100, 50],
+    "toggles": [
+      { "id": "variant", "label": "Тип", "options": ["initials", "placeholder", "picture"] }
+    ],
+    "html_samples": [
+      { "label": "Инициалы", "html": "<span class=\"avatar avatar-initials avatar--400\">АК</span>" },
+      { "label": "Placeholder", "html": "<span class=\"avatar avatar-placeholder avatar--400\"><svg>…user…</svg></span>" },
+      { "label": "Фото", "html": "<span class=\"avatar avatar-picture avatar--400\"><img src=\"…\" alt=\"…\"></span>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-primary-container-core",
+    "--color-primary-container-chroma",
+    "--color-primary-container-on",
+    "--color-primary-container-on-lowest",
+    "--awds-space-2",
+    "--awds-space-6", "--awds-space-7", "--awds-space-8", "--awds-space-9", "--awds-space-10",
+    "--awds-space-11", "--awds-space-12", "--awds-space-14", "--awds-space-16",
+    "--awds-control-600-*", "--awds-control-700-*", "--awds-control-850-*", "--awds-control-900-*", "--awds-control-950-*",
+    "--awds-opacity-60",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
+  ],
+  "last_synced": "2026-06-17T14:19:54Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:83c412bb759f1f450717a8788db5388b146e13550780ef5a6929208ce39023f5",
+  "published": null
+}

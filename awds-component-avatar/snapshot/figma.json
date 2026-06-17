@@ -1,0 +1,42 @@
+{
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "primary_node_id": "2001:81",
+  "frame_name": "Avatar",
+  "variant_properties": {
+    "Type": ["Initials", "Placeholder", "Picture"],
+    "Size": [700, 600, 500, 400, 300, 250, 200, 150, 100, 50]
+  },
+  "type_node_ids": {
+    "initials":    { "700": "2001:82", "600": "2001:84", "500": "2001:86", "400": "2001:88", "300": "2001:90", "250": "2001:92", "200": "2001:94", "150": "2001:96", "100": "2001:98", "50": "2001:100" },
+    "placeholder": { "700": "2001:102", "600": "2001:120", "500": "2001:118", "400": "2001:116", "300": "2001:114", "250": "2001:112", "200": "2001:110", "150": "2001:108", "100": "2001:106", "50": "2001:104" },
+    "picture":     { "700": "2001:122", "600": "2001:131", "500": "2001:130", "400": "2001:129", "300": "2001:128", "250": "2001:127", "200": "2001:126", "150": "2001:125", "100": "2001:124", "50": "2001:123" }
+  },
+  "colors": {
+    "bg":      "{role.primary.container.core}",
+    "chroma":  "{role.primary.container.chroma}",
+    "border":  "{role.primary.container.on-lowest}",
+    "color":   "{role.primary.container.on}",
+    "placeholder-icon-opacity": "{opacity.content.placeholder} = 60"
+  },
+  "size_map": {
+    "_note": "Диаметр — base space-шкала (24–64 точно; 72 = space-16 + space-2, т.к. space-18 в DS нет). Инициалы — фикс Control-шкала (font-size/N в этом Figma-файле = Control/Value/N, совпадает: 600=16,700=17,850=20,900=24,950=28). НЕ --awds-typography-* (та респонсивная и расходится).",
+    "700": { "diameter_px": 72, "space": "16+2", "initials_control": 950 },
+    "600": { "diameter_px": 64, "space": 16, "initials_control": 900 },
+    "500": { "diameter_px": 56, "space": 14, "initials_control": 850 },
+    "400": { "diameter_px": 48, "space": 12, "initials_control": 850 },
+    "300": { "diameter_px": 44, "space": 11, "initials_control": 700 },
+    "250": { "diameter_px": 40, "space": 10, "initials_control": 600 },
+    "200": { "diameter_px": 36, "space": 9,  "initials_control": 600 },
+    "150": { "diameter_px": 32, "space": 8,  "initials_control": 600 },
+    "100": { "diameter_px": 28, "space": 7,  "initials_control": 600 },
+    "50":  { "diameter_px": 24, "space": 6,  "initials_control": 600 }
+  },
+  "non_token_decisions": {
+    "border-radius": "50% (аватар всегда круглый, не зависит от темы Rounded; не --awds-rounded-full)",
+    "ring": "::after с inset box-shadow 1px (виден поверх picture, в отличие от inset box-shadow на самом элементе)",
+    "placeholder-icon-size": "60% диаметра (структурный %)",
+    "picture": "object-fit: cover, width/height 100%",
+    "states": "нет — аватар статичный (в Figma нет hover/focus/disabled)"
+  }
+}
