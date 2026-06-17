@@ -1,0 +1,47 @@
+{
+  "component": "notice",
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:552",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-552"
+  },
+  "variants": {
+    "primary":   { "node_id": "2093:562", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-562", "figma_label": "Variant=Primary" },
+    "secondary": { "node_id": "2093:577", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-577", "figma_label": "Variant=Secondary" },
+    "ghost":     { "node_id": "2093:592", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-592", "figma_label": "Variant=Ghost" }
+  },
+  "shape": "notice",
+  "size_scale": [100, 200, 300, 400, 500, 600],
+  "states": ["rest"],
+  "color_tokens": ["bg", "chroma", "border", "color"],
+  "css_files": ["notice.css"],
+  "preview": {
+    "base_class": "notice",
+    "default_size": 400,
+    "matrix_states": ["rest"],
+    "matrix_sizes": [600, 500, 400, 300, 200, 100],
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary", "ghost"] }
+    ],
+    "html_samples": [
+      { "label": "Счётчик", "html": "<span class=\"notice notice-primary notice--400\">9</span>" },
+      { "label": "Двузначный (пилюля)", "html": "<span class=\"notice notice-primary notice--400\">99</span>" },
+      { "label": "Точка (без числа)", "html": "<span class=\"notice notice-primary notice--100\"></span>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-accent-core", "--color-accent-chroma", "--color-accent-on",
+    "--color-secondary-core", "--color-secondary-chroma", "--color-secondary-on-dim",
+    "--color-surface-on-high",
+    "--awds-notice-*",
+    "--awds-space-0",
+    "--awds-rounded-full",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
+  ],
+  "last_synced": "2026-06-17T14:52:02Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:abd028d0cc1a6a34c45dcbcd3b2b17ee7b6028281530b3074a5982533d21c9b4",
+  "published": null
+}

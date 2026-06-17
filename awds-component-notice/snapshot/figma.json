@@ -1,0 +1,36 @@
+{
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "primary_node_id": "2093:552",
+  "frame_name": "Notice",
+  "variant_properties": {
+    "Variant": ["Primary", "Secondary", "Ghost"],
+    "Size": [600, 500, 400, 300, 200, 100]
+  },
+  "variant_node_ids": {
+    "primary":   { "600": "2093:562", "500": "2093:559", "400": "2093:556", "300": "2093:553", "200": "2093:565", "100": "2093:598" },
+    "secondary": { "600": "2093:577", "500": "2093:574", "400": "2093:571", "300": "2093:568", "200": "2093:580", "100": "2093:599" },
+    "ghost":     { "600": "2093:592", "500": "2093:589", "400": "2093:586", "300": "2093:583", "200": "2093:595", "100": "2093:600" }
+  },
+  "colors_by_variant": {
+    "primary":   { "_badge_ns": "badge/system/accent",    "bg": "{role.accent.core}",     "chroma": "{role.accent.chroma}",     "border": "{role.accent.core}",     "color": "{role.accent.on}" },
+    "secondary": { "_badge_ns": "badge/system/secondary", "bg": "{role.secondary.core}",  "chroma": "{role.secondary.chroma}",  "border": "{role.secondary.core}",  "color": "{role.secondary.on-dim}" },
+    "ghost":     { "_badge_ns": "badge/system/ghost",     "bg": "transparent",            "chroma": "transparent",              "border": "transparent",            "color": "{role.surface.on-high}" }
+  },
+  "size_map": {
+    "_note": "shape notice (--awds-notice-N-*). size = диаметр для 1 цифры; padding-h раздувает в пилюлю для 2+ цифр. 600=28px(space-7), 100=6px(space-1-5) — точка без числа. typography → control-шкала.",
+    "600": { "size_px": 28, "padding_h": 4, "padding_v": 2, "font_px": 15 },
+    "500": { "size_px": 24 },
+    "400": { "size_px": 20 },
+    "300": { "size_px": 20 },
+    "200": { "size_px": 16 },
+    "100": { "size_px": 6, "note": "точка-индикатор, без числа" }
+  },
+  "non_token_decisions": {
+    "border-radius": "var(--awds-rounded-full) — всегда пилюля/круг (Figma border-radius/full)",
+    "shape": "min-width=size (круг для 1 цифры) + padding-inline (пилюля для 2+ цифр)",
+    "size-100-dot": "padding-h обнулён до var(--awds-space-0): DS notice-100-padding-h=4px дал бы овал 8×6, а точка-индикатор должна быть кругом 6×6",
+    "tabular-nums": "MIFB — динамический счётчик не должен прыгать при смене значения",
+    "states": "нет — бейдж статичный (в Figma нет hover/focus)"
+  }
+}
