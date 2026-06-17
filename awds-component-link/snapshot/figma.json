@@ -1,0 +1,23 @@
+{
+  "file_key": null,
+  "file_name": "ArrowDS tokens (theme.json State/*/link)",
+  "source": "tokens",
+  "_source_note": "Компонент собран НЕ из Figma Component Set, а напрямую из DS-токенов State/*/link (component-token-map.json, секция link). file_key/node_id отсутствуют — link не выгружен отдельным Component Set. При появлении Figma-ноды прописать сюда file_key + node_id и перейти на обычный refresh.",
+  "states": ["rest", "hover", "focus", "active"],
+  "variants": ["default", "muted", "contrast", "accent", "heading"],
+  "color_by_variant_state": {
+    "default":  { "rest": "{role.tertiary.container.on-high}",  "hover": "{role.tertiary.container.on-highest}", "focus": "{role.tertiary.container.on-high}",  "active": "{role.tertiary.container.on-high}" },
+    "muted":    { "rest": "{role.surface.on-high}",             "hover": "{role.surface.on-highest}",            "focus": "{role.surface.on-high}",             "active": "{role.surface.on-high}" },
+    "contrast": { "rest": "{role.surface.on-highest}",          "hover": "{role.surface.on-high}",               "focus": "{role.surface.on-highest}",          "active": "{role.surface.on-highest}" },
+    "accent":   { "rest": "{role.surface.on-highest}",          "hover": "{role.accent.container.on}",           "focus": "{role.surface.on-highest}",          "active": "{role.surface.on-highest}" },
+    "heading":  { "rest": "{role.surface.on-high}",             "hover": "{role.accent.container.on}",           "focus": "{role.surface.on-high}",             "active": "{role.surface.on-high}" }
+  },
+  "non_token_decisions": {
+    "text-decoration": "underline (default/muted/contrast/accent); none у heading — заголовки не подчёркивают",
+    "text-decoration-thickness": "from-font (метрика шрифта, не хардкод)",
+    "text-underline-offset": "var(--awds-space-0-5)",
+    "focus-outline": "2px solid rgb(var(--surface-on-highest)), offset 2px, скругление var(--awds-rounded-200)",
+    "size": "нет — ссылка наследует font-size/family/weight из контекста (shape=null, size_scale=null)",
+    "disabled": "нет — в токенах link отсутствует disabled-состояние"
+  }
+}

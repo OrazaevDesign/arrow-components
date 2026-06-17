@@ -1,0 +1,46 @@
+{
+  "component": "link",
+  "figma": {
+    "file_key": null,
+    "file_name": "ArrowDS tokens (theme.json State/*/link)",
+    "primary_node_id": null,
+    "primary_url": null
+  },
+  "variants": {
+    "default":  { "node_id": null, "url": null, "figma_label": "link/default" },
+    "muted":    { "node_id": null, "url": null, "figma_label": "link/muted" },
+    "contrast": { "node_id": null, "url": null, "figma_label": "link/contrast" },
+    "accent":   { "node_id": null, "url": null, "figma_label": "link/accent" },
+    "heading":  { "node_id": null, "url": null, "figma_label": "link/heading" }
+  },
+  "shape": null,
+  "size_scale": null,
+  "states": ["rest", "hover", "focus", "active"],
+  "color_tokens": ["color"],
+  "preview": {
+    "base_class": "lnk",
+    "default_size": null,
+    "matrix_states": ["rest", "hover", "focus", "active"],
+    "matrix_sizes": null,
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["default", "muted", "contrast", "accent", "heading"] }
+    ],
+    "html_samples": [
+      { "label": "Инлайн-ссылка в тексте", "html": "<p>Читайте <a class=\"lnk lnk-default\" href=\"#\">условия доставки</a> перед оформлением.</p>" },
+      { "label": "Ссылка-заголовок", "html": "<h3><a class=\"lnk lnk-heading\" href=\"#\">Название статьи</a></h3>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-tertiary-container-on-high",
+    "--color-tertiary-container-on-highest",
+    "--color-surface-on-high",
+    "--color-surface-on-highest",
+    "--color-accent-container-on",
+    "--awds-space-0-5",
+    "--awds-rounded-200"
+  ],
+  "last_synced": "2026-06-17T13:54:45Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:2019784442cce80b5c9cae83eb705e05f17f7a105f03a216294785ed980b6663",
+  "published": null
+}
