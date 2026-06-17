@@ -1,0 +1,65 @@
+{
+  "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
+  "file_name": "💠 Comp ↪ ² Buttons",
+  "primary_node_id": "145:30637",
+  "frame_name": "Button Overhung / Primary",
+  "variant_properties": {
+    "Type": ["Text", "Icon"],
+    "Size": [600, 500, 400, 300, 200, 100, 50],
+    "State": ["Rest", "Hovered", "Focused", "Active", "Disabled"],
+    "Progress": [false, true]
+  },
+  "variable_defs": {
+    "frame_145:30637_rest": {
+      "overhung/primary/bg": "#f7f7f7",
+      "overhung/primary/chroma": "#ffffff",
+      "overhung/primary/border": "#f7f7f7",
+      "overhung/primary/color": "#8e8e8e",
+      "overhung/secondary/color": "#080808",
+      "focus-selection/outline": "#080808",
+      "focus-selection/outlineShow": "true",
+      "opacity/control/enabled": "100",
+      "opacity/control/disabled": "40",
+      "elevation": "Effect(DROP_SHADOW shadow3/color 0/0 r0 s1); Effect(DROP_SHADOW shadow2/color 0/1 r2 s-1); Effect(DROP_SHADOW shadow1/color 0/2 r2 s0)",
+      "shadow1/color": "#00000014",
+      "shadow2/color": "#0000000f",
+      "shadow3/color": "#00000008",
+      "rectangle/600/padding": "16", "rectangle/600/gap": "8", "rectangle/600/icon": "20",
+      "rectangle/500/padding": "14", "rectangle/500/gap": "6", "rectangle/500/icon": "20",
+      "rectangle/400/padding": "10", "rectangle/400/gap": "6", "rectangle/400/icon": "20",
+      "rectangle/300/padding": "8", "rectangle/300/gap": "6", "rectangle/300/icon": "20",
+      "rectangle/200/padding": "8", "rectangle/200/gap": "4", "rectangle/200/icon": "16",
+      "rectangle/100/padding": "4", "rectangle/100/gap": "2", "rectangle/100/icon": "16",
+      "rectangle/50/padding": "2", "rectangle/50/gap": "2", "rectangle/50/icon": "16",
+      "border-radius/500": "8", "border-radius/400": "8", "border-radius/300": "6", "border-radius/200": "6",
+      "font-family": "Inter", "font-weight": "semibold",
+      "font-size/600": "16", "line-height/600": "20",
+      "font-size/400": "14", "line-height/400": "20",
+      "font-size/300": "13", "line-height/300": "16",
+      "font-size/200": "12", "line-height/200": "16"
+    },
+    "node_231:41552_hovered_600": {
+      "overhung/primary/bg": "#f7f7f7",
+      "overhung/primary/chroma": "#f2f2f2",
+      "overhung/primary/border": "#f7f7f7",
+      "overhung/primary/color": "#080808",
+      "elevation": "same as rest (elevation-1)"
+    },
+    "node_231:41748_active_600": {
+      "overhung/primary/bg": "#f7f7f7",
+      "overhung/primary/chroma": "#ffffff",
+      "overhung/primary/border": "#f7f7f7",
+      "overhung/primary/color": "#8e8e8e",
+      "elevation": "same as rest (elevation-1)"
+    },
+    "node_231:41468_disabled_600": {
+      "overhung/primary/bg": "#f7f7f7",
+      "overhung/primary/chroma": "#ffffff",
+      "overhung/primary/border": "#f7f7f7",
+      "overhung/primary/color": "#8e8e8e",
+      "opacity/control/disabled": "40",
+      "elevation": "same as rest (elevation-1)"
+    }
+  },
+  "_note": "Сырые ответы Figma MCP get_metadata + get_variable_defs (frame + по-state ноды). Elevation одинакова во всех состояниях, маппится на --awds-shadow-elevation-1. Шкала теней DS обновлена 2026-06-17: чёрная база #00000014/0f/08 (раньше #1c1c1c26/1a/0d), третий слой — хайрлайн 0 0 0 1px. Резолв ролей — через arrow-design-system/references/component-token-map.json (секция overhung)."
+}

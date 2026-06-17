@@ -1,0 +1,50 @@
+{
+  "component": "button-overhung",
+  "figma": {
+    "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
+    "file_name": "💠 Comp ↪ ² Buttons",
+    "primary_node_id": "145:30637",
+    "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=145-30637"
+  },
+  "variants": {
+    "primary": {
+      "node_id": "145:30637",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=145-30637",
+      "figma_label": "Button Overhung / Primary"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [50, 100, 200, 300, 400, 500, 600],
+  "states": ["rest", "hover", "focus", "active", "disabled", "loading"],
+  "color_tokens": ["bg", "chroma", "border", "color"],
+  "preview": {
+    "base_class": "obtn",
+    "default_size": 400,
+    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
+    "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["primary"] },
+      { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
+    ],
+    "html_samples": [
+      { "label": "Только текст", "html": "<button class=\"obtn obtn-primary obtn--400\">Купить</button>" },
+      { "label": "Иконка слева", "html": "<button class=\"obtn obtn-primary obtn--400\"><svg>...</svg><span class=\"obtn__content\">Добавить</span></button>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-surface-surface",
+    "--color-surface-bright",
+    "--color-surface-dim",
+    "--color-surface-on",
+    "--color-surface-on-highest",
+    "--awds-rectangle-*",
+    "--awds-shadow-elevation-1",
+    "--awds-opacity-40",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
+  ],
+  "last_synced": "2026-06-17T12:36:47Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:b4553c801d67fd1e245ad7e45515599979847435be605aa8c780c356858f7965",
+  "published": null
+}
