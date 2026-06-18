@@ -21,6 +21,18 @@
     h2 { margin: 32px 0 12px; font-size: 16px; font-weight: 600; }
     .sub { color: rgb(var(--surface-on) / 1); font-size: 13px; margin-bottom: 24px; max-width: 720px; }
 
+    .toolbar {
+      display: flex; gap: 16px; align-items: center; margin-bottom: 24px;
+      padding: 12px 16px; background: rgb(var(--surface-container-low) / 1);
+      border: 1px solid rgb(var(--surface-container-high) / 1); border-radius: 8px; flex-wrap: wrap;
+    }
+    .toolbar label { font-weight: 600; cursor: pointer; }
+    .toolbar select {
+      font: inherit; padding: 6px 10px; border-radius: 6px;
+      border: 1px solid rgb(var(--surface-container-high) / 1);
+      background: rgb(var(--surface-container-lowest) / 1); color: inherit; cursor: pointer;
+    }
+
     table.matrix {
       border-collapse: collapse; background: rgb(var(--surface-container-lowest) / 1);
       border-radius: 12px; overflow: hidden; width: 100%; max-width: 760px; margin-bottom: 24px;
@@ -46,9 +58,9 @@
   <h1>range / storybook</h1>
   <p class="sub">Рабочий слайдер — тащи ползунки (мышь / тач / стрелки с клавиатуры). Рельса (<code>surface-container</code>) + заливка (<code>primary</code>) + ползунок (Default — жёлтый, Light — белый с обводкой). Single и Double (диапазон). Интерактив — нативный <code>&lt;input type=range&gt;</code> поверх + <code>range.js</code>. Переключи тему — палитра подтянется.</p>
 
-  <div style="margin-bottom:24px;">
-    <label style="font-weight:600;">Тема:
-      <select id="theme" style="font:inherit;padding:6px 10px;border-radius:6px;border:1px solid rgb(var(--surface-container-high) / 1);background:rgb(var(--surface-container-lowest) / 1);color:inherit;">
+  <div class="toolbar">
+    <label>Тема:
+      <select id="theme">
         <option value="light">light</option>
         <option value="dark">dark</option>
       </select>

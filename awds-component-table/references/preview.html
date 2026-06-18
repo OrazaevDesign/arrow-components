@@ -17,20 +17,25 @@
   <style>
     body {
       margin: 0;
+      padding: 24px 32px 48px;
       font-family: var(--awds-font-family-system);
       color: rgb(var(--surface-on-highest));
       background: rgb(var(--surface-surface));
     }
+    h1 { margin: 0 0 4px; font-size: 22px; font-weight: 700; }
+    .sub { color: rgb(var(--surface-on) / 1); font-size: 13px; margin-bottom: 24px; max-width: 720px; }
     .toolbar {
-      position: sticky; top: 0; z-index: 10;
-      display: flex; gap: var(--awds-space-5); align-items: center; flex-wrap: wrap;
-      padding: var(--awds-space-4) var(--awds-space-6);
-      background: rgb(var(--surface-bright));
-      border-bottom: 1px solid rgb(var(--surface-on-lowest));
+      display: flex; gap: 16px; align-items: center; margin-bottom: 24px;
+      padding: 12px 16px; background: rgb(var(--surface-container-low) / 1);
+      border: 1px solid rgb(var(--surface-container-high) / 1); border-radius: 8px; flex-wrap: wrap;
     }
-    .toolbar h1 { font-size: var(--awds-typography-font-size-700); margin: 0; }
-    .toolbar label { display: flex; gap: var(--awds-space-2); align-items: center; font-size: var(--awds-typography-font-size-300); }
-    .layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--awds-space-8); padding: var(--awds-space-8) var(--awds-space-6); }
+    .toolbar label { font-weight: 600; cursor: pointer; }
+    .toolbar select {
+      font: inherit; padding: 6px 10px; border-radius: 6px;
+      border: 1px solid rgb(var(--surface-container-high) / 1);
+      background: rgb(var(--surface-container-lowest) / 1); color: inherit; cursor: pointer;
+    }
+    .layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--awds-space-8); }
     h2 { font-size: var(--awds-typography-font-size-600); margin: 0 0 var(--awds-space-4); }
     section + section { margin-top: var(--awds-space-10); }
 
@@ -66,8 +71,11 @@
   </style>
 </head>
 <body>
-  <header class="toolbar">
-    <h1>awds-component-table</h1>
+
+  <h1>table / storybook</h1>
+  <p class="sub">Ячейки и таблицы ArrowDS: варианты ячейки (light / head / default) и их сборка в таблицу (default / light). Размеры и цвета — токены DS; справа — панель токенов выбранного варианта. Переключи тему — палитра подтянется.</p>
+
+  <div class="toolbar">
     <label>Тема:
       <select id="theme">
         <option value="light">light</option>
@@ -81,7 +89,7 @@
         <option value="default">default</option>
       </select>
     </label>
-  </header>
+  </div>
 
   <main class="layout">
     <div>
