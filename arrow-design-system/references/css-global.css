@@ -1,0 +1,784 @@
+/*
+ * PageCraft tokens — зеркало css-global для скилла arrow-design-system.
+ * Автоматически собран из снапшота дизайн-системы — НЕ ПРАВЬ ВРУЧНУЮ.
+ * Перегенерация: `node .claude/skills/arrow-design-system/scripts/build-global.js`
+ *
+ * Файл — «зеркало для чтения»: показывает агенту, какие переменные реально
+ * доступны на странице при построении блоков. Сами токены на страницу
+ * приносит сайт (css-variables.css + css-global сайта).
+ *
+ * Цвета приходят с сайта через css-variables.css (RGB-триплеты --{role},
+ * обёртка rgb(var(--…)), тема .theme-default.theme-light). Всё остальное
+ * генерируется здесь под неймспейсом --awds-* (шкалы --awds-space-*,
+ * --awds-rounded-*, --awds-shadow-*, типографика), чтобы
+ * не конфликтовать с переменными сайта вне дизайн-системы:
+ *   — базовая шкала: space, rounded (моды None/Smooth/Rounded, классы .rounded-* на <html>; дефолт Smooth), shadow elevation;
+ *   — глобальные токены: font-family/weight, typography scale, control typography,
+ *     opacity, z-index, layout (с media queries);
+ *   — компонентные РАЗМЕРНЫЕ токены (Size/Default): --awds-rectangle-*, --awds-notice-*,
+ *     --awds-nav-*, --awds-tabs-* и т.д. — каждый ссылается на базовую шкалу выше.
+ *
+ * Компонентные ЦВЕТОВЫЕ / state-токены (button/focus/...) сюда НЕ входят —
+ * их маппинг в базовые токены живёт в references/component-token-map.json.
+ */
+
+:root {
+  /* === Space scale === */
+  --awds-space-0: 0px;
+  --awds-space-1: 4px;
+  --awds-space-2: 8px;
+  --awds-space-3: 12px;
+  --awds-space-4: 16px;
+  --awds-space-5: 20px;
+  --awds-space-6: 24px;
+  --awds-space-7: 28px;
+  --awds-space-8: 32px;
+  --awds-space-9: 36px;
+  --awds-space-10: 40px;
+  --awds-space-11: 44px;
+  --awds-space-12: 48px;
+  --awds-space-13: 52px;
+  --awds-space-14: 56px;
+  --awds-space-15: 60px;
+  --awds-space-16: 64px;
+  --awds-space-20: 80px;
+  --awds-space-24: 96px;
+  --awds-space-28: 112px;
+  --awds-space-32: 128px;
+  --awds-space-36: 144px;
+  --awds-space-40: 160px;
+  --awds-space-44: 176px;
+  --awds-space-48: 192px;
+  --awds-space-52: 208px;
+  --awds-space-56: 224px;
+  --awds-space-60: 240px;
+  --awds-space-64: 256px;
+  --awds-space-72: 288px;
+  --awds-space-80: 320px;
+  --awds-space-96: 384px;
+  --awds-space-px: 1px;
+  --awds-space-0-5: 2px;
+  --awds-space-1-5: 6px;
+  --awds-space-2-5: 10px;
+  --awds-space-3-5: 14px;
+  --awds-space-4-5: 18px;
+  --awds-space-5-5: 22px;
+
+  /* === Border radius — значения модов (коллекция Rounded) === */
+  --awds-rounded-50-none: 0px;
+  --awds-rounded-100-none: 0px;
+  --awds-rounded-200-none: 0px;
+  --awds-rounded-300-none: 0px;
+  --awds-rounded-400-none: 0px;
+  --awds-rounded-500-none: 0px;
+  --awds-rounded-600-none: 0px;
+  --awds-rounded-700-none: 0px;
+  --awds-rounded-800-none: 0px;
+  --awds-rounded-900-none: 0px;
+  --awds-rounded-full-none: 600px;
+  --awds-rounded-none-none: 0px;
+  --awds-rounded-50-smooth: 4px;
+  --awds-rounded-100-smooth: 6px;
+  --awds-rounded-200-smooth: 6px;
+  --awds-rounded-300-smooth: 6px;
+  --awds-rounded-400-smooth: 8px;
+  --awds-rounded-500-smooth: 8px;
+  --awds-rounded-600-smooth: 10px;
+  --awds-rounded-700-smooth: 12px;
+  --awds-rounded-800-smooth: 16px;
+  --awds-rounded-900-smooth: 20px;
+  --awds-rounded-full-smooth: 600px;
+  --awds-rounded-none-smooth: 0px;
+  --awds-rounded-50-rounded: 26px;
+  --awds-rounded-100-rounded: 26px;
+  --awds-rounded-200-rounded: 26px;
+  --awds-rounded-300-rounded: 26px;
+  --awds-rounded-400-rounded: 26px;
+  --awds-rounded-500-rounded: 26px;
+  --awds-rounded-600-rounded: 26px;
+  --awds-rounded-700-rounded: 26px;
+  --awds-rounded-800-rounded: 26px;
+  --awds-rounded-900-rounded: 26px;
+  --awds-rounded-full-rounded: 600px;
+  --awds-rounded-none-rounded: 0px;
+
+  /* === Border radius — базовая переменная (дефолт = Smooth) === */
+  --awds-rounded-50: var(--awds-rounded-50-smooth);
+  --awds-rounded-100: var(--awds-rounded-100-smooth);
+  --awds-rounded-200: var(--awds-rounded-200-smooth);
+  --awds-rounded-300: var(--awds-rounded-300-smooth);
+  --awds-rounded-400: var(--awds-rounded-400-smooth);
+  --awds-rounded-500: var(--awds-rounded-500-smooth);
+  --awds-rounded-600: var(--awds-rounded-600-smooth);
+  --awds-rounded-700: var(--awds-rounded-700-smooth);
+  --awds-rounded-800: var(--awds-rounded-800-smooth);
+  --awds-rounded-900: var(--awds-rounded-900-smooth);
+  --awds-rounded-full: var(--awds-rounded-full-smooth);
+  --awds-rounded-none: var(--awds-rounded-none-smooth);
+
+  /* === Shadow elevation === */
+  --awds-shadow-elevation-1: 0px 2px 4px 0px #00000014, 0px 1px 2px -1px #0000000f, 0px 0px 0px 1px #00000008;
+  --awds-shadow-elevation-2: 0px 4px 8px 0px #00000014, 0px 2px 4px -2px #0000000f, 0px 0px 0px 1px #00000008;
+  --awds-shadow-elevation-3: 0px 6px 12px 0px #00000014, 0px 4px 8px -4px #0000000f, 0px 0px 0px 1px #00000008;
+  --awds-shadow-elevation-4: 0px 8px 16px 0px #00000014, 0px 8px 12px -4px #0000000f, 0px 0px 0px 1px #00000008;
+
+  /* === Font-family (системные стеки; кастомные шрифты не подключаем) === */
+  --awds-font-family-system: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awds-font-family-heading: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --awds-font-family-code: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+
+  /* === Font-weight === */
+  --awds-font-weight-light: 300;
+  --awds-font-weight-regular: 400;
+  --awds-font-weight-semibold: 600;
+  --awds-font-weight-bold: 700;
+
+  /* === Typography scale (mobile-first; tablet/desktop — в @media ниже) === */
+  --awds-typography-font-size-50: 10px;
+  --awds-typography-font-size-100: 11px;
+  --awds-typography-font-size-200: 12px;
+  --awds-typography-font-size-300: 13px;
+  --awds-typography-font-size-400: 14px;
+  --awds-typography-font-size-500: 15px;
+  --awds-typography-font-size-600: 16px;
+  --awds-typography-font-size-700: 17px;
+  --awds-typography-font-size-800: 18px;
+  --awds-typography-font-size-900: 19px;
+  --awds-typography-font-size-910: 20px;
+  --awds-typography-font-size-920: 22px;
+  --awds-typography-font-size-930: 24px;
+  --awds-typography-font-size-940: 28px;
+  --awds-typography-font-size-950: 30px;
+  --awds-typography-font-size-960: 32px;
+  --awds-typography-font-size-970: 34px;
+  --awds-typography-font-size-980: 40px;
+  --awds-typography-font-size-1000: 48px;
+  --awds-typography-line-height-50: 16px;
+  --awds-typography-line-height-100: 18px;
+  --awds-typography-line-height-200: 19px;
+  --awds-typography-line-height-300: 21px;
+  --awds-typography-line-height-400: 22px;
+  --awds-typography-line-height-500: 24px;
+  --awds-typography-line-height-600: 26px;
+  --awds-typography-line-height-700: 27px;
+  --awds-typography-line-height-800: 29px;
+  --awds-typography-line-height-900: 30px;
+  --awds-typography-line-height-910: 32px;
+  --awds-typography-line-height-920: 35px;
+  --awds-typography-line-height-930: 38px;
+  --awds-typography-line-height-940: 45px;
+  --awds-typography-line-height-950: 48px;
+  --awds-typography-line-height-960: 51px;
+  --awds-typography-line-height-970: 54px;
+  --awds-typography-line-height-980: 64px;
+  --awds-typography-line-height-1000: 77px;
+  --awds-typography-line-height-compact-50: 12px;
+  --awds-typography-line-height-compact-100: 13px;
+  --awds-typography-line-height-compact-200: 14px;
+  --awds-typography-line-height-compact-300: 16px;
+  --awds-typography-line-height-compact-400: 17px;
+  --awds-typography-line-height-compact-500: 18px;
+  --awds-typography-line-height-compact-600: 19px;
+  --awds-typography-line-height-compact-700: 20px;
+  --awds-typography-line-height-compact-800: 22px;
+  --awds-typography-line-height-compact-900: 23px;
+  --awds-typography-line-height-compact-910: 24px;
+  --awds-typography-line-height-compact-920: 26px;
+  --awds-typography-line-height-compact-930: 29px;
+  --awds-typography-line-height-compact-940: 34px;
+  --awds-typography-line-height-compact-950: 36px;
+  --awds-typography-line-height-compact-960: 38px;
+  --awds-typography-line-height-compact-970: 41px;
+  --awds-typography-line-height-compact-980: 48px;
+  --awds-typography-line-height-compact-1000: 58px;
+  --awds-typography-letter-spacing-50: 0.003em;
+  --awds-typography-letter-spacing-100: 0.002em;
+  --awds-typography-letter-spacing-200: 0.001em;
+  --awds-typography-letter-spacing-300: 0.001em;
+  --awds-typography-letter-spacing-400: 0em;
+  --awds-typography-letter-spacing-500: 0em;
+  --awds-typography-letter-spacing-600: 0em;
+  --awds-typography-letter-spacing-700: -0.001em;
+  --awds-typography-letter-spacing-800: -0.002em;
+  --awds-typography-letter-spacing-900: -0.002em;
+  --awds-typography-letter-spacing-910: -0.002em;
+  --awds-typography-letter-spacing-920: -0.003em;
+  --awds-typography-letter-spacing-930: -0.004em;
+  --awds-typography-letter-spacing-940: -0.005em;
+  --awds-typography-letter-spacing-950: -0.006em;
+  --awds-typography-letter-spacing-960: -0.006em;
+  --awds-typography-letter-spacing-970: -0.006em;
+  --awds-typography-letter-spacing-980: -0.006em;
+  --awds-typography-letter-spacing-1000: -0.006em;
+
+  /* === Control typography (Control/Value) — для кнопок, инпутов === */
+  --awds-control-50-font-size: 10px;
+  --awds-control-100-font-size: 11px;
+  --awds-control-200-font-size: 12px;
+  --awds-control-300-font-size: 13px;
+  --awds-control-400-font-size: 14px;
+  --awds-control-500-font-size: 15px;
+  --awds-control-600-font-size: 16px;
+  --awds-control-700-font-size: 17px;
+  --awds-control-800-font-size: 18px;
+  --awds-control-850-font-size: 20px;
+  --awds-control-900-font-size: 24px;
+  --awds-control-950-font-size: 28px;
+  --awds-control-1000-font-size: 32px;
+  --awds-control-50-line-height: 12px;
+  --awds-control-100-line-height: 16px;
+  --awds-control-200-line-height: 16px;
+  --awds-control-300-line-height: 16px;
+  --awds-control-400-line-height: 20px;
+  --awds-control-500-line-height: 20px;
+  --awds-control-600-line-height: 20px;
+  --awds-control-700-line-height: 24px;
+  --awds-control-800-line-height: 24px;
+  --awds-control-850-line-height: 28px;
+  --awds-control-900-line-height: 32px;
+  --awds-control-950-line-height: 36px;
+  --awds-control-1000-line-height: 40px;
+  --awds-control-50-letter-spacing: 0.003em;
+  --awds-control-100-letter-spacing: 0.002em;
+  --awds-control-200-letter-spacing: 0.001em;
+  --awds-control-300-letter-spacing: 0.001em;
+  --awds-control-400-letter-spacing: 0em;
+  --awds-control-500-letter-spacing: 0em;
+  --awds-control-600-letter-spacing: 0em;
+  --awds-control-700-letter-spacing: 0em;
+  --awds-control-800-letter-spacing: 0em;
+  --awds-control-850-letter-spacing: -0.001em;
+  --awds-control-900-letter-spacing: -0.002em;
+  --awds-control-950-letter-spacing: -0.003em;
+  --awds-control-1000-letter-spacing: -0.004em;
+
+  /* === Opacity (Opacity/Value) === */
+  --awds-opacity-0: 0%;
+  --awds-opacity-5: 5%;
+  --awds-opacity-10: 10%;
+  --awds-opacity-15: 15%;
+  --awds-opacity-20: 20%;
+  --awds-opacity-25: 25%;
+  --awds-opacity-30: 30%;
+  --awds-opacity-35: 35%;
+  --awds-opacity-40: 40%;
+  --awds-opacity-45: 45%;
+  --awds-opacity-50: 50%;
+  --awds-opacity-55: 55%;
+  --awds-opacity-60: 60%;
+  --awds-opacity-65: 65%;
+  --awds-opacity-70: 70%;
+  --awds-opacity-75: 75%;
+  --awds-opacity-80: 80%;
+  --awds-opacity-85: 85%;
+  --awds-opacity-90: 90%;
+  --awds-opacity-95: 95%;
+  --awds-opacity-100: 100%;
+
+  /* === Z-index (Zindex/Value) === */
+  --awds-z-dropdown: 1030;
+  --awds-z-sticky: 1000;
+  --awds-z-fixed: 1020;
+  --awds-z-backdrop: 1040;
+  --awds-z-offcanvas: 1050;
+  --awds-z-modal: 1060;
+  --awds-z-popover: 1070;
+  --awds-z-tooltip: 1080;
+
+  /* === Component size tokens (Size/Default) === */
+  /* nav */
+  --awds-nav-300-padding: var(--awds-space-2);
+  --awds-nav-300-gap: var(--awds-space-1-5);
+  --awds-nav-300-icon: var(--awds-space-5);
+  --awds-nav-300-typography-font-size: var(--awds-control-400-font-size);
+  --awds-nav-300-typography-line-height: var(--awds-control-400-line-height);
+  --awds-nav-300-typography-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-nav-300-level-gap: var(--awds-space-2-5);
+  --awds-nav-400-padding: var(--awds-space-2-5);
+  --awds-nav-400-gap: var(--awds-space-1-5);
+  --awds-nav-400-icon: var(--awds-space-5);
+  --awds-nav-400-typography-font-size: var(--awds-control-400-font-size);
+  --awds-nav-400-typography-line-height: var(--awds-control-400-line-height);
+  --awds-nav-400-typography-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-nav-400-level-gap: var(--awds-space-2-5);
+  --awds-nav-500-padding: var(--awds-space-3-5);
+  --awds-nav-500-gap: var(--awds-space-1-5);
+  --awds-nav-500-icon: var(--awds-space-5);
+  --awds-nav-500-typography-font-size: var(--awds-control-400-font-size);
+  --awds-nav-500-typography-line-height: var(--awds-control-400-line-height);
+  --awds-nav-500-typography-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-nav-500-level-gap: var(--awds-space-2-5);
+
+  /* profile-button */
+  --awds-profile-button-padding: var(--awds-space-1);
+  --awds-profile-button-gap: var(--awds-space-0-5);
+  --awds-profile-button-icon: var(--awds-space-5);
+
+  /* dropdown */
+  --awds-dropdown-200-padding: var(--awds-space-1);
+  --awds-dropdown-200-border-radius: var(--awds-rounded-200);
+  --awds-dropdown-300-padding: var(--awds-space-1);
+  --awds-dropdown-300-border-radius: var(--awds-rounded-300);
+  --awds-dropdown-400-padding: var(--awds-space-1);
+  --awds-dropdown-400-border-radius: var(--awds-rounded-400);
+  --awds-dropdown-500-padding: var(--awds-space-1);
+  --awds-dropdown-500-border-radius: var(--awds-rounded-500);
+
+  /* tabs */
+  --awds-tabs-300-padding: var(--awds-space-2);
+  --awds-tabs-300-gap: var(--awds-space-1-5);
+  --awds-tabs-300-typography-font-size: var(--awds-control-400-font-size);
+  --awds-tabs-300-typography-line-height: var(--awds-control-400-line-height);
+  --awds-tabs-300-typography-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-tabs-300-gap-panel: var(--awds-space-4);
+  --awds-tabs-300-gap-button: var(--awds-space-1-5);
+  --awds-tabs-400-padding: var(--awds-space-2-5);
+  --awds-tabs-400-gap: var(--awds-space-1-5);
+  --awds-tabs-400-typography-font-size: var(--awds-control-600-font-size);
+  --awds-tabs-400-typography-line-height: var(--awds-control-600-line-height);
+  --awds-tabs-400-typography-letter-spacing: var(--awds-control-600-letter-spacing);
+  --awds-tabs-400-gap-panel: var(--awds-space-5);
+  --awds-tabs-400-gap-button: var(--awds-space-2);
+
+  /* range */
+  --awds-range-300-handle: var(--awds-space-4);
+  --awds-range-400-handle: var(--awds-space-5);
+  --awds-range-500-handle: var(--awds-space-7);
+
+  /* notice */
+  --awds-notice-100-padding-v: var(--awds-space-0);
+  --awds-notice-100-typography-font-size: var(--awds-control-50-font-size);
+  --awds-notice-100-typography-line-height: var(--awds-control-50-line-height);
+  --awds-notice-100-typography-letter-spacing: var(--awds-control-50-letter-spacing);
+  --awds-notice-100-size: var(--awds-space-1-5);
+  --awds-notice-100-padding-h: var(--awds-space-1);
+  --awds-notice-100-padding: var(--awds-space-0);
+  --awds-notice-200-padding-v: var(--awds-space-0);
+  --awds-notice-200-typography-font-size: var(--awds-control-100-font-size);
+  --awds-notice-200-typography-line-height: var(--awds-control-100-line-height);
+  --awds-notice-200-typography-letter-spacing: var(--awds-control-100-letter-spacing);
+  --awds-notice-200-padding-h: var(--awds-space-1);
+  --awds-notice-200-padding: var(--awds-space-0);
+  --awds-notice-200-size: var(--awds-space-4);
+  --awds-notice-300-padding-v: var(--awds-space-px);
+  --awds-notice-300-typography-font-size: var(--awds-control-200-font-size);
+  --awds-notice-300-typography-line-height: var(--awds-control-200-line-height);
+  --awds-notice-300-typography-letter-spacing: var(--awds-control-200-letter-spacing);
+  --awds-notice-300-padding-h: var(--awds-space-1);
+  --awds-notice-300-padding: var(--awds-space-px);
+  --awds-notice-300-size: var(--awds-space-5);
+  --awds-notice-400-padding-v: var(--awds-space-px);
+  --awds-notice-400-typography-font-size: var(--awds-control-300-font-size);
+  --awds-notice-400-typography-line-height: var(--awds-control-300-line-height);
+  --awds-notice-400-typography-letter-spacing: var(--awds-control-300-letter-spacing);
+  --awds-notice-400-padding-h: var(--awds-space-1);
+  --awds-notice-400-padding: var(--awds-space-px);
+  --awds-notice-400-size: var(--awds-space-5);
+  --awds-notice-500-padding-v: var(--awds-space-px);
+  --awds-notice-500-typography-font-size: var(--awds-control-400-font-size);
+  --awds-notice-500-typography-line-height: var(--awds-control-400-line-height);
+  --awds-notice-500-typography-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-notice-500-padding-h: var(--awds-space-1);
+  --awds-notice-500-padding: var(--awds-space-px);
+  --awds-notice-500-size: var(--awds-space-6);
+  --awds-notice-600-padding-v: var(--awds-space-0-5);
+  --awds-notice-600-typography-font-size: var(--awds-control-500-font-size);
+  --awds-notice-600-typography-line-height: var(--awds-control-500-line-height);
+  --awds-notice-600-typography-letter-spacing: var(--awds-control-500-letter-spacing);
+  --awds-notice-600-padding-h: var(--awds-space-1);
+  --awds-notice-600-padding: var(--awds-space-0-5);
+  --awds-notice-600-size: var(--awds-space-7);
+
+  /* rectangle */
+  --awds-rectangle-50-padding: var(--awds-space-0-5);
+  --awds-rectangle-50-gap: var(--awds-space-0-5);
+  --awds-rectangle-50-icon: var(--awds-space-4);
+  --awds-rectangle-50-typography-font-size: var(--awds-control-200-font-size);
+  --awds-rectangle-50-typography-line-height: var(--awds-control-200-line-height);
+  --awds-rectangle-50-typography-letter-spacing: var(--awds-control-200-letter-spacing);
+  --awds-rectangle-50-notice-gap: var(--awds-space-1);
+  --awds-rectangle-50-description-font-size: var(--awds-control-100-font-size);
+  --awds-rectangle-50-description-line-height: var(--awds-control-100-line-height);
+  --awds-rectangle-50-description-letter-spacing: var(--awds-control-100-letter-spacing);
+  --awds-rectangle-50-text-gap: var(--awds-space-2);
+  --awds-rectangle-50-rounded: var(--awds-rounded-50);
+  --awds-rectangle-50-combi-label-top: var(--awds-space-0);
+  --awds-rectangle-50-combi-label-bottom: var(--awds-space-0);
+  --awds-rectangle-50-combi-input-top: var(--awds-space-0);
+  --awds-rectangle-50-combi-input-bottom: var(--awds-space-0);
+  --awds-rectangle-50-img-padding: var(--awds-space-0-5);
+  --awds-rectangle-50-img: var(--awds-space-4);
+  --awds-rectangle-100-padding: var(--awds-space-1);
+  --awds-rectangle-100-gap: var(--awds-space-0-5);
+  --awds-rectangle-100-icon: var(--awds-space-4);
+  --awds-rectangle-100-typography-font-size: var(--awds-control-300-font-size);
+  --awds-rectangle-100-typography-line-height: var(--awds-control-300-line-height);
+  --awds-rectangle-100-typography-letter-spacing: var(--awds-control-300-letter-spacing);
+  --awds-rectangle-100-notice-gap: var(--awds-space-1);
+  --awds-rectangle-100-description-font-size: var(--awds-control-200-font-size);
+  --awds-rectangle-100-description-line-height: var(--awds-control-200-line-height);
+  --awds-rectangle-100-description-letter-spacing: var(--awds-control-200-letter-spacing);
+  --awds-rectangle-100-text-gap: var(--awds-space-2-5);
+  --awds-rectangle-100-rounded: var(--awds-rounded-100);
+  --awds-rectangle-100-combi-label-top: var(--awds-space-0);
+  --awds-rectangle-100-combi-label-bottom: var(--awds-space-0);
+  --awds-rectangle-100-combi-input-top: var(--awds-space-0);
+  --awds-rectangle-100-combi-input-bottom: var(--awds-space-0);
+  --awds-rectangle-100-img-padding: var(--awds-space-0-5);
+  --awds-rectangle-100-img: var(--awds-space-5);
+  --awds-rectangle-200-padding: var(--awds-space-2);
+  --awds-rectangle-200-gap: var(--awds-space-1);
+  --awds-rectangle-200-icon: var(--awds-space-4);
+  --awds-rectangle-200-typography-font-size: var(--awds-control-300-font-size);
+  --awds-rectangle-200-typography-line-height: var(--awds-control-300-line-height);
+  --awds-rectangle-200-typography-letter-spacing: var(--awds-control-300-letter-spacing);
+  --awds-rectangle-200-notice-gap: var(--awds-space-1-5);
+  --awds-rectangle-200-description-font-size: var(--awds-control-200-font-size);
+  --awds-rectangle-200-description-line-height: var(--awds-control-200-line-height);
+  --awds-rectangle-200-description-letter-spacing: var(--awds-control-200-letter-spacing);
+  --awds-rectangle-200-text-gap: var(--awds-space-3-5);
+  --awds-rectangle-200-rounded: var(--awds-rounded-200);
+  --awds-rectangle-200-combi-label-top: var(--awds-space-0);
+  --awds-rectangle-200-combi-label-bottom: var(--awds-space-0);
+  --awds-rectangle-200-combi-input-top: var(--awds-space-0);
+  --awds-rectangle-200-combi-input-bottom: var(--awds-space-0);
+  --awds-rectangle-200-img-padding: var(--awds-space-0-5);
+  --awds-rectangle-200-img: var(--awds-space-7);
+  --awds-rectangle-300-padding: var(--awds-space-2);
+  --awds-rectangle-300-gap: var(--awds-space-1-5);
+  --awds-rectangle-300-icon: var(--awds-space-5);
+  --awds-rectangle-300-typography-font-size: var(--awds-control-400-font-size);
+  --awds-rectangle-300-typography-line-height: var(--awds-control-400-line-height);
+  --awds-rectangle-300-typography-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-rectangle-300-notice-gap: var(--awds-space-1-5);
+  --awds-rectangle-300-description-font-size: var(--awds-control-300-font-size);
+  --awds-rectangle-300-description-line-height: var(--awds-control-300-line-height);
+  --awds-rectangle-300-description-letter-spacing: var(--awds-control-300-letter-spacing);
+  --awds-rectangle-300-text-gap: var(--awds-space-3-5);
+  --awds-rectangle-300-rounded: var(--awds-rounded-300);
+  --awds-rectangle-300-combi-input-bottom: var(--awds-space-0-5);
+  --awds-rectangle-300-combi-label-bottom: var(--awds-space-0);
+  --awds-rectangle-300-combi-input-top: var(--awds-space-3-5);
+  --awds-rectangle-300-combi-label-top: var(--awds-space-0-5);
+  --awds-rectangle-300-img-padding: var(--awds-space-0-5);
+  --awds-rectangle-300-img: var(--awds-space-8);
+  --awds-rectangle-400-padding: var(--awds-space-2-5);
+  --awds-rectangle-400-gap: var(--awds-space-1-5);
+  --awds-rectangle-400-icon: var(--awds-space-5);
+  --awds-rectangle-400-typography-font-size: var(--awds-control-400-font-size);
+  --awds-rectangle-400-typography-line-height: var(--awds-control-400-line-height);
+  --awds-rectangle-400-typography-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-rectangle-400-notice-gap: var(--awds-space-1-5);
+  --awds-rectangle-400-description-font-size: var(--awds-control-300-font-size);
+  --awds-rectangle-400-description-line-height: var(--awds-control-300-line-height);
+  --awds-rectangle-400-description-letter-spacing: var(--awds-control-300-letter-spacing);
+  --awds-rectangle-400-text-gap: var(--awds-space-4);
+  --awds-rectangle-400-rounded: var(--awds-rounded-400);
+  --awds-rectangle-400-combi-input-top: var(--awds-space-4);
+  --awds-rectangle-400-combi-label-bottom: var(--awds-space-0);
+  --awds-rectangle-400-combi-input-bottom: var(--awds-space-1);
+  --awds-rectangle-400-combi-label-top: var(--awds-space-1);
+  --awds-rectangle-400-img-padding: var(--awds-space-0-5);
+  --awds-rectangle-400-img: var(--awds-space-9);
+  --awds-rectangle-500-padding: var(--awds-space-3-5);
+  --awds-rectangle-500-gap: var(--awds-space-1-5);
+  --awds-rectangle-500-icon: var(--awds-space-5);
+  --awds-rectangle-500-typography-font-size: var(--awds-control-600-font-size);
+  --awds-rectangle-500-typography-line-height: var(--awds-control-600-line-height);
+  --awds-rectangle-500-typography-letter-spacing: var(--awds-control-600-letter-spacing);
+  --awds-rectangle-500-notice-gap: var(--awds-space-2);
+  --awds-rectangle-500-description-font-size: var(--awds-control-400-font-size);
+  --awds-rectangle-500-description-line-height: var(--awds-control-400-line-height);
+  --awds-rectangle-500-description-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-rectangle-500-text-gap: var(--awds-space-4-5);
+  --awds-rectangle-500-rounded: var(--awds-rounded-500);
+  --awds-rectangle-500-combi-input-top: var(--awds-space-5-5);
+  --awds-rectangle-500-combi-label-bottom: var(--awds-space-0);
+  --awds-rectangle-500-combi-input-bottom: var(--awds-space-1-5);
+  --awds-rectangle-500-combi-label-top: var(--awds-space-1-5);
+  --awds-rectangle-500-img-padding: var(--awds-space-1);
+  --awds-rectangle-500-img: var(--awds-space-10);
+  --awds-rectangle-600-padding: var(--awds-space-4);
+  --awds-rectangle-600-gap: var(--awds-space-2);
+  --awds-rectangle-600-icon: var(--awds-space-5);
+  --awds-rectangle-600-typography-font-size: var(--awds-control-600-font-size);
+  --awds-rectangle-600-typography-line-height: var(--awds-control-600-line-height);
+  --awds-rectangle-600-typography-letter-spacing: var(--awds-control-600-letter-spacing);
+  --awds-rectangle-600-notice-gap: var(--awds-space-2);
+  --awds-rectangle-600-description-font-size: var(--awds-control-400-font-size);
+  --awds-rectangle-600-description-line-height: var(--awds-control-400-line-height);
+  --awds-rectangle-600-description-letter-spacing: var(--awds-control-400-letter-spacing);
+  --awds-rectangle-600-text-gap: var(--awds-space-4-5);
+  --awds-rectangle-600-rounded: var(--awds-rounded-600);
+  --awds-rectangle-600-combi-label-top: var(--awds-space-2);
+  --awds-rectangle-600-combi-label-bottom: var(--awds-space-0);
+  --awds-rectangle-600-combi-input-top: var(--awds-space-6);
+  --awds-rectangle-600-combi-input-bottom: var(--awds-space-2);
+  --awds-rectangle-600-img-padding: var(--awds-space-1);
+  --awds-rectangle-600-img: var(--awds-space-11);
+
+  /* square */
+  --awds-square-200-padding: var(--awds-space-0);
+  --awds-square-200-gap: var(--awds-space-1-5);
+  --awds-square-200-icon: var(--awds-space-4);
+  --awds-square-200-handle: var(--awds-space-5);
+  --awds-square-200-switch-width: var(--awds-space-7);
+  --awds-square-200-rounded: var(--awds-rounded-200);
+  --awds-square-200-img-padding: var(--awds-space-0-5);
+  --awds-square-200-img: var(--awds-space-7);
+  --awds-square-300-padding: var(--awds-space-0);
+  --awds-square-300-gap: var(--awds-space-1-5);
+  --awds-square-300-icon: var(--awds-space-5);
+  --awds-square-300-handle: var(--awds-space-5);
+  --awds-square-300-switch-width: var(--awds-space-8);
+  --awds-square-300-rounded: var(--awds-rounded-300);
+  --awds-square-300-img-padding: var(--awds-space-0-5);
+  --awds-square-300-img: var(--awds-space-8);
+  --awds-square-400-padding: var(--awds-space-0-5);
+  --awds-square-400-gap: var(--awds-space-1-5);
+  --awds-square-400-icon: var(--awds-space-5);
+  --awds-square-400-handle: var(--awds-space-5);
+  --awds-square-400-switch-width: var(--awds-space-9);
+  --awds-square-400-rounded: var(--awds-rounded-400);
+  --awds-square-400-img-padding: var(--awds-space-0-5);
+  --awds-square-400-img: var(--awds-space-9);
+  --awds-square-500-padding: var(--awds-space-0-5);
+  --awds-square-500-gap: var(--awds-space-2);
+  --awds-square-500-icon: var(--awds-space-6);
+  --awds-square-500-handle: var(--awds-space-6);
+  --awds-square-500-switch-width: var(--awds-space-11);
+  --awds-square-500-rounded: var(--awds-rounded-500);
+  --awds-square-500-img-padding: var(--awds-space-1);
+  --awds-square-500-img: var(--awds-space-6);
+  --awds-square-600-padding: var(--awds-space-0-5);
+  --awds-square-600-gap: var(--awds-space-2);
+  --awds-square-600-icon: var(--awds-space-7);
+  --awds-square-600-handle: var(--awds-space-7);
+  --awds-square-600-switch-width: var(--awds-space-13);
+  --awds-square-600-rounded: var(--awds-rounded-600);
+  --awds-square-600-img-padding: var(--awds-space-1);
+  --awds-square-600-img: var(--awds-space-7);
+}
+
+/* === Rounded mode classes (коллекция Rounded: None/Smooth/Rounded) === */
+/* Ставь на <html> рядом с theme-*; без класса действует :root (= Smooth). */
+.rounded-none {
+  --awds-rounded-50: var(--awds-rounded-50-none);
+  --awds-rounded-100: var(--awds-rounded-100-none);
+  --awds-rounded-200: var(--awds-rounded-200-none);
+  --awds-rounded-300: var(--awds-rounded-300-none);
+  --awds-rounded-400: var(--awds-rounded-400-none);
+  --awds-rounded-500: var(--awds-rounded-500-none);
+  --awds-rounded-600: var(--awds-rounded-600-none);
+  --awds-rounded-700: var(--awds-rounded-700-none);
+  --awds-rounded-800: var(--awds-rounded-800-none);
+  --awds-rounded-900: var(--awds-rounded-900-none);
+  --awds-rounded-full: var(--awds-rounded-full-none);
+  --awds-rounded-none: var(--awds-rounded-none-none);
+}
+
+.rounded-smooth {
+  --awds-rounded-50: var(--awds-rounded-50-smooth);
+  --awds-rounded-100: var(--awds-rounded-100-smooth);
+  --awds-rounded-200: var(--awds-rounded-200-smooth);
+  --awds-rounded-300: var(--awds-rounded-300-smooth);
+  --awds-rounded-400: var(--awds-rounded-400-smooth);
+  --awds-rounded-500: var(--awds-rounded-500-smooth);
+  --awds-rounded-600: var(--awds-rounded-600-smooth);
+  --awds-rounded-700: var(--awds-rounded-700-smooth);
+  --awds-rounded-800: var(--awds-rounded-800-smooth);
+  --awds-rounded-900: var(--awds-rounded-900-smooth);
+  --awds-rounded-full: var(--awds-rounded-full-smooth);
+  --awds-rounded-none: var(--awds-rounded-none-smooth);
+}
+
+.rounded-rounded {
+  --awds-rounded-50: var(--awds-rounded-50-rounded);
+  --awds-rounded-100: var(--awds-rounded-100-rounded);
+  --awds-rounded-200: var(--awds-rounded-200-rounded);
+  --awds-rounded-300: var(--awds-rounded-300-rounded);
+  --awds-rounded-400: var(--awds-rounded-400-rounded);
+  --awds-rounded-500: var(--awds-rounded-500-rounded);
+  --awds-rounded-600: var(--awds-rounded-600-rounded);
+  --awds-rounded-700: var(--awds-rounded-700-rounded);
+  --awds-rounded-800: var(--awds-rounded-800-rounded);
+  --awds-rounded-900: var(--awds-rounded-900-rounded);
+  --awds-rounded-full: var(--awds-rounded-full-rounded);
+  --awds-rounded-none: var(--awds-rounded-none-rounded);
+}
+
+/* === Typography scale — tablet/desktop (mobile-first) === */
+@media (min-width: 616px) {
+  :root {
+    --awds-typography-font-size-920: 24px;
+    --awds-typography-font-size-930: 28px;
+    --awds-typography-font-size-940: 34px;
+    --awds-typography-font-size-950: 40px;
+    --awds-typography-font-size-960: 48px;
+    --awds-typography-font-size-970: 52px;
+    --awds-typography-font-size-980: 58px;
+    --awds-typography-font-size-1000: 64px;
+    --awds-typography-line-height-900: 32px;
+    --awds-typography-line-height-910: 35px;
+    --awds-typography-line-height-920: 38px;
+    --awds-typography-line-height-930: 45px;
+    --awds-typography-line-height-940: 54px;
+    --awds-typography-line-height-950: 64px;
+    --awds-typography-line-height-960: 77px;
+    --awds-typography-line-height-970: 83px;
+    --awds-typography-line-height-980: 93px;
+    --awds-typography-line-height-1000: 102.4px;
+    --awds-typography-line-height-compact-900: 24px;
+    --awds-typography-line-height-compact-910: 26px;
+    --awds-typography-line-height-compact-920: 29px;
+    --awds-typography-line-height-compact-930: 34px;
+    --awds-typography-line-height-compact-940: 41px;
+    --awds-typography-line-height-compact-950: 48px;
+    --awds-typography-line-height-compact-960: 58px;
+    --awds-typography-line-height-compact-970: 62px;
+    --awds-typography-line-height-compact-980: 70px;
+    --awds-typography-line-height-compact-1000: 76.8px;
+  }
+}
+
+@media (min-width: 1068px) {
+  :root {
+    --awds-typography-font-size-910: 24px;
+    --awds-typography-font-size-920: 28px;
+    --awds-typography-font-size-930: 34px;
+    --awds-typography-font-size-940: 40px;
+    --awds-typography-font-size-950: 48px;
+    --awds-typography-font-size-960: 52px;
+    --awds-typography-font-size-970: 58px;
+    --awds-typography-font-size-980: 64px;
+    --awds-typography-font-size-1000: 70px;
+    --awds-typography-line-height-910: 38px;
+    --awds-typography-line-height-920: 45px;
+    --awds-typography-line-height-930: 54px;
+    --awds-typography-line-height-940: 64px;
+    --awds-typography-line-height-950: 77px;
+    --awds-typography-line-height-960: 83px;
+    --awds-typography-line-height-970: 93px;
+    --awds-typography-line-height-980: 102px;
+    --awds-typography-line-height-1000: 112px;
+    --awds-typography-line-height-compact-910: 29px;
+    --awds-typography-line-height-compact-920: 34px;
+    --awds-typography-line-height-compact-930: 41px;
+    --awds-typography-line-height-compact-940: 48px;
+    --awds-typography-line-height-compact-950: 58px;
+    --awds-typography-line-height-compact-960: 62px;
+    --awds-typography-line-height-compact-970: 70px;
+    --awds-typography-line-height-compact-980: 77px;
+    --awds-typography-line-height-compact-1000: 84px;
+  }
+}
+
+/* === Layout tokens (market) === */
+/* Mobile-first: дефолты < 616px, tablet >= 616px, desktop >= 1068px. */
+
+:root {
+  --awds-layout-market-banner-1-max: 1440px;
+  --awds-layout-market-banner-1-min: 288px;
+  --awds-layout-market-banner-2-max: 720px;
+  --awds-layout-market-banner-2-min: 272px;
+  --awds-layout-market-banner-3-max: 474px;
+  --awds-layout-market-banner-3-min: 272px;
+  --awds-layout-market-banner-4-max: 388px;
+  --awds-layout-market-banner-4-min: 128px;
+  --awds-layout-market-blog-listing-bottom: var(--awds-space-4);
+  --awds-layout-market-blog-listing-gap-x: var(--awds-space-4);
+  --awds-layout-market-blog-listing-gap-y: var(--awds-space-6);
+  --awds-layout-market-blog-listing-max: 368px;
+  --awds-layout-market-blog-listing-min: 136px;
+  --awds-layout-market-blog-listing-top: var(--awds-space-6);
+  --awds-layout-market-blog-slider-max: 256px;
+  --awds-layout-market-blog-slider-min: 128px;
+  --awds-layout-market-card-listing-bottom: var(--awds-space-4);
+  --awds-layout-market-card-listing-gap-x: var(--awds-space-4);
+  --awds-layout-market-card-listing-gap-y: var(--awds-space-6);
+  --awds-layout-market-card-listing-max: 368px;
+  --awds-layout-market-card-listing-min: 136px;
+  --awds-layout-market-card-listing-top: var(--awds-space-6);
+  --awds-layout-market-card-listing-wide-max: 368px;
+  --awds-layout-market-card-listing-wide-min: 136px;
+  --awds-layout-market-card-slider-max: 256px;
+  --awds-layout-market-card-slider-min: 128px;
+  --awds-layout-market-form-gap: var(--awds-space-5);
+  --awds-layout-market-form-group-gap: var(--awds-space-3);
+  --awds-layout-market-form-top: var(--awds-space-6);
+  --awds-layout-market-productcard-gap: var(--awds-space-4);
+  --awds-layout-market-productcard-pragraph: var(--awds-space-3);
+  --awds-layout-market-productcard-top: var(--awds-space-2);
+  --awds-layout-market-section-bottom: var(--awds-space-8);
+  --awds-layout-market-section-gap-y: var(--awds-space-4);
+  --awds-layout-market-section-large-max: 616px;
+  --awds-layout-market-section-medium-max: 900px;
+  --awds-layout-market-section-padding-x: var(--awds-space-4);
+  --awds-layout-market-section-padding-y: var(--awds-space-9);
+  --awds-layout-market-section-side: var(--awds-space-4);
+  --awds-layout-market-section-small-max: 600px;
+  --awds-layout-market-section-top: var(--awds-space-8);
+  --awds-layout-market-section-top-start: var(--awds-space-4);
+}
+
+@media (min-width: 616px) {
+  :root {
+    --awds-layout-market-banner-1-min: 398px;
+    --awds-layout-market-banner-2-min: 340px;
+    --awds-layout-market-banner-3-min: 340px;
+    --awds-layout-market-banner-4-min: 162px;
+    --awds-layout-market-blog-listing-gap-x: var(--awds-space-5);
+    --awds-layout-market-blog-listing-gap-y: var(--awds-space-7);
+    --awds-layout-market-blog-listing-min: 246px;
+    --awds-layout-market-blog-listing-top: var(--awds-space-7);
+    --awds-layout-market-blog-slider-max: 368px;
+    --awds-layout-market-blog-slider-min: 170px;
+    --awds-layout-market-card-listing-gap-x: var(--awds-space-5);
+    --awds-layout-market-card-listing-gap-y: var(--awds-space-7);
+    --awds-layout-market-card-listing-min: 220px;
+    --awds-layout-market-card-listing-top: var(--awds-space-7);
+    --awds-layout-market-card-listing-wide-min: 220px;
+    --awds-layout-market-card-slider-max: 368px;
+    --awds-layout-market-card-slider-min: 170px;
+    --awds-layout-market-form-top: var(--awds-space-7);
+    --awds-layout-market-productcard-pragraph: var(--awds-space-4);
+    --awds-layout-market-productcard-top: var(--awds-space-4);
+    --awds-layout-market-section-bottom: var(--awds-space-10);
+    --awds-layout-market-section-large-max: 1068px;
+    --awds-layout-market-section-padding-x: var(--awds-space-5);
+    --awds-layout-market-section-padding-y: var(--awds-space-11);
+    --awds-layout-market-section-top: var(--awds-space-10);
+  }
+}
+
+@media (min-width: 1068px) {
+  :root {
+    --awds-layout-market-banner-1-min: 976px;
+    --awds-layout-market-banner-2-max: 800px;
+    --awds-layout-market-banner-2-min: 392px;
+    --awds-layout-market-banner-3-max: 800px;
+    --awds-layout-market-banner-3-min: 392px;
+    --awds-layout-market-banner-4-min: 184px;
+    --awds-layout-market-blog-listing-gap-x: var(--awds-space-6);
+    --awds-layout-market-blog-listing-gap-y: var(--awds-space-8);
+    --awds-layout-market-blog-listing-max: 430px;
+    --awds-layout-market-blog-listing-min: 310px;
+    --awds-layout-market-blog-listing-top: var(--awds-space-8);
+    --awds-layout-market-card-listing-gap-x: var(--awds-space-6);
+    --awds-layout-market-card-listing-gap-y: var(--awds-space-8);
+    --awds-layout-market-card-listing-top: var(--awds-space-8);
+    --awds-layout-market-card-listing-wide-min: 222px;
+    --awds-layout-market-form-top: var(--awds-space-8);
+    --awds-layout-market-productcard-gap: var(--awds-space-6);
+    --awds-layout-market-productcard-pragraph: var(--awds-space-5);
+    --awds-layout-market-productcard-top: var(--awds-space-6);
+    --awds-layout-market-section-bottom: var(--awds-space-12);
+    --awds-layout-market-section-gap-y: var(--awds-space-6);
+    --awds-layout-market-section-large-max: 1488px;
+    --awds-layout-market-section-padding-x: var(--awds-space-6);
+    --awds-layout-market-section-padding-y: var(--awds-space-13);
+    --awds-layout-market-section-side: var(--awds-space-6);
+    --awds-layout-market-section-top: var(--awds-space-12);
+    --awds-layout-market-section-top-start: var(--awds-space-6);
+  }
+}
