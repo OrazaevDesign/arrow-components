@@ -1,0 +1,47 @@
+{
+  "component": "range",
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:3494",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3494"
+  },
+  "variants": {
+    "default": { "node_id": "2093:3495", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3495", "figma_label": "Variant=Default" },
+    "light":   { "node_id": "2093:3552", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3552", "figma_label": "Variant=Light" }
+  },
+  "shape": "range",
+  "size_scale": [300, 400, 500],
+  "states": ["rest", "hover", "active", "disabled"],
+  "color_tokens": ["fill-bg", "fill-chroma", "track", "thumb-bg", "thumb-chroma", "thumb-border"],
+  "css_files": ["range.css"],
+  "js_files": ["range.js"],
+  "preview": {
+    "base_class": "range",
+    "default_size": 400,
+    "matrix_states": ["rest"],
+    "matrix_sizes": [500, 400, 300],
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["default", "light"] },
+      { "id": "double", "label": "Double", "options": ["off", "on"] }
+    ],
+    "html_samples": [
+      { "label": "Single", "html": "<div class=\"range range-default range--400\" style=\"--range-to:60%\"><div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb\"></div></div>" },
+      { "label": "Double", "html": "<div class=\"range range-default range--400 range--double\" style=\"--range-from:25%;--range-to:70%\"><div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb range__thumb--from\"></div><div class=\"range__thumb range__thumb--to\"></div></div>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-primary-core", "--color-primary-chroma", "--color-primary-dim",
+    "--color-secondary-container-core", "--color-secondary-container-dim",
+    "--color-surface-bright", "--color-surface-container-container",
+    "--color-surface-on-highest",
+    "--awds-square-300-handle", "--awds-square-400-handle", "--awds-square-500-handle",
+    "--awds-space-1",
+    "--awds-rounded-full",
+    "--awds-opacity-40"
+  ],
+  "last_synced": "2026-06-18T08:48:51Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:8cda025fb203d88dd8ae66d0d809f4f1bb02759e9ae7dfa666593811fc4785da",
+  "published": null
+}

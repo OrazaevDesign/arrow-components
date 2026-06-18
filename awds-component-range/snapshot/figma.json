@@ -1,0 +1,38 @@
+{
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "primary_node_id": "2093:3494",
+  "frame_name": "Range",
+  "variant_properties": {
+    "Variant": ["Default", "Light"],
+    "Size": [500, 400, 300],
+    "Double": ["Off", "On"]
+  },
+  "variant_node_ids": {
+    "default": { "500-off": "2093:3495", "500-on": "2093:3504", "400-off": "2093:3514", "400-on": "2093:3523", "300-off": "2093:3533", "300-on": "2093:3542" },
+    "light":   { "500-off": "2093:3552", "500-on": "2093:3561", "400-off": "2093:3571", "400-on": "2093:3580", "300-off": "2093:3590", "300-on": "2093:3599" }
+  },
+  "colors": {
+    "track":      "{role.surface.container.container}   (range/container)",
+    "fill":       { "bg": "{role.primary.core}", "chroma": "{role.primary.chroma}", "_note": "range/bg + range/chroma — одинаково у обоих вариантов" },
+    "thumb_default": { "bg": "{role.primary.core}", "chroma": "{role.primary.chroma}", "border": "{role.primary.core}" },
+    "thumb_light":   { "bg": "{role.secondary.container.core}", "chroma": "{role.surface.bright}", "border": "{role.secondary.container.dim}" },
+    "hover": { "fill_bg": "{role.primary.dim}", "thumb_default": "{role.primary.dim}", "thumb_light": "{role.secondary.container.dim}" },
+    "active": { "chroma": "collapses to core (плоская заливка)" }
+  },
+  "size_map": {
+    "_note": "thumb = square/N/handle (Figma node 500 даёт square/500/handle=24; frame-высоты 500=24,400=20,300=20). track-height=4px (из get_design_context, нода 2093:3504) → --awds-space-1, константна по размерам.",
+    "500": { "thumb_px": 24, "thumb_token": "square-500-handle", "track_h_px": 4 },
+    "400": { "thumb_px": 20, "thumb_token": "square-400-handle", "track_h_px": 4 },
+    "300": { "thumb_px": 20, "thumb_token": "square-300-handle", "track_h_px": 4 }
+  },
+  "non_token_decisions": {
+    "structure": "div-based презентационный: .range__track > .range__fill + .range__thumb(--from/--to). Позиции через CSS-vars --range-from/--range-to (0–100%).",
+    "track-height": "var(--awds-space-1) (4px) — в Figma не размер-токенизирована, взята из design_context; константна по размерам (в макете рельсы одинаковой толщины)",
+    "border-radius": "var(--awds-rounded-full) для track/fill (пилюля), 50% для thumb (круг)",
+    "double": ".range--double — два ползунка (--from/--to), заливка между ними; single (Off) — from=0, один ползунок на --range-to",
+    "transition": "только цвет fill/thumb (не позицию left/right — лаг при drag)",
+    "interactivity": "РАБОЧИЙ: прозрачный нативный <input type=range> поверх визуала (single — 1, double — 2) + range.js синхронит value → --range-from/--range-to (доли 0–1). Drag/клавиатура/фокус/ARIA — от нативного input. Позиция thumb считается с учётом ширины (size/2 + (100%-size)*доля), чтобы визуальный и нативный thumb совпадали.",
+    "double-constraint": "Ограничение перемещения ручек (doka.guide): from зажимается <= to, to >= from (не пересекаются). z-index: from по умолчанию сверху (захватываема); to поднимается поверх когда в минимуме. controlFrom/controlTo/setToggleAccessible в range.js."
+  }
+}
