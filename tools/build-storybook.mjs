@@ -15,6 +15,10 @@ import { dirname, join } from 'node:path';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
+// Логотип — инлайнится в сайдбар (вордмарк на currentColor → адаптируется к теме).
+const LOGO_PATH = join(ROOT, 'assets', 'logo-arrow.svg');
+const LOGO_SVG = existsSync(LOGO_PATH) ? readFileSync(LOGO_PATH, 'utf8').trim() : '';
+
 // Порядок в сайдбаре (как в README); не перечисленные — в конец по алфавиту.
 const ORDER = [
   'button', 'button-overhung', 'link', 'avatar', 'notice', 'range', 'table',
@@ -98,9 +102,9 @@ const html = `<!DOCTYPE html>
       padding: var(--awds-space-5) var(--awds-space-5) var(--awds-space-4);
       border-bottom: 1px solid rgb(var(--surface-container-low) / 1);
     }
-    .side__brand { font-size: 16px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
-    .side__brand b { color: rgb(var(--primary-core) / 1); }
-    .side__tagline { margin: 2px 0 0; font-size: 12px; color: rgb(var(--surface-on) / 1); }
+    .side__logo { display: block; color: rgb(var(--surface-on-highest) / 1); }
+    .side__logo svg { display: block; height: 28px; width: auto; }
+    .side__tagline { margin: 10px 0 0; font-size: 12px; color: rgb(var(--surface-on) / 1); }
 
     .side__theme {
       display: flex; align-items: center; gap: var(--awds-space-2);
@@ -145,7 +149,7 @@ const html = `<!DOCTYPE html>
 <body>
   <aside class="side">
     <div class="side__head">
-      <p class="side__brand"><b>Arrow</b>DS · Components</p>
+      <span class="side__logo" role="img" aria-label="ArrowDS">${LOGO_SVG}</span>
       <p class="side__tagline">Storybook компонент-скиллов · <a href="https://github.com/OrazaevDesign/arrow-components" style="color:inherit;">GitHub</a></p>
     </div>
     <label class="side__theme">Тема
