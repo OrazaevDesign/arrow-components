@@ -1,0 +1,51 @@
+{
+  "component": "badge",
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:5285",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5285"
+  },
+  "variants": {
+    "market-percent": { "node_id": "2093:5286", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5286", "figma_label": "Type=Text, Var=Percent, Size=600, State=Rest" },
+    "market-sale":    { "node_id": "2093:5417", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5417", "figma_label": "Type=Text, Var=Sale, Size=600, State=Rest" },
+    "market-new":     { "node_id": "2093:5374", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5374", "figma_label": "Type=Text, Var=New, Size=600, State=Rest" },
+    "market-brand":   { "node_id": "2093:5331", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5331", "figma_label": "Type=Text, Var=Brand, Size=600, State=Rest" }
+  },
+  "shape": "rectangle",
+  "size_scale": [50, 100, 200, 300, 400, 500, 600],
+  "states": ["rest"],
+  "color_tokens": ["bg", "chroma", "border", "color"],
+  "css_files": ["badge.css"],
+  "preview": {
+    "base_class": "badge",
+    "default_size": 400,
+    "matrix_states": ["rest"],
+    "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["market-percent", "market-sale", "market-new", "market-brand"] },
+      { "id": "type", "label": "Тип", "options": ["text", "icon"] }
+    ],
+    "html_samples": [
+      { "label": "Процент (accent)", "html": "<span class=\"badge badge-market-percent badge--400\"><span class=\"badge__label\">-30%</span></span>" },
+      { "label": "Sale (primary)", "html": "<span class=\"badge badge-market-sale badge--400\"><span class=\"badge__label\">SALE</span></span>" },
+      { "label": "New (info)", "html": "<span class=\"badge badge-market-new badge--400\"><span class=\"badge__label\">NEW</span></span>" },
+      { "label": "Brand (secondary)", "html": "<span class=\"badge badge-market-brand badge--400\"><span class=\"badge__label\">BRAND</span></span>" },
+      { "label": "С иконкой слева", "html": "<span class=\"badge badge-market-sale badge--400\"><svg class=\"badge__icon\">...</svg><span class=\"badge__label\">SALE</span></span>" },
+      { "label": "Только иконки (Type=Icon)", "html": "<span class=\"badge badge-market-percent badge--400\"><svg class=\"badge__icon\">...</svg></span>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-accent-core", "--color-accent-chroma", "--color-accent-on",
+    "--color-primary-core", "--color-primary-chroma", "--color-primary-on",
+    "--color-info-core", "--color-info-chroma", "--color-info-on",
+    "--color-secondary-core", "--color-secondary-chroma", "--color-secondary-on",
+    "--awds-rectangle-*",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
+  ],
+  "last_synced": "2026-06-22T11:02:57Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:72aa1559f9bd2bef62ee03eaee11a11b521664297fbeb652410247f9bb75aeaa",
+  "published": null
+}

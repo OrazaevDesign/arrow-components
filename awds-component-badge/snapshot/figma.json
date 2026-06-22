@@ -1,0 +1,116 @@
+{
+  "source": "Figma MCP — get_metadata + get_variable_defs + get_design_context",
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "primary_node_id": "2093:5285",
+  "variants_meta": {
+    "market-percent": {
+      "node_id": "2093:5286",
+      "frame": { "id": "2093:5285", "name": "Badge / Market Precent", "width": 429, "height": 452 }
+    },
+    "market-sale": {
+      "node_id": "2093:5417",
+      "frame": { "id": "2093:5414", "name": "Badge / Market Sale", "width": 429, "height": 452 }
+    },
+    "market-new": {
+      "node_id": "2093:5374",
+      "frame": { "id": "2093:5371", "name": "Badge / Market New", "width": 429, "height": 452 }
+    },
+    "market-brand": {
+      "node_id": "2093:5331",
+      "frame": { "id": "2093:5328", "name": "Badge / Market Brand", "width": 429, "height": 452 }
+    }
+  },
+  "symbols": {
+    "market-percent": [
+      "2093:5286 Type=Text Size=600", "2093:5290 Type=Icon Size=600",
+      "2093:5292 Type=Text Size=500", "2093:5296 Type=Icon Size=500",
+      "2093:5298 Type=Text Size=400", "2093:5302 Type=Icon Size=400",
+      "2093:5304 Type=Text Size=300", "2093:5308 Type=Icon Size=300",
+      "2093:5310 Type=Text Size=200", "2093:5314 Type=Icon Size=200",
+      "2093:5316 Type=Text Size=100", "2093:5320 Type=Icon Size=100",
+      "2093:5322 Type=Text Size=50",  "2093:5326 Type=Icon Size=50"
+    ],
+    "market-sale": [
+      "2093:5417 Type=Text Size=600", "2093:5415 Type=Icon Size=600",
+      "2093:5423 Type=Text Size=500", "2093:5421 Type=Icon Size=500",
+      "2093:5429 Type=Text Size=400", "2093:5427 Type=Icon Size=400",
+      "2093:5435 Type=Text Size=300", "2093:5433 Type=Icon Size=300",
+      "2093:5441 Type=Text Size=200", "2093:5439 Type=Icon Size=200",
+      "2093:5447 Type=Text Size=100", "2093:5445 Type=Icon Size=100",
+      "2093:5453 Type=Text Size=50",  "2093:5451 Type=Icon Size=50"
+    ],
+    "market-new": [
+      "2093:5374 Type=Text Size=600", "2093:5372 Type=Icon Size=600",
+      "2093:5380 Type=Text Size=500", "2093:5378 Type=Icon Size=500",
+      "2093:5386 Type=Text Size=400", "2093:5384 Type=Icon Size=400",
+      "2093:5392 Type=Text Size=300", "2093:5390 Type=Icon Size=300",
+      "2093:5398 Type=Text Size=200", "2093:5396 Type=Icon Size=200",
+      "2093:5404 Type=Text Size=100", "2093:5402 Type=Icon Size=100",
+      "2093:5410 Type=Text Size=50",  "2093:5408 Type=Icon Size=50"
+    ],
+    "market-brand": [
+      "2093:5331 Type=Text Size=600", "2093:5329 Type=Icon Size=600",
+      "2093:5337 Type=Text Size=500", "2093:5335 Type=Icon Size=500",
+      "2093:5343 Type=Text Size=400", "2093:5341 Type=Icon Size=400",
+      "2093:5349 Type=Text Size=300", "2093:5347 Type=Icon Size=300",
+      "2093:5355 Type=Text Size=200", "2093:5353 Type=Icon Size=200",
+      "2093:5361 Type=Text Size=100", "2093:5359 Type=Icon Size=100",
+      "2093:5367 Type=Text Size=50",  "2093:5365 Type=Icon Size=50"
+    ]
+  },
+  "variable_defs": {
+    "market-percent": {
+      "badge/market/percent/bg": "#cc4033",
+      "badge/market/percent/chroma": "#d65745",
+      "badge/market/percent/border": "#cc4033",
+      "badge/market/percent/color": "#fff9f5"
+    },
+    "market-sale": {
+      "badge/market/sale/bg": "#fad646",
+      "badge/market/sale/chroma": "#fce279",
+      "badge/market/sale/border": "#fad646",
+      "badge/market/sale/color": "#19110a"
+    },
+    "market-new": {
+      "badge/market/new/bg": "#2e46d1",
+      "badge/market/new/chroma": "#4764d4",
+      "badge/market/new/border": "#2e46d1",
+      "badge/market/new/color": "#f7fcff"
+    },
+    "market-brand": {
+      "badge/market/brand/bg": "#f2f2f2",
+      "badge/market/brand/chroma": "#f7f7f7",
+      "badge/market/brand/border": "#f2f2f2",
+      "badge/market/brand/color": "#555555"
+    },
+    "shared_rectangle": {
+      "rectangle/600/icon": "20", "rectangle/600/gap": "8", "rectangle/600/padding": "16", "rectangle/600/rounded": "10",
+      "rectangle/500/icon": "20", "rectangle/500/gap": "6", "rectangle/500/padding": "14", "rectangle/500/rounded": "8",
+      "rectangle/400/icon": "20", "rectangle/400/gap": "6", "rectangle/400/padding": "10", "rectangle/400/rounded": "8",
+      "rectangle/300/icon": "20", "rectangle/300/gap": "6", "rectangle/300/padding": "8", "rectangle/300/rounded": "6",
+      "rectangle/200/icon": "16", "rectangle/200/gap": "4", "rectangle/200/padding": "8",
+      "rectangle/100/icon": "16", "rectangle/100/gap": "2", "rectangle/100/padding": "4", "rectangle/100/rounded": "6",
+      "rectangle/50/icon": "16", "rectangle/50/gap": "2", "rectangle/50/padding": "2", "rectangle/50/rounded": "4",
+      "font-size/600": "16", "line-height/600": "20", "letter-spacing/600": "0",
+      "font-size/400": "14", "line-height/400": "20", "letter-spacing/400": "0",
+      "font-size/300": "13", "line-height/300": "16", "letter-spacing/300": "0.10000000149011612",
+      "font-size/200": "12", "line-height/200": "16", "letter-spacing/200": "0.10000000149011612"
+    }
+  },
+  "token_resolution": {
+    "badge/market/percent/{bg,border}": "rgb(var(--accent-core))",
+    "badge/market/percent/chroma": "rgb(var(--accent-chroma))",
+    "badge/market/percent/color": "rgb(var(--accent-on))",
+    "badge/market/sale/{bg,border}": "rgb(var(--primary-core))",
+    "badge/market/sale/chroma": "rgb(var(--primary-chroma))",
+    "badge/market/sale/color": "rgb(var(--primary-on))",
+    "badge/market/new/{bg,border}": "rgb(var(--info-core))",
+    "badge/market/new/chroma": "rgb(var(--info-chroma))",
+    "badge/market/new/color": "rgb(var(--info-on))",
+    "badge/market/brand/{bg,border}": "rgb(var(--secondary-core))",
+    "badge/market/brand/chroma": "rgb(var(--secondary-chroma))",
+    "badge/market/brand/color": "rgb(var(--secondary-on))",
+    "rectangle/N/*": "var(--awds-rectangle-N-{padding|gap|icon|rounded|typography-*})"
+  }
+}
