@@ -2,7 +2,7 @@
 
 Кнопка «в избранное»: **icon-only вариант компонента Button**, прозрачный (без фона/бордера), с двумя стекнутыми иконками heart. Toggle между «не в избранном» и «в избранном».
 
-**Figma:** [.button-favorites](https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6130-28039)
+**Figma:** [button-favorites](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471)
 
 ## HTML
 
