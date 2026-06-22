@@ -1,0 +1,51 @@
+{
+  "component": "tooltip",
+  "figma": {
+    "file_key": "XfUbnX6GFLFZ6nInMOlyQD",
+    "file_name": "💠 Comp ↪ ⁶ Popup",
+    "primary_node_id": "4001:27067",
+    "primary_url": "https://www.figma.com/design/XfUbnX6GFLFZ6nInMOlyQD/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B6-Popup?node-id=4001-27067"
+  },
+  "variants": {
+    "default":  { "node_id": "4001:27067", "url": "https://www.figma.com/design/XfUbnX6GFLFZ6nInMOlyQD/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B6-Popup?node-id=4001-27067", "figma_label": "Type=Default, Variant=Default, Side=Top" },
+    "contrast": { "node_id": "4001:27091", "url": "https://www.figma.com/design/XfUbnX6GFLFZ6nInMOlyQD/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B6-Popup?node-id=4001-27091", "figma_label": "Type=Default, Variant=Contrast, Side=Top" }
+  },
+  "shape": null,
+  "size_scale": null,
+  "states": ["rest"],
+  "color_tokens": ["bg", "color"],
+  "css_files": ["tooltip.css"],
+  "preview": {
+    "base_class": "tooltip",
+    "default_size": null,
+    "matrix_states": ["rest"],
+    "matrix_sizes": null,
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["default", "contrast"] },
+      { "id": "type",    "label": "Тип",      "options": ["default", "compact"] },
+      { "id": "side",    "label": "Сторона",  "options": ["top", "bottom", "left", "right"] }
+    ],
+    "html_samples": [
+      { "label": "Default / Top", "html": "<span class=\"tooltip tooltip-default tooltip--top\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Подсказка</span></span>" },
+      { "label": "Contrast / Bottom", "html": "<span class=\"tooltip tooltip-contrast tooltip--bottom\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Подсказка</span></span>" },
+      { "label": "Compact / Right", "html": "<span class=\"tooltip tooltip-default tooltip--compact tooltip--right\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Инфо</span></span>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-surface-bright",
+    "--color-surface-on-high",
+    "--color-surface-on-highest",
+    "--awds-shadow-elevation-3",
+    "--awds-space-1", "--awds-space-1-5", "--awds-space-2", "--awds-space-2-5",
+    "--awds-rounded-300", "--awds-rounded-400",
+    "--awds-typography-font-size-300", "--awds-typography-line-height-compact-300", "--awds-typography-letter-spacing-300",
+    "--awds-typography-font-size-400", "--awds-typography-line-height-compact-400", "--awds-typography-letter-spacing-400",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular"
+  ],
+  "notes": "3 независимые оси: variant (default/contrast — цвет), type (default/compact — размер, модификатор .tooltip--compact), side (top/bottom/left/right — хвост, модификатор .tooltip--{side}). Категория body в DS отсутствует → размер из typography, line-height округлён к compact. Хвост — повёрнутый квадрат поверх пузыря, без drop-тени (лежит на тени бокса), по центру стороны; хайрлайн-обводка 1px (Figma shape Stroke) = кольцо тени пузыря (чёрный 3%) на двух внешних гранях, --awds-tooltip-hairline (opacity-3-токена в DS нет → литерал).",
+  "last_synced": "2026-06-22T13:26:22Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:f34d4dbc08430e723f18a1b2db52948d8a91f20fa20dc830961ec240b5a3d5ba",
+  "published": null
+}
