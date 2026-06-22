@@ -1,0 +1,91 @@
+{
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "fetched_at": "2026-06-22T11:33:17Z",
+  "metadata": {
+    "node_id": "2093:4386",
+    "name": "Slider",
+    "type": "COMPONENT_SET",
+    "width": 178,
+    "height": 48,
+    "children": [
+      { "node_id": "2093:4387", "name": "Variant=Dots", "width": 60, "height": 14 },
+      { "node_id": "2093:4401", "name": "Variant=Dots Mini", "width": 40, "height": 12 },
+      { "node_id": "2093:4414", "name": "Variant=Numbs", "width": 36, "height": 24 }
+    ]
+  },
+  "component_description": {
+    "figma": "https://www.figma.com/design/75ik8jCGkg0m2EN6FDtFW6/%F0%9F%9F%A3-Slider?node-id=0-1",
+    "asana": "https://app.asana.com/0/1203198440472196/1209711474813793/f"
+  },
+  "structure": {
+    "container": {
+      "backdrop_blur": "3px",
+      "padding": "space/1",
+      "rounded": "border-radius/full",
+      "display": "flex"
+    },
+    "bg_layer": {
+      "present_in": ["Dots", "Numbs"],
+      "fill": "role/surface/bright",
+      "opacity": "opacity/80",
+      "rounded": "border-radius/full"
+    },
+    "dots_list": {
+      "present_in": ["Dots", "Dots Mini"],
+      "gap": "4px",
+      "dot": { "fill": "role/surface/on-highest", "opacity": "opacity/30", "rounded": "20px", "size_dots": "6px", "size_mini": "4px" },
+      "dot_active": { "fill": "role/surface/on-highest", "opacity": "opacity/100", "size_dots": "12x6", "size_mini": "8x4" }
+    },
+    "numbs_text": {
+      "present_in": ["Numbs"],
+      "text": "1/2",
+      "color": "role/surface/on-high",
+      "typography": "Web/Control/300-Medium",
+      "font": "Inter Medium 500"
+    }
+  },
+  "variable_defs": {
+    "2093:4386": {
+      "border-radius/full": "600",
+      "opacity/80": "80",
+      "role/surface/bright": "#ffffff",
+      "opacity/30": "30",
+      "role/surface/on-highest": "#080808",
+      "opacity/100": "100",
+      "space/1": "4",
+      "role/surface/on-high": "#646464",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "Web/Control/300-Medium": "Font(family: \"Inter\", style: Medium, size: font-size/300, weight: 500, lineHeight: line-height/300, letterSpacing: letter-spacing/300)"
+    },
+    "2093:4387": {
+      "border-radius/full": "600",
+      "opacity/80": "80",
+      "role/surface/bright": "#ffffff",
+      "opacity/30": "30",
+      "role/surface/on-highest": "#080808",
+      "opacity/100": "100",
+      "space/1": "4"
+    },
+    "2093:4401": {
+      "opacity/30": "30",
+      "role/surface/on-highest": "#080808",
+      "opacity/100": "100",
+      "space/1": "4",
+      "border-radius/full": "600"
+    },
+    "2093:4414": {
+      "border-radius/full": "600",
+      "opacity/80": "80",
+      "role/surface/bright": "#ffffff",
+      "role/surface/on-high": "#646464",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "Web/Control/300-Medium": "Font(family: \"Inter\", style: Medium, size: font-size/300, weight: 500, lineHeight: line-height/300, letterSpacing: letter-spacing/300)",
+      "space/1": "4"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "component": "slider",
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:4387",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387"
+  },
+  "variants": {
+    "dots":      { "node_id": "2093:4387", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387", "figma_label": "Variant=Dots" },
+    "dots-mini": { "node_id": "2093:4401", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4401", "figma_label": "Variant=Dots Mini" },
+    "numbs":     { "node_id": "2093:4414", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4414", "figma_label": "Variant=Numbs" }
+  },
+  "shape": null,
+  "size_scale": null,
+  "states": ["rest"],
+  "color_tokens": ["bg", "color"],
+  "css_files": ["slider.css"],
+  "preview": {
+    "base_class": "slider",
+    "default_size": null,
+    "matrix_states": ["rest"],
+    "matrix_sizes": null,
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["dots", "dots-mini", "numbs"] },
+      { "id": "count",   "label": "Слайдов",  "options": ["3", "5", "7"] }
+    ],
+    "html_samples": [
+      { "label": "Dots (5 слайдов, активный 3-й)", "html": "<div class=\"slider slider-dots\" role=\"group\" aria-label=\"Слайд 3 из 5\"><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot slider__dot--active\" aria-current=\"true\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span></div>" },
+      { "label": "Dots Mini (поверх фото)", "html": "<div class=\"slider slider-dots-mini\" role=\"group\" aria-label=\"Слайд 1 из 5\"><span class=\"slider__dot slider__dot--active\" aria-current=\"true\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span></div>" },
+      { "label": "Numbs (счётчик)", "html": "<div class=\"slider slider-numbs\" role=\"group\" aria-label=\"Слайд 1 из 2\">1/2</div>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-surface-bright",
+    "--color-surface-on-highest",
+    "--color-surface-on-high",
+    "--awds-space-1",
+    "--awds-rounded-full",
+    "--awds-opacity-30",
+    "--awds-opacity-80",
+    "--awds-control-300-font-size",
+    "--awds-control-300-line-height",
+    "--awds-control-300-letter-spacing",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
+  ],
+  "notes": "Статичный индикатор пагинации, без size-шкалы (shape=null) и без состояний. Геометрия точек (диаметр 6px, blur 3px) — raw Figma px, в DS нет соответствующего токена. Figma Inter Medium(500) округлён к --awds-font-weight-semibold (нет weight-500).",
+  "last_synced": "2026-06-22T11:33:17Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:cfb32f017f63fd46432c44393125b738e29b97c086cea26bdffbb58625bb40b2",
+  "published": null
+}
