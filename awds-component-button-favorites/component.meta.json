@@ -1,0 +1,50 @@
+{
+  "component": "button-favorites",
+  "figma": {
+    "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
+    "file_name": "🔶 B2C ↪ ¹ Componets",
+    "primary_node_id": "6130:28039",
+    "primary_url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6130-28039"
+  },
+  "variants": {
+    "favorites": { "node_id": "6130:28039", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6130-28039", "figma_label": ".button-favorites (⚙️Favourites)" }
+  },
+  "shape": "rectangle",
+  "size_scale": null,
+  "based_on": "awds-component-button (.btn icon-only, прозрачный вариант)",
+  "views": ["desktop", "mobile"],
+  "states": ["rest", "hover", "selected"],
+  "states_note": "Figma State=Active соответствует 'selected' (постоянное «в избранном», [aria-pressed=true]); CSS :active отдан press-feedback. Desktop = дефолт .btn (rect-400, 40px), Mobile = .btn-favorites--mobile (32px).",
+  "color_tokens": ["bg", "chroma", "border", "color", "fav-fill", "fav-stroke"],
+  "css_files": ["button-favorites.css"],
+  "preview": {
+    "base_class": "btn",
+    "variant_class": "btn-favorites",
+    "default_size": 400,
+    "matrix_states": ["rest", "hover", "selected"],
+    "matrix_sizes": null,
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["favorites"] },
+      { "id": "view", "label": "Вью", "options": ["desktop", "mobile"] }
+    ],
+    "html_samples": [
+      { "label": "Desktop, не в избранном", "html": "<button class=\"btn btn-favorites btn--icon-only\" type=\"button\" aria-pressed=\"false\" aria-label=\"В избранное\"><span class=\"btn-favorites__icon\">…heart solid + outline…</span></button>" },
+      { "label": "Mobile, в избранном", "html": "<button class=\"btn btn-favorites btn-favorites--mobile btn--icon-only\" type=\"button\" aria-pressed=\"true\" aria-label=\"В избранном\"><span class=\"btn-favorites__icon\">…</span></button>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-surface-bright",
+    "--color-surface-on-high",
+    "--color-surface-on-highest",
+    "--color-error-container-dim",
+    "--color-error-container-on",
+    "--awds-rectangle-400-padding", "--awds-rectangle-400-icon", "--awds-rectangle-400-rounded", "--awds-rectangle-400-gap", "--awds-rectangle-400-typography-font-size", "--awds-rectangle-400-typography-line-height", "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-space-5", "--awds-space-1-5",
+    "--awds-opacity-40",
+    "--awds-font-family-system", "--awds-font-weight-semibold"
+  ],
+  "last_synced": "2026-06-22T09:28:25Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:753288e66912fa276cb757373c5fbab3fda14d49e8121da51f916e337b96854c",
+  "published": null
+}
