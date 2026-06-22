@@ -1,0 +1,145 @@
+# Product Card — price-first
+
+Карточка товара в раскладке **price-first**: цена → бренд → название → рейтинг. Фото 3:4 с оверлеями (страна-поставщик, избранное, маркет-бейджи).
+
+**Figma:** [product-card / price-first](https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800)
+
+## HTML
+
+Корень — `<div>` (контейнер). Кликабельны **4 отдельные ссылки** со своим hover: фото → товар, бренд → бренд, название → товар, отзывы → к отзывам товара. Мобильная вью — добавь `.pcard--mobile`.
+
+```html
+<div class="pcard pcard-price-first">
+  <div class="pcard__media">
+    <!-- #1 фото → карточка товара (aria-label, т.к. ссылка без текста) -->
+    <a class="pcard__image-link" href="/product/123" aria-label="Название товара">
+      <img class="pcard__image" src="/img/123.jpg" alt="Название товара">
+    </a>
+
+    <div class="pcard__top">
+      <!-- Флаг страны + тултип (awds-component-tooltip): текст = страна из данных карточки -->
+      <span class="pcard__country pcard__tip">
+        <img src="/flags/de.svg" alt="Германия">
+        <span class="tooltip tooltip-contrast tooltip--compact tooltip--top" role="tooltip">
+          <span class="tooltip__tail"></span><span class="tooltip__bubble">Германия</span>
+        </span>
+      </span>
+      <!-- Избранное (awds-component-button-favorites) + тултип «Добавить в избранное» -->
+      <span class="pcard__tip">
+      <button type="button" class="btn btn-favorites btn--icon-only" aria-pressed="false" aria-label="В избранное">
+        <span class="btn-favorites__icon">
+          <svg class="btn-favorites__solid" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11.0928 3.05991C12.7287 1.82393 14.7348 1.67089 16.3496 2.5892C17.9639 3.50742 18.9999 5.38217 19 7.83041C19 10.3627 17.5048 12.5134 15.9102 14.1039C14.295 15.7147 12.4254 16.9035 11.3584 17.5189C10.935 17.765 10.5039 17.9945 10 17.9945C9.49607 17.9945 9.06496 17.765 8.6416 17.5189C7.57455 16.9035 5.70499 15.7147 4.08984 14.1039C2.49516 12.5134 1 10.3627 1 7.83041C1.0001 5.38314 2.03712 3.51291 3.65137 2.59702C5.26481 1.68165 7.26864 1.83336 8.90234 3.06088C9.40086 3.43548 9.74153 3.6909 9.9873 3.8558L10.0127 3.85678C10.2575 3.69164 10.5961 3.43517 11.0928 3.05991Z"/></svg>
+          <svg class="btn-favorites__outline" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0928 3.05991C12.7287 1.82393 14.7348 1.67089 16.3496 2.5892C17.9639 3.50742 18.9999 5.38217 19 7.83041C19 10.3627 17.5048 12.5134 15.9102 14.1039C14.295 15.7147 12.4254 16.9035 11.3584 17.5189C10.935 17.765 10.5039 17.9945 10 17.9945C9.49607 17.9945 9.06495 17.765 8.6416 17.5189C7.57455 16.9035 5.70499 15.7147 4.08984 14.1039C2.49516 12.5134 1 10.3627 1 7.83041C1.0001 5.38314 2.03712 3.51291 3.65137 2.59702C5.26481 1.68165 7.26864 1.83336 8.90234 3.06088C9.26444 3.33297 9.62329 3.61272 10 3.86459C10.375 3.61235 10.7323 3.33224 11.0928 3.05991ZM15.3613 4.32846C14.3526 3.7547 13.165 4.00159 12.2734 4.67514C11.8085 5.0264 11.4258 5.31503 11.1309 5.51401C10.794 5.74121 10.4222 5.96072 10.0029 5.96127C9.58341 5.96178 9.21066 5.74344 8.87305 5.51694C8.57711 5.31839 8.19345 5.02989 7.72656 4.67905C6.83401 4.00833 5.64645 3.7647 4.63867 4.33627C3.7728 4.82752 3.00009 5.95047 3 7.83041C3 9.56747 4.04271 11.2324 5.50195 12.6878C6.78251 13.965 8.29529 15.0576 9.88281 15.9242C9.9903 15.9828 10.0097 15.9828 10.1172 15.9242C11.7047 15.0576 13.2175 13.965 14.498 12.6878C15.9573 11.2324 17 9.56748 17 7.83041C16.9999 5.94766 16.2272 4.82117 15.3613 4.32846Z"/></svg>
+        </span>
+      </button>
+        <span class="tooltip tooltip-contrast tooltip--compact tooltip--top" role="tooltip"><span class="tooltip__tail"></span><span class="tooltip__bubble">Добавить в избранное</span></span>
+      </span>
+    </div>
+
+    <!-- Бейджи — компонент awds-component-badge (подключи badge.css). Mobile: .badge--50 -->
+    <div class="pcard__badges">
+      <span class="badge badge-market-percent badge--100">10%</span>
+      <span class="badge badge-market-sale badge--100">Скидка</span>
+    </div>
+  </div>
+
+  <div class="pcard__content">
+    <div class="pcard__price">
+      <span class="pcard__price-value">1 900</span>
+      <span class="pcard__price-currency">₽</span>
+    </div>
+    <!-- #2 бренд → страница бренда -->
+    <a class="pcard__brand" href="/brand/nike">Brandname</a>
+    <!-- #3 название → карточка товара -->
+    <a class="pcard__name" href="/product/123">Название товара которое ложится в две строки</a>
+    <!-- #4 отзывы → к отзывам внутри карточки товара -->
+    <a class="pcard__feedback" href="/product/123#reviews">
+      <svg class="pcard__rating-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.4 9.9 5.3l4.3.62-3.1 3 .73 4.28L8 11.18 4.17 13.2l.73-4.28-3.1-3 4.3-.62Z"/></svg>
+      <span class="pcard__rating-text">4.25 · 23 отзыва</span>
+    </a>
+  </div>
+</div>
+```
+
+### Без фото
+
+Внутри `.pcard__image-link` замени `<img class="pcard__image">` на плейсхолдер (ссылка на товар остаётся):
+
+```html
+<a class="pcard__image-link" href="/product/123" aria-label="Название товара">
+  <div class="pcard__media-placeholder">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="9" r="1.6"/><path d="M21 16l-5-5L7 20"/>
+    </svg>
+  </div>
+</a>
+```
+
+### Mobile
+
+В мобильной вью добавь `.pcard--mobile` корню, кнопке избранного — `.btn-favorites--mobile` (32px вместо 40px), а бейджам — `.badge--50` вместо `.badge--100`:
+
+```html
+<div class="pcard pcard-price-first pcard--mobile">
+  …
+  <button class="btn btn-favorites btn-favorites--mobile btn--icon-only" …>…</button>
+  …
+  <div class="pcard__badges">
+    <span class="badge badge-market-percent badge--50">10%</span>
+    <span class="badge badge-market-sale badge--50">Скидка</span>
+  </div>
+  …
+</div>
+```
+
+## Состояния и hover
+
+Карточка статична по контенту (`states = rest`). Это **контейнер** (`<div>`), внутри — 4 отдельные ссылки, hover у каждой **свой** (наведение на одну не затрагивает остальные):
+
+| Ссылка | href | Поведение по `:hover` |
+|---|---|---|
+| `.pcard__image-link` (#1) | товар | фото `scale(0.9) → scale(1)` (0.4s) — раскрывается до 100% · 3%-скрим `opacity → 0` |
+| `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-container-on` |
+| `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-container-on` |
+| `.pcard__feedback` (#4) | товар `#reviews` | текст рейтинга `surface-on-high → accent-container-on` (звезда остаётся warning) |
+
+Фокус-обводка — на каждой ссылке отдельно (`:focus-visible`). Оверлеи над фото: избранное (`.btn-favorites`) — своя кнопка-тоггл (pointer-events:auto); бейджи — `pointer-events:none`, hover/клик проходят к ссылке-фото. Флаг теперь `pointer-events:auto` (ловит hover для тултипа) — зум фото остаётся на остальной площади. Все hover-переходы гасятся при `prefers-reduced-motion: reduce` (зум фото отключается).
+
+### Тултипы (компонент `awds-component-tooltip`, подключи `tooltip.css`)
+
+Триггер `.pcard__tip` (обёртка). Показ по `:hover`/`:focus-within` с задержкой **400мс**, скрытие почти мгновенно (спека tooltip). Тултип — `contrast`/`compact`/`--top` (выпадает **сверху** от элемента, хвост вниз), центрирован по горизонтали относительно триггера.
+
+| Где | `.pcard__tip` на | Текст |
+|---|---|---|
+| Флаг страны | `.pcard__country` | страна (из данных карточки) |
+| Избранное | обёртка вокруг `.btn-favorites` | «Добавить в избранное» |
+
+Точное избегание выхода тултипа за край экрана — на JS-контроллере (как в спеке tooltip); CSS даёт показ/скрытие и центрирование под триггером.
+
+## Опциональные элементы
+
+Любой оверлей можно убрать — карточка не сломается:
+
+- **`.pcard__country`** — флаг страны-поставщика (24px `<img>`/`<svg>`). Нет страны → убери блок.
+- **`.pcard__badges`** — маркет-бейджи (компонент `awds-component-badge`, подключи `badge.css`): `badge-market-percent` (акцент) для скидки в %, `badge-market-sale` (бренд-primary) для «Скидка». Можно один, оба или ни одного.
+- **`.btn-favorites`** — избранное (компонент `awds-component-button-favorites`, подключи `button-favorites.css`). Нет логики избранного → убери кнопку.
+
+## Поля для биндинга (PageCraft / SSR)
+
+| Слот | Куда |
+|---|---|
+| Ссылка на товар | `.pcard__image-link[href]` + `.pcard__name[href]` |
+| Ссылка на бренд | `.pcard__brand[href]` |
+| Ссылка на отзывы | `.pcard__feedback[href]` (якорь `#reviews` товара) |
+| Фото | `.pcard__image[src]` / `.pcard__image-link[aria-label]` |
+| Флаг страны | `.pcard__country img[src]` |
+| Цена | `.pcard__price-value` (число), `.pcard__price-currency` (символ) |
+| Бренд | `.pcard__brand` |
+| Название | `.pcard__name` |
+| Рейтинг / отзывы | `.pcard__rating-text` |
+| Скидка % | `.badge-market-percent` (текст) |
+| Состояние избранного | `.btn-favorites[aria-pressed]` |
+
+## Токены
+
+Все значения — через DS. Полная карта — в шапке `product-card-price-first.css` и в `SKILL.md`. Цвета: `surface-on-highest` (текст + скрим над фото @ opacity-5), `accent-container-on` (бренд/название на hover), `surface-on-high` (рейтинг), `surface-bright` (фон медиа = рамка вокруг уменьшенного фото), `warning-core` (звезда). Теней нет. Бейджи и избранное — внешние компоненты (`badge.css`, `button-favorites.css`).

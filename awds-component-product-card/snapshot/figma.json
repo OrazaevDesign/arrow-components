@@ -1,0 +1,195 @@
+{
+  "_note": "Raw Figma MCP responses captured at bootstrap. ACB-owned.",
+  "_refresh_2026_06_22": {
+    "summary": "Рефреш под макет + правки заказчика. Из Figma подтверждены: 3% тёмный скрим над фото (rgba(0,0,0,0.03) → DS округление к opacity-5), бренд/название = ссылки link/accent. Бейджи переведены на внешний компонент awds-component-badge (.badge-market-*). Поведенческие правки (не из variable_defs, требование заказчика): фото scale(1.3) по hover, скрим убирается по hover, тень покоя медиа (shadow-elevation-2) убирается по hover. ВТОРАЯ итерация: карточка из единого <a> разбита на контейнер <div> + 4 отдельные ссылки со своим hover — фото (.pcard__image-link → товар), бренд (→ бренд), название (→ товар), отзывы (.pcard__feedback → товар #reviews). Эффекты фото перенесены с .pcard:hover на .pcard__image-link:hover; флаг и бейджи pointer-events:none, избранное pointer-events:auto. ТРЕТЬЯ итерация: тени убраны полностью (ни в одном состоянии); зум инвертирован — в покое фото scale(0.9) (−10%, видна рамка surface-bright), по hover scale(1) (100%).",
+    "link_accent_hover": "rgb(var(--accent-container-on))",
+    "media_overlay": "rgba(0,0,0,0.03) → rgb(var(--surface-on-highest) / var(--awds-opacity-5))"
+  },
+  "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
+  "file_name": "🔶 B2C ↪ ¹ Componets",
+  "primary_node_id": "7460:1800",
+  "frame_name": "product-card / price-first",
+  "metadata": {
+    "frame": { "id": "7460:1800", "name": "product-card / price-first", "width": 448, "height": 385 },
+    "views": {
+      "desktop-tablet": { "id": "6130:27773", "name": "View=Desktop-Tablet", "width": 174, "height": 345 },
+      "mobile": { "id": "6130:27780", "name": "View=Mobile", "width": 174, "height": 335 }
+    }
+  },
+  "variable_defs": {
+    "desktop-tablet": {
+      "node_id": "6130:27773",
+      "vars": {
+        "opacity/color": "100",
+        "badge/market/percent/color": "#fff9f5",
+        "badge/market/percent/bg": "#cc4033",
+        "badge/market/percent/chroma": "#d65745",
+        "badge/market/percent/border": "#cc4033",
+        "badge/market/sale/color": "#19110a",
+        "badge/market/sale/chroma": "#fce279",
+        "badge/market/sale/bg": "#fad646",
+        "badge/market/sale/border": "#fad646",
+        "rectangle/100/gap": "2",
+        "rectangle/100/padding": "4",
+        "rectangle/100/rounded": "6",
+        "opacity/control/enabled": "100",
+        "control/font-size/300": "13",
+        "control/line-height/300": "16",
+        "control/letter-spacing/300": "0.1",
+        "control/font-size/850": "20",
+        "control/line-height/850": "28",
+        "control/letter-spacing/850": "-0.1",
+        "font-size/300": "13",
+        "line-height/300": "16",
+        "letter-spacing/300": "0.1",
+        "space/0,5": "2",
+        "space/1": "4",
+        "space/2": "8",
+        "space/2,5": "10",
+        "border-radius/500": "8",
+        "role/surface/bright": "#ffffff",
+        "role/surface/on-high": "#646464",
+        "role/surface/on-highest": "#080808",
+        "link/accent": "#080808",
+        "typography/font-size/600": "16",
+        "typography/line-height-compact/600": "19",
+        "typography/letter-spacing/600": "0",
+        "typography/font-size/400": "14",
+        "typography/line-height-compact/400": "17",
+        "typography/letter-spacing/400": "0",
+        "rating/selected/bg": "#f97316",
+        "layout/market/card/slider-min": "170",
+        "layout/market/card/slider-max": "368"
+      }
+    },
+    "mobile": {
+      "node_id": "6130:27780",
+      "vars": {
+        "opacity/color": "100",
+        "badge/market/percent/color": "#fff9f5",
+        "badge/market/percent/bg": "#cc4033",
+        "badge/market/percent/chroma": "#d65745",
+        "badge/market/percent/border": "#cc4033",
+        "badge/market/sale/color": "#19110a",
+        "badge/market/sale/chroma": "#fce279",
+        "badge/market/sale/bg": "#fad646",
+        "badge/market/sale/border": "#fad646",
+        "rectangle/50/gap": "2",
+        "rectangle/50/padding": "2",
+        "rectangle/50/rounded": "4",
+        "opacity/control/enabled": "100",
+        "control/font-size/500": "15",
+        "control/line-height/500": "20",
+        "control/letter-spacing/500": "0",
+        "control/font-size/200": "12",
+        "control/line-height/200": "16",
+        "control/letter-spacing/200": "0.1",
+        "font-size/200": "12",
+        "line-height/200": "16",
+        "letter-spacing/200": "0.1",
+        "space/px": "1",
+        "space/0,5": "2",
+        "space/1": "4",
+        "space/1,5": "6",
+        "space/2": "8",
+        "border-radius/400": "8",
+        "role/surface/bright": "#ffffff",
+        "role/surface/on-high": "#646464",
+        "role/surface/on-highest": "#080808",
+        "link/accent": "#080808",
+        "typography/font-size/600": "16",
+        "typography/line-height-compact/600": "19",
+        "typography/letter-spacing/600": "0",
+        "typography/font-size/400": "14",
+        "typography/line-height-compact/400": "17",
+        "typography/letter-spacing/400": "0",
+        "rating/selected/bg": "#f97316",
+        "layout/market/card/slider-min": "170",
+        "layout/market/card/slider-max": "368"
+      }
+    }
+  },
+  "token_resolution": {
+    "_comment": "Figma token → DS value used in CSS (via arrow-design-system/references/component-token-map.json + tokens-units/typography).",
+    "colors": {
+      "role/surface/on-highest": "rgb(var(--surface-on-highest))",
+      "role/surface/on-high": "rgb(var(--surface-on-high))",
+      "role/surface/bright": "rgb(var(--surface-bright))",
+      "link/accent": "rgb(var(--surface-on-highest)) (rest) → rgb(var(--accent-container-on)) (hover) — бренд/название",
+      "media/overlay (3%)": "rgb(var(--surface-on-highest) / var(--awds-opacity-5)) — скрим над фото, убирается по hover",
+      "badge/market/*": "внешний компонент awds-component-badge (.badge-market-percent → accent, .badge-market-sale → primary)",
+      "rating/selected/bg": "rgb(var(--warning-core))"
+    },
+    "sizes": {
+      "rectangle/100": "var(--awds-rectangle-100-*) — desktop badge",
+      "rectangle/50": "var(--awds-rectangle-50-*) — mobile badge",
+      "border-radius/500": "var(--awds-rounded-500) — media corners",
+      "control/850": "var(--awds-control-850-*) — price value desktop",
+      "control/500": "var(--awds-control-500-*) — price value mobile",
+      "control/300": "var(--awds-control-300-*) — currency/feedback desktop",
+      "control/200": "var(--awds-control-200-*) — currency/feedback mobile",
+      "typography/600 compact": "var(--awds-typography-font-size-600) + var(--awds-typography-line-height-compact-600) — brand",
+      "typography/400 compact": "var(--awds-typography-font-size-400) + var(--awds-typography-line-height-compact-400) — name",
+      "space scale": "space/0,5→space-0-5, space/1→space-1, space/1,5→space-1-5, space/2→space-2, space/2,5→space-2-5, space/px→space-px"
+    }
+  },
+  "brand_first": {
+    "_note": "Вариант Product Card / Brand First (node 7460:2601, views Desktop 6130:27833 / Mobile 6130:27842). Центрированный контент, порядок рейтинг→бренд→название→цена→кнопка корзины. Бейджи по центру снизу, флага нет. Hover-модель фото — как у price-first (scale 0.9→1, 3%-скрим, без теней). Свотчи цветов из макета убраны по требованию заказчика.",
+    "variable_defs": {
+      "desktop": {
+        "badge": "rectangle/100, padding space/2", "favorites": "40px",
+        "feedback": "control/300 (13) text surface-on-high, star warning-core 16px",
+        "brand": "link/catalog/default (#2E3034) typography/600 — нет catalog-роли в DS → surface-on-high",
+        "name": "link/accent (#080808) typography/400 — surface-on-highest, 1 строка",
+        "price": "value control/600 (16), currency control/300 (13), surface-on-highest",
+        "cart": "Button/Primary rectangle/400 — компонент awds-component-button .btn--400"
+      },
+      "mobile": {
+        "badge": "rectangle/50, padding space/1", "favorites": "32px (.btn-favorites--mobile)",
+        "feedback": "control/200 (12)",
+        "price": "value control/300 (13), currency control/50 (10)",
+        "cart": "Button/Primary rectangle/300 — .btn--300",
+        "content_gap": "space/1,5 (6px)"
+      }
+    },
+    "token_resolution": {
+      "link/catalog/default": "нет роли в DS → ближайшая rgb(var(--surface-on-high)); hover rgb(var(--accent-container-on))",
+      "link/accent": "rgb(var(--surface-on-highest)); hover rgb(var(--accent-container-on))",
+      "control/600": "var(--awds-control-600-*) — price value desktop",
+      "control/300 (price value mobile)": "var(--awds-control-300-*)",
+      "control/50": "var(--awds-control-50-*) — currency mobile",
+      "button/primary": "внешний awds-component-button (.btn .btn-primary .btn--400/300)"
+    }
+  },
+  "tooltips_2026_06_22": {
+    "_note": "Добавлены тултипы (компонент awds-component-tooltip) поверх оверлеев — не из Figma, требование заказчика. Триггер .pcard__tip: флаг страны (текст = страна из данных карточки; price-first + buy-now) и обёртка избранного («Добавить в избранное»; все 3 варианта; brand-first — только избранное, флага нет). CSS-hover: показ по hover/focus-within с задержкой 400мс, скрытие почти мгновенно (по спеке tooltip). Тултип contrast/compact/side-top (выпадает сверху от элемента, хвост вниз), по центру над триггером. Флаг получил pointer-events:auto (ловит hover для тултипа; зум фото остаётся на остальной площади). Точное избегание выхода за край — на JS-контроллере (как в спеке tooltip)."
+  },
+  "buy_now": {
+    "_note": "Вариант Product Card / Buy Now (node 7460:2602, views Desktop 6130:27887 / Mobile 6130:27896). Контент слева, порядок цена(крупная)→название→рубрика→рейтинг→кнопка корзины. Медиа как у price-first (флаг слева + избранное справа, бейджи слева снизу). Бренда нет — вместо него ссылка на рубрику (link/muted). Hover-модель фото — как у price-first.",
+    "variable_defs": {
+      "desktop": {
+        "badge": "rectangle/100, padding space/2 (слева снизу)", "favorites": "40px", "country": "флаг 24px слева",
+        "price": "value control/850 (20), currency control/300 (13), surface-on-highest",
+        "name": "link/accent (#080808) typography/400 — surface-on-highest, 1 строка",
+        "category": "link/muted (#646464) typography/300 (13/16) — surface-on-high, 1 строка",
+        "feedback": "control/300 (13) surface-on-high, star warning-core 16px",
+        "cart": "Button/Primary rectangle/400 — awds-component-button .btn--400"
+      },
+      "mobile": {
+        "badge": "rectangle/50, padding space/1", "favorites": "32px (.btn-favorites--mobile)",
+        "price": "value control/500 (15), currency control/200 (12)",
+        "category": "typography/300 (13/16)", "feedback": "control/200 (12)",
+        "cart": "Button/Primary rectangle/300 — .btn--300",
+        "content_gap": "space/1,5 (6px)"
+      }
+    },
+    "token_resolution": {
+      "link/accent": "rgb(var(--surface-on-highest)); hover rgb(var(--accent-container-on))",
+      "link/muted": "rgb(var(--surface-on-high)); hover rgb(var(--surface-on-highest)) — рубрика",
+      "control/850": "var(--awds-control-850-*) — price value desktop",
+      "control/500": "var(--awds-control-500-*) — price value mobile",
+      "typography/300 compact": "var(--awds-typography-font-size-300) + line-height-compact-300 — рубрика",
+      "button/primary": "внешний awds-component-button (.btn .btn-primary .btn--400/300)"
+    }
+  }
+}

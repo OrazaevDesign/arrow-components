@@ -1,0 +1,64 @@
+{
+  "component": "product-card",
+  "figma": {
+    "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
+    "file_name": "🔶 B2C ↪ ¹ Componets",
+    "primary_node_id": "7460:1800",
+    "primary_url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800"
+  },
+  "variants": {
+    "price-first": { "node_id": "7460:1800", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800", "figma_label": "product-card / price-first" },
+    "brand-first": { "node_id": "7460:2601", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2601", "figma_label": "Product Card / Brand First" },
+    "buy-now": { "node_id": "7460:2602", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2602", "figma_label": "Product Card / Buy Now" }
+  },
+  "shape": null,
+  "size_scale": null,
+  "views": ["desktop-tablet", "mobile"],
+  "states": ["rest"],
+  "color_tokens": ["bg", "chroma", "border", "color"],
+  "css_files": ["product-card-price-first.css", "product-card-brand-first.css", "product-card-buy-now.css"],
+  "composes": [
+    "awds-component-button-favorites (.btn-favorites — кнопка избранного в .pcard__top; требует button-favorites.css)",
+    "awds-component-badge (.badge-market-percent / -sale — маркет-бейджи в .pcard__badges; требует badge.css; --100 desktop / --50 mobile)",
+    "awds-component-button (.btn .btn-primary — кнопка «В корзину» в brand-first и buy-now; требует button.css; --400 desktop / --300 mobile)",
+    "awds-component-tooltip (.tooltip на .pcard__tip — подсказка на флаге страны (текст = страна из данных; price-first/buy-now) и на избранном («Добавить в избранное»; все варианты); требует tooltip.css; показ по hover/focus с задержкой 400мс, скрытие мгновенно)"
+  ],
+  "preview": {
+    "base_class": "pcard",
+    "default_size": null,
+    "matrix_states": ["rest"],
+    "matrix_sizes": null,
+    "toggles": [
+      { "id": "variant", "label": "Вариант", "options": ["price-first", "brand-first", "buy-now"] },
+      { "id": "view", "label": "Вью", "options": ["desktop-tablet", "mobile"] },
+      { "id": "fav", "label": "Избранное", "options": ["off", "on"] },
+      { "id": "image", "label": "Фото", "options": ["with", "placeholder"] }
+    ],
+    "html_samples": [
+      { "label": "price-first", "html": "<a class=\"pcard pcard-price-first\" href=\"#\">…</a>" },
+      { "label": "brand-first", "html": "<div class=\"pcard pcard-brand-first\">…</div>" },
+      { "label": "buy-now", "html": "<div class=\"pcard pcard-buy-now\">…</div>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-surface-on-highest",
+    "--color-surface-on-high",
+    "--color-surface-bright",
+    "--color-accent-container-on",
+    "--color-warning-core",
+    "--awds-control-50-*", "--awds-control-200-*", "--awds-control-300-*", "--awds-control-500-*", "--awds-control-600-*", "--awds-control-850-*",
+    "--awds-typography-font-size-300", "--awds-typography-line-height-compact-300", "--awds-typography-letter-spacing-300",
+    "--awds-typography-font-size-400", "--awds-typography-line-height-compact-400", "--awds-typography-letter-spacing-400",
+    "--awds-typography-font-size-600", "--awds-typography-line-height-compact-600", "--awds-typography-letter-spacing-600",
+    "--awds-space-0-5", "--awds-space-px", "--awds-space-1", "--awds-space-1-5", "--awds-space-2", "--awds-space-2-5", "--awds-space-4", "--awds-space-5", "--awds-space-12",
+    "--awds-rounded-500", "--awds-rounded-200",
+    "--awds-opacity-5", "--awds-opacity-40",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular", "--awds-font-weight-semibold"
+  ],
+  "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). price-first: control-850/500. brand-first: control-600/300/50, кнопка корзины (button). buy-now: control-850/500, typography-300 (рубрика link/muted), кнопка корзины (button).",
+  "last_synced": "2026-06-22T13:39:11Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:48f7e124faa47f9ae790c87e06ff3d0f7a96b679516030af9b13013ea0315bfc",
+  "published": null
+}
