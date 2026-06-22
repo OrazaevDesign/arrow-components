@@ -47,5 +47,22 @@
   "last_synced": "2026-06-22T11:02:57Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:72aa1559f9bd2bef62ee03eaee11a11b521664297fbeb652410247f9bb75aeaa",
-  "published": null
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "a98c53a",
+    "pushed_at": "2026-06-22T11:33:17Z",
+    "github_urls": {
+      "market-percent": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-percent.md",
+      "market-sale":    "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-sale.md",
+      "market-new":     "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-new.md",
+      "market-brand":   "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-brand.md"
+    },
+    "dev_resources_status": {
+      "market-percent": { "status": "linked", "method": "component_description", "node_id": "2093:5286", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
+      "market-sale":    { "status": "linked", "method": "component_description", "node_id": "2093:5417", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
+      "market-new":     { "status": "linked", "method": "component_description", "node_id": "2093:5374", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
+      "market-brand":   { "status": "linked", "method": "component_description", "node_id": "2093:5331", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
+      "set":            { "status": "linked", "method": "component_description", "node_id": "2093:5285", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" }
+    }
+  }
 }
