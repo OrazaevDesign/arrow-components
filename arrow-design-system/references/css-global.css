@@ -211,6 +211,41 @@
   --awds-typography-letter-spacing-980: -0.006em;
   --awds-typography-letter-spacing-1000: -0.006em;
 
+  /* === Semantic type roles (ось масштаба типографики, дефолт = Medium) === */
+  --awds-type-h1-fs: var(--awds-typography-font-size-930);
+  --awds-type-h1-lh: var(--awds-typography-line-height-compact-920);
+  --awds-type-h1-ls: var(--awds-typography-letter-spacing-920);
+  --awds-type-h2-fs: var(--awds-typography-font-size-920);
+  --awds-type-h2-lh: var(--awds-typography-line-height-compact-920);
+  --awds-type-h2-ls: var(--awds-typography-letter-spacing-920);
+  --awds-type-h3-fs: var(--awds-typography-font-size-910);
+  --awds-type-h3-lh: var(--awds-typography-line-height-compact-910);
+  --awds-type-h3-ls: var(--awds-typography-letter-spacing-910);
+  --awds-type-h4-fs: var(--awds-typography-font-size-900);
+  --awds-type-h4-lh: var(--awds-typography-line-height-compact-900);
+  --awds-type-h4-ls: var(--awds-typography-letter-spacing-900);
+  --awds-type-h5-fs: var(--awds-typography-font-size-700);
+  --awds-type-h5-lh: var(--awds-typography-line-height-compact-700);
+  --awds-type-h5-ls: var(--awds-typography-letter-spacing-700);
+  --awds-type-h6-fs: var(--awds-typography-font-size-600);
+  --awds-type-h6-lh: var(--awds-typography-line-height-compact-600);
+  --awds-type-h6-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-body-fs: var(--awds-typography-font-size-600);
+  --awds-type-body-lh: var(--awds-typography-line-height-600);
+  --awds-type-body-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-lead-fs: var(--awds-typography-font-size-800);
+  --awds-type-lead-lh: var(--awds-typography-line-height-800);
+  --awds-type-lead-ls: var(--awds-typography-letter-spacing-800);
+  --awds-type-caption-fs: var(--awds-typography-font-size-300);
+  --awds-type-caption-lh: var(--awds-typography-line-height-300);
+  --awds-type-caption-ls: var(--awds-typography-letter-spacing-300);
+  --awds-type-code-fs: var(--awds-typography-font-size-600);
+  --awds-type-code-lh: var(--awds-typography-line-height-600);
+  --awds-type-code-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-quote-fs: var(--awds-typography-font-size-910);
+  --awds-type-quote-lh: var(--awds-typography-line-height-910);
+  --awds-type-quote-ls: var(--awds-typography-letter-spacing-910);
+
   /* === Control typography (Control/Value) — для кнопок, инпутов === */
   --awds-control-50-font-size: 10px;
   --awds-control-100-font-size: 11px;
@@ -605,6 +640,116 @@
   --awds-rounded-900: var(--awds-rounded-900-rounded);
   --awds-rounded-full: var(--awds-rounded-full-rounded);
   --awds-rounded-none: var(--awds-rounded-none-rounded);
+}
+
+/* === Typography scale mode classes (масштаб: Small/Medium/Large) === */
+/* На <html> рядом с theme-* (страница) или на корень блока (локально). Без класса :root = Medium. */
+.typo-large {
+  --awds-type-h1-fs: var(--awds-typography-font-size-940);
+  --awds-type-h1-lh: var(--awds-typography-line-height-compact-940);
+  --awds-type-h1-ls: var(--awds-typography-letter-spacing-940);
+  --awds-type-h2-fs: var(--awds-typography-font-size-930);
+  --awds-type-h2-lh: var(--awds-typography-line-height-compact-930);
+  --awds-type-h2-ls: var(--awds-typography-letter-spacing-930);
+  --awds-type-h3-fs: var(--awds-typography-font-size-920);
+  --awds-type-h3-lh: var(--awds-typography-line-height-compact-920);
+  --awds-type-h3-ls: var(--awds-typography-letter-spacing-920);
+  --awds-type-h4-fs: var(--awds-typography-font-size-910);
+  --awds-type-h4-lh: var(--awds-typography-line-height-compact-910);
+  --awds-type-h4-ls: var(--awds-typography-letter-spacing-910);
+  --awds-type-h5-fs: var(--awds-typography-font-size-800);
+  --awds-type-h5-lh: var(--awds-typography-line-height-compact-800);
+  --awds-type-h5-ls: var(--awds-typography-letter-spacing-800);
+  --awds-type-h6-fs: var(--awds-typography-font-size-700);
+  --awds-type-h6-lh: var(--awds-typography-line-height-compact-700);
+  --awds-type-h6-ls: var(--awds-typography-letter-spacing-700);
+  --awds-type-body-fs: var(--awds-typography-font-size-700);
+  --awds-type-body-lh: var(--awds-typography-line-height-700);
+  --awds-type-body-ls: var(--awds-typography-letter-spacing-700);
+  --awds-type-lead-fs: var(--awds-typography-font-size-900);
+  --awds-type-lead-lh: var(--awds-typography-line-height-900);
+  --awds-type-lead-ls: var(--awds-typography-letter-spacing-900);
+  --awds-type-caption-fs: var(--awds-typography-font-size-400);
+  --awds-type-caption-lh: var(--awds-typography-line-height-400);
+  --awds-type-caption-ls: var(--awds-typography-letter-spacing-400);
+  --awds-type-code-fs: var(--awds-typography-font-size-700);
+  --awds-type-code-lh: var(--awds-typography-line-height-700);
+  --awds-type-code-ls: var(--awds-typography-letter-spacing-700);
+  --awds-type-quote-fs: var(--awds-typography-font-size-930);
+  --awds-type-quote-lh: var(--awds-typography-line-height-930);
+  --awds-type-quote-ls: var(--awds-typography-letter-spacing-930);
+}
+
+.typo-medium {
+  --awds-type-h1-fs: var(--awds-typography-font-size-930);
+  --awds-type-h1-lh: var(--awds-typography-line-height-compact-920);
+  --awds-type-h1-ls: var(--awds-typography-letter-spacing-920);
+  --awds-type-h2-fs: var(--awds-typography-font-size-920);
+  --awds-type-h2-lh: var(--awds-typography-line-height-compact-920);
+  --awds-type-h2-ls: var(--awds-typography-letter-spacing-920);
+  --awds-type-h3-fs: var(--awds-typography-font-size-910);
+  --awds-type-h3-lh: var(--awds-typography-line-height-compact-910);
+  --awds-type-h3-ls: var(--awds-typography-letter-spacing-910);
+  --awds-type-h4-fs: var(--awds-typography-font-size-900);
+  --awds-type-h4-lh: var(--awds-typography-line-height-compact-900);
+  --awds-type-h4-ls: var(--awds-typography-letter-spacing-900);
+  --awds-type-h5-fs: var(--awds-typography-font-size-700);
+  --awds-type-h5-lh: var(--awds-typography-line-height-compact-700);
+  --awds-type-h5-ls: var(--awds-typography-letter-spacing-700);
+  --awds-type-h6-fs: var(--awds-typography-font-size-600);
+  --awds-type-h6-lh: var(--awds-typography-line-height-compact-600);
+  --awds-type-h6-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-body-fs: var(--awds-typography-font-size-600);
+  --awds-type-body-lh: var(--awds-typography-line-height-600);
+  --awds-type-body-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-lead-fs: var(--awds-typography-font-size-800);
+  --awds-type-lead-lh: var(--awds-typography-line-height-800);
+  --awds-type-lead-ls: var(--awds-typography-letter-spacing-800);
+  --awds-type-caption-fs: var(--awds-typography-font-size-300);
+  --awds-type-caption-lh: var(--awds-typography-line-height-300);
+  --awds-type-caption-ls: var(--awds-typography-letter-spacing-300);
+  --awds-type-code-fs: var(--awds-typography-font-size-600);
+  --awds-type-code-lh: var(--awds-typography-line-height-600);
+  --awds-type-code-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-quote-fs: var(--awds-typography-font-size-910);
+  --awds-type-quote-lh: var(--awds-typography-line-height-910);
+  --awds-type-quote-ls: var(--awds-typography-letter-spacing-910);
+}
+
+.typo-small {
+  --awds-type-h1-fs: var(--awds-typography-font-size-920);
+  --awds-type-h1-lh: var(--awds-typography-line-height-compact-920);
+  --awds-type-h1-ls: var(--awds-typography-letter-spacing-920);
+  --awds-type-h2-fs: var(--awds-typography-font-size-910);
+  --awds-type-h2-lh: var(--awds-typography-line-height-compact-910);
+  --awds-type-h2-ls: var(--awds-typography-letter-spacing-910);
+  --awds-type-h3-fs: var(--awds-typography-font-size-900);
+  --awds-type-h3-lh: var(--awds-typography-line-height-compact-900);
+  --awds-type-h3-ls: var(--awds-typography-letter-spacing-900);
+  --awds-type-h4-fs: var(--awds-typography-font-size-800);
+  --awds-type-h4-lh: var(--awds-typography-line-height-compact-800);
+  --awds-type-h4-ls: var(--awds-typography-letter-spacing-800);
+  --awds-type-h5-fs: var(--awds-typography-font-size-600);
+  --awds-type-h5-lh: var(--awds-typography-line-height-compact-600);
+  --awds-type-h5-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-h6-fs: var(--awds-typography-font-size-400);
+  --awds-type-h6-lh: var(--awds-typography-line-height-compact-400);
+  --awds-type-h6-ls: var(--awds-typography-letter-spacing-400);
+  --awds-type-body-fs: var(--awds-typography-font-size-400);
+  --awds-type-body-lh: var(--awds-typography-line-height-400);
+  --awds-type-body-ls: var(--awds-typography-letter-spacing-400);
+  --awds-type-lead-fs: var(--awds-typography-font-size-600);
+  --awds-type-lead-lh: var(--awds-typography-line-height-600);
+  --awds-type-lead-ls: var(--awds-typography-letter-spacing-600);
+  --awds-type-caption-fs: var(--awds-typography-font-size-200);
+  --awds-type-caption-lh: var(--awds-typography-line-height-200);
+  --awds-type-caption-ls: var(--awds-typography-letter-spacing-200);
+  --awds-type-code-fs: var(--awds-typography-font-size-400);
+  --awds-type-code-lh: var(--awds-typography-line-height-400);
+  --awds-type-code-ls: var(--awds-typography-letter-spacing-400);
+  --awds-type-quote-fs: var(--awds-typography-font-size-800);
+  --awds-type-quote-lh: var(--awds-typography-line-height-800);
+  --awds-type-quote-ls: var(--awds-typography-letter-spacing-800);
 }
 
 /* === Typography scale — tablet/desktop (mobile-first) === */
