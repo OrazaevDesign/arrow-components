@@ -7,16 +7,42 @@
     "primary_url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800"
   },
   "variants": {
-    "price-first": { "node_id": "7460:1800", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800", "figma_label": "product-card / price-first" },
-    "brand-first": { "node_id": "7460:2601", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2601", "figma_label": "Product Card / Brand First" },
-    "buy-now": { "node_id": "7460:2602", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2602", "figma_label": "Product Card / Buy Now" }
+    "price-first": {
+      "node_id": "7460:1800",
+      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800",
+      "figma_label": "product-card / price-first"
+    },
+    "brand-first": {
+      "node_id": "7460:2601",
+      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2601",
+      "figma_label": "Product Card / Brand First"
+    },
+    "buy-now": {
+      "node_id": "7460:2602",
+      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2602",
+      "figma_label": "Product Card / Buy Now"
+    }
   },
   "shape": null,
   "size_scale": null,
-  "views": ["desktop-tablet", "mobile"],
-  "states": ["rest"],
-  "color_tokens": ["bg", "chroma", "border", "color"],
-  "css_files": ["product-card-price-first.css", "product-card-brand-first.css", "product-card-buy-now.css"],
+  "views": [
+    "desktop-tablet",
+    "mobile"
+  ],
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
+  "css_files": [
+    "product-card-price-first.css",
+    "product-card-brand-first.css",
+    "product-card-buy-now.css"
+  ],
   "composes": [
     "awds-component-button-favorites (.btn-favorites — кнопка избранного в .pcard__top; требует button-favorites.css)",
     "awds-component-badge (.badge-market-percent / -sale — маркет-бейджи в .pcard__badges; требует badge.css; --100 desktop / --50 mobile)",
@@ -28,21 +54,83 @@
   "preview": {
     "base_class": "pcard",
     "default_size": null,
-    "matrix_states": ["rest"],
+    "matrix_states": [
+      "rest"
+    ],
     "matrix_sizes": null,
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["price-first", "brand-first", "buy-now"] },
-      { "id": "view", "label": "Вью", "options": ["desktop-tablet", "mobile"] },
-      { "id": "fav", "label": "Избранное", "options": ["off", "on"] },
-      { "id": "image", "label": "Фото", "options": ["with", "placeholder"] },
-      { "id": "cart", "label": "Корзина", "options": ["button", "stepper"] },
-      { "id": "price", "label": "Цена", "options": ["default", "sale", "none"] },
-      { "id": "frames", "label": "Кадры", "options": ["3", "10"] }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "price-first",
+          "brand-first",
+          "buy-now"
+        ]
+      },
+      {
+        "id": "view",
+        "label": "Вью",
+        "options": [
+          "desktop-tablet",
+          "mobile"
+        ]
+      },
+      {
+        "id": "fav",
+        "label": "Избранное",
+        "options": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "image",
+        "label": "Фото",
+        "options": [
+          "with",
+          "placeholder"
+        ]
+      },
+      {
+        "id": "cart",
+        "label": "Корзина",
+        "options": [
+          "button",
+          "stepper"
+        ]
+      },
+      {
+        "id": "price",
+        "label": "Цена",
+        "options": [
+          "default",
+          "sale",
+          "none"
+        ]
+      },
+      {
+        "id": "frames",
+        "label": "Кадры",
+        "options": [
+          "3",
+          "10"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "price-first", "html": "<a class=\"pcard pcard-price-first\" href=\"#\">…</a>" },
-      { "label": "brand-first", "html": "<div class=\"pcard pcard-brand-first\">…</div>" },
-      { "label": "buy-now", "html": "<div class=\"pcard pcard-buy-now\">…</div>" }
+      {
+        "label": "price-first",
+        "html": "<a class=\"pcard pcard-price-first\" href=\"#\">…</a>"
+      },
+      {
+        "label": "brand-first",
+        "html": "<div class=\"pcard pcard-brand-first\">…</div>"
+      },
+      {
+        "label": "buy-now",
+        "html": "<div class=\"pcard pcard-buy-now\">…</div>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -52,46 +140,100 @@
     "--color-surface-bright",
     "--color-accent-container-on",
     "--color-warning-core",
-    "--color-secondary-core", "--color-secondary-chroma", "--color-secondary-container-on-high",
+    "--color-secondary-core",
+    "--color-secondary-chroma",
+    "--color-secondary-container-on-high",
     "--awds-typography-line-height-400",
-    "--awds-rectangle-400-rounded", "--awds-rectangle-300-rounded",
-    "--awds-control-50-*", "--awds-control-200-*", "--awds-control-300-*", "--awds-control-500-*", "--awds-control-600-*", "--awds-control-850-*",
-    "--awds-typography-font-size-300", "--awds-typography-line-height-compact-300", "--awds-typography-letter-spacing-300",
-    "--awds-typography-font-size-400", "--awds-typography-line-height-compact-400", "--awds-typography-letter-spacing-400",
-    "--awds-typography-font-size-600", "--awds-typography-line-height-compact-600", "--awds-typography-letter-spacing-600",
-    "--awds-typography-font-size-200", "--awds-typography-line-height-200", "--awds-typography-letter-spacing-200",
-    "--awds-typography-line-height-400", "--awds-typography-line-height-600",
-    "--awds-space-0-5", "--awds-space-px", "--awds-space-1", "--awds-space-1-5", "--awds-space-2", "--awds-space-2-5", "--awds-space-3-5", "--awds-space-4", "--awds-space-5", "--awds-space-6", "--awds-space-12",
-    "--awds-rounded-500", "--awds-rounded-200",
-    "--awds-opacity-5", "--awds-opacity-40",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-300-rounded",
+    "--awds-control-50-*",
+    "--awds-control-200-*",
+    "--awds-control-300-*",
+    "--awds-control-500-*",
+    "--awds-control-600-*",
+    "--awds-control-850-*",
+    "--awds-typography-font-size-300",
+    "--awds-typography-line-height-compact-300",
+    "--awds-typography-letter-spacing-300",
+    "--awds-typography-font-size-400",
+    "--awds-typography-line-height-compact-400",
+    "--awds-typography-letter-spacing-400",
+    "--awds-typography-font-size-600",
+    "--awds-typography-line-height-compact-600",
+    "--awds-typography-letter-spacing-600",
+    "--awds-typography-font-size-200",
+    "--awds-typography-line-height-200",
+    "--awds-typography-letter-spacing-200",
+    "--awds-typography-line-height-400",
+    "--awds-typography-line-height-600",
+    "--awds-space-0-5",
+    "--awds-space-px",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-12",
+    "--awds-rounded-500",
+    "--awds-rounded-200",
+    "--awds-opacity-5",
+    "--awds-opacity-40",
     "--awds-font-family-system",
-    "--awds-font-weight-regular", "--awds-font-weight-semibold"
+    "--awds-font-weight-regular",
+    "--awds-font-weight-semibold"
   ],
   "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). price-first: цену даёт компонент awds-component-price (price.css, price--800/600) — собственных control-* для цены больше НЕ использует; рейтинг — typography-200 (caption); флаг 24×24 object-fit:contain. control-* в deps остаются для brand-first (control-600/300/50) и buy-now (control-850/500, зона корзины). Зона корзины (.pcard__cart, Figma .AddCart 6130:27738) встроена вручную в brand-first/buy-now: контейнер степпера (Input/Secondary) стилизуется в самом product-card на secondary-core/-chroma + secondary-container-on-high (form-скилла нет); кнопки −/+/корзина — composed из awds-component-button (ghost/addition). Refresh product-card по его component-set эту зону НЕ перегенерирует.",
   "add_cart": {
     "node_id": "6130:27738",
     "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6130-27738",
     "figma_label": ".AddCart (⚙️ButtonCart var1)",
-    "states": ["button", "stepper"],
-    "views": ["desktop", "mobile"],
-    "composed_from": ["awds-component-button (primary/ghost/addition)", "Input/Secondary (стилизован в product-card)"]
+    "states": [
+      "button",
+      "stepper"
+    ],
+    "views": [
+      "desktop",
+      "mobile"
+    ],
+    "composed_from": [
+      "awds-component-button (primary/ghost/addition)",
+      "Input/Secondary (стилизован в product-card)"
+    ]
   },
   "last_synced": "2026-06-30T14:28:35Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:bf2d698ba336f8bfc11410186ea5e3f08a3ae77883757d7fb9ed9b02406b10e6",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "dd6a5421d998e387476d86257a58fb5804311fdf",
-    "pushed_at": "2026-06-30T14:32:56Z",
+    "commit": "79d2dad",
+    "pushed_at": "2026-06-30T19:08:50Z",
     "github_urls": {
       "price-first": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/references/product-card-price-first.md",
       "brand-first": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/references/product-card-brand-first.md",
-      "buy-now":     "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/references/product-card-buy-now.md"
+      "buy-now": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/references/product-card-buy-now.md"
     },
     "dev_resources_status": {
-      "price-first": { "status": "linked", "method": "component_description", "node_id": "7460:1800", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/SKILL.md" },
-      "brand-first": { "status": "linked", "method": "component_description", "node_id": "7460:2601", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/SKILL.md" },
-      "buy-now":     { "status": "linked", "method": "component_description", "node_id": "7460:2602", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/SKILL.md" }
+      "price-first": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "7460:1800",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/SKILL.md"
+      },
+      "brand-first": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "7460:2601",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/SKILL.md"
+      },
+      "buy-now": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "7460:2602",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/SKILL.md"
+      }
     }
   }
 }
