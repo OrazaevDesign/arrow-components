@@ -1,0 +1,64 @@
+{
+  "component": "heading",
+  "figma": {
+    "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
+    "file_name": "🔶 B2C ↪ ¹ Componets",
+    "primary_node_id": "6128:6392",
+    "primary_url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6128-6392"
+  },
+  "variants": {
+    "heading": { "node_id": "6128:6392", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6128-6392", "figma_label": "Heading / Heading + Button" }
+  },
+  "modifiers": {
+    "level": { "values": ["h1", "h2", "h3", "h4", "h5"], "class": { "h1": "heading--h1", "h2": "heading--h2", "h3": "heading--h3", "h4": "heading--h4", "h5": "heading--h5" }, "default": "h2" },
+    "action": { "values": ["none", "link"], "note": "Опциональная ссылка-действие .heading__action (композиция awds-component-link .lnk.lnk-default + шеврон)." }
+  },
+  "shape": null,
+  "size_scale": ["h1", "h2", "h3", "h4", "h5"],
+  "level_typography_map": {
+    "_note": "level → АДАПТИВНЫЙ примитив typography (--awds-typography-{font-size,line-height-compact,letter-spacing}-{N}). Примитив сам растёт по брейкпоинту (@media в css-global), давая значения Figma для View Desktop/Tablet/Mobile. Сматчено по px из get_variable_defs (WYSIWYG/h{N}).",
+    "h1": { "typography": 920, "px": "22/24/28 (M/T/D)" },
+    "h2": { "typography": 910, "px": "20/20/24" },
+    "h3": { "typography": 900, "px": "19 (фикс)" },
+    "h4": { "typography": 800, "px": "18 (фикс)" },
+    "h5": { "typography": 600, "px": "16 (фикс)" }
+  },
+  "views": ["desktop", "tablet", "mobile"],
+  "states": ["rest"],
+  "color_tokens": ["color"],
+  "css_files": ["heading.css"],
+  "composes": [
+    "awds-component-link (.lnk.lnk-default — ссылка-действие «Все ›» в .heading__action; требует link-default.css; цвет tertiary-container-on-high → hover tertiary-container-on-highest). Опционально: заголовок без действия — просто .heading > .heading__title."
+  ],
+  "preview": {
+    "base_class": "heading",
+    "default_size": "h2",
+    "matrix_states": ["rest"],
+    "matrix_sizes": ["h1", "h2", "h3", "h4", "h5"],
+    "toggles": [
+      { "id": "level",  "label": "Уровень",  "options": ["h1", "h2", "h3", "h4", "h5"] },
+      { "id": "action", "label": "Действие", "options": ["link", "none"] },
+      { "id": "view",   "label": "View",     "options": ["desktop", "tablet", "mobile"] }
+    ],
+    "html_samples": [
+      { "label": "H1 + действие", "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"lnk lnk-default heading__action\" href=\"#\">Все<svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 4l4 4-4 4\"/></svg></a></div>" },
+      { "label": "H3 без действия", "html": "<div class=\"heading heading--h3\"><h3 class=\"heading__title\">Heading</h3></div>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-surface-on-highest",
+    "--awds-typography-font-size-920", "--awds-typography-line-height-compact-920", "--awds-typography-letter-spacing-920",
+    "--awds-typography-font-size-910", "--awds-typography-line-height-compact-910", "--awds-typography-letter-spacing-910",
+    "--awds-typography-font-size-900", "--awds-typography-line-height-compact-900", "--awds-typography-letter-spacing-900",
+    "--awds-typography-font-size-800", "--awds-typography-line-height-compact-800", "--awds-typography-letter-spacing-800",
+    "--awds-typography-font-size-600", "--awds-typography-line-height-compact-600", "--awds-typography-letter-spacing-600",
+    "--awds-control-300-font-size", "--awds-control-300-line-height", "--awds-control-300-letter-spacing",
+    "--awds-space-0-5", "--awds-space-1-5", "--awds-space-4",
+    "--awds-font-family-system", "--awds-font-weight-semibold", "--awds-font-weight-regular"
+  ],
+  "_dependency_note": "Заголовок — адаптивные примитивы typography (920/910/900/800/600), View Desktop/Tablet/Mobile зашит в их @media. Действие «Все ›» — внешний awds-component-link (.lnk.lnk-default, link-default.css), цвет инлайн в нём; здесь только раскладка (.heading__action). Раскладка по View: desktop — действие вплотную к заголовку (gap space-1-5), tablet/mobile — space-between (@media max-width 1067).",
+  "last_synced": "2026-06-30T16:34:41Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:a21e3a5fce1daf8a7088081ea45af274ec16996bd602e2eda549758663634a05",
+  "published": null
+}

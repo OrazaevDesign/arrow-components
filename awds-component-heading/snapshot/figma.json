@@ -1,0 +1,23 @@
+{
+  "_note": "Сырые ответы Figma MCP для awds-component-heading. file_key fgXw7Tlrdfz0gCUi2xbZDt, node 6128:6392 (Heading / Heading + Button). get_variable_defs по ключевым символам (Desktop H1..H5 + Tablet/Mobile H1) — остальные View выводятся из адаптивных примитивов typography.",
+  "component_set": {
+    "node_id": "6128:6392",
+    "name": "Heading / Heading + Button",
+    "axes": { "View": ["Desktop", "Tablet", "Mobile"], "Heading": ["H1", "H2", "H3", "H4", "H5"] }
+  },
+  "variable_defs": {
+    "Desktop/H1 (6128:6393)": { "WYSIWYG/font-size/h1": 28, "WYSIWYG/line-height/h1": 34, "WYSIWYG/letter-spacing/h1": -0.3, "font-family": "Inter", "font-weight": "semibold", "role/surface/on-highest": "#080808", "link/default": "#4764d4", "font-size/300": 13, "line-height/300": 16, "letter-spacing/300": 0.1, "rectangle/100/gap": 2, "space/1,5": 6 },
+    "Tablet/H1 (6128:6408)":  { "WYSIWYG/font-size/h1": 24, "WYSIWYG/line-height/h1": 29, "WYSIWYG/letter-spacing/h1": -0.3 },
+    "Mobile/H1 (6128:6423)":  { "WYSIWYG/font-size/h1": 22, "WYSIWYG/line-height/h1": 26, "WYSIWYG/letter-spacing/h1": -0.3 },
+    "Desktop/H2 (6128:6396)": { "WYSIWYG/font-size/h2": 24, "WYSIWYG/line-height/h2": 29, "WYSIWYG/letter-spacing/h2": -0.2 },
+    "Desktop/H3 (6128:6399)": { "WYSIWYG/font-size/h3": 19, "WYSIWYG/line-height/h3": 24, "WYSIWYG/letter-spacing/h3": -0.2 },
+    "Desktop/H4 (6128:6402)": { "WYSIWYG/font-size/h4": 18, "WYSIWYG/line-height/h4": 22, "WYSIWYG/letter-spacing/h4": -0.2 },
+    "Desktop/H5 (6128:6405)": { "WYSIWYG/font-size/h5": 16, "WYSIWYG/line-height/h5": 19, "WYSIWYG/letter-spacing/h5": 0 }
+  },
+  "design_context": {
+    "structure": "div.heading > (p.heading__title) + (Button Area/Default: a.lnk.lnk-default > text 'Все' + suffix svg chevron-right 16px)",
+    "action": { "text": "Все", "color_token": "link/default (#4764d4)", "font": "font-size/300 13 / line-height/300 16 / letter-spacing/300 0.1, regular", "icon": "ic20-chevron-right 16px", "text_icon_gap": "rectangle/100/gap 2px" },
+    "layout": { "container": "flex, items-end, gap space/1,5 (6px)", "view_desktop": "действие вплотную к заголовку (gap 6px)", "view_tablet_mobile": "действие к правому краю (space-between)" },
+    "note_pt": "В символе есть pt-[wysiwyg/gap/h{N}] — это вертикальный ритм НАД заголовком (flow-spacing), в компонент не закладываем (отступ задаёт контекст/потребитель)."
+  }
+}
