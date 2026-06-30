@@ -133,11 +133,14 @@
   letter-spacing: var(--awds-price-ls-sec);
 }
 
-/* Плейсхолдер «Нет в наличии» (тип none) — приглушённый, вторичная шкала */
+/* Плейсхолдер «Нет в наличии» (тип none) — приглушённый, вторичный КЕГЛЬ, но
+   ОСНОВНАЯ line-height: высота блока none = высоте блока с ценой, поэтому переключение
+   наличия НЕ меняет высоту (текст центрируется в строке). Как в макете — у одного
+   размера Sale/Default/None одинаковая высота. */
 .price__placeholder {
   color: var(--awds-price-muted);
   font-size: var(--awds-price-fs-sec);
-  line-height: var(--awds-price-lh-sec);
+  line-height: var(--awds-price-lh);     /* основная (не -sec) — держит высоту цены */
   letter-spacing: var(--awds-price-ls-sec);
 }
 

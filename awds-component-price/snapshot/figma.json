@@ -1,5 +1,6 @@
 {
   "_note": "Сырой снимок Figma MCP для awds-component-price. Два Component Set: горизонтальный (Price ↔, 2093:1971) и вертикальный (Price ↕, 2093:912). Оси: Size (100..1100) × Type (Sale/Default/None) × Side (Right/Left).",
+  "_fix_2026_06_30_height": "В макете у одного размера Sale/Default/None одинаковая высота (напр. 1100 ↔ = 40px у всех типов). Раньше .price__placeholder (none) брал вторичную line-height → блок none был ниже, контент под ценой прыгал. Исправлено: placeholder использует основную line-height (--awds-price-lh) при вторичном кегле — высота none = высоте default/sale, текст центрируется. Переключение наличия не меняет высоту блока.",
   "file_key": "UCYhMA1JeNUNuVGsxUEne7",
   "file_name": "💠 Comp ↪ ¹ Elemets",
   "sets": {
