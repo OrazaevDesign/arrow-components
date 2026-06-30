@@ -1,0 +1,68 @@
+{
+  "_note": "Figma .AddCart (⚙️ButtonCart var1), node 6130:27738 — встроена в product-card как зона .pcard__cart (buy-now/brand-first). Сырой ответ MCP на момент встройки. Не часть product-card component-set: refresh product-card эту зону не перегенерирует.",
+  "node_id": "6130:27738",
+  "name": ".AddCart",
+  "variants": {
+    "view=desktop, var=button": "6130:27739",
+    "view=mobile, var=button": "6130:27741",
+    "view=desktop, var=stepper": "6130:27743",
+    "view=mobile, var=stepper": "6130:27745"
+  },
+  "composed_from": {
+    "Button / Primary": "7470:2741",
+    "Button / Ghost": "7325:36288",
+    "Button / Addition": "7476:5067",
+    "Input / Secondary": "7364:63258"
+  },
+  "variable_defs": {
+    "stepper_desktop_6130:27743": {
+      "button/ghost/color": "#646464",
+      "button/ghost/bg": "#ffffff00",
+      "button/ghost/chroma": "#ffffff00",
+      "button/ghost/border": "#ffffff00",
+      "form-control/secondary/bg": "#f2f2f2",
+      "form-control/secondary/chroma": "#f7f7f7",
+      "form-control/secondary/border": "#f2f2f2",
+      "form-control/default/placehold": "#555555",
+      "button/addition/color": "#ffffff",
+      "button/addition/chroma": "#303442",
+      "button/addition/bg": "#0c0d11",
+      "button/addition/border": "#0c0d11",
+      "rectangle/400/icon": "20",
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8",
+      "rectangle/400/text-gap": "16",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "space/2": "8",
+      "opacity/control/enabled": "100"
+    },
+    "button_desktop_6130:27739": {
+      "button/primary/color": "#19110a",
+      "button/primary/chroma": "#fce279",
+      "button/primary/bg": "#fad646",
+      "button/primary/border": "#fad646",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "font-weight": "semibold",
+      "font-family": "Inter",
+      "rectangle/400/gap": "6",
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8"
+    }
+  },
+  "ds_mapping": {
+    "form-control/secondary/bg": "rgb(var(--secondary-core))",
+    "form-control/secondary/chroma": "rgb(var(--secondary-chroma))",
+    "form-control/secondary/border": "rgb(var(--secondary-core))",
+    "form-control/default/placehold": "rgb(var(--secondary-container-on-high))",
+    "button/ghost": "awds-component-button → btn-ghost",
+    "button/addition": "awds-component-button → btn-addition",
+    "button/primary": "awds-component-button → btn-primary",
+    "rectangle/400/rounded": "var(--awds-rectangle-400-rounded)",
+    "rectangle/300/rounded": "var(--awds-rectangle-300-rounded)",
+    "space/2": "var(--awds-space-2)"
+  }
+}

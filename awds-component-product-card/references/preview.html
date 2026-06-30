@@ -14,7 +14,11 @@
   <link rel="stylesheet" href="../../awds-component-button-favorites/references/button-favorites.css">
   <link rel="stylesheet" href="../../awds-component-badge/references/badge.css">
   <link rel="stylesheet" href="../../awds-component-button/references/button-primary.css">
+  <link rel="stylesheet" href="../../awds-component-button/references/button-ghost.css">
+  <link rel="stylesheet" href="../../awds-component-button/references/button-addition.css">
   <link rel="stylesheet" href="../../awds-component-tooltip/references/tooltip.css">
+  <link rel="stylesheet" href="../../awds-component-slider/references/slider.css">
+  <link rel="stylesheet" href="../../awds-component-price/references/price.css">
   <link rel="stylesheet" href="./product-card-price-first.css">
   <link rel="stylesheet" href="./product-card-brand-first.css">
   <link rel="stylesheet" href="./product-card-buy-now.css">
@@ -59,7 +63,7 @@
 <body>
 
   <h1>product-card / storybook</h1>
-  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — рейтинг → бренд → название → цена → кнопка «В корзину» → цвета, по центру, без флага. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: <code>scale(0.9)→1</code>, скрим уходит, теней нет. Переключи тему / скругление / вариант.</p>
+  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — рейтинг → бренд → название → цена → кнопка «В корзину» → цвета, по центру, без флага. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: <code>scale(0.9)→1</code>, скрим уходит, теней нет. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель. Переключи тему / скругление / вариант / корзину.</p>
 
   <div class="toolbar">
     <label>Вариант:
@@ -94,6 +98,26 @@
         <option value="placeholder">placeholder</option>
       </select>
     </label>
+    <label>Корзина:
+      <select id="cart">
+        <option value="button">button</option>
+        <option value="stepper">stepper</option>
+      </select>
+    </label>
+    <label>Цена:
+      <select id="price">
+        <option value="default">default</option>
+        <option value="sale">sale (скидка)</option>
+        <option value="none">none (нет в наличии)</option>
+      </select>
+    </label>
+    <label>Кадры:
+      <select id="frames">
+        <option value="10" selected>10 (окно)</option>
+        <option value="3">3</option>
+        <option value="1">1 (без слайдера)</option>
+      </select>
+    </label>
   </div>
 
   <h2>Вью × состояние</h2>
@@ -114,9 +138,11 @@
       + `<svg class="btn-favorites__outline" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0928 3.05991C12.7287 1.82393 14.7348 1.67089 16.3496 2.5892C17.9639 3.50742 18.9999 5.38217 19 7.83041C19 10.3627 17.5048 12.5134 15.9102 14.1039C14.295 15.7147 12.4254 16.9035 11.3584 17.5189C10.935 17.765 10.5039 17.9945 10 17.9945C9.49607 17.9945 9.06495 17.765 8.6416 17.5189C7.57455 16.9035 5.70499 15.7147 4.08984 14.1039C2.49516 12.5134 1 10.3627 1 7.83041C1.0001 5.38314 2.03712 3.51291 3.65137 2.59702C5.26481 1.68165 7.26864 1.83336 8.90234 3.06088C9.26444 3.33297 9.62329 3.61272 10 3.86459C10.375 3.61235 10.7323 3.33224 11.0928 3.05991ZM15.3613 4.32846C14.3526 3.7547 13.165 4.00159 12.2734 4.67514C11.8085 5.0264 11.4258 5.31503 11.1309 5.51401C10.794 5.74121 10.4222 5.96072 10.0029 5.96127C9.58341 5.96178 9.21066 5.74344 8.87305 5.51694C8.57711 5.31839 8.19345 5.02989 7.72656 4.67905C6.83401 4.00833 5.64645 3.7647 4.63867 4.33627C3.7728 4.82752 3.00009 5.95047 3 7.83041C3 9.56747 4.04271 11.2324 5.50195 12.6878C6.78251 13.965 8.29529 15.0576 9.88281 15.9242C9.9903 15.9828 10.0097 15.9828 10.1172 15.9242C11.7047 15.0576 13.2175 13.965 14.498 12.6878C15.9573 11.2324 17 9.56748 17 7.83041C16.9999 5.94766 16.2272 4.82117 15.3613 4.32846Z"/></svg>`
       + `</span>`;
     const starSolid    = `<svg class="pcard__rating-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.4 9.9 5.3l4.3.62-3.1 3 .73 4.28L8 11.18 4.17 13.2l.73-4.28-3.1-3 4.3-.62Z"/></svg>`;
-    // Флаг Германии как data-URI (офлайн), квадрат 20×20 — под размер иконки избранного.
-    const flagDE = "data:image/svg+xml," + encodeURIComponent(
-      `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><clipPath id='r'><rect width='20' height='20' rx='5'/></clipPath><g clip-path='url(#r)'><rect width='20' height='6.67' fill='#000'/><rect y='6.67' width='20' height='6.66' fill='#D00'/><rect y='13.33' width='20' height='6.67' fill='#FFCE00'/></g></svg>`);
+    // Иконка отзывов (пузырёк-чат, contact-chat_1-filled) — price-first
+    const chatIcon     = `<svg class="pcard__reviews-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2C4.27 2 1.25 4.42 1.25 7.4c0 1.52.8 2.88 2.06 3.86-.13.92-.55 1.72-1.16 2.34 1.2.05 2.4-.32 3.34-1.02.74.22 1.56.34 2.51.34 3.73 0 6.75-2.42 6.75-5.52S11.73 2 8 2Z"/></svg>`;
+    // Флаг Германии — инлайн-SVG ic24 (24×24, бэнды 3.75→20.25 со скруглением).
+    // Цвета флага — фиксированные hex (госфлаг не темизируется DS-токенами, это ассет).
+    const flagDE = `<svg class="pcard__flag" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Германия"><path d="M4.66667 3.75C2.64162 3.75 1 5.39162 1 7.41667V9.25H23V7.41667C23 5.39162 21.3584 3.75 19.3333 3.75H4.66667Z" fill="#151515"/><path d="M1 14.75H23V9.25H1V14.75Z" fill="#F93939"/><path d="M1 14.75V16.5833C1 18.6084 2.64162 20.25 4.66667 20.25H19.3333C21.3584 20.25 23 18.6084 23 16.5833V14.75H1Z" fill="#FFDA2C"/></svg>`;
     // Фейк-фото товара (офлайн).
     const photo = "data:image/svg+xml," + encodeURIComponent(
       `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='320'><rect width='240' height='320' fill='#ece9f2'/><circle cx='120' cy='130' r='52' fill='#d7d2e0'/><rect x='70' y='200' width='100' height='70' rx='14' fill='#d7d2e0'/></svg>`);
@@ -125,6 +151,54 @@
     const mediaHtml = (image) => image === 'with'
       ? `<img class="pcard__image" src="${photo}" alt="Название товара">`
       : imgPlaceholder;
+
+    // --- Галерея фото (price-first): несколько кадров + индикатор слайдера ---
+    // Палитры «ракурсов» товара (офлайн), циклически на нужное число кадров.
+    const PHOTO_TINTS = [
+      ['#ece9f2', '#d7d2e0'], ['#e7eef0', '#cdddE2'], ['#f0ece6', '#e1d6c6'],
+      ['#eef0e7', '#d6e0cd'], ['#f0e7ee', '#e0cdda'], ['#e7e9f0', '#cdd2e0'],
+    ];
+    const galleryPhotos = (count) => Array.from({ length: count }, (_, i) => {
+      const [bg, fg] = PHOTO_TINTS[i % PHOTO_TINTS.length];
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='320'><rect width='240' height='320' fill='${bg}'/><circle cx='120' cy='130' r='52' fill='${fg}'/><rect x='70' y='200' width='100' height='70' rx='14' fill='${fg}'/><text x='120' y='150' font-size='40' fill='#fff' text-anchor='middle' font-family='system-ui'>${i + 1}</text></svg>`;
+      return "data:image/svg+xml," + encodeURIComponent(svg);
+    });
+
+    // Окно индикатора: при кадрах > WINDOW включается режим .pcard__slider--many (фикс-окно).
+    const DOTS_WINDOW = 5;
+
+    // Индикатор-слайдер dots-mini (компонент awds-component-slider): N точек, активная — первая.
+    // Много кадров (> WINDOW) → лента в обёртке .pcard__slider-track + класс --many (фикс-окно).
+    const sliderDots = (n) => {
+      let dots = '';
+      for (let i = 0; i < n; i++) dots += `<span class="slider__dot${i === 0 ? ' slider__dot--active' : ''}"></span>`;
+      if (n > DOTS_WINDOW) {
+        return `<div class="slider slider-dots-mini pcard__slider pcard__slider--many" aria-hidden="true"><span class="pcard__slider-track">${dots}</span></div>`;
+      }
+      return `<div class="slider slider-dots-mini pcard__slider" aria-hidden="true">${dots}</div>`;
+    };
+
+    // Цена — компонент awds-component-price. Состояние: default (одна) / sale (скидка:
+    // акцентная цена + старая зачёркнутая) / none (нет в наличии). Размер: 800 desktop / 600 mobile.
+    const priceBlock = (mobile, state, mobileSize = 'price--600') => {
+      const sz = mobile ? mobileSize : 'price--800';
+      if (state === 'none') {
+        return `<span class="price price-none ${sz}"><span class="price__placeholder">Нет в наличии</span></span>`;
+      }
+      const main = `<span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>`;
+      if (state === 'sale') {
+        return `<span class="price price-sale ${sz}">${main}<span class="price__old"><span class="price__old-value">2 000</span><span class="price__old-currency">₽</span></span></span>`;
+      }
+      return `<span class="price price-default ${sz}">${main}</span>`;
+    };
+
+    // Медиа price-first: галерея из count кадров (первый активен). placeholder — без галереи.
+    const galleryMedia = (image, count) => {
+      if (image !== 'with') return imgPlaceholder;
+      return galleryPhotos(count)
+        .map((src, i) => `<img class="pcard__image${i === 0 ? ' pcard__image--active' : ''}" src="${src}" alt="Название товара — фото ${i + 1}">`)
+        .join('');
+    };
     // Тултип (компонент awds-component-tooltip): contrast / compact / снизу
     const tip = (text) =>
       `<span class="tooltip tooltip-contrast tooltip--compact tooltip--top" role="tooltip"><span class="tooltip__tail"></span><span class="tooltip__bubble">${text}</span></span>`;
@@ -133,81 +207,103 @@
       `<span class="pcard__tip"><button type="button" class="btn btn-favorites btn--icon-only${mobile ? ' btn-favorites--mobile' : ''}" aria-pressed="${fav === 'on'}" aria-label="В избранное">${favIcon}</button>${tip('Добавить в избранное')}</span>`;
     // Флаг страны: триггер .pcard__country.pcard__tip, текст = страна (из данных карточки)
     const country = (name) =>
-      `<span class="pcard__country pcard__tip"><img src="${flagDE}" alt="${name}">${tip(name)}</span>`;
+      `<span class="pcard__country pcard__tip">${flagDE}${tip(name)}</span>`;
     const badges = (mobile) => {
       const sz = mobile ? 'badge--50' : 'badge--100';
       return `<span class="badge badge-market-percent ${sz}">10%</span><span class="badge badge-market-sale ${sz}">Скидка</span>`;
     };
 
+    // Иконки степпера (ic20): минус / плюс — stroke; корзина — solid (на тёмной addition).
+    const icMinus = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 10h10"/></svg>`;
+    const icPlus  = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 5v10M5 10h10"/></svg>`;
+    const icCart  = `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 16a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM1.2 2a1 1 0 1 0 0 2h1.6l2.1 9.05a1 1 0 0 0 .98.77h9.02a1 1 0 0 0 .96-.72l1.74-6.05A.85.85 0 0 0 17.78 6H5.07l-.44-1.99A1 1 0 0 0 3.66 2H1.2Z"/></svg>`;
+
+    // Зона корзины (Figma .AddCart): button ↔ stepper. size: --400 desktop / --300 mobile.
+    const cartZone = (mobile, cart) => {
+      const sz = mobile ? 'btn--300' : 'btn--400';
+      if (cart === 'stepper') {
+        return `<div class="pcard__cart">`
+          + `<div class="pcard__stepper">`
+          +   `<button type="button" class="btn btn-ghost ${sz} btn--icon-only" aria-label="Убрать один">${icMinus}</button>`
+          +   `<span class="pcard__stepper-value" aria-live="polite">1</span>`
+          +   `<button type="button" class="btn btn-ghost ${sz} btn--icon-only" aria-label="Добавить один">${icPlus}</button>`
+          + `</div>`
+          + `<button type="button" class="btn btn-addition ${sz} btn--icon-only" aria-label="В корзину">${icCart}</button>`
+          + `</div>`;
+      }
+      return `<div class="pcard__cart"><button type="button" class="btn btn-primary ${sz}">В корзину</button></div>`;
+    };
+
     function cardPriceFirst(view, opts) {
       const mobile = view === 'mobile';
+      const frames = opts.frames || 3;
       return `
 <div class="pcard pcard-price-first${mobile ? ' pcard--mobile' : ''}">
   <div class="pcard__media">
-    <a class="pcard__image-link" href="#" aria-label="Название товара">${mediaHtml(opts.image)}</a>
+    <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
     <div class="pcard__top">
       ${country('Германия')}
       ${favBtn(mobile, opts.fav)}
     </div>
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
+  ${opts.image === 'with' && frames > 1
+      ? sliderDots(frames)
+      : '<div class="pcard__slider-spacer" aria-hidden="true"></div>'}
   <div class="pcard__content">
-    <div class="pcard__price">
-      <span class="pcard__price-value">1 900</span>
-      <span class="pcard__price-currency">₽</span>
-    </div>
+    ${priceBlock(mobile, opts.price)}
     <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в две строки</a>
-    <a class="pcard__feedback" href="#">${starSolid}<span class="pcard__rating-text">4.25 · 23 отзыва</span></a>
+    <div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>
   </div>
 </div>`;
     }
 
     function cardBrandFirst(view, opts) {
       const mobile = view === 'mobile';
-      const btnSize = mobile ? 'btn--300' : 'btn--400';
+      const frames = opts.frames || 3;
       return `
 <div class="pcard pcard-brand-first${mobile ? ' pcard--mobile' : ''}">
   <div class="pcard__media">
-    <a class="pcard__image-link" href="#" aria-label="Название товара">${mediaHtml(opts.image)}</a>
+    <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
     <div class="pcard__top">${favBtn(mobile, opts.fav)}</div>
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
+  ${opts.image === 'with' && frames > 1
+      ? sliderDots(frames)
+      : '<div class="pcard__slider-spacer" aria-hidden="true"></div>'}
   <div class="pcard__content">
-    <a class="pcard__feedback" href="#">${starSolid}<span class="pcard__rating-text">4.25 · 23 отзыва</span></a>
     <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
-    <div class="pcard__price">
-      <span class="pcard__price-value">1 900</span>
-      <span class="pcard__price-currency">₽</span>
-    </div>
-    <button type="button" class="btn btn-primary ${btnSize}">В корзину</button>
+    <div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>
+    <div class="pcard__price">${priceBlock(mobile, opts.price)}</div>
+    ${cartZone(mobile, opts.cart)}
   </div>
 </div>`;
     }
 
     function cardBuyNow(view, opts) {
       const mobile = view === 'mobile';
-      const btnSize = mobile ? 'btn--300' : 'btn--400';
+      const frames = opts.frames || 3;
       return `
 <div class="pcard pcard-buy-now${mobile ? ' pcard--mobile' : ''}">
   <div class="pcard__media">
-    <a class="pcard__image-link" href="#" aria-label="Название товара">${mediaHtml(opts.image)}</a>
+    <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
     <div class="pcard__top">
       ${country('Германия')}
       ${favBtn(mobile, opts.fav)}
     </div>
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
+  ${opts.image === 'with' && frames > 1
+      ? sliderDots(frames)
+      : '<div class="pcard__slider-spacer" aria-hidden="true"></div>'}
   <div class="pcard__content">
-    <div class="pcard__price">
-      <span class="pcard__price-value">1 900</span>
-      <span class="pcard__price-currency">₽</span>
-    </div>
+    ${priceBlock(mobile, opts.price, 'price--500')}
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
     <a class="pcard__category" href="#">Ссылка на рубрику товара</a>
-    <a class="pcard__feedback" href="#">${starSolid}<span class="pcard__rating-text">4.25 · 23 отзыва</span></a>
-    <button type="button" class="btn btn-primary ${btnSize}">В корзину</button>
+    <div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>
+    ${cartZone(mobile, opts.cart)}
   </div>
 </div>`;
     }
@@ -215,20 +311,77 @@
     const CARDS = { 'brand-first': cardBrandFirst, 'buy-now': cardBuyNow };
     const card = (view, opts) => (CARDS[opts.variant] || cardPriceFirst)(view, opts);
 
+    // --- Галерея: перелистывание фото по hover-зонам ---
+    // Наведение делит фото на N равных вертикальных зон (N = число кадров). Позиция
+    // курсора по X выбирает активный кадр и активную точку индикатора. Уход курсора —
+    // возврат к первому кадру. Это и есть код, который вписывает потребитель карточки.
+    function wireGallery(link) {
+      const imgs = [...link.querySelectorAll('.pcard__image')];
+      if (imgs.length < 2) return;                       // одиночное фото — листать нечего
+      const card = link.closest('.pcard');               // слайдер — сосед .pcard__media в карточке
+      const slider = card ? card.querySelector('.pcard__slider') : null;
+      const dots = slider ? [...slider.querySelectorAll('.slider__dot')] : [];
+      const track = slider ? slider.querySelector('.pcard__slider-track') : null;
+      const windowed = slider ? slider.classList.contains('pcard__slider--many') : false;
+      const n = imgs.length;
+
+      // Окно индикатора: лента сдвигается, держа активную точку по центру окна.
+      // Центрируем ПИКСЕЛЬНО (offsetLeft/offsetWidth не зависят от transform и
+      // корректны при удлинённой активной точке). Крайние точки окна — --sm.
+      const layoutDots = (i) => {
+        if (!windowed || !track || !dots.length) return;
+        const cs = getComputedStyle(slider);
+        const winW = slider.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+        const x0 = dots[0].offsetLeft;
+        const center = (d) => (d.offsetLeft - x0) + d.offsetWidth / 2;   // центр точки от начала ленты
+        const trackW = (dots[n - 1].offsetLeft - x0) + dots[n - 1].offsetWidth;
+        let shift = winW / 2 - center(dots[i]);
+        shift = Math.min(0, Math.max(shift, winW - trackW));             // не выходим за края ленты
+        track.style.setProperty('--pcard-dots-shift', `${shift}px`);
+        const moreLeft = shift < -0.5, moreRight = shift > (winW - trackW) + 0.5;
+        dots.forEach((d) => {
+          const c = center(d) + shift;                                   // центр в координатах окна
+          const edge = (moreLeft && c < winW * 0.18) || (moreRight && c > winW * 0.82);
+          d.classList.toggle('slider__dot--sm', edge);
+        });
+      };
+      const setActive = (i) => {
+        imgs.forEach((im, k) => im.classList.toggle('pcard__image--active', k === i));
+        dots.forEach((d, k) => d.classList.toggle('slider__dot--active', k === i));
+        layoutDots(i);
+      };
+      link.addEventListener('pointermove', (e) => {
+        const r = link.getBoundingClientRect();
+        const i = Math.min(n - 1, Math.max(0, Math.floor((e.clientX - r.left) / r.width * n)));
+        setActive(i);
+      });
+      link.addEventListener('pointerleave', () => setActive(0));
+      setActive(0);                                              // стартовое окно
+    }
+    const wireGalleries = (root) => root.querySelectorAll('.pcard__image-link').forEach(wireGallery);
+
     function render() {
       const opts = {
         variant: document.querySelector('#variant').value,
         fav:   document.querySelector('#fav').value,
         image: document.querySelector('#image').value,
+        cart:  document.querySelector('#cart').value,
+        price: document.querySelector('#price').value,
+        frames: parseInt(document.querySelector('#frames').value, 10),
       };
       document.querySelector('#slot-desktop').innerHTML = card('desktop', opts);
       document.querySelector('#slot-mobile').innerHTML  = card('mobile', opts);
 
       const grid = document.querySelector('#grid');
       grid.innerHTML = '';
+      // В гриде показываем разные состояния цены: default · sale · none · sale
+      const priceStates = ['default', 'sale', 'none', 'sale'];
       for (let i = 0; i < 4; i++) {
-        grid.insertAdjacentHTML('beforeend', card('desktop', { variant: opts.variant, fav: i % 2 ? 'on' : 'off', image: 'with' }));
+        grid.insertAdjacentHTML('beforeend', card('desktop', { variant: opts.variant, fav: i % 2 ? 'on' : 'off', image: 'with', cart: i % 2 ? 'stepper' : 'button', price: priceStates[i], frames: opts.frames }));
       }
+
+      // Подключаем перелистывание галереи ко всем price-first карточкам на странице
+      wireGalleries(document);
     }
 
     document.querySelector('#theme').addEventListener('change', (e) => {
@@ -242,6 +395,9 @@
     document.querySelector('#variant').addEventListener('change', render);
     document.querySelector('#fav').addEventListener('change', render);
     document.querySelector('#image').addEventListener('change', render);
+    document.querySelector('#cart').addEventListener('change', render);
+    document.querySelector('#price').addEventListener('change', render);
+    document.querySelector('#frames').addEventListener('change', render);
 
     render();
   </script>

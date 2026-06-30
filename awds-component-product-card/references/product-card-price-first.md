@@ -6,7 +6,7 @@
 
 ## HTML
 
-Корень — `<div>` (контейнер). Кликабельны **4 отдельные ссылки** со своим hover: фото → товар, бренд → бренд, название → товар, отзывы → к отзывам товара. Мобильная вью — добавь `.pcard--mobile`.
+Корень — `<div>` (контейнер). Кликабельны **3 отдельные ссылки** со своим hover: фото → товар, бренд → бренд, название → товар. Строка отзывов `.pcard__feedback` — **статичный блок, не ссылка** (как в макете). Мобильная вью — добавь `.pcard--mobile`.
 
 ```html
 <div class="pcard pcard-price-first">
@@ -44,22 +44,146 @@
   </div>
 
   <div class="pcard__content">
-    <div class="pcard__price">
-      <span class="pcard__price-value">1 900</span>
-      <span class="pcard__price-currency">₽</span>
-    </div>
+    <!-- Цена — компонент awds-component-price (подключи price.css): price-default,
+         desktop price--800 / mobile price--600. Цвет surface-on-highest задаёт сам компонент. -->
+    <span class="price price-default price--800">
+      <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
+    </span>
     <!-- #2 бренд → страница бренда -->
     <a class="pcard__brand" href="/brand/nike">Brandname</a>
     <!-- #3 название → карточка товара -->
     <a class="pcard__name" href="/product/123">Название товара которое ложится в две строки</a>
-    <!-- #4 отзывы → к отзывам внутри карточки товара -->
-    <a class="pcard__feedback" href="/product/123#reviews">
+    <!-- Отзывы — статичный блок (НЕ ссылка): ★ рейтинг · 💬 счётчик -->
+    <div class="pcard__feedback">
       <svg class="pcard__rating-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.4 9.9 5.3l4.3.62-3.1 3 .73 4.28L8 11.18 4.17 13.2l.73-4.28-3.1-3 4.3-.62Z"/></svg>
-      <span class="pcard__rating-text">4.25 · 23 отзыва</span>
-    </a>
+      <span class="pcard__rating-value">4.9</span>
+      <svg class="pcard__reviews-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2C4.27 2 1.25 4.42 1.25 7.4c0 1.52.8 2.88 2.06 3.86-.13.92-.55 1.72-1.16 2.34 1.2.05 2.4-.32 3.34-1.02.74.22 1.56.34 2.51.34 3.73 0 6.75-2.42 6.75-5.52S11.73 2 8 2Z"/></svg>
+      <span class="pcard__reviews-count">23 отзыва</span>
+    </div>
   </div>
 </div>
 ```
+
+### Состояния цены (скидка / нет в наличии)
+
+Цена — компонент `awds-component-price`, у него три типа. Карточка выбирает нужный по данным товара (подключи `price.css`):
+
+```html
+<!-- Обычная цена -->
+<span class="price price-default price--800">
+  <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
+</span>
+
+<!-- Скидка: акцентная цена + старая зачёркнутая (показывай вместе с бейджем .badge-market-percent) -->
+<span class="price price-sale price--800">
+  <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
+  <span class="price__old"><span class="price__old-value">2 000</span><span class="price__old-currency">₽</span></span>
+</span>
+
+<!-- Нет в наличии: плейсхолдер вместо цены -->
+<span class="price price-none price--800">
+  <span class="price__placeholder">Нет в наличии</span>
+</span>
+```
+
+- Размер: `price--800` desktop / `price--600` mobile (одинаков для всех трёх типов).
+- **Скидка** (`price-sale`): текущая цена — акцент, старая — зачёркнута; обычно вместе с бейджем скидки `.badge-market-percent` в `.pcard__badges`.
+- **Нет в наличии** (`price-none`): цену заменяет «Нет в наличии». Логично при этом скрыть бейдж скидки и (если есть) отключить корзину/избранное — это на стороне данных потребителя.
+- Все детали типов цены — в скилле `awds-component-price`.
+
+### Галерея фото (несколько кадров + слайдер)
+
+Если у товара несколько фото — вложи **несколько** `<img class="pcard__image">` в ссылку-фото (первый помечен `.pcard__image--active`) и добавь индикатор `awds-component-slider` (вариант **dots-mini**, подключи `slider.css`) **между `.pcard__media` и `.pcard__content`** (как в макете — по центру, под фото; НЕ оверлеем). Число точек = числу кадров.
+
+Наведение делит фото на равные вертикальные зоны по числу кадров: позиция курсора по X выбирает активный кадр и активную точку; уход курсора возвращает к первому. Кадры — кроссфейд (CSS), смена активного — JS потребителя (ниже).
+
+**Много кадров (например 10).** Чтобы индикатор не растягивался, при числе кадров больше окна (`DOTS_WINDOW = 5`) точки оборачивают в `.pcard__slider-track` и добавляют классу слайдера `.pcard__slider--many` — это включает **фикс-окно**: лента точек сдвигается, держа активную по центру, крайние точки окна уменьшаются (`.slider__dot--sm`, намёк, что есть ещё кадры). Сдвиг и edge-классы выставляет тот же `wireGallery` (ниже).
+
+```html
+<!-- Много кадров: лента в .pcard__slider-track + класс .pcard__slider--many -->
+<div class="slider slider-dots-mini pcard__slider pcard__slider--many" aria-hidden="true">
+  <span class="pcard__slider-track">
+    <span class="slider__dot slider__dot--active"></span>
+    <span class="slider__dot"></span>
+    <!-- … все N точек … -->
+  </span>
+</div>
+```
+
+```html
+<div class="pcard pcard-price-first">
+  <div class="pcard__media">
+    <a class="pcard__image-link" href="/product/123" aria-label="Название товара">
+      <img class="pcard__image pcard__image--active" src="/img/123-1.jpg" alt="Название товара — фото 1">
+      <img class="pcard__image" src="/img/123-2.jpg" alt="Название товара — фото 2">
+      <img class="pcard__image" src="/img/123-3.jpg" alt="Название товара — фото 3">
+    </a>
+    <div class="pcard__top">…</div>
+    <div class="pcard__badges">…</div>
+  </div>
+
+  <!-- Индикатор: awds-component-slider, dots-mini. Между медиа и контентом, по центру.
+       Точек = числу кадров, первая активна. -->
+  <div class="slider slider-dots-mini pcard__slider" aria-hidden="true">
+    <span class="slider__dot slider__dot--active"></span>
+    <span class="slider__dot"></span>
+    <span class="slider__dot"></span>
+  </div>
+
+  <div class="pcard__content">…</div>
+</div>
+```
+
+JS-обвязка потребителя (перелистывание по hover-зонам):
+
+```js
+function wireGallery(link) {
+  const imgs = [...link.querySelectorAll('.pcard__image')];
+  if (imgs.length < 2) return;                       // одиночное фото — листать нечего
+  const card = link.closest('.pcard');
+  const slider = card.querySelector('.pcard__slider');
+  const dots = slider ? [...slider.querySelectorAll('.slider__dot')] : [];
+  const track = slider ? slider.querySelector('.pcard__slider-track') : null;
+  const many = slider ? slider.classList.contains('pcard__slider--many') : false;
+  const n = imgs.length;
+
+  // Окно индикатора (много кадров): лента сдвигается, держа активную по центру окна.
+  // Центрируем ПИКСЕЛЬНО (offsetLeft/offsetWidth не зависят от transform и корректны
+  // при удлинённой активной точке). Крайние точки окна уменьшаются (--sm).
+  const layoutDots = (i) => {
+    if (!many || !track || !dots.length) return;
+    const cs = getComputedStyle(slider);
+    const winW = slider.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+    const x0 = dots[0].offsetLeft;
+    const center = (d) => (d.offsetLeft - x0) + d.offsetWidth / 2;
+    const trackW = (dots[n - 1].offsetLeft - x0) + dots[n - 1].offsetWidth;
+    let shift = winW / 2 - center(dots[i]);
+    shift = Math.min(0, Math.max(shift, winW - trackW));     // не выходим за края ленты
+    track.style.setProperty('--pcard-dots-shift', `${shift}px`);
+    const moreLeft = shift < -0.5, moreRight = shift > (winW - trackW) + 0.5;
+    dots.forEach((d) => {
+      const c = center(d) + shift;
+      d.classList.toggle('slider__dot--sm', (moreLeft && c < winW * 0.18) || (moreRight && c > winW * 0.82));
+    });
+  };
+  const setActive = (i) => {
+    imgs.forEach((im, k) => im.classList.toggle('pcard__image--active', k === i));
+    dots.forEach((d, k) => d.classList.toggle('slider__dot--active', k === i));
+    layoutDots(i);
+  };
+  link.addEventListener('pointermove', (e) => {
+    const r = link.getBoundingClientRect();
+    setActive(Math.min(n - 1, Math.max(0, Math.floor((e.clientX - r.left) / r.width * n))));
+  });
+  link.addEventListener('pointerleave', () => setActive(0));
+  setActive(0);
+}
+document.querySelectorAll('.pcard-price-first .pcard__image-link').forEach(wireGallery);
+```
+
+Одиночное фото (без `.pcard__image--active` и без `.pcard__slider`) работает как прежде — `wireGallery` его пропускает. Мало кадров (≤ окна) — обычные точки без `.pcard__slider--many`/`-track`.
+
+**Одно фото — резерв места под индикатор.** Когда кадр один, слайдер не выводят, но вместо него ставят пустую заглушку `<div class="pcard__slider-spacer" aria-hidden="true"></div>` (между `.pcard__media` и `.pcard__content`). Она занимает ровно высоту индикатора dots-mini — карточки с одним и несколькими фото получаются одной высоты, контент (цена/бренд) не сдвигается в гриде. Если в каталоге у всех товаров одно фото — заглушку можно не ставить.
 
 ### Без фото
 
@@ -94,14 +218,14 @@
 
 ## Состояния и hover
 
-Карточка статична по контенту (`states = rest`). Это **контейнер** (`<div>`), внутри — 4 отдельные ссылки, hover у каждой **свой** (наведение на одну не затрагивает остальные):
+Карточка статична по контенту (`states = rest`). Это **контейнер** (`<div>`), внутри — 3 отдельные ссылки, hover у каждой **свой** (наведение на одну не затрагивает остальные). Строка отзывов `.pcard__feedback` — статичный блок (не ссылка), без hover:
 
 | Ссылка | href | Поведение по `:hover` |
 |---|---|---|
 | `.pcard__image-link` (#1) | товар | фото `scale(0.9) → scale(1)` (0.4s) — раскрывается до 100% · 3%-скрим `opacity → 0` |
 | `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-container-on` |
 | `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-container-on` |
-| `.pcard__feedback` (#4) | товар `#reviews` | текст рейтинга `surface-on-high → accent-container-on` (звезда остаётся warning) |
+| `.pcard__feedback` | — (не ссылка) | статичный: ★ warning · рейтинг surface-on-highest · 💬 иконка surface-on · счётчик surface-on-high |
 
 Фокус-обводка — на каждой ссылке отдельно (`:focus-visible`). Оверлеи над фото: избранное (`.btn-favorites`) — своя кнопка-тоггл (pointer-events:auto); бейджи — `pointer-events:none`, hover/клик проходят к ссылке-фото. Флаг теперь `pointer-events:auto` (ловит hover для тултипа) — зум фото остаётся на остальной площади. Все hover-переходы гасятся при `prefers-reduced-motion: reduce` (зум фото отключается).
 
@@ -120,9 +244,10 @@
 
 Любой оверлей можно убрать — карточка не сломается:
 
-- **`.pcard__country`** — флаг страны-поставщика (24px `<img>`/`<svg>`). Нет страны → убери блок.
+- **`.pcard__country`** — флаг страны-поставщика. Бокс 24×24px, флаг вписан с сохранением пропорций (`object-fit: contain` — не обрезается). Нет страны → убери блок.
 - **`.pcard__badges`** — маркет-бейджи (компонент `awds-component-badge`, подключи `badge.css`): `badge-market-percent` (акцент) для скидки в %, `badge-market-sale` (бренд-primary) для «Скидка». Можно один, оба или ни одного.
 - **`.btn-favorites`** — избранное (компонент `awds-component-button-favorites`, подключи `button-favorites.css`). Нет логики избранного → убери кнопку.
+- **`.pcard__slider`** — индикатор галереи (компонент `awds-component-slider`, dots-mini, подключи `slider.css`). Одно фото → не добавляй (и не нужен `.pcard__image--active`).
 
 ## Поля для биндинга (PageCraft / SSR)
 
@@ -130,13 +255,14 @@
 |---|---|
 | Ссылка на товар | `.pcard__image-link[href]` + `.pcard__name[href]` |
 | Ссылка на бренд | `.pcard__brand[href]` |
-| Ссылка на отзывы | `.pcard__feedback[href]` (якорь `#reviews` товара) |
 | Фото | `.pcard__image[src]` / `.pcard__image-link[aria-label]` |
+| Галерея фото | несколько `.pcard__image[src]` + `.pcard__slider` точек по числу кадров |
 | Флаг страны | `.pcard__country img[src]` |
-| Цена | `.pcard__price-value` (число), `.pcard__price-currency` (символ) |
+| Цена | компонент `.price` (`.price__current` число, `.price__currency` символ) |
 | Бренд | `.pcard__brand` |
 | Название | `.pcard__name` |
-| Рейтинг / отзывы | `.pcard__rating-text` |
+| Рейтинг | `.pcard__rating-value` (число) |
+| Счётчик отзывов | `.pcard__reviews-count` |
 | Скидка % | `.badge-market-percent` (текст) |
 | Состояние избранного | `.btn-favorites[aria-pressed]` |
 
