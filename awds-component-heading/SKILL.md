@@ -25,9 +25,9 @@ description: >
 <!-- Заголовок + действие «Все ›» -->
 <div class="heading heading--h1">
   <h2 class="heading__title">Heading</h2>
-  <a class="lnk lnk-default heading__action" href="/all">
-    Все
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg>
+  <a class="btn-area btn-area-default btn-area--100 btn-area--fill-y heading__action" href="/all">
+    <span class="btn-area__label">Все</span>
+    <span class="btn-area__suffix"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></span>
   </a>
 </div>
 
@@ -38,7 +38,7 @@ description: >
 ```
 
 - **Семантика vs визуал.** Тег (`<h1>…<h6>`) выбирай по структуре документа; визуальный размер задаёт класс `.heading--h{N}` — они независимы (можно `<h2 class="heading__title">` в карточке `.heading--h1`).
-- **Действие** `.heading__action` — опционально. Цвет/hover/focus даёт внешний компонент `awds-component-link` (`.lnk.lnk-default`) — подключи `link-default.css`. Сам heading задаёт только раскладку действия (зазор до шеврона, выравнивание, позицию по View).
+- **Действие** «Все ›» — опционально, это композиция **`awds-component-button-area`** (`.btn-area.btn-area-default.btn-area--100.btn-area--fill-y`) — подключи `button-area.css`. В Figma действие heading-а и есть инстанс Button Area/Default. Цвет/размер (control-300 13/16)/состояния/суффикс-шеврон/полную высоту (`--fill-y`) держит сам button-area; heading лишь раскладывает его по View. Класс `.heading__action` — опц. хук (без собственных стилей).
 
 ## Уровни (размер) и адаптив
 
@@ -63,15 +63,14 @@ description: >
 | Размер заголовка | адаптивный примитив `var(--awds-typography-font-size-{920\|910\|900\|800\|600})` + `-line-height-compact-{N}` + `-letter-spacing-{N}` |
 | Цвет заголовка | `rgb(var(--surface-on-highest))` |
 | Вес | `var(--awds-font-weight-semibold)` |
-| Цвет действия «Все ›» | внешний `awds-component-link` · `.lnk.lnk-default` (tertiary-container-on-high → hover -on-highest) — link **color-only** |
-| Размер действия «Все ›» | `--awds-control-300-*` (13/16, regular) — шкала `Control/Value` (Figma font-size/300 + line-height/300), НЕ typography-300 (там lh 21) |
+| Действие «Все ›» | внешний `awds-component-button-area` (`.btn-area-default` `.btn-area--100` `.btn-area--fill-y`) — он держит цвет (tertiary-container-on-high → hover -on-highest), размер (control-300 13/16), состояния, суффикс-шеврон, полную высоту |
 | Зазор заголовок ↔ действие (desktop) | `var(--awds-space-1-5)` (6px) |
 | Зазор текст ↔ шеврон | `var(--awds-space-0-5)` (2px); иконка `var(--awds-space-4)` (16px) |
 | Перенос заголовка | `text-wrap: balance` (MIFB — без сирот) |
 
 ## CSS
 
-Один файл — `references/heading.css` (база `.heading` + `.heading__title` + `.heading__action` + уровни `.heading--h{1..5}` + раскладка по View через `@media`). Подключается один раз глобально. Для действия дополнительно нужен `link-default.css` (компонент `awds-component-link`).
+Один файл — `references/heading.css` (база `.heading` + `.heading__title` + уровни `.heading--h{1..5}` + раскладка по View через `@media`). Подключается один раз глобально. Для действия дополнительно нужен `button-area.css` (компонент `awds-component-button-area`).
 
 Визуальный QA — `references/preview.html` (storybook, `file://`): все уровни, переключатели Действие / View / тема (View меняет ширину iframe → срабатывает `@media`).
 
@@ -79,7 +78,7 @@ description: >
 
 | Компонент | Зачем |
 |---|---|
-| `awds-component-link` (`.lnk.lnk-default`) | Цвет/hover/focus ссылки-действия «Все ›». Heading задаёт только её раскладку. |
+| `awds-component-button-area` (`.btn-area-default` `--100` `--fill-y`) | Действие «Все ›» целиком (цвет/размер/состояния/шеврон/полная высота). В Figma — инстанс Button Area/Default. Heading лишь раскладывает по View. |
 
 ## Заметки
 

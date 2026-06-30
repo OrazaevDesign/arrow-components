@@ -7,9 +7,9 @@
 ```html
 <div class="heading heading--h1">
   <h2 class="heading__title">Heading</h2>
-  <a class="lnk lnk-default heading__action" href="/all">
-    Все
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg>
+  <a class="btn-area btn-area-default btn-area--100 btn-area--fill-y heading__action" href="/all">
+    <span class="btn-area__label">Все</span>
+    <span class="btn-area__suffix"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4l4 4-4 4"/></svg></span>
   </a>
 </div>
 ```
@@ -26,7 +26,7 @@
 |---|---|
 | `.heading` | Контейнер: flex, `align-items: flex-end`, `gap: 6px`, `width: 100%`. На <1068 — `space-between`. |
 | `.heading__title` | Текст заголовка. Размер — от `.heading--h{N}`. Цвет `surface-on-highest`, semibold, `text-wrap: balance`. |
-| `.heading__action` | Ссылка-действие (опц.). Раскладка: зазор до шеврона 2px, иконка 16px. Цвет — из `.lnk.lnk-default`. |
+| `.heading__action` | Действие (опц.) = `awds-component-button-area` (`.btn-area-default --100 --fill-y`). Цвет/размер/состояния/шеврон/полная высота — из button-area. Класс — опц. хук. |
 | `.heading--h1…--h5` | Уровень (размер) заголовка. |
 
 ## Уровни
@@ -42,5 +42,5 @@
 ## Зависимости
 
 - `heading.css` — сам компонент.
-- `link-default.css` (`awds-component-link`) — если есть действие `.heading__action`.
+- `button-area.css` (`awds-component-button-area`) — если есть действие «Все ›».
 - DS: `css-variables.css` (роли) + `css-global.css` (шкала typography, space).

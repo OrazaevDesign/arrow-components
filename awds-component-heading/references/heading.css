@@ -26,9 +26,10 @@
 
    Цвета (роли с сайта, инлайн):
      заголовок            surface-on-highest
-     действие «Все ›»     ВНЕШНИЙ компонент awds-component-link (.lnk.lnk-default —
-                          tertiary-container-on-high → hover tertiary-container-on-highest);
-                          подключи link-default.css. Здесь — только раскладка действия.
+     действие «Все ›»     ВНЕШНИЙ компонент awds-component-button-area (.btn-area
+                          .btn-area-default.btn-area--100.btn-area--fill-y; подключи
+                          button-area.css). В Figma это инстанс Button Area/Default.
+                          Цвет/размер/состояния/полную высоту держит сам button-area.
 
    Приватные аккумуляторы: --awds-heading-fs / -lh / -ls (размер уровня).
    ============================================================================= */
@@ -60,29 +61,12 @@
   text-wrap: balance;                /* MIFB: заголовок распределяется ровно, без сирот */
 }
 
-/* Действие «Все ›» — ОПЦИОНАЛЬНО. ЦВЕТ/hover/focus даёт awds-component-link
-   (.lnk.lnk-default; подключи link-default.css) — link color-only, размер НЕ задаёт.
-   Поэтому типографику ссылки задаём здесь: Control 300 = 13/16 (Figma font-size/300 +
-   line-height/300; это шкала Control/Value, а НЕ typography-300 — у того lh 21).
-   regular, без подчёркивания. Раскладка: не сжимается, шеврон 16px, зазор текст↔иконка 2px. */
-.heading__action {
-  flex-shrink: 0;
-  align-self: stretch;               /* как в макете: действие — область на ВСЮ высоту заголовка (self-stretch), не прибито к низу */
-  display: inline-flex;
-  align-items: center;               /* «Все ›» центрируется по вертикали внутри полной высоты (h-full items-center) */
-  gap: var(--awds-space-0-5);        /* 2px текст ↔ шеврон (rectangle/100/gap) */
-  white-space: nowrap;
-  font-size: var(--awds-control-300-font-size);          /* 13px */
-  line-height: var(--awds-control-300-line-height);      /* 16px */
-  letter-spacing: var(--awds-control-300-letter-spacing);
-  font-weight: var(--awds-font-weight-regular);
-  text-decoration: none;             /* как в макете — «Все ›» без подчёркивания (цвет + шеврон) */
-}
-.heading__action > svg {
-  width: var(--awds-space-4);        /* 16px (ic20 chevron-right) */
-  height: var(--awds-space-4);
-  flex-shrink: 0;
-}
+/* Действие «Все ›» — ОПЦИОНАЛЬНО. Это композиция awds-component-button-area
+   (.btn-area.btn-area-default.btn-area--100.btn-area--fill-y; подключи button-area.css).
+   В Figma действие heading-а и есть инстанс Button Area/Default. Button Area сам задаёт
+   цвет/состояния/размер (control-300 = 13/16)/иконку-суффикс/полную высоту (--fill-y →
+   область на всю высоту заголовка, контент центрирован) — собственных стилей
+   .heading__action здесь больше НЕ нужно. Класс .heading__action оставлен как опц. хук. */
 
 /* === Уровни (адаптивные примитивы typography; View = брейкпоинт, зашит в примитив) === */
 

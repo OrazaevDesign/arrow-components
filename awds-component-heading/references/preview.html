@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="../../arrow-design-system/references/css-variables.css">
   <link rel="stylesheet" href="../../arrow-design-system/references/css-global.css">
-  <link rel="stylesheet" href="../../awds-component-link/references/link-default.css">
+  <link rel="stylesheet" href="../../awds-component-button-area/references/button-area.css">
   <link rel="stylesheet" href="./heading.css">
 
   <style>
@@ -46,7 +46,7 @@
 <body>
 
   <h1 class="pg">heading / storybook</h1>
-  <p class="sub">Заголовок секции <code>H1–H5</code> с опциональной ссылкой-действием <code>«Все ›»</code> (композиция <code>awds-component-link</code> · <code>.lnk.lnk-default</code>). Размер заголовка и раскладка действия адаптивны по ширине: <code>Desktop ≥1068</code> — действие вплотную к заголовку, <code>Tablet 616–1067</code> / <code>Mobile &lt;616</code> — к правому краю. Переключи тему — палитра подтянется.</p>
+  <p class="sub">Заголовок секции <code>H1–H5</code> с опциональной ссылкой-действием <code>«Все ›»</code> (композиция <code>awds-component-button-area</code>). Размер заголовка и раскладка действия адаптивны по ширине: <code>Desktop ≥1068</code> — действие вплотную к заголовку, <code>Tablet 616–1067</code> / <code>Mobile &lt;616</code> — к правому краю. Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -89,7 +89,7 @@
 
     function action() {
       return actionSel.value === 'link'
-        ? `<a class="lnk lnk-default heading__action" href="#">Все${CHEVRON}</a>`
+        ? `<a class="btn-area btn-area-default btn-area--100 btn-area--fill-y heading__action" href="#"><span class="btn-area__label">Все</span><span class="btn-area__suffix">${CHEVRON}</span></a>`
         : '';
     }
 
@@ -104,7 +104,7 @@
       return `<!DOCTYPE html><html class="theme-default theme-${theme} rounded-smooth"><head><meta charset="UTF-8">
         <link rel="stylesheet" href="../../arrow-design-system/references/css-variables.css">
         <link rel="stylesheet" href="../../arrow-design-system/references/css-global.css">
-        <link rel="stylesheet" href="../../awds-component-link/references/link-default.css">
+        <link rel="stylesheet" href="../../awds-component-button-area/references/button-area.css">
         <link rel="stylesheet" href="./heading.css">
         <style>body{margin:0;padding:20px 24px;background:rgb(var(--surface-bright)/1);color:rgb(var(--surface-on-highest)/1);display:flex;flex-direction:column;gap:20px;}</style>
         </head><body>${rows()}</body></html>`;
