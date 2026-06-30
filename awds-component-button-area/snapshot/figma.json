@@ -1,0 +1,39 @@
+{
+  "_note": "Сырые ответы Figma MCP для awds-component-button-area. file_key rRCDPR2SJ90wJZCr5rsXAd. 5 наборов (вариантов), оси Type×Size×State×Progress. Цвета вариантов = роли awds-component-link (имена совпадают, Default сверен с Figma); остальные взяты из верифицированного link-маппинга, не из повторного fetch (frugality).",
+  "sets": {
+    "default":  { "node_id": "539:48759", "name": "Button Area/Default" },
+    "muted":    { "node_id": "539:49096", "name": "Button Area/Muted" },
+    "contrast": { "node_id": "539:49433", "name": "Button Area/Contrast" },
+    "accent":   { "node_id": "539:49770", "name": "Button Area/Accent" },
+    "heading":  { "node_id": "539:50107", "name": "Button Area/Heading" }
+  },
+  "axes": {
+    "Type": ["Text", "Icon"],
+    "Size": ["500", "400", "100", "50"],
+    "State": ["Rest", "Hover", "Active", "Disabled", "Focus"],
+    "Progress": ["False", "True"]
+  },
+  "structure_design_context_539_48760": "div.flex.items-center.justify-center (opacity/control/enabled) > [◆/Prefix icon pr=rectangle/500/gap] + ◆/Text (link/default, font-size/600 16/20, regular) + [◆/Suffix icon pl=rectangle/500/gap]",
+  "variable_defs": {
+    "Default/Text/500/Rest (539:48760)":  { "link/default": "#4764d4", "rectangle/500/icon": 20, "rectangle/500/gap": 6, "font-size/600": 16, "line-height/600": 20, "letter-spacing/600": 0, "border-radius/500": 8, "opacity/control/enabled": 100 },
+    "Default/Text/500/Hover (539:48766)": { "link/default": "#193891" },
+    "Default/Text/500/Active (539:48772)":{ "link/default": "#4764d4" },
+    "Default/Text/500/Focus (539:48784)": { "focus-selection/outline": "#080808", "focus-selection/outlineShow": true },
+    "Default/Text/500/Disabled (539:48778)": { "opacity/control/disabled": 40 }
+  },
+  "size_to_rectangle": {
+    "_note": "Size N → shape-слой rectangle/N (gap/icon/typography/rounded). Проверено по css-global.",
+    "500": { "gap": "space-1-5 (6)", "icon": "space-5 (20)", "typography": "control-600 (16/20)" },
+    "400": { "gap": "space-1-5 (6)", "icon": "space-5 (20)", "typography": "control-400 (14/20)" },
+    "100": { "gap": "space-0-5 (2)", "icon": "space-4 (16)", "typography": "control-300 (13/16)" },
+    "50":  { "gap": "space-0-5 (2)", "icon": "space-4 (16)", "typography": "control-200 (12/16)" }
+  },
+  "variant_colors": {
+    "_note": "= awds-component-link роли (rest → hover). focus/active = rest. Сверено с link-*.css.",
+    "default":  { "rest": "tertiary-container-on-high",  "hover": "tertiary-container-on-highest" },
+    "muted":    { "rest": "surface-on-high",             "hover": "surface-on-highest" },
+    "contrast": { "rest": "surface-on-highest",          "hover": "surface-on-high" },
+    "accent":   { "rest": "surface-on-highest",          "hover": "accent-container-on" },
+    "heading":  { "rest": "surface-on-high",             "hover": "accent-container-on" }
+  }
+}

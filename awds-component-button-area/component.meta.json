@@ -1,0 +1,68 @@
+{
+  "component": "button-area",
+  "figma": {
+    "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
+    "file_name": "💠 Comp ↪ ² Buttons",
+    "primary_node_id": "539:48759",
+    "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-48759"
+  },
+  "variants": {
+    "default":  { "node_id": "539:48759", "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-48759", "figma_label": "Button Area/Default" },
+    "muted":    { "node_id": "539:49096", "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-49096", "figma_label": "Button Area/Muted" },
+    "contrast": { "node_id": "539:49433", "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-49433", "figma_label": "Button Area/Contrast" },
+    "accent":   { "node_id": "539:49770", "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-49770", "figma_label": "Button Area/Accent" },
+    "heading":  { "node_id": "539:50107", "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-50107", "figma_label": "Button Area/Heading" }
+  },
+  "modifiers": {
+    "size":     { "values": ["500", "400", "100", "50"], "class": { "500": "btn-area--500", "400": "btn-area--400", "100": "btn-area--100", "50": "btn-area--50" }, "default": "500" },
+    "type":     { "values": ["text", "icon"], "class": { "icon": "btn-area--icon-only" }, "default": "text" },
+    "fill":     { "values": ["none", "fill", "fill-x", "fill-y"], "class": { "fill": "btn-area--fill", "fill-x": "btn-area--fill-x", "fill-y": "btn-area--fill-y" }, "default": "none", "note": "Растяжение hit-области под контейнер; контент остаётся по центру." },
+    "progress": { "values": [false, true], "class": { "true": "btn-area--progress" }, "default": false, "note": "Состояние загрузки: контент скрыт, спиннер по центру." }
+  },
+  "shape": "rectangle",
+  "size_scale": [50, 100, 400, 500],
+  "size_rectangle_map": {
+    "_note": "size → семантический shape-слой rectangle/{N} (gap/icon/typography/rounded). Размеры привязаны через --awds-rectangle-{N}-*.",
+    "500": { "gap": "space-1-5", "icon": "space-5", "typography": "control-600" },
+    "400": { "gap": "space-1-5", "icon": "space-5", "typography": "control-400" },
+    "100": { "gap": "space-0-5", "icon": "space-4", "typography": "control-300" },
+    "50":  { "gap": "space-0-5", "icon": "space-4", "typography": "control-200" }
+  },
+  "states": ["rest", "hover", "active", "focus", "disabled"],
+  "color_tokens": ["color"],
+  "css_files": ["button-area.css"],
+  "composes": [
+    "Цвета вариантов = роли awds-component-link (default/muted/contrast/accent/heading). Имена и роли совпадают; Button Area — это link как кликабельная ОБЛАСТЬ (с иконками, размерами, progress, растяжением). Если link-роли поменяются в DS — обновить оба."
+  ],
+  "preview": {
+    "base_class": "btn-area",
+    "default_size": "500",
+    "matrix_states": ["rest", "hover", "active", "focus", "disabled"],
+    "matrix_sizes": ["500", "400", "100", "50"],
+    "toggles": [
+      { "id": "variant",  "label": "Вариант",  "options": ["default", "muted", "contrast", "accent", "heading"] },
+      { "id": "size",     "label": "Размер",    "options": ["500", "400", "100", "50"] },
+      { "id": "type",     "label": "Тип",       "options": ["text", "icon"] },
+      { "id": "fill",     "label": "Растяжение","options": ["none", "fill-x", "fill-y", "fill"] },
+      { "id": "progress", "label": "Загрузка",  "options": ["off", "on"] }
+    ],
+    "html_samples": [
+      { "label": "Default, текст + иконки", "html": "<a class=\"btn-area btn-area-default btn-area--500\" href=\"#\"><span class=\"btn-area__prefix\"><svg viewBox=\"0 0 20 20\">…</svg></span><span class=\"btn-area__label\">Button</span><span class=\"btn-area__suffix\"><svg viewBox=\"0 0 20 20\">…</svg></span></a>" },
+      { "label": "Accent, только иконка", "html": "<button class=\"btn-area btn-area-accent btn-area--400 btn-area--icon-only\" aria-label=\"…\"><span class=\"btn-area__icon\"><svg viewBox=\"0 0 20 20\">…</svg></span></button>" },
+      { "label": "Растянут по ширине + загрузка", "html": "<a class=\"btn-area btn-area-default btn-area--500 btn-area--fill-x btn-area--progress\" href=\"#\"><span class=\"btn-area__label\">Button</span><span class=\"btn-area__spinner\" aria-hidden=\"true\"></span></a>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-tertiary-container-on-high", "--color-tertiary-container-on-highest",
+    "--color-surface-on-high", "--color-surface-on-highest",
+    "--color-accent-container-on",
+    "--awds-rectangle-500-*", "--awds-rectangle-400-*", "--awds-rectangle-100-*", "--awds-rectangle-50-*",
+    "--awds-opacity-40", "--awds-rounded-full",
+    "--awds-font-family-system", "--awds-font-weight-regular"
+  ],
+  "_dependency_note": "Размеры — через shape-слой --awds-rectangle-{500,400,100,50}-{gap,icon,typography-*,rounded}. Цвета — роли inline (= link). Focus-обводка rgb(var(--surface-on-highest)); disabled — var(--awds-opacity-40); спиннер — var(--awds-rounded-full) + @keyframes. Растяжение hit-области — модификаторы --fill*.",
+  "last_synced": "2026-06-30T17:57:53Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:3bf955fc5d85d8138594d707b327f5d81196979c4aacca210e4ecd95d1d402ef",
+  "published": null
+}
