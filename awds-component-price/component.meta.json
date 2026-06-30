@@ -1,0 +1,73 @@
+{
+  "component": "price",
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:1972",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1972",
+    "sets": {
+      "horizontal": { "node_id": "2093:1971", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1971", "figma_label": "Price ↔" },
+      "vertical":   { "node_id": "2093:912",  "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-912",  "figma_label": "Price ↕" }
+    }
+  },
+  "variants": {
+    "sale":    { "node_id": "2093:1972", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1972", "figma_label": "Size=1100, Type=Sale, Side=Right" },
+    "default": { "node_id": "2093:2148", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-2148", "figma_label": "Size=1100, Type=Default, Side=Right" },
+    "none":    { "node_id": "2093:2236", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-2236", "figma_label": "Size=1100, Type=None, Side=Right" }
+  },
+  "modifiers": {
+    "orientation": { "values": ["horizontal", "vertical"], "class": { "vertical": "price--vertical" }, "default": "horizontal" },
+    "side":        { "values": ["right", "left"], "class": { "left": "price--currency-left" }, "default": "right" }
+  },
+  "shape": null,
+  "size_scale": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100],
+  "size_typography_map": {
+    "_note": "size → имена DS-токенов typography (main / secondary), сматчено по значению px (DS — старший источник).",
+    "1100": { "main": 960, "sec": 700 },
+    "1000": { "main": 940, "sec": 600 },
+    "900":  { "main": 930, "sec": 500 },
+    "800":  { "main": 910, "sec": 300 },
+    "700":  { "main": 800, "sec": 300 },
+    "600":  { "main": 600, "sec": 300 },
+    "500":  { "main": 500, "sec": 200 },
+    "400":  { "main": 400, "sec": 100 },
+    "300":  { "main": 300, "sec": 50 },
+    "200":  { "main": 200, "sec": 50 },
+    "100":  { "main": 100, "sec": 50 }
+  },
+  "states": ["rest"],
+  "color_tokens": ["color", "muted"],
+  "css_files": ["price.css"],
+  "preview": {
+    "base_class": "price",
+    "default_size": 600,
+    "matrix_states": ["rest"],
+    "matrix_sizes": [1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100],
+    "toggles": [
+      { "id": "variant",     "label": "Тип",        "options": ["sale", "default", "none"] },
+      { "id": "orientation", "label": "Ориентация", "options": ["horizontal", "vertical"] },
+      { "id": "side",        "label": "Валюта",     "options": ["right", "left"] }
+    ],
+    "html_samples": [
+      { "label": "Sale, горизонтальная, ₽ справа", "html": "<span class=\"price price-sale price--600\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>" },
+      { "label": "Default, одна цена", "html": "<span class=\"price price-default price--600\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span></span>" },
+      { "label": "None, нет в наличии", "html": "<span class=\"price price-none price--600\"><span class=\"price__placeholder\">Нет в наличии</span></span>" },
+      { "label": "Sale, вертикальная", "html": "<span class=\"price price-sale price--600 price--vertical\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>" },
+      { "label": "Sale, валюта слева", "html": "<span class=\"price price-sale price--600 price--currency-left\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-accent-container-on",
+    "--color-surface-on-highest",
+    "--color-surface-on",
+    "--awds-typography-font-size-*",
+    "--awds-typography-line-height-compact-*",
+    "--awds-typography-letter-spacing-*",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
+  ],
+  "last_synced": "2026-06-30T11:55:05Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:8ef337b50cfc7dfb49e9ab944f8e705af94d6e05f4dd6a2ecbf76f18eb8cfe66",
+  "published": null
+}

@@ -1,0 +1,44 @@
+{
+  "_note": "Сырой снимок Figma MCP для awds-component-price. Два Component Set: горизонтальный (Price ↔, 2093:1971) и вертикальный (Price ↕, 2093:912). Оси: Size (100..1100) × Type (Sale/Default/None) × Side (Right/Left).",
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "sets": {
+    "horizontal": { "frame_node_id": "2093:1971", "name": "Price ↔" },
+    "vertical":   { "frame_node_id": "2093:912",  "name": "Price ↕" }
+  },
+  "variant_properties": {
+    "Size": ["100", "200", "300", "400", "500", "600", "700", "800", "900", "1000", "1100"],
+    "Type": ["Sale", "Default", "None"],
+    "Side": ["Right", "Left"]
+  },
+  "structure": {
+    "_doc": "get_design_context для горизонтального Sale/Right/1100 (2093:1972) и вертикального Sale/Right/1100 (2093:913).",
+    "horizontal_sale": "container[row, gap 2px, items-end]: price(accent, fs main) + currency[pb 2px](₽ accent, fs sec) + oldprice[row, gap 2px, relative](old число surface-on + ₽ surface-on + line зачёркивание), fs sec",
+    "vertical_sale": "container[col, items-start]: price-row[row, gap 2px](price accent fs main + currency ₽ accent fs sec) + oldprice-row[row, gap 2px, relative](old число + ₽ surface-on fs sec, line зачёркивание)",
+    "default": "только price + currency (без oldprice); цвет surface-on-highest",
+    "none": "текст «Нет в наличии», цвет surface-on, fs sec"
+  },
+  "variable_defs": {
+    "_doc": "get_variable_defs по репрезентативным нодам горизонтального набора (Sale/Right). Figma font-size/letter-spacing/line-height в px. Цвета — роли.",
+    "roles": {
+      "role/accent/container/on": "#cc4033",
+      "role/surface/on": "#8e8e8e",
+      "role/surface/on-highest": "#080808"
+    },
+    "by_size_sale_right": {
+      "1100": { "node": "2093:1972", "main": { "font-size": 32, "line-height": 40, "letter-spacing": -0.4 }, "sec": { "font-size": 17, "line-height": 24, "letter-spacing": 0 } },
+      "1000": { "node": "2093:1988", "main": { "font-size": 28, "line-height": 36, "letter-spacing": -0.3 }, "sec": { "font-size": 16, "line-height": 20, "letter-spacing": 0 } },
+      "900":  { "node": "2093:2004", "main": { "font-size": 24, "line-height": 32, "letter-spacing": -0.2 }, "sec": { "font-size": 15, "line-height": 20, "letter-spacing": 0 } },
+      "800":  { "node": "2093:2020", "main": { "font-size": 20, "line-height": 28, "letter-spacing": -0.1 }, "sec": { "font-size": 13, "line-height": 16, "letter-spacing": 0.1 } },
+      "700":  { "node": "2093:2036", "main": { "font-size": 18, "line-height": 24, "letter-spacing": 0 },    "sec": { "font-size": 13, "line-height": 16, "letter-spacing": 0.1 } },
+      "600":  { "node": "2093:2052", "main": { "font-size": 16, "line-height": 20, "letter-spacing": 0 },    "sec": { "font-size": 13, "line-height": 16, "letter-spacing": 0.1 } },
+      "500":  { "node": "2093:2068", "main": { "font-size": 15, "line-height": 20, "letter-spacing": 0 },    "sec": { "font-size": 12, "line-height": 16, "letter-spacing": 0.1 } },
+      "400":  { "node": "2093:2084", "main": { "font-size": 14, "line-height": 20, "letter-spacing": 0 },    "sec": { "font-size": 11, "line-height": 16, "letter-spacing": 0.2 } },
+      "300":  { "node": "2093:2100", "main": { "font-size": 13, "line-height": 16, "letter-spacing": 0.1 },  "sec": { "font-size": 10, "line-height": 12, "letter-spacing": 0.3 } },
+      "200":  { "node": "2093:2116", "main": { "font-size": 12, "line-height": 16, "letter-spacing": 0.1 },  "sec": { "font-size": 10, "line-height": 12, "letter-spacing": 0.3 } },
+      "100":  { "node": "2093:2132", "main": { "font-size": 11, "line-height": 16, "letter-spacing": 0.2 },  "sec": { "font-size": 10, "line-height": 12, "letter-spacing": 0.3 } }
+    },
+    "none_1100": { "node": "2093:2236", "text": { "font-size": 17, "line-height": 24, "letter-spacing": 0, "color": "role/surface/on" } },
+    "gaps": { "_note": "В Figma container gap фикс 2px (space/0,5), местами space/1 (4px) / space/px (1px) — baseline-снэппинг. В компоненте зазор между атомами задан font-относительно (--awds-price-gap: 0.2em), а не фикс-px: только так он остаётся пропорциональным шрифту на всех 11 размерах (11..32px), как выглядит в макете. Фикс 2px на крупных кеглях слипал атомы." }
+  }
+}
