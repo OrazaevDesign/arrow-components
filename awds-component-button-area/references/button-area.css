@@ -173,9 +173,9 @@
 /* === Растяжение hit-области (главная фишка) ===
    Область клика тянется под контейнер, контент остаётся по центру (justify/items center).
    --fill — по обеим осям, --fill-x — по ширине, --fill-y — по высоте. */
-.btn-area--fill   { display: flex; width: 100%; height: 100%; align-self: stretch; }
+.btn-area--fill   { display: flex; width: 100%; align-self: stretch; }
 .btn-area--fill-x { display: flex; width: 100%; }
-.btn-area--fill-y { display: flex; height: 100%; align-self: stretch; }
+.btn-area--fill-y { display: flex; align-self: stretch; }
 
 /* === Progress (загрузка) ===
    Контент скрыт (место сохраняется), по центру — спиннер. Клики гасятся. */
