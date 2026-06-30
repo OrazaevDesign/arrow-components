@@ -108,7 +108,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;                   /* фото товара вписывается целиком, без обрезки */
   display: block;
   transform: scale(0.9);                 /* в покое −10%, по hover → 100% */
   transition: transform 0.4s ease-out, opacity 0.2s ease-out;
