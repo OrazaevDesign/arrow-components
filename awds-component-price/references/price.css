@@ -21,27 +21,35 @@
      (по умолчанию) Right — «1 900 ₽»
      .price--currency-left          — «₽ 1 900»
 
-   Размеры: 11 шагов 100..1100 (по умолчанию 600). КОМПОНЕНТ БЕССHAPE-ный
-     (shape=null): размер задаётся НЕ shape-токенами (--awds-rectangle-* и т.п.),
-     а напрямую базовой шкалой типографики --awds-typography-*. Внутри одного
-     размера главная цена крупнее, валюта / старая цена / плейсхолдер — на пару
-     ступеней мельче (вторичная шкала -sec). Line-height — compact-ветка шкалы
-     (плотный числовой набор, как в макете).
+   Размеры: 11 шагов 100..1100 (по умолчанию 600). Цена — КОНТРОЛ-элемент с
+     ФИКСИРОВАННЫМИ размерами (size-варианты), поэтому привязана к шкале
+     Control/Value (--awds-control-*), которая НЕ зависит от брейкпоинта. Это
+     принципиально: viewport-адаптивная шкала --awds-typography-font-size-910..960
+     раздувается на десктопе (910: 20px→24px), и цена переставала бы совпадать с
+     макетом (size 800 рисовался 24px вместо фикс-20px). Control-шкала фикс на всех
+     брейкпоинтах. Адаптив цены — задача потребителя (он меняет size-класс:
+     карточка → price--800 desktop / price--600 mobile), а не масштаб токена.
+
+     Внутри одного размера главная цена крупнее, валюта / старая цена / плейсхолдер —
+     на меньшей ступени Control (-sec).
+
+   Размер→шкала Control/Value (Figma font-size/N → --awds-control-N-*; fs/lh px):
+     1100: main control-1000 (32/40)  sec control-700 (17/24)
+     1000: main control-950  (28/36)  sec control-600 (16/20)
+      900: main control-900  (24/32)  sec control-500 (15/20)
+      800: main control-850  (20/28)  sec control-300 (13/16)
+      700: main control-800  (18/24)  sec control-300 (13/16)
+      600: main control-600  (16/20)  sec control-300 (13/16)
+      500: main control-500  (15/20)  sec control-200 (12/16)
+      400: main control-400  (14/20)  sec control-100 (11/16)
+      300: main control-300  (13/16)  sec control-50  (10/12)
+      200: main control-200  (12/16)  sec control-50  (10/12)
+      100: main control-100  (11/16)  sec control-50  (10/12)
 
    Цвета (роли с сайта, инлайн):
      текущая (sale)   accent-container-on   (#cc4033 на эталонном сайте)
      текущая (default) surface-on-highest
      старая / плейсхолдер surface-on
-
-   Размер→шкала типографики (Figma font-size → имя DS-токена по значению px,
-   DS — старший источник; верх Figma-шкалы 850/900/950/1000 переотображён на
-   актуальные DS-номера 910/930/940/960):
-     1100: main 960  sec 700      600: main 600  sec 300
-     1000: main 940  sec 600      500: main 500  sec 200
-      900: main 930  sec 500      400: main 400  sec 100
-      800: main 910  sec 300      300: main 300  sec 50
-      700: main 800  sec 300      200: main 200  sec 50
-                                   100: main 100  sec 50
 
    Приватные аккумуляторы: --awds-price-fs/-lh/-ls (главная),
      --awds-price-fs-sec/-lh-sec/-ls-sec (вторичная), --awds-price-gap,
@@ -52,12 +60,12 @@
 
 .price {
   /* Size accumulators (default = 600) */
-  --awds-price-fs:      var(--awds-typography-font-size-600);
-  --awds-price-lh:      var(--awds-typography-line-height-compact-600);
-  --awds-price-ls:      var(--awds-typography-letter-spacing-600);
-  --awds-price-fs-sec:  var(--awds-typography-font-size-300);
-  --awds-price-lh-sec:  var(--awds-typography-line-height-compact-300);
-  --awds-price-ls-sec:  var(--awds-typography-letter-spacing-300);
+  --awds-price-fs:      var(--awds-control-600-font-size);
+  --awds-price-lh:      var(--awds-control-600-line-height);
+  --awds-price-ls:      var(--awds-control-600-letter-spacing);
+  --awds-price-fs-sec:  var(--awds-control-300-font-size);
+  --awds-price-lh-sec:  var(--awds-control-300-line-height);
+  --awds-price-ls-sec:  var(--awds-control-300-letter-spacing);
 
   /* Зазор между атомами цены (число ↔ валюта ↔ старая цена). Font-относительный
      (em), а не фикс-px: компонент живёт на 11 размерах (11..32px), и только
@@ -180,103 +188,103 @@
   --awds-price-color: var(--awds-price-muted);
 }
 
-/* === Размеры (шкала типографики, не shape) === */
+/* === Размеры (фикс-шкала Control/Value, не зависит от брейкпоинта) === */
 
 .price--1100 {
-  --awds-price-fs:     var(--awds-typography-font-size-960);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-960);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-960);
-  --awds-price-fs-sec: var(--awds-typography-font-size-700);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-700);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-700);
+  --awds-price-fs:     var(--awds-control-1000-font-size);
+  --awds-price-lh:     var(--awds-control-1000-line-height);
+  --awds-price-ls:     var(--awds-control-1000-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-700-font-size);
+  --awds-price-lh-sec: var(--awds-control-700-line-height);
+  --awds-price-ls-sec: var(--awds-control-700-letter-spacing);
 }
 
 .price--1000 {
-  --awds-price-fs:     var(--awds-typography-font-size-940);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-940);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-940);
-  --awds-price-fs-sec: var(--awds-typography-font-size-600);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-600);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-600);
+  --awds-price-fs:     var(--awds-control-950-font-size);
+  --awds-price-lh:     var(--awds-control-950-line-height);
+  --awds-price-ls:     var(--awds-control-950-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-600-font-size);
+  --awds-price-lh-sec: var(--awds-control-600-line-height);
+  --awds-price-ls-sec: var(--awds-control-600-letter-spacing);
 }
 
 .price--900 {
-  --awds-price-fs:     var(--awds-typography-font-size-930);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-930);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-930);
-  --awds-price-fs-sec: var(--awds-typography-font-size-500);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-500);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-500);
+  --awds-price-fs:     var(--awds-control-900-font-size);
+  --awds-price-lh:     var(--awds-control-900-line-height);
+  --awds-price-ls:     var(--awds-control-900-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-500-font-size);
+  --awds-price-lh-sec: var(--awds-control-500-line-height);
+  --awds-price-ls-sec: var(--awds-control-500-letter-spacing);
 }
 
 .price--800 {
-  --awds-price-fs:     var(--awds-typography-font-size-910);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-910);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-910);
-  --awds-price-fs-sec: var(--awds-typography-font-size-300);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-300);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-300);
+  --awds-price-fs:     var(--awds-control-850-font-size);
+  --awds-price-lh:     var(--awds-control-850-line-height);
+  --awds-price-ls:     var(--awds-control-850-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-300-font-size);
+  --awds-price-lh-sec: var(--awds-control-300-line-height);
+  --awds-price-ls-sec: var(--awds-control-300-letter-spacing);
 }
 
 .price--700 {
-  --awds-price-fs:     var(--awds-typography-font-size-800);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-800);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-800);
-  --awds-price-fs-sec: var(--awds-typography-font-size-300);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-300);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-300);
+  --awds-price-fs:     var(--awds-control-800-font-size);
+  --awds-price-lh:     var(--awds-control-800-line-height);
+  --awds-price-ls:     var(--awds-control-800-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-300-font-size);
+  --awds-price-lh-sec: var(--awds-control-300-line-height);
+  --awds-price-ls-sec: var(--awds-control-300-letter-spacing);
 }
 
 .price--600 {
-  --awds-price-fs:     var(--awds-typography-font-size-600);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-600);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-600);
-  --awds-price-fs-sec: var(--awds-typography-font-size-300);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-300);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-300);
+  --awds-price-fs:     var(--awds-control-600-font-size);
+  --awds-price-lh:     var(--awds-control-600-line-height);
+  --awds-price-ls:     var(--awds-control-600-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-300-font-size);
+  --awds-price-lh-sec: var(--awds-control-300-line-height);
+  --awds-price-ls-sec: var(--awds-control-300-letter-spacing);
 }
 
 .price--500 {
-  --awds-price-fs:     var(--awds-typography-font-size-500);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-500);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-500);
-  --awds-price-fs-sec: var(--awds-typography-font-size-200);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-200);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-200);
+  --awds-price-fs:     var(--awds-control-500-font-size);
+  --awds-price-lh:     var(--awds-control-500-line-height);
+  --awds-price-ls:     var(--awds-control-500-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-200-font-size);
+  --awds-price-lh-sec: var(--awds-control-200-line-height);
+  --awds-price-ls-sec: var(--awds-control-200-letter-spacing);
 }
 
 .price--400 {
-  --awds-price-fs:     var(--awds-typography-font-size-400);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-400);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-400);
-  --awds-price-fs-sec: var(--awds-typography-font-size-100);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-100);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-100);
+  --awds-price-fs:     var(--awds-control-400-font-size);
+  --awds-price-lh:     var(--awds-control-400-line-height);
+  --awds-price-ls:     var(--awds-control-400-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-100-font-size);
+  --awds-price-lh-sec: var(--awds-control-100-line-height);
+  --awds-price-ls-sec: var(--awds-control-100-letter-spacing);
 }
 
 .price--300 {
-  --awds-price-fs:     var(--awds-typography-font-size-300);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-300);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-300);
-  --awds-price-fs-sec: var(--awds-typography-font-size-50);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-50);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-50);
+  --awds-price-fs:     var(--awds-control-300-font-size);
+  --awds-price-lh:     var(--awds-control-300-line-height);
+  --awds-price-ls:     var(--awds-control-300-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-50-font-size);
+  --awds-price-lh-sec: var(--awds-control-50-line-height);
+  --awds-price-ls-sec: var(--awds-control-50-letter-spacing);
 }
 
 .price--200 {
-  --awds-price-fs:     var(--awds-typography-font-size-200);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-200);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-200);
-  --awds-price-fs-sec: var(--awds-typography-font-size-50);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-50);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-50);
+  --awds-price-fs:     var(--awds-control-200-font-size);
+  --awds-price-lh:     var(--awds-control-200-line-height);
+  --awds-price-ls:     var(--awds-control-200-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-50-font-size);
+  --awds-price-lh-sec: var(--awds-control-50-line-height);
+  --awds-price-ls-sec: var(--awds-control-50-letter-spacing);
 }
 
 .price--100 {
-  --awds-price-fs:     var(--awds-typography-font-size-100);
-  --awds-price-lh:     var(--awds-typography-line-height-compact-100);
-  --awds-price-ls:     var(--awds-typography-letter-spacing-100);
-  --awds-price-fs-sec: var(--awds-typography-font-size-50);
-  --awds-price-lh-sec: var(--awds-typography-line-height-compact-50);
-  --awds-price-ls-sec: var(--awds-typography-letter-spacing-50);
+  --awds-price-fs:     var(--awds-control-100-font-size);
+  --awds-price-lh:     var(--awds-control-100-line-height);
+  --awds-price-ls:     var(--awds-control-100-letter-spacing);
+  --awds-price-fs-sec: var(--awds-control-50-font-size);
+  --awds-price-lh-sec: var(--awds-control-50-line-height);
+  --awds-price-ls-sec: var(--awds-control-50-letter-spacing);
 }

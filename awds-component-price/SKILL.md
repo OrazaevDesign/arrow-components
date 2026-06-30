@@ -84,8 +84,8 @@ description: >
 |---|---|
 | Цвет текущей цены | sale → `rgb(var(--accent-container-on))`, default → `rgb(var(--surface-on-highest))` |
 | Цвет старой цены / плейсхолдера | `rgb(var(--surface-on))` |
-| Размер главного числа | `var(--awds-typography-font-size-{main})` + `-line-height-compact-{main}` + `-letter-spacing-{main}` |
-| Размер валюты / старой цены | вторичная шкала `-{sec}` |
+| Размер главного числа | ФИКС-шкала Control/Value: `var(--awds-control-{main}-font-size)` + `-line-height` + `-letter-spacing`. НЕ адаптивная `--awds-typography-*` (она раздувается на десктопе и ломает фикс-размер цены) |
+| Размер валюты / старой цены | вторичная ступень Control `--awds-control-{sec}-*` |
 | Зазор между атомами | `--awds-price-gap: 0.2em` (font-относительный — пропорционален кеглю на всех 11 размерах) |
 | Шрифт / вес | `var(--awds-font-family-system)`, `var(--awds-font-weight-semibold)` |
 | Цифры | `font-variant-numeric: tabular-nums` (не прыгают при смене значения) |
