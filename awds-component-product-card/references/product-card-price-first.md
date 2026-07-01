@@ -95,7 +95,12 @@
 
 Если у товара несколько фото — вложи **несколько** `<img class="pcard__image">` в ссылку-фото (первый помечен `.pcard__image--active`) и добавь индикатор `awds-component-slider` (вариант **dots-mini**, подключи `slider.css`) **между `.pcard__media` и `.pcard__content`** (как в макете — по центру, под фото; НЕ оверлеем). Число точек = числу кадров.
 
-Наведение делит фото на равные вертикальные зоны по числу кадров: позиция курсора по X выбирает активный кадр и активную точку; уход курсора возвращает к первому. Кадры — кроссфейд (CSS), смена активного — JS потребителя (ниже).
+Листание работает в двух режимах, оба — через один `wireGallery` (ниже):
+
+- **Десктоп (мышь)** — наведение делит фото на равные вертикальные зоны по числу кадров: позиция курсора по X выбирает активный кадр и активную точку; уход курсора возвращает к первому.
+- **Мобила / таблет (тач)** — **свайп** влево/вправо листает кадры по одному. Вертикальный скролл страницы остаётся нативным (в CSS ссылка-фото несёт `touch-action: pan-y`), горизонтальный жест уходит в JS. Свайп не открывает карточку товара — клик по ссылке после жеста подавляется.
+
+Кадры — кроссфейд (CSS), смена активного — JS потребителя (ниже).
 
 **Много кадров (например 10).** Чтобы индикатор не растягивался, при числе кадров больше окна (`DOTS_WINDOW = 5`) точки оборачивают в `.pcard__slider-track` и добавляют классу слайдера `.pcard__slider--many` — это включает **фикс-окно**: лента точек сдвигается, держа активную по центру, крайние точки окна уменьшаются (`.slider__dot--sm`, намёк, что есть ещё кадры). Сдвиг и edge-классы выставляет тот же `wireGallery` (ниже).
 
@@ -134,7 +139,7 @@
 </div>
 ```
 
-JS-обвязка потребителя (перелистывание по hover-зонам):
+JS-обвязка потребителя (десктоп — hover-зоны, мобила/таблет — свайп):
 
 ```js
 function wireGallery(link) {
@@ -146,6 +151,7 @@ function wireGallery(link) {
   const track = slider ? slider.querySelector('.pcard__slider-track') : null;
   const many = slider ? slider.classList.contains('pcard__slider--many') : false;
   const n = imgs.length;
+  let current = 0;
 
   // Окно индикатора (много кадров): лента сдвигается, держа активную по центру окна.
   // Центрируем ПИКСЕЛЬНО (offsetLeft/offsetWidth не зависят от transform и корректны
@@ -167,21 +173,54 @@ function wireGallery(link) {
     });
   };
   const setActive = (i) => {
-    imgs.forEach((im, k) => im.classList.toggle('pcard__image--active', k === i));
-    dots.forEach((d, k) => d.classList.toggle('slider__dot--active', k === i));
-    layoutDots(i);
+    current = Math.min(n - 1, Math.max(0, i));
+    imgs.forEach((im, k) => im.classList.toggle('pcard__image--active', k === current));
+    dots.forEach((d, k) => d.classList.toggle('slider__dot--active', k === current));
+    layoutDots(current);
   };
+
+  // Десктоп (мышь): перелистывание по hover-зонам.
   link.addEventListener('pointermove', (e) => {
+    if (e.pointerType !== 'mouse') return;
     const r = link.getBoundingClientRect();
-    setActive(Math.min(n - 1, Math.max(0, Math.floor((e.clientX - r.left) / r.width * n))));
+    setActive(Math.floor((e.clientX - r.left) / r.width * n));
   });
-  link.addEventListener('pointerleave', () => setActive(0));
+  link.addEventListener('pointerleave', (e) => {
+    if (e.pointerType === 'mouse') setActive(0);
+  });
+
+  // Мобила/таблет (тач/перо): свайп влево/вправо. CSS даёт ссылке touch-action:pan-y —
+  // вертикальный скролл страницы остаётся нативным, горизонталь приходит сюда. Порог
+  // SWIPE листает по одному кадру; ребейз sx позволяет длинному свайпу листать дальше.
+  // После свайпа гасим клик по ссылке, чтобы жест не открыл карточку товара.
+  const SWIPE = 32;                                  // порог, px
+  let sx = 0, sy = 0, axis = '', dragging = false, swiped = false;
+  link.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse') return;
+    dragging = true; swiped = false; axis = '';
+    sx = e.clientX; sy = e.clientY;
+  });
+  link.addEventListener('pointermove', (e) => {
+    if (e.pointerType === 'mouse' || !dragging) return;
+    const dx = e.clientX - sx, dy = e.clientY - sy;
+    if (!axis && Math.hypot(dx, dy) > 8) axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    if (axis === 'x' && Math.abs(dx) >= SWIPE) {
+      setActive(current + (dx < 0 ? 1 : -1));        // влево → следующий, вправо → предыдущий
+      swiped = true;
+      sx = e.clientX;                                // ребейз под следующий шаг того же жеста
+    }
+  });
+  link.addEventListener('pointerup',     () => { dragging = false; });
+  link.addEventListener('pointercancel', () => { dragging = false; axis = ''; });
+  link.addEventListener('click', (e) => { if (swiped) { e.preventDefault(); swiped = false; } });
+
   setActive(0);
 }
-document.querySelectorAll('.pcard-price-first .pcard__image-link').forEach(wireGallery);
+// Свайп/hover — во всех вариантах карточки; селектор ловит любую ссылку-фото.
+document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 ```
 
-Одиночное фото (без `.pcard__image--active` и без `.pcard__slider`) работает как прежде — `wireGallery` его пропускает. Мало кадров (≤ окна) — обычные точки без `.pcard__slider--many`/`-track`.
+Одиночное фото (без `.pcard__image--active` и без `.pcard__slider`) работает как прежде — `wireGallery` его пропускает. Мало кадров (≤ окна) — обычные точки без `.pcard__slider--many`/`-track`. Свайп доступен на всех тач-устройствах независимо от числа кадров (≥2).
 
 **Одно фото — резерв места под индикатор.** Когда кадр один, слайдер не выводят, но вместо него ставят пустую заглушку `<div class="pcard__slider-spacer" aria-hidden="true"></div>` (между `.pcard__media` и `.pcard__content`). Она занимает ровно высоту индикатора dots-mini — карточки с одним и несколькими фото получаются одной высоты, контент (цена/бренд) не сдвигается в гриде. Если в каталоге у всех товаров одно фото — заглушку можно не ставить.
 

@@ -4,7 +4,7 @@
 
 **Figma:** [Product Card / Brand First](https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2601)
 
-Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, флага нет, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (desktop `price--800` 20px / mobile `price--600` 16px), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах), hover-модель фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
+Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, флага нет, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (desktop `price--800` 20px / mobile `price--600` 16px), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), hover-модель фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
 
 ## HTML
 

@@ -101,6 +101,8 @@
   border-radius: var(--awds-rounded-500);
   background: rgb(var(--surface-bright));
   text-decoration: none;
+  /* Свайп галереи на тач-устройствах: вертикаль — нативному скроллу, горизонталь — JS галереи. */
+  touch-action: pan-y;
 }
 
 .pcard-buy-now .pcard__image {
