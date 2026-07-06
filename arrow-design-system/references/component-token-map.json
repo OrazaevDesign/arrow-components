@@ -1,0 +1,2782 @@
+{
+  "_generated_by": "build-component-map.js",
+  "_note": "Карта для arrow-components-builder. size → ИМЯ семантического shape-токена (var(--awds-{shape}-{N}-{prop}), определён в css-global); state → роль/база (rgb(var(--role)) / var(--awds-opacity-N)). НЕ ПРАВЬ ВРУЧНУЮ — перегенерация: node .claude/skills/arrow-design-system/scripts/build-component-map.js",
+  "snapshot_hash": "sha256:971e866999e481a02d083c2c342ff98313968875f1aa44884f28d4b7c57aa328",
+  "size": {
+    "nav": {
+      "300": {
+        "padding": "var(--awds-nav-300-padding)",
+        "gap": "var(--awds-nav-300-gap)",
+        "icon": "var(--awds-nav-300-icon)",
+        "typography": {
+          "font-size": "var(--awds-nav-300-typography-font-size)",
+          "line-height": "var(--awds-nav-300-typography-line-height)",
+          "letter-spacing": "var(--awds-nav-300-typography-letter-spacing)"
+        },
+        "level-gap": "var(--awds-nav-300-level-gap)"
+      },
+      "400": {
+        "padding": "var(--awds-nav-400-padding)",
+        "gap": "var(--awds-nav-400-gap)",
+        "icon": "var(--awds-nav-400-icon)",
+        "typography": {
+          "font-size": "var(--awds-nav-400-typography-font-size)",
+          "line-height": "var(--awds-nav-400-typography-line-height)",
+          "letter-spacing": "var(--awds-nav-400-typography-letter-spacing)"
+        },
+        "level-gap": "var(--awds-nav-400-level-gap)"
+      },
+      "500": {
+        "padding": "var(--awds-nav-500-padding)",
+        "gap": "var(--awds-nav-500-gap)",
+        "icon": "var(--awds-nav-500-icon)",
+        "typography": {
+          "font-size": "var(--awds-nav-500-typography-font-size)",
+          "line-height": "var(--awds-nav-500-typography-line-height)",
+          "letter-spacing": "var(--awds-nav-500-typography-letter-spacing)"
+        },
+        "level-gap": "var(--awds-nav-500-level-gap)"
+      }
+    },
+    "profile-button": {
+      "padding": "var(--awds-profile-button-padding)",
+      "gap": "var(--awds-profile-button-gap)",
+      "icon": "var(--awds-profile-button-icon)"
+    },
+    "dropdown": {
+      "200": {
+        "padding": "var(--awds-dropdown-200-padding)",
+        "border-radius": "var(--awds-dropdown-200-border-radius)"
+      },
+      "300": {
+        "padding": "var(--awds-dropdown-300-padding)",
+        "border-radius": "var(--awds-dropdown-300-border-radius)"
+      },
+      "400": {
+        "padding": "var(--awds-dropdown-400-padding)",
+        "border-radius": "var(--awds-dropdown-400-border-radius)"
+      },
+      "500": {
+        "padding": "var(--awds-dropdown-500-padding)",
+        "border-radius": "var(--awds-dropdown-500-border-radius)"
+      }
+    },
+    "tabs": {
+      "300": {
+        "padding": "var(--awds-tabs-300-padding)",
+        "gap": "var(--awds-tabs-300-gap)",
+        "typography": {
+          "font-size": "var(--awds-tabs-300-typography-font-size)",
+          "line-height": "var(--awds-tabs-300-typography-line-height)",
+          "letter-spacing": "var(--awds-tabs-300-typography-letter-spacing)"
+        },
+        "gap-panel": "var(--awds-tabs-300-gap-panel)",
+        "gap-button": "var(--awds-tabs-300-gap-button)"
+      },
+      "400": {
+        "padding": "var(--awds-tabs-400-padding)",
+        "gap": "var(--awds-tabs-400-gap)",
+        "typography": {
+          "font-size": "var(--awds-tabs-400-typography-font-size)",
+          "line-height": "var(--awds-tabs-400-typography-line-height)",
+          "letter-spacing": "var(--awds-tabs-400-typography-letter-spacing)"
+        },
+        "gap-panel": "var(--awds-tabs-400-gap-panel)",
+        "gap-button": "var(--awds-tabs-400-gap-button)"
+      }
+    },
+    "range": {
+      "300": {
+        "handle": "var(--awds-range-300-handle)"
+      },
+      "400": {
+        "handle": "var(--awds-range-400-handle)"
+      },
+      "500": {
+        "handle": "var(--awds-range-500-handle)"
+      }
+    },
+    "notice": {
+      "100": {
+        "padding-v": "var(--awds-notice-100-padding-v)",
+        "typography": {
+          "font-size": "var(--awds-notice-100-typography-font-size)",
+          "line-height": "var(--awds-notice-100-typography-line-height)",
+          "letter-spacing": "var(--awds-notice-100-typography-letter-spacing)"
+        },
+        "size": "var(--awds-notice-100-size)",
+        "padding-h": "var(--awds-notice-100-padding-h)",
+        "padding": "var(--awds-notice-100-padding)"
+      },
+      "200": {
+        "padding-v": "var(--awds-notice-200-padding-v)",
+        "typography": {
+          "font-size": "var(--awds-notice-200-typography-font-size)",
+          "line-height": "var(--awds-notice-200-typography-line-height)",
+          "letter-spacing": "var(--awds-notice-200-typography-letter-spacing)"
+        },
+        "padding-h": "var(--awds-notice-200-padding-h)",
+        "padding": "var(--awds-notice-200-padding)",
+        "size": "var(--awds-notice-200-size)"
+      },
+      "300": {
+        "padding-v": "var(--awds-notice-300-padding-v)",
+        "typography": {
+          "font-size": "var(--awds-notice-300-typography-font-size)",
+          "line-height": "var(--awds-notice-300-typography-line-height)",
+          "letter-spacing": "var(--awds-notice-300-typography-letter-spacing)"
+        },
+        "padding-h": "var(--awds-notice-300-padding-h)",
+        "padding": "var(--awds-notice-300-padding)",
+        "size": "var(--awds-notice-300-size)"
+      },
+      "400": {
+        "padding-v": "var(--awds-notice-400-padding-v)",
+        "typography": {
+          "font-size": "var(--awds-notice-400-typography-font-size)",
+          "line-height": "var(--awds-notice-400-typography-line-height)",
+          "letter-spacing": "var(--awds-notice-400-typography-letter-spacing)"
+        },
+        "padding-h": "var(--awds-notice-400-padding-h)",
+        "padding": "var(--awds-notice-400-padding)",
+        "size": "var(--awds-notice-400-size)"
+      },
+      "500": {
+        "padding-v": "var(--awds-notice-500-padding-v)",
+        "typography": {
+          "font-size": "var(--awds-notice-500-typography-font-size)",
+          "line-height": "var(--awds-notice-500-typography-line-height)",
+          "letter-spacing": "var(--awds-notice-500-typography-letter-spacing)"
+        },
+        "padding-h": "var(--awds-notice-500-padding-h)",
+        "padding": "var(--awds-notice-500-padding)",
+        "size": "var(--awds-notice-500-size)"
+      },
+      "600": {
+        "padding-v": "var(--awds-notice-600-padding-v)",
+        "typography": {
+          "font-size": "var(--awds-notice-600-typography-font-size)",
+          "line-height": "var(--awds-notice-600-typography-line-height)",
+          "letter-spacing": "var(--awds-notice-600-typography-letter-spacing)"
+        },
+        "padding-h": "var(--awds-notice-600-padding-h)",
+        "padding": "var(--awds-notice-600-padding)",
+        "size": "var(--awds-notice-600-size)"
+      }
+    },
+    "rectangle": {
+      "50": {
+        "padding": "var(--awds-rectangle-50-padding)",
+        "gap": "var(--awds-rectangle-50-gap)",
+        "icon": "var(--awds-rectangle-50-icon)",
+        "typography": {
+          "font-size": "var(--awds-rectangle-50-typography-font-size)",
+          "line-height": "var(--awds-rectangle-50-typography-line-height)",
+          "letter-spacing": "var(--awds-rectangle-50-typography-letter-spacing)"
+        },
+        "notice-gap": "var(--awds-rectangle-50-notice-gap)",
+        "description": {
+          "font-size": "var(--awds-rectangle-50-description-font-size)",
+          "line-height": "var(--awds-rectangle-50-description-line-height)",
+          "letter-spacing": "var(--awds-rectangle-50-description-letter-spacing)"
+        },
+        "text-gap": "var(--awds-rectangle-50-text-gap)",
+        "rounded": "var(--awds-rectangle-50-rounded)",
+        "combi": {
+          "label-top": "var(--awds-rectangle-50-combi-label-top)",
+          "label-bottom": "var(--awds-rectangle-50-combi-label-bottom)",
+          "input-top": "var(--awds-rectangle-50-combi-input-top)",
+          "input-bottom": "var(--awds-rectangle-50-combi-input-bottom)"
+        },
+        "img-padding": "var(--awds-rectangle-50-img-padding)",
+        "img": "var(--awds-rectangle-50-img)"
+      },
+      "100": {
+        "padding": "var(--awds-rectangle-100-padding)",
+        "gap": "var(--awds-rectangle-100-gap)",
+        "icon": "var(--awds-rectangle-100-icon)",
+        "typography": {
+          "font-size": "var(--awds-rectangle-100-typography-font-size)",
+          "line-height": "var(--awds-rectangle-100-typography-line-height)",
+          "letter-spacing": "var(--awds-rectangle-100-typography-letter-spacing)"
+        },
+        "notice-gap": "var(--awds-rectangle-100-notice-gap)",
+        "description": {
+          "font-size": "var(--awds-rectangle-100-description-font-size)",
+          "line-height": "var(--awds-rectangle-100-description-line-height)",
+          "letter-spacing": "var(--awds-rectangle-100-description-letter-spacing)"
+        },
+        "text-gap": "var(--awds-rectangle-100-text-gap)",
+        "rounded": "var(--awds-rectangle-100-rounded)",
+        "combi": {
+          "label-top": "var(--awds-rectangle-100-combi-label-top)",
+          "label-bottom": "var(--awds-rectangle-100-combi-label-bottom)",
+          "input-top": "var(--awds-rectangle-100-combi-input-top)",
+          "input-bottom": "var(--awds-rectangle-100-combi-input-bottom)"
+        },
+        "img-padding": "var(--awds-rectangle-100-img-padding)",
+        "img": "var(--awds-rectangle-100-img)"
+      },
+      "200": {
+        "padding": "var(--awds-rectangle-200-padding)",
+        "gap": "var(--awds-rectangle-200-gap)",
+        "icon": "var(--awds-rectangle-200-icon)",
+        "typography": {
+          "font-size": "var(--awds-rectangle-200-typography-font-size)",
+          "line-height": "var(--awds-rectangle-200-typography-line-height)",
+          "letter-spacing": "var(--awds-rectangle-200-typography-letter-spacing)"
+        },
+        "notice-gap": "var(--awds-rectangle-200-notice-gap)",
+        "description": {
+          "font-size": "var(--awds-rectangle-200-description-font-size)",
+          "line-height": "var(--awds-rectangle-200-description-line-height)",
+          "letter-spacing": "var(--awds-rectangle-200-description-letter-spacing)"
+        },
+        "text-gap": "var(--awds-rectangle-200-text-gap)",
+        "rounded": "var(--awds-rectangle-200-rounded)",
+        "combi": {
+          "label-top": "var(--awds-rectangle-200-combi-label-top)",
+          "label-bottom": "var(--awds-rectangle-200-combi-label-bottom)",
+          "input-top": "var(--awds-rectangle-200-combi-input-top)",
+          "input-bottom": "var(--awds-rectangle-200-combi-input-bottom)"
+        },
+        "img-padding": "var(--awds-rectangle-200-img-padding)",
+        "img": "var(--awds-rectangle-200-img)"
+      },
+      "300": {
+        "padding": "var(--awds-rectangle-300-padding)",
+        "gap": "var(--awds-rectangle-300-gap)",
+        "icon": "var(--awds-rectangle-300-icon)",
+        "typography": {
+          "font-size": "var(--awds-rectangle-300-typography-font-size)",
+          "line-height": "var(--awds-rectangle-300-typography-line-height)",
+          "letter-spacing": "var(--awds-rectangle-300-typography-letter-spacing)"
+        },
+        "notice-gap": "var(--awds-rectangle-300-notice-gap)",
+        "description": {
+          "font-size": "var(--awds-rectangle-300-description-font-size)",
+          "line-height": "var(--awds-rectangle-300-description-line-height)",
+          "letter-spacing": "var(--awds-rectangle-300-description-letter-spacing)"
+        },
+        "text-gap": "var(--awds-rectangle-300-text-gap)",
+        "rounded": "var(--awds-rectangle-300-rounded)",
+        "combi": {
+          "input-bottom": "var(--awds-rectangle-300-combi-input-bottom)",
+          "label-bottom": "var(--awds-rectangle-300-combi-label-bottom)",
+          "input-top": "var(--awds-rectangle-300-combi-input-top)",
+          "label-top": "var(--awds-rectangle-300-combi-label-top)"
+        },
+        "img-padding": "var(--awds-rectangle-300-img-padding)",
+        "img": "var(--awds-rectangle-300-img)"
+      },
+      "400": {
+        "padding": "var(--awds-rectangle-400-padding)",
+        "gap": "var(--awds-rectangle-400-gap)",
+        "icon": "var(--awds-rectangle-400-icon)",
+        "typography": {
+          "font-size": "var(--awds-rectangle-400-typography-font-size)",
+          "line-height": "var(--awds-rectangle-400-typography-line-height)",
+          "letter-spacing": "var(--awds-rectangle-400-typography-letter-spacing)"
+        },
+        "notice-gap": "var(--awds-rectangle-400-notice-gap)",
+        "description": {
+          "font-size": "var(--awds-rectangle-400-description-font-size)",
+          "line-height": "var(--awds-rectangle-400-description-line-height)",
+          "letter-spacing": "var(--awds-rectangle-400-description-letter-spacing)"
+        },
+        "text-gap": "var(--awds-rectangle-400-text-gap)",
+        "rounded": "var(--awds-rectangle-400-rounded)",
+        "combi": {
+          "input-top": "var(--awds-rectangle-400-combi-input-top)",
+          "label-bottom": "var(--awds-rectangle-400-combi-label-bottom)",
+          "input-bottom": "var(--awds-rectangle-400-combi-input-bottom)",
+          "label-top": "var(--awds-rectangle-400-combi-label-top)"
+        },
+        "img-padding": "var(--awds-rectangle-400-img-padding)",
+        "img": "var(--awds-rectangle-400-img)"
+      },
+      "500": {
+        "padding": "var(--awds-rectangle-500-padding)",
+        "gap": "var(--awds-rectangle-500-gap)",
+        "icon": "var(--awds-rectangle-500-icon)",
+        "typography": {
+          "font-size": "var(--awds-rectangle-500-typography-font-size)",
+          "line-height": "var(--awds-rectangle-500-typography-line-height)",
+          "letter-spacing": "var(--awds-rectangle-500-typography-letter-spacing)"
+        },
+        "notice-gap": "var(--awds-rectangle-500-notice-gap)",
+        "description": {
+          "font-size": "var(--awds-rectangle-500-description-font-size)",
+          "line-height": "var(--awds-rectangle-500-description-line-height)",
+          "letter-spacing": "var(--awds-rectangle-500-description-letter-spacing)"
+        },
+        "text-gap": "var(--awds-rectangle-500-text-gap)",
+        "rounded": "var(--awds-rectangle-500-rounded)",
+        "combi": {
+          "input-top": "var(--awds-rectangle-500-combi-input-top)",
+          "label-bottom": "var(--awds-rectangle-500-combi-label-bottom)",
+          "input-bottom": "var(--awds-rectangle-500-combi-input-bottom)",
+          "label-top": "var(--awds-rectangle-500-combi-label-top)"
+        },
+        "img-padding": "var(--awds-rectangle-500-img-padding)",
+        "img": "var(--awds-rectangle-500-img)"
+      },
+      "600": {
+        "padding": "var(--awds-rectangle-600-padding)",
+        "gap": "var(--awds-rectangle-600-gap)",
+        "icon": "var(--awds-rectangle-600-icon)",
+        "typography": {
+          "font-size": "var(--awds-rectangle-600-typography-font-size)",
+          "line-height": "var(--awds-rectangle-600-typography-line-height)",
+          "letter-spacing": "var(--awds-rectangle-600-typography-letter-spacing)"
+        },
+        "notice-gap": "var(--awds-rectangle-600-notice-gap)",
+        "description": {
+          "font-size": "var(--awds-rectangle-600-description-font-size)",
+          "line-height": "var(--awds-rectangle-600-description-line-height)",
+          "letter-spacing": "var(--awds-rectangle-600-description-letter-spacing)"
+        },
+        "text-gap": "var(--awds-rectangle-600-text-gap)",
+        "rounded": "var(--awds-rectangle-600-rounded)",
+        "combi": {
+          "label-top": "var(--awds-rectangle-600-combi-label-top)",
+          "label-bottom": "var(--awds-rectangle-600-combi-label-bottom)",
+          "input-top": "var(--awds-rectangle-600-combi-input-top)",
+          "input-bottom": "var(--awds-rectangle-600-combi-input-bottom)"
+        },
+        "img-padding": "var(--awds-rectangle-600-img-padding)",
+        "img": "var(--awds-rectangle-600-img)"
+      }
+    },
+    "square": {
+      "200": {
+        "padding": "var(--awds-square-200-padding)",
+        "gap": "var(--awds-square-200-gap)",
+        "icon": "var(--awds-square-200-icon)",
+        "handle": "var(--awds-square-200-handle)",
+        "switch-width": "var(--awds-square-200-switch-width)",
+        "rounded": "var(--awds-square-200-rounded)",
+        "img-padding": "var(--awds-square-200-img-padding)",
+        "img": "var(--awds-square-200-img)"
+      },
+      "300": {
+        "padding": "var(--awds-square-300-padding)",
+        "gap": "var(--awds-square-300-gap)",
+        "icon": "var(--awds-square-300-icon)",
+        "handle": "var(--awds-square-300-handle)",
+        "switch-width": "var(--awds-square-300-switch-width)",
+        "rounded": "var(--awds-square-300-rounded)",
+        "img-padding": "var(--awds-square-300-img-padding)",
+        "img": "var(--awds-square-300-img)"
+      },
+      "400": {
+        "padding": "var(--awds-square-400-padding)",
+        "gap": "var(--awds-square-400-gap)",
+        "icon": "var(--awds-square-400-icon)",
+        "handle": "var(--awds-square-400-handle)",
+        "switch-width": "var(--awds-square-400-switch-width)",
+        "rounded": "var(--awds-square-400-rounded)",
+        "img-padding": "var(--awds-square-400-img-padding)",
+        "img": "var(--awds-square-400-img)"
+      },
+      "500": {
+        "padding": "var(--awds-square-500-padding)",
+        "gap": "var(--awds-square-500-gap)",
+        "icon": "var(--awds-square-500-icon)",
+        "handle": "var(--awds-square-500-handle)",
+        "switch-width": "var(--awds-square-500-switch-width)",
+        "rounded": "var(--awds-square-500-rounded)",
+        "img-padding": "var(--awds-square-500-img-padding)",
+        "img": "var(--awds-square-500-img)"
+      },
+      "600": {
+        "padding": "var(--awds-square-600-padding)",
+        "gap": "var(--awds-square-600-gap)",
+        "icon": "var(--awds-square-600-icon)",
+        "handle": "var(--awds-square-600-handle)",
+        "switch-width": "var(--awds-square-600-switch-width)",
+        "rounded": "var(--awds-square-600-rounded)",
+        "img-padding": "var(--awds-square-600-img-padding)",
+        "img": "var(--awds-square-600-img)"
+      }
+    }
+  },
+  "state": {
+    "rest": {
+      "button": {
+        "primary": {
+          "bg": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "group-border": "rgb(var(--primary-chroma))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-high))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--surface-on-high))"
+        },
+        "addition": {
+          "bg": "rgb(var(--addition-core))",
+          "chroma": "rgb(var(--addition-chroma))",
+          "border": "rgb(var(--addition-core))",
+          "color": "rgb(var(--addition-on))",
+          "group-border": "rgb(var(--addition-dim))",
+          "group-color": "rgb(var(--addition-on))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on))"
+        },
+        "tertiary": {
+          "bg": "rgb(var(--tertiary-core))",
+          "chroma": "rgb(var(--tertiary-chroma))",
+          "border": "rgb(var(--tertiary-core))",
+          "color": "rgb(var(--tertiary-on))",
+          "group-border": "rgb(var(--tertiary-core))",
+          "group-color": "rgb(var(--tertiary-on))"
+        },
+        "contrast": {
+          "bg": "rgb(var(--surface-on-highest))",
+          "chroma": "rgb(var(--surface-on-high))",
+          "border": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--surface-bright))",
+          "group-border": "rgb(var(--surface-on-highest))",
+          "group-color": "rgb(var(--surface-bright))"
+        },
+        "clean": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "group-border": "rgb(var(--surface-bright))",
+          "group-color": "rgb(var(--surface-on-high))"
+        },
+        "pills": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on))"
+        }
+      },
+      "focus-selection": {
+        "outline": "rgb(var(--surface-on-highest))",
+        "outlineVariant": "rgb(var(--primary-core))",
+        "outlineShow": "false"
+      },
+      "form-control": {
+        "default": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "rgb(var(--secondary-container-dim))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "success": {
+          "bg": "rgb(var(--success-container-core))",
+          "chroma": "rgb(var(--success-container-chroma))",
+          "border": "rgb(var(--success-container-on-lowest))",
+          "color": "rgb(var(--success-container-on-highest))",
+          "icon": "rgb(var(--success-container-on-high))",
+          "chevrone": "rgb(var(--success-container-on))",
+          "dim": "rgb(var(--success-container-dim))",
+          "placehold": "rgb(var(--success-container-on-high))"
+        },
+        "error": {
+          "bg": "rgb(var(--error-container-core))",
+          "chroma": "rgb(var(--error-container-chroma))",
+          "border": "rgb(var(--error-container-on-lowest))",
+          "color": "rgb(var(--error-container-on-highest))",
+          "icon": "rgb(var(--error-container-on-high))",
+          "chevrone": "rgb(var(--error-container-on))",
+          "dim": "rgb(var(--error-container-dim))",
+          "placehold": "rgb(var(--error-container-on-high))"
+        },
+        "light": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "rgb(var(--surface-surface))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "transparent",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "autofill": {
+          "bg": "rgb(var(--tertiary-container-core))",
+          "chroma": "rgb(var(--tertiary-container-chroma))",
+          "border": "rgb(var(--tertiary-container-on-lowest))",
+          "color": "rgb(var(--tertiary-container-on-highest))",
+          "icon": "rgb(var(--tertiary-container-on-high))",
+          "chevrone": "rgb(var(--tertiary-container-on))",
+          "dim": "rgb(var(--tertiary-container-dim))",
+          "placehold": "rgb(var(--tertiary-container-on-high))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "dim": "rgb(var(--secondary-dim))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "placehold": "rgb(var(--secondary-on-dim))",
+          "icon": "rgb(var(--secondary-on))",
+          "chevrone": "rgb(var(--secondary-on))"
+        }
+      },
+      "check-radio": {
+        "selected": {
+          "bg": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "transparent",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "list-control": {
+        "label": "rgb(var(--surface-on-highest))",
+        "bg": "transparent",
+        "border": "transparent"
+      },
+      "list": {
+        "selected": {
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--surface-on))",
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-surface))",
+          "description": "rgb(var(--surface-on))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on))"
+        },
+        "unselected-transparent": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected-actual": {
+          "bg": "transparent",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on-low))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--accent-container-on-low))"
+        },
+        "selected-secondary": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-on-lowest))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "selected-variation": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-variation": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "placehold": "rgb(var(--surface-on))",
+          "description": "rgb(var(--surface-on))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "transparent"
+        },
+        "indeterminate-variation": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "placehold": "rgb(var(--surface-on))",
+          "description": "rgb(var(--surface-on))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-tabbar": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))",
+          "description": "rgb(var(--surface-on-high))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))"
+        },
+        "selected-tabbar": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))"
+        },
+        "unselected-menu": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))",
+          "description": "rgb(var(--surface-on-high))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))"
+        },
+        "selected-menu": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        }
+      },
+      "nav-button": {
+        "selected-transparent": {
+          "bg": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "transparent"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "border": "transparent",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        },
+        "selected": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "tab": {
+        "selected": {
+          "bg": "transparent",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--surface-on-highest))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-high))"
+        }
+      },
+      "badge": {
+        "market": {
+          "percent": {
+            "bg": "rgb(var(--accent-core))",
+            "chroma": "rgb(var(--accent-chroma))",
+            "border": "rgb(var(--accent-core))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "sale": {
+            "bg": "rgb(var(--primary-core))",
+            "chroma": "rgb(var(--primary-chroma))",
+            "border": "rgb(var(--primary-core))",
+            "color": "rgb(var(--primary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "brand": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on))"
+          }
+        },
+        "state": {
+          "delivered": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "inprogress": {
+            "bg": "rgb(var(--tertiary-core))",
+            "chroma": "rgb(var(--tertiary-chroma))",
+            "border": "rgb(var(--tertiary-core))",
+            "color": "rgb(var(--tertiary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "paid": {
+            "bg": "rgb(var(--success-core))",
+            "chroma": "rgb(var(--success-chroma))",
+            "border": "rgb(var(--success-core))",
+            "color": "rgb(var(--success-on))"
+          },
+          "cancelled": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "paidclient": {
+            "bg": "rgb(var(--warning-core))",
+            "chroma": "rgb(var(--warning-chroma))",
+            "border": "rgb(var(--warning-core))",
+            "color": "rgb(var(--warning-on))"
+          }
+        },
+        "system": {
+          "info": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "success": {
+            "bg": "rgb(var(--success-core))",
+            "chroma": "rgb(var(--success-chroma))",
+            "border": "rgb(var(--success-core))",
+            "color": "rgb(var(--success-on))"
+          },
+          "warning": {
+            "bg": "rgb(var(--warning-core))",
+            "chroma": "rgb(var(--warning-chroma))",
+            "border": "rgb(var(--warning-core))",
+            "color": "rgb(var(--warning-on))"
+          },
+          "error": {
+            "bg": "rgb(var(--error-core))",
+            "chroma": "rgb(var(--error-chroma))",
+            "border": "rgb(var(--error-core))",
+            "color": "rgb(var(--error-on))"
+          },
+          "accent": {
+            "bg": "rgb(var(--accent-core))",
+            "chroma": "rgb(var(--accent-chroma))",
+            "border": "rgb(var(--accent-core))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "secondary": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "ghost": {
+            "bg": "transparent",
+            "chroma": "transparent",
+            "border": "transparent",
+            "color": "rgb(var(--surface-on-high))"
+          }
+        }
+      },
+      "range": {
+        "default": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-core))"
+        },
+        "container": "rgb(var(--surface-container-container))",
+        "light": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--secondary-container-dim))"
+        },
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-chroma))"
+      },
+      "link": {
+        "default": "rgb(var(--tertiary-container-on-high))",
+        "muted": "rgb(var(--surface-on-high))",
+        "contrast": "rgb(var(--surface-on-highest))",
+        "accent": "rgb(var(--surface-on-highest))",
+        "heading": "rgb(var(--surface-on-high))"
+      },
+      "overhung": {
+        "primary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on))"
+        }
+      },
+      "areabutton": {
+        "default": "rgb(var(--tertiary-container-on-high))",
+        "muted": "rgb(var(--surface-on-high))",
+        "contrast": "rgb(var(--surface-on-highest))"
+      },
+      "rating": {
+        "selected": {
+          "bg": "rgb(var(--warning-core))",
+          "chroma": "rgb(var(--warning-chroma))",
+          "border": "rgb(var(--warning-core))",
+          "color": "rgb(var(--warning-on))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-container-container))",
+          "chroma": "rgb(var(--surface-container-low))",
+          "border": "rgb(var(--surface-container-container))",
+          "color": "rgb(var(--surface-on-high))"
+        }
+      },
+      "variation": {
+        "selected": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "chroma": "rgb(var(--primary-container-core))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-dim))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "chroma": "rgb(var(--secondary-container-core))"
+        },
+        "indeterminate": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on))",
+          "chroma": "rgb(var(--surface-bright))"
+        }
+      },
+      "tsar-button": {
+        "rich": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "group-border": "rgb(var(--primary-chroma))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--primary-container-core))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "border": "rgb(var(--primary-container-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "group-border": "rgb(var(--primary-container-dim))",
+          "group-color": "rgb(var(--primary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--primary-container-on-highest))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--primary-container-on-highest))"
+        }
+      },
+      "tsar-check-radio": {
+        "rich": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "handle": "rgb(var(--secondary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--secondary-container-on-high))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "tabbar-button": {
+        "selected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-high))",
+          "chevrone": "rgb(var(--surface-on-high))"
+        }
+      },
+      "cell": {
+        "default-head": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "light": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "default": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        }
+      },
+      "opacity": {
+        "control": {
+          "disabled": "var(--awds-opacity-40)",
+          "enabled": "var(--awds-opacity-100)"
+        },
+        "content": {
+          "handle-opacity": "var(--awds-opacity-100)",
+          "placeholder": "var(--awds-opacity-60)",
+          "textarea-handle": "var(--awds-opacity-30)"
+        },
+        "chevrone": {
+          "expand": "var(--awds-opacity-90)",
+          "shrink": "var(--awds-opacity-40)"
+        },
+        "overhung": {
+          "secondary": "var(--awds-opacity-60)"
+        }
+      }
+    },
+    "hover": {
+      "button": {
+        "primary": {
+          "bg": "rgb(var(--primary-dim))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-on))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "group-border": "rgb(var(--primary-dim))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--surface-on-highest))"
+        },
+        "addition": {
+          "bg": "rgb(var(--addition-dim))",
+          "chroma": "rgb(var(--addition-chroma))",
+          "border": "rgb(var(--addition-dim))",
+          "color": "rgb(var(--addition-on))",
+          "group-border": "rgb(var(--addition-dim))",
+          "group-color": "rgb(var(--addition-on-dim))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--secondary-dim))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "border": "rgb(var(--secondary-dim))",
+          "color": "rgb(var(--secondary-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on-dim))"
+        },
+        "tertiary": {
+          "bg": "rgb(var(--tertiary-dim))",
+          "chroma": "rgb(var(--tertiary-chroma))",
+          "border": "rgb(var(--tertiary-dim))",
+          "color": "rgb(var(--tertiary-on))",
+          "group-border": "rgb(var(--tertiary-dim))",
+          "group-color": "rgb(var(--tertiary-on-dim))"
+        },
+        "contrast": {
+          "bg": "rgb(var(--surface-on-highest))",
+          "chroma": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--surface-bright))",
+          "group-border": "rgb(var(--surface-on-highest))",
+          "group-color": "rgb(var(--surface-surface))"
+        },
+        "clean": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-highest))",
+          "group-border": "rgb(var(--surface-surface))",
+          "group-color": "rgb(var(--surface-on-highest))"
+        },
+        "pills": {
+          "bg": "rgb(var(--secondary-dim))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "border": "rgb(var(--secondary-dim))",
+          "color": "rgb(var(--accent-container-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on-dim))"
+        }
+      },
+      "focus-selection": {
+        "outline": "rgb(var(--surface-on-highest))",
+        "outlineVariant": "rgb(var(--primary-core))",
+        "outlineShow": "false"
+      },
+      "form-control": {
+        "default": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-on-low))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "rgb(var(--secondary-container-dim))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "success": {
+          "bg": "rgb(var(--success-container-core))",
+          "chroma": "rgb(var(--success-container-chroma))",
+          "border": "rgb(var(--success-container-on-low))",
+          "color": "rgb(var(--success-container-on-highest))",
+          "icon": "rgb(var(--success-container-on-high))",
+          "chevrone": "rgb(var(--success-container-on))",
+          "dim": "rgb(var(--success-container-dim))",
+          "placehold": "rgb(var(--success-container-on-high))"
+        },
+        "error": {
+          "bg": "rgb(var(--error-container-core))",
+          "chroma": "rgb(var(--error-container-chroma))",
+          "border": "rgb(var(--error-container-on-low))",
+          "color": "rgb(var(--error-container-on-highest))",
+          "icon": "rgb(var(--error-container-on-high))",
+          "chevrone": "rgb(var(--error-container-on))",
+          "dim": "rgb(var(--error-container-dim))",
+          "placehold": "rgb(var(--error-container-on-high))"
+        },
+        "light": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--secondary-container-on-low))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "rgb(var(--surface-surface))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "transparent",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "autofill": {
+          "bg": "rgb(var(--tertiary-container-core))",
+          "chroma": "rgb(var(--tertiary-container-chroma))",
+          "border": "rgb(var(--tertiary-container-on-low))",
+          "color": "rgb(var(--tertiary-container-on-highest))",
+          "icon": "rgb(var(--tertiary-container-on-high))",
+          "chevrone": "rgb(var(--tertiary-container-on))",
+          "dim": "rgb(var(--tertiary-container-dim))",
+          "placehold": "rgb(var(--tertiary-container-on-high))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--secondary-dim))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "dim": "rgb(var(--secondary-dim))",
+          "border": "rgb(var(--secondary-dim))",
+          "color": "rgb(var(--secondary-on))",
+          "placehold": "rgb(var(--secondary-on-dim))",
+          "icon": "rgb(var(--secondary-on))",
+          "chevrone": "rgb(var(--secondary-on))"
+        }
+      },
+      "check-radio": {
+        "selected": {
+          "bg": "rgb(var(--primary-dim))",
+          "border": "rgb(var(--primary-dim))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "border": "rgb(var(--secondary-container-on-low))",
+          "color": "transparent",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "list-control": {
+        "label": "rgb(var(--surface-on-highest))",
+        "bg": "rgb(var(--surface-surface))",
+        "border": "rgb(var(--surface-dim))"
+      },
+      "list": {
+        "selected": {
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--surface-on))",
+          "bg": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-dim))",
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected-transparent": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected-actual": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on-low))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--accent-container-on-low))"
+        },
+        "selected-secondary": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-on-lowest))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "selected-variation": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-variation": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "transparent"
+        },
+        "indeterminate-variation": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-tabbar": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        },
+        "selected-tabbar": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        },
+        "unselected-menu": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        },
+        "selected-menu": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        }
+      },
+      "nav-button": {
+        "selected-transparent": {
+          "bg": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-dim))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-surface))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        },
+        "selected": {
+          "bg": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "tab": {
+        "selected": {
+          "bg": "transparent",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--surface-on-high))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "rgb(var(--surface-on-low))",
+          "color": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "badge": {
+        "market": {
+          "percent": {
+            "bg": "rgb(var(--accent-dim))",
+            "chroma": "rgb(var(--accent-chroma))",
+            "border": "rgb(var(--accent-dim))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "sale": {
+            "bg": "rgb(var(--primary-dim))",
+            "chroma": "rgb(var(--primary-chroma))",
+            "border": "rgb(var(--primary-dim))",
+            "color": "rgb(var(--primary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-dim))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-dim))",
+            "color": "rgb(var(--info-on))"
+          },
+          "brand": {
+            "bg": "rgb(var(--secondary-dim))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-dim))",
+            "color": "rgb(var(--secondary-on))"
+          }
+        },
+        "state": {
+          "delivered": {
+            "bg": "rgb(var(--secondary-dim))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-dim))",
+            "color": "rgb(var(--secondary-on))"
+          },
+          "inprogress": {
+            "bg": "rgb(var(--tertiary-dim))",
+            "chroma": "rgb(var(--tertiary-chroma))",
+            "border": "rgb(var(--tertiary-dim))",
+            "color": "rgb(var(--tertiary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-dim))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-dim))",
+            "color": "rgb(var(--info-on))"
+          },
+          "paid": {
+            "bg": "rgb(var(--success-dim))",
+            "chroma": "rgb(var(--success-chroma))",
+            "border": "rgb(var(--success-dim))",
+            "color": "rgb(var(--success-on))"
+          },
+          "cancelled": {
+            "bg": "rgb(var(--secondary-dim))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-dim))",
+            "color": "rgb(var(--secondary-on))"
+          },
+          "paidclient": {
+            "bg": "rgb(var(--warning-dim))",
+            "chroma": "rgb(var(--warning-chroma))",
+            "border": "rgb(var(--warning-dim))",
+            "color": "rgb(var(--warning-on))"
+          }
+        },
+        "system": {
+          "info": {
+            "bg": "rgb(var(--info-dim))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-dim))",
+            "color": "rgb(var(--info-on))"
+          },
+          "success": {
+            "bg": "rgb(var(--success-dim))",
+            "chroma": "rgb(var(--success-chroma))",
+            "border": "rgb(var(--success-dim))",
+            "color": "rgb(var(--success-on))"
+          },
+          "warning": {
+            "bg": "rgb(var(--warning-dim))",
+            "chroma": "rgb(var(--warning-chroma))",
+            "border": "rgb(var(--warning-dim))",
+            "color": "rgb(var(--warning-on))"
+          },
+          "error": {
+            "bg": "rgb(var(--error-dim))",
+            "chroma": "rgb(var(--error-chroma))",
+            "border": "rgb(var(--error-dim))",
+            "color": "rgb(var(--error-on))"
+          },
+          "accent": {
+            "bg": "rgb(var(--accent-dim))",
+            "chroma": "rgb(var(--accent-chroma))",
+            "border": "rgb(var(--accent-dim))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "secondary": {
+            "bg": "rgb(var(--secondary-dim))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-dim))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "ghost": {
+            "bg": "transparent",
+            "chroma": "transparent",
+            "border": "transparent",
+            "color": "rgb(var(--surface-on-high))"
+          }
+        }
+      },
+      "range": {
+        "default": {
+          "bg": "rgb(var(--primary-dim))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-dim))"
+        },
+        "container": "rgb(var(--surface-container-container))",
+        "light": {
+          "bg": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--secondary-container-dim))"
+        },
+        "bg": "rgb(var(--primary-dim))",
+        "chroma": "rgb(var(--primary-chroma))"
+      },
+      "link": {
+        "default": "rgb(var(--tertiary-container-on-highest))",
+        "muted": "rgb(var(--surface-on-highest))",
+        "contrast": "rgb(var(--surface-on-high))",
+        "accent": "rgb(var(--accent-container-on))",
+        "heading": "rgb(var(--accent-container-on))"
+      },
+      "overhung": {
+        "primary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "areabutton": {
+        "default": "rgb(var(--tertiary-container-on-highest))",
+        "muted": "rgb(var(--surface-on-highest))",
+        "contrast": "rgb(var(--surface-on-high))"
+      },
+      "rating": {
+        "selected": {
+          "bg": "rgb(var(--warning-dim))",
+          "chroma": "rgb(var(--warning-chroma))",
+          "border": "rgb(var(--warning-dim))",
+          "color": "rgb(var(--warning-on))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-container-container))",
+          "chroma": "rgb(var(--surface-container-low))",
+          "border": "rgb(var(--surface-container-container))",
+          "color": "rgb(var(--surface-on-high))"
+        }
+      },
+      "variation": {
+        "selected": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "chroma": "rgb(var(--primary-container-core))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "chroma": "rgb(var(--primary-container-core))"
+        },
+        "indeterminate": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-high))",
+          "chroma": "rgb(var(--primary-container-core))"
+        }
+      },
+      "tsar-button": {
+        "rich": {
+          "bg": "rgb(var(--primary-dim))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-on))",
+          "group-border": "rgb(var(--primary-dim))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--primary-container-dim))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "border": "rgb(var(--primary-container-dim))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "group-border": "rgb(var(--primary-container-dim))",
+          "group-color": "rgb(var(--primary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--primary-container-on-high))",
+          "color": "rgb(var(--primary-container-on-high))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--primary-container-on-high))"
+        }
+      },
+      "tsar-check-radio": {
+        "rich": {
+          "bg": "rgb(var(--primary-dim))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "border": "rgb(var(--secondary-container-on-low))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "handle": "rgb(var(--secondary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--secondary-container-on))",
+          "color": "rgb(var(--secondary-container-on))",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "tabbar-button": {
+        "selected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))"
+        }
+      },
+      "cell": {
+        "default-head": {
+          "bg": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "light": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "default": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        }
+      },
+      "opacity": {
+        "control": {
+          "disabled": "var(--awds-opacity-40)",
+          "enabled": "var(--awds-opacity-100)"
+        },
+        "content": {
+          "handle-opacity": "var(--awds-opacity-100)",
+          "placeholder": "var(--awds-opacity-60)",
+          "textarea-handle": "var(--awds-opacity-30)"
+        },
+        "chevrone": {
+          "expand": "var(--awds-opacity-100)",
+          "shrink": "var(--awds-opacity-90)"
+        },
+        "overhung": {
+          "secondary": "var(--awds-opacity-90)"
+        }
+      }
+    },
+    "focus": {
+      "button": {
+        "primary": {
+          "bg": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "group-border": "rgb(var(--primary-dim))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--surface-on-highest))"
+        },
+        "addition": {
+          "bg": "rgb(var(--addition-core))",
+          "chroma": "rgb(var(--addition-chroma))",
+          "border": "rgb(var(--addition-core))",
+          "color": "rgb(var(--addition-on))",
+          "group-border": "rgb(var(--addition-core))",
+          "group-color": "rgb(var(--addition-on))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on))"
+        },
+        "tertiary": {
+          "bg": "rgb(var(--tertiary-core))",
+          "chroma": "rgb(var(--tertiary-chroma))",
+          "border": "rgb(var(--tertiary-core))",
+          "color": "rgb(var(--tertiary-on))",
+          "group-border": "rgb(var(--tertiary-core))",
+          "group-color": "rgb(var(--tertiary-on))"
+        },
+        "contrast": {
+          "bg": "rgb(var(--surface-on-highest))",
+          "chroma": "rgb(var(--surface-on-high))",
+          "border": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--surface-bright))",
+          "group-border": "rgb(var(--surface-on-highest))",
+          "group-color": "rgb(var(--surface-bright))"
+        },
+        "clean": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "group-border": "rgb(var(--surface-bright))",
+          "group-color": "rgb(var(--surface-on-high))"
+        },
+        "pills": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on))"
+        }
+      },
+      "focus-selection": {
+        "outline": "rgb(var(--surface-on-highest))",
+        "outlineVariant": "rgb(var(--primary-core))",
+        "outlineShow": "true"
+      },
+      "form-control": {
+        "default": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on))",
+          "dim": "rgb(var(--primary-container-core))",
+          "placehold": "rgb(var(--primary-container-on-high))"
+        },
+        "success": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "icon": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on))",
+          "dim": "rgb(var(--primary-container-core))",
+          "placehold": "rgb(var(--primary-container-on-high))"
+        },
+        "error": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "icon": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on))",
+          "dim": "rgb(var(--primary-container-core))",
+          "placehold": "rgb(var(--primary-container-on-high))"
+        },
+        "light": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "icon": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on))",
+          "dim": "rgb(var(--primary-container-core))",
+          "placehold": "rgb(var(--primary-container-on-high))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "icon": "rgb(var(--primary-container-on-highest))",
+          "chevrone": "rgb(var(--primary-container-on))",
+          "dim": "transparent",
+          "placehold": "rgb(var(--primary-container-on-high))"
+        },
+        "autofill": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "icon": "rgb(var(--primary-container-on-highest))",
+          "chevrone": "rgb(var(--primary-container-on))",
+          "dim": "rgb(var(--primary-container-core))",
+          "placehold": "rgb(var(--primary-container-on-high))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "dim": "rgb(var(--secondary-core))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "placehold": "rgb(var(--secondary-on-dim))",
+          "icon": "rgb(var(--secondary-on))",
+          "chevrone": "rgb(var(--secondary-on))"
+        }
+      },
+      "check-radio": {
+        "selected": {
+          "bg": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "transparent",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "list-control": {
+        "label": "rgb(var(--surface-on-highest))",
+        "bg": "rgb(var(--primary-container-core))",
+        "border": "rgb(var(--primary-container-core))"
+      },
+      "list": {
+        "selected": {
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--surface-on))",
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-surface))",
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected-transparent": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected-actual": {
+          "bg": "transparent",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on-low))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--accent-container-on-low))"
+        },
+        "selected-secondary": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-on-lowest))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "selected-variation": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-variation": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "placehold": "rgb(var(--surface-on))",
+          "description": "rgb(var(--surface-on))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "transparent"
+        },
+        "indeterminate-variation": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "placehold": "rgb(var(--surface-on))",
+          "description": "rgb(var(--surface-on))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-tabbar": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))",
+          "description": "rgb(var(--surface-on-high))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))"
+        },
+        "selected-tabbar": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        },
+        "unselected-menu": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))",
+          "description": "rgb(var(--surface-on-high))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))"
+        },
+        "selected-menu": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        }
+      },
+      "nav-button": {
+        "selected-transparent": {
+          "bg": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "transparent"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "border": "transparent",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        },
+        "selected": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "tab": {
+        "selected": {
+          "bg": "transparent",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--surface-on-highest))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))"
+        }
+      },
+      "badge": {
+        "market": {
+          "percent": {
+            "bg": "rgb(var(--accent-core))",
+            "chroma": "rgb(var(--accent-chroma))",
+            "border": "rgb(var(--accent-core))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "sale": {
+            "bg": "rgb(var(--primary-core))",
+            "chroma": "rgb(var(--primary-chroma))",
+            "border": "rgb(var(--primary-core))",
+            "color": "rgb(var(--primary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "brand": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on))"
+          }
+        },
+        "state": {
+          "delivered": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on))"
+          },
+          "inprogress": {
+            "bg": "rgb(var(--tertiary-core))",
+            "chroma": "rgb(var(--tertiary-chroma))",
+            "border": "rgb(var(--tertiary-core))",
+            "color": "rgb(var(--tertiary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "paid": {
+            "bg": "rgb(var(--success-core))",
+            "chroma": "rgb(var(--success-chroma))",
+            "border": "rgb(var(--success-core))",
+            "color": "rgb(var(--success-on))"
+          },
+          "cancelled": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on))"
+          },
+          "paidclient": {
+            "bg": "rgb(var(--warning-dim))",
+            "chroma": "rgb(var(--warning-chroma))",
+            "border": "rgb(var(--warning-dim))",
+            "color": "rgb(var(--warning-on))"
+          }
+        },
+        "system": {
+          "info": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-chroma))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "success": {
+            "bg": "rgb(var(--success-core))",
+            "chroma": "rgb(var(--success-chroma))",
+            "border": "rgb(var(--success-core))",
+            "color": "rgb(var(--success-on))"
+          },
+          "warning": {
+            "bg": "rgb(var(--warning-core))",
+            "chroma": "rgb(var(--warning-chroma))",
+            "border": "rgb(var(--warning-core))",
+            "color": "rgb(var(--warning-on))"
+          },
+          "error": {
+            "bg": "rgb(var(--error-core))",
+            "chroma": "rgb(var(--error-chroma))",
+            "border": "rgb(var(--error-core))",
+            "color": "rgb(var(--error-on))"
+          },
+          "accent": {
+            "bg": "rgb(var(--accent-core))",
+            "chroma": "rgb(var(--accent-chroma))",
+            "border": "rgb(var(--accent-core))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "secondary": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-chroma))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "ghost": {
+            "bg": "transparent",
+            "chroma": "transparent",
+            "border": "transparent",
+            "color": "rgb(var(--surface-on-high))"
+          }
+        }
+      },
+      "range": {
+        "default": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-core))"
+        },
+        "container": "rgb(var(--surface-container-container))",
+        "light": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--secondary-container-dim))"
+        },
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-chroma))"
+      },
+      "link": {
+        "default": "rgb(var(--tertiary-container-on-high))",
+        "muted": "rgb(var(--surface-on-high))",
+        "contrast": "rgb(var(--surface-on-highest))",
+        "accent": "rgb(var(--surface-on-highest))",
+        "heading": "rgb(var(--surface-on-high))"
+      },
+      "overhung": {
+        "primary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on))"
+        }
+      },
+      "areabutton": {
+        "default": "rgb(var(--tertiary-container-on-high))",
+        "muted": "rgb(var(--surface-on-high))",
+        "contrast": "rgb(var(--surface-on-highest))"
+      },
+      "rating": {
+        "selected": {
+          "bg": "rgb(var(--warning-core))",
+          "chroma": "rgb(var(--warning-chroma))",
+          "border": "rgb(var(--warning-core))",
+          "color": "rgb(var(--warning-on))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-container-container))",
+          "chroma": "rgb(var(--surface-container-low))",
+          "border": "rgb(var(--surface-container-container))",
+          "color": "rgb(var(--surface-on-high))"
+        }
+      },
+      "variation": {
+        "selected": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "chroma": "rgb(var(--primary-container-core))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-dim))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "chroma": "rgb(var(--secondary-container-core))"
+        },
+        "indeterminate": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on))",
+          "chroma": "rgb(var(--surface-bright))"
+        }
+      },
+      "tsar-button": {
+        "rich": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "group-border": "rgb(var(--primary-dim))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--primary-container-core))",
+          "chroma": "rgb(var(--primary-container-chroma))",
+          "border": "rgb(var(--primary-container-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "group-border": "rgb(var(--primary-container-dim))",
+          "group-color": "rgb(var(--primary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--primary-container-on-highest))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--primary-container-on-highest))"
+        }
+      },
+      "tsar-check-radio": {
+        "rich": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "handle": "rgb(var(--secondary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--secondary-container-on-high))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "tabbar-button": {
+        "selected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "cell": {
+        "default-head": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "light": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "default": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        }
+      },
+      "opacity": {
+        "control": {
+          "disabled": "var(--awds-opacity-40)",
+          "enabled": "var(--awds-opacity-100)"
+        },
+        "content": {
+          "handle-opacity": "var(--awds-opacity-100)",
+          "placeholder": "var(--awds-opacity-60)",
+          "textarea-handle": "var(--awds-opacity-30)"
+        },
+        "chevrone": {
+          "expand": "var(--awds-opacity-90)",
+          "shrink": "var(--awds-opacity-40)"
+        },
+        "overhung": {
+          "secondary": "var(--awds-opacity-90)"
+        }
+      }
+    },
+    "active": {
+      "button": {
+        "primary": {
+          "bg": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "chroma": "rgb(var(--primary-core))",
+          "group-border": "rgb(var(--primary-dim))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--surface-on-highest))"
+        },
+        "addition": {
+          "bg": "rgb(var(--addition-core))",
+          "chroma": "rgb(var(--addition-core))",
+          "border": "rgb(var(--addition-core))",
+          "color": "rgb(var(--addition-on))",
+          "group-border": "rgb(var(--addition-core))",
+          "group-color": "rgb(var(--addition-on))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-core))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on))"
+        },
+        "tertiary": {
+          "bg": "rgb(var(--tertiary-core))",
+          "chroma": "rgb(var(--tertiary-core))",
+          "border": "rgb(var(--tertiary-core))",
+          "color": "rgb(var(--tertiary-on))",
+          "group-border": "rgb(var(--tertiary-core))",
+          "group-color": "rgb(var(--tertiary-on-dim))"
+        },
+        "contrast": {
+          "bg": "rgb(var(--surface-on-highest))",
+          "chroma": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--surface-bright))",
+          "group-border": "rgb(var(--surface-on-highest))",
+          "group-color": "rgb(var(--surface-bright))"
+        },
+        "clean": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-highest))",
+          "group-border": "rgb(var(--surface-surface))",
+          "group-color": "rgb(var(--surface-on-highest))"
+        },
+        "pills": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-core))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "group-border": "rgb(var(--secondary-dim))",
+          "group-color": "rgb(var(--secondary-on))"
+        }
+      },
+      "focus-selection": {
+        "outline": "rgb(var(--surface-on-highest))",
+        "outlineVariant": "rgb(var(--primary-core))",
+        "outlineShow": "false"
+      },
+      "form-control": {
+        "default": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chroma": "rgb(var(--secondary-container-chroma))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "rgb(var(--secondary-container-dim))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "success": {
+          "bg": "rgb(var(--success-container-core))",
+          "chroma": "rgb(var(--success-container-chroma))",
+          "border": "rgb(var(--success-container-on-lowest))",
+          "color": "rgb(var(--success-container-on-highest))",
+          "icon": "rgb(var(--success-container-on-high))",
+          "chevrone": "rgb(var(--success-container-on))",
+          "dim": "rgb(var(--success-container-dim))",
+          "placehold": "rgb(var(--success-container-on-high))"
+        },
+        "error": {
+          "bg": "rgb(var(--error-container-core))",
+          "chroma": "rgb(var(--error-container-chroma))",
+          "border": "rgb(var(--error-container-on-lowest))",
+          "color": "rgb(var(--error-container-on-highest))",
+          "icon": "rgb(var(--error-container-on-high))",
+          "chevrone": "rgb(var(--error-container-on))",
+          "dim": "rgb(var(--error-container-dim))",
+          "placehold": "rgb(var(--error-container-on-high))"
+        },
+        "light": {
+          "bg": "rgb(var(--surface-bright))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "rgb(var(--surface-surface))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "ghost": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "icon": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on))",
+          "dim": "transparent",
+          "placehold": "rgb(var(--secondary-container-on-high))"
+        },
+        "autofill": {
+          "bg": "rgb(var(--tertiary-container-core))",
+          "chroma": "rgb(var(--tertiary-container-chroma))",
+          "border": "rgb(var(--tertiary-container-on-lowest))",
+          "color": "rgb(var(--tertiary-container-on-highest))",
+          "icon": "rgb(var(--tertiary-container-on-high))",
+          "chevrone": "rgb(var(--tertiary-container-on))",
+          "dim": "rgb(var(--tertiary-container-dim))",
+          "placehold": "rgb(var(--tertiary-container-on-high))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--secondary-core))",
+          "chroma": "rgb(var(--secondary-chroma))",
+          "dim": "rgb(var(--secondary-core))",
+          "border": "rgb(var(--secondary-core))",
+          "color": "rgb(var(--secondary-on))",
+          "placehold": "rgb(var(--secondary-on-dim))",
+          "icon": "rgb(var(--secondary-on))",
+          "chevrone": "rgb(var(--secondary-on))"
+        }
+      },
+      "check-radio": {
+        "selected": {
+          "bg": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--secondary-container-dim))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "transparent",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "list-control": {
+        "label": "rgb(var(--surface-on-highest))",
+        "bg": "transparent",
+        "border": "transparent"
+      },
+      "list": {
+        "selected": {
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--surface-on))",
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--surface-surface))",
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected-transparent": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--surface-on-high))"
+        },
+        "unselected-actual": {
+          "bg": "transparent",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on-low))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on-lowest))",
+          "placehold": "rgb(var(--accent-container-on-low))"
+        },
+        "selected-secondary": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-on-lowest))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "selected-variation": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "placehold": "rgb(var(--primary-container-on-high))",
+          "description": "rgb(var(--primary-container-on-high))",
+          "chevrone": "rgb(var(--primary-container-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-variation": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "placehold": "rgb(var(--surface-on))",
+          "description": "rgb(var(--surface-on))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "transparent"
+        },
+        "indeterminate-variation": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))",
+          "placehold": "rgb(var(--surface-on))",
+          "description": "rgb(var(--surface-on))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "icon-check": "rgb(var(--primary-container-on))"
+        },
+        "unselected-tabbar": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        },
+        "selected-tabbar": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        },
+        "unselected-menu": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        },
+        "selected-menu": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--accent-container-on))",
+          "placehold": "rgb(var(--accent-container-on))",
+          "description": "rgb(var(--accent-container-on))",
+          "chevrone": "rgb(var(--accent-container-on))",
+          "icon-check": "rgb(var(--accent-container-on-lowest))"
+        }
+      },
+      "nav-button": {
+        "selected-transparent": {
+          "bg": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "transparent"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "border": "transparent",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        },
+        "selected": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "tab": {
+        "selected": {
+          "bg": "transparent",
+          "border": "rgb(var(--primary-dim))",
+          "color": "rgb(var(--surface-on-highest))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "rgb(var(--surface-dim))",
+          "color": "rgb(var(--surface-on-high))"
+        }
+      },
+      "badge": {
+        "market": {
+          "percent": {
+            "bg": "rgb(var(--accent-core))",
+            "chroma": "rgb(var(--accent-core))",
+            "border": "rgb(var(--accent-core))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "sale": {
+            "bg": "rgb(var(--primary-core))",
+            "chroma": "rgb(var(--primary-core))",
+            "border": "rgb(var(--primary-core))",
+            "color": "rgb(var(--primary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-core))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "brand": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-core))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on))"
+          }
+        },
+        "state": {
+          "delivered": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-core))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "inprogress": {
+            "bg": "rgb(var(--tertiary-core))",
+            "chroma": "rgb(var(--tertiary-core))",
+            "border": "rgb(var(--tertiary-core))",
+            "color": "rgb(var(--tertiary-on))"
+          },
+          "new": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-core))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "paid": {
+            "bg": "rgb(var(--success-core))",
+            "chroma": "rgb(var(--success-core))",
+            "border": "rgb(var(--success-core))",
+            "color": "rgb(var(--success-on))"
+          },
+          "cancelled": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-core))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "paidclient": {
+            "bg": "rgb(var(--warning-core))",
+            "chroma": "rgb(var(--warning-chroma))",
+            "border": "rgb(var(--warning-core))",
+            "color": "rgb(var(--warning-on))"
+          }
+        },
+        "system": {
+          "info": {
+            "bg": "rgb(var(--info-core))",
+            "chroma": "rgb(var(--info-core))",
+            "border": "rgb(var(--info-core))",
+            "color": "rgb(var(--info-on))"
+          },
+          "success": {
+            "bg": "rgb(var(--success-core))",
+            "chroma": "rgb(var(--success-core))",
+            "border": "rgb(var(--success-core))",
+            "color": "rgb(var(--success-on))"
+          },
+          "warning": {
+            "bg": "rgb(var(--warning-core))",
+            "chroma": "rgb(var(--warning-core))",
+            "border": "rgb(var(--warning-core))",
+            "color": "rgb(var(--warning-on))"
+          },
+          "error": {
+            "bg": "rgb(var(--error-core))",
+            "chroma": "rgb(var(--error-core))",
+            "border": "rgb(var(--error-core))",
+            "color": "rgb(var(--error-on))"
+          },
+          "accent": {
+            "bg": "rgb(var(--accent-core))",
+            "chroma": "rgb(var(--accent-core))",
+            "border": "rgb(var(--accent-core))",
+            "color": "rgb(var(--accent-on))"
+          },
+          "secondary": {
+            "bg": "rgb(var(--secondary-core))",
+            "chroma": "rgb(var(--secondary-core))",
+            "border": "rgb(var(--secondary-core))",
+            "color": "rgb(var(--secondary-on-dim))"
+          },
+          "ghost": {
+            "bg": "transparent",
+            "chroma": "transparent",
+            "border": "transparent",
+            "color": "rgb(var(--surface-on-high))"
+          }
+        }
+      },
+      "range": {
+        "default": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))"
+        },
+        "container": "rgb(var(--surface-container-container))",
+        "light": {
+          "bg": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--secondary-container-dim))"
+        },
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-core))"
+      },
+      "link": {
+        "default": "rgb(var(--tertiary-container-on-high))",
+        "muted": "rgb(var(--surface-on-high))",
+        "contrast": "rgb(var(--surface-on-highest))",
+        "accent": "rgb(var(--surface-on-highest))",
+        "heading": "rgb(var(--surface-on-high))"
+      },
+      "overhung": {
+        "primary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on))"
+        },
+        "secondary": {
+          "bg": "rgb(var(--surface-surface))",
+          "chroma": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-surface))",
+          "color": "rgb(var(--surface-on))"
+        }
+      },
+      "areabutton": {
+        "default": "rgb(var(--tertiary-container-on-high))",
+        "muted": "rgb(var(--surface-on-high))",
+        "contrast": "rgb(var(--surface-on-highest))"
+      },
+      "rating": {
+        "selected": {
+          "bg": "rgb(var(--warning-core))",
+          "chroma": "rgb(var(--warning-chroma))",
+          "border": "rgb(var(--warning-core))",
+          "color": "rgb(var(--warning-on))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--surface-container-container))",
+          "chroma": "rgb(var(--surface-container-low))",
+          "border": "rgb(var(--surface-container-container))",
+          "color": "rgb(var(--surface-on-high))"
+        }
+      },
+      "variation": {
+        "selected": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "chroma": "rgb(var(--primary-container-core))"
+        },
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-dim))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "chroma": "rgb(var(--secondary-container-core))"
+        },
+        "indeterminate": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on))",
+          "chroma": "rgb(var(--surface-bright))"
+        }
+      },
+      "tsar-button": {
+        "rich": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "group-border": "rgb(var(--primary-dim))",
+          "group-color": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--primary-container-core))",
+          "chroma": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-core))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "group-border": "rgb(var(--primary-container-dim))",
+          "group-color": "rgb(var(--primary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--primary-container-on-highest))",
+          "color": "rgb(var(--primary-container-on-highest))",
+          "group-border": "transparent",
+          "group-color": "rgb(var(--primary-container-on-highest))"
+        }
+      },
+      "tsar-check-radio": {
+        "rich": {
+          "bg": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-core))",
+          "border": "rgb(var(--primary-core))",
+          "color": "rgb(var(--primary-on))",
+          "handle": "rgb(var(--primary-on-dim))"
+        },
+        "faded": {
+          "bg": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--secondary-container-dim))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "handle": "rgb(var(--secondary-container-on))"
+        },
+        "outline": {
+          "bg": "transparent",
+          "chroma": "transparent",
+          "border": "rgb(var(--secondary-container-on-high))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "handle": "rgb(var(--secondary-container-on))"
+        }
+      },
+      "tabbar-button": {
+        "selected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        },
+        "unselected": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--surface-on-highest))"
+        }
+      },
+      "cell": {
+        "default-head": {
+          "bg": "rgb(var(--surface-surface))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "light": {
+          "bg": "transparent",
+          "border": "transparent",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        },
+        "default": {
+          "bg": "rgb(var(--surface-bright))",
+          "border": "rgb(var(--surface-on-lowest))",
+          "color": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
+        }
+      },
+      "opacity": {
+        "control": {
+          "disabled": "var(--awds-opacity-40)",
+          "enabled": "var(--awds-opacity-100)"
+        },
+        "content": {
+          "handle-opacity": "var(--awds-opacity-100)",
+          "placeholder": "var(--awds-opacity-60)",
+          "textarea-handle": "var(--awds-opacity-30)"
+        },
+        "chevrone": {
+          "expand": "var(--awds-opacity-100)",
+          "shrink": "var(--awds-opacity-90)"
+        },
+        "overhung": {
+          "secondary": "var(--awds-opacity-90)"
+        }
+      }
+    }
+  }
+}

@@ -239,6 +239,9 @@
   --awds-type-caption-fs: var(--awds-typography-font-size-300);
   --awds-type-caption-lh: var(--awds-typography-line-height-300);
   --awds-type-caption-ls: var(--awds-typography-letter-spacing-300);
+  --awds-type-price-listing-fs: var(--awds-typography-font-size-910);
+  --awds-type-price-listing-lh: var(--awds-typography-line-height-compact-910);
+  --awds-type-price-listing-ls: var(--awds-typography-letter-spacing-910);
   --awds-type-code-fs: var(--awds-typography-font-size-600);
   --awds-type-code-lh: var(--awds-typography-line-height-600);
   --awds-type-code-ls: var(--awds-typography-letter-spacing-600);
@@ -672,6 +675,9 @@
   --awds-type-caption-fs: var(--awds-typography-font-size-400);
   --awds-type-caption-lh: var(--awds-typography-line-height-400);
   --awds-type-caption-ls: var(--awds-typography-letter-spacing-400);
+  --awds-type-price-listing-fs: var(--awds-typography-font-size-920);
+  --awds-type-price-listing-lh: var(--awds-typography-line-height-compact-920);
+  --awds-type-price-listing-ls: var(--awds-typography-letter-spacing-920);
   --awds-type-code-fs: var(--awds-typography-font-size-700);
   --awds-type-code-lh: var(--awds-typography-line-height-700);
   --awds-type-code-ls: var(--awds-typography-letter-spacing-700);
@@ -708,6 +714,9 @@
   --awds-type-caption-fs: var(--awds-typography-font-size-300);
   --awds-type-caption-lh: var(--awds-typography-line-height-300);
   --awds-type-caption-ls: var(--awds-typography-letter-spacing-300);
+  --awds-type-price-listing-fs: var(--awds-typography-font-size-910);
+  --awds-type-price-listing-lh: var(--awds-typography-line-height-compact-910);
+  --awds-type-price-listing-ls: var(--awds-typography-letter-spacing-910);
   --awds-type-code-fs: var(--awds-typography-font-size-600);
   --awds-type-code-lh: var(--awds-typography-line-height-600);
   --awds-type-code-ls: var(--awds-typography-letter-spacing-600);
@@ -744,6 +753,9 @@
   --awds-type-caption-fs: var(--awds-typography-font-size-200);
   --awds-type-caption-lh: var(--awds-typography-line-height-200);
   --awds-type-caption-ls: var(--awds-typography-letter-spacing-200);
+  --awds-type-price-listing-fs: var(--awds-typography-font-size-900);
+  --awds-type-price-listing-lh: var(--awds-typography-line-height-compact-900);
+  --awds-type-price-listing-ls: var(--awds-typography-letter-spacing-900);
   --awds-type-code-fs: var(--awds-typography-font-size-400);
   --awds-type-code-lh: var(--awds-typography-line-height-400);
   --awds-type-code-ls: var(--awds-typography-letter-spacing-400);
@@ -874,7 +886,7 @@
     --awds-layout-market-banner-4-min: 162px;
     --awds-layout-market-blog-listing-gap-x: var(--awds-space-5);
     --awds-layout-market-blog-listing-gap-y: var(--awds-space-7);
-    --awds-layout-market-blog-listing-min: 246px;
+    --awds-layout-market-blog-listing-min: 236px;
     --awds-layout-market-blog-listing-top: var(--awds-space-7);
     --awds-layout-market-blog-slider-max: 368px;
     --awds-layout-market-blog-slider-min: 170px;
@@ -907,7 +919,6 @@
     --awds-layout-market-blog-listing-gap-x: var(--awds-space-6);
     --awds-layout-market-blog-listing-gap-y: var(--awds-space-8);
     --awds-layout-market-blog-listing-max: 430px;
-    --awds-layout-market-blog-listing-min: 310px;
     --awds-layout-market-blog-listing-top: var(--awds-space-8);
     --awds-layout-market-card-listing-gap-x: var(--awds-space-6);
     --awds-layout-market-card-listing-gap-y: var(--awds-space-8);
