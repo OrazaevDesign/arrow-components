@@ -186,9 +186,10 @@
     };
 
     // Цена — компонент awds-component-price. Состояние: default (одна) / sale (скидка:
-    // акцентная цена + старая зачёркнутая) / none (нет в наличии). Размер: 800 desktop / 600 mobile.
-    const priceBlock = (mobile, state, mobileSize = 'price--600') => {
-      const sz = mobile ? mobileSize : 'price--800';
+    // акцентная цена + старая зачёркнутая) / none (нет в наличии). Размер — МАСШТАБИРУЕМЫЙ
+    // price--listing: едет по .typo-* карточки (как бренд/название), без раздельного desktop/mobile.
+    const priceBlock = (mobile, state, mobileSize) => {
+      const sz = 'price--listing';
       if (state === 'none') {
         return `<span class="price price-none ${sz}"><span class="price__placeholder">Нет в наличии</span></span>`;
       }
@@ -311,7 +312,7 @@
       ? sliderDots(frames)
       : '<div class="pcard__slider-spacer" aria-hidden="true"></div>'}
   <div class="pcard__content">
-    ${priceBlock(mobile, opts.price, 'price--500')}
+    ${priceBlock(mobile, opts.price)}
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
     <a class="pcard__category" href="#">Ссылка на рубрику товара</a>
     <div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>

@@ -45,8 +45,9 @@
 
   <div class="pcard__content">
     <!-- Цена — компонент awds-component-price (подключи price.css): price-default,
-         desktop price--800 / mobile price--600. Цвет surface-on-highest задаёт сам компонент. -->
-    <span class="price price-default price--800">
+         размер price--listing (масштабируется по .typo-* карточки, как бренд/название).
+         Цвет surface-on-highest задаёт сам компонент. -->
+    <span class="price price-default price--listing">
       <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
     </span>
     <!-- #2 бренд → страница бренда -->
@@ -70,23 +71,23 @@
 
 ```html
 <!-- Обычная цена -->
-<span class="price price-default price--800">
+<span class="price price-default price--listing">
   <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
 </span>
 
 <!-- Скидка: акцентная цена + старая зачёркнутая (показывай вместе с бейджем .badge-market-percent) -->
-<span class="price price-sale price--800">
+<span class="price price-sale price--listing">
   <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
   <span class="price__old"><span class="price__old-value">2 000</span><span class="price__old-currency">₽</span></span>
 </span>
 
 <!-- Нет в наличии: плейсхолдер вместо цены -->
-<span class="price price-none price--800">
+<span class="price price-none price--listing">
   <span class="price__placeholder">Нет в наличии</span>
 </span>
 ```
 
-- Размер: `price--800` desktop / `price--600` mobile (одинаков для всех трёх типов).
+- Размер: `price--listing` — масштабируемый, едет по `.typo-*` карточки (как бренд/название), одинаков для всех трёх типов и обеих вью (без раздельного desktop/mobile).
 - **Скидка** (`price-sale`): текущая цена — акцент, старая — зачёркнута; обычно вместе с бейджем скидки `.badge-market-percent` в `.pcard__badges`.
 - **Нет в наличии** (`price-none`): цену заменяет «Нет в наличии». Логично при этом скрыть бейдж скидки и (если есть) отключить корзину/избранное — это на стороне данных потребителя.
 - Все детали типов цены — в скилле `awds-component-price`.

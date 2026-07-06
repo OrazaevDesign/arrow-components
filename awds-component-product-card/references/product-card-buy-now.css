@@ -34,7 +34,7 @@
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-500)
-     — цена:   компонент .price.price-default price--800 (desktop) / price--500 (mobile)
+     — цена:   компонент .price.price-default price--listing (масштаб по .typo-*, обе вью)
      — название: 14/22 (typography 400 + line-height 400), 1 строка
      — рубрика:  12/19 (typography 200 + line-height 200, caption), 1 строка
      — рейтинг: caption 12/19 semibold, звезда/иконки 14px
@@ -251,7 +251,7 @@
 }
 
 /* Цена — компонент awds-component-price (подключи price.css): .price.price-default,
-   desktop price--800 (20/13), mobile price--500 (15/12). Первый блок, без отступа. */
+   размер price--listing (масштаб по .typo-* карточки, обе вью). Первый блок, без отступа. */
 
 /* #2 название (→ товар). link/accent = surface-on-highest. 1 строка, роль WYSIWYG
    body (--awds-type-body-*, .typo-small = 14/22), масштабируется с блоками. */

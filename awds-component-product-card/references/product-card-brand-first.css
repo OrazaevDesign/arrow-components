@@ -33,7 +33,7 @@
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-500)
-     — цена:   компонент .price.price-default price--800 (desktop) / price--600 (mobile)
+     — цена:   компонент .price.price-default price--listing (масштаб по .typo-*, обе вью)
      — бренд:  desktop 16/26 (typography 600 + line-height 600), mobile 13/16 (300 + compact-300)
      — название: 14/22 (typography 400 + line-height 400), 1 строка, обе вью
      — рейтинг: caption 12/19 semibold (обе вью), звезда/иконки 14px
@@ -319,7 +319,7 @@
 .pcard-brand-first .pcard__reviews-count { color: rgb(var(--surface-on-high)); }
 
 /* Цена — компонент awds-component-price (подключи price.css): .price.price-default,
-   desktop price--800 (20/13), mobile price--600 (16/13). .pcard__price — слот-обёртка:
+   размер price--listing (масштаб по .typo-* карточки, обе вью). .pcard__price — слот-обёртка:
    центрирует и даёт верхний отступ. */
 .pcard-brand-first .pcard__price {
   width: 100%;

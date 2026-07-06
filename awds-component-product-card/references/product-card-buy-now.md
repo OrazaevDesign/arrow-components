@@ -4,7 +4,7 @@
 
 **Figma:** [Product Card / Buy Now](https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2602)
 
-Отличия от `price-first`: вместо бренда — **ссылка на рубрику** (категория, `link/muted`); снизу **кнопка «В корзину»** (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (desktop `price--800` 20px / mobile `price--500` 15px), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах, спейсер при одном; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), флаг 24px, hover фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
+Отличия от `price-first`: вместо бренда — **ссылка на рубрику** (категория, `link/muted`); снизу **кнопка «В корзину»** (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер `price--listing`, масштабируется по `.typo-*` карточки), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах, спейсер при одном; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), флаг 24px, hover фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
 
 ## HTML
 
@@ -49,8 +49,8 @@
   <div class="pcard__slider-spacer" aria-hidden="true"></div>
 
   <div class="pcard__content">
-    <!-- цена — компонент awds-component-price (подключи price.css): desktop price--800 -->
-    <span class="price price-default price--800">
+    <!-- цена — компонент awds-component-price (подключи price.css): price--listing (масштаб .typo-*) -->
+    <span class="price price-default price--listing">
       <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
     </span>
     <!-- #2 название → товар -->

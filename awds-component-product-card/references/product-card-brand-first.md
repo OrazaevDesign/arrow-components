@@ -4,7 +4,7 @@
 
 **Figma:** [Product Card / Brand First](https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2601)
 
-Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, флага нет, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (desktop `price--800` 20px / mobile `price--600` 16px), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), hover-модель фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
+Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, флага нет, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер `price--listing`, масштабируется по `.typo-*` карточки), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), hover-модель фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
 
 ## HTML
 
@@ -56,9 +56,9 @@
       <svg class="pcard__reviews-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2C4.27 2 1.25 4.42 1.25 7.4c0 1.52.8 2.88 2.06 3.86-.13.92-.55 1.72-1.16 2.34 1.2.05 2.4-.32 3.34-1.02.74.22 1.56.34 2.51.34 3.73 0 6.75-2.42 6.75-5.52S11.73 2 8 2Z"/></svg>
       <span class="pcard__reviews-count">23 отзыва</span>
     </div>
-    <!-- цена — компонент awds-component-price (подключи price.css): desktop price--800 -->
+    <!-- цена — компонент awds-component-price (подключи price.css): price--listing (масштаб .typo-*) -->
     <div class="pcard__price">
-      <span class="price price-default price--800">
+      <span class="price price-default price--listing">
         <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
       </span>
     </div>

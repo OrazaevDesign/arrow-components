@@ -30,9 +30,9 @@
    + .pcard__image--active) и позиционирование индикатора (.pcard__slider).
 
    Две вьюхи (ось "view" = размер): база = Desktop-Tablet, .pcard--mobile = Mobile.
-   Различия view: цена/валюта (компонент awds-component-price, price--800→--600),
-   размер бейджей (.badge--100 → .badge--50), оверлей-паддинги и БРЕНД (desktop 16/26
-   lead → mobile 14/22 body). Название и фидбэк — одинаковы в обеих вью.
+   Различия view: размер бейджей (.badge--100 → .badge--50), оверлей-паддинги и
+   БРЕНД (desktop lead → mobile body). Цена (price--listing), название и фидбэк —
+   одинаковы в обеих вью; их масштаб задаёт .typo-* карточки, а не вью.
 
    Маппинг (component-token-map.json + Figma get_variable_defs):
      — текст цены/валюты:                 rgb(var(--surface-on-highest))
@@ -46,7 +46,7 @@
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-500)            (8px Smooth, border-radius/500)
-     — цена/валюта: компонент awds-component-price (price--800 desktop / --600 mobile) — ось control (фикс)
+     — цена/валюта: компонент awds-component-price, размер price--listing (роль --awds-type-price-listing, масштаб по .typo-* — как текст)
      — бренд:  роль WYSIWYG lead (--awds-type-lead-*) desktop; mobile — роль body (--awds-type-body-*)
      — название: роль WYSIWYG body (--awds-type-body-*), clamp 2 строки
      — рейтинг-текст: роль WYSIWYG caption (--awds-type-caption-*), обе вью
@@ -327,8 +327,8 @@
 }
 
 /* Цена — отдельный компонент awds-component-price (подключи price.css).
-   В разметке: <span class="price price-default price--800"> (desktop) /
-   price--600 (mobile). price-default = одна цена, цвет surface-on-highest —
+   В разметке: <span class="price price-default price--listing"> (обе вью;
+   масштаб по .typo-* карточки). price-default = одна цена, цвет surface-on-highest —
    совпадает с прежним инлайн-вариантом. Размер/типографику/зазоры держит сам
    компонент; собственных .pcard__price* стилей здесь больше нет. */
 

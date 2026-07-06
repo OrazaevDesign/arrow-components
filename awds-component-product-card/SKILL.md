@@ -25,8 +25,8 @@ description: >
 
 | Вью | Класс | Цена | Бренд | Бейдж | Рейтинг-текст |
 |---|---|---|---|---|---|
-| **Desktop-Tablet** (база) | `.pcard` | `price--800` (20px) | WYSIWYG lead 16/26 | `rectangle-100` | WYSIWYG caption 12/19 |
-| **Mobile** | `.pcard--mobile` | `price--600` (16px) | WYSIWYG body 14/22 | `rectangle-50` | WYSIWYG caption 12/19 |
+| **Desktop-Tablet** (база) | `.pcard` | `price--listing` (масштаб .typo-*) | WYSIWYG lead 16/26 | `rectangle-100` | WYSIWYG caption 12/19 |
+| **Mobile** | `.pcard--mobile` | `price--listing` (масштаб .typo-*) | WYSIWYG body 14/22 | `rectangle-50` | WYSIWYG caption 12/19 |
 
 ## Откуда берутся значения
 
@@ -60,7 +60,7 @@ description: >
 ├── .slider.slider-dots-mini.pcard__slider         ← awds-component-slider (индикатор галереи; между медиа и контентом, по центру)
 │       └ одно фото → вместо слайдера .pcard__slider-spacer (резерв высоты, без сдвига)
 └── .pcard__content
-    ├── .price.price-{default|sale|none}.price--800/600  ← awds-component-price (default / скидка / нет в наличии; desktop 800 / mobile 600)
+    ├── .price.price-{default|sale|none}.price--listing  ← awds-component-price (default / скидка / нет в наличии; масштабируемый размер, едет по .typo-* карточки)
     ├── .pcard__brand
     ├── .pcard__name        (clamp 2 строки)
     └── .pcard__feedback ( .pcard__rating-icon + .pcard__rating-value + .pcard__reviews-icon + .pcard__reviews-count )
@@ -77,7 +77,7 @@ description: >
 1. Корень карточки — `<a class="pcard pcard-price-first" href="…">` (мобильная вью: добавь `.pcard--mobile`).
 2. Медиа: `<img class="pcard__image" alt="…">` или `.pcard__media-placeholder` если фото нет. Несколько фото → галерея: помечай активный кадр `.pcard__image--active` + добавь индикатор `.slider.slider-dots-mini.pcard__slider` (компонент `awds-component-slider`, точек = кадров) и JS-обвязку `wireGallery` (см. `references/product-card-price-first.md`) — она даёт перелистывание по hover-зонам на десктопе **и свайп влево/вправо на мобиле/таблете** (ссылка-фото несёт `touch-action: pan-y`: вертикальный скролл страницы остаётся нативным). **Много кадров (>5)** — оберни точки в `.pcard__slider-track` и добавь `.pcard__slider--many`: фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки уменьшены — индикатор не растягивается. **Одно фото** — слайдера нет, но ставь пустую заглушку `.pcard__slider-spacer` (резерв высоты индикатора), чтобы карточки с 1 и несколькими фото были одной высоты.
 3. Оверлеи опциональны: страна (`.pcard__country`), избранное (`.btn.btn-favorites` — компонент `awds-component-button-favorites`, в мобильной вью `+ .btn-favorites--mobile`), бейджи (`.pcard__badge--percent` / `--sale`).
-4. Контент в порядке price-first. Цена — компонент `awds-component-price` (desktop `price--800` / mobile `price--600`), подключи `price.css`; выбери тип по данным товара: `price-default` (обычная), `price-sale` (скидка: акцентная + старая зачёркнутая, обычно с бейджем `.badge-market-percent`), `price-none` («Нет в наличии» — при этом скрой бейдж скидки). Название клампится в 2 строки. Между медиа и контентом — индикатор галереи `.pcard__slider` (если несколько фото).
+4. Контент в порядке price-first. Цена — компонент `awds-component-price`, размер **`price--listing`** (масштабируемый: едет по `.typo-*` карточки вместе с брендом/названием, без раздельного desktop/mobile), подключи `price.css`; выбери тип по данным товара: `price-default` (обычная), `price-sale` (скидка: акцентная + старая зачёркнутая, обычно с бейджем `.badge-market-percent`), `price-none` («Нет в наличии» — при этом скрой бейдж скидки). Название клампится в 2 строки. Между медиа и контентом — индикатор галереи `.pcard__slider` (если несколько фото).
 5. Подключи `references/product-card-price-first.css` **и** CSS используемых компонентов: `awds-component-button-favorites/.../button-favorites.css` (избранное), `awds-component-price/.../price.css` (цена), `awds-component-badge/.../badge.css` (бейджи), `awds-component-slider/.../slider.css` (индикатор галереи), `awds-component-tooltip/.../tooltip.css` (тултипы). Нужны `css-variables.css` сайта (роли) и базовые токены DS (`--awds-space-*`, `--awds-typography-*`, `--awds-rounded-*`, `--awds-shadow-*`, `--awds-font-*`).
 
 ## Зона корзины (buy-now / brand-first)
