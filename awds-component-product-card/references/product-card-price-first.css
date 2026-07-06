@@ -30,8 +30,9 @@
    + .pcard__image--active) и позиционирование индикатора (.pcard__slider).
 
    Две вьюхи (ось "view" = размер): база = Desktop-Tablet, .pcard--mobile = Mobile.
-   Различия view касаются только цены/валюты/рейтинга (Control-шкала), размера
-   бейджей (.badge--100 → .badge--50) и оверлей-паддингов. Бренд и название одинаковы.
+   Различия view: цена/валюта (компонент awds-component-price, price--800→--600),
+   размер бейджей (.badge--100 → .badge--50), оверлей-паддинги и БРЕНД (desktop 16/26
+   lead → mobile 14/22 body). Название и фидбэк — одинаковы в обеих вью.
 
    Маппинг (component-token-map.json + Figma get_variable_defs):
      — текст цены/валюты:                 rgb(var(--surface-on-highest))
@@ -45,11 +46,12 @@
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-500)            (8px Smooth, border-radius/500)
-     — цена:   Control 850 (desktop) / 500 (mobile)
-     — валюта: Control 300 (desktop) / 200 (mobile)
-     — бренд:  typography 600 + line-height-compact 600 (16/19)
-     — название: typography 400 + line-height-compact 400 (14/17), clamp 2 строки
-     — рейтинг-текст: Control 300 (desktop) / 200 (mobile)
+     — цена/валюта: компонент awds-component-price (price--800 desktop / --600 mobile) — ось control (фикс)
+     — бренд:  роль WYSIWYG lead (--awds-type-lead-*) desktop; mobile — роль body (--awds-type-body-*)
+     — название: роль WYSIWYG body (--awds-type-body-*), clamp 2 строки
+     — рейтинг-текст: роль WYSIWYG caption (--awds-type-caption-*), обе вью
+     ↑ текст на РОЛЯХ --awds-type-* → масштабируется коллекцией .typo-large/medium/small
+       на секции-предке (как типографика блоков). Без .typo-* = :root; .typo-small = макет.
      — бейджи: компонент .badge --100 desktop / --50 mobile (badge.css)
      — иконки: 24px флаг (space-6), 20px сердце (space-5), 16px звезда (space-4)
 
@@ -330,13 +332,16 @@
    совпадает с прежним инлайн-вариантом. Размер/типографику/зазоры держит сам
    компонент; собственных .pcard__price* стилей здесь больше нет. */
 
-/* Бренд (одна строка, ссылка link/accent). Line-height — обычный (не compact),
-   как WYSIWYG-пресет в макете: desktop 16/26, mobile 14/22 (см. ниже). */
+/* Бренд (одна строка, ссылка link/accent). Типографика — на РОЛИ WYSIWYG-пресета
+   `lead` (`--awds-type-lead-*`), а не на жёсткий шаг шкалы. Роль масштабируется
+   коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же
+   оси, что и типографика блоков (без своего `.typo-*` = наследует от контекста;
+   `.typo-small` = макет 16/26). Mobile бренд мельче — роль `body` (см. ниже). */
 .pcard__brand {
   margin: 0;
-  font-size: var(--awds-typography-font-size-600);              /* 16px */
-  line-height: var(--awds-typography-line-height-600);          /* 26px (lead) */
-  letter-spacing: var(--awds-typography-letter-spacing-600);
+  font-size: var(--awds-type-lead-fs);                          /* WYSIWYG lead (.typo-small = 16px) */
+  line-height: var(--awds-type-lead-lh);                        /* .typo-small = 26px */
+  letter-spacing: var(--awds-type-lead-ls);
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));                        /* link/accent rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
@@ -347,21 +352,22 @@
   white-space: nowrap;
   max-width: 100%;
 }
-/* Mobile: бренд мельче (14/22 — body), как в макете */
+/* Mobile: бренд мельче — роль `body` (.typo-small = 14/22), как в макете */
 .pcard--mobile .pcard__brand {
-  font-size: var(--awds-typography-font-size-400);              /* 14px */
-  line-height: var(--awds-typography-line-height-400);          /* 22px (body) */
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  font-size: var(--awds-type-body-fs);                          /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-type-body-lh);                        /* .typo-small = 22px */
+  letter-spacing: var(--awds-type-body-ls);
 }
 
-/* Название (до 2 строк, регуляр, ссылка link/accent). Line-height обычный (22px),
-   как WYSIWYG body в макете (раньше compact 17px). Без padding-top — в макете
-   контент-элементы идут вплотную (gap 0), вертикальный ритм даёт line-height. */
+/* Название (до 2 строк, регуляр, ссылка link/accent). Роль `body`
+   (`--awds-type-body-*`, .typo-small = 14/22) — масштабируется вместе с блоками.
+   Без padding-top — в макете контент-элементы идут вплотную (gap 0),
+   вертикальный ритм даёт line-height. */
 .pcard__name {
   margin: 0;
-  font-size: var(--awds-typography-font-size-400);              /* 14px */
-  line-height: var(--awds-typography-line-height-400);          /* 22px (body) */
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  font-size: var(--awds-type-body-fs);                          /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-type-body-lh);                        /* .typo-small = 22px */
+  letter-spacing: var(--awds-type-body-ls);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));                        /* link/accent rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
@@ -408,12 +414,13 @@
   height: var(--awds-space-3-5);
   color: rgb(var(--surface-on));
 }
-/* Значение рейтинга и счётчик отзывов — caption 12/19 semibold, tabular-nums */
+/* Значение рейтинга и счётчик отзывов — роль `caption` (.typo-small = 12/19)
+   semibold, tabular-nums; масштабируется вместе с блоками. */
 .pcard__rating-value,
 .pcard__reviews-count {
-  font-size: var(--awds-typography-font-size-200);          /* 12px */
-  line-height: var(--awds-typography-line-height-200);      /* 19px (caption) */
-  letter-spacing: var(--awds-typography-letter-spacing-200);
+  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-type-caption-ls);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;

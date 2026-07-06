@@ -62,28 +62,30 @@
         <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
       </span>
     </div>
-    <!-- Зона корзины (Figma .AddCart). Потребитель показывает ОДНО из состояний:
-         товара нет в корзине → кнопка «В корзину»; есть → степпер с количеством. -->
-
-    <!-- Состояние A — кнопка (товара нет в корзине) -->
-    <div class="pcard__cart">
-      <button type="button" class="btn btn-primary btn--400">В корзину</button>
-    </div>
-
-    <!-- Состояние B — степпер (товар в корзине; кол-во регулируется) -->
-    <div class="pcard__cart">
-      <div class="pcard__stepper">
-        <button type="button" class="btn btn-ghost btn--400 btn--icon-only" aria-label="Убрать один">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 10h10"/></svg>
-        </button>
-        <span class="pcard__stepper-value" aria-live="polite">1</span>
-        <button type="button" class="btn btn-ghost btn--400 btn--icon-only" aria-label="Добавить один">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 5v10M5 10h10"/></svg>
+    <!-- Зона корзины (Figma .AddCart). ОБЕ вью всегда в DOM (сложены стопкой);
+         активную задаёт data-cart-state на .pcard__cart (button | stepper),
+         переключение — плавный кросс-фейд (CSS). Потребитель только меняет
+         атрибут (см. wireStepper ниже). Дефолт без атрибута = button. -->
+    <div class="pcard__cart" data-cart-state="button">
+      <!-- Вью A — кнопка (товара нет в корзине) -->
+      <div class="pcard__cart-view pcard__cart-view--button">
+        <button type="button" class="btn btn-primary btn--400">В корзину</button>
+      </div>
+      <!-- Вью B — степпер (товар в корзине; кол-во регулируется) -->
+      <div class="pcard__cart-view pcard__cart-view--stepper">
+        <div class="pcard__stepper">
+          <button type="button" class="btn btn-ghost btn--400 btn--icon-only" aria-label="Убрать один">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 10h10"/></svg>
+          </button>
+          <span class="pcard__stepper-value" aria-live="polite">1</span>
+          <button type="button" class="btn btn-ghost btn--400 btn--icon-only" aria-label="Добавить один">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 5v10M5 10h10"/></svg>
+          </button>
+        </div>
+        <button type="button" class="btn btn-addition btn--400 btn--icon-only" aria-label="В корзину">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 16a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM1.2 2a1 1 0 1 0 0 2h1.6l2.1 9.05a1 1 0 0 0 .98.77h9.02a1 1 0 0 0 .96-.72l1.74-6.05A.85.85 0 0 0 17.78 6H5.07l-.44-1.99A1 1 0 0 0 3.66 2H1.2Z"/></svg>
         </button>
       </div>
-      <button type="button" class="btn btn-addition btn--400 btn--icon-only" aria-label="В корзину">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 16a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM1.2 2a1 1 0 1 0 0 2h1.6l2.1 9.05a1 1 0 0 0 .98.77h9.02a1 1 0 0 0 .96-.72l1.74-6.05A.85.85 0 0 0 17.78 6H5.07l-.44-1.99A1 1 0 0 0 3.66 2H1.2Z"/></svg>
-      </button>
     </div>
   </div>
 </div>
@@ -117,18 +119,19 @@
     <span class="badge badge-market-sale badge--50">Скидка</span>
   </div>
   …
-  <!-- Состояние A — кнопка -->
-  <div class="pcard__cart">
-    <button type="button" class="btn btn-primary btn--300">В корзину</button>
-  </div>
-  <!-- Состояние B — степпер -->
-  <div class="pcard__cart">
-    <div class="pcard__stepper">
-      <button type="button" class="btn btn-ghost btn--300 btn--icon-only" aria-label="Убрать один">…</button>
-      <span class="pcard__stepper-value" aria-live="polite">1</span>
-      <button type="button" class="btn btn-ghost btn--300 btn--icon-only" aria-label="Добавить один">…</button>
+  <!-- Зона корзины: обе вью, --300 вместо --400 -->
+  <div class="pcard__cart" data-cart-state="button">
+    <div class="pcard__cart-view pcard__cart-view--button">
+      <button type="button" class="btn btn-primary btn--300">В корзину</button>
     </div>
-    <button type="button" class="btn btn-addition btn--300 btn--icon-only" aria-label="В корзину">…</button>
+    <div class="pcard__cart-view pcard__cart-view--stepper">
+      <div class="pcard__stepper">
+        <button type="button" class="btn btn-ghost btn--300 btn--icon-only" aria-label="Убрать один">…</button>
+        <span class="pcard__stepper-value" aria-live="polite">1</span>
+        <button type="button" class="btn btn-ghost btn--300 btn--icon-only" aria-label="Добавить один">…</button>
+      </div>
+      <button type="button" class="btn btn-addition btn--300 btn--icon-only" aria-label="В корзину">…</button>
+    </div>
   </div>
 </div>
 ```
@@ -143,10 +146,14 @@
 | `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-container-on` |
 | `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-container-on` |
 | `.pcard__feedback` | — (не ссылка) | статичный: ★ warning · рейтинг surface-on-highest · 💬 иконка surface-on · счётчик surface-on-high |
-| `.pcard__cart` (зона корзины) | добавить / менять кол-во | состояние A — `.btn-primary` (кнопка); состояние B — степпер: `.btn-ghost` −/+ + квадратная `.btn-addition`; переключает потребитель |
+| `.pcard__cart` (зона корзины) | добавить / менять кол-во | обе вью (`--button` / `--stepper`) в DOM, активную задаёт `data-cart-state`; переключение — **плавный кросс-фейд** (прерываемый, MIFB) |
 | `.btn-favorites` | избранное | свой компонент (toggle `aria-pressed`) |
 
 Теней нет. Фокус — на каждой ссылке отдельно. Бейджи/флаг не перехватывают hover фото (`pointer-events:none`). Переходы гасятся при `prefers-reduced-motion`.
+
+## Степпер корзины (JS потребителя)
+
+Идентично `buy-now`. Зона `.pcard__cart` держит **обе** вью (`.pcard__cart-view--button` и `.pcard__cart-view--stepper`) в DOM, сложенные стопкой; активную выбирает `data-cart-state="button|stepper"`. Смена атрибута = **плавный кросс-фейд** (appear 0.3s cross-fade easing, hide 0.15s ease-in — прерываемый `transition`). Число `.pcard__stepper-value` при смене получает мягкий bump (`@keyframes pcard-stepper-bump`), ретриггер — тогл класса `--bump` с reflow. Готовый `wireStepper` см. в [product-card-buy-now.md](product-card-buy-now.md#степпер-корзины-js-потребителя). Карточка даёт визуальные хуки, логику количества подставляет потребитель.
 
 ## Поля для биндинга (PageCraft / SSR)
 
@@ -162,7 +169,7 @@
 | Счётчик отзывов | `.pcard__reviews-count` |
 | Галерея фото | несколько `.pcard__image[src]` + `.pcard__slider` (одно фото → `.pcard__slider-spacer`) |
 | Скидка % | `.badge-market-percent` |
-| Корзина | `.pcard__cart`: кнопка `.btn-primary` (нет в корзине) ↔ степпер `.pcard__stepper` (`.pcard__stepper-value` = кол-во, `.btn-ghost` −/+, `.btn-addition` = подтвердить); состояние выбирает потребитель |
+| Корзина | `.pcard__cart[data-cart-state]`: вью `--button` (`.btn-primary`) ↔ вью `--stepper` (`.pcard__stepper-value` = кол-во, `.btn-ghost` −/+, `.btn-addition` = подтвердить); кросс-фейд, см. «Степпер корзины» |
 | Избранное | `.btn-favorites[aria-pressed]` |
 
 ## Токены

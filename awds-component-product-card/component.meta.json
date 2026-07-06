@@ -77,6 +77,15 @@
         ]
       },
       {
+        "id": "typo",
+        "label": "Масштаб",
+        "options": [
+          "small",
+          "medium",
+          "large"
+        ]
+      },
+      {
         "id": "fav",
         "label": "Избранное",
         "options": [
@@ -143,29 +152,20 @@
     "--color-secondary-core",
     "--color-secondary-chroma",
     "--color-secondary-container-on-high",
-    "--awds-typography-line-height-400",
     "--awds-rectangle-400-rounded",
     "--awds-rectangle-300-rounded",
-    "--awds-control-50-*",
-    "--awds-control-200-*",
-    "--awds-control-300-*",
-    "--awds-control-500-*",
-    "--awds-control-600-*",
-    "--awds-control-850-*",
-    "--awds-typography-font-size-300",
-    "--awds-typography-line-height-compact-300",
-    "--awds-typography-letter-spacing-300",
+    "--awds-type-lead-fs",
+    "--awds-type-lead-lh",
+    "--awds-type-lead-ls",
+    "--awds-type-body-fs",
+    "--awds-type-body-lh",
+    "--awds-type-body-ls",
+    "--awds-type-caption-fs",
+    "--awds-type-caption-lh",
+    "--awds-type-caption-ls",
     "--awds-typography-font-size-400",
-    "--awds-typography-line-height-compact-400",
-    "--awds-typography-letter-spacing-400",
-    "--awds-typography-font-size-600",
-    "--awds-typography-line-height-compact-600",
-    "--awds-typography-letter-spacing-600",
-    "--awds-typography-font-size-200",
-    "--awds-typography-line-height-200",
-    "--awds-typography-letter-spacing-200",
     "--awds-typography-line-height-400",
-    "--awds-typography-line-height-600",
+    "--awds-typography-letter-spacing-400",
     "--awds-space-0-5",
     "--awds-space-px",
     "--awds-space-1",
@@ -185,7 +185,7 @@
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold"
   ],
-  "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). price-first: цену даёт компонент awds-component-price (price.css, price--800/600) — собственных control-* для цены больше НЕ использует; рейтинг — typography-200 (caption); флаг 24×24 object-fit:contain. control-* в deps остаются для brand-first (control-600/300/50) и buy-now (control-850/500, зона корзины). Зона корзины (.pcard__cart, Figma .AddCart 6130:27738) встроена вручную в brand-first/buy-now: контейнер степпера (Input/Secondary) стилизуется в самом product-card на secondary-core/-chroma + secondary-container-on-high (form-скилла нет); кнопки −/+/корзина — composed из awds-component-button (ghost/addition). Refresh product-card по его component-set эту зону НЕ перегенерирует.",
+  "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). ТИПОГРАФИКА текста карточки — на РОЛЯХ WYSIWYG-пресетов --awds-type-lead/body/caption-{fs,lh,ls}, а НЕ на жёстком шаге --awds-typography-*: бренд desktop=lead, mobile=body; название=body; фидбэк/рубрика=caption (одинаково во всех вариантах, включая brand-first mobile brand — мигрирован с фикс typography/300 на роль body). Роли масштабируются коллекцией .typo-large/medium/small на секции-предке — карточка едет по той же оси, что типографика блоков (чисто наследует: без .typo-* = :root ≈medium; .typo-small = макет 16/26·14/22·12/19). Прямой --awds-typography-*-400 остался ТОЛЬКО у .pcard__stepper-value (число в поле количества — контрол корзины, не масштабируется). Цену во ВСЕХ вариантах даёт компонент awds-component-price (price.css, price--800/600/500) — ось control-* (фикс). Флаг 24×24 object-fit:contain. Зона корзины (.pcard__cart, Figma .AddCart 6130:27738) встроена вручную в brand-first/buy-now: контейнер степпера (Input/Secondary) стилизуется в самом product-card на secondary-core/-chroma + secondary-container-on-high (form-скилла нет); кнопки −/+/корзина — composed из awds-component-button (ghost/addition). Refresh product-card по его component-set эту зону НЕ перегенерирует.",
   "add_cart": {
     "node_id": "6130:27738",
     "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6130-27738",
@@ -203,9 +203,9 @@
       "Input/Secondary (стилизован в product-card)"
     ]
   },
-  "last_synced": "2026-06-30T14:28:35Z",
+  "last_synced": "2026-07-06T12:43:53Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:bf2d698ba336f8bfc11410186ea5e3f08a3ae77883757d7fb9ed9b02406b10e6",
+  "snapshot_hash": "sha256:23f3cb5c6d79eb88faa01f0790d0f87be9190b6c2738fbc5fa77a41884bdfa6d",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "c27ea3d",

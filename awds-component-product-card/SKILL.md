@@ -21,12 +21,12 @@ description: >
 
 ## Две вьюхи (ось «view» = размер)
 
-Различия касаются только цены/валюты/рейтинга (Control-шкала), размера бейджей и оверлей-паддингов. Бренд и название одинаковы.
+Различия касаются размера цены (компонент awds-component-price), бренда, бейджей и оверлей-паддингов. Название и фидбэк — одинаковы в обеих вью.
 
-| Вью | Класс | Цена | Валюта | Бейдж | Рейтинг-текст |
+| Вью | Класс | Цена | Бренд | Бейдж | Рейтинг-текст |
 |---|---|---|---|---|---|
-| **Desktop-Tablet** (база) | `.pcard` | Control 850 (20px) | Control 300 (13px) | `rectangle-100` | Control 300 (13px) |
-| **Mobile** | `.pcard--mobile` | Control 500 (15px) | Control 200 (12px) | `rectangle-50` | Control 200 (12px) |
+| **Desktop-Tablet** (база) | `.pcard` | `price--800` (20px) | WYSIWYG lead 16/26 | `rectangle-100` | WYSIWYG caption 12/19 |
+| **Mobile** | `.pcard--mobile` | `price--600` (16px) | WYSIWYG body 14/22 | `rectangle-50` | WYSIWYG caption 12/19 |
 
 ## Откуда берутся значения
 
@@ -40,7 +40,7 @@ description: >
 | Бейдж **sale** | bg `primary-core` / sheen `primary-chroma` / border `primary-core` / текст `primary-on` |
 | Избранное | компонент `awds-component-button-favorites` (`.btn-favorites`) — свои цвета/состояния |
 | Скругление медиа | `var(--awds-rounded-500)` (8px Smooth) |
-| Бренд / название | `--awds-typography-font-size-{600,400}` + `line-height-compact-{600,400}` |
+| Бренд / название / фидбэк | **Роли WYSIWYG-пресетов** `--awds-type-lead/body/caption-{fs,lh,ls}` (НЕ жёсткий шаг `--awds-typography-*`). Бренд desktop = `lead`, mobile = `body`; название = `body`; фидбэк/рубрика = `caption`. Роли масштабируются коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же оси, что типографика блоков. **Без `.typo-*` = `:root` (≈medium); `.typo-small` = макет** (lead 16/26, body 14/22, caption 12/19). Цена — ось `control-*` (фикс, не масштабируется) |
 | Иконки | флаг 20px (`space-5`, как иконка избранного), звезда 16px (`space-4`); сердце — в компоненте button-favorites |
 
 ## Структура и классы
@@ -82,10 +82,10 @@ description: >
 
 ## Зона корзины (buy-now / brand-first)
 
-Варианты `buy-now` и `brand-first` несут зону корзины `.pcard__cart` (Figma `.AddCart`) с **двумя состояниями** — переключает потребитель по количеству товара в корзине:
+Варианты `buy-now` и `brand-first` несут зону корзины `.pcard__cart` (Figma `.AddCart`) с **двумя вью**. Обе вью держатся в DOM (сложены в один слот через grid-stack), активную выбирает атрибут `data-cart-state="button|stepper"`; переключение — **плавный кросс-фейд** (прерываемый `transition`, MIFB), а не подмена DOM. Меняет атрибут потребитель:
 
-- **button** (нет в корзине): `<button class="btn btn-primary btn--400/300">В корзину</button>` — компонент `awds-component-button`.
-- **stepper** (в корзине): поле количества `.pcard__stepper` (Input/Secondary) с ghost-кнопками `−`/`+` внутри + квадратная кнопка корзины `.btn-addition`. Кнопки — `awds-component-button` (ghost / addition, `.btn--icon-only`); стилизуется тут только контейнер-инпут и число (`.pcard__stepper-value`, `tabular-nums`).
+- **button** (нет в корзине): `.pcard__cart-view--button` → `<button class="btn btn-primary btn--400/300">В корзину</button>` — компонент `awds-component-button`.
+- **stepper** (в корзине): `.pcard__cart-view--stepper` → поле количества `.pcard__stepper` (Input/Secondary) с ghost-кнопками `−`/`+` внутри + квадратная кнопка корзины `.btn-addition`. Кнопки — `awds-component-button` (ghost / addition, `.btn--icon-only`); стилизуется тут только контейнер-инпут и число (`.pcard__stepper-value`, `tabular-nums`). Число при смене получает мягкий bump (`@keyframes pcard-stepper-bump`, ретриггер класса `.pcard__stepper-value--bump`). Готовый `wireStepper` — в `product-card-buy-now.md`.
 
 Скилла form/input в DS нет, поэтому контейнер степпера стилизован в самом product-card на ролях `secondary-core` / `secondary-chroma` (sheen-градиент + бордер) и `secondary-container-on-high` (число). Размеры: `rectangle-400/300-rounded`, gap `space-2`. Подключи дополнительно `button-ghost.css` + `button-addition.css`. Разметка и mobile — в `product-card-buy-now.md` / `product-card-brand-first.md`.
 

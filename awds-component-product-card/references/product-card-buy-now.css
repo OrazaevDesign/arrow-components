@@ -253,13 +253,14 @@
 /* Цена — компонент awds-component-price (подключи price.css): .price.price-default,
    desktop price--800 (20/13), mobile price--500 (15/12). Первый блок, без отступа. */
 
-/* #2 название (→ товар). link/accent = surface-on-highest. 1 строка, 14/22. */
+/* #2 название (→ товар). link/accent = surface-on-highest. 1 строка, роль WYSIWYG
+   body (--awds-type-body-*, .typo-small = 14/22), масштабируется с блоками. */
 .pcard-buy-now .pcard__name {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-typography-font-size-400);          /* 14px */
-  line-height: var(--awds-typography-line-height-400);      /* 22px (body) */
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  font-size: var(--awds-type-body-fs);                      /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-type-body-lh);                    /* .typo-small = 22px */
+  letter-spacing: var(--awds-type-body-ls);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));
   text-decoration: none;
@@ -270,13 +271,14 @@
   white-space: nowrap;
 }
 
-/* #3 рубрика (→ категория). link/muted = surface-on-high. 1 строка, 12/19 (caption). */
+/* #3 рубрика (→ категория). link/muted = surface-on-high. 1 строка, роль WYSIWYG
+   caption (--awds-type-caption-*, .typo-small = 12/19), масштабируется с блоками. */
 .pcard-buy-now .pcard__category {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-typography-font-size-200);          /* 12px */
-  line-height: var(--awds-typography-line-height-200);      /* 19px (caption) */
-  letter-spacing: var(--awds-typography-letter-spacing-200);
+  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-type-caption-ls);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));
   text-decoration: none;
@@ -316,9 +318,9 @@
 }
 .pcard-buy-now .pcard__rating-value,
 .pcard-buy-now .pcard__reviews-count {
-  font-size: var(--awds-typography-font-size-200);          /* 12px */
-  line-height: var(--awds-typography-line-height-200);      /* 19px (caption) */
-  letter-spacing: var(--awds-typography-letter-spacing-200);
+  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-type-caption-ls);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -335,12 +337,39 @@
    число (form-control placehold) → secondary-container-on-high; gap зоны → space-2 (8px);
    скругление инпута → rectangle-400/300-rounded. Подключи button*.css. pt 8px. */
 
+/* Обе вью (кнопка / степпер) сложены в один слот через grid-stack и КРОСС-ФЕЙДЯТСЯ
+   по data-cart-state (переключает потребитель). Прерываемый transition (MIFB):
+   повторные add/remove мягко реверсятся, без «выскакивания». Дефолт (без атрибута)
+   = состояние button. */
 .pcard-buy-now .pcard__cart {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);   /* одна колонка на всю ширину */
+  width: 100%;
+  padding-top: var(--awds-space-2);        /* 8px */
+}
+
+/* Обе вью — в одной ячейке (стопкой). Скрытая: убрана из клика/таба/AT (visibility)
+   и мягко гаснет; появление — cross-fade easing из motion.md (0.3s), скрытие
+   короче (0.15s ease-in) с задержкой visibility до конца fade. */
+.pcard-buy-now .pcard__cart-view {
+  grid-area: 1 / 1;
   display: flex;
   align-items: center;
-  gap: var(--awds-space-2);              /* 8px */
-  width: 100%;
-  padding-top: var(--awds-space-2);      /* 8px */
+  gap: var(--awds-space-2);                /* 8px */
+  min-width: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
+}
+.pcard-buy-now .pcard__cart:not([data-cart-state="stepper"]) .pcard__cart-view--button,
+.pcard-buy-now .pcard__cart[data-cart-state="stepper"] .pcard__cart-view--stepper {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
+  transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
 /* Контейнер количества — Input/Secondary: sheen-градиент chroma→bg + бордер. */
@@ -372,6 +401,18 @@
   white-space: nowrap;
   user-select: none;
 }
+/* Число: мягкий «bump» при смене значения (one-shot → @keyframes). Потребитель
+   ретриггерит анимацию — тогл класса --bump при обновлении textContent (см.
+   bumpStepperValue в .md); чистый CSS смену текста не ловит. tabular-nums уже
+   держит ширину, число не прыгает по горизонтали. */
+.pcard-buy-now .pcard__stepper-value--bump {
+  animation: pcard-stepper-bump 0.15s ease-out;
+}
+@keyframes pcard-stepper-bump {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
 
 /* Кнопка «В корзину» (button) и квадратная корзина (addition, stepper) —
    компоненты awds-component-button, своих стилей не нужно. */
@@ -390,8 +431,12 @@
   .pcard-buy-now .pcard__name,
   .pcard-buy-now .pcard__category,
   .pcard-buy-now .pcard__slider-track,
-  .pcard-buy-now .pcard__slider--many .slider__dot {
+  .pcard-buy-now .pcard__slider--many .slider__dot,
+  .pcard-buy-now .pcard__cart-view {
     transition: none;
+  }
+  .pcard-buy-now .pcard__stepper-value--bump {
+    animation: none;
   }
 }
 

@@ -235,13 +235,14 @@
   text-align: center;
 }
 
-/* #2 бренд (→ бренд). link/accent = surface-on-highest. Desktop 16/26, mobile 13/16. */
+/* #2 бренд (→ бренд). link/accent = surface-on-highest. Desktop — роль WYSIWYG
+   lead (--awds-type-lead-*, .typo-small = 16/26), масштабируется с блоками. */
 .pcard-brand-first .pcard__brand {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-typography-font-size-600);          /* 16px */
-  line-height: var(--awds-typography-line-height-600);      /* 26px (lead) */
-  letter-spacing: var(--awds-typography-letter-spacing-600);
+  font-size: var(--awds-type-lead-fs);                      /* WYSIWYG lead (.typo-small = 16px) */
+  line-height: var(--awds-type-lead-lh);                    /* .typo-small = 26px */
+  letter-spacing: var(--awds-type-lead-ls);
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));
   text-decoration: none;
@@ -251,19 +252,23 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* Mobile бренд — роль WYSIWYG body (--awds-type-body-*, .typo-small = 14/22), как
+   mobile-бренд в price-first: desktop lead → mobile body, одинаково во всех вариантах.
+   Масштабируется вместе с блоками (в макете был фикс typography/300 — мигрирован на ось). */
 .pcard.pcard-brand-first.pcard--mobile .pcard__brand {
-  font-size: var(--awds-typography-font-size-300);              /* 13px */
-  line-height: var(--awds-typography-line-height-compact-300);  /* 16px */
-  letter-spacing: var(--awds-typography-letter-spacing-300);
+  font-size: var(--awds-type-body-fs);                          /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-type-body-lh);                        /* .typo-small = 22px */
+  letter-spacing: var(--awds-type-body-ls);
 }
 
-/* #3 название (→ товар). link/accent = surface-on-highest. 1 строка, 14/22 (обе вью). */
+/* #3 название (→ товар). link/accent = surface-on-highest. 1 строка, роль WYSIWYG
+   body (--awds-type-body-*, .typo-small = 14/22), масштабируется с блоками. */
 .pcard-brand-first .pcard__name {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-typography-font-size-400);          /* 14px */
-  line-height: var(--awds-typography-line-height-400);      /* 22px (body) */
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  font-size: var(--awds-type-body-fs);                      /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-type-body-lh);                    /* .typo-small = 22px */
+  letter-spacing: var(--awds-type-body-ls);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));
   text-decoration: none;
@@ -303,9 +308,9 @@
 }
 .pcard-brand-first .pcard__rating-value,
 .pcard-brand-first .pcard__reviews-count {
-  font-size: var(--awds-typography-font-size-200);          /* 12px */
-  line-height: var(--awds-typography-line-height-200);      /* 19px (caption) */
-  letter-spacing: var(--awds-typography-letter-spacing-200);
+  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-type-caption-ls);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -332,14 +337,40 @@
    число (form-control placehold) → secondary-container-on-high; gap зоны → space-2 (8px);
    скругление инпута → rectangle-400/300-rounded. Подключи button*.css. */
 
-/* Зона целиком. Контент центрирован → кнопка «В корзину» тоже по центру. pt 6px. */
+/* Зона целиком: обе вью (кнопка / степпер) сложены в один слот через grid-stack
+   и КРОСС-ФЕЙДЯТСЯ по data-cart-state (переключает потребитель). Прерываемый
+   transition (MIFB): повторные add/remove мягко реверсятся, без «выскакивания».
+   Контент центрирован → вью тоже по центру. Дефолт (без атрибута) = button. pt 6px. */
 .pcard-brand-first .pcard__cart {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);   /* одна колонка на всю ширину */
+  width: 100%;
+  padding-top: var(--awds-space-1-5);      /* 6px */
+}
+
+/* Обе вью — в одной ячейке (стопкой), контент по центру. Скрытая: убрана из
+   клика/таба/AT (visibility) и мягко гаснет; появление — cross-fade easing из
+   motion.md (0.3s), скрытие короче (0.15s ease-in). */
+.pcard-brand-first .pcard__cart-view {
+  grid-area: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--awds-space-2);              /* 8px */
-  width: 100%;
-  padding-top: var(--awds-space-1-5);    /* 6px */
+  gap: var(--awds-space-2);                /* 8px */
+  min-width: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96);
+  pointer-events: none;
+  transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
+}
+.pcard-brand-first .pcard__cart:not([data-cart-state="stepper"]) .pcard__cart-view--button,
+.pcard-brand-first .pcard__cart[data-cart-state="stepper"] .pcard__cart-view--stepper {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  pointer-events: auto;
+  transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
 
 /* Контейнер количества — Input/Secondary: sheen-градиент chroma→bg + бордер. */
@@ -371,6 +402,18 @@
   white-space: nowrap;
   user-select: none;
 }
+/* Число: мягкий «bump» при смене значения (one-shot → @keyframes). Потребитель
+   ретриггерит анимацию — тогл класса --bump при обновлении textContent (см.
+   bumpStepperValue в .md); чистый CSS смену текста не ловит. tabular-nums уже
+   держит ширину, число не прыгает по горизонтали. */
+.pcard-brand-first .pcard__stepper-value--bump {
+  animation: pcard-stepper-bump 0.15s ease-out;
+}
+@keyframes pcard-stepper-bump {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
 
 /* Кнопка «В корзину» (button) и квадратная корзина (addition, stepper) —
    компоненты awds-component-button, своих стилей не нужно. */
@@ -388,8 +431,12 @@
   .pcard-brand-first .pcard__brand,
   .pcard-brand-first .pcard__name,
   .pcard-brand-first .pcard__slider-track,
-  .pcard-brand-first .pcard__slider--many .slider__dot {
+  .pcard-brand-first .pcard__slider--many .slider__dot,
+  .pcard-brand-first .pcard__cart-view {
     transition: none;
+  }
+  .pcard-brand-first .pcard__stepper-value--bump {
+    animation: none;
   }
 }
 
