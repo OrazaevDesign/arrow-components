@@ -7,7 +7,9 @@
     "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1972",
     "sets": {
       "horizontal": { "node_id": "2093:1971", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1971", "figma_label": "Price ↔" },
-      "vertical":   { "node_id": "2093:912",  "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-912",  "figma_label": "Price ↕" }
+      "vertical":   { "node_id": "2093:912",  "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-912",  "figma_label": "Price ↕" },
+      "listing":    { "node_id": "2217:74",   "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2217-74",   "figma_label": "Price Listing (масштабируемый; ось Type=Sale/Default/None)",
+        "type_nodes": { "sale": "2217:73", "default": "2217:72", "none": "2217:71" } }
     }
   },
   "variants": {
@@ -20,7 +22,11 @@
     "side":        { "values": ["right", "left"], "class": { "left": "price--currency-left" }, "default": "right" }
   },
   "shape": null,
-  "size_scale": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100],
+  "size_scale": [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, "listing"],
+  "size_role_map": {
+    "_note": "Масштабируемый размер .price--listing (Figma «Price Listing» 2217:74). В отличие от фикс size_control_map (Control/Value), main/sec берут РОЛИ WYSIWYG-пресетов --awds-type-* и едут по коллекции .typo-small/medium/large на предке. plc = плейсхолдер типа none (роль body, регуляр).",
+    "listing": { "main": "type-price-listing", "sec": "type-caption", "plc": "type-body" }
+  },
   "size_control_map": {
     "_note": "size → ступени ФИКС-шкалы Control/Value (--awds-control-N-*), main / secondary. Figma биндит цену на font-size/N из Control/Value (НЕ на адаптивную typography). Control фикс на всех брейкпоинтах; адаптив цены — смена size-класса потребителем. Сматчено 1-в-1 по get_variable_defs каждого Size-варианта.",
     "1100": { "main": 1000, "sec": 700 },
@@ -42,11 +48,12 @@
     "base_class": "price",
     "default_size": 600,
     "matrix_states": ["rest"],
-    "matrix_sizes": [1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100],
+    "matrix_sizes": ["listing", 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100],
     "toggles": [
       { "id": "variant",     "label": "Тип",        "options": ["sale", "default", "none"] },
       { "id": "orientation", "label": "Ориентация", "options": ["horizontal", "vertical"] },
-      { "id": "side",        "label": "Валюта",     "options": ["right", "left"] }
+      { "id": "side",        "label": "Валюта",     "options": ["right", "left"] },
+      { "id": "typo",        "label": "Масштаб",    "options": ["small", "medium", "large"] }
     ],
     "html_samples": [
       { "label": "Sale, горизонтальная, ₽ справа", "html": "<span class=\"price price-sale price--600\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>" },
@@ -61,10 +68,14 @@
     "--color-surface-on-highest",
     "--color-surface-on",
     "--awds-control-50-*", "--awds-control-100-*", "--awds-control-200-*", "--awds-control-300-*", "--awds-control-400-*", "--awds-control-500-*", "--awds-control-600-*", "--awds-control-700-*", "--awds-control-800-*", "--awds-control-850-*", "--awds-control-900-*", "--awds-control-950-*", "--awds-control-1000-*",
+    "--awds-type-price-listing-fs", "--awds-type-price-listing-lh", "--awds-type-price-listing-ls",
+    "--awds-type-caption-fs", "--awds-type-caption-lh", "--awds-type-caption-ls",
+    "--awds-type-body-fs", "--awds-type-body-lh", "--awds-type-body-ls",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-font-weight-regular"
   ],
-  "last_synced": "2026-06-30T16:15:50Z",
+  "last_synced": "2026-07-06T13:26:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:ecd04fd4ffc073314f2be662e5cc679c79618e44bb96a325f118129c64285c65",
   "published": {

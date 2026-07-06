@@ -288,3 +288,30 @@
   --awds-price-lh-sec: var(--awds-control-50-line-height);
   --awds-price-ls-sec: var(--awds-control-50-letter-spacing);
 }
+
+/* === Вариант «Listing» — МАСШТАБИРУЕМЫЙ размер (Figma «Price Listing» 2217:74) ===
+   Исключение из фикс-правила выше: вместо шага Control/Value главное число берёт
+   РОЛЬ WYSIWYG-пресета --awds-type-price-listing-*, валюта/старая цена — роль
+   --awds-type-caption-*. Роли переопределяются коллекцией .typo-small/medium/large
+   на секции-предке → цена масштабируется вместе с типографикой блоков/страницы
+   (в отличие от price--N, которые фикс на всех брейкпоинтах). .typo-small = макет
+   (число 19/23 — ступень 900, валюта/старая 12/19 — caption). Тип (sale/default/none) и ориентация/сторона —
+   как у обычных размеров (комбинируется с price-sale/-default/-none, --vertical, --currency-left).
+   Взаимоисключающ с price--N: потребитель выбирает ЛИБО фикс-размер, ЛИБО listing. */
+.price--listing {
+  --awds-price-fs:     var(--awds-type-price-listing-fs);
+  --awds-price-lh:     var(--awds-type-price-listing-lh);
+  --awds-price-ls:     var(--awds-type-price-listing-ls);
+  --awds-price-fs-sec: var(--awds-type-caption-fs);
+  --awds-price-lh-sec: var(--awds-type-caption-lh);
+  --awds-price-ls-sec: var(--awds-type-caption-ls);
+}
+/* Плейсхолдер «Нет в наличии» в listing — роль body (small = 14/22), РЕГУЛЯР (как в
+   макете, тип None). line-height держим по главной (price-listing) — высота блока
+   none = высоте цены, переключение наличия не прыгает. */
+.price--listing .price__placeholder {
+  font-size: var(--awds-type-body-fs);
+  line-height: var(--awds-price-lh);
+  letter-spacing: var(--awds-type-body-ls);
+  font-weight: var(--awds-font-weight-regular);
+}

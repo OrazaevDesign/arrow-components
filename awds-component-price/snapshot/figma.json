@@ -1,5 +1,15 @@
 {
   "_note": "Сырой снимок Figma MCP для awds-component-price. Два Component Set: горизонтальный (Price ↔, 2093:1971) и вертикальный (Price ↕, 2093:912). Оси: Size (100..1100) × Type (Sale/Default/None) × Side (Right/Left).",
+  "_refresh_2026_07_06_listing": {
+    "scope": "Добавлен масштабируемый вариант размера .price--listing (Figma «Price Listing» set 2217:74, ось Type=Sale/Default/None; узлы sale 2217:73 / default 2217:72 / none 2217:71).",
+    "summary": "Новый размер, не входящий в фикс-шкалу Control. Главное число → роль WYSIWYG-пресета --awds-type-price-listing-*, валюта + старая цена → --awds-type-caption-*, плейсхолдер none → --awds-type-body-* (регуляр). Роли переопределяются коллекцией .typo-* → цена масштабируется вместе с типографикой блоков (в отличие от price--N фикс). Связан с добавлением WYSIWYG-пресета price-listing в DS-токены (2026-07-06) и слота price-listing в SLOT_ORDER build-global.js. Цвета типов переиспользованы (sale=accent-container-on, default=surface-on-highest, old/placeholder=surface-on). Правки: price.css (+.price--listing и .price--listing .price__placeholder), SKILL.md, meta (sets.listing, size_scale+listing, size_role_map, deps type-*, preview matrix+typo toggle), preview.html (размер listing + тумблер Масштаб).",
+    "live_variable_defs": {
+      "sale_2217_73": "value price-listing 18/22/-0.2 semibold accent/container/on; currency caption 12/19 accent/container/on; old value+currency caption 12/19 surface/on (line-through); gap space/0,5",
+      "default_2217_72": "value price-listing 18/22/-0.2 semibold surface/on-highest; currency caption 12/19",
+      "none_2217_71": "placeholder body 14/22 regular surface/on"
+    },
+    "_note_sizes_may_shift": "Значения px (18/22, 12/19, 14/22) — при WYSIWYG Small на момент чтения. price-listing/caption/body — роли, реальные px зависят от .typo-* и последующих правок размеров в токенах. Код на ролях, не на px — авто-подстройка."
+  },
   "_fix_2026_06_30_height": "В макете у одного размера Sale/Default/None одинаковая высота (напр. 1100 ↔ = 40px у всех типов). Раньше .price__placeholder (none) брал вторичную line-height → блок none был ниже, контент под ценой прыгал. Исправлено: placeholder использует основную line-height (--awds-price-lh) при вторичном кегле — высота none = высоте default/sale, текст центрируется. Переключение наличия не меняет высоту блока.",
   "file_key": "UCYhMA1JeNUNuVGsxUEne7",
   "file_name": "💠 Comp ↪ ¹ Elemets",
