@@ -1,0 +1,82 @@
+{
+  "component": "content-area",
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2221:59",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-59",
+    "aspect_ratio_source": {
+      "file_key": "SLujhvMwJRHdRWAqZeiEu3",
+      "node_id": "741:39415",
+      "url": "https://www.figma.com/design/SLujhvMwJRHdRWAqZeiEu3/%F0%9F%93%9C-Tokens-%E2%86%AA-%C2%B9-Units?node-id=741-39415",
+      "figma_label": "FixedAspectRatioSpacer (39 соотношений)"
+    }
+  },
+  "variants": {
+    "illustration": { "node_id": "2221:60", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-60", "figma_label": "var=illustration" },
+    "img":          { "node_id": "2221:69", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-69", "figma_label": "var=img" },
+    "video":        { "node_id": "2221:71", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-71", "figma_label": "var=video" }
+  },
+  "modifiers": {
+    "ratio": {
+      "_note": "39 хелперов --{R} + override через --awds-content-area-ratio. Дефолт (без класса) 16:9.",
+      "class_prefix": "content-area--",
+      "default": "16-9",
+      "numeric": ["1-1","16-9","9-16","4-3","3-4","3-2","2-3","5-4","4-5","16-10","10-16","8-5","9-8","21-9","9-21","32-9","16-5","14-3","8-3","5-2","3-1","2-1","1-2","4-1","6-1","12-1","6-7"],
+      "named": ["a4-portrait","a4-landscape","a4-half-portrait","a4-half-landscape","letter-portrait","letter-landscape","letter-half-portrait","letter-half-landscape","golden-portrait","golden-landscape","golden-half-portrait","golden-half-landscape"]
+    },
+    "fit": {
+      "_note": "только variant img: способ вписывания object-fit + override object-position через --awds-content-area-position",
+      "values": ["cover", "contain", "fill"],
+      "class": { "cover": "content-area--fit-cover", "contain": "content-area--fit-contain", "fill": "content-area--fit-fill" },
+      "default": "cover"
+    }
+  },
+  "illustration_recolor": {
+    "_note": "Публичный API перекраски SVG-иллюстрации. Классы на путях артворка. Цвет задаётся колорпикером потребителя через --awds-ill-*; не задан → DS-роль по умолчанию.",
+    "classes": {
+      "awds-ill-a": { "var": "--awds-ill-a", "default_role": "primary-container-on-highest" },
+      "awds-ill-b": { "var": "--awds-ill-b", "default_role": "primary-core" },
+      "awds-ill-c": { "var": "--awds-ill-c", "default_role": "primary-container-core" },
+      "awds-ill-d": { "var": "--awds-ill-d", "default_role": "primary-dim" },
+      "awds-ill-f": { "var": "--awds-ill-f", "default_role": "primary-container-on-low" }
+    }
+  },
+  "shape": null,
+  "size_scale": null,
+  "states": ["rest"],
+  "color_tokens": ["border"],
+  "css_files": ["content-area.css"],
+  "preview": {
+    "base_class": "content-area",
+    "default_size": null,
+    "matrix_states": ["rest"],
+    "matrix_sizes": null,
+    "toggles": [
+      { "id": "variant", "label": "Тип",         "options": ["illustration", "img", "video"] },
+      { "id": "ratio",   "label": "Соотношение",  "options": ["16-9","1-1","4-3","3-2","3-4","9-16","21-9","2-1","a4-portrait","golden-landscape"] },
+      { "id": "fit",     "label": "Вписывание",   "options": ["cover", "contain", "fill"] }
+    ],
+    "html_samples": [
+      { "label": "Иллюстрация 16:9", "html": "<div class=\"content-area content-area--illustration content-area--16-9\"><svg class=\"content-area__illustration\" viewBox=\"0 0 267 207\"><g class=\"awds-ill-b\">…</g><g class=\"awds-ill-a\">…</g></svg></div>" },
+      { "label": "Картинка 4:3, cover", "html": "<figure class=\"content-area content-area--img content-area--4-3 content-area--fit-cover\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" },
+      { "label": "Картинка 1:1, contain", "html": "<figure class=\"content-area content-area--img content-area--1-1 content-area--fit-contain\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" },
+      { "label": "Видео YouTube 16:9", "html": "<div class=\"content-area content-area--video content-area--16-9\"><iframe class=\"content-area__video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" title=\"…\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen loading=\"lazy\"></iframe></div>" },
+      { "label": "Произвольное соотношение 7:3", "html": "<figure class=\"content-area content-area--img\" style=\"--awds-content-area-ratio: 7/3\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--color-primary-core",
+    "--color-primary-dim",
+    "--color-primary-container-core",
+    "--color-primary-container-on-highest",
+    "--color-primary-container-on-low",
+    "--color-surface-surface",
+    "--color-extended-shadow",
+    "--awds-rounded-700"
+  ],
+  "last_synced": "2026-07-07T10:20:47Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:ec9c9bff7704973acbe3ddd4fc84354fb2a1880f67191aa64b020a7e9fef4077",
+  "published": null
+}
