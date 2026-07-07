@@ -13,10 +13,10 @@
     }
   },
   "variants": {
-    "illustration": { "node_id": "2221:60", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-60", "figma_label": "var=illustration" },
-    "img":          { "node_id": "2221:69", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-69", "figma_label": "var=img" },
-    "video":        { "node_id": "2221:71", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-71", "figma_label": "var=video" }
+    "img":   { "node_id": "2221:69", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-69", "figma_label": "var=img" },
+    "video": { "node_id": "2221:71", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-71", "figma_label": "var=video" }
   },
+  "_note_dropped": "Вариант illustration (2221:60) и API перекраски awds-ill-* удалены — компонент упрощён до img/video (SVG идёт как img с fit-contain). Figma-набор ещё содержит ноду illustration.",
   "modifiers": {
     "ratio": {
       "_note": "39 хелперов --{R} + override через --awds-content-area-ratio. Дефолт (без класса) 16:9.",
@@ -32,16 +32,6 @@
       "default": "cover"
     }
   },
-  "illustration_recolor": {
-    "_note": "Публичный API перекраски SVG-иллюстрации. Классы на путях артворка. Цвет задаётся колорпикером потребителя через --awds-ill-*; не задан → DS-роль по умолчанию.",
-    "classes": {
-      "awds-ill-a": { "var": "--awds-ill-a", "default_role": "primary-container-on-highest" },
-      "awds-ill-b": { "var": "--awds-ill-b", "default_role": "primary-core" },
-      "awds-ill-c": { "var": "--awds-ill-c", "default_role": "primary-container-core" },
-      "awds-ill-d": { "var": "--awds-ill-d", "default_role": "primary-dim" },
-      "awds-ill-f": { "var": "--awds-ill-f", "default_role": "primary-container-on-low" }
-    }
-  },
   "shape": null,
   "size_scale": null,
   "states": ["rest"],
@@ -53,12 +43,11 @@
     "matrix_states": ["rest"],
     "matrix_sizes": null,
     "toggles": [
-      { "id": "variant", "label": "Тип",         "options": ["illustration", "img", "video"] },
+      { "id": "variant", "label": "Тип",         "options": ["img", "video"] },
       { "id": "ratio",   "label": "Соотношение",  "options": ["16-9","1-1","4-3","3-2","3-4","9-16","21-9","2-1","a4-portrait","golden-landscape"] },
       { "id": "fit",     "label": "Вписывание",   "options": ["cover", "contain", "fill"] }
     ],
     "html_samples": [
-      { "label": "Иллюстрация 16:9", "html": "<div class=\"content-area content-area--illustration content-area--16-9\"><svg class=\"content-area__illustration\" viewBox=\"0 0 267 207\"><g class=\"awds-ill-b\">…</g><g class=\"awds-ill-a\">…</g></svg></div>" },
       { "label": "Картинка 4:3, cover", "html": "<figure class=\"content-area content-area--img content-area--4-3 content-area--fit-cover\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" },
       { "label": "Картинка 1:1, contain", "html": "<figure class=\"content-area content-area--img content-area--1-1 content-area--fit-contain\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" },
       { "label": "Видео YouTube 16:9", "html": "<div class=\"content-area content-area--video content-area--16-9\"><iframe class=\"content-area__video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" title=\"…\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen loading=\"lazy\"></iframe></div>" },
@@ -66,11 +55,6 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-primary-core",
-    "--color-primary-dim",
-    "--color-primary-container-core",
-    "--color-primary-container-on-highest",
-    "--color-primary-container-on-low",
     "--color-surface-surface",
     "--color-extended-shadow",
     "--awds-rounded-700"

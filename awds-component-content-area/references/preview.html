@@ -53,7 +53,7 @@
 <body>
 
   <h1>content-area / storybook</h1>
-  <p class="sub">Медиа-область с соотношением сторон. Типы: <code>content-area--illustration</code> (SVG, contain, перекраска <code>awds-ill-*</code>), <code>content-area--img</code> (растр, cover/contain/fill), <code>content-area--video</code> (responsive iframe). 39 соотношений через хелперы <code>content-area--16-9</code>… или <code>style="--awds-content-area-ratio: 7/3"</code>. Радиус — <code>--awds-rounded-700</code>. Статичный. Переключи тему — палитра подтянется.</p>
+  <p class="sub">Медиа-область с соотношением сторон. Типы: <code>content-area--img</code> (jpg/png/svg, cover/contain/fill) и <code>content-area--video</code> (responsive iframe). 39 соотношений через хелперы <code>content-area--16-9</code>… или <code>style="--awds-content-area-ratio: 7/3"</code>. Радиус — <code>--awds-rounded-700</code>. Статичный. Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -61,7 +61,6 @@
     </label>
     <label>Тип:
       <select id="variant">
-        <option value="illustration">illustration</option>
         <option value="img">img</option>
         <option value="video">video</option>
       </select>
@@ -88,9 +87,6 @@
   <h2>Все соотношения (активный тип)</h2>
   <div class="grid" id="grid"></div>
 
-  <h2>Перекраска иллюстрации (awds-ill-*)</h2>
-  <div class="recolor" id="recolor"></div>
-
   <script>
     const RATIOS = [
       '1-1','16-9','9-16','4-3','3-4','3-2','2-3','5-4','4-5','16-10','10-16','8-5','9-8',
@@ -99,15 +95,6 @@
       'letter-portrait','letter-landscape','letter-half-portrait','letter-half-landscape',
       'golden-portrait','golden-landscape','golden-half-portrait','golden-half-landscape'
     ];
-
-    // Демо-иллюстрация: простой артворк со слоями-классами перекраски
-    const ILL_SVG = `<svg class="content-area__illustration" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
-      <g class="awds-ill-c"><circle cx="80" cy="45" r="40"/></g>
-      <g class="awds-ill-b"><rect x="52" y="30" width="56" height="30" rx="6"/></g>
-      <g class="awds-ill-a"><path d="M60 60 L100 60 L80 80 Z"/></g>
-      <g class="awds-ill-d"><circle cx="122" cy="24" r="8"/></g>
-      <g class="awds-ill-f"><circle cx="40" cy="66" r="6"/></g>
-    </svg>`;
 
     // Демо-картинка (data-URI SVG 4:3) — видно разницу cover / contain / fill
     const IMG_SRC = "data:image/svg+xml;utf8," + encodeURIComponent(
@@ -125,10 +112,11 @@
 
     // Внутренность бокса по типу
     function inner(v) {
-      if (v === 'illustration') return ILL_SVG;
-      if (v === 'img') return `<img class="content-area__img" src="${IMG_SRC}" alt="демо">`;
-      // video: реальный iframe (грузится онлайн) — офлайн виден surface-фон бокса
-      return `<iframe class="content-area__video" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="демо" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+      if (v === 'video') {
+        // реальный iframe (грузится онлайн) — офлайн виден surface-фон бокса
+        return `<iframe class="content-area__video" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="демо" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+      }
+      return `<img class="content-area__img" src="${IMG_SRC}" alt="демо">`;
     }
 
     function box(v, ratio, extra) {
@@ -151,12 +139,6 @@
         cell.innerHTML = `${box(v, r2, f)}<div class="label">${r2}</div>`;
         grid.appendChild(cell);
       });
-
-      // Перекраска: дефолт vs два кастома через инлайн --awds-ill-*
-      document.querySelector('#recolor').innerHTML = `
-        <div class="stage"><div class="content-area content-area--illustration content-area--16-9">${ILL_SVG}</div><div class="cap">дефолт (роли DS)</div></div>
-        <div class="stage"><div class="content-area content-area--illustration content-area--16-9" style="--awds-ill-b:#ff5a00;--awds-ill-a:#101828;--awds-ill-d:#0aa;--awds-ill-f:#e11">${ILL_SVG}</div><div class="cap">кастом (колорпикер)</div></div>
-        <div class="stage"><div class="content-area content-area--illustration content-area--16-9" style="--awds-ill-a:#1b4332;--awds-ill-b:#40916c;--awds-ill-c:#d8f3dc;--awds-ill-d:#95d5b2;--awds-ill-f:#2d6a4f">${ILL_SVG}</div><div class="cap">кастом (зелёная гамма)</div></div>`;
     }
 
     [variantSel, ratioSel, fitSel].forEach(el => el.addEventListener('change', render));
