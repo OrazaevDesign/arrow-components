@@ -20,12 +20,38 @@
   color: var(--awds-lnk-color, currentColor);
   display: inline;
   cursor: pointer;
+
+  /* Подчёркивание — ось «стиль линии» × «поведение по hover». Линия 1px, цвет =
+     текущий цвет ссылки на 30% (color-mix с currentColor — следует за вариантом).
+     Стиль линии — var --awds-lnk-ul-style (solid по умолчанию; --ul-dashed / --ul-dotted).
+     По умолчанию линия ЕСТЬ и гаснет по hover; --ul-hover инвертирует (появляется на hover);
+     --ul-none убирает совсем. */
   text-decoration-line: underline;
-  text-decoration-thickness: from-font;
+  text-decoration-style: var(--awds-lnk-ul-style, solid);
+  text-decoration-thickness: var(--awds-space-px);          /* 1px, не хардкод */
+  text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);  /* 30% */
   text-underline-offset: var(--awds-space-0-5);
+
   border-radius: var(--awds-rounded-200);
-  transition: color 0.15s ease-out;
+
+  /* Polish (MIFB): прерываемые transition; линия анимируется через text-decoration-color. */
+  transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
 }
+
+/* Тип 1 (по умолчанию): линия есть → гаснет по hover */
+.lnk:hover { text-decoration-color: transparent; }
+
+/* Ось «стиль линии» (комбинируется с поведением) */
+.lnk--ul-solid  { --awds-lnk-ul-style: solid; }
+.lnk--ul-dashed { --awds-lnk-ul-style: dashed; }
+.lnk--ul-dotted { --awds-lnk-ul-style: dotted; }
+
+/* Тип 2: линии нет → появляется по hover */
+.lnk--ul-hover       { text-decoration-color: transparent; }
+.lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent); }
+
+/* Тип 3: без подчёркивания */
+.lnk--ul-none { text-decoration-line: none; }
 
 .lnk:focus-visible {
   outline: 2px solid rgb(var(--surface-on-highest));

@@ -19,7 +19,7 @@ Link — **color-only** компонент: DS задаёт только цве�
 | Что | Источник | Где |
 |---|---|---|
 | Цвет варианта | `rgb(var(--{role}))` inline в `.lnk-{variant}` и его `:hover/:focus-visible/:active` | `references/link-{variant}.css` |
-| Подчёркивание | `text-decoration-line: underline` + `text-underline-offset: var(--awds-space-0-5)`, толщина `from-font` | там же (у `heading` — без подчёркивания) |
+| Подчёркивание | ось «стиль линии × поведение» (см. раздел ниже). Линия `1px` (`--awds-space-px`), цвет = currentColor на `30%` (`--awds-opacity-30` через `color-mix`), offset `--awds-space-0-5` | база `.lnk` + модификаторы `.lnk--ul-*` (у `heading` — без подчёркивания) |
 | Фокус-обводка | `2px solid rgb(var(--surface-on-highest))`, `outline-offset: 2px`, скругление `var(--awds-rounded-200)` | там же |
 | Размер/шрифт | **наследуются** от родителя — не задаются | — |
 
@@ -36,6 +36,30 @@ Link — **color-only** компонент: DS задаёт только цве�
 | **Heading** | `references/link-heading.md` ✅ | surface-on-high → accent-container-on | Кликабельный заголовок (без подчёркивания), акцент на hover |
 
 Подчёркивание есть у всех вариантов, кроме **heading** (заголовки не подчёркивают).
+
+## Подчёркивание — ось «стиль линии × поведение»
+
+Ортогонально цветовому варианту. Линия всегда **1px** (`--awds-space-px`), цвет = **текущий цвет ссылки на 30%** (`color-mix(in srgb, currentColor var(--awds-opacity-30), transparent)` — следует за цветом варианта, в т.ч. за сменой на hover). Модификаторы вешаются на тот же `<a>` рядом с `.lnk .lnk-{variant}`.
+
+**Две оси:**
+- **Стиль линии:** `.lnk--ul-solid` (по умолчанию) · `.lnk--ul-dashed` (пунктир) · `.lnk--ul-dotted` (точки).
+- **Поведение:** по умолчанию линия **есть и гаснет по hover**; `.lnk--ul-hover` инвертирует (**нет линии → появляется по hover**); `.lnk--ul-none` — **без подчёркивания**.
+
+**7 готовых комбинаций:**
+
+| # | Что | Классы (сверх `.lnk .lnk-{variant}`) |
+|---|---|---|
+| 1.1 | Линия, гаснет по hover | — (по умолчанию) |
+| 1.2 | Пунктир, гаснет по hover | `.lnk--ul-dashed` |
+| 1.3 | Точки, гаснет по hover | `.lnk--ul-dotted` |
+| 2.1 | Линия, появляется по hover | `.lnk--ul-hover` |
+| 2.2 | Пунктир, появляется по hover | `.lnk--ul-hover .lnk--ul-dashed` |
+| 2.3 | Точки, появляется по hover | `.lnk--ul-hover .lnk--ul-dotted` |
+| 3 | Без подчёркивания | `.lnk--ul-none` |
+
+Пример: `<a class="lnk lnk-default lnk--ul-dotted" href="…">ссылка</a>` — точечное подчёркивание, гаснущее по наведению.
+
+> Гашение/появление анимируется через `text-decoration-color` (прерываемый transition 0.15s), поэтому layout не прыгает. `heading` по своей природе без подчёркивания.
 
 ## Состояния
 

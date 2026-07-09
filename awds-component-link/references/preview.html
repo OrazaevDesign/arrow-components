@@ -110,6 +110,23 @@
     <tbody></tbody>
   </table>
 
+  <h2>Подчёркивание (ось: стиль линии × поведение)</h2>
+  <p class="sub">Комбинируется с любым цветовым вариантом. Линия 1&nbsp;px, цвет&nbsp;— текущий цвет ссылки на&nbsp;30% (<code>color-mix</code> от currentColor). <b>Наведи курсор</b>, чтобы увидеть гашение/появление.</p>
+  <table class="matrix">
+    <thead>
+      <tr><th style="width:260px;">Опция</th><th>Классы (сверх <code>.lnk .lnk-{variant}</code>)</th><th>Пример (наведи)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="variant-label">1.1 линия · гаснет по hover</td><td class="variant-label">— (по умолчанию)</td><td><a class="lnk lnk-default" href="#" onclick="return false">условия доставки</a></td></tr>
+      <tr><td class="variant-label">1.2 пунктир · гаснет</td><td class="variant-label">.lnk--ul-dashed</td><td><a class="lnk lnk-default lnk--ul-dashed" href="#" onclick="return false">условия доставки</a></td></tr>
+      <tr><td class="variant-label">1.3 точки · гаснет</td><td class="variant-label">.lnk--ul-dotted</td><td><a class="lnk lnk-default lnk--ul-dotted" href="#" onclick="return false">условия доставки</a></td></tr>
+      <tr><td class="variant-label">2.1 линия · по hover</td><td class="variant-label">.lnk--ul-hover</td><td><a class="lnk lnk-default lnk--ul-hover" href="#" onclick="return false">условия доставки</a></td></tr>
+      <tr><td class="variant-label">2.2 пунктир · по hover</td><td class="variant-label">.lnk--ul-hover .lnk--ul-dashed</td><td><a class="lnk lnk-default lnk--ul-hover lnk--ul-dashed" href="#" onclick="return false">условия доставки</a></td></tr>
+      <tr><td class="variant-label">2.3 точки · по hover</td><td class="variant-label">.lnk--ul-hover .lnk--ul-dotted</td><td><a class="lnk lnk-default lnk--ul-hover lnk--ul-dotted" href="#" onclick="return false">условия доставки</a></td></tr>
+      <tr><td class="variant-label">3 без подчёркивания</td><td class="variant-label">.lnk--ul-none</td><td><a class="lnk lnk-default lnk--ul-none" href="#" onclick="return false">условия доставки</a></td></tr>
+    </tbody>
+  </table>
+
   <h2>В контексте</h2>
   <div class="context">
     <div class="row" data-label="Инлайн в тексте (default)">

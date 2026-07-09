@@ -23,7 +23,8 @@
     "matrix_states": ["rest", "hover", "focus", "active"],
     "matrix_sizes": null,
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["default", "muted", "contrast", "accent", "heading"] }
+      { "id": "variant", "label": "Вариант", "options": ["default", "muted", "contrast", "accent", "heading"] },
+      { "id": "underline", "label": "Подчёркивание", "options": ["ul-solid", "ul-dashed", "ul-dotted", "ul-hover", "ul-none"], "note": "ось стиль×поведение (1px, 30%); стиль (solid/dashed/dotted) комбинируется с ul-hover (появляется по hover) или ul-none (без линии)" }
     ],
     "html_samples": [
       { "label": "Инлайн-ссылка в тексте", "html": "<p>Читайте <a class=\"lnk lnk-default\" href=\"#\">условия доставки</a> перед оформлением.</p>" },
@@ -37,9 +38,11 @@
     "--color-surface-on-highest",
     "--color-accent-container-on",
     "--awds-space-0-5",
+    "--awds-space-px",
+    "--awds-opacity-30",
     "--awds-rounded-200"
   ],
-  "last_synced": "2026-06-17T13:54:45Z",
+  "last_synced": "2026-07-09T11:30:51Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:2019784442cce80b5c9cae83eb705e05f17f7a105f03a216294785ed980b6663",
   "published": {
