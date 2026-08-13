@@ -283,6 +283,100 @@
   "last_synced": "2026-08-13T13:58:16Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:093e0a3b2bf6ecec301c7352bf054c65529356e376697f4983dfa1d264abe480",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "67065ff3beac2b7024237e849f7ae964131bc691",
+    "pushed_at": "2026-08-13T14:47:40Z",
+    "skill_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md",
+    "storybook": "https://orazaevdesign.github.io/arrow-components/",
+    "github_urls": {
+      "transparent": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-transparent.md",
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-default.md",
+      "default-selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-default-selected.md",
+      "actual-selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-actual-selected.md",
+      "accent-selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-accent-selected.md",
+      "tabbar": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-tabbar.md",
+      "tabbar-selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-tabbar-selected.md",
+      "menu": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-menu.md",
+      "menu-selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-menu-selected.md",
+      "variation": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-variation.md",
+      "variation-selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-variation-selected.md",
+      "variation-indeterminate": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-variation-indeterminate.md"
+    },
+    "dev_resources_status": {
+      "transparent": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "1:22254",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20398",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "default-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20401",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "actual-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20399",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "accent-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20400",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "tabbar": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20402",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "tabbar-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20403",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "menu": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20410",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "menu-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:20558",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "variation": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "324:77087",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "variation-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:22197",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      },
+      "variation-indeterminate": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "590:22196",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
+      }
+    }
+  },
   "naming_note": "Имена классов нормализованы: в Figma фреймы называются «Variaton» (опечатка, пропущена i) — в CSS это variation / variation-indeterminate. Точные подписи из макета лежат в variants[].figma_label."
 }
