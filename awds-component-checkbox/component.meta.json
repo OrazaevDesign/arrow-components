@@ -51,13 +51,18 @@
   "snapshot_hash": "sha256:30466daa5dda0d9b7b66796a8230cb861f9d246d39b395ed6a9ea7c51fad3bc8",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "pending",
-    "pushed_at": null,
+    "commit": "30f1b0031f1abdaa1bce9f2b1e8ea3034b9be171",
+    "pushed_at": "2026-08-13T08:24:29Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-checkbox/references/checkbox-default.md"
     },
     "dev_resources_status": {
-      "default": { "status": "pending", "node_id": "395:43665" }
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:43665",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-checkbox/SKILL.md"
+      }
     }
   }
 }
