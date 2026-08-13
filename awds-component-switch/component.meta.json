@@ -58,13 +58,18 @@
   "snapshot_hash": "sha256:af09bdc60737d4e8e425a9405b449da7badb92aa1da3ed576e1e7140ea651fc3",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "pending",
-    "pushed_at": null,
+    "commit": "b7d7b0288ff46eaace31994abfe4ecef02e9e4e6",
+    "pushed_at": "2026-08-13T09:07:16Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-switch/references/switch-default.md"
     },
     "dev_resources_status": {
-      "default": { "status": "pending", "node_id": "395:57077" }
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:57077",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-switch/SKILL.md"
+      }
     }
   }
 }
