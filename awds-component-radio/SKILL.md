@@ -113,4 +113,4 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 ## Соседние компоненты
 
 - **[awds-component-checkbox](../awds-component-checkbox/SKILL.md)** — близнец: тот же shape `square`, та же палитра `check-radio/*`, те же состояния. Отличия: квадрат со скруглением из шкалы, галка + прочерк (есть Indeterminate), выбор снимается кликом.
-- **Switch** — мгновенное включение/выключение настройки. Другая shape-геометрия (`square/{N}/handle`, `switch-width`).
+- **[awds-component-switch](../awds-component-switch/SKILL.md)** — мгновенное включение/выключение настройки. Та же палитра `check-radio/*`, но горизонтальная геометрия (`square/{N}/switch-width`) с едущим бегунком.
