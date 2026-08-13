@@ -1,0 +1,248 @@
+{
+  "_note": "Сырые ответы Figma MCP. ACB-owned, не править руками.",
+  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+  "file_name": "💠 Comp ↪ ⁵ Forms",
+  "primary_node_id": "395:43665",
+  "fetched_at": "2026-08-13T08:12:23Z",
+  "metadata": {
+    "frame": { "id": "395:43665", "name": "Checkbox", "width": 300, "height": 604 },
+    "axes": {
+      "Type": ["Selected", "Indeterminate", "Unselected"],
+      "Size": [500, 400, 300, 200],
+      "State": ["Rest", "Hover", "Focus", "Active", "Disabled"]
+    },
+    "cells": 60,
+    "node_box_px": { "500": 28, "400": 24, "300": 20, "200": 16 },
+    "sampled_nodes": {
+      "Selected/500/Rest": "395:43666",
+      "Selected/500/Hover": "395:43714",
+      "Selected/500/Focus": "395:43738",
+      "Selected/500/Active": "395:43741",
+      "Selected/500/Disabled": "395:43668",
+      "Selected/400/Rest": "395:43670",
+      "Selected/300/Rest": "395:43674",
+      "Selected/200/Rest": "395:43676",
+      "Selected/200/Focus": "395:43751",
+      "Indeterminate/500/Rest": "395:43682",
+      "Unselected/500/Rest": "395:43698",
+      "Unselected/500/Hover": "395:43730",
+      "Unselected/500/Focus": "395:43778",
+      "Unselected/500/Active": "395:43781",
+      "Unselected/500/Disabled": "395:43700"
+    }
+  },
+  "variable_defs": {
+    "395:43666": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43714": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#fad046",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#fad046"
+    },
+    "395:43738": {
+      "focus-selection/outlineShow": "true",
+      "outline/500": "9",
+      "focus-selection/outline": "#080808",
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43741": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#ffeb5a",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43668": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/disabled": "40",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43670": {
+      "check-radio/selected/color": "#19110a",
+      "square/400/icon": "20",
+      "square/400/padding": "2",
+      "square/400/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43674": {
+      "check-radio/selected/color": "#19110a",
+      "square/300/icon": "20",
+      "square/300/padding": "0",
+      "square/300/rounded": "6",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43676": {
+      "check-radio/selected/color": "#19110a",
+      "square/200/icon": "16",
+      "square/200/padding": "0",
+      "square/200/rounded": "6",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43751": {
+      "focus-selection/outlineShow": "true",
+      "outline/200": "7",
+      "focus-selection/outline": "#080808",
+      "check-radio/selected/color": "#19110a",
+      "square/200/icon": "16",
+      "square/200/padding": "0",
+      "square/200/rounded": "6",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43682": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:43698": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "opacity/0": "0",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/bg": "#f7f7f7",
+      "check-radio/unselected/chroma": "#f7f7f7",
+      "check-radio/unselected/border": "#c7c7c7"
+    },
+    "395:43730": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "opacity/0": "0",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/bg": "#f2f2f2",
+      "check-radio/unselected/chroma": "#f7f7f7",
+      "check-radio/unselected/border": "#808080"
+    },
+    "395:43778": {
+      "focus-selection/outlineShow": "true",
+      "outline/500": "9",
+      "focus-selection/outline": "#080808",
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "opacity/0": "0",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/bg": "#f7f7f7",
+      "check-radio/unselected/chroma": "#f7f7f7",
+      "check-radio/unselected/border": "#c7c7c7"
+    },
+    "395:43781": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "opacity/0": "0",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/bg": "#f2f2f2",
+      "check-radio/unselected/chroma": "#f2f2f2",
+      "check-radio/unselected/border": "#c7c7c7"
+    },
+    "395:43700": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "opacity/0": "0",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/disabled": "40",
+      "check-radio/unselected/bg": "#f7f7f7",
+      "check-radio/unselected/chroma": "#f7f7f7",
+      "check-radio/unselected/border": "#c7c7c7"
+    }
+  },
+  "design_context": {
+    "395:43666": {
+      "structure": "div.container (auto-layout column, items-start, p=square/500/padding) > div.ic24-checkbox-outline (24×24, overflow-clip) > Union (inset 29.17% 20.83%, 14×10)",
+      "container_style": "bg-gradient-to-r from-[check-radio/selected/chroma] to-[check-radio/selected/bg], border 1px solid [check-radio/selected/border], opacity [opacity/control/enabled]",
+      "icon_name": "ic24-checkbox-outline"
+    },
+    "395:43682": {
+      "structure": "div.container > div.ic24-indeterminacy-outline (24×24) > Union (inset 45.83% 20.83%, 14×2)",
+      "icon_name": "ic24-indeterminacy-outline"
+    },
+    "395:43738": {
+      "structure": "div.container > div.FocusSelection (inset -1px) > div.outline (border 2px solid [focus-selection/outline], inset -1px) + иконка",
+      "note": "кольцо занимает полосу 0…2px СНАРУЖИ бокса → CSS outline-offset: 0 (в отличие от .btn, где offset 2px)"
+    }
+  },
+  "icons": {
+    "check": {
+      "figma_name": "ic24-checkbox-outline",
+      "viewbox": "0 0 24 24",
+      "source_path_24": "M17.2929 7.29289C17.6834 6.90237 18.3164 6.90237 18.7069 7.29289C19.0975 7.68342 19.0975 8.31643 18.7069 8.70696L10.7069 16.707C10.3164 17.0975 9.68342 17.0975 9.29289 16.707L5.29289 12.707C4.90237 12.3164 4.90237 11.6834 5.29289 11.2929C5.68342 10.9024 6.31643 10.9024 6.70696 11.2929L9.99992 14.5859L17.2929 7.29289Z",
+      "note": "исходный Union 13.9998×9.99985 сдвинут на inset 20.83%/29.17% от 24 → translate(5, 7)"
+    },
+    "indeterminate": {
+      "figma_name": "ic24-indeterminacy-outline",
+      "viewbox": "0 0 24 24",
+      "source_path_24": "M18 11C18.5523 11 19 11.4477 19 12C19 12.5523 18.5523 13 18 13H6C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11H18Z",
+      "note": "исходный Union 14×2 сдвинут на inset 20.83%/45.83% от 24 → translate(5, 11)"
+    }
+  },
+  "resolution": {
+    "_source": "arrow-design-system/references/component-token-map.json",
+    "square/{200,300,400,500}/{padding,icon,rounded,gap}": "var(--awds-square-{N}-{prop})",
+    "check-radio/selected": {
+      "rest": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" },
+      "hover": { "bg": "rgb(var(--primary-dim))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-dim))", "color": "rgb(var(--primary-on))" },
+      "focus": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" },
+      "active": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-core))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" }
+    },
+    "check-radio/unselected": {
+      "rest": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" },
+      "hover": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on))", "color": "transparent" },
+      "focus": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" },
+      "active": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-dim))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" }
+    },
+    "focus-selection/outline": "rgb(var(--surface-on-highest))",
+    "opacity/control/disabled": "var(--awds-opacity-40)",
+    "outline/{N}": "не эмитится в css-global (радиус кольца = rounded/{N} + 1px); CSS считает радиус outline сам"
+  }
+}
