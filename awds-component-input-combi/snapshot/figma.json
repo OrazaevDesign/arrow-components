@@ -1,0 +1,725 @@
+{
+  "_note": "Сырые ответы Figma MCP, как пришли. Семейство Input Combi = 7 компонент-сетов (Default / Light / Success / Error / Ghost / Autofill / Secondary), у каждого оси Size 300/400/500/600 × State Rest/Hover/Focus/Active/Disabled = 20 ячеек, всего 140. Снято 44: по Default — все пять состояний на крайних размерах (600 и 300) плюс Rest/Focus на 500 и 400 (оттуда вся геометрия); по остальным шести — все пять состояний на размере 600 (оттуда цвета). Так и разделено намеренно: геометрия зависит от размера и не зависит от варианта, цвета — наоборот. Что цвета не зависят от размера, проверено на Default (600 и 300 совпали побайтово).",
+  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+  "file_name": "💠 Comp ↪ ⁵ Forms",
+  "primary_node_id": "251:16991",
+  "metadata": {
+    "251:16991": {
+      "name": "Input Combi / Default",
+      "width": 1760,
+      "height": 452,
+      "cells": {
+        "Size=600, State=Rest": "251:16996",
+        "Size=600, State=Hover": "251:17014",
+        "Size=600, State=Focus": "251:17023",
+        "Size=600, State=Active": "251:17032",
+        "Size=600, State=Disabled": "251:17005",
+        "Size=500, State=Rest": "251:16992",
+        "Size=500, State=Hover": "251:17010",
+        "Size=500, State=Focus": "251:17018",
+        "Size=500, State=Active": "251:17028",
+        "Size=500, State=Disabled": "251:17000",
+        "Size=400, State=Rest": "251:17036",
+        "Size=400, State=Hover": "251:17044",
+        "Size=400, State=Focus": "251:17048",
+        "Size=400, State=Active": "251:17053",
+        "Size=400, State=Disabled": "251:17040",
+        "Size=300, State=Rest": "251:17057",
+        "Size=300, State=Hover": "251:17089",
+        "Size=300, State=Focus": "251:17105",
+        "Size=300, State=Active": "251:17125",
+        "Size=300, State=Disabled": "251:17073"
+      },
+      "cell_heights": {
+        "600": 52,
+        "500": 48,
+        "400": 40,
+        "300": 36
+      }
+    },
+    "251:16996": {
+      "_name": "Size=600, State=Rest",
+      "children": [
+        {
+          "name": "Prefix Input",
+          "x": 0,
+          "width": 56,
+          "height": 52
+        },
+        {
+          "name": "Content Combi Input",
+          "x": 56,
+          "width": 208,
+          "height": 52
+        },
+        {
+          "name": "Suffix Input",
+          "x": 264,
+          "width": 56,
+          "height": 52
+        }
+      ]
+    },
+    "251:16998": {
+      "_name": "Content Combi Input (Rest, 600)",
+      "children": [
+        {
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 208,
+          "height": 52,
+          "text": {
+            "x": 16,
+            "y": 16,
+            "height": 20
+          }
+        },
+        {
+          "name": "input",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 44,
+          "text": {
+            "x": 16,
+            "y": 18,
+            "height": 20
+          }
+        }
+      ],
+      "_read": "В покое видна ТОЛЬКО метка, и она в размер значения (16/20) по центру: y=16 при высоте 52. Строка input в этой ячейке пустая — её собственные отступы (18/6) относятся к скрытой строке значения и в CSS не переносятся."
+    },
+    "251:17023": {
+      "_name": "Size=600, State=Focus",
+      "children": [
+        {
+          "name": "Prefix Input",
+          "x": 0,
+          "width": 56,
+          "height": 52
+        },
+        {
+          "name": "Content Combi Input",
+          "x": 56,
+          "width": 208,
+          "height": 52
+        },
+        {
+          "name": "Suffix Input",
+          "x": 264,
+          "width": 56,
+          "height": 52
+        },
+        {
+          "name": "FocusSelection",
+          "x": 0,
+          "width": 320,
+          "height": 52
+        }
+      ]
+    },
+    "251:17025": {
+      "_name": "Content Combi Input (Focus, 600)",
+      "children": [
+        {
+          "name": "input",
+          "x": 0,
+          "y": 0,
+          "width": 208,
+          "height": 52,
+          "text": {
+            "x": 16,
+            "y": 24,
+            "height": 20
+          }
+        },
+        {
+          "name": "label",
+          "x": 0,
+          "y": 0,
+          "width": 208,
+          "height": 52,
+          "text": {
+            "x": 16,
+            "y": 8,
+            "height": 16
+          }
+        }
+      ],
+      "_read": "Метка уехала наверх (y=8, кегль 12/16), значение встало на y=24. Порядок детей — input, потом label: тот же порядок в DOM нужен для соседнего комбинатора + в CSS."
+    },
+    "251:16997": {
+      "_name": "Prefix Input (600)",
+      "width": 56,
+      "children": [
+        {
+          "name": "ic20-radio-outline",
+          "x": 16,
+          "y": 16,
+          "width": 20,
+          "height": 20
+        },
+        {
+          "name": "ic20-radio-outline",
+          "x": 36,
+          "y": 16,
+          "width": 20,
+          "height": 20
+        }
+      ],
+      "_read": "56 = padding 16 + две филлер-иконки по 20 вплотную. Правого padding у слота нет — зазор до текста даёт padding поля. Иконки филлерные, не часть компонента."
+    },
+    "251:17058": {
+      "_name": "Prefix Input (300)",
+      "width": 48,
+      "_read": "48 = padding 8 + 20 + 20 — та же формула на другом размере."
+    }
+  },
+  "variable_defs": {
+    "251:16996": {
+      "_cell": "Size=600, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "Web/Control/600-Regular": "Font(family: \"Inter\", style: Regular, size: font-size/600, weight: 400, lineHeight: line-height/600, letterSpacing: letter-spacing/600)",
+      "space/4,5": "18",
+      "space/1,5": "6",
+      "opacity/control/enabled": "100"
+    },
+    "251:17014": {
+      "_cell": "Size=600, State=Hover",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#808080",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "space/4,5": "18",
+      "space/1,5": "6",
+      "opacity/control/enabled": "100"
+    },
+    "251:17023": {
+      "_cell": "Size=600, State=Focus",
+      "form-control/default/color": "#19110a",
+      "form-control/default/placehold": "#674d25",
+      "form-control/default/bg": "#ffffff",
+      "form-control/default/chroma": "#fffdf6",
+      "form-control/default/border": "#fad046",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "rectangle/600/combi/label-top": "8",
+      "rectangle/600/combi/input-top": "24",
+      "rectangle/600/combi/input-bottom": "8",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/200": "12",
+      "line-height/200": "16",
+      "letter-spacing/200": "0.10000000149011612",
+      "focus-selection/outlineShow": "true",
+      "focus-selection/outlineVariant": "#fad646",
+      "outline/600": "11",
+      "opacity/50": "50",
+      "opacity/control/enabled": "100"
+    },
+    "251:17032": {
+      "_cell": "Size=600, State=Active",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "space/4,5": "18",
+      "space/1,5": "6",
+      "opacity/control/enabled": "100"
+    },
+    "251:17005": {
+      "_cell": "Size=600, State=Disabled",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "space/4,5": "18",
+      "space/1,5": "6",
+      "opacity/50": "50",
+      "opacity/control/disabled": "40"
+    },
+    "251:16992": {
+      "_cell": "Size=500, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "space/4,5": "18",
+      "space/1,5": "6",
+      "opacity/control/enabled": "100"
+    },
+    "251:17018": {
+      "_cell": "Size=500, State=Focus",
+      "form-control/default/color": "#19110a",
+      "form-control/default/placehold": "#674d25",
+      "form-control/default/bg": "#ffffff",
+      "form-control/default/chroma": "#fffdf6",
+      "form-control/default/border": "#fad046",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "rectangle/500/combi/label-top": "6",
+      "rectangle/500/combi/input-top": "22",
+      "rectangle/500/combi/input-bottom": "6",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/200": "12",
+      "line-height/200": "16",
+      "letter-spacing/200": "0.10000000149011612",
+      "focus-selection/outlineShow": "true",
+      "focus-selection/outlineVariant": "#fad646",
+      "outline/500": "9",
+      "opacity/50": "50",
+      "opacity/control/enabled": "100"
+    },
+    "251:17036": {
+      "_cell": "Size=400, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/400/icon": "20",
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "space/4": "16",
+      "space/1": "4",
+      "opacity/control/enabled": "100"
+    },
+    "251:17048": {
+      "_cell": "Size=400, State=Focus",
+      "form-control/default/color": "#19110a",
+      "form-control/default/placehold": "#674d25",
+      "form-control/default/bg": "#ffffff",
+      "form-control/default/chroma": "#fffdf6",
+      "form-control/default/border": "#fad046",
+      "rectangle/400/icon": "20",
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8",
+      "rectangle/400/combi/label-top": "4",
+      "rectangle/400/combi/input-top": "16",
+      "rectangle/400/combi/input-bottom": "4",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "font-size/100": "11",
+      "line-height/100": "16",
+      "letter-spacing/100": "0.20000000298023224",
+      "focus-selection/outlineShow": "true",
+      "focus-selection/outlineVariant": "#fad646",
+      "outline/400": "9",
+      "opacity/50": "50",
+      "opacity/control/enabled": "100"
+    },
+    "251:17057": {
+      "_cell": "Size=300, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "space/3,5": "14",
+      "space/0,5": "2",
+      "opacity/control/enabled": "100"
+    },
+    "251:17089": {
+      "_cell": "Size=300, State=Hover",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#808080",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "space/3,5": "14",
+      "space/0,5": "2",
+      "opacity/control/enabled": "100"
+    },
+    "251:17105": {
+      "_cell": "Size=300, State=Focus",
+      "form-control/default/color": "#19110a",
+      "form-control/default/placehold": "#674d25",
+      "form-control/default/bg": "#ffffff",
+      "form-control/default/chroma": "#fffdf6",
+      "form-control/default/border": "#fad046",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "rectangle/300/combi/label-top": "2",
+      "rectangle/300/combi/input-top": "14",
+      "rectangle/300/combi/input-bottom": "2",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "font-size/100": "11",
+      "line-height/100": "16",
+      "letter-spacing/100": "0.20000000298023224",
+      "focus-selection/outlineShow": "true",
+      "focus-selection/outlineVariant": "#fad646",
+      "outline/300": "7",
+      "opacity/50": "50",
+      "opacity/control/enabled": "100"
+    },
+    "251:17125": {
+      "_cell": "Size=300, State=Active",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "space/3,5": "14",
+      "space/0,5": "2",
+      "opacity/control/enabled": "100"
+    },
+    "251:17073": {
+      "_cell": "Size=300, State=Disabled",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "space/3,5": "14",
+      "space/0,5": "2",
+      "opacity/control/disabled": "40"
+    }
+  },
+  "variants": {
+    "_note": "Ячейки размера 600 по каждому варианту. Ключи Figma — form-control/{вариант}/*, резолв через component-token-map.json → map.state.{состояние}.form-control.{вариант}.",
+    "_verification": "Хексы всех семи вариантов сверены с записанным снапшотом awds-component-input (снят с Input / * на размере 500): 73 пары значений, 0 расхождений. Значит роли у Combi и у обычного Input совпадают — переносить их можно, не выводя заново.",
+    "default": {
+      "node": "251:16991",
+      "см": "variable_defs выше — там все пять состояний на 600 и на 300"
+    },
+    "light": {
+      "node": "322:59585",
+      "cells_size_600": {
+        "rest": "322:59677",
+        "hover": "322:59693",
+        "focus": "322:59702",
+        "active": "322:59711",
+        "disabled": "322:59685"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#ffffff",
+          "chroma": "#ffffff",
+          "border": "#c7c7c7",
+          "color": "#0f0f0f",
+          "placehold": "#555555"
+        },
+        "hover": {
+          "border": "#808080",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#c7c7c7",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "surface-bright",
+        "chroma": "surface-bright",
+        "border": "secondary-container-on-low",
+        "color": "secondary-container-on-highest",
+        "placehold": "secondary-container-on-high"
+      },
+      "отличие": "Отличается от Default только фоном покоя: белый вместо серого. Выбор варианта — по подложке, а не по важности поля."
+    },
+    "success": {
+      "node": "322:61640",
+      "cells_size_600": {
+        "rest": "322:61816",
+        "hover": "322:61832",
+        "focus": "322:61841",
+        "active": "322:61850",
+        "disabled": "322:61824"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#e5faf1",
+          "chroma": "#f7fffb",
+          "border": "#a0e4c0",
+          "color": "#224f29",
+          "placehold": "#388e4e"
+        },
+        "hover": {
+          "border": "#57c47f",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#a0e4c0",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "success-container-core",
+        "chroma": "success-container-chroma",
+        "border": "success-container-on-low",
+        "color": "success-container-on-highest",
+        "placehold": "success-container-on-high"
+      },
+      "отличие": "Состояние значения, а не вид контрола. При фокусе зелёная подсветка полностью уступает брендовой."
+    },
+    "error": {
+      "node": "322:73149",
+      "cells_size_600": {
+        "rest": "322:73323",
+        "hover": "322:73339",
+        "focus": "322:73348",
+        "active": "322:73357",
+        "disabled": "322:73331"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#fff2eb",
+          "chroma": "#fff9f5",
+          "border": "#eea28b",
+          "color": "#41141a",
+          "placehold": "#9c2c2a"
+        },
+        "hover": {
+          "border": "#d65745",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#eea28b",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "error-container-core",
+        "chroma": "error-container-chroma",
+        "border": "error-container-on-low",
+        "color": "error-container-on-highest",
+        "placehold": "error-container-on-high"
+      },
+      "отличие": "Состояние значения. Цвет ошибку не объясняет — нужны aria-invalid и текст причины."
+    },
+    "ghost": {
+      "node": "322:78959",
+      "cells_size_600": {
+        "rest": "322:79057",
+        "hover": "322:79105",
+        "focus": "322:79132",
+        "active": "322:79159",
+        "disabled": "322:79081"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#ffffff00",
+          "chroma": "#ffffff00",
+          "border": "#ffffff00",
+          "color": "#0f0f0f",
+          "placehold": "#555555"
+        },
+        "hover": {
+          "bg": "#ffffff00",
+          "chroma": "#ffffff00",
+          "border": "#ffffff00",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff00",
+          "chroma": "#ffffff00",
+          "border": "#ffffff00",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "bg": "#ffffff00",
+          "chroma": "#ffffff00",
+          "border": "#ffffff00",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "transparent",
+        "chroma": "transparent",
+        "border": "transparent",
+        "color": "secondary-container-on-highest",
+        "placehold": "secondary-container-on-high"
+      },
+      "отличие": "Hover и active НЕ меняют ничего — все три ячейки дают #ffffff00. Правил в CSS нет намеренно. В ячейке Focus у размера 600 подтянут outline/500 вместо outline/600 — опечатка в макете, на CSS не влияет: радиус кольца в коде не маппится, его даёт border-radius элемента."
+    },
+    "autofill": {
+      "node": "322:82353",
+      "cells_size_600": {
+        "rest": "322:82371",
+        "hover": "322:82419",
+        "focus": "322:82447",
+        "active": "322:82473",
+        "disabled": "322:82395"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#ebf6ff",
+          "chroma": "#f7fcff",
+          "border": "#90aee0",
+          "color": "#193891",
+          "placehold": "#4764d4"
+        },
+        "hover": {
+          "border": "#7897dc",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#90aee0",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "tertiary-container-core",
+        "chroma": "tertiary-container-chroma",
+        "border": "tertiary-container-on-low",
+        "color": "tertiary-container-on-highest",
+        "placehold": "tertiary-container-on-high"
+      },
+      "отличие": "Класс вешает приложение, а не браузер: нативный :-webkit-autofill сюда не завязан."
+    },
+    "secondary": {
+      "node": "322:85319",
+      "cells_size_600": {
+        "rest": "322:85333",
+        "hover": "322:85365",
+        "focus": "322:85384",
+        "active": "322:85401",
+        "disabled": "322:85349"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#f2f2f2",
+          "chroma": "#f7f7f7",
+          "border": "#f2f2f2",
+          "color": "#555555",
+          "placehold": "#808080"
+        },
+        "hover": {
+          "bg": "#ededed",
+          "border": "#ededed",
+          "chroma": "#f7f7f7",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#f7f7f7",
+          "border": "#f2f2f2",
+          "color": "#555555",
+          "placehold": "#808080"
+        },
+        "active": {
+          "border": "#f2f2f2",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "secondary-core",
+        "chroma": "secondary-chroma",
+        "border": "secondary-core",
+        "color": "secondary-on",
+        "placehold": "secondary-on-dim"
+      },
+      "отличие": "Три отличия: рамка в цвет фона; hover меняет ФОН и рамку (secondary-dim), а не только рамку; кольцо фокуса ТЁМНОЕ — в ячейке Focus стоит focus-selection/outline (#080808 = surface-on-highest) без opacity/50. Текст и метка при фокусе не меняются. В снапшоте awds-component-input у hover записано «остальное = rest», хотя фон там тоже меняется — сокращение неточное, CSS обоих компонентов при этом верный."
+    }
+  }
+}

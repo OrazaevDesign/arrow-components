@@ -1,0 +1,331 @@
+{
+  "component": "input-combi",
+  "figma": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "primary_node_id": "251:16991",
+    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=251-16991"
+  },
+  "variants": {
+    "default": {
+      "node_id": "251:16991",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=251-16991",
+      "figma_label": "Input Combi / Default (Size × State)"
+    },
+    "light": {
+      "node_id": "322:59585",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-59585",
+      "figma_label": "Input Combi / Light (Size × State)"
+    },
+    "success": {
+      "node_id": "322:61640",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-61640",
+      "figma_label": "Input Combi / Success (Size × State)"
+    },
+    "error": {
+      "node_id": "322:73149",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-73149",
+      "figma_label": "Input Combi / Error (Size × State)"
+    },
+    "autofill": {
+      "node_id": "322:82353",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-82353",
+      "figma_label": "Input Combi / Autofill (Size × State)"
+    },
+    "ghost": {
+      "node_id": "322:78959",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-78959",
+      "figma_label": "Input Combi / Ghost (Size × State)"
+    },
+    "secondary": {
+      "node_id": "322:85319",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-85319",
+      "figma_label": "Input Combi / Secondary (Size × State)"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    300,
+    400,
+    500,
+    600
+  ],
+  "size_scale_note": "Четыре размера, а не семь как у awds-component-input. У 50/100/200 combi-токены в css-global стоят в space-0 — метке некуда уезжать на высоте 32/24/20 px. Ниже 300 компонент не масштабируется: там нужен обычный input с подписью снаружи.",
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "states_note": "Focus реализован через :focus-within (у текстового поля «сфокусировано» = активно). Active в макете совпадает с Rest, но правило :active нужно — иначе при нажатии осталась бы hover-рамка. Фокус гасит hover и active ЯВНО, через :not(:focus-within): :has() добавляет вес аргумента, hover-селектор весит (0,5,0) против (0,2,0) у :focus-within, и порядок правил не помог бы. Отдельного состояния «заполнено» в макете нет — оно выведено: метка остаётся наверху, пока в поле есть значение (:not(:placeholder-shown)), иначе заполненная форма потеряла бы все подписи.",
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color",
+    "placehold",
+    "icon-color"
+  ],
+  "css_files": [
+    "input-combi-default.css",
+    "input-combi-light.css",
+    "input-combi-success.css",
+    "input-combi-error.css",
+    "input-combi-autofill.css",
+    "input-combi-ghost.css",
+    "input-combi-secondary.css"
+  ],
+  "base_class_note": "Базовый класс .icombi, а не .input-combi. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = input-combi они стали бы --awds-input-combi-* — префиксом это чужой запрещённый --awds-input-*, sanity-check публикации ложно блокирует. Тот же приём, что у button-overhung → .obtn.",
+  "geometry_note": "Высота не задаётся явно и совпадает с обычным input того же размера: input-top + line-height + input-bottom = 2×padding + line-height. Закономерность макета, проверена на всех четырёх размерах: input-top = padding + Δ, input-bottom = label-top = padding − Δ, где Δ = 8 у 500/600 и 6 у 300/400. Строку значения сдвигают вниз, освобождая место метке, а не растягивают контрол. Все три числа берутся из css-global: --awds-rectangle-{N}-combi-{label-top , input-top , input-bottom}. Паддинг слотов prefix/suffix вертикально симметричный (padding), в отличие от поля.",
+  "typography_note": "Значение — семантический var(--awds-rectangle-{N}-typography-*) (шкала control: Figma даёт font-size/600=16 при line-height/600=20, у typography-600 line-height 26). Типографика УЕХАВШЕЙ МЕТКИ — единственное место, где shape-токена нет, маппинг ручной по значению: 500/600 → control-200 (12/16/0.1%), 300/400 → control-100 (11/16/0.2%). Совпадают все три свойства, поэтому шкала control (фикс), а не typography.",
+  "focus_ring_note": "Кольцо как у awds-component-input и в отличие от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. offset 0.",
+  "markup_note": "Обязателен placeholder=\" \" (пробел) на поле: на :placeholder-shown держится определение «поле пустое», без атрибута метка навсегда останется наверху поверх пустого поля. Сам placeholder невидим — его роль играет метка. Порядок в DOM — поле, потом <label>: соседний комбинатор + смотрит только вперёд. Метке нужен for + полю id: pointer-events: none на метке гасит клики, но не связь.",
+  "icons_note": "В макете слоты заполнены филлером ic20-radio-outline (по две штуки на слот) — это НЕ иконка компонента. Слот принимает любую иконку, одну или несколько; размер — var(--awds-icombi-icon).",
+  "verification": {
+    "method": "headless chromium, getComputedStyle + getBoundingClientRect",
+    "cells": "4 размера × {пусто, заполнено} = 8 экземпляров, 32 замера",
+    "result": "высота 52/48/40/36, radius 10/8/8/6, padding поля 24/8, 22/6, 16/4, 14/2, метка в покое top 16/14/10/8 в кегле значения, уехавшая top 8/6/4/2 в кегле 12/12/11/11 при line-height 16 — совпадение с Figma до пикселя",
+    "interaction": "живой hover + фокус поверх ховера: рамка rgb(115,120,130) → rgb(250,223,66), кольцо rgba(250,216,20,.5) — :has() на потомке работает, фокус ховер не проигрывает",
+    "variants": "Живой прогон всех семи в headless chromium: цвета по Rest / Hover / Active / Focus сняты с зеркал состояний. Подтверждено, что ghost прозрачен во всех четырёх, у secondary hover двигает фон (241,242,243 → 236,237,238) и кольцо фокуса тёмное rgb(19,20,22), у остальных пяти кольцо rgba(250,216,20,.5). Значения --awds-icombi-bg мерились с задержкой 400 мс: они зарегистрированы через @property и анимируются, поэтому чтение на первом кадре отдаёт ещё старый цвет.",
+    "base_identity": "База (.icombi, элементы, четыре размера) и хвост (disabled + reduced-motion) во всех семи CSS побайтово одинаковы — сверено sha1 по срезам файлов."
+  },
+  "preview": {
+    "base_class": "icombi",
+    "variant_class": "icombi-default",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "default",
+          "light",
+          "success",
+          "error",
+          "autofill",
+          "ghost",
+          "secondary"
+        ]
+      },
+      {
+        "id": "slots",
+        "label": "Слоты",
+        "options": [
+          "both",
+          "none",
+          "prefix",
+          "suffix",
+          "double"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "empty",
+          "value"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Поле с плавающей меткой",
+        "html": "<span class=\"icombi icombi-default icombi--400\"><span class=\"icombi__body\"><input class=\"icombi__field\" id=\"city\" type=\"text\" placeholder=\" \"><label class=\"icombi__label\" for=\"city\">Город</label></span></span>"
+      },
+      {
+        "label": "С иконкой в prefix",
+        "html": "<span class=\"icombi icombi-default icombi--500\"><span class=\"icombi__prefix\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\">…</svg></span><span class=\"icombi__body\"><input class=\"icombi__field\" id=\"mail\" type=\"email\" placeholder=\" \"><label class=\"icombi__label\" for=\"mail\">Электронная почта</label></span></span>"
+      },
+      {
+        "label": "С кнопкой очистки в suffix",
+        "html": "<span class=\"icombi icombi-default icombi--400\"><span class=\"icombi__body\"><input class=\"icombi__field\" id=\"q\" type=\"text\" placeholder=\" \" value=\"Алматы\"><label class=\"icombi__label\" for=\"q\">Город</label></span><span class=\"icombi__suffix\"><button type=\"button\" aria-label=\"Очистить\">…</button></span></span>"
+      },
+      {
+        "label": "Выключенное",
+        "html": "<span class=\"icombi icombi-default icombi--400\"><span class=\"icombi__body\"><input class=\"icombi__field\" id=\"promo\" type=\"text\" placeholder=\" \" disabled><label class=\"icombi__label\" for=\"promo\">Промокод</label></span></span>"
+      },
+      {
+        "label": "Вариант с ошибкой (класс + aria)",
+        "html": "<span class=\"icombi icombi-error icombi--400\"><span class=\"icombi__body\"><input class=\"icombi__field\" id=\"mail\" type=\"email\" placeholder=\" \" value=\"ivan@\" aria-invalid=\"true\" aria-describedby=\"mail-err\"><label class=\"icombi__label\" for=\"mail\">Электронная почта</label></span></span>\n<p id=\"mail-err\">Не хватает домена — например, ivan@example.com</p>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--secondary-container-core",
+    "--secondary-container-chroma",
+    "--secondary-container-on-low",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--surface-bright",
+    "--surface-on-highest",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-container-chroma",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--success-container-core",
+    "--success-container-chroma",
+    "--success-container-on-low",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--error-container-core",
+    "--error-container-chroma",
+    "--error-container-on-low",
+    "--error-container-on",
+    "--error-container-on-high",
+    "--error-container-on-highest",
+    "--tertiary-container-core",
+    "--tertiary-container-chroma",
+    "--tertiary-container-on-low",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
+    "--secondary-core",
+    "--secondary-chroma",
+    "--secondary-dim",
+    "--secondary-on",
+    "--secondary-on-dim",
+    "--awds-rectangle-300-padding",
+    "--awds-rectangle-300-icon",
+    "--awds-rectangle-300-rounded",
+    "--awds-rectangle-300-typography-font-size",
+    "--awds-rectangle-300-typography-line-height",
+    "--awds-rectangle-300-typography-letter-spacing",
+    "--awds-rectangle-300-combi-label-top",
+    "--awds-rectangle-300-combi-input-top",
+    "--awds-rectangle-300-combi-input-bottom",
+    "--awds-rectangle-400-padding",
+    "--awds-rectangle-400-icon",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-400-typography-font-size",
+    "--awds-rectangle-400-typography-line-height",
+    "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-rectangle-400-combi-label-top",
+    "--awds-rectangle-400-combi-input-top",
+    "--awds-rectangle-400-combi-input-bottom",
+    "--awds-rectangle-500-padding",
+    "--awds-rectangle-500-icon",
+    "--awds-rectangle-500-rounded",
+    "--awds-rectangle-500-typography-font-size",
+    "--awds-rectangle-500-typography-line-height",
+    "--awds-rectangle-500-typography-letter-spacing",
+    "--awds-rectangle-500-combi-label-top",
+    "--awds-rectangle-500-combi-input-top",
+    "--awds-rectangle-500-combi-input-bottom",
+    "--awds-rectangle-600-padding",
+    "--awds-rectangle-600-icon",
+    "--awds-rectangle-600-rounded",
+    "--awds-rectangle-600-typography-font-size",
+    "--awds-rectangle-600-typography-line-height",
+    "--awds-rectangle-600-typography-letter-spacing",
+    "--awds-rectangle-600-combi-label-top",
+    "--awds-rectangle-600-combi-input-top",
+    "--awds-rectangle-600-combi-input-bottom",
+    "--awds-control-100-font-size",
+    "--awds-control-100-line-height",
+    "--awds-control-100-letter-spacing",
+    "--awds-control-200-font-size",
+    "--awds-control-200-line-height",
+    "--awds-control-200-letter-spacing",
+    "--awds-rounded-50",
+    "--awds-opacity-40",
+    "--awds-opacity-50",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular"
+  ],
+  "last_synced": "2026-08-13T11:14:40Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:37c669b678ded87699dedeb8caaa79aff66160a8110674173ebdbf236679a162",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "pending",
+    "pushed_at": "pending",
+    "github_urls": {
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-default.md",
+      "light": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-light.md",
+      "success": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-success.md",
+      "error": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-error.md",
+      "autofill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-autofill.md",
+      "ghost": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-ghost.md",
+      "secondary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-secondary.md"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "pending",
+        "method": "component_description",
+        "node_id": "251:16991",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-default.md"
+      },
+      "light": {
+        "status": "pending",
+        "method": "component_description",
+        "node_id": "322:59585",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-light.md"
+      },
+      "success": {
+        "status": "pending",
+        "method": "component_description",
+        "node_id": "322:61640",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-success.md"
+      },
+      "error": {
+        "status": "pending",
+        "method": "component_description",
+        "node_id": "322:73149",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-error.md"
+      },
+      "autofill": {
+        "status": "pending",
+        "method": "component_description",
+        "node_id": "322:82353",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-autofill.md"
+      },
+      "ghost": {
+        "status": "pending",
+        "method": "component_description",
+        "node_id": "322:78959",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-ghost.md"
+      },
+      "secondary": {
+        "status": "pending",
+        "method": "component_description",
+        "node_id": "322:85319",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-combi/references/input-combi-secondary.md"
+      }
+    }
+  },
+  "variants_note": "Семь вариантов одного компонента (фреймы Input Combi / *), тот же набор, что у awds-component-input. Роли не выводились заново: хексы всех семи вариантов сверены со снапшотом awds-component-input — 73 пары значений, 0 расхождений, значит палитра у Combi и обычного Input общая (в Figma обе группы ячеек ссылаются на один form-control/{вариант}/*). success / error / autofill — состояния значения, а не виды контрола. Два исключения, сверенные по ячейкам: у ghost hover и active не меняют ничего (правил нет намеренно), у secondary hover меняет фон вместо рамки и кольцо фокуса тёмное (surface-on-highest без альфы) вместо брендового при 50%. Input Inline / * — отдельный компонент, в этот скилл не входит."
+}
