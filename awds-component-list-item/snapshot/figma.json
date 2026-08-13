@@ -1,0 +1,393 @@
+{
+  "_note": "Сырые ответы Figma MCP по семейству List-item (12 фреймов). ACB-owned, не править руками. Блоки nodes / variable_defs / layout сняты подробно по фрейму Transparent — геометрия и анатомия у всей семьи общие; по остальным одиннадцати снят Rest (и точечно Hover/Focus), см. variants_fetched.",
+  "file_key": "cPyLl9CqwylgJMzMzeyF5g",
+  "file_name": "💠 Comp ↪ ⁴ Lists",
+  "primary_node_id": "1:22254",
+  "component_set": {
+    "name": "List-item (семейство из 12 фреймов)",
+    "axes": [
+      "Size",
+      "State"
+    ],
+    "sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "states": [
+      "Rest",
+      "Hover",
+      "Focus",
+      "Active",
+      "Disabled"
+    ],
+    "cells": 35,
+    "frame": {
+      "width": 1335,
+      "height": 452
+    },
+    "cell_width": 235,
+    "cell_width_note": "235 — ширина демо-ячейки, не размер компонента: в бою строка тянется на 100% контейнера.",
+    "note": "Каждый вариант — отдельный Component Set с одинаковыми осями Size × State (35 ячеек). У группы Variaton есть третья ось Var с единственным значением на фрейм, а высоты соответствуют строке С ОПИСАНИЕМ: 74/70/58/54/50/42/38."
+  },
+  "nodes": {
+    "size_rest": {
+      "600": "1:22259",
+      "500": "1:22255",
+      "400": "1:22271",
+      "300": "1:22279",
+      "200": "1:22283",
+      "100": "1:22287",
+      "50": "1:22291"
+    },
+    "state_at_500": {
+      "Rest": "1:22255",
+      "Hover": "1:22311",
+      "Focus": "360:15491",
+      "Active": "1:22451",
+      "Disabled": "1:22263"
+    },
+    "content_list": {
+      "_note": "Вложенный компонент Content List — отдельный Component Set с осями Size × Description × Padding. Именно он решает горизонтальный отступ текста и типографику описания.",
+      "500_desc_off_padding_false": "603:23252",
+      "500_desc_off_padding_true": "389:11239",
+      "500_desc_on_padding_true": "389:11254"
+    }
+  },
+  "variable_defs": {
+    "size_rest": {
+      "600": {
+        "list/unselected-transparent/color": "#0f0f0f",
+        "list/unselected-transparent/bg": "#ffffff00",
+        "list/unselected-transparent/border": "#ffffff00",
+        "rectangle/600/padding": "16",
+        "rectangle/600/icon": "20",
+        "rectangle/600/rounded": "10",
+        "font-size/600": "16",
+        "line-height/600": "20",
+        "letter-spacing/600": "0",
+        "space/0,5": "2",
+        "opacity/color": "100",
+        "opacity/control/enabled": "100",
+        "font-weight": "regular",
+        "font-family": "Inter"
+      },
+      "500": {
+        "list/unselected-transparent/color": "#0f0f0f",
+        "list/unselected-transparent/bg": "#ffffff00",
+        "list/unselected-transparent/border": "#ffffff00",
+        "rectangle/500/padding": "14",
+        "rectangle/500/icon": "20",
+        "rectangle/500/rounded": "8",
+        "font-size/600": "16",
+        "line-height/600": "20",
+        "letter-spacing/600": "0",
+        "space/0,5": "2",
+        "opacity/color": "100",
+        "opacity/control/enabled": "100"
+      },
+      "400": {
+        "rectangle/400/padding": "10",
+        "rectangle/400/icon": "20",
+        "rectangle/400/rounded": "8",
+        "font-size/400": "14",
+        "line-height/400": "20",
+        "letter-spacing/400": "0",
+        "space/0,5": "2"
+      },
+      "300": {
+        "rectangle/300/padding": "8",
+        "rectangle/300/icon": "20",
+        "rectangle/300/rounded": "6",
+        "font-size/400": "14",
+        "line-height/400": "20",
+        "letter-spacing/400": "0",
+        "space/0,5": "2"
+      },
+      "200": {
+        "rectangle/200/padding": "8",
+        "rectangle/200/icon": "16",
+        "rectangle/200/rounded": "6",
+        "font-size/300": "13",
+        "line-height/300": "16",
+        "letter-spacing/300": "0.1",
+        "space/0,5": "2"
+      },
+      "100": {
+        "rectangle/100/padding": "4",
+        "rectangle/100/icon": "16",
+        "rectangle/100/rounded": "6",
+        "font-size/300": "13",
+        "line-height/300": "16",
+        "letter-spacing/300": "0.1",
+        "rectangle/100/gap": "2"
+      },
+      "50": {
+        "rectangle/50/padding": "2",
+        "rectangle/50/icon": "16",
+        "rectangle/50/rounded": "4",
+        "font-size/200": "12",
+        "line-height/200": "16",
+        "letter-spacing/200": "0.1",
+        "rectangle/50/gap": "2"
+      }
+    },
+    "state_at_500": {
+      "Rest": {
+        "list/unselected-transparent/bg": "#ffffff00",
+        "list/unselected-transparent/border": "#ffffff00",
+        "list/unselected-transparent/color": "#0f0f0f",
+        "opacity/control/enabled": "100"
+      },
+      "Hover": {
+        "list/unselected-transparent/bg": "#f7f7f7",
+        "list/unselected-transparent/border": "#f7f7f7",
+        "list/unselected-transparent/color": "#0f0f0f",
+        "opacity/control/enabled": "100"
+      },
+      "Focus": {
+        "list/unselected-transparent/bg": "#ffffff00",
+        "list/unselected-transparent/border": "#ffffff00",
+        "focus-selection/outlineShow": "true",
+        "focus-selection/outline": "#080808",
+        "outline/500": "9",
+        "opacity/control/enabled": "100"
+      },
+      "Active": {
+        "list/unselected-transparent/bg": "#ffffff00",
+        "list/unselected-transparent/border": "#ffffff00",
+        "opacity/control/enabled": "100"
+      },
+      "Disabled": {
+        "list/unselected-transparent/bg": "#ffffff00",
+        "list/unselected-transparent/border": "#ffffff00",
+        "opacity/control/disabled": "40"
+      }
+    },
+    "content_list": {
+      "500_padding_false": {
+        "rectangle/500/padding": "14",
+        "space/0,5": "2",
+        "font-size/600": "16",
+        "line-height/600": "20",
+        "list/unselected-transparent/color": "#0f0f0f"
+      },
+      "500_padding_true": {
+        "rectangle/500/padding": "14",
+        "rectangle/500/text-gap": "18",
+        "space/0,5": "2",
+        "font-size/600": "16",
+        "line-height/600": "20"
+      },
+      "500_desc_on": {
+        "rectangle/500/padding": "14",
+        "rectangle/500/text-gap": "18",
+        "space/0,5": "2",
+        "font-size/600": "16",
+        "line-height/600": "20",
+        "list/unselected/description": "#808080",
+        "font-size/400": "14",
+        "line-height/400": "20",
+        "letter-spacing/400": "0"
+      }
+    }
+  },
+  "layout": {
+    "_source": "get_design_context, нода 1:22255 (Size=500, State=Rest), auto-layout",
+    "root": "flex, align-items: flex-start, border 1px solid, isolate; ширина демо-ячейки 235",
+    "prefix_slot": "flex, items-center, justify-center, padding со ВСЕХ сторон = rectangle/{N}/padding, shrink-0; внутри 2 филлер-иконки ic20-stateEmpty-outline вплотную (gap 0)",
+    "content": "flex: 1 0 0, min-width: 0, padding-block = rectangle/{N}/padding; padding-inline = 0 при Padding=False, rectangle/{N}/text-gap при Padding=True",
+    "content_inner": "flex-column, justify-center, gap = space/0,5 (2px) между заголовком и описанием",
+    "suffix_slot": "зеркально prefix",
+    "items_start_consequence": "при Description=On контент выше слотов (70 против 48 на размере 500), и иконки остаются прижатыми к верху — это из макета, не артефакт вёрстки"
+  },
+  "derived": {
+    "heights": {
+      "600": 52,
+      "500": 48,
+      "400": 40,
+      "300": 36,
+      "200": 32,
+      "100": 24,
+      "50": 20
+    },
+    "heights_formula": "2 × padding + line-height; сверено по всем семи ячейкам",
+    "heights_with_description": {
+      "600": 74,
+      "500": 70,
+      "400": 58,
+      "300": 54,
+      "200": 50,
+      "100": 42,
+      "50": 38
+    },
+    "heights_with_description_formula": "2 × padding + line-height + 2 + line-height описания; сверено по метаданным Content List",
+    "gap_title_description": "space/0,5 = 2px, ФИКС на всех размерах — НЕ rectangle/{N}/gap (тот даёт 2/2/4/6/6/6/8)",
+    "focus_ring_radius": "outline/{N} = rectangle/{N}/rounded + 1 (9 при 8, 11 при 10) → outline-offset: 1px",
+    "description_role": "list/unselected/description (#808080 = neutral.50 = secondary-container-on), а НЕ list/unselected-transparent/description (#555555 = neutral.30 = secondary-container-on-high). Так привязано в макете.",
+    "role_map_crosscheck": "Rest всех 12 ролей сверен с component-token-map.json — совпадение 12/12 по фону, рамке, тексту и описанию. Hover спот-чек на default и tabbar также совпал. Значит карта — достоверный источник для hover/focus/active, которые пофреймово не снимались.",
+    "broken_alias": "list/unselected/border в Hover = {form-control.secondary.dim} — путь не существует. Макет рендерит #ededed = role.secondary.dim; в CSS взято по значению.",
+    "description_binding": "Описание в Transparent и Variaton привязано к list/unselected/description (меняется по состоянию: #808080 в покое, #555555 на hover и focus). selected-variation и indeterminate-variation используют свои роли."
+  },
+  "palette_crosscheck": {
+    "_note": "Hex из макета сверены с канонической палитрой снапшота — совпали, то есть файл Figma рендерится актуальными ролями.",
+    "#0f0f0f": "neutral.10 = secondary-container-on-highest",
+    "#f7f7f7": "neutral.99 = secondary-container-core",
+    "#808080": "neutral.50 = secondary-container-on",
+    "#080808": "neutral.5 = surface-on-highest"
+  },
+  "variants_fetched": {
+    "transparent": {
+      "frame": "1:22254",
+      "role": "list/unselected-transparent",
+      "rest_cell_500": "1:22255",
+      "rest": {
+        "bg": "#ffffff00",
+        "border": "#ffffff00",
+        "color": "#0f0f0f"
+      }
+    },
+    "default": {
+      "frame": "590:20398",
+      "role": "list/unselected",
+      "rest_cell_500": "45:2492",
+      "rest": {
+        "bg": "#f7f7f7",
+        "border": "#f7f7f7",
+        "color": "#808080"
+      },
+      "hover_cell_500": "45:2548",
+      "hover": {
+        "bg": "#f2f2f2",
+        "border": "#ededed",
+        "color": "#0f0f0f"
+      }
+    },
+    "default-selected": {
+      "frame": "590:20401",
+      "role": "list/selected",
+      "rest_cell_500": "1:22339",
+      "rest": {
+        "bg": "#f7f7f7",
+        "border": "#f7f7f7",
+        "color": "#0f0f0f"
+      }
+    },
+    "actual-selected": {
+      "frame": "590:20399",
+      "role": "list/unselected-actual",
+      "rest_cell_500": "45:2576",
+      "rest": {
+        "bg": "#ffffff00",
+        "border": "#e8e8e8",
+        "color": "#cc4033"
+      }
+    },
+    "accent-selected": {
+      "frame": "590:20400",
+      "role": "list/selected-secondary",
+      "rest_cell_500": "122:16300",
+      "rest": {
+        "bg": "#fffae7",
+        "border": "#fff2bc",
+        "color": "#19110a"
+      }
+    },
+    "tabbar": {
+      "frame": "590:20402",
+      "role": "list/unselected-tabbar",
+      "rest_cell_500": "562:14665",
+      "rest": {
+        "bg": "#ffffff00",
+        "border": "#ffffff00",
+        "color": "#0f0f0f"
+      },
+      "hover_cell_500": "562:14756",
+      "hover": {
+        "bg": "#ffffff00",
+        "border": "#ffffff00",
+        "color": "#cc4033"
+      }
+    },
+    "tabbar-selected": {
+      "frame": "590:20403",
+      "role": "list/selected-tabbar",
+      "rest_cell_500": "571:15407",
+      "rest": {
+        "bg": "#ffffff00",
+        "border": "#ffffff00",
+        "color": "#cc4033"
+      }
+    },
+    "menu": {
+      "frame": "590:20410",
+      "role": "list/unselected-menu",
+      "rest_cell_500": "590:20411",
+      "rest": {
+        "bg": "#ffffff00",
+        "border": "#ffffff00",
+        "color": "#0f0f0f"
+      }
+    },
+    "menu-selected": {
+      "frame": "590:20558",
+      "role": "list/selected-menu",
+      "rest_cell_500": "590:20559",
+      "rest": {
+        "bg": "#f7f7f7",
+        "border": "#f7f7f7",
+        "color": "#cc4033"
+      }
+    },
+    "variation": {
+      "frame": "324:77087",
+      "role": "list/unselected-variation",
+      "rest_cell_500": "324:77260",
+      "rest": {
+        "bg": "#f7f7f7",
+        "border": "#e8e8e8",
+        "color": "#555555",
+        "description": "#808080 (через list/unselected/description)"
+      },
+      "hover_cell_500": "324:77310",
+      "hover": {
+        "bg": "#fffae7",
+        "border": "#ffeb5a",
+        "color": "#19110a",
+        "description": "#555555 (через list/unselected/description)"
+      },
+      "focus_cell_500": "360:19696",
+      "focus": {
+        "outline": "#080808",
+        "outline/500": "9"
+      }
+    },
+    "variation-selected": {
+      "frame": "590:22197",
+      "role": "list/selected-variation",
+      "rest_cell_500": "324:77264",
+      "rest": {
+        "bg": "#fffae7",
+        "border": "#ffeb5a",
+        "color": "#19110a",
+        "description": "#674d25 (своя роль)",
+        "outlineVariant": "#ffeb5a"
+      }
+    },
+    "variation-indeterminate": {
+      "frame": "590:22196",
+      "role": "list/indeterminate-variation",
+      "rest_cell_500": "324:77269",
+      "rest": {
+        "bg": "#ffffff",
+        "border": "#e8e8e8",
+        "color": "#555555",
+        "description": "#808080 (своя роль)"
+      }
+    }
+  }
+}

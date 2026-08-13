@@ -1,0 +1,288 @@
+{
+  "component": "list-item",
+  "figma": {
+    "file_key": "cPyLl9CqwylgJMzMzeyF5g",
+    "file_name": "💠 Comp ↪ ⁴ Lists",
+    "primary_node_id": "1:22254",
+    "primary_url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=1-22254"
+  },
+  "variants": {
+    "transparent": {
+      "node_id": "1:22254",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=1-22254",
+      "figma_label": "List-item / Transparent",
+      "token_role": "list/unselected-transparent"
+    },
+    "default": {
+      "node_id": "590:20398",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20398",
+      "figma_label": "List-item / Default",
+      "token_role": "list/unselected"
+    },
+    "default-selected": {
+      "node_id": "590:20401",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20401",
+      "figma_label": "List-item / Default-selected",
+      "token_role": "list/selected"
+    },
+    "actual-selected": {
+      "node_id": "590:20399",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20399",
+      "figma_label": "List-item / Actual-selected",
+      "token_role": "list/unselected-actual"
+    },
+    "accent-selected": {
+      "node_id": "590:20400",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20400",
+      "figma_label": "List-item / Accent-selected",
+      "token_role": "list/selected-secondary"
+    },
+    "tabbar": {
+      "node_id": "590:20402",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20402",
+      "figma_label": "List-item / Tabbar",
+      "token_role": "list/unselected-tabbar"
+    },
+    "tabbar-selected": {
+      "node_id": "590:20403",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20403",
+      "figma_label": "List-item / Tabbar-selected",
+      "token_role": "list/selected-tabbar"
+    },
+    "menu": {
+      "node_id": "590:20410",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20410",
+      "figma_label": "List-item / Menu",
+      "token_role": "list/unselected-menu"
+    },
+    "menu-selected": {
+      "node_id": "590:20558",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20558",
+      "figma_label": "List-item / Menu-selected",
+      "token_role": "list/selected-menu"
+    },
+    "variation": {
+      "node_id": "324:77087",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=324-77087",
+      "figma_label": "List-item / Variaton",
+      "token_role": "list/unselected-variation"
+    },
+    "variation-selected": {
+      "node_id": "590:22197",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-22197",
+      "figma_label": "List-item / Variation-selected",
+      "token_role": "list/selected-variation"
+    },
+    "variation-indeterminate": {
+      "node_id": "590:22196",
+      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-22196",
+      "figma_label": "List-item / Variaton-indeterminate",
+      "token_role": "list/indeterminate-variation"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "color_tokens": [
+    "bg",
+    "border",
+    "color",
+    "desc",
+    "check"
+  ],
+  "base_class_note": "base_class = list-item, приватные var --awds-list-item-*. Это НЕ конфликтует с именами --awds-list-* из human-зеркала tokens-components-state.md: те нигде не эмитятся, они лишь подписи к map.state.list. Но наивный grep 'var(--awds-list' поймал бы и наши переменные — если в sanity-check ACP когда-нибудь добавят 'list' в forbidden-список, вычитать нужно именно 'list-item'.",
+  "preview": {
+    "base_class": "list-item",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "transparent",
+          "default",
+          "default-selected",
+          "actual-selected",
+          "accent-selected",
+          "tabbar",
+          "tabbar-selected",
+          "menu",
+          "menu-selected",
+          "variation",
+          "variation-selected",
+          "variation-indeterminate"
+        ]
+      },
+      {
+        "id": "slots",
+        "label": "Слоты",
+        "options": [
+          "both",
+          "prefix",
+          "suffix",
+          "none"
+        ]
+      },
+      {
+        "id": "description",
+        "label": "Описание",
+        "options": [
+          "off",
+          "on"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Пункт меню",
+        "html": "<button type=\"button\" class=\"list-item list-item-transparent list-item--400\"><span class=\"list-item__content\"><span class=\"list-item__title\">Алматы</span></span></button>"
+      },
+      {
+        "label": "С иконкой и описанием",
+        "html": "<button type=\"button\" class=\"list-item list-item-transparent list-item--400\"><span class=\"list-item__prefix\" aria-hidden=\"true\"><svg viewBox=\"0 0 20 20\"></svg></span><span class=\"list-item__content\"><span class=\"list-item__title\">Алматы</span><span class=\"list-item__description\">Казахстан</span></span></button>"
+      }
+    ],
+    "default_variant": "transparent"
+  },
+  "ds_token_dependencies": [
+    "--accent-container-on",
+    "--accent-container-on-low",
+    "--accent-container-on-lowest",
+    "--primary-container-core",
+    "--primary-container-on",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--primary-container-on-lowest",
+    "--primary-core",
+    "--secondary-container-core",
+    "--secondary-container-dim",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--secondary-container-on-lowest",
+    "--secondary-dim",
+    "--surface-bright",
+    "--surface-on-highest",
+    "--surface-surface",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-40",
+    "--awds-rectangle-100-description-font-size",
+    "--awds-rectangle-100-description-letter-spacing",
+    "--awds-rectangle-100-description-line-height",
+    "--awds-rectangle-100-icon",
+    "--awds-rectangle-100-padding",
+    "--awds-rectangle-100-rounded",
+    "--awds-rectangle-100-text-gap",
+    "--awds-rectangle-100-typography-font-size",
+    "--awds-rectangle-100-typography-letter-spacing",
+    "--awds-rectangle-100-typography-line-height",
+    "--awds-rectangle-200-description-font-size",
+    "--awds-rectangle-200-description-letter-spacing",
+    "--awds-rectangle-200-description-line-height",
+    "--awds-rectangle-200-icon",
+    "--awds-rectangle-200-padding",
+    "--awds-rectangle-200-rounded",
+    "--awds-rectangle-200-text-gap",
+    "--awds-rectangle-200-typography-font-size",
+    "--awds-rectangle-200-typography-letter-spacing",
+    "--awds-rectangle-200-typography-line-height",
+    "--awds-rectangle-300-description-font-size",
+    "--awds-rectangle-300-description-letter-spacing",
+    "--awds-rectangle-300-description-line-height",
+    "--awds-rectangle-300-icon",
+    "--awds-rectangle-300-padding",
+    "--awds-rectangle-300-rounded",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-300-typography-font-size",
+    "--awds-rectangle-300-typography-letter-spacing",
+    "--awds-rectangle-300-typography-line-height",
+    "--awds-rectangle-400-description-font-size",
+    "--awds-rectangle-400-description-letter-spacing",
+    "--awds-rectangle-400-description-line-height",
+    "--awds-rectangle-400-icon",
+    "--awds-rectangle-400-padding",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-400-typography-font-size",
+    "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-rectangle-400-typography-line-height",
+    "--awds-rectangle-50-description-font-size",
+    "--awds-rectangle-50-description-letter-spacing",
+    "--awds-rectangle-50-description-line-height",
+    "--awds-rectangle-50-icon",
+    "--awds-rectangle-50-padding",
+    "--awds-rectangle-50-rounded",
+    "--awds-rectangle-50-text-gap",
+    "--awds-rectangle-50-typography-font-size",
+    "--awds-rectangle-50-typography-letter-spacing",
+    "--awds-rectangle-50-typography-line-height",
+    "--awds-rectangle-500-description-font-size",
+    "--awds-rectangle-500-description-letter-spacing",
+    "--awds-rectangle-500-description-line-height",
+    "--awds-rectangle-500-icon",
+    "--awds-rectangle-500-padding",
+    "--awds-rectangle-500-rounded",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-500-typography-font-size",
+    "--awds-rectangle-500-typography-letter-spacing",
+    "--awds-rectangle-500-typography-line-height",
+    "--awds-rectangle-600-description-font-size",
+    "--awds-rectangle-600-description-letter-spacing",
+    "--awds-rectangle-600-description-line-height",
+    "--awds-rectangle-600-icon",
+    "--awds-rectangle-600-padding",
+    "--awds-rectangle-600-rounded",
+    "--awds-rectangle-600-text-gap",
+    "--awds-rectangle-600-typography-font-size",
+    "--awds-rectangle-600-typography-letter-spacing",
+    "--awds-rectangle-600-typography-line-height",
+    "--awds-space-0-5"
+  ],
+  "focus_ring_note": "focus-selection/outline (= surface-on-highest), как у button / checkbox / radio / switch — НЕ вариант input и select с собственным кольцом primary-core при 50%. offset 1px выведен числом: outline/500 = 9 при rounded 8, outline/600 = 11 при rounded 10, то есть радиус кольца = rounded + 1.",
+  "open_questions": [
+    "Описание во всём семействе привязано к роли list/unselected/description, а не к собственной …/description каждого варианта — проверено в Rest, Hover и Focus у Transparent и Variaton. Исключение: selected-variation и indeterminate-variation используют свои роли. Реализовано как в макете.",
+    "В репозитории токенов у list/unselected/border (Hover) стоит несуществующий алиас {form-control.secondary.dim} — у form-control нет варианта secondary. Макет рендерит #ededed, что равно role.secondary.dim; взято по значению. После правки токенов перегенерировать.",
+    "У selected-variation в ячейке Rest дополнительно включён focus-selection/outlineShow со значением outlineVariant = primary-core — тем же цветом, что и рамка. Трактовано как задублированный контур: в CSS одна рамка, второго кольца не добавляем."
+  ],
+  "verification": {
+    "geometry": "7 размеров × {со слотами, без слотов, только префикс, с описанием} = 84 замера computed px в headless Chromium, совпадение с макетом до пикселя",
+    "colors": "Rest всех 12 ролей сверен с hex из макета — совпадение 12/12, включая описания; hover спот-чек на default и tabbar",
+    "css_parse": "все 12 файлов разобраны через CSSOM, база байт-в-байт идентична во всех"
+  },
+  "last_synced": "2026-08-13T13:58:16Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:093e0a3b2bf6ecec301c7352bf054c65529356e376697f4983dfa1d264abe480",
+  "published": null,
+  "naming_note": "Имена классов нормализованы: в Figma фреймы называются «Variaton» (опечатка, пропущена i) — в CSS это variation / variation-indeterminate. Точные подписи из макета лежат в variants[].figma_label."
+}
