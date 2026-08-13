@@ -54,13 +54,18 @@
   "snapshot_hash": "sha256:b23bc2f8b71502c898ca1d4b5e27190d3901a3192c6842a9fcb43d3770032e72",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "pending",
-    "pushed_at": null,
+    "commit": "6102a9a0eaf5616f7b4b5f9560f590a4d7168639",
+    "pushed_at": "2026-08-13T08:52:02Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-radio/references/radio-default.md"
     },
     "dev_resources_status": {
-      "default": { "status": "pending", "node_id": "395:56332" }
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:56332",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-radio/SKILL.md"
+      }
     }
   }
 }
