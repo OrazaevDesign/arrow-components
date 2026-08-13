@@ -1,0 +1,665 @@
+{
+  "_note": "Сырые ответы Figma MCP. ACB-owned, не править руками.",
+  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+  "file_name": "💠 Comp ↪ ⁵ Forms",
+  "primary_node_id": "3:1152",
+  "fetched_at": "2026-08-13T09:38:20Z",
+  "metadata": {
+    "frame": {
+      "id": "3:1152",
+      "name": "Input / Default",
+      "width": 1760,
+      "height": 452
+    },
+    "axes": {
+      "Size": [
+        600,
+        500,
+        400,
+        300,
+        200,
+        100,
+        50
+      ],
+      "State": [
+        "Rest",
+        "Hover",
+        "Focus",
+        "Active",
+        "Disabled"
+      ]
+    },
+    "cells": 35,
+    "node_size_px": {
+      "600": "320x52",
+      "500": "320x48",
+      "400": "320x40",
+      "300": "320x36",
+      "200": "320x32",
+      "100": "320x24",
+      "50": "320x20"
+    },
+    "width_note": "320px — ширина демо-фрейма, а НЕ свойство компонента: у контейнера в CSS width: 100%, ширину задаёт потребитель",
+    "sampled_nodes": {
+      "500/Rest": "3:1153",
+      "500/Hover": "3:1171",
+      "500/Focus": "3:1179",
+      "500/Active": "3:1189",
+      "500/Disabled": "3:1161",
+      "600/Rest": "3:1157",
+      "400/Rest": "3:1197",
+      "300/Rest": "3:1218",
+      "200/Rest": "3:1222",
+      "100/Rest": "3:1226",
+      "50/Rest": "3:1230"
+    }
+  },
+  "variable_defs": {
+    "3:1153": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "form-control/default/placehold": "#555555",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1171": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "form-control/default/placehold": "#555555",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#808080"
+    },
+    "3:1179": {
+      "form-control/default/color": "#19110a",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "form-control/default/placehold": "#674d25",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "focus-selection/outlineShow": "true",
+      "outline/500": "9",
+      "focus-selection/outlineVariant": "#fad646",
+      "opacity/50": "50",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#ffffff",
+      "form-control/default/chroma": "#fffdf6",
+      "form-control/default/border": "#fad046"
+    },
+    "3:1189": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "form-control/default/placehold": "#555555",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1161": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "form-control/default/placehold": "#555555",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "opacity/50": "50",
+      "opacity/control/disabled": "40",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1157": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "form-control/default/placehold": "#555555",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1197": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/400/icon": "20",
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8",
+      "form-control/default/placehold": "#555555",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1218": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "form-control/default/placehold": "#555555",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1222": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/200/icon": "16",
+      "rectangle/200/padding": "8",
+      "rectangle/200/rounded": "6",
+      "form-control/default/placehold": "#555555",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1226": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/100/icon": "16",
+      "rectangle/100/padding": "4",
+      "rectangle/100/rounded": "6",
+      "form-control/default/placehold": "#555555",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    },
+    "3:1230": {
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/50/icon": "16",
+      "rectangle/50/padding": "2",
+      "rectangle/50/rounded": "4",
+      "form-control/default/placehold": "#555555",
+      "line-height/200": "16",
+      "letter-spacing/200": "0.10000000149011612",
+      "font-size/200": "12",
+      "opacity/control/enabled": "100",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7"
+    }
+  },
+  "design_context": {
+    "3:1153": {
+      "structure": "div.container (auto-layout row, items-center, isolate, БЕЗ padding) > [ Prefix Input (z-3, опц.) , Content Input (flex-1, min-w-px, z-2) , Suffix Input (z-1, опц.) ]",
+      "container_style": "bg-gradient-to-r from-[form-control/default/chroma] to-[form-control/default/bg], border 1px solid [form-control/default/border], opacity [opacity/control/enabled], rounded [rectangle/{N}/rounded]",
+      "prefix": "flex, gap=rectangle/{N}/padding > Icon (pl=padding, py=padding, justify-center) > 2× ic20-radio-outline (20px)",
+      "content": "flex-1, p=rectangle/{N}/padding > текст: color=form-control/default/placehold, font-size/{M}, line-height/{M}, letter-spacing/{M}, ellipsis + nowrap",
+      "suffix": "зеркало prefix: Icon (pr=padding, py=padding)",
+      "padding_note": "КЛЮЧЕВОЕ: padding на СЛОТАХ, у контейнера его нет. Поэтому «край → иконка» = padding слота, «иконка → текст» = padding поля. Padding на контейнере удвоил бы зазор при наличии иконки",
+      "icon_note": "ic20-radio-outline — ФИЛЛЕР («здесь может быть иконка»), не дизайнерская иконка инпута. В дефолтном инстансе показаны ДВЕ на каждый слот → слот принимает одну или несколько; боксы иконок идут вплотную (внутри Icon нет gap)"
+    },
+    "3:1179": {
+      "structure": "div.container > [ Prefix (z-4) , Content (z-3) , Suffix (z-2) , FocusSelection (absolute inset -1px, opacity=[opacity/50], z-1) > div.outline (border 2px solid [focus-selection/outlineVariant], inset -1px) ]",
+      "note": "ОТЛИЧИЕ ОТ ОСТАЛЬНОГО НАБОРА: кольцо использует outlineVariant (= primary-core) и несёт opacity 50%, тогда как у button/checkbox/radio/switch это outline (= surface-on-highest) без альфы. Полоса 0…2px снаружи → CSS outline-offset: 0"
+    }
+  },
+  "geometry_resolved": {
+    "_formulas": {
+      "height": "calc(2 * rectangle-{N}-padding + rectangle-{N}-typography-line-height) — явного height нет",
+      "width": "100% (задаёт потребитель; 320px в макете — ширина демо-фрейма)"
+    },
+    "_height_invariant": "на каждом размере icon == line-height, поэтому высота одинакова со слотами и без них",
+    "600": {
+      "padding": 16,
+      "icon": 20,
+      "rounded": 10,
+      "fs": 16,
+      "lh": 20,
+      "height": 52
+    },
+    "500": {
+      "padding": 14,
+      "icon": 20,
+      "rounded": 8,
+      "fs": 16,
+      "lh": 20,
+      "height": 48
+    },
+    "400": {
+      "padding": 10,
+      "icon": 20,
+      "rounded": 8,
+      "fs": 14,
+      "lh": 20,
+      "height": 40
+    },
+    "300": {
+      "padding": 8,
+      "icon": 20,
+      "rounded": 6,
+      "fs": 14,
+      "lh": 20,
+      "height": 36
+    },
+    "200": {
+      "padding": 8,
+      "icon": 16,
+      "rounded": 6,
+      "fs": 13,
+      "lh": 16,
+      "height": 32
+    },
+    "100": {
+      "padding": 4,
+      "icon": 16,
+      "rounded": 6,
+      "fs": 13,
+      "lh": 16,
+      "height": 24
+    },
+    "50": {
+      "padding": 2,
+      "icon": 16,
+      "rounded": 4,
+      "fs": 12,
+      "lh": 16,
+      "height": 20
+    }
+  },
+  "resolution": {
+    "_source": "arrow-design-system/references/component-token-map.json",
+    "rectangle/{N}/{padding,icon,rounded}": "var(--awds-rectangle-{N}-{prop})",
+    "_typography_scale_trap": {
+      "figma": "font-size/600 = 16 И line-height/600 = 20",
+      "typography-600": "font-size 16, line-height 26 — НЕ подходит (адаптивная шкала)",
+      "control-600": "font-size 16, line-height 20, letter-spacing 0em — совпадает по всем трём",
+      "решение": "берём не control напрямую, а var(--awds-rectangle-{N}-typography-*) — в css-global он уже ссылается на нужный control-{M}",
+      "маршрутизация": {
+        "50": "control-200",
+        "100": "control-300",
+        "200": "control-300",
+        "300": "control-400",
+        "400": "control-400",
+        "500": "control-600",
+        "600": "control-600"
+      },
+      "letter_spacing": "Figma 0.1 для 200/300 — это ПРОЦЕНТЫ (0.1% от font-size), в DS = 0.001em. При 13px оба дают 0.013px — сходится"
+    },
+    "form-control/default": {
+      "rest": {
+        "bg": "rgb(var(--secondary-container-core))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "rgb(var(--secondary-container-on-highest))",
+        "placehold": "rgb(var(--secondary-container-on-high))",
+        "icon": "rgb(var(--secondary-container-on-high))"
+      },
+      "hover": {
+        "bg": "rgb(var(--secondary-container-core))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on))",
+        "color": "rgb(var(--secondary-container-on-highest))",
+        "placehold": "rgb(var(--secondary-container-on-high))",
+        "icon": "rgb(var(--secondary-container-on-high))"
+      },
+      "focus": {
+        "bg": "rgb(var(--surface-bright))",
+        "chroma": "rgb(var(--primary-container-chroma))",
+        "border": "rgb(var(--primary-dim))",
+        "color": "rgb(var(--primary-container-on-highest))",
+        "placehold": "rgb(var(--primary-container-on-high))",
+        "icon": "rgb(var(--secondary-container-on-high))"
+      },
+      "active": {
+        "bg": "rgb(var(--secondary-container-core))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "rgb(var(--secondary-container-on-highest))",
+        "placehold": "rgb(var(--secondary-container-on-high))",
+        "icon": "rgb(var(--secondary-container-on-high))"
+      }
+    },
+    "focus_ring": "rgb(var(--primary-core) / var(--awds-opacity-50)) — outlineVariant + opacity/50 из макета; --awds-opacity-50 = 50%, альфа-синтаксис rgb(триплет / процент) проверен в Chromium",
+    "opacity/control/disabled": "var(--awds-opacity-40)",
+    "opacity/50_в_disabled": "в ноде Disabled тоже встречается opacity/50 — это скрытый слой FocusSelection, к самому disabled не относится (его прозрачность = opacity/control/disabled = 40%)",
+    "outline/500": "9 — радиус кольца (rounded/{N} + 1px); CSS считает радиус outline сам, отдельный токен не нужен"
+  },
+  "future_variants": {
+    "_note": "Отдельные компоненты в том же файле Figma, в этот скилл НЕ входят",
+    "Input Combi / *": "поле со сцепленным контролом, 7 вариантов",
+    "Input Inline / *": "инлайн-поле, 3 варианта (Ghost / Success / Error)"
+  },
+  "relation_to_family": {
+    "shape": "rectangle (как button), а не square (как checkbox/radio/switch)",
+    "identical": [
+      "модель «фон-градиент bg+chroma, рамка inset box-shadow»",
+      "disabled = opacity 40% на обёртке",
+      "кольцо вплотную (offset 0)"
+    ],
+    "different": [
+      "палитра form-control вместо check-radio",
+      "кольцо primary-core при 50% альфы вместо surface-on-highest без альфы",
+      "семь размеров (50–600)",
+      "три слота с padding на каждом",
+      "Active в макете равен Rest — правило нужно, чтобы отменить hover при нажатии"
+    ]
+  },
+  "variants": {
+    "_note": "Семь фреймов Input / * — варианты одного компонента. Оси, размеры и вся геометрия совпадают с Default во всех семи (сверено по сетке ячеек и контрольным размерам). Отличаются только цвета.",
+    "_verification": "Палитра в скилле — снимок ДРУГОГО сайта, поэтому hex→роль напрямую не резолвится. Сверка шла перекрёстно между фреймами: одна и та же роль даёт один и тот же hex во всех вариантах (например focus #ffffff/#fffdf6/#fad046 = surface-bright/primary-container-chroma/primary-dim повторяется в пяти вариантах). Все отклонения ghost и secondary независимо совпали с component-token-map.json.",
+    "default": {
+      "node": "3:1152",
+      "cells": {
+        "500/Rest": "3:1153",
+        "500/Hover": "3:1171",
+        "500/Focus": "3:1179",
+        "500/Active": "3:1189",
+        "500/Disabled": "3:1161",
+        "600/Rest": "3:1157",
+        "400/Rest": "3:1197",
+        "300/Rest": "3:1218",
+        "200/Rest": "3:1222",
+        "100/Rest": "3:1226",
+        "50/Rest": "3:1230"
+      },
+      "_см": "variable_defs выше"
+    },
+    "light": {
+      "node": "322:16305",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-16305",
+      "sampled_cells_size_500": {
+        "rest": "322:16455",
+        "hover": "322:16471",
+        "focus": "322:16479",
+        "active": "322:16489",
+        "disabled": "322:16463"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#ffffff",
+          "chroma": "#ffffff",
+          "border": "#c7c7c7",
+          "color": "#0f0f0f",
+          "placehold": "#555555"
+        },
+        "hover": {
+          "border": "#808080",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#c7c7c7",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "surface-bright",
+        "chroma": "surface-bright",
+        "border": "secondary-container-on-low",
+        "color": "secondary-container-on-highest",
+        "placehold": "secondary-container-on-high"
+      },
+      "resolved_role_hover_border": "secondary-container-on",
+      "_отличие": "Только подложка: surface-bright вместо secondary-container-core/-chroma. Иконка при фокусе — primary-container-on-high."
+    },
+    "success": {
+      "node": "322:27157",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-27157",
+      "sampled_cells_size_500": {
+        "rest": "322:27306",
+        "hover": "322:27322",
+        "focus": "322:27330",
+        "active": "322:27340",
+        "disabled": "322:27314"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#e5faf1",
+          "chroma": "#f7fffb",
+          "border": "#a0e4c0",
+          "color": "#224f29",
+          "placehold": "#388e4e"
+        },
+        "hover": {
+          "border": "#57c47f",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#a0e4c0",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "success-container-core",
+        "chroma": "success-container-chroma",
+        "border": "success-container-on-low",
+        "color": "success-container-on-highest",
+        "placehold": "success-container-on-high"
+      },
+      "resolved_role_hover_border": "success-container-on",
+      "_отличие": "Состояние значения, а не вид контрола. При фокусе подсветка полностью уступает брендовой (сверено по ячейке Focus)."
+    },
+    "error": {
+      "node": "322:32999",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-32999",
+      "sampled_cells_size_500": {
+        "rest": "322:33148",
+        "hover": "322:33164",
+        "focus": "322:33172",
+        "active": "322:33182",
+        "disabled": "322:33156"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#fff2eb",
+          "chroma": "#fff9f5",
+          "border": "#eea28b",
+          "color": "#41141a",
+          "placehold": "#9c2c2a"
+        },
+        "hover": {
+          "border": "#d65745",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#eea28b",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "error-container-core",
+        "chroma": "error-container-chroma",
+        "border": "error-container-on-low",
+        "color": "error-container-on-highest",
+        "placehold": "error-container-on-high"
+      },
+      "resolved_role_hover_border": "error-container-on",
+      "_отличие": "Состояние значения, а не вид контрола. При фокусе подсветка полностью уступает брендовой (сверено по ячейке Focus)."
+    },
+    "autofill": {
+      "node": "322:43572",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-43572",
+      "sampled_cells_size_500": {
+        "rest": "322:43578",
+        "hover": "322:43626",
+        "focus": "322:43651",
+        "active": "322:43680",
+        "disabled": "322:43602"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#ebf6ff",
+          "chroma": "#f7fcff",
+          "border": "#90aee0",
+          "color": "#193891",
+          "placehold": "#4764d4"
+        },
+        "hover": {
+          "border": "#7897dc",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#fffdf6",
+          "border": "#fad046",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#90aee0",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "tertiary-container-core",
+        "chroma": "tertiary-container-chroma",
+        "border": "tertiary-container-on-low",
+        "color": "tertiary-container-on-highest",
+        "placehold": "tertiary-container-on-high"
+      },
+      "resolved_role_hover_border": "tertiary-container-on",
+      "_отличие": "Состояние значения, а не вид контрола. При фокусе подсветка полностью уступает брендовой (сверено по ячейке Focus)."
+    },
+    "ghost": {
+      "node": "322:38006",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-38006",
+      "sampled_cells_size_500": {
+        "rest": "322:38155",
+        "hover": "322:38203",
+        "focus": "322:38227",
+        "active": "322:38257",
+        "disabled": "322:38179"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#ffffff00",
+          "chroma": "#ffffff00",
+          "border": "#ffffff00",
+          "color": "#0f0f0f",
+          "placehold": "#555555"
+        },
+        "hover": {
+          "border": "#ffffff00",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff00",
+          "chroma": "#ffffff00",
+          "border": "#ffffff00",
+          "color": "#19110a",
+          "placehold": "#674d25"
+        },
+        "active": {
+          "border": "#ffffff00",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "transparent",
+        "chroma": "transparent",
+        "border": "transparent",
+        "color": "secondary-container-on-highest",
+        "placehold": "secondary-container-on-high"
+      },
+      "resolved_role_hover_border": "transparent",
+      "_отличие": "hover НЕ меняет ничего: в ячейках rest/hover/active все три свойства = #ffffff00. Правило hover в CSS отсутствует намеренно. При фокусе фон и рамка остаются прозрачными — меняется только текст + кольцо."
+    },
+    "secondary": {
+      "node": "322:49551",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-49551",
+      "sampled_cells_size_500": {
+        "rest": "322:49557",
+        "hover": "322:49589",
+        "focus": "322:49606",
+        "active": "322:49625",
+        "disabled": "322:49573"
+      },
+      "figma_hex": {
+        "rest": {
+          "bg": "#f2f2f2",
+          "chroma": "#f7f7f7",
+          "border": "#f2f2f2",
+          "color": "#555555",
+          "placehold": "#808080"
+        },
+        "hover": {
+          "border": "#ededed",
+          "остальное": "= rest"
+        },
+        "focus": {
+          "bg": "#ffffff",
+          "chroma": "#f7f7f7",
+          "border": "#f2f2f2",
+          "color": "#555555",
+          "placehold": "#808080"
+        },
+        "active": {
+          "border": "#f2f2f2",
+          "остальное": "= rest"
+        },
+        "disabled": "= rest + opacity/control/disabled 40"
+      },
+      "resolved_roles_rest": {
+        "bg": "secondary-core",
+        "chroma": "secondary-chroma",
+        "border": "secondary-core",
+        "color": "secondary-on",
+        "placehold": "secondary-on-dim"
+      },
+      "resolved_role_hover_border": "secondary-dim",
+      "_отличие": "Два исключения: (1) hover меняет ФОН и рамку на secondary-dim, а не только рамку — рамка здесь в цвет фона; (2) кольцо фокуса ТЁМНОЕ: в ячейке Focus стоит focus-selection/outline (#080808 = surface-on-highest) без opacity/50, а не outlineVariant при 50% как у остальных шести. Текст и placeholder при фокусе не меняются."
+    }
+  }
+}
