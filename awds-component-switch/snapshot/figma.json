@@ -1,0 +1,326 @@
+{
+  "_note": "Сырые ответы Figma MCP. ACB-owned, не править руками.",
+  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+  "file_name": "💠 Comp ↪ ⁵ Forms",
+  "primary_node_id": "395:57077",
+  "fetched_at": "2026-08-13T08:57:28Z",
+  "metadata": {
+    "frame": { "id": "395:57077", "name": "Switch", "width": 420, "height": 1000 },
+    "axes": {
+      "Type": ["Selected", "Unselected"],
+      "Var": ["Default", "Icon"],
+      "Size": [600, 500, 400, 300, 200],
+      "State": ["Rest", "Hover", "Focus", "Active", "Disabled"]
+    },
+    "cells": 100,
+    "node_box_px": { "600": "52x32", "500": "44x28", "400": "36x24", "300": "32x20", "200": "28x16" },
+    "sampled_nodes": {
+      "Selected/Default/600/Rest": "395:57078",
+      "Selected/Default/600/Hover": "395:57198",
+      "Selected/Default/600/Focus": "395:57201",
+      "Selected/Default/600/Active": "395:57205",
+      "Selected/Default/600/Disabled": "395:57081",
+      "Selected/Default/500/Rest": "395:57084",
+      "Selected/Default/400/Rest": "395:57090",
+      "Selected/Default/300/Rest": "395:57096",
+      "Selected/Default/200/Rest": "395:57099",
+      "Unselected/Default/600/Rest": "395:57108",
+      "Unselected/Default/600/Hover": "395:57248",
+      "Unselected/Default/600/Active": "395:57255",
+      "Selected/Icon/600/Rest": "395:57138",
+      "Selected/Icon/600/Hover": "395:57298",
+      "Unselected/Icon/600/Rest": "395:57168"
+    }
+  },
+  "variable_defs": {
+    "395:57078": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57198": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#fad046",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#fad046"
+    },
+    "395:57201": {
+      "focus-selection/outlineShow": "true",
+      "border-radius/full": "600",
+      "focus-selection/outline": "#080808",
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57205": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#ffeb5a",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57081": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/disabled": "40",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57084": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/switch-width": "44",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57090": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/400/icon": "20",
+      "square/400/padding": "2",
+      "square/400/switch-width": "36",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57096": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/300/icon": "20",
+      "square/300/padding": "0",
+      "square/300/switch-width": "32",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57099": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "check-radio/200/icon": "16",
+      "square/200/padding": "0",
+      "square/200/switch-width": "28",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57108": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/unselected/handle": "#808080",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "opacity/100": "100",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/bg": "#f7f7f7",
+      "check-radio/unselected/chroma": "#f7f7f7",
+      "check-radio/unselected/border": "#c7c7c7"
+    },
+    "395:57248": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/unselected/handle": "#808080",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "opacity/100": "100",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/bg": "#f2f2f2",
+      "check-radio/unselected/chroma": "#f7f7f7",
+      "check-radio/unselected/border": "#808080"
+    },
+    "395:57255": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/unselected/handle": "#808080",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "opacity/100": "100",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/bg": "#f2f2f2",
+      "check-radio/unselected/chroma": "#f2f2f2",
+      "check-radio/unselected/border": "#c7c7c7"
+    },
+    "395:57138": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/500/icon": "24",
+      "button-input/500/icon": "24",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a"
+    },
+    "395:57298": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "check-radio/selected/bg": "#fad046",
+      "check-radio/500/icon": "24",
+      "button-input/500/icon": "24",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#fad046"
+    },
+    "395:57168": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/unselected/handle": "#808080",
+      "check-radio/unselected/bg": "#f7f7f7",
+      "check-radio/500/icon": "24",
+      "button-input/500/icon": "24",
+      "space/0,5": "2",
+      "square/600/icon": "28",
+      "opacity/100": "100",
+      "square/600/padding": "2",
+      "square/600/switch-width": "52",
+      "border-radius/full": "600",
+      "opacity/control/enabled": "100",
+      "check-radio/unselected/chroma": "#f7f7f7",
+      "check-radio/unselected/border": "#c7c7c7"
+    }
+  },
+  "design_context": {
+    "395:57078": {
+      "structure": "div.track (auto-layout row, items-start, w=square/600/switch-width, p=square/600/padding, rounded=border-radius/full) > [ div.space (w=20, self-stretch) , div.◆/Handle ]",
+      "handle": "div (size=square/600/icon=28, p=space/0,5=2, rounded 20) > div.Handle (absolute inset 2px, opacity/content/handle-opacity) = круг Ø24, fill check-radio/selected/handle",
+      "note": "порядок детей задаёт положение: Selected → space ПЕРЕД бегунком (бегунок справа); Unselected → бегунок ПЕРЕД space (бегунок слева). Ширина space = 20 = switch-width − 2×padding − icon (отдельного токена нет)"
+    },
+    "395:57108": {
+      "structure": "div.track > [ div.◆/Handle , div.space (w=20) ]",
+      "note": "Unselected — бегунок слева"
+    },
+    "395:57138": {
+      "structure": "handle > [ div.Handle (круг) , div.ic24-checkbox-outline (flex-1, h-full = 24×24) > Union (inset 29.17% / 20.83%, 14×10) ]",
+      "note": "Var=Icon, Selected — галка внутри бегунка, fill = check-radio/selected/bg (цвет ТРЕКА, выбита в тёмном круге)"
+    },
+    "395:57168": {
+      "structure": "handle > [ div.Handle (круг) , div.ic24-close-outline (flex-1, h-full = 24×24) > Union (inset 20.83%, 14×14) ]",
+      "note": "Var=Icon, Unselected — крестик, fill = check-radio/unselected/bg"
+    },
+    "395:57201": {
+      "structure": "div.track > div.FocusSelection (inset -1px) > div.outline (border 2px solid [focus-selection/outline], inset -1px, rounded=border-radius/full)",
+      "note": "кольцо занимает полосу 0…2px СНАРУЖИ трека → CSS outline-offset: 0 (в отличие от .btn, где offset 2px)"
+    }
+  },
+  "icons": {
+    "on": {
+      "figma_name": "ic24-checkbox-outline",
+      "viewbox": "0 0 24 24",
+      "wrap": "<g transform=\"translate(5 7)\">",
+      "source_path": "M12.2929 0.292893C12.6834 -0.0976311 13.3164 -0.0976311 13.707 0.292893C14.0975 0.683417 14.0975 1.31643 13.707 1.70696L5.70696 9.70696C5.31643 10.0975 4.68342 10.0975 4.29289 9.70696L0.292893 5.70696C-0.0976311 5.31643 -0.0976311 4.68342 0.292893 4.29289C0.683417 3.90237 1.31643 3.90237 1.70696 4.29289L4.99992 7.58586L12.2929 0.292893Z",
+      "note": "Union 13.9998×9.99985 при inset 20.83% / 29.17% от 24 → translate(5, 7). Тот же вектор, что у awds-component-checkbox",
+      "figma_fill": "#FFEB5A = check-radio/selected/bg"
+    },
+    "off": {
+      "figma_name": "ic24-close-outline",
+      "viewbox": "0 0 24 24",
+      "wrap": "<g transform=\"translate(5 5)\">",
+      "source_path": "M12.2929 0.292893C12.6834 -0.0976311 13.3164 -0.097631 13.707 0.292893C14.0975 0.683417 14.0975 1.31643 13.707 1.70696L8.41399 6.99992L13.707 12.2929C14.0975 12.6834 14.0975 13.3164 13.707 13.707C13.3164 14.0975 12.6834 14.0975 12.2929 13.707L6.99992 8.41399L1.70696 13.707C1.31643 14.0975 0.683418 14.0975 0.292893 13.707C-0.0976304 13.3164 -0.0976305 12.6834 0.292893 12.2929L5.58586 6.99992L0.292893 1.70696C-0.097631 1.31643 -0.0976311 0.683417 0.292893 0.292893C0.683417 -0.097631 1.31643 -0.0976309 1.70696 0.292893L6.99992 5.58586L12.2929 0.292893Z",
+      "note": "Union 13.9998×13.9998 при inset 20.83% от 24 → translate(5, 5)",
+      "figma_fill": "#F7F7F7 = check-radio/unselected/bg"
+    }
+  },
+  "geometry_resolved": {
+    "_formulas": {
+      "track_width": "var(--awds-square-{N}-switch-width)",
+      "track_height": "calc(var(--awds-square-{N}-icon) + 2 * var(--awds-square-{N}-padding))",
+      "knob_circle": "calc(var(--awds-square-{N}-icon) - 2 * var(--awds-space-0-5))",
+      "travel": "calc(switch-width - 2 * padding - icon)"
+    },
+    "600": { "width": 52, "icon": 28, "padding": 2, "track": "52x32", "knob": 24, "travel": 20 },
+    "500": { "width": 44, "icon": 24, "padding": 2, "track": "44x28", "knob": 20, "travel": 16 },
+    "400": { "width": 36, "icon": 20, "padding": 2, "track": "36x24", "knob": 16, "travel": 12 },
+    "300": { "width": 32, "icon": 20, "padding": 0, "track": "32x20", "knob": 16, "travel": 12 },
+    "200": { "width": 28, "icon": 16, "padding": 0, "track": "28x16", "knob": 12, "travel": 12 }
+  },
+  "resolution": {
+    "_source": "arrow-design-system/references/component-token-map.json",
+    "square/{N}/{switch-width,icon,padding,gap}": "var(--awds-square-{N}-{prop})",
+    "space/0,5": "var(--awds-space-0-5)",
+    "border-radius/full": "var(--awds-rounded-full) — 600px во всех модах коллекции Rounded",
+    "check-radio/200/icon": "НЕ имеет CSS-var: семейства check-radio в css-global нет. Значение 16px совпадает с square/200/icon, поэтому в CSS взят square-токен (одна shape-шкала на компонент)",
+    "check-radio/500/icon и button-input/500/icon": "размер иконки в бегунке (24) = контентная коробка бегунка после padding; в CSS иконка занимает 100% бегунка, отдельного токена не требуется",
+    "check-radio/selected": {
+      "rest": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "handle": "rgb(var(--primary-on-dim))" },
+      "hover": { "bg": "rgb(var(--primary-dim))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-dim))", "handle": "rgb(var(--primary-on-dim))" },
+      "focus": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "handle": "rgb(var(--primary-on-dim))" },
+      "active": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-core))", "border": "rgb(var(--primary-core))", "handle": "rgb(var(--primary-on-dim))" }
+    },
+    "check-radio/unselected": {
+      "rest": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "handle": "rgb(var(--secondary-container-on))" },
+      "hover": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on))", "handle": "rgb(var(--secondary-container-on))" },
+      "focus": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "handle": "rgb(var(--secondary-container-on))" },
+      "active": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-dim))", "border": "rgb(var(--secondary-container-on-low))", "handle": "rgb(var(--secondary-container-on))" }
+    },
+    "icon_fill": "= bg соответствующего состояния (иконка выбита цветом трека). Подтверждено ячейкой Selected/Icon/600/Hover: check-radio/selected/bg = #fad046 = primary-dim",
+    "focus-selection/outline": "rgb(var(--surface-on-highest))",
+    "opacity/control/disabled": "var(--awds-opacity-40)",
+    "opacity/content/handle-opacity": "var(--awds-opacity-100) — бегунок всегда непрозрачен, в CSS не выражается"
+  },
+  "relation_to_checkbox_radio": {
+    "identical": ["палитра трека check-radio selected + unselected", "прогрессия состояний rest → hover → focus → active → disabled", "focus outline 2px surface-on-highest, offset 0", "disabled = opacity 40% на обёртке"],
+    "different": ["горизонтальная геометрия: switch-width + едущий бегунок вместо квадрата/круга", "появился размер 600", "четвёртая ось Var (Default / Icon) — выражена наличием иконок в разметке", "handle-цвет (primary-on-dim / secondary-container-on) — своя роль, у checkbox/radio не используется", "иконка залита цветом трека, а не контрастной ролью"]
+  }
+}

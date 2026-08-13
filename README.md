@@ -28,6 +28,7 @@
 | [awds-component-content-area](awds-component-content-area/) | img · video (× 39 соотношений сторон) | [img](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-69) · [video](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-71) |
 | [awds-component-checkbox](awds-component-checkbox/) | default (Type Selected · Indeterminate · Unselected × 4 размера × 5 состояний) | [open](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-43665) |
 | [awds-component-radio](awds-component-radio/) | default (Type Selected · Unselected × 4 размера × 5 состояний, группа с общим name) | [open](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-56332) |
+| [awds-component-switch](awds-component-switch/) | default (Type Selected · Unselected × Var Default · Icon × 5 размеров × 5 состояний) | [open](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-57077) |
 
 _(список пополняется по мере публикации новых компонентов)_
 
