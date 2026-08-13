@@ -77,7 +77,7 @@
     "input-combi-secondary.css"
   ],
   "base_class_note": "Базовый класс .icombi, а не .input-combi. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = input-combi они стали бы --awds-input-combi-* — префиксом это чужой запрещённый --awds-input-*, sanity-check публикации ложно блокирует. Тот же приём, что у button-overhung → .obtn.",
-  "geometry_note": "Высота не задаётся явно и совпадает с обычным input того же размера: input-top + line-height + input-bottom = 2×padding + line-height. Закономерность макета, проверена на всех четырёх размерах: input-top = padding + Δ, input-bottom = label-top = padding − Δ, где Δ = 8 у 500/600 и 6 у 300/400. Строку значения сдвигают вниз, освобождая место метке, а не растягивают контрол. Все три числа берутся из css-global: --awds-rectangle-{N}-combi-{label-top , input-top , input-bottom}. Паддинг слотов prefix/suffix вертикально симметричный (padding), в отличие от поля.",
+  "geometry_note": "Высота не задаётся явно и совпадает с обычным input того же размера: input-top + line-height + input-bottom = 2×padding + line-height. Закономерность макета, проверена на всех четырёх размерах: input-top = padding + Δ, input-bottom = label-top = padding − Δ, где Δ = 8 у 500/600 и 6 у 300/400. Строку значения сдвигают вниз, освобождая место метке, а не растягивают контрол. Все три числа берутся из css-global: --awds-rectangle-{N}-combi-{label-top , input-top , input-bottom}. Паддинг слотов prefix/suffix вертикально симметричный (padding), в отличие от поля. Горизонтальный отступ текста зависит от наличия иконки рядом: есть иконка → rectangle-{N}-padding (отсчёт от иконки), иконки нет → rectangle-{N}-text-gap (отсчёт от края). text-gap всегда шире (18/18/16/14/14/10/8 против padding 16/14/10/8/8/4/2). В макете это булев проп Padding Icon у компонента Content Input, он переключает ОБА горизонтальных паддинга сразу; в CSS сделано ПО СТОРОНЕ через :has(> .icombi__prefix) / :has(> .icombi__suffix), иначе поле с одной иконкой (частый случай — поиск слева) получило бы неверный отступ со второй стороны. Вертикальные паддинги не меняются, высота контрола та же. МЕТКА едет вместе с текстом: в макете горизонтальные паддинги строк label и input всегда равны, поэтому left/right метки переключаются тем же правилом — иначе при уезде метка прыгала бы по горизонтали.",
   "typography_note": "Значение — семантический var(--awds-rectangle-{N}-typography-*) (шкала control: Figma даёт font-size/600=16 при line-height/600=20, у typography-600 line-height 26). Типографика УЕХАВШЕЙ МЕТКИ — единственное место, где shape-токена нет, маппинг ручной по значению: 500/600 → control-200 (12/16/0.1%), 300/400 → control-100 (11/16/0.2%). Совпадают все три свойства, поэтому шкала control (фикс), а не typography.",
   "focus_ring_note": "Кольцо как у awds-component-input и в отличие от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. offset 0.",
   "markup_note": "Обязателен placeholder=\" \" (пробел) на поле: на :placeholder-shown держится определение «поле пустое», без атрибута метка навсегда останется наверху поверх пустого поля. Сам placeholder невидим — его роль играет метка. Порядок в DOM — поле, потом <label>: соседний комбинатор + смотрит только вперёд. Метке нужен for + полю id: pointer-events: none на метке гасит клики, но не связь.",
@@ -88,7 +88,8 @@
     "result": "высота 52/48/40/36, radius 10/8/8/6, padding поля 24/8, 22/6, 16/4, 14/2, метка в покое top 16/14/10/8 в кегле значения, уехавшая top 8/6/4/2 в кегле 12/12/11/11 при line-height 16 — совпадение с Figma до пикселя",
     "interaction": "живой hover + фокус поверх ховера: рамка rgb(115,120,130) → rgb(250,223,66), кольцо rgba(250,216,20,.5) — :has() на потомке работает, фокус ховер не проигрывает",
     "variants": "Живой прогон всех семи в headless chromium: цвета по Rest / Hover / Active / Focus сняты с зеркал состояний. Подтверждено, что ghost прозрачен во всех четырёх, у secondary hover двигает фон (241,242,243 → 236,237,238) и кольцо фокуса тёмное rgb(19,20,22), у остальных пяти кольцо rgba(250,216,20,.5). Значения --awds-icombi-bg мерились с задержкой 400 мс: они зарегистрированы через @property и анимируются, поэтому чтение на первом кадре отдаёт ещё старый цвет.",
-    "base_identity": "База (.icombi, элементы, четыре размера) и хвост (disabled + reduced-motion) во всех семи CSS побайтово одинаковы — сверено sha1 по срезам файлов."
+    "base_identity": "База (.icombi, элементы, четыре размера) и хвост (disabled + reduced-motion) во всех семи CSS побайтово одинаковы — сверено sha1 по срезам файлов.",
+    "text_gap": "Прогон в headless chromium по всем комбинациям {без слотов, только prefix, только suffix, оба} × размеры: 26 проверок на три компонента, 0 расхождений. Проверено и то, что вертикальные паддинги и высоты не изменились."
   },
   "preview": {
     "base_class": "icombi",
@@ -264,11 +265,15 @@
     "--awds-opacity-40",
     "--awds-opacity-50",
     "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--awds-font-weight-regular",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-600-text-gap"
   ],
-  "last_synced": "2026-08-13T11:14:40Z",
+  "last_synced": "2026-08-13T12:55:54Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:37c669b678ded87699dedeb8caaa79aff66160a8110674173ebdbf236679a162",
+  "snapshot_hash": "sha256:5616438ecf77844afa5cd37015ebb98da44012261de97e440ffc9681aef7a0f7",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "9a164dc5e7412ae096e8c118dbb993d928eb96a9",

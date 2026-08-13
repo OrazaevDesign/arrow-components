@@ -47,6 +47,19 @@
    Считать Δ в CSS не нужно: все три числа лежат в css-global семантическим слоем —
    --awds-rectangle-{N}-combi-{label-top , input-top , input-bottom}.
 
+   ГОРИЗОНТАЛЬНЫЙ ОТСТУП ЗАВИСИТ ОТ НАЛИЧИЯ СЛОТА — отдельный токен, не тот же padding:
+     есть иконка с этой стороны → rectangle-{N}-padding   (отсчёт от иконки)
+     иконки нет                 → rectangle-{N}-text-gap  (отсчёт от края)
+   text-gap шире: 18/18/16/14 против padding 16/14/10/8 — у голого текста от края до
+   буквы должно быть больше воздуха, чем от иконки до буквы. В макете это булев проп
+   Padding Icon у Content Combi Input, он переключает оба паддинга сразу; в CSS делаем
+   по стороне, иначе поле с одной иконкой получило бы неверный отступ со второй.
+
+   МЕТКА ЕДЕТ ВМЕСТЕ С ТЕКСТОМ. В макете горизонтальные паддинги строки label и строки
+   input всегда равны — значит left/right метки обязаны переключаться тем же правилом,
+   что и padding-inline поля. Иначе метка и значение встанут по разным вертикалям, и
+   при уезде метка «прыгнет» по горизонтали.
+
    ТИПОГРАФИКА МЕТКИ — единственное место, где семантический слой не покрывает.
    Для значения есть --awds-rectangle-{N}-typography-* , для уехавшей метки такого
    shape-токена в Figma нет, поэтому маппинг ручной — по значению, не по номеру:
@@ -126,6 +139,7 @@
   --awds-icombi-fs:           var(--awds-rectangle-400-typography-font-size);
   --awds-icombi-lh:           var(--awds-rectangle-400-typography-line-height);
   --awds-icombi-ls:           var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-icombi-text-gap:     var(--awds-rectangle-400-text-gap);
   --awds-icombi-label-top:    var(--awds-rectangle-400-combi-label-top);
   --awds-icombi-input-top:    var(--awds-rectangle-400-combi-input-top);
   --awds-icombi-input-bottom: var(--awds-rectangle-400-combi-input-bottom);
@@ -184,8 +198,9 @@
   display: block;
   width: 100%;
   /* Вертикаль асимметрична (input-top > input-bottom): строка значения сдвинута
-     вниз, чтобы над ней поместилась уехавшая метка. Горизонталь — обычный padding. */
-  padding: var(--awds-icombi-input-top) var(--awds-icombi-padding) var(--awds-icombi-input-bottom);
+     вниз, чтобы над ней поместилась уехавшая метка. Горизонталь по умолчанию
+     text-gap — базовый случай поля без иконок; со слотом сторона уходит в padding. */
+  padding: var(--awds-icombi-input-top) var(--awds-icombi-text-gap) var(--awds-icombi-input-bottom);
 
   /* Гасим UA-оформление: фон и рамку несёт контейнер. */
   appearance: none;
@@ -235,8 +250,9 @@
 
 .icombi__label {
   position: absolute;
-  left: var(--awds-icombi-padding);
-  right: var(--awds-icombi-padding);
+  /* Те же значения, что у padding-inline поля (см. шапку: метка едет вместе с текстом). */
+  left: var(--awds-icombi-text-gap);
+  right: var(--awds-icombi-text-gap);
   top: var(--awds-icombi-padding);
   margin: 0;
 
@@ -281,6 +297,25 @@
   letter-spacing: var(--awds-icombi-label-ls);
 }
 
+
+/* Сторона со слотом отсчитывается от иконки, а не от края, — поэтому padding вместо
+   text-gap. Двигаем И поле, И метку: в макете их горизонтали всегда равны. Прямой
+   ребёнок (>) — слоты лежат на .icombi, поле и метка внутри .icombi__body. */
+.icombi:has(> .icombi__prefix) .icombi__field {
+  padding-left: var(--awds-icombi-padding);
+}
+
+.icombi:has(> .icombi__prefix) .icombi__label {
+  left: var(--awds-icombi-padding);
+}
+
+.icombi:has(> .icombi__suffix) .icombi__field {
+  padding-right: var(--awds-icombi-padding);
+}
+
+.icombi:has(> .icombi__suffix) .icombi__label {
+  right: var(--awds-icombi-padding);
+}
 
 /* === Слоты prefix / suffix ===
    Иконки в макете — филлер (ic20-radio-outline), не дизайнерская иконка: слот
@@ -348,6 +383,7 @@
   --awds-icombi-fs:           var(--awds-rectangle-300-typography-font-size);
   --awds-icombi-lh:           var(--awds-rectangle-300-typography-line-height);
   --awds-icombi-ls:           var(--awds-rectangle-300-typography-letter-spacing);
+  --awds-icombi-text-gap:     var(--awds-rectangle-300-text-gap);
   --awds-icombi-label-top:    var(--awds-rectangle-300-combi-label-top);
   --awds-icombi-input-top:    var(--awds-rectangle-300-combi-input-top);
   --awds-icombi-input-bottom: var(--awds-rectangle-300-combi-input-bottom);
@@ -363,6 +399,7 @@
   --awds-icombi-fs:           var(--awds-rectangle-400-typography-font-size);
   --awds-icombi-lh:           var(--awds-rectangle-400-typography-line-height);
   --awds-icombi-ls:           var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-icombi-text-gap:     var(--awds-rectangle-400-text-gap);
   --awds-icombi-label-top:    var(--awds-rectangle-400-combi-label-top);
   --awds-icombi-input-top:    var(--awds-rectangle-400-combi-input-top);
   --awds-icombi-input-bottom: var(--awds-rectangle-400-combi-input-bottom);
@@ -378,6 +415,7 @@
   --awds-icombi-fs:           var(--awds-rectangle-500-typography-font-size);
   --awds-icombi-lh:           var(--awds-rectangle-500-typography-line-height);
   --awds-icombi-ls:           var(--awds-rectangle-500-typography-letter-spacing);
+  --awds-icombi-text-gap:     var(--awds-rectangle-500-text-gap);
   --awds-icombi-label-top:    var(--awds-rectangle-500-combi-label-top);
   --awds-icombi-input-top:    var(--awds-rectangle-500-combi-input-top);
   --awds-icombi-input-bottom: var(--awds-rectangle-500-combi-input-bottom);
@@ -393,6 +431,7 @@
   --awds-icombi-fs:           var(--awds-rectangle-600-typography-font-size);
   --awds-icombi-lh:           var(--awds-rectangle-600-typography-line-height);
   --awds-icombi-ls:           var(--awds-rectangle-600-typography-letter-spacing);
+  --awds-icombi-text-gap:     var(--awds-rectangle-600-text-gap);
   --awds-icombi-label-top:    var(--awds-rectangle-600-combi-label-top);
   --awds-icombi-input-top:    var(--awds-rectangle-600-combi-input-top);
   --awds-icombi-input-bottom: var(--awds-rectangle-600-combi-input-bottom);
