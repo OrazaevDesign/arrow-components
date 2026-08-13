@@ -661,5 +661,41 @@
       "resolved_role_hover_border": "secondary-dim",
       "_отличие": "Два исключения: (1) hover меняет ФОН и рамку на secondary-dim, а не только рамку — рамка здесь в цвет фона; (2) кольцо фокуса ТЁМНОЕ: в ячейке Focus стоит focus-selection/outline (#080808 = surface-on-highest) без opacity/50, а не outlineVariant при 50% как у остальных шести. Текст и placeholder при фокусе не меняются."
     }
+  },
+  "text_gap": {
+    "_source": "Компонент Content Input (394:11134) / Content Combi Input (394:11247) на странице «↪ Form Control», булев проп Padding Icon. Снято через use_figma с разрешением имён привязанных переменных.",
+    "Padding Icon=False": "paddingLeft и paddingRight = rectangle/{N}/text-gap; paddingTop/Bottom = rectangle/{N}/padding",
+    "Padding Icon=True": "все четыре = rectangle/{N}/padding",
+    "values": {
+      "600": {
+        "padding": 16,
+        "text-gap": 18
+      },
+      "500": {
+        "padding": 14,
+        "text-gap": 18
+      },
+      "400": {
+        "padding": 10,
+        "text-gap": 16
+      },
+      "300": {
+        "padding": 8,
+        "text-gap": 14
+      },
+      "200": {
+        "padding": 8,
+        "text-gap": 14
+      },
+      "100": {
+        "padding": 4,
+        "text-gap": 10
+      },
+      "50": {
+        "padding": 2,
+        "text-gap": 8
+      }
+    },
+    "_в_css": "Проп переключает обе стороны разом; в CSS раскрыто по стороне через :has() — asymmetric случай (одна иконка) в макете компонентом не выражается, но в вёрстке встречается чаще всего."
   }
 }

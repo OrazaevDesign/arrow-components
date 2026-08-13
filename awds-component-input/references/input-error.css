@@ -41,11 +41,25 @@
    ПАДДИНГИ ЖИВУТ НА СЛОТАХ, не на контейнере (так в auto-layout макета):
      контейнер — без padding, только рамка/фон/скругление;
      prefix    — padding-left + padding-block;
-     поле      — padding со всех сторон;
+     поле      — padding-block + padding-inline (см. ниже про text-gap);
      suffix    — padding-right + padding-block.
    Поэтому расстояние «иконка → текст» = padding поля, а «край → иконка» = padding
    слота: одно и то же значение, но набирается из двух элементов. Если положить
    padding на контейнер, при наличии иконки зазор удвоится.
+
+   ГОРИЗОНТАЛЬНЫЙ ОТСТУП ПОЛЯ ЗАВИСИТ ОТ НАЛИЧИЯ СЛОТА — это отдельный токен, а не
+   тот же padding:
+     есть иконка с этой стороны → rectangle-{N}-padding   (отсчёт идёт от иконки)
+     иконки нет                 → rectangle-{N}-text-gap  (отсчёт идёт от края)
+   text-gap всегда шире: 18/18/16/14/14/10/8 против padding 16/14/10/8/8/4/2. Смысл
+   в том, что у голого текста от края до буквы должно быть больше воздуха, чем от
+   иконки до буквы, — иначе текст выглядит прижатым к рамке.
+
+   В макете это булев проп Padding Icon у компонента Content Input: он переключает
+   ОБА горизонтальных паддинга сразу. В CSS делаем по стороне — через
+   :has(> .input__prefix) и :has(> .input__suffix), иначе поле с одной иконкой
+   (частый случай: только поиск слева) получило бы неверный отступ справа.
+   Вертикальные паддинги не меняются, высота контрола та же.
 
    Цвета (map.state.*.form-control.error):
      Rest    bg error-container-core   chroma error-container-chroma
@@ -114,6 +128,7 @@
   --awds-input-fs:      var(--awds-rectangle-400-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-400-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-400-text-gap);
 
   box-sizing: border-box;
   position: relative;
@@ -154,7 +169,10 @@
      ~20 символов) не даст контейнеру сжаться уже неё. */
   flex: 1;
   min-width: 0;
-  padding: var(--awds-input-padding);
+  /* Вертикаль — всегда padding. Горизонталь по умолчанию text-gap: базовый случай
+     поля — без иконок. Со слотом сторона переключается на padding, см. ниже. */
+  padding-block: var(--awds-input-padding);
+  padding-inline: var(--awds-input-text-gap);
 
   /* Гасим UA-оформление: фон и рамку несёт контейнер. */
   appearance: none;
@@ -195,6 +213,17 @@
   display: none;
 }
 
+
+/* Сторона со слотом отсчитывается от иконки, а не от края, — поэтому padding вместо
+   text-gap. Прямой ребёнок (>) не случайно: считаем только собственные слоты поля,
+   а не иконку, которую потребитель положил внутрь текста. */
+.input:has(> .input__prefix) .input__field {
+  padding-left: var(--awds-input-padding);
+}
+
+.input:has(> .input__suffix) .input__field {
+  padding-right: var(--awds-input-padding);
+}
 
 /* === Слоты prefix / suffix ===
    Иконки в макете — филлер (ic20-radio-outline), не дизайнерская иконка: слот
@@ -259,6 +288,7 @@
   --awds-input-fs:      var(--awds-rectangle-50-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-50-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-50-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-50-text-gap);
 }
 
 .input--100 {
@@ -268,6 +298,7 @@
   --awds-input-fs:      var(--awds-rectangle-100-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-100-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-100-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-100-text-gap);
 }
 
 .input--200 {
@@ -277,6 +308,7 @@
   --awds-input-fs:      var(--awds-rectangle-200-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-200-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-200-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-200-text-gap);
 }
 
 .input--300 {
@@ -286,6 +318,7 @@
   --awds-input-fs:      var(--awds-rectangle-300-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-300-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-300-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-300-text-gap);
 }
 
 .input--400 {
@@ -295,6 +328,7 @@
   --awds-input-fs:      var(--awds-rectangle-400-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-400-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-400-text-gap);
 }
 
 .input--500 {
@@ -304,6 +338,7 @@
   --awds-input-fs:      var(--awds-rectangle-500-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-500-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-500-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-500-text-gap);
 }
 
 .input--600 {
@@ -313,6 +348,7 @@
   --awds-input-fs:      var(--awds-rectangle-600-typography-font-size);
   --awds-input-lh:      var(--awds-rectangle-600-typography-line-height);
   --awds-input-ls:      var(--awds-rectangle-600-typography-letter-spacing);
+  --awds-input-text-gap: var(--awds-rectangle-600-text-gap);
 }
 
 

@@ -38,6 +38,7 @@ description: >
 | Цвета состояний (bg/chroma/border/текст/placeholder/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-{вариант}.css` |
 | Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))` | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
+| Горизонтальный отступ текста | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Input` |
 | Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
 | Opacity для disabled | `var(--awds-opacity-40)` | css-global (базовая шкала) |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
@@ -58,12 +59,13 @@ description: >
 
 Высота не задаётся явно — она равна `2 × padding + line-height` и совпадает со слотами и без них (на каждом размере иконка равна line-height). Ширина — `100%`; 320px в макете это ширина демо-фрейма, а не свойство компонента.
 
-## Четыре вещи, которые легко сделать неправильно
+## Пять вещей, которые легко сделать неправильно
 
 1. **Padding — на слотах, а не на контейнере.** Так в auto-layout макета: «край → иконка» даёт padding слота, «иконка → текст» — padding поля. Перенесёшь padding на контейнер — при иконке зазор удвоится.
-2. **Типографика — шкала `control`, не `typography`.** Figma даёт `font-size/600 = 16` при `line-height/600 = 20`; у `typography-600` line-height 26. В CSS взят `var(--awds-rectangle-{N}-typography-*)`, который в DS уже маршрутизирован на нужный `control-{M}`.
-3. **Фокус-кольцо у input своё.** Брендовое `primary-core` при 50% прозрачности, а не тёмное `surface-on-highest` как у button / checkbox / radio / switch. Не копируй кольцо из соседнего компонента.
-4. **Фокус гасит hover через `:not(:focus-within)`, а не порядком правил.** `:has()` в hover-селекторе поднимает специфичность выше, чем у `:focus-within`, — без `:not()` наведение на сфокусированное поле подменяло бы брендовую рамку серой.
+2. **Горизонтальный отступ текста — `text-gap`, если с этой стороны нет иконки.** Не тот же `padding`: у голого текста от края до буквы должно быть больше воздуха, чем от иконки до буквы. `text-gap` шире — 18/18/16/14/14/10/8 против `padding` 16/14/10/8/8/4/2. Переключается **по стороне** (`:has(> .input__prefix)` / `:has(> .input__suffix)`), потому что поле с одной иконкой — самый частый случай. Вертикаль всегда `padding`, высота не меняется.
+3. **Типографика — шкала `control`, не `typography`.** Figma даёт `font-size/600 = 16` при `line-height/600 = 20`; у `typography-600` line-height 26. В CSS взят `var(--awds-rectangle-{N}-typography-*)`, который в DS уже маршрутизирован на нужный `control-{M}`.
+4. **Фокус-кольцо у input своё.** Брендовое `primary-core` при 50% прозрачности, а не тёмное `surface-on-highest` как у button / checkbox / radio / switch. Не копируй кольцо из соседнего компонента.
+5. **Фокус гасит hover через `:not(:focus-within)`, а не порядком правил.** `:has()` в hover-селекторе поднимает специфичность выше, чем у `:focus-within`, — без `:not()` наведение на сфокусированное поле подменяло бы брендовую рамку серой.
 
 ## Доступность
 
@@ -137,6 +139,7 @@ ACB зайдёт в Figma по сохранённым ссылкам обоих 
 
 ## Соседние компоненты
 
-- **`Input Combi / *` и `Input Inline / *`** — в Figma это **отдельные компоненты** (поле со сцепленным контролом и инлайн-поле), а не варианты этого. Сюда не входят; когда понадобятся — заводятся своими скиллами.
+- **[awds-component-input-combi](../awds-component-input-combi/SKILL.md)** — то же поле, но подпись живёт **внутри** рамки и уезжает наверх при вводе. Отдельный компонент Figma, а не вариант этого: своя разметка (метка в обёртке `__body`), четыре размера вместо семи и своя ось `combi`-токенов. Палитра общая, поэтому цвета совпадают — но смешивать два способа подписи в одной форме не стоит.
+- **`Input Inline / *`** — в Figma ещё один **отдельный** компонент семейства, а не вариант этого. Сюда не входит; понадобится — заводится своим скиллом.
 - **[awds-component-checkbox](../awds-component-checkbox/SKILL.md)**, **[awds-component-radio](../awds-component-radio/SKILL.md)**, **[awds-component-switch](../awds-component-switch/SKILL.md)** — остальные контролы форм. Они на shape `square` и палитре `check-radio/*`; input — на `rectangle` и `form-control/*`.
 - **[awds-component-button](../awds-component-button/SKILL.md)** — тот же shape `rectangle`, поэтому кнопка рядом с полем одного размера совпадает по высоте и скруглению.

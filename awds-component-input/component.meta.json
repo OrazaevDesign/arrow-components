@@ -78,7 +78,7 @@
     "input-ghost.css",
     "input-secondary.css"
   ],
-  "geometry_note": "Высота НЕ задаётся явно: calc(2 × rectangle-{N}-padding + rectangle-{N}-typography-line-height). На каждом размере icon == line-height, поэтому высота одинакова со слотами и без них. Ширина — 100% (320px в макете это ширина демо-фрейма). Padding живёт на слотах (prefix / поле / suffix), у контейнера его нет.",
+  "geometry_note": "Высота НЕ задаётся явно: calc(2 × rectangle-{N}-padding + rectangle-{N}-typography-line-height). На каждом размере icon == line-height, поэтому высота одинакова со слотами и без них. Ширина — 100% (320px в макете это ширина демо-фрейма). Padding живёт на слотах (prefix / поле / suffix), у контейнера его нет. Горизонтальный отступ текста зависит от наличия иконки рядом: есть иконка → rectangle-{N}-padding (отсчёт от иконки), иконки нет → rectangle-{N}-text-gap (отсчёт от края). text-gap всегда шире (18/18/16/14/14/10/8 против padding 16/14/10/8/8/4/2). В макете это булев проп Padding Icon у компонента Content Input, он переключает ОБА горизонтальных паддинга сразу; в CSS сделано ПО СТОРОНЕ через :has(> .input__prefix) / :has(> .input__suffix), иначе поле с одной иконкой (частый случай — поиск слева) получило бы неверный отступ со второй стороны. Вертикальные паддинги не меняются, высота контрола та же.",
   "typography_note": "Шкала — control, НЕ typography: Figma даёт font-size/600=16 при line-height/600=20, а у typography-600 line-height 26. В CSS берётся семантический var(--awds-rectangle-{N}-typography-*), который в css-global уже ссылается на нужный control-{M}.",
   "focus_ring_note": "Кольцо отличается от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. В CSS — rgb(var(--primary-core) / var(--awds-opacity-50)), offset 0.",
   "icons_note": "В макете слоты заполнены филлером ic20-radio-outline (по две штуки на слот) — это НЕ иконка инпута. Слот принимает любую иконку, одну или несколько; размер — var(--awds-input-icon).",
@@ -234,11 +234,18 @@
     "--awds-opacity-40",
     "--awds-opacity-50",
     "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--awds-font-weight-regular",
+    "--awds-rectangle-50-text-gap",
+    "--awds-rectangle-100-text-gap",
+    "--awds-rectangle-200-text-gap",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-600-text-gap"
   ],
-  "last_synced": "2026-08-13T10:38:11Z",
+  "last_synced": "2026-08-13T12:55:54Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:a93ef089317824d908130641cdfd388f4feaf4f1cfcbda247abfc2c922931c25",
+  "snapshot_hash": "sha256:2d3728206ff334549c8314f62d5cff2df1b2bc0b30c57edd72a3ae18ec229bde",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "aa104e0a3f766b11adcc88169efc35f0d7393e4e",
@@ -297,5 +304,8 @@
       }
     }
   },
-  "variants_note": "Семь вариантов одного компонента (Figma-фреймы Input / *). success / error / autofill — состояния значения, а не виды контрола. Два исключения, сверенные по ячейкам: у ghost hover ничего не меняет (правило намеренно отсутствует), у secondary hover меняет фон вместо рамки и кольцо фокуса тёмное (surface-on-highest без альфы) вместо брендового при 50%. Input Combi / * и Input Inline / * — отдельные компоненты, в этот скилл не входят."
+  "variants_note": "Семь вариантов одного компонента (Figma-фреймы Input / *). success / error / autofill — состояния значения, а не виды контрола. Два исключения, сверенные по ячейкам: у ghost hover ничего не меняет (правило намеренно отсутствует), у secondary hover меняет фон вместо рамки и кольцо фокуса тёмное (surface-on-highest без альфы) вместо брендового при 50%. Input Combi / * и Input Inline / * — отдельные компоненты, в этот скилл не входят.",
+  "verification": {
+    "text_gap": "Прогон в headless chromium по всем комбинациям {без слотов, только prefix, только suffix, оба} × размеры: 26 проверок на три компонента, 0 расхождений. Проверено и то, что вертикальные паддинги и высоты не изменились."
+  }
 }
