@@ -241,8 +241,8 @@
   "snapshot_hash": "sha256:a93ef089317824d908130641cdfd388f4feaf4f1cfcbda247abfc2c922931c25",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "pending",
-    "pushed_at": null,
+    "commit": "aa104e0a3f766b11adcc88169efc35f0d7393e4e",
+    "pushed_at": "2026-08-13T10:42:04Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-default.md",
       "light": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-light.md",
@@ -254,32 +254,46 @@
     },
     "dev_resources_status": {
       "default": {
-        "status": "pending",
-        "node_id": "3:1152"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "3:1152",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-default.md"
       },
       "light": {
-        "status": "pending",
-        "node_id": "322:16305"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "322:16305",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-light.md"
       },
       "success": {
-        "status": "pending",
-        "node_id": "322:27157"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "322:27157",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-success.md"
       },
       "error": {
-        "status": "pending",
-        "node_id": "322:32999"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "322:32999",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-error.md"
       },
       "autofill": {
-        "status": "pending",
-        "node_id": "322:43572"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "322:43572",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-autofill.md"
       },
       "ghost": {
-        "status": "pending",
-        "node_id": "322:38006"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "322:38006",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-ghost.md"
       },
       "secondary": {
-        "status": "pending",
-        "node_id": "322:49551"
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "322:49551",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input/references/input-secondary.md"
       }
     }
   },
