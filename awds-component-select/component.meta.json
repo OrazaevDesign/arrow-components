@@ -263,7 +263,59 @@
   "last_synced": "2026-08-13T12:55:54Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:d705ecbb45f5a925a5eee2871dde50b7e9f24c3932897eef87d714e0ada1a014",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "2e8bd36a99576f7e8d45db80a35c751cb41d2eba",
+    "pushed_at": "2026-08-13T15:22:13Z",
+    "skill_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/SKILL.md",
+    "storybook": "https://orazaevdesign.github.io/arrow-components/",
+    "github_urls": {
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/references/select-default.md",
+      "light": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/references/select-light.md",
+      "success": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/references/select-success.md",
+      "error": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/references/select-error.md",
+      "ghost": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/references/select-ghost.md",
+      "autofill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/references/select-autofill.md"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:15271",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/SKILL.md"
+      },
+      "light": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:15454",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/SKILL.md"
+      },
+      "success": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:15637",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/SKILL.md"
+      },
+      "error": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:15821",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/SKILL.md"
+      },
+      "ghost": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16004",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/SKILL.md"
+      },
+      "autofill": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16187",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select/SKILL.md"
+      }
+    }
+  },
   "variants_note": "Снят только Select / Default. Семейство перечислено (страница «↪ Select»): у Select ШЕСТЬ вариантов — Default (394:15271), Light (394:15454), Success (394:15637), Error (394:15821), Ghost (394:16004), Autofill (394:16187), по 35 ячеек каждый. Secondary тут НЕТ, в отличие от Input и Input Combi, где вариантов семь — это разница семейств, а не пропуск. Отдельно на той же странице лежит семейство Select Combi / * (тоже шесть вариантов, по 20 ячеек = 4 размера × 5 состояний) — выбор с плавающей меткой, ОТДЕЛЬНЫЙ компонент, в этот скилл не входит. Палитра form-control/* общая с input и input-combi.",
   "picker_note": "Проверено в Chromium 150: под appearance: base-select <option> принимает вложенную разметку целиком — работают потомки (__prefix / __content / __title / __description), :has() внутри пункта и :hover. Поэтому метрики и цвета пункта больше не дублируются в CSS селекта.",
   "depends_on": {
