@@ -1,0 +1,272 @@
+{
+  "component": "select",
+  "figma": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "primary_node_id": "394:15271",
+    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15271"
+  },
+  "variants": {
+    "default": {
+      "node_id": "394:15271",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15271",
+      "figma_label": "Select / Default",
+      "token_role": "form-control/default"
+    },
+    "light": {
+      "node_id": "394:15454",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15454",
+      "figma_label": "Select / Light",
+      "token_role": "form-control/light"
+    },
+    "success": {
+      "node_id": "394:15637",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15637",
+      "figma_label": "Select / Success",
+      "token_role": "form-control/success"
+    },
+    "error": {
+      "node_id": "394:15821",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15821",
+      "figma_label": "Select / Error",
+      "token_role": "form-control/error"
+    },
+    "ghost": {
+      "node_id": "394:16004",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16004",
+      "figma_label": "Select / Ghost",
+      "token_role": "form-control/ghost"
+    },
+    "autofill": {
+      "node_id": "394:16187",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16187",
+      "figma_label": "Select / Autofill",
+      "token_role": "form-control/autofill"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "states_note": "Focus реализован через :focus-within, а не :focus-visible: у выпадающего списка «сфокусировано» = активно, и рамка должна загораться и при клике мышью. Active в макете совпадает с Rest, но правило :active нужно — иначе при нажатии осталась бы hover-рамка. Фокус гасит hover и active ЯВНО, через :not(:focus-within): :has() добавляет вес аргумента, hover-селектор весит (0,4,0) против (0,2,0) у :focus-within, и порядок правил не помог бы. Состояния «открыт» в макете нет, поэтому шеврон не поворачивается — хотя технически мог бы: селектор :open в движках с base-select поддержан (проверено). Не добавляем: этого нет в дизайне.",
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color",
+    "placehold",
+    "chevron",
+    "icon-color"
+  ],
+  "css_files": [
+    "select-default.css"
+  ],
+  "implementation_note": "Нативный <select>, а не самодельный дропдаун: клавиатура, поиск по первым буквам, скринридеры, мобильные колёса выбора и работа в форме достаются бесплатно и правильно. РАСКРЫТЫЙ СПИСОК ПРИ ЭТОМ СТИЛИЗОВАН — слоем @supports (appearance: base-select) по компоненту ◆ / Dropdown из макета. Где движок не умеет base-select (пока Safari и Firefox), слой не применяется и остаётся системный попап: контрол тот же, отличается только вид раскрытого списка. Полифилла нет и не нужно. Чего компонент по-прежнему не делает: мультивыбор, поиск внутри списка, произвольная вёрстка пункта (иконка + две строки + бейдж) — для этого нужен кастомный listbox, отдельный компонент.",
+  "chevron_note": "Шеврон — псевдоэлемент ОБЁРТКИ (.select::after), а не элемент разметки: у <select> своих псевдоэлементов нет (заменяемый элемент), а отдельным <span> потребитель мог бы его забыть. Цвет меняется по состоянию (роль chevrone), поэтому mask-image, а не background-image — в data-URI цвет пришлось бы зашить. Форма взята из макета (ic20-chevroneBottom-outline, union-path 10×6 в боксе 20×20), не нарисована заново. pointer-events: none — клик по шеврону проходит в <select> и открывает список; полосу под ним резервирует padding-right самого поля.",
+  "geometry_note": "Высота НЕ задаётся явно: 2 × rectangle-{N}-padding + line-height. Совпадает с awds-component-input того же размера — и padding, и типографика приходят из одних rectangle-токенов. Паддинги живут на слотах (prefix — только слева, suffix — только справа, поле — со всех сторон). Полоса шеврона = 2 × padding + icon: зазор до иконки, иконка, отступ от края — ровно три слагаемых из макета. Горизонтальный отступ текста зависит от наличия иконки рядом: есть иконка → rectangle-{N}-padding (отсчёт от иконки), иконки нет → rectangle-{N}-text-gap (отсчёт от края). text-gap всегда шире (18/18/16/14/14/10/8 против padding 16/14/10/8/8/4/2). В макете это булев проп Padding Icon у компонента Content Input, он переключает ОБА горизонтальных паддинга сразу; в CSS сделано ПО СТОРОНЕ через :has(> .select__prefix) / :has(> .select__suffix), иначе поле с одной иконкой (частый случай — поиск слева) получило бы неверный отступ со второй стороны. Вертикальные паддинги не меняются, высота контрола та же. У селекта СПРАВА всегда padding: там иконка есть всегда — шеврон, полоса под него не меняется. То же правило действует внутри попапа: у пункта списка иконки нет, поэтому его горизонтальный отступ — rectangle-{шаг вниз}-text-gap (14 при rectangle-300), а вертикальный — padding. Сверено и привязкой переменной, и геометрией текста внутри инстанса List-item.",
+  "typography_note": "Шкала control, НЕ typography: Figma даёт font-size/600=16 при line-height/600=20, а у typography-600 line-height 26. В CSS взят семантический var(--awds-rectangle-{N}-typography-*), который в css-global уже маршрутизирован на нужный control-{M}.",
+  "focus_ring_note": "Кольцо как у input и в отличие от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. offset 0.",
+  "slots_note": "prefix / suffix здесь ДЕКОРАТИВНЫЕ (pointer-events: none). У <input> в suffix кладут кнопку «очистить»; у нативного <select> кликабельному элементу внутри контрола взяться неоткуда — нажатие в его области список не откроет. Нужна кнопка рядом с выбором — ставится отдельным элементом за пределами .select. Иконки в макете филлерные (ic20-radio-outline, по две на слот), слот принимает любые.",
+  "known_tradeoff": "Клик по шеврону открывает список ВЕЗДЕ, кроме случая, когда используется slot suffix: тогда полосу шеврона резервирует обёртка (иначе suffix заехал бы под него), шеврон стоит над её паддингом, и попадание уходит в обёртку. Проверено elementFromPoint. Без JS это неустранимо: у нативного <select> нельзя расширить бокс под произвольной ширины суффикс. Практический вывод — в селекте суффикс лучше не использовать.",
+  "verification": {
+    "sizes": "6 вариантов × 7 размеров × 4 свойства = 168 замеров computed px: высота, скругление, полоса шеврона, line-height — совпадение полное",
+    "colors": "Rest всех вариантов сверен с макетом (25/25 hex); в браузере проверены rest/hover/focus/active: у ghost hover равен rest (как в макете), у остальных hover меняет рамку, active везде возвращает рамку к rest, кольцо фокуса есть у всех шести",
+    "picker": "пункт попапа — awds-component-list-item; ступень и выбранный пункт проверены отдельно (см. picker_note)",
+    "measurement_gotcha": "Замер высоты сразу после вставки через innerHTML в живое дерево даёт заниженное значение (32 вместо 52): под appearance: base-select Chromium пересчитывает содержимое кнопки только к следующему кадру. Мерить после requestAnimationFrame либо строить через createElement."
+  },
+  "preview": {
+    "base_class": "select",
+    "variant_class": "select-default",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "default",
+          "light",
+          "success",
+          "error",
+          "ghost",
+          "autofill"
+        ]
+      },
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "slots",
+        "label": "Слоты",
+        "options": [
+          "none",
+          "prefix",
+          "double",
+          "suffix"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "value",
+          "placeholder"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      },
+      {
+        "id": "picker",
+        "label": "Список",
+        "options": [
+          "открыть первый",
+          "закрыт"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Выбор с подписью",
+        "html": "<label for=\"city\">Город</label>\n<span class=\"select select-default select--400\"><select class=\"select__field\" id=\"city\"><option value=\"\">Выберите город</option><option value=\"ala\">Алматы</option></select></span>"
+      },
+      {
+        "label": "С иконкой в prefix",
+        "html": "<span class=\"select select-default select--500\"><span class=\"select__prefix\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\">…</svg></span><select class=\"select__field\" id=\"lang\"><option>Русский</option></select></span>"
+      },
+      {
+        "label": "Выключенный",
+        "html": "<span class=\"select select-default select--400\"><select class=\"select__field\" id=\"pvz\" disabled><option>Нет доступных пунктов</option></select></span>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--secondary-container-core",
+    "--secondary-container-chroma",
+    "--secondary-container-on-low",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--surface-bright",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-container-chroma",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--surface-on",
+    "--primary-container-core",
+    "--primary-container-on-lowest",
+    "--awds-shadow-elevation-3",
+    "--awds-rounded-600",
+    "--awds-dropdown-200-padding",
+    "--awds-dropdown-200-border-radius",
+    "--awds-dropdown-300-padding",
+    "--awds-dropdown-300-border-radius",
+    "--awds-dropdown-400-padding",
+    "--awds-dropdown-400-border-radius",
+    "--awds-dropdown-500-padding",
+    "--awds-dropdown-500-border-radius",
+    "--awds-space-1",
+    "--awds-rectangle-50-padding",
+    "--awds-rectangle-50-icon",
+    "--awds-rectangle-50-rounded",
+    "--awds-rectangle-50-typography-font-size",
+    "--awds-rectangle-50-typography-line-height",
+    "--awds-rectangle-50-typography-letter-spacing",
+    "--awds-rectangle-100-padding",
+    "--awds-rectangle-100-icon",
+    "--awds-rectangle-100-rounded",
+    "--awds-rectangle-100-typography-font-size",
+    "--awds-rectangle-100-typography-line-height",
+    "--awds-rectangle-100-typography-letter-spacing",
+    "--awds-rectangle-200-padding",
+    "--awds-rectangle-200-icon",
+    "--awds-rectangle-200-rounded",
+    "--awds-rectangle-200-typography-font-size",
+    "--awds-rectangle-200-typography-line-height",
+    "--awds-rectangle-200-typography-letter-spacing",
+    "--awds-rectangle-300-padding",
+    "--awds-rectangle-300-icon",
+    "--awds-rectangle-300-rounded",
+    "--awds-rectangle-300-typography-font-size",
+    "--awds-rectangle-300-typography-line-height",
+    "--awds-rectangle-300-typography-letter-spacing",
+    "--awds-rectangle-400-padding",
+    "--awds-rectangle-400-icon",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-400-typography-font-size",
+    "--awds-rectangle-400-typography-line-height",
+    "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-rectangle-500-padding",
+    "--awds-rectangle-500-icon",
+    "--awds-rectangle-500-rounded",
+    "--awds-rectangle-500-typography-font-size",
+    "--awds-rectangle-500-typography-line-height",
+    "--awds-rectangle-500-typography-letter-spacing",
+    "--awds-rectangle-600-padding",
+    "--awds-rectangle-600-icon",
+    "--awds-rectangle-600-rounded",
+    "--awds-rectangle-600-typography-font-size",
+    "--awds-rectangle-600-typography-line-height",
+    "--awds-rectangle-600-typography-letter-spacing",
+    "--awds-opacity-40",
+    "--awds-opacity-50",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-rectangle-50-text-gap",
+    "--awds-rectangle-100-text-gap",
+    "--awds-rectangle-200-text-gap",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-600-text-gap"
+  ],
+  "last_synced": "2026-08-13T12:55:54Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:d705ecbb45f5a925a5eee2871dde50b7e9f24c3932897eef87d714e0ada1a014",
+  "published": null,
+  "variants_note": "Снят только Select / Default. Семейство перечислено (страница «↪ Select»): у Select ШЕСТЬ вариантов — Default (394:15271), Light (394:15454), Success (394:15637), Error (394:15821), Ghost (394:16004), Autofill (394:16187), по 35 ячеек каждый. Secondary тут НЕТ, в отличие от Input и Input Combi, где вариантов семь — это разница семейств, а не пропуск. Отдельно на той же странице лежит семейство Select Combi / * (тоже шесть вариантов, по 20 ячеек = 4 размера × 5 состояний) — выбор с плавающей меткой, ОТДЕЛЬНЫЙ компонент, в этот скилл не входит. Палитра form-control/* общая с input и input-combi.",
+  "picker_note": "Проверено в Chromium 150: под appearance: base-select <option> принимает вложенную разметку целиком — работают потомки (__prefix / __content / __title / __description), :has() внутри пункта и :hover. Поэтому метрики и цвета пункта больше не дублируются в CSS селекта.",
+  "depends_on": {
+    "awds-component-list-item": "Пункт раскрытого списка размечается классами .list-item / .list-item-transparent. Селект задаёт пункту только размерную ступень (на одну ниже своей) через мост .select__field option, а выбранный пункт переключает на роли list/selected-secondary правилом :checked. Потребителю нужно подключить list-item-transparent.css рядом с select-default.css."
+  }
+}

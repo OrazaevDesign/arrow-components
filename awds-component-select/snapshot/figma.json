@@ -1,0 +1,566 @@
+{
+  "_note": "Сырые ответы Figma MCP, как пришли. Оси: Size 50/100/200/300/400/500/600 × State Rest/Hover/Focus/Active/Disabled = 35 ячеек. Снято 11: все пять состояний на размере 600 (оттуда цвета) плюс Rest на каждом из семи размеров (оттуда геометрия и типографика). Разделение намеренное: цвета от размера не зависят, размеры от состояния — тоже. Что цвета не зависят от размера, проверено на соседних компонентах того же семейства form-control (input, input-combi — там сверялись крайние размеры и совпадали побайтово). Отдельно снят компонент ◆ / Dropdown (раскрытый список) — см. секцию dropdown: по нему сделан слой @supports (appearance: base-select).",
+  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+  "file_name": "💠 Comp ↪ ⁵ Forms",
+  "primary_node_id": "394:15271",
+  "metadata": {
+    "394:15271": {
+      "name": "Select / Default",
+      "width": 1760,
+      "height": 452,
+      "cells_sampled": {
+        "Size=600, State=Rest": "394:15277",
+        "Size=600, State=Hover": "394:15297",
+        "Size=600, State=Focus": "394:15398",
+        "Size=600, State=Active": "394:15307",
+        "Size=600, State=Disabled": "394:15287",
+        "Size=500, State=Rest": "394:15272",
+        "Size=400, State=Rest": "394:15312",
+        "Size=300, State=Rest": "394:15332",
+        "Size=200, State=Rest": "394:15337",
+        "Size=100, State=Rest": "394:15342",
+        "Size=50, State=Rest": "394:15347"
+      },
+      "cell_heights": {
+        "600": 52,
+        "500": 48,
+        "400": 40,
+        "300": 36,
+        "200": 32,
+        "100": 24,
+        "50": 20
+      }
+    },
+    "394:15277": {
+      "_name": "Size=600, State=Rest",
+      "children": [
+        {
+          "name": "Prefix Input",
+          "x": 0,
+          "width": 56,
+          "height": 52
+        },
+        {
+          "name": "Content Input",
+          "x": 56,
+          "width": 172,
+          "height": 52
+        },
+        {
+          "name": "Suffix Input",
+          "x": 228,
+          "width": 56,
+          "height": 52
+        },
+        {
+          "name": "◆ / Chevrone",
+          "x": 284,
+          "width": 36,
+          "height": 52
+        }
+      ],
+      "_read": "Четыре слота в ряд. Шеврон — ОТДЕЛЬНЫЙ слот справа, а не иконка внутри suffix."
+    },
+    "394:15398": {
+      "_name": "Size=600, State=Focus",
+      "children": [
+        {
+          "name": "Prefix Input",
+          "x": 0,
+          "width": 56
+        },
+        {
+          "name": "Content Input",
+          "x": 56,
+          "width": 172
+        },
+        {
+          "name": "Suffix Input",
+          "x": 228,
+          "width": 56
+        },
+        {
+          "name": "◆ / Chevrone",
+          "x": 284,
+          "width": 36
+        },
+        {
+          "name": "FocusSelection",
+          "x": 0,
+          "width": 320
+        }
+      ]
+    },
+    "394:15281": {
+      "_name": "◆ / Chevrone (600)",
+      "width": 36,
+      "children": [
+        {
+          "name": "ic20-chevroneBottom-outline",
+          "x": 0,
+          "y": 16,
+          "width": 20,
+          "height": 20
+        }
+      ],
+      "_read": "36 = иконка 20 + padding-right 16. Левого padding у слота нет — зазор до него даёт padding-right соседа (suffix или поля). Иконка вертикально по центру: y=16 при высоте 52 и высоте иконки 20."
+    },
+    "394:15280": {
+      "_name": "Suffix Input (600)",
+      "width": 56,
+      "children": [
+        {
+          "name": "ic20-radio-outline",
+          "x": 0,
+          "y": 16,
+          "width": 20,
+          "height": 20
+        },
+        {
+          "name": "ic20-radio-outline",
+          "x": 20,
+          "y": 16,
+          "width": 20,
+          "height": 20
+        }
+      ],
+      "_read": "56 = две филлер-иконки по 20 вплотную + padding-right 16. Иконки филлерные, не часть компонента."
+    },
+    "394:15279": {
+      "_name": "Content Input (600)",
+      "width": 172,
+      "children": [
+        {
+          "name": "placeholder",
+          "x": 16,
+          "y": 16,
+          "width": 140,
+          "height": 20
+        }
+      ],
+      "_read": "Текст с padding 16 слева. Нода названа placeholder — в ячейках показан то плейсхолдер, то значение."
+    },
+    "chevron_svg": {
+      "_source": "download_assets по ноде 394:15281, формат svg",
+      "_read": "Артворк уже сведён в один union-path (не stroke) — то же, что в остальных иконках MGC. Путь 10×6 внутри бокса 20×20, в экспорте лежит со смещением y=16 (высота слота 52, иконка по центру). Для CSS-маски координаты сдвинуты на −16 по y и завёрнуты в viewBox 0 0 20 20.",
+      "path_in_20x20_box": "M13.2928 7.2968C13.6833 6.9063 14.3163 6.9063 14.7068 7.2968C15.0973 7.6873 15.0973 8.3203 14.7068 8.7109L10.7107 12.707C10.3206 13.0971 9.68829 13.0975 9.29763 12.7079L5.29373 8.7118C4.90292 8.3218 4.90192 7.6887 5.29177 7.2978C5.68182 6.907 6.31491 6.906 6.70584 7.2958L10.0027 10.5868L13.2928 7.2968Z"
+    }
+  },
+  "variable_defs": {
+    "394:15277": {
+      "_cell": "Size=600, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "opacity/control/enabled": "100"
+    },
+    "394:15297": {
+      "_cell": "Size=600, State=Hover",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#808080",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "opacity/control/enabled": "100"
+    },
+    "394:15398": {
+      "_cell": "Size=600, State=Focus",
+      "form-control/default/color": "#19110a",
+      "form-control/default/chevrone": "#bb953b",
+      "form-control/default/bg": "#ffffff",
+      "form-control/default/chroma": "#fffdf6",
+      "form-control/default/border": "#fad046",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "focus-selection/outlineShow": "true",
+      "focus-selection/outlineVariant": "#fad646",
+      "outline/600": "11",
+      "opacity/50": "50",
+      "opacity/control/enabled": "100"
+    },
+    "394:15307": {
+      "_cell": "Size=600, State=Active",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "opacity/control/enabled": "100"
+    },
+    "394:15287": {
+      "_cell": "Size=600, State=Disabled",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/rounded": "10",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "opacity/control/disabled": "40"
+    },
+    "394:15272": {
+      "_cell": "Size=500, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/500/icon": "20",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "font-size/600": "16",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "opacity/control/enabled": "100",
+      "_note": "Единственная ячейка, где подтянут placehold: в ней текст — плейсхолдер, а не значение. Роль для него есть в карте у всех состояний."
+    },
+    "394:15312": {
+      "_cell": "Size=400, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/400/icon": "20",
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "opacity/control/enabled": "100"
+    },
+    "394:15332": {
+      "_cell": "Size=300, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "opacity/control/enabled": "100"
+    },
+    "394:15337": {
+      "_cell": "Size=200, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/200/icon": "16",
+      "rectangle/200/padding": "8",
+      "rectangle/200/rounded": "6",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "opacity/control/enabled": "100"
+    },
+    "394:15342": {
+      "_cell": "Size=100, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/100/icon": "16",
+      "rectangle/100/padding": "4",
+      "rectangle/100/rounded": "6",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "opacity/control/enabled": "100"
+    },
+    "394:15347": {
+      "_cell": "Size=50, State=Rest",
+      "form-control/default/color": "#0f0f0f",
+      "form-control/default/chevrone": "#808080",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "rectangle/50/icon": "16",
+      "rectangle/50/padding": "2",
+      "rectangle/50/rounded": "4",
+      "font-size/200": "12",
+      "line-height/200": "16",
+      "letter-spacing/200": "0.10000000149011612",
+      "opacity/control/enabled": "100"
+    }
+  },
+  "geometry_resolved": {
+    "_formula": "высота = 2 × rectangle-{N}-padding + line-height; полоса шеврона = 2 × padding + icon",
+    "600": {
+      "padding": 16,
+      "icon": 20,
+      "rounded": 10,
+      "fs": 16,
+      "lh": 20,
+      "height": 52,
+      "chevron_strip": 52
+    },
+    "500": {
+      "padding": 14,
+      "icon": 20,
+      "rounded": 8,
+      "fs": 16,
+      "lh": 20,
+      "height": 48,
+      "chevron_strip": 48
+    },
+    "400": {
+      "padding": 10,
+      "icon": 20,
+      "rounded": 8,
+      "fs": 14,
+      "lh": 20,
+      "height": 40,
+      "chevron_strip": 40
+    },
+    "300": {
+      "padding": 8,
+      "icon": 20,
+      "rounded": 6,
+      "fs": 14,
+      "lh": 20,
+      "height": 36,
+      "chevron_strip": 36
+    },
+    "200": {
+      "padding": 8,
+      "icon": 16,
+      "rounded": 6,
+      "fs": 13,
+      "lh": 16,
+      "height": 32,
+      "chevron_strip": 32
+    },
+    "100": {
+      "padding": 4,
+      "icon": 16,
+      "rounded": 6,
+      "fs": 13,
+      "lh": 16,
+      "height": 24,
+      "chevron_strip": 24
+    },
+    "50": {
+      "padding": 2,
+      "icon": 16,
+      "rounded": 4,
+      "fs": 12,
+      "lh": 16,
+      "height": 20,
+      "chevron_strip": 20
+    },
+    "_identical_to_input": "Все семь строк совпадают с awds-component-input — и padding, и icon, и rounded, и типографика приходят из одних rectangle-токенов. Поэтому select и input одного размера в форме стоят ровно."
+  },
+  "relation_to_family": {
+    "shape": "rectangle",
+    "identical": "Размерная шкала (семь), геометрия, палитра form-control/*, фокус-кольцо (primary-core при 50%), паддинги на слотах — как у awds-component-input.",
+    "different": "Добавлен слот шеврона справа со своей ролью form-control/{вариант}/chevrone (rest secondary-container-on-high → focus primary-container-on-high). Контрол построен на нативном <select>, поэтому список рисует ОС и не стилизуется, а слоты prefix/suffix здесь декоративные."
+  },
+  "future_variants": {
+    "_note": "Проверить перед следующим рефрешем: у семейства Select в Figma, по аналогии с Input / *, могут быть фреймы Light / Success / Error / Ghost / Autofill / Secondary. В этот снапшот снят только Default."
+  },
+  "dropdown": {
+    "_note": "Компонент ◆ / Dropdown (394:15171) с той же страницы «↪ Select» — раскрытый список. Снят отдельно, потому что попап у нативного <select> рисуется браузером: под @supports (appearance: base-select) мы его стилизуем по этому макету, без поддержки остаётся системный.",
+    "node": "394:15171",
+    "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15171",
+    "cells": {
+      "600": "394:15172",
+      "500": "394:15184",
+      "400": "394:15196",
+      "300": "394:15208",
+      "200": "394:15220",
+      "100": "394:15234",
+      "50": "394:15252"
+    },
+    "structure": "Панель (frame List) + отдельный инстанс Scrollbar 6px справа. Пункты — List-item / Transparent и List-item / Accent-selected, идут вплотную, без зазора.",
+    "panel": {
+      "bg": "role/surface/bright",
+      "padding": "space/1 = 4 на ВСЕХ семи размерах",
+      "radius": "border-radius/{N}: 600→10, 500→8, 400→8, 300→6, 200→6, 100→6, 50→6",
+      "elevation": "три слоя — 0/6/12/0 #00000014, 0/4/8/−4 #0000000f, 0/0/0/1 #00000008. Совпадает с --awds-shadow-elevation-3: второй и третий слои есть только у неё."
+    },
+    "item_scale": {
+      "_read": "Метрики пункта берутся из rectangle НА ШАГ НИЖЕ размера контрола — и padding/rounded, и типографика. Решающая ячейка — 500: пункт набран 14/20 (rectangle-400-typography), а не 16/20, как у самого контрола 500. У 50 шага вниз нет, поэтому rectangle-50.",
+      "600": {
+        "item_rectangle": "500",
+        "padding": 14,
+        "rounded": 8,
+        "fs": 16,
+        "lh": 20,
+        "height": 48
+      },
+      "500": {
+        "item_rectangle": "400",
+        "padding": 10,
+        "rounded": 8,
+        "fs": 14,
+        "lh": 20,
+        "height": 40
+      },
+      "400": {
+        "item_rectangle": "300",
+        "padding": 8,
+        "rounded": 6,
+        "fs": 14,
+        "lh": 20,
+        "height": 36
+      },
+      "300": {
+        "item_rectangle": "200",
+        "padding": 8,
+        "rounded": 6,
+        "fs": 13,
+        "lh": 16,
+        "height": 32
+      },
+      "200": {
+        "item_rectangle": "100",
+        "padding": 4,
+        "rounded": 6,
+        "fs": 13,
+        "lh": 16,
+        "height": 24
+      },
+      "100": {
+        "item_rectangle": "50",
+        "padding": 2,
+        "rounded": 4,
+        "fs": 12,
+        "lh": 16,
+        "height": 20
+      },
+      "50": {
+        "item_rectangle": "50",
+        "padding": 2,
+        "rounded": 4,
+        "fs": 12,
+        "lh": 16,
+        "height": 20
+      }
+    },
+    "item_colors": {
+      "rest": "list/unselected-transparent → bg transparent, border transparent, color secondary-container-on-highest",
+      "hover": "list/unselected-transparent (hover) → bg и border secondary-container-core",
+      "selected": "list/selected-secondary → bg primary-container-core, border primary-container-on-lowest, color primary-container-on-highest (в Figma #fffae7 / #fff2bc / #19110a)",
+      "_галочки_нет": "Слот Suffix у пункта в этой композиции скрыт, роль icon-check не задействована — выбранный пункт отмечен фоном и рамкой. UA-шный ::checkmark в CSS погашен."
+    },
+    "scrollbar": {
+      "track": "role/surface/transparent",
+      "thumb": "role/surface/on при opacity/40",
+      "radius": "border-radius/full",
+      "width": "6 (ползунок 4)",
+      "_реализация": "scrollbar-width: thin + scrollbar-color на ::picker(select). Ширина у thin своя, пиксель-в-пиксель 6/4 не задаётся — цвет и скруглённость совпадают."
+    }
+  },
+  "text_gap": {
+    "_source": "Компонент Content Input (394:11134) / Content Combi Input (394:11247) на странице «↪ Form Control», булев проп Padding Icon. Снято через use_figma с разрешением имён привязанных переменных.",
+    "Padding Icon=False": "paddingLeft и paddingRight = rectangle/{N}/text-gap; paddingTop/Bottom = rectangle/{N}/padding",
+    "Padding Icon=True": "все четыре = rectangle/{N}/padding",
+    "values": {
+      "600": {
+        "padding": 16,
+        "text-gap": 18
+      },
+      "500": {
+        "padding": 14,
+        "text-gap": 18
+      },
+      "400": {
+        "padding": 10,
+        "text-gap": 16
+      },
+      "300": {
+        "padding": 8,
+        "text-gap": 14
+      },
+      "200": {
+        "padding": 8,
+        "text-gap": 14
+      },
+      "100": {
+        "padding": 4,
+        "text-gap": 10
+      },
+      "50": {
+        "padding": 2,
+        "text-gap": 8
+      }
+    },
+    "_в_css": "Проп переключает обе стороны разом; в CSS раскрыто по стороне через :has() — asymmetric случай (одна иконка) в макете компонентом не выражается, но в вёрстке встречается чаще всего."
+  },
+  "variants_fetched": {
+    "default": {
+      "frame": "394:15271",
+      "role": "form-control/default",
+      "rest_cell_500": "394:15272",
+      "figma_label": "Select / Default"
+    },
+    "light": {
+      "frame": "394:15454",
+      "role": "form-control/light",
+      "rest_cell_500": "394:15455",
+      "figma_label": "Select / Light"
+    },
+    "success": {
+      "frame": "394:15637",
+      "role": "form-control/success",
+      "rest_cell_500": "394:15638",
+      "figma_label": "Select / Success"
+    },
+    "error": {
+      "frame": "394:15821",
+      "role": "form-control/error",
+      "rest_cell_500": "394:15822",
+      "figma_label": "Select / Error"
+    },
+    "ghost": {
+      "frame": "394:16004",
+      "role": "form-control/ghost",
+      "rest_cell_500": "394:16005",
+      "figma_label": "Select / Ghost"
+    },
+    "autofill": {
+      "frame": "394:16187",
+      "role": "form-control/autofill",
+      "rest_cell_500": "394:16188",
+      "figma_label": "Select / Autofill"
+    }
+  },
+  "family": "На странице «↪ Select» шесть Component Set варианта (по 35 ячеек, оси Size × State) плюс ◆ / Dropdown (7), ◆ / Chevrone (7) и отдельное семейство Select Combi (6 наборов по 20 ячеек, 4 размера) — последнее в этот скилл не входит.",
+  "rest_crosscheck": "Rest всех пяти новых вариантов снят из макета и сверён с component-token-map: 25 hex из 25 совпали (bg, chroma, border, color, chevrone). Hover/Focus/Active взяты из карты."
+}
