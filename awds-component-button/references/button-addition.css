@@ -260,3 +260,18 @@
   --awds-btn-border: rgb(var(--addition-core));
   --awds-btn-color:  rgb(var(--addition-on));
 }
+
+
+/* === Уважение к системной настройке «меньше движения» ===
+   prefers-reduced-motion: reduce — системный тумблер пользователя (укачивание,
+   мигрень, вестибулярные расстройства). Гасим ДВИЖЕНИЕ, но не ИНФОРМАЦИЮ:
+   состояние остаётся различимым, меняется мгновенно. Спиннер не останавливаем,
+   а замедляем — остановленный читается как «зависло». */
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+  .btn__progress {
+    animation-duration: 1.4s;
+  }
+}
