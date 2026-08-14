@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="../../awds-component-input/references/input-error.css">
   <link rel="stylesheet" href="../../awds-component-select/references/select-default.css">
   <link rel="stylesheet" href="../../awds-component-textarea/references/textarea-default.css">
+  <!-- Вариант FileUploader: внутрь поля кладётся целый загрузчик со своей кнопкой. -->
+  <link rel="stylesheet" href="../../awds-component-button/references/button-ghost.css">
+  <link rel="stylesheet" href="../../awds-component-uploader/references/uploader.css">
   <link rel="stylesheet" href="./formfield-input.css">
 
   <style>
@@ -76,6 +79,7 @@
         <option value="input">input (как в макете)</option>
         <option value="select">select</option>
         <option value="textarea">textarea</option>
+        <option value="uploader">uploader (загрузка файлов)</option>
       </select>
     </label>
     <label>Состав:
@@ -121,13 +125,41 @@
       input:    { 500: 124, 400: 108, 300: 100 },
       select:   { 500: 124, 400: 108, 300: 100 },
       textarea: { 500: 164, 400: 148, 300: 140 },
+      uploader: { 500: 252, 400: 236, 300: 228 },
     };
+
+    const IC_UPLOAD = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13V3.5M10 3.5 6.5 7M10 3.5 13.5 7M3.5 13.5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2"/></svg>';
+    const IC_PAGE = '<svg viewBox="0 0 20 20" fill="currentColor"><path d="M5.5 2h5l4 4v11a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" opacity=".9"/></svg>';
+    const IC_CLOSE = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l8 8M14 6l-8 8"/></svg>';
+    const PROGRESS = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="8" opacity=".25"/><path d="M10 2a8 8 0 0 1 8 8" stroke-linecap="round"/></svg>';
+
+    // Строка файла — разметка 1-в-1 из awds-component-uploader, включая btn--icon-only:
+    // без этого класса кнопка выходит 48×36 и ломает строку.
+    function uploaderFile(i) {
+      return '<li class="upl__file">' +
+        (i === 0
+          ? '<span class="upl__preview"><img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'72\' height=\'72\'%3E%3Crect width=\'72\' height=\'72\' fill=\'%23c0392b\'/%3E%3C/svg%3E" alt=""></span>'
+          : `<span class="upl__icon">${IC_PAGE}</span>`) +
+        '<span class="upl__content"><span class="upl__name">договор-оферта.pdf</span><span class="upl__size">324 kb</span></span>' +
+        `<span class="upl__progress">${PROGRESS}</span>` +
+        `<button type="button" class="btn btn-ghost btn--300 btn--icon-only upl__remove" aria-label="Удалить файл">${IC_CLOSE}</button>` +
+        '</li>';
+    }
 
     let seq = 0;
     function control(kind, id, opts = {}) {
       const dis = opts.disabled ? ' disabled' : '';
       const descr = opts.describedby ? ` aria-describedby="${opts.describedby}"` : '';
       const invalid = opts.invalid ? ' aria-invalid="true"' : '';
+      if (kind === 'uploader') {
+        return '<div class="upl">' +
+          `<label class="upl__label"><input class="upl__input" type="file" id="${id}" multiple${dis}${descr}>` +
+          '<span class="input input-default">' +
+          '<input class="input__field" type="text" placeholder="Выберите файл" readonly tabindex="-1">' +
+          `<span class="input__suffix" aria-hidden="true">${IC_UPLOAD}</span></span></label>` +
+          `<ul class="upl__list">${uploaderFile(0)}${uploaderFile(1)}${uploaderFile(2)}</ul>` +
+          '</div>';
+      }
       if (kind === 'select') {
         return `<span class="select select-default"><select class="select__field" id="${id}"${dis}${descr}>` +
                '<option>Алматы</option><option>Астана</option></select></span>';
