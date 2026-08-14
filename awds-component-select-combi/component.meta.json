@@ -1,0 +1,237 @@
+{
+  "component": "select-combi",
+  "figma": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "primary_node_id": "394:16370",
+    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16370"
+  },
+  "variants": {
+    "default": {
+      "node_id": "394:16370",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16370",
+      "figma_label": "Select Combi / Default (Size × State)",
+      "token_role": "form-control/default"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    300,
+    400,
+    500,
+    600
+  ],
+  "size_scale_note": "Четыре размера, а не семь как у awds-component-select. Ровно та же граница, что у input-combi: у 50/100/200 combi-токены в css-global стоят в space-0 — метке некуда уезжать на высоте 32/24/20 px. Ниже 300 компонент не масштабируется, там нужен обычный select с подписью снаружи.",
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "states_note": "Focus через :focus-within, а не :focus-visible: у выпадающего списка «сфокусировано» = активно, рамка должна загораться и при клике мышью. Active в макете совпадает с Rest, но правило нужно — иначе при нажатии осталась бы hover-рамка. Фокус гасит hover и active ЯВНО, через :not(:focus-within): :has() добавляет вес аргумента, hover-селектор весит (0,5,0) против (0,2,0) у :focus-within, порядок правил не помог бы. Открытый попап — отдельное правило в своём @supports: под base-select activeElement уходит в <option> и :focus-within на обёртке ложен.",
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color",
+    "placehold",
+    "chevron",
+    "icon-color"
+  ],
+  "css_files": [
+    "select-combi-default.css"
+  ],
+  "base_class_note": "Базовый класс .scombi, а не .select-combi. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = select-combi они стали бы --awds-select-combi-* — префиксом это чужой --awds-select-*, sanity-check публикации ложно блокирует. Тот же приём, что у input-combi → .icombi и button-overhung → .obtn.",
+  "geometry_note": "Высота не задаётся явно и совпадает с обычным select того же размера: input-top + line-height + input-bottom = 2×padding + line-height. Проверено на всех четырёх размерах: input-top = padding + Δ, input-bottom = label-top = padding − Δ, где Δ = 8 у 500/600 и 6 у 300/400. Все три числа берутся из css-global: --awds-rectangle-{N}-combi-{label-top , input-top , input-bottom}. ВЫСОТУ ДЕРЖИТ .scombi__body через min-block-size, а не поле: у пустого варианта (option[value=\"\"] без текста) content-box у <select> нулевой, и контрол схлопывался до 32/28/20/16 — замерено. Ставить min-block-size на само поле нельзя: тогда строка значения уехала бы к центру раздутого бокса. Плюс align-self: stretch на теле — иначе оно центрируется по короткому полю и метка в покое встаёт ниже на половину разницы (26 вместо 16 у 600). Полоса шеврона = 2 × padding + icon, как у select. Паддинг слотов вертикально симметричный (padding), в отличие от поля. Горизонталь текста: есть иконка рядом → rectangle-{N}-padding, нет → rectangle-{N}-text-gap; справа всегда padding, потому что шеврон стоит всегда. Метка едет вместе с текстом — её left/right переключаются тем же правилом.",
+  "float_note": "КОГДА МЕТКА УЕЗЖАЕТ — выведенное поведение, в макете его нет: все 20 ячеек нарисованы с уже уехавшей меткой. Правило: уехала, пока выбран непустой вариант; вернулась по центру при выбранном option[value=\"\"]. Фокус метку НЕ двигает — отличие от input-combi, где фокус = начало ввода и строку надо освободить немедленно. Здесь вводить нечего, а подпрыгивающая на клике метка была бы движением без причины. Побочный выигрыш: правило не зависит от :focus-within и :open, то есть не ломается там, где base-select не поддержан. Реализация — соседний комбинатор .scombi__field:has(option[value=\"\"]:checked) + .scombi__label; :has внутри :has запрещён спекой, поэтому условие висит на поле, а не на обёртке.",
+  "typography_note": "Значение — семантический var(--awds-rectangle-{N}-typography-*) (шкала control: Figma даёт font-size/600=16 при line-height/600=20, у typography-600 line-height 26). Типографика УЕХАВШЕЙ МЕТКИ — единственное место без shape-токена, маппинг ручной по значению: 500/600 → control-200 (12/16/0.1%), 300/400 → control-100 (11/16/0.2%). Совпадают все три свойства, поэтому шкала control (фикс), а не typography.",
+  "focus_ring_note": "Кольцо как у select, input и input-combi и в отличие от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, ширина 2, offset 1 — снято с геометрии макета (слой outline на 1 наружу от контрола, обводка 2 OUTSIDE).",
+  "markup_note": "Пустой <option value=\"\"> обязателен и должен быть БЕЗ ТЕКСТА: на нём держится состояние «ничего не выбрано» (возврат метки на центр), а роль подписи играет сама метка — текст в пустом пункте наложился бы на неё. В раскрытом списке этот пункт скрыт (display: none в слое base-select), чтобы не висел пустой строкой. Порядок в DOM — поле, потом <label>: соседний комбинатор + смотрит только вперёд. Метке нужен for + полю id: pointer-events: none гасит клики, но не связь. Если пустого варианта нет вовсе (значение выбрано всегда) — метка просто стоит наверху с самого начала, отдельной разметки не нужно.",
+  "slots_note": "prefix / suffix ДЕКОРАТИВНЫЕ (pointer-events: none): у нативного <select> кликабельному элементу внутри контрола взяться неоткуда. Иконки в макете филлерные (ic20-radio-outline, по две на слот), слот принимает любые.",
+  "known_tradeoff": "Клик по шеврону открывает список ВЕЗДЕ, кроме случая со слотом suffix: тогда полосу шеврона резервирует обёртка, шеврон стоит над её паддингом, и попадание уходит в обёртку. Наследуется от awds-component-select, без JS неустранимо. Практический вывод — суффикс в селекте лучше не использовать.",
+  "verification": {
+    "method": "headless chromium (chrome-devtools MCP), getComputedStyle + getBoundingClientRect",
+    "cells": "48 экземпляров = 4 размера × 4 раскладки слотов (нет / prefix / suffix / оба) × {пусто, выбрано, disabled}; 624 замера",
+    "result": "0 расхождений. Высота 52/48/40/36 (одинаково в пустом и заполненном), radius 10/8/8/6, паддинги поля 24/8, 22/6, 16/4, 14/2, горизонталь по стороне (text-gap 18/18/16/14 без слота, padding 16/14/10/8 со слотом), полоса шеврона 52/48/40/36, метка в покое top = padding в кегле значения, уехавшая top 8/6/4/2 в кегле 12/12/11/11 при line-height 16",
+    "interaction": "живой hover: рамка уходит в rgb(115,120,130) (secondary-container-on), фон не двигается — как в макете. Настоящий фокус: фон → белый + тёплый chroma, рамка rgb(250,223,66), кольцо rgba(250,216,20,.5) 2px offset 1, текст и метка в focus-роли; blur возвращает rest. Значения аккумуляторов мерились с задержкой 400 мс: они зарегистрированы через @property и анимируются, чтение на первом кадре отдаёт ещё старый цвет.",
+    "picker": "showPicker() в Chromium: обёртка получает focus-роли и кольцо (правило :open работает), панель по ширине контрола (312 = 320 − 2×4 padding), зазор 4, пустой пункт скрыт (display: none), пункт — list-item ступенью ниже (при контроле 500 высота 40, заголовок 14/20, радиус 8, отступ текста 16 = text-gap), UA-галочка погашена",
+    "palette": "Роли не выводились заново: хексы Figma (rest #f7f7f7 / #c7c7c7, hover #808080, focus #fad046 + кольцо #fad646 при 50%) совпадают со снапшотом awds-component-select — палитра form-control/default общая у select, input и input-combi."
+  },
+  "preview": {
+    "base_class": "scombi",
+    "variant_class": "scombi-default",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "slots",
+        "label": "Слоты",
+        "options": [
+          "none",
+          "prefix",
+          "double",
+          "suffix"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "value",
+          "placeholder"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Выбор с плавающей меткой",
+        "html": "<span class=\"scombi scombi-default scombi--400\"><span class=\"scombi__body\"><select class=\"scombi__field\" id=\"city\"><option value=\"\"></option><option value=\"ala\">Алматы</option></select><label class=\"scombi__label\" for=\"city\">Город доставки</label></span></span>"
+      },
+      {
+        "label": "С иконкой в prefix",
+        "html": "<span class=\"scombi scombi-default scombi--500\"><span class=\"scombi__prefix\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\">…</svg></span><span class=\"scombi__body\"><select class=\"scombi__field\" id=\"pay\"><option value=\"card\" selected>Картой онлайн</option></select><label class=\"scombi__label\" for=\"pay\">Способ оплаты</label></span></span>"
+      },
+      {
+        "label": "Пункты как list-item (стилизованный попап)",
+        "html": "<span class=\"scombi scombi-default scombi--500\"><span class=\"scombi__body\"><select class=\"scombi__field\" id=\"pvz\"><option value=\"\" class=\"list-item list-item-transparent\"></option><option value=\"p1\" class=\"list-item list-item-transparent\"><span class=\"list-item__content\"><span class=\"list-item__title\">Абая, 150</span><span class=\"list-item__description\">Пн–Вс, 10:00–22:00</span></span></option></select><label class=\"scombi__label\" for=\"pvz\">Пункт выдачи</label></span></span>"
+      },
+      {
+        "label": "Выключенное",
+        "html": "<span class=\"scombi scombi-default scombi--400\"><span class=\"scombi__body\"><select class=\"scombi__field\" id=\"pvz2\" disabled><option value=\"\"></option></select><label class=\"scombi__label\" for=\"pvz2\">Пункт выдачи</label></span></span>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--secondary-container-core",
+    "--secondary-container-chroma",
+    "--secondary-container-on-low",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--surface-bright",
+    "--surface-on",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-container-core",
+    "--primary-container-chroma",
+    "--primary-container-on",
+    "--primary-container-on-lowest",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--awds-shadow-elevation-3",
+    "--awds-rounded-600",
+    "--awds-space-1",
+    "--awds-dropdown-300-padding",
+    "--awds-dropdown-300-border-radius",
+    "--awds-dropdown-400-padding",
+    "--awds-dropdown-400-border-radius",
+    "--awds-dropdown-500-padding",
+    "--awds-dropdown-500-border-radius",
+    "--awds-rectangle-200-padding",
+    "--awds-rectangle-200-icon",
+    "--awds-rectangle-200-rounded",
+    "--awds-rectangle-200-text-gap",
+    "--awds-rectangle-200-typography-font-size",
+    "--awds-rectangle-200-typography-line-height",
+    "--awds-rectangle-200-typography-letter-spacing",
+    "--awds-rectangle-200-description-font-size",
+    "--awds-rectangle-200-description-line-height",
+    "--awds-rectangle-200-description-letter-spacing",
+    "--awds-rectangle-300-padding",
+    "--awds-rectangle-300-icon",
+    "--awds-rectangle-300-rounded",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-300-typography-font-size",
+    "--awds-rectangle-300-typography-line-height",
+    "--awds-rectangle-300-typography-letter-spacing",
+    "--awds-rectangle-300-description-font-size",
+    "--awds-rectangle-300-description-line-height",
+    "--awds-rectangle-300-description-letter-spacing",
+    "--awds-rectangle-300-combi-label-top",
+    "--awds-rectangle-300-combi-input-top",
+    "--awds-rectangle-300-combi-input-bottom",
+    "--awds-rectangle-400-padding",
+    "--awds-rectangle-400-icon",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-400-typography-font-size",
+    "--awds-rectangle-400-typography-line-height",
+    "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-rectangle-400-description-font-size",
+    "--awds-rectangle-400-description-line-height",
+    "--awds-rectangle-400-description-letter-spacing",
+    "--awds-rectangle-400-combi-label-top",
+    "--awds-rectangle-400-combi-input-top",
+    "--awds-rectangle-400-combi-input-bottom",
+    "--awds-rectangle-500-padding",
+    "--awds-rectangle-500-icon",
+    "--awds-rectangle-500-rounded",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-500-typography-font-size",
+    "--awds-rectangle-500-typography-line-height",
+    "--awds-rectangle-500-typography-letter-spacing",
+    "--awds-rectangle-500-description-font-size",
+    "--awds-rectangle-500-description-line-height",
+    "--awds-rectangle-500-description-letter-spacing",
+    "--awds-rectangle-500-combi-label-top",
+    "--awds-rectangle-500-combi-input-top",
+    "--awds-rectangle-500-combi-input-bottom",
+    "--awds-rectangle-600-padding",
+    "--awds-rectangle-600-icon",
+    "--awds-rectangle-600-rounded",
+    "--awds-rectangle-600-text-gap",
+    "--awds-rectangle-600-typography-font-size",
+    "--awds-rectangle-600-typography-line-height",
+    "--awds-rectangle-600-typography-letter-spacing",
+    "--awds-rectangle-600-combi-label-top",
+    "--awds-rectangle-600-combi-input-top",
+    "--awds-rectangle-600-combi-input-bottom",
+    "--awds-control-100-font-size",
+    "--awds-control-100-line-height",
+    "--awds-control-100-letter-spacing",
+    "--awds-control-200-font-size",
+    "--awds-control-200-line-height",
+    "--awds-control-200-letter-spacing",
+    "--awds-opacity-40",
+    "--awds-opacity-50",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular"
+  ],
+  "depends_on": {
+    "awds-component-list-item": "Пункт раскрытого списка размечается классами .list-item / .list-item-transparent. Селект задаёт пункту только размерную ступень (на одну ниже своей) через мост .scombi__field option, а выбранный пункт переключает на роли list/selected-secondary правилом :checked. Потребителю нужно подключить list-item-transparent.css рядом с select-combi-default.css."
+  },
+  "variants_note": "Снят только Select Combi / Default по прямому запросу. Семейство на той же странице макета — шесть вариантов (Default / Light / Success / Error / Ghost / Autofill), по 20 ячеек каждый; Secondary тут нет, как и у обычного select. Палитра form-control/* общая с awds-component-select и awds-component-input-combi (сверено по хексам), поэтому остальные пять размножаются из этого файла подменой ролей — Figma заново обходить не придётся.",
+  "last_synced": "2026-08-14T10:39:24Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:e4c6769a9ca2698f3b61f40f52e7dd5f8664579f0a849777d6cc2391030d2086"
+}
