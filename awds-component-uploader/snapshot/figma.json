@@ -1,0 +1,112 @@
+{
+  "_note": "Сырые ответы Figma MCP, как пришли. Два связанных сета: Uploader (395:77614, ось Size 300/400/500 = 3 ячейки) и Uploader / File (395:77633, оси Var IMG/Default × Error Off/On = 4 ячейки). Строка файла реализована в этом же скилле: она существует только внутри загрузчика. Снято: get_metadata по всем трём ячейкам Uploader (состав, высоты, зазоры), variable_defs по всем трём, get_metadata по всем ячейкам Uploader / File плюс get_design_context по Var=IMG/Error=Off и Var=Default/Error=On (структура строки и цвет ошибки), get_metadata по слоту Suffix Input внутри поля (там иконка ic20-upload-outline).",
+  "metadata": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "node_id": "395:77614",
+    "name": "Uploader",
+    "frame": { "width": 410, "height": 628 },
+    "cells": {
+      "Size=500": "395:77615",
+      "Size=400": "395:77621",
+      "Size=300": "395:77627"
+    },
+    "file_set": {
+      "node_id": "395:77633",
+      "name": "Uploader / File",
+      "cells": {
+        "Var=IMG, Error=Off": "395:77634",
+        "Var=Default, Error=Off": "395:77642",
+        "Var=IMG, Error=On": "395:77650",
+        "Var=Default, Error=On": "395:77657"
+      }
+    },
+    "composition": {
+      "395:77615": ["Input / Default — y 0, h 48", "list — y 56, h 120 (3 × Uploader / File по 36 с зазором 6)"],
+      "395:77621": ["Input / Default — y 0, h 40", "list — y 48, h 120"],
+      "395:77627": ["Input / Default — y 0, h 36", "list — y 44, h 120"]
+    },
+    "geometry_notes": [
+      "РАЗМЕР МЕНЯЕТ ТОЛЬКО ПОЛЕ. Список файлов на всех трёх размерах одинаков: 176 = 48 + 8 + 120, 168 = 40 + 8 + 120, 164 = 36 + 8 + 120.",
+      "Зазор поле → список = space/2 (8); между файлами = 6; внутри строки файла = 6 (в defs это ключ «1,5»).",
+      "Строка файла всегда 36 высотой, у самой строки оси Size нет.",
+      "Состав строки: превью 36×36 (Var=IMG) или бокс 36×36 с иконкой ic24-page-solid 20×20 (Var=Default) → content (имя 13/16, вес 12/16) → ProgressIndicators 20×20 → Button 36×36. Позиции у Var=Default: icon 0, content 42, progress 135, button 161 при ширине 197 — то есть зазоры ровно по 6.",
+      "Бокс 36 = rectangle/300/icon (20) + 2 × rectangle/300/padding (8). Так же собран бокс кнопки удаления: в макете это Button с Type=Icon, Var=Ghost, Size=300.",
+      "Поле — обычный Input / Default со слотом Suffix, в котором иконка ic20-upload-outline; Prefix скрыт.",
+      "Error=On: цвет role/error/core стоит на КОНТЕЙНЕРЕ content, поэтому краснеют обе строки — и имя, и вес."
+    ]
+  },
+  "variable_defs": {
+    "395:77615 (Uploader, Size=500)": {
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "form-control/default/color": "#0f0f0f",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "role/surface/on-highest": "#080808",
+      "role/surface/on-high": "#646464",
+      "role/surface/on": "#8e8e8e",
+      "role/error/core": "#b4352f",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/200": "12",
+      "line-height/200": "16",
+      "letter-spacing/200": "0.10000000149011612",
+      "button/ghost/bg": "#ffffff00",
+      "button/ghost/chroma": "#ffffff00",
+      "button/ghost/border": "#ffffff00",
+      "button/ghost/color": "#646464",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "4",
+      "border-radius/400": "6",
+      "space/1,5": "6",
+      "space/2": "8",
+      "1,5": "6",
+      "opacity/control/enabled": "100"
+    },
+    "395:77621 (Uploader, Size=400)": {
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "_note": "остальные ключи совпадают с Size=500: палитра, типографика строки файла и токены кнопки от размера загрузчика не зависят"
+    },
+    "395:77627 (Uploader, Size=300)": {
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6",
+      "line-height/400": "20",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "_note": "остальные ключи совпадают с Size=500"
+    },
+    "395:77657 (Uploader / File, Var=Default, Error=On)": {
+      "role/error/core": "#b4352f",
+      "role/surface/on": "#8e8e8e",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/200": "12",
+      "line-height/200": "16",
+      "letter-spacing/200": "0.10000000149011612",
+      "button/ghost/bg": "#ffffff00",
+      "button/ghost/chroma": "#ffffff00",
+      "button/ghost/border": "#ffffff00",
+      "button/ghost/color": "#646464",
+      "rectangle/300/icon": "20",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "4",
+      "border-radius/400": "6",
+      "1,5": "6",
+      "opacity/control/enabled": "100",
+      "_note": "В Error=Off на этих местах стоят role/surface/on-highest (имя) и role/surface/on-high (вес); в Error=On обе строки берут role/error/core."
+    }
+  }
+}

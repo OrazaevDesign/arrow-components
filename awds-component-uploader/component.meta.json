@@ -1,0 +1,161 @@
+{
+  "component": "uploader",
+  "figma": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "primary_node_id": "395:77614",
+    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77614"
+  },
+  "variants": {
+    "default": {
+      "node_id": "395:77614",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77614",
+      "figma_label": "Uploader (Size)",
+      "token_role": "role/surface/on-highest + on-high + error/core"
+    },
+    "file": {
+      "node_id": "395:77633",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77633",
+      "figma_label": "Uploader / File (Var × Error)",
+      "token_role": "role/surface/on-highest + on-high + error/core",
+      "css": "uploader.css",
+      "css_note": "Отдельного скилла строке файла не нужно: она существует только внутри загрузчика и реализована здесь же, классами .upl__file и соседними. Оси Var (IMG / Default) и Error (Off / On) выражены составом разметки и модификатором .upl__file--error."
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    300,
+    400,
+    500
+  ],
+  "size_scale_note": "Размер задаёт ТОЛЬКО поле выбора. Список файлов на всех трёх ступенях одинаков — строка файла всегда 36 px и набрана одинаково; в макете это видно по высотам ячеек: 176 = 48 + 8 + 120, 168 = 40 + 8 + 120, 164 = 36 + 8 + 120.",
+  "states": [
+    "rest",
+    "error"
+  ],
+  "states_note": "Оси State у загрузчика нет: состояния принадлежат вложенному полю и кнопке. У строки файла есть ось Error (Off / On) — в макете цвет ошибки стоит на контейнере content, поэтому краснеют ОБЕ строки, имя и вес. Модификатор вешается на строку, а не на весь загрузчик: ошибка относится к конкретному файлу.",
+  "color_tokens": [
+    "name",
+    "size",
+    "error"
+  ],
+  "css_files": [
+    "uploader.css"
+  ],
+  "base_class_note": "Базовый класс .upl. Имя .uploader заняло бы слишком общее пространство имён у потребителя, а --awds-uploader-* — длинный префикс в каждой переменной. Тот же приём, что у label → .lbl, textarea → .txa, formfield → .fld.",
+  "geometry_note": "Сверено по трём ячейкам загрузчика и четырём ячейкам строки файла. Зазоры: поле → список 8 (space-2), между файлами 6 (space-1-5), внутри строки 6. Бокс превью и бокс иконки типа файла — 36×36; бокс кнопки удаления тоже 36. ВСЕ ТРИ ВЫРАЖЕНЫ ЧЕРЕЗ rectangle-300 (icon 20 + 2 × padding 8), а не через space-9: превью обязано совпадать с боксом кнопки в той же строке, а кнопка — это .btn--300 из awds-component-button, собранная именно по этой формуле. Через общую формулу они останутся равными, даже если шкала поедет. Имя файла 13/16 (control-300), вес 12/16 (control-200) — одинаково на всех размерах.",
+  "composition_note": "Компонент НЕ рисует три вещи и это осознанно: (1) поле — awds-component-input любого варианта, приходит готовым, ступень ему раздаёт мост .upl--{N} .input; (2) кнопку удаления — awds-component-button, вариант ghost, размер 300, ОБЯЗАТЕЛЬНО с классом .btn--icon-only (без него кнопка выходит 48×36 вместо 36×36 — проверено замером); (3) круговой индикатор загрузки — в макете это внешний компонент ProgressIndicators (M3 circular) из отдельного файла Figma, в arrow-components его нет, поэтому здесь только слот с фиксированным боксом 20×20, чтобы строка не прыгала при появлении и исчезновении индикатора.",
+  "markup_note": "Нативный <input type=\"file\"> прячется визуально (clip-path, а НЕ display: none и не visibility: hidden — иначе он выпадет из таба), а видимую роль играет обёртка <label> с обычным .input внутри: UA-кнопку «Выберите файл» к виду макета привести нельзя. Фокус спрятанного инпута отражается на видимом поле отдельным правилом .upl__input:focus-visible + .input, иначе при табуляции подсветки не было бы вовсе. Список — настоящий <ul> с <li>: скринридер объявит число загруженных файлов.",
+  "verification": {
+    "method": "headless chromium (chrome-devtools MCP), getComputedStyle + getBoundingClientRect",
+    "cells": "3 загрузчика × 3 строки файла (превью / иконка / ошибка); 114 замеров",
+    "result": "0 расхождений. Полные высоты 176/168/164 — совпадают с ячейками макета; поле 48/40/36; список 120 на всех размерах; зазоры 8 и 6; строка файла 36; бокс превью и иконки 36×36; индикатор 20×20; кнопка удаления 36×36; имя 13/16 с обрезкой ellipsis, вес 12/16 с tabular-nums; при Error=On имя и вес красятся в error-core, остальные строки не затронуты.",
+    "fixed_defects": "Два дефекта, найденных проверками и исправленных: (1) кнопка удаления вышла 48×36 вместо 36×36 — в тестовой разметке стоял .btn btn-ghost btn--300 без .btn--icon-only; тот же класс ошибок, что с radio__dot у label, разметку вложенных компонентов нужно брать из их скиллов, а не по памяти. (2) Размерные переменные были объявлены ТОЛЬКО на .upl, из-за чего список файлов вне загрузчика разваливался (строка 300 px вместо 36, бокс превью не ограничен). Это не косметика, а дефект API: список уже загруженных файлов резонно показывать там, где поля выбора нет вовсе — в карточке заказа, в просмотре заявки. Переменные объявлены на .upl, .upl__list и .upl__file, значения одинаковые, вложенное переопределение безвредно.",
+    "autonomy": "Отдельно проверено, что <ul class=\"upl__list\"> с файлами работает БЕЗ обёртки .upl: 4 автономные строки дали 36 px высоты, бокс превью 36, зазор списка 6.",
+    "overflow": "Отдельно проверено, что длинное имя файла не выталкивает кнопку удаления за правый край строки: имя обрезается многоточием, кнопка остаётся внутри бокса на всех трёх размерах."
+  },
+  "preview": {
+    "base_class": "upl",
+    "variant_class": "upl",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "error"
+    ],
+    "matrix_sizes": [
+      500,
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "state",
+        "label": "Список",
+        "options": [
+          "загружается",
+          "загружено",
+          "пустой"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Загрузчик с файлами",
+        "html": "<div class=\"upl upl--400\"><label class=\"upl__label\"><input class=\"upl__input\" type=\"file\" multiple><span class=\"input input-default\"><input class=\"input__field\" type=\"text\" placeholder=\"Выберите файл\" readonly tabindex=\"-1\"><span class=\"input__suffix\" aria-hidden=\"true\">…</span></span></label><ul class=\"upl__list\"><li class=\"upl__file\">…</li></ul></div>"
+      },
+      {
+        "label": "Строка файла с превью",
+        "html": "<li class=\"upl__file\"><span class=\"upl__preview\"><img src=\"…\" alt=\"\"></span><span class=\"upl__content\"><span class=\"upl__name\">wp.png</span><span class=\"upl__size\">324 kb</span></span><span class=\"upl__progress\">…</span><button type=\"button\" class=\"btn btn-ghost btn--300 btn--icon-only upl__remove\" aria-label=\"Удалить wp.png\">…</button></li>"
+      },
+      {
+        "label": "Файл с ошибкой",
+        "html": "<li class=\"upl__file upl__file--error\"><span class=\"upl__icon\">…</span><span class=\"upl__content\"><span class=\"upl__name\">contract.pdf</span><span class=\"upl__size\">12 Мб — больше допустимых 10</span></span><button type=\"button\" class=\"btn btn-ghost btn--300 btn--icon-only upl__remove\" aria-label=\"Удалить contract.pdf\">…</button></li>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--surface-on-highest",
+    "--surface-on-high",
+    "--error-core",
+    "--primary-core",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-5",
+    "--awds-rectangle-300-icon",
+    "--awds-rectangle-300-padding",
+    "--awds-rectangle-300-rounded",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-300-typography-font-size",
+    "--awds-rectangle-300-typography-line-height",
+    "--awds-rectangle-300-typography-letter-spacing",
+    "--awds-rectangle-400-padding",
+    "--awds-rectangle-400-icon",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-400-typography-font-size",
+    "--awds-rectangle-400-typography-line-height",
+    "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-rectangle-500-padding",
+    "--awds-rectangle-500-icon",
+    "--awds-rectangle-500-rounded",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-500-typography-font-size",
+    "--awds-rectangle-500-typography-line-height",
+    "--awds-rectangle-500-typography-letter-spacing",
+    "--awds-control-200-font-size",
+    "--awds-control-200-line-height",
+    "--awds-control-200-letter-spacing",
+    "--awds-control-300-font-size",
+    "--awds-control-300-line-height",
+    "--awds-control-300-letter-spacing",
+    "--awds-opacity-50",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular"
+  ],
+  "depends_on": {
+    "awds-component-input": "Поле выбора — .input любого варианта; ступень задаёт мост .upl--{N} .input. Иконка загрузки кладётся в слот .input__suffix.",
+    "awds-component-button": "Кнопка удаления файла — .btn.btn-ghost.btn--300.btn--icon-only. Класс icon-only обязателен: без него бокс 48×36 вместо 36×36.",
+    "ProgressIndicators": "Круговой индикатор загрузки — внешний компонент DS (M3 circular) из отдельного файла Figma, в arrow-components не реализован. Здесь только слот 20×20."
+  },
+  "variants_note": "У загрузчика один вариант: осей палитры нет. Рядом на странице «↪ Form Filed» лежит Formfiled / FileUploader (395:77542) — это тот же загрузчик, обёрнутый в поле формы с подписью и пояснением; отдельного CSS ему не потребуется, только композиция awds-component-formfield + этот компонент. Он пока не собран.",
+  "last_synced": "2026-08-14T13:58:00Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:6151c3141b9219a91611b182eac4d6fb6647779bb8ebf000e1296f2967da0234"
+}
