@@ -168,5 +168,37 @@
   "variants_note": "Снят Formfiled / Input; Formfiled / Select (395:77510) и Formfiled / Textarea (395:77526) сверены по высотам ячеек и закрыты тем же CSS через мост — отдельные файлы им не нужны, разница только во вложенном компоненте. Осей палитры у formfield нет: цвет несут контрол и подпись. На той же странице «↪ Form Filed» лежат ещё НЕ реализованные вещи, каждая из которых — отдельный компонент, а не вариант этого: Formfiled / FileUploader (395:77542) и Uploader / Uploader / File (395:77614, 395:77633) — загрузка файлов; Formfiled Combi / Input · Select · Textarea (395:77558, 395:77571, 395:77584) — те же поля, но с плавающей меткой вместо внешней подписи; Formfiled / Square (395:77597); Datepiker (395:77671) и DatepikerRange (395:77760). Отдельно стоят компонент-сеты ◆ / Description (395:77395) и ◆ / Error (395:77445) по три размера — их этот скилл реализует внутри себя, отдельного скилла им не нужно.",
   "last_synced": "2026-08-14T13:37:26Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:4c8944112c472faf65aeee3f423898f2dd5081a241ef1f529f9449c9e957a5da"
+  "snapshot_hash": "sha256:4c8944112c472faf65aeee3f423898f2dd5081a241ef1f529f9449c9e957a5da",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "ef3c8705547bbf7d3c67fea0228a34be9abd7d96",
+    "pushed_at": "2026-08-14T13:48:00Z",
+    "skill_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
+    "storybook": "https://orazaevdesign.github.io/arrow-components/",
+    "github_urls": {
+      "input": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/references/formfield-input.md"
+    },
+    "dev_resources_status": {
+      "input": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:77494",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md"
+      },
+      "select": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:77510",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
+        "note": "Отдельного CSS у варианта нет — та же реализация через мост; ссылка проставлена, чтобы агент, открывший Formfiled / Select, не начал верстать его заново."
+      },
+      "textarea": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:77526",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
+        "note": "То же, что у select."
+      }
+    }
+  }
 }
