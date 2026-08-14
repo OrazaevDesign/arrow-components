@@ -137,7 +137,9 @@ CSS сам погасит UA-оформление такой кнопки и о�
 | button, checkbox, radio, switch | `rgb(var(--surface-on-highest))`, без альфы — тёмное |
 | **input** | `rgb(var(--primary-core) / var(--awds-opacity-50))` — брендовое, 50% прозрачности |
 
-В макете это слой `FocusSelection` с `opacity 50%` и цветом `focus-selection/outlineVariant` (= `primary-core`), а не `outline` (= `surface-on-highest`). `outline-offset: 0` — кольцо стоит вплотную к рамке.
+В макете это слой `FocusSelection` с `opacity 50%` и цветом `focus-selection/outlineVariant` (= `primary-core`), а не `outline` (= `surface-on-highest`).
+
+**`outline-offset: 1px`, а не 0** — снято с геометрии слоя: прямоугольник кольца стоит на 1 наружу от контрола (322×50 при 320×48), обводка 2 наружу от него. CSS-outline рисуется от края бокса, поэтому offset 1 + width 2 дают ту же полосу 1..3. Радиус подтверждает независимо: в макете он равен скруглению контрола + 1, и CSS считает его так же сам из offset. Сверено по всем семи размерам.
 
 ## CSS
 

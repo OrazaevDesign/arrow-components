@@ -69,7 +69,7 @@
    (адаптивная: там на тех же номерах другие line-height).
 
    Цвета — те же роли, что у Input / Default: в Figma обе группы ячеек ссылаются на
-   один и тот же form-control/default/*, сверено по Rest / Hover / Focus / Active /
+   один и тот же form-control/default/…, сверено по Rest / Hover / Focus / Active /
    Disabled (map.state.*.form-control.default):
      Rest    bg secondary-container-core   chroma secondary-container-chroma
              border secondary-container-on-low   текст secondary-container-on-highest
@@ -485,9 +485,13 @@
   /* map.state.focus.focus-selection.outlineVariant = primary-core, в макете слой
      FocusSelection несёт opacity 50% → альфа прямо в цвете. Это НЕ тот же фокус,
      что у button/checkbox/radio/switch (там outline = surface-on-highest, без альфы).
-     offset 0: кольцо стоит вплотную к рамке. */
+     offset 1, а не 0 — снято с геометрии макета: слой outline внутри
+     FocusSelection стоит прямоугольником на 1 наружу от контрола (322x50 при
+     320x48), обводка 2 OUTSIDE. CSS-outline рисуется от края бокса, поэтому
+     offset 1 + width 2 дают ту же полосу 1..3. Радиус подтверждает независимо:
+     в макете он равен скруглению контрола + 1. Сверено по всем размерам. */
   outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
-  outline-offset: 0;
+  outline-offset: 1px;
 }
 
 
