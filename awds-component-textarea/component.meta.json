@@ -264,5 +264,58 @@
   "variants_note": "Шесть вариантов — весь набор семейства со страницы «↪ Text Area», по 35 ячеек каждый: Default (395:40586), Light (395:40736), Success (395:40884), Error (395:41032), Ghost (395:41180), Autofill (395:41328). Secondary тут НЕТ, как и у select (у input и input-combi он есть — это разница семейств, а не пропуск). Палитра form-control/* общая с input, select и их combi-версиями. Два варианта ведут себя не как все, и это снято с ячеек: у ghost hover и active НЕ меняют ничего (правил в CSS нет намеренно), у light фокус не переопределяет bg — он уже surface-bright. ОТДЕЛЬНО на той же странице лежит семейство Textarea Combi / * (шесть вариантов, по 20 ячеек = 4 размера × 5 состояний) — многострочное поле с плавающей меткой, ЭТО ДРУГОЙ КОМПОНЕНТ и в данный скилл не входит (как select vs select-combi).",
   "last_synced": "2026-08-14T12:04:52Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:a99c864b6e4415717512db98e5fa4f3b41d27173678059c726169a059260a21d"
+  "snapshot_hash": "sha256:a99c864b6e4415717512db98e5fa4f3b41d27173678059c726169a059260a21d",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "eed934c8a7a66862da2ce5824ee492e7a3d9873c",
+    "pushed_at": "2026-08-14T12:12:00Z",
+    "skill_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/SKILL.md",
+    "storybook": "https://orazaevdesign.github.io/arrow-components/",
+    "github_urls": {
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/references/textarea-default.md",
+      "light": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/references/textarea-light.md",
+      "success": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/references/textarea-success.md",
+      "error": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/references/textarea-error.md",
+      "ghost": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/references/textarea-ghost.md",
+      "autofill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/references/textarea-autofill.md"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:40586",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/SKILL.md"
+      },
+      "light": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:40736",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/SKILL.md"
+      },
+      "success": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:40884",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/SKILL.md"
+      },
+      "error": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:41032",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/SKILL.md"
+      },
+      "ghost": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:41180",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/SKILL.md"
+      },
+      "autofill": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:41328",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-textarea/SKILL.md"
+      }
+    }
+  }
 }
