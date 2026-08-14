@@ -18,6 +18,9 @@
   <!-- Вариант FileUploader: внутрь поля кладётся целый загрузчик со своей кнопкой. -->
   <link rel="stylesheet" href="../../awds-component-button/references/button-ghost.css">
   <link rel="stylesheet" href="../../awds-component-uploader/references/uploader.css">
+  <!-- Вариант Square: квадратный контрол живёт внутри подписи. -->
+  <link rel="stylesheet" href="../../awds-component-checkbox/references/checkbox.css">
+  <link rel="stylesheet" href="../../awds-component-switch/references/switch.css">
   <link rel="stylesheet" href="./formfield-input.css">
 
   <style>
@@ -80,6 +83,7 @@
         <option value="select">select</option>
         <option value="textarea">textarea</option>
         <option value="uploader">uploader (загрузка файлов)</option>
+        <option value="square">square (чекбокс в подписи)</option>
       </select>
     </label>
     <label>Состав:
@@ -126,6 +130,7 @@
       select:   { 500: 124, 400: 108, 300: 100 },
       textarea: { 500: 164, 400: 148, 300: 140 },
       uploader: { 500: 252, 400: 236, 300: 228 },
+      square:   { 500: 76,  400: 64,  300: 60 },
     };
 
     const IC_UPLOAD = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13V3.5M10 3.5 6.5 7M10 3.5 13.5 7M3.5 13.5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2"/></svg>';
@@ -171,12 +176,30 @@
       return `<span class="input ${variant}"><input class="input__field" id="${id}" type="text" placeholder="Placeholder"${dis}${descr}${invalid}></span>`;
     }
 
+    const CHECK_ICON = '<svg class="checkbox__icon checkbox__icon--check" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2929 7.29289C17.6834 6.90237 18.3164 6.90237 18.7069 7.29289C19.0975 7.68342 19.0975 8.31643 18.7069 8.70696L10.7069 16.707C10.3164 17.0975 9.68342 17.0975 9.29289 16.707L5.29289 12.707C4.90237 12.3164 4.90237 11.6834 5.29289 11.2929C5.68342 10.9024 6.31643 10.9024 6.70696 11.2929L9.99992 14.5859L17.2929 7.29289Z"/></svg>';
+
     function field(size, kind, parts, opts = {}) {
       const id = 'f' + (seq++);
       const descId = id + '-desc', errId = id + '-err';
       const showDesc = parts !== 'bare';
       const showErr = parts === 'all';
       const describedby = [showDesc ? descId : '', showErr ? errId : ''].filter(Boolean).join(' ');
+
+      // Square: отдельной строки контрола нет — чекбокс живёт внутри подписи,
+      // поэтому у поля три части, а не четыре.
+      if (kind === 'square') {
+        return `<div class="fld fld--${size}">` +
+          '<label class="lbl">' +
+            `<span class="checkbox"><input class="checkbox__input" type="checkbox" id="${id}" checked` +
+            (describedby ? ` aria-describedby="${describedby}"` : '') + '>' +
+            `<span class="checkbox__box">${CHECK_ICON}</span></span>` +
+            `<span class="lbl__body"><span class="lbl__text">${opts.label || 'Согласен с условиями'}</span></span>` +
+          '</label>' +
+          (showDesc ? `<p class="fld__description" id="${descId}">${opts.desc || 'Мы пришлём копию на почту'}</p>` : '') +
+          (showErr ? `<p class="fld__error" id="${errId}">${opts.err || 'Без согласия продолжить нельзя'}</p>` : '') +
+          '</div>';
+      }
+
       return `<div class="fld fld--${size}">` +
         `<label class="lbl" for="${id}"><span class="lbl__body"><span class="lbl__text">${opts.label || 'Подпись'}</span></span></label>` +
         control(kind, id, Object.assign({ describedby, invalid: showErr }, opts)) +

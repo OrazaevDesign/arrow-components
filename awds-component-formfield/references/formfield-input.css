@@ -151,6 +151,69 @@
   --awds-lbl-control:  calc(var(--awds-square-500-icon) + 2 * var(--awds-square-500-padding));
 }
 
+/* --- Квадратные контролы внутри подписи (Figma: Formfiled / Square) ---
+   Здесь отдельного контрола-строки нет вовсе: роль контрола играет подпись с
+   чекбоксом, радио или переключателем внутри. Казалось бы, ступень должна дойти сама
+   — через мост подписи (.lbl--{N} .checkbox), но он срабатывает только при классе
+   .lbl--{N}, а его в разметке нет: ступень подписи мы задаём переменными. Цепочка
+   рвалась молча — контрол оставался на дефолтных 24 и совпадал с макетом лишь на
+   размере 400. Поэтому поле кормит квадратные контролы напрямую, как и остальные.
+
+   Селектор через .lbl (вес 0,3,0) — не только семантика: он гарантированно
+   перебивает мост подписи (0,2,0), какой бы порядок подключения файлов ни выбрал
+   потребитель. */
+
+.fld--300 .lbl .checkbox {
+  --awds-checkbox-padding: var(--awds-square-300-padding);
+  --awds-checkbox-icon:    var(--awds-square-300-icon);
+  --awds-checkbox-rounded: var(--awds-square-300-rounded);
+}
+
+.fld--400 .lbl .checkbox {
+  --awds-checkbox-padding: var(--awds-square-400-padding);
+  --awds-checkbox-icon:    var(--awds-square-400-icon);
+  --awds-checkbox-rounded: var(--awds-square-400-rounded);
+}
+
+.fld--500 .lbl .checkbox {
+  --awds-checkbox-padding: var(--awds-square-500-padding);
+  --awds-checkbox-icon:    var(--awds-square-500-icon);
+  --awds-checkbox-rounded: var(--awds-square-500-rounded);
+}
+
+.fld--300 .lbl .radio {
+  --awds-radio-padding: var(--awds-square-300-padding);
+  --awds-radio-icon:    var(--awds-square-300-icon);
+}
+
+.fld--400 .lbl .radio {
+  --awds-radio-padding: var(--awds-square-400-padding);
+  --awds-radio-icon:    var(--awds-square-400-icon);
+}
+
+.fld--500 .lbl .radio {
+  --awds-radio-padding: var(--awds-square-500-padding);
+  --awds-radio-icon:    var(--awds-square-500-icon);
+}
+
+.fld--300 .lbl .switch {
+  --awds-switch-width:   var(--awds-square-300-switch-width);
+  --awds-switch-icon:    var(--awds-square-300-icon);
+  --awds-switch-padding: var(--awds-square-300-padding);
+}
+
+.fld--400 .lbl .switch {
+  --awds-switch-width:   var(--awds-square-400-switch-width);
+  --awds-switch-icon:    var(--awds-square-400-icon);
+  --awds-switch-padding: var(--awds-square-400-padding);
+}
+
+.fld--500 .lbl .switch {
+  --awds-switch-width:   var(--awds-square-500-switch-width);
+  --awds-switch-icon:    var(--awds-square-500-icon);
+  --awds-switch-padding: var(--awds-square-500-padding);
+}
+
 .fld--300 .input {
   --awds-input-padding:  var(--awds-rectangle-300-padding);
   --awds-input-icon:     var(--awds-rectangle-300-icon);
