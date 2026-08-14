@@ -11,7 +11,24 @@
       "node_id": "395:77494",
       "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77494",
       "figma_label": "Formfiled / Input (Size)",
-      "token_role": "role/surface/on-high + form-control/error/placehold"
+      "token_role": "role/surface/on-high + form-control/error/placehold",
+      "css": "formfield-input.css"
+    },
+    "select": {
+      "node_id": "395:77510",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77510",
+      "figma_label": "Formfiled / Select (Size)",
+      "token_role": "role/surface/on-high + form-control/error/placehold",
+      "css": "formfield-input.css",
+      "css_note": "Своего CSS у варианта НЕТ и не должно быть: сверены все три ячейки макета (395:77511 / 395:77516 / 395:77521) — состав, порядок частей, зазор 4 и высоты 124/108/100 совпадают с Input до пикселя. Отличается только вложенный контрол, а его подключает потребитель."
+    },
+    "textarea": {
+      "node_id": "395:77526",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77526",
+      "figma_label": "Formfiled / Textarea (Size)",
+      "token_role": "role/surface/on-high + form-control/error/placehold",
+      "css": "formfield-input.css",
+      "css_note": "Своего CSS у варианта НЕТ: сверены все три ячейки (395:77527 / 395:77532 / 395:77537). Состав и зазоры те же, высоты 164/148/140 отличаются от Input ровно на разницу контролов (88/80/76 против 48/40/36)."
     }
   },
   "shape": "rectangle",
@@ -33,6 +50,7 @@
   "css_files": [
     "formfield-input.css"
   ],
+  "css_files_note": "Файл ОДИН на все три варианта — это не упущение генерации. Formfiled / Input, / Select и / Textarea различаются только вложенным контролом; сам formfield (колонка, зазор, пояснение, ошибка, мост размеров) у них общий, что сверено по всем шести ячейкам макета. Отдельные CSS были бы тремя побайтово одинаковыми файлами, которые разъехались бы при первой же правке.",
   "base_class_note": "Базовый класс .fld, а не .formfield и не .field. Префикс --awds-formfield-* начинается с --awds-form, а это запрещённый префикс чужих компонентных токенов — sanity-check публикации срабатывал бы на каждой переменной. Имя .field слишком общее и почти наверняка занято на стороне потребителя. Тот же приём, что у label → .lbl и textarea → .txa.",
   "geometry_note": "Сверено по всем трём ячейкам. ЗАЗОР МЕЖДУ ВСЕМИ ЧЕТЫРЬМЯ ЧАСТЯМИ ОДИНАКОВЫЙ — space-1 (4) и не растёт с размером; проверено сложением: 24+4+48+4+20+4+20 = 124 (Size=500), 24+4+40+4+16+4+16 = 108 (400), 20+4+36+4+16+4+16 = 100 (300) — совпадает с высотами ячеек. Части: подпись 24/24/20 (это Label той же ступени), контрол 48/40/36 (Input той же ступени), пояснение и ошибка 20/16/16.",
   "typography_note": "ГЛАВНАЯ ЛОВУШКА КОМПОНЕНТА: типографика пояснения и ошибки — РУЧНОЙ МАППИНГ по значению, а не семантический var(--awds-rectangle-{N}-description-*). Напрашивается именно он и на размерах 500/400 совпадает (14/20 и 13/16), но на 300 семантический токен даёт 13/16, а в макете там 12/16 — на ступень мельче. Поэтому: 500 → control-400, 400 → control-300, 300 → control-200. Если rectangle-300-description однажды починят до 12/16, три строки можно свернуть обратно в семантику.",
