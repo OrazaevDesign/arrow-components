@@ -12,6 +12,11 @@
        останутся без стилей: селект задаёт им только размерную ступень. -->
   <link rel="stylesheet" href="../../awds-component-list-item/references/list-item-transparent.css">
   <link rel="stylesheet" href="./select-combi-default.css">
+  <link rel="stylesheet" href="./select-combi-light.css">
+  <link rel="stylesheet" href="./select-combi-success.css">
+  <link rel="stylesheet" href="./select-combi-error.css">
+  <link rel="stylesheet" href="./select-combi-ghost.css">
+  <link rel="stylesheet" href="./select-combi-autofill.css">
 
   <style>
     body {
@@ -85,14 +90,105 @@
       outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
       outline-offset: 1px;
     }
+
+    .scombi-light.is-hover {
+      --awds-scombi-border:     rgb(var(--secondary-container-on));
+    }
+    .scombi-light.is-active {
+      --awds-scombi-border:     rgb(var(--secondary-container-on-low));
+    }
+    .scombi-light.is-focus {
+      --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
+      --awds-scombi-border:     rgb(var(--primary-dim));
+      --awds-scombi-color:      rgb(var(--primary-container-on-highest));
+      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
+      --awds-scombi-icon-color: rgb(var(--primary-container-on-high));
+      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+      outline-offset: 1px;
+    }
+
+    .scombi-success.is-hover {
+      --awds-scombi-border:     rgb(var(--success-container-on));
+    }
+    .scombi-success.is-active {
+      --awds-scombi-border:     rgb(var(--success-container-on-low));
+    }
+    .scombi-success.is-focus {
+      --awds-scombi-bg:         rgb(var(--surface-bright));
+      --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
+      --awds-scombi-border:     rgb(var(--primary-dim));
+      --awds-scombi-color:      rgb(var(--primary-container-on-highest));
+      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
+      --awds-scombi-icon-color: rgb(var(--primary-container-on-high));
+      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+      outline-offset: 1px;
+    }
+
+    .scombi-error.is-hover {
+      --awds-scombi-border:     rgb(var(--error-container-on));
+    }
+    .scombi-error.is-active {
+      --awds-scombi-border:     rgb(var(--error-container-on-low));
+    }
+    .scombi-error.is-focus {
+      --awds-scombi-bg:         rgb(var(--surface-bright));
+      --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
+      --awds-scombi-border:     rgb(var(--primary-dim));
+      --awds-scombi-color:      rgb(var(--primary-container-on-highest));
+      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
+      --awds-scombi-icon-color: rgb(var(--primary-container-on-high));
+      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+      outline-offset: 1px;
+    }
+
+    /* У ghost зеркал hover и active НЕТ намеренно: в макете обе ячейки = Rest. */
+    .scombi-ghost.is-focus {
+      --awds-scombi-color:      rgb(var(--primary-container-on-highest));
+      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
+      --awds-scombi-icon-color: rgb(var(--primary-container-on-highest));
+      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+      outline-offset: 1px;
+    }
+
+    .scombi-autofill.is-hover {
+      --awds-scombi-border:     rgb(var(--tertiary-container-on));
+    }
+    .scombi-autofill.is-active {
+      --awds-scombi-border:     rgb(var(--tertiary-container-on-low));
+    }
+    .scombi-autofill.is-focus {
+      --awds-scombi-bg:         rgb(var(--surface-bright));
+      --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
+      --awds-scombi-border:     rgb(var(--primary-dim));
+      --awds-scombi-color:      rgb(var(--primary-container-on-highest));
+      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
+      --awds-scombi-icon-color: rgb(var(--primary-container-on-highest));
+      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+      outline-offset: 1px;
+    }
   </style>
 </head>
 <body>
 
   <h1>select-combi / storybook</h1>
-  <p class="sub">Выбор из списка с <b>плавающей меткой</b>: нативный <code>&lt;select&gt;</code> и шеврон — от <code>awds-component-select</code>, подпись внутри рамки — от <code>awds-component-input-combi</code>. Оси Figma: <code>Size</code> 300–600 (четыре) × <code>State</code> Rest / Hover / Focus / Active / Disabled. Высота выводится как <code>input-top + line-height + input-bottom</code> и совпадает с обычным селектом того же размера: строку значения сдвигают вниз, а не растягивают контрол. Ничего не выбрано — метка стоит по центру в кегле значения; выбрано — уезжает наверх в шкалу <code>control-200</code> (500/600) или <code>control-100</code> (300/400).</p>
+  <p class="sub">Выбор из списка с <b>плавающей меткой</b>: нативный <code>&lt;select&gt;</code> и шеврон — от <code>awds-component-select</code>, подпись внутри рамки — от <code>awds-component-input-combi</code>. Оси Figma: <code>Size</code> 300–600 (четыре) × <code>State</code> Rest / Hover / Focus / Active / Disabled. Высота выводится как <code>input-top + line-height + input-bottom</code> и совпадает с обычным селектом того же размера: строку значения сдвигают вниз, а не растягивают контрол. Ничего не выбрано — метка стоит по центру в кегле значения; выбрано — уезжает наверх в шкалу <code>control-200</code> (500/600) или <code>control-100</code> (300/400). Шесть вариантов — палитра <code>form-control/*</code> общая с <code>select</code> и <code>input</code>: <b>default</b> на белой странице, <b>light</b> на сером блоке, <b>success</b> / <b>error</b> / <b>autofill</b> — состояния значения, <b>ghost</b> — когда рамку рисует окружение.</p>
 
   <div class="toolbar">
+    <label>Вариант:
+      <select id="variant">
+        <option value="default" selected>default</option>
+        <option value="light">light</option>
+        <option value="success">success</option>
+        <option value="error">error</option>
+        <option value="ghost">ghost</option>
+        <option value="autofill">autofill</option>
+      </select>
+    </label>
     <label>Тема:
       <select id="theme">
         <option value="light">light</option>
@@ -229,7 +325,8 @@
         ? OPT('', '', true) + OPT('1', 'Алматы', false)
         : OPT('', '', false) + OPT('1', 'Алматы', true);
       const s = slots();
-      return '<span class="scombi scombi-default scombi--' + size + mirror + '">' +
+      const V = document.querySelector('#variant').value;
+      return '<span class="scombi scombi-' + V + ' scombi--' + size + mirror + '">' +
              (s.pre ? '<span class="scombi__prefix" aria-hidden="true">' + s.pre + '</span>' : '') +
              '<span class="scombi__body">' +
              '<select class="scombi__field" id="' + id + '" tabindex="-1" style="pointer-events:none"' + disabled + '>' + opts + '</select>' +
@@ -246,8 +343,23 @@
       ).join('');
     }
 
+    // Живые экземпляры (демо и форма) переключаются вместе с матрицей — иначе
+    // варианты можно было бы посмотреть только в зеркалах, без настоящего фокуса.
+    const VARIANTS = ['default', 'light', 'success', 'error', 'ghost', 'autofill'];
+    function applyVariantToLive() {
+      const V = document.querySelector('#variant').value;
+      document.querySelectorAll('.ctx .scombi').forEach(el => {
+        el.classList.remove(...VARIANTS.map(v => 'scombi-' + v));
+        el.classList.add('scombi-' + V);
+      });
+    }
+
     document.querySelector('#slots').addEventListener('change', renderMatrix);
     document.querySelector('#content').addEventListener('change', renderMatrix);
+    document.querySelector('#variant').addEventListener('change', () => {
+      renderMatrix();
+      applyVariantToLive();
+    });
     document.querySelector('#theme').addEventListener('change', (e) => {
       document.documentElement.classList.remove('theme-light', 'theme-dark');
       document.documentElement.classList.add('theme-' + e.target.value);

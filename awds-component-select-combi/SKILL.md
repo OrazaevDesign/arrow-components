@@ -7,6 +7,8 @@ description: >
   на подпись сверху, длинных формах заказа и профиля, где выбранные значения должны
   сохранять названия, вопросах о стилях scombi / scombi__field / scombi__label /
   scombi__body / select-combi, выборе размера такого списка (высота 36/40/48/52px),
+  выборе варианта такого списка (default, light, success, error, ghost, autofill),
+  подсветке валидации выбора и пометке предзаполненного значения,
   стилизации раскрытого списка и его пунктов, получении Figma-ссылки на компонент
   Select Combi. Построен на нативном <select> плюс абсолютно спозиционированный <label>;
   состояния Rest / Hover / Focus / Active / Disabled идут от самого контрола. Если подпись
@@ -117,13 +119,40 @@ description: >
 
 ## Варианты
 
-Собран **только `default`**. В Figma у семейства шесть вариантов (Default / Light / Success / Error / Ghost / Autofill, по 20 ячеек), палитра `form-control/*` у них общая с `select`, `input` и `input-combi` — сверено по хексам. Понадобится ещё один вариант: `обнови awds-component-select-combi под Figma` — он размножается из этого файла подменой ролей.
+Шесть — весь набор семейства. Палитра `form-control/*` общая с `select`, `input` и `input-combi`: рядом в одной форме контролы совпадают по цвету. `secondary` тут нет, в отличие от полей ввода, — у выбора из списка его нет и в макете.
+
+Выбор варианта — от **фона, на котором стоит контрол**, а не от важности поля:
+
+| Вариант | Класс | Фон в покое | Когда |
+|---|---|---|---|
+| **default** | `.scombi-default` | `secondary-container-core` — серый | Контрол на белой странице |
+| **light** | `.scombi-light` | `surface-bright` — белый | Контрол на сером блоке: карточка, панель фильтров, модалка |
+| **success** | `.scombi-success` | `success-container-core` — зелёный | Выбор прошёл проверку |
+| **error** | `.scombi-error` | `error-container-core` — красный | Выбор недопустим или обязательный не сделан |
+| **autofill** | `.scombi-autofill` | `tertiary-container-core` — синий | Значение подставило приложение, а не пользователь |
+| **ghost** | `.scombi-ghost` | прозрачный | Границу задаёт окружение: ячейка таблицы, инлайн-правка |
+
+**success / error / autofill — это состояния значения**, а не виды контрола: класс вешается и снимается по ходу валидации. У `error` цвета мало — нужны `aria-invalid` и текст причины (см. [select-combi-error.md](references/select-combi-error.md)).
+
+**Два варианта ведут себя не как все**, и это сверено по ячейкам макета:
+
+- **ghost** — на hover и active **ничего не подсвечивается** (все три ячейки прозрачны), поэтому правил в CSS нет намеренно. С плавающей меткой он опаснее, чем у обычного селекта: в покое видны только серая метка и шеврон.
+- **light** — фокус **не меняет фон**: он и в покое `surface-bright`. Меняются chroma, рамка и цвета текста.
+
+У остальных четырёх при фокусе подсветка (зелёная / красная / синяя / серая) **полностью уступает брендовой** — пока пользователь в контроле, важнее «где я», а не «что со значением».
 
 Цвета живут на классе варианта, база `.scombi` бесцветна (как `.btn` / `.btn-primary` у кнопки), поэтому класс варианта обязателен: `class="scombi scombi-default scombi--400"`.
 
 | Вариант | Файл | Reference |
 |---|---|---|
 | default | `references/select-combi-default.css` | [select-combi-default.md](references/select-combi-default.md) |
+| light | `references/select-combi-light.css` | [select-combi-light.md](references/select-combi-light.md) |
+| success | `references/select-combi-success.css` | [select-combi-success.md](references/select-combi-success.md) |
+| error | `references/select-combi-error.css` | [select-combi-error.md](references/select-combi-error.md) |
+| ghost | `references/select-combi-ghost.css` | [select-combi-ghost.md](references/select-combi-ghost.md) |
+| autofill | `references/select-combi-autofill.css` | [select-combi-autofill.md](references/select-combi-autofill.md) |
+
+Каждый файл **самодостаточен**: содержит базу `.scombi` (побайтово одинаковую), четыре размера, слой попапа, свой блок варианта и reduced-motion. Подключается только нужный вариант; если нужны несколько — несколько файлов, дублирующаяся база безвредна.
 
 ## Storybook
 
@@ -142,7 +171,7 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 ## Алгоритм использования
 
 1. Возьми разметку из [references/select-combi-default.md](references/select-combi-default.md) — с пустым `<option value="">`, `id`/`for` и обёрткой `__body`.
-2. Подключи `select-combi-default.css` и рядом `list-item-transparent.css` (для пунктов раскрытого списка).
+2. Подключи CSS нужного варианта (`select-combi-{вариант}.css`) и рядом `list-item-transparent.css` (для пунктов раскрытого списка).
 3. Убедись, что на странице есть DS-токены (`--awds-rectangle-*`, `--awds-control-*`, `--awds-dropdown-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
 4. Поставь класс варианта (`scombi-default`) — без него контрол останется бесцветным — и размерный модификатор `.scombi--{N}` (если не указан, действует 400).
 5. Ширину задай контейнеру-родителю: контрол тянется на 100%.

@@ -1,4 +1,5 @@
 {
+  "_note2": "Вторым проходом сняты остальные пять вариантов семейства (Light / Success / Error / Ghost / Autofill). По каждому — ячейки Size=500 в состояниях Rest / Hover / Focus (плюс Active у light для проверки, что он совпадает с Rest). Геометрия у вариантов не переснималась: rectangle- и combi-токены в снятых ячейках побайтово те же, что у Default — вариант меняет только палитру form-control/{вариант}. В variable_defs ниже для этих пяти оставлены цветовые ключи и ключи кольца фокуса; размерные повторяли бы Default.",
   "_note": "Сырые ответы Figma MCP, как пришли. Оси: Size 300/400/500/600 × State Rest/Hover/Focus/Active/Disabled = 20 ячеек. Снято 8: Rest на каждом из четырёх размеров (оттуда геометрия и типографика) плюс все пять состояний на размере 500 (оттуда цвета). Разделение намеренное: цвета от размера не зависят, размеры от состояния — тоже; для этого семейства (form-control) это уже проверялось побайтово на input и input-combi. Разметка снята одним get_design_context по ячейке Size=500, State=Rest — из неё структура (Prefix Input / Content Combi Input / Suffix Input / ◆ Chevrone) и auto-layout. Палитра сверена со снапшотом awds-component-select: хексы rest (#f7f7f7 bg, #c7c7c7 border), hover (#808080) и focus (#fad046) совпадают, значит роли form-control/default те же и выводить их заново не требовалось.",
   "metadata": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
@@ -188,6 +189,121 @@
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7"
+    },
+    "394:16896 (light Rest)": {
+      "form-control/light/bg": "#ffffff",
+      "form-control/light/chroma": "#ffffff",
+      "form-control/light/border": "#c7c7c7",
+      "form-control/light/color": "#0f0f0f",
+      "form-control/light/placehold": "#555555",
+      "form-control/light/chevrone": "#555555"
+    },
+    "394:16916 (light Hover)": {
+      "form-control/light/border": "#808080"
+    },
+    "394:16926 (light Active)": {
+      "form-control/light/border": "#c7c7c7"
+    },
+    "394:16971 (light Focus)": {
+      "form-control/light/bg": "#ffffff",
+      "form-control/light/chroma": "#fffdf6",
+      "form-control/light/border": "#fad046",
+      "form-control/light/color": "#19110a",
+      "form-control/light/placehold": "#674d25",
+      "form-control/light/chevrone": "#674d25",
+      "focus-selection/outlineVariant": "#fad646",
+      "opacity/50": "50"
+    },
+    "394:16791 (success Rest)": {
+      "form-control/success/bg": "#e5faf1",
+      "form-control/success/chroma": "#f7fffb",
+      "form-control/success/border": "#a0e4c0",
+      "form-control/success/color": "#224f29",
+      "form-control/success/placehold": "#388e4e",
+      "form-control/success/chevrone": "#388e4e"
+    },
+    "394:16811 (success Hover)": {
+      "form-control/success/border": "#57c47f"
+    },
+    "394:16866 (success Focus)": {
+      "form-control/success/bg": "#ffffff",
+      "form-control/success/chroma": "#fffdf6",
+      "form-control/success/border": "#fad046",
+      "form-control/success/color": "#19110a",
+      "form-control/success/placehold": "#674d25",
+      "form-control/success/chevrone": "#674d25",
+      "focus-selection/outlineVariant": "#fad646",
+      "opacity/50": "50"
+    },
+    "394:16686 (error Rest)": {
+      "form-control/error/bg": "#fff2eb",
+      "form-control/error/chroma": "#fff9f5",
+      "form-control/error/border": "#eea28b",
+      "form-control/error/color": "#41141a",
+      "form-control/error/placehold": "#9c2c2a",
+      "form-control/error/chevrone": "#9c2c2a"
+    },
+    "394:16706 (error Hover)": {
+      "form-control/error/border": "#d65745"
+    },
+    "394:16761 (error Focus)": {
+      "form-control/error/bg": "#ffffff",
+      "form-control/error/chroma": "#fffdf6",
+      "form-control/error/border": "#fad046",
+      "form-control/error/color": "#19110a",
+      "form-control/error/placehold": "#674d25",
+      "form-control/error/chevrone": "#674d25",
+      "focus-selection/outlineVariant": "#fad646",
+      "opacity/50": "50"
+    },
+    "394:16581 (ghost Rest)": {
+      "form-control/ghost/bg": "#ffffff00",
+      "form-control/ghost/chroma": "#ffffff00",
+      "form-control/ghost/border": "#ffffff00",
+      "form-control/ghost/color": "#0f0f0f",
+      "form-control/ghost/placehold": "#555555",
+      "form-control/ghost/chevrone": "#555555"
+    },
+    "394:16601 (ghost Hover)": {
+      "form-control/ghost/bg": "#ffffff00",
+      "form-control/ghost/chroma": "#ffffff00",
+      "form-control/ghost/border": "#ffffff00",
+      "form-control/ghost/color": "#0f0f0f",
+      "form-control/ghost/placehold": "#555555",
+      "form-control/ghost/chevrone": "#555555",
+      "_same_as_rest": true
+    },
+    "394:16656 (ghost Focus)": {
+      "form-control/ghost/bg": "#ffffff00",
+      "form-control/ghost/chroma": "#ffffff00",
+      "form-control/ghost/border": "#ffffff00",
+      "form-control/ghost/color": "#19110a",
+      "form-control/error/placehold": "#674d25",
+      "form-control/ghost/chevrone": "#674d25",
+      "focus-selection/outlineVariant": "#fad646",
+      "opacity/50": "50",
+      "_note": "placehold в этой ячейке макета привязан к form-control/error — опечатка биндинга в Figma; значение (#674d25) совпадает с остальными вариантами, поэтому в CSS взята роль primary-container-on-high, как везде."
+    },
+    "394:16476 (autofill Rest)": {
+      "form-control/autofill/bg": "#ebf6ff",
+      "form-control/autofill/chroma": "#f7fcff",
+      "form-control/autofill/border": "#90aee0",
+      "form-control/autofill/color": "#193891",
+      "form-control/autofill/placehold": "#4764d4",
+      "form-control/autofill/chevrone": "#4764d4"
+    },
+    "394:16496 (autofill Hover)": {
+      "form-control/autofill/border": "#7897dc"
+    },
+    "394:16551 (autofill Focus)": {
+      "form-control/autofill/bg": "#ffffff",
+      "form-control/autofill/chroma": "#fffdf6",
+      "form-control/autofill/border": "#fad046",
+      "form-control/autofill/color": "#19110a",
+      "form-control/autofill/placehold": "#674d25",
+      "form-control/autofill/chevrone": "#674d25",
+      "focus-selection/outlineVariant": "#fad646",
+      "opacity/50": "50"
     },
     "394:16381": {
       "form-control/default/color": "#0f0f0f",

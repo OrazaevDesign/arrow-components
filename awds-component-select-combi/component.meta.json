@@ -12,6 +12,36 @@
       "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16370",
       "figma_label": "Select Combi / Default (Size × State)",
       "token_role": "form-control/default"
+    },
+    "light": {
+      "node_id": "394:16895",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16895",
+      "figma_label": "Select Combi / Light (Size × State)",
+      "token_role": "form-control/light"
+    },
+    "success": {
+      "node_id": "394:16790",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16790",
+      "figma_label": "Select Combi / Success (Size × State)",
+      "token_role": "form-control/success"
+    },
+    "error": {
+      "node_id": "394:16685",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16685",
+      "figma_label": "Select Combi / Error (Size × State)",
+      "token_role": "form-control/error"
+    },
+    "ghost": {
+      "node_id": "394:16580",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16580",
+      "figma_label": "Select Combi / Ghost (Size × State)",
+      "token_role": "form-control/ghost"
+    },
+    "autofill": {
+      "node_id": "394:16475",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16475",
+      "figma_label": "Select Combi / Autofill (Size × State)",
+      "token_role": "form-control/autofill"
     }
   },
   "shape": "rectangle",
@@ -40,7 +70,12 @@
     "icon-color"
   ],
   "css_files": [
-    "select-combi-default.css"
+    "select-combi-default.css",
+    "select-combi-light.css",
+    "select-combi-success.css",
+    "select-combi-error.css",
+    "select-combi-ghost.css",
+    "select-combi-autofill.css"
   ],
   "base_class_note": "Базовый класс .scombi, а не .select-combi. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = select-combi они стали бы --awds-select-combi-* — префиксом это чужой --awds-select-*, sanity-check публикации ложно блокирует. Тот же приём, что у input-combi → .icombi и button-overhung → .obtn.",
   "geometry_note": "Высота не задаётся явно и совпадает с обычным select того же размера: input-top + line-height + input-bottom = 2×padding + line-height. Проверено на всех четырёх размерах: input-top = padding + Δ, input-bottom = label-top = padding − Δ, где Δ = 8 у 500/600 и 6 у 300/400. Все три числа берутся из css-global: --awds-rectangle-{N}-combi-{label-top , input-top , input-bottom}. ВЫСОТУ ДЕРЖИТ .scombi__body через min-block-size, а не поле: у пустого варианта (option[value=\"\"] без текста) content-box у <select> нулевой, и контрол схлопывался до 32/28/20/16 — замерено. Ставить min-block-size на само поле нельзя: тогда строка значения уехала бы к центру раздутого бокса. Плюс align-self: stretch на теле — иначе оно центрируется по короткому полю и метка в покое встаёт ниже на половину разницы (26 вместо 16 у 600). Полоса шеврона = 2 × padding + icon, как у select. Паддинг слотов вертикально симметричный (padding), в отличие от поля. Горизонталь текста: есть иконка рядом → rectangle-{N}-padding, нет → rectangle-{N}-text-gap; справа всегда padding, потому что шеврон стоит всегда. Метка едет вместе с текстом — её left/right переключаются тем же правилом.",
@@ -56,7 +91,9 @@
     "result": "0 расхождений. Высота 52/48/40/36 (одинаково в пустом и заполненном), radius 10/8/8/6, паддинги поля 24/8, 22/6, 16/4, 14/2, горизонталь по стороне (text-gap 18/18/16/14 без слота, padding 16/14/10/8 со слотом), полоса шеврона 52/48/40/36, метка в покое top = padding в кегле значения, уехавшая top 8/6/4/2 в кегле 12/12/11/11 при line-height 16",
     "interaction": "живой hover: рамка уходит в rgb(115,120,130) (secondary-container-on), фон не двигается — как в макете. Настоящий фокус: фон → белый + тёплый chroma, рамка rgb(250,223,66), кольцо rgba(250,216,20,.5) 2px offset 1, текст и метка в focus-роли; blur возвращает rest. Значения аккумуляторов мерились с задержкой 400 мс: они зарегистрированы через @property и анимируются, чтение на первом кадре отдаёт ещё старый цвет.",
     "picker": "showPicker() в Chromium: обёртка получает focus-роли и кольцо (правило :open работает), панель по ширине контрола (312 = 320 − 2×4 padding), зазор 4, пустой пункт скрыт (display: none), пункт — list-item ступенью ниже (при контроле 500 высота 40, заголовок 14/20, радиус 8, отступ текста 16 = text-gap), UA-галочка погашена",
-    "palette": "Роли не выводились заново: хексы Figma (rest #f7f7f7 / #c7c7c7, hover #808080, focus #fad046 + кольцо #fad646 при 50%) совпадают со снапшотом awds-component-select — палитра form-control/default общая у select, input и input-combi."
+    "palette": "Роли не выводились заново: хексы Figma (rest #f7f7f7 / #c7c7c7, hover #808080, focus #fad046 + кольцо #fad646 при 50%) совпадают со снапшотом awds-component-select — палитра form-control/default общая у select, input и input-combi.",
+    "variants": "Шесть вариантов сверены ПРЯМЫМ сравнением с awds-component-select того же варианта (он уже сверен с макетом по 25/25 hex): пары .select-{v} и .scombi-{v} размера 500 рядом на одной странице, замер фона-градиента, рамки, цвета текста, цвета шеврона и кольца в покое и при НАСТОЯЩЕМ фокусе — 60 сравнений, 0 расхождений. Гоча теста: фокусировать оба экземпляра подряд нельзя, второй focus() отбирает фокус у первого и эталон замеряется как нефокусированный; мерить по одному. Отдельно живым hover: у success рамка уходит в success-container-on (46,194,95) при покое on-low (164,234,187); у ghost под курсором не меняется ничего — фон, рамка и цвета остаются прозрачными/прежними, как в макете.",
+    "base_identity": "База (.scombi, элементы, четыре размера, слой попапа, disabled, reduced-motion) во всех шести CSS идентична: сравнение файлов с вырезанными комментариями даёт различия ТОЛЬКО в декларациях блока варианта."
   },
   "preview": {
     "base_class": "scombi",
@@ -76,6 +113,18 @@
       300
     ],
     "toggles": [
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "default",
+          "light",
+          "success",
+          "error",
+          "ghost",
+          "autofill"
+        ]
+      },
       {
         "id": "theme",
         "label": "Тема",
@@ -138,6 +187,24 @@
     "--secondary-container-on",
     "--secondary-container-on-high",
     "--secondary-container-on-highest",
+    "--success-container-core",
+    "--success-container-chroma",
+    "--success-container-on-low",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--error-container-core",
+    "--error-container-chroma",
+    "--error-container-on-low",
+    "--error-container-on",
+    "--error-container-on-high",
+    "--error-container-on-highest",
+    "--tertiary-container-core",
+    "--tertiary-container-chroma",
+    "--tertiary-container-on-low",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
     "--surface-bright",
     "--surface-on",
     "--primary-core",
@@ -230,10 +297,10 @@
   "depends_on": {
     "awds-component-list-item": "Пункт раскрытого списка размечается классами .list-item / .list-item-transparent. Селект задаёт пункту только размерную ступень (на одну ниже своей) через мост .scombi__field option, а выбранный пункт переключает на роли list/selected-secondary правилом :checked. Потребителю нужно подключить list-item-transparent.css рядом с select-combi-default.css."
   },
-  "variants_note": "Снят только Select Combi / Default по прямому запросу. Семейство на той же странице макета — шесть вариантов (Default / Light / Success / Error / Ghost / Autofill), по 20 ячеек каждый; Secondary тут нет, как и у обычного select. Палитра form-control/* общая с awds-component-select и awds-component-input-combi (сверено по хексам), поэтому остальные пять размножаются из этого файла подменой ролей — Figma заново обходить не придётся.",
-  "last_synced": "2026-08-14T10:39:24Z",
+  "variants_note": "Шесть вариантов — весь набор семейства со страницы «↪ Select» (Default / Light / Success / Error / Ghost / Autofill), по 20 ячеек каждый. Secondary тут НЕТ, в отличие от input и input-combi, где вариантов семь — это разница семейств, а не пропуск (у обычного select так же). Палитра form-control/* общая с awds-component-select, awds-component-input и awds-component-input-combi. Два варианта ведут себя не как все, и это снято с ячеек: у ghost hover и active НЕ меняют ничего (правил в CSS нет намеренно), у light фокус не переопределяет bg — он уже surface-bright. У ghost в ячейке Focus placehold привязан к form-control/error вместо form-control/ghost — опечатка биндинга в Figma; значение то же (#674d25), в CSS взята обычная роль primary-container-on-high.",
+  "last_synced": "2026-08-14T11:16:12Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:e4c6769a9ca2698f3b61f40f52e7dd5f8664579f0a849777d6cc2391030d2086",
+  "snapshot_hash": "sha256:426f1b56132da495b5ea77f1bda86cb376d829c8e95dc4b7aed06ca4b871b84e",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "64bd4d11933f5e06e8bd607bdfe23ecd278de0a3",
