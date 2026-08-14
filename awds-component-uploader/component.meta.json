@@ -157,5 +157,30 @@
   "variants_note": "У загрузчика один вариант: осей палитры нет. Рядом на странице «↪ Form Filed» лежит Formfiled / FileUploader (395:77542) — это тот же загрузчик, обёрнутый в поле формы с подписью и пояснением; отдельного CSS ему не потребуется, только композиция awds-component-formfield + этот компонент. Он пока не собран.",
   "last_synced": "2026-08-14T13:58:00Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:6151c3141b9219a91611b182eac4d6fb6647779bb8ebf000e1296f2967da0234"
+  "snapshot_hash": "sha256:6151c3141b9219a91611b182eac4d6fb6647779bb8ebf000e1296f2967da0234",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "091a034274b71ed626c381d5ddb263ad014a889c",
+    "pushed_at": "2026-08-14T14:06:00Z",
+    "skill_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/SKILL.md",
+    "storybook": "https://orazaevdesign.github.io/arrow-components/",
+    "github_urls": {
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/references/uploader.md"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:77614",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/SKILL.md"
+      },
+      "file": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "395:77633",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/SKILL.md",
+        "note": "Своего скилла у строки файла нет — ссылка ведёт в скилл загрузчика, где она и реализована."
+      }
+    }
+  }
 }
