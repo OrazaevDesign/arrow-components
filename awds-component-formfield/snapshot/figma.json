@@ -1,0 +1,108 @@
+{
+  "_note": "Сырые ответы Figma MCP, как пришли. Ось одна — Size 300/400/500, три ячейки. Осей Type и State у компонента НЕТ: тип определяется составом (есть пояснение или нет, показана ошибка или нет), состояния живут внутри вложенного контрола. Снято: get_metadata по всем трём ячейкам (оттуда состав, высоты частей и зазоры), variable_defs по всем трём (оттуда типографика пояснения и роли), get_design_context по ◆ / Description (структура: только текст, без иконки) и get_metadata по ◆ / Error (та же структура). Внутри ячеек лежат ИНСТАНСЫ уже реализованных компонентов: Label (awds-component-label) и Input / Default (awds-component-input).",
+  "metadata": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "node_id": "395:77494",
+    "name": "Formfiled / Input",
+    "frame": { "width": 383, "height": 452 },
+    "cells": {
+      "Size=500": "395:77495",
+      "Size=400": "395:77500",
+      "Size=300": "395:77505"
+    },
+    "composition": {
+      "395:77495": [
+        "Label (395:77496) — y 0, h 24",
+        "Input / Default (395:77497) — y 28, h 48",
+        "◆ / Description (395:77498) — y 80, h 20",
+        "◆ / Error (395:77499) — y 104, h 20"
+      ],
+      "395:77500": [
+        "Label — y 0, h 24",
+        "Input / Default — y 28, h 40",
+        "◆ / Description — y 72, h 16",
+        "◆ / Error — y 92, h 16"
+      ],
+      "395:77505": [
+        "Label — y 0, h 20",
+        "Input / Default — y 24, h 36",
+        "◆ / Description — y 64, h 16",
+        "◆ / Error — y 84, h 16"
+      ]
+    },
+    "geometry_notes": [
+      "Зазор между ВСЕМИ четырьмя частями одинаковый и равен space/1 (4) на всех размерах. Проверено сложением: 24+4+48+4+20+4+20 = 124, 24+4+40+4+16+4+16 = 108, 20+4+36+4+16+4+16 = 100 — совпадает с высотами ячеек.",
+      "Ступень вложенных компонентов совпадает со ступенью поля: Label 500 (24) + Input 500 (48) при Size=500 и так далее.",
+      "Типографика пояснения и ошибки: 500 → 14/20 (font-size/400), 400 → 13/16 (font-size/300), 300 → 12/16 (font-size/200). ВАЖНО: это НЕ rectangle-{N}-description — на размере 300 тот даёт 13/16, то есть на ступень крупнее макета.",
+      "◆ / Description и ◆ / Error устроены одинаково: пустой спейсер ◆/Gap нулевой ширины и текстовый слой. Иконок нет.",
+      "Цвета: пояснение role/surface/on-high, ошибка form-control/error/placehold."
+    ]
+  },
+  "variable_defs": {
+    "395:77495 (Size=500)": {
+      "opacity/control/enabled": "100",
+      "role/surface/on-highest": "#080808",
+      "role/surface/on-high": "#646464",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "font-weight": "regular",
+      "font-family": "Inter",
+      "space/0,5": "2",
+      "space/1": "4",
+      "space/2": "8",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "form-control/error/placehold": "#9c2c2a",
+      "line-height/600": "20",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "rectangle/500/text-gap": "18",
+      "rectangle/500/padding": "14",
+      "rectangle/500/rounded": "8"
+    },
+    "395:77500 (Size=400)": {
+      "role/surface/on-highest": "#080808",
+      "role/surface/on-high": "#646464",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "space/0,5": "2",
+      "space/1": "4",
+      "space/2": "8",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "form-control/error/placehold": "#9c2c2a",
+      "rectangle/400/text-gap": "16",
+      "rectangle/400/padding": "10",
+      "rectangle/400/rounded": "8"
+    },
+    "395:77505 (Size=300)": {
+      "role/surface/on-highest": "#080808",
+      "role/surface/on-high": "#646464",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "letter-spacing/200": "0.10000000149011612",
+      "font-size/200": "12",
+      "line-height/200": "16",
+      "space/0": "0",
+      "space/1": "4",
+      "space/2": "8",
+      "form-control/default/placehold": "#555555",
+      "form-control/default/bg": "#f7f7f7",
+      "form-control/default/chroma": "#f7f7f7",
+      "form-control/default/border": "#c7c7c7",
+      "form-control/error/placehold": "#9c2c2a",
+      "rectangle/300/text-gap": "14",
+      "rectangle/300/padding": "8",
+      "rectangle/300/rounded": "6"
+    }
+  }
+}

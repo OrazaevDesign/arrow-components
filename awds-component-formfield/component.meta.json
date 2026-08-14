@@ -1,0 +1,172 @@
+{
+  "component": "formfield",
+  "figma": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "primary_node_id": "395:77494",
+    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77494"
+  },
+  "variants": {
+    "input": {
+      "node_id": "395:77494",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77494",
+      "figma_label": "Formfiled / Input (Size)",
+      "token_role": "role/surface/on-high + form-control/error/placehold"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    300,
+    400,
+    500
+  ],
+  "size_scale_note": "Три размера — ровно те, что есть у awds-component-label; у контролов шкала шире (50…600), но поле собирается только на пересечении.",
+  "states": [
+    "rest",
+    "disabled"
+  ],
+  "states_note": "Оси State в макете нет: состояния принадлежат вложенному контролу и живут в его скилле. Единственное правило здесь — disabled, и оно ВЫВЕДЕНО: контрол и подпись гаснут сами, а пояснение осталось бы в полную силу и читалось бы как активная инструкция к недоступному полю. Гасим только пояснение; текст ошибки НЕ трогаем — если поле выключено и при этом показывает ошибку, эта ошибка тем более должна быть видна.",
+  "color_tokens": [
+    "description",
+    "error"
+  ],
+  "css_files": [
+    "formfield-input.css"
+  ],
+  "base_class_note": "Базовый класс .fld, а не .formfield и не .field. Префикс --awds-formfield-* начинается с --awds-form, а это запрещённый префикс чужих компонентных токенов — sanity-check публикации срабатывал бы на каждой переменной. Имя .field слишком общее и почти наверняка занято на стороне потребителя. Тот же приём, что у label → .lbl и textarea → .txa.",
+  "geometry_note": "Сверено по всем трём ячейкам. ЗАЗОР МЕЖДУ ВСЕМИ ЧЕТЫРЬМЯ ЧАСТЯМИ ОДИНАКОВЫЙ — space-1 (4) и не растёт с размером; проверено сложением: 24+4+48+4+20+4+20 = 124 (Size=500), 24+4+40+4+16+4+16 = 108 (400), 20+4+36+4+16+4+16 = 100 (300) — совпадает с высотами ячеек. Части: подпись 24/24/20 (это Label той же ступени), контрол 48/40/36 (Input той же ступени), пояснение и ошибка 20/16/16.",
+  "typography_note": "ГЛАВНАЯ ЛОВУШКА КОМПОНЕНТА: типографика пояснения и ошибки — РУЧНОЙ МАППИНГ по значению, а не семантический var(--awds-rectangle-{N}-description-*). Напрашивается именно он и на размерах 500/400 совпадает (14/20 и 13/16), но на 300 семантический токен даёт 13/16, а в макете там 12/16 — на ступень мельче. Поэтому: 500 → control-400, 400 → control-300, 300 → control-200. Если rectangle-300-description однажды починят до 12/16, три строки можно свернуть обратно в семантику.",
+  "bridge_note": "Ступень раздаёт само поле: .fld--{N} кормит size-аккумуляторы подписи (.lbl) и контрола (.input / .select / .txa), поэтому .lbl--400 и .input--400 в разметке не нужны. Тот же приём и то же следствие, что у label с чекбоксом: мост весит (0,2,0) против (0,1,0) у size-класса контрола, то есть внутри поля ступень всегда диктует поле. Мост прописан для input, select и textarea — и это не догадка: на странице макета рядом лежат отдельные компонент-сеты Formfiled / Select (395:77510) и Formfiled / Textarea (395:77526), они сверены. Select даёт ровно те же высоты ячеек, что Input (124/108/100), Textarea — 164/148/140 за счёт более высокого контрола (88/80/76) при том же составе и том же зазоре 4. То есть все три Formfield отличаются ТОЛЬКО вложенным контролом, что мост и выражает.",
+  "composition_note": "Пояснение и ошибка — единственное, что компонент рисует сам (в макете ◆ / Description и ◆ / Error, оба без собственных токенов и без иконок: внутри только текстовый слой и пустой спейсер нулевой ширины). Всё остальное — готовые компоненты: подпись из awds-component-label, контрол из awds-component-input / -select / -textarea. Внутренности контролов копируются из их скиллов дословно.",
+  "verification": {
+    "method": "headless chromium (chrome-devtools MCP), getComputedStyle + getBoundingClientRect",
+    "cells": "11 полей = 3 размера × 3 контрола (input / select / textarea) + поле без пояснения + выключенное; 83 замера",
+    "result": "0 расхождений. Полная высота поля с input 124/108/100 — совпадает с ячейками макета; зазор 4 на всех размерах; подпись 24/24/20; контрол 48/40/36; пояснение 20/16/16 при типографике 14/20, 13/16, 12/16; цвета пояснения и ошибки резолвятся в свои роли",
+    "bridge": "Мост проверен на трёх контролах: ни одному не выставлялся size-класс, все три получили ступень от поля. Полные высоты собранных полей сверены с соответствующими ячейками макета — 9 из 9: Formfiled/Input 124/108/100, Formfiled/Select 124/108/100, Formfiled/Textarea 164/148/140.",
+    "color_gotcha": "Первый прогон показал «расхождение» цвета пояснения (34,35,38 против ожидаемых 100,101,107) — ошибка была в тестовой константе, а не в CSS: палитра снапшота темнее эталонной, роль резолвилась верно. Проверять цвета нужно сравнением с probe('rgb(var(--роль))'), а не с числом из Figma.",
+    "disabled": "У выключенного поля гаснет только пояснение (0.4), само поле остаётся 1 — ошибка при этом сохраняет полную яркость."
+  },
+  "preview": {
+    "base_class": "fld",
+    "variant_class": "fld",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      500,
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "control",
+        "label": "Контрол",
+        "options": [
+          "input",
+          "select",
+          "textarea"
+        ]
+      },
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "parts",
+        "label": "Состав",
+        "options": [
+          "всё",
+          "без ошибки",
+          "только подпись и контрол"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Поле с пояснением",
+        "html": "<div class=\"fld fld--400\"><label class=\"lbl\" for=\"inn\"><span class=\"lbl__body\"><span class=\"lbl__text\">ИНН</span></span></label><span class=\"input input-default\"><input class=\"input__field\" id=\"inn\" aria-describedby=\"inn-desc\"></span><p class=\"fld__description\" id=\"inn-desc\">10 цифр для компании, 12 для ИП</p></div>"
+      },
+      {
+        "label": "Поле с ошибкой",
+        "html": "<div class=\"fld fld--400\"><label class=\"lbl\" for=\"mail\"><span class=\"lbl__body\"><span class=\"lbl__text\">Почта</span></span></label><span class=\"input input-error\"><input class=\"input__field\" id=\"mail\" aria-invalid=\"true\" aria-describedby=\"mail-err\"></span><p class=\"fld__error\" id=\"mail-err\">Не хватает домена — например, ivan@example.com</p></div>"
+      },
+      {
+        "label": "Поле с выбором из списка",
+        "html": "<div class=\"fld fld--500\"><label class=\"lbl\" for=\"city\"><span class=\"lbl__body\"><span class=\"lbl__text\">Город</span></span></label><span class=\"select select-default\"><select class=\"select__field\" id=\"city\">…</select></span></div>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--surface-on-high",
+    "--error-container-on-high",
+    "--awds-space-0",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-square-300-icon",
+    "--awds-square-300-padding",
+    "--awds-square-400-icon",
+    "--awds-square-400-padding",
+    "--awds-square-500-icon",
+    "--awds-square-500-padding",
+    "--awds-rectangle-300-padding",
+    "--awds-rectangle-300-icon",
+    "--awds-rectangle-300-rounded",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-300-typography-font-size",
+    "--awds-rectangle-300-typography-line-height",
+    "--awds-rectangle-300-typography-letter-spacing",
+    "--awds-rectangle-400-padding",
+    "--awds-rectangle-400-icon",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-400-typography-font-size",
+    "--awds-rectangle-400-typography-line-height",
+    "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-rectangle-500-padding",
+    "--awds-rectangle-500-icon",
+    "--awds-rectangle-500-rounded",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-500-typography-font-size",
+    "--awds-rectangle-500-typography-line-height",
+    "--awds-rectangle-500-typography-letter-spacing",
+    "--awds-control-200-font-size",
+    "--awds-control-200-line-height",
+    "--awds-control-200-letter-spacing",
+    "--awds-control-300-font-size",
+    "--awds-control-300-line-height",
+    "--awds-control-300-letter-spacing",
+    "--awds-control-400-font-size",
+    "--awds-control-400-line-height",
+    "--awds-control-400-letter-spacing",
+    "--awds-opacity-40",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular"
+  ],
+  "depends_on": {
+    "awds-component-label": "Подпись — компонент .lbl, ступень задаёт мост .fld--{N} .lbl. Потребителю нужно подключить label.css.",
+    "awds-component-input": "Контрол по умолчанию — .input, ступень через мост. Именно с ним компонент снят в макете.",
+    "awds-component-select": "Альтернативный контрол — .select, ступень через мост (в макете не снят, добавлен по общей размерной шкале).",
+    "awds-component-textarea": "Альтернативный контрол — .txa, ступень через мост (в макете не снят)."
+  },
+  "variants_note": "Снят Formfiled / Input; Formfiled / Select (395:77510) и Formfiled / Textarea (395:77526) сверены по высотам ячеек и закрыты тем же CSS через мост — отдельные файлы им не нужны, разница только во вложенном компоненте. Осей палитры у formfield нет: цвет несут контрол и подпись. На той же странице «↪ Form Filed» лежат ещё НЕ реализованные вещи, каждая из которых — отдельный компонент, а не вариант этого: Formfiled / FileUploader (395:77542) и Uploader / Uploader / File (395:77614, 395:77633) — загрузка файлов; Formfiled Combi / Input · Select · Textarea (395:77558, 395:77571, 395:77584) — те же поля, но с плавающей меткой вместо внешней подписи; Formfiled / Square (395:77597); Datepiker (395:77671) и DatepikerRange (395:77760). Отдельно стоят компонент-сеты ◆ / Description (395:77395) и ◆ / Error (395:77445) по три размера — их этот скилл реализует внутри себя, отдельного скилла им не нужно.",
+  "last_synced": "2026-08-14T13:37:26Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:4c8944112c472faf65aeee3f423898f2dd5081a241ef1f529f9449c9e957a5da"
+}
