@@ -1,0 +1,150 @@
+{
+  "component": "label",
+  "figma": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "primary_node_id": "395:77055",
+    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77055"
+  },
+  "variants": {
+    "default": {
+      "node_id": "395:77055",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77055",
+      "figma_label": "Label (Size × Type)",
+      "token_role": "role/surface/on-highest + link/muted"
+    }
+  },
+  "shape": "square",
+  "size_scale": [
+    300,
+    400,
+    500
+  ],
+  "size_scale_note": "Три размера, и shape здесь square, потому что размер задаётся вложенным контролом (чекбокс / радио / переключатель), а не прямоугольником поля. Ступень подписи и ступень контрола совпадают: подпись 500 → контрол 500.",
+  "states": [
+    "rest",
+    "disabled"
+  ],
+  "states_note": "Оси State в макете НЕТ вовсе: hover, focus и active принадлежат вложенному контролу и живут в его скилле. Единственное состояние здесь — disabled, и оно ВЫВЕДЕНО, а не снято с ячейки: без него строка была бы половинчатой (серый чекбокс со своим disabled-правилом и чёрная подпись рядом). Гасим ряд целиком на opacity 40%, как всё семейство форм.",
+  "color_tokens": [
+    "text",
+    "help",
+    "mark-border"
+  ],
+  "css_files": [
+    "label.css"
+  ],
+  "base_class_note": "Базовый класс .lbl, а не .label. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = label они дали бы --awds-label-* — имя, которое читается как глобальный слой дизайн-системы, а не как компонент. Плюс .label — слишком общее имя класса, оно почти наверняка занято на стороне потребителя. Тот же приём, что у input-combi → .icombi и textarea → .txa.",
+  "types_note": "Восемь значений оси Type (Label / Label+Help / Icon / Checkbox / Radio / Switch / Checkbox + Color / Checkbox + Flag) НЕ выражены классами: они отличаются только составом строки — есть ли ведущий контрол, есть ли образец перед текстом, есть ли подсказка справа. Классы заставляли бы автора дублировать в атрибуте то, что уже видно в разметке, и держать их синхронными. Поэтому тип определяется составом, а CSS даёт три слота: .lbl__icon / вложенный компонент контрола, .lbl__mark и .lbl__help.",
+  "geometry_note": "Сверено по всем 24 ячейкам. Три вещи, которые легко прочитать неверно: (1) ТЕКСТ НЕ ЗАВИСИТ ОТ РАЗМЕРА — во всех трёх это font-size/400 при line-height/400, то есть 14/20 по шкале control; размер меняет только контрол, вертикальный отступ текста и мелкие элементы. (2) GAP МЕЖДУ КОНТРОЛОМ И ТЕКСТОМ = space-2 (8) НА ВСЕХ РАЗМЕРАХ и это НЕ square-{N}-gap (там 6 на 300/400 и 8 только на 500) — считано как 36−28 = 32−24 = 28−20. (3) Высоту строки задаёт контрол (28/24/20), а без контрола — текст с паддингом: 20 + 2×2 = 24 у 500/400 и 20 + 0 = 20 у 300, отсюда странность макета — у типа без контрола размеры 500 и 400 совпадают полностью. Бокс контрола = square-{N}-icon + 2 × square-{N}-padding. Образец = square-{N}-icon (24/20/20), зазор до текста space-1-5 (6). Подсказка 20/16/16 — переменной у неё в Figma нет, взяты space-5 и space-4.",
+  "body_note": "Тело (.lbl__body) НЕ растянуто на всю ширину (flex: 0 1 auto), и это видно только на типе Label+Help: в макете знак вопроса стоит вплотную за текстом (36 + 8 = 44 при ширине подписи 36), а не у противоположного края строки. Растянутое тело уводило бы подсказку вправо, и связь «вопрос относится к этой подписи» рвалась бы тем сильнее, чем шире форма. У типов без подсказки разницы не видно. Нужен «?» именно у правого края (широкая таблица настроек) — это композиция уровня страницы: margin-inline-start: auto на .lbl__help.",
+  "bridge_note": "Размер вложенного контрола задаёт САМА подпись — мостом .lbl--{N} .checkbox / .radio / .switch, который кормит их size-аккумуляторы из square-{N}. Тот же приём, что у awds-component-select с пунктом списка: ступень одна и та же (подпись 500 → контрол 500), и дублировать её в разметке не нужно. ВАЖНО: мост весит (0,2,0) против (0,1,0) у .checkbox--200, то есть внутри подписи он ВСЕГДА сильнее size-класса контрола. Так и задумано — рассинхрон был бы молчаливым. Нужна нестандартная пара — задавай --awds-checkbox-icon и соседние переменные инлайном на самом контроле.",
+  "mark_note": "Образец цвета (.lbl__mark) — круг с обводкой role/surface/on-lowest и скруглением border-radius/full; ЗАЛИВКУ ЗАДАЁТ ПОТРЕБИТЕЛЬ (это цвет товара, а не роль DS — в макете стоит белый плейсхолдер). Обводка нужна всегда: без неё белый и светлые образцы исчезают на белом фоне. Тот же слот с модификатором .lbl__mark--plain принимает флаг или другую цветную иконку (тип Checkbox + Flag) — там рамка и скругление снимаются, форму несёт сама картинка.",
+  "verification": {
+    "method": "headless chromium (chrome-devtools MCP), getComputedStyle + getBoundingClientRect",
+    "cells": "27 строк = 8 типов × 3 размера + 3 выключенных; 222 замера",
+    "result": "0 расхождений. Бокс контрола 28/24/20, высота строки по контролу, без контрола 24/24/20, gap 8 на всех размерах, зазор образец→текст 6, образец 24/20/20, подсказка 20/16/16, вертикальный отступ текста 2/2/0, типографика 14/20 везде, disabled гасит ряд на 0.4",
+    "composition": "Вложенные контролы взяты живыми из awds-component-checkbox / -radio / -switch и подключены рядом: мост размеров отработал на всех трёх ступенях без единого size-класса на самих контролах.",
+    "help_position": "Отдельная проверка после правки: расстояние от текста до подсказки равно 8 на всех трёх размерах (в первой версии тело было растянуто flex: 1 и уводило подсказку к правому краю — расхождение с макетом)."
+  },
+  "preview": {
+    "base_class": "lbl",
+    "variant_class": "lbl",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      500,
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "text",
+        "label": "Текст",
+        "options": [
+          "короткий",
+          "длинный (перенос)"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Подпись к полю",
+        "html": "<label class=\"lbl lbl--400\" for=\"city\"><span class=\"lbl__body\"><span class=\"lbl__text\">Город доставки</span></span></label>"
+      },
+      {
+        "label": "Подпись с подсказкой",
+        "html": "<label class=\"lbl lbl--400\" for=\"inn\"><span class=\"lbl__body\"><span class=\"lbl__text\">ИНН</span></span><button type=\"button\" class=\"lbl__help\" aria-label=\"Зачем это нужно\"><svg viewBox=\"0 0 20 20\">…</svg></button></label>"
+      },
+      {
+        "label": "Строка с чекбоксом",
+        "html": "<label class=\"lbl lbl--400\"><span class=\"checkbox\"><input class=\"checkbox__input\" type=\"checkbox\"><span class=\"checkbox__box\">…</span></span><span class=\"lbl__body\"><span class=\"lbl__text\">Согласен с условиями</span></span></label>"
+      },
+      {
+        "label": "Выбор цвета товара",
+        "html": "<label class=\"lbl lbl--500\"><span class=\"checkbox\"><input class=\"checkbox__input\" type=\"checkbox\"><span class=\"checkbox__box\">…</span></span><span class=\"lbl__body\"><span class=\"lbl__mark\" style=\"background:#c0392b\"></span><span class=\"lbl__text\">Красный</span></span></label>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--surface-on-highest",
+    "--surface-on-high",
+    "--surface-on-lowest",
+    "--surface-bright",
+    "--awds-space-0",
+    "--awds-space-0-5",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-square-300-icon",
+    "--awds-square-300-padding",
+    "--awds-square-300-rounded",
+    "--awds-square-300-switch-width",
+    "--awds-square-400-icon",
+    "--awds-square-400-padding",
+    "--awds-square-400-rounded",
+    "--awds-square-400-switch-width",
+    "--awds-square-500-icon",
+    "--awds-square-500-padding",
+    "--awds-square-500-rounded",
+    "--awds-square-500-switch-width",
+    "--awds-control-400-font-size",
+    "--awds-control-400-line-height",
+    "--awds-control-400-letter-spacing",
+    "--awds-rounded-full",
+    "--awds-rounded-50",
+    "--awds-opacity-40",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular"
+  ],
+  "depends_on": {
+    "awds-component-checkbox": "Тип Checkbox / Checkbox + Color / Checkbox + Flag: контрол размечается классами .checkbox / .checkbox__input / .checkbox__box. Подпись задаёт ему только размерную ступень мостом .lbl--{N} .checkbox. Потребителю нужно подключить checkbox.css рядом с label.css.",
+    "awds-component-radio": "Тип Radio: .radio / .radio__input / .radio__box, размер через мост .lbl--{N} .radio.",
+    "awds-component-switch": "Тип Switch: .switch / .switch__input / .switch__track, размер через мост .lbl--{N} .switch (включая switch-width)."
+  },
+  "variants_note": "У компонента один вариант: осей палитры (Light / Success / Error / …) в макете нет — Label не носит собственного фона и рамки, он только текст и слоты. Поэтому файл один, label.css, как у checkbox / radio / switch.",
+  "last_synced": "2026-08-14T12:28:42Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:9ea0872be25c9237efb77be8119edb0daeda43503f7297ef6d0f61a593a79cd8"
+}

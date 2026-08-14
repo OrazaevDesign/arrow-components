@@ -1,0 +1,146 @@
+{
+  "_note": "Сырые ответы Figma MCP, как пришли. Оси: Size 300/400/500 × Type Label / Label+Help / Icon / Checkbox / Radio / Switch / Checkbox + Color / Checkbox + Flag = 24 ячейки. Оси State у компонента НЕТ: hover/focus/active принадлежат вложенному контролу, а не подписи. Снято: variable_defs по типу Label на всех трёх размерах (оттуда типографика и вертикальный отступ), по Label+Help / Checkbox / Checkbox+Color / Switch на размере 500 (оттуда цвета, space и токены вложенного контрола), плюс get_metadata по ячейкам всех типов на 500 и по Checkbox / Checkbox+Color / Label+Help на 400 и 300 — оттуда геометрия боксов и зазоры. Разметка снята get_design_context по Label+Help (500) и Checkbox + Color (500).",
+  "metadata": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "node_id": "395:77055",
+    "name": "Label",
+    "frame": { "width": 311, "height": 1108 },
+    "cells": {
+      "Size=500, Type=Label": "395:77056",
+      "Size=400, Type=Label": "395:77059",
+      "Size=300, Type=Label": "395:77062",
+      "Size=500, Type=Label+Help": "395:77065",
+      "Size=400, Type=Label+Help": "395:77069",
+      "Size=300, Type=Label+Help": "395:77073",
+      "Size=500, Type=Icon": "395:77077",
+      "Size=400, Type=Icon": "395:77081",
+      "Size=300, Type=Icon": "395:77085",
+      "Size=500, Type=Checkbox": "395:77089",
+      "Size=400, Type=Checkbox": "395:77093",
+      "Size=300, Type=Checkbox": "395:77097",
+      "Size=500, Type=Radio": "395:77101",
+      "Size=400, Type=Radio": "395:77105",
+      "Size=300, Type=Radio": "395:77109",
+      "Size=500, Type=Switch": "395:77113",
+      "Size=400, Type=Switch": "395:77117",
+      "Size=300, Type=Switch": "395:77121",
+      "Size=500, Type=Checkbox + Color": "395:77125",
+      "Size=400, Type=Checkbox + Color": "395:77130",
+      "Size=300, Type=Checkbox + Color": "395:77135",
+      "Size=500, Type=Checkbox + Flag": "427:2604",
+      "Size=400, Type=Checkbox + Flag": "427:2599",
+      "Size=300, Type=Checkbox + Flag": "427:2594"
+    },
+    "geometry_measured": {
+      "500": { "row": 28, "control_box": 28, "gap_control_text": 8, "mark": 24, "gap_mark_text": 6, "help": 20, "text_pad_block": 2, "row_without_control": 24 },
+      "400": { "row": 24, "control_box": 24, "gap_control_text": 8, "mark": 20, "gap_mark_text": 6, "help": 16, "text_pad_block": 2, "row_without_control": 24 },
+      "300": { "row": 20, "control_box": 20, "gap_control_text": 8, "mark": 20, "gap_mark_text": 6, "help": 16, "text_pad_block": 0, "row_without_control": 20 }
+    },
+    "geometry_notes": [
+      "Типографика ОДНА на все три размера: font-size/400 = 14 при line-height/400 = 20 (шкала control).",
+      "gap между контролом и текстом = space/2 (8) на всех размерах — это НЕ square-{N}-gap, где 6 на 300/400 и 8 только на 500. Считано как 36−28 = 32−24 = 28−20.",
+      "Бокс контрола = square-{N}-icon + 2 × square-{N}-padding: 24+4 = 28, 20+4 = 24, 20+0 = 20.",
+      "Образец (color/flag) = square-{N}-icon: 24 / 20 / 20; зазор до текста space/1,5 (6) на всех размерах.",
+      "Подсказка (ic20-questionCircle-outline) 20 на размере 500 и 16 на 400/300 — переменной у неё нет, сырые числа; ближайшие токены space-5 и space-4.",
+      "У типа Label+Help подпись НЕ растянута: иконка стоит вплотную за текстом (x = 36 + 8 = 44 при ширине текста 36).",
+      "У типа без контрола высота = 20 + 2 × text_pad, поэтому размеры 500 и 400 совпадают по всем метрикам."
+    ],
+    "structure_from_design_context": {
+      "395:77065 (Label+Help, 500)": [
+        "обёртка — flex, gap space/2, items-center, opacity/control/enabled",
+        "Label — блок с py = space/0,5; текст 14/20, цвет role/surface/on-highest",
+        "ic20-questionCircle-outline 20×20, цвет link/muted"
+      ],
+      "395:77125 (Checkbox + Color, 500)": [
+        "Checkbox — ИНСТАНС компонента (395:43665, у которого в Figma уже стоит ссылка на awds-component-checkbox), padding square/500/padding, иконка ic24-checkbox-outline 24",
+        "Label — flex-1, gap space/1,5, py space/0,5",
+        "color — круг 24×24: bg белый (плейсхолдер), border role/surface/on-lowest, radius border-radius/full",
+        "текст 14/20, цвет role/surface/on-highest"
+      ]
+    }
+  },
+  "variable_defs": {
+    "395:77056 (Label, 500)": {
+      "opacity/control/enabled": "100",
+      "role/surface/on-highest": "#080808",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "font-weight": "regular",
+      "font-family": "Inter",
+      "line-height/400": "20",
+      "space/0,5": "2",
+      "space/2": "8"
+    },
+    "395:77059 (Label, 400)": {
+      "opacity/control/enabled": "100",
+      "role/surface/on-highest": "#080808",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "space/0,5": "2",
+      "space/2": "8"
+    },
+    "395:77062 (Label, 300)": {
+      "opacity/control/enabled": "100",
+      "role/surface/on-highest": "#080808",
+      "letter-spacing/400": "0",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "space/0": "0",
+      "space/2": "8"
+    },
+    "395:77065 (Label+Help, 500)": {
+      "opacity/control/enabled": "100",
+      "role/surface/on-highest": "#080808",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "space/0,5": "2",
+      "link/muted": "#646464",
+      "space/2": "8"
+    },
+    "395:77089 (Checkbox, 500)": {
+      "check-radio/selected/color": "#19110a",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "opacity/control/enabled": "100",
+      "check-radio/selected/bg": "#ffeb5a",
+      "check-radio/selected/chroma": "#fce279",
+      "check-radio/selected/border": "#ffeb5a",
+      "role/surface/on-highest": "#080808",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "space/1,5": "6",
+      "space/1": "4",
+      "space/2": "8"
+    },
+    "395:77125 (Checkbox + Color, 500)": {
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/rounded": "8",
+      "border-radius/full": "600",
+      "role/surface/on-lowest": "#ededed",
+      "role/surface/on-highest": "#080808",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "space/1,5": "6",
+      "space/0,5": "2",
+      "space/2": "8"
+    },
+    "395:77113 (Switch, 500)": {
+      "opacity/content/handle-opacity": "100",
+      "check-radio/selected/handle": "#322414",
+      "space/0,5": "2",
+      "square/500/icon": "24",
+      "square/500/padding": "2",
+      "square/500/switch-width": "44",
+      "border-radius/full": "600",
+      "role/surface/on-highest": "#080808",
+      "font-size/400": "14",
+      "line-height/400": "20",
+      "space/1,5": "6",
+      "space/2": "8"
+    }
+  }
+}
