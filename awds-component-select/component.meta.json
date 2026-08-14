@@ -85,7 +85,8 @@
     "sizes": "6 вариантов × 7 размеров × 4 свойства = 168 замеров computed px: высота, скругление, полоса шеврона, line-height — совпадение полное",
     "colors": "Rest всех вариантов сверен с макетом (25/25 hex); в браузере проверены rest/hover/focus/active: у ghost hover равен rest (как в макете), у остальных hover меняет рамку, active везде возвращает рамку к rest, кольцо фокуса есть у всех шести",
     "picker": "пункт попапа — awds-component-list-item; ступень и выбранный пункт проверены отдельно (см. picker_note)",
-    "measurement_gotcha": "Замер высоты сразу после вставки через innerHTML в живое дерево даёт заниженное значение (32 вместо 52): под appearance: base-select Chromium пересчитывает содержимое кнопки только к следующему кадру. Мерить после requestAnimationFrame либо строить через createElement."
+    "measurement_gotcha": "Замер высоты сразу после вставки через innerHTML в живое дерево даёт заниженное значение (32 вместо 52): под appearance: base-select Chromium пересчитывает содержимое кнопки только к следующему кадру. Мерить после requestAnimationFrame либо строить через createElement.",
+    "open_state": "Открытый попап проверен вживую на default, ghost и error: поле получает фокусные роли и кольцо, при этом hover перебивается (курсор над контролом). Причина бага — под base-select activeElement уходит в <option>, и :focus-within на обёртке ложен; лечится :has(> .select__field:open) отдельным правилом в своём @supports."
   },
   "preview": {
     "base_class": "select",

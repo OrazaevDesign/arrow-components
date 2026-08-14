@@ -666,6 +666,42 @@
 }
 
 
+/* === Открытый список — тоже состояние фокуса ===
+
+   ПОЧЕМУ ОТДЕЛЬНОЕ ПРАВИЛО, А НЕ ЗАПЯТАЯ К :focus-within. Под base-select при
+   раскрытии списка фокус уходит В ПОПАП: document.activeElement становится
+   <option>, а :focus-within на обёртке — ЛОЖНЫМ (проверено в Chromium 150:
+   при открытом списке поле оставалось в hover-виде и без кольца). Дописать
+   `, .select-autofill:has(> .select__field:open)` в существующее focus-правило
+   нельзя: один невалидный селектор в списке через запятую убивает ВСЁ правило,
+   и в движке без :open отвалился бы заодно обычный фокус.
+
+   ПОЧЕМУ В СВОЁМ @supports. Проблема существует только у нашего попапа: там,
+   где base-select не поддержан, открывается системный список и фокус с контрола
+   не уходит. Значит и лечить это надо ровно в том слое, где оно ломается.
+
+   ПОЧЕМУ ТАКОЙ ВЕС. При открытом списке курсор обычно висит над контролом,
+   то есть hover активен, а его селектор весит (0,5,0). Это правило весит
+   (0,6,0) и перебивает hover по весу, а не по порядку строк в файле.
+   Второй :has() — не только вес: выключенный контрол раскрыться не может,
+   и состояние, которого не бывает, стилизовать незачем. */
+
+@supports (appearance: base-select) {
+  .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
+    --awds-select-bg:       rgb(var(--surface-bright));
+    --awds-select-chroma:   rgb(var(--primary-container-chroma));
+    --awds-select-border:   rgb(var(--primary-dim));
+    --awds-select-color:    rgb(var(--primary-container-on-highest));
+    --awds-select-placehold: rgb(var(--primary-container-on-high));
+    --awds-select-chevron:  rgb(var(--primary-container-on-high));
+    --awds-select-icon-color: rgb(var(--primary-container-on-highest));
+
+    outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+    outline-offset: 0;
+  }
+}
+
+
 /* === State: Disabled ===
    map.state.rest.opacity.control.disabled → 40%. Гасим контрол целиком, как в
    Figma (opacity на ноде компонента), цвета остаются Rest.
