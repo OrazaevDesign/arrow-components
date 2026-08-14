@@ -303,18 +303,53 @@
   "snapshot_hash": "sha256:426f1b56132da495b5ea77f1bda86cb376d829c8e95dc4b7aed06ca4b871b84e",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "64bd4d11933f5e06e8bd607bdfe23ecd278de0a3",
-    "pushed_at": "2026-08-14T11:00:50Z",
+    "commit": "384d2120bd09192e2ff2c3c65525d42230c92a0b",
+    "pushed_at": "2026-08-14T11:24:00Z",
     "skill_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md",
     "storybook": "https://orazaevdesign.github.io/arrow-components/",
     "github_urls": {
-      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-default.md"
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-default.md",
+      "light": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-light.md",
+      "success": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-success.md",
+      "error": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-error.md",
+      "ghost": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-ghost.md",
+      "autofill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-autofill.md"
     },
     "dev_resources_status": {
       "default": {
         "status": "linked",
         "method": "component_description",
         "node_id": "394:16370",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md"
+      },
+      "light": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16895",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md"
+      },
+      "success": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16790",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md"
+      },
+      "error": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16685",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md"
+      },
+      "ghost": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16580",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md"
+      },
+      "autofill": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16475",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md"
       }
     }
