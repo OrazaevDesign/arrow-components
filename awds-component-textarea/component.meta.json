@@ -1,0 +1,268 @@
+{
+  "component": "textarea",
+  "figma": {
+    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
+    "file_name": "💠 Comp ↪ ⁵ Forms",
+    "primary_node_id": "395:40586",
+    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40586"
+  },
+  "variants": {
+    "default": {
+      "node_id": "395:40586",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40586",
+      "figma_label": "Textarea / Default (Size × State)",
+      "token_role": "form-control/default"
+    },
+    "light": {
+      "node_id": "395:40736",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40736",
+      "figma_label": "Textarea / Light (Size × State)",
+      "token_role": "form-control/light"
+    },
+    "success": {
+      "node_id": "395:40884",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40884",
+      "figma_label": "Textarea / Success (Size × State)",
+      "token_role": "form-control/success"
+    },
+    "error": {
+      "node_id": "395:41032",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41032",
+      "figma_label": "Textarea / Error (Size × State)",
+      "token_role": "form-control/error"
+    },
+    "ghost": {
+      "node_id": "395:41180",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41180",
+      "figma_label": "Textarea / Ghost (Size × State)",
+      "token_role": "form-control/ghost"
+    },
+    "autofill": {
+      "node_id": "395:41328",
+      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41328",
+      "figma_label": "Textarea / Autofill (Size × State)",
+      "token_role": "form-control/autofill"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "states_note": "Focus через :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно, и рамка должна загораться при клике мышью. Active в макете совпадает с Rest, но правило нужно — иначе при нажатии осталась бы hover-рамка. Фокус гасит hover и active ЯВНО, через :not(:focus-within): :has() добавляет вес аргумента, hover-селектор весит (0,5,0) против (0,2,0) у :focus-within, и порядок правил не помог бы.",
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color",
+    "placehold"
+  ],
+  "css_files": [
+    "textarea-default.css",
+    "textarea-light.css",
+    "textarea-success.css",
+    "textarea-error.css",
+    "textarea-ghost.css",
+    "textarea-autofill.css"
+  ],
+  "base_class_note": "Базовый класс .txa, а не .textarea. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = textarea они читались бы как чужой компонентный токен --awds-textarea-* (такого слоя в DS нет и быть не должно); плюс .textarea на элементе <textarea> — тавтология. Тот же приём, что у input-combi → .icombi и button-overhung → .obtn.",
+  "geometry_note": "Высота не задаётся явно и выводится из ТРЁХ СТРОК: 2 × rectangle-{N}-padding + 3 × line-height. Сверено по всем семи ячейкам макета: 92/88/80/76/64/56/52. В CSS это min-block-size на поле, а не height: три строки — минимум, который может увеличить атрибут rows или сам пользователь ресайзом; height сломал бы и то, и другое. ГОРИЗОНТАЛЬ ВСЕГДА text-gap, без развилки padding/text-gap, знакомой по input и select: слотов prefix/suffix у этого компонента нет вовсе, текст всегда отсчитывается от края. Вертикаль — padding. Ровно так стоит в auto-layout ячейки (px = text-gap, py = padding, items-start).",
+  "handle_note": "Ручка ресайза — псевдоэлемент обёртки (.txa::after) поверх нативного механизма. Нативный ресайзер Chromium (::-webkit-resizer) выключен: он рисует системный уголок из полосок, которого в макете нет; выключен только ВИД, тяга работает — проверено hit-тестом (elementFromPoint в углу возвращает textarea, псевдоэлемент событий не перехватывает благодаря pointer-events: none) и тем, что обёртка следует за высотой поля. Firefox ::-webkit-resizer не поддерживает — там останется системная ручка поверх нашей; работу это не ломает. Форма из макета (ic20-textareaControl-outline: диагональ 9×9 внутри бокса 20×20, union-путь сдвинут на +7/+7). Цвет — роль текста (меняется вместе с ним при фокусе) при opacity 30% = map.state.rest.content.textarea-handle. Бокс 20×20 на ВСЕХ семи размерах — это не rectangle-{N}-icon (у мелких он 16), поэтому в CSS базовая шкала --awds-space-5.",
+  "resize_note": "resize: vertical, а не both — осознанное отклонение от статичной иконки макета: контрол тянется на всю ширину контейнера (width: 100%), и горизонтальная тяга позволила бы вытащить поле за пределы формы. Ось в макете не задана. Для неизменяемого размера есть модификатор .txa--fixed: он снимает и resize, и ручку разом — показывать хват, которого нет, было бы обманом. В состоянии disabled, наоборот, ручка ОСТАЁТСЯ видимой (так в макете: в колонке Disabled уголок нарисован и приглушён вместе со всем контролом), а resize снят.",
+  "typography_note": "Шкала control, НЕ typography: Figma даёт font-size/600=16 при line-height/600=20, а у typography-600 line-height 26. В CSS взят семантический var(--awds-rectangle-{N}-typography-*), который в css-global маршрутизирован на нужный control-{M}: 600/500 → 16/20, 400/300 → 14/20, 200/100 → 13/16, 50 → 12/16.",
+  "focus_ring_note": "Кольцо как у input, select и их combi-версий и в отличие от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, ширина 2, offset 1.",
+  "markup_note": "Разметка — обёртка + нативный <textarea>, без слотов: <span class=\"txa txa-default txa--400\"><textarea class=\"txa__field\" id=\"…\"></textarea></span>. Подпись живёт СНАРУЖИ (<label for>) — combi-версии (метка внутри рамки) у этого компонента в макете нет. Атрибут rows не обязателен: три строки уже заданы через min-block-size; rows больше трёх увеличит высоту, меньше — не уменьшит.",
+  "verification": {
+    "method": "headless chromium (chrome-devtools MCP), getComputedStyle + getBoundingClientRect",
+    "cells": "28 экземпляров = 7 размеров × {обычный, --fixed} × {активный, disabled}; 280 замеров",
+    "result": "0 расхождений. Высота 92/88/80/76/64/56/52, radius 10/8/8/6/6/6/4, padding-block 16/14/10/8/8/4/2, padding-inline (text-gap) 18/18/16/14/14/10/8, типографика 16/20, 16/20, 14/20, 14/20, 13/16, 13/16, 12/16, ручка 20×20 при opacity 0.3 на всех размерах",
+    "states": "Живой фокус на размере 500: фон → белый + тёплый chroma, рамка rgb(250,223,66), текст и плейсхолдер в focus-роли, кольцо rgba(250,216,20,.5) 2px offset 1; ручка красится тем же цветом, что и текст, и уходит в focus-роль вместе с ним. Blur возвращает rest. Значения аккумуляторов мерились с задержкой 400 мс: они зарегистрированы через @property и анимируются.",
+    "resize": "Хит-тест в правом нижнем углу возвращает сам <textarea> — псевдоэлемент ручки события не перехватывает (pointer-events: none), то есть нативная тяга остаётся доступной при скрытом ::-webkit-resizer. Обёртка следует за высотой поля: при увеличении поля на 40 px её бокс вырос ровно на 40. Саму тягу мышью программно не воспроизвести (нативный ресайз реагирует только на trusted-события) — проверялась механика, а не жест.",
+    "modifiers": ".txa--fixed снимает resize и убирает ручку; disabled снимает resize, но ручку ОСТАВЛЯЕТ (как в макете) и гасит весь контрол на 40% — проверено на всех семи размерах.",
+    "variants": "Шесть вариантов сверены ПРЯМЫМ сравнением с awds-component-input того же варианта (он уже сверен с макетом): пары .input-{v} и .txa-{v} размера 500 рядом на одной странице, замер фона-градиента, рамки, цвета текста, цвета плейсхолдера и кольца в покое и при НАСТОЯЩЕМ фокусе — 60 сравнений, 0 расхождений. Гоча теста: фокусировать оба экземпляра подряд нельзя, второй focus() отбирает фокус у первого; мерить по одному. Отдельно проверено, что ручка ресайза во всех шести вариантах красится ровно цветом текста своего варианта при opacity 0.3 — отдельного правила для неё нет, она следует за --awds-txa-color.",
+    "base_identity": "База (.txa, поле, ручка, семь размеров, --fixed, disabled, reduced-motion) во всех шести CSS идентична: сравнение файлов с вырезанными комментариями даёт различия ТОЛЬКО в декларациях блока варианта (13–22 строки)."
+  },
+  "preview": {
+    "base_class": "txa",
+    "variant_class": "txa-default",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "default",
+          "light",
+          "success",
+          "error",
+          "ghost",
+          "autofill"
+        ]
+      },
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "placeholder",
+          "value",
+          "long"
+        ]
+      },
+      {
+        "id": "resize",
+        "label": "Ресайз",
+        "options": [
+          "vertical",
+          "fixed"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Поле с подписью",
+        "html": "<label for=\"comment\">Комментарий к заказу</label>\n<span class=\"txa txa-default txa--400\"><textarea class=\"txa__field\" id=\"comment\" placeholder=\"Например: позвонить за час\"></textarea></span>"
+      },
+      {
+        "label": "Крупное поле на пять строк",
+        "html": "<span class=\"txa txa-default txa--500\"><textarea class=\"txa__field\" id=\"review\" rows=\"5\"></textarea></span>"
+      },
+      {
+        "label": "Без ресайза (узкая форма)",
+        "html": "<span class=\"txa txa-default txa--400 txa--fixed\"><textarea class=\"txa__field\" id=\"note\"></textarea></span>"
+      },
+      {
+        "label": "Выключенное",
+        "html": "<span class=\"txa txa-default txa--400\"><textarea class=\"txa__field\" id=\"reason\" disabled></textarea></span>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--secondary-container-core",
+    "--secondary-container-chroma",
+    "--secondary-container-on-low",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--success-container-core",
+    "--success-container-chroma",
+    "--success-container-on-low",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--error-container-core",
+    "--error-container-chroma",
+    "--error-container-on-low",
+    "--error-container-on",
+    "--error-container-on-high",
+    "--error-container-on-highest",
+    "--tertiary-container-core",
+    "--tertiary-container-chroma",
+    "--tertiary-container-on-low",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
+    "--surface-bright",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-container-chroma",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--awds-space-5",
+    "--awds-rectangle-50-padding",
+    "--awds-rectangle-50-text-gap",
+    "--awds-rectangle-50-rounded",
+    "--awds-rectangle-50-typography-font-size",
+    "--awds-rectangle-50-typography-line-height",
+    "--awds-rectangle-50-typography-letter-spacing",
+    "--awds-rectangle-100-padding",
+    "--awds-rectangle-100-text-gap",
+    "--awds-rectangle-100-rounded",
+    "--awds-rectangle-100-typography-font-size",
+    "--awds-rectangle-100-typography-line-height",
+    "--awds-rectangle-100-typography-letter-spacing",
+    "--awds-rectangle-200-padding",
+    "--awds-rectangle-200-text-gap",
+    "--awds-rectangle-200-rounded",
+    "--awds-rectangle-200-typography-font-size",
+    "--awds-rectangle-200-typography-line-height",
+    "--awds-rectangle-200-typography-letter-spacing",
+    "--awds-rectangle-300-padding",
+    "--awds-rectangle-300-text-gap",
+    "--awds-rectangle-300-rounded",
+    "--awds-rectangle-300-typography-font-size",
+    "--awds-rectangle-300-typography-line-height",
+    "--awds-rectangle-300-typography-letter-spacing",
+    "--awds-rectangle-400-padding",
+    "--awds-rectangle-400-text-gap",
+    "--awds-rectangle-400-rounded",
+    "--awds-rectangle-400-typography-font-size",
+    "--awds-rectangle-400-typography-line-height",
+    "--awds-rectangle-400-typography-letter-spacing",
+    "--awds-rectangle-500-padding",
+    "--awds-rectangle-500-text-gap",
+    "--awds-rectangle-500-rounded",
+    "--awds-rectangle-500-typography-font-size",
+    "--awds-rectangle-500-typography-line-height",
+    "--awds-rectangle-500-typography-letter-spacing",
+    "--awds-rectangle-600-padding",
+    "--awds-rectangle-600-text-gap",
+    "--awds-rectangle-600-rounded",
+    "--awds-rectangle-600-typography-font-size",
+    "--awds-rectangle-600-typography-line-height",
+    "--awds-rectangle-600-typography-letter-spacing",
+    "--awds-opacity-30",
+    "--awds-opacity-40",
+    "--awds-opacity-50",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular"
+  ],
+  "variants_note": "Шесть вариантов — весь набор семейства со страницы «↪ Text Area», по 35 ячеек каждый: Default (395:40586), Light (395:40736), Success (395:40884), Error (395:41032), Ghost (395:41180), Autofill (395:41328). Secondary тут НЕТ, как и у select (у input и input-combi он есть — это разница семейств, а не пропуск). Палитра form-control/* общая с input, select и их combi-версиями. Два варианта ведут себя не как все, и это снято с ячеек: у ghost hover и active НЕ меняют ничего (правил в CSS нет намеренно), у light фокус не переопределяет bg — он уже surface-bright. ОТДЕЛЬНО на той же странице лежит семейство Textarea Combi / * (шесть вариантов, по 20 ячеек = 4 размера × 5 состояний) — многострочное поле с плавающей меткой, ЭТО ДРУГОЙ КОМПОНЕНТ и в данный скилл не входит (как select vs select-combi).",
+  "last_synced": "2026-08-14T12:04:52Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:a99c864b6e4415717512db98e5fa4f3b41d27173678059c726169a059260a21d"
+}
