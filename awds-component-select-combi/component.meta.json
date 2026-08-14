@@ -233,5 +233,23 @@
   "variants_note": "Снят только Select Combi / Default по прямому запросу. Семейство на той же странице макета — шесть вариантов (Default / Light / Success / Error / Ghost / Autofill), по 20 ячеек каждый; Secondary тут нет, как и у обычного select. Палитра form-control/* общая с awds-component-select и awds-component-input-combi (сверено по хексам), поэтому остальные пять размножаются из этого файла подменой ролей — Figma заново обходить не придётся.",
   "last_synced": "2026-08-14T10:39:24Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:e4c6769a9ca2698f3b61f40f52e7dd5f8664579f0a849777d6cc2391030d2086"
+  "snapshot_hash": "sha256:e4c6769a9ca2698f3b61f40f52e7dd5f8664579f0a849777d6cc2391030d2086",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "64bd4d11933f5e06e8bd607bdfe23ecd278de0a3",
+    "pushed_at": "2026-08-14T11:00:50Z",
+    "skill_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md",
+    "storybook": "https://orazaevdesign.github.io/arrow-components/",
+    "github_urls": {
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/references/select-combi-default.md"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "394:16370",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-select-combi/SKILL.md"
+      }
+    }
+  }
 }
