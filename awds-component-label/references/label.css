@@ -75,9 +75,21 @@
   --awds-lbl-lh:       var(--awds-control-400-line-height);
   --awds-lbl-ls:       var(--awds-control-400-letter-spacing);
 
+  /* Эффективный вертикальный отступ текста: без ведущего контрола он макетный
+     (2/2/0), с контролом — такой, чтобы ПЕРВАЯ СТРОКА текста встала по центру
+     контрола: (бокс контрола − line-height) / 2 → 4/2/0. Переопределяется правилом
+     :has() ниже; help читает ту же переменную, поэтому знак вопроса всегда на одной
+     вертикали с первой строкой. */
+  --awds-lbl-pad: var(--awds-lbl-text-pad);
+
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  /* ПО ВЕРХНЕМУ КРАЮ, а не по центру. На однострочной подписи разницы нет — числа
+     макета сходятся в обоих случаях. Разница появляется, когда текст переносится:
+     при центрировании чекбокс уползал бы к середине абзаца и переставал читаться
+     как относящийся к его началу. Контрол остаётся у первой строки, а первая строка
+     остаётся по центру контрола — это и даёт --awds-lbl-pad. */
+  align-items: flex-start;
   gap: var(--awds-lbl-gap);
   /* Ширину задаёт потребитель: 231px в макете — ширина демо-фрейма. */
   width: 100%;
@@ -91,6 +103,16 @@
   cursor: pointer;
 }
 
+/* Есть ведущий элемент — текст опускается так, чтобы его первая строка встала по
+   центру бокса контрола. Числа при этом совпадают с макетом: 4/2/0 против
+   макетных y текста 4/2/0 в ячейках типов Icon / Checkbox / Radio / Switch. */
+.lbl:has(> .checkbox),
+.lbl:has(> .radio),
+.lbl:has(> .switch),
+.lbl:has(> .lbl__icon) {
+  --awds-lbl-pad: calc((var(--awds-lbl-control) - var(--awds-lbl-lh)) / 2);
+}
+
 
 /* === Тело: образец + текст ===
    Отдельная обёртка нужна, чтобы вертикальный отступ текста не влиял на бокс
@@ -98,7 +120,9 @@
 
 .lbl__body {
   display: flex;
-  align-items: center;
+  /* Тоже по верху: образец должен стоять у первой строки, а не уезжать к середине
+     переносящегося текста. Его собственное смещение — ниже, в .lbl__mark. */
+  align-items: flex-start;
   gap: var(--awds-lbl-mark-gap);
 
   /* ПО КОНТЕНТУ, А НЕ НА ВСЮ ШИРИНУ — это видно только на типе Label+Help, но видно
@@ -111,7 +135,7 @@
      уровня страницы: margin-inline-start: auto на .lbl__help. */
   flex: 0 1 auto;
   min-width: 0;
-  padding-block: var(--awds-lbl-text-pad);
+  padding-block: var(--awds-lbl-pad);
 }
 
 
@@ -142,6 +166,15 @@
   box-sizing: border-box;
   width: var(--awds-lbl-mark);
   height: var(--awds-lbl-mark);
+
+  /* Держится за первую строку текста и центрируется по ней. На размере 500 образец
+     (24) выше строки (20), поэтому смещение отрицательное — он на 2px выступает
+     сверху и снизу, ровно как в макете (2..26 внутри строки 28).
+     margin-block, а НЕ margin-block-start: односторонний отступ убирал бы место
+     только сверху, а снизу образец продолжал бы распирать строку — замерено 30
+     вместо 28 на размере 500. Симметричный съедает выступ с обеих сторон: образец
+     виден целиком, но по вертикали занимает ровно строку. */
+  margin-block: calc((var(--awds-lbl-lh) - var(--awds-lbl-mark)) / 2);
   border-radius: var(--awds-rounded-full);
   border: 1px solid rgb(var(--surface-on-lowest));
   background: rgb(var(--surface-bright));
@@ -175,6 +208,10 @@
   justify-content: center;
   width: var(--awds-lbl-help);
   height: var(--awds-lbl-help);
+
+  /* На одной вертикали с первой строкой текста: отступ тела плюс центрирование
+     иконки внутри строки. Даёт макетные 2/4/2 при подписи без контрола. */
+  margin-block-start: calc(var(--awds-lbl-pad) + (var(--awds-lbl-lh) - var(--awds-lbl-help)) / 2);
   padding: 0;
   border: 0;
   background: none;
