@@ -1,12 +1,6 @@
 ---
 name: awds-component-tooltip
-description: >
-  Верстка всплывающих подсказок (Tooltip) ArrowDS — HTML-разметка и CSS на токенах
-  дизайн-системы. Используй ВСЕГДА при: добавлении тултипа/подсказки к элементу
-  (иконке, кнопке, полю), выборе варианта (default светлый / contrast тёмный),
-  типа (default / compact), стороны появления и направления хвоста
-  (top / bottom / left / right), получении Figma-ссылки на компонент Tooltip.
-  Пузырь с текстом + хвост-стрелка, тень elevation-3. Статичный (показ/скрытие — на потребителе).
+description: Всплывающие подсказки Tooltip ArrowDS: пузырь с хвостом-стрелкой, светлый и contrast, сторона появления. Для подсказки к иконке, кнопке, полю. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Tooltip (всплывающая подсказка) ArrowDS
@@ -63,10 +57,10 @@ description: >
 | Фон / текст (default) | `rgb(var(--surface-bright))` / `rgb(var(--surface-on-high))` |
 | Фон / текст (contrast) | `rgb(var(--surface-on-highest))` / `rgb(var(--surface-bright))` |
 | Тень | `var(--awds-shadow-elevation-3)` |
-| Padding | `--awds-space-2-5` / `-2` (Default) · `-1-5` / `-1` (Compact) |
-| Текст | `--awds-typography-font-size-400` (Default) / `-300` (Compact) + compact line-height |
-| Скругление | `var(--awds-rounded-400)` (Default) / `-300` (Compact) |
-| Хвост | повёрнутый на 45° квадрат `--awds-space-2` (8px) поверх пузыря, без drop-тени — лежит на тени бокса, по центру стороны; хайрлайн-обводка 1px (чёрный 3%, как кольцо тени пузыря) на двух внешних гранях |
+| Padding | `--awds-space-space-2-5` / `-2` (Default) · `-1-5` / `-1` (Compact) |
+| Текст | `--awds-typography-typography-font-size-400` (Default) / `-300` (Compact) + compact line-height |
+| Скругление | `var(--awds-rounded-border-radius-400)` (Default) / `-300` (Compact) |
+| Хвост | повёрнутый на 45° квадрат `--awds-space-space-2` (8px) поверх пузыря, без drop-тени — лежит на тени бокса, по центру стороны; хайрлайн-обводка 1px (чёрный 3%, как кольцо тени пузыря) на двух внешних гранях |
 
 Состояний нет. Маппинг зафиксирован в `component.meta.json` + `snapshot/figma.json`. Обновление — через `arrow-components-builder` («обнови awds-component-tooltip»).
 
