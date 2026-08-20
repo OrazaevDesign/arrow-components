@@ -1,17 +1,6 @@
 ---
 name: awds-component-input
-description: >
-  Верстка текстовых полей ввода ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении поля ввода в форму, фильтры, поиск или PageCraft-блок
-  (email, телефон, промокод, поисковая строка, адрес, имя), поле с иконкой слева или справа
-  (поиск, очистить, показать пароль), выборе размера поля (высота 20/24/32/36/40/48/52px),
-  вопросах о стилях input / input__field / input__prefix / input__suffix / form-control,
-  выборе варианта поля (default, light, success, error, autofill, ghost, secondary),
-  подсветке валидации поля (успех / ошибка) и пометке автозаполнения,
-  получении Figma-ссылки на компонент Input. Построен на нативном <input> внутри
-  контейнера-рамки; состояния Rest / Hover / Focus / Active / Disabled идут от самого поля.
-  Для чекбокса — awds-component-checkbox, для радиокнопки — awds-component-radio,
-  для тумблера — awds-component-switch, не этот скилл.
+description: Текстовые поля ввода ArrowDS (input): размеры, варианты, состояния, иконки, подпись СНАРУЖИ поля. Для поля в форме. Подпись внутри рамки — input-combi. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Input ArrowDS
@@ -36,11 +25,11 @@ description: >
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/placeholder/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-{вариант}.css` |
-| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))` | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Input` |
 | Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
-| Opacity для disabled | `var(--awds-opacity-40)` | css-global (базовая шкала) |
+| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Промежуточный слой `--awds-input-*` в DS НЕ существует.** Внутри CSS вариантов есть приватные `--awds-input-*` accumulators, но они scope'нуты только на компонент. Подробнее — [arrow-components-builder/references/component-skill-contract.md](../arrow-components-builder/references/component-skill-contract.md).
@@ -73,7 +62,7 @@ description: >
 - Подпись обязательна: `<label for>` снаружи либо `aria-label` на самом `<input>`. Placeholder подписью не считается — он исчезает при вводе.
 - Фокус виден при любом способе входа в поле (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Декоративная иконка в слоте → `aria-hidden="true"`. Кликабельная (очистить, показать пароль) → внутри слота настоящий `<button type="button" aria-label="…">`, без `aria-hidden`.
-- Disabled гасится `opacity: var(--awds-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 - Размеры 50 и 100 (высота 20 и 24px) меньше тач-минимума — только для мыши и плотных таблиц.
 
 ## Варианты

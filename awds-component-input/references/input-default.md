@@ -122,7 +122,7 @@ CSS сам погасит UA-оформление такой кнопки и о�
 | Hover | `.input-default:hover:not(:focus-within):has(> .input__field:enabled)` | border `secondary-container-on` |
 | Active | `.input-default:active:not(:focus-within):has(> .input__field:enabled)` | border `secondary-container-on-low` |
 | Focus | `.input-default:focus-within` | bg `surface-bright`, chroma `primary-container-chroma`, border `primary-dim`, текст `primary-container-on-highest`, placeholder `primary-container-on-high` + кольцо |
-| Disabled | `.input:has(> .input__field:disabled)` | `opacity: var(--awds-opacity-40)` (на базе — не зависит от варианта) |
+| Disabled | `.input:has(> .input__field:disabled)` | `opacity: var(--awds-opacity-opacity-40)` (на базе — не зависит от варианта) |
 
 Три нюанса:
 
@@ -135,7 +135,7 @@ CSS сам погасит UA-оформление такой кнопки и о�
 | | Кольцо |
 |---|---|
 | button, checkbox, radio, switch | `rgb(var(--surface-on-highest))`, без альфы — тёмное |
-| **input** | `rgb(var(--primary-core) / var(--awds-opacity-50))` — брендовое, 50% прозрачности |
+| **input** | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` — брендовое, 50% прозрачности |
 
 В макете это слой `FocusSelection` с `opacity 50%` и цветом `focus-selection/outlineVariant` (= `primary-core`), а не `outline` (= `surface-on-highest`).
 
