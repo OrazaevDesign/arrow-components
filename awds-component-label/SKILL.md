@@ -1,16 +1,6 @@
 ---
 name: awds-component-label
-description: >
-  Верстка подписей к контролам форм (Label) ArrowDS — HTML-разметка и CSS на токенах
-  дизайн-системы. Используй ВСЕГДА при: подписи к полю, строке «чекбокс + текст»,
-  «радио + текст», «переключатель + текст», списке опций с чекбоксами, выборе цвета
-  товара кружком-образцом, строке с флагом или иконкой перед текстом, подписи со знаком
-  вопроса-подсказкой; вопросах о стилях lbl / lbl__text / lbl__body / lbl__mark /
-  lbl__help / label, выборе размера подписи (20/24/28px), получении Figma-ссылки на
-  компонент Label. Это КОМПОЗИЦИОННЫЙ компонент: сам рисует текст и мелочи, а чекбокс,
-  радио и переключатель берёт готовыми из awds-component-checkbox / -radio / -switch.
-  Подпись ВНУТРИ рамки поля, которая уезжает наверх, — это не сюда, а
-  awds-component-input-combi.
+description: Подписи к контролам форм Label ArrowDS: размеры, обязательность, состояние ошибки. Для подписи над полем и в составе formfield. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Label ArrowDS
@@ -105,11 +95,11 @@ description: >
 | Текст | `var(--awds-control-400-*)` — 14/20, одинаково на всех размерах |
 | Цвет текста | `rgb(var(--surface-on-highest))` |
 | Цвет подсказки | `rgb(var(--surface-on-high))` — роль `link/muted` |
-| Обводка образца | `rgb(var(--surface-on-lowest))`, скругление `var(--awds-rounded-full)` |
+| Обводка образца | `rgb(var(--surface-on-lowest))`, скругление `var(--awds-rounded-border-radius-full)` |
 | Заливка образца | **задаёт потребитель** — это цвет товара, а не роль DS |
 | Бокс контрола и образца | `var(--awds-square-{N}-icon)` + `padding` |
-| Зазоры | `var(--awds-space-2)` контрол↔текст, `var(--awds-space-1-5)` образец↔текст |
-| Disabled | `var(--awds-opacity-40)` |
+| Зазоры | `var(--awds-space-space-2)` контрол↔текст, `var(--awds-space-space-1-5)` образец↔текст |
+| Disabled | `var(--awds-opacity-opacity-40)` |
 
 ## Состояний у компонента нет
 

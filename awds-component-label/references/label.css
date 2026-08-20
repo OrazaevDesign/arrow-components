@@ -64,16 +64,16 @@
 
 .lbl {
   /* Size accumulator defaults (default_size = 400) */
-  --awds-lbl-text-pad: var(--awds-space-0-5);
-  --awds-lbl-mark:     var(--awds-square-400-icon);
-  --awds-lbl-help:     var(--awds-space-4);
+  --awds-lbl-text-pad: var(--awds-space-space-0-5);
+  --awds-lbl-mark:     var(--awds-size-square-400-icon);
+  --awds-lbl-help:     var(--awds-space-space-4);
 
   /* Не зависят от размера — см. пункт 2 в шапке. */
-  --awds-lbl-gap:      var(--awds-space-2);
-  --awds-lbl-mark-gap: var(--awds-space-1-5);
-  --awds-lbl-fs:       var(--awds-control-400-font-size);
-  --awds-lbl-lh:       var(--awds-control-400-line-height);
-  --awds-lbl-ls:       var(--awds-control-400-letter-spacing);
+  --awds-lbl-gap:      var(--awds-space-space-2);
+  --awds-lbl-mark-gap: var(--awds-space-space-1-5);
+  --awds-lbl-fs:       var(--awds-control-font-size-400);
+  --awds-lbl-lh:       var(--awds-control-line-height-400);
+  --awds-lbl-ls:       var(--awds-control-letter-spacing-400);
 
   /* Эффективный вертикальный отступ текста: без ведущего контрола он макетный
      (2/2/0), с контролом — такой, чтобы ПЕРВАЯ СТРОКА текста встала по центру
@@ -175,7 +175,7 @@
      вместо 28 на размере 500. Симметричный съедает выступ с обеих сторон: образец
      виден целиком, но по вертикали занимает ровно строку. */
   margin-block: calc((var(--awds-lbl-lh) - var(--awds-lbl-mark)) / 2);
-  border-radius: var(--awds-rounded-full);
+  border-radius: var(--awds-rounded-border-radius-full);
   border: 1px solid rgb(var(--surface-on-lowest));
   background: rgb(var(--surface-bright));
 }
@@ -228,7 +228,7 @@
 .lbl__help:focus-visible {
   outline: 2px solid rgb(var(--surface-on-highest));
   outline-offset: 2px;
-  border-radius: var(--awds-rounded-50);
+  border-radius: var(--awds-rounded-border-radius-50);
 }
 
 
@@ -237,25 +237,25 @@
    размер вложенного контрола. Кегль текста не трогаем: он один на все размеры. */
 
 .lbl--300 {
-  --awds-lbl-text-pad: var(--awds-space-0);
-  --awds-lbl-mark:     var(--awds-square-300-icon);
-  --awds-lbl-help:     var(--awds-space-4);
+  --awds-lbl-text-pad: var(--awds-space-space-0);
+  --awds-lbl-mark:     var(--awds-size-square-300-icon);
+  --awds-lbl-help:     var(--awds-space-space-4);
   /* Бокс ведущего элемента = бокс контрола этой ступени: icon + 2 × padding. */
-  --awds-lbl-control:  calc(var(--awds-square-300-icon) + 2 * var(--awds-square-300-padding));
+  --awds-lbl-control:  calc(var(--awds-size-square-300-icon) + 2 * var(--awds-size-square-300-padding));
 }
 
 .lbl--400 {
-  --awds-lbl-text-pad: var(--awds-space-0-5);
-  --awds-lbl-mark:     var(--awds-square-400-icon);
-  --awds-lbl-help:     var(--awds-space-4);
-  --awds-lbl-control:  calc(var(--awds-square-400-icon) + 2 * var(--awds-square-400-padding));
+  --awds-lbl-text-pad: var(--awds-space-space-0-5);
+  --awds-lbl-mark:     var(--awds-size-square-400-icon);
+  --awds-lbl-help:     var(--awds-space-space-4);
+  --awds-lbl-control:  calc(var(--awds-size-square-400-icon) + 2 * var(--awds-size-square-400-padding));
 }
 
 .lbl--500 {
-  --awds-lbl-text-pad: var(--awds-space-0-5);
-  --awds-lbl-mark:     var(--awds-square-500-icon);
-  --awds-lbl-help:     var(--awds-space-5);
-  --awds-lbl-control:  calc(var(--awds-square-500-icon) + 2 * var(--awds-square-500-padding));
+  --awds-lbl-text-pad: var(--awds-space-space-0-5);
+  --awds-lbl-mark:     var(--awds-size-square-500-icon);
+  --awds-lbl-help:     var(--awds-space-space-5);
+  --awds-lbl-control:  calc(var(--awds-size-square-500-icon) + 2 * var(--awds-size-square-500-padding));
 }
 
 
@@ -274,54 +274,54 @@
    прямо на контроле (инлайн-стиль весит больше любого селектора). */
 
 .lbl--300 .checkbox {
-  --awds-checkbox-padding: var(--awds-square-300-padding);
-  --awds-checkbox-icon:    var(--awds-square-300-icon);
-  --awds-checkbox-rounded: var(--awds-square-300-rounded);
+  --awds-checkbox-padding: var(--awds-size-square-300-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-300-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-300-rounded);
 }
 
 .lbl--400 .checkbox {
-  --awds-checkbox-padding: var(--awds-square-400-padding);
-  --awds-checkbox-icon:    var(--awds-square-400-icon);
-  --awds-checkbox-rounded: var(--awds-square-400-rounded);
+  --awds-checkbox-padding: var(--awds-size-square-400-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-400-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-400-rounded);
 }
 
 .lbl--500 .checkbox {
-  --awds-checkbox-padding: var(--awds-square-500-padding);
-  --awds-checkbox-icon:    var(--awds-square-500-icon);
-  --awds-checkbox-rounded: var(--awds-square-500-rounded);
+  --awds-checkbox-padding: var(--awds-size-square-500-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-500-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-500-rounded);
 }
 
 .lbl--300 .radio {
-  --awds-radio-padding: var(--awds-square-300-padding);
-  --awds-radio-icon:    var(--awds-square-300-icon);
+  --awds-radio-padding: var(--awds-size-square-300-padding);
+  --awds-radio-icon:    var(--awds-size-square-300-icon);
 }
 
 .lbl--400 .radio {
-  --awds-radio-padding: var(--awds-square-400-padding);
-  --awds-radio-icon:    var(--awds-square-400-icon);
+  --awds-radio-padding: var(--awds-size-square-400-padding);
+  --awds-radio-icon:    var(--awds-size-square-400-icon);
 }
 
 .lbl--500 .radio {
-  --awds-radio-padding: var(--awds-square-500-padding);
-  --awds-radio-icon:    var(--awds-square-500-icon);
+  --awds-radio-padding: var(--awds-size-square-500-padding);
+  --awds-radio-icon:    var(--awds-size-square-500-icon);
 }
 
 .lbl--300 .switch {
-  --awds-switch-width:   var(--awds-square-300-switch-width);
-  --awds-switch-icon:    var(--awds-square-300-icon);
-  --awds-switch-padding: var(--awds-square-300-padding);
+  --awds-switch-width:   var(--awds-size-square-300-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-300-icon);
+  --awds-switch-padding: var(--awds-size-square-300-padding);
 }
 
 .lbl--400 .switch {
-  --awds-switch-width:   var(--awds-square-400-switch-width);
-  --awds-switch-icon:    var(--awds-square-400-icon);
-  --awds-switch-padding: var(--awds-square-400-padding);
+  --awds-switch-width:   var(--awds-size-square-400-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-400-icon);
+  --awds-switch-padding: var(--awds-size-square-400-padding);
 }
 
 .lbl--500 .switch {
-  --awds-switch-width:   var(--awds-square-500-switch-width);
-  --awds-switch-icon:    var(--awds-square-500-icon);
-  --awds-switch-padding: var(--awds-square-500-padding);
+  --awds-switch-width:   var(--awds-size-square-500-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-500-icon);
+  --awds-switch-padding: var(--awds-size-square-500-padding);
 }
 
 
@@ -334,8 +334,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--awds-lbl-control, calc(var(--awds-square-400-icon) + 2 * var(--awds-square-400-padding)));
-  height: var(--awds-lbl-control, calc(var(--awds-square-400-icon) + 2 * var(--awds-square-400-padding)));
+  width: var(--awds-lbl-control, calc(var(--awds-size-square-400-icon) + 2 * var(--awds-size-square-400-padding)));
+  height: var(--awds-lbl-control, calc(var(--awds-size-square-400-icon) + 2 * var(--awds-size-square-400-padding)));
 }
 
 .lbl__icon svg,
@@ -357,6 +357,6 @@
 
 .lbl:has(input:disabled),
 .lbl--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
