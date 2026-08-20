@@ -33,7 +33,7 @@
      — фон медиа:               surface-bright · скрим (3%→opacity-5) surface-on-highest
 
    Размеры:
-     — медиа-скругление:  var(--awds-rounded-500)
+     — медиа-скругление:  var(--awds-rounded-border-radius-500)
      — цена:   компонент .price.price-default price--listing (масштаб по .typo-*, обе вью)
      — название: 14/22 (typography 400 + line-height 400), 1 строка
      — рубрика:  12/19 (typography 200 + line-height 200, caption), 1 строка
@@ -74,13 +74,13 @@
 .pcard-buy-now .pcard__image-link:focus-visible {
   outline: 2px solid rgb(var(--surface-on-highest));
   outline-offset: 2px;
-  border-radius: var(--awds-rounded-500);
+  border-radius: var(--awds-rounded-border-radius-500);
 }
 .pcard-buy-now .pcard__name:focus-visible,
 .pcard-buy-now .pcard__category:focus-visible {
   outline: 2px solid rgb(var(--surface-on-highest));
   outline-offset: 2px;
-  border-radius: var(--awds-rounded-200);
+  border-radius: var(--awds-rounded-border-radius-200);
 }
 
 
@@ -98,7 +98,7 @@
   inset: 0;
   display: block;
   overflow: hidden;
-  border-radius: var(--awds-rounded-500);
+  border-radius: var(--awds-rounded-border-radius-500);
   background: rgb(var(--surface-bright));
   text-decoration: none;
   /* Свайп галереи на тач-устройствах: вертикаль — нативному скроллу, горизонталь — JS галереи. */
@@ -134,7 +134,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-5));
+  background: rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-5));
   transition: opacity 0.3s ease-out;
 }
 .pcard-buy-now .pcard__image-link:hover::after {
@@ -149,11 +149,11 @@
   align-items: center;
   justify-content: center;
   color: rgb(var(--surface-on-high));
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
 }
 .pcard-buy-now .pcard__media-placeholder > svg {
-  width: var(--awds-space-12);
-  height: var(--awds-space-12);
+  width: var(--awds-space-space-12);
+  height: var(--awds-space-space-12);
 }
 
 /* Верхний оверлей: страна (слева) ↔ избранное (справа) */
@@ -177,16 +177,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--awds-space-2);          /* 8px desktop → бокс 24+16 = 40px */
+  padding: var(--awds-space-space-2);          /* 8px desktop → бокс 24+16 = 40px */
 }
 .pcard.pcard-buy-now.pcard--mobile .pcard__country {
-  padding: var(--awds-space-1);          /* 4px mobile → бокс 24+8 = 32px */
+  padding: var(--awds-space-space-1);          /* 4px mobile → бокс 24+8 = 32px */
 }
 .pcard-buy-now .pcard__country > img,
 .pcard-buy-now .pcard__country > svg {
   display: block;
-  width: var(--awds-space-6);            /* 24px (ic24) */
-  height: var(--awds-space-6);
+  width: var(--awds-space-space-6);            /* 24px (ic24) */
+  height: var(--awds-space-space-6);
   object-fit: contain;                   /* флаг вписан с сохранением пропорций */
 }
 
@@ -198,12 +198,12 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: var(--awds-space-1);              /* 4px */
-  padding: var(--awds-space-2);          /* 8px desktop */
+  gap: var(--awds-space-space-1);              /* 4px */
+  padding: var(--awds-space-space-2);          /* 8px desktop */
   pointer-events: none;                  /* декоративные — hover/клик к ссылке-фото */
 }
 .pcard.pcard-buy-now.pcard--mobile .pcard__badges {
-  padding: var(--awds-space-1);          /* 4px mobile */
+  padding: var(--awds-space-space-1);          /* 4px mobile */
 }
 
 
@@ -216,17 +216,17 @@
 }
 .pcard-buy-now .pcard__slider-spacer {
   align-self: center;
-  height: calc(3 * var(--awds-space-1)); /* = высота dots-mini (12px), без сдвига контента */
+  height: calc(3 * var(--awds-space-space-1)); /* = высота dots-mini (12px), без сдвига контента */
   flex-shrink: 0;
 }
 .pcard-buy-now .pcard__slider--many {
   overflow: hidden;
-  max-width: calc(13 * var(--awds-space-1));   /* окно ~5 точек + удлинённая активная */
+  max-width: calc(13 * var(--awds-space-space-1));   /* окно ~5 точек + удлинённая активная */
 }
 .pcard-buy-now .pcard__slider-track {
   display: flex;
   align-items: center;
-  gap: var(--awds-space-1);
+  gap: var(--awds-space-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
   transition: transform 0.2s ease-out;
 }
@@ -299,21 +299,21 @@
 .pcard-buy-now .pcard__feedback {
   display: inline-flex;
   align-items: center;
-  gap: var(--awds-space-1);              /* 4px */
-  padding-top: var(--awds-space-1);      /* 4px */
+  gap: var(--awds-space-space-1);              /* 4px */
+  padding-top: var(--awds-space-space-1);      /* 4px */
 }
 .pcard-buy-now .pcard__rating-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-3-5);          /* 14px */
-  height: var(--awds-space-3-5);
+  width: var(--awds-space-space-3-5);          /* 14px */
+  height: var(--awds-space-space-3-5);
   color: rgb(var(--warning-core));
 }
 .pcard-buy-now .pcard__reviews-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-3-5);          /* 14px */
-  height: var(--awds-space-3-5);
+  width: var(--awds-space-space-3-5);          /* 14px */
+  height: var(--awds-space-space-3-5);
   color: rgb(var(--surface-on));
 }
 .pcard-buy-now .pcard__rating-value,
@@ -345,7 +345,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);   /* одна колонка на всю ширину */
   width: 100%;
-  padding-top: var(--awds-space-2);        /* 8px */
+  padding-top: var(--awds-space-space-2);        /* 8px */
 }
 
 /* Обе вью — в одной ячейке (стопкой). Скрытая: убрана из клика/таба/AT (visibility)
@@ -355,7 +355,7 @@
   grid-area: 1 / 1;
   display: flex;
   align-items: center;
-  gap: var(--awds-space-2);                /* 8px */
+  gap: var(--awds-space-space-2);                /* 8px */
   min-width: 0;
   opacity: 0;
   visibility: hidden;
@@ -379,12 +379,12 @@
   display: flex;
   align-items: center;
   background: linear-gradient(to right, rgb(var(--secondary-chroma)), rgb(var(--secondary-core)));
-  border: var(--awds-space-px) solid rgb(var(--secondary-core));   /* 1px */
-  border-radius: var(--awds-rectangle-400-rounded);
+  border: var(--awds-space-space-px) solid rgb(var(--secondary-core));   /* 1px */
+  border-radius: var(--awds-size-rectangle-400-rounded);
   overflow: hidden;                      /* ghost-кнопки не вылезают за скругление */
 }
 .pcard.pcard-buy-now.pcard--mobile .pcard__stepper {
-  border-radius: var(--awds-rectangle-300-rounded);
+  border-radius: var(--awds-size-rectangle-300-rounded);
 }
 
 /* Число количества (form-control default placehold). Динамика → tabular-nums. */
@@ -392,9 +392,9 @@
   flex: 1 1 auto;
   min-width: 0;
   text-align: center;
-  font-size: var(--awds-typography-font-size-400);              /* 14px */
-  line-height: var(--awds-typography-line-height-400);          /* 22px */
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  font-size: var(--awds-typography-typography-font-size-400);              /* 14px */
+  line-height: var(--awds-typography-typography-line-height-400);          /* 22px */
+  letter-spacing: var(--awds-typography-typography-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--secondary-container-on-high));
   font-variant-numeric: tabular-nums;
@@ -452,7 +452,7 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: var(--awds-space-1);
+  margin-bottom: var(--awds-space-space-1);
   z-index: 3;
   opacity: 0;
   visibility: hidden;

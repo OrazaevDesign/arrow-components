@@ -1,10 +1,6 @@
 ---
 name: awds-component-product-card
-description: >
-  Верстка карточек товара ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении карточки товара в маркет-грид / слайдер или PageCraft-блок,
-  выборе варианта раскладки (price-first), вопросах о стилях product-card / бейджах / избранном,
-  получении Figma-ссылки на компонент Product Card. Фото 3:4 + оверлеи, две вьюхи (Desktop-Tablet / Mobile).
+description: Карточки товара ArrowDS (product-card): фото 3:4 с оверлеями, бейджи, избранное, две вьюхи. Для карточки в гриде и слайдере товаров. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Карточка товара ArrowDS
@@ -39,7 +35,7 @@ description: >
 | Бейдж **percent** | bg `accent-core` / sheen `accent-chroma` / border `accent-core` / текст `accent-on` |
 | Бейдж **sale** | bg `primary-core` / sheen `primary-chroma` / border `primary-core` / текст `primary-on` |
 | Избранное | компонент `awds-component-button-favorites` (`.btn-favorites`) — свои цвета/состояния |
-| Скругление медиа | `var(--awds-rounded-500)` (8px Smooth) |
+| Скругление медиа | `var(--awds-rounded-border-radius-500)` (8px Smooth) |
 | Бренд / название / фидбэк | **Роли WYSIWYG-пресетов** `--awds-type-lead/body/caption-{fs,lh,ls}` (НЕ жёсткий шаг `--awds-typography-*`). Бренд desktop = `lead`, mobile = `body`; название = `body`; фидбэк/рубрика = `caption`. Роли масштабируются коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же оси, что типографика блоков. **Без `.typo-*` = `:root` (≈medium); `.typo-small` = макет** (lead 16/26, body 14/22, caption 12/19). Цена — ось `control-*` (фикс, не масштабируется) |
 | Иконки | флаг 20px (`space-5`, как иконка избранного), звезда 16px (`space-4`); сердце — в компоненте button-favorites |
 

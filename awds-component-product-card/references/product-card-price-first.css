@@ -39,13 +39,13 @@
      — бренд/название (link/accent):      rest rgb(var(--surface-on-highest)) → hover rgb(var(--accent-container-on))
      — текст рейтинга:                    rgb(var(--surface-on-high))
      — фон медиа:                         rgb(var(--surface-bright))
-     — скрим над фото (3% → opacity-5):   rgb(var(--surface-on-highest) / var(--awds-opacity-5))
+     — скрим над фото (3% → opacity-5):   rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-5))
      — тени:                              нет (убраны во всех состояниях)
      — звезда рейтинга:                   rgb(var(--warning-core))         (rating/selected)
      — бейджи и избранное:                внешние компоненты (badge.css / button-favorites.css)
 
    Размеры:
-     — медиа-скругление:  var(--awds-rounded-500)            (8px Smooth, border-radius/500)
+     — медиа-скругление:  var(--awds-rounded-border-radius-500)            (8px Smooth, border-radius/500)
      — цена/валюта: компонент awds-component-price, размер price--listing (роль --awds-type-price-listing, масштаб по .typo-* — как текст)
      — бренд:  роль WYSIWYG lead (--awds-type-lead-*) desktop; mobile — роль body (--awds-type-body-*)
      — название: роль WYSIWYG body (--awds-type-body-*), clamp 2 строки
@@ -62,7 +62,7 @@
 /* === Base (= View Desktop-Tablet) === */
 
 .pcard {
-  --awds-pcard-gap: var(--awds-space-2-5);   /* 10px медиа↔контент */
+  --awds-pcard-gap: var(--awds-space-space-2-5);   /* 10px медиа↔контент */
 
   box-sizing: border-box;
   position: relative;
@@ -91,17 +91,17 @@
 .pcard__image-link:focus-visible {
   outline: 2px solid rgb(var(--surface-on-highest));
   outline-offset: 2px;
-  border-radius: var(--awds-rounded-500);
+  border-radius: var(--awds-rounded-border-radius-500);
 }
 .pcard__brand:focus-visible,
 .pcard__name:focus-visible {
   outline: 2px solid rgb(var(--surface-on-highest));
   outline-offset: 2px;
-  border-radius: var(--awds-rounded-200);
+  border-radius: var(--awds-rounded-border-radius-200);
 }
 
 .pcard--mobile {
-  --awds-pcard-gap: var(--awds-space-2);     /* 8px */
+  --awds-pcard-gap: var(--awds-space-space-2);     /* 8px */
 }
 
 /* price-first: без зазора медиа↔слайдер↔контент (как в макете — родитель gap 0).
@@ -131,7 +131,7 @@
   inset: 0;
   display: block;
   overflow: hidden;                          /* клипает фото и скрим в скруглении */
-  border-radius: var(--awds-rounded-500);
+  border-radius: var(--awds-rounded-border-radius-500);
   background: rgb(var(--surface-bright));
   text-decoration: none;
   /* Без тени — у карточки её нет ни в одном состоянии. */
@@ -189,7 +189,7 @@
    точка (space-1) = 12px. Пустой, не кликается. */
 .pcard__slider-spacer {
   align-self: center;
-  height: calc(3 * var(--awds-space-1));
+  height: calc(3 * var(--awds-space-space-1));
   flex-shrink: 0;
 }
 
@@ -204,12 +204,12 @@
 .pcard__slider--many {
   overflow: hidden;
   /* окно ~5 точек + удлинённая активная + зазоры + padding пилюли */
-  max-width: calc(13 * var(--awds-space-1));   /* 52px (border-box, padding включён) */
+  max-width: calc(13 * var(--awds-space-space-1));   /* 52px (border-box, padding включён) */
 }
 .pcard__slider-track {
   display: flex;
   align-items: center;
-  gap: var(--awds-space-1);
+  gap: var(--awds-space-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
   transition: transform 0.2s ease-out;         /* MIFB: плавный сдвиг ленты */
 }
@@ -235,7 +235,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-5));
+  background: rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-5));
   transition: opacity 0.3s ease-out;
 }
 .pcard__image-link:hover::after {
@@ -250,11 +250,11 @@
   align-items: center;
   justify-content: center;
   color: rgb(var(--surface-on-high));
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
 }
 .pcard__media-placeholder > svg {
-  width: var(--awds-space-12);   /* 48px */
-  height: var(--awds-space-12);
+  width: var(--awds-space-space-12);   /* 48px */
+  height: var(--awds-space-space-12);
 }
 
 /* Верхний оверлей: страна (слева) ↔ избранное (справа) */
@@ -279,16 +279,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--awds-space-2);          /* 8px desktop → бокс 24+16 = 40px */
+  padding: var(--awds-space-space-2);          /* 8px desktop → бокс 24+16 = 40px */
 }
 .pcard--mobile .pcard__country {
-  padding: var(--awds-space-1);          /* 4px mobile → бокс 24+8 = 32px */
+  padding: var(--awds-space-space-1);          /* 4px mobile → бокс 24+8 = 32px */
 }
 .pcard__country > img,
 .pcard__country > svg {
   display: block;
-  width: var(--awds-space-6);            /* 24px (ic24) — бокс флага */
-  height: var(--awds-space-6);
+  width: var(--awds-space-space-6);            /* 24px (ic24) — бокс флага */
+  height: var(--awds-space-space-6);
   /* Флаг вписан в квадрат 24×24 с сохранением пропорций (3:2 не обрезается, а
      помещается целиком с полями сверху/снизу), как ic24 в макете. */
   object-fit: contain;
@@ -309,12 +309,12 @@
   z-index: 1;                            /* над скримом .pcard__image-link::after */
   display: flex;
   align-items: center;
-  gap: var(--awds-space-1);              /* 4px */
-  padding: var(--awds-space-2);          /* 8px desktop */
+  gap: var(--awds-space-space-1);              /* 4px */
+  padding: var(--awds-space-space-2);          /* 8px desktop */
   pointer-events: none;                  /* декоративные — hover/клик проходят к ссылке-фото */
 }
 .pcard--mobile .pcard__badges {
-  padding: var(--awds-space-1);          /* 4px mobile */
+  padding: var(--awds-space-space-1);          /* 4px mobile */
 }
 
 
@@ -394,24 +394,24 @@
 .pcard__feedback {
   display: flex;
   align-items: center;                   /* как в макете — по центру строки */
-  gap: var(--awds-space-1);              /* 4px */
-  padding-top: var(--awds-space-1);      /* 4px */
+  gap: var(--awds-space-space-1);              /* 4px */
+  padding-top: var(--awds-space-space-1);      /* 4px */
   width: fit-content;
 }
 /* Звезда рейтинга — 14px, warning (rating/selected/bg → #f97316 на эталоне) */
 .pcard__rating-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-3-5);          /* 14px */
-  height: var(--awds-space-3-5);
+  width: var(--awds-space-space-3-5);          /* 14px */
+  height: var(--awds-space-space-3-5);
   color: rgb(var(--warning-core));
 }
 /* Иконка отзывов (пузырёк) — 14px, приглушённая (surface-on) */
 .pcard__reviews-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-3-5);          /* 14px */
-  height: var(--awds-space-3-5);
+  width: var(--awds-space-space-3-5);          /* 14px */
+  height: var(--awds-space-space-3-5);
   color: rgb(var(--surface-on));
 }
 /* Значение рейтинга и счётчик отзывов — роль `caption` (.typo-small = 12/19)
@@ -466,7 +466,7 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: var(--awds-space-1);   /* зазор над остриё */
+  margin-bottom: var(--awds-space-space-1);   /* зазор над остриё */
   z-index: 3;                        /* над бейджами и скримом */
   opacity: 0;
   visibility: hidden;
