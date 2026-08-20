@@ -1,18 +1,11 @@
 ---
 name: awds-component-content-area
-description: >
-  Верстка медиа-области (Content Area) ArrowDS — HTML-разметка и CSS на токенах
-  дизайн-системы. Используй ВСЕГДА при: добавлении области с фиксированным
-  соотношением сторон под изображение или видео в разметку или PageCraft-блок,
-  выборе типа контента (image / video), соотношения сторон (16:9, 4:3, 1:1, 9:16,
-  A4, Letter, golden ratio…), способа вписывания картинки (cover / contain / fill),
-  вставке embed видео (youtube / vimeo / rutube / vk), получении Figma-ссылки на
-  компонент Content Area. 2 типа, 39 соотношений, статичный.
+description: Медиа-область Content Area ArrowDS: иллюстрация, изображение или видео с выбором соотношения сторон и вписыванием. Для медиа-слота в hero и карточке. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Content Area (медиа-область) ArrowDS
 
-Область с **фиксированным соотношением сторон** и скруглением под два типа контента: изображение (jpg/png/svg) и видео-embed. Ничего не хардкодит: радиус — `--awds-rounded-700`, цвета — роли. См. скилл `arrow-design-system`.
+Область с **фиксированным соотношением сторон** и скруглением под два типа контента: изображение (jpg/png/svg) и видео-embed. Ничего не хардкодит: радиус — `--awds-rounded-border-radius-700`, цвета — роли. См. скилл `arrow-design-system`.
 
 Компонент **статичный** (без hover/focus/disabled) и **бессhape-ный** (`shape=null`): «размер» — это соотношение сторон, а не size-токены.
 
@@ -65,7 +58,7 @@ description: >
 
 | Что | Источник |
 |---|---|
-| Радиус | `var(--awds-rounded-700)` (12px Smooth) — из макета `border-radius/700` |
+| Радиус | `var(--awds-rounded-border-radius-700)` (12px Smooth) — из макета `border-radius/700` |
 | Hairline-рамка | `rgb(var(--extended-shadow) / 0.03)` — та же ring-строка, что в `--awds-shadow-elevation-*` (`0 0 0 1px #00000008`); шкала `--awds-opacity-*` от 5%, поэтому alpha — литерал |
 | Фон video | `rgb(var(--surface-surface))` |
 | Соотношение | `--awds-content-area-ratio` (хелпер или инлайн) |

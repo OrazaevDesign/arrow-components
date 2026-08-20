@@ -32,7 +32,7 @@
                       --awds-opacity-* начинается с 5%, поэтому alpha — литерал)
      фон video        surface-surface
 
-   Радиус:              --awds-rounded-700 (12px Smooth) — из макета (border-radius/700)
+   Радиус:              --awds-rounded-border-radius-700 (12px Smooth) — из макета (border-radius/700)
 
    Приватные аккумуляторы: --awds-content-area-ratio, --awds-content-area-radius,
      --awds-content-area-border, --awds-content-area-fit, --awds-content-area-position.
@@ -43,7 +43,7 @@
 .content-area {
   /* Дефолты аккумуляторов */
   --awds-content-area-ratio:    16 / 9;
-  --awds-content-area-radius:   var(--awds-rounded-700);
+  --awds-content-area-radius:   var(--awds-rounded-border-radius-700);
   --awds-content-area-border:   rgb(var(--extended-shadow) / 0.03);
   --awds-content-area-fit:      cover;
   --awds-content-area-position: center;
