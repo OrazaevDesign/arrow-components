@@ -1,10 +1,6 @@
 ---
 name: awds-component-avatar
-description: >
-  Верстка аватаров ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении аватара пользователя в разметку или PageCraft-блок,
-  выборе типа аватара (initials / placeholder / picture), вопросах о стилях avatar / размерах,
-  получении Figma-ссылки на компонент Avatar. Круглый, 3 типа × 10 размеров, статичный.
+description: Аватары ArrowDS: круглый портрет, инициалы, заглушка, размеры. Для аватара пользователя в шапке, отзыве, списке, карточке автора. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Аватары ArrowDS
@@ -28,7 +24,7 @@ description: >
 | Фон | `rgb(var(--primary-container-core))` + sheen `rgb(var(--primary-container-chroma))` |
 | Кольцо | `rgb(var(--primary-container-on-lowest))` (через `::after` inset box-shadow) |
 | Инициалы / иконка | `rgb(var(--primary-container-on))` |
-| Иконка placeholder | + `opacity: var(--awds-opacity-60)` |
+| Иконка placeholder | + `opacity: var(--awds-opacity-opacity-60)` |
 | Диаметр | `var(--awds-space-N)` (24–64; для 72 — `calc(space-16 + space-2)`) |
 | Размер инициалов | `var(--awds-control-N-font-size / -line-height / -letter-spacing)` |
 | Скругление | `50%` — аватар **всегда круглый**, не зависит от темы Rounded |

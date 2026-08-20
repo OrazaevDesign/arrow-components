@@ -28,7 +28,7 @@
 | Кольцо | `primary-container-on-lowest` (1px, `::after`) |
 | Цвет иконки | `primary-container-on` |
 | Размер иконки | 60% диаметра |
-| Непрозрачность иконки | `var(--awds-opacity-60)` |
+| Непрозрачность иконки | `var(--awds-opacity-opacity-60)` |
 | Скругление | 50% (всегда круг) |
 
 ## Размеры

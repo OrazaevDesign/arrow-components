@@ -14,7 +14,7 @@
      — sheen:    rgb(var(--primary-container-chroma))    (chroma, левый край градиента)
      — кольцо:   rgb(var(--primary-container-on-lowest)) (тонкая обводка)
      — контент:  rgb(var(--primary-container-on))        (инициалы и иконка)
-     — иконка placeholder: opacity var(--awds-opacity-60)
+     — иконка placeholder: opacity var(--awds-opacity-opacity-60)
 
    Размеры (своя шкала avatar 50–700; в DS нет shape-слоя avatar, поэтому ссылаемся
    на базовые шкалы напрямую):
@@ -23,17 +23,17 @@
                  (фикс-шкала Control, совпадает с Figma: 16/17/20/24/28)
 
    Скругление: 50% — аватар ВСЕГДА круглый, независимо от темы Rounded
-   (None/Smooth/Rounded). Поэтому не --awds-rounded-full (он стал бы квадратом в None).
+   (None/Smooth/Rounded). Поэтому не --awds-rounded-border-radius-full (он стал бы квадратом в None).
    ============================================================================= */
 
 /* === Base === */
 
 .avatar {
   /* size accumulators (default = 400) */
-  --awds-avatar-size: var(--awds-space-12);            /* 48px */
-  --awds-avatar-fs:   var(--awds-control-850-font-size);
-  --awds-avatar-lh:   var(--awds-control-850-line-height);
-  --awds-avatar-ls:   var(--awds-control-850-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-12);            /* 48px */
+  --awds-avatar-fs:   var(--awds-control-font-size-850);
+  --awds-avatar-lh:   var(--awds-control-line-height-850);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-850);
 
   /* colors (единые для всех типов) */
   --awds-avatar-bg:     rgb(var(--primary-container-core));
@@ -85,7 +85,7 @@
 .avatar-placeholder > svg {
   width: 60%;
   height: 60%;
-  opacity: var(--awds-opacity-60);
+  opacity: var(--awds-opacity-opacity-60);
 }
 
 /* === Type: Picture (фото на весь круг) === */
@@ -100,71 +100,71 @@
 /* === Sizes (диаметр — base space-шкала; инициалы — Control-шкала) === */
 
 .avatar--700 {
-  --awds-avatar-size: calc(var(--awds-space-16) + var(--awds-space-2));   /* 72px (нет space-18) */
-  --awds-avatar-fs:   var(--awds-control-950-font-size);
-  --awds-avatar-lh:   var(--awds-control-950-line-height);
-  --awds-avatar-ls:   var(--awds-control-950-letter-spacing);
+  --awds-avatar-size: calc(var(--awds-space-space-16) + var(--awds-space-space-2));   /* 72px (нет space-18) */
+  --awds-avatar-fs:   var(--awds-control-font-size-950);
+  --awds-avatar-lh:   var(--awds-control-line-height-950);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-950);
 }
 
 .avatar--600 {
-  --awds-avatar-size: var(--awds-space-16);            /* 64px */
-  --awds-avatar-fs:   var(--awds-control-900-font-size);
-  --awds-avatar-lh:   var(--awds-control-900-line-height);
-  --awds-avatar-ls:   var(--awds-control-900-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-16);            /* 64px */
+  --awds-avatar-fs:   var(--awds-control-font-size-900);
+  --awds-avatar-lh:   var(--awds-control-line-height-900);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-900);
 }
 
 .avatar--500 {
-  --awds-avatar-size: var(--awds-space-14);            /* 56px */
-  --awds-avatar-fs:   var(--awds-control-850-font-size);
-  --awds-avatar-lh:   var(--awds-control-850-line-height);
-  --awds-avatar-ls:   var(--awds-control-850-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-14);            /* 56px */
+  --awds-avatar-fs:   var(--awds-control-font-size-850);
+  --awds-avatar-lh:   var(--awds-control-line-height-850);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-850);
 }
 
 .avatar--400 {
-  --awds-avatar-size: var(--awds-space-12);            /* 48px */
-  --awds-avatar-fs:   var(--awds-control-850-font-size);
-  --awds-avatar-lh:   var(--awds-control-850-line-height);
-  --awds-avatar-ls:   var(--awds-control-850-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-12);            /* 48px */
+  --awds-avatar-fs:   var(--awds-control-font-size-850);
+  --awds-avatar-lh:   var(--awds-control-line-height-850);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-850);
 }
 
 .avatar--300 {
-  --awds-avatar-size: var(--awds-space-11);            /* 44px */
-  --awds-avatar-fs:   var(--awds-control-700-font-size);
-  --awds-avatar-lh:   var(--awds-control-700-line-height);
-  --awds-avatar-ls:   var(--awds-control-700-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-11);            /* 44px */
+  --awds-avatar-fs:   var(--awds-control-font-size-700);
+  --awds-avatar-lh:   var(--awds-control-line-height-700);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-700);
 }
 
 .avatar--250 {
-  --awds-avatar-size: var(--awds-space-10);            /* 40px */
-  --awds-avatar-fs:   var(--awds-control-600-font-size);
-  --awds-avatar-lh:   var(--awds-control-600-line-height);
-  --awds-avatar-ls:   var(--awds-control-600-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-10);            /* 40px */
+  --awds-avatar-fs:   var(--awds-control-font-size-600);
+  --awds-avatar-lh:   var(--awds-control-line-height-600);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-600);
 }
 
 .avatar--200 {
-  --awds-avatar-size: var(--awds-space-9);             /* 36px */
-  --awds-avatar-fs:   var(--awds-control-600-font-size);
-  --awds-avatar-lh:   var(--awds-control-600-line-height);
-  --awds-avatar-ls:   var(--awds-control-600-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-9);             /* 36px */
+  --awds-avatar-fs:   var(--awds-control-font-size-600);
+  --awds-avatar-lh:   var(--awds-control-line-height-600);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-600);
 }
 
 .avatar--150 {
-  --awds-avatar-size: var(--awds-space-8);             /* 32px */
-  --awds-avatar-fs:   var(--awds-control-600-font-size);
-  --awds-avatar-lh:   var(--awds-control-600-line-height);
-  --awds-avatar-ls:   var(--awds-control-600-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-8);             /* 32px */
+  --awds-avatar-fs:   var(--awds-control-font-size-600);
+  --awds-avatar-lh:   var(--awds-control-line-height-600);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-600);
 }
 
 .avatar--100 {
-  --awds-avatar-size: var(--awds-space-7);             /* 28px */
-  --awds-avatar-fs:   var(--awds-control-600-font-size);
-  --awds-avatar-lh:   var(--awds-control-600-line-height);
-  --awds-avatar-ls:   var(--awds-control-600-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-7);             /* 28px */
+  --awds-avatar-fs:   var(--awds-control-font-size-600);
+  --awds-avatar-lh:   var(--awds-control-line-height-600);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-600);
 }
 
 .avatar--50 {
-  --awds-avatar-size: var(--awds-space-6);             /* 24px */
-  --awds-avatar-fs:   var(--awds-control-600-font-size);
-  --awds-avatar-lh:   var(--awds-control-600-line-height);
-  --awds-avatar-ls:   var(--awds-control-600-letter-spacing);
+  --awds-avatar-size: var(--awds-space-space-6);             /* 24px */
+  --awds-avatar-fs:   var(--awds-control-font-size-600);
+  --awds-avatar-lh:   var(--awds-control-line-height-600);
+  --awds-avatar-ls:   var(--awds-control-letter-spacing-600);
 }
