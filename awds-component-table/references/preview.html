@@ -7,8 +7,8 @@
   <title>awds-component-table / storybook</title>
 
   <!-- Порядок критичен: палитра ролей → DS-токены → CSS вариантов -->
-  <link rel="stylesheet" href="../../arrow-design-system/references/css-variables.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/css-global.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
   <link rel="stylesheet" href="./table.css">
   <link rel="stylesheet" href="./cell-light.css">
   <link rel="stylesheet" href="./cell-head.css">
@@ -35,26 +35,26 @@
       border: 1px solid rgb(var(--surface-container-high) / 1);
       background: rgb(var(--surface-container-lowest) / 1); color: inherit; cursor: pointer;
     }
-    .layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--awds-space-8); }
-    h2 { font-size: var(--awds-typography-font-size-600); margin: 0 0 var(--awds-space-4); }
-    section + section { margin-top: var(--awds-space-10); }
+    .layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--awds-space-space-8); }
+    h2 { font-size: var(--awds-typography-typography-font-size-600); margin: 0 0 var(--awds-space-space-4); }
+    section + section { margin-top: var(--awds-space-space-10); }
 
     /* Матрица variant × state */
     table.matrix { border-collapse: collapse; }
-    table.matrix th, table.matrix td { padding: var(--awds-space-3); text-align: left; vertical-align: middle; }
-    table.matrix > thead th { font-size: var(--awds-typography-font-size-200); color: rgb(var(--surface-on-high)); font-weight: var(--awds-font-weight-regular); }
-    table.matrix > tbody th { font-size: var(--awds-typography-font-size-200); color: rgb(var(--surface-on-high)); font-weight: var(--awds-font-weight-regular); white-space: nowrap; }
+    table.matrix th, table.matrix td { padding: var(--awds-space-space-3); text-align: left; vertical-align: middle; }
+    table.matrix > thead th { font-size: var(--awds-typography-typography-font-size-200); color: rgb(var(--surface-on-high)); font-weight: var(--awds-font-weight-regular); }
+    table.matrix > tbody th { font-size: var(--awds-typography-typography-font-size-200); color: rgb(var(--surface-on-high)); font-weight: var(--awds-font-weight-regular); white-space: nowrap; }
     /* мини-таблица-обёртка вокруг демонстрируемой ячейки */
     .demo { width: 180px; }
 
-    .samples { display: flex; flex-direction: column; gap: var(--awds-space-6); }
-    .sample__label { font-size: var(--awds-typography-font-size-200); color: rgb(var(--surface-on-high)); margin-bottom: var(--awds-space-2); }
+    .samples { display: flex; flex-direction: column; gap: var(--awds-space-space-6); }
+    .sample__label { font-size: var(--awds-typography-typography-font-size-200); color: rgb(var(--surface-on-high)); margin-bottom: var(--awds-space-space-2); }
 
-    aside.tokens { font-size: var(--awds-typography-font-size-200); }
-    aside.tokens dl { display: grid; grid-template-columns: 1fr auto; gap: var(--awds-space-1) var(--awds-space-3); }
+    aside.tokens { font-size: var(--awds-typography-typography-font-size-200); }
+    aside.tokens dl { display: grid; grid-template-columns: 1fr auto; gap: var(--awds-space-space-1) var(--awds-space-space-3); }
     aside.tokens dt { color: rgb(var(--surface-on-high)); }
-    aside.tokens dd { margin: 0; display: flex; align-items: center; gap: var(--awds-space-2); font-variant-numeric: tabular-nums; }
-    .swatch { width: 14px; height: 14px; border: 1px solid rgb(var(--surface-on-lowest)); border-radius: var(--awds-rounded-50); }
+    aside.tokens dd { margin: 0; display: flex; align-items: center; gap: var(--awds-space-space-2); font-variant-numeric: tabular-nums; }
+    .swatch { width: 14px; height: 14px; border: 1px solid rgb(var(--surface-on-lowest)); border-radius: var(--awds-rounded-border-radius-50); }
 
     /* === Зеркала состояний для статичной матрицы (копии :hover/:focus-visible/:active) === */
     .cell-light.is-hover  { --awds-cell-bg: rgb(var(--surface-surface)); --awds-cell-border: rgb(var(--surface-on-lowest)); }

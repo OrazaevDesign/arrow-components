@@ -16,11 +16,11 @@
    фиксированная. Поэтому size-классов .cell--{N} нет.
 
    Источники:
-     — padding:  var(--awds-space-3)            (Figma WYSIWYG/gap/li-top = 12px)
+     — padding:  var(--awds-space-space-3)            (Figma WYSIWYG/gap/li-top = 12px)
      — типографика: var(--awds-typography-…-400)  (Figma WYSIWYG body = 14/22/0)
      — цвета:    rgb(var(--surface-*))          (map.state.*.cell.*, css-variables.css сайта)
      — фокус:    rgb(var(--surface-on-highest)) (map.state.focus.focus-selection.outline)
-     — disabled: var(--awds-opacity-40)          (map.state.rest.opacity.control.disabled)
+     — disabled: var(--awds-opacity-opacity-40)          (map.state.rest.opacity.control.disabled)
      — шрифт:    var(--awds-font-family-system), var(--awds-font-weight-regular)
 
    Private vars аккумуляторы (заполняются в вариантах):
@@ -43,17 +43,17 @@
   font-family: var(--awds-font-family-system);
 }
 
-/* Минимальная ширина колонки — Figma min-w-[80px] = --awds-space-20 */
+/* Минимальная ширина колонки — Figma min-w-[80px] = --awds-space-space-20 */
 .awds-table .cell {
-  min-width: var(--awds-space-20);
+  min-width: var(--awds-space-space-20);
 }
 
 /* --- Var=Light: безрамочная, разделители строк, flush-left первый столбец --- */
 .awds-table--light .cell {
   border: 0;
-  border-bottom: var(--awds-space-px) solid rgb(var(--surface-on-lowest));
+  border-bottom: var(--awds-space-space-px) solid rgb(var(--surface-on-lowest));
   /* flush-left: левого паддинга нет, только верт. + правый (Figma pr-12 / py-12) */
-  padding-inline: 0 var(--awds-space-3);
+  padding-inline: 0 var(--awds-space-space-3);
 }
 .awds-table--light tr:last-child .cell {
   border-bottom: 0;
@@ -61,7 +61,7 @@
 
 /* --- Var=Default: сетка через границы ячеек (border-collapse + --awds-cell-border) --- */
 /* Тут ничего доопределять не нужно: cell-head / cell-default несут видимую
- * границу surface-on-lowest, а равномерный паддинг --awds-space-3 берётся из базы .cell.
+ * границу surface-on-lowest, а равномерный паддинг --awds-space-space-3 берётся из базы .cell.
  * Внешняя рамка собирается из границ крайних ячеек при border-collapse. */
 
 /* === Горизонтальный скролл (замена декоративного скроллбара из Figma) === */
@@ -84,7 +84,7 @@
   --awds-cell-description: rgb(var(--surface-on-high));
 
   /* Box & layout */
-  padding: var(--awds-space-3);                 /* 12px — Figma WYSIWYG/gap/li-top */
+  padding: var(--awds-space-space-3);                 /* 12px — Figma WYSIWYG/gap/li-top */
   border: 1px solid var(--awds-cell-border);
   background-color: var(--awds-cell-bg);
   color: var(--awds-cell-color);
@@ -92,9 +92,9 @@
   vertical-align: middle;
 
   /* Type (Figma WYSIWYG/body) — font-weight regular даже у заголовков, по макету */
-  font-size: var(--awds-typography-font-size-400);          /* 14px */
-  line-height: var(--awds-typography-line-height-400);      /* 22px */
-  letter-spacing: var(--awds-typography-letter-spacing-400); /* 0 */
+  font-size: var(--awds-typography-typography-font-size-400);          /* 14px */
+  line-height: var(--awds-typography-typography-line-height-400);      /* 22px */
+  letter-spacing: var(--awds-typography-typography-letter-spacing-400); /* 0 */
   font-weight: var(--awds-font-weight-regular);
 
   /* Polish (MIFB): короткий ячейный текст — pretty, чтобы не было висячих сирот. */
@@ -118,7 +118,7 @@
 
 .cell:disabled,
 .cell[aria-disabled="true"] {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
 
@@ -128,10 +128,10 @@
 /* Вторичная строка под основным текстом (token cell description). */
 .cell__description {
   display: block;
-  margin-block-start: var(--awds-space-1);
+  margin-block-start: var(--awds-space-space-1);
   color: var(--awds-cell-description);
-  font-size: var(--awds-typography-font-size-200);          /* 12px */
-  line-height: var(--awds-typography-line-height-200);      /* 19px */
+  font-size: var(--awds-typography-typography-font-size-200);          /* 12px */
+  line-height: var(--awds-typography-typography-line-height-200);      /* 19px */
   font-weight: var(--awds-font-weight-regular);
 }
 

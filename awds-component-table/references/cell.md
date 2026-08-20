@@ -53,13 +53,13 @@ Focus-обводка — `outline: 2px solid rgb(var(--surface-on-highest))` с�
 | color | `surface-on-highest` | `surface-on-highest` | `surface-on-highest` |
 | description | `surface-on-high` | `surface-on-high` | `surface-on-high` |
 
-Active = Rest. Focus = Rest + обводка. Disabled = Rest + `opacity: var(--awds-opacity-40)`.
+Active = Rest. Focus = Rest + обводка. Disabled = Rest + `opacity: var(--awds-opacity-opacity-40)`.
 
 ## Раскладки таблицы
 
 Ячейки кладутся в одну из двух раскладок (Figma-нода `2038:1350`):
 
-- `.awds-table--default` — сетка: все ячейки с границей (`border-collapse`), шапка залита. Паддинг равномерный `--awds-space-3`.
+- `.awds-table--default` — сетка: все ячейки с границей (`border-collapse`), шапка залита. Паддинг равномерный `--awds-space-space-3`.
 - `.awds-table--light` — безрамочная: только `border-bottom` между строками (`surface-on-lowest`), ячейки прозрачные, первый столбец flush-влево (`padding-inline-start: 0`).
 
 Широкую таблицу оборачивай в `.awds-table-scroll` (нативный `overflow-x:auto`).

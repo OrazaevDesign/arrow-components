@@ -1,6 +1,6 @@
 ---
 name: awds-component-table
-description: Верстка таблиц ArrowDS — HTML-разметка и CSS на токенах дизайн-системы. Используй ВСЕГДА при: добавлении таблицы или ячейки в разметку или PageCraft-блок, выборе варианта ячейки (cell-light / cell-head / cell-default), вопросах о стилях табличных ячеек, получении Figma-ссылки на компонент Cell/Table.
+description: Таблицы ArrowDS: шапка, строки, выравнивание колонок, зебра, адаптив. Для характеристик товара, сравнения, тарифов. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Таблица ArrowDS (`awds-component-table`)
@@ -73,7 +73,7 @@ HTML-разметка и CSS таблицы дизайн-системы ArrowDS.
 
 ## Размеры
 
-У ячейки **нет размерной шкалы** (`shape: null`): единственная фиксированная геометрия — padding `--awds-space-3` (12px), типографика `--awds-typography-*-400` (14/22px). Размерных классов `.cell--{N}` нет.
+У ячейки **нет размерной шкалы** (`shape: null`): единственная фиксированная геометрия — padding `--awds-space-space-3` (12px), типографика `--awds-typography-*-400` (14/22px). Размерных классов `.cell--{N}` нет.
 
 ## Заметка по cell-default
 
@@ -82,6 +82,6 @@ HTML-разметка и CSS таблицы дизайн-системы ArrowDS.
 ## Источники значений
 
 - **Цвета:** `rgb(var(--surface-*))` — `map.state.*.cell.*`, реальная палитра из `css-variables.css` сайта.
-- **Отступы / типографика:** `--awds-space-3`, `--awds-typography-*-400` — базовые шкалы css-global.
-- **Фокус:** `rgb(var(--surface-on-highest))`; **disabled:** `var(--awds-opacity-40)`.
+- **Отступы / типографика:** `--awds-space-space-3`, `--awds-typography-*-400` — базовые шкалы css-global.
+- **Фокус:** `rgb(var(--surface-on-highest))`; **disabled:** `var(--awds-opacity-opacity-40)`.
 - **Шрифт:** `--awds-font-family-system`, `--awds-font-weight-regular`.
