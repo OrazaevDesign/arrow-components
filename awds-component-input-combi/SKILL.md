@@ -1,18 +1,6 @@
 ---
 name: awds-component-input-combi
-description: >
-  Верстка полей ввода с ПЛАВАЮЩЕЙ МЕТКОЙ (floating label) ArrowDS — HTML-разметка и CSS
-  на токенах дизайн-системы. Используй ВСЕГДА при: поле, где подпись лежит внутри рамки
-  и уезжает наверх при вводе (Material-подобное поведение), компактных формах, где нет
-  места на подпись сверху, длинных формах адреса и профиля, где заполненные значения
-  должны сохранять названия, вопросах о стилях icombi / icombi__field / icombi__label /
-  icombi__body / input-combi, выборе размера такого поля (высота 36/40/48/52px),
-  выборе варианта такого поля (default, light, success, error, autofill, ghost, secondary),
-  подсветке валидации поля с плавающей меткой и пометке автозаполнения,
-  получении Figma-ссылки на компонент Input Combi. Построен на нативном <input> плюс
-  абсолютно спозиционированный <label>; состояния Rest / Hover / Focus / Active /
-  Disabled идут от самого поля. Если подпись стоит СНАРУЖИ поля — это
-  awds-component-input, не этот скилл.
+description: Поля ввода с ПЛАВАЮЩЕЙ МЕТКОЙ ArrowDS (icombi, input-combi): подпись внутри рамки уезжает наверх при вводе. Для компактных и длинных форм. Подпись снаружи — input. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Input Combi ArrowDS
@@ -56,13 +44,13 @@ description: >
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/метка/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-combi-default.css` |
-| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))` | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста и метки | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Combi Input` |
 | Вертикаль поля и метки | `var(--awds-rectangle-{N}-combi-{input-top , input-bottom , label-top})` | там же, ветка `combi` |
 | Типографика значения | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
 | Типографика уехавшей метки | `var(--awds-control-200-*)` / `var(--awds-control-100-*)` | **маппинг ручной** — shape-токена нет |
-| Opacity для disabled | `var(--awds-opacity-40)` | css-global (базовая шкала) |
+| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Базовый класс — `.icombi`, а не `.input-combi`.** Приватные аккумуляторы по контракту зовутся `--awds-{base_class}-*`; при `base_class = input-combi` они стали бы `--awds-input-combi-*`, что префиксом совпадает с чужим запрещённым `--awds-input-*` и ложно роняет sanity-check публикации. Тот же приём, что у `button-overhung` → `.obtn`.
@@ -96,7 +84,7 @@ description: >
 - Фокус виден при любом способе входа в поле (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Длинная метка обрезается многоточием. Если подпись не помещается — это сигнал, что поле требует внешней подписи или подсказки под ним, а не более длинной метки.
 - Декоративная иконка в слоте → `aria-hidden="true"`. Кликабельная (очистить, показать пароль) → внутри слота настоящий `<button type="button" aria-label="…">`.
-- Disabled гасится `opacity: var(--awds-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 
 ## Варианты
 

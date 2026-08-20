@@ -134,19 +134,19 @@
 
 .icombi {
   /* Size accumulator defaults (default_size = 400, map.size.rectangle.400) */
-  --awds-icombi-padding:      var(--awds-rectangle-400-padding);
-  --awds-icombi-icon:         var(--awds-rectangle-400-icon);
-  --awds-icombi-rounded:      var(--awds-rectangle-400-rounded);
-  --awds-icombi-fs:           var(--awds-rectangle-400-typography-font-size);
-  --awds-icombi-lh:           var(--awds-rectangle-400-typography-line-height);
-  --awds-icombi-ls:           var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-icombi-text-gap:     var(--awds-rectangle-400-text-gap);
-  --awds-icombi-label-top:    var(--awds-rectangle-400-combi-label-top);
-  --awds-icombi-input-top:    var(--awds-rectangle-400-combi-input-top);
-  --awds-icombi-input-bottom: var(--awds-rectangle-400-combi-input-bottom);
-  --awds-icombi-label-fs:     var(--awds-control-100-font-size);
-  --awds-icombi-label-lh:     var(--awds-control-100-line-height);
-  --awds-icombi-label-ls:     var(--awds-control-100-letter-spacing);
+  --awds-icombi-padding:      var(--awds-size-rectangle-400-padding);
+  --awds-icombi-icon:         var(--awds-size-rectangle-400-icon);
+  --awds-icombi-rounded:      var(--awds-size-rectangle-400-rounded);
+  --awds-icombi-fs:           var(--awds-size-rectangle-400-typography);
+  --awds-icombi-lh:           var(--awds-control-line-height-400);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-icombi-text-gap:     var(--awds-size-rectangle-400-text-gap);
+  --awds-icombi-label-top:    var(--awds-size-rectangle-400-combi-label-top);
+  --awds-icombi-input-top:    var(--awds-size-rectangle-400-combi-input-top);
+  --awds-icombi-input-bottom: var(--awds-size-rectangle-400-combi-input-bottom);
+  --awds-icombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-100);
 
   box-sizing: border-box;
   position: relative;
@@ -370,7 +370,7 @@
 .icombi__suffix button:focus-visible {
   outline: 2px solid rgb(var(--surface-on-highest));
   outline-offset: 0;
-  border-radius: var(--awds-rounded-50);
+  border-radius: var(--awds-rounded-border-radius-50);
 }
 
 
@@ -378,67 +378,67 @@
    Размеров четыре: у 50/100/200 combi-токены нулевые — см. шапку файла. */
 
 .icombi--300 {
-  --awds-icombi-padding:      var(--awds-rectangle-300-padding);
-  --awds-icombi-icon:         var(--awds-rectangle-300-icon);
-  --awds-icombi-rounded:      var(--awds-rectangle-300-rounded);
-  --awds-icombi-fs:           var(--awds-rectangle-300-typography-font-size);
-  --awds-icombi-lh:           var(--awds-rectangle-300-typography-line-height);
-  --awds-icombi-ls:           var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-icombi-text-gap:     var(--awds-rectangle-300-text-gap);
-  --awds-icombi-label-top:    var(--awds-rectangle-300-combi-label-top);
-  --awds-icombi-input-top:    var(--awds-rectangle-300-combi-input-top);
-  --awds-icombi-input-bottom: var(--awds-rectangle-300-combi-input-bottom);
-  --awds-icombi-label-fs:     var(--awds-control-100-font-size);
-  --awds-icombi-label-lh:     var(--awds-control-100-line-height);
-  --awds-icombi-label-ls:     var(--awds-control-100-letter-spacing);
+  --awds-icombi-padding:      var(--awds-size-rectangle-300-padding);
+  --awds-icombi-icon:         var(--awds-size-rectangle-300-icon);
+  --awds-icombi-rounded:      var(--awds-size-rectangle-300-rounded);
+  --awds-icombi-fs:           var(--awds-size-rectangle-300-typography);
+  --awds-icombi-lh:           var(--awds-control-line-height-400);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-icombi-text-gap:     var(--awds-size-rectangle-300-text-gap);
+  --awds-icombi-label-top:    var(--awds-size-rectangle-300-combi-label-top);
+  --awds-icombi-input-top:    var(--awds-size-rectangle-300-combi-input-top);
+  --awds-icombi-input-bottom: var(--awds-size-rectangle-300-combi-input-bottom);
+  --awds-icombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-100);
 }
 
 .icombi--400 {
-  --awds-icombi-padding:      var(--awds-rectangle-400-padding);
-  --awds-icombi-icon:         var(--awds-rectangle-400-icon);
-  --awds-icombi-rounded:      var(--awds-rectangle-400-rounded);
-  --awds-icombi-fs:           var(--awds-rectangle-400-typography-font-size);
-  --awds-icombi-lh:           var(--awds-rectangle-400-typography-line-height);
-  --awds-icombi-ls:           var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-icombi-text-gap:     var(--awds-rectangle-400-text-gap);
-  --awds-icombi-label-top:    var(--awds-rectangle-400-combi-label-top);
-  --awds-icombi-input-top:    var(--awds-rectangle-400-combi-input-top);
-  --awds-icombi-input-bottom: var(--awds-rectangle-400-combi-input-bottom);
-  --awds-icombi-label-fs:     var(--awds-control-100-font-size);
-  --awds-icombi-label-lh:     var(--awds-control-100-line-height);
-  --awds-icombi-label-ls:     var(--awds-control-100-letter-spacing);
+  --awds-icombi-padding:      var(--awds-size-rectangle-400-padding);
+  --awds-icombi-icon:         var(--awds-size-rectangle-400-icon);
+  --awds-icombi-rounded:      var(--awds-size-rectangle-400-rounded);
+  --awds-icombi-fs:           var(--awds-size-rectangle-400-typography);
+  --awds-icombi-lh:           var(--awds-control-line-height-400);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-icombi-text-gap:     var(--awds-size-rectangle-400-text-gap);
+  --awds-icombi-label-top:    var(--awds-size-rectangle-400-combi-label-top);
+  --awds-icombi-input-top:    var(--awds-size-rectangle-400-combi-input-top);
+  --awds-icombi-input-bottom: var(--awds-size-rectangle-400-combi-input-bottom);
+  --awds-icombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-100);
 }
 
 .icombi--500 {
-  --awds-icombi-padding:      var(--awds-rectangle-500-padding);
-  --awds-icombi-icon:         var(--awds-rectangle-500-icon);
-  --awds-icombi-rounded:      var(--awds-rectangle-500-rounded);
-  --awds-icombi-fs:           var(--awds-rectangle-500-typography-font-size);
-  --awds-icombi-lh:           var(--awds-rectangle-500-typography-line-height);
-  --awds-icombi-ls:           var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-icombi-text-gap:     var(--awds-rectangle-500-text-gap);
-  --awds-icombi-label-top:    var(--awds-rectangle-500-combi-label-top);
-  --awds-icombi-input-top:    var(--awds-rectangle-500-combi-input-top);
-  --awds-icombi-input-bottom: var(--awds-rectangle-500-combi-input-bottom);
-  --awds-icombi-label-fs:     var(--awds-control-200-font-size);
-  --awds-icombi-label-lh:     var(--awds-control-200-line-height);
-  --awds-icombi-label-ls:     var(--awds-control-200-letter-spacing);
+  --awds-icombi-padding:      var(--awds-size-rectangle-500-padding);
+  --awds-icombi-icon:         var(--awds-size-rectangle-500-icon);
+  --awds-icombi-rounded:      var(--awds-size-rectangle-500-rounded);
+  --awds-icombi-fs:           var(--awds-size-rectangle-500-typography);
+  --awds-icombi-lh:           var(--awds-control-line-height-600);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-icombi-text-gap:     var(--awds-size-rectangle-500-text-gap);
+  --awds-icombi-label-top:    var(--awds-size-rectangle-500-combi-label-top);
+  --awds-icombi-input-top:    var(--awds-size-rectangle-500-combi-input-top);
+  --awds-icombi-input-bottom: var(--awds-size-rectangle-500-combi-input-bottom);
+  --awds-icombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
 }
 
 .icombi--600 {
-  --awds-icombi-padding:      var(--awds-rectangle-600-padding);
-  --awds-icombi-icon:         var(--awds-rectangle-600-icon);
-  --awds-icombi-rounded:      var(--awds-rectangle-600-rounded);
-  --awds-icombi-fs:           var(--awds-rectangle-600-typography-font-size);
-  --awds-icombi-lh:           var(--awds-rectangle-600-typography-line-height);
-  --awds-icombi-ls:           var(--awds-rectangle-600-typography-letter-spacing);
-  --awds-icombi-text-gap:     var(--awds-rectangle-600-text-gap);
-  --awds-icombi-label-top:    var(--awds-rectangle-600-combi-label-top);
-  --awds-icombi-input-top:    var(--awds-rectangle-600-combi-input-top);
-  --awds-icombi-input-bottom: var(--awds-rectangle-600-combi-input-bottom);
-  --awds-icombi-label-fs:     var(--awds-control-200-font-size);
-  --awds-icombi-label-lh:     var(--awds-control-200-line-height);
-  --awds-icombi-label-ls:     var(--awds-control-200-letter-spacing);
+  --awds-icombi-padding:      var(--awds-size-rectangle-600-padding);
+  --awds-icombi-icon:         var(--awds-size-rectangle-600-icon);
+  --awds-icombi-rounded:      var(--awds-size-rectangle-600-rounded);
+  --awds-icombi-fs:           var(--awds-size-rectangle-600-typography);
+  --awds-icombi-lh:           var(--awds-control-line-height-600);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-icombi-text-gap:     var(--awds-size-rectangle-600-text-gap);
+  --awds-icombi-label-top:    var(--awds-size-rectangle-600-combi-label-top);
+  --awds-icombi-input-top:    var(--awds-size-rectangle-600-combi-input-top);
+  --awds-icombi-input-bottom: var(--awds-size-rectangle-600-combi-input-bottom);
+  --awds-icombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
 }
 
 
@@ -497,7 +497,7 @@
      320x48), обводка 2 OUTSIDE. CSS-outline рисуется от края бокса, поэтому
      offset 1 + width 2 дают ту же полосу 1..3. Радиус подтверждает независимо:
      в макете он равен скруглению контрола + 1. Сверено по всем размерам. */
-  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
   outline-offset: 1px;
 }
 
@@ -509,7 +509,7 @@
 
 .icombi:has(.icombi__field:disabled),
 .icombi--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
 
