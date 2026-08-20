@@ -13,8 +13,16 @@
     }
   },
   "variants": {
-    "img":   { "node_id": "2221:69", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-69", "figma_label": "var=img" },
-    "video": { "node_id": "2221:71", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-71", "figma_label": "var=video" }
+    "img": {
+      "node_id": "2221:69",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-69",
+      "figma_label": "var=img"
+    },
+    "video": {
+      "node_id": "2221:71",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-71",
+      "figma_label": "var=video"
+    }
   },
   "_note_dropped": "Вариант illustration (2221:60) и API перекраски awds-ill-* удалены — компонент упрощён до img/video (SVG идёт как img с fit-contain). Figma-набор ещё содержит ноду illustration.",
   "modifiers": {
@@ -22,36 +30,135 @@
       "_note": "39 хелперов --{R} + override через --awds-content-area-ratio. Дефолт (без класса) 16:9.",
       "class_prefix": "content-area--",
       "default": "16-9",
-      "numeric": ["1-1","16-9","9-16","4-3","3-4","3-2","2-3","5-4","4-5","16-10","10-16","8-5","9-8","21-9","9-21","32-9","16-5","14-3","8-3","5-2","3-1","2-1","1-2","4-1","6-1","12-1","6-7"],
-      "named": ["a4-portrait","a4-landscape","a4-half-portrait","a4-half-landscape","letter-portrait","letter-landscape","letter-half-portrait","letter-half-landscape","golden-portrait","golden-landscape","golden-half-portrait","golden-half-landscape"]
+      "numeric": [
+        "1-1",
+        "16-9",
+        "9-16",
+        "4-3",
+        "3-4",
+        "3-2",
+        "2-3",
+        "5-4",
+        "4-5",
+        "16-10",
+        "10-16",
+        "8-5",
+        "9-8",
+        "21-9",
+        "9-21",
+        "32-9",
+        "16-5",
+        "14-3",
+        "8-3",
+        "5-2",
+        "3-1",
+        "2-1",
+        "1-2",
+        "4-1",
+        "6-1",
+        "12-1",
+        "6-7"
+      ],
+      "named": [
+        "a4-portrait",
+        "a4-landscape",
+        "a4-half-portrait",
+        "a4-half-landscape",
+        "letter-portrait",
+        "letter-landscape",
+        "letter-half-portrait",
+        "letter-half-landscape",
+        "golden-portrait",
+        "golden-landscape",
+        "golden-half-portrait",
+        "golden-half-landscape"
+      ]
     },
     "fit": {
       "_note": "только variant img: способ вписывания object-fit + override object-position через --awds-content-area-position",
-      "values": ["cover", "contain", "fill"],
-      "class": { "cover": "content-area--fit-cover", "contain": "content-area--fit-contain", "fill": "content-area--fit-fill" },
+      "values": [
+        "cover",
+        "contain",
+        "fill"
+      ],
+      "class": {
+        "cover": "content-area--fit-cover",
+        "contain": "content-area--fit-contain",
+        "fill": "content-area--fit-fill"
+      },
       "default": "cover"
     }
   },
   "shape": null,
   "size_scale": null,
-  "states": ["rest"],
-  "color_tokens": ["border"],
-  "css_files": ["content-area.css"],
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "border"
+  ],
+  "css_files": [
+    "content-area.css"
+  ],
   "preview": {
     "base_class": "content-area",
     "default_size": null,
-    "matrix_states": ["rest"],
+    "matrix_states": [
+      "rest"
+    ],
     "matrix_sizes": null,
     "toggles": [
-      { "id": "variant", "label": "Тип",         "options": ["img", "video"] },
-      { "id": "ratio",   "label": "Соотношение",  "options": ["16-9","1-1","4-3","3-2","3-4","9-16","21-9","2-1","a4-portrait","golden-landscape"] },
-      { "id": "fit",     "label": "Вписывание",   "options": ["cover", "contain", "fill"] }
+      {
+        "id": "variant",
+        "label": "Тип",
+        "options": [
+          "img",
+          "video"
+        ]
+      },
+      {
+        "id": "ratio",
+        "label": "Соотношение",
+        "options": [
+          "16-9",
+          "1-1",
+          "4-3",
+          "3-2",
+          "3-4",
+          "9-16",
+          "21-9",
+          "2-1",
+          "a4-portrait",
+          "golden-landscape"
+        ]
+      },
+      {
+        "id": "fit",
+        "label": "Вписывание",
+        "options": [
+          "cover",
+          "contain",
+          "fill"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Картинка 4:3, cover", "html": "<figure class=\"content-area content-area--img content-area--4-3 content-area--fit-cover\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" },
-      { "label": "Картинка 1:1, contain", "html": "<figure class=\"content-area content-area--img content-area--1-1 content-area--fit-contain\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" },
-      { "label": "Видео YouTube 16:9", "html": "<div class=\"content-area content-area--video content-area--16-9\"><iframe class=\"content-area__video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" title=\"…\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen loading=\"lazy\"></iframe></div>" },
-      { "label": "Произвольное соотношение 7:3", "html": "<figure class=\"content-area content-area--img\" style=\"--awds-content-area-ratio: 7/3\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>" }
+      {
+        "label": "Картинка 4:3, cover",
+        "html": "<figure class=\"content-area content-area--img content-area--4-3 content-area--fit-cover\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
+      },
+      {
+        "label": "Картинка 1:1, contain",
+        "html": "<figure class=\"content-area content-area--img content-area--1-1 content-area--fit-contain\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
+      },
+      {
+        "label": "Видео YouTube 16:9",
+        "html": "<div class=\"content-area content-area--video content-area--16-9\"><iframe class=\"content-area__video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" title=\"…\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen loading=\"lazy\"></iframe></div>"
+      },
+      {
+        "label": "Произвольное соотношение 7:3",
+        "html": "<figure class=\"content-area content-area--img\" style=\"--awds-content-area-ratio: 7/3\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -64,17 +171,37 @@
   "snapshot_hash": "sha256:ec9c9bff7704973acbe3ddd4fc84354fb2a1880f67191aa64b020a7e9fef4077",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "0d3b149",
-    "pushed_at": "2026-07-07T12:34:35Z",
+    "commit": "94f5d5a1ed7c8206cf7e699de227b915827ef8aa",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "img": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/references/content-area-img.md",
       "video": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/references/content-area-video.md"
     },
     "dev_resources_status": {
-      "set":   { "status": "linked", "method": "component_description", "node_id": "2221:59", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/SKILL.md" },
-      "img":   { "status": "linked", "method": "component_description", "node_id": "2221:69", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/SKILL.md" },
-      "video": { "status": "linked", "method": "component_description", "node_id": "2221:71", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/SKILL.md" },
-      "illustration_node": { "status": "linked", "method": "component_description", "node_id": "2221:60", "note": "вариант удалён из скилла; нода перепривязана к общему SKILL.md" }
+      "set": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2221:59",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/SKILL.md"
+      },
+      "img": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2221:69",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/SKILL.md"
+      },
+      "video": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2221:71",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-content-area/SKILL.md"
+      },
+      "illustration_node": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2221:60",
+        "note": "вариант удалён из скилла; нода перепривязана к общему SKILL.md"
+      }
     }
   }
 }

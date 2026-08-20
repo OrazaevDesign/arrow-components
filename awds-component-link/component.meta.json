@@ -7,28 +7,87 @@
     "primary_url": null
   },
   "variants": {
-    "default":  { "node_id": null, "url": null, "figma_label": "link/default" },
-    "muted":    { "node_id": null, "url": null, "figma_label": "link/muted" },
-    "contrast": { "node_id": null, "url": null, "figma_label": "link/contrast" },
-    "accent":   { "node_id": null, "url": null, "figma_label": "link/accent" },
-    "heading":  { "node_id": null, "url": null, "figma_label": "link/heading" }
+    "default": {
+      "node_id": null,
+      "url": null,
+      "figma_label": "link/default"
+    },
+    "muted": {
+      "node_id": null,
+      "url": null,
+      "figma_label": "link/muted"
+    },
+    "contrast": {
+      "node_id": null,
+      "url": null,
+      "figma_label": "link/contrast"
+    },
+    "accent": {
+      "node_id": null,
+      "url": null,
+      "figma_label": "link/accent"
+    },
+    "heading": {
+      "node_id": null,
+      "url": null,
+      "figma_label": "link/heading"
+    }
   },
   "shape": null,
   "size_scale": null,
-  "states": ["rest", "hover", "focus", "active"],
-  "color_tokens": ["color"],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active"
+  ],
+  "color_tokens": [
+    "color"
+  ],
   "preview": {
     "base_class": "lnk",
     "default_size": null,
-    "matrix_states": ["rest", "hover", "focus", "active"],
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active"
+    ],
     "matrix_sizes": null,
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["default", "muted", "contrast", "accent", "heading"] },
-      { "id": "underline", "label": "Подчёркивание", "options": ["ul-solid", "ul-dashed", "ul-dotted", "ul-hover", "ul-none"], "note": "ось стиль×поведение (1px, 30%); стиль (solid/dashed/dotted) комбинируется с ul-hover (появляется по hover) или ul-none (без линии)" }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "default",
+          "muted",
+          "contrast",
+          "accent",
+          "heading"
+        ]
+      },
+      {
+        "id": "underline",
+        "label": "Подчёркивание",
+        "options": [
+          "ul-solid",
+          "ul-dashed",
+          "ul-dotted",
+          "ul-hover",
+          "ul-none"
+        ],
+        "note": "ось стиль×поведение (1px, 30%); стиль (solid/dashed/dotted) комбинируется с ul-hover (появляется по hover) или ul-none (без линии)"
+      }
     ],
     "html_samples": [
-      { "label": "Инлайн-ссылка в тексте", "html": "<p>Читайте <a class=\"lnk lnk-default\" href=\"#\">условия доставки</a> перед оформлением.</p>" },
-      { "label": "Ссылка-заголовок", "html": "<h3><a class=\"lnk lnk-heading\" href=\"#\">Название статьи</a></h3>" }
+      {
+        "label": "Инлайн-ссылка в тексте",
+        "html": "<p>Читайте <a class=\"lnk lnk-default\" href=\"#\">условия доставки</a> перед оформлением.</p>"
+      },
+      {
+        "label": "Ссылка-заголовок",
+        "html": "<h3><a class=\"lnk lnk-heading\" href=\"#\">Название статьи</a></h3>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -47,21 +106,36 @@
   "snapshot_hash": "sha256:2019784442cce80b5c9cae83eb705e05f17f7a105f03a216294785ed980b6663",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "54b3fdd22cfc11cac431e40c496c47eb7bb7538d",
-    "pushed_at": "2026-08-13T09:18:31Z",
+    "commit": "b8a5319321ae7f982852274d01740d308a1b5179",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
-      "default":  "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-default.md",
-      "muted":    "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-muted.md",
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-default.md",
+      "muted": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-muted.md",
       "contrast": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-contrast.md",
-      "accent":   "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-accent.md",
-      "heading":  "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-heading.md"
+      "accent": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-accent.md",
+      "heading": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-link/references/link-heading.md"
     },
     "dev_resources_status": {
-      "default":  { "status": "not_applicable", "reason": "no Figma node — built from DS tokens State/*/link" },
-      "muted":    { "status": "not_applicable", "reason": "no Figma node — built from DS tokens State/*/link" },
-      "contrast": { "status": "not_applicable", "reason": "no Figma node — built from DS tokens State/*/link" },
-      "accent":   { "status": "not_applicable", "reason": "no Figma node — built from DS tokens State/*/link" },
-      "heading":  { "status": "not_applicable", "reason": "no Figma node — built from DS tokens State/*/link" }
+      "default": {
+        "status": "not_applicable",
+        "reason": "no Figma node — built from DS tokens State/*/link"
+      },
+      "muted": {
+        "status": "not_applicable",
+        "reason": "no Figma node — built from DS tokens State/*/link"
+      },
+      "contrast": {
+        "status": "not_applicable",
+        "reason": "no Figma node — built from DS tokens State/*/link"
+      },
+      "accent": {
+        "status": "not_applicable",
+        "reason": "no Figma node — built from DS tokens State/*/link"
+      },
+      "heading": {
+        "status": "not_applicable",
+        "reason": "no Figma node — built from DS tokens State/*/link"
+      }
     }
   }
 }

@@ -19,21 +19,77 @@
     }
   },
   "shape": "rectangle",
-  "size_scale": [50, 100, 200, 300, 400, 500, 600],
-  "states": ["rest", "hover", "focus", "active", "disabled", "loading"],
-  "color_tokens": ["bg", "chroma", "border", "color"],
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled",
+    "loading"
+  ],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
   "preview": {
     "base_class": "obtn",
     "default_size": 400,
-    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
-    "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary"] },
-      { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "primary",
+          "secondary"
+        ]
+      },
+      {
+        "id": "icons",
+        "label": "Иконки",
+        "options": [
+          "none",
+          "left",
+          "right",
+          "both"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Только текст", "html": "<button class=\"obtn obtn-primary obtn--400\">Купить</button>" },
-      { "label": "Иконка слева", "html": "<button class=\"obtn obtn-primary obtn--400\"><svg>...</svg><span class=\"obtn__content\">Добавить</span></button>" }
+      {
+        "label": "Только текст",
+        "html": "<button class=\"obtn obtn-primary obtn--400\">Купить</button>"
+      },
+      {
+        "label": "Иконка слева",
+        "html": "<button class=\"obtn obtn-primary obtn--400\"><svg>...</svg><span class=\"obtn__content\">Добавить</span></button>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -55,8 +111,8 @@
   "snapshot_hash": "sha256:3dfb22886176bf2388ff4999e1b0f805b8f36e56b9c8250f65719a487b53f623",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "9b034d764568f648c6bb6893f61d8f24aff5dbe1",
-    "pushed_at": "2026-08-13T09:18:31Z",
+    "commit": "887021a50da0286bf01d937e51084dd32b2d5005",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/references/button-overhung-primary.md",
       "secondary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/references/button-overhung-secondary.md"

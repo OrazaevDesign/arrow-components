@@ -14,36 +14,107 @@
     }
   },
   "shape": "square",
-  "size_scale": [200, 300, 400, 500],
-  "states": ["rest", "hover", "focus", "active", "disabled"],
+  "size_scale": [
+    200,
+    300,
+    400,
+    500
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
   "states_note": "Ось Figma Type (Selected / Indeterminate / Unselected) — это НЕ CSS-варианты, а состояния нативного input (:checked / :indeterminate / дефолт). Selected и Indeterminate делят палитру check-radio/selected и отличаются только иконкой. Отдельный CSS-вариант один — default.",
-  "color_tokens": ["bg", "chroma", "border", "color"],
-  "css_files": ["checkbox.css"],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
+  "css_files": [
+    "checkbox.css"
+  ],
   "preview": {
     "base_class": "checkbox",
     "variant_class": "checkbox",
     "default_size": 400,
-    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
-    "matrix_sizes": [500, 400, 300, 200],
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      500,
+      400,
+      300,
+      200
+    ],
     "toggles": [
-      { "id": "theme", "label": "Тема", "options": ["light", "dark"] },
-      { "id": "type", "label": "Тип", "options": ["selected", "indeterminate", "unselected"] }
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "type",
+        "label": "Тип",
+        "options": [
+          "selected",
+          "indeterminate",
+          "unselected"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Чекбокс с подписью", "html": "<label class=\"checkbox checkbox--400\"><input class=\"checkbox__input\" type=\"checkbox\"><span class=\"checkbox__box\">…check + dash svg…</span><span class=\"checkbox__label\">Согласен с условиями</span></label>" },
-      { "label": "Без подписи (в таблице/списке)", "html": "<label class=\"checkbox checkbox--300\" aria-label=\"Выбрать строку\"><input class=\"checkbox__input\" type=\"checkbox\"><span class=\"checkbox__box\">…</span></label>" },
-      { "label": "Indeterminate («выбрать всё»)", "html": "<label class=\"checkbox checkbox--400\"><input class=\"checkbox__input\" type=\"checkbox\"><!-- input.indeterminate = true из JS --><span class=\"checkbox__box\">…</span><span class=\"checkbox__label\">Выбрать всё</span></label>" }
+      {
+        "label": "Чекбокс с подписью",
+        "html": "<label class=\"checkbox checkbox--400\"><input class=\"checkbox__input\" type=\"checkbox\"><span class=\"checkbox__box\">…check + dash svg…</span><span class=\"checkbox__label\">Согласен с условиями</span></label>"
+      },
+      {
+        "label": "Без подписи (в таблице/списке)",
+        "html": "<label class=\"checkbox checkbox--300\" aria-label=\"Выбрать строку\"><input class=\"checkbox__input\" type=\"checkbox\"><span class=\"checkbox__box\">…</span></label>"
+      },
+      {
+        "label": "Indeterminate («выбрать всё»)",
+        "html": "<label class=\"checkbox checkbox--400\"><input class=\"checkbox__input\" type=\"checkbox\"><!-- input.indeterminate = true из JS --><span class=\"checkbox__box\">…</span><span class=\"checkbox__label\">Выбрать всё</span></label>"
+      }
     ]
   },
   "ds_token_dependencies": [
-    "--primary-core", "--primary-dim", "--primary-chroma", "--primary-on",
-    "--secondary-container-core", "--secondary-container-dim", "--secondary-container-chroma",
-    "--secondary-container-on", "--secondary-container-on-low",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-chroma",
+    "--primary-on",
+    "--secondary-container-core",
+    "--secondary-container-dim",
+    "--secondary-container-chroma",
+    "--secondary-container-on",
+    "--secondary-container-on-low",
     "--surface-on-highest",
-    "--awds-size-square-200-padding", "--awds-size-square-200-icon", "--awds-size-square-200-rounded", "--awds-size-square-200-gap",
-    "--awds-size-square-300-padding", "--awds-size-square-300-icon", "--awds-size-square-300-rounded", "--awds-size-square-300-gap",
-    "--awds-size-square-400-padding", "--awds-size-square-400-icon", "--awds-size-square-400-rounded", "--awds-size-square-400-gap",
-    "--awds-size-square-500-padding", "--awds-size-square-500-icon", "--awds-size-square-500-rounded", "--awds-size-square-500-gap",
+    "--awds-size-square-200-padding",
+    "--awds-size-square-200-icon",
+    "--awds-size-square-200-rounded",
+    "--awds-size-square-200-gap",
+    "--awds-size-square-300-padding",
+    "--awds-size-square-300-icon",
+    "--awds-size-square-300-rounded",
+    "--awds-size-square-300-gap",
+    "--awds-size-square-400-padding",
+    "--awds-size-square-400-icon",
+    "--awds-size-square-400-rounded",
+    "--awds-size-square-400-gap",
+    "--awds-size-square-500-padding",
+    "--awds-size-square-500-icon",
+    "--awds-size-square-500-rounded",
+    "--awds-size-square-500-gap",
     "--awds-opacity-opacity-40"
   ],
   "last_synced": "2026-08-13T08:12:23Z",
@@ -51,8 +122,8 @@
   "snapshot_hash": "sha256:30466daa5dda0d9b7b66796a8230cb861f9d246d39b395ed6a9ea7c51fad3bc8",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "bf1d2062340b1116a70d0c657997bec2eb0bbc31",
-    "pushed_at": "2026-08-13T09:18:31Z",
+    "commit": "f042e490698f3cd4e3f5dc42e5bbe9a2592076f1",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-checkbox/references/checkbox-default.md"
     },

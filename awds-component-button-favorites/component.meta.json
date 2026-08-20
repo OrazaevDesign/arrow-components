@@ -7,29 +7,72 @@
     "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471"
   },
   "variants": {
-    "favorites": { "node_id": "856:30471", "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471", "figma_label": "button-favorites (⚙️Favourites, State × View)" }
+    "favorites": {
+      "node_id": "856:30471",
+      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471",
+      "figma_label": "button-favorites (⚙️Favourites, State × View)"
+    }
   },
   "shape": "rectangle",
   "size_scale": null,
   "based_on": "awds-component-button (.btn icon-only, прозрачный вариант)",
-  "views": ["desktop", "mobile"],
-  "states": ["rest", "hover", "selected"],
+  "views": [
+    "desktop",
+    "mobile"
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "selected"
+  ],
   "states_note": "Figma State=Active соответствует 'selected' (постоянное «в избранном», [aria-pressed=true]); CSS :active отдан press-feedback. Desktop = дефолт .btn (rect-400, 40px), Mobile = .btn-favorites--mobile (32px).",
-  "color_tokens": ["bg", "chroma", "border", "color", "fav-fill", "fav-stroke"],
-  "css_files": ["button-favorites.css"],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color",
+    "fav-fill",
+    "fav-stroke"
+  ],
+  "css_files": [
+    "button-favorites.css"
+  ],
   "preview": {
     "base_class": "btn",
     "variant_class": "btn-favorites",
     "default_size": 400,
-    "matrix_states": ["rest", "hover", "selected"],
+    "matrix_states": [
+      "rest",
+      "hover",
+      "selected"
+    ],
     "matrix_sizes": null,
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["favorites"] },
-      { "id": "view", "label": "Вью", "options": ["desktop", "mobile"] }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "favorites"
+        ]
+      },
+      {
+        "id": "view",
+        "label": "Вью",
+        "options": [
+          "desktop",
+          "mobile"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Desktop, не в избранном", "html": "<button class=\"btn btn-favorites btn--icon-only\" type=\"button\" aria-pressed=\"false\" aria-label=\"В избранное\"><span class=\"btn-favorites__icon\">…heart solid + outline…</span></button>" },
-      { "label": "Mobile, в избранном", "html": "<button class=\"btn btn-favorites btn-favorites--mobile btn--icon-only\" type=\"button\" aria-pressed=\"true\" aria-label=\"В избранном\"><span class=\"btn-favorites__icon\">…</span></button>" }
+      {
+        "label": "Desktop, не в избранном",
+        "html": "<button class=\"btn btn-favorites btn--icon-only\" type=\"button\" aria-pressed=\"false\" aria-label=\"В избранное\"><span class=\"btn-favorites__icon\">…heart solid + outline…</span></button>"
+      },
+      {
+        "label": "Mobile, в избранном",
+        "html": "<button class=\"btn btn-favorites btn-favorites--mobile btn--icon-only\" type=\"button\" aria-pressed=\"true\" aria-label=\"В избранном\"><span class=\"btn-favorites__icon\">…</span></button>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -38,18 +81,26 @@
     "--color-surface-on-highest",
     "--color-error-container-dim",
     "--color-error-container-on",
-    "--awds-size-rectangle-400-padding", "--awds-size-rectangle-400-icon", "--awds-size-rectangle-400-rounded", "--awds-size-rectangle-400-gap", "--awds-size-rectangle-400-typography", "--awds-control-line-height-400", "--awds-control-letter-spacing-400",
-    "--awds-space-space-5", "--awds-space-space-1-5",
+    "--awds-size-rectangle-400-padding",
+    "--awds-size-rectangle-400-icon",
+    "--awds-size-rectangle-400-rounded",
+    "--awds-size-rectangle-400-gap",
+    "--awds-size-rectangle-400-typography",
+    "--awds-control-line-height-400",
+    "--awds-control-letter-spacing-400",
+    "--awds-space-space-5",
+    "--awds-space-space-1-5",
     "--awds-opacity-opacity-40",
-    "--awds-font-family-system", "--awds-font-weight-semibold"
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
   ],
   "last_synced": "2026-06-22T09:28:25Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:e51ed9428008f0037740c04d16e43d134eb48a8622072577104a71c64d9e8459",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "ba729c7a0f1b32f5b7331bda157097101e2edbaf",
-    "pushed_at": "2026-08-13T09:18:31Z",
+    "commit": "0c6594ec7465ac9f575d32863ebc9f316eafc2b5",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "favorites": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-favorites/references/button-favorites.md"
     },

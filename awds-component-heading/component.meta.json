@@ -7,53 +7,160 @@
     "primary_url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6128-6392"
   },
   "variants": {
-    "heading": { "node_id": "6128:6392", "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6128-6392", "figma_label": "Heading / Heading + Button" }
+    "heading": {
+      "node_id": "6128:6392",
+      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6128-6392",
+      "figma_label": "Heading / Heading + Button"
+    }
   },
   "modifiers": {
-    "level": { "values": ["h1", "h2", "h3", "h4", "h5"], "class": { "h1": "heading--h1", "h2": "heading--h2", "h3": "heading--h3", "h4": "heading--h4", "h5": "heading--h5" }, "default": "h2" },
-    "action": { "values": ["none", "button-area"], "note": "Опциональное действие «Все ›» — композиция awds-component-button-area (.btn-area.btn-area-default.btn-area--100.btn-area--fill-y + суффикс-шеврон). В Figma — инстанс Button Area/Default." }
+    "level": {
+      "values": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5"
+      ],
+      "class": {
+        "h1": "heading--h1",
+        "h2": "heading--h2",
+        "h3": "heading--h3",
+        "h4": "heading--h4",
+        "h5": "heading--h5"
+      },
+      "default": "h2"
+    },
+    "action": {
+      "values": [
+        "none",
+        "button-area"
+      ],
+      "note": "Опциональное действие «Все ›» — композиция awds-component-button-area (.btn-area.btn-area-default.btn-area--100.btn-area--fill-y + суффикс-шеврон). В Figma — инстанс Button Area/Default."
+    }
   },
   "shape": null,
-  "size_scale": ["h1", "h2", "h3", "h4", "h5"],
+  "size_scale": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5"
+  ],
   "level_typography_map": {
     "_note": "level → АДАПТИВНЫЙ примитив typography (--awds-typography-{font-size,line-height-compact,letter-spacing}-{N}). Примитив сам растёт по брейкпоинту (@media в css-global), давая значения Figma для View Desktop/Tablet/Mobile. Сматчено по px из get_variable_defs (WYSIWYG/h{N}).",
-    "h1": { "typography": 920, "px": "22/24/28 (M/T/D)" },
-    "h2": { "typography": 910, "px": "20/20/24" },
-    "h3": { "typography": 900, "px": "19 (фикс)" },
-    "h4": { "typography": 800, "px": "18 (фикс)" },
-    "h5": { "typography": 600, "px": "16 (фикс)" }
+    "h1": {
+      "typography": 920,
+      "px": "22/24/28 (M/T/D)"
+    },
+    "h2": {
+      "typography": 910,
+      "px": "20/20/24"
+    },
+    "h3": {
+      "typography": 900,
+      "px": "19 (фикс)"
+    },
+    "h4": {
+      "typography": 800,
+      "px": "18 (фикс)"
+    },
+    "h5": {
+      "typography": 600,
+      "px": "16 (фикс)"
+    }
   },
-  "views": ["desktop", "tablet", "mobile"],
-  "states": ["rest"],
-  "color_tokens": ["color"],
-  "css_files": ["heading.css"],
+  "views": [
+    "desktop",
+    "tablet",
+    "mobile"
+  ],
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "color"
+  ],
+  "css_files": [
+    "heading.css"
+  ],
   "composes": [
     "awds-component-button-area (.btn-area.btn-area-default.btn-area--100.btn-area--fill-y — действие «Все ›» в .heading__action; требует button-area.css). В Figma действие heading-а и есть инстанс Button Area/Default. Button Area держит цвет (default → tertiary-container-on-high), размер (control-300 13/16), состояния, суффикс-шеврон и полную высоту (--fill-y). Опционально: заголовок без действия — просто .heading > .heading__title."
   ],
   "preview": {
     "base_class": "heading",
     "default_size": "h2",
-    "matrix_states": ["rest"],
-    "matrix_sizes": ["h1", "h2", "h3", "h4", "h5"],
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5"
+    ],
     "toggles": [
-      { "id": "level",  "label": "Уровень",  "options": ["h1", "h2", "h3", "h4", "h5"] },
-      { "id": "action", "label": "Действие", "options": ["link", "none"] },
-      { "id": "view",   "label": "View",     "options": ["desktop", "tablet", "mobile"] }
+      {
+        "id": "level",
+        "label": "Уровень",
+        "options": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5"
+        ]
+      },
+      {
+        "id": "action",
+        "label": "Действие",
+        "options": [
+          "link",
+          "none"
+        ]
+      },
+      {
+        "id": "view",
+        "label": "View",
+        "options": [
+          "desktop",
+          "tablet",
+          "mobile"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "H1 + действие (button-area)", "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn-area btn-area-default btn-area--100 btn-area--fill-y heading__action\" href=\"#\"><span class=\"btn-area__label\">Все</span><span class=\"btn-area__suffix\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 4l4 4-4 4\"/></svg></span></a></div>" },
-      { "label": "H3 без действия", "html": "<div class=\"heading heading--h3\"><h3 class=\"heading__title\">Heading</h3></div>" }
+      {
+        "label": "H1 + действие (button-area)",
+        "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn-area btn-area-default btn-area--100 btn-area--fill-y heading__action\" href=\"#\"><span class=\"btn-area__label\">Все</span><span class=\"btn-area__suffix\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 4l4 4-4 4\"/></svg></span></a></div>"
+      },
+      {
+        "label": "H3 без действия",
+        "html": "<div class=\"heading heading--h3\"><h3 class=\"heading__title\">Heading</h3></div>"
+      }
     ]
   },
   "ds_token_dependencies": [
     "--color-surface-on-highest",
-    "--awds-typography-typography-font-size-920", "--awds-typography-typography-line-height-compact-920", "--awds-typography-typography-letter-spacing-920",
-    "--awds-typography-typography-font-size-910", "--awds-typography-typography-line-height-compact-910", "--awds-typography-typography-letter-spacing-910",
-    "--awds-typography-typography-font-size-900", "--awds-typography-typography-line-height-compact-900", "--awds-typography-typography-letter-spacing-900",
-    "--awds-typography-typography-font-size-800", "--awds-typography-typography-line-height-compact-800", "--awds-typography-typography-letter-spacing-800",
-    "--awds-typography-typography-font-size-600", "--awds-typography-typography-line-height-compact-600", "--awds-typography-typography-letter-spacing-600",
+    "--awds-typography-typography-font-size-920",
+    "--awds-typography-typography-line-height-compact-920",
+    "--awds-typography-typography-letter-spacing-920",
+    "--awds-typography-typography-font-size-910",
+    "--awds-typography-typography-line-height-compact-910",
+    "--awds-typography-typography-letter-spacing-910",
+    "--awds-typography-typography-font-size-900",
+    "--awds-typography-typography-line-height-compact-900",
+    "--awds-typography-typography-letter-spacing-900",
+    "--awds-typography-typography-font-size-800",
+    "--awds-typography-typography-line-height-compact-800",
+    "--awds-typography-typography-letter-spacing-800",
+    "--awds-typography-typography-font-size-600",
+    "--awds-typography-typography-line-height-compact-600",
+    "--awds-typography-typography-letter-spacing-600",
     "--awds-space-space-1-5",
-    "--awds-font-family-system", "--awds-font-weight-semibold"
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold"
   ],
   "_dependency_note": "Заголовок — адаптивные примитивы typography (920/910/900/800/600), View Desktop/Tablet/Mobile зашит в их @media. Действие «Все ›» — внешний awds-component-button-area (button-area.css): цвет/размер/состояния/полную высоту держит он сам, heading.css своих стилей действия больше не имеет. Раскладка по View: desktop — действие вплотную к заголовку (gap space-1-5), tablet/mobile — space-between (@media max-width 1067).",
   "last_synced": "2026-06-30T16:34:41Z",
@@ -61,13 +168,18 @@
   "snapshot_hash": "sha256:a21e3a5fce1daf8a7088081ea45af274ec16996bd602e2eda549758663634a05",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "34e9ee5",
-    "pushed_at": "2026-06-30T18:21:41Z",
+    "commit": "2d0c7cb353a0656f912328c90d0a3fdddccab889",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "heading": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-heading/references/heading.md"
     },
     "dev_resources_status": {
-      "heading": { "status": "linked", "method": "component_description", "node_id": "6128:6392", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-heading/SKILL.md" }
+      "heading": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "6128:6392",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-heading/SKILL.md"
+      }
     }
   }
 }

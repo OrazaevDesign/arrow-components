@@ -7,27 +7,89 @@
     "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-81"
   },
   "variants": {
-    "initials":    { "node_id": "2001:82",  "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-82",  "figma_label": "Type=Initials" },
-    "placeholder": { "node_id": "2001:102", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-102", "figma_label": "Type=Placeholder" },
-    "picture":     { "node_id": "2001:122", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-122", "figma_label": "Type=Picture" }
+    "initials": {
+      "node_id": "2001:82",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-82",
+      "figma_label": "Type=Initials"
+    },
+    "placeholder": {
+      "node_id": "2001:102",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-102",
+      "figma_label": "Type=Placeholder"
+    },
+    "picture": {
+      "node_id": "2001:122",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2001-122",
+      "figma_label": "Type=Picture"
+    }
   },
   "shape": null,
-  "size_scale": [50, 100, 150, 200, 250, 300, 400, 500, 600, 700],
-  "states": ["rest"],
-  "color_tokens": ["bg", "chroma", "border", "color"],
-  "css_files": ["avatar.css"],
+  "size_scale": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    700
+  ],
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
+  "css_files": [
+    "avatar.css"
+  ],
   "preview": {
     "base_class": "avatar",
     "default_size": 400,
-    "matrix_states": ["rest"],
-    "matrix_sizes": [700, 600, 500, 400, 300, 250, 200, 150, 100, 50],
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": [
+      700,
+      600,
+      500,
+      400,
+      300,
+      250,
+      200,
+      150,
+      100,
+      50
+    ],
     "toggles": [
-      { "id": "variant", "label": "Тип", "options": ["initials", "placeholder", "picture"] }
+      {
+        "id": "variant",
+        "label": "Тип",
+        "options": [
+          "initials",
+          "placeholder",
+          "picture"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Инициалы", "html": "<span class=\"avatar avatar-initials avatar--400\">АК</span>" },
-      { "label": "Placeholder", "html": "<span class=\"avatar avatar-placeholder avatar--400\"><svg>…user…</svg></span>" },
-      { "label": "Фото", "html": "<span class=\"avatar avatar-picture avatar--400\"><img src=\"…\" alt=\"…\"></span>" }
+      {
+        "label": "Инициалы",
+        "html": "<span class=\"avatar avatar-initials avatar--400\">АК</span>"
+      },
+      {
+        "label": "Placeholder",
+        "html": "<span class=\"avatar avatar-placeholder avatar--400\"><svg>…user…</svg></span>"
+      },
+      {
+        "label": "Фото",
+        "html": "<span class=\"avatar avatar-picture avatar--400\"><img src=\"…\" alt=\"…\"></span>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -36,9 +98,20 @@
     "--color-primary-container-on",
     "--color-primary-container-on-lowest",
     "--awds-space-space-2",
-    "--awds-space-space-6", "--awds-space-space-7", "--awds-space-space-8", "--awds-space-space-9", "--awds-space-space-10",
-    "--awds-space-space-11", "--awds-space-space-12", "--awds-space-space-14", "--awds-space-space-16",
-    "--awds-control-600-*", "--awds-control-700-*", "--awds-control-850-*", "--awds-control-900-*", "--awds-control-950-*",
+    "--awds-space-space-6",
+    "--awds-space-space-7",
+    "--awds-space-space-8",
+    "--awds-space-space-9",
+    "--awds-space-space-10",
+    "--awds-space-space-11",
+    "--awds-space-space-12",
+    "--awds-space-space-14",
+    "--awds-space-space-16",
+    "--awds-control-600-*",
+    "--awds-control-700-*",
+    "--awds-control-850-*",
+    "--awds-control-900-*",
+    "--awds-control-950-*",
     "--awds-opacity-opacity-60",
     "--awds-font-family-system",
     "--awds-font-weight-semibold"
@@ -48,17 +121,32 @@
   "snapshot_hash": "sha256:83c412bb759f1f450717a8788db5388b146e13550780ef5a6929208ce39023f5",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "8ddd58db074f6fadd0e03f3a88ce4a60067b1c8f",
-    "pushed_at": "2026-06-17T14:34:43Z",
+    "commit": "20248cdaeefbda2bf944fb87a52fb803ba16a856",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
-      "initials":    "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-initials.md",
+      "initials": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-initials.md",
       "placeholder": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-placeholder.md",
-      "picture":     "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-picture.md"
+      "picture": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-picture.md"
     },
     "dev_resources_status": {
-      "initials":    { "status": "linked", "method": "component_description", "node_id": "2001:82",  "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md" },
-      "placeholder": { "status": "linked", "method": "component_description", "node_id": "2001:102", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md" },
-      "picture":     { "status": "linked", "method": "component_description", "node_id": "2001:122", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md" }
+      "initials": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2001:82",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+      },
+      "placeholder": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2001:102",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+      },
+      "picture": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2001:122",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+      }
     }
   }
 }

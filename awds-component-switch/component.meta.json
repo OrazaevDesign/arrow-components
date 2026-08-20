@@ -14,43 +14,134 @@
     }
   },
   "shape": "square",
-  "size_scale": [200, 300, 400, 500, 600],
-  "states": ["rest", "hover", "focus", "active", "disabled"],
+  "size_scale": [
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
   "states_note": "Ось Figma Type (Selected / Unselected) — состояние нативного input (:checked / дефолт). Ось Var (Default / Icon) выражена НАЛИЧИЕМ иконок в разметке, отдельного CSS-класса нет: правила в CSS одни и те же. Отдельный CSS-вариант один — default. Скругление трека и бегунка фиксированное (border-radius/full → var(--awds-rounded-border-radius-full)), в size-аккумуляторах его нет.",
-  "color_tokens": ["bg", "chroma", "border", "handle", "icon-color"],
-  "css_files": ["switch.css"],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "handle",
+    "icon-color"
+  ],
+  "css_files": [
+    "switch.css"
+  ],
   "based_on": "awds-component-checkbox / awds-component-radio (палитра check-radio и прогрессия состояний те же); отличия — горизонтальная геометрия с едущим бегунком, размер 600, ось Var, роль handle и иконка, выбитая цветом трека",
   "geometry_note": "Трек = square/{N}/switch-width × (icon + 2×padding). Круг бегунка = icon − 2×space-0-5. Ход = switch-width − 2×padding − icon (в макете это ширина распорки «space»; отдельного токена нет, считается в CSS).",
   "preview": {
     "base_class": "switch",
     "variant_class": "switch",
     "default_size": 400,
-    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
-    "matrix_sizes": [600, 500, 400, 300, 200],
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200
+    ],
     "toggles": [
-      { "id": "theme", "label": "Тема", "options": ["light", "dark"] },
-      { "id": "type", "label": "Тип", "options": ["selected", "unselected"] },
-      { "id": "variant", "label": "Var", "options": ["default", "icon"] },
-      { "id": "rounding", "label": "Скругление", "options": ["smooth", "none", "rounded"] }
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "type",
+        "label": "Тип",
+        "options": [
+          "selected",
+          "unselected"
+        ]
+      },
+      {
+        "id": "variant",
+        "label": "Var",
+        "options": [
+          "default",
+          "icon"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Настройка с подписью (Var=Default)", "html": "<label class=\"switch switch--400\"><input class=\"switch__input\" type=\"checkbox\" role=\"switch\" checked><span class=\"switch__track\"><span class=\"switch__handle\"></span></span><span class=\"switch__label\">Показывать цены со скидкой</span></label>" },
-      { "label": "С иконками в бегунке (Var=Icon)", "html": "<label class=\"switch switch--600\"><input class=\"switch__input\" type=\"checkbox\" role=\"switch\"><span class=\"switch__track\"><span class=\"switch__handle\"><svg class=\"switch__icon switch__icon--on\">…галка…</svg><svg class=\"switch__icon switch__icon--off\">…крестик…</svg></span></span><span class=\"switch__label\">Тёмная тема</span></label>" },
-      { "label": "Без подписи (в строке настроек)", "html": "<label class=\"switch switch--400\" aria-label=\"Уведомления\"><input class=\"switch__input\" type=\"checkbox\" role=\"switch\"><span class=\"switch__track\"><span class=\"switch__handle\"></span></span></label>" }
+      {
+        "label": "Настройка с подписью (Var=Default)",
+        "html": "<label class=\"switch switch--400\"><input class=\"switch__input\" type=\"checkbox\" role=\"switch\" checked><span class=\"switch__track\"><span class=\"switch__handle\"></span></span><span class=\"switch__label\">Показывать цены со скидкой</span></label>"
+      },
+      {
+        "label": "С иконками в бегунке (Var=Icon)",
+        "html": "<label class=\"switch switch--600\"><input class=\"switch__input\" type=\"checkbox\" role=\"switch\"><span class=\"switch__track\"><span class=\"switch__handle\"><svg class=\"switch__icon switch__icon--on\">…галка…</svg><svg class=\"switch__icon switch__icon--off\">…крестик…</svg></span></span><span class=\"switch__label\">Тёмная тема</span></label>"
+      },
+      {
+        "label": "Без подписи (в строке настроек)",
+        "html": "<label class=\"switch switch--400\" aria-label=\"Уведомления\"><input class=\"switch__input\" type=\"checkbox\" role=\"switch\"><span class=\"switch__track\"><span class=\"switch__handle\"></span></span></label>"
+      }
     ]
   },
   "ds_token_dependencies": [
-    "--primary-core", "--primary-dim", "--primary-chroma", "--primary-on-dim",
-    "--secondary-container-core", "--secondary-container-dim", "--secondary-container-chroma",
-    "--secondary-container-on", "--secondary-container-on-low",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-chroma",
+    "--primary-on-dim",
+    "--secondary-container-core",
+    "--secondary-container-dim",
+    "--secondary-container-chroma",
+    "--secondary-container-on",
+    "--secondary-container-on-low",
     "--surface-on-highest",
     "--awds-rounded-border-radius-full",
     "--awds-space-space-0-5",
-    "--awds-size-square-200-switch-width", "--awds-size-square-200-icon", "--awds-size-square-200-padding", "--awds-size-square-200-gap",
-    "--awds-size-square-300-switch-width", "--awds-size-square-300-icon", "--awds-size-square-300-padding", "--awds-size-square-300-gap",
-    "--awds-size-square-400-switch-width", "--awds-size-square-400-icon", "--awds-size-square-400-padding", "--awds-size-square-400-gap",
-    "--awds-size-square-500-switch-width", "--awds-size-square-500-icon", "--awds-size-square-500-padding", "--awds-size-square-500-gap",
-    "--awds-size-square-600-switch-width", "--awds-size-square-600-icon", "--awds-size-square-600-padding", "--awds-size-square-600-gap",
+    "--awds-size-square-200-switch-width",
+    "--awds-size-square-200-icon",
+    "--awds-size-square-200-padding",
+    "--awds-size-square-200-gap",
+    "--awds-size-square-300-switch-width",
+    "--awds-size-square-300-icon",
+    "--awds-size-square-300-padding",
+    "--awds-size-square-300-gap",
+    "--awds-size-square-400-switch-width",
+    "--awds-size-square-400-icon",
+    "--awds-size-square-400-padding",
+    "--awds-size-square-400-gap",
+    "--awds-size-square-500-switch-width",
+    "--awds-size-square-500-icon",
+    "--awds-size-square-500-padding",
+    "--awds-size-square-500-gap",
+    "--awds-size-square-600-switch-width",
+    "--awds-size-square-600-icon",
+    "--awds-size-square-600-padding",
+    "--awds-size-square-600-gap",
     "--awds-opacity-opacity-40"
   ],
   "last_synced": "2026-08-13T08:57:28Z",
@@ -58,8 +149,8 @@
   "snapshot_hash": "sha256:af09bdc60737d4e8e425a9405b449da7badb92aa1da3ed576e1e7140ea651fc3",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "b7d7b0288ff46eaace31994abfe4ecef02e9e4e6",
-    "pushed_at": "2026-08-13T09:07:16Z",
+    "commit": "e22ad6bdf529b8701e21f01317259ff4dde5f780",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-switch/references/switch-default.md"
     },

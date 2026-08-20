@@ -7,39 +7,124 @@
     "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5285"
   },
   "variants": {
-    "market-percent": { "node_id": "2093:5286", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5286", "figma_label": "Type=Text, Var=Percent, Size=600, State=Rest" },
-    "market-sale":    { "node_id": "2093:5417", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5417", "figma_label": "Type=Text, Var=Sale, Size=600, State=Rest" },
-    "market-new":     { "node_id": "2093:5374", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5374", "figma_label": "Type=Text, Var=New, Size=600, State=Rest" },
-    "market-brand":   { "node_id": "2093:5331", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5331", "figma_label": "Type=Text, Var=Brand, Size=600, State=Rest" }
+    "market-percent": {
+      "node_id": "2093:5286",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5286",
+      "figma_label": "Type=Text, Var=Percent, Size=600, State=Rest"
+    },
+    "market-sale": {
+      "node_id": "2093:5417",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5417",
+      "figma_label": "Type=Text, Var=Sale, Size=600, State=Rest"
+    },
+    "market-new": {
+      "node_id": "2093:5374",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5374",
+      "figma_label": "Type=Text, Var=New, Size=600, State=Rest"
+    },
+    "market-brand": {
+      "node_id": "2093:5331",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5331",
+      "figma_label": "Type=Text, Var=Brand, Size=600, State=Rest"
+    }
   },
   "shape": "rectangle",
-  "size_scale": [50, 100, 200, 300, 400, 500, 600],
-  "states": ["rest"],
-  "color_tokens": ["bg", "chroma", "border", "color"],
-  "css_files": ["badge.css"],
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
+  "css_files": [
+    "badge.css"
+  ],
   "preview": {
     "base_class": "badge",
     "default_size": 400,
-    "matrix_states": ["rest"],
-    "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["market-percent", "market-sale", "market-new", "market-brand"] },
-      { "id": "type", "label": "Тип", "options": ["text", "icon"] }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "market-percent",
+          "market-sale",
+          "market-new",
+          "market-brand"
+        ]
+      },
+      {
+        "id": "type",
+        "label": "Тип",
+        "options": [
+          "text",
+          "icon"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Процент (accent)", "html": "<span class=\"badge badge-market-percent badge--400\"><span class=\"badge__label\">-30%</span></span>" },
-      { "label": "Sale (primary)", "html": "<span class=\"badge badge-market-sale badge--400\"><span class=\"badge__label\">SALE</span></span>" },
-      { "label": "New (info)", "html": "<span class=\"badge badge-market-new badge--400\"><span class=\"badge__label\">NEW</span></span>" },
-      { "label": "Brand (secondary)", "html": "<span class=\"badge badge-market-brand badge--400\"><span class=\"badge__label\">BRAND</span></span>" },
-      { "label": "С иконкой слева", "html": "<span class=\"badge badge-market-sale badge--400\"><svg class=\"badge__icon\">...</svg><span class=\"badge__label\">SALE</span></span>" },
-      { "label": "Только иконки (Type=Icon)", "html": "<span class=\"badge badge-market-percent badge--400\"><svg class=\"badge__icon\">...</svg></span>" }
+      {
+        "label": "Процент (accent)",
+        "html": "<span class=\"badge badge-market-percent badge--400\"><span class=\"badge__label\">-30%</span></span>"
+      },
+      {
+        "label": "Sale (primary)",
+        "html": "<span class=\"badge badge-market-sale badge--400\"><span class=\"badge__label\">SALE</span></span>"
+      },
+      {
+        "label": "New (info)",
+        "html": "<span class=\"badge badge-market-new badge--400\"><span class=\"badge__label\">NEW</span></span>"
+      },
+      {
+        "label": "Brand (secondary)",
+        "html": "<span class=\"badge badge-market-brand badge--400\"><span class=\"badge__label\">BRAND</span></span>"
+      },
+      {
+        "label": "С иконкой слева",
+        "html": "<span class=\"badge badge-market-sale badge--400\"><svg class=\"badge__icon\">...</svg><span class=\"badge__label\">SALE</span></span>"
+      },
+      {
+        "label": "Только иконки (Type=Icon)",
+        "html": "<span class=\"badge badge-market-percent badge--400\"><svg class=\"badge__icon\">...</svg></span>"
+      }
     ]
   },
   "ds_token_dependencies": [
-    "--color-accent-core", "--color-accent-chroma", "--color-accent-on",
-    "--color-primary-core", "--color-primary-chroma", "--color-primary-on",
-    "--color-info-core", "--color-info-chroma", "--color-info-on",
-    "--color-secondary-core", "--color-secondary-chroma", "--color-secondary-on",
+    "--color-accent-core",
+    "--color-accent-chroma",
+    "--color-accent-on",
+    "--color-primary-core",
+    "--color-primary-chroma",
+    "--color-primary-on",
+    "--color-info-core",
+    "--color-info-chroma",
+    "--color-info-on",
+    "--color-secondary-core",
+    "--color-secondary-chroma",
+    "--color-secondary-on",
     "--awds-rectangle-*",
     "--awds-font-family-system",
     "--awds-font-weight-semibold"
@@ -49,20 +134,45 @@
   "snapshot_hash": "sha256:72aa1559f9bd2bef62ee03eaee11a11b521664297fbeb652410247f9bb75aeaa",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "a98c53a",
-    "pushed_at": "2026-06-22T11:33:17Z",
+    "commit": "2f52444a336dcfa800f6c59fa00c2044edfb343c",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "market-percent": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-percent.md",
-      "market-sale":    "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-sale.md",
-      "market-new":     "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-new.md",
-      "market-brand":   "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-brand.md"
+      "market-sale": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-sale.md",
+      "market-new": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-new.md",
+      "market-brand": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/references/badge-market-brand.md"
     },
     "dev_resources_status": {
-      "market-percent": { "status": "linked", "method": "component_description", "node_id": "2093:5286", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
-      "market-sale":    { "status": "linked", "method": "component_description", "node_id": "2093:5417", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
-      "market-new":     { "status": "linked", "method": "component_description", "node_id": "2093:5374", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
-      "market-brand":   { "status": "linked", "method": "component_description", "node_id": "2093:5331", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" },
-      "set":            { "status": "linked", "method": "component_description", "node_id": "2093:5285", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md" }
+      "market-percent": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:5286",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md"
+      },
+      "market-sale": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:5417",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md"
+      },
+      "market-new": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:5374",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md"
+      },
+      "market-brand": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:5331",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md"
+      },
+      "set": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:5285",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md"
+      }
     }
   }
 }

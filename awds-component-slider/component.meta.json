@@ -7,28 +7,74 @@
     "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387"
   },
   "variants": {
-    "dots":      { "node_id": "2093:4387", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387", "figma_label": "Variant=Dots" },
-    "dots-mini": { "node_id": "2093:4401", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4401", "figma_label": "Variant=Dots Mini" },
-    "numbs":     { "node_id": "2093:4414", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4414", "figma_label": "Variant=Numbs" }
+    "dots": {
+      "node_id": "2093:4387",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387",
+      "figma_label": "Variant=Dots"
+    },
+    "dots-mini": {
+      "node_id": "2093:4401",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4401",
+      "figma_label": "Variant=Dots Mini"
+    },
+    "numbs": {
+      "node_id": "2093:4414",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4414",
+      "figma_label": "Variant=Numbs"
+    }
   },
   "shape": null,
   "size_scale": null,
-  "states": ["rest"],
-  "color_tokens": ["bg", "color"],
-  "css_files": ["slider.css"],
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "bg",
+    "color"
+  ],
+  "css_files": [
+    "slider.css"
+  ],
   "preview": {
     "base_class": "slider",
     "default_size": null,
-    "matrix_states": ["rest"],
+    "matrix_states": [
+      "rest"
+    ],
     "matrix_sizes": null,
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["dots", "dots-mini", "numbs"] },
-      { "id": "count",   "label": "Слайдов",  "options": ["3", "5", "7"] }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "dots",
+          "dots-mini",
+          "numbs"
+        ]
+      },
+      {
+        "id": "count",
+        "label": "Слайдов",
+        "options": [
+          "3",
+          "5",
+          "7"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Dots (5 слайдов, активный 3-й)", "html": "<div class=\"slider slider-dots\" role=\"group\" aria-label=\"Слайд 3 из 5\"><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot slider__dot--active\" aria-current=\"true\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span></div>" },
-      { "label": "Dots Mini (поверх фото)", "html": "<div class=\"slider slider-dots-mini\" role=\"group\" aria-label=\"Слайд 1 из 5\"><span class=\"slider__dot slider__dot--active\" aria-current=\"true\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span></div>" },
-      { "label": "Numbs (счётчик)", "html": "<div class=\"slider slider-numbs\" role=\"group\" aria-label=\"Слайд 1 из 2\">1/2</div>" }
+      {
+        "label": "Dots (5 слайдов, активный 3-й)",
+        "html": "<div class=\"slider slider-dots\" role=\"group\" aria-label=\"Слайд 3 из 5\"><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot slider__dot--active\" aria-current=\"true\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span></div>"
+      },
+      {
+        "label": "Dots Mini (поверх фото)",
+        "html": "<div class=\"slider slider-dots-mini\" role=\"group\" aria-label=\"Слайд 1 из 5\"><span class=\"slider__dot slider__dot--active\" aria-current=\"true\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span></div>"
+      },
+      {
+        "label": "Numbs (счётчик)",
+        "html": "<div class=\"slider slider-numbs\" role=\"group\" aria-label=\"Слайд 1 из 2\">1/2</div>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -51,18 +97,38 @@
   "snapshot_hash": "sha256:cfb32f017f63fd46432c44393125b738e29b97c086cea26bdffbb58625bb40b2",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "9f54cd3",
-    "pushed_at": "2026-06-22T11:33:17Z",
+    "commit": "a538233d1bb0474404256c6f86b51b255cc27cd3",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
-      "dots":      "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/references/slider-dots.md",
+      "dots": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/references/slider-dots.md",
       "dots-mini": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/references/slider-dots-mini.md",
-      "numbs":     "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/references/slider-numbs.md"
+      "numbs": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/references/slider-numbs.md"
     },
     "dev_resources_status": {
-      "dots":      { "status": "linked", "method": "component_description", "node_id": "2093:4387", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md" },
-      "dots-mini": { "status": "linked", "method": "component_description", "node_id": "2093:4401", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md" },
-      "numbs":     { "status": "linked", "method": "component_description", "node_id": "2093:4414", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md" },
-      "set":       { "status": "linked", "method": "component_description", "node_id": "2093:4386", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md" }
+      "dots": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:4387",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md"
+      },
+      "dots-mini": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:4401",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md"
+      },
+      "numbs": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:4414",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md"
+      },
+      "set": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:4386",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-slider/SKILL.md"
+      }
     }
   }
 }

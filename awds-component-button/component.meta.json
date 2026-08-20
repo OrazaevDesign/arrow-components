@@ -49,24 +49,94 @@
     }
   },
   "shape": "rectangle",
-  "size_scale": [50, 100, 200, 300, 400, 500, 600],
-  "states": ["rest", "hover", "focus", "active", "disabled"],
-  "color_tokens": ["bg", "chroma", "border", "color"],
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
   "preview": {
     "base_class": "btn",
     "default_size": 400,
-    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
-    "matrix_sizes": [600, 500, 400, 300, 200, 100, 50],
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["primary", "secondary", "addition", "contrast", "tertiary", "ghost", "clean", "pills"] },
-      { "id": "icons", "label": "Иконки", "options": ["none", "left", "right", "both"] }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "primary",
+          "secondary",
+          "addition",
+          "contrast",
+          "tertiary",
+          "ghost",
+          "clean",
+          "pills"
+        ]
+      },
+      {
+        "id": "icons",
+        "label": "Иконки",
+        "options": [
+          "none",
+          "left",
+          "right",
+          "both"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Только текст", "html": "<button class=\"btn btn-primary btn--400\" type=\"button\">Купить</button>" },
-      { "label": "Иконка слева", "html": "<button class=\"btn btn-primary btn--400\" type=\"button\"><svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg>Добавить</button>" },
-      { "label": "Иконка справа", "html": "<button class=\"btn btn-primary btn--400\" type=\"button\">Дальше<svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg></button>" },
-      { "label": "Только иконка", "html": "<button class=\"btn btn-primary btn--400 btn--icon-only\" type=\"button\" aria-label=\"Опции\"><svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg></button>" },
-      { "label": "Загрузка", "html": "<button class=\"btn btn-primary btn--400 btn--loading\" type=\"button\" disabled aria-busy=\"true\"><span class=\"btn__content\">Загрузка…</span><svg class=\"btn__progress\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-dasharray=\"40 60\" stroke-linecap=\"round\"/></svg></button>" }
+      {
+        "label": "Только текст",
+        "html": "<button class=\"btn btn-primary btn--400\" type=\"button\">Купить</button>"
+      },
+      {
+        "label": "Иконка слева",
+        "html": "<button class=\"btn btn-primary btn--400\" type=\"button\"><svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg>Добавить</button>"
+      },
+      {
+        "label": "Иконка справа",
+        "html": "<button class=\"btn btn-primary btn--400\" type=\"button\">Дальше<svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg></button>"
+      },
+      {
+        "label": "Только иконка",
+        "html": "<button class=\"btn btn-primary btn--400 btn--icon-only\" type=\"button\" aria-label=\"Опции\"><svg width=\"20\" height=\"20\" aria-hidden=\"true\"></svg></button>"
+      },
+      {
+        "label": "Загрузка",
+        "html": "<button class=\"btn btn-primary btn--400 btn--loading\" type=\"button\" disabled aria-busy=\"true\"><span class=\"btn__content\">Загрузка…</span><svg class=\"btn__progress\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-dasharray=\"40 60\" stroke-linecap=\"round\"/></svg></button>"
+      }
     ]
   },
   "ds_token_dependencies": [
@@ -109,8 +179,8 @@
     "repo": "OrazaevDesign/arrow-components",
     "variants": {
       "primary": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-primary.md",
         "dev_resources": {
           "status": "linked",
@@ -121,8 +191,8 @@
         }
       },
       "secondary": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-secondary.md",
         "dev_resources": {
           "status": "linked",
@@ -133,8 +203,8 @@
         }
       },
       "addition": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-addition.md",
         "dev_resources": {
           "status": "linked",
@@ -145,8 +215,8 @@
         }
       },
       "contrast": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-contrast.md",
         "dev_resources": {
           "status": "linked",
@@ -157,8 +227,8 @@
         }
       },
       "tertiary": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-tertiary.md",
         "dev_resources": {
           "status": "linked",
@@ -169,8 +239,8 @@
         }
       },
       "ghost": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-ghost.md",
         "dev_resources": {
           "status": "linked",
@@ -181,8 +251,8 @@
         }
       },
       "clean": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-clean.md",
         "dev_resources": {
           "status": "linked",
@@ -193,8 +263,8 @@
         }
       },
       "pills": {
-        "commit": "a671053f47e090c87d34911acc4579ec1a9e9f55",
-        "pushed_at": "2026-08-13T09:18:31Z",
+        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
+        "pushed_at": "2026-08-20T15:35:00Z",
         "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-pills.md",
         "dev_resources": {
           "status": "linked",

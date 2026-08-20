@@ -7,35 +7,95 @@
     "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3494"
   },
   "variants": {
-    "default": { "node_id": "2093:3495", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3495", "figma_label": "Variant=Default" },
-    "light":   { "node_id": "2093:3552", "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3552", "figma_label": "Variant=Light" }
+    "default": {
+      "node_id": "2093:3495",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3495",
+      "figma_label": "Variant=Default"
+    },
+    "light": {
+      "node_id": "2093:3552",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3552",
+      "figma_label": "Variant=Light"
+    }
   },
   "shape": "range",
-  "size_scale": [300, 400, 500],
-  "states": ["rest", "hover", "active", "disabled"],
-  "color_tokens": ["fill-bg", "fill-chroma", "track", "thumb-bg", "thumb-chroma", "thumb-border"],
-  "css_files": ["range.css"],
-  "js_files": ["range.js"],
+  "size_scale": [
+    300,
+    400,
+    500
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "active",
+    "disabled"
+  ],
+  "color_tokens": [
+    "fill-bg",
+    "fill-chroma",
+    "track",
+    "thumb-bg",
+    "thumb-chroma",
+    "thumb-border"
+  ],
+  "css_files": [
+    "range.css"
+  ],
+  "js_files": [
+    "range.js"
+  ],
   "preview": {
     "base_class": "range",
     "default_size": 400,
-    "matrix_states": ["rest"],
-    "matrix_sizes": [500, 400, 300],
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": [
+      500,
+      400,
+      300
+    ],
     "toggles": [
-      { "id": "variant", "label": "Вариант", "options": ["default", "light"] },
-      { "id": "double", "label": "Double", "options": ["off", "on"] }
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "default",
+          "light"
+        ]
+      },
+      {
+        "id": "double",
+        "label": "Double",
+        "options": [
+          "off",
+          "on"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Single", "html": "<div class=\"range range-default range--400\" style=\"--range-to:60%\"><div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb\"></div></div>" },
-      { "label": "Double", "html": "<div class=\"range range-default range--400 range--double\" style=\"--range-from:25%;--range-to:70%\"><div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb range__thumb--from\"></div><div class=\"range__thumb range__thumb--to\"></div></div>" }
+      {
+        "label": "Single",
+        "html": "<div class=\"range range-default range--400\" style=\"--range-to:60%\"><div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb\"></div></div>"
+      },
+      {
+        "label": "Double",
+        "html": "<div class=\"range range-default range--400 range--double\" style=\"--range-from:25%;--range-to:70%\"><div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb range__thumb--from\"></div><div class=\"range__thumb range__thumb--to\"></div></div>"
+      }
     ]
   },
   "ds_token_dependencies": [
-    "--color-primary-core", "--color-primary-chroma", "--color-primary-dim",
-    "--color-secondary-container-core", "--color-secondary-container-dim",
-    "--color-surface-bright", "--color-surface-container-container",
+    "--color-primary-core",
+    "--color-primary-chroma",
+    "--color-primary-dim",
+    "--color-secondary-container-core",
+    "--color-secondary-container-dim",
+    "--color-surface-bright",
+    "--color-surface-container-container",
     "--color-surface-on-highest",
-    "--awds-size-square-300-handle", "--awds-size-square-400-handle", "--awds-size-square-500-handle",
+    "--awds-size-square-300-handle",
+    "--awds-size-square-400-handle",
+    "--awds-size-square-500-handle",
     "--awds-space-space-1",
     "--awds-rounded-border-radius-full",
     "--awds-opacity-opacity-40"
@@ -45,15 +105,25 @@
   "snapshot_hash": "sha256:8cda025fb203d88dd8ae66d0d809f4f1bb02759e9ae7dfa666593811fc4785da",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "6b7f9b712a8205958168e4c16c4da7d2ed61f713",
-    "pushed_at": "2026-08-13T09:18:31Z",
+    "commit": "630a19a7d047a32e30d139b51036251cc361c908",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/references/range-default.md",
-      "light":   "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/references/range-light.md"
+      "light": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/references/range-light.md"
     },
     "dev_resources_status": {
-      "default": { "status": "linked", "method": "component_description", "node_id": "2093:3495", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/SKILL.md" },
-      "light":   { "status": "linked", "method": "component_description", "node_id": "2093:3552", "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/SKILL.md" }
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:3495",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/SKILL.md"
+      },
+      "light": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:3552",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/SKILL.md"
+      }
     }
   }
 }

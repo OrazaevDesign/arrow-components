@@ -14,39 +14,113 @@
     }
   },
   "shape": "square",
-  "size_scale": [200, 300, 400, 500],
-  "states": ["rest", "hover", "focus", "active", "disabled"],
+  "size_scale": [
+    200,
+    300,
+    400,
+    500
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
   "states_note": "Ось Figma Type (Selected / Unselected) — это НЕ CSS-варианты, а состояние нативного input (:checked / дефолт). Отдельный CSS-вариант один — default. Скругление у всех размеров фиксированное (border-radius/full → var(--awds-rounded-border-radius-full)), в size-аккумуляторах его нет.",
-  "color_tokens": ["bg", "chroma", "border", "color"],
-  "css_files": ["radio.css"],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
+  "css_files": [
+    "radio.css"
+  ],
   "based_on": "awds-component-checkbox (тот же shape square и палитра check-radio; отличия — круглая форма, точка вместо галки, нет Indeterminate, выбор снимается только группой)",
   "preview": {
     "base_class": "radio",
     "variant_class": "radio",
     "default_size": 400,
-    "matrix_states": ["rest", "hover", "focus", "active", "disabled"],
-    "matrix_sizes": [500, 400, 300, 200],
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      500,
+      400,
+      300,
+      200
+    ],
     "toggles": [
-      { "id": "theme", "label": "Тема", "options": ["light", "dark"] },
-      { "id": "type", "label": "Тип", "options": ["selected", "unselected"] },
-      { "id": "rounding", "label": "Скругление", "options": ["smooth", "none", "rounded"] }
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "type",
+        "label": "Тип",
+        "options": [
+          "selected",
+          "unselected"
+        ]
+      },
+      {
+        "id": "rounding",
+        "label": "Скругление",
+        "options": [
+          "smooth",
+          "none",
+          "rounded"
+        ]
+      }
     ],
     "html_samples": [
-      { "label": "Группа с общим name", "html": "<fieldset class=\"radio-group\"><legend>Способ доставки</legend><label class=\"radio radio--400\"><input class=\"radio__input\" type=\"radio\" name=\"delivery\" value=\"pickup\" checked><span class=\"radio__box\"><svg class=\"radio__dot\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"5\"/></svg></span><span class=\"radio__label\">Самовывоз</span></label>…</fieldset>" },
-      { "label": "Одна радиокнопка", "html": "<label class=\"radio radio--400\"><input class=\"radio__input\" type=\"radio\" name=\"delivery\" value=\"courier\"><span class=\"radio__box\">…dot svg…</span><span class=\"radio__label\">Курьером</span></label>" },
-      { "label": "Компактная (в таблице)", "html": "<label class=\"radio radio--300\" aria-label=\"Выбрать строку\"><input class=\"radio__input\" type=\"radio\" name=\"row\"><span class=\"radio__box\">…</span></label>" }
+      {
+        "label": "Группа с общим name",
+        "html": "<fieldset class=\"radio-group\"><legend>Способ доставки</legend><label class=\"radio radio--400\"><input class=\"radio__input\" type=\"radio\" name=\"delivery\" value=\"pickup\" checked><span class=\"radio__box\"><svg class=\"radio__dot\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"5\"/></svg></span><span class=\"radio__label\">Самовывоз</span></label>…</fieldset>"
+      },
+      {
+        "label": "Одна радиокнопка",
+        "html": "<label class=\"radio radio--400\"><input class=\"radio__input\" type=\"radio\" name=\"delivery\" value=\"courier\"><span class=\"radio__box\">…dot svg…</span><span class=\"radio__label\">Курьером</span></label>"
+      },
+      {
+        "label": "Компактная (в таблице)",
+        "html": "<label class=\"radio radio--300\" aria-label=\"Выбрать строку\"><input class=\"radio__input\" type=\"radio\" name=\"row\"><span class=\"radio__box\">…</span></label>"
+      }
     ]
   },
   "ds_token_dependencies": [
-    "--primary-core", "--primary-dim", "--primary-chroma", "--primary-on",
-    "--secondary-container-core", "--secondary-container-dim", "--secondary-container-chroma",
-    "--secondary-container-on", "--secondary-container-on-low",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-chroma",
+    "--primary-on",
+    "--secondary-container-core",
+    "--secondary-container-dim",
+    "--secondary-container-chroma",
+    "--secondary-container-on",
+    "--secondary-container-on-low",
     "--surface-on-highest",
     "--awds-rounded-border-radius-full",
-    "--awds-size-square-200-padding", "--awds-size-square-200-icon", "--awds-size-square-200-gap",
-    "--awds-size-square-300-padding", "--awds-size-square-300-icon", "--awds-size-square-300-gap",
-    "--awds-size-square-400-padding", "--awds-size-square-400-icon", "--awds-size-square-400-gap",
-    "--awds-size-square-500-padding", "--awds-size-square-500-icon", "--awds-size-square-500-gap",
+    "--awds-size-square-200-padding",
+    "--awds-size-square-200-icon",
+    "--awds-size-square-200-gap",
+    "--awds-size-square-300-padding",
+    "--awds-size-square-300-icon",
+    "--awds-size-square-300-gap",
+    "--awds-size-square-400-padding",
+    "--awds-size-square-400-icon",
+    "--awds-size-square-400-gap",
+    "--awds-size-square-500-padding",
+    "--awds-size-square-500-icon",
+    "--awds-size-square-500-gap",
     "--awds-opacity-opacity-40"
   ],
   "last_synced": "2026-08-13T08:41:11Z",
@@ -54,8 +128,8 @@
   "snapshot_hash": "sha256:b23bc2f8b71502c898ca1d4b5e27190d3901a3192c6842a9fcb43d3770032e72",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "5e6073251b50f0a07d364946d03ecb7ad577ca6e",
-    "pushed_at": "2026-08-13T09:18:31Z",
+    "commit": "407d4f7e3f2f5cc056438fedd70254aa62b1c2c4",
+    "pushed_at": "2026-08-20T15:35:00Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-radio/references/radio-default.md"
     },
