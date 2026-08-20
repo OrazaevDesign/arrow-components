@@ -84,7 +84,7 @@
 ```
 трек:    width  = var(--awds-square-{N}-switch-width)
          height = calc(icon + 2 × padding)
-круг:    calc(icon − 2 × var(--awds-space-0-5))
+круг:    calc(icon − 2 × var(--awds-space-space-0-5))
 ход:     calc(switch-width − 2 × padding − icon)
 ```
 
@@ -98,7 +98,7 @@
 
 Ход в макете нарисован распоркой «space» рядом с бегунком; отдельного токена под него нет, поэтому в CSS он выводится формулой — и совпадает с макетом на всех пяти размерах.
 
-**Скругление не размерное:** `var(--awds-rounded-full)` — 600px во всех модах коллекции Rounded. Тумблер остаётся пилюлей даже под `.rounded-none`.
+**Скругление не размерное:** `var(--awds-rounded-border-radius-full)` — 600px во всех модах коллекции Rounded. Тумблер остаётся пилюлей даже под `.rounded-none`.
 
 ## Состояния
 
@@ -111,7 +111,7 @@
 | Selected Hover | `.switch:hover > …:checked` | bg / border `primary-dim` |
 | Selected Active | `.switch:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
 | Focus | `.switch__input:focus-visible + .switch__track` | `outline: 2px solid rgb(var(--surface-on-highest))`, **`outline-offset: 0`** |
-| Disabled | `.switch:has(> .switch__input:disabled)` | `opacity: var(--awds-opacity-40)` на всей обёртке |
+| Disabled | `.switch:has(> .switch__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
 
 Два нюанса из макета:
 

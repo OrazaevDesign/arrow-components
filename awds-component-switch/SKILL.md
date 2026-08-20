@@ -1,16 +1,6 @@
 ---
 name: awds-component-switch
-description: >
-  Верстка тумблеров-переключателей ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: включении/выключении настройки с мгновенным эффектом (тёмная тема,
-  уведомления, показ цен со скидкой, синхронизация), списке настроек с переключателями,
-  добавлении switch / toggle в форму, панель настроек или PageCraft-блок, выборе размера
-  тумблера (28/32/36/44/52px по ширине), варианте с иконками галка-крестик в бегунке,
-  вопросах о стилях switch / switch__track / switch__handle / check-radio.
-  Построен на нативном input type="checkbox" role="switch" — Selected / Unselected это
-  :checked / дефолт, а не CSS-варианты.
-  Для отметки пунктов с применением по кнопке — awds-component-checkbox, для выбора одного
-  из списка — awds-component-radio, не этот скилл.
+description: Тумблеры-переключатели Switch ArrowDS: вкл/выкл, размеры, состояния, подпись. Для настроек и мгновенного переключения режима. Выбор из списка — checkbox или radio. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Switch ArrowDS
@@ -36,9 +26,9 @@ description: >
 | Цвет бегунка | `rgb(var(--primary-on-dim))` / `rgb(var(--secondary-container-on))` | `component-token-map.json` → `check-radio.*.handle` |
 | Цвет иконки в бегунке | = цвет фона трека (иконка «выбита» в круге) | Figma `check-radio/{type}/bg` |
 | Цвет фокус-обводки | `rgb(var(--surface-on-highest))` (inline) | `component-token-map.json` → `map.state.focus` |
-| Геометрия (ширина/высота/круг/ход) | `var(--awds-square-{N}-{switch-width,icon,padding})` + `var(--awds-space-0-5)` | `component-token-map.json` → `map.size.square` |
-| Скругление | `var(--awds-rounded-full)` — фиксированное, не размерное | Figma `border-radius/full` |
-| Opacity для disabled | `var(--awds-opacity-40)` | css-global (базовая шкала) |
+| Геометрия (ширина/высота/круг/ход) | `var(--awds-square-{N}-{switch-width,icon,padding})` + `var(--awds-space-space-0-5)` | `component-token-map.json` → `map.size.square` |
+| Скругление | `var(--awds-rounded-border-radius-full)` — фиксированное, не размерное | Figma `border-radius/full` |
+| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Промежуточный слой `--awds-switch-*` в DS НЕ существует.** Внутри `switch.css` есть приватные `--awds-switch-*` accumulators, но они scope'нуты только на компонент. Подробнее — [arrow-components-builder/references/component-skill-contract.md](../arrow-components-builder/references/component-skill-contract.md).
@@ -69,7 +59,7 @@ description: >
 
 Геометрия выводится из токенов формулами (см. `switch-default.md` → «Геометрия»), включая **ход бегунка**: `switch-width − 2×padding − icon`. Отдельного токена под ход в Figma нет — в макете это распорка рядом с бегунком.
 
-Скругление у всех размеров одно — `var(--awds-rounded-full)`, тумблер остаётся пилюлей даже под `.rounded-none`.
+Скругление у всех размеров одно — `var(--awds-rounded-border-radius-full)`, тумблер остаётся пилюлей даже под `.rounded-none`.
 
 ## Доступность
 
@@ -77,7 +67,7 @@ description: >
 - Тумблер без видимой подписи обязан нести `aria-label` на `<label>`.
 - Фокус-кольцо — `outline-offset: 0` (вплотную к треку, как в макете), не 2px как у `.btn`.
 - Подпись формулируй утверждением, не отрицанием: «выключено» + «Не показывать…» читается как двойное отрицание.
-- Disabled гасится `opacity: var(--awds-opacity-40)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина.
+- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина.
 - `@media (prefers-reduced-motion: reduce)` гасит переезд бегунка: состояние остаётся различимым (положение, цвет, иконка), меняется мгновенно.
 
 ## CSS-файл
@@ -105,7 +95,7 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 1. Проверь, что нужен именно switch: эффект применяется **сразу**. Иначе — checkbox.
 2. Возьми разметку из [references/switch-default.md](references/switch-default.md); для `Var=Icon` нужны **обе** иконки — они переключаются по состоянию.
 3. Подключи `references/switch.css` (один раз глобально).
-4. Убедись, что на странице есть DS-токены (`--awds-square-*`, `--awds-rounded-full`, `--awds-space-0-5`, `--awds-opacity-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
+4. Убедись, что на странице есть DS-токены (`--awds-square-*`, `--awds-rounded-border-radius-full`, `--awds-space-space-0-5`, `--awds-opacity-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
 5. Добавь размерный модификатор `.switch--{N}` (если не указан — действует 400).
 6. Раскладку строки настроек (подпись слева, тумблер у правого края) задай своим классом-обёрткой — в компоненте её нет.
 

@@ -32,7 +32,7 @@
      300  │ 32    │ 20   │ 0       │ 32×20  │ 16   │ 12
      200  │ 28    │ 16   │ 0       │ 28×16  │ 12   │ 12
 
-   Скругление трека и бегунка — var(--awds-rounded-full) (Figma border-radius/full,
+   Скругление трека и бегунка — var(--awds-rounded-border-radius-full) (Figma border-radius/full,
    600px). Оно 600px во ВСЕХ модах коллекции Rounded, поэтому тумблер остаётся
    пилюлей даже под классом .rounded-none — так и задумано.
 
@@ -97,10 +97,10 @@
 
 .switch {
   /* Size accumulator defaults (default_size = 400, map.size.square.400). */
-  --awds-switch-width:   var(--awds-square-400-switch-width);
-  --awds-switch-icon:    var(--awds-square-400-icon);
-  --awds-switch-padding: var(--awds-square-400-padding);
-  --awds-switch-gap:     var(--awds-square-400-gap);
+  --awds-switch-width:   var(--awds-size-square-400-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-400-icon);
+  --awds-switch-padding: var(--awds-size-square-400-padding);
+  --awds-switch-gap:     var(--awds-size-square-400-gap);
 
   box-sizing: border-box;
   position: relative;
@@ -158,7 +158,7 @@
      токенными width/height съедал бы внутреннюю коробку под бегунок. box-shadow
      не влияет на лейаут — inside-stroke как в Figma. */
   border: 0;
-  border-radius: var(--awds-rounded-full);
+  border-radius: var(--awds-rounded-border-radius-full);
   box-shadow: inset 0 0 0 1px var(--awds-switch-border);
   background: linear-gradient(to right, var(--awds-switch-chroma, var(--awds-switch-bg)), var(--awds-switch-bg));
 
@@ -186,10 +186,10 @@
   flex-shrink: 0;
   /* Круг лежит с отступом space-0-5 внутри слота icon — как inset 2px в макете.
      margin + размер круга = слот icon, поэтому ход считается от icon. */
-  margin: var(--awds-space-0-5);
-  width:  calc(var(--awds-switch-icon) - 2 * var(--awds-space-0-5));
-  height: calc(var(--awds-switch-icon) - 2 * var(--awds-space-0-5));
-  border-radius: var(--awds-rounded-full);
+  margin: var(--awds-space-space-0-5);
+  width:  calc(var(--awds-switch-icon) - 2 * var(--awds-space-space-0-5));
+  height: calc(var(--awds-switch-icon) - 2 * var(--awds-space-space-0-5));
+  border-radius: var(--awds-rounded-border-radius-full);
   background: var(--awds-switch-handle);
   color: var(--awds-switch-icon-color);
 
@@ -215,44 +215,44 @@
 
 
 /* === Sizes (shape = square, map.size.square.{N}) ===
-   Скругление не переопределяем: у тумблера оно всегда --awds-rounded-full. */
+   Скругление не переопределяем: у тумблера оно всегда --awds-rounded-border-radius-full. */
 
 .switch--200 {
   /* Внимание: в Figma нода size 200 привязана к check-radio/200/icon = 16.
      Семейства check-radio в css-global нет вовсе, а square/200/icon — те же 16px,
      поэтому берём его: значение совпадает, компонент остаётся на одной shape-шкале. */
-  --awds-switch-width:   var(--awds-square-200-switch-width);
-  --awds-switch-icon:    var(--awds-square-200-icon);
-  --awds-switch-padding: var(--awds-square-200-padding);
-  --awds-switch-gap:     var(--awds-square-200-gap);
+  --awds-switch-width:   var(--awds-size-square-200-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-200-icon);
+  --awds-switch-padding: var(--awds-size-square-200-padding);
+  --awds-switch-gap:     var(--awds-size-square-200-gap);
 }
 
 .switch--300 {
-  --awds-switch-width:   var(--awds-square-300-switch-width);
-  --awds-switch-icon:    var(--awds-square-300-icon);
-  --awds-switch-padding: var(--awds-square-300-padding);
-  --awds-switch-gap:     var(--awds-square-300-gap);
+  --awds-switch-width:   var(--awds-size-square-300-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-300-icon);
+  --awds-switch-padding: var(--awds-size-square-300-padding);
+  --awds-switch-gap:     var(--awds-size-square-300-gap);
 }
 
 .switch--400 {
-  --awds-switch-width:   var(--awds-square-400-switch-width);
-  --awds-switch-icon:    var(--awds-square-400-icon);
-  --awds-switch-padding: var(--awds-square-400-padding);
-  --awds-switch-gap:     var(--awds-square-400-gap);
+  --awds-switch-width:   var(--awds-size-square-400-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-400-icon);
+  --awds-switch-padding: var(--awds-size-square-400-padding);
+  --awds-switch-gap:     var(--awds-size-square-400-gap);
 }
 
 .switch--500 {
-  --awds-switch-width:   var(--awds-square-500-switch-width);
-  --awds-switch-icon:    var(--awds-square-500-icon);
-  --awds-switch-padding: var(--awds-square-500-padding);
-  --awds-switch-gap:     var(--awds-square-500-gap);
+  --awds-switch-width:   var(--awds-size-square-500-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-500-icon);
+  --awds-switch-padding: var(--awds-size-square-500-padding);
+  --awds-switch-gap:     var(--awds-size-square-500-gap);
 }
 
 .switch--600 {
-  --awds-switch-width:   var(--awds-square-600-switch-width);
-  --awds-switch-icon:    var(--awds-square-600-icon);
-  --awds-switch-padding: var(--awds-square-600-padding);
-  --awds-switch-gap:     var(--awds-square-600-gap);
+  --awds-switch-width:   var(--awds-size-square-600-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-600-icon);
+  --awds-switch-padding: var(--awds-size-square-600-padding);
+  --awds-switch-gap:     var(--awds-size-square-600-gap);
 }
 
 
@@ -334,7 +334,7 @@
    атрибут disabled (например, отрисован как aria-disabled). */
 .switch:has(> .switch__input:disabled),
 .switch--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
 
