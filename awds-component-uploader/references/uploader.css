@@ -65,16 +65,16 @@
 .upl__list,
 .upl__file {
   /* Не зависят от размера — см. шапку. */
-  --awds-upl-gap:      var(--awds-space-2);
-  --awds-upl-file-gap: var(--awds-space-1-5);
-  --awds-upl-box:      calc(var(--awds-rectangle-300-icon) + 2 * var(--awds-rectangle-300-padding));
-  --awds-upl-progress: var(--awds-space-5);
-  --awds-upl-name-fs:  var(--awds-control-300-font-size);
-  --awds-upl-name-lh:  var(--awds-control-300-line-height);
-  --awds-upl-name-ls:  var(--awds-control-300-letter-spacing);
-  --awds-upl-size-fs:  var(--awds-control-200-font-size);
-  --awds-upl-size-lh:  var(--awds-control-200-line-height);
-  --awds-upl-size-ls:  var(--awds-control-200-letter-spacing);
+  --awds-upl-gap:      var(--awds-space-space-2);
+  --awds-upl-file-gap: var(--awds-space-space-1-5);
+  --awds-upl-box:      calc(var(--awds-size-rectangle-300-icon) + 2 * var(--awds-size-rectangle-300-padding));
+  --awds-upl-progress: var(--awds-space-space-5);
+  --awds-upl-name-fs:  var(--awds-control-font-size-300);
+  --awds-upl-name-lh:  var(--awds-control-line-height-300);
+  --awds-upl-name-ls:  var(--awds-control-letter-spacing-300);
+  --awds-upl-size-fs:  var(--awds-control-font-size-200);
+  --awds-upl-size-lh:  var(--awds-control-line-height-200);
+  --awds-upl-size-ls:  var(--awds-control-letter-spacing-200);
 }
 
 .upl {
@@ -129,7 +129,7 @@
 /* Картинка заполняет квадрат кропом — так в макете (object-cover). Скругление тоже
    отсюда: в макете превью со скруглением rectangle-300. */
 .upl__preview {
-  border-radius: var(--awds-rectangle-300-rounded);
+  border-radius: var(--awds-size-rectangle-300-rounded);
 }
 
 .upl__preview img {
@@ -142,8 +142,8 @@
 /* У иконки типа файла свой бокс: сама иконка 20, вокруг padding — как у кнопки. */
 .upl__icon svg {
   display: block;
-  width: var(--awds-rectangle-300-icon);
-  height: var(--awds-rectangle-300-icon);
+  width: var(--awds-size-rectangle-300-icon);
+  height: var(--awds-size-rectangle-300-icon);
   color: rgb(var(--surface-on-high));
 }
 
@@ -237,33 +237,33 @@
    Поэтому здесь один мост и ни одной собственной переменной. */
 
 .upl--300 .input {
-  --awds-input-padding:  var(--awds-rectangle-300-padding);
-  --awds-input-icon:     var(--awds-rectangle-300-icon);
-  --awds-input-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-input-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-input-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-input-ls:       var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-input-text-gap: var(--awds-rectangle-300-text-gap);
+  --awds-input-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-input-lh:       var(--awds-control-line-height-400);
+  --awds-input-ls:       var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-300-text-gap);
 }
 
 .upl--400 .input {
-  --awds-input-padding:  var(--awds-rectangle-400-padding);
-  --awds-input-icon:     var(--awds-rectangle-400-icon);
-  --awds-input-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-input-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-input-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-input-ls:       var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-input-text-gap: var(--awds-rectangle-400-text-gap);
+  --awds-input-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-input-lh:       var(--awds-control-line-height-400);
+  --awds-input-ls:       var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
 }
 
 .upl--500 .input {
-  --awds-input-padding:  var(--awds-rectangle-500-padding);
-  --awds-input-icon:     var(--awds-rectangle-500-icon);
-  --awds-input-rounded:  var(--awds-rectangle-500-rounded);
-  --awds-input-fs:       var(--awds-rectangle-500-typography-font-size);
-  --awds-input-lh:       var(--awds-rectangle-500-typography-line-height);
-  --awds-input-ls:       var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-input-text-gap: var(--awds-rectangle-500-text-gap);
+  --awds-input-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-input-lh:       var(--awds-control-line-height-600);
+  --awds-input-ls:       var(--awds-control-letter-spacing-600);
+  --awds-input-text-gap: var(--awds-size-rectangle-500-text-gap);
 }
 
 
@@ -290,6 +290,6 @@
 /* Видимое поле реагирует на фокус спрятанного инпута — иначе при табуляции
    подсветки не было бы вовсе. Правило дублирует фокус самого input-компонента. */
 .upl__input:focus-visible + .input {
-  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
   outline-offset: 1px;
 }
