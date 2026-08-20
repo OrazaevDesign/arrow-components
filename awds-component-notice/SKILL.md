@@ -1,10 +1,6 @@
 ---
 name: awds-component-notice
-description: >
-  Верстка бейджей-счётчиков (Notice) ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении счётчика нотификаций / непрочитанных / бейджа с числом
-  в разметку или PageCraft-блок, выборе варианта (primary / secondary / ghost), точки-индикатора,
-  получении Figma-ссылки на компонент Notice. Круг для 1 цифры, пилюля для 2+, статичный.
+description: Бейджи-счётчики Notice ArrowDS: число или точка-индикатор поверх иконки. Для счётчика корзины, уведомлений, непрочитанного. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Notice (бейдж-счётчик) ArrowDS
@@ -26,7 +22,7 @@ description: >
 | Фон + sheen | `rgb(var(--accent-core))` / `rgb(var(--secondary-core))` / `transparent` + `*-chroma` |
 | Цвет числа | `rgb(var(--accent-on))` / `rgb(var(--secondary-on-dim))` / `rgb(var(--surface-on-high))` |
 | Диаметр / padding / шрифт | shape `notice`: `var(--awds-notice-N-size / -padding-h / -padding-v / -typography-*)` |
-| Скругление | `var(--awds-rounded-full)` (всегда пилюля) |
+| Скругление | `var(--awds-rounded-border-radius-full)` (всегда пилюля) |
 | Цифры | `font-variant-numeric: tabular-nums` (не прыгают при смене значения) |
 
 Состояний нет (бейдж статичный). Маппинг variant → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление — через `arrow-components-builder` («обнови awds-component-notice»).
@@ -52,7 +48,7 @@ description: >
    - двузначный: `<span class="notice notice-primary notice--400">99</span>`
    - точка: `<span class="notice notice-primary notice--100"></span>`
 3. Позиционирование в углу иконки/кнопки — на стороне потребителя: контейнер `position: relative`, бейдж `position: absolute; top/right` (см. preview, блок «иконка-якорь»).
-4. Подключи `references/notice.css`. Нужны `css-variables.css` сайта (роли `--accent-*`, `--secondary-*`, `--surface-*`) и базовые токены DS (`--awds-notice-*`, `--awds-rounded-full`, `--awds-font-*`).
+4. Подключи `references/notice.css`. Нужны `css-variables.css` сайта (роли `--accent-*`, `--secondary-*`, `--surface-*`) и базовые токены DS (`--awds-notice-*`, `--awds-rounded-border-radius-full`, `--awds-font-*`).
 
 ## Refresh
 
