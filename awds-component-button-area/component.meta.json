@@ -57,10 +57,10 @@
     "--color-surface-on-high", "--color-surface-on-highest",
     "--color-accent-container-on",
     "--awds-rectangle-500-*", "--awds-rectangle-400-*", "--awds-rectangle-100-*", "--awds-rectangle-50-*",
-    "--awds-opacity-40", "--awds-rounded-full",
+    "--awds-opacity-opacity-40", "--awds-rounded-border-radius-full",
     "--awds-font-family-system", "--awds-font-weight-regular"
   ],
-  "_dependency_note": "Размеры — через shape-слой --awds-rectangle-{500,400,100,50}-{gap,icon,typography-*,rounded}. Цвета — роли inline (= link). Focus-обводка rgb(var(--surface-on-highest)); disabled — var(--awds-opacity-40); спиннер — var(--awds-rounded-full) + @keyframes. Растяжение hit-области — модификаторы --fill*.",
+  "_dependency_note": "Размеры — через shape-слой --awds-rectangle-{500,400,100,50}-{gap,icon,typography-*,rounded}. Цвета — роли inline (= link). Focus-обводка rgb(var(--surface-on-highest)); disabled — var(--awds-opacity-opacity-40); спиннер — var(--awds-rounded-border-radius-full) + @keyframes. Растяжение hit-области — модификаторы --fill*.",
   "last_synced": "2026-06-30T17:57:53Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:3bf955fc5d85d8138594d707b327f5d81196979c4aacca210e4ecd95d1d402ef",

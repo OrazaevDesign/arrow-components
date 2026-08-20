@@ -1,15 +1,6 @@
 ---
 name: awds-component-button-area
-description: >
-  Верстка «Button Area» ArrowDS — кликабельной ОБЛАСТИ-обёртки (link-area): текст ±
-  иконки префикс/суффикс, центрированный контент, растяжимая под контейнер область
-  нажатия. Используй ВСЕГДА при: добавлении кликабельной ссылки-области/кнопки-ссылки,
-  где нужна увеличенная зона клика (растянуть по ширине/высоте), ссылке с иконкой
-  слева/справа, only-icon кликабельной области, состоянии загрузки на ссылке-кнопке,
-  выборе варианта default/muted/contrast/accent/heading, вопросах про .btn-area /
-  .btn-area--fill / .btn-area__label / hit-area. Это link как полноценная область
-  клика (с размерами, состояниями, progress, fill). Для inline-ссылки в тексте —
-  awds-component-link; для настоящей кнопки с фоном — awds-component-button.
+description: Button Area ArrowDS (link-area): кликабельная область-обёртка с текстом и иконками префикс/суффикс, тянется по ширине. Для строки-ссылки целиком, не для обычной кнопки. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Button Area (кликабельная область) ArrowDS
@@ -65,8 +56,8 @@ description: >
 | Цвет варианта | роли `awds-component-link` (rest → hover): default `tertiary-container-on-high→-highest`, muted `surface-on-high→-on-highest`, contrast `surface-on-highest→-on-high`, accent `surface-on-highest→accent-container-on`, heading `surface-on-high→accent-container-on` |
 | Размер (текст/иконка/зазор/радиус) | shape-слой `var(--awds-rectangle-{N}-{typography-*,icon,gap,rounded})` |
 | Focus-обводка | `rgb(var(--surface-on-highest))` |
-| Disabled | `opacity: var(--awds-opacity-40)` + `pointer-events: none` |
-| Спиннер | `var(--awds-rounded-full)` + `@keyframes` (прерываемая анимация — для загрузки корректно) |
+| Disabled | `opacity: var(--awds-opacity-opacity-40)` + `pointer-events: none` |
+| Спиннер | `var(--awds-rounded-border-radius-full)` + `@keyframes` (прерываемая анимация — для загрузки корректно) |
 | Растяжение | `width/height: 100%` + `align-self: stretch`, контент по центру (`justify-content/align-items: center`) |
 
 ## CSS

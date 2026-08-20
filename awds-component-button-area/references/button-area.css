@@ -39,12 +39,12 @@
 
 .btn-area {
   /* size accumulators (default = 500) — через shape-слой rectangle */
-  --awds-btn-area-gap:     var(--awds-rectangle-500-gap);
-  --awds-btn-area-icon:    var(--awds-rectangle-500-icon);
-  --awds-btn-area-fs:      var(--awds-rectangle-500-typography-font-size);
-  --awds-btn-area-lh:      var(--awds-rectangle-500-typography-line-height);
-  --awds-btn-area-ls:      var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-btn-area-rounded: var(--awds-rectangle-500-rounded);
+  --awds-btn-area-gap:     var(--awds-size-rectangle-500-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-600);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-600);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-500-rounded);
   /* color — заполняет вариант (.btn-area-*) */
   --awds-btn-area-color:   currentColor;
 
@@ -103,36 +103,36 @@
 /* === Размеры (shape-слой rectangle/{N}) === */
 
 .btn-area--500 {
-  --awds-btn-area-gap:     var(--awds-rectangle-500-gap);
-  --awds-btn-area-icon:    var(--awds-rectangle-500-icon);
-  --awds-btn-area-fs:      var(--awds-rectangle-500-typography-font-size);
-  --awds-btn-area-lh:      var(--awds-rectangle-500-typography-line-height);
-  --awds-btn-area-ls:      var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-btn-area-rounded: var(--awds-rectangle-500-rounded);
+  --awds-btn-area-gap:     var(--awds-size-rectangle-500-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-600);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-600);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-500-rounded);
 }
 .btn-area--400 {
-  --awds-btn-area-gap:     var(--awds-rectangle-400-gap);
-  --awds-btn-area-icon:    var(--awds-rectangle-400-icon);
-  --awds-btn-area-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-btn-area-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-btn-area-ls:      var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-btn-area-rounded: var(--awds-rectangle-400-rounded);
+  --awds-btn-area-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-400);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-400);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-400-rounded);
 }
 .btn-area--100 {
-  --awds-btn-area-gap:     var(--awds-rectangle-100-gap);
-  --awds-btn-area-icon:    var(--awds-rectangle-100-icon);
-  --awds-btn-area-fs:      var(--awds-rectangle-100-typography-font-size);
-  --awds-btn-area-lh:      var(--awds-rectangle-100-typography-line-height);
-  --awds-btn-area-ls:      var(--awds-rectangle-100-typography-letter-spacing);
-  --awds-btn-area-rounded: var(--awds-rectangle-100-rounded);
+  --awds-btn-area-gap:     var(--awds-size-rectangle-100-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-300);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-300);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-100-rounded);
 }
 .btn-area--50 {
-  --awds-btn-area-gap:     var(--awds-rectangle-50-gap);
-  --awds-btn-area-icon:    var(--awds-rectangle-50-icon);
-  --awds-btn-area-fs:      var(--awds-rectangle-50-typography-font-size);
-  --awds-btn-area-lh:      var(--awds-rectangle-50-typography-line-height);
-  --awds-btn-area-ls:      var(--awds-rectangle-50-typography-letter-spacing);
-  --awds-btn-area-rounded: var(--awds-rectangle-50-rounded);
+  --awds-btn-area-gap:     var(--awds-size-rectangle-50-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-200);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-200);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-50-rounded);
 }
 
 /* === Варианты (цвет; rest + hover. focus/active = rest) === */
@@ -165,7 +165,7 @@
 .btn-area:disabled,
 .btn-area[aria-disabled="true"],
 .btn-area--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
   cursor: default;
 }
@@ -193,7 +193,7 @@
   width: var(--awds-btn-area-icon);
   height: var(--awds-btn-area-icon);
   margin: calc(var(--awds-btn-area-icon) / -2) 0 0 calc(var(--awds-btn-area-icon) / -2);
-  border-radius: var(--awds-rounded-full);
+  border-radius: var(--awds-rounded-border-radius-full);
   border: 2px solid currentColor;
   border-top-color: transparent;     /* «хвост» спиннера */
   /* one-shot вращение — корректно через @keyframes (MIFB: keyframes для спиннера, не transition) */
