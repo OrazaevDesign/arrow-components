@@ -1,16 +1,6 @@
 ---
 name: awds-component-textarea
-description: >
-  Верстка многострочных полей ввода (textarea) ArrowDS — HTML-разметка и CSS на токенах
-  дизайн-системы. Используй ВСЕГДА при: добавлении поля на несколько строк — комментарий
-  к заказу, отзыв, описание товара, сообщение в поддержку, адресная строка с уточнениями;
-  вопросах о стилях txa / txa__field / textarea, выборе размера такого поля
-  (высота 52/56/64/76/80/88/92px), выборе варианта такого поля (default, light, success,
-  error, ghost, autofill), подсветке валидации введённого текста, ручке ресайза и её
-  отключении, запрете растягивания поля, получении Figma-ссылки на компонент Textarea. Построен на нативном <textarea>
-  с кастомной ручкой ресайза; состояния Rest / Hover / Focus / Active / Disabled идут от
-  самого поля. Если поле однострочное — это awds-component-input, а если подпись должна
-  лежать ВНУТРИ рамки и уезжать наверх — awds-component-input-combi.
+description: Многострочные поля ввода Textarea ArrowDS: размеры, состояния, счётчик символов, авто-рост. Для комментария, отзыва, адреса. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Textarea ArrowDS
@@ -60,13 +50,13 @@ description: >
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/плейсхолдер) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/textarea-default.css` |
-| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста | `var(--awds-rectangle-{N}-text-gap)` — всегда, слотов нет | Figma: auto-layout ячейки |
 | Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
-| Приглушение ручки | `var(--awds-opacity-30)` | `map.state.rest.content.textarea-handle` |
-| Бокс ручки | `var(--awds-space-5)` — 20px фикс на всех размерах | базовая шкала, не `rectangle-{N}-icon` |
-| Opacity для disabled | `var(--awds-opacity-40)` | css-global (базовая шкала) |
+| Приглушение ручки | `var(--awds-opacity-opacity-30)` | `map.state.rest.content.textarea-handle` |
+| Бокс ручки | `var(--awds-space-space-5)` — 20px фикс на всех размерах | базовая шкала, не `rectangle-{N}-icon` |
+| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Базовый класс — `.txa`, а не `.textarea`.** Приватные аккумуляторы зовутся `--awds-{base_class}-*`; при `base_class = textarea` они читались бы как чужой компонентный токен `--awds-textarea-*` (такого слоя в DS нет), а `.textarea` на элементе `<textarea>` — тавтология.
@@ -85,7 +75,7 @@ description: >
 - Фокус виден при любом способе входа в поле (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Ресайз пользователем — это **функция доступности**: человеку с крупным шрифтом или длинным текстом нужна возможность увеличить поле. Не отключай `.txa--fixed` без причины.
 - Если у поля есть лимит символов, счётчик ставится **снаружи** и связывается через `aria-describedby`; в этом компоненте его нет.
-- Disabled гасится `opacity: var(--awds-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 
 ## Варианты
 

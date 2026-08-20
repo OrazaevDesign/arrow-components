@@ -58,7 +58,7 @@
    Форма из макета (ic20-textareaControl-outline: диагональ 9×9 в боксе 20×20, сведённый
    union), цвет — роль текста при opacity 30% (map.state.rest.content.textarea-handle).
    Бокс ручки 20×20 на ВСЕХ семи размерах — это не rectangle-{N}-icon (у мелких он 16),
-   поэтому здесь базовая шкала --awds-space-5, а не size-токен.
+   поэтому здесь базовая шкала --awds-space-space-5, а не size-токен.
 
    RESIZE: VERTICAL, а не both — осознанное решение. Контрол тянется на всю ширину
    контейнера (width: 100%), и горизонтальный ресайз позволил бы пользователю вытащить
@@ -119,12 +119,12 @@
 
 .txa {
   /* Size accumulator defaults (default_size = 400, map.size.rectangle.400) */
-  --awds-txa-padding:  var(--awds-rectangle-400-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-400);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 
   box-sizing: border-box;
   position: relative;
@@ -221,13 +221,13 @@
   bottom: 0;
   /* Бокс иконки в макете 20×20 на всех семи размерах — это НЕ rectangle-{N}-icon
      (у мелких размеров он 16), поэтому базовая шкала. */
-  width: var(--awds-space-5);
-  height: var(--awds-space-5);
+  width: var(--awds-space-space-5);
+  height: var(--awds-space-space-5);
 
   /* Цвет — роль текста, приглушение — map.state.rest.content.textarea-handle (30%).
      Форма — диагональ 9×9 внутри бокса 20×20, union-путь из макета. */
   background: var(--awds-txa-color);
-  opacity: var(--awds-opacity-30);
+  opacity: var(--awds-opacity-opacity-30);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
 
@@ -251,66 +251,66 @@
 /* === Sizes (shape = rectangle, map.size.rectangle.{N}) === */
 
 .txa--50 {
-  --awds-txa-padding:  var(--awds-rectangle-50-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-50-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-50-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-50-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-50-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-50-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-50-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-50-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-50-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-50-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-200);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-200);
 }
 
 .txa--100 {
-  --awds-txa-padding:  var(--awds-rectangle-100-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-100-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-100-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-100-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-100-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-100-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-100-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-100-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-100-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-100-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-300);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-300);
 }
 
 .txa--200 {
-  --awds-txa-padding:  var(--awds-rectangle-200-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-200-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-200-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-200-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-200-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-200-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-200-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-200-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-200-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-300);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-300);
 }
 
 .txa--300 {
-  --awds-txa-padding:  var(--awds-rectangle-300-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-300-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-400);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .txa--400 {
-  --awds-txa-padding:  var(--awds-rectangle-400-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-400);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .txa--500 {
-  --awds-txa-padding:  var(--awds-rectangle-500-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-500-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-500-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-500-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-500-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-500-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-600);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-600);
 }
 
 .txa--600 {
-  --awds-txa-padding:  var(--awds-rectangle-600-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-600-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-600-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-600-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-600-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-600-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-600-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-600-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-600-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-600-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-600);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-600);
 }
 
 
@@ -363,7 +363,7 @@
   /* map.state.focus.focus-selection.outlineVariant = primary-core, в макете слой
      FocusSelection несёт opacity 50% → альфа прямо в цвете. offset 1 + width 2 дают ту
      же полосу 1..3, что и обводка 2 OUTSIDE на 1 наружу от контрола в макете. */
-  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
   outline-offset: 1px;
 }
 
@@ -380,7 +380,7 @@
 
 .txa:has(.txa__field:disabled),
 .txa--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
 

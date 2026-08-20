@@ -54,7 +54,7 @@
 <p class="hint">Комментарий можно оставить после оформления</p>
 ```
 
-Гасится вся обёртка (`opacity: var(--awds-opacity-40)`), ресайз снят. **Ручка при этом остаётся видимой** — так в макете: выключенный вид считывается по всему блоку, а не по одной иконке. Контраст в этом состоянии заведомо ниже AA, поэтому рядом нужен текст-причина.
+Гасится вся обёртка (`opacity: var(--awds-opacity-opacity-40)`), ресайз снят. **Ручка при этом остаётся видимой** — так в макете: выключенный вид считывается по всему блоку, а не по одной иконке. Контраст в этом состоянии заведомо ниже AA, поэтому рядом нужен текст-причина.
 
 ## Состояния
 
@@ -64,9 +64,9 @@
 | Hover | только рамка → `secondary-container-on` | `:hover:not(:focus-within):has(.txa__field:enabled)` |
 | Active | рамка возвращается к `secondary-container-on-low` (в макете Active = Rest; правило нужно, чтобы отменить hover при нажатии) | `:active:not(:focus-within):has(…)` |
 | Focus | `bg surface-bright`, `chroma primary-container-chroma`, рамка `primary-dim`, текст `primary-container-on-highest`, плейсхолдер `primary-container-on-high` + кольцо; ручка красится вместе с текстом | `:focus-within` |
-| Disabled | Rest + `opacity: var(--awds-opacity-40)` | `:has(.txa__field:disabled)` |
+| Disabled | Rest + `opacity: var(--awds-opacity-opacity-40)` | `:has(.txa__field:disabled)` |
 
-Кольцо фокуса: `outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50))`, `outline-offset: 1px` — как у input, select и combi-версий.
+Кольцо фокуса: `outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, `outline-offset: 1px` — как у input, select и combi-версий.
 
 ## Размеры
 
