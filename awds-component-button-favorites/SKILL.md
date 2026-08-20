@@ -1,10 +1,6 @@
 ---
 name: awds-component-button-favorites
-description: >
-  Верстка кнопки «в избранное» (heart toggle) ArrowDS — icon-only вариант компонента Button на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении кнопки избранного / вишлиста / лайка-сердца в разметку,
-  карточку товара или PageCraft-блок, вопросах о стилях button-favorites / состоянии «в избранном»,
-  получении Figma-ссылки на компонент Favourites. Прозрачная (без фона) icon-only кнопка с двумя иконками, toggle, 2 вью (Desktop 40 / Mobile 32).
+description: Кнопка «в избранное» ArrowDS: icon-only heart-toggle с состоянием отмечено/нет. Для избранного на карточке товара и в галерее. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Кнопка «в избранное» ArrowDS

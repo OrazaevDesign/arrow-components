@@ -45,7 +45,7 @@ CSS сам перекрашивает дуотон по `aria-pressed` — ме�
 | Selected | `[aria-pressed="true"]` | `error-container-on` / `error-container-on` |
 | Press | `:active` | без смены цвета, `transform: scale(0.9)` |
 | Focus | `:focus-visible` | обводка `surface-on-highest` (от базы `.btn`) |
-| Disabled | `:disabled` / `[aria-disabled]` | `opacity: var(--awds-opacity-40)` (от базы `.btn`) |
+| Disabled | `:disabled` / `[aria-disabled]` | `opacity: var(--awds-opacity-opacity-40)` (от базы `.btn`) |
 
 Фона и бордера нет ни в одном состоянии (`--awds-btn-bg/-chroma/-border = transparent`). Наведение на уже выбранную кнопку не откатывает цвет к hover-розовому.
 

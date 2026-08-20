@@ -59,13 +59,13 @@
 
 .btn {
   /* size accumulator defaults = rectangle-400 (Desktop favorites) */
-  --awds-btn-padding: var(--awds-rectangle-400-padding);   /* 10px */
-  --awds-btn-gap:     var(--awds-rectangle-400-gap);
-  --awds-btn-rounded: var(--awds-rectangle-400-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-400-icon);      /* 20px */
-  --awds-btn-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-400-padding);   /* 10px */
+  --awds-btn-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-400-icon);      /* 20px */
+  --awds-btn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-400);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-400);
 
   box-sizing: border-box;
   position: relative;
@@ -106,7 +106,7 @@
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
 
@@ -190,8 +190,8 @@
 /* === View Mobile (32px — padding на base-шкале, в shape-шкале такого размера нет) === */
 
 .btn-favorites--mobile {
-  --awds-btn-padding: var(--awds-space-1-5);   /* 6px → 20 + 12 = 32px */
-  --awds-btn-icon:    var(--awds-space-5);      /* 20px (как Desktop) */
+  --awds-btn-padding: var(--awds-space-space-1-5);   /* 6px → 20 + 12 = 32px */
+  --awds-btn-icon:    var(--awds-space-space-5);      /* 20px (как Desktop) */
 }
 
 
