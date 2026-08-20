@@ -1,11 +1,6 @@
 ---
 name: awds-component-button-overhung
-description: >
-  Верстка «парящих» кнопок Button Overhung ArrowDS — HTML-разметка и CSS на токенах
-  дизайн-системы. Используй ВСЕГДА при: добавлении overhung/«парящей»/«нависающей»
-  кнопки в разметку или PageCraft-блок, выборе варианта overhung-кнопки из Figma-дизайна,
-  вопросах о стилях obtn-primary, получении Figma-ссылки на компонент Button Overhung.
-  Это ОТДЕЛЬНЫЙ компонент от awds-component-button: светлый фон + постоянная elevation-тень.
+description: «Парящие» кнопки Button Overhung ArrowDS (obtn-primary): светлый фон плюс постоянная elevation-тень. Отдельный компонент от button — для нависающей кнопки над медиа или карточкой. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Button Overhung ArrowDS
@@ -24,7 +19,7 @@ description: >
 | Парящая тень | `var(--awds-shadow-elevation-1)` в базовом `.obtn` box-shadow | `css-global` (базовая шкала shadow) |
 | Цвет фокус-обводки | `rgb(var(--surface-on-highest))` inline | `references/button-overhung-primary.css` |
 | Размеры (padding/gap/icon/rounded/font) | `var(--awds-rectangle-{N}-*)` (семантические shape-токены) в `.obtn--{N}` | `css-global` (там же резолвятся в базовые шкалы) |
-| `opacity` для disabled | `var(--awds-opacity-40)` | там же |
+| `opacity` для disabled | `var(--awds-opacity-opacity-40)` | там же |
 | Шрифт (family/weight) | `--awds-font-family-system`, `--awds-font-weight-semibold` | там же |
 
 Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление под Figma — через скилл `arrow-components-builder` («обнови awds-component-button-overhung»), не руками.

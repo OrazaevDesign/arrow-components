@@ -78,7 +78,7 @@
 | Hover | `surface-surface` | `surface-dim` | `surface-surface` | `surface-on-highest` | — |
 | Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | `outline: 2px solid rgb(var(--surface-on-highest))` |
 | Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | = Rest |
-| Disabled | = Rest | | | | `opacity: var(--awds-opacity-40)` + `pointer-events: none` |
+| Disabled | = Rest | | | | `opacity: var(--awds-opacity-opacity-40)` + `pointer-events: none` |
 
 Тень `elevation-1` одинакова во всех состояниях (зашита в `.obtn`, не в селекторах) — в макете нажатие не меняет высоту.
 

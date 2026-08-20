@@ -19,9 +19,9 @@
      — размеры:  var(--awds-rectangle-{N}-*)        (map.size.rectangle.{N}; css-global)
      — тень:     var(--awds-shadow-elevation-1)      (Figma effect «elevation»)
      — цвета:    rgb(var(--surface-*))               (map.state.*.overhung.secondary)
-     — opacity:  var(--awds-opacity-60 | -90)        (map.state.*.opacity.overhung.secondary)
+     — opacity:  var(--awds-opacity-opacity-60 | -90)        (map.state.*.opacity.overhung.secondary)
      — фокус:    rgb(var(--surface-on-highest))      (map.state.focus.focus-selection.outline)
-     — disabled: var(--awds-opacity-40)                (map.state.rest.opacity.control.disabled)
+     — disabled: var(--awds-opacity-opacity-40)                (map.state.rest.opacity.control.disabled)
      — шрифт:    var(--awds-font-family-system), var(--awds-font-weight-semibold)
 
    Маппинг variant × state → роль (Figma node 490:231905):
@@ -56,13 +56,13 @@
 
 .obtn {
   /* size accumulator defaults (default_size = 400, семантические shape-токены map.size.rectangle.400) */
-  --awds-obtn-padding: var(--awds-rectangle-400-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-400-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-400-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-400-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-400-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-400);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-400);
 
   box-sizing: border-box;
   position: relative;
@@ -108,7 +108,7 @@
 
 .obtn:disabled,
 .obtn[aria-disabled="true"] {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
 
@@ -156,73 +156,73 @@
    ============================================================================= */
 
 .obtn--600 {
-  --awds-obtn-padding: var(--awds-rectangle-600-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-600-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-600-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-600-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-600-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-600-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-600-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-600-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-600-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-600-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-600-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-600);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .obtn--500 {
-  --awds-obtn-padding: var(--awds-rectangle-500-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-500-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-500-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-500-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-500-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-500-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-500-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-500-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-500-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-600);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .obtn--400 {
-  --awds-obtn-padding: var(--awds-rectangle-400-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-400-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-400-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-400-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-400-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-400);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .obtn--300 {
-  --awds-obtn-padding: var(--awds-rectangle-300-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-300-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-300-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-300-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-300-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-300-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-300-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-300-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-300-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-300-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-300-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-400);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .obtn--200 {
-  --awds-obtn-padding: var(--awds-rectangle-200-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-200-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-200-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-200-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-200-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-200-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-200-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-200-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-200-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-200-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-200-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-300);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .obtn--100 {
-  --awds-obtn-padding: var(--awds-rectangle-100-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-100-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-100-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-100-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-100-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-100-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-100-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-100-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-100-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-100-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-300);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .obtn--50 {
-  --awds-obtn-padding: var(--awds-rectangle-50-padding);
-  --awds-obtn-gap:     var(--awds-rectangle-50-gap);
-  --awds-obtn-rounded: var(--awds-rectangle-50-rounded);
-  --awds-obtn-icon:    var(--awds-rectangle-50-icon);
-  --awds-obtn-fs:      var(--awds-rectangle-50-typography-font-size);
-  --awds-obtn-lh:      var(--awds-rectangle-50-typography-line-height);
-  --awds-obtn-ls:      var(--awds-rectangle-50-typography-letter-spacing);
+  --awds-obtn-padding: var(--awds-size-rectangle-50-padding);
+  --awds-obtn-gap:     var(--awds-size-rectangle-50-gap);
+  --awds-obtn-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-obtn-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-obtn-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-obtn-lh:      var(--awds-control-line-height-200);
+  --awds-obtn-ls:      var(--awds-control-letter-spacing-200);
 }
 
 /* =============================================================================
@@ -235,7 +235,7 @@
   --awds-obtn-chroma: rgb(var(--surface-bright));
   --awds-obtn-border: rgb(var(--surface-surface));
   --awds-obtn-color:  rgb(var(--surface-on));
-  opacity: var(--awds-opacity-60);
+  opacity: var(--awds-opacity-opacity-60);
   /* Дописываем opacity к списку перехода базы (он перечисляет свойства явно,
      не transition: all) — иначе уплотнение 60→90% «снапнет». */
   transition: --awds-obtn-bg 0.15s ease-out,
@@ -251,7 +251,7 @@
   --awds-obtn-chroma: rgb(var(--surface-dim));
   --awds-obtn-border: rgb(var(--surface-surface));
   --awds-obtn-color:  rgb(var(--surface-on-highest));
-  opacity: var(--awds-opacity-90);
+  opacity: var(--awds-opacity-opacity-90);
 }
 
 .obtn-secondary:focus-visible {
@@ -259,7 +259,7 @@
   --awds-obtn-chroma: rgb(var(--surface-bright));
   --awds-obtn-border: rgb(var(--surface-surface));
   --awds-obtn-color:  rgb(var(--surface-on));
-  opacity: var(--awds-opacity-90);
+  opacity: var(--awds-opacity-opacity-90);
 }
 
 /* Active: = Rest цвета, плотность 90% */
@@ -268,7 +268,7 @@
   --awds-obtn-chroma: rgb(var(--surface-bright));
   --awds-obtn-border: rgb(var(--surface-surface));
   --awds-obtn-color:  rgb(var(--surface-on));
-  opacity: var(--awds-opacity-90);
+  opacity: var(--awds-opacity-opacity-90);
 }
 
 

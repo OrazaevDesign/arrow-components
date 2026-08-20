@@ -37,8 +37,8 @@
 |---|---|
 | Base `.obtn` | Идентична primary: layout, `box-shadow` = `elevation-1` + inset stroke, фон-градиент, типографика, размер 400, focus-visible, disabled, loading/icon-only |
 | Sizes `.obtn--{N}` | Те же shape-токены `--awds-rectangle-{N}-*` |
-| Variant `.obtn-secondary` | Роли `rgb(var(--surface-*))` (как primary) + `opacity: var(--awds-opacity-60)`; переход дополнен `opacity` |
-| `:hover` / `:focus-visible` / `:active` | Те же роли + `opacity: var(--awds-opacity-90)` (кнопка уплотняется) |
+| Variant `.obtn-secondary` | Роли `rgb(var(--surface-*))` (как primary) + `opacity: var(--awds-opacity-opacity-60)`; переход дополнен `opacity` |
+| `:hover` / `:focus-visible` / `:active` | Те же роли + `opacity: var(--awds-opacity-opacity-90)` (кнопка уплотняется) |
 
 ## Состояния
 
@@ -48,7 +48,7 @@
 | Hover | `surface-surface` | `surface-dim` | `surface-surface` | `surface-on-highest` | **90%** |
 | Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | **90%** + `outline` |
 | Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | **90%** |
-| Disabled | = Rest цвета | | | | **40%** (`--awds-opacity-40`, база `.obtn:disabled` перекрывает 60% по специфичности) |
+| Disabled | = Rest цвета | | | | **40%** (`--awds-opacity-opacity-40`, база `.obtn:disabled` перекрывает 60% по специфичности) |
 
 Отличие от Primary — только непрозрачность всей кнопки. Цвета, тень и геометрия совпадают. Тень `elevation-1` постоянна.
 
