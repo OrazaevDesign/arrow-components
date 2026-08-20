@@ -4,7 +4,7 @@
 
 Высококонтрастная «чернильная» кнопка — тёмная поверхность на светлом фоне (или инверсия). Максимальный визуальный вес, когда нужно выбить действие из общего ритма.
 
-Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
+Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
 
 Contrast строится на ролях **surface** (`surface-on-highest` для фона, `surface-bright` для текста), а не на отдельном семействе `--contrast-*`. Геометрия, base-механика, loading, icon-only — общие с Primary; `button-contrast.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -105,7 +105,7 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 | Hover   | `--surface-on-highest` | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
 | Focus   | `--surface-on-highest` | `--surface-on-high`    | `--surface-on-highest` | `--surface-bright` |
 | Active  | `--surface-on-highest` | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
-| Disabled| Rest + `opacity: var(--awds-opacity-40)` (= 40%) | | | |
+| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
 
 Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest`, общая для всех интерактивных элементов сайта.

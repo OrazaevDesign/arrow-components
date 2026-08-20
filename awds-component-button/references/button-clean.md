@@ -4,7 +4,7 @@
 
 Белая кнопка с тонкой обводкой — для цветных/насыщенных секций (hero, баннеры), где нужна нейтральная светлая поверхность поверх фона.
 
-Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`.
+Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`.
 
 Единственный вариант, где `border ≠ bg`: обводка `surface-dim` тонко, но видимо очерчивает белую кнопку. Реализована через inset box-shadow (не влияет на размер). `chroma = bg` — фон плоский, без градиента.
 
@@ -107,7 +107,7 @@
 | Hover   | `--surface-surface` | `--surface-dim` | `--surface-on-highest` |
 | Focus   | `--surface-bright`  | `--surface-dim` | `--surface-on-high` |
 | Active  | `--surface-surface` | `--surface-dim` | `--surface-on-highest` |
-| Disabled| Rest + `opacity: var(--awds-opacity-40)` (= 40%) | | |
+| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | |
 
 Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.

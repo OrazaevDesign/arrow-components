@@ -6,7 +6,7 @@
 
 > Имя «Pills» — название компонента в Figma. **Пилюльной формы в токенах нет** (`rounded` = стандартный `rectangle/{N}`, как у остальных вариантов). Если нужна круглая форма — применяй на странице мод скругления `.rounded-rounded` на `<html>` или оборачивающем контейнере (см. `arrow-design-system/tokens-units.md`).
 
-Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-container-on))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-40)`.
+Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-container-on))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`.
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-pills.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -107,7 +107,7 @@
 | Hover   | `--secondary-dim`  | `--secondary-chroma` | `--secondary-dim`  | **`--accent-container-on`** (красный) |
 | Focus   | `--secondary-core` | `--secondary-chroma` | `--secondary-core` | `--secondary-on` |
 | Active  | `--secondary-core` | `--secondary-core`   | `--secondary-core` | `--secondary-on` |
-| Disabled| Rest + `opacity: var(--awds-opacity-40)` (= 40%) | | | |
+| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
 
 Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px`.

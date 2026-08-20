@@ -4,7 +4,7 @@
 
 Текстовая кнопка без фона и обводки — минимальный визуальный вес. Для третьестепенных действий, тулбаров, «Отмена» рядом с заполненной кнопкой.
 
-Всё на токенах. Фон/обводка — `transparent` во всех состояниях; цвет текста → роли `rgb(var(--surface-on-high/-highest))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`.
+Всё на токенах. Фон/обводка — `transparent` во всех состояниях; цвет текста → роли `rgb(var(--surface-on-high/-highest))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`.
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-ghost.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -105,7 +105,7 @@
 | Hover   | `transparent` | `transparent` | `--surface-on-highest` |
 | Focus   | `transparent` | `transparent` | `--surface-on-highest` |
 | Active  | `transparent` | `transparent` | `--surface-on-highest` |
-| Disabled| Rest + `opacity: var(--awds-opacity-40)` (= 40%) | | |
+| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | |
 
 Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.

@@ -4,7 +4,7 @@
 
 Третичное действие — мягкая «container»-поверхность ниже веса Secondary. Подходит для вспомогательной навигации, второстепенных действий в плотных блоках.
 
-Всё на токенах. Цвета → роли `rgb(var(--tertiary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
+Всё на токенах. Цвета → роли `rgb(var(--tertiary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-tertiary.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -105,7 +105,7 @@
 | Hover   | `--tertiary-dim`  | `--tertiary-chroma` | `--tertiary-dim`  | `--tertiary-on` |
 | Focus   | `--tertiary-core` | `--tertiary-chroma` | `--tertiary-core` | `--tertiary-on` |
 | Active  | `--tertiary-core` | `--tertiary-core`   | `--tertiary-core` | `--tertiary-on` |
-| Disabled| Rest + `opacity: var(--awds-opacity-40)` (= 40%) | | | |
+| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
 
 Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.

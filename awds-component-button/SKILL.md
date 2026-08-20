@@ -1,10 +1,6 @@
 ---
 name: awds-component-button
-description: >
-  Верстка кнопок ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении любой кнопки в разметку или PageCraft-блок,
-  выборе варианта кнопки из Figma-дизайна, вопросах о стилях btn-primary / btn-secondary и т.д.,
-  получении Figma-ссылки на компонент кнопки.
+description: Кнопки ArrowDS (btn-primary, btn-secondary, btn-clean, btn-addition): варианты, размеры, состояния. Для любой кнопки в блоке или разметке, и по Figma-ссылке на Button. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Кнопки ArrowDS
@@ -20,7 +16,7 @@ description: >
 | Цвета вариантов (bg/border/color/chroma) | `var(--color-{role}-*)` inline в `.btn-{variant}` и его `:hover/:focus-visible/:active` | `references/{variant}.css` (+ палитра в `css-variables.css` сайта) |
 | Цвет фокус-обводки | `var(--color-surface-on-highest)` inline | `references/{variant}.css` |
 | Размеры (padding/gap/icon/rounded/font) | `var(--awds-rectangle-{N}-*)` (семантические shape-токены) в `.btn--{N}` | `blocks/arrowds-css/style.css` (там же резолвятся в базовые шкалы) |
-| `opacity` для disabled | `var(--awds-opacity-40)` | там же |
+| `opacity` для disabled | `var(--awds-opacity-opacity-40)` | там же |
 | Шрифт (family/weight) | `--awds-font-family-system`, `--awds-font-weight-semibold` | там же |
 
 Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление под Figma — через скилл `arrow-components-builder` («обнови awds-component-button»), не руками.

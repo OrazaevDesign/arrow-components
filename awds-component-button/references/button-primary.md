@@ -4,7 +4,7 @@
 
 Главный призыв к действию. На экране/секции — только одна Primary-кнопка.
 
-Всё на токенах. Цвета → роли `rgb(var(--primary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт — блок `arrowds-css`.
+Всё на токенах. Цвета → роли `rgb(var(--primary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт — блок `arrowds-css`.
 
 ---
 
@@ -73,8 +73,8 @@
 ```css
 .btn {
   /* size-дефолты (= 400) */
-  --awds-btn-padding: var(--awds-rectangle-400-padding);
-  --awds-btn-fs:      var(--awds-rectangle-400-typography-font-size);
+  --awds-btn-padding: var(--awds-size-rectangle-400-padding);
+  --awds-btn-fs:      var(--awds-size-rectangle-400-typography);
   /* … */
   box-sizing: border-box;
   padding-block: var(--awds-btn-padding);
@@ -92,7 +92,7 @@
   font-family: var(--awds-font-family-system);
   font-weight: var(--awds-font-weight-semibold);
 }
-.btn:disabled       { opacity: var(--awds-opacity-40); }
+.btn:disabled       { opacity: var(--awds-opacity-opacity-40); }
 .btn:focus-visible  { outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px; }
 ```
 
@@ -101,13 +101,13 @@
 
 ```css
 .btn--400 {
-  --awds-btn-padding: var(--awds-rectangle-400-padding);
-  --awds-btn-gap:     var(--awds-rectangle-400-gap);
-  --awds-btn-rounded: var(--awds-rectangle-400-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-400-icon);
-  --awds-btn-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-400-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-400);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-400);
 }
 ```
 
@@ -145,7 +145,7 @@
 | Hover   | `--primary-dim`  | `--primary-chroma` | `--primary-dim`  | `--primary-on` |
 | Focus   | `--primary-core` | `--primary-chroma` | `--primary-core` | `--primary-on` |
 | Active  | `--primary-core` | `--primary-core`   | `--primary-core` | `--primary-on` |
-| Disabled| Rest + `opacity: var(--awds-opacity-40)` (= 40%) | | | |
+| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
 
 Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.

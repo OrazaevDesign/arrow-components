@@ -15,7 +15,7 @@
                  -typography-font-size | …)   (map.size.rectangle.{N}; определены в css-global)
      — цвета:    rgb(var(--primary-*))            (map.state.*.button.primary, css-variables.css сайта)
      — фокус:    rgb(var(--surface-on-highest))   (map.state.focus.focus-selection.outline)
-     — disabled: var(--awds-opacity-40)             (map.state.rest.opacity.control.disabled)
+     — disabled: var(--awds-opacity-opacity-40)             (map.state.rest.opacity.control.disabled)
      — шрифт:    var(--awds-font-family-system), var(--awds-font-weight-semibold)
 
    Маппинг variant × state → роль (Figma node 1:757):
@@ -54,13 +54,13 @@
 
 .btn {
   /* size accumulator defaults (default_size = 400, семантические shape-токены map.size.rectangle.400) */
-  --awds-btn-padding: var(--awds-rectangle-400-padding);
-  --awds-btn-gap:     var(--awds-rectangle-400-gap);
-  --awds-btn-rounded: var(--awds-rectangle-400-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-400-icon);
-  --awds-btn-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-400-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-400);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-400);
 
   box-sizing: border-box;
   position: relative;
@@ -107,7 +107,7 @@
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
 
@@ -155,73 +155,73 @@
    ============================================================================= */
 
 .btn--600 {
-  --awds-btn-padding: var(--awds-rectangle-600-padding);
-  --awds-btn-gap:     var(--awds-rectangle-600-gap);
-  --awds-btn-rounded: var(--awds-rectangle-600-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-600-icon);
-  --awds-btn-fs:      var(--awds-rectangle-600-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-600-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-600-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-600-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-600-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-600-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-600-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-600);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .btn--500 {
-  --awds-btn-padding: var(--awds-rectangle-500-padding);
-  --awds-btn-gap:     var(--awds-rectangle-500-gap);
-  --awds-btn-rounded: var(--awds-rectangle-500-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-500-icon);
-  --awds-btn-fs:      var(--awds-rectangle-500-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-500-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-500-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-500-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-500-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-600);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .btn--400 {
-  --awds-btn-padding: var(--awds-rectangle-400-padding);
-  --awds-btn-gap:     var(--awds-rectangle-400-gap);
-  --awds-btn-rounded: var(--awds-rectangle-400-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-400-icon);
-  --awds-btn-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-400-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-400);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .btn--300 {
-  --awds-btn-padding: var(--awds-rectangle-300-padding);
-  --awds-btn-gap:     var(--awds-rectangle-300-gap);
-  --awds-btn-rounded: var(--awds-rectangle-300-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-300-icon);
-  --awds-btn-fs:      var(--awds-rectangle-300-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-300-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-300-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-300-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-300-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-300-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-300-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-400);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .btn--200 {
-  --awds-btn-padding: var(--awds-rectangle-200-padding);
-  --awds-btn-gap:     var(--awds-rectangle-200-gap);
-  --awds-btn-rounded: var(--awds-rectangle-200-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-200-icon);
-  --awds-btn-fs:      var(--awds-rectangle-200-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-200-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-200-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-200-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-200-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-200-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-200-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-300);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .btn--100 {
-  --awds-btn-padding: var(--awds-rectangle-100-padding);
-  --awds-btn-gap:     var(--awds-rectangle-100-gap);
-  --awds-btn-rounded: var(--awds-rectangle-100-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-100-icon);
-  --awds-btn-fs:      var(--awds-rectangle-100-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-100-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-100-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-100-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-100-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-100-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-300);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .btn--50 {
-  --awds-btn-padding: var(--awds-rectangle-50-padding);
-  --awds-btn-gap:     var(--awds-rectangle-50-gap);
-  --awds-btn-rounded: var(--awds-rectangle-50-rounded);
-  --awds-btn-icon:    var(--awds-rectangle-50-icon);
-  --awds-btn-fs:      var(--awds-rectangle-50-typography-font-size);
-  --awds-btn-lh:      var(--awds-rectangle-50-typography-line-height);
-  --awds-btn-ls:      var(--awds-rectangle-50-typography-letter-spacing);
+  --awds-btn-padding: var(--awds-size-rectangle-50-padding);
+  --awds-btn-gap:     var(--awds-size-rectangle-50-gap);
+  --awds-btn-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-btn-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-btn-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-btn-lh:      var(--awds-control-line-height-200);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-200);
 }
 
 /* =============================================================================
