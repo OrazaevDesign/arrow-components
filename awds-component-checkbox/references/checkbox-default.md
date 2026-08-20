@@ -70,7 +70,7 @@ document.querySelector('#select-all .checkbox__input').indeterminate = true;
 | Selected / Indeterminate Hover | `.checkbox:hover > …:checked` | bg / border `primary-dim` |
 | Selected / Indeterminate Active | `.checkbox:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
 | Focus | `.checkbox__input:focus-visible + .checkbox__box` | `outline: 2px solid rgb(var(--surface-on-highest))`, **`outline-offset: 0`** |
-| Disabled | `.checkbox:has(> .checkbox__input:disabled)` | `opacity: var(--awds-opacity-40)` на всей обёртке |
+| Disabled | `.checkbox:has(> .checkbox__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
 
 `outline-offset: 0`, а не 2px как у `.btn` — в макете FocusSelection стоит вплотную к боксу. Контрол маленький (16–28px), кольцо с зазором на нём выглядело бы отдельным элементом.
 

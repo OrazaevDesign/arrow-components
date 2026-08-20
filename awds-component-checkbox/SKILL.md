@@ -1,14 +1,6 @@
 ---
 name: awds-component-checkbox
-description: >
-  Верстка чекбоксов ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении чекбокса в форму, фильтры, таблицу или PageCraft-блок,
-  согласии с условиями / подписке / «выбрать всё», выборе размера чекбокса (16/20/24/28px),
-  состоянии indeterminate (частично отмеченный список), вопросах о стилях checkbox /
-  checkbox__box / check-radio, получении Figma-ссылки на компонент Checkbox.
-  Построен на нативном input type="checkbox" — состояния Selected / Indeterminate /
-  Unselected это :checked / :indeterminate / дефолт, а не CSS-варианты.
-  Для переключателя «вкл/выкл» — это switch, для выбора одного из списка — radio, не этот скилл.
+description: Чекбоксы ArrowDS (checkbox, check-radio) на нативном input: состояния checked и indeterminate, размеры 16–28. Для согласия с условиями, фильтров, «выбрать всё». Тумблер вкл/выкл — switch. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Checkbox ArrowDS
@@ -34,7 +26,7 @@ Selected и Indeterminate делят одну палитру `check-radio/select
 | Цвета состояний (bg/chroma/border/color) | `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline | `references/checkbox.css` |
 | Цвет фокус-обводки | `rgb(var(--surface-on-highest))` (inline) | `component-token-map.json` → `map.state.focus` |
 | Размеры (padding/icon/rounded/gap) | `var(--awds-square-{N}-*)` | `component-token-map.json` → `map.size.square` |
-| Opacity для disabled | `var(--awds-opacity-40)` | css-global (базовая шкала) |
+| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Промежуточный слой `--awds-checkbox-*` в DS НЕ существует.** Внутри `checkbox.css` есть приватные `--awds-checkbox-*` accumulators, но они scope'нуты только на компонент. Подробнее — [arrow-components-builder/references/component-skill-contract.md](../arrow-components-builder/references/component-skill-contract.md).
@@ -74,7 +66,7 @@ Selected и Indeterminate делят одну палитру `check-radio/select
 - Инпут остаётся настоящим и в потоке: клавиатура, скринридер, автозаполнение формы работают сами.
 - Чекбокс без видимой подписи обязан нести `aria-label` на `<label>`.
 - Фокус-кольцо — `outline-offset: 0` (вплотную к боксу, как в макете), не 2px как у `.btn`.
-- Disabled гасится `opacity: var(--awds-opacity-40)` на всей обёртке — это макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Не используй disabled как способ «объяснить» недоступность: рядом нужен текст-причина.
+- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — это макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Не используй disabled как способ «объяснить» недоступность: рядом нужен текст-причина.
 
 ## CSS-файл
 

@@ -68,10 +68,10 @@
 .checkbox {
   /* Size accumulator defaults (default_size = 400, map.size.square.400).
      Наследуются вниз в .checkbox__box (обычные кастом-пропы, не registered). */
-  --awds-checkbox-padding: var(--awds-square-400-padding);
-  --awds-checkbox-icon:    var(--awds-square-400-icon);
-  --awds-checkbox-rounded: var(--awds-square-400-rounded);
-  --awds-checkbox-gap:     var(--awds-square-400-gap);
+  --awds-checkbox-padding: var(--awds-size-square-400-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-400-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-400-rounded);
+  --awds-checkbox-gap:     var(--awds-size-square-400-gap);
 
   box-sizing: border-box;
   position: relative;
@@ -156,31 +156,31 @@
 /* === Sizes (shape = square, map.size.square.{N}) === */
 
 .checkbox--200 {
-  --awds-checkbox-padding: var(--awds-square-200-padding);
-  --awds-checkbox-icon:    var(--awds-square-200-icon);
-  --awds-checkbox-rounded: var(--awds-square-200-rounded);
-  --awds-checkbox-gap:     var(--awds-square-200-gap);
+  --awds-checkbox-padding: var(--awds-size-square-200-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-200-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-200-rounded);
+  --awds-checkbox-gap:     var(--awds-size-square-200-gap);
 }
 
 .checkbox--300 {
-  --awds-checkbox-padding: var(--awds-square-300-padding);
-  --awds-checkbox-icon:    var(--awds-square-300-icon);
-  --awds-checkbox-rounded: var(--awds-square-300-rounded);
-  --awds-checkbox-gap:     var(--awds-square-300-gap);
+  --awds-checkbox-padding: var(--awds-size-square-300-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-300-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-300-rounded);
+  --awds-checkbox-gap:     var(--awds-size-square-300-gap);
 }
 
 .checkbox--400 {
-  --awds-checkbox-padding: var(--awds-square-400-padding);
-  --awds-checkbox-icon:    var(--awds-square-400-icon);
-  --awds-checkbox-rounded: var(--awds-square-400-rounded);
-  --awds-checkbox-gap:     var(--awds-square-400-gap);
+  --awds-checkbox-padding: var(--awds-size-square-400-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-400-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-400-rounded);
+  --awds-checkbox-gap:     var(--awds-size-square-400-gap);
 }
 
 .checkbox--500 {
-  --awds-checkbox-padding: var(--awds-square-500-padding);
-  --awds-checkbox-icon:    var(--awds-square-500-icon);
-  --awds-checkbox-rounded: var(--awds-square-500-rounded);
-  --awds-checkbox-gap:     var(--awds-square-500-gap);
+  --awds-checkbox-padding: var(--awds-size-square-500-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-500-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-500-rounded);
+  --awds-checkbox-gap:     var(--awds-size-square-500-gap);
 }
 
 
@@ -264,7 +264,7 @@
    атрибут disabled (например, отрисован как aria-disabled). */
 .checkbox:has(> .checkbox__input:disabled),
 .checkbox--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
 
