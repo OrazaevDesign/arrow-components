@@ -142,31 +142,31 @@
 
 .scombi {
   /* Size accumulator defaults (default_size = 400, map.size.rectangle.400) */
-  --awds-scombi-padding:      var(--awds-rectangle-400-padding);
-  --awds-scombi-icon:         var(--awds-rectangle-400-icon);
-  --awds-scombi-rounded:      var(--awds-rectangle-400-rounded);
-  --awds-scombi-fs:           var(--awds-rectangle-400-typography-font-size);
-  --awds-scombi-lh:           var(--awds-rectangle-400-typography-line-height);
-  --awds-scombi-ls:           var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-scombi-text-gap:     var(--awds-rectangle-400-text-gap);
-  --awds-scombi-label-top:    var(--awds-rectangle-400-combi-label-top);
-  --awds-scombi-input-top:    var(--awds-rectangle-400-combi-input-top);
-  --awds-scombi-input-bottom: var(--awds-rectangle-400-combi-input-bottom);
-  --awds-scombi-label-fs:     var(--awds-control-100-font-size);
-  --awds-scombi-label-lh:     var(--awds-control-100-line-height);
-  --awds-scombi-label-ls:     var(--awds-control-100-letter-spacing);
-  --awds-scombi-picker-rounded: var(--awds-dropdown-400-border-radius);
-  --awds-scombi-picker-padding: var(--awds-dropdown-400-padding);
-  --awds-scombi-opt-padding:  var(--awds-rectangle-300-padding);
-  --awds-scombi-opt-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-scombi-opt-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-scombi-opt-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-scombi-opt-ls:       var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-scombi-opt-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-scombi-opt-icon:     var(--awds-rectangle-300-icon);
-  --awds-scombi-opt-desc-fs:  var(--awds-rectangle-300-description-font-size);
-  --awds-scombi-opt-desc-lh:  var(--awds-rectangle-300-description-line-height);
-  --awds-scombi-opt-desc-ls:  var(--awds-rectangle-300-description-letter-spacing);
+  --awds-scombi-padding:      var(--awds-size-rectangle-400-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-400-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-400-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-400-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-400);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-400-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-400-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-400-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-400-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-100);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-400-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-400-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-400);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-400);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-300-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-300);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-300);
 
   box-sizing: border-box;
   position: relative;
@@ -434,115 +434,115 @@
    ◆ / Dropdown), считать её потребителю не нужно. */
 
 .scombi--300 {
-  --awds-scombi-padding:      var(--awds-rectangle-300-padding);
-  --awds-scombi-icon:         var(--awds-rectangle-300-icon);
-  --awds-scombi-rounded:      var(--awds-rectangle-300-rounded);
-  --awds-scombi-fs:           var(--awds-rectangle-300-typography-font-size);
-  --awds-scombi-lh:           var(--awds-rectangle-300-typography-line-height);
-  --awds-scombi-ls:           var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-scombi-text-gap:     var(--awds-rectangle-300-text-gap);
-  --awds-scombi-label-top:    var(--awds-rectangle-300-combi-label-top);
-  --awds-scombi-input-top:    var(--awds-rectangle-300-combi-input-top);
-  --awds-scombi-input-bottom: var(--awds-rectangle-300-combi-input-bottom);
-  --awds-scombi-label-fs:     var(--awds-control-100-font-size);
-  --awds-scombi-label-lh:     var(--awds-control-100-line-height);
-  --awds-scombi-label-ls:     var(--awds-control-100-letter-spacing);
-  --awds-scombi-picker-rounded: var(--awds-dropdown-300-border-radius);
-  --awds-scombi-picker-padding: var(--awds-dropdown-300-padding);
-  --awds-scombi-opt-padding:  var(--awds-rectangle-200-padding);
-  --awds-scombi-opt-rounded:  var(--awds-rectangle-200-rounded);
-  --awds-scombi-opt-fs:       var(--awds-rectangle-200-typography-font-size);
-  --awds-scombi-opt-lh:       var(--awds-rectangle-200-typography-line-height);
-  --awds-scombi-opt-ls:       var(--awds-rectangle-200-typography-letter-spacing);
-  --awds-scombi-opt-text-gap: var(--awds-rectangle-200-text-gap);
-  --awds-scombi-opt-icon:     var(--awds-rectangle-200-icon);
-  --awds-scombi-opt-desc-fs:  var(--awds-rectangle-200-description-font-size);
-  --awds-scombi-opt-desc-lh:  var(--awds-rectangle-200-description-line-height);
-  --awds-scombi-opt-desc-ls:  var(--awds-rectangle-200-description-letter-spacing);
+  --awds-scombi-padding:      var(--awds-size-rectangle-300-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-300-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-300-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-300-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-400);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-300-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-300-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-300-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-300-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-100);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-300-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-300-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-200-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-200-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-200-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-300);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-300);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-200-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-200-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-200);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-200);
 }
 
 .scombi--400 {
-  --awds-scombi-padding:      var(--awds-rectangle-400-padding);
-  --awds-scombi-icon:         var(--awds-rectangle-400-icon);
-  --awds-scombi-rounded:      var(--awds-rectangle-400-rounded);
-  --awds-scombi-fs:           var(--awds-rectangle-400-typography-font-size);
-  --awds-scombi-lh:           var(--awds-rectangle-400-typography-line-height);
-  --awds-scombi-ls:           var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-scombi-text-gap:     var(--awds-rectangle-400-text-gap);
-  --awds-scombi-label-top:    var(--awds-rectangle-400-combi-label-top);
-  --awds-scombi-input-top:    var(--awds-rectangle-400-combi-input-top);
-  --awds-scombi-input-bottom: var(--awds-rectangle-400-combi-input-bottom);
-  --awds-scombi-label-fs:     var(--awds-control-100-font-size);
-  --awds-scombi-label-lh:     var(--awds-control-100-line-height);
-  --awds-scombi-label-ls:     var(--awds-control-100-letter-spacing);
-  --awds-scombi-picker-rounded: var(--awds-dropdown-400-border-radius);
-  --awds-scombi-picker-padding: var(--awds-dropdown-400-padding);
-  --awds-scombi-opt-padding:  var(--awds-rectangle-300-padding);
-  --awds-scombi-opt-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-scombi-opt-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-scombi-opt-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-scombi-opt-ls:       var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-scombi-opt-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-scombi-opt-icon:     var(--awds-rectangle-300-icon);
-  --awds-scombi-opt-desc-fs:  var(--awds-rectangle-300-description-font-size);
-  --awds-scombi-opt-desc-lh:  var(--awds-rectangle-300-description-line-height);
-  --awds-scombi-opt-desc-ls:  var(--awds-rectangle-300-description-letter-spacing);
+  --awds-scombi-padding:      var(--awds-size-rectangle-400-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-400-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-400-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-400-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-400);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-400-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-400-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-400-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-400-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-100);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-400-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-400-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-400);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-400);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-300-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-300);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-300);
 }
 
 .scombi--500 {
-  --awds-scombi-padding:      var(--awds-rectangle-500-padding);
-  --awds-scombi-icon:         var(--awds-rectangle-500-icon);
-  --awds-scombi-rounded:      var(--awds-rectangle-500-rounded);
-  --awds-scombi-fs:           var(--awds-rectangle-500-typography-font-size);
-  --awds-scombi-lh:           var(--awds-rectangle-500-typography-line-height);
-  --awds-scombi-ls:           var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-scombi-text-gap:     var(--awds-rectangle-500-text-gap);
-  --awds-scombi-label-top:    var(--awds-rectangle-500-combi-label-top);
-  --awds-scombi-input-top:    var(--awds-rectangle-500-combi-input-top);
-  --awds-scombi-input-bottom: var(--awds-rectangle-500-combi-input-bottom);
-  --awds-scombi-label-fs:     var(--awds-control-200-font-size);
-  --awds-scombi-label-lh:     var(--awds-control-200-line-height);
-  --awds-scombi-label-ls:     var(--awds-control-200-letter-spacing);
-  --awds-scombi-picker-rounded: var(--awds-dropdown-500-border-radius);
-  --awds-scombi-picker-padding: var(--awds-dropdown-500-padding);
-  --awds-scombi-opt-padding:  var(--awds-rectangle-400-padding);
-  --awds-scombi-opt-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-scombi-opt-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-scombi-opt-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-scombi-opt-ls:       var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-scombi-opt-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-scombi-opt-icon:     var(--awds-rectangle-400-icon);
-  --awds-scombi-opt-desc-fs:  var(--awds-rectangle-400-description-font-size);
-  --awds-scombi-opt-desc-lh:  var(--awds-rectangle-400-description-line-height);
-  --awds-scombi-opt-desc-ls:  var(--awds-rectangle-400-description-letter-spacing);
+  --awds-scombi-padding:      var(--awds-size-rectangle-500-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-500-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-500-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-500-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-600);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-500-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-500-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-500-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-500-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-500-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-500-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-400);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-400);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-400-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-300);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-300);
 }
 
 .scombi--600 {
-  --awds-scombi-padding:      var(--awds-rectangle-600-padding);
-  --awds-scombi-icon:         var(--awds-rectangle-600-icon);
-  --awds-scombi-rounded:      var(--awds-rectangle-600-rounded);
-  --awds-scombi-fs:           var(--awds-rectangle-600-typography-font-size);
-  --awds-scombi-lh:           var(--awds-rectangle-600-typography-line-height);
-  --awds-scombi-ls:           var(--awds-rectangle-600-typography-letter-spacing);
-  --awds-scombi-text-gap:     var(--awds-rectangle-600-text-gap);
-  --awds-scombi-label-top:    var(--awds-rectangle-600-combi-label-top);
-  --awds-scombi-input-top:    var(--awds-rectangle-600-combi-input-top);
-  --awds-scombi-input-bottom: var(--awds-rectangle-600-combi-input-bottom);
-  --awds-scombi-label-fs:     var(--awds-control-200-font-size);
-  --awds-scombi-label-lh:     var(--awds-control-200-line-height);
-  --awds-scombi-label-ls:     var(--awds-control-200-letter-spacing);
-  --awds-scombi-picker-rounded: var(--awds-rounded-600);
-  --awds-scombi-picker-padding: var(--awds-space-1);
-  --awds-scombi-opt-padding:  var(--awds-rectangle-500-padding);
-  --awds-scombi-opt-rounded:  var(--awds-rectangle-500-rounded);
-  --awds-scombi-opt-fs:       var(--awds-rectangle-500-typography-font-size);
-  --awds-scombi-opt-lh:       var(--awds-rectangle-500-typography-line-height);
-  --awds-scombi-opt-ls:       var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-scombi-opt-text-gap: var(--awds-rectangle-500-text-gap);
-  --awds-scombi-opt-icon:     var(--awds-rectangle-500-icon);
-  --awds-scombi-opt-desc-fs:  var(--awds-rectangle-500-description-font-size);
-  --awds-scombi-opt-desc-lh:  var(--awds-rectangle-500-description-line-height);
-  --awds-scombi-opt-desc-ls:  var(--awds-rectangle-500-description-letter-spacing);
+  --awds-scombi-padding:      var(--awds-size-rectangle-600-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-600-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-600-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-600-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-600);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-600-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-600-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-600-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-600-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
+  --awds-scombi-picker-rounded: var(--awds-rounded-border-radius-600);
+  --awds-scombi-picker-padding: var(--awds-space-space-1);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-600);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-600);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-500-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-400);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-400);
 }
 
 
@@ -618,10 +618,10 @@
 
     /* Отступ панели от контрола — 4 (space-1), как в макете. margin-BLOCK, а не
        margin-top: попап открывается вниз ИЛИ вверх — куда хватит места. */
-    margin-block: var(--awds-space-1);
+    margin-block: var(--awds-space-space-1);
 
     scrollbar-width: thin;
-    scrollbar-color: rgb(var(--surface-on) / var(--awds-opacity-40)) transparent;
+    scrollbar-color: rgb(var(--surface-on) / var(--awds-opacity-opacity-40)) transparent;
   }
 
   /* --- Пункт: мост «размер селекта → размер list-item» --- */
@@ -675,7 +675,7 @@
   }
 
   .scombi__field option:disabled {
-    opacity: var(--awds-opacity-40);
+    opacity: var(--awds-opacity-opacity-40);
     cursor: default;
   }
 }
@@ -733,7 +733,7 @@
   /* map.state.focus.focus-selection.outlineVariant = primary-core, в макете слой
      FocusSelection несёт opacity 50% → альфа прямо в цвете. offset 1 + width 2 дают ту
      же полосу 1..3, что и обводка 2 OUTSIDE на 1 наружу от контрола в макете. */
-  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
   outline-offset: 1px;
 }
 
@@ -754,7 +754,7 @@
     --awds-scombi-chevron:     rgb(var(--primary-container-on-high));
     --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));
 
-    outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+    outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
     outline-offset: 1px;
   }
 }
@@ -767,7 +767,7 @@
 
 .scombi:has(.scombi__field:disabled),
 .scombi--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
 

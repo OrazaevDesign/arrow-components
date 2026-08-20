@@ -74,7 +74,7 @@
 <p class="hint">Сначала выберите город</p>
 ```
 
-Гасится вся обёртка (`opacity: var(--awds-opacity-40)`), как в макете. Контраст в этом состоянии заведомо ниже AA, поэтому рядом нужен текст-причина, а не только серость. Если контрол не может нести атрибут `disabled` — есть запасной класс `.scombi--disabled`.
+Гасится вся обёртка (`opacity: var(--awds-opacity-opacity-40)`), как в макете. Контраст в этом состоянии заведомо ниже AA, поэтому рядом нужен текст-причина, а не только серость. Если контрол не может нести атрибут `disabled` — есть запасной класс `.scombi--disabled`.
 
 ## Состояния
 
@@ -85,9 +85,9 @@
 | Active | рамка возвращается к `secondary-container-on-low` (в макете Active = Rest; правило нужно, чтобы отменить hover при нажатии) | `:active:not(:focus-within):has(…)` |
 | Focus | `bg surface-bright`, `chroma primary-container-chroma`, рамка `primary-dim`, текст `primary-container-on-highest`, метка и шеврон `primary-container-on-high` + кольцо | `:focus-within` |
 | Открыт список | то же, что Focus | `@supports` + `:has(.scombi__field:open)` |
-| Disabled | Rest + `opacity: var(--awds-opacity-40)` | `:has(.scombi__field:disabled)` |
+| Disabled | Rest + `opacity: var(--awds-opacity-opacity-40)` | `:has(.scombi__field:disabled)` |
 
-Кольцо фокуса: `outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50))`, `outline-offset: 1px` — как у `select`, `input` и `input-combi`, и в отличие от остального набора (там `surface-on-highest` без альфы).
+Кольцо фокуса: `outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, `outline-offset: 1px` — как у `select`, `input` и `input-combi`, и в отличие от остального набора (там `surface-on-highest` без альфы).
 
 Отдельное правило на `:open` нужно потому, что под `base-select` при раскрытии фокус уходит в `<option>` и `:focus-within` на обёртке становится ложным.
 
