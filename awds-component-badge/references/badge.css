@@ -28,13 +28,13 @@
 
 .badge {
   /* size accumulators (default = 400) */
-  --awds-badge-padding: var(--awds-rectangle-400-padding);
-  --awds-badge-gap:     var(--awds-rectangle-400-gap);
-  --awds-badge-rounded: var(--awds-rectangle-400-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-400-icon);
-  --awds-badge-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-400-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-400);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-400);
 
   box-sizing: border-box;
   display: inline-flex;
@@ -119,71 +119,71 @@
 /* === Sizes (shape rectangle) === */
 
 .badge--600 {
-  --awds-badge-padding: var(--awds-rectangle-600-padding);
-  --awds-badge-gap:     var(--awds-rectangle-600-gap);
-  --awds-badge-rounded: var(--awds-rectangle-600-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-600-icon);
-  --awds-badge-fs:      var(--awds-rectangle-600-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-600-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-600-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-600-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-600-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-600-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-600-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-600);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .badge--500 {
-  --awds-badge-padding: var(--awds-rectangle-500-padding);
-  --awds-badge-gap:     var(--awds-rectangle-500-gap);
-  --awds-badge-rounded: var(--awds-rectangle-500-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-500-icon);
-  --awds-badge-fs:      var(--awds-rectangle-500-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-500-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-500-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-500-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-500-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-600);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .badge--400 {
-  --awds-badge-padding: var(--awds-rectangle-400-padding);
-  --awds-badge-gap:     var(--awds-rectangle-400-gap);
-  --awds-badge-rounded: var(--awds-rectangle-400-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-400-icon);
-  --awds-badge-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-400-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-400);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .badge--300 {
-  --awds-badge-padding: var(--awds-rectangle-300-padding);
-  --awds-badge-gap:     var(--awds-rectangle-300-gap);
-  --awds-badge-rounded: var(--awds-rectangle-300-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-300-icon);
-  --awds-badge-fs:      var(--awds-rectangle-300-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-300-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-300-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-300-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-300-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-300-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-300-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-400);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .badge--200 {
-  --awds-badge-padding: var(--awds-rectangle-200-padding);
-  --awds-badge-gap:     var(--awds-rectangle-200-gap);
-  --awds-badge-rounded: var(--awds-rectangle-200-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-200-icon);
-  --awds-badge-fs:      var(--awds-rectangle-200-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-200-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-200-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-200-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-200-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-200-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-200-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-300);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .badge--100 {
-  --awds-badge-padding: var(--awds-rectangle-100-padding);
-  --awds-badge-gap:     var(--awds-rectangle-100-gap);
-  --awds-badge-rounded: var(--awds-rectangle-100-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-100-icon);
-  --awds-badge-fs:      var(--awds-rectangle-100-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-100-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-100-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-100-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-100-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-100-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-300);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .badge--50 {
-  --awds-badge-padding: var(--awds-rectangle-50-padding);
-  --awds-badge-gap:     var(--awds-rectangle-50-gap);
-  --awds-badge-rounded: var(--awds-rectangle-50-rounded);
-  --awds-badge-icon:    var(--awds-rectangle-50-icon);
-  --awds-badge-fs:      var(--awds-rectangle-50-typography-font-size);
-  --awds-badge-lh:      var(--awds-rectangle-50-typography-line-height);
-  --awds-badge-ls:      var(--awds-rectangle-50-typography-letter-spacing);
+  --awds-badge-padding: var(--awds-size-rectangle-50-padding);
+  --awds-badge-gap:     var(--awds-size-rectangle-50-gap);
+  --awds-badge-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-badge-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-badge-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-badge-lh:      var(--awds-control-line-height-200);
+  --awds-badge-ls:      var(--awds-control-letter-spacing-200);
 }
