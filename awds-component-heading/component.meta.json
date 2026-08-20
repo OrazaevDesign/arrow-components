@@ -47,12 +47,12 @@
   },
   "ds_token_dependencies": [
     "--color-surface-on-highest",
-    "--awds-typography-font-size-920", "--awds-typography-line-height-compact-920", "--awds-typography-letter-spacing-920",
-    "--awds-typography-font-size-910", "--awds-typography-line-height-compact-910", "--awds-typography-letter-spacing-910",
-    "--awds-typography-font-size-900", "--awds-typography-line-height-compact-900", "--awds-typography-letter-spacing-900",
-    "--awds-typography-font-size-800", "--awds-typography-line-height-compact-800", "--awds-typography-letter-spacing-800",
-    "--awds-typography-font-size-600", "--awds-typography-line-height-compact-600", "--awds-typography-letter-spacing-600",
-    "--awds-space-1-5",
+    "--awds-typography-typography-font-size-920", "--awds-typography-typography-line-height-compact-920", "--awds-typography-typography-letter-spacing-920",
+    "--awds-typography-typography-font-size-910", "--awds-typography-typography-line-height-compact-910", "--awds-typography-typography-letter-spacing-910",
+    "--awds-typography-typography-font-size-900", "--awds-typography-typography-line-height-compact-900", "--awds-typography-typography-letter-spacing-900",
+    "--awds-typography-typography-font-size-800", "--awds-typography-typography-line-height-compact-800", "--awds-typography-typography-letter-spacing-800",
+    "--awds-typography-typography-font-size-600", "--awds-typography-typography-line-height-compact-600", "--awds-typography-typography-letter-spacing-600",
+    "--awds-space-space-1-5",
     "--awds-font-family-system", "--awds-font-weight-semibold"
   ],
   "_dependency_note": "Заголовок — адаптивные примитивы typography (920/910/900/800/600), View Desktop/Tablet/Mobile зашит в их @media. Действие «Все ›» — внешний awds-component-button-area (button-area.css): цвет/размер/состояния/полную высоту держит он сам, heading.css своих стилей действия больше не имеет. Раскладка по View: desktop — действие вплотную к заголовку (gap space-1-5), tablet/mobile — space-between (@media max-width 1067).",

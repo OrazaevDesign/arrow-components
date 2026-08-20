@@ -1,12 +1,6 @@
 ---
 name: awds-component-heading
-description: >
-  Верстка заголовка секции (Heading + Button) ArrowDS — HTML-разметка и CSS на токенах
-  дизайн-системы. Используй ВСЕГДА при: добавлении заголовка секции/блока с уровнем
-  H1–H5, заголовка с опциональной ссылкой-действием «Все ›» справа, выборе размера
-  заголовка, вопросах о стилях heading / heading__title / heading__action, адаптиве
-  заголовка по брейкпоинту (Desktop/Tablet/Mobile), получении Figma-ссылки на компонент
-  Heading. 5 уровней, адаптивная типографика, опциональное действие, статичный.
+description: Заголовок секции Heading ArrowDS: уровни H1–H5, адаптивная типографика, опциональное действие «Все ›» справа. Для заголовка блока или секции. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Heading (заголовок секции + действие) ArrowDS
@@ -64,8 +58,8 @@ description: >
 | Цвет заголовка | `rgb(var(--surface-on-highest))` |
 | Вес | `var(--awds-font-weight-semibold)` |
 | Действие «Все ›» | внешний `awds-component-button-area` (`.btn-area-default` `.btn-area--100` `.btn-area--fill-y`) — он держит цвет (tertiary-container-on-high → hover -on-highest), размер (control-300 13/16), состояния, суффикс-шеврон, полную высоту |
-| Зазор заголовок ↔ действие (desktop) | `var(--awds-space-1-5)` (6px) |
-| Зазор текст ↔ шеврон | `var(--awds-space-0-5)` (2px); иконка `var(--awds-space-4)` (16px) |
+| Зазор заголовок ↔ действие (desktop) | `var(--awds-space-space-1-5)` (6px) |
+| Зазор текст ↔ шеврон | `var(--awds-space-space-0-5)` (2px); иконка `var(--awds-space-space-4)` (16px) |
 | Перенос заголовка | `text-wrap: balance` (MIFB — без сирот) |
 
 ## CSS
