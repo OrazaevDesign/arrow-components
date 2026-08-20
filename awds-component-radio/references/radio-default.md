@@ -75,7 +75,7 @@
 | Selected Hover | `.radio:hover > …:checked` | bg / border `primary-dim` |
 | Selected Active | `.radio:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
 | Focus | `.radio__input:focus-visible + .radio__box` | `outline: 2px solid rgb(var(--surface-on-highest))`, **`outline-offset: 0`** |
-| Disabled | `.radio:has(> .radio__input:disabled)` | `opacity: var(--awds-opacity-40)` на всей обёртке |
+| Disabled | `.radio:has(> .radio__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
 
 Значения полностью совпадают с `awds-component-checkbox` — это одна пара токенов `check-radio/*`. `outline-offset: 0`, а не 2px как у `.btn`: в макете кольцо стоит вплотную к кругу.
 
@@ -92,7 +92,7 @@
 
 Размер круга = `icon + 2 × padding`, значения — shape-токены `var(--awds-square-{N}-*)`. Точка масштабируется вместе с иконкой (SVG с `viewBox="0 0 24 24"`), как в макете.
 
-**Скругление не размерное:** `border-radius: var(--awds-rounded-full)` — 600px во всех модах коллекции Rounded. Радиокнопка остаётся круглой даже под `.rounded-none`, и это правильно: круг здесь несёт смысл «выбор один из многих».
+**Скругление не размерное:** `border-radius: var(--awds-rounded-border-radius-full)` — 600px во всех модах коллекции Rounded. Радиокнопка остаётся круглой даже под `.rounded-none`, и это правильно: круг здесь несёт смысл «выбор один из многих».
 
 Тач-таргет: круг на 200/300 меньше 24px. Без подписи и без кликабельной строки-родителя бери 400+.
 

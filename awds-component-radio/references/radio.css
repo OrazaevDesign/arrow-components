@@ -27,7 +27,7 @@
      300: icon 20 + padding 0  = 20px
      400: icon 20 + padding 2  = 24px
      500: icon 24 + padding 2  = 28px
-   Скругление у всех размеров одно — var(--awds-rounded-full) (Figma border-radius/full,
+   Скругление у всех размеров одно — var(--awds-rounded-border-radius-full) (Figma border-radius/full,
    600px). Оно 600px во ВСЕХ модах коллекции Rounded (none / smooth / rounded), поэтому
    радиокнопка остаётся круглой даже под классом .rounded-none — так и задумано.
 
@@ -75,9 +75,9 @@
   /* Size accumulator defaults (default_size = 400, map.size.square.400).
      Наследуются вниз в .radio__box (обычные кастом-пропы, не registered).
      rounded в аккумуляторах НЕТ — он фиксированный, см. .radio__box. */
-  --awds-radio-padding: var(--awds-square-400-padding);
-  --awds-radio-icon:    var(--awds-square-400-icon);
-  --awds-radio-gap:     var(--awds-square-400-gap);
+  --awds-radio-padding: var(--awds-size-square-400-padding);
+  --awds-radio-icon:    var(--awds-size-square-400-icon);
+  --awds-radio-gap:     var(--awds-size-square-400-gap);
 
   box-sizing: border-box;
   position: relative;
@@ -133,7 +133,7 @@
      inside-stroke как в Figma. */
   border: 0;
   /* Figma border-radius/full — одно значение на все размеры и все моды Rounded. */
-  border-radius: var(--awds-rounded-full);
+  border-radius: var(--awds-rounded-border-radius-full);
   box-shadow: inset 0 0 0 1px var(--awds-radio-border);
   background: linear-gradient(to right, var(--awds-radio-chroma, var(--awds-radio-bg)), var(--awds-radio-bg));
   color: var(--awds-radio-color);
@@ -163,30 +163,30 @@
 
 
 /* === Sizes (shape = square, map.size.square.{N}) ===
-   rounded не переопределяем: у радиокнопки он всегда --awds-rounded-full. */
+   rounded не переопределяем: у радиокнопки он всегда --awds-rounded-border-radius-full. */
 
 .radio--200 {
-  --awds-radio-padding: var(--awds-square-200-padding);
-  --awds-radio-icon:    var(--awds-square-200-icon);
-  --awds-radio-gap:     var(--awds-square-200-gap);
+  --awds-radio-padding: var(--awds-size-square-200-padding);
+  --awds-radio-icon:    var(--awds-size-square-200-icon);
+  --awds-radio-gap:     var(--awds-size-square-200-gap);
 }
 
 .radio--300 {
-  --awds-radio-padding: var(--awds-square-300-padding);
-  --awds-radio-icon:    var(--awds-square-300-icon);
-  --awds-radio-gap:     var(--awds-square-300-gap);
+  --awds-radio-padding: var(--awds-size-square-300-padding);
+  --awds-radio-icon:    var(--awds-size-square-300-icon);
+  --awds-radio-gap:     var(--awds-size-square-300-gap);
 }
 
 .radio--400 {
-  --awds-radio-padding: var(--awds-square-400-padding);
-  --awds-radio-icon:    var(--awds-square-400-icon);
-  --awds-radio-gap:     var(--awds-square-400-gap);
+  --awds-radio-padding: var(--awds-size-square-400-padding);
+  --awds-radio-icon:    var(--awds-size-square-400-icon);
+  --awds-radio-gap:     var(--awds-size-square-400-gap);
 }
 
 .radio--500 {
-  --awds-radio-padding: var(--awds-square-500-padding);
-  --awds-radio-icon:    var(--awds-square-500-icon);
-  --awds-radio-gap:     var(--awds-square-500-gap);
+  --awds-radio-padding: var(--awds-size-square-500-padding);
+  --awds-radio-icon:    var(--awds-size-square-500-icon);
+  --awds-radio-gap:     var(--awds-size-square-500-gap);
 }
 
 
@@ -256,7 +256,7 @@
    атрибут disabled (например, отрисован как aria-disabled). */
 .radio:has(> .radio__input:disabled),
 .radio--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
 
@@ -278,7 +278,7 @@
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--awds-square-400-gap);
+  gap: var(--awds-size-square-400-gap);
   border: 0;
   margin: 0;
   padding: 0;
