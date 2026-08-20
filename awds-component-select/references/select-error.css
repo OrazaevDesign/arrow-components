@@ -136,25 +136,25 @@
 
 .select {
   /* Size accumulator defaults (default_size = 400, map.size.rectangle.400) */
-  --awds-select-padding: var(--awds-rectangle-400-padding);
-  --awds-select-icon:    var(--awds-rectangle-400-icon);
-  --awds-select-rounded: var(--awds-rectangle-400-rounded);
-  --awds-select-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-select-picker-rounded: var(--awds-dropdown-400-border-radius);
-  --awds-select-picker-padding: var(--awds-dropdown-400-padding);
-  --awds-select-opt-padding: var(--awds-rectangle-300-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-300-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-300-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-300-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-300-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-300-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-300-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-300-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-400-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-select-lh:      var(--awds-control-line-height-400);
+  --awds-select-ls:      var(--awds-control-letter-spacing-400);
+  --awds-select-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-select-picker-rounded: var(--awds-size-dropdown-400-border-radius);
+  --awds-select-picker-padding: var(--awds-size-dropdown-400-padding);
+  --awds-select-opt-padding: var(--awds-size-rectangle-300-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-300-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-400);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-400);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-300-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-300-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-300);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-300);
 
   box-sizing: border-box;
   position: relative;
@@ -319,157 +319,157 @@
 /* === Sizes (shape = rectangle, map.size.rectangle.{N}) === */
 
 .select--50 {
-  --awds-select-padding: var(--awds-rectangle-50-padding);
-  --awds-select-icon:    var(--awds-rectangle-50-icon);
-  --awds-select-rounded: var(--awds-rectangle-50-rounded);
-  --awds-select-fs:      var(--awds-rectangle-50-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-50-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-50-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-50-text-gap);
-  --awds-select-picker-rounded: var(--awds-dropdown-200-border-radius);
-  --awds-select-picker-padding: var(--awds-dropdown-200-padding);
-  --awds-select-opt-padding: var(--awds-rectangle-50-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-50-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-50-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-50-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-50-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-50-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-50-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-50-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-50-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-50-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-50-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-select-lh:      var(--awds-control-line-height-200);
+  --awds-select-ls:      var(--awds-control-letter-spacing-200);
+  --awds-select-text-gap: var(--awds-size-rectangle-50-text-gap);
+  --awds-select-picker-rounded: var(--awds-size-dropdown-200-border-radius);
+  --awds-select-picker-padding: var(--awds-size-dropdown-200-padding);
+  --awds-select-opt-padding: var(--awds-size-rectangle-50-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-200);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-200);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-50-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-50-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-100);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-100);
 }
 
 .select--100 {
-  --awds-select-padding: var(--awds-rectangle-100-padding);
-  --awds-select-icon:    var(--awds-rectangle-100-icon);
-  --awds-select-rounded: var(--awds-rectangle-100-rounded);
-  --awds-select-fs:      var(--awds-rectangle-100-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-100-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-100-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-100-text-gap);
-  --awds-select-picker-rounded: var(--awds-dropdown-200-border-radius);
-  --awds-select-picker-padding: var(--awds-dropdown-200-padding);
-  --awds-select-opt-padding: var(--awds-rectangle-50-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-50-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-50-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-50-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-50-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-50-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-50-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-50-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-50-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-50-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-100-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-100-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-select-lh:      var(--awds-control-line-height-300);
+  --awds-select-ls:      var(--awds-control-letter-spacing-300);
+  --awds-select-text-gap: var(--awds-size-rectangle-100-text-gap);
+  --awds-select-picker-rounded: var(--awds-size-dropdown-200-border-radius);
+  --awds-select-picker-padding: var(--awds-size-dropdown-200-padding);
+  --awds-select-opt-padding: var(--awds-size-rectangle-50-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-200);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-200);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-50-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-50-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-100);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-100);
 }
 
 .select--200 {
-  --awds-select-padding: var(--awds-rectangle-200-padding);
-  --awds-select-icon:    var(--awds-rectangle-200-icon);
-  --awds-select-rounded: var(--awds-rectangle-200-rounded);
-  --awds-select-fs:      var(--awds-rectangle-200-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-200-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-200-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-200-text-gap);
-  --awds-select-picker-rounded: var(--awds-dropdown-200-border-radius);
-  --awds-select-picker-padding: var(--awds-dropdown-200-padding);
-  --awds-select-opt-padding: var(--awds-rectangle-100-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-100-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-100-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-100-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-100-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-100-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-100-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-100-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-100-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-100-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-200-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-200-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-200-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-select-lh:      var(--awds-control-line-height-300);
+  --awds-select-ls:      var(--awds-control-letter-spacing-300);
+  --awds-select-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-select-picker-rounded: var(--awds-size-dropdown-200-border-radius);
+  --awds-select-picker-padding: var(--awds-size-dropdown-200-padding);
+  --awds-select-opt-padding: var(--awds-size-rectangle-100-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-100-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-300);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-300);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-100-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-100-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-200);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-200);
 }
 
 .select--300 {
-  --awds-select-padding: var(--awds-rectangle-300-padding);
-  --awds-select-icon:    var(--awds-rectangle-300-icon);
-  --awds-select-rounded: var(--awds-rectangle-300-rounded);
-  --awds-select-fs:      var(--awds-rectangle-300-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-300-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-select-picker-rounded: var(--awds-dropdown-300-border-radius);
-  --awds-select-picker-padding: var(--awds-dropdown-300-padding);
-  --awds-select-opt-padding: var(--awds-rectangle-200-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-200-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-200-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-200-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-200-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-200-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-200-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-200-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-200-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-200-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-300-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-300-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-300-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-select-lh:      var(--awds-control-line-height-400);
+  --awds-select-ls:      var(--awds-control-letter-spacing-400);
+  --awds-select-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-select-picker-rounded: var(--awds-size-dropdown-300-border-radius);
+  --awds-select-picker-padding: var(--awds-size-dropdown-300-padding);
+  --awds-select-opt-padding: var(--awds-size-rectangle-200-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-200-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-300);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-300);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-200-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-200-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-200);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-200);
 }
 
 .select--400 {
-  --awds-select-padding: var(--awds-rectangle-400-padding);
-  --awds-select-icon:    var(--awds-rectangle-400-icon);
-  --awds-select-rounded: var(--awds-rectangle-400-rounded);
-  --awds-select-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-select-picker-rounded: var(--awds-dropdown-400-border-radius);
-  --awds-select-picker-padding: var(--awds-dropdown-400-padding);
-  --awds-select-opt-padding: var(--awds-rectangle-300-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-300-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-300-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-300-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-300-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-300-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-300-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-300-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-400-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-select-lh:      var(--awds-control-line-height-400);
+  --awds-select-ls:      var(--awds-control-letter-spacing-400);
+  --awds-select-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-select-picker-rounded: var(--awds-size-dropdown-400-border-radius);
+  --awds-select-picker-padding: var(--awds-size-dropdown-400-padding);
+  --awds-select-opt-padding: var(--awds-size-rectangle-300-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-300-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-400);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-400);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-300-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-300-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-300);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-300);
 }
 
 .select--500 {
-  --awds-select-padding: var(--awds-rectangle-500-padding);
-  --awds-select-icon:    var(--awds-rectangle-500-icon);
-  --awds-select-rounded: var(--awds-rectangle-500-rounded);
-  --awds-select-fs:      var(--awds-rectangle-500-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-500-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-500-text-gap);
-  --awds-select-picker-rounded: var(--awds-dropdown-500-border-radius);
-  --awds-select-picker-padding: var(--awds-dropdown-500-padding);
-  --awds-select-opt-padding: var(--awds-rectangle-400-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-400-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-400-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-400-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-400-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-400-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-400-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-400-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-500-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-select-lh:      var(--awds-control-line-height-600);
+  --awds-select-ls:      var(--awds-control-letter-spacing-600);
+  --awds-select-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-select-picker-rounded: var(--awds-size-dropdown-500-border-radius);
+  --awds-select-picker-padding: var(--awds-size-dropdown-500-padding);
+  --awds-select-opt-padding: var(--awds-size-rectangle-400-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-400);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-400);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-400-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-300);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-300);
 }
 
 .select--600 {
-  --awds-select-padding: var(--awds-rectangle-600-padding);
-  --awds-select-icon:    var(--awds-rectangle-600-icon);
-  --awds-select-rounded: var(--awds-rectangle-600-rounded);
-  --awds-select-fs:      var(--awds-rectangle-600-typography-font-size);
-  --awds-select-lh:      var(--awds-rectangle-600-typography-line-height);
-  --awds-select-ls:      var(--awds-rectangle-600-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-600-text-gap);
-  --awds-select-picker-rounded: var(--awds-rounded-600);
-  --awds-select-picker-padding: var(--awds-space-1);
-  --awds-select-opt-padding: var(--awds-rectangle-500-padding);
-  --awds-select-opt-rounded: var(--awds-rectangle-500-rounded);
-  --awds-select-opt-fs:      var(--awds-rectangle-500-typography-font-size);
-  --awds-select-opt-lh:      var(--awds-rectangle-500-typography-line-height);
-  --awds-select-opt-ls:      var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-select-opt-text-gap: var(--awds-rectangle-500-text-gap);
-  --awds-select-opt-icon:    var(--awds-rectangle-500-icon);
-  --awds-select-opt-desc-fs: var(--awds-rectangle-500-description-font-size);
-  --awds-select-opt-desc-lh: var(--awds-rectangle-500-description-line-height);
-  --awds-select-opt-desc-ls: var(--awds-rectangle-500-description-letter-spacing);
+  --awds-select-padding: var(--awds-size-rectangle-600-padding);
+  --awds-select-icon:    var(--awds-size-rectangle-600-icon);
+  --awds-select-rounded: var(--awds-size-rectangle-600-rounded);
+  --awds-select-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-select-lh:      var(--awds-control-line-height-600);
+  --awds-select-ls:      var(--awds-control-letter-spacing-600);
+  --awds-select-text-gap: var(--awds-size-rectangle-600-text-gap);
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-600);
+  --awds-select-picker-padding: var(--awds-space-space-1);
+  --awds-select-opt-padding: var(--awds-size-rectangle-500-padding);
+  --awds-select-opt-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-select-opt-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-select-opt-lh:      var(--awds-control-line-height-600);
+  --awds-select-opt-ls:      var(--awds-control-letter-spacing-600);
+  --awds-select-opt-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-select-opt-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-select-opt-desc-fs: var(--awds-size-rectangle-500-description);
+  --awds-select-opt-desc-lh: var(--awds-control-line-height-400);
+  --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-400);
 }
 
 
@@ -599,10 +599,10 @@
        margin-BLOCK, а не margin-top: попап открывается вниз ИЛИ вверх — куда
        хватит места. При margin-top зазор появлялся бы только у одного
        направления, а у второго панель так и липла бы к контролу. */
-    margin-block: var(--awds-space-1);
+    margin-block: var(--awds-space-space-1);
 
     scrollbar-width: thin;
-    scrollbar-color: rgb(var(--surface-on) / var(--awds-opacity-40)) transparent;
+    scrollbar-color: rgb(var(--surface-on) / var(--awds-opacity-opacity-40)) transparent;
   }
 
   /* --- Пункт: мост «размер селекта → размер list-item» ---
@@ -652,7 +652,7 @@
   }
 
   .select__field option:disabled {
-    opacity: var(--awds-opacity-40);
+    opacity: var(--awds-opacity-opacity-40);
     cursor: default;
   }
 }
@@ -710,7 +710,7 @@
      320x48), обводка 2 наружу от него. CSS-outline рисуется от края бокса,
      поэтому offset 1 + width 2 дают ту же полосу 1..3. Радиус подтверждает:
      в макете он равен скруглению контрола + 1. Сверено по всем семи размерам. */
-  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
   outline-offset: 1px;
 }
 
@@ -745,7 +745,7 @@
     --awds-select-chevron:  rgb(var(--primary-container-on-high));
     --awds-select-icon-color: rgb(var(--primary-container-on-high));
 
-    outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-50));
+    outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
     outline-offset: 1px;
   }
 }
@@ -758,7 +758,7 @@
 
 .select:has(> .select__field:disabled),
 .select--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   cursor: default;
 }
 

@@ -1,23 +1,6 @@
 ---
 name: awds-component-select
-description: >
-  Верстка выпадающих списков (select, dropdown) ArrowDS — HTML-разметка и CSS на
-  токенах дизайн-системы. Используй ВСЕГДА при: выборе из списка в форме или фильтрах
-  (город, способ доставки и оплаты, сортировка, количество, валюта, размер, регион),
-  замене нативной стрелки select на шеврон дизайн-системы, вопросах о стилях
-  select / select__field / select__prefix / select__suffix / form-control chevrone,
-  выборе размера выпадающего списка (высота 20/24/32/36/40/48/52px),
-  стилизации раскрытого списка (попап, панель, пункты, ::picker(select),
-  appearance: base-select), состоянии валидации выпадающего списка
-  (успех / ошибка), прозрачном селекте в тулбаре, автозаполненном селекте,
-  получении Figma-ссылки на компонент Select. Шесть вариантов:
-  default / light / success / error / ghost / autofill.
-  Построен на нативном <select>; пункт раскрытого списка — компонент
-  awds-component-list-item, поэтому подключай и его CSS. Где движок не умеет
-  base-select, попап остаётся системным.
-  Для текстового ввода — awds-component-input,
-  для поля с плавающей меткой — awds-component-input-combi, для переключения
-  двух состояний — awds-component-switch, не этот скилл.
+description: Выпадающие списки ArrowDS (select, dropdown): триггер, список, размеры, состояния, подпись снаружи. Для выбора из перечня. Подпись внутри рамки — select-combi. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Select ArrowDS
@@ -92,7 +75,7 @@ description: >
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/плейсхолдер/иконки) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-default.css` |
 | Цвет шеврона | роль `chevrone`: `secondary-container-on-high` → при фокусе `primary-container-on-high` | `component-token-map.json` → `map.state.*.form-control.default.chevrone` |
-| Фокус-кольцо | `2px solid rgb(var(--primary-core) / var(--awds-opacity-50))`, `outline-offset: 1px` | Figma `focus-selection/outlineVariant` + `opacity/50`; ширина и offset — с геометрии слоя |
+| Фокус-кольцо | `2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, `outline-offset: 1px` | Figma `focus-selection/outlineVariant` + `opacity/50`; ширина и offset — с геометрии слоя |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `map.size.rectangle` |
 | Горизонтальный отступ текста | слева `text-gap` (с `prefix` — `padding`), справа всегда `padding`: там шеврон | Figma: проп `Padding Icon` у `Content Input` |
 | Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
@@ -100,7 +83,7 @@ description: >
 | Панель попапа | `var(--awds-dropdown-{N}-*)` + `var(--awds-shadow-elevation-3)` | `snapshot/figma.json` → `dropdown` |
 | Пункт попапа | компонент `awds-component-list-item`; селект даёт ему ступень `{N−1}` через мост | `awds-component-list-item` |
 | Цвета пунктов | роли `list/unselected-transparent` (покой, hover) и `list/selected-secondary` (выбранный) | `map.state.*.list` |
-| Opacity для disabled | `var(--awds-opacity-40)` | css-global (базовая шкала) |
+| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
 
 ## Размерные модификаторы
 
@@ -136,7 +119,7 @@ description: >
 - Подпись обязательна: `<label for>` снаружи либо `aria-label` на самом `<select>`.
 - Фокус виден при любом способе входа (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Декоративная иконка в слоте → `aria-hidden="true"`.
-- Disabled гасится `opacity: var(--awds-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 - Размеры 50 и 100 (высота 20 и 24px) меньше тач-минимума — только для мыши и плотных таблиц.
 
 ## Варианты
