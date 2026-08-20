@@ -24,7 +24,7 @@
    Размеры: 11 шагов 100..1100 (по умолчанию 600). Цена — КОНТРОЛ-элемент с
      ФИКСИРОВАННЫМИ размерами (size-варианты), поэтому привязана к шкале
      Control/Value (--awds-control-*), которая НЕ зависит от брейкпоинта. Это
-     принципиально: viewport-адаптивная шкала --awds-typography-font-size-910..960
+     принципиально: viewport-адаптивная шкала --awds-typography-typography-font-size-910..960
      раздувается на десктопе (910: 20px→24px), и цена переставала бы совпадать с
      макетом (size 800 рисовался 24px вместо фикс-20px). Control-шкала фикс на всех
      брейкпоинтах. Адаптив цены — задача потребителя (он меняет size-класс:
@@ -60,12 +60,12 @@
 
 .price {
   /* Size accumulators (default = 600) */
-  --awds-price-fs:      var(--awds-control-600-font-size);
-  --awds-price-lh:      var(--awds-control-600-line-height);
-  --awds-price-ls:      var(--awds-control-600-letter-spacing);
-  --awds-price-fs-sec:  var(--awds-control-300-font-size);
-  --awds-price-lh-sec:  var(--awds-control-300-line-height);
-  --awds-price-ls-sec:  var(--awds-control-300-letter-spacing);
+  --awds-price-fs:      var(--awds-control-font-size-600);
+  --awds-price-lh:      var(--awds-control-line-height-600);
+  --awds-price-ls:      var(--awds-control-letter-spacing-600);
+  --awds-price-fs-sec:  var(--awds-control-font-size-300);
+  --awds-price-lh-sec:  var(--awds-control-line-height-300);
+  --awds-price-ls-sec:  var(--awds-control-letter-spacing-300);
 
   /* Зазор между атомами цены (число ↔ валюта ↔ старая цена). Font-относительный
      (em), а не фикс-px: компонент живёт на 11 размерах (11..32px), и только
@@ -191,102 +191,102 @@
 /* === Размеры (фикс-шкала Control/Value, не зависит от брейкпоинта) === */
 
 .price--1100 {
-  --awds-price-fs:     var(--awds-control-1000-font-size);
-  --awds-price-lh:     var(--awds-control-1000-line-height);
-  --awds-price-ls:     var(--awds-control-1000-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-700-font-size);
-  --awds-price-lh-sec: var(--awds-control-700-line-height);
-  --awds-price-ls-sec: var(--awds-control-700-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-1000);
+  --awds-price-lh:     var(--awds-control-line-height-1000);
+  --awds-price-ls:     var(--awds-control-letter-spacing-1000);
+  --awds-price-fs-sec: var(--awds-control-font-size-700);
+  --awds-price-lh-sec: var(--awds-control-line-height-700);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-700);
 }
 
 .price--1000 {
-  --awds-price-fs:     var(--awds-control-950-font-size);
-  --awds-price-lh:     var(--awds-control-950-line-height);
-  --awds-price-ls:     var(--awds-control-950-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-600-font-size);
-  --awds-price-lh-sec: var(--awds-control-600-line-height);
-  --awds-price-ls-sec: var(--awds-control-600-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-950);
+  --awds-price-lh:     var(--awds-control-line-height-950);
+  --awds-price-ls:     var(--awds-control-letter-spacing-950);
+  --awds-price-fs-sec: var(--awds-control-font-size-600);
+  --awds-price-lh-sec: var(--awds-control-line-height-600);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-600);
 }
 
 .price--900 {
-  --awds-price-fs:     var(--awds-control-900-font-size);
-  --awds-price-lh:     var(--awds-control-900-line-height);
-  --awds-price-ls:     var(--awds-control-900-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-500-font-size);
-  --awds-price-lh-sec: var(--awds-control-500-line-height);
-  --awds-price-ls-sec: var(--awds-control-500-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-900);
+  --awds-price-lh:     var(--awds-control-line-height-900);
+  --awds-price-ls:     var(--awds-control-letter-spacing-900);
+  --awds-price-fs-sec: var(--awds-control-font-size-500);
+  --awds-price-lh-sec: var(--awds-control-line-height-500);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-500);
 }
 
 .price--800 {
-  --awds-price-fs:     var(--awds-control-850-font-size);
-  --awds-price-lh:     var(--awds-control-850-line-height);
-  --awds-price-ls:     var(--awds-control-850-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-300-font-size);
-  --awds-price-lh-sec: var(--awds-control-300-line-height);
-  --awds-price-ls-sec: var(--awds-control-300-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-850);
+  --awds-price-lh:     var(--awds-control-line-height-850);
+  --awds-price-ls:     var(--awds-control-letter-spacing-850);
+  --awds-price-fs-sec: var(--awds-control-font-size-300);
+  --awds-price-lh-sec: var(--awds-control-line-height-300);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-300);
 }
 
 .price--700 {
-  --awds-price-fs:     var(--awds-control-800-font-size);
-  --awds-price-lh:     var(--awds-control-800-line-height);
-  --awds-price-ls:     var(--awds-control-800-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-300-font-size);
-  --awds-price-lh-sec: var(--awds-control-300-line-height);
-  --awds-price-ls-sec: var(--awds-control-300-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-800);
+  --awds-price-lh:     var(--awds-control-line-height-800);
+  --awds-price-ls:     var(--awds-control-letter-spacing-800);
+  --awds-price-fs-sec: var(--awds-control-font-size-300);
+  --awds-price-lh-sec: var(--awds-control-line-height-300);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-300);
 }
 
 .price--600 {
-  --awds-price-fs:     var(--awds-control-600-font-size);
-  --awds-price-lh:     var(--awds-control-600-line-height);
-  --awds-price-ls:     var(--awds-control-600-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-300-font-size);
-  --awds-price-lh-sec: var(--awds-control-300-line-height);
-  --awds-price-ls-sec: var(--awds-control-300-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-600);
+  --awds-price-lh:     var(--awds-control-line-height-600);
+  --awds-price-ls:     var(--awds-control-letter-spacing-600);
+  --awds-price-fs-sec: var(--awds-control-font-size-300);
+  --awds-price-lh-sec: var(--awds-control-line-height-300);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-300);
 }
 
 .price--500 {
-  --awds-price-fs:     var(--awds-control-500-font-size);
-  --awds-price-lh:     var(--awds-control-500-line-height);
-  --awds-price-ls:     var(--awds-control-500-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-200-font-size);
-  --awds-price-lh-sec: var(--awds-control-200-line-height);
-  --awds-price-ls-sec: var(--awds-control-200-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-500);
+  --awds-price-lh:     var(--awds-control-line-height-500);
+  --awds-price-ls:     var(--awds-control-letter-spacing-500);
+  --awds-price-fs-sec: var(--awds-control-font-size-200);
+  --awds-price-lh-sec: var(--awds-control-line-height-200);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-200);
 }
 
 .price--400 {
-  --awds-price-fs:     var(--awds-control-400-font-size);
-  --awds-price-lh:     var(--awds-control-400-line-height);
-  --awds-price-ls:     var(--awds-control-400-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-100-font-size);
-  --awds-price-lh-sec: var(--awds-control-100-line-height);
-  --awds-price-ls-sec: var(--awds-control-100-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-400);
+  --awds-price-lh:     var(--awds-control-line-height-400);
+  --awds-price-ls:     var(--awds-control-letter-spacing-400);
+  --awds-price-fs-sec: var(--awds-control-font-size-100);
+  --awds-price-lh-sec: var(--awds-control-line-height-100);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-100);
 }
 
 .price--300 {
-  --awds-price-fs:     var(--awds-control-300-font-size);
-  --awds-price-lh:     var(--awds-control-300-line-height);
-  --awds-price-ls:     var(--awds-control-300-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-50-font-size);
-  --awds-price-lh-sec: var(--awds-control-50-line-height);
-  --awds-price-ls-sec: var(--awds-control-50-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-300);
+  --awds-price-lh:     var(--awds-control-line-height-300);
+  --awds-price-ls:     var(--awds-control-letter-spacing-300);
+  --awds-price-fs-sec: var(--awds-control-font-size-50);
+  --awds-price-lh-sec: var(--awds-control-line-height-50);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-50);
 }
 
 .price--200 {
-  --awds-price-fs:     var(--awds-control-200-font-size);
-  --awds-price-lh:     var(--awds-control-200-line-height);
-  --awds-price-ls:     var(--awds-control-200-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-50-font-size);
-  --awds-price-lh-sec: var(--awds-control-50-line-height);
-  --awds-price-ls-sec: var(--awds-control-50-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-200);
+  --awds-price-lh:     var(--awds-control-line-height-200);
+  --awds-price-ls:     var(--awds-control-letter-spacing-200);
+  --awds-price-fs-sec: var(--awds-control-font-size-50);
+  --awds-price-lh-sec: var(--awds-control-line-height-50);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-50);
 }
 
 .price--100 {
-  --awds-price-fs:     var(--awds-control-100-font-size);
-  --awds-price-lh:     var(--awds-control-100-line-height);
-  --awds-price-ls:     var(--awds-control-100-letter-spacing);
-  --awds-price-fs-sec: var(--awds-control-50-font-size);
-  --awds-price-lh-sec: var(--awds-control-50-line-height);
-  --awds-price-ls-sec: var(--awds-control-50-letter-spacing);
+  --awds-price-fs:     var(--awds-control-font-size-100);
+  --awds-price-lh:     var(--awds-control-line-height-100);
+  --awds-price-ls:     var(--awds-control-letter-spacing-100);
+  --awds-price-fs-sec: var(--awds-control-font-size-50);
+  --awds-price-lh-sec: var(--awds-control-line-height-50);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-50);
 }
 
 /* === Вариант «Listing» — МАСШТАБИРУЕМЫЙ размер (Figma «Price Listing» 2217:74) ===
