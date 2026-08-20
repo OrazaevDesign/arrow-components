@@ -48,16 +48,16 @@
 
 .list-item {
   /* Size accumulator defaults (default_size = 400) */
-  --awds-list-item-padding:  var(--awds-rectangle-400-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-400-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-400-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-400-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-400-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-400-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
 
   box-sizing: border-box;
   position: relative;
@@ -106,7 +106,7 @@
 .list-item:disabled,
 .list-item[aria-disabled="true"] {
   /* map.state.rest.opacity.control.disabled */
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
 
@@ -157,7 +157,7 @@
   min-width: 0;
   /* Зазор заголовок-описание — ФИКС 2px на всех размерах. Это НЕ
      rectangle-{N}-gap: тот идёт 2/2/4/6/6/6/8 и на 600 дал бы 8 вместо 2. */
-  gap: var(--awds-space-0-5);
+  gap: var(--awds-space-space-0-5);
 
   padding-block: var(--awds-list-item-padding);
   /* Горизонталь по умолчанию — text-gap. Ниже сбрасывается в 0 с той стороны,
@@ -198,94 +198,94 @@
    Семантические shape-токены из map.size.rectangle.{N}. */
 
 .list-item--600 {
-  --awds-list-item-padding:  var(--awds-rectangle-600-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-600-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-600-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-600-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-600-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-600-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-600-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-600-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-600-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-600-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-600-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-600-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-600-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-600-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-600-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-600-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
 }
 
 .list-item--500 {
-  --awds-list-item-padding:  var(--awds-rectangle-500-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-500-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-500-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-500-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-500-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-500-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-500-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-500-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-500-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-500-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
 }
 
 .list-item--400 {
-  --awds-list-item-padding:  var(--awds-rectangle-400-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-400-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-400-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-400-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-400-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-400-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
 }
 
 .list-item--300 {
-  --awds-list-item-padding:  var(--awds-rectangle-300-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-300-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-300-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-300-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-300-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-300-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
 }
 
 .list-item--200 {
-  --awds-list-item-padding:  var(--awds-rectangle-200-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-200-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-200-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-200-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-200-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-200-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-200-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-200-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-200-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-200-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-200-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-200-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-200-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-200-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-200-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
 }
 
 .list-item--100 {
-  --awds-list-item-padding:  var(--awds-rectangle-100-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-100-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-100-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-100-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-100-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-100-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-100-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-100-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-100-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-100-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-100-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-100-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-100-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-100-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-100-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-100-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
 }
 
 .list-item--50 {
-  --awds-list-item-padding:  var(--awds-rectangle-50-padding);
-  --awds-list-item-icon:     var(--awds-rectangle-50-icon);
-  --awds-list-item-rounded:  var(--awds-rectangle-50-rounded);
-  --awds-list-item-text-gap: var(--awds-rectangle-50-text-gap);
-  --awds-list-item-fs:       var(--awds-rectangle-50-typography-font-size);
-  --awds-list-item-lh:       var(--awds-rectangle-50-typography-line-height);
-  --awds-list-item-ls:       var(--awds-rectangle-50-typography-letter-spacing);
-  --awds-list-item-desc-fs:  var(--awds-rectangle-50-description-font-size);
-  --awds-list-item-desc-lh:  var(--awds-rectangle-50-description-line-height);
-  --awds-list-item-desc-ls:  var(--awds-rectangle-50-description-letter-spacing);
+  --awds-list-item-padding:  var(--awds-size-rectangle-50-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-50-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-50-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-50-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-50-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-200);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-200);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-50-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-100);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-100);
 }
 
 
