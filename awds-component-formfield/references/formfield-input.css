@@ -51,12 +51,12 @@
 
 .fld {
   /* Size accumulator defaults (default_size = 400) */
-  --awds-fld-fs: var(--awds-control-300-font-size);
-  --awds-fld-lh: var(--awds-control-300-line-height);
-  --awds-fld-ls: var(--awds-control-300-letter-spacing);
+  --awds-fld-fs: var(--awds-control-font-size-300);
+  --awds-fld-lh: var(--awds-control-line-height-300);
+  --awds-fld-ls: var(--awds-control-letter-spacing-300);
 
   /* Не зависит от размера — см. шапку. */
-  --awds-fld-gap: var(--awds-space-1);
+  --awds-fld-gap: var(--awds-space-space-1);
 
   box-sizing: border-box;
   display: flex;
@@ -98,21 +98,21 @@
    Размер задаёт типографику пояснения и ступень вложенных компонентов (мост ниже). */
 
 .fld--300 {
-  --awds-fld-fs: var(--awds-control-200-font-size);
-  --awds-fld-lh: var(--awds-control-200-line-height);
-  --awds-fld-ls: var(--awds-control-200-letter-spacing);
+  --awds-fld-fs: var(--awds-control-font-size-200);
+  --awds-fld-lh: var(--awds-control-line-height-200);
+  --awds-fld-ls: var(--awds-control-letter-spacing-200);
 }
 
 .fld--400 {
-  --awds-fld-fs: var(--awds-control-300-font-size);
-  --awds-fld-lh: var(--awds-control-300-line-height);
-  --awds-fld-ls: var(--awds-control-300-letter-spacing);
+  --awds-fld-fs: var(--awds-control-font-size-300);
+  --awds-fld-lh: var(--awds-control-line-height-300);
+  --awds-fld-ls: var(--awds-control-letter-spacing-300);
 }
 
 .fld--500 {
-  --awds-fld-fs: var(--awds-control-400-font-size);
-  --awds-fld-lh: var(--awds-control-400-line-height);
-  --awds-fld-ls: var(--awds-control-400-letter-spacing);
+  --awds-fld-fs: var(--awds-control-font-size-400);
+  --awds-fld-lh: var(--awds-control-line-height-400);
+  --awds-fld-ls: var(--awds-control-letter-spacing-400);
 }
 
 
@@ -131,24 +131,24 @@
    так же, как с input. */
 
 .fld--300 .lbl {
-  --awds-lbl-text-pad: var(--awds-space-0);
-  --awds-lbl-mark:     var(--awds-square-300-icon);
-  --awds-lbl-help:     var(--awds-space-4);
-  --awds-lbl-control:  calc(var(--awds-square-300-icon) + 2 * var(--awds-square-300-padding));
+  --awds-lbl-text-pad: var(--awds-space-space-0);
+  --awds-lbl-mark:     var(--awds-size-square-300-icon);
+  --awds-lbl-help:     var(--awds-space-space-4);
+  --awds-lbl-control:  calc(var(--awds-size-square-300-icon) + 2 * var(--awds-size-square-300-padding));
 }
 
 .fld--400 .lbl {
-  --awds-lbl-text-pad: var(--awds-space-0-5);
-  --awds-lbl-mark:     var(--awds-square-400-icon);
-  --awds-lbl-help:     var(--awds-space-4);
-  --awds-lbl-control:  calc(var(--awds-square-400-icon) + 2 * var(--awds-square-400-padding));
+  --awds-lbl-text-pad: var(--awds-space-space-0-5);
+  --awds-lbl-mark:     var(--awds-size-square-400-icon);
+  --awds-lbl-help:     var(--awds-space-space-4);
+  --awds-lbl-control:  calc(var(--awds-size-square-400-icon) + 2 * var(--awds-size-square-400-padding));
 }
 
 .fld--500 .lbl {
-  --awds-lbl-text-pad: var(--awds-space-0-5);
-  --awds-lbl-mark:     var(--awds-square-500-icon);
-  --awds-lbl-help:     var(--awds-space-5);
-  --awds-lbl-control:  calc(var(--awds-square-500-icon) + 2 * var(--awds-square-500-padding));
+  --awds-lbl-text-pad: var(--awds-space-space-0-5);
+  --awds-lbl-mark:     var(--awds-size-square-500-icon);
+  --awds-lbl-help:     var(--awds-space-space-5);
+  --awds-lbl-control:  calc(var(--awds-size-square-500-icon) + 2 * var(--awds-size-square-500-padding));
 }
 
 /* --- Квадратные контролы внутри подписи (Figma: Formfiled / Square) ---
@@ -164,141 +164,141 @@
    потребитель. */
 
 .fld--300 .lbl .checkbox {
-  --awds-checkbox-padding: var(--awds-square-300-padding);
-  --awds-checkbox-icon:    var(--awds-square-300-icon);
-  --awds-checkbox-rounded: var(--awds-square-300-rounded);
+  --awds-checkbox-padding: var(--awds-size-square-300-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-300-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-300-rounded);
 }
 
 .fld--400 .lbl .checkbox {
-  --awds-checkbox-padding: var(--awds-square-400-padding);
-  --awds-checkbox-icon:    var(--awds-square-400-icon);
-  --awds-checkbox-rounded: var(--awds-square-400-rounded);
+  --awds-checkbox-padding: var(--awds-size-square-400-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-400-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-400-rounded);
 }
 
 .fld--500 .lbl .checkbox {
-  --awds-checkbox-padding: var(--awds-square-500-padding);
-  --awds-checkbox-icon:    var(--awds-square-500-icon);
-  --awds-checkbox-rounded: var(--awds-square-500-rounded);
+  --awds-checkbox-padding: var(--awds-size-square-500-padding);
+  --awds-checkbox-icon:    var(--awds-size-square-500-icon);
+  --awds-checkbox-rounded: var(--awds-size-square-500-rounded);
 }
 
 .fld--300 .lbl .radio {
-  --awds-radio-padding: var(--awds-square-300-padding);
-  --awds-radio-icon:    var(--awds-square-300-icon);
+  --awds-radio-padding: var(--awds-size-square-300-padding);
+  --awds-radio-icon:    var(--awds-size-square-300-icon);
 }
 
 .fld--400 .lbl .radio {
-  --awds-radio-padding: var(--awds-square-400-padding);
-  --awds-radio-icon:    var(--awds-square-400-icon);
+  --awds-radio-padding: var(--awds-size-square-400-padding);
+  --awds-radio-icon:    var(--awds-size-square-400-icon);
 }
 
 .fld--500 .lbl .radio {
-  --awds-radio-padding: var(--awds-square-500-padding);
-  --awds-radio-icon:    var(--awds-square-500-icon);
+  --awds-radio-padding: var(--awds-size-square-500-padding);
+  --awds-radio-icon:    var(--awds-size-square-500-icon);
 }
 
 .fld--300 .lbl .switch {
-  --awds-switch-width:   var(--awds-square-300-switch-width);
-  --awds-switch-icon:    var(--awds-square-300-icon);
-  --awds-switch-padding: var(--awds-square-300-padding);
+  --awds-switch-width:   var(--awds-size-square-300-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-300-icon);
+  --awds-switch-padding: var(--awds-size-square-300-padding);
 }
 
 .fld--400 .lbl .switch {
-  --awds-switch-width:   var(--awds-square-400-switch-width);
-  --awds-switch-icon:    var(--awds-square-400-icon);
-  --awds-switch-padding: var(--awds-square-400-padding);
+  --awds-switch-width:   var(--awds-size-square-400-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-400-icon);
+  --awds-switch-padding: var(--awds-size-square-400-padding);
 }
 
 .fld--500 .lbl .switch {
-  --awds-switch-width:   var(--awds-square-500-switch-width);
-  --awds-switch-icon:    var(--awds-square-500-icon);
-  --awds-switch-padding: var(--awds-square-500-padding);
+  --awds-switch-width:   var(--awds-size-square-500-switch-width);
+  --awds-switch-icon:    var(--awds-size-square-500-icon);
+  --awds-switch-padding: var(--awds-size-square-500-padding);
 }
 
 .fld--300 .input {
-  --awds-input-padding:  var(--awds-rectangle-300-padding);
-  --awds-input-icon:     var(--awds-rectangle-300-icon);
-  --awds-input-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-input-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-input-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-input-ls:       var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-input-text-gap: var(--awds-rectangle-300-text-gap);
+  --awds-input-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-input-lh:       var(--awds-control-line-height-400);
+  --awds-input-ls:       var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-300-text-gap);
 }
 
 .fld--400 .input {
-  --awds-input-padding:  var(--awds-rectangle-400-padding);
-  --awds-input-icon:     var(--awds-rectangle-400-icon);
-  --awds-input-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-input-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-input-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-input-ls:       var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-input-text-gap: var(--awds-rectangle-400-text-gap);
+  --awds-input-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-input-lh:       var(--awds-control-line-height-400);
+  --awds-input-ls:       var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
 }
 
 .fld--500 .input {
-  --awds-input-padding:  var(--awds-rectangle-500-padding);
-  --awds-input-icon:     var(--awds-rectangle-500-icon);
-  --awds-input-rounded:  var(--awds-rectangle-500-rounded);
-  --awds-input-fs:       var(--awds-rectangle-500-typography-font-size);
-  --awds-input-lh:       var(--awds-rectangle-500-typography-line-height);
-  --awds-input-ls:       var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-input-text-gap: var(--awds-rectangle-500-text-gap);
+  --awds-input-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-input-lh:       var(--awds-control-line-height-600);
+  --awds-input-ls:       var(--awds-control-letter-spacing-600);
+  --awds-input-text-gap: var(--awds-size-rectangle-500-text-gap);
 }
 
 .fld--300 .select {
-  --awds-select-padding:  var(--awds-rectangle-300-padding);
-  --awds-select-icon:     var(--awds-rectangle-300-icon);
-  --awds-select-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-select-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-select-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-select-ls:       var(--awds-rectangle-300-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-300-text-gap);
+  --awds-select-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-select-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-select-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-select-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-select-lh:       var(--awds-control-line-height-400);
+  --awds-select-ls:       var(--awds-control-letter-spacing-400);
+  --awds-select-text-gap: var(--awds-size-rectangle-300-text-gap);
 }
 
 .fld--400 .select {
-  --awds-select-padding:  var(--awds-rectangle-400-padding);
-  --awds-select-icon:     var(--awds-rectangle-400-icon);
-  --awds-select-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-select-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-select-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-select-ls:       var(--awds-rectangle-400-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-400-text-gap);
+  --awds-select-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-select-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-select-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-select-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-select-lh:       var(--awds-control-line-height-400);
+  --awds-select-ls:       var(--awds-control-letter-spacing-400);
+  --awds-select-text-gap: var(--awds-size-rectangle-400-text-gap);
 }
 
 .fld--500 .select {
-  --awds-select-padding:  var(--awds-rectangle-500-padding);
-  --awds-select-icon:     var(--awds-rectangle-500-icon);
-  --awds-select-rounded:  var(--awds-rectangle-500-rounded);
-  --awds-select-fs:       var(--awds-rectangle-500-typography-font-size);
-  --awds-select-lh:       var(--awds-rectangle-500-typography-line-height);
-  --awds-select-ls:       var(--awds-rectangle-500-typography-letter-spacing);
-  --awds-select-text-gap: var(--awds-rectangle-500-text-gap);
+  --awds-select-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-select-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-select-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-select-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-select-lh:       var(--awds-control-line-height-600);
+  --awds-select-ls:       var(--awds-control-letter-spacing-600);
+  --awds-select-text-gap: var(--awds-size-rectangle-500-text-gap);
 }
 
 .fld--300 .txa {
-  --awds-txa-padding:  var(--awds-rectangle-300-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-300-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-300-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-300-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-300-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-300-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-400);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .fld--400 .txa {
-  --awds-txa-padding:  var(--awds-rectangle-400-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-400-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-400-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-400-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-400-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-400-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-400);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .fld--500 .txa {
-  --awds-txa-padding:  var(--awds-rectangle-500-padding);
-  --awds-txa-text-gap: var(--awds-rectangle-500-text-gap);
-  --awds-txa-rounded:  var(--awds-rectangle-500-rounded);
-  --awds-txa-fs:       var(--awds-rectangle-500-typography-font-size);
-  --awds-txa-lh:       var(--awds-rectangle-500-typography-line-height);
-  --awds-txa-ls:       var(--awds-rectangle-500-typography-letter-spacing);
+  --awds-txa-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-txa-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-txa-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-txa-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-txa-lh:       var(--awds-control-line-height-600);
+  --awds-txa-ls:       var(--awds-control-letter-spacing-600);
 }
 
 
@@ -310,5 +310,5 @@
    выключено и при этом показывает ошибку, эта ошибка тем более должна быть видна. */
 
 .fld:has(:disabled) .fld__description {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
 }
