@@ -16,11 +16,11 @@
 
 | Свойство | Значение |
 |---|---|
-| Фон | `rgb(var(--surface-bright) / var(--awds-opacity-80))` + `backdrop-filter: blur(3px)` |
-| Padding | `var(--awds-space-1)` |
-| Скругление | `var(--awds-rounded-full)` |
+| Фон | `rgb(var(--surface-bright) / var(--awds-opacity-opacity-80))` + `backdrop-filter: blur(3px)` |
+| Padding | `var(--awds-space-space-1)` |
+| Скругление | `var(--awds-rounded-border-radius-full)` |
 | Цвет текста | `rgb(var(--surface-on-high))` |
-| Типографика | `--awds-control-300-font-size / -line-height / -letter-spacing`, `--awds-font-weight-semibold` |
+| Типографика | `--awds-control-font-size-300 / -line-height / -letter-spacing`, `--awds-font-weight-semibold` |
 | Цифры | `font-variant-numeric: tabular-nums` — не «прыгают» при 1/9 → 1/10 |
 
 Figma-исходник — Inter Medium (500); в DS нет weight-500, округлено к `semibold` (как у `awds-component-notice`).

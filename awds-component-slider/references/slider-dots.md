@@ -24,11 +24,11 @@
 
 | Свойство | Значение |
 |---|---|
-| Фон | `rgb(var(--surface-bright) / var(--awds-opacity-80))` |
+| Фон | `rgb(var(--surface-bright) / var(--awds-opacity-opacity-80))` |
 | Размытие подложки | `backdrop-filter: blur(3px)` (raw, нет DS-токена) |
-| Padding / gap | `var(--awds-space-1)` |
-| Скругление пилюли | `var(--awds-rounded-full)` |
-| Точка | 6px (raw Figma px), `rgb(var(--surface-on-highest) / var(--awds-opacity-30))` |
+| Padding / gap | `var(--awds-space-space-1)` |
+| Скругление пилюли | `var(--awds-rounded-border-radius-full)` |
+| Точка | 6px (raw Figma px), `rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-30))` |
 | Активная точка | 12×6, `rgb(var(--surface-on-highest))` |
 
 ## Состояния
