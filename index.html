@@ -5,8 +5,13 @@
   <meta charset="UTF-8">
   <title>ArrowDS · Components</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./arrow-design-system/references/css-variables.css">
-  <link rel="stylesheet" href="./arrow-design-system/references/css-global.css">
+  <!-- Снапшот темы ArrowDS из Design Studio: компоненты переведены на её имена
+       переменных 20.08.2026, поэтому канон css-variables/css-global здесь больше
+       не подключается — на нём значения приезжали бы пустыми.
+       studio-vars.css — переменные темы, studio-compat.css — то, чего в теме нет
+       (композитные тени, роли --awds-type-* с осью .typo-*). -->
+  <link rel="stylesheet" href="./arrow-design-system/references/studio-vars.css">
+  <link rel="stylesheet" href="./arrow-design-system/references/studio-compat.css">
   <style>
     * { box-sizing: border-box; }
     html, body { height: 100%; margin: 0; }

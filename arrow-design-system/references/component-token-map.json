@@ -1,7 +1,7 @@
 {
   "_generated_by": "build-component-map.js",
   "_note": "Карта для arrow-components-builder. size → ИМЯ семантического shape-токена (var(--awds-{shape}-{N}-{prop}), определён в css-global); state → роль/база (rgb(var(--role)) / var(--awds-opacity-N)). НЕ ПРАВЬ ВРУЧНУЮ — перегенерация: node .claude/skills/arrow-design-system/scripts/build-component-map.js",
-  "snapshot_hash": "sha256:971e866999e481a02d083c2c342ff98313968875f1aa44884f28d4b7c57aa328",
+  "snapshot_hash": "sha256:52f671066ece2afcb38df4cf44e31467660bd9115e7d0e58c8ca3fd24a91303c",
   "size": {
     "nav": {
       "300": {
@@ -477,41 +477,41 @@
       "form-control": {
         "default": {
           "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-on-lowest))",
+          "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "chroma": "rgb(var(--secondary-container-chroma))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "rgb(var(--secondary-container-dim))",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "success": {
           "bg": "rgb(var(--success-container-core))",
           "chroma": "rgb(var(--success-container-chroma))",
-          "border": "rgb(var(--success-container-on-lowest))",
+          "border": "rgb(var(--success-container-on-low))",
           "color": "rgb(var(--success-container-on-highest))",
           "icon": "rgb(var(--success-container-on-high))",
-          "chevrone": "rgb(var(--success-container-on))",
+          "chevrone": "rgb(var(--success-container-on-high))",
           "dim": "rgb(var(--success-container-dim))",
           "placehold": "rgb(var(--success-container-on-high))"
         },
         "error": {
           "bg": "rgb(var(--error-container-core))",
           "chroma": "rgb(var(--error-container-chroma))",
-          "border": "rgb(var(--error-container-on-lowest))",
+          "border": "rgb(var(--error-container-on-low))",
           "color": "rgb(var(--error-container-on-highest))",
           "icon": "rgb(var(--error-container-on-high))",
-          "chevrone": "rgb(var(--error-container-on))",
+          "chevrone": "rgb(var(--error-container-on-high))",
           "dim": "rgb(var(--error-container-dim))",
           "placehold": "rgb(var(--error-container-on-high))"
         },
         "light": {
           "bg": "rgb(var(--surface-bright))",
           "chroma": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--secondary-container-on-lowest))",
+          "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "rgb(var(--surface-surface))",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
@@ -521,17 +521,17 @@
           "border": "transparent",
           "color": "rgb(var(--secondary-container-on-highest))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "transparent",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "autofill": {
           "bg": "rgb(var(--tertiary-container-core))",
           "chroma": "rgb(var(--tertiary-container-chroma))",
-          "border": "rgb(var(--tertiary-container-on-lowest))",
+          "border": "rgb(var(--tertiary-container-on-low))",
           "color": "rgb(var(--tertiary-container-on-highest))",
           "icon": "rgb(var(--tertiary-container-on-high))",
-          "chevrone": "rgb(var(--tertiary-container-on))",
+          "chevrone": "rgb(var(--tertiary-container-on-high))",
           "dim": "rgb(var(--tertiary-container-dim))",
           "placehold": "rgb(var(--tertiary-container-on-high))"
         },
@@ -557,7 +557,7 @@
         "unselected": {
           "bg": "rgb(var(--secondary-container-core))",
           "chroma": "rgb(var(--secondary-container-chroma))",
-          "border": "rgb(var(--secondary-container-on-lowest))",
+          "border": "rgb(var(--secondary-container-on-low))",
           "color": "transparent",
           "handle": "rgb(var(--secondary-container-on))"
         }
@@ -569,38 +569,38 @@
       },
       "list": {
         "selected": {
-          "description": "rgb(var(--surface-on-high))",
-          "icon-check": "rgb(var(--surface-on))",
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "description": "rgb(var(--secondary-container-on-high))",
+          "icon-check": "rgb(var(--secondary-container-on))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected": {
-          "bg": "rgb(var(--surface-surface))",
-          "color": "rgb(var(--surface-on))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on))",
           "chevrone": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-surface))",
-          "description": "rgb(var(--surface-on))",
+          "border": "rgb(var(--secondary-container-core))",
+          "description": "rgb(var(--secondary-container-on))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on))"
+          "placehold": "rgb(var(--secondary-container-on))"
         },
         "unselected-transparent": {
           "bg": "transparent",
           "border": "transparent",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "description": "rgb(var(--surface-on-high))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected-actual": {
           "bg": "transparent",
-          "border": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on-low))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
           "placehold": "rgb(var(--accent-container-on-low))"
         },
@@ -623,30 +623,30 @@
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-variation": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-high))",
-          "placehold": "rgb(var(--surface-on))",
-          "description": "rgb(var(--surface-on))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "transparent"
         },
         "indeterminate-variation": {
           "bg": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-high))",
-          "placehold": "rgb(var(--surface-on))",
-          "description": "rgb(var(--surface-on))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-tabbar": {
           "bg": "transparent",
           "border": "transparent",
-          "color": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))",
-          "description": "rgb(var(--surface-on-high))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "placehold": "rgb(var(--secondary-container-on-high))",
+          "description": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))"
         },
         "selected-tabbar": {
@@ -661,15 +661,15 @@
         "unselected-menu": {
           "bg": "transparent",
           "border": "transparent",
-          "color": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))",
-          "description": "rgb(var(--surface-on-high))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "placehold": "rgb(var(--secondary-container-on-high))",
+          "description": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))"
         },
         "selected-menu": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-container-on))",
           "placehold": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on))",
@@ -1071,41 +1071,41 @@
       "form-control": {
         "default": {
           "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-on-low))",
+          "border": "rgb(var(--secondary-container-on))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "chroma": "rgb(var(--secondary-container-chroma))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "rgb(var(--secondary-container-dim))",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "success": {
           "bg": "rgb(var(--success-container-core))",
           "chroma": "rgb(var(--success-container-chroma))",
-          "border": "rgb(var(--success-container-on-low))",
+          "border": "rgb(var(--success-container-on))",
           "color": "rgb(var(--success-container-on-highest))",
           "icon": "rgb(var(--success-container-on-high))",
-          "chevrone": "rgb(var(--success-container-on))",
+          "chevrone": "rgb(var(--success-container-on-high))",
           "dim": "rgb(var(--success-container-dim))",
           "placehold": "rgb(var(--success-container-on-high))"
         },
         "error": {
           "bg": "rgb(var(--error-container-core))",
           "chroma": "rgb(var(--error-container-chroma))",
-          "border": "rgb(var(--error-container-on-low))",
+          "border": "rgb(var(--error-container-on))",
           "color": "rgb(var(--error-container-on-highest))",
           "icon": "rgb(var(--error-container-on-high))",
-          "chevrone": "rgb(var(--error-container-on))",
+          "chevrone": "rgb(var(--error-container-on-high))",
           "dim": "rgb(var(--error-container-dim))",
           "placehold": "rgb(var(--error-container-on-high))"
         },
         "light": {
           "bg": "rgb(var(--surface-bright))",
           "chroma": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--secondary-container-on-low))",
+          "border": "rgb(var(--secondary-container-on))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "rgb(var(--surface-surface))",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
@@ -1115,17 +1115,17 @@
           "border": "transparent",
           "color": "rgb(var(--secondary-container-on-highest))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "transparent",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "autofill": {
           "bg": "rgb(var(--tertiary-container-core))",
           "chroma": "rgb(var(--tertiary-container-chroma))",
-          "border": "rgb(var(--tertiary-container-on-low))",
+          "border": "rgb(var(--tertiary-container-on))",
           "color": "rgb(var(--tertiary-container-on-highest))",
           "icon": "rgb(var(--tertiary-container-on-high))",
-          "chevrone": "rgb(var(--tertiary-container-on))",
+          "chevrone": "rgb(var(--tertiary-container-on-high))",
           "dim": "rgb(var(--tertiary-container-dim))",
           "placehold": "rgb(var(--tertiary-container-on-high))"
         },
@@ -1151,7 +1151,7 @@
         "unselected": {
           "bg": "rgb(var(--secondary-container-dim))",
           "chroma": "rgb(var(--secondary-container-chroma))",
-          "border": "rgb(var(--secondary-container-on-low))",
+          "border": "rgb(var(--secondary-container-on))",
           "color": "transparent",
           "handle": "rgb(var(--secondary-container-on))"
         }
@@ -1163,38 +1163,38 @@
       },
       "list": {
         "selected": {
-          "description": "rgb(var(--surface-on-high))",
-          "icon-check": "rgb(var(--surface-on))",
-          "bg": "rgb(var(--surface-dim))",
-          "border": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "description": "rgb(var(--secondary-container-on-high))",
+          "icon-check": "rgb(var(--secondary-container-on))",
+          "bg": "rgb(var(--secondary-container-dim))",
+          "border": "rgb(var(--secondary-container-dim))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected": {
-          "bg": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-dim))",
-          "description": "rgb(var(--surface-on-high))",
+          "bg": "rgb(var(--secondary-container-dim))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
+          "border": "{form-control.secondary.dim}",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected-transparent": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "description": "rgb(var(--surface-on-high))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected-actual": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-dim))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on-low))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
           "placehold": "rgb(var(--accent-container-on-low))"
         },
@@ -1262,8 +1262,8 @@
           "icon-check": "rgb(var(--accent-container-on-lowest))"
         },
         "selected-menu": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-container-on))",
           "placehold": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on))",
@@ -1669,7 +1669,7 @@
           "color": "rgb(var(--primary-container-on-highest))",
           "chroma": "rgb(var(--primary-container-chroma))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--primary-container-on))",
+          "chevrone": "rgb(var(--primary-container-on-high))",
           "dim": "rgb(var(--primary-container-core))",
           "placehold": "rgb(var(--primary-container-on-high))"
         },
@@ -1679,7 +1679,7 @@
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "icon": "rgb(var(--primary-container-on-high))",
-          "chevrone": "rgb(var(--primary-container-on))",
+          "chevrone": "rgb(var(--primary-container-on-high))",
           "dim": "rgb(var(--primary-container-core))",
           "placehold": "rgb(var(--primary-container-on-high))"
         },
@@ -1689,7 +1689,7 @@
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "icon": "rgb(var(--primary-container-on-high))",
-          "chevrone": "rgb(var(--primary-container-on))",
+          "chevrone": "rgb(var(--primary-container-on-high))",
           "dim": "rgb(var(--primary-container-core))",
           "placehold": "rgb(var(--primary-container-on-high))"
         },
@@ -1699,7 +1699,7 @@
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "icon": "rgb(var(--primary-container-on-high))",
-          "chevrone": "rgb(var(--primary-container-on))",
+          "chevrone": "rgb(var(--primary-container-on-high))",
           "dim": "rgb(var(--primary-container-core))",
           "placehold": "rgb(var(--primary-container-on-high))"
         },
@@ -1709,7 +1709,7 @@
           "border": "transparent",
           "color": "rgb(var(--primary-container-on-highest))",
           "icon": "rgb(var(--primary-container-on-highest))",
-          "chevrone": "rgb(var(--primary-container-on))",
+          "chevrone": "rgb(var(--primary-container-on-high))",
           "dim": "transparent",
           "placehold": "rgb(var(--primary-container-on-high))"
         },
@@ -1719,7 +1719,7 @@
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "icon": "rgb(var(--primary-container-on-highest))",
-          "chevrone": "rgb(var(--primary-container-on))",
+          "chevrone": "rgb(var(--primary-container-on-high))",
           "dim": "rgb(var(--primary-container-core))",
           "placehold": "rgb(var(--primary-container-on-high))"
         },
@@ -1745,7 +1745,7 @@
         "unselected": {
           "bg": "rgb(var(--secondary-container-core))",
           "chroma": "rgb(var(--secondary-container-chroma))",
-          "border": "rgb(var(--secondary-container-on-lowest))",
+          "border": "rgb(var(--secondary-container-on-low))",
           "color": "transparent",
           "handle": "rgb(var(--secondary-container-on))"
         }
@@ -1757,38 +1757,38 @@
       },
       "list": {
         "selected": {
-          "description": "rgb(var(--surface-on-high))",
-          "icon-check": "rgb(var(--surface-on))",
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "description": "rgb(var(--secondary-container-on-high))",
+          "icon-check": "rgb(var(--secondary-container-on))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected": {
-          "bg": "rgb(var(--surface-surface))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-surface))",
-          "description": "rgb(var(--surface-on-high))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
+          "border": "rgb(var(--secondary-container-core))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected-transparent": {
           "bg": "transparent",
           "border": "transparent",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "description": "rgb(var(--surface-on-high))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected-actual": {
           "bg": "transparent",
-          "border": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on-low))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
           "placehold": "rgb(var(--accent-container-on-low))"
         },
@@ -1811,30 +1811,30 @@
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-variation": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-high))",
-          "placehold": "rgb(var(--surface-on))",
-          "description": "rgb(var(--surface-on))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "transparent"
         },
         "indeterminate-variation": {
           "bg": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-high))",
-          "placehold": "rgb(var(--surface-on))",
-          "description": "rgb(var(--surface-on))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-tabbar": {
           "bg": "transparent",
           "border": "transparent",
-          "color": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))",
-          "description": "rgb(var(--surface-on-high))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "placehold": "rgb(var(--secondary-container-on-high))",
+          "description": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))"
         },
         "selected-tabbar": {
@@ -1849,15 +1849,15 @@
         "unselected-menu": {
           "bg": "transparent",
           "border": "transparent",
-          "color": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))",
-          "description": "rgb(var(--surface-on-high))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "placehold": "rgb(var(--secondary-container-on-high))",
+          "description": "rgb(var(--secondary-container-on-high))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))"
         },
         "selected-menu": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-container-on))",
           "placehold": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on))",
@@ -2259,41 +2259,41 @@
       "form-control": {
         "default": {
           "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-on-lowest))",
+          "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "chroma": "rgb(var(--secondary-container-chroma))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "rgb(var(--secondary-container-dim))",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "success": {
           "bg": "rgb(var(--success-container-core))",
           "chroma": "rgb(var(--success-container-chroma))",
-          "border": "rgb(var(--success-container-on-lowest))",
+          "border": "rgb(var(--success-container-on-low))",
           "color": "rgb(var(--success-container-on-highest))",
           "icon": "rgb(var(--success-container-on-high))",
-          "chevrone": "rgb(var(--success-container-on))",
+          "chevrone": "rgb(var(--success-container-on-high))",
           "dim": "rgb(var(--success-container-dim))",
           "placehold": "rgb(var(--success-container-on-high))"
         },
         "error": {
           "bg": "rgb(var(--error-container-core))",
           "chroma": "rgb(var(--error-container-chroma))",
-          "border": "rgb(var(--error-container-on-lowest))",
+          "border": "rgb(var(--error-container-on-low))",
           "color": "rgb(var(--error-container-on-highest))",
           "icon": "rgb(var(--error-container-on-high))",
-          "chevrone": "rgb(var(--error-container-on))",
+          "chevrone": "rgb(var(--error-container-on-high))",
           "dim": "rgb(var(--error-container-dim))",
           "placehold": "rgb(var(--error-container-on-high))"
         },
         "light": {
           "bg": "rgb(var(--surface-bright))",
           "chroma": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--secondary-container-on-lowest))",
+          "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "rgb(var(--surface-surface))",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
@@ -2303,17 +2303,17 @@
           "border": "transparent",
           "color": "rgb(var(--secondary-container-on-highest))",
           "icon": "rgb(var(--secondary-container-on-high))",
-          "chevrone": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
           "dim": "transparent",
           "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "autofill": {
           "bg": "rgb(var(--tertiary-container-core))",
           "chroma": "rgb(var(--tertiary-container-chroma))",
-          "border": "rgb(var(--tertiary-container-on-lowest))",
+          "border": "rgb(var(--tertiary-container-on-low))",
           "color": "rgb(var(--tertiary-container-on-highest))",
           "icon": "rgb(var(--tertiary-container-on-high))",
-          "chevrone": "rgb(var(--tertiary-container-on))",
+          "chevrone": "rgb(var(--tertiary-container-on-high))",
           "dim": "rgb(var(--tertiary-container-dim))",
           "placehold": "rgb(var(--tertiary-container-on-high))"
         },
@@ -2339,7 +2339,7 @@
         "unselected": {
           "bg": "rgb(var(--secondary-container-dim))",
           "chroma": "rgb(var(--secondary-container-dim))",
-          "border": "rgb(var(--secondary-container-on-lowest))",
+          "border": "rgb(var(--secondary-container-on-low))",
           "color": "transparent",
           "handle": "rgb(var(--secondary-container-on))"
         }
@@ -2351,38 +2351,38 @@
       },
       "list": {
         "selected": {
-          "description": "rgb(var(--surface-on-high))",
-          "icon-check": "rgb(var(--surface-on))",
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "description": "rgb(var(--secondary-container-on-high))",
+          "icon-check": "rgb(var(--secondary-container-on))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected": {
-          "bg": "rgb(var(--surface-surface))",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-surface))",
-          "description": "rgb(var(--surface-on-high))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
+          "border": "rgb(var(--secondary-container-core))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected-transparent": {
           "bg": "transparent",
           "border": "transparent",
-          "color": "rgb(var(--surface-on-highest))",
-          "chevrone": "rgb(var(--surface-on-highest))",
-          "description": "rgb(var(--surface-on-high))",
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
-          "placehold": "rgb(var(--surface-on-high))"
+          "placehold": "rgb(var(--secondary-container-on-high))"
         },
         "unselected-actual": {
           "bg": "transparent",
-          "border": "rgb(var(--surface-dim))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on-low))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on-lowest))",
           "placehold": "rgb(var(--accent-container-on-low))"
         },
@@ -2405,21 +2405,21 @@
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-variation": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-high))",
-          "placehold": "rgb(var(--surface-on))",
-          "description": "rgb(var(--surface-on))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "transparent"
         },
         "indeterminate-variation": {
           "bg": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--surface-dim))",
-          "color": "rgb(var(--surface-on-high))",
-          "placehold": "rgb(var(--surface-on))",
-          "description": "rgb(var(--surface-on))",
-          "chevrone": "rgb(var(--surface-on-highest))",
+          "border": "rgb(var(--secondary-container-on-lowest))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "placehold": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on))",
+          "chevrone": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-tabbar": {
@@ -2450,8 +2450,8 @@
           "icon-check": "rgb(var(--accent-container-on-lowest))"
         },
         "selected-menu": {
-          "bg": "rgb(var(--surface-surface))",
-          "border": "rgb(var(--surface-surface))",
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-container-on))",
           "placehold": "rgb(var(--accent-container-on))",
           "description": "rgb(var(--accent-container-on))",
