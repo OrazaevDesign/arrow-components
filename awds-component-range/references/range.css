@@ -20,8 +20,8 @@
      — ползунок light:   rgb(var(--secondary-container-core)) + border
                          rgb(var(--secondary-container-dim))
      — размер ползунка: var(--awds-square-N-handle)  (500=24,400=20,300=20)
-     — высота рельсы:   var(--awds-space-1) (4px, из design_context)
-     — скругление:      var(--awds-rounded-full) (track/fill), 50% (thumb)
+     — высота рельсы:   var(--awds-space-space-1) (4px, из design_context)
+     — скругление:      var(--awds-rounded-border-radius-full) (track/fill), 50% (thumb)
 
    Позиция ползунка считается с учётом его ширины (как у нативного input: центр
    ходит от size/2 до 100%-size/2), чтобы визуальный и нативный thumb совпадали.
@@ -39,8 +39,8 @@
   --range-to: 0.5;
 
   /* size accumulators (default = 400) */
-  --awds-range-size:    var(--awds-square-400-handle);
-  --awds-range-track-h: var(--awds-space-1);
+  --awds-range-size:    var(--awds-size-square-400-handle);
+  --awds-range-track-h: var(--awds-space-space-1);
 
   /* fill — одинаков у обоих вариантов */
   --awds-range-fill-bg:     rgb(var(--primary-core));
@@ -61,7 +61,7 @@
   position: relative;
   width: 100%;
   height: var(--awds-range-track-h);
-  border-radius: var(--awds-rounded-full);
+  border-radius: var(--awds-rounded-border-radius-full);
   background: var(--awds-range-track);
   pointer-events: none;
 }
@@ -74,7 +74,7 @@
   bottom: 0;
   left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-from));
   right: calc(100% - (var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-to)));
-  border-radius: var(--awds-rounded-full);
+  border-radius: var(--awds-rounded-border-radius-full);
   background: linear-gradient(to right, var(--awds-range-fill-chroma), var(--awds-range-fill-bg));
   pointer-events: none;
   /* Polish (MIFB): анимируем цвет, не позицию (left/right меняются при drag). */
@@ -146,7 +146,7 @@
 }
 
 .range--disabled {
-  opacity: var(--awds-opacity-40);
+  opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
 
@@ -190,18 +190,18 @@
 /* === Sizes (thumb = square/N/handle; track-h константна 4px) === */
 
 .range--500 {
-  --awds-range-size:    var(--awds-square-500-handle);   /* 24px */
-  --awds-range-track-h: var(--awds-space-1);
+  --awds-range-size:    var(--awds-size-square-500-handle);   /* 24px */
+  --awds-range-track-h: var(--awds-space-space-1);
 }
 
 .range--400 {
-  --awds-range-size:    var(--awds-square-400-handle);   /* 20px */
-  --awds-range-track-h: var(--awds-space-1);
+  --awds-range-size:    var(--awds-size-square-400-handle);   /* 20px */
+  --awds-range-track-h: var(--awds-space-space-1);
 }
 
 .range--300 {
-  --awds-range-size:    var(--awds-square-300-handle);   /* 20px */
-  --awds-range-track-h: var(--awds-space-1);
+  --awds-range-size:    var(--awds-size-square-300-handle);   /* 20px */
+  --awds-range-track-h: var(--awds-space-space-1);
 }
 
 

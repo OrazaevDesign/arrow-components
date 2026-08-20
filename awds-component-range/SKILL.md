@@ -1,10 +1,6 @@
 ---
 name: awds-component-range
-description: >
-  Верстка слайдеров (Range) ArrowDS — HTML-разметка и CSS на токенах дизайн-системы.
-  Используй ВСЕГДА при: добавлении ползунка-слайдера, выбора диапазона (range), регулятора
-  значения в разметку или PageCraft-блок, выборе варианта (default / light), одиночного или
-  двойного (диапазон) слайдера, получении Figma-ссылки на компонент Range.
+description: Ползунок-регулятор Range ArrowDS: трек, ручка, заполнение, диапазон цены двумя ручками. Для фильтра по цене и регулятора значения. Индикатор карусели — slider. Токены ArrowDS, работает и по Figma-ссылке.
 ---
 
 # Range (слайдер) ArrowDS
@@ -26,14 +22,14 @@ description: >
 
 | Что | Источник |
 |---|---|
-| Рельса (track) | `rgb(var(--surface-container-container))`, высота `var(--awds-space-1)` (4px) |
+| Рельса (track) | `rgb(var(--surface-container-container))`, высота `var(--awds-space-space-1)` (4px) |
 | Заливка (fill) | `rgb(var(--primary-core))` + sheen `rgb(var(--primary-chroma))` |
 | Ползунок Default | `rgb(var(--primary-core))` |
 | Ползунок Light | `rgb(var(--secondary-container-core))` + обводка `rgb(var(--secondary-container-dim))` |
 | Размер ползунка | `var(--awds-square-N-handle)` (500=24, 400=20, 300=20px) |
-| Скругление | `var(--awds-rounded-full)` (рельса/заливка), `50%` (ползунок) |
+| Скругление | `var(--awds-rounded-border-radius-full)` (рельса/заливка), `50%` (ползунок) |
 | hover | заливка/ползунок темнеют до `primary-dim` (light-ползунок → `secondary-container-dim`) |
-| disabled | `.range--disabled` → `opacity: var(--awds-opacity-40)` |
+| disabled | `.range--disabled` → `opacity: var(--awds-opacity-opacity-40)` |
 
 ## Размеры (3)
 
