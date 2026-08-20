@@ -13,8 +13,8 @@
    Источники:
      — цвет:     rgb(var(--tertiary-container-on-*))   (map.state.*.link.default)
      — фокус:    rgb(var(--surface-on-highest))          (focus-обводка)
-     — offset:   var(--awds-space-0-5)                    (подчёркивание)
-     — радиус:   var(--awds-rounded-200)                  (для focus-обводки)
+     — offset:   var(--awds-space-space-0-5)                    (подчёркивание)
+     — радиус:   var(--awds-rounded-border-radius-200)                  (для focus-обводки)
 
    variant × state → роль:
      Rest/Focus/Active  color = tertiary-container-on-high
@@ -38,11 +38,11 @@
      --ul-none убирает совсем. */
   text-decoration-line: underline;
   text-decoration-style: var(--awds-lnk-ul-style, solid);
-  text-decoration-thickness: var(--awds-space-px);          /* 1px, не хардкод */
-  text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);  /* 30% */
-  text-underline-offset: var(--awds-space-0-5);
+  text-decoration-thickness: var(--awds-space-space-px);          /* 1px, не хардкод */
+  text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-opacity-30), transparent);  /* 30% */
+  text-underline-offset: var(--awds-space-space-0-5);
 
-  border-radius: var(--awds-rounded-200);       /* скругление focus-обводки */
+  border-radius: var(--awds-rounded-border-radius-200);       /* скругление focus-обводки */
 
   /* Polish (MIFB): прерываемые transition; линия анимируется через text-decoration-color
      (гашение/появление), цвет — через color. Стандарт 0.15s ease-out. */
@@ -59,7 +59,7 @@
 
 /* Тип 2: линии нет → появляется по hover */
 .lnk--ul-hover       { text-decoration-color: transparent; }
-.lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent); }
+.lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-opacity-30), transparent); }
 
 /* Тип 3: без подчёркивания */
 .lnk--ul-none { text-decoration-line: none; }
