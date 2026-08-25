@@ -1,5 +1,11 @@
 {
   "component": "heading",
+  "version": "1.0.1",
+  "contract_hash": "sha256:18eff919cc75ef8133d7db571a94ccab6fbda27b75d6221280b87adf19c8c9fd",
+  "artifact_hash": "sha256:44a75427a9cb0d34488b817161da2515e79d2009979bbae493c89fd3cd807702",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.325Z",
+  "own_values": [],
   "figma": {
     "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
     "file_name": "🔶 B2C ↪ ¹ Componets",
@@ -181,5 +187,35 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-heading/SKILL.md"
       }
     }
+  },
+  "uses": {
+    "awds-component-button-area": "1.0.1"
+  },
+  "contract": {
+    "classes": [
+      "heading",
+      "heading--h1",
+      "heading--h2",
+      "heading--h3",
+      "heading--h4",
+      "heading--h5",
+      "heading__title"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "heading"
+    ],
+    "sizes": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5"
+    ],
+    "states": [
+      "rest"
+    ]
   }
 }
