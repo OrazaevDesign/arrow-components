@@ -2,15 +2,27 @@
 
 🔭 **Storybook (GitHub Pages):** https://orazaevdesign.github.io/arrow-components/ — все компоненты с переключением в сайдбаре, живой preview каждого.
 
-Опубликованные **компонент-скиллы ArrowDS** — самодостаточные инструкции «как сверстать компонент 1‑в‑1 по Figma». Размеры берутся из семантических shape-токенов css-global (`--awds-rectangle-{N}-*`, …), цвета/состояния инлайнятся ролями как RGB-триплеты (`rgb(var(--primary-*))`, под `.theme-default.theme-light`).
+Опубликованные **компонент-скиллы ArrowDS** — самодостаточные инструкции «как сверстать компонент 1‑в‑1 по Figma». Значения приходят из темы Design Studio: размеры берутся из ячеек коллекции Size (`--awds-size-rectangle-{N}-*`, …), цвета инлайнятся ролями как RGB-триплеты (`rgb(var(--primary-core))`) под составным классом темы на `<html>`.
 
-Генерируются и обновляются через `arrow-components-builder` (ACB) из Figma. Компонентной прослойки (`--awds-button-*` / `--awds-form-*` / …) нет — значения мапятся напрямую через карту `component-token-map.json`: размеры на shape-слой `--awds-rectangle-*`, цвета на роли `rgb(var(--…))`.
+Генерируются и обновляются через `arrow-components-builder` (ACB) из Figma. Компонентной
+прослойки (`--awds-button-*-bg` и подобных) нет — значения мапятся через карту
+`component-token-map.json`, где имена CSS-переменных приходят прямо из студии, а не
+выводятся правилами склейки.
+
+**Что нужно на странице:** CSS темы студии (`theme-{slug}.{hash}.css`). Он даёт шкалы,
+роли, коллекцию State и слой производных (композит тени). Отдельных `css-global.css` /
+`css-variables.css` больше нет — они удалены вместе со своим генератором 25.08.2026.
+
+**У каждого компонента есть версия и CHANGELOG.** Уровень описывает работу потребителя:
+MAJOR — править разметку, MINOR — ничего, PATCH — пересобрать копию CSS. Флаг
+`visual_change` отдельно отмечает, изменился ли вид.
 
 ## Компоненты
 
 | Компонент | Варианты | Figma link |
 |---|---|---|
 | [awds-component-button](awds-component-button/) | primary · secondary · addition · contrast · tertiary | [primary](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757) · [secondary](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-59661) · [addition](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-74776) · [contrast](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-83105) · [tertiary](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-89007) · [ghost](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-94401) · [clean](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-119060) · [pills](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=811-30987) |
+| [awds-component-focus-selection](awds-component-focus-selection/) | контракт `--awds-focus-*`: outside · inside · formcontrol · tab | [open](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-265) |
 | [awds-component-table](awds-component-table/) | cell light / head / default · таблица light / default | [open](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2038-1350) |
 | [awds-component-button-overhung](awds-component-button-overhung/) | primary · secondary | [primary](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=145-30637) · [secondary](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=490-231905) |
 | [awds-component-button-favorites](awds-component-button-favorites/) | favorites (icon-only toggle, 2 вью) | [open](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471) |
