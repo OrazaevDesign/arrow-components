@@ -96,11 +96,11 @@
 }
 
 .list-item:focus-visible {
-  /* map.state.focus.focus-selection.outline — inline, без --awds-focus-* .
-     offset 1px, а не 2: в макете outline/500 = 9 при rounded 8 и
-     outline/600 = 11 при rounded 10, то есть радиус кольца = rounded + 1. */
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 1px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
 }
 
 .list-item:disabled,

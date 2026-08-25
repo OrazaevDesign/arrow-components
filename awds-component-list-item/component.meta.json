@@ -1,5 +1,11 @@
 {
   "component": "list-item",
+  "version": "1.0.1",
+  "contract_hash": "sha256:8f957981ee405a1e75dd055737fb2319e8ed02dd480aff4df32ad3a00ec72813",
+  "artifact_hash": "sha256:e1792e373c9311ca1a0d992501306321261d773a5f3b2d1251b825637e20e252",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.627Z",
+  "own_values": [],
   "figma": {
     "file_key": "cPyLl9CqwylgJMzMzeyF5g",
     "file_name": "💠 Comp ↪ ⁴ Lists",
@@ -378,5 +384,84 @@
       }
     }
   },
-  "naming_note": "Имена классов нормализованы: в Figma фреймы называются «Variaton» (опечатка, пропущена i) — в CSS это variation / variation-indeterminate. Точные подписи из макета лежат в variants[].figma_label."
+  "naming_note": "Имена классов нормализованы: в Figma фреймы называются «Variaton» (опечатка, пропущена i) — в CSS это variation / variation-indeterminate. Точные подписи из макета лежат в variants[].figma_label.",
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "list-item",
+      "list-item--100",
+      "list-item--200",
+      "list-item--300",
+      "list-item--400",
+      "list-item--50",
+      "list-item--500",
+      "list-item--600",
+      "list-item-accent-selected",
+      "list-item-actual-selected",
+      "list-item-default",
+      "list-item-default-selected",
+      "list-item-menu",
+      "list-item-menu-selected",
+      "list-item-tabbar",
+      "list-item-tabbar-selected",
+      "list-item-transparent",
+      "list-item-variation",
+      "list-item-variation-indeterminate",
+      "list-item-variation-selected",
+      "list-item__check",
+      "list-item__content",
+      "list-item__description",
+      "list-item__prefix",
+      "list-item__suffix",
+      "list-item__title"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [
+      "img",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "accent-selected",
+      "actual-selected",
+      "default",
+      "default-selected",
+      "menu",
+      "menu-selected",
+      "tabbar",
+      "tabbar-selected",
+      "transparent",
+      "variation",
+      "variation-indeterminate",
+      "variation-selected"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
 }

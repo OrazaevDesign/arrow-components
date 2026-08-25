@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./list-item-transparent.css">
   <link rel="stylesheet" href="./list-item-default.css">
   <link rel="stylesheet" href="./list-item-default-selected.css">
@@ -118,7 +119,7 @@
     .list-item-variation.is-active { --awds-list-item-desc: rgb(var(--secondary-container-on-high)); --awds-list-item-bg: rgb(var(--secondary-container-core)); --awds-list-item-border: rgb(var(--secondary-container-on-lowest)); --awds-list-item-color: rgb(var(--secondary-container-on-high)); }
     .list-item-variation-indeterminate.is-hover { --awds-list-item-bg: rgb(var(--primary-container-core)); --awds-list-item-border: rgb(var(--primary-core)); --awds-list-item-color: rgb(var(--primary-container-on-highest)); --awds-list-item-desc: rgb(var(--primary-container-on-high)); }
     .list-item-variation-indeterminate.is-active { --awds-list-item-bg: rgb(var(--surface-bright)); --awds-list-item-border: rgb(var(--secondary-container-on-lowest)); --awds-list-item-color: rgb(var(--secondary-container-on-high)); --awds-list-item-desc: rgb(var(--secondary-container-on)); }
-    .list-item.is-focus { outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 1px; }
+    .list-item.is-focus { outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset); }
     .list-item.is-disabled { opacity: var(--awds-opacity-opacity-40); pointer-events: none; }
   </style>
 </head>

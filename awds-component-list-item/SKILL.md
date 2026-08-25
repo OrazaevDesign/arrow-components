@@ -104,7 +104,7 @@ description: Строка списка ArrowDS: пункт меню, пункт 
 
 **Отсечка выключенного — через `:not()`, а не `:enabled`.** Корнем может быть `<li>` или `<a>`, а `:enabled` на не-form-элементах не матчится: правило молча перестало бы работать ровно там, где список собран не на кнопках.
 
-**Кольцо фокуса общее для всех вариантов** — `surface-on-highest`, 2px, как у button / checkbox / radio / switch. Это **не** вариант `input` и `select`, где кольцо своё (`primary-core` при 50%). `outline-offset: 1px` выведен числом: в макете `outline/500 = 9` при `rounded 8`, `outline/600 = 11` при `rounded 10` — радиус кольца ровно `rounded + 1`.
+**Кольцо фокуса общее для всех вариантов** — `surface-on-highest`, 2px, как у button / checkbox / radio / switch. Это **не** вариант `input` и `select`, где кольцо своё (`primary-core` при 50%). `outline-offset: var(--awds-focus-offset)` выведен числом: в макете `outline/500 = 9` при `rounded 8`, `outline/600 = 11` при `rounded 10` — радиус кольца ровно `rounded + 1`.
 
 **У трёх вариантов состояний нет вовсе** — `accent-selected`, `menu-selected`, `variation-selected` выглядят одинаково в Rest, Hover, Focus и Active. Строка уже выбрана, подсвечивать нечего. Следствие: на наведение она **не отвечает**, и если по ней можно кликнуть, чтобы снять выбор, сообщи это текстом или иконкой.
 
@@ -115,7 +115,7 @@ description: Строка списка ArrowDS: пункт меню, пункт 
 | Цвета состояний | `rgb(var(--*))` inline, своя роль на вариант | `references/list-item-{вариант}.css` |
 | Цвет описания | роль `list/unselected/description` (см. ниже) | `map.state.*.list` |
 | Цвет галочки | роль `icon-check` варианта | `map.state.*.list.{роль}.icon-check` |
-| Фокус-кольцо | `rgb(var(--surface-on-highest))` | `map.state.focus.focus-selection.outline` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Геометрия | `var(--awds-rectangle-{N}-*)` | `map.size.rectangle` |
 | Горизонталь без слота | `var(--awds-rectangle-{N}-text-gap)` | Figma: проп `Padding` у `Content List` |
 | Зазор заголовок/описание | `var(--awds-space-space-0-5)` | Figma: `space/0,5`, фикс |
