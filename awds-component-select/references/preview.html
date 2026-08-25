@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
   <!-- Пункт попапа — компонент awds-component-list-item. Без этого файла пункты
        останутся без стилей: селект задаёт им только размерную ступень. -->
   <link rel="stylesheet" href="../../awds-component-list-item/references/list-item-transparent.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./select-default.css">
   <link rel="stylesheet" href="./select-light.css">
   <link rel="stylesheet" href="./select-success.css">
@@ -86,8 +87,8 @@
       --awds-select-color:      rgb(var(--primary-container-on-highest));
       --awds-select-placehold:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .select-light.is-hover {
       --awds-select-border:     rgb(var(--secondary-container-on));
@@ -102,8 +103,8 @@
       --awds-select-placehold:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .select-success.is-hover {
       --awds-select-border:     rgb(var(--success-container-on));
@@ -119,8 +120,8 @@
       --awds-select-placehold:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .select-error.is-hover {
       --awds-select-border:     rgb(var(--error-container-on));
@@ -136,16 +137,16 @@
       --awds-select-placehold:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .select-ghost.is-focus {
       --awds-select-color:      rgb(var(--primary-container-on-highest));
       --awds-select-placehold:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-highest));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .select-autofill.is-hover {
       --awds-select-border:     rgb(var(--tertiary-container-on));
@@ -161,8 +162,8 @@
       --awds-select-placehold:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-highest));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
   </style>
 </head>

@@ -1,5 +1,11 @@
 {
   "component": "select",
+  "version": "1.0.1",
+  "contract_hash": "sha256:4c9bab587d29276f9af3329b9df97a90c1bcf8e5162a2e796b7753c5760f2af3",
+  "artifact_hash": "sha256:d4ee5fecbaebac36a5f29d5dddb5462834836bf7cea5f913fe60d346c5a41366",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.974Z",
+  "own_values": [],
   "figma": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
     "file_name": "💠 Comp ↪ ⁵ Forms",
@@ -323,5 +329,69 @@
   "picker_note": "Проверено в Chromium 150: под appearance: base-select <option> принимает вложенную разметку целиком — работают потомки (__prefix / __content / __title / __description), :has() внутри пункта и :hover. Поэтому метрики и цвета пункта больше не дублируются в CSS селекта.",
   "depends_on": {
     "awds-component-list-item": "Пункт раскрытого списка размечается классами .list-item / .list-item-transparent. Селект задаёт пункту только размерную ступень (на одну ниже своей) через мост .select__field option, а выбранный пункт переключает на роли list/selected-secondary правилом :checked. Потребителю нужно подключить list-item-transparent.css рядом с select-default.css."
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Formcontrol"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3",
+    "awds-component-list-item": "1.0.1"
+  },
+  "contract": {
+    "classes": [
+      "select",
+      "select--100",
+      "select--200",
+      "select--300",
+      "select--400",
+      "select--50",
+      "select--500",
+      "select--600",
+      "select--disabled",
+      "select-autofill",
+      "select-default",
+      "select-error",
+      "select-ghost",
+      "select-light",
+      "select-success",
+      "select__field",
+      "select__prefix",
+      "select__suffix"
+    ],
+    "attributes": [],
+    "elements": [
+      "option",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "autofill",
+      "default",
+      "error",
+      "ghost",
+      "light",
+      "success"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
   }
 }

@@ -134,7 +134,7 @@
 | Плейсхолдер | `secondary-container-on-high` | = Rest | `primary-container-on-high` |
 | **Шеврон** | `secondary-container-on-high` | = Rest | `primary-container-on-high` |
 
-Кольцо фокуса — `primary-core` при 50% прозрачности, `offset 0`. Это **не** тёмное `surface-on-highest`, как у button / checkbox / radio / switch: у контролов ввода кольцо своё.
+Кольцо фокуса — слой [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md), вариант **Outside + Formcontrol**: `primary-core` при 50% прозрачности, зазор 1px. Это **не** тёмное `surface-on-highest`, как у button / checkbox / radio / switch (там вариант Default): у контролов ввода рамка в фокусе уже брендовая, и плотное кольцо слилось бы с ней в одну полосу.
 
 ## CSS
 

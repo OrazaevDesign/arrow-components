@@ -55,7 +55,7 @@ description: Выпадающие списки ArrowDS (select, dropdown): тр�
 
 Ступени: селект 600→пункт 500, 500→400, 400→300, 300→200, 200→100, 100→50, 50→50. Высоты пунктов 48/40/36/32/24/20/20 — проверено computed px по всем семи размерам.
 
-**Кольцо фокуса снято с геометрии макета, а не подобрано.** Слой `outline` внутри `FocusSelection` стоит прямоугольником на 1 наружу от контрола (322×50 при 320×48), обводка 2 наружу от него, а сам слой несёт `opacity: 0.5`. CSS-outline рисуется от края бокса, поэтому `outline-offset: 1px` + `width: 2px` дают ровно ту же полосу 1..3. Радиус подтверждает независимо: в макете он равен скруглению контрола + 1 (11 при 10, 9 при 8, 5 при 4), и CSS считает его так же сам, из offset. Сверено по всем семи размерам.
+**Кольцо фокуса снято с геометрии макета, а не подобрано.** Слой `outline` внутри `FocusSelection` стоит прямоугольником на 1 наружу от контрола (322×50 при 320×48), обводка 2 наружу от него, а сам слой несёт `opacity: 0.5`. CSS-outline рисуется от края бокса, поэтому `outline-offset: var(--awds-focus-offset)` + `width: 2px` дают ровно ту же полосу 1..3. Радиус подтверждает независимо: в макете он равен скруглению контрола + 1 (11 при 10, 9 при 8, 5 при 4), и CSS считает его так же сам, из offset. Сверено по всем семи размерам.
 
 **Панель повторяет ширину контрола точно, а не «не уже» его.** В макете инстансы `Select / Default` и `◆ / Dropdown` оба 297 — ширины совпадают. Поэтому `width`, а не `min-width`: иначе длинный пункт растягивал бы попап шире кнопки и тот переставал бы читаться как её продолжение. Длинный текст при этом не режется — `list-item` переносит его по строкам.
 
@@ -75,7 +75,7 @@ description: Выпадающие списки ArrowDS (select, dropdown): тр�
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/плейсхолдер/иконки) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-default.css` |
 | Цвет шеврона | роль `chevrone`: `secondary-container-on-high` → при фокусе `primary-container-on-high` | `component-token-map.json` → `map.state.*.form-control.default.chevrone` |
-| Фокус-кольцо | `2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, `outline-offset: 1px` | Figma `focus-selection/outlineVariant` + `opacity/50`; ширина и offset — с геометрии слоя |
+| Фокус-кольцо | `var(--awds-focus-width) solid var(--awds-focus-color-formcontrol)`, `outline-offset: var(--awds-focus-offset)` | Figma `focus-selection/outlineVariant` + `opacity/50`; ширина и offset — с геометрии слоя |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `map.size.rectangle` |
 | Горизонтальный отступ текста | слева `text-gap` (с `prefix` — `padding`), справа всегда `padding`: там шеврон | Figma: проп `Padding Icon` у `Content Input` |
 | Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
