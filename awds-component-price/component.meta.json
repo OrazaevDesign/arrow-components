@@ -1,5 +1,24 @@
 {
   "component": "price",
+  "version": "1.0.2",
+  "contract_hash": "sha256:a6f3c62ff14eecd79aaccc383a113737af0b111d9900c69e93c23417652605ed",
+  "artifact_hash": "sha256:a004e067f3b295c9606c4ba552402030368e1992d3a857ebfb98e3997ee51cd1",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.739Z",
+  "own_values": [
+    {
+      "value": "0.2em",
+      "where": "--awds-price-gap",
+      "count": 1,
+      "why": "размер относительно кегля: элемент масштабируется вместе со шрифтом, шкала в px этого не даёт"
+    },
+    {
+      "value": "-0.18em",
+      "where": "word-spacing",
+      "count": 1,
+      "why": "размер относительно кегля: элемент масштабируется вместе со шрифтом, шкала в px этого не даёт"
+    }
+  ],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
@@ -282,5 +301,59 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-price/SKILL.md"
       }
     }
+  },
+  "contract": {
+    "classes": [
+      "price",
+      "price--100",
+      "price--1000",
+      "price--1100",
+      "price--200",
+      "price--300",
+      "price--400",
+      "price--500",
+      "price--600",
+      "price--700",
+      "price--800",
+      "price--900",
+      "price--currency-left",
+      "price--listing",
+      "price--vertical",
+      "price-default",
+      "price-none",
+      "price-sale",
+      "price__currency",
+      "price__current",
+      "price__main",
+      "price__old",
+      "price__old-currency",
+      "price__old-value",
+      "price__placeholder"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "default",
+      "none",
+      "sale"
+    ],
+    "sizes": [
+      "100",
+      "1000",
+      "1100",
+      "200",
+      "300",
+      "400",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900",
+      "listing"
+    ],
+    "states": [
+      "rest"
+    ]
   }
 }
