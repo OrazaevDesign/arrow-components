@@ -17,7 +17,7 @@ description: «Парящие» кнопки Button Overhung ArrowDS (obtn-prima
 |---|---|---|
 | Цвета (bg/chroma/border/color) | `rgb(var(--surface-*))` inline в `.obtn-primary` и его `:hover/:focus-visible/:active` | `references/button-overhung-primary.css` (+ палитра в `css-variables.css` сайта) |
 | Парящая тень | `var(--awds-shadow-elevation-1)` в базовом `.obtn` box-shadow | `css-global` (базовая шкала shadow) |
-| Цвет фокус-обводки | `rgb(var(--surface-on-highest))` inline | `references/button-overhung-primary.css` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Размеры (padding/gap/icon/rounded/font) | `var(--awds-rectangle-{N}-*)` (семантические shape-токены) в `.obtn--{N}` | `css-global` (там же резолвятся в базовые шкалы) |
 | `opacity` для disabled | `var(--awds-opacity-opacity-40)` | там же |
 | Шрифт (family/weight) | `--awds-font-family-system`, `--awds-font-weight-semibold` | там же |
@@ -47,7 +47,7 @@ description: «Парящие» кнопки Button Overhung ArrowDS (obtn-prima
 | `obtn--100` | Inline-действия |
 | `obtn--50`  | Самые компактные контролы |
 
-Конкретные значения каждого размера — в `tokens-components-size.md` скилла `arrow-design-system`, секция `rectangle`.
+Конкретные значения каждого размера — в `tokens-map.md` скилла `arrow-design-system`, секция `rectangle`.
 
 ## Состояния
 

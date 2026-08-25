@@ -76,7 +76,7 @@
 |---|---|---|---|---|---|
 | Rest | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | тень `elevation-1` |
 | Hover | `surface-surface` | `surface-dim` | `surface-surface` | `surface-on-highest` | — |
-| Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | `outline: 2px solid rgb(var(--surface-on-highest))` |
+| Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
 | Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | = Rest |
 | Disabled | = Rest | | | | `opacity: var(--awds-opacity-opacity-40)` + `pointer-events: none` |
 
@@ -86,7 +86,7 @@
 
 Класс `.obtn--{N}`, где N — один из: 50, 100, 200, 300, 400, 500, 600.
 
-Все значения инлайнятся через семантические shape-токены `--awds-rectangle-{N}-*` (резолв из `map.size.rectangle.{N}`; см. `arrow-design-system/references/tokens-components-size.md`, секция `rectangle`).
+Все значения инлайнятся через семантические shape-токены `--awds-rectangle-{N}-*` (резолв из `map.size.rectangle.{N}`; см. `arrow-design-system/references/tokens-map.md`, секция `rectangle`).
 
 ## Refresh
 

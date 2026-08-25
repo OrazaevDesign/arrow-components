@@ -54,7 +54,7 @@
 
 ## Размеры
 
-Класс `.obtn--{N}`, N ∈ {50, 100, 200, 300, 400, 500, 600}. Значения — через `--awds-rectangle-{N}-*` (см. `arrow-design-system/references/tokens-components-size.md`, секция `rectangle`).
+Класс `.obtn--{N}`, N ∈ {50, 100, 200, 300, 400, 500, 600}. Значения — через `--awds-rectangle-{N}-*` (см. `arrow-design-system/references/tokens-map.md`, секция `rectangle`).
 
 ## Refresh
 

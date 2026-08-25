@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
 
   <!-- 2. Базовые шкалы + семантические shape-токены DS (--awds-space-*, --awds-rounded-*, --awds-shadow-*, --awds-rectangle-*) -->
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
 
   <!-- 3. Варианты этого скилла -->
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./button-overhung-primary.css">
   <link rel="stylesheet" href="./button-overhung-secondary.css">
 
@@ -31,8 +32,8 @@
       --awds-obtn-chroma: rgb(var(--surface-bright));
       --awds-obtn-border: rgb(var(--surface-surface));
       --awds-obtn-color:  rgb(var(--surface-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .obtn-primary.is-active {
       --awds-obtn-bg:     rgb(var(--surface-surface));
@@ -56,8 +57,8 @@
       --awds-obtn-border: rgb(var(--surface-surface));
       --awds-obtn-color:  rgb(var(--surface-on));
       opacity: var(--awds-opacity-opacity-90);
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .obtn-secondary.is-active {
       --awds-obtn-bg:     rgb(var(--surface-surface));
