@@ -1,0 +1,23 @@
+/* ArrowDS derived — производные от переменных темы студии.
+   Не «чего нет в теме», а «что из темы выводится»: студия отдаёт части, а склейку
+   делаем мы. Это единственное содержимое поля `styles` темы 21.
+
+   Здесь только композит теней. Три слоя × (4 размера + цвет) — 18 переменных на одну
+   тень; типов у переменной студии три (COLOR, NUMBER, DIMENSION), и ни один не держит
+   смесь размеров с цветом. STRING отвергнут 25.08.2026: строка не может быть ссылкой,
+   поэтому переименование части сломало бы тень молча.
+
+   Чего здесь нет и почему:
+   — контракт кольца фокуса (--awds-focus-*) живёт в компоненте
+     awds-component-focus-selection: кольцо — часть компонента, а не значение системы;
+   — роли типографики убраны 25.08.2026: их отдаёт студия (WYSIWYG привязан к ступеням
+     Typography, масштаб идёт модами .typo-*, адаптив — внутри ступени);
+   — шрифты и z-index убраны 20.08.2026: тема отдаёт их сама.
+
+   Решение и причина: logs/2026/08/25/17-05, 18-02. */
+:root {
+  --awds-shadow-elevation-1: var(--awds-shadow-shadow1-offset-x-elevation-1) var(--awds-shadow-shadow1-offset-y-elevation-1) var(--awds-shadow-shadow1-blur-radius-elevation-1) var(--awds-shadow-shadow1-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow1-color-elevation-1)), var(--awds-shadow-shadow2-offset-x-elevation-1) var(--awds-shadow-shadow2-offset-y-elevation-1) var(--awds-shadow-shadow2-blur-radius-elevation-1) var(--awds-shadow-shadow2-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow2-color-elevation-1)), var(--awds-shadow-shadow3-offset-x-elevation-1) var(--awds-shadow-shadow3-offset-y-elevation-1) var(--awds-shadow-shadow3-blur-radius-elevation-1) var(--awds-shadow-shadow3-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow3-color-elevation-1));
+  --awds-shadow-elevation-2: var(--awds-shadow-shadow1-offset-x-elevation-2) var(--awds-shadow-shadow1-offset-y-elevation-2) var(--awds-shadow-shadow1-blur-radius-elevation-2) var(--awds-shadow-shadow1-spread-radius-elevation-2) rgb(var(--awds-shadow-shadow1-color-elevation-2)), var(--awds-shadow-shadow2-offset-x-elevation-2) var(--awds-shadow-shadow2-offset-y-elevation-2) var(--awds-shadow-shadow2-blur-radius-elevation-2) var(--awds-shadow-shadow2-spread-radius-elevation-2) rgb(var(--awds-shadow-shadow2-color-elevation-2)), var(--awds-shadow-shadow3-offset-x-elevation-2) var(--awds-shadow-shadow3-offset-y-elevation-2) var(--awds-shadow-shadow3-blur-radius-elevation-2) var(--awds-shadow-shadow3-spread-radius-elevation-2) rgb(var(--awds-shadow-shadow3-color-elevation-2));
+  --awds-shadow-elevation-3: var(--awds-shadow-shadow1-offset-x-elevation-3) var(--awds-shadow-shadow1-offset-y-elevation-3) var(--awds-shadow-shadow1-blur-radius-elevation-3) var(--awds-shadow-shadow1-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow1-color-elevation-3)), var(--awds-shadow-shadow2-offset-x-elevation-3) var(--awds-shadow-shadow2-offset-y-elevation-3) var(--awds-shadow-shadow2-blur-radius-elevation-3) var(--awds-shadow-shadow2-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow2-color-elevation-3)), var(--awds-shadow-shadow3-offset-x-elevation-3) var(--awds-shadow-shadow3-offset-y-elevation-3) var(--awds-shadow-shadow3-blur-radius-elevation-3) var(--awds-shadow-shadow3-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow3-color-elevation-3));
+  --awds-shadow-elevation-4: var(--awds-shadow-shadow1-offset-x-elevation-4) var(--awds-shadow-shadow1-offset-y-elevation-4) var(--awds-shadow-shadow1-blur-radius-elevation-4) var(--awds-shadow-shadow1-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow1-color-elevation-4)), var(--awds-shadow-shadow2-offset-x-elevation-4) var(--awds-shadow-shadow2-offset-y-elevation-4) var(--awds-shadow-shadow2-blur-radius-elevation-4) var(--awds-shadow-shadow2-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow2-color-elevation-4)), var(--awds-shadow-shadow3-offset-x-elevation-4) var(--awds-shadow-shadow3-offset-y-elevation-4) var(--awds-shadow-shadow3-blur-radius-elevation-4) var(--awds-shadow-shadow3-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow3-color-elevation-4));
+}
