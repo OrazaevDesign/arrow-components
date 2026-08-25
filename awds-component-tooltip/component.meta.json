@@ -1,5 +1,42 @@
 {
   "component": "tooltip",
+  "version": "1.0.1",
+  "contract_hash": "sha256:8a86507521dde227a92b5fa6ed26ad8fbc8a7825762fff58c8bc1b7c5515a91c",
+  "artifact_hash": "sha256:b371a8eb7c3721e73956cc3551f00dbbfda8184c79222d17dd45ede06e8500c0",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:09.307Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "border-right",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "1px",
+      "where": "border-bottom",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "1px",
+      "where": "border-top",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "1px",
+      "where": "border-left",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "250px",
+      "where": "--awds-tooltip-max-width",
+      "count": 1,
+      "why": "нет ячейки в студии для «--awds-tooltip-max-width»: группы этого элемента в коллекции Size не существует"
+    }
+  ],
   "figma": {
     "file_key": "XfUbnX6GFLFZ6nInMOlyQD",
     "file_name": "💠 Comp ↪ ⁶ Popup",
@@ -132,5 +169,29 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tooltip/SKILL.md"
       }
     }
+  },
+  "contract": {
+    "classes": [
+      "tooltip",
+      "tooltip--bottom",
+      "tooltip--compact",
+      "tooltip--left",
+      "tooltip--right",
+      "tooltip-contrast",
+      "tooltip-default",
+      "tooltip__bubble",
+      "tooltip__tail"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "contrast",
+      "default"
+    ],
+    "sizes": [],
+    "states": [
+      "rest"
+    ]
   }
 }
