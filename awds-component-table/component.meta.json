@@ -1,5 +1,18 @@
 {
   "component": "table",
+  "version": "1.0.1",
+  "contract_hash": "sha256:712d664d5b944b411f15559c62a866a3b7096883819ceaba6c1a8fc51afc0a58",
+  "artifact_hash": "sha256:52714d1567052e4350466c73e849ef37942b722cf7d21d82771a42e0149bcee0",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:09.193Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "border",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
   "figma": {
     "file_key": "MzbIinUK3d5C31yhl6TKmB",
     "file_name": "💠 Comp ↪ ³ Cell",
@@ -160,5 +173,49 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-table/SKILL.md"
       }
     }
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Inside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "awds-table",
+      "awds-table--light",
+      "awds-table-scroll",
+      "cell",
+      "cell--numeric",
+      "cell-default",
+      "cell-head",
+      "cell-light",
+      "cell__description"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [
+      "tr"
+    ],
+    "public_vars": [],
+    "variants": [
+      "default",
+      "head",
+      "light"
+    ],
+    "sizes": [],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
   }
 }

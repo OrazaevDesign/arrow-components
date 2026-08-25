@@ -8,7 +8,8 @@
 
   <!-- Порядок критичен: палитра ролей → DS-токены → CSS вариантов -->
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./table.css">
   <link rel="stylesheet" href="./cell-light.css">
   <link rel="stylesheet" href="./cell-head.css">
@@ -58,15 +59,15 @@
 
     /* === Зеркала состояний для статичной матрицы (копии :hover/:focus-visible/:active) === */
     .cell-light.is-hover  { --awds-cell-bg: rgb(var(--surface-surface)); --awds-cell-border: rgb(var(--surface-on-lowest)); }
-    .cell-light.is-focus  { --awds-cell-bg: transparent; --awds-cell-border: transparent; outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: -2px; }
+    .cell-light.is-focus  { --awds-cell-bg: transparent; --awds-cell-border: transparent; outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset-inside); }
     .cell-light.is-active  { --awds-cell-bg: transparent; --awds-cell-border: transparent; }
 
     .cell-head.is-hover   { --awds-cell-bg: rgb(var(--surface-dim)); --awds-cell-border: rgb(var(--surface-on-lowest)); }
-    .cell-head.is-focus   { --awds-cell-bg: rgb(var(--surface-surface)); --awds-cell-border: rgb(var(--surface-on-lowest)); outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: -2px; }
+    .cell-head.is-focus   { --awds-cell-bg: rgb(var(--surface-surface)); --awds-cell-border: rgb(var(--surface-on-lowest)); outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset-inside); }
     .cell-head.is-active   { --awds-cell-bg: rgb(var(--surface-surface)); --awds-cell-border: rgb(var(--surface-on-lowest)); }
 
     .cell-default.is-hover { --awds-cell-bg: rgb(var(--surface-surface)); --awds-cell-border: rgb(var(--surface-on-lowest)); }
-    .cell-default.is-focus { --awds-cell-bg: rgb(var(--surface-bright)); --awds-cell-border: rgb(var(--surface-on-lowest)); outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: -2px; }
+    .cell-default.is-focus { --awds-cell-bg: rgb(var(--surface-bright)); --awds-cell-border: rgb(var(--surface-on-lowest)); outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset-inside); }
     .cell-default.is-active { --awds-cell-bg: rgb(var(--surface-bright)); --awds-cell-border: rgb(var(--surface-on-lowest)); }
   </style>
 </head>

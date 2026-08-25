@@ -40,7 +40,7 @@ Figma: [Cell — light](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%
 | Active | `.cell-{variant}:active` | `.is-active` |
 | Disabled | `.cell[aria-disabled="true"]` | атрибут `aria-disabled="true"` |
 
-Focus-обводка — `outline: 2px solid rgb(var(--surface-on-highest))` со смещением `-2px` (внутрь, чтобы не перекрывать соседние ячейки в flush-таблице).
+Focus-обводка — `outline: var(--awds-focus-width) solid var(--awds-focus-color)` со смещением `-2px` (внутрь, чтобы не перекрывать соседние ячейки в flush-таблице).
 
 ## Цвета по вариантам (map.state.*.cell.*)
 
