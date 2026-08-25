@@ -226,8 +226,11 @@
 }
 
 .lbl__help:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-50);
 }
 
