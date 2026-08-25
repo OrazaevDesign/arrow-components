@@ -290,6 +290,10 @@
 /* Видимое поле реагирует на фокус спрятанного инпута — иначе при табуляции
    подсветки не было бы вовсе. Правило дублирует фокус самого input-компонента. */
 .upl__input:focus-visible + .input {
-  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-  outline-offset: 1px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
+     (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
+     уже брендовая, и плотное кольцо поверх неё слилось бы с ней в одну полосу.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
 }

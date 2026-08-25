@@ -1,5 +1,30 @@
 {
   "component": "uploader",
+  "version": "1.0.1",
+  "contract_hash": "sha256:bb2ae5003da30935455e45a0b4a079904a5431c4a2a7ae0b16b12e885d6ed119",
+  "artifact_hash": "sha256:c75c8663f49ca64c51683fb391c8e83d232a0a2cd996aec97bfce496d87af054",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:09.360Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "width",
+      "count": 1,
+      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
+    },
+    {
+      "value": "1px",
+      "where": "height",
+      "count": 1,
+      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
+    },
+    {
+      "value": "-1px",
+      "where": "margin",
+      "count": 1,
+      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
+    }
+  ],
   "figma": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
     "file_name": "💠 Comp ↪ ⁵ Forms",
@@ -182,5 +207,58 @@
         "note": "Своего скилла у строки файла нет — ссылка ведёт в скилл загрузчика, где она и реализована."
       }
     }
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Formcontrol"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-button": "1.0.3",
+    "awds-component-focus-selection": "1.0.3",
+    "awds-component-input": "1.0.1",
+    "awds-component-radio": "1.0.2"
+  },
+  "contract": {
+    "classes": [
+      "input",
+      "upl",
+      "upl--300",
+      "upl--400",
+      "upl--500",
+      "upl__content",
+      "upl__file",
+      "upl__file--error",
+      "upl__icon",
+      "upl__input",
+      "upl__list",
+      "upl__name",
+      "upl__preview",
+      "upl__progress",
+      "upl__remove",
+      "upl__size"
+    ],
+    "attributes": [],
+    "elements": [
+      "img",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "default",
+      "file"
+    ],
+    "sizes": [
+      "300",
+      "400",
+      "500"
+    ],
+    "states": [
+      "error",
+      "rest"
+    ]
   }
 }
