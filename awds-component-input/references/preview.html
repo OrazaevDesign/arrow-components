@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./input-default.css">
   <link rel="stylesheet" href="./input-light.css">
   <link rel="stylesheet" href="./input-success.css">
@@ -86,8 +87,8 @@
       --awds-input-border:    rgb(var(--primary-dim));
       --awds-input-color:     rgb(var(--primary-container-on-highest));
       --awds-input-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .input-light.is-hover {
       --awds-input-border: rgb(var(--secondary-container-on));
@@ -102,8 +103,8 @@
       --awds-input-color:      rgb(var(--primary-container-on-highest));
       --awds-input-placehold:  rgb(var(--primary-container-on-high));
       --awds-input-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .input-success.is-hover {
       --awds-input-border: rgb(var(--success-container-on));
@@ -118,8 +119,8 @@
       --awds-input-color:      rgb(var(--primary-container-on-highest));
       --awds-input-placehold:  rgb(var(--primary-container-on-high));
       --awds-input-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .input-error.is-hover {
       --awds-input-border: rgb(var(--error-container-on));
@@ -134,8 +135,8 @@
       --awds-input-color:      rgb(var(--primary-container-on-highest));
       --awds-input-placehold:  rgb(var(--primary-container-on-high));
       --awds-input-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .input-autofill.is-hover {
       --awds-input-border: rgb(var(--tertiary-container-on));
@@ -150,8 +151,8 @@
       --awds-input-color:      rgb(var(--primary-container-on-highest));
       --awds-input-placehold:  rgb(var(--primary-container-on-high));
       --awds-input-icon-color: rgb(var(--primary-container-on-highest));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .input-ghost.is-focus {
       --awds-input-bg:         transparent;
@@ -160,8 +161,8 @@
       --awds-input-color:      rgb(var(--primary-container-on-highest));
       --awds-input-placehold:  rgb(var(--primary-container-on-high));
       --awds-input-icon-color: rgb(var(--primary-container-on-highest));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .input-secondary.is-hover {
       --awds-input-bg:     rgb(var(--secondary-dim));
@@ -178,8 +179,8 @@
       --awds-input-color:      rgb(var(--secondary-on));
       --awds-input-placehold:  rgb(var(--secondary-on-dim));
       --awds-input-icon-color: rgb(var(--secondary-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
   </style>
 </head>

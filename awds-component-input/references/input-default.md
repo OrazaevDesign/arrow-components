@@ -139,7 +139,7 @@ CSS сам погасит UA-оформление такой кнопки и о�
 
 В макете это слой `FocusSelection` с `opacity 50%` и цветом `focus-selection/outlineVariant` (= `primary-core`), а не `outline` (= `surface-on-highest`).
 
-**`outline-offset: 1px`, а не 0** — снято с геометрии слоя: прямоугольник кольца стоит на 1 наружу от контрола (322×50 при 320×48), обводка 2 наружу от него. CSS-outline рисуется от края бокса, поэтому offset 1 + width 2 дают ту же полосу 1..3. Радиус подтверждает независимо: в макете он равен скруглению контрола + 1, и CSS считает его так же сам из offset. Сверено по всем семи размерам.
+Кольцо целиком отдано слою [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md): вариант **Outside + Formcontrol**, `outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol)` и `outline-offset: var(--awds-focus-offset)`. Геометрия снята с макета в слое (прямоугольник кольца на 1px наружу, stroke 2px OUTSIDE → полоса 1…3px), радиус CSS считает сам из offset — поэтому здесь чисел нет и `focus-selection.css` подключается вместе с `input-default.css`.
 
 ## CSS
 

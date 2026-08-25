@@ -25,7 +25,7 @@ description: Текстовые поля ввода ArrowDS (input): разме�
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/placeholder/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-{вариант}.css` |
-| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Кольцо фокуса | `var(--awds-focus-color-formcontrol)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Input` |
 | Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |

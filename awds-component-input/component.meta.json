@@ -1,5 +1,11 @@
 {
   "component": "input",
+  "version": "1.0.1",
+  "contract_hash": "sha256:103a13e9ef85dad3cc0d0722ed0f96ee02ba5d5b320bca538155bdfbc75628c4",
+  "artifact_hash": "sha256:bbb802b47ed873e479d39bbe8f5d2086381d0cda737841551ee3e3a8e2244d84",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.386Z",
+  "own_values": [],
   "figma": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
     "file_name": "💠 Comp ↪ ⁵ Forms",
@@ -310,5 +316,72 @@
   "verification": {
     "text_gap": "Прогон в headless chromium по всем комбинациям {без слотов, только prefix, только suffix, оба} × размеры: 26 проверок на три компонента, 0 расхождений. Проверено и то, что вертикальные паддинги и высоты не изменились.",
     "focus_ring": "Кольцо сверено с геометрией макета по всем семи размерам: слой outline внутри FocusSelection стоит на 1 наружу от контрола, обводка 2 OUTSIDE. В CSS это outline 2px + outline-offset 1px (было 0 — кольцо липло к рамке). У варианта secondary кольцо тёмное и без альфы (focus-selection/outline при opacity 1) — так в макете, не тронуто. Кольцо кнопки в слоте — отдельная история, в макете его нет, offset у него оставлен 0. Проверено настоящим фокусом в браузере."
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default",
+      "Outside + Formcontrol"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-button": "1.0.3",
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "input",
+      "input--100",
+      "input--200",
+      "input--300",
+      "input--400",
+      "input--50",
+      "input--500",
+      "input--600",
+      "input--disabled",
+      "input-autofill",
+      "input-default",
+      "input-error",
+      "input-ghost",
+      "input-light",
+      "input-secondary",
+      "input-success",
+      "input__field",
+      "input__prefix",
+      "input__suffix"
+    ],
+    "attributes": [],
+    "elements": [
+      "button",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "autofill",
+      "default",
+      "error",
+      "ghost",
+      "light",
+      "secondary",
+      "success"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
   }
 }
