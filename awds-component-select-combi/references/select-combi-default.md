@@ -87,7 +87,7 @@
 | Открыт список | то же, что Focus | `@supports` + `:has(.scombi__field:open)` |
 | Disabled | Rest + `opacity: var(--awds-opacity-opacity-40)` | `:has(.scombi__field:disabled)` |
 
-Кольцо фокуса: `outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, `outline-offset: 1px` — как у `select`, `input` и `input-combi`, и в отличие от остального набора (там `surface-on-highest` без альфы).
+Кольцо фокуса: `outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol)`, `outline-offset: var(--awds-focus-offset)` — как у `select`, `input` и `input-combi`, и в отличие от остального набора (там `surface-on-highest` без альфы).
 
 Отдельное правило на `:open` нужно потому, что под `base-select` при раскрытии фокус уходит в `<option>` и `:focus-within` на обёртке становится ложным.
 
