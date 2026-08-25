@@ -1,5 +1,11 @@
 {
   "component": "button-favorites",
+  "version": "1.0.1",
+  "contract_hash": "sha256:e26660cbfb682ff4941e6fa4b0b1ae6a36518d79fb1fba1ace4362b874098997",
+  "artifact_hash": "sha256:b6cf7b73ccb55fd48ecf638da2791414604c38b1e525c0fb5df13b24769e7bfe",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:07.975Z",
+  "own_values": [],
   "figma": {
     "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
     "file_name": "💠 Comp ↪ ² Buttons",
@@ -112,5 +118,45 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-favorites/SKILL.md"
       }
     }
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-button": "1.0.3",
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "btn",
+      "btn--icon-only",
+      "btn-favorites",
+      "btn-favorites--mobile",
+      "btn-favorites__icon",
+      "btn-favorites__outline",
+      "btn-favorites__solid"
+    ],
+    "attributes": [
+      "aria-disabled",
+      "aria-pressed"
+    ],
+    "elements": [
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "favorites"
+    ],
+    "sizes": [],
+    "states": [
+      "hover",
+      "rest",
+      "selected"
+    ]
   }
 }
