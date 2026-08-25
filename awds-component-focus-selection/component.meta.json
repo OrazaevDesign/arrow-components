@@ -147,13 +147,19 @@
   "sync_method_note": "MCP Figma в сессии был недоступен — данные снимались Figma REST /v1/files/{key}/nodes по FIGMA_API_TOKEN. variables/local отдаёт 403 (scope), поэтому цвета резолвились по значению через component-token-map.json.",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "6c11192",
-    "pushed_at": "2026-08-25T18:10:38Z",
+    "commit": "8d76960",
+    "pushed_at": "2026-08-25T18:10:00Z",
     "github_urls": {
       "SKILL": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md"
     },
     "dev_resources_status": {
-      "note": "Ссылка в Figma-ноде не ставилась: первая публикация 25.08.2026."
+      "layer": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2093:265",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md",
+        "note": "PRO plan: ссылка вписана в description и descriptionMarkdown COMPONENT_SET FocusSelection через use_figma. Прежнее описание (🟣 Figma / 📎 Asana) перезаписано — так задумано каноном ACP."
+      }
     }
   },
   "contract": {
