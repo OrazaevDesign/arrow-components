@@ -1,5 +1,11 @@
 {
   "component": "badge",
+  "version": "1.0.1",
+  "contract_hash": "sha256:81a96082734f98d326537dae08377409ef539178f600a223275e53ef5e00bfb7",
+  "artifact_hash": "sha256:260e614880e1db4b2790c3654d8c2226422fcfb2e10958fd2d4c0602e4432559",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:07.769Z",
+  "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
@@ -174,5 +180,46 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-badge/SKILL.md"
       }
     }
+  },
+  "contract": {
+    "classes": [
+      "badge",
+      "badge--100",
+      "badge--200",
+      "badge--300",
+      "badge--400",
+      "badge--50",
+      "badge--500",
+      "badge--600",
+      "badge-market-brand",
+      "badge-market-new",
+      "badge-market-percent",
+      "badge-market-sale",
+      "badge__icon",
+      "badge__label"
+    ],
+    "attributes": [],
+    "elements": [
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "market-brand",
+      "market-new",
+      "market-percent",
+      "market-sale"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
+    "states": [
+      "rest"
+    ]
   }
 }
