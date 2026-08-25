@@ -44,7 +44,7 @@ description: Поля ввода с ПЛАВАЮЩЕЙ МЕТКОЙ ArrowDS (ico
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/метка/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-combi-default.css` |
-| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Кольцо фокуса | `var(--awds-focus-color-formcontrol)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста и метки | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Combi Input` |
 | Вертикаль поля и метки | `var(--awds-rectangle-{N}-combi-{input-top , input-bottom , label-top})` | там же, ветка `combi` |

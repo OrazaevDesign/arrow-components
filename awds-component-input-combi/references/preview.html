@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./input-combi-default.css">
   <link rel="stylesheet" href="./input-combi-light.css">
   <link rel="stylesheet" href="./input-combi-success.css">
@@ -90,8 +91,8 @@
       --awds-icombi-border:    rgb(var(--primary-dim));
       --awds-icombi-color:     rgb(var(--primary-container-on-highest));
       --awds-icombi-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .icombi-light.is-hover {
       --awds-icombi-border: rgb(var(--secondary-container-on));
@@ -106,8 +107,8 @@
       --awds-icombi-color:      rgb(var(--primary-container-on-highest));
       --awds-icombi-placehold:  rgb(var(--primary-container-on-high));
       --awds-icombi-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .icombi-success.is-hover {
       --awds-icombi-border: rgb(var(--success-container-on));
@@ -122,8 +123,8 @@
       --awds-icombi-color:      rgb(var(--primary-container-on-highest));
       --awds-icombi-placehold:  rgb(var(--primary-container-on-high));
       --awds-icombi-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .icombi-error.is-hover {
       --awds-icombi-border: rgb(var(--error-container-on));
@@ -138,8 +139,8 @@
       --awds-icombi-color:      rgb(var(--primary-container-on-highest));
       --awds-icombi-placehold:  rgb(var(--primary-container-on-high));
       --awds-icombi-icon-color: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .icombi-autofill.is-hover {
       --awds-icombi-border: rgb(var(--tertiary-container-on));
@@ -154,8 +155,8 @@
       --awds-icombi-color:      rgb(var(--primary-container-on-highest));
       --awds-icombi-placehold:  rgb(var(--primary-container-on-high));
       --awds-icombi-icon-color: rgb(var(--primary-container-on-highest));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .icombi-ghost.is-focus {
       --awds-icombi-bg:         transparent;
@@ -164,8 +165,8 @@
       --awds-icombi-color:      rgb(var(--primary-container-on-highest));
       --awds-icombi-placehold:  rgb(var(--primary-container-on-high));
       --awds-icombi-icon-color: rgb(var(--primary-container-on-highest));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
     .icombi-secondary.is-hover {
       --awds-icombi-bg:     rgb(var(--secondary-dim));
@@ -182,8 +183,8 @@
       --awds-icombi-color:      rgb(var(--secondary-on));
       --awds-icombi-placehold:  rgb(var(--secondary-on-dim));
       --awds-icombi-icon-color: rgb(var(--secondary-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .icombi.is-focus .icombi__label {
       top: var(--awds-icombi-label-top);

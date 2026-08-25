@@ -368,8 +368,11 @@
 
 .icombi__prefix button:focus-visible,
 .icombi__suffix button:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 0;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-50);
 }
 
@@ -491,16 +494,11 @@
   --awds-icombi-placehold:  rgb(var(--secondary-on-dim));
   --awds-icombi-icon-color: rgb(var(--secondary-on));
 
-  /* ОТЛИЧИЕ: у secondary кольцо ТЁМНОЕ и без альфы — в ячейке Focus стоит
-     focus-selection/outline (= surface-on-highest), а не outlineVariant, и нет
-     opacity/50. То есть как у button/checkbox/radio/switch, а не как у остальных
-     offset 1, а не 0 — снято с геометрии макета: слой outline внутри
-     FocusSelection стоит прямоугольником на 1 наружу от контрола (322x50 при
-     320x48), обводка 2 OUTSIDE. CSS-outline рисуется от края бокса, поэтому
-     offset 1 + width 2 дают ту же полосу 1..3. Радиус подтверждает независимо:
-     в макете он равен скруглению контрола + 1. Сверено по всем размерам. */
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 1px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
 }
 
 

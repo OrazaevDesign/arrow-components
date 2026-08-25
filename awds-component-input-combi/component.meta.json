@@ -1,5 +1,11 @@
 {
   "component": "input-combi",
+  "version": "1.0.1",
+  "contract_hash": "sha256:7c2a2ea3cdb3933b48b3ce1982aff1d09d70e2499a7e80765258712334ee150d",
+  "artifact_hash": "sha256:2f46d55c990bb085069f41bbecd4df0e3cfedfcfa378ee041ef869ec1e8b8848",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.450Z",
+  "own_values": [],
   "figma": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
     "file_name": "💠 Comp ↪ ⁵ Forms",
@@ -335,5 +341,67 @@
       }
     }
   },
-  "variants_note": "Семь вариантов одного компонента (фреймы Input Combi / *), тот же набор, что у awds-component-input. Роли не выводились заново: хексы всех семи вариантов сверены со снапшотом awds-component-input — 73 пары значений, 0 расхождений, значит палитра у Combi и обычного Input общая (в Figma обе группы ячеек ссылаются на один form-control/{вариант}/*). success / error / autofill — состояния значения, а не виды контрола. Два исключения, сверенные по ячейкам: у ghost hover и active не меняют ничего (правил нет намеренно), у secondary hover меняет фон вместо рамки и кольцо фокуса тёмное (surface-on-highest без альфы) вместо брендового при 50%. Input Inline / * — отдельный компонент, в этот скилл не входит."
+  "variants_note": "Семь вариантов одного компонента (фреймы Input Combi / *), тот же набор, что у awds-component-input. Роли не выводились заново: хексы всех семи вариантов сверены со снапшотом awds-component-input — 73 пары значений, 0 расхождений, значит палитра у Combi и обычного Input общая (в Figma обе группы ячеек ссылаются на один form-control/{вариант}/*). success / error / autofill — состояния значения, а не виды контрола. Два исключения, сверенные по ячейкам: у ghost hover и active не меняют ничего (правил нет намеренно), у secondary hover меняет фон вместо рамки и кольцо фокуса тёмное (surface-on-highest без альфы) вместо брендового при 50%. Input Inline / * — отдельный компонент, в этот скилл не входит.",
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default",
+      "Outside + Formcontrol"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "icombi",
+      "icombi--300",
+      "icombi--400",
+      "icombi--500",
+      "icombi--600",
+      "icombi--disabled",
+      "icombi-autofill",
+      "icombi-default",
+      "icombi-error",
+      "icombi-ghost",
+      "icombi-light",
+      "icombi-secondary",
+      "icombi-success",
+      "icombi__body",
+      "icombi__field",
+      "icombi__label",
+      "icombi__prefix",
+      "icombi__suffix"
+    ],
+    "attributes": [],
+    "elements": [
+      "button",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "autofill",
+      "default",
+      "error",
+      "ghost",
+      "light",
+      "secondary",
+      "success"
+    ],
+    "sizes": [
+      "300",
+      "400",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
 }
