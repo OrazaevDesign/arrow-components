@@ -156,8 +156,12 @@
 
 /* Focus — обводка surface-on-highest (focus-selection/outline), радиус из shape-слоя */
 .btn-area:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Inside + Default
+     (снято с инстанса FocusSelection в макете): кольцо уходит внутрь бокса — область тянется
+     на всю ячейку, снаружи места под кольцо нет.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset-inside);
   border-radius: var(--awds-btn-area-rounded);
 }
 

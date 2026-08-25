@@ -55,7 +55,7 @@ description: Button Area ArrowDS (link-area): кликабельная обла�
 |---|---|
 | Цвет варианта | роли `awds-component-link` (rest → hover): default `tertiary-container-on-high→-highest`, muted `surface-on-high→-on-highest`, contrast `surface-on-highest→-on-high`, accent `surface-on-highest→accent-container-on`, heading `surface-on-high→accent-container-on` |
 | Размер (текст/иконка/зазор/радиус) | shape-слой `var(--awds-rectangle-{N}-{typography-*,icon,gap,rounded})` |
-| Focus-обводка | `rgb(var(--surface-on-highest))` |
+| Кольцо фокуса | слой `awds-component-focus-selection`, вариант **Inside + Default**: кольцо уходит внутрь — область тянется на всю ячейку, снаружи места нет |
 | Disabled | `opacity: var(--awds-opacity-opacity-40)` + `pointer-events: none` |
 | Спиннер | `var(--awds-rounded-border-radius-full)` + `@keyframes` (прерываемая анимация — для загрузки корректно) |
 | Растяжение | `width/height: 100%` + `align-self: stretch`, контент по центру (`justify-content/align-items: center`) |

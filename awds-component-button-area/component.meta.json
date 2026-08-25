@@ -1,5 +1,24 @@
 {
   "component": "button-area",
+  "version": "1.0.1",
+  "contract_hash": "sha256:fdb387f8dadd6a157d624e1496c7d7669868f83a971c79b77be8021217bd0f1f",
+  "artifact_hash": "sha256:a93bfe6dc16cc1f983926a7e62254cb1736a0923a64fca8f0eb1b3f78260e6be",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:07.914Z",
+  "own_values": [
+    {
+      "value": "2px",
+      "where": "border",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "1.4s",
+      "where": "animation-duration",
+      "count": 1,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
     "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
     "file_name": "💠 Comp ↪ ² Buttons",
@@ -270,5 +289,68 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-area/SKILL.md"
       }
     }
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Inside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "btn-area",
+      "btn-area--100",
+      "btn-area--400",
+      "btn-area--50",
+      "btn-area--500",
+      "btn-area--disabled",
+      "btn-area--fill",
+      "btn-area--fill-x",
+      "btn-area--fill-y",
+      "btn-area--icon-only",
+      "btn-area--progress",
+      "btn-area-accent",
+      "btn-area-contrast",
+      "btn-area-default",
+      "btn-area-heading",
+      "btn-area-muted",
+      "btn-area__icon",
+      "btn-area__label",
+      "btn-area__prefix",
+      "btn-area__spinner",
+      "btn-area__suffix"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "accent",
+      "contrast",
+      "default",
+      "heading",
+      "muted"
+    ],
+    "sizes": [
+      "100",
+      "400",
+      "50",
+      "500"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
   }
 }
