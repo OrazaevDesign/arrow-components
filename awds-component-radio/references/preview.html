@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./radio.css">
 
   <style>
@@ -87,8 +88,8 @@
       --awds-radio-color:  rgb(var(--primary-on));
     }
     .radio.is-focus > .radio__input + .radio__box {
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 0;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
   </style>
 </head>

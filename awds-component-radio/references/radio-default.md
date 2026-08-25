@@ -74,10 +74,10 @@
 | Selected Rest | `.radio__input:checked + .radio__box` | bg `primary-core`, chroma `primary-chroma`, border `primary-core`, точка `primary-on` |
 | Selected Hover | `.radio:hover > …:checked` | bg / border `primary-dim` |
 | Selected Active | `.radio:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
-| Focus | `.radio__input:focus-visible + .radio__box` | `outline: 2px solid rgb(var(--surface-on-highest))`, **`outline-offset: 0`** |
+| Focus | `.radio__input:focus-visible + .radio__box` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)`, **`outline-offset: var(--awds-focus-offset)`** |
 | Disabled | `.radio:has(> .radio__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
 
-Значения полностью совпадают с `awds-component-checkbox` — это одна пара токенов `check-radio/*`. `outline-offset: 0`, а не 2px как у `.btn`: в макете кольцо стоит вплотную к кругу.
+Значения полностью совпадают с `awds-component-checkbox` — это одна пара токенов `check-radio/*`. Кольцо фокуса приходит слоем [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md), вариант **Outside + Default** — тот же, что у button, checkbox и switch.
 
 ## Размеры
 

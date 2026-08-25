@@ -23,7 +23,7 @@ description: Радиокнопки ArrowDS на нативном input: выб�
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/color) | `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline | `references/radio.css` |
-| Цвет фокус-обводки | `rgb(var(--surface-on-highest))` (inline) | `component-token-map.json` → `map.state.focus` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Размеры (padding/icon/gap) | `var(--awds-square-{N}-*)` | `component-token-map.json` → `map.size.square` |
 | Скругление | `var(--awds-rounded-border-radius-full)` — фиксированное, не размерное | Figma `border-radius/full` |
 | Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
@@ -58,7 +58,7 @@ description: Радиокнопки ArrowDS на нативном input: выб�
 | `radio--400` | 24px | **По умолчанию** — способы доставки/оплаты, тарифы |
 | `radio--500` | 28px | Крупные формы, тач-интерфейсы |
 
-Круг = `icon + 2 × padding` из `map.size.square.{N}`; точка масштабируется вместе с иконкой. Конкретные значения — в `tokens-components-size.md` скилла `arrow-design-system`, секция `square`.
+Круг = `icon + 2 × padding` из `map.size.square.{N}`; точка масштабируется вместе с иконкой. Конкретные значения — в `tokens-map.md` скилла `arrow-design-system`, секция `square`.
 
 Скругление у всех размеров одно — `var(--awds-rounded-border-radius-full)` (600px во всех модах Rounded), поэтому радиокнопка круглая даже под `.rounded-none`.
 
@@ -69,7 +69,7 @@ description: Радиокнопки ArrowDS на нативном input: выб�
 - Инпут остаётся настоящим и в потоке: группировка по `name`, стрелки клавиатуры, скринридер и отправка формы работают сами.
 - Группе нужен заголовок: `<fieldset>` + `<legend>` либо `role="radiogroup"` + `aria-labelledby`.
 - Радиокнопка без видимой подписи обязана нести `aria-label` на `<label>`.
-- Фокус-кольцо — `outline-offset: 0` (вплотную к кругу, как в макете), не 2px как у `.btn`.
+- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи круга. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `radio.css`.
 - Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 - Ставь `checked` на разумный вариант по умолчанию: группа без выбора заставляет пользователя угадывать, а «снять всё» он потом не сможет.
 
