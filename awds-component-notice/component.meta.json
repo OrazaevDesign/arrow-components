@@ -1,5 +1,11 @@
 {
   "component": "notice",
+  "version": "1.0.1",
+  "contract_hash": "sha256:f224d1fd8e13f8bd8949d8e1d9516ca6b9c5b904d343015941818b47e0b6e565",
+  "artifact_hash": "sha256:94ebc177fcc7134798a089b4187c4f3172dbcf28eb5fc46cc821e146f3362483",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.680Z",
+  "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
@@ -130,5 +136,38 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/SKILL.md"
       }
     }
+  },
+  "contract": {
+    "classes": [
+      "notice",
+      "notice--100",
+      "notice--200",
+      "notice--300",
+      "notice--400",
+      "notice--500",
+      "notice--600",
+      "notice-ghost",
+      "notice-primary",
+      "notice-secondary"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "ghost",
+      "primary",
+      "secondary"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "500",
+      "600"
+    ],
+    "states": [
+      "rest"
+    ]
   }
 }
