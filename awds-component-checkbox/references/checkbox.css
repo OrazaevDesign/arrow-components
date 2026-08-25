@@ -37,9 +37,9 @@
      Focus       = Rest + обводка surface-on-highest
      Disabled    = Rest + opacity 40%
 
-   Фокус-обводка: в макете FocusSelection стоит вплотную к боксу (2px кольцо в полосе
-   0…2px наружу) → outline-offset: 0, а не 2px как у .btn. Радиус кольца в Figma —
-   Rounded/outline/{N} = rounded/{N} + 1px; CSS считает радиус обводки сам.
+   Фокус-обводка: слой awds-component-focus-selection, вариант Outside + Default
+   (снято с инстанса FocusSelection в макете). Значения приходят переменными
+   --awds-focus-*, своих чисел файл не держит: геометрия кольца правится в слое.
 
    Приватные var:
      State: --awds-checkbox-bg, -chroma, -border, -color
@@ -250,10 +250,11 @@
 /* === State: Focus === */
 
 .checkbox__input:focus-visible + .checkbox__box {
-  /* map.state.focus.focus-selection.outline — inline, без --awds-focus-*.
-     offset 0: в макете кольцо стоит вплотную к боксу (в отличие от .btn). */
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 0;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
 }
 
 

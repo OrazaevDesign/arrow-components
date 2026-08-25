@@ -24,7 +24,7 @@ Selected и Indeterminate делят одну палитру `check-radio/select
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/color) | `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline | `references/checkbox.css` |
-| Цвет фокус-обводки | `rgb(var(--surface-on-highest))` (inline) | `component-token-map.json` → `map.state.focus` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Размеры (padding/icon/rounded/gap) | `var(--awds-square-{N}-*)` | `component-token-map.json` → `map.size.square` |
 | Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
@@ -57,7 +57,7 @@ Selected и Indeterminate делят одну палитру `check-radio/select
 | `checkbox--400` | 24px | **По умолчанию** — формы, соглашения |
 | `checkbox--500` | 28px | Крупные формы, тач-интерфейсы |
 
-Размер бокса = `icon + 2 × padding` из `map.size.square.{N}`. Конкретные значения — в `tokens-components-size.md` скилла `arrow-design-system`, секция `square`.
+Размер бокса = `icon + 2 × padding` из `map.size.square.{N}`. Конкретные значения — в `tokens-map.md` скилла `arrow-design-system`, секция `square`.
 
 На 200/300 бокс меньше тач-минимума 24px: без подписи и без кликабельной строки-родителя бери 400+.
 
@@ -65,7 +65,7 @@ Selected и Indeterminate делят одну палитру `check-radio/select
 
 - Инпут остаётся настоящим и в потоке: клавиатура, скринридер, автозаполнение формы работают сами.
 - Чекбокс без видимой подписи обязан нести `aria-label` на `<label>`.
-- Фокус-кольцо — `outline-offset: 0` (вплотную к боксу, как в макете), не 2px как у `.btn`.
+- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи бокса. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `checkbox.css`.
 - Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — это макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Не используй disabled как способ «объяснить» недоступность: рядом нужен текст-причина.
 
 ## CSS-файл

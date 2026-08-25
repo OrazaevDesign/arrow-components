@@ -69,10 +69,10 @@ document.querySelector('#select-all .checkbox__input').indeterminate = true;
 | Selected / Indeterminate Rest | `:checked +`, `:indeterminate +` | bg `primary-core`, chroma `primary-chroma`, border `primary-core`, иконка `primary-on` |
 | Selected / Indeterminate Hover | `.checkbox:hover > …:checked` | bg / border `primary-dim` |
 | Selected / Indeterminate Active | `.checkbox:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
-| Focus | `.checkbox__input:focus-visible + .checkbox__box` | `outline: 2px solid rgb(var(--surface-on-highest))`, **`outline-offset: 0`** |
+| Focus | `.checkbox__input:focus-visible + .checkbox__box` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)`, **`outline-offset: var(--awds-focus-offset)`** |
 | Disabled | `.checkbox:has(> .checkbox__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
 
-`outline-offset: 0`, а не 2px как у `.btn` — в макете FocusSelection стоит вплотную к боксу. Контрол маленький (16–28px), кольцо с зазором на нём выглядело бы отдельным элементом.
+Кольцо — слой [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: зазор 1px, толщина 2px, полоса 1…3px снаружи бокса. Значения приходят переменными `--awds-focus-*`, поэтому `focus-selection.css` подключается вместе с `checkbox.css` — без него кольца не будет вовсе.
 
 ## Размеры
 
@@ -85,7 +85,7 @@ document.querySelector('#select-all .checkbox__input').indeterminate = true;
 | `.checkbox--400` | 24px | 20 | 2 | `rounded-400` | **По умолчанию** — формы, соглашения |
 | `.checkbox--500` | 28px | 24 | 2 | `rounded-500` | Крупные формы, тач-интерфейсы |
 
-Размер бокса = `icon + 2 × padding`, значения — shape-токены `var(--awds-square-{N}-*)` (см. `arrow-design-system/references/tokens-components-size.md`, секция `square`).
+Размер бокса = `icon + 2 × padding`, значения — shape-токены `var(--awds-square-{N}-*)` (см. `arrow-design-system/references/tokens-map.md`, секция `square`).
 
 Тач-таргет: сам бокс на 200/300 меньше 24px. Если чекбокс стоит без подписи и без соседней кликабельной области — бери 400+ либо расширь зону клика на родителе (строку таблицы, ячейку).
 
