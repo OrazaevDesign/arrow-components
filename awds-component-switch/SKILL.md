@@ -25,7 +25,7 @@ description: Тумблеры-переключатели Switch ArrowDS: вкл/
 | Цвета трека (bg/chroma/border) | `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline | `references/switch.css` |
 | Цвет бегунка | `rgb(var(--primary-on-dim))` / `rgb(var(--secondary-container-on))` | `component-token-map.json` → `check-radio.*.handle` |
 | Цвет иконки в бегунке | = цвет фона трека (иконка «выбита» в круге) | Figma `check-radio/{type}/bg` |
-| Цвет фокус-обводки | `rgb(var(--surface-on-highest))` (inline) | `component-token-map.json` → `map.state.focus` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Геометрия (ширина/высота/круг/ход) | `var(--awds-square-{N}-{switch-width,icon,padding})` + `var(--awds-space-space-0-5)` | `component-token-map.json` → `map.size.square` |
 | Скругление | `var(--awds-rounded-border-radius-full)` — фиксированное, не размерное | Figma `border-radius/full` |
 | Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
@@ -65,7 +65,7 @@ description: Тумблеры-переключатели Switch ArrowDS: вкл/
 
 - `role="switch"` на нативном чекбоксе: скринридер объявит «переключатель, вкл/выкл» вместо «флажок, отмечен». Клавиатура, таб-порядок и отправка формы работают сами.
 - Тумблер без видимой подписи обязан нести `aria-label` на `<label>`.
-- Фокус-кольцо — `outline-offset: 0` (вплотную к треку, как в макете), не 2px как у `.btn`.
+- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи трека. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `switch.css`.
 - Подпись формулируй утверждением, не отрицанием: «выключено» + «Не показывать…» читается как двойное отрицание.
 - Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина.
 - `@media (prefers-reduced-motion: reduce)` гасит переезд бегунка: состояние остаётся различимым (положение, цвет, иконка), меняется мгновенно.

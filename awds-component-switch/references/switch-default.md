@@ -110,7 +110,7 @@
 | Selected Rest | `.switch__input:checked + .switch__track` | bg `primary-core`, chroma `primary-chroma`, border `primary-core`, handle `primary-on-dim` |
 | Selected Hover | `.switch:hover > …:checked` | bg / border `primary-dim` |
 | Selected Active | `.switch:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
-| Focus | `.switch__input:focus-visible + .switch__track` | `outline: 2px solid rgb(var(--surface-on-highest))`, **`outline-offset: 0`** |
+| Focus | `.switch__input:focus-visible + .switch__track` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)`, **`outline-offset: var(--awds-focus-offset)`** |
 | Disabled | `.switch:has(> .switch__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
 
 Два нюанса из макета:

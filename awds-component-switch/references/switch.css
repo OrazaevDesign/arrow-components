@@ -56,8 +56,9 @@
    (primary-core → primary-dim); проверено по ячейке Selected/Icon/600/Hover.
    handle при смене состояний НЕ меняется — только при переключении Type.
 
-   Фокус-обводка: в макете FocusSelection стоит вплотную к треку (2px кольцо в
-   полосе 0…2px наружу) → outline-offset: 0, а не 2px как у .btn.
+   Фокус-обводка: слой awds-component-focus-selection, вариант Outside + Default
+   (снято с инстанса FocusSelection в макете). Значения приходят переменными
+   --awds-focus-*, своих чисел файл не держит: геометрия кольца правится в слое.
 
    Приватные var:
      State: --awds-switch-bg, -chroma, -border, -handle, -icon-color
@@ -320,10 +321,11 @@
 /* === State: Focus === */
 
 .switch__input:focus-visible + .switch__track {
-  /* map.state.focus.focus-selection.outline — inline, без --awds-focus-*.
-     offset 0: в макете кольцо стоит вплотную к треку (в отличие от .btn). */
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 0;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
 }
 
 
