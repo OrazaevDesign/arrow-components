@@ -1,5 +1,18 @@
 {
   "component": "button",
+  "version": "1.0.3",
+  "contract_hash": "sha256:fe2fa3331abcfa4551fbace225f769709dbea18d8be14baba4dc2f76aa0ee716",
+  "artifact_hash": "sha256:dbbc7133d1e51421f1593bda68b65f6aa5f99d1996dd6f5df6b34956dcb16ce5",
+  "visual_change": false,
+  "released_at": "2026-08-25T17:40:03.088Z",
+  "own_values": [
+    {
+      "value": "1.4s",
+      "where": "animation-duration",
+      "count": 8,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
     "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
     "file_name": "💠 Comp ↪ ² Buttons",
@@ -175,6 +188,14 @@
   "snapshot_hash": "sha256:1e670e1ba360a3f5a56ba1ea081b1fb118ed50b02a81e1f38207dffd2bc2ff0b",
   "map_source": "arrow-design-system/references/component-token-map.json",
   "map_snapshot_hash": "sha256:c80e5a80742e563b72540d69fb4196e2cff84f9984e2fae870f03e6c7019c1e1",
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "variants": {
@@ -275,5 +296,65 @@
         }
       }
     }
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "btn",
+      "btn--100",
+      "btn--200",
+      "btn--300",
+      "btn--400",
+      "btn--50",
+      "btn--500",
+      "btn--600",
+      "btn--icon-only",
+      "btn--loading",
+      "btn-addition",
+      "btn-clean",
+      "btn-contrast",
+      "btn-ghost",
+      "btn-pills",
+      "btn-primary",
+      "btn-secondary",
+      "btn-tertiary",
+      "btn__content",
+      "btn__progress"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "addition",
+      "clean",
+      "contrast",
+      "ghost",
+      "pills",
+      "primary",
+      "secondary",
+      "tertiary"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
   }
 }

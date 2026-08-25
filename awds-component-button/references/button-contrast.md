@@ -108,7 +108,7 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 | Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
 
-Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest`, общая для всех интерактивных элементов сайта.
+Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest`, общая для всех интерактивных элементов сайта.
 
 **Отличие от других вариантов:** chroma схлопывается в bg уже на `Hover` (а не только на `Active`), поэтому едва заметный градиент виден только в `Rest`/`Focus`.
 

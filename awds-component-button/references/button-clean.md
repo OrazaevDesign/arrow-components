@@ -110,7 +110,7 @@
 | Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | |
 
-Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
+Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 
 `chroma = bg` во всех состояниях → фон плоский (без градиента). Обводка `surface-dim` постоянна и видима — единственный вариант с border ≠ bg.
 

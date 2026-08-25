@@ -14,7 +14,7 @@ description: Кнопки ArrowDS (btn-primary, btn-secondary, btn-clean, btn-ad
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета вариантов (bg/border/color/chroma) | `var(--color-{role}-*)` inline в `.btn-{variant}` и его `:hover/:focus-visible/:active` | `references/{variant}.css` (+ палитра в `css-variables.css` сайта) |
-| Цвет фокус-обводки | `var(--color-surface-on-highest)` inline | `references/{variant}.css` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Размеры (padding/gap/icon/rounded/font) | `var(--awds-rectangle-{N}-*)` (семантические shape-токены) в `.btn--{N}` | `blocks/arrowds-css/style.css` (там же резолвятся в базовые шкалы) |
 | `opacity` для disabled | `var(--awds-opacity-opacity-40)` | там же |
 | Шрифт (family/weight) | `--awds-font-family-system`, `--awds-font-weight-semibold` | там же |
@@ -50,7 +50,7 @@ description: Кнопки ArrowDS (btn-primary, btn-secondary, btn-clean, btn-ad
 | `btn--100` | Inline-действия |
 | `btn--50`  | Самые компактные контролы |
 
-Конкретные значения каждого размера — в `tokens-components-size.md` скилла `arrow-design-system`, секция `rectangle`.
+Конкретные значения каждого размера — в `tokens-map.md` скилла `arrow-design-system`, секция `rectangle`.
 
 ## CSS-файлы
 

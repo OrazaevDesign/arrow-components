@@ -4,7 +4,7 @@
 
 По данным Figma вариант повторяет **Secondary** (серая поверхность, стандартное скругление), но на **hover текст становится акцентным** (`accent-container-on`, красный) — и спиннер тоже. Подходит для удаляемых чипов/фильтров, где наведение сигналит «акцентное/деструктивное» действие.
 
-> Имя «Pills» — название компонента в Figma. **Пилюльной формы в токенах нет** (`rounded` = стандартный `rectangle/{N}`, как у остальных вариантов). Если нужна круглая форма — применяй на странице мод скругления `.rounded-rounded` на `<html>` или оборачивающем контейнере (см. `arrow-design-system/tokens-units.md`).
+> Имя «Pills» — название компонента в Figma. **Пилюльной формы в токенах нет** (`rounded` = стандартный `rectangle/{N}`, как у остальных вариантов). Если нужна круглая форма — применяй на странице мод скругления `.rounded-rounded` на `<html>` или оборачивающем контейнере (см. `arrow-design-system/tokens-map.md`).
 
 Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-container-on))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`.
 
@@ -110,7 +110,7 @@
 | Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
 
-Фокус-обводка: `outline: 2px solid rgb(var(--surface-on-highest)); outline-offset: 2px`.
+Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)`.
 
 Главное отличие от Secondary — **акцентный (красный) цвет текста на hover** (`accent-container-on`); в остальном идентично. В Figma на `Active` `chroma` = `bg` (плоский градиент).
 

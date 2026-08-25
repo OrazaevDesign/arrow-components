@@ -10,9 +10,10 @@
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
 
   <!-- 2. Базовые шкалы + семантические shape-токены DS (--awds-space-*, --awds-rounded-*, --awds-control-*, --awds-opacity-*, --awds-font-*, --awds-rectangle-*) -->
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
 
   <!-- 3. Варианты этого скилла -->
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./button-primary.css">
   <link rel="stylesheet" href="./button-secondary.css">
   <link rel="stylesheet" href="./button-addition.css">
@@ -37,8 +38,8 @@
       --awds-btn-chroma: rgb(var(--primary-chroma));
       --awds-btn-border: rgb(var(--primary-core));
       --awds-btn-color:  rgb(var(--primary-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-primary.is-active {
       --awds-btn-bg:     rgb(var(--primary-core));
@@ -60,8 +61,8 @@
       --awds-btn-chroma: rgb(var(--secondary-chroma));
       --awds-btn-border: rgb(var(--secondary-core));
       --awds-btn-color:  rgb(var(--secondary-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-secondary.is-active {
       --awds-btn-bg:     rgb(var(--secondary-core));
@@ -83,8 +84,8 @@
       --awds-btn-chroma: rgb(var(--addition-chroma));
       --awds-btn-border: rgb(var(--addition-core));
       --awds-btn-color:  rgb(var(--addition-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-addition.is-active {
       --awds-btn-bg:     rgb(var(--addition-core));
@@ -106,8 +107,8 @@
       --awds-btn-chroma: rgb(var(--surface-on-high));
       --awds-btn-border: rgb(var(--surface-on-highest));
       --awds-btn-color:  rgb(var(--surface-bright));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-contrast.is-active {
       --awds-btn-bg:     rgb(var(--surface-on-highest));
@@ -129,8 +130,8 @@
       --awds-btn-chroma: rgb(var(--tertiary-chroma));
       --awds-btn-border: rgb(var(--tertiary-core));
       --awds-btn-color:  rgb(var(--tertiary-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-tertiary.is-active {
       --awds-btn-bg:     rgb(var(--tertiary-core));
@@ -152,8 +153,8 @@
       --awds-btn-chroma: transparent;
       --awds-btn-border: transparent;
       --awds-btn-color:  rgb(var(--surface-on-highest));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-ghost.is-active {
       --awds-btn-bg:     transparent;
@@ -175,8 +176,8 @@
       --awds-btn-chroma: rgb(var(--surface-bright));
       --awds-btn-border: rgb(var(--surface-dim));
       --awds-btn-color:  rgb(var(--surface-on-high));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-clean.is-active {
       --awds-btn-bg:     rgb(var(--surface-surface));
@@ -198,8 +199,8 @@
       --awds-btn-chroma: rgb(var(--secondary-chroma));
       --awds-btn-border: rgb(var(--secondary-core));
       --awds-btn-color:  rgb(var(--secondary-on));
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
     .btn-pills.is-active {
       --awds-btn-bg:     rgb(var(--secondary-core));
