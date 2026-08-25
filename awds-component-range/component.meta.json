@@ -1,5 +1,11 @@
 {
   "component": "range",
+  "version": "1.0.1",
+  "contract_hash": "sha256:b4b9d9e11afcea9c6a4e629bf34fb505c866a48d30f2d20b7693bc0e4ae0dccc",
+  "artifact_hash": "sha256:95fbad75e5ac92c3af567d66cb19717925847c2287296df1c4ccd1a2fbbddfa8",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.906Z",
+  "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
@@ -125,5 +131,51 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/SKILL.md"
       }
     }
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "range",
+      "range--300",
+      "range--400",
+      "range--500",
+      "range--disabled",
+      "range-default",
+      "range-light",
+      "range__fill",
+      "range__input",
+      "range__thumb",
+      "range__thumb--from",
+      "range__thumb--to",
+      "range__track"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "default",
+      "light"
+    ],
+    "sizes": [
+      "300",
+      "400",
+      "500"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "hover",
+      "rest"
+    ]
   }
 }
