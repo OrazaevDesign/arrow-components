@@ -7,7 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./textarea-default.css">
   <link rel="stylesheet" href="./textarea-light.css">
   <link rel="stylesheet" href="./textarea-success.css">
@@ -82,8 +83,8 @@
       --awds-txa-border:    rgb(var(--primary-dim));
       --awds-txa-color:     rgb(var(--primary-container-on-highest));
       --awds-txa-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
 
     .txa-light.is-hover  { --awds-txa-border: rgb(var(--secondary-container-on)); }
@@ -93,8 +94,8 @@
       --awds-txa-border:    rgb(var(--primary-dim));
       --awds-txa-color:     rgb(var(--primary-container-on-highest));
       --awds-txa-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
 
     .txa-success.is-hover  { --awds-txa-border: rgb(var(--success-container-on)); }
@@ -105,8 +106,8 @@
       --awds-txa-border:    rgb(var(--primary-dim));
       --awds-txa-color:     rgb(var(--primary-container-on-highest));
       --awds-txa-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
 
     .txa-error.is-hover  { --awds-txa-border: rgb(var(--error-container-on)); }
@@ -117,16 +118,16 @@
       --awds-txa-border:    rgb(var(--primary-dim));
       --awds-txa-color:     rgb(var(--primary-container-on-highest));
       --awds-txa-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
 
     /* У ghost зеркал hover и active НЕТ намеренно: в макете обе ячейки = Rest. */
     .txa-ghost.is-focus {
       --awds-txa-color:     rgb(var(--primary-container-on-highest));
       --awds-txa-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
 
     .txa-autofill.is-hover  { --awds-txa-border: rgb(var(--tertiary-container-on)); }
@@ -137,8 +138,8 @@
       --awds-txa-border:    rgb(var(--primary-dim));
       --awds-txa-color:     rgb(var(--primary-container-on-highest));
       --awds-txa-placehold: rgb(var(--primary-container-on-high));
-      outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-      outline-offset: 1px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline-offset: var(--awds-focus-offset);
     }
   </style>
 </head>

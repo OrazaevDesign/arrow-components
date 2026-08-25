@@ -78,8 +78,11 @@
              (primary-container-on-high) плюс кольцо
      Disabled = Rest + opacity 40%
 
-   ФОКУС-ОБВОДКА как у input, select и их combi-версий и в отличие от остального набора:
-   focus-selection/outlineVariant (= primary-core) при opacity 50%, ширина 2, offset 1.
+   Фокус-обводка: слой awds-component-focus-selection, вариант Outside + Formcontrol
+   (снято с инстанса FocusSelection в макете). Значения приходят переменными
+   --awds-focus-*, своих чисел файл не держит: геометрия кольца правится в слое.
+   Formcontrol — брендовое кольцо при 50%: рамка поля в фокусе уже брендовая,
+   и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
      State: --awds-txa-bg, -chroma, -border, -color, -placehold
@@ -342,11 +345,12 @@
   --awds-txa-color:      rgb(var(--primary-container-on-highest));
   --awds-txa-placehold:  rgb(var(--primary-container-on-high));
 
-  /* map.state.focus.focus-selection.outlineVariant = primary-core, в макете слой
-     FocusSelection несёт opacity 50% → альфа прямо в цвете. offset 1 + width 2 дают ту
-     же полосу 1..3, что и обводка 2 OUTSIDE на 1 наружу от контрола в макете. */
-  outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50));
-  outline-offset: 1px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
+     (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
+     уже брендовая, и плотное кольцо поверх неё слилось бы с ней в одну полосу.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
 }
 
 

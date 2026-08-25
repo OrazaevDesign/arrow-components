@@ -66,7 +66,7 @@
 | Focus | `bg surface-bright`, `chroma primary-container-chroma`, рамка `primary-dim`, текст `primary-container-on-highest`, плейсхолдер `primary-container-on-high` + кольцо; ручка красится вместе с текстом | `:focus-within` |
 | Disabled | Rest + `opacity: var(--awds-opacity-opacity-40)` | `:has(.txa__field:disabled)` |
 
-Кольцо фокуса: `outline: 2px solid rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, `outline-offset: 1px` — как у input, select и combi-версий.
+Кольцо фокуса: `outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol)`, `outline-offset: var(--awds-focus-offset)` — как у input, select и combi-версий.
 
 ## Размеры
 
