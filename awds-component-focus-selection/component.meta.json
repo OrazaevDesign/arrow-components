@@ -1,0 +1,174 @@
+{
+  "component": "focus-selection",
+  "version": "1.0.3",
+  "contract_hash": "sha256:4ed79ba5f9ed1f8fd53b88e924e1c68325c447c3410b40dc04ede14e855b9df7",
+  "artifact_hash": "sha256:eb57cca8609902abfbc540c1c07a962a17b33c9d61ae03bf597fe99e190e2cae",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.215Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:265",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-265"
+  },
+  "variants": {
+    "default": {
+      "node_id": "2093:265",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-265",
+      "figma_label": "FocusSelection (Size × Var × Type)"
+    }
+  },
+  "shape": null,
+  "shape_note": "Shape-семейства нет: кольцо не имеет собственной геометрии бокса, оно наследует размер и радиус контрола, на который надето. Ось Figma Size (50…600 / Rounded / None) в CSS не эмитится — outline следует border-radius и прибавляет outline-offset сам.",
+  "size_scale": [],
+  "states": [
+    "focus"
+  ],
+  "states_note": "Единственное состояние — focus-visible. Кольцо не имеет rest/hover/active: в макете оно лежит во всех ячейках, но видимость переключает переменная focus-selection/outlineShow.",
+  "axes": {
+    "Type": [
+      "Inside",
+      "Outside"
+    ],
+    "Var": [
+      "Default",
+      "Formcontrol",
+      "Tab"
+    ],
+    "Size": "не выражается в CSS"
+  },
+  "color_tokens": [
+    "outline",
+    "outlineVariant"
+  ],
+  "css_files": [
+    "focus-selection.css"
+  ],
+  "cross_component": true,
+  "cross_component_note": "Слой, а не элемент: объявляет контракт --awds-focus-* в :root. focus-selection.css подключается на страницу ОДИН раз до компонентных CSS; компоненты ссылаются на переменные и своих значений фокуса не держат.",
+  "public_vars": [
+    "--awds-focus-width",
+    "--awds-focus-offset",
+    "--awds-focus-offset-inside",
+    "--awds-focus-color",
+    "--awds-focus-color-formcontrol",
+    "--awds-focus-color-tab"
+  ],
+  "preview": {
+    "base_class": "focus-selection",
+    "variant_class": "focus-selection",
+    "default_size": null,
+    "matrix_states": [
+      "focus"
+    ],
+    "matrix_sizes": [],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "type",
+        "label": "Type",
+        "options": [
+          "outside",
+          "inside"
+        ]
+      },
+      {
+        "id": "var",
+        "label": "Var",
+        "options": [
+          "default",
+          "formcontrol",
+          "tab"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Элемент фокусируется сам",
+        "html": "<button class=\"btn btn-primary focus-selection\">Кнопка</button>"
+      },
+      {
+        "label": "Кольцо на соседе (нативный input спрятан)",
+        "html": ".checkbox__input:focus-visible + .checkbox__box { outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset); }"
+      },
+      {
+        "label": "Поле ввода — брендовое кольцо при 50%",
+        "html": ".input:focus-within { outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol); outline-offset: var(--awds-focus-offset); }"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--surface-on-highest",
+    "--primary-core",
+    "--awds-opacity-opacity-50"
+  ],
+  "consumers": {
+    "outside-default": [
+      "button",
+      "button-overhung",
+      "checkbox",
+      "radio",
+      "switch",
+      "list-item",
+      "input/secondary",
+      "input-combi/secondary"
+    ],
+    "outside-formcontrol": [
+      "input",
+      "input-combi",
+      "select",
+      "select-combi",
+      "textarea",
+      "uploader"
+    ],
+    "inside-default": [
+      "button-area",
+      "table"
+    ],
+    "canon-by-default": [
+      "button-favorites",
+      "label",
+      "link",
+      "product-card",
+      "range"
+    ]
+  },
+  "last_synced": "2026-08-21T08:55:01Z",
+  "last_synced_by": "claude",
+  "sync_method": "figma-rest",
+  "sync_method_note": "MCP Figma в сессии был недоступен — данные снимались Figma REST /v1/files/{key}/nodes по FIGMA_API_TOKEN. variables/local отдаёт 403 (scope), поэтому цвета резолвились по значению через component-token-map.json.",
+  "published": null,
+  "contract": {
+    "classes": [
+      "focus-selection",
+      "focus-selection--formcontrol",
+      "focus-selection--inside",
+      "focus-selection--tab"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [
+      "--awds-focus-color",
+      "--awds-focus-color-formcontrol",
+      "--awds-focus-color-tab",
+      "--awds-focus-offset",
+      "--awds-focus-offset-inside",
+      "--awds-focus-width"
+    ],
+    "variants": [
+      "default"
+    ],
+    "sizes": [],
+    "states": [
+      "focus"
+    ]
+  }
+}
