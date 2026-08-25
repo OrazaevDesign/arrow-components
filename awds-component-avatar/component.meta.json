@@ -1,5 +1,11 @@
 {
   "component": "avatar",
+  "version": "1.0.1",
+  "contract_hash": "sha256:24db062292e032d8e46924f5e26fc858a4451a4915c45f799cf95cc7a486697c",
+  "artifact_hash": "sha256:2591ebcd77910af97d1b5cf1540aa49b5616b55e92e582095794bc733d2bdfa4",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:07.703Z",
+  "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
@@ -148,5 +154,49 @@
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
       }
     }
+  },
+  "contract": {
+    "classes": [
+      "avatar",
+      "avatar--100",
+      "avatar--150",
+      "avatar--200",
+      "avatar--250",
+      "avatar--300",
+      "avatar--400",
+      "avatar--50",
+      "avatar--500",
+      "avatar--600",
+      "avatar--700",
+      "avatar-initials",
+      "avatar-picture",
+      "avatar-placeholder"
+    ],
+    "attributes": [],
+    "elements": [
+      "img",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "initials",
+      "picture",
+      "placeholder"
+    ],
+    "sizes": [
+      "100",
+      "150",
+      "200",
+      "250",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600",
+      "700"
+    ],
+    "states": [
+      "rest"
+    ]
   }
 }
