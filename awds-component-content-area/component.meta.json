@@ -1,5 +1,11 @@
 {
   "component": "content-area",
+  "version": "1.0.1",
+  "contract_hash": "sha256:4fec660d0a097043fe02e503b2c1c4508af60418195ad1e75f9282f00e67e923",
+  "artifact_hash": "sha256:7ccde5db34aba85e0f24ff35a04cf72ddd9b1e607f61564ef7e623c2ff9adefe",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.160Z",
+  "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
@@ -203,5 +209,67 @@
         "note": "вариант удалён из скилла; нода перепривязана к общему SKILL.md"
       }
     }
+  },
+  "contract": {
+    "classes": [
+      "content-area",
+      "content-area--1-1",
+      "content-area--1-2",
+      "content-area--10-16",
+      "content-area--12-1",
+      "content-area--14-3",
+      "content-area--16-10",
+      "content-area--16-5",
+      "content-area--16-9",
+      "content-area--2-1",
+      "content-area--2-3",
+      "content-area--21-9",
+      "content-area--3-1",
+      "content-area--3-2",
+      "content-area--3-4",
+      "content-area--32-9",
+      "content-area--4-1",
+      "content-area--4-3",
+      "content-area--4-5",
+      "content-area--5-2",
+      "content-area--5-4",
+      "content-area--6-1",
+      "content-area--6-7",
+      "content-area--8-3",
+      "content-area--8-5",
+      "content-area--9-16",
+      "content-area--9-21",
+      "content-area--9-8",
+      "content-area--a4-half-landscape",
+      "content-area--a4-half-portrait",
+      "content-area--a4-landscape",
+      "content-area--a4-portrait",
+      "content-area--fit-contain",
+      "content-area--fit-cover",
+      "content-area--fit-fill",
+      "content-area--golden-half-landscape",
+      "content-area--golden-half-portrait",
+      "content-area--golden-landscape",
+      "content-area--golden-portrait",
+      "content-area--img",
+      "content-area--letter-half-landscape",
+      "content-area--letter-half-portrait",
+      "content-area--letter-landscape",
+      "content-area--letter-portrait",
+      "content-area--video",
+      "content-area__img",
+      "content-area__video"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "img",
+      "video"
+    ],
+    "sizes": [],
+    "states": [
+      "rest"
+    ]
   }
 }

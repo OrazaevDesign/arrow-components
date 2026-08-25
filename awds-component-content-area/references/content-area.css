@@ -44,7 +44,7 @@
   /* Дефолты аккумуляторов */
   --awds-content-area-ratio:    16 / 9;
   --awds-content-area-radius:   var(--awds-rounded-border-radius-700);
-  --awds-content-area-border:   rgb(var(--extended-shadow) / 0.03);
+  --awds-content-area-border:   rgb(var(--extended-shadow-1));   /* роль Extended/Shadow-1 = чёрный 3 % */
   --awds-content-area-fit:      cover;
   --awds-content-area-position: center;
 
