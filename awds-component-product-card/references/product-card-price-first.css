@@ -46,11 +46,11 @@
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-border-radius-500)            (8px Smooth, border-radius/500)
-     — цена/валюта: компонент awds-component-price, размер price--listing (роль --awds-type-price-listing, масштаб по .typo-* — как текст)
-     — бренд:  роль WYSIWYG lead (--awds-type-lead-*) desktop; mobile — роль body (--awds-type-body-*)
-     — название: роль WYSIWYG body (--awds-type-body-*), clamp 2 строки
-     — рейтинг-текст: роль WYSIWYG caption (--awds-type-caption-*), обе вью
-     ↑ текст на РОЛЯХ --awds-type-* → масштабируется коллекцией .typo-large/medium/small
+     — цена/валюта: компонент awds-component-price, размер price--listing (роль --awds-wysiwyg-wysiwyg-*-price-listing, масштаб по .typo-* — как текст)
+     — бренд:  роль WYSIWYG lead (--awds-wysiwyg-wysiwyg-*-lead) desktop; mobile — роль body (--awds-wysiwyg-wysiwyg-*-body)
+     — название: роль WYSIWYG body (--awds-wysiwyg-wysiwyg-*-body), clamp 2 строки
+     — рейтинг-текст: роль WYSIWYG caption (--awds-wysiwyg-wysiwyg-*-caption), обе вью
+     ↑ текст на РОЛЯХ --awds-wysiwyg-wysiwyg-* → масштабируется коллекцией .typo-large/medium/small
        на секции-предке (как типографика блоков). Без .typo-* = :root; .typo-small = макет.
      — бейджи: компонент .badge --100 desktop / --50 mobile (badge.css)
      — иконки: 24px флаг (space-6), 20px сердце (space-5), 16px звезда (space-4)
@@ -70,7 +70,9 @@
   flex-direction: column;
   gap: var(--awds-pcard-gap);
   min-width: 170px;        /* layout/market/card/slider-min */
-  max-width: 368px;        /* layout/market/card/slider-max */
+  /* Ширина карточки — токен раскладки: у токена есть адаптив (desktop/tablet/mobile),
+     число 368px его теряло. Копии в блоках ссылались на токен, компонент отставал. */
+  max-width: var(--awds-layout-layout-market-card-slider-max);
   width: 100%;
 
   font-family: var(--awds-font-family-system);
@@ -89,14 +91,20 @@
    .pcard__feedback — НЕ ссылка (статичный блок, как в макете).
    Фокус-обводка — на каждой ссылке отдельно (см. ниже), не на карточке. */
 .pcard__image-link:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-500);
 }
 .pcard__brand:focus-visible,
 .pcard__name:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-200);
 }
 
@@ -333,15 +341,15 @@
    компонент; собственных .pcard__price* стилей здесь больше нет. */
 
 /* Бренд (одна строка, ссылка link/accent). Типографика — на РОЛИ WYSIWYG-пресета
-   `lead` (`--awds-type-lead-*`), а не на жёсткий шаг шкалы. Роль масштабируется
+   `lead` (`--awds-wysiwyg-wysiwyg-*-lead`), а не на жёсткий шаг шкалы. Роль масштабируется
    коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же
    оси, что и типографика блоков (без своего `.typo-*` = наследует от контекста;
    `.typo-small` = макет 16/26). Mobile бренд мельче — роль `body` (см. ниже). */
 .pcard__brand {
   margin: 0;
-  font-size: var(--awds-type-lead-fs);                          /* WYSIWYG lead (.typo-small = 16px) */
-  line-height: var(--awds-type-lead-lh);                        /* .typo-small = 26px */
-  letter-spacing: var(--awds-type-lead-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-lead);                          /* WYSIWYG lead (.typo-small = 16px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-lead);                        /* .typo-small = 26px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-lead);
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));                        /* link/accent rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
@@ -354,20 +362,20 @@
 }
 /* Mobile: бренд мельче — роль `body` (.typo-small = 14/22), как в макете */
 .pcard--mobile .pcard__brand {
-  font-size: var(--awds-type-body-fs);                          /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-type-body-lh);                        /* .typo-small = 22px */
-  letter-spacing: var(--awds-type-body-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                          /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                        /* .typo-small = 22px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
 }
 
 /* Название (до 2 строк, регуляр, ссылка link/accent). Роль `body`
-   (`--awds-type-body-*`, .typo-small = 14/22) — масштабируется вместе с блоками.
+   (`--awds-wysiwyg-wysiwyg-*-body`, .typo-small = 14/22) — масштабируется вместе с блоками.
    Без padding-top — в макете контент-элементы идут вплотную (gap 0),
    вертикальный ритм даёт line-height. */
 .pcard__name {
   margin: 0;
-  font-size: var(--awds-type-body-fs);                          /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-type-body-lh);                        /* .typo-small = 22px */
-  letter-spacing: var(--awds-type-body-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                          /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                        /* .typo-small = 22px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));                        /* link/accent rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
@@ -418,9 +426,9 @@
    semibold, tabular-nums; масштабируется вместе с блоками. */
 .pcard__rating-value,
 .pcard__reviews-count {
-  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
-  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
-  letter-spacing: var(--awds-type-caption-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-caption);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;

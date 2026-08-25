@@ -36,7 +36,7 @@ description: Карточки товара ArrowDS (product-card): фото 3:4 
 | Бейдж **sale** | bg `primary-core` / sheen `primary-chroma` / border `primary-core` / текст `primary-on` |
 | Избранное | компонент `awds-component-button-favorites` (`.btn-favorites`) — свои цвета/состояния |
 | Скругление медиа | `var(--awds-rounded-border-radius-500)` (8px Smooth) |
-| Бренд / название / фидбэк | **Роли WYSIWYG-пресетов** `--awds-type-lead/body/caption-{fs,lh,ls}` (НЕ жёсткий шаг `--awds-typography-*`). Бренд desktop = `lead`, mobile = `body`; название = `body`; фидбэк/рубрика = `caption`. Роли масштабируются коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же оси, что типографика блоков. **Без `.typo-*` = `:root` (≈medium); `.typo-small` = макет** (lead 16/26, body 14/22, caption 12/19). Цена — ось `control-*` (фикс, не масштабируется) |
+| Бренд / название / фидбэк | **Роли WYSIWYG-пресетов** `--awds-wysiwyg-wysiwyg-*-lead/body/caption-{fs,lh,ls}` (НЕ жёсткий шаг `--awds-typography-*`). Бренд desktop = `lead`, mobile = `body`; название = `body`; фидбэк/рубрика = `caption`. Роли масштабируются коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же оси, что типографика блоков. **Без `.typo-*` = `:root` (≈medium); `.typo-small` = макет** (lead 16/26, body 14/22, caption 12/19). Цена — ось `control-*` (фикс, не масштабируется) |
 | Иконки | флаг 20px (`space-5`, как иконка избранного), звезда 16px (`space-4`); сердце — в компоненте button-favorites |
 
 ## Структура и классы

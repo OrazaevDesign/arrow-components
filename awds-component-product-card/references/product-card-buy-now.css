@@ -56,7 +56,9 @@
   flex-direction: column;
   gap: var(--awds-pcard-gap);
   min-width: 170px;        /* layout/market/card/slider-min */
-  max-width: 368px;        /* layout/market/card/slider-max */
+  /* Ширина карточки — токен раскладки: у токена есть адаптив (desktop/tablet/mobile),
+     число 368px его теряло. Копии в блоках ссылались на токен, компонент отставал. */
+  max-width: var(--awds-layout-layout-market-card-slider-max);
   width: 100%;
 
   font-family: var(--awds-font-family-system);
@@ -72,14 +74,20 @@
 
 /* Фокус-обводка — на каждой ссылке отдельно */
 .pcard-buy-now .pcard__image-link:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-500);
 }
 .pcard-buy-now .pcard__name:focus-visible,
 .pcard-buy-now .pcard__category:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-200);
 }
 
@@ -254,13 +262,13 @@
    размер price--listing (масштаб по .typo-* карточки, обе вью). Первый блок, без отступа. */
 
 /* #2 название (→ товар). link/accent = surface-on-highest. 1 строка, роль WYSIWYG
-   body (--awds-type-body-*, .typo-small = 14/22), масштабируется с блоками. */
+   body (--awds-wysiwyg-wysiwyg-*-body, .typo-small = 14/22), масштабируется с блоками. */
 .pcard-buy-now .pcard__name {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-type-body-fs);                      /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-type-body-lh);                    /* .typo-small = 22px */
-  letter-spacing: var(--awds-type-body-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                      /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                    /* .typo-small = 22px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));
   text-decoration: none;
@@ -272,13 +280,13 @@
 }
 
 /* #3 рубрика (→ категория). link/muted = surface-on-high. 1 строка, роль WYSIWYG
-   caption (--awds-type-caption-*, .typo-small = 12/19), масштабируется с блоками. */
+   caption (--awds-wysiwyg-wysiwyg-*-caption, .typo-small = 12/19), масштабируется с блоками. */
 .pcard-buy-now .pcard__category {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
-  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
-  letter-spacing: var(--awds-type-caption-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-caption);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));
   text-decoration: none;
@@ -318,9 +326,9 @@
 }
 .pcard-buy-now .pcard__rating-value,
 .pcard-buy-now .pcard__reviews-count {
-  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
-  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
-  letter-spacing: var(--awds-type-caption-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-caption);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;

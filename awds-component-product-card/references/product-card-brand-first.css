@@ -54,7 +54,9 @@
   flex-direction: column;
   gap: var(--awds-pcard-gap);
   min-width: 170px;        /* layout/market/card/slider-min */
-  max-width: 368px;        /* layout/market/card/slider-max */
+  /* Ширина карточки — токен раскладки: у токена есть адаптив (desktop/tablet/mobile),
+     число 368px его теряло. Копии в блоках ссылались на токен, компонент отставал. */
+  max-width: var(--awds-layout-layout-market-card-slider-max);
   width: 100%;
 
   font-family: var(--awds-font-family-system);
@@ -70,14 +72,20 @@
 
 /* Фокус-обводка — на каждой ссылке отдельно (карточка — контейнер, не <a>) */
 .pcard-brand-first .pcard__image-link:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-500);
 }
 .pcard-brand-first .pcard__brand:focus-visible,
 .pcard-brand-first .pcard__name:focus-visible {
-  outline: 2px solid rgb(var(--surface-on-highest));
-  outline-offset: 2px;
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
+     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-rounded-border-radius-200);
 }
 
@@ -236,13 +244,13 @@
 }
 
 /* #2 бренд (→ бренд). link/accent = surface-on-highest. Desktop — роль WYSIWYG
-   lead (--awds-type-lead-*, .typo-small = 16/26), масштабируется с блоками. */
+   lead (--awds-wysiwyg-wysiwyg-*-lead, .typo-small = 16/26), масштабируется с блоками. */
 .pcard-brand-first .pcard__brand {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-type-lead-fs);                      /* WYSIWYG lead (.typo-small = 16px) */
-  line-height: var(--awds-type-lead-lh);                    /* .typo-small = 26px */
-  letter-spacing: var(--awds-type-lead-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-lead);                      /* WYSIWYG lead (.typo-small = 16px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-lead);                    /* .typo-small = 26px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-lead);
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));
   text-decoration: none;
@@ -252,23 +260,23 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* Mobile бренд — роль WYSIWYG body (--awds-type-body-*, .typo-small = 14/22), как
+/* Mobile бренд — роль WYSIWYG body (--awds-wysiwyg-wysiwyg-*-body, .typo-small = 14/22), как
    mobile-бренд в price-first: desktop lead → mobile body, одинаково во всех вариантах.
    Масштабируется вместе с блоками (в макете был фикс typography/300 — мигрирован на ось). */
 .pcard.pcard-brand-first.pcard--mobile .pcard__brand {
-  font-size: var(--awds-type-body-fs);                          /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-type-body-lh);                        /* .typo-small = 22px */
-  letter-spacing: var(--awds-type-body-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                          /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                        /* .typo-small = 22px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
 }
 
 /* #3 название (→ товар). link/accent = surface-on-highest. 1 строка, роль WYSIWYG
-   body (--awds-type-body-*, .typo-small = 14/22), масштабируется с блоками. */
+   body (--awds-wysiwyg-wysiwyg-*-body, .typo-small = 14/22), масштабируется с блоками. */
 .pcard-brand-first .pcard__name {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-type-body-fs);                      /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-type-body-lh);                    /* .typo-small = 22px */
-  letter-spacing: var(--awds-type-body-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                      /* WYSIWYG body (.typo-small = 14px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                    /* .typo-small = 22px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));
   text-decoration: none;
@@ -308,9 +316,9 @@
 }
 .pcard-brand-first .pcard__rating-value,
 .pcard-brand-first .pcard__reviews-count {
-  font-size: var(--awds-type-caption-fs);                   /* WYSIWYG caption (.typo-small = 12px) */
-  line-height: var(--awds-type-caption-lh);                 /* .typo-small = 19px */
-  letter-spacing: var(--awds-type-caption-ls);
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-caption);                   /* WYSIWYG caption (.typo-small = 12px) */
+  line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
