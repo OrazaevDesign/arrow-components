@@ -19,7 +19,7 @@
 |---|---|
 | Rest / Focus / Active | `rgb(var(--surface-on-highest))` |
 | Hover | `rgb(var(--surface-on-high))` |
-| Focus | + `outline: 2px solid rgb(var(--surface-on-highest))` |
+| Focus | + `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
 
 Размер/шрифт наследуются. Disabled нет.
 

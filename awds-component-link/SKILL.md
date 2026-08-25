@@ -15,7 +15,7 @@ Link — **color-only** компонент: DS задаёт только цве�
 |---|---|---|
 | Цвет варианта | `rgb(var(--{role}))` inline в `.lnk-{variant}` и его `:hover/:focus-visible/:active` | `references/link-{variant}.css` |
 | Подчёркивание | ось «стиль линии × поведение» (см. раздел ниже). Линия `1px` (`--awds-space-space-px`), цвет = currentColor на `30%` (`--awds-opacity-opacity-30` через `color-mix`), offset `--awds-space-space-0-5` | база `.lnk` + модификаторы `.lnk--ul-*` (у `heading` — без подчёркивания) |
-| Фокус-обводка | `2px solid rgb(var(--surface-on-highest))`, `outline-offset: 2px`, скругление `var(--awds-rounded-border-radius-200)` | там же |
+| Фокус-обводка | `var(--awds-focus-width) solid var(--awds-focus-color)`, `outline-offset: var(--awds-focus-offset)`, скругление `var(--awds-rounded-border-radius-200)` | там же |
 | Размер/шрифт | **наследуются** от родителя — не задаются | — |
 
 Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление — через `arrow-components-builder` («обнови awds-component-link»), не руками.

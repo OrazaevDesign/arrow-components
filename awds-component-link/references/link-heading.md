@@ -19,7 +19,7 @@
 |---|---|
 | Rest / Focus / Active | `rgb(var(--surface-on-high))` |
 | Hover | `rgb(var(--accent-container-on))` |
-| Focus | + `outline: 2px solid rgb(var(--surface-on-highest))` |
+| Focus | + `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
 
 Подчёркивания нет (`text-decoration-line: none`). Размер/вес наследуются от заголовка. Disabled нет.
 

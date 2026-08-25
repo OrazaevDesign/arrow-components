@@ -9,8 +9,9 @@
   <!-- 1. Цвета сайта -->
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
   <!-- 2. Базовые шкалы + shape-токены -->
-  <link rel="stylesheet" href="../../arrow-design-system/references/studio-compat.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
   <!-- 3. Варианты этого скилла -->
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="./link-default.css">
   <link rel="stylesheet" href="./link-muted.css">
   <link rel="stylesheet" href="./link-contrast.css">
@@ -28,8 +29,8 @@
 
     /* focus — цвет = rest + обводка */
     .lnk.is-focus {
-      outline: 2px solid rgb(var(--surface-on-highest));
-      outline-offset: 2px;
+      outline: var(--awds-focus-width) solid var(--awds-focus-color);
+      outline-offset: var(--awds-focus-offset);
     }
 
     /* active = rest по цвету (отдельных правил не нужно) */

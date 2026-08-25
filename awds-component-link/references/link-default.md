@@ -27,7 +27,7 @@
 |---|---|
 | Rest / Focus / Active | `rgb(var(--tertiary-container-on-high))` |
 | Hover | `rgb(var(--tertiary-container-on-highest))` |
-| Focus | + `outline: 2px solid rgb(var(--surface-on-highest))` |
+| Focus | + `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
 
 Размер и шрифт наследуются от окружающего текста. Disabled нет.
 

@@ -1,5 +1,30 @@
 {
   "component": "link",
+  "version": "1.0.1",
+  "contract_hash": "sha256:f9e6b1b8aae6cfc984d7f9d9e2e89a82aa63850cd5707ecb12ae44d7f26ed64d",
+  "artifact_hash": "sha256:8fb688cb7436b5dc8bd7a5043360048296f2fa56f262aa2d0462c6548ab2185e",
+  "visual_change": false,
+  "released_at": "2026-08-25T15:19:08.560Z",
+  "own_values": [
+    {
+      "value": "1em",
+      "where": "width",
+      "count": 5,
+      "why": "размер относительно кегля: элемент масштабируется вместе со шрифтом, шкала в px этого не даёт"
+    },
+    {
+      "value": "1em",
+      "where": "height",
+      "count": 5,
+      "why": "размер относительно кегля: элемент масштабируется вместе со шрифтом, шкала в px этого не даёт"
+    },
+    {
+      "value": "-0.125em",
+      "where": "vertical-align",
+      "count": 5,
+      "why": "размер относительно кегля: элемент масштабируется вместе со шрифтом, шкала в px этого не даёт"
+    }
+  ],
   "figma": {
     "file_key": null,
     "file_name": "ArrowDS tokens (theme.json State/*/link)",
@@ -137,5 +162,50 @@
         "reason": "no Figma node — built from DS tokens State/*/link"
       }
     }
+  },
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.0.3"
+  },
+  "contract": {
+    "classes": [
+      "lnk",
+      "lnk--ul-dashed",
+      "lnk--ul-dotted",
+      "lnk--ul-hover",
+      "lnk--ul-none",
+      "lnk--ul-solid",
+      "lnk-accent",
+      "lnk-contrast",
+      "lnk-default",
+      "lnk-heading",
+      "lnk-muted"
+    ],
+    "attributes": [],
+    "elements": [
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "accent",
+      "contrast",
+      "default",
+      "heading",
+      "muted"
+    ],
+    "sizes": [],
+    "states": [
+      "active",
+      "focus",
+      "hover",
+      "rest"
+    ]
   }
 }
