@@ -1,10 +1,10 @@
 {
   "component": "focus-selection",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "contract_hash": "sha256:4ed79ba5f9ed1f8fd53b88e924e1c68325c447c3410b40dc04ede14e855b9df7",
-  "artifact_hash": "sha256:eb57cca8609902abfbc540c1c07a962a17b33c9d61ae03bf597fe99e190e2cae",
+  "artifact_hash": "sha256:35b7508051f1bc3c64b6d678a2e4b0477db58d7809b2d93609e259c9c1fc7acf",
   "visual_change": false,
-  "released_at": "2026-08-25T15:19:08.215Z",
+  "released_at": "2026-08-26T07:36:47.759Z",
   "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
@@ -161,6 +161,9 @@
         "note": "PRO plan: ссылка вписана в description и descriptionMarkdown COMPONENT_SET FocusSelection через use_figma. Прежнее описание (🟣 Figma / 📎 Asana) перезаписано — так задумано каноном ACP."
       }
     }
+  },
+  "uses": {
+    "awds-component-button": "1.0.5"
   },
   "contract": {
     "classes": [

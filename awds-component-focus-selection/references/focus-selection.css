@@ -87,6 +87,26 @@
    спрятан, кольцо рисует соседний span), классом воспользоваться не может —
    он пишет две строки в своём селекторе, см. блок «Применение» ниже. */
 
+/* === Потребители: слой сам надевает кольцо ===
+   Правило кольца жило в 19 компонентах (58 копий) — из такого дублирования 21.08 и
+   выросло расхождение 0 / 1px / 2px при макетном 1px. Теперь правило одно, а список
+   потребителей ведётся здесь и пополняется по мере перевода компонентов (этап Н6).
+
+   :where() выбран ради НУЛЕВОЙ специфичности: правило слоя обязано уступать и
+   отклонениям блока, и правилам самого компонента. Гашение на внутреннем поле
+   (.input__field:focus { outline: none }) слой не задевает — оно на другом элементе.
+
+   Переведены: button.
+   Ждут перевода: button-overhung, button-area, button-favorites, checkbox, radio,
+   switch, list-item, link, range, table, input, input-combi, select, select-combi,
+   textarea, uploader, product-card, formfield, label. */
+
+:where(.btn):focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+
 .focus-selection:focus-visible {
   outline: var(--awds-focus-width) solid var(--awds-focus-color);
   outline-offset: var(--awds-focus-offset);
