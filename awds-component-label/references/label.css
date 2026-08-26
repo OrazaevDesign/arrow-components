@@ -51,7 +51,7 @@
 
    ЦВЕТА:
      текст      role/surface/on-highest → rgb(var(--surface-on-highest))
-     подсказка  link/muted             → rgb(var(--surface-on-high))
+     подсказка  link/muted             → rgb(var(--awds-state-link-muted-rest))
      образец    заливку задаёт потребитель, обводка role/surface/on-lowest,
                 скругление border-radius/full — это КРУГ, а не квадрат
 
@@ -215,7 +215,8 @@
   padding: 0;
   border: 0;
   background: none;
-  color: rgb(var(--surface-on-high));
+  /* ячейка State link/muted — так подсказка привязана в макете (нода 395:77065) */
+  color: rgb(var(--awds-state-link-muted-rest));
   cursor: help;
 }
 
