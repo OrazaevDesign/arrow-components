@@ -105,9 +105,9 @@
 
 .checkbox__box {
   /* Rest = Type:Unselected (map.state.rest.check-radio.unselected) */
-  --awds-checkbox-bg:     rgb(var(--secondary-container-core));
-  --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));
-  --awds-checkbox-border: rgb(var(--secondary-container-on-low));
+  --awds-checkbox-bg:     rgb(var(--awds-state-check-radio-unselected-bg-rest));
+  --awds-checkbox-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-rest));
+  --awds-checkbox-border: rgb(var(--awds-state-check-radio-unselected-border-rest));
   --awds-checkbox-color:  transparent;
 
   box-sizing: border-box;
@@ -188,15 +188,15 @@
    :enabled — чтобы отключённый чекбокс не реагировал на наведение и нажатие. */
 
 .checkbox:hover > .checkbox__input:enabled + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));
-  --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));
-  --awds-checkbox-border: rgb(var(--secondary-container-on));
+  --awds-checkbox-bg:     rgb(var(--awds-state-check-radio-unselected-bg-hover));
+  --awds-checkbox-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-hover));
+  --awds-checkbox-border: rgb(var(--awds-state-check-radio-unselected-border-hover));
 }
 
 .checkbox:active > .checkbox__input:enabled + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));
-  --awds-checkbox-chroma: rgb(var(--secondary-container-dim));
-  --awds-checkbox-border: rgb(var(--secondary-container-on-low));
+  --awds-checkbox-bg:     rgb(var(--awds-state-check-radio-unselected-bg-active));
+  --awds-checkbox-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-active));
+  --awds-checkbox-border: rgb(var(--awds-state-check-radio-unselected-border-active));
 }
 
 
@@ -207,26 +207,26 @@
 
 .checkbox__input:checked + .checkbox__box,
 .checkbox__input:indeterminate + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--primary-core));
-  --awds-checkbox-chroma: rgb(var(--primary-chroma));
-  --awds-checkbox-border: rgb(var(--primary-core));
-  --awds-checkbox-color:  rgb(var(--primary-on));
+  --awds-checkbox-bg:     rgb(var(--awds-state-check-radio-selected-bg-rest));
+  --awds-checkbox-chroma: rgb(var(--awds-state-check-radio-selected-chroma-rest));
+  --awds-checkbox-border: rgb(var(--awds-state-check-radio-selected-border-rest));
+  --awds-checkbox-color:  rgb(var(--awds-state-check-radio-selected-color-rest));
 }
 
 .checkbox:hover > .checkbox__input:enabled:checked + .checkbox__box,
 .checkbox:hover > .checkbox__input:enabled:indeterminate + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--primary-dim));
-  --awds-checkbox-chroma: rgb(var(--primary-chroma));
-  --awds-checkbox-border: rgb(var(--primary-dim));
-  --awds-checkbox-color:  rgb(var(--primary-on));
+  --awds-checkbox-bg:     rgb(var(--awds-state-check-radio-selected-bg-hover));
+  --awds-checkbox-chroma: rgb(var(--awds-state-check-radio-selected-chroma-hover));
+  --awds-checkbox-border: rgb(var(--awds-state-check-radio-selected-border-hover));
+  --awds-checkbox-color:  rgb(var(--awds-state-check-radio-selected-color-hover));
 }
 
 .checkbox:active > .checkbox__input:enabled:checked + .checkbox__box,
 .checkbox:active > .checkbox__input:enabled:indeterminate + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--primary-core));
-  --awds-checkbox-chroma: rgb(var(--primary-core));
-  --awds-checkbox-border: rgb(var(--primary-core));
-  --awds-checkbox-color:  rgb(var(--primary-on));
+  --awds-checkbox-bg:     rgb(var(--awds-state-check-radio-selected-bg-active));
+  --awds-checkbox-chroma: rgb(var(--awds-state-check-radio-selected-chroma-active));
+  --awds-checkbox-border: rgb(var(--awds-state-check-radio-selected-border-active));
+  --awds-checkbox-color:  rgb(var(--awds-state-check-radio-selected-color-active));
 }
 
 
