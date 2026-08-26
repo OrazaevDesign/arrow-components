@@ -83,37 +83,37 @@
 /* === Variant: Market Percent (badge/market/percent -> accent) === */
 
 .badge-market-percent {
-  --awds-badge-bg:     rgb(var(--accent-core));
-  --awds-badge-chroma: rgb(var(--accent-chroma));
-  --awds-badge-border: rgb(var(--accent-core));
-  --awds-badge-color:  rgb(var(--accent-on));
+  --awds-badge-bg:     rgb(var(--awds-state-badge-market-percent-bg-rest));
+  --awds-badge-chroma: rgb(var(--awds-state-badge-market-percent-chroma-rest));
+  --awds-badge-border: rgb(var(--awds-state-badge-market-percent-border-rest));
+  --awds-badge-color:  rgb(var(--awds-state-badge-market-percent-color-rest));
 }
 
 /* === Variant: Market Sale (badge/market/sale -> primary) === */
 
 .badge-market-sale {
-  --awds-badge-bg:     rgb(var(--primary-core));
-  --awds-badge-chroma: rgb(var(--primary-chroma));
-  --awds-badge-border: rgb(var(--primary-core));
-  --awds-badge-color:  rgb(var(--primary-on));
+  --awds-badge-bg:     rgb(var(--awds-state-badge-market-sale-bg-rest));
+  --awds-badge-chroma: rgb(var(--awds-state-badge-market-sale-chroma-rest));
+  --awds-badge-border: rgb(var(--awds-state-badge-market-sale-border-rest));
+  --awds-badge-color:  rgb(var(--awds-state-badge-market-sale-color-rest));
 }
 
 /* === Variant: Market New (badge/market/new -> info) === */
 
 .badge-market-new {
-  --awds-badge-bg:     rgb(var(--info-core));
-  --awds-badge-chroma: rgb(var(--info-chroma));
-  --awds-badge-border: rgb(var(--info-core));
-  --awds-badge-color:  rgb(var(--info-on));
+  --awds-badge-bg:     rgb(var(--awds-state-badge-market-new-bg-rest));
+  --awds-badge-chroma: rgb(var(--awds-state-badge-market-new-chroma-rest));
+  --awds-badge-border: rgb(var(--awds-state-badge-market-new-border-rest));
+  --awds-badge-color:  rgb(var(--awds-state-badge-market-new-color-rest));
 }
 
 /* === Variant: Market Brand (badge/market/brand -> secondary) === */
 
 .badge-market-brand {
-  --awds-badge-bg:     rgb(var(--secondary-core));
-  --awds-badge-chroma: rgb(var(--secondary-chroma));
-  --awds-badge-border: rgb(var(--secondary-core));
-  --awds-badge-color:  rgb(var(--secondary-on));
+  --awds-badge-bg:     rgb(var(--awds-state-badge-market-brand-bg-rest));
+  --awds-badge-chroma: rgb(var(--awds-state-badge-market-brand-chroma-rest));
+  --awds-badge-border: rgb(var(--awds-state-badge-market-brand-border-rest));
+  --awds-badge-color:  rgb(var(--awds-state-badge-market-brand-color-rest));
 }
 
 /* === Sizes (shape rectangle) === */
