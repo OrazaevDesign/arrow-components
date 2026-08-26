@@ -572,7 +572,7 @@
     padding: var(--awds-select-picker-padding);
     border: 0;
     border-radius: var(--awds-select-picker-rounded);
-    background: rgb(var(--surface-bright));
+    background: rgb(var(--awds-state-picker-bg-rest));
     box-shadow: var(--awds-shadow-elevation-3);
 
     /* Ширина панели РОВНО по обёртке, а не «не уже» её: в макете инстансы
@@ -603,7 +603,7 @@
     margin-block: var(--awds-space-space-1);
 
     scrollbar-width: thin;
-    scrollbar-color: rgb(var(--surface-on) / var(--awds-opacity-opacity-40)) transparent;
+    scrollbar-color: rgb(var(--awds-state-picker-scrollbar-rest) / var(--awds-opacity-opacity-40)) transparent;
   }
 
   /* --- Пункт: мост «размер селекта → размер list-item» ---
@@ -633,8 +633,8 @@
      этот селектор её повторяет для :focus. :not(:checked) — чтобы не гасить
      выбранный пункт при переходе по нему стрелками. */
   .select__field option:not(:checked):focus {
-    --awds-list-item-bg:     rgb(var(--secondary-container-core));
-    --awds-list-item-border: rgb(var(--secondary-container-core));
+    --awds-list-item-bg:     rgb(var(--awds-state-list-unselected-bg-focus));
+    --awds-list-item-border: rgb(var(--awds-state-list-unselected-bg-focus));
   }
 
   /* Выбранный пункт = вариант list-item-accent-selected (роль list/selected-secondary).
@@ -645,11 +645,11 @@
      у list-item hover-правило весит (0,4,0), и без этих двух :not() мост весил бы
      (0,2,1) и проигрывал — выбранный пункт под курсором стал бы серым. */
   .select__field option:checked:not(:disabled):not([aria-disabled="true"]) {
-    --awds-list-item-bg:     rgb(var(--primary-container-core));
-    --awds-list-item-border: rgb(var(--primary-container-on-lowest));
-    --awds-list-item-color:  rgb(var(--primary-container-on-highest));
-    --awds-list-item-desc:   rgb(var(--primary-container-on-high));
-    --awds-list-item-check:  rgb(var(--primary-container-on));
+    --awds-list-item-bg:     rgb(var(--awds-state-list-selected-secondary-bg-rest));
+    --awds-list-item-border: rgb(var(--awds-state-list-selected-secondary-border-rest));
+    --awds-list-item-color:  rgb(var(--awds-state-list-selected-secondary-color-rest));
+    --awds-list-item-desc:   rgb(var(--awds-state-list-selected-secondary-description-rest));
+    --awds-list-item-check:  rgb(var(--awds-state-list-selected-secondary-icon-check-rest));
   }
 
   .select__field option:disabled {
@@ -671,37 +671,37 @@
 
 .select-success {
   /* Rest (map.state.rest.form-control.success) */
-  --awds-select-bg:       rgb(var(--success-container-core));
-  --awds-select-chroma:   rgb(var(--success-container-chroma));
-  --awds-select-border:   rgb(var(--success-container-on-low));
-  --awds-select-color:    rgb(var(--success-container-on-highest));
-  --awds-select-placehold: rgb(var(--success-container-on-high));
-  --awds-select-chevron:  rgb(var(--success-container-on-high));
-  --awds-select-icon-color: rgb(var(--success-container-on-high));
+  --awds-select-bg:       rgb(var(--awds-state-form-control-success-bg-rest));
+  --awds-select-chroma:   rgb(var(--awds-state-form-control-success-chroma-rest));
+  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-rest));
+  --awds-select-color:    rgb(var(--awds-state-form-control-success-color-rest));
+  --awds-select-placehold: rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-select-chevron:  rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-select-icon-color: rgb(var(--awds-state-form-control-success-placehold-rest));
 }
 
 /* :has(:enabled) — отключённый контрол не реагирует на наведение.
    :not(:focus-within) — на сфокусированном hover не применяется (см. выше). */
 .select-success:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--success-container-on));
+  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-hover));
 }
 
 /* Active в макете совпадает с Rest. Правило нужно именно поэтому: при нажатии
    мышь всё ещё висит над контролом, и без него осталась бы hover-рамка. */
 .select-success:active:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--success-container-on-low));
+  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у выпадающего списка «сфокусировано» =
    активно, и в макете состояние Focus именно про это. */
 .select-success:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));
-  --awds-select-border:   rgb(var(--primary-dim));
-  --awds-select-color:    rgb(var(--primary-container-on-highest));
-  --awds-select-placehold: rgb(var(--primary-container-on-high));
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));
-  --awds-select-icon-color: rgb(var(--primary-container-on-high));
+  --awds-select-bg:       rgb(var(--awds-state-form-control-success-bg-focus));
+  --awds-select-chroma:   rgb(var(--awds-state-form-control-success-chroma-focus));
+  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-focus));
+  --awds-select-color:    rgb(var(--awds-state-form-control-success-color-focus));
+  --awds-select-placehold: rgb(var(--awds-state-form-control-success-placehold-focus));
+  --awds-select-chevron:  rgb(var(--awds-state-form-control-success-placehold-focus));
+  --awds-select-icon-color: rgb(var(--awds-state-form-control-success-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
@@ -734,13 +734,13 @@
 
 @supports (appearance: base-select) {
   .select.select-success:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));
-    --awds-select-border:   rgb(var(--primary-dim));
-    --awds-select-color:    rgb(var(--primary-container-on-highest));
-    --awds-select-placehold: rgb(var(--primary-container-on-high));
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));
+    --awds-select-bg:       rgb(var(--awds-state-form-control-success-bg-focus));
+    --awds-select-chroma:   rgb(var(--awds-state-form-control-success-chroma-focus));
+    --awds-select-border:   rgb(var(--awds-state-form-control-success-border-focus));
+    --awds-select-color:    rgb(var(--awds-state-form-control-success-color-focus));
+    --awds-select-placehold: rgb(var(--awds-state-form-control-success-placehold-focus));
+    --awds-select-chevron:  rgb(var(--awds-state-form-control-success-placehold-focus));
+    --awds-select-icon-color: rgb(var(--awds-state-form-control-success-placehold-focus));
 
     /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
        (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
