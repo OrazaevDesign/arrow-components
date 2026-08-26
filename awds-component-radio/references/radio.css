@@ -113,9 +113,9 @@
 
 .radio__box {
   /* Rest = Type:Unselected (map.state.rest.check-radio.unselected) */
-  --awds-radio-bg:     rgb(var(--secondary-container-core));
-  --awds-radio-chroma: rgb(var(--secondary-container-chroma));
-  --awds-radio-border: rgb(var(--secondary-container-on-low));
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-rest));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-rest));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-rest));
   --awds-radio-color:  transparent;
 
   box-sizing: border-box;
@@ -195,15 +195,15 @@
    :enabled — чтобы отключённая радиокнопка не реагировала на наведение и нажатие. */
 
 .radio:hover > .radio__input:enabled + .radio__box {
-  --awds-radio-bg:     rgb(var(--secondary-container-dim));
-  --awds-radio-chroma: rgb(var(--secondary-container-chroma));
-  --awds-radio-border: rgb(var(--secondary-container-on));
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-hover));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-hover));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-hover));
 }
 
 .radio:active > .radio__input:enabled + .radio__box {
-  --awds-radio-bg:     rgb(var(--secondary-container-dim));
-  --awds-radio-chroma: rgb(var(--secondary-container-dim));
-  --awds-radio-border: rgb(var(--secondary-container-on-low));
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-active));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-active));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-active));
 }
 
 
@@ -212,24 +212,24 @@
    в тех же состояниях. */
 
 .radio__input:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--primary-core));
-  --awds-radio-chroma: rgb(var(--primary-chroma));
-  --awds-radio-border: rgb(var(--primary-core));
-  --awds-radio-color:  rgb(var(--primary-on));
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-rest));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-rest));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-rest));
+  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-rest));
 }
 
 .radio:hover > .radio__input:enabled:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--primary-dim));
-  --awds-radio-chroma: rgb(var(--primary-chroma));
-  --awds-radio-border: rgb(var(--primary-dim));
-  --awds-radio-color:  rgb(var(--primary-on));
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-hover));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-hover));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-hover));
+  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-hover));
 }
 
 .radio:active > .radio__input:enabled:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--primary-core));
-  --awds-radio-chroma: rgb(var(--primary-core));
-  --awds-radio-border: rgb(var(--primary-core));
-  --awds-radio-color:  rgb(var(--primary-on));
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-active));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-active));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-active));
+  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-active));
 }
 
 
