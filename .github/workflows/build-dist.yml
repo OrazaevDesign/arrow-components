@@ -67,9 +67,25 @@ jobs:
             git -C .dist rm -rf --cached . || true
           fi
 
+          # ЗАЩИТА ОТ ОТКАТА. Прогон может стартовать с большой задержкой (наблюдали ~20
+          # минут) и прийти уже после того, как в ветку легла сборка из более свежего
+          # коммита — своим или чужим прогоном, или руками. Тогда «просто заменить
+          # содержимое» означает молча откатить пакет на старую версию: именно так
+          # 26.08.2026 из ветки пропало исправление анимаций progress.
+          # Поэтому в ветке лежит SOURCE_SHA, и мы коммитим только если наш коммит —
+          # потомок записанного (то есть действительно новее).
+          PREV=$(cat .dist/SOURCE_SHA 2>/dev/null || echo "")
+          if [ -n "$PREV" ] && [ "$PREV" != "$GITHUB_SHA" ]; then
+            if git merge-base --is-ancestor "$GITHUB_SHA" "$PREV" 2>/dev/null; then
+              echo "В ветке dist уже сборка из $PREV, а это прогон более старого $GITHUB_SHA — откат не делаем."
+              exit 0
+            fi
+          fi
+
           # Содержимое ветки = содержимое dist/ и ничего больше.
           find .dist -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           cp -r dist/. .dist/
+          echo "$GITHUB_SHA" > .dist/SOURCE_SHA
 
           cd .dist
           git add -A
@@ -79,7 +95,12 @@ jobs:
           fi
           VERSION=$(node -e "console.log(require('./package.json').version)")
           git commit -m "dist ${VERSION} из ${GITHUB_SHA::8}"
-          git push origin dist
+          # Ветку мог обновить параллельный прогон, пока мы собирали: перечитываем и
+          # повторяем проверку, вместо того чтобы давить чужой результат force-push.
+          git push origin dist || {
+            echo "push отклонён — ветку обновили параллельно; прогон завершается без записи"
+            exit 0
+          }
 
       - name: Отчёт
         run: |
