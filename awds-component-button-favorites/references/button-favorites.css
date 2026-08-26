@@ -17,11 +17,13 @@
      — Mobile: .btn-favorites--mobile → padding 6px (space-1-5), иконка 20px → 32px
        (32px нет в стандартной shape-шкале rectangle, поэтому padding на base-шкале)
 
-   Состояния (Figma State × модель тоггла), фон НЕ меняется (его нет):
-     — Rest:            заливка surface-bright (белый, читается на фото) + контур surface-on-high (серый)
-     — Hover:           заливка error-container-dim (розовый) + контур error-container-on (красный)
-     — Active=Selected: заливка + контур error-container-on (сплошной красный) → [aria-pressed="true"]
-                        (Figma «Active» = постоянное «в избранном», не press)
+   Состояния — ячейки State набора `favorites` (заведён 26.08.2026 под этот компонент):
+     — не в избранном:  --awds-state-favorites-unselected-{fill|stroke}-{rest|hover}
+     — в избранном:     --awds-state-favorites-selected-{fill|stroke}-{rest|hover}
+   Выбор — ВАРИАНТ набора (unselected/selected), а не мод Active: мод Active коллекции
+   компилируется в `:active`, то есть нажатие, а «в избранном» — `[aria-pressed="true"]`.
+   В макете (Figma State=Active) это же состояние нарисовано как Active — читать его
+   буквально нельзя, иначе красный вспыхивает на нажатии и гаснет после.
 
    Приватные var:
      База кнопки: --awds-btn-padding, -gap, -rounded, -icon, -fs, -lh, -ls, -bg, -chroma, -border, -color
@@ -136,9 +138,9 @@
   --awds-btn-border: transparent;
   --awds-btn-color:  transparent;   /* не используется — цвет несут слои иконки */
 
-  /* Дуотон Rest */
-  --awds-btn-fav-fill:   rgb(var(--surface-bright));
-  --awds-btn-fav-stroke: rgb(var(--surface-on-high));
+  /* Дуотон Rest — ячейки State favorites/unselected */
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-unselected-fill-rest));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-unselected-stroke-rest));
 
   /* Polish (MIFB): press-feedback transform (GPU), явное свойство. */
   transition: transform 0.12s ease-out;
@@ -173,20 +175,22 @@
 
 /* Hover (не выбрано) */
 .btn-favorites:hover {
-  --awds-btn-fav-fill:   rgb(var(--error-container-dim));
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-unselected-fill-hover));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-unselected-stroke-hover));
 }
 
-/* Selected (в избранном) — Figma State=Active */
+/* Selected (в избранном) — вариант набора favorites/selected, НЕ мод Active:
+   мод Active коллекции State компилируется в `:active`, то есть нажатие. Выбор в
+   студии выражается вариантом набора, как list/selected против list/unselected. */
 .btn-favorites[aria-pressed="true"] {
-  --awds-btn-fav-fill:   rgb(var(--error-container-on));
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-selected-fill-rest));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-selected-stroke-rest));
 }
 
-/* Наведение на уже выбранную — держим красный, не откатываем к hover-розовому */
+/* Наведение на уже выбранную — значение держит ячейка (hover у selected тот же цвет) */
 .btn-favorites[aria-pressed="true"]:hover {
-  --awds-btn-fav-fill:   rgb(var(--error-container-on));
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-selected-fill-hover));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-selected-stroke-hover));
 }
 
 
