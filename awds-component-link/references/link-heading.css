@@ -72,20 +72,20 @@
 /* === Variant: Heading === */
 
 .lnk-heading {
-  --awds-lnk-color: rgb(var(--surface-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-heading-rest));
   text-decoration-line: none;   /* заголовки не подчёркиваем */
 }
 
 .lnk-heading:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));
+  --awds-lnk-color: rgb(var(--awds-state-link-heading-hover));
 }
 
 .lnk-heading:focus-visible {
-  --awds-lnk-color: rgb(var(--surface-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-heading-focus));
 }
 
 .lnk-heading:active {
-  --awds-lnk-color: rgb(var(--surface-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-heading-active));
 }
 
 

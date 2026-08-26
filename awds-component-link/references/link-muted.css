@@ -71,19 +71,19 @@
 /* === Variant: Muted === */
 
 .lnk-muted {
-  --awds-lnk-color: rgb(var(--surface-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-muted-rest));
 }
 
 .lnk-muted:hover {
-  --awds-lnk-color: rgb(var(--surface-on-highest));
+  --awds-lnk-color: rgb(var(--awds-state-link-muted-hover));
 }
 
 .lnk-muted:focus-visible {
-  --awds-lnk-color: rgb(var(--surface-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-muted-focus));
 }
 
 .lnk-muted:active {
-  --awds-lnk-color: rgb(var(--surface-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-muted-active));
 }
 
 

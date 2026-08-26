@@ -83,19 +83,19 @@
 /* === Variant: Default === */
 
 .lnk-default {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-default-rest));
 }
 
 .lnk-default:hover {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-highest));
+  --awds-lnk-color: rgb(var(--awds-state-link-default-hover));
 }
 
 .lnk-default:focus-visible {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-default-focus));
 }
 
 .lnk-default:active {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--awds-state-link-default-active));
 }
 
 

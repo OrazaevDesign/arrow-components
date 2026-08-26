@@ -71,19 +71,19 @@
 /* === Variant: Accent === */
 
 .lnk-accent {
-  --awds-lnk-color: rgb(var(--surface-on-highest));
+  --awds-lnk-color: rgb(var(--awds-state-link-accent-rest));
 }
 
 .lnk-accent:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));
+  --awds-lnk-color: rgb(var(--awds-state-link-accent-hover));
 }
 
 .lnk-accent:focus-visible {
-  --awds-lnk-color: rgb(var(--surface-on-highest));
+  --awds-lnk-color: rgb(var(--awds-state-link-accent-focus));
 }
 
 .lnk-accent:active {
-  --awds-lnk-color: rgb(var(--surface-on-highest));
+  --awds-lnk-color: rgb(var(--awds-state-link-accent-active));
 }
 
 
