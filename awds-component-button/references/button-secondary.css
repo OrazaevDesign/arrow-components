@@ -106,13 +106,6 @@
               color 0.15s ease-out;
 }
 
-.btn:focus-visible {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
-     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
-     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset);
-}
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
@@ -240,32 +233,32 @@
    ============================================================================= */
 
 .btn-secondary {
-  --awds-btn-bg:     rgb(var(--secondary-core));
-  --awds-btn-chroma: rgb(var(--secondary-chroma));
-  --awds-btn-border: rgb(var(--secondary-core));
-  --awds-btn-color:  rgb(var(--secondary-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-secondary-bg-rest));
+  --awds-btn-chroma: rgb(var(--awds-state-button-secondary-chroma-rest));
+  --awds-btn-border: rgb(var(--awds-state-button-secondary-border-rest));
+  --awds-btn-color:  rgb(var(--awds-state-button-secondary-color-rest));
 }
 
 .btn-secondary:hover {
-  --awds-btn-bg:     rgb(var(--secondary-dim));
-  --awds-btn-chroma: rgb(var(--secondary-chroma));
-  --awds-btn-border: rgb(var(--secondary-dim));
-  --awds-btn-color:  rgb(var(--secondary-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-secondary-bg-hover));
+  --awds-btn-chroma: rgb(var(--awds-state-button-secondary-chroma-hover));
+  --awds-btn-border: rgb(var(--awds-state-button-secondary-border-hover));
+  --awds-btn-color:  rgb(var(--awds-state-button-secondary-color-hover));
 }
 
 .btn-secondary:focus-visible {
-  --awds-btn-bg:     rgb(var(--secondary-core));
-  --awds-btn-chroma: rgb(var(--secondary-chroma));
-  --awds-btn-border: rgb(var(--secondary-core));
-  --awds-btn-color:  rgb(var(--secondary-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-secondary-bg-focus));
+  --awds-btn-chroma: rgb(var(--awds-state-button-secondary-chroma-focus));
+  --awds-btn-border: rgb(var(--awds-state-button-secondary-border-focus));
+  --awds-btn-color:  rgb(var(--awds-state-button-secondary-color-focus));
 }
 
 /* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-secondary:active {
-  --awds-btn-bg:     rgb(var(--secondary-core));
-  --awds-btn-chroma: rgb(var(--secondary-core));
-  --awds-btn-border: rgb(var(--secondary-core));
-  --awds-btn-color:  rgb(var(--secondary-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-secondary-bg-active));
+  --awds-btn-chroma: rgb(var(--awds-state-button-secondary-chroma-active));
+  --awds-btn-border: rgb(var(--awds-state-button-secondary-border-active));
+  --awds-btn-color:  rgb(var(--awds-state-button-secondary-color-active));
 }
 
 

@@ -107,13 +107,6 @@
               color 0.15s ease-out;
 }
 
-.btn:focus-visible {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
-     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
-     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset);
-}
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
@@ -245,28 +238,28 @@
   --awds-btn-bg:     transparent;
   --awds-btn-chroma: transparent;
   --awds-btn-border: transparent;
-  --awds-btn-color:  rgb(var(--surface-on-high));
+  --awds-btn-color:  rgb(var(--awds-state-button-ghost-color-rest));
 }
 
 .btn-ghost:hover {
   --awds-btn-bg:     transparent;
   --awds-btn-chroma: transparent;
   --awds-btn-border: transparent;
-  --awds-btn-color:  rgb(var(--surface-on-highest));
+  --awds-btn-color:  rgb(var(--awds-state-button-ghost-color-hover));
 }
 
 .btn-ghost:focus-visible {
   --awds-btn-bg:     transparent;
   --awds-btn-chroma: transparent;
   --awds-btn-border: transparent;
-  --awds-btn-color:  rgb(var(--surface-on-highest));
+  --awds-btn-color:  rgb(var(--awds-state-button-ghost-color-focus));
 }
 
 .btn-ghost:active {
   --awds-btn-bg:     transparent;
   --awds-btn-chroma: transparent;
   --awds-btn-border: transparent;
-  --awds-btn-color:  rgb(var(--surface-on-highest));
+  --awds-btn-color:  rgb(var(--awds-state-button-ghost-color-active));
 }
 
 

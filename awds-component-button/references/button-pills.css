@@ -109,13 +109,6 @@
               color 0.15s ease-out;
 }
 
-.btn:focus-visible {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
-     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
-     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset);
-}
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
@@ -244,33 +237,33 @@
    ============================================================================= */
 
 .btn-pills {
-  --awds-btn-bg:     rgb(var(--secondary-core));
-  --awds-btn-chroma: rgb(var(--secondary-chroma));
-  --awds-btn-border: rgb(var(--secondary-core));
-  --awds-btn-color:  rgb(var(--secondary-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-pills-bg-rest));
+  --awds-btn-chroma: rgb(var(--awds-state-button-pills-chroma-rest));
+  --awds-btn-border: rgb(var(--awds-state-button-pills-border-rest));
+  --awds-btn-color:  rgb(var(--awds-state-button-pills-color-rest));
 }
 
 /* Hover: текст краснеет (accent-container-on), фон темнеет до secondary-dim */
 .btn-pills:hover {
-  --awds-btn-bg:     rgb(var(--secondary-dim));
-  --awds-btn-chroma: rgb(var(--secondary-chroma));
-  --awds-btn-border: rgb(var(--secondary-dim));
-  --awds-btn-color:  rgb(var(--accent-container-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-pills-bg-hover));
+  --awds-btn-chroma: rgb(var(--awds-state-button-pills-chroma-hover));
+  --awds-btn-border: rgb(var(--awds-state-button-pills-border-hover));
+  --awds-btn-color:  rgb(var(--awds-state-button-pills-color-hover));
 }
 
 .btn-pills:focus-visible {
-  --awds-btn-bg:     rgb(var(--secondary-core));
-  --awds-btn-chroma: rgb(var(--secondary-chroma));
-  --awds-btn-border: rgb(var(--secondary-core));
-  --awds-btn-color:  rgb(var(--secondary-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-pills-bg-focus));
+  --awds-btn-chroma: rgb(var(--awds-state-button-pills-chroma-focus));
+  --awds-btn-border: rgb(var(--awds-state-button-pills-border-focus));
+  --awds-btn-color:  rgb(var(--awds-state-button-pills-color-focus));
 }
 
 /* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-pills:active {
-  --awds-btn-bg:     rgb(var(--secondary-core));
-  --awds-btn-chroma: rgb(var(--secondary-core));
-  --awds-btn-border: rgb(var(--secondary-core));
-  --awds-btn-color:  rgb(var(--secondary-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-pills-bg-active));
+  --awds-btn-chroma: rgb(var(--awds-state-button-pills-chroma-active));
+  --awds-btn-border: rgb(var(--awds-state-button-pills-border-active));
+  --awds-btn-color:  rgb(var(--awds-state-button-pills-color-active));
 }
 
 

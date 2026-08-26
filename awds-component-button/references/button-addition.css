@@ -107,13 +107,6 @@
               color 0.15s ease-out;
 }
 
-.btn:focus-visible {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
-     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
-     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset);
-}
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
@@ -241,32 +234,32 @@
    ============================================================================= */
 
 .btn-addition {
-  --awds-btn-bg:     rgb(var(--addition-core));
-  --awds-btn-chroma: rgb(var(--addition-chroma));
-  --awds-btn-border: rgb(var(--addition-core));
-  --awds-btn-color:  rgb(var(--addition-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-addition-bg-rest));
+  --awds-btn-chroma: rgb(var(--awds-state-button-addition-chroma-rest));
+  --awds-btn-border: rgb(var(--awds-state-button-addition-border-rest));
+  --awds-btn-color:  rgb(var(--awds-state-button-addition-color-rest));
 }
 
 .btn-addition:hover {
-  --awds-btn-bg:     rgb(var(--addition-dim));
-  --awds-btn-chroma: rgb(var(--addition-chroma));
-  --awds-btn-border: rgb(var(--addition-dim));
-  --awds-btn-color:  rgb(var(--addition-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-addition-bg-hover));
+  --awds-btn-chroma: rgb(var(--awds-state-button-addition-chroma-hover));
+  --awds-btn-border: rgb(var(--awds-state-button-addition-border-hover));
+  --awds-btn-color:  rgb(var(--awds-state-button-addition-color-hover));
 }
 
 .btn-addition:focus-visible {
-  --awds-btn-bg:     rgb(var(--addition-core));
-  --awds-btn-chroma: rgb(var(--addition-chroma));
-  --awds-btn-border: rgb(var(--addition-core));
-  --awds-btn-color:  rgb(var(--addition-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-addition-bg-focus));
+  --awds-btn-chroma: rgb(var(--awds-state-button-addition-chroma-focus));
+  --awds-btn-border: rgb(var(--awds-state-button-addition-border-focus));
+  --awds-btn-color:  rgb(var(--awds-state-button-addition-color-focus));
 }
 
 /* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-addition:active {
-  --awds-btn-bg:     rgb(var(--addition-core));
-  --awds-btn-chroma: rgb(var(--addition-core));
-  --awds-btn-border: rgb(var(--addition-core));
-  --awds-btn-color:  rgb(var(--addition-on));
+  --awds-btn-bg:     rgb(var(--awds-state-button-addition-bg-active));
+  --awds-btn-chroma: rgb(var(--awds-state-button-addition-chroma-active));
+  --awds-btn-border: rgb(var(--awds-state-button-addition-border-active));
+  --awds-btn-color:  rgb(var(--awds-state-button-addition-color-active));
 }
 
 
