@@ -1,10 +1,10 @@
 {
   "component": "switch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "contract_hash": "sha256:5bb7fca129f6ba8600f29f1d3ec04389a8f512e00f2b9ecaf361ab122b08b28b",
-  "artifact_hash": "sha256:fd9c45a8b774dc57fbf896a16c9728ef3d63ad8211218b75de1172e76e845b77",
+  "artifact_hash": "sha256:0f5130b109b93bdd515af0459e210b840bf68b4225f05941ea14ccf82d5e0cfc",
   "visual_change": false,
-  "released_at": "2026-08-25T15:19:09.142Z",
+  "released_at": "2026-08-26T07:36:48.753Z",
   "own_values": [],
   "figma": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
@@ -178,7 +178,7 @@
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
   "uses": {
-    "awds-component-focus-selection": "1.0.3"
+    "awds-component-focus-selection": "1.1.0"
   },
   "contract": {
     "classes": [

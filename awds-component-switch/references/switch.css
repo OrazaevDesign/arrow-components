@@ -136,11 +136,11 @@
 .switch__track {
   /* Rest = Type:Unselected (map.state.rest.check-radio.unselected).
      handle и icon-color наследуются вниз в бегунок (@property inherits: true). */
-  --awds-switch-bg:         rgb(var(--secondary-container-core));
-  --awds-switch-chroma:     rgb(var(--secondary-container-chroma));
-  --awds-switch-border:     rgb(var(--secondary-container-on-low));
-  --awds-switch-handle:     rgb(var(--secondary-container-on));
-  --awds-switch-icon-color: rgb(var(--secondary-container-core));
+  --awds-switch-bg:         rgb(var(--awds-state-check-radio-unselected-bg-rest));
+  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-unselected-chroma-rest));
+  --awds-switch-border:     rgb(var(--awds-state-check-radio-unselected-border-rest));
+  --awds-switch-handle:     rgb(var(--awds-state-check-radio-unselected-handle-rest));
+  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-unselected-bg-rest));
 
   /* Ход бегунка = внутренняя ширина − слот бегунка. Тот же размер, что у распорки
      «space» в макете. Считается от токенов, отдельного токена в Figma нет. */
@@ -261,18 +261,18 @@
    :enabled — чтобы отключённый тумблер не реагировал на наведение и нажатие. */
 
 .switch:hover > .switch__input:enabled + .switch__track {
-  --awds-switch-bg:     rgb(var(--secondary-container-dim));
-  --awds-switch-chroma: rgb(var(--secondary-container-chroma));
-  --awds-switch-border: rgb(var(--secondary-container-on));
+  --awds-switch-bg:     rgb(var(--awds-state-check-radio-unselected-bg-hover));
+  --awds-switch-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-hover));
+  --awds-switch-border: rgb(var(--awds-state-check-radio-unselected-border-hover));
   /* иконка выбита цветом фона — следует за bg */
-  --awds-switch-icon-color: rgb(var(--secondary-container-dim));
+  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-unselected-bg-hover));
 }
 
 .switch:active > .switch__input:enabled + .switch__track {
-  --awds-switch-bg:     rgb(var(--secondary-container-dim));
-  --awds-switch-chroma: rgb(var(--secondary-container-dim));
-  --awds-switch-border: rgb(var(--secondary-container-on-low));
-  --awds-switch-icon-color: rgb(var(--secondary-container-dim));
+  --awds-switch-bg:     rgb(var(--awds-state-check-radio-unselected-bg-active));
+  --awds-switch-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-active));
+  --awds-switch-border: rgb(var(--awds-state-check-radio-unselected-border-active));
+  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-unselected-bg-active));
 }
 
 
@@ -281,25 +281,25 @@
    в тех же состояниях. */
 
 .switch__input:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--primary-core));
-  --awds-switch-chroma:     rgb(var(--primary-chroma));
-  --awds-switch-border:     rgb(var(--primary-core));
-  --awds-switch-handle:     rgb(var(--primary-on-dim));
-  --awds-switch-icon-color: rgb(var(--primary-core));
+  --awds-switch-bg:         rgb(var(--awds-state-check-radio-selected-bg-rest));
+  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-selected-chroma-rest));
+  --awds-switch-border:     rgb(var(--awds-state-check-radio-selected-border-rest));
+  --awds-switch-handle:     rgb(var(--awds-state-check-radio-selected-handle-rest));
+  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-selected-bg-rest));
 }
 
 .switch:hover > .switch__input:enabled:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--primary-dim));
-  --awds-switch-chroma:     rgb(var(--primary-chroma));
-  --awds-switch-border:     rgb(var(--primary-dim));
-  --awds-switch-icon-color: rgb(var(--primary-dim));
+  --awds-switch-bg:         rgb(var(--awds-state-check-radio-selected-bg-hover));
+  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-selected-chroma-hover));
+  --awds-switch-border:     rgb(var(--awds-state-check-radio-selected-border-hover));
+  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-selected-bg-hover));
 }
 
 .switch:active > .switch__input:enabled:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--primary-core));
-  --awds-switch-chroma:     rgb(var(--primary-core));
-  --awds-switch-border:     rgb(var(--primary-core));
-  --awds-switch-icon-color: rgb(var(--primary-core));
+  --awds-switch-bg:         rgb(var(--awds-state-check-radio-selected-bg-active));
+  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-selected-chroma-active));
+  --awds-switch-border:     rgb(var(--awds-state-check-radio-selected-border-active));
+  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-selected-bg-active));
 }
 
 
