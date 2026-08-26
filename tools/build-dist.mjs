@@ -257,8 +257,15 @@ function build() {
   // имена, на которые ссылается собранный CSS
   const bundle = files.get('awds.css');
   const used = new Set([...bundle.matchAll(/var\(\s*(--[\w-]+)/g)].map((m) => m[1]));
-  // приватные контракты компонентов объявлены здесь же — их из темы брать не нужно
-  const declaredHere = new Set([...bundle.matchAll(/(--[\w-]+)\s*:/g)].map((m) => m[1]));
+  /* Приватные контракты компонентов объявлены здесь же — их из темы брать не нужно.
+     Два способа объявить: обычное `--name: value` и регистрация `@property --name`,
+     у которой значение задаёт `initial-value`. Второй способ учитывать обязательно:
+     иначе переменная, которую ставит потребитель (`--awds-progress-value` у прогресса),
+     читается как висячая ссылка, хотя дефолт у неё есть. */
+  const declaredHere = new Set([
+    ...[...bundle.matchAll(/(--[\w-]+)\s*:/g)].map((m) => m[1]),
+    ...[...bundle.matchAll(/@property\s+(--[\w-]+)/g)].map((m) => m[1]),
+  ]);
   const wanted = [...used].filter((n) => !declaredHere.has(n));
 
   /* Ссылка С FALLBACK (`var(--x, 0px)`) отсутствием в теме не считается: значение по

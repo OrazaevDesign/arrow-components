@@ -1,0 +1,48 @@
+{
+  "fetched": "2026-08-26",
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "component_set": "2093:3033",
+  "axes": {
+    "Type": ["Linear", "Circular"],
+    "Variant": ["Determinate", "Indeterminate"],
+    "Progress": ["0", "10", "30", "50", "80", "100"]
+  },
+  "cells": 18,
+  "variable_defs": {
+    "2093:3060 (Linear Determinate 50)": { "role/surface/on": "#8e8e8e", "opacity/20": "20" },
+    "2093:3126 (Circular Determinate 50)": { "role/surface/on": "#8e8e8e" }
+  },
+  "geometry": {
+    "linear": {
+      "container": "404×12",
+      "bar_stroke_width": 4,
+      "bar_linecap": "round",
+      "active_padding": { "left": 2, "right": 6 },
+      "track": { "height": 4, "radius": 8, "opacity": 0.2 },
+      "stop_dot": { "size": 4, "radius": 26 },
+      "segments": "Segment-start 40px · Segment flex · Segment-end 40px — все три прямая линия stroke-width 4, слои названы wave-increment (заготовка M3 под волну, амплитуда 0)"
+    },
+    "circular": {
+      "box": "48×48",
+      "arc_stroke_width": 2,
+      "arc_linecap": "round",
+      "track": "в макете отсутствует — нарисована только активная дуга"
+    }
+  },
+  "resolved": {
+    "role/surface/on": "rgb(var(--surface-on))",
+    "opacity/20": "var(--awds-opacity-opacity-20)",
+    "12px": "var(--awds-space-space-3)",
+    "6px": "var(--awds-space-space-1-5)",
+    "4px": "var(--awds-space-space-1)",
+    "2px": "var(--awds-space-space-0-5)",
+    "48px": "var(--awds-space-space-12)",
+    "radius pill": "var(--awds-rounded-border-radius-full)"
+  },
+  "notes": [
+    "Своей группы State у прогресса в теме нет — цвет инлайнится ролью.",
+    "Своего shape-семейства в Size нет; ближайшее (size-range) содержит только handle, трека там не выражено. Геометрия взята с базовой шкалы Space, все значения совпали точно.",
+    "Ось Progress в CSS не выражается классами: это значение --awds-progress-value (число 0…100)."
+  ],
+  "reference": "https://github.com/material-components/material-web/blob/main/docs/components/progress.md"
+}

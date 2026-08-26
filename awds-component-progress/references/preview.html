@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="theme-default theme-light" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress — ArrowDS</title>
+
+  <!-- Значения темы: снапшот студии плюс слой производных. Без них компонент
+       ссылается в пустоту и рисуется невидимым. -->
+  <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="./progress-linear.css">
+  <link rel="stylesheet" href="./progress-circular.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: var(--awds-space-space-8);
+      background: rgb(var(--surface-bright));
+      color: rgb(var(--surface-on-highest));
+      font-family: var(--awds-font-family-system);
+      display: grid;
+      gap: var(--awds-space-space-8);
+    }
+    h1 { font-size: 20px; margin: 0; }
+    h2 { font-size: 14px; margin: 0 0 var(--awds-space-space-3); opacity: .6; font-weight: 400; }
+    .row { display: grid; gap: var(--awds-space-space-4); max-width: 404px; }
+    .row--circles { display: flex; gap: var(--awds-space-space-6); max-width: none; align-items: center; }
+    .cell { display: grid; gap: var(--awds-space-space-1); }
+    .cell__label { font-size: 12px; opacity: .5; font-variant-numeric: tabular-nums; }
+    .dark { padding: var(--awds-space-space-6); border-radius: var(--awds-rounded-border-radius-400); }
+  </style>
+</head>
+<body>
+  <h1>Progress</h1>
+
+  <section>
+    <h2>Linear · determinate — ось Progress из макета</h2>
+    <div class="row" id="linear-determinate"></div>
+  </section>
+
+  <section>
+    <h2>Linear · indeterminate</h2>
+    <div class="row">
+      <div class="progress progress-linear progress-linear--indeterminate"
+           role="progressbar" aria-label="Загрузка">
+        <span class="progress-linear__active"></span>
+        <span class="progress-linear__track"></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Circular · determinate</h2>
+    <div class="row row--circles" id="circular-determinate"></div>
+  </section>
+
+  <section>
+    <h2>Circular · indeterminate</h2>
+    <div class="row row--circles">
+      <svg class="progress progress-circular progress-circular--indeterminate" viewBox="0 0 48 48"
+           role="progressbar" aria-label="Загрузка">
+        <circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="dark theme-dark" style="background: rgb(var(--surface-bright)); color: rgb(var(--surface-on-highest));">
+    <h2>Тёмная тема — островок theme-dark</h2>
+    <div class="row">
+      <div class="progress progress-linear" style="--awds-progress-value: 50"
+           role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Загрузка">
+        <span class="progress-linear__active"></span>
+        <span class="progress-linear__track"><span class="progress-linear__stop"></span></span>
+      </div>
+    </div>
+    <div class="row row--circles" style="margin-top: var(--awds-space-space-4)">
+      <svg class="progress progress-circular" viewBox="0 0 48 48" style="--awds-progress-value: 50"
+           role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Загрузка">
+        <circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/>
+      </svg>
+    </div>
+  </section>
+
+  <script>
+    // Матрица собирается скриптом: шесть ячеек оси Progress различаются ОДНИМ
+    // числом, и копировать разметку шесть раз значит поддерживать шесть копий.
+    const VALUES = [0, 10, 30, 50, 80, 100];
+
+    const linear = (v) => `
+      <div class="cell">
+        <span class="cell__label">${v}%</span>
+        <div class="progress progress-linear" style="--awds-progress-value: ${v}"
+             role="progressbar" aria-valuenow="${v}" aria-valuemin="0" aria-valuemax="100"
+             aria-label="Загрузка ${v} процентов">
+          <span class="progress-linear__active"></span>
+          <span class="progress-linear__track"><span class="progress-linear__stop"></span></span>
+        </div>
+      </div>`;
+
+    const circular = (v) => `
+      <div class="cell">
+        <span class="cell__label">${v}%</span>
+        <svg class="progress progress-circular" viewBox="0 0 48 48" style="--awds-progress-value: ${v}"
+             role="progressbar" aria-valuenow="${v}" aria-valuemin="0" aria-valuemax="100"
+             aria-label="Загрузка ${v} процентов">
+          <circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/>
+        </svg>
+      </div>`;
+
+    document.getElementById('linear-determinate').innerHTML = VALUES.map(linear).join('');
+    document.getElementById('circular-determinate').innerHTML = VALUES.map(circular).join('');
+  </script>
+</body>
+</html>
