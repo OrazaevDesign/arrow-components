@@ -1,10 +1,10 @@
 {
   "component": "uploader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "contract_hash": "sha256:bb2ae5003da30935455e45a0b4a079904a5431c4a2a7ae0b16b12e885d6ed119",
   "artifact_hash": "sha256:c75c8663f49ca64c51683fb391c8e83d232a0a2cd996aec97bfce496d87af054",
   "visual_change": false,
-  "released_at": "2026-08-25T15:19:09.360Z",
+  "released_at": "2026-08-26T07:36:48.967Z",
   "own_values": [
     {
       "value": "1px",
@@ -217,10 +217,10 @@
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
   "uses": {
-    "awds-component-button": "1.0.3",
-    "awds-component-focus-selection": "1.0.3",
-    "awds-component-input": "1.0.1",
-    "awds-component-radio": "1.0.2"
+    "awds-component-button": "1.0.5",
+    "awds-component-focus-selection": "1.1.0",
+    "awds-component-input": "1.0.3",
+    "awds-component-radio": "1.0.3"
   },
   "contract": {
     "classes": [
