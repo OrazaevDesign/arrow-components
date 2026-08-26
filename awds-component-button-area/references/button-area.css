@@ -137,20 +137,20 @@
 
 /* === Варианты (цвет; rest + hover. focus/active = rest) === */
 
-.btn-area-default  { --awds-btn-area-color: rgb(var(--tertiary-container-on-high)); }
-.btn-area-default:hover  { --awds-btn-area-color: rgb(var(--tertiary-container-on-highest)); }
+.btn-area-default  { --awds-btn-area-color: rgb(var(--awds-state-areabutton-default-rest)); }
+.btn-area-default:hover  { --awds-btn-area-color: rgb(var(--awds-state-areabutton-default-hover)); }
 
-.btn-area-muted    { --awds-btn-area-color: rgb(var(--surface-on-high)); }
-.btn-area-muted:hover    { --awds-btn-area-color: rgb(var(--surface-on-highest)); }
+.btn-area-muted    { --awds-btn-area-color: rgb(var(--awds-state-areabutton-muted-rest)); }
+.btn-area-muted:hover    { --awds-btn-area-color: rgb(var(--awds-state-areabutton-muted-hover)); }
 
-.btn-area-contrast { --awds-btn-area-color: rgb(var(--surface-on-highest)); }
-.btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--surface-on-high)); }
+.btn-area-contrast { --awds-btn-area-color: rgb(var(--awds-state-areabutton-contrast-rest)); }
+.btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--awds-state-areabutton-contrast-hover)); }
 
-.btn-area-accent   { --awds-btn-area-color: rgb(var(--surface-on-highest)); }
-.btn-area-accent:hover   { --awds-btn-area-color: rgb(var(--accent-container-on)); }
+.btn-area-accent   { --awds-btn-area-color: rgb(var(--awds-state-link-accent-rest)); }
+.btn-area-accent:hover   { --awds-btn-area-color: rgb(var(--awds-state-link-accent-hover)); }
 
-.btn-area-heading  { --awds-btn-area-color: rgb(var(--surface-on-high)); }
-.btn-area-heading:hover  { --awds-btn-area-color: rgb(var(--accent-container-on)); }
+.btn-area-heading  { --awds-btn-area-color: rgb(var(--awds-state-link-heading-rest)); }
+.btn-area-heading:hover  { --awds-btn-area-color: rgb(var(--awds-state-link-heading-hover)); }
 
 /* === Состояния === */
 

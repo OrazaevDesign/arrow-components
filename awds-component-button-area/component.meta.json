@@ -1,10 +1,10 @@
 {
   "component": "button-area",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "contract_hash": "sha256:fdb387f8dadd6a157d624e1496c7d7669868f83a971c79b77be8021217bd0f1f",
-  "artifact_hash": "sha256:a93bfe6dc16cc1f983926a7e62254cb1736a0923a64fca8f0eb1b3f78260e6be",
+  "artifact_hash": "sha256:3824fedf1882ee53038bbf1f1bf6a8d528bae17fc8029eb1eaeead4ce1d40c1c",
   "visual_change": false,
-  "released_at": "2026-08-25T15:19:07.914Z",
+  "released_at": "2026-08-26T07:49:41.400Z",
   "own_values": [
     {
       "value": "2px",
@@ -299,7 +299,7 @@
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
   "uses": {
-    "awds-component-focus-selection": "1.0.3"
+    "awds-component-focus-selection": "1.1.0"
   },
   "contract": {
     "classes": [
