@@ -1,0 +1,417 @@
+/* ArrowDS · input@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-input-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-input-chroma {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-input-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-input-placehold {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-input-icon-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.input {
+  --awds-input-padding: var(--awds-size-rectangle-400-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-input-lh:      var(--awds-control-line-height-400);
+  --awds-input-ls:      var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  border-radius: var(--awds-input-rounded);
+  box-shadow: inset 0 0 0 1px var(--awds-input-border);
+  background: linear-gradient(to right, var(--awds-input-chroma, var(--awds-input-bg)), var(--awds-input-bg));
+  color: var(--awds-input-color);
+  cursor: text;
+  transition: --awds-input-bg 0.15s ease-out,
+              --awds-input-chroma 0.15s ease-out,
+              --awds-input-color 0.15s ease-out,
+              --awds-input-placehold 0.15s ease-out,
+              --awds-input-icon-color 0.15s ease-out,
+              box-shadow 0.15s ease-out;
+}
+
+.input__field {
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 0;
+  padding-block: var(--awds-input-padding);
+  padding-inline: var(--awds-input-text-gap);
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: 0;
+  color: var(--awds-input-color);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-input-fs);
+  line-height: var(--awds-input-lh);
+  letter-spacing: var(--awds-input-ls);
+  font-weight: var(--awds-font-weight-regular);
+  text-overflow: ellipsis;
+}
+
+.input__field:focus {
+  outline: none;
+}
+
+.input__field::placeholder {
+  color: var(--awds-input-placehold);
+  opacity: 1;
+}
+
+.input__field::-webkit-search-cancel-button, .input__field::-webkit-search-decoration, .input__field::-webkit-search-results-button, .input__field::-webkit-search-results-decoration {
+  appearance: none;
+  display: none;
+}
+
+.input:has(> .input__prefix) .input__field {
+  padding-left: var(--awds-input-padding);
+}
+
+.input:has(> .input__suffix) .input__field {
+  padding-right: var(--awds-input-padding);
+}
+
+.input__prefix, .input__suffix {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-block: var(--awds-input-padding);
+  color: var(--awds-input-icon-color);
+}
+
+.input__prefix {
+  padding-left: var(--awds-input-padding);
+}
+
+.input__suffix {
+  padding-right: var(--awds-input-padding);
+}
+
+.input__prefix svg, .input__suffix svg {
+  display: block;
+  width: var(--awds-input-icon);
+  height: var(--awds-input-icon);
+  flex-shrink: 0;
+}
+
+.input__prefix button, .input__suffix button {
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.input__prefix button:focus-visible, .input__suffix button:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+  border-radius: var(--awds-rounded-border-radius-50);
+}
+
+.input--50 {
+  --awds-input-padding: var(--awds-size-rectangle-50-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-input-lh:      var(--awds-control-line-height-200);
+  --awds-input-ls:      var(--awds-control-letter-spacing-200);
+  --awds-input-text-gap: var(--awds-size-rectangle-50-text-gap);
+}
+
+.input--100 {
+  --awds-input-padding: var(--awds-size-rectangle-100-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-100-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-input-lh:      var(--awds-control-line-height-300);
+  --awds-input-ls:      var(--awds-control-letter-spacing-300);
+  --awds-input-text-gap: var(--awds-size-rectangle-100-text-gap);
+}
+
+.input--200 {
+  --awds-input-padding: var(--awds-size-rectangle-200-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-200-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-200-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-input-lh:      var(--awds-control-line-height-300);
+  --awds-input-ls:      var(--awds-control-letter-spacing-300);
+  --awds-input-text-gap: var(--awds-size-rectangle-200-text-gap);
+}
+
+.input--300 {
+  --awds-input-padding: var(--awds-size-rectangle-300-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-300-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-300-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-input-lh:      var(--awds-control-line-height-400);
+  --awds-input-ls:      var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-300-text-gap);
+}
+
+.input--400 {
+  --awds-input-padding: var(--awds-size-rectangle-400-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-input-lh:      var(--awds-control-line-height-400);
+  --awds-input-ls:      var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
+}
+
+.input--500 {
+  --awds-input-padding: var(--awds-size-rectangle-500-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-input-lh:      var(--awds-control-line-height-600);
+  --awds-input-ls:      var(--awds-control-letter-spacing-600);
+  --awds-input-text-gap: var(--awds-size-rectangle-500-text-gap);
+}
+
+.input--600 {
+  --awds-input-padding: var(--awds-size-rectangle-600-padding);
+  --awds-input-icon:    var(--awds-size-rectangle-600-icon);
+  --awds-input-rounded: var(--awds-size-rectangle-600-rounded);
+  --awds-input-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-input-lh:      var(--awds-control-line-height-600);
+  --awds-input-ls:      var(--awds-control-letter-spacing-600);
+  --awds-input-text-gap: var(--awds-size-rectangle-600-text-gap);
+}
+
+.input-autofill {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-autofill-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-autofill-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-autofill-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-autofill-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-autofill-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-autofill-placehold-rest));
+}
+
+.input-autofill:hover:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-autofill-border-hover));
+}
+
+.input-autofill:active:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-autofill-border-active));
+}
+
+.input-autofill:focus-within {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-autofill-bg-focus));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-autofill-chroma-focus));
+  --awds-input-border:     rgb(var(--awds-state-form-control-autofill-border-focus));
+  --awds-input-color:      rgb(var(--awds-state-form-control-autofill-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-autofill-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-autofill-color-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.input:has(> .input__field:disabled), .input--disabled {
+  opacity: var(--awds-opacity-opacity-40);
+  cursor: default;
+}
+
+.input__field:disabled {
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .input {
+    transition: none;
+  }
+}
+
+.input-default {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-default-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-default-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-default-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-default-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-default-placehold-rest));
+}
+
+.input-default:hover:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-default-border-hover));
+}
+
+.input-default:active:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-default-border-active));
+}
+
+.input-default:focus-within {
+  --awds-input-bg:        rgb(var(--awds-state-form-control-default-bg-focus));
+  --awds-input-chroma:    rgb(var(--awds-state-form-control-default-chroma-focus));
+  --awds-input-border:    rgb(var(--awds-state-form-control-default-border-focus));
+  --awds-input-color:     rgb(var(--awds-state-form-control-default-color-focus));
+  --awds-input-placehold: rgb(var(--awds-state-form-control-default-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.input-error {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-error-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-error-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-error-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-error-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-error-placehold-rest));
+}
+
+.input-error:hover:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-error-border-hover));
+}
+
+.input-error:active:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-error-border-active));
+}
+
+.input-error:focus-within {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-error-bg-focus));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-error-chroma-focus));
+  --awds-input-border:     rgb(var(--awds-state-form-control-error-border-focus));
+  --awds-input-color:      rgb(var(--awds-state-form-control-error-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-error-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-error-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.input-ghost {
+  --awds-input-bg:         transparent;
+  --awds-input-chroma:     transparent;
+  --awds-input-border:     transparent;
+  --awds-input-color:      rgb(var(--awds-state-form-control-ghost-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-ghost-placehold-rest));
+}
+
+.input-ghost:focus-within {
+  --awds-input-bg:         transparent;
+  --awds-input-chroma:     transparent;
+  --awds-input-border:     transparent;
+  --awds-input-color:      rgb(var(--awds-state-form-control-ghost-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-ghost-color-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.input-light {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-light-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-light-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-light-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-light-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-light-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-light-placehold-rest));
+}
+
+.input-light:hover:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-light-border-hover));
+}
+
+.input-light:active:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-light-border-active));
+}
+
+.input-light:focus-within {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-light-bg-focus));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-light-chroma-focus));
+  --awds-input-border:     rgb(var(--awds-state-form-control-light-border-focus));
+  --awds-input-color:      rgb(var(--awds-state-form-control-light-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-light-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-light-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.input-secondary {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-secondary-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-secondary-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-secondary-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-secondary-color-rest));
+}
+
+.input-secondary:hover:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-bg:     rgb(var(--awds-state-form-control-secondary-bg-hover));
+  --awds-input-border: rgb(var(--awds-state-form-control-secondary-border-hover));
+}
+
+.input-secondary:active:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-bg:     rgb(var(--awds-state-form-control-secondary-dim-active));
+  --awds-input-border: rgb(var(--awds-state-form-control-secondary-border-active));
+}
+
+.input-secondary:focus-within {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-secondary-bg-focus));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-focus));
+  --awds-input-border:     rgb(var(--awds-state-form-control-secondary-border-focus));
+  --awds-input-color:      rgb(var(--awds-state-form-control-secondary-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-secondary-color-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.input-success {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-success-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-success-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-success-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-success-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-success-placehold-rest));
+}
+
+.input-success:hover:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-success-border-hover));
+}
+
+.input-success:active:not(:focus-within):has(> .input__field:enabled) {
+  --awds-input-border: rgb(var(--awds-state-form-control-success-border-active));
+}
+
+.input-success:focus-within {
+  --awds-input-bg:         rgb(var(--awds-state-form-control-success-bg-focus));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-success-chroma-focus));
+  --awds-input-border:     rgb(var(--awds-state-form-control-success-border-focus));
+  --awds-input-color:      rgb(var(--awds-state-form-control-success-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-success-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-success-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+}

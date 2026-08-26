@@ -1,0 +1,655 @@
+/* ArrowDS · select-combi@1.0.6
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-scombi-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-scombi-chroma {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-scombi-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-scombi-placehold {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-scombi-chevron {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-scombi-icon-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.scombi {
+  --awds-scombi-padding:      var(--awds-size-rectangle-400-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-400-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-400-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-400-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-400);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-400-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-400-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-400-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-400-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-100);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-400-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-400-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-400);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-400);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-300-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-300);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-300);
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  border-radius: var(--awds-scombi-rounded);
+  box-shadow: inset 0 0 0 1px var(--awds-scombi-border);
+  background: linear-gradient(to right, var(--awds-scombi-chroma, var(--awds-scombi-bg)), var(--awds-scombi-bg));
+  color: var(--awds-scombi-color);
+  cursor: pointer;
+  transition: --awds-scombi-bg 0.15s ease-out,
+              --awds-scombi-chroma 0.15s ease-out,
+              --awds-scombi-color 0.15s ease-out,
+              --awds-scombi-placehold 0.15s ease-out,
+              --awds-scombi-chevron 0.15s ease-out,
+              --awds-scombi-icon-color 0.15s ease-out,
+              box-shadow 0.15s ease-out;
+}
+
+.scombi::after {
+  content: "";
+  position: absolute;
+  right: var(--awds-scombi-padding);
+  top: 50%;
+  translate: 0 -50%;
+  width: var(--awds-scombi-icon);
+  height: var(--awds-scombi-icon);
+  background: var(--awds-scombi-chevron);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M13.2928 7.2968C13.6833 6.9063 14.3163 6.9063 14.7068 7.2968C15.0973 7.6873 15.0973 8.3203 14.7068 8.7109L10.7107 12.707C10.3206 13.0971 9.68829 13.0975 9.29763 12.7079L5.29373 8.7118C4.90292 8.3218 4.90192 7.6887 5.29177 7.2978C5.68182 6.907 6.31491 6.906 6.70584 7.2958L10.0027 10.5868L13.2928 7.2968Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M13.2928 7.2968C13.6833 6.9063 14.3163 6.9063 14.7068 7.2968C15.0973 7.6873 15.0973 8.3203 14.7068 8.7109L10.7107 12.707C10.3206 13.0971 9.68829 13.0975 9.29763 12.7079L5.29373 8.7118C4.90292 8.3218 4.90192 7.6887 5.29177 7.2978C5.68182 6.907 6.31491 6.906 6.70584 7.2958L10.0027 10.5868L13.2928 7.2968Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  pointer-events: none;
+}
+
+.scombi__body {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+  min-block-size: calc(var(--awds-scombi-input-top) + var(--awds-scombi-lh) + var(--awds-scombi-input-bottom));
+}
+
+.scombi__field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding-block: var(--awds-scombi-input-top) var(--awds-scombi-input-bottom);
+  padding-left: var(--awds-scombi-text-gap);
+  padding-right: calc(2 * var(--awds-scombi-padding) + var(--awds-scombi-icon));
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: 0;
+  color: var(--awds-scombi-color);
+  cursor: pointer;
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-scombi-fs);
+  line-height: var(--awds-scombi-lh);
+  letter-spacing: var(--awds-scombi-ls);
+  font-weight: var(--awds-font-weight-regular);
+  text-overflow: ellipsis;
+}
+
+.scombi__field:focus {
+  outline: none;
+}
+
+.scombi__field:has(option[value=""]:checked) {
+  color: var(--awds-scombi-placehold);
+}
+
+.scombi__label {
+  position: absolute;
+  left: var(--awds-scombi-text-gap);
+  right: calc(2 * var(--awds-scombi-padding) + var(--awds-scombi-icon));
+  top: var(--awds-scombi-label-top);
+  margin: 0;
+  pointer-events: none;
+  color: var(--awds-scombi-placehold);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-scombi-label-fs);
+  line-height: var(--awds-scombi-label-lh);
+  letter-spacing: var(--awds-scombi-label-ls);
+  font-weight: var(--awds-font-weight-regular);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: top 0.15s ease-out,
+              font-size 0.15s ease-out,
+              line-height 0.15s ease-out,
+              letter-spacing 0.15s ease-out,
+              --awds-scombi-placehold 0.15s ease-out;
+}
+
+.scombi__field:has(option[value=""]:checked) + .scombi__label {
+  top: var(--awds-scombi-padding);
+  font-size: var(--awds-scombi-fs);
+  line-height: var(--awds-scombi-lh);
+  letter-spacing: var(--awds-scombi-ls);
+}
+
+.scombi:has(> .scombi__prefix) .scombi__field {
+  padding-left: var(--awds-scombi-padding);
+}
+
+.scombi:has(> .scombi__prefix) .scombi__label {
+  left: var(--awds-scombi-padding);
+}
+
+.scombi__prefix, .scombi__suffix {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding-block: var(--awds-scombi-padding);
+  color: var(--awds-scombi-icon-color);
+  pointer-events: none;
+}
+
+.scombi__prefix {
+  padding-left: var(--awds-scombi-padding);
+}
+
+.scombi__suffix {
+  padding-right: var(--awds-scombi-padding);
+}
+
+.scombi__prefix svg, .scombi__suffix svg {
+  display: block;
+  width: var(--awds-scombi-icon);
+  height: var(--awds-scombi-icon);
+  flex-shrink: 0;
+}
+
+.scombi:has(> .scombi__suffix) {
+  padding-right: calc(var(--awds-scombi-padding) + var(--awds-scombi-icon));
+}
+
+.scombi:has(> .scombi__suffix) .scombi__field {
+  padding-right: var(--awds-scombi-padding);
+}
+
+.scombi:has(> .scombi__suffix) .scombi__label {
+  right: var(--awds-scombi-padding);
+}
+
+.scombi--300 {
+  --awds-scombi-padding:      var(--awds-size-rectangle-300-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-300-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-300-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-300-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-400);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-300-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-300-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-300-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-300-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-100);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-300-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-300-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-200-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-200-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-200-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-300);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-300);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-200-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-200-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-200);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.scombi--400 {
+  --awds-scombi-padding:      var(--awds-size-rectangle-400-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-400-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-400-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-400-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-400);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-400-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-400-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-400-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-400-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-100);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-400-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-400-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-400);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-400);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-300-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-300);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.scombi--500 {
+  --awds-scombi-padding:      var(--awds-size-rectangle-500-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-500-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-500-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-500-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-600);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-500-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-500-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-500-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-500-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
+  --awds-scombi-picker-rounded: var(--awds-size-dropdown-500-border-radius);
+  --awds-scombi-picker-padding: var(--awds-size-dropdown-500-padding);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-400);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-400);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-400-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-300);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.scombi--600 {
+  --awds-scombi-padding:      var(--awds-size-rectangle-600-padding);
+  --awds-scombi-icon:         var(--awds-size-rectangle-600-icon);
+  --awds-scombi-rounded:      var(--awds-size-rectangle-600-rounded);
+  --awds-scombi-fs:           var(--awds-size-rectangle-600-typography);
+  --awds-scombi-lh:           var(--awds-control-line-height-600);
+  --awds-scombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-scombi-text-gap:     var(--awds-size-rectangle-600-text-gap);
+  --awds-scombi-label-top:    var(--awds-size-rectangle-600-combi-label-top);
+  --awds-scombi-input-top:    var(--awds-size-rectangle-600-combi-input-top);
+  --awds-scombi-input-bottom: var(--awds-size-rectangle-600-combi-input-bottom);
+  --awds-scombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-scombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
+  --awds-scombi-picker-rounded: var(--awds-rounded-border-radius-600);
+  --awds-scombi-picker-padding: var(--awds-space-space-1);
+  --awds-scombi-opt-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-scombi-opt-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-scombi-opt-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-scombi-opt-lh:       var(--awds-control-line-height-600);
+  --awds-scombi-opt-ls:       var(--awds-control-letter-spacing-600);
+  --awds-scombi-opt-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-scombi-opt-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-scombi-opt-desc-fs:  var(--awds-size-rectangle-500-description);
+  --awds-scombi-opt-desc-lh:  var(--awds-control-line-height-400);
+  --awds-scombi-opt-desc-ls:  var(--awds-control-letter-spacing-400);
+}
+
+@supports (appearance: base-select) {
+  .scombi__field,
+  .scombi__field::picker(select) {
+    appearance: base-select;
+  }
+  .scombi__field {
+    border: 0;
+    background: none;
+    min-block-size: 0;
+    align-items: flex-start;
+  }
+  .scombi__field::picker-icon {
+    display: none;
+  }
+  .scombi {
+    anchor-name: --awds-scombi-anchor;
+    anchor-scope: --awds-scombi-anchor;
+  }
+  .scombi__field::picker(select) {
+    box-sizing: border-box;
+    padding: var(--awds-scombi-picker-padding);
+    border: 0;
+    border-radius: var(--awds-scombi-picker-rounded);
+    background: rgb(var(--awds-state-picker-bg-rest));
+    box-shadow: var(--awds-shadow-elevation-3);
+    position-anchor: --awds-scombi-anchor;
+    width: anchor-size(--awds-scombi-anchor width);
+    margin-block: var(--awds-space-space-1);
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--awds-state-picker-scrollbar-rest) / var(--awds-opacity-opacity-40)) transparent;
+  }
+  .scombi__field option {
+    --awds-list-item-padding:  var(--awds-scombi-opt-padding);
+    --awds-list-item-rounded:  var(--awds-scombi-opt-rounded);
+    --awds-list-item-icon:     var(--awds-scombi-opt-icon);
+    --awds-list-item-text-gap: var(--awds-scombi-opt-text-gap);
+    --awds-list-item-fs:       var(--awds-scombi-opt-fs);
+    --awds-list-item-lh:       var(--awds-scombi-opt-lh);
+    --awds-list-item-ls:       var(--awds-scombi-opt-ls);
+    --awds-list-item-desc-fs:  var(--awds-scombi-opt-desc-fs);
+    --awds-list-item-desc-lh:  var(--awds-scombi-opt-desc-lh);
+    --awds-list-item-desc-ls:  var(--awds-scombi-opt-desc-ls);
+  }
+  .scombi__field option::checkmark {
+    display: none;
+  }
+  .scombi__field option[value=""] {
+    display: none;
+  }
+  .scombi__field option:not(:checked):focus {
+    --awds-list-item-bg:     rgb(var(--awds-state-list-unselected-bg-focus));
+    --awds-list-item-border: rgb(var(--awds-state-list-unselected-bg-focus));
+  }
+  .scombi__field option:checked:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:     rgb(var(--awds-state-list-selected-secondary-bg-rest));
+    --awds-list-item-border: rgb(var(--awds-state-list-selected-secondary-border-rest));
+    --awds-list-item-color:  rgb(var(--awds-state-list-selected-secondary-color-rest));
+    --awds-list-item-desc:   rgb(var(--awds-state-list-selected-secondary-description-rest));
+    --awds-list-item-check:  rgb(var(--awds-state-list-selected-secondary-icon-check-rest));
+  }
+  .scombi__field option:disabled {
+    opacity: var(--awds-opacity-opacity-40);
+    cursor: default;
+  }
+}
+
+.scombi-autofill {
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-autofill-bg-rest));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-autofill-chroma-rest));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-autofill-border-rest));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-autofill-color-rest));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-autofill-placehold-rest));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-autofill-placehold-rest));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-autofill-placehold-rest));
+}
+
+.scombi-autofill:hover:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-autofill-border-hover));
+}
+
+.scombi-autofill:active:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-autofill-border-active));
+}
+
+.scombi-autofill:focus-within {
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-autofill-bg-focus));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-autofill-chroma-focus));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-autofill-border-focus));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-autofill-color-focus));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-autofill-placehold-focus));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-autofill-placehold-focus));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-autofill-color-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+@supports (appearance: base-select) {
+  .scombi.scombi-autofill:has(.scombi__field:open):has(.scombi__field:enabled) {
+    --awds-scombi-bg:          rgb(var(--awds-state-form-control-autofill-bg-focus));
+    --awds-scombi-chroma:      rgb(var(--awds-state-form-control-autofill-chroma-focus));
+    --awds-scombi-border:      rgb(var(--awds-state-form-control-autofill-border-focus));
+    --awds-scombi-color:       rgb(var(--awds-state-form-control-autofill-color-focus));
+    --awds-scombi-placehold:   rgb(var(--awds-state-form-control-autofill-placehold-focus));
+    --awds-scombi-chevron:     rgb(var(--awds-state-form-control-autofill-placehold-focus));
+    --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-autofill-color-focus));
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    outline-offset: var(--awds-focus-offset);
+  }
+}
+
+.scombi:has(.scombi__field:disabled), .scombi--disabled {
+  opacity: var(--awds-opacity-opacity-40);
+  cursor: default;
+}
+
+.scombi__field:disabled {
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scombi,
+  .scombi__label {
+    transition: none;
+  }
+}
+
+.scombi-default {
+  --awds-scombi-bg:         rgb(var(--awds-state-form-control-default-bg-rest));
+  --awds-scombi-chroma:     rgb(var(--awds-state-form-control-default-chroma-rest));
+  --awds-scombi-border:     rgb(var(--awds-state-form-control-default-border-rest));
+  --awds-scombi-color:      rgb(var(--awds-state-form-control-default-color-rest));
+  --awds-scombi-placehold:  rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-scombi-chevron:    rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-scombi-icon-color: rgb(var(--awds-state-form-control-default-placehold-rest));
+}
+
+.scombi-default:hover:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border: rgb(var(--awds-state-form-control-default-border-hover));
+}
+
+.scombi-default:active:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border: rgb(var(--awds-state-form-control-default-border-active));
+}
+
+.scombi-default:focus-within {
+  --awds-scombi-bg:         rgb(var(--awds-state-form-control-default-bg-focus));
+  --awds-scombi-chroma:     rgb(var(--awds-state-form-control-default-chroma-focus));
+  --awds-scombi-border:     rgb(var(--awds-state-form-control-default-border-focus));
+  --awds-scombi-color:      rgb(var(--awds-state-form-control-default-color-focus));
+  --awds-scombi-placehold:  rgb(var(--awds-state-form-control-default-placehold-focus));
+  --awds-scombi-chevron:    rgb(var(--awds-state-form-control-default-placehold-focus));
+  --awds-scombi-icon-color: rgb(var(--awds-state-form-control-default-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+@supports (appearance: base-select) {
+  .scombi.scombi-default:has(.scombi__field:open):has(.scombi__field:enabled) {
+    --awds-scombi-bg:         rgb(var(--awds-state-form-control-default-bg-focus));
+    --awds-scombi-chroma:     rgb(var(--awds-state-form-control-default-chroma-focus));
+    --awds-scombi-border:     rgb(var(--awds-state-form-control-default-border-focus));
+    --awds-scombi-color:      rgb(var(--awds-state-form-control-default-color-focus));
+    --awds-scombi-placehold:  rgb(var(--awds-state-form-control-default-placehold-focus));
+    --awds-scombi-chevron:    rgb(var(--awds-state-form-control-default-placehold-focus));
+    --awds-scombi-icon-color: rgb(var(--awds-state-form-control-default-placehold-focus));
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    outline-offset: var(--awds-focus-offset);
+  }
+}
+
+.scombi-error {
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-error-bg-rest));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-error-chroma-rest));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-rest));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-error-color-rest));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-error-placehold-rest));
+}
+
+.scombi-error:hover:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-hover));
+}
+
+.scombi-error:active:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-active));
+}
+
+.scombi-error:focus-within {
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-error-bg-focus));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-error-chroma-focus));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-focus));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-error-color-focus));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-error-placehold-focus));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-error-placehold-focus));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-error-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+@supports (appearance: base-select) {
+  .scombi.scombi-error:has(.scombi__field:open):has(.scombi__field:enabled) {
+    --awds-scombi-bg:          rgb(var(--awds-state-form-control-error-bg-focus));
+    --awds-scombi-chroma:      rgb(var(--awds-state-form-control-error-chroma-focus));
+    --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-focus));
+    --awds-scombi-color:       rgb(var(--awds-state-form-control-error-color-focus));
+    --awds-scombi-placehold:   rgb(var(--awds-state-form-control-error-placehold-focus));
+    --awds-scombi-chevron:     rgb(var(--awds-state-form-control-error-placehold-focus));
+    --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-error-placehold-focus));
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    outline-offset: var(--awds-focus-offset);
+  }
+}
+
+.scombi-ghost {
+  --awds-scombi-bg:          transparent;
+  --awds-scombi-chroma:      transparent;
+  --awds-scombi-border:      transparent;
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-ghost-color-rest));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
+}
+
+.scombi-ghost:focus-within {
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-ghost-color-focus));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-ghost-placehold-focus));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-ghost-placehold-focus));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-ghost-color-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+@supports (appearance: base-select) {
+  .scombi.scombi-ghost:has(.scombi__field:open):has(.scombi__field:enabled) {
+    --awds-scombi-color:       rgb(var(--awds-state-form-control-ghost-color-focus));
+    --awds-scombi-placehold:   rgb(var(--awds-state-form-control-ghost-placehold-focus));
+    --awds-scombi-chevron:     rgb(var(--awds-state-form-control-ghost-placehold-focus));
+    --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-ghost-color-focus));
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    outline-offset: var(--awds-focus-offset);
+  }
+}
+
+.scombi-light {
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-light-bg-rest));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-light-chroma-rest));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-light-border-rest));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-light-color-rest));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-light-placehold-rest));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-light-placehold-rest));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-light-placehold-rest));
+}
+
+.scombi-light:hover:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-light-border-hover));
+}
+
+.scombi-light:active:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-light-border-active));
+}
+
+.scombi-light:focus-within {
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-light-chroma-focus));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-light-border-focus));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-light-color-focus));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-light-placehold-focus));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-light-placehold-focus));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-light-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+@supports (appearance: base-select) {
+  .scombi.scombi-light:has(.scombi__field:open):has(.scombi__field:enabled) {
+    --awds-scombi-chroma:      rgb(var(--awds-state-form-control-light-chroma-focus));
+    --awds-scombi-border:      rgb(var(--awds-state-form-control-light-border-focus));
+    --awds-scombi-color:       rgb(var(--awds-state-form-control-light-color-focus));
+    --awds-scombi-placehold:   rgb(var(--awds-state-form-control-light-placehold-focus));
+    --awds-scombi-chevron:     rgb(var(--awds-state-form-control-light-placehold-focus));
+    --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-light-placehold-focus));
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    outline-offset: var(--awds-focus-offset);
+  }
+}
+
+.scombi-success {
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-success-bg-rest));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-success-chroma-rest));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-success-border-rest));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-success-color-rest));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-success-placehold-rest));
+}
+
+.scombi-success:hover:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-success-border-hover));
+}
+
+.scombi-success:active:not(:focus-within):has(.scombi__field:enabled) {
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-success-border-active));
+}
+
+.scombi-success:focus-within {
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-success-bg-focus));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-success-chroma-focus));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-success-border-focus));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-success-color-focus));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-success-placehold-focus));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-success-placehold-focus));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-success-placehold-focus));
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+@supports (appearance: base-select) {
+  .scombi.scombi-success:has(.scombi__field:open):has(.scombi__field:enabled) {
+    --awds-scombi-bg:          rgb(var(--awds-state-form-control-success-bg-focus));
+    --awds-scombi-chroma:      rgb(var(--awds-state-form-control-success-chroma-focus));
+    --awds-scombi-border:      rgb(var(--awds-state-form-control-success-border-focus));
+    --awds-scombi-color:       rgb(var(--awds-state-form-control-success-color-focus));
+    --awds-scombi-placehold:   rgb(var(--awds-state-form-control-success-placehold-focus));
+    --awds-scombi-chevron:     rgb(var(--awds-state-form-control-success-placehold-focus));
+    --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-success-placehold-focus));
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    outline-offset: var(--awds-focus-offset);
+  }
+}
+
+}

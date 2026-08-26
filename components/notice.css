@@ -1,0 +1,112 @@
+/* ArrowDS · notice@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.notice {
+  --awds-notice-size:  var(--awds-size-notice-400-size);
+  --awds-notice-pad-h: var(--awds-size-notice-400-padding-h);
+  --awds-notice-pad-v: var(--awds-size-notice-400-padding-v);
+  --awds-notice-fs:    var(--awds-size-notice-400-typography);
+  --awds-notice-lh:    var(--awds-control-line-height-300);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-300);
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: var(--awds-notice-size);          
+  height: var(--awds-notice-size);
+  padding-block: var(--awds-notice-pad-v);
+  padding-inline: var(--awds-notice-pad-h);    
+  border-radius: var(--awds-rounded-border-radius-full);     
+  background: linear-gradient(to right, var(--awds-notice-chroma, var(--awds-notice-bg)), var(--awds-notice-bg));
+  box-shadow: inset 0 0 0 1px var(--awds-notice-border);
+  color: var(--awds-notice-color);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-notice-fs);
+  line-height: var(--awds-notice-lh);
+  letter-spacing: var(--awds-notice-ls);
+  font-weight: var(--awds-font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.notice-primary {
+  --awds-notice-bg:     rgb(var(--awds-state-badge-system-accent-bg-rest));
+  --awds-notice-chroma: rgb(var(--awds-state-badge-system-accent-chroma-rest));
+  --awds-notice-border: rgb(var(--awds-state-badge-system-accent-border-rest));
+  --awds-notice-color:  rgb(var(--awds-state-badge-system-accent-color-rest));
+}
+
+.notice-secondary {
+  --awds-notice-bg:     rgb(var(--awds-state-badge-system-secondary-bg-rest));
+  --awds-notice-chroma: rgb(var(--awds-state-badge-system-secondary-chroma-rest));
+  --awds-notice-border: rgb(var(--awds-state-badge-system-secondary-border-rest));
+  --awds-notice-color:  rgb(var(--awds-state-badge-system-secondary-color-rest));
+}
+
+.notice-ghost {
+  --awds-notice-bg:     rgb(var(--awds-state-badge-system-ghost-bg-rest));
+  --awds-notice-chroma: rgb(var(--awds-state-badge-system-ghost-chroma-rest));
+  --awds-notice-border: rgb(var(--awds-state-badge-system-ghost-border-rest));
+  --awds-notice-color:  rgb(var(--awds-state-badge-system-ghost-color-rest));
+}
+
+.notice--600 {
+  --awds-notice-size:  var(--awds-size-notice-600-size);
+  --awds-notice-pad-h: var(--awds-size-notice-600-padding-h);
+  --awds-notice-pad-v: var(--awds-size-notice-600-padding-v);
+  --awds-notice-fs:    var(--awds-size-notice-600-typography);
+  --awds-notice-lh:    var(--awds-control-line-height-500);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-500);
+}
+
+.notice--500 {
+  --awds-notice-size:  var(--awds-size-notice-500-size);
+  --awds-notice-pad-h: var(--awds-size-notice-500-padding-h);
+  --awds-notice-pad-v: var(--awds-size-notice-500-padding-v);
+  --awds-notice-fs:    var(--awds-size-notice-500-typography);
+  --awds-notice-lh:    var(--awds-control-line-height-400);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-400);
+}
+
+.notice--400 {
+  --awds-notice-size:  var(--awds-size-notice-400-size);
+  --awds-notice-pad-h: var(--awds-size-notice-400-padding-h);
+  --awds-notice-pad-v: var(--awds-size-notice-400-padding-v);
+  --awds-notice-fs:    var(--awds-size-notice-400-typography);
+  --awds-notice-lh:    var(--awds-control-line-height-300);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-300);
+}
+
+.notice--300 {
+  --awds-notice-size:  var(--awds-size-notice-300-size);
+  --awds-notice-pad-h: var(--awds-size-notice-300-padding-h);
+  --awds-notice-pad-v: var(--awds-size-notice-300-padding-v);
+  --awds-notice-fs:    var(--awds-size-notice-300-typography);
+  --awds-notice-lh:    var(--awds-control-line-height-200);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-200);
+}
+
+.notice--200 {
+  --awds-notice-size:  var(--awds-size-notice-200-size);
+  --awds-notice-pad-h: var(--awds-size-notice-200-padding-h);
+  --awds-notice-pad-v: var(--awds-size-notice-200-padding-v);
+  --awds-notice-fs:    var(--awds-size-notice-200-typography);
+  --awds-notice-lh:    var(--awds-control-line-height-100);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-100);
+}
+
+.notice--100 {
+  --awds-notice-size:  var(--awds-size-notice-100-size);
+  --awds-notice-pad-h: var(--awds-space-space-0);
+  --awds-notice-pad-v: var(--awds-size-notice-100-padding-v);
+  --awds-notice-fs:    var(--awds-size-notice-100-typography);
+  --awds-notice-lh:    var(--awds-control-line-height-50);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-50);
+}
+
+}

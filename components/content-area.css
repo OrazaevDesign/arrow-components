@@ -1,0 +1,174 @@
+/* ArrowDS · content-area@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.content-area {
+  --awds-content-area-ratio:    16 / 9;
+  --awds-content-area-radius:   var(--awds-rounded-border-radius-700);
+  --awds-content-area-border:   rgb(var(--extended-shadow-1));
+  --awds-content-area-fit:      cover;
+  --awds-content-area-position: center;
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  inline-size: 100%;
+  margin: 0;
+  aspect-ratio: var(--awds-content-area-ratio);
+  border-radius: var(--awds-content-area-radius);
+  overflow: hidden;
+}
+
+.content-area__img, .content-area__video {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  display: block;
+}
+
+.content-area--img {
+  box-shadow: inset 0 0 0 1px var(--awds-content-area-border);
+}
+
+.content-area__img {
+  object-fit: var(--awds-content-area-fit);
+  object-position: var(--awds-content-area-position);
+}
+
+.content-area--fit-cover { --awds-content-area-fit: cover;
+}
+
+.content-area--fit-contain { --awds-content-area-fit: contain;
+}
+
+.content-area--fit-fill { --awds-content-area-fit: fill;
+}
+
+.content-area--video {
+  background: rgb(var(--surface-surface));
+  box-shadow: inset 0 0 0 1px var(--awds-content-area-border);
+}
+
+.content-area__video {
+  border: 0;
+}
+
+.content-area--1-1 { --awds-content-area-ratio: 1 / 1;
+}
+
+.content-area--16-9 { --awds-content-area-ratio: 16 / 9;
+}
+
+.content-area--9-16 { --awds-content-area-ratio: 9 / 16;
+}
+
+.content-area--4-3 { --awds-content-area-ratio: 4 / 3;
+}
+
+.content-area--3-4 { --awds-content-area-ratio: 3 / 4;
+}
+
+.content-area--3-2 { --awds-content-area-ratio: 3 / 2;
+}
+
+.content-area--2-3 { --awds-content-area-ratio: 2 / 3;
+}
+
+.content-area--5-4 { --awds-content-area-ratio: 5 / 4;
+}
+
+.content-area--4-5 { --awds-content-area-ratio: 4 / 5;
+}
+
+.content-area--16-10 { --awds-content-area-ratio: 16 / 10;
+}
+
+.content-area--10-16 { --awds-content-area-ratio: 10 / 16;
+}
+
+.content-area--8-5 { --awds-content-area-ratio: 8 / 5;
+}
+
+.content-area--9-8 { --awds-content-area-ratio: 9 / 8;
+}
+
+.content-area--21-9 { --awds-content-area-ratio: 21 / 9;
+}
+
+.content-area--9-21 { --awds-content-area-ratio: 9 / 21;
+}
+
+.content-area--32-9 { --awds-content-area-ratio: 32 / 9;
+}
+
+.content-area--16-5 { --awds-content-area-ratio: 16 / 5;
+}
+
+.content-area--14-3 { --awds-content-area-ratio: 14 / 3;
+}
+
+.content-area--8-3 { --awds-content-area-ratio: 8 / 3;
+}
+
+.content-area--5-2 { --awds-content-area-ratio: 5 / 2;
+}
+
+.content-area--3-1 { --awds-content-area-ratio: 3 / 1;
+}
+
+.content-area--2-1 { --awds-content-area-ratio: 2 / 1;
+}
+
+.content-area--1-2 { --awds-content-area-ratio: 1 / 2;
+}
+
+.content-area--4-1 { --awds-content-area-ratio: 4 / 1;
+}
+
+.content-area--6-1 { --awds-content-area-ratio: 6 / 1;
+}
+
+.content-area--12-1 { --awds-content-area-ratio: 12 / 1;
+}
+
+.content-area--6-7 { --awds-content-area-ratio: 6 / 7;
+}
+
+.content-area--a4-portrait { --awds-content-area-ratio: 210 / 297;
+}
+
+.content-area--a4-landscape { --awds-content-area-ratio: 297 / 210;
+}
+
+.content-area--a4-half-portrait { --awds-content-area-ratio: 420 / 297;
+}
+
+.content-area--a4-half-landscape { --awds-content-area-ratio: 297 / 105;
+}
+
+.content-area--letter-portrait { --awds-content-area-ratio: 17 / 22;
+}
+
+.content-area--letter-landscape { --awds-content-area-ratio: 22 / 17;
+}
+
+.content-area--letter-half-portrait { --awds-content-area-ratio: 17 / 11;
+}
+
+.content-area--letter-half-landscape { --awds-content-area-ratio: 44 / 17;
+}
+
+.content-area--golden-portrait { --awds-content-area-ratio: 0.618 / 1;
+}
+
+.content-area--golden-landscape { --awds-content-area-ratio: 1.618 / 1;
+}
+
+.content-area--golden-half-portrait { --awds-content-area-ratio: 1.236 / 1;
+}
+
+.content-area--golden-half-landscape { --awds-content-area-ratio: 3.236 / 1;
+}
+
+}

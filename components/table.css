@@ -1,0 +1,149 @@
+/* ArrowDS · table@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.cell-default {
+  --awds-cell-bg:          rgb(var(--awds-state-cell-default-bg-rest));
+  --awds-cell-border:      rgb(var(--awds-state-cell-default-border-rest));
+  --awds-cell-color:       rgb(var(--awds-state-cell-default-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-default-description-rest));
+}
+
+.cell-default:hover {
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-hover));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-border-hover));
+}
+
+.cell-default:focus-visible {
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-focus));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-border-focus));
+}
+
+.cell-default:active {
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-active));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-border-active));
+}
+
+.cell-head {
+  --awds-cell-bg:          rgb(var(--awds-state-cell-default-head-bg-rest));
+  --awds-cell-border:      rgb(var(--awds-state-cell-default-head-border-rest));
+  --awds-cell-color:       rgb(var(--awds-state-cell-default-head-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-default-head-description-rest));
+  font-weight: var(--awds-font-weight-semibold);
+}
+
+.cell-head:hover {
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-hover));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-hover));
+}
+
+.cell-head:focus-visible {
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-focus));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-focus));
+}
+
+.cell-head:active {
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-active));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-active));
+}
+
+.cell-light {
+  --awds-cell-bg:          transparent;
+  --awds-cell-border:      transparent;
+  --awds-cell-color:       rgb(var(--awds-state-cell-light-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-light-description-rest));
+}
+
+.cell-light:hover {
+  --awds-cell-bg:     rgb(var(--awds-state-cell-light-bg-hover));
+  --awds-cell-border: rgb(var(--awds-state-cell-light-border-hover));
+}
+
+.cell-light:focus-visible {
+  --awds-cell-bg:     transparent;
+  --awds-cell-border: transparent;
+}
+
+.cell-light:active {
+  --awds-cell-bg:     transparent;
+  --awds-cell-border: transparent;
+}
+
+.awds-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--awds-font-family-system);
+}
+
+.awds-table .cell {
+  min-width: var(--awds-space-space-20);
+}
+
+.awds-table--light .cell {
+  border: 0;
+  border-bottom: var(--awds-space-space-px) solid rgb(var(--awds-state-cell-default-head-border-rest));
+  padding-inline: 0 var(--awds-space-space-3);
+}
+
+.awds-table--light tr:last-child .cell {
+  border-bottom: 0;
+}
+
+.awds-table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.cell {
+  --awds-cell-bg:          rgb(var(--awds-state-cell-light-bg-rest));
+  --awds-cell-border:      rgb(var(--awds-state-cell-light-border-rest));
+  --awds-cell-color:       rgb(var(--awds-state-cell-light-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-light-description-rest));
+  padding: var(--awds-space-space-3);                 
+  border: 1px solid var(--awds-cell-border);
+  background-color: var(--awds-cell-bg);
+  color: var(--awds-cell-color);
+  text-align: start;
+  vertical-align: middle;
+  font-size: var(--awds-typography-typography-font-size-400);          
+  line-height: var(--awds-typography-typography-line-height-400);      
+  letter-spacing: var(--awds-typography-typography-letter-spacing-400); 
+  font-weight: var(--awds-font-weight-regular);
+  text-wrap: pretty;
+  transition: background-color 0.15s ease-out,
+              border-color 0.15s ease-out,
+              color 0.15s ease-out;
+}
+
+.cell:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset-inside);
+}
+
+.cell:disabled, .cell[aria-disabled="true"] {
+  opacity: var(--awds-opacity-opacity-40);
+  pointer-events: none;
+}
+
+.cell__description {
+  display: block;
+  margin-block-start: var(--awds-space-space-1);
+  color: var(--awds-cell-description);
+  font-size: var(--awds-typography-typography-font-size-200);          
+  line-height: var(--awds-typography-typography-line-height-200);      
+  font-weight: var(--awds-font-weight-regular);
+}
+
+.cell--numeric {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cell {
+    transition: none;
+  }
+}
+
+}

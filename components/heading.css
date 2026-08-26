@@ -1,0 +1,63 @@
+/* ArrowDS · heading@1.0.2
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.heading {
+  --awds-heading-fs: var(--awds-typography-typography-font-size-910);
+  --awds-heading-lh: var(--awds-typography-typography-line-height-compact-910);
+  --awds-heading-ls: var(--awds-typography-typography-letter-spacing-910);
+  display: flex;
+  align-items: flex-end;             
+  gap: var(--awds-space-space-1-5);        
+  width: 100%;                       
+  font-family: var(--awds-font-family-system);
+}
+
+.heading__title {
+  margin: 0;
+  font-size: var(--awds-heading-fs);
+  line-height: var(--awds-heading-lh);
+  letter-spacing: var(--awds-heading-ls);
+  font-weight: var(--awds-font-weight-semibold);
+  color: rgb(var(--surface-on-highest));
+  text-wrap: balance;
+}
+
+.heading--h1 {
+  --awds-heading-fs: var(--awds-typography-typography-font-size-920);
+  --awds-heading-lh: var(--awds-typography-typography-line-height-compact-920);
+  --awds-heading-ls: var(--awds-typography-typography-letter-spacing-920);
+}
+
+.heading--h2 {
+  --awds-heading-fs: var(--awds-typography-typography-font-size-910);
+  --awds-heading-lh: var(--awds-typography-typography-line-height-compact-910);
+  --awds-heading-ls: var(--awds-typography-typography-letter-spacing-910);
+}
+
+.heading--h3 {
+  --awds-heading-fs: var(--awds-typography-typography-font-size-900);
+  --awds-heading-lh: var(--awds-typography-typography-line-height-compact-900);
+  --awds-heading-ls: var(--awds-typography-typography-letter-spacing-900);
+}
+
+.heading--h4 {
+  --awds-heading-fs: var(--awds-typography-typography-font-size-800);
+  --awds-heading-lh: var(--awds-typography-typography-line-height-compact-800);
+  --awds-heading-ls: var(--awds-typography-typography-letter-spacing-800);
+}
+
+.heading--h5 {
+  --awds-heading-fs: var(--awds-typography-typography-font-size-600);
+  --awds-heading-lh: var(--awds-typography-typography-line-height-compact-600);
+  --awds-heading-ls: var(--awds-typography-typography-letter-spacing-600);
+}
+
+@media (max-width: 1067px) {
+  .heading {
+    justify-content: space-between;
+  }
+}
+
+}

@@ -1,0 +1,173 @@
+/* ArrowDS · uploader@1.0.2
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.upl, .upl__list, .upl__file {
+  --awds-upl-gap:      var(--awds-space-space-2);
+  --awds-upl-file-gap: var(--awds-space-space-1-5);
+  --awds-upl-box:      calc(var(--awds-size-rectangle-300-icon) + 2 * var(--awds-size-rectangle-300-padding));
+  --awds-upl-progress: var(--awds-space-space-5);
+  --awds-upl-name-fs:  var(--awds-control-font-size-300);
+  --awds-upl-name-lh:  var(--awds-control-line-height-300);
+  --awds-upl-name-ls:  var(--awds-control-letter-spacing-300);
+  --awds-upl-size-fs:  var(--awds-control-font-size-200);
+  --awds-upl-size-lh:  var(--awds-control-line-height-200);
+  --awds-upl-size-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.upl {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-upl-gap);
+  width: 100%;
+}
+
+.upl__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-upl-file-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.upl__file {
+  display: flex;
+  align-items: center;
+  gap: var(--awds-upl-file-gap);
+  min-block-size: var(--awds-upl-box);
+  color: rgb(var(--surface-on-highest));
+}
+
+.upl__preview, .upl__icon {
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: var(--awds-upl-box);
+  height: var(--awds-upl-box);
+}
+
+.upl__preview {
+  border-radius: var(--awds-size-rectangle-300-rounded);
+}
+
+.upl__preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upl__icon svg {
+  display: block;
+  width: var(--awds-size-rectangle-300-icon);
+  height: var(--awds-size-rectangle-300-icon);
+  color: rgb(var(--surface-on-high));
+}
+
+.upl__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--awds-font-family-system);
+  font-weight: var(--awds-font-weight-regular);
+}
+
+.upl__name {
+  font-size: var(--awds-upl-name-fs);
+  line-height: var(--awds-upl-name-lh);
+  letter-spacing: var(--awds-upl-name-ls);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.upl__size {
+  font-size: var(--awds-upl-size-fs);
+  line-height: var(--awds-upl-size-lh);
+  letter-spacing: var(--awds-upl-size-ls);
+  color: rgb(var(--surface-on-high));
+  font-variant-numeric: tabular-nums;
+}
+
+.upl__progress {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--awds-upl-progress);
+  height: var(--awds-upl-progress);
+}
+
+.upl__progress svg, .upl__progress img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.upl__remove {
+  flex-shrink: 0;
+}
+
+.upl__file--error {
+  color: rgb(var(--error-core));
+}
+
+.upl__file--error .upl__size {
+  color: rgb(var(--error-core));
+}
+
+.upl--300 .input {
+  --awds-input-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-input-lh:       var(--awds-control-line-height-400);
+  --awds-input-ls:       var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-300-text-gap);
+}
+
+.upl--400 .input {
+  --awds-input-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-input-lh:       var(--awds-control-line-height-400);
+  --awds-input-ls:       var(--awds-control-letter-spacing-400);
+  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
+}
+
+.upl--500 .input {
+  --awds-input-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-input-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-input-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-input-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-input-lh:       var(--awds-control-line-height-600);
+  --awds-input-ls:       var(--awds-control-letter-spacing-600);
+  --awds-input-text-gap: var(--awds-size-rectangle-500-text-gap);
+}
+
+.upl__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.upl__input:focus-visible + .input {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+}
+
+}

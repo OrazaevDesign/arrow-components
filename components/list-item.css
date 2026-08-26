@@ -1,0 +1,441 @@
+/* ArrowDS · list-item@1.0.4
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-list-item-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-list-item-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.list-item {
+  --awds-list-item-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-400-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  appearance: none;
+  border: 0;
+  border-radius: var(--awds-list-item-rounded);
+  box-shadow: inset 0 0 0 1px var(--awds-list-item-border);
+  background: var(--awds-list-item-bg);
+  color: var(--awds-list-item-color);
+  font-family: var(--awds-font-family-system);
+  font-weight: var(--awds-font-weight-regular);
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: --awds-list-item-bg 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out;
+}
+
+.list-item:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.list-item:disabled, .list-item[aria-disabled="true"] {
+  opacity: var(--awds-opacity-opacity-40);
+  pointer-events: none;
+}
+
+.list-item__prefix, .list-item__suffix {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--awds-list-item-padding);
+  gap: 0;
+}
+
+.list-item__prefix > svg, .list-item__suffix > svg, .list-item__prefix > img, .list-item__suffix > img {
+  display: block;
+  width: var(--awds-list-item-icon);
+  height: var(--awds-list-item-icon);
+  flex-shrink: 0;
+}
+
+.list-item__check {
+  color: var(--awds-list-item-check);
+}
+
+.list-item__content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 0;
+  min-width: 0;
+  gap: var(--awds-space-space-0-5);
+  padding-block: var(--awds-list-item-padding);
+  padding-inline: var(--awds-list-item-text-gap);
+}
+
+.list-item:has(> .list-item__prefix) .list-item__content {
+  padding-left: 0;
+}
+
+.list-item:has(> .list-item__suffix) .list-item__content {
+  padding-right: 0;
+}
+
+.list-item__title {
+  font-size: var(--awds-list-item-fs);
+  line-height: var(--awds-list-item-lh);
+  letter-spacing: var(--awds-list-item-ls);
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.list-item__description {
+  font-size: var(--awds-list-item-desc-fs);
+  line-height: var(--awds-list-item-desc-lh);
+  letter-spacing: var(--awds-list-item-desc-ls);
+  color: var(--awds-list-item-desc);
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.list-item--600 {
+  --awds-list-item-padding:  var(--awds-size-rectangle-600-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-600-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-600-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-600-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-600-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-600-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
+}
+
+.list-item--500 {
+  --awds-list-item-padding:  var(--awds-size-rectangle-500-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-500-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-500-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-500-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
+}
+
+.list-item--400 {
+  --awds-list-item-padding:  var(--awds-size-rectangle-400-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-400-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-400-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-400-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.list-item--300 {
+  --awds-list-item-padding:  var(--awds-size-rectangle-300-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-300-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-300-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-300-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.list-item--200 {
+  --awds-list-item-padding:  var(--awds-size-rectangle-200-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-200-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-200-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-200-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-200-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.list-item--100 {
+  --awds-list-item-padding:  var(--awds-size-rectangle-100-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-100-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-100-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-100-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-100-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-100-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.list-item--50 {
+  --awds-list-item-padding:  var(--awds-size-rectangle-50-padding);
+  --awds-list-item-icon:     var(--awds-size-rectangle-50-icon);
+  --awds-list-item-rounded:  var(--awds-size-rectangle-50-rounded);
+  --awds-list-item-text-gap: var(--awds-size-rectangle-50-text-gap);
+  --awds-list-item-fs:       var(--awds-size-rectangle-50-typography);
+  --awds-list-item-lh:       var(--awds-control-line-height-200);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-200);
+  --awds-list-item-desc-fs:  var(--awds-size-rectangle-50-description);
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-100);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-100);
+}
+
+.list-item-accent-selected {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-secondary-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-secondary-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-secondary-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-secondary-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-secondary-icon-check-rest));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .list-item {
+    transition: none;
+  }
+}
+
+.list-item-actual-selected {
+  --awds-list-item-bg:      transparent;
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-actual-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-actual-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-actual-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-actual-icon-check-rest));
+}
+
+.list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-actual-bg-hover));
+}
+
+.list-item-actual-selected:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      transparent;
+}
+
+.list-item-default-selected {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-bg-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-icon-check-rest));
+}
+
+.list-item-default-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-bg-hover));
+}
+
+.list-item-default-selected:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-bg-active));
+}
+
+.list-item-default {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-bg-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-icon-check-rest));
+}
+
+.list-item-default:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-border-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-hover));
+}
+
+.list-item-default:focus-visible {
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-focus));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-focus));
+}
+
+.list-item-default:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-bg-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-active));
+}
+
+.list-item-menu-selected {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-menu-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-menu-bg-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-menu-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-menu-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-menu-icon-check-rest));
+}
+
+.list-item-menu {
+  --awds-list-item-bg:      transparent;
+  --awds-list-item-border:  transparent;
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-menu-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-menu-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-menu-icon-check-rest));
+}
+
+.list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-menu-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-menu-bg-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-menu-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-menu-description-hover));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-menu-icon-check-hover));
+}
+
+.list-item-menu:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-menu-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-menu-bg-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-menu-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-menu-description-active));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-menu-icon-check-active));
+}
+
+.list-item-tabbar-selected {
+  --awds-list-item-bg:      transparent;
+  --awds-list-item-border:  transparent;
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-tabbar-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-tabbar-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-rest));
+}
+
+.list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-hover));
+}
+
+.list-item-tabbar-selected:focus-visible {
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-focus));
+}
+
+.list-item-tabbar-selected:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-active));
+}
+
+.list-item-tabbar {
+  --awds-list-item-bg:      transparent;
+  --awds-list-item-border:  transparent;
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-tabbar-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-tabbar-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-tabbar-icon-check-rest));
+}
+
+.list-item-tabbar:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-tabbar-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-tabbar-description-hover));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-tabbar-icon-check-hover));
+}
+
+.list-item-tabbar:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-tabbar-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-tabbar-bg-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-tabbar-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-tabbar-description-active));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-tabbar-icon-check-active));
+}
+
+.list-item-transparent {
+  --awds-list-item-bg:      transparent;
+  --awds-list-item-border:  transparent;
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-transparent-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-transparent-icon-check-rest));
+}
+
+.list-item-transparent:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-transparent-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-transparent-bg-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-hover));
+}
+
+.list-item-transparent:focus-visible {
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-focus));
+}
+
+.list-item-transparent:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      transparent;
+  --awds-list-item-border:  transparent;
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-active));
+}
+
+.list-item-variation-indeterminate {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-indeterminate-variation-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-indeterminate-variation-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-indeterminate-variation-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-indeterminate-variation-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-indeterminate-variation-icon-check-rest));
+}
+
+.list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-indeterminate-variation-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-indeterminate-variation-border-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-indeterminate-variation-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-indeterminate-variation-description-hover));
+}
+
+.list-item-variation-indeterminate:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-indeterminate-variation-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-indeterminate-variation-border-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-indeterminate-variation-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-indeterminate-variation-description-active));
+}
+
+.list-item-variation-selected {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-variation-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-variation-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-variation-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-variation-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-variation-icon-check-rest));
+}
+
+.list-item-variation {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-variation-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-variation-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-variation-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-rest));
+  --awds-list-item-check:   transparent;
+}
+
+.list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-variation-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-variation-border-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-variation-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-hover));
+}
+
+.list-item-variation:focus-visible {
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-focus));
+}
+
+.list-item-variation:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-variation-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-variation-border-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-variation-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-active));
+}
+
+}

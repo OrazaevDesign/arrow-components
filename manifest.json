@@ -1,0 +1,546 @@
+{
+  "generator": "tools/build-dist.mjs",
+  "package_version": "0.1.0",
+  "components": [
+    {
+      "name": "focus-selection",
+      "version": "1.1.0",
+      "variants": [
+        "default"
+      ],
+      "sizes": [],
+      "rules": 8,
+      "bytes": 1478
+    },
+    {
+      "name": "avatar",
+      "version": "1.0.2",
+      "variants": [
+        "initials",
+        "placeholder",
+        "picture"
+      ],
+      "sizes": [
+        50,
+        100,
+        150,
+        200,
+        250,
+        300,
+        400,
+        500,
+        600,
+        700
+      ],
+      "rules": 15,
+      "bytes": 4321
+    },
+    {
+      "name": "badge",
+      "version": "1.0.2",
+      "variants": [
+        "market-percent",
+        "market-sale",
+        "market-new",
+        "market-brand"
+      ],
+      "sizes": [
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 14,
+      "bytes": 6128
+    },
+    {
+      "name": "button",
+      "version": "1.0.5",
+      "variants": [
+        "primary",
+        "secondary",
+        "addition",
+        "contrast",
+        "tertiary",
+        "ghost",
+        "clean",
+        "pills"
+      ],
+      "sizes": [
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 49,
+      "bytes": 15316
+    },
+    {
+      "name": "button-area",
+      "version": "1.0.3",
+      "variants": [
+        "default",
+        "muted",
+        "contrast",
+        "accent",
+        "heading"
+      ],
+      "sizes": [
+        50,
+        100,
+        400,
+        500
+      ],
+      "rules": 31,
+      "bytes": 5707
+    },
+    {
+      "name": "button-favorites",
+      "version": "1.0.3",
+      "variants": [
+        "favorites"
+      ],
+      "sizes": null,
+      "rules": 16,
+      "bytes": 2419
+    },
+    {
+      "name": "button-overhung",
+      "version": "1.0.5",
+      "variants": [
+        "primary",
+        "secondary"
+      ],
+      "sizes": [
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 27,
+      "bytes": 9215
+    },
+    {
+      "name": "checkbox",
+      "version": "1.0.3",
+      "variants": [
+        "default"
+      ],
+      "sizes": [
+        200,
+        300,
+        400,
+        500
+      ],
+      "rules": 22,
+      "bytes": 6010
+    },
+    {
+      "name": "content-area",
+      "version": "1.0.3",
+      "variants": [
+        "img",
+        "video"
+      ],
+      "sizes": null,
+      "rules": 48,
+      "bytes": 3799
+    },
+    {
+      "name": "formfield",
+      "version": "1.0.3",
+      "variants": [
+        "input",
+        "select",
+        "square",
+        "fileuploader",
+        "textarea"
+      ],
+      "sizes": [
+        300,
+        400,
+        500
+      ],
+      "rules": 29,
+      "bytes": 8139
+    },
+    {
+      "name": "heading",
+      "version": "1.0.2",
+      "variants": [
+        "heading"
+      ],
+      "sizes": [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5"
+      ],
+      "rules": 8,
+      "bytes": 2094
+    },
+    {
+      "name": "input",
+      "version": "1.0.3",
+      "variants": [
+        "default",
+        "light",
+        "success",
+        "error",
+        "autofill",
+        "ghost",
+        "secondary"
+      ],
+      "sizes": [
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 54,
+      "bytes": 17124
+    },
+    {
+      "name": "input-combi",
+      "version": "1.0.3",
+      "variants": [
+        "default",
+        "light",
+        "success",
+        "error",
+        "autofill",
+        "ghost",
+        "secondary"
+      ],
+      "sizes": [
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 56,
+      "bytes": 19567
+    },
+    {
+      "name": "label",
+      "version": "1.0.3",
+      "variants": [
+        "default"
+      ],
+      "sizes": [
+        300,
+        400,
+        500
+      ],
+      "rules": 26,
+      "bytes": 5636
+    },
+    {
+      "name": "link",
+      "version": "1.0.2",
+      "variants": [
+        "default",
+        "muted",
+        "contrast",
+        "accent",
+        "heading"
+      ],
+      "sizes": null,
+      "rules": 32,
+      "bytes": 3701
+    },
+    {
+      "name": "list-item",
+      "version": "1.0.4",
+      "variants": [
+        "transparent",
+        "default",
+        "default-selected",
+        "actual-selected",
+        "accent-selected",
+        "tabbar",
+        "tabbar-selected",
+        "menu",
+        "menu-selected",
+        "variation",
+        "variation-selected",
+        "variation-indeterminate"
+      ],
+      "sizes": [
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 55,
+      "bytes": 20341
+    },
+    {
+      "name": "notice",
+      "version": "1.0.3",
+      "variants": [
+        "primary",
+        "secondary",
+        "ghost"
+      ],
+      "sizes": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 10,
+      "bytes": 4690
+    },
+    {
+      "name": "price",
+      "version": "1.0.3",
+      "variants": [
+        "sale",
+        "default",
+        "none"
+      ],
+      "sizes": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+        800,
+        900,
+        1000,
+        1100,
+        "listing"
+      ],
+      "rules": 25,
+      "bytes": 7273
+    },
+    {
+      "name": "product-card",
+      "version": "1.0.5",
+      "variants": [
+        "price-first",
+        "brand-first",
+        "buy-now"
+      ],
+      "sizes": null,
+      "rules": 143,
+      "bytes": 28739
+    },
+    {
+      "name": "radio",
+      "version": "1.0.3",
+      "variants": [
+        "default"
+      ],
+      "sizes": [
+        200,
+        300,
+        400,
+        500
+      ],
+      "rules": 21,
+      "bytes": 5181
+    },
+    {
+      "name": "range",
+      "version": "1.0.2",
+      "variants": [
+        "default",
+        "light"
+      ],
+      "sizes": [
+        300,
+        400,
+        500
+      ],
+      "rules": 25,
+      "bytes": 4958
+    },
+    {
+      "name": "select",
+      "version": "1.0.6",
+      "variants": [
+        "default",
+        "light",
+        "success",
+        "error",
+        "ghost",
+        "autofill"
+      ],
+      "sizes": [
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 57,
+      "bytes": 31330
+    },
+    {
+      "name": "select-combi",
+      "version": "1.0.6",
+      "variants": [
+        "default",
+        "light",
+        "success",
+        "error",
+        "ghost",
+        "autofill"
+      ],
+      "sizes": [
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 59,
+      "bytes": 31688
+    },
+    {
+      "name": "slider",
+      "version": "1.0.2",
+      "variants": [
+        "dots",
+        "dots-mini",
+        "numbs"
+      ],
+      "sizes": null,
+      "rules": 7,
+      "bytes": 1653
+    },
+    {
+      "name": "switch",
+      "version": "1.0.2",
+      "variants": [
+        "default"
+      ],
+      "sizes": [
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 27,
+      "bytes": 7217
+    },
+    {
+      "name": "table",
+      "version": "1.0.3",
+      "variants": [
+        "light",
+        "head",
+        "default"
+      ],
+      "sizes": null,
+      "rules": 23,
+      "bytes": 4624
+    },
+    {
+      "name": "textarea",
+      "version": "1.0.3",
+      "variants": [
+        "default",
+        "light",
+        "success",
+        "error",
+        "ghost",
+        "autofill"
+      ],
+      "sizes": [
+        50,
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 44,
+      "bytes": 13373
+    },
+    {
+      "name": "tooltip",
+      "version": "1.0.2",
+      "variants": [
+        "default",
+        "contrast"
+      ],
+      "sizes": null,
+      "rules": 11,
+      "bytes": 3595
+    },
+    {
+      "name": "uploader",
+      "version": "1.0.2",
+      "variants": [
+        "default",
+        "file"
+      ],
+      "sizes": [
+        300,
+        400,
+        500
+      ],
+      "rules": 21,
+      "bytes": 4556
+    }
+  ],
+  "bundle": {
+    "bytes": 277651,
+    "rules": 963,
+    "hash": "sha256:f319ddefa00e5cc078911157c6aaa8be68b5365b9039af5a5fd224a6667c5768"
+  },
+  "theme": {
+    "bytes": 105617,
+    "variables_kept": 1126,
+    "variables_declared": 3769,
+    "missing": []
+  },
+  "skipped_selectors": [
+    {
+      "component": "button-favorites",
+      "selector": ".btn",
+      "owner": "button"
+    },
+    {
+      "component": "button-favorites",
+      "selector": ".btn:disabled, .btn[aria-disabled=\"true\"]",
+      "owner": "button"
+    },
+    {
+      "component": "button-favorites",
+      "selector": ".btn svg",
+      "owner": "button"
+    },
+    {
+      "component": "button-favorites",
+      "selector": ".btn--icon-only",
+      "owner": "button"
+    }
+  ]
+}

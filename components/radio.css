@@ -1,0 +1,167 @@
+/* ArrowDS · radio@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-radio-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-radio-chroma {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.radio {
+  --awds-radio-padding: var(--awds-size-square-400-padding);
+  --awds-radio-icon:    var(--awds-size-square-400-icon);
+  --awds-radio-gap:     var(--awds-size-square-400-gap);
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--awds-radio-gap);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.radio__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: none;
+  opacity: 0;
+  cursor: inherit;
+}
+
+.radio__box {
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-rest));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-rest));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-rest));
+  --awds-radio-color:  transparent;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width:  calc(var(--awds-radio-icon) + 2 * var(--awds-radio-padding));
+  height: calc(var(--awds-radio-icon) + 2 * var(--awds-radio-padding));
+  padding: var(--awds-radio-padding);
+  border: 0;
+  border-radius: var(--awds-rounded-border-radius-full);
+  box-shadow: inset 0 0 0 1px var(--awds-radio-border);
+  background: linear-gradient(to right, var(--awds-radio-chroma, var(--awds-radio-bg)), var(--awds-radio-bg));
+  color: var(--awds-radio-color);
+  transition: --awds-radio-bg 0.15s ease-out,
+              --awds-radio-chroma 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out;
+}
+
+.radio__dot {
+  width: var(--awds-radio-icon);
+  height: var(--awds-radio-icon);
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.radio--200 {
+  --awds-radio-padding: var(--awds-size-square-200-padding);
+  --awds-radio-icon:    var(--awds-size-square-200-icon);
+  --awds-radio-gap:     var(--awds-size-square-200-gap);
+}
+
+.radio--300 {
+  --awds-radio-padding: var(--awds-size-square-300-padding);
+  --awds-radio-icon:    var(--awds-size-square-300-icon);
+  --awds-radio-gap:     var(--awds-size-square-300-gap);
+}
+
+.radio--400 {
+  --awds-radio-padding: var(--awds-size-square-400-padding);
+  --awds-radio-icon:    var(--awds-size-square-400-icon);
+  --awds-radio-gap:     var(--awds-size-square-400-gap);
+}
+
+.radio--500 {
+  --awds-radio-padding: var(--awds-size-square-500-padding);
+  --awds-radio-icon:    var(--awds-size-square-500-icon);
+  --awds-radio-gap:     var(--awds-size-square-500-gap);
+}
+
+.radio:hover > .radio__input:enabled + .radio__box {
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-hover));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-hover));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-hover));
+}
+
+.radio:active > .radio__input:enabled + .radio__box {
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-active));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-active));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-active));
+}
+
+.radio__input:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-rest));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-rest));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-rest));
+  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-rest));
+}
+
+.radio:hover > .radio__input:enabled:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-hover));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-hover));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-hover));
+  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-hover));
+}
+
+.radio:active > .radio__input:enabled:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-active));
+  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-active));
+  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-active));
+  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-active));
+}
+
+.radio__input:checked + .radio__box .radio__dot {
+  opacity: 1;
+}
+
+.radio__input:focus-visible + .radio__box {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.radio:has(> .radio__input:disabled), .radio--disabled {
+  opacity: var(--awds-opacity-opacity-40);
+  cursor: default;
+}
+
+.radio__label {
+  text-wrap: pretty;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-size-square-400-gap);
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radio__box,
+  .radio__dot {
+    transition: none;
+  }
+}
+
+}

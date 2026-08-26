@@ -1,0 +1,106 @@
+/* ArrowDS · tooltip@1.0.2
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.tooltip {
+  --awds-tooltip-pad-inline: var(--awds-space-space-2-5);   
+  --awds-tooltip-pad-block:  var(--awds-space-space-2);     
+  --awds-tooltip-fs:         var(--awds-typography-typography-font-size-400);             
+  --awds-tooltip-lh:         var(--awds-typography-typography-line-height-compact-400);   
+  --awds-tooltip-ls:         var(--awds-typography-typography-letter-spacing-400);
+  --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);  
+  --awds-tooltip-tail:       var(--awds-space-space-2);      
+  --awds-tooltip-hairline:   rgb(0 0 0 / 3%);
+  --awds-tooltip-max-width:  250px;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  max-width: var(--awds-tooltip-max-width);
+}
+
+.tooltip *, .tooltip *::before, .tooltip *::after {
+  box-sizing: border-box;
+}
+
+.tooltip__bubble {
+  display: block;
+  position: relative;
+  z-index: 1;
+  padding-block: var(--awds-tooltip-pad-block);
+  padding-inline: var(--awds-tooltip-pad-inline);
+  border-radius: var(--awds-tooltip-rounded);
+  background: var(--awds-tooltip-bg);
+  color: var(--awds-tooltip-color);
+  box-shadow: var(--awds-shadow-elevation-3);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-tooltip-fs);
+  line-height: var(--awds-tooltip-lh);
+  letter-spacing: var(--awds-tooltip-ls);
+  font-weight: var(--awds-font-weight-regular);
+  text-wrap: pretty;
+}
+
+.tooltip__tail {
+  position: absolute;
+  z-index: 2;
+  width: var(--awds-tooltip-tail);
+  height: var(--awds-tooltip-tail);
+  background: var(--awds-tooltip-bg);
+  transform: rotate(45deg);
+}
+
+.tooltip-default {
+  --awds-tooltip-bg:    rgb(var(--surface-bright));
+  --awds-tooltip-color: rgb(var(--surface-on-high));
+}
+
+.tooltip-contrast {
+  --awds-tooltip-bg:    rgb(var(--surface-on-highest));
+  --awds-tooltip-color: rgb(var(--surface-bright));
+}
+
+.tooltip--compact {
+  --awds-tooltip-pad-inline: var(--awds-space-space-1-5);   
+  --awds-tooltip-pad-block:  var(--awds-space-space-1);     
+  --awds-tooltip-fs:         var(--awds-typography-typography-font-size-300);             
+  --awds-tooltip-lh:         var(--awds-typography-typography-line-height-compact-300);   
+  --awds-tooltip-ls:         var(--awds-typography-typography-letter-spacing-300);
+  --awds-tooltip-rounded:    var(--awds-rounded-border-radius-300);
+}
+
+.tooltip--top .tooltip__tail, .tooltip:not(.tooltip--bottom):not(.tooltip--left):not(.tooltip--right) .tooltip__tail {
+  bottom: calc(-0.5 * var(--awds-tooltip-tail));
+  left: 50%;
+  margin-left: calc(-0.5 * var(--awds-tooltip-tail));
+  border-right:  1px solid var(--awds-tooltip-hairline);
+  border-bottom: 1px solid var(--awds-tooltip-hairline);
+}
+
+.tooltip--bottom .tooltip__tail {
+  top: calc(-0.5 * var(--awds-tooltip-tail));
+  bottom: auto;
+  left: 50%;
+  margin-left: calc(-0.5 * var(--awds-tooltip-tail));
+  border-top:  1px solid var(--awds-tooltip-hairline);
+  border-left: 1px solid var(--awds-tooltip-hairline);
+}
+
+.tooltip--left .tooltip__tail {
+  right: calc(-0.5 * var(--awds-tooltip-tail));
+  top: 50%;
+  margin-top: calc(-0.5 * var(--awds-tooltip-tail));
+  border-top:   1px solid var(--awds-tooltip-hairline);
+  border-right: 1px solid var(--awds-tooltip-hairline);
+}
+
+.tooltip--right .tooltip__tail {
+  left: calc(-0.5 * var(--awds-tooltip-tail));
+  top: 50%;
+  margin-top: calc(-0.5 * var(--awds-tooltip-tail));
+  border-bottom: 1px solid var(--awds-tooltip-hairline);
+  border-left:   1px solid var(--awds-tooltip-hairline);
+}
+
+}

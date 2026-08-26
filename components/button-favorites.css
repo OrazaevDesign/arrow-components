@@ -1,0 +1,102 @@
+/* ArrowDS · button-favorites@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-btn-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-btn-chroma {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-btn-fav-fill {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-btn-fav-stroke {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.btn:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.btn-favorites {
+  --awds-btn-bg:     transparent;
+  --awds-btn-chroma: transparent;
+  --awds-btn-border: transparent;
+  --awds-btn-color:  transparent;   
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-unselected-fill-rest));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-unselected-stroke-rest));
+  transition: transform 0.12s ease-out;
+}
+
+.btn-favorites:active {
+  transform: scale(0.9);
+}
+
+.btn-favorites__icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--awds-btn-icon);
+  height: var(--awds-btn-icon);
+  flex-shrink: 0;
+}
+
+.btn-favorites .btn-favorites__icon svg {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  transition: color 0.15s ease-out;
+}
+
+.btn-favorites__solid { color: var(--awds-btn-fav-fill);
+}
+
+.btn-favorites__outline { color: var(--awds-btn-fav-stroke);
+}
+
+.btn-favorites:hover {
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-unselected-fill-hover));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-unselected-stroke-hover));
+}
+
+.btn-favorites[aria-pressed="true"] {
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-selected-fill-rest));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-selected-stroke-rest));
+}
+
+.btn-favorites[aria-pressed="true"]:hover {
+  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-selected-fill-hover));
+  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-selected-stroke-hover));
+}
+
+.btn-favorites--mobile {
+  --awds-btn-padding: var(--awds-space-space-1-5);   
+  --awds-btn-icon:    var(--awds-space-space-5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-favorites,
+  .btn-favorites .btn-favorites__icon svg {
+    transition: none;
+  }
+  .btn-favorites:active {
+    transform: none;
+  }
+}
+
+}

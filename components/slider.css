@@ -1,0 +1,62 @@
+/* ArrowDS · slider@1.0.2
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.slider {
+  --awds-slider-dot-size: 6px;
+  --awds-slider-dot-active-w: 12px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--awds-space-space-1);
+  padding: var(--awds-space-space-1);
+  border-radius: var(--awds-rounded-border-radius-full);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  user-select: none;
+}
+
+.slider__dot {
+  flex-shrink: 0;
+  width: var(--awds-slider-dot-size);
+  height: var(--awds-slider-dot-size);
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-30));
+  transition: width 0.15s ease-out, background-color 0.15s ease-out;
+}
+
+.slider__dot--active {
+  width: var(--awds-slider-dot-active-w);
+  background: rgb(var(--surface-on-highest));
+}
+
+.slider-dots {
+  background: rgb(var(--surface-bright) / var(--awds-opacity-opacity-80));
+}
+
+.slider-dots-mini {
+  --awds-slider-dot-size: 4px;
+  --awds-slider-dot-active-w: 8px;
+  background: transparent;
+}
+
+.slider-numbs {
+  background: rgb(var(--surface-bright) / var(--awds-opacity-opacity-80));
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-control-font-size-300);
+  line-height: var(--awds-control-line-height-300);
+  letter-spacing: var(--awds-control-letter-spacing-300);
+  font-weight: var(--awds-font-weight-semibold);
+  color: rgb(var(--surface-on-high));
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider__dot {
+    transition: none;
+  }
+}
+
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@orazaevdesign/arrow-components",
+  "version": "0.1.0",
+  "description": "CSS-компоненты ArrowDS на переменных темы Design Studio",
+  "license": "UNLICENSED",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./awds.css": "./awds.css",
+    "./theme/arrowds.css": "./theme/arrowds.css",
+    "./components/*.css": "./components/*.css",
+    "./manifest.json": "./manifest.json"
+  },
+  "files": [
+    "awds.css",
+    "components/",
+    "theme/",
+    "manifest.json"
+  ]
+}

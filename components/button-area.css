@@ -1,0 +1,176 @@
+/* ArrowDS · button-area@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@keyframes btn-area-spin { to { transform: rotate(360deg); }
+}
+
+@layer awds {
+
+.btn-area {
+  --awds-btn-area-gap:     var(--awds-size-rectangle-500-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-600);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-600);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-btn-area-color:   currentColor;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;            
+  gap: var(--awds-btn-area-gap);
+  color: var(--awds-btn-area-color);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-btn-area-fs);
+  line-height: var(--awds-btn-area-lh);
+  letter-spacing: var(--awds-btn-area-ls);
+  font-weight: var(--awds-font-weight-regular);
+  text-decoration: none;              
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s ease-out;
+}
+
+.btn-area, .btn-area *, .btn-area *::before, .btn-area *::after { box-sizing: border-box;
+}
+
+.btn-area__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-area__prefix, .btn-area__suffix, .btn-area__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-area__prefix > svg, .btn-area__suffix > svg, .btn-area__icon > svg {
+  display: block;
+  width: var(--awds-btn-area-icon);
+  height: var(--awds-btn-area-icon);
+}
+
+.btn-area--icon-only { gap: 0;
+}
+
+.btn-area--500 {
+  --awds-btn-area-gap:     var(--awds-size-rectangle-500-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-500-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-600);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-600);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-500-rounded);
+}
+
+.btn-area--400 {
+  --awds-btn-area-gap:     var(--awds-size-rectangle-400-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-400-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-400);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-400);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-400-rounded);
+}
+
+.btn-area--100 {
+  --awds-btn-area-gap:     var(--awds-size-rectangle-100-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-100-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-300);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-300);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-100-rounded);
+}
+
+.btn-area--50 {
+  --awds-btn-area-gap:     var(--awds-size-rectangle-50-gap);
+  --awds-btn-area-icon:    var(--awds-size-rectangle-50-icon);
+  --awds-btn-area-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-btn-area-lh:      var(--awds-control-line-height-200);
+  --awds-btn-area-ls:      var(--awds-control-letter-spacing-200);
+  --awds-btn-area-rounded: var(--awds-size-rectangle-50-rounded);
+}
+
+.btn-area-default { --awds-btn-area-color: rgb(var(--awds-state-areabutton-default-rest));
+}
+
+.btn-area-default:hover { --awds-btn-area-color: rgb(var(--awds-state-areabutton-default-hover));
+}
+
+.btn-area-muted { --awds-btn-area-color: rgb(var(--awds-state-areabutton-muted-rest));
+}
+
+.btn-area-muted:hover { --awds-btn-area-color: rgb(var(--awds-state-areabutton-muted-hover));
+}
+
+.btn-area-contrast { --awds-btn-area-color: rgb(var(--awds-state-areabutton-contrast-rest));
+}
+
+.btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--awds-state-areabutton-contrast-hover));
+}
+
+.btn-area-accent { --awds-btn-area-color: rgb(var(--awds-state-link-accent-rest));
+}
+
+.btn-area-accent:hover { --awds-btn-area-color: rgb(var(--awds-state-link-accent-hover));
+}
+
+.btn-area-heading { --awds-btn-area-color: rgb(var(--awds-state-link-heading-rest));
+}
+
+.btn-area-heading:hover { --awds-btn-area-color: rgb(var(--awds-state-link-heading-hover));
+}
+
+.btn-area:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset-inside);
+  border-radius: var(--awds-btn-area-rounded);
+}
+
+.btn-area:disabled, .btn-area[aria-disabled="true"], .btn-area--disabled {
+  opacity: var(--awds-opacity-opacity-40);
+  pointer-events: none;
+  cursor: default;
+}
+
+.btn-area--fill { display: flex; width: 100%; align-self: stretch;
+}
+
+.btn-area--fill-x { display: flex; width: 100%;
+}
+
+.btn-area--fill-y { display: flex; align-self: stretch;
+}
+
+.btn-area--progress { pointer-events: none;
+}
+
+.btn-area--progress .btn-area__label, .btn-area--progress .btn-area__prefix, .btn-area--progress .btn-area__suffix, .btn-area--progress .btn-area__icon { opacity: 0;
+}
+
+.btn-area__spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--awds-btn-area-icon);
+  height: var(--awds-btn-area-icon);
+  margin: calc(var(--awds-btn-area-icon) / -2) 0 0 calc(var(--awds-btn-area-icon) / -2);
+  border-radius: var(--awds-rounded-border-radius-full);
+  border: 2px solid currentColor;
+  border-top-color: transparent;     
+  animation: btn-area-spin 0.7s linear infinite;
+}
+
+.btn-area--progress .btn-area__spinner { display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-area { transition: none; }
+  .btn-area__spinner { animation-duration: 1.4s; }
+}
+
+}

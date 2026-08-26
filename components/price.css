@@ -1,0 +1,209 @@
+/* ArrowDS · price@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.price {
+  --awds-price-fs:      var(--awds-control-font-size-600);
+  --awds-price-lh:      var(--awds-control-line-height-600);
+  --awds-price-ls:      var(--awds-control-letter-spacing-600);
+  --awds-price-fs-sec:  var(--awds-control-font-size-300);
+  --awds-price-lh-sec:  var(--awds-control-line-height-300);
+  --awds-price-ls-sec:  var(--awds-control-letter-spacing-300);
+  --awds-price-gap:     0.2em;
+  --awds-price-color:   rgb(var(--surface-on-highest));
+  --awds-price-muted:   rgb(var(--surface-on));
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--awds-price-gap);
+  font-size: var(--awds-price-fs);
+  font-family: var(--awds-font-family-system);
+  font-weight: var(--awds-font-weight-semibold);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+.price__main {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--awds-price-gap);
+  color: var(--awds-price-color);
+}
+
+.price__old {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: var(--awds-price-gap);
+  color: var(--awds-price-muted);
+  font-size: var(--awds-price-fs-sec);
+  line-height: var(--awds-price-lh-sec);
+  letter-spacing: var(--awds-price-ls-sec);
+  text-decoration: line-through;
+  text-decoration-thickness: from-font;
+}
+
+.price__current {
+  font-size: var(--awds-price-fs);
+  line-height: var(--awds-price-lh);
+  letter-spacing: var(--awds-price-ls);
+}
+
+.price__current, .price__old-value {
+  word-spacing: -0.18em;
+}
+
+.price__currency {
+  font-size: var(--awds-price-fs-sec);
+  line-height: var(--awds-price-lh-sec);
+  letter-spacing: var(--awds-price-ls-sec);
+}
+
+.price__placeholder {
+  color: var(--awds-price-muted);
+  font-size: var(--awds-price-fs-sec);
+  line-height: var(--awds-price-lh);     
+  letter-spacing: var(--awds-price-ls-sec);
+}
+
+.price--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 0;
+}
+
+.price--currency-left .price__currency, .price--currency-left .price__old-currency {
+  order: -1;
+}
+
+.price-sale {
+  --awds-price-color: rgb(var(--accent-container-on));
+}
+
+.price-default {
+  --awds-price-color: rgb(var(--surface-on-highest));
+}
+
+.price-none {
+  --awds-price-color: var(--awds-price-muted);
+}
+
+.price--1100 {
+  --awds-price-fs:     var(--awds-control-font-size-1000);
+  --awds-price-lh:     var(--awds-control-line-height-1000);
+  --awds-price-ls:     var(--awds-control-letter-spacing-1000);
+  --awds-price-fs-sec: var(--awds-control-font-size-700);
+  --awds-price-lh-sec: var(--awds-control-line-height-700);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-700);
+}
+
+.price--1000 {
+  --awds-price-fs:     var(--awds-control-font-size-950);
+  --awds-price-lh:     var(--awds-control-line-height-950);
+  --awds-price-ls:     var(--awds-control-letter-spacing-950);
+  --awds-price-fs-sec: var(--awds-control-font-size-600);
+  --awds-price-lh-sec: var(--awds-control-line-height-600);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-600);
+}
+
+.price--900 {
+  --awds-price-fs:     var(--awds-control-font-size-900);
+  --awds-price-lh:     var(--awds-control-line-height-900);
+  --awds-price-ls:     var(--awds-control-letter-spacing-900);
+  --awds-price-fs-sec: var(--awds-control-font-size-500);
+  --awds-price-lh-sec: var(--awds-control-line-height-500);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-500);
+}
+
+.price--800 {
+  --awds-price-fs:     var(--awds-control-font-size-850);
+  --awds-price-lh:     var(--awds-control-line-height-850);
+  --awds-price-ls:     var(--awds-control-letter-spacing-850);
+  --awds-price-fs-sec: var(--awds-control-font-size-300);
+  --awds-price-lh-sec: var(--awds-control-line-height-300);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-300);
+}
+
+.price--700 {
+  --awds-price-fs:     var(--awds-control-font-size-800);
+  --awds-price-lh:     var(--awds-control-line-height-800);
+  --awds-price-ls:     var(--awds-control-letter-spacing-800);
+  --awds-price-fs-sec: var(--awds-control-font-size-300);
+  --awds-price-lh-sec: var(--awds-control-line-height-300);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-300);
+}
+
+.price--600 {
+  --awds-price-fs:     var(--awds-control-font-size-600);
+  --awds-price-lh:     var(--awds-control-line-height-600);
+  --awds-price-ls:     var(--awds-control-letter-spacing-600);
+  --awds-price-fs-sec: var(--awds-control-font-size-300);
+  --awds-price-lh-sec: var(--awds-control-line-height-300);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-300);
+}
+
+.price--500 {
+  --awds-price-fs:     var(--awds-control-font-size-500);
+  --awds-price-lh:     var(--awds-control-line-height-500);
+  --awds-price-ls:     var(--awds-control-letter-spacing-500);
+  --awds-price-fs-sec: var(--awds-control-font-size-200);
+  --awds-price-lh-sec: var(--awds-control-line-height-200);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-200);
+}
+
+.price--400 {
+  --awds-price-fs:     var(--awds-control-font-size-400);
+  --awds-price-lh:     var(--awds-control-line-height-400);
+  --awds-price-ls:     var(--awds-control-letter-spacing-400);
+  --awds-price-fs-sec: var(--awds-control-font-size-100);
+  --awds-price-lh-sec: var(--awds-control-line-height-100);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-100);
+}
+
+.price--300 {
+  --awds-price-fs:     var(--awds-control-font-size-300);
+  --awds-price-lh:     var(--awds-control-line-height-300);
+  --awds-price-ls:     var(--awds-control-letter-spacing-300);
+  --awds-price-fs-sec: var(--awds-control-font-size-50);
+  --awds-price-lh-sec: var(--awds-control-line-height-50);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-50);
+}
+
+.price--200 {
+  --awds-price-fs:     var(--awds-control-font-size-200);
+  --awds-price-lh:     var(--awds-control-line-height-200);
+  --awds-price-ls:     var(--awds-control-letter-spacing-200);
+  --awds-price-fs-sec: var(--awds-control-font-size-50);
+  --awds-price-lh-sec: var(--awds-control-line-height-50);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-50);
+}
+
+.price--100 {
+  --awds-price-fs:     var(--awds-control-font-size-100);
+  --awds-price-lh:     var(--awds-control-line-height-100);
+  --awds-price-ls:     var(--awds-control-letter-spacing-100);
+  --awds-price-fs-sec: var(--awds-control-font-size-50);
+  --awds-price-lh-sec: var(--awds-control-line-height-50);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-50);
+}
+
+.price--listing {
+  --awds-price-fs:     var(--awds-wysiwyg-wysiwyg-font-size-price-listing);
+  --awds-price-lh:     var(--awds-wysiwyg-wysiwyg-line-height-price-listing);
+  --awds-price-ls:     var(--awds-wysiwyg-wysiwyg-letter-spacing-price-listing);
+  --awds-price-fs-sec: var(--awds-wysiwyg-wysiwyg-font-size-caption);
+  --awds-price-lh-sec: var(--awds-wysiwyg-wysiwyg-line-height-caption);
+  --awds-price-ls-sec: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
+}
+
+.price--listing .price__placeholder {
+  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);
+  line-height: var(--awds-price-lh);
+  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
+  font-weight: var(--awds-font-weight-regular);
+}
+
+}

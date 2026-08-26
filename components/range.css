@@ -1,0 +1,174 @@
+/* ArrowDS · range@1.0.2
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.range {
+  --range-from: 0;
+  --range-to: 0.5;
+  --awds-range-size:    var(--awds-size-square-400-handle);
+  --awds-range-track-h: var(--awds-space-space-1);
+  --awds-range-fill-bg:     rgb(var(--awds-state-range-bg-rest));
+  --awds-range-fill-chroma: rgb(var(--awds-state-range-chroma-rest));
+  --awds-range-track: rgb(var(--awds-state-range-container-rest));
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--awds-range-size);
+  user-select: none;
+}
+
+.range__track {
+  position: relative;
+  width: 100%;
+  height: var(--awds-range-track-h);
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: var(--awds-range-track);
+  pointer-events: none;
+}
+
+.range__fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-from));
+  right: calc(100% - (var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-to)));
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: linear-gradient(to right, var(--awds-range-fill-chroma), var(--awds-range-fill-bg));
+  pointer-events: none;
+  transition: background 0.15s ease-out;
+}
+
+.range:not(.range--double) .range__fill { left: 0;
+}
+
+.range__thumb {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-to));
+  width: var(--awds-range-size);
+  height: var(--awds-range-size);
+  border-radius: 50%;
+  background: linear-gradient(to right, var(--awds-range-thumb-chroma, var(--awds-range-thumb-bg)), var(--awds-range-thumb-bg));
+  box-shadow: inset 0 0 0 1px var(--awds-range-thumb-border);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: background 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.range__thumb--from { left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-from));
+}
+
+.range__thumb--to { left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-to));
+}
+
+.range__input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.range__input:focus { outline: none;
+}
+
+.range__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: var(--awds-range-size);
+  height: var(--awds-range-size);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.range__input::-webkit-slider-thumb:active { cursor: grabbing;
+}
+
+.range__input::-moz-range-thumb {
+  width: var(--awds-range-size);
+  height: var(--awds-range-size);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: auto;
+  cursor: grab;
+}
+
+.range__input::-moz-range-track { background: transparent;
+}
+
+.range:focus-within .range__thumb {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.range--disabled {
+  opacity: var(--awds-opacity-opacity-40);
+  pointer-events: none;
+}
+
+.range-default {
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-default-bg-rest));
+  --awds-range-thumb-chroma: rgb(var(--awds-state-range-default-chroma-rest));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-default-bg-rest));
+}
+
+.range-default:hover {
+  --awds-range-fill-bg:      rgb(var(--awds-state-range-bg-hover));
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-default-bg-hover));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-default-bg-hover));
+}
+
+.range-default:active {
+  --awds-range-fill-chroma:  rgb(var(--awds-state-range-bg-active));
+  --awds-range-thumb-chroma: rgb(var(--awds-state-range-default-bg-active));
+}
+
+.range-light {
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-rest));
+  --awds-range-thumb-chroma: rgb(var(--awds-state-range-light-chroma-rest));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-light-border-rest));
+}
+
+.range-light:hover {
+  --awds-range-fill-bg:      rgb(var(--awds-state-range-bg-hover));
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-hover));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-light-bg-hover));
+}
+
+.range-light:active {
+  --awds-range-fill-chroma:  rgb(var(--awds-state-range-bg-active));
+}
+
+.range--500 {
+  --awds-range-size:    var(--awds-size-square-500-handle);   
+  --awds-range-track-h: var(--awds-space-space-1);
+}
+
+.range--400 {
+  --awds-range-size:    var(--awds-size-square-400-handle);   
+  --awds-range-track-h: var(--awds-space-space-1);
+}
+
+.range--300 {
+  --awds-range-size:    var(--awds-size-square-300-handle);   
+  --awds-range-track-h: var(--awds-space-space-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .range__fill,
+  .range__thumb {
+    transition: none;
+  }
+}
+
+}
