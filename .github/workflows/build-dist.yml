@@ -1,0 +1,92 @@
+# Пересборка дистрибутива и публикация в ветку `dist`.
+#
+# Модель — plans/2026-08-26 - component-dist-and-markup-contract.md (репо arrowdesign),
+# решения Р1, Р1а, Р1б.
+#
+# Зачем CI, а не шаг в инструкции скилла: публикацию компонентов делает ACP, а он
+# запускается только вручную (фразой или /arrow-components-publisher). Шаг «пересобери
+# dist» в его тексте исполнялся бы по памяти агента — тот же класс проблемы, ради
+# которого в arrowdesign заведён component-guard.sh. Здесь пересборка следует из push.
+#
+# Почему коммит идёт в отдельную ветку, а не в main:
+#   — корень ветки = корень пакета, потребитель ставит github:…#<tag> и тянет только
+#     собранное, без 29 папок скиллов и снапшота темы на 516 КБ;
+#   — main остаётся читаемым: коммиты бота не смешиваются с историей публикаций;
+#   — триггер стоит только на main, поэтому коммит бота сам себя не запускает —
+#     paths-ignore не нужен.
+
+name: build-dist
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'awds-component-*/references/**'
+      - 'awds-component-*/component.meta.json'
+      - 'arrow-design-system/references/*.css'
+      - 'dist-version.json'
+      - 'tools/build-dist.mjs'
+      - '.github/workflows/build-dist.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write        # push в ветку dist своего же репозитория, внешний секрет не нужен
+
+concurrency:
+  group: build-dist
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Собрать dist/
+        run: node tools/build-dist.mjs
+
+      - name: Опубликовать в ветку dist
+        run: |
+          set -euo pipefail
+          git config user.name  "arrow-components bot"
+          git config user.email "bot@users.noreply.github.com"
+
+          # Ветка-сирота: своя история, в ней лежит только пакет.
+          if git ls-remote --exit-code --heads origin dist >/dev/null 2>&1; then
+            git fetch origin dist:dist
+            git worktree add .dist dist
+          else
+            git worktree add --detach .dist
+            git -C .dist checkout --orphan dist
+            git -C .dist rm -rf --cached . || true
+          fi
+
+          # Содержимое ветки = содержимое dist/ и ничего больше.
+          find .dist -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -r dist/. .dist/
+
+          cd .dist
+          git add -A
+          if git diff --cached --quiet; then
+            echo "dist не изменился — коммита нет"
+            exit 0
+          fi
+          VERSION=$(node -e "console.log(require('./package.json').version)")
+          git commit -m "dist ${VERSION} из ${GITHUB_SHA::8}"
+          git push origin dist
+
+      - name: Отчёт
+        run: |
+          node -e "
+            const m = require('./dist/manifest.json');
+            console.log('пакет', m.package_version, '·', m.components.length, 'компонентов');
+            console.log('awds.css', (m.bundle.bytes/1024).toFixed(1), 'КБ; тема', (m.theme.bytes/1024).toFixed(1), 'КБ');
+            if (m.theme.missing.length) console.log('⚠ висячие ссылки:', m.theme.missing.join(', '));
+            if (m.skipped_selectors.length) console.log('пропущено правил с чужими селекторами:', m.skipped_selectors.length);
+          "
