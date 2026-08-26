@@ -39,8 +39,8 @@
    свернуть обратно в семантику — но не раньше.
 
    ЦВЕТА:
-     пояснение  role/surface/on-high            → rgb(var(--surface-on-high))
-     ошибка     form-control/error/placehold     → rgb(var(--error-container-on-high))
+     пояснение  role/surface/on-high            → rgb(var(--surface-on-high))  (роль, так в макете)
+     ошибка     form-control/error/placehold    → --awds-state-form-control-error-placehold-rest
    Больше компонент не красит ничего: фон и рамку несёт контрол, цвет подписи — label.
 
    Приватные var: --awds-fld-gap, -fs, -lh, -ls
@@ -90,7 +90,7 @@
 }
 
 .fld__error {
-  color: rgb(var(--error-container-on-high));
+  color: rgb(var(--awds-state-form-control-error-placehold-rest));
 }
 
 
