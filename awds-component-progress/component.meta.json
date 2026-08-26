@@ -1,10 +1,10 @@
 {
   "component": "progress",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "contract_hash": "sha256:90556a8a4630ff19bd95f84c065af9170ac08c0a0eaaf788842d41aed8656874",
-  "artifact_hash": "sha256:17992e9fe52bb50d0d1916afa313daf9023cbfa4a7041054590b3c216efb3833",
+  "artifact_hash": "sha256:50347f6daf3ec1d30d9594dc8528b2bbdabe63353fc20ca65cb966157c75185f",
   "visual_change": true,
-  "released_at": "2026-08-26T16:50:57.473Z",
+  "released_at": "2026-08-26T16:57:39.190Z",
   "own_values": [
     {
       "value": "2s",
@@ -13,16 +13,10 @@
       "why": "период цикла линейного indeterminate — из material-web; коллекции движения в студии нет"
     },
     {
-      "value": "1.568s",
+      "value": "1.4s",
       "where": "--awds-progress-spin-duration",
       "count": 2,
-      "why": "период вращения кольца — из material-web; намеренно не равен периоду дыхания дуги, иначе рисунок повторяется каждый оборот и читается механически"
-    },
-    {
-      "value": "1.333s",
-      "where": "--awds-progress-dash-duration",
-      "count": 2,
-      "why": "период дыхания дуги — из material-web; см. причину у spin-duration"
+      "why": "период кольца: вращение и протяжка дуги идут ОДНИМ периодом, иначе момент раскрытия дуги каждый оборот приходится в новую точку и читается как случайный сбой"
     }
   ],
   "figma": {

@@ -53,12 +53,11 @@
   --awds-progress-idle-opacity: var(--awds-opacity-opacity-20);
   /* Длительности цикла indeterminate. Свои значения компонента: коллекции движения в
      студии нет, поэтому числа живут здесь и заявлены в own_values меты. Взяты из
-     material-web, оттуда же ритм: у полосы 2s, у кольца вращение 1.568s и «дыхание»
-     дуги 1.333s — РАЗНЫЕ периоды намеренно, из-за их несовпадения рисунок не
-     повторяется каждый оборот и не читается как механический. */
+     material-web: у полосы 2s, у кольца 1.4s. У кольца вращение и протяжка дуги идут
+     ОДНИМ периодом намеренно — при разных периодах момент раскрытия дуги каждый оборот
+     приходится в новую точку и читается как случайный сбой. */
   --awds-progress-duration: 2s;
-  --awds-progress-spin-duration: 1.568s;
-  --awds-progress-dash-duration: 1.333s;
+  --awds-progress-spin-duration: 1.4s;
 }
 
 /* Позиция бегущей полосы в indeterminate, 0…100. Отдельная переменная от значения
@@ -73,6 +72,21 @@
 /* Длина бегунка в процентах ширины — тоже число и тоже с регистрацией: в material-web
    это scaleX, и она меняется отдельно от позиции. */
 @property --awds-progress-run-width {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 8;
+}
+
+/* ВТОРАЯ полоса. В material-web их две — primary и secondary; вторая выходит, пока
+   первая стоит в начале цикла, и именно она делает движение непрерывным. Без неё
+   пауза первой полосы читается как случайный сбой ритма. */
+@property --awds-progress-run-2 {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@property --awds-progress-run-2-width {
   syntax: "<number>";
   inherits: true;
   initial-value: 8;
@@ -140,36 +154,31 @@
    таймлайн, который повторяется, а не переход к состоянию (motion.md).
    ============================================================================= */
 
-/* В макете («Step 2», node 2093:3097) трек в indeterminate РАЗРЕЗАН: участок до
-   бегунка и участок после, с зазором 6px с каждой стороны. Поэтому сам `__track`
-   становится прозрачной рамкой, а две части рисуют его псевдоэлементы — разметка
-   при этом не меняется, то есть переход на indeterminate остаётся сменой класса. */
+/* Трек в indeterminate — СПЛОШНОЙ, на всю ширину. В макете он разрезан вокруг одной
+   полосы, но полос здесь две (иначе ритм рваный, см. ниже), и разрез вокруг каждой
+   превратил бы полосу в мигающие огрызки. Разрез остаётся у determinate, где полоса
+   одна и её конец что-то означает.
+
+   Прозрачность задаётся ЦВЕТОМ, а не свойством opacity: opacity создаёт группу, и
+   вторая полоса — псевдоэлемент трека — унаследовала бы её вместе с фоном. */
 .progress-linear--indeterminate .progress-linear__track {
   inset-inline: 0;
-  background: none;
   opacity: 1;
+  background: rgb(var(--surface-on) / var(--awds-progress-idle-opacity));
   transition: none;
   overflow: visible;
 }
 
-.progress-linear--indeterminate .progress-linear__track::before,
-.progress-linear--indeterminate .progress-linear__track::after {
+/* Вторая полоса живёт псевдоэлементом трека: так разметка компонента не меняется —
+   переход между determinate и indeterminate остаётся сменой класса. */
+.progress-linear--indeterminate .progress-linear__track::before {
   content: "";
   position: absolute;
   inset-block: 0;
   border-radius: var(--awds-rounded-border-radius-full);
   background: var(--awds-progress-color);
-  opacity: var(--awds-progress-idle-opacity);
-}
-
-/* Участок трека ДО бегунка: от левого края до его позиции минус зазор. */
-.progress-linear--indeterminate .progress-linear__track::before {
-  inset-inline: 0 calc(100% - var(--awds-progress-run) * 1% + var(--awds-progress-gap));
-}
-
-/* Участок ПОСЛЕ: от конца бегунка плюс зазор до правого края. */
-.progress-linear--indeterminate .progress-linear__track::after {
-  inset-inline: calc((var(--awds-progress-run) + var(--awds-progress-run-width)) * 1% + var(--awds-progress-gap)) 0;
+  inset-inline-start: calc(var(--awds-progress-run-2) * 1%);
+  inline-size: calc(var(--awds-progress-run-2-width) * 1%);
 }
 
 .progress-linear--indeterminate .progress-linear__stop {
@@ -190,7 +199,16 @@
 .progress-linear--indeterminate {
   animation:
     progress-linear-translate var(--awds-progress-duration) infinite,
-    progress-linear-scale var(--awds-progress-duration) infinite;
+    progress-linear-scale var(--awds-progress-duration) infinite,
+    /* Вторая полоса идёт со сдвигом в ПОЛПЕРИОДА — отрицательный delay, то есть
+       стартует уже разогнанной. Это единственное отклонение от material-web, и оно
+       осознанное: там задержки нет, и в конце цикла обе полосы успевают уйти за край —
+       остаётся ~0.6s пустого трека, который читается как сбой ритма. Со сдвигом в
+       кадре всегда есть хотя бы одна полоса; проверено по фазам. */
+    progress-linear-translate-2 var(--awds-progress-duration) infinite
+      calc(var(--awds-progress-duration) * -0.5),
+    progress-linear-scale-2 var(--awds-progress-duration) infinite
+      calc(var(--awds-progress-duration) * -0.5);
 }
 
 .progress-linear--indeterminate .progress-linear__active {
@@ -211,6 +229,23 @@
   36.65% { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
   69.15% { --awds-progress-run-width: 66.1479; animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1); }
   100%   { --awds-progress-run-width: 8; }
+}
+
+/* Вторая полоса, кадры и кривые тоже из material-web (secondary bar). Она стартует
+   сразу и уходит раньше первой — за счёт этого в полосе нет ни одного момента без
+   движения. */
+@keyframes progress-linear-translate-2 {
+  0%     { --awds-progress-run-2: 0; animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685); }
+  25%    { --awds-progress-run-2: 37.651913; animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712); }
+  48.35% { --awds-progress-run-2: 84.386165; animation-timing-function: cubic-bezier(0.4, 0.627035, 0.6, 0.902026); }
+  100%   { --awds-progress-run-2: 160.277782; }
+}
+
+@keyframes progress-linear-scale-2 {
+  0%     { --awds-progress-run-2-width: 8; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
+  19.15% { --awds-progress-run-2-width: 45.7104; animation-timing-function: cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315); }
+  44.15% { --awds-progress-run-2-width: 72.796; animation-timing-function: cubic-bezier(0.257759, 0.190373, 0.622109, 0.997137); }
+  100%   { --awds-progress-run-2-width: 8; }
 }
 
 @keyframes progress-pulse {
