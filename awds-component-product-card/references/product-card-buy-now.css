@@ -17,8 +17,8 @@
    Карточка — контейнер (<div>), НЕ один <a>. Теней НЕТ. Поэлементные ссылки/hover:
      1. .pcard__image-link (фото → товар): в покое фото scale(0.9) + 3%-скрим;
         по hover фото → scale(1), скрим → 0.
-     2. .pcard__name (→ товар): hover → accent-container-on.
-     3. .pcard__category (→ рубрика): link/muted, hover → accent-container-on.
+     2. .pcard__name (→ товар): ячейка State link/accent (rest → hover).
+     3. .pcard__category (→ рубрика): ячейка State link/muted (rest → hover).
      Строка отзывов .pcard__feedback — статичный блок (НЕ ссылка), как в макете.
      + кнопка «В корзину» — awds-component-button; избранное — .btn-favorites;
        цена — awds-component-price; бейджи — awds-component-badge; индикатор галереи
@@ -26,9 +26,11 @@
 
    Маппинг (Figma → DS):
      — цена:                    компонент awds-component-price (surface-on-highest)
-     — название (link/accent):  surface-on-highest → hover accent-container-on
-     — рубрика (link/muted):    surface-on-high → hover accent-container-on
-     — рейтинг «4.9»:           surface-on-highest · звезда warning-core
+     — название:                --awds-state-link-accent-rest / -hover
+     — рубрика:                 --awds-state-link-muted-rest / -hover
+                                 (hover рубрики задаёт ячейка: surface-on-highest,
+                                  прежний акцентный hover был решением компонента)
+     — рейтинг «4.9»:           surface-on-highest · звезда --awds-state-rating-selected-bg-rest
      — 💬 иконка отзывов:        surface-on · счётчик surface-on-high
      — фон медиа:               surface-bright · скрим (3%→opacity-5) surface-on-highest
 
@@ -270,7 +272,7 @@
   line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                    /* .typo-small = 22px */
   letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--awds-state-link-accent-rest));
   text-decoration: none;
   transition: color 0.15s ease-out;
   display: block;
@@ -288,7 +290,7 @@
   line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
   letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--surface-on-high));
+  color: rgb(var(--awds-state-link-muted-rest));
   text-decoration: none;
   transition: color 0.15s ease-out;
   display: block;
@@ -297,9 +299,12 @@
   white-space: nowrap;
 }
 
-.pcard-buy-now .pcard__name:hover,
+.pcard-buy-now .pcard__name:hover {
+  color: rgb(var(--awds-state-link-accent-hover));
+}
+
 .pcard-buy-now .pcard__category:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--awds-state-link-muted-hover));
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка): ★ warning + рейтинг surface-on-highest +
@@ -315,7 +320,7 @@
   flex-shrink: 0;
   width: var(--awds-space-space-3-5);          /* 14px */
   height: var(--awds-space-space-3-5);
-  color: rgb(var(--warning-core));
+  color: rgb(var(--awds-state-rating-selected-bg-rest));
 }
 .pcard-buy-now .pcard__reviews-icon {
   display: block;
@@ -386,8 +391,8 @@
   min-width: 0;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, rgb(var(--secondary-chroma)), rgb(var(--secondary-core)));
-  border: var(--awds-space-space-px) solid rgb(var(--secondary-core));   /* 1px */
+  background: linear-gradient(to right, rgb(var(--awds-state-form-control-secondary-chroma-rest)), rgb(var(--awds-state-form-control-secondary-bg-rest)));
+  border: var(--awds-space-space-px) solid rgb(var(--awds-state-form-control-secondary-bg-rest));   /* 1px */
   border-radius: var(--awds-size-rectangle-400-rounded);
   overflow: hidden;                      /* ghost-кнопки не вылезают за скругление */
 }
@@ -404,7 +409,7 @@
   line-height: var(--awds-typography-typography-line-height-400);          /* 22px */
   letter-spacing: var(--awds-typography-typography-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--secondary-container-on-high));
+  color: rgb(var(--awds-state-form-control-secondary-color-rest));
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   user-select: none;

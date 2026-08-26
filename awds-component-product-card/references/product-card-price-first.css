@@ -13,8 +13,8 @@
    3 отдельные ссылки, hover у каждой свой (+ статичная строка отзывов, не ссылка):
      1. .pcard__image-link (фото → товар): в покое фото уменьшено на 10% (scale 0.9)
         + 3%-скрим; по hover фото → 100% (scale 1), скрим → 0. Перекрывает медиа под оверлеями.
-     2. .pcard__brand (→ бренд): link/accent, hover → accent-container-on.
-     3. .pcard__name  (→ товар): link/accent, hover → accent-container-on.
+     2. .pcard__brand (→ бренд): ячейка State link/accent (rest → hover).
+     3. .pcard__name  (→ товар): ячейка State link/accent (rest → hover).
      .pcard__feedback — статичный блок (НЕ ссылка): ★ warning + рейтинг + 💬 + счётчик,
         цвета из макета (★ rating/selected, рейтинг surface-on-highest, 💬 surface-on,
         счётчик surface-on-high), без hover.
@@ -36,12 +36,12 @@
 
    Маппинг (component-token-map.json + Figma get_variable_defs):
      — текст цены/валюты:                 rgb(var(--surface-on-highest))
-     — бренд/название (link/accent):      rest rgb(var(--surface-on-highest)) → hover rgb(var(--accent-container-on))
+     — бренд/название:                    --awds-state-link-accent-rest / -hover
      — текст рейтинга:                    rgb(var(--surface-on-high))
      — фон медиа:                         rgb(var(--surface-bright))
      — скрим над фото (3% → opacity-5):   rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-5))
      — тени:                              нет (убраны во всех состояниях)
-     — звезда рейтинга:                   rgb(var(--warning-core))         (rating/selected)
+     — звезда рейтинга:                   --awds-state-rating-selected-bg-rest
      — бейджи и избранное:                внешние компоненты (badge.css / button-favorites.css)
 
    Размеры:
@@ -351,7 +351,7 @@
   line-height: var(--awds-wysiwyg-wysiwyg-line-height-lead);                        /* .typo-small = 26px */
   letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-lead);
   font-weight: var(--awds-font-weight-semibold);
-  color: rgb(var(--surface-on-highest));                        /* link/accent rest */
+  color: rgb(var(--awds-state-link-accent-rest));                        /* link/accent rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
   transition: color 0.15s ease-out;                             /* MIFB: явное свойство */
   display: block;                                               /* <a> инлайн — нужен блок для ellipsis */
@@ -377,7 +377,7 @@
   line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                        /* .typo-small = 22px */
   letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--surface-on-highest));                        /* link/accent rest */
+  color: rgb(var(--awds-state-link-accent-rest));                        /* link/accent rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
   transition: color 0.15s ease-out;
   text-wrap: pretty;                     /* MIFB: короткий параграф без сирот */
@@ -391,7 +391,7 @@
    Hover срабатывает на самой ссылке: rest surface-on-highest → hover accent-container-on. */
 .pcard__brand:hover,
 .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--awds-state-link-accent-hover));
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка, как в макете). Кластер из 4 элементов:
@@ -412,7 +412,7 @@
   flex-shrink: 0;
   width: var(--awds-space-space-3-5);          /* 14px */
   height: var(--awds-space-space-3-5);
-  color: rgb(var(--warning-core));
+  color: rgb(var(--awds-state-rating-selected-bg-rest));
 }
 /* Иконка отзывов (пузырёк) — 14px, приглушённая (surface-on) */
 .pcard__reviews-icon {

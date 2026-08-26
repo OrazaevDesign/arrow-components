@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "contract_hash": "sha256:70766218c524116f3acf0844fe33aa391872e6eaa1e3d140b0750b794f90732e",
-  "artifact_hash": "sha256:7c8b4ff23a301920bb1904d7ef4a1c838885a0830a1fd15f7e4a9c571a17c979",
-  "visual_change": false,
-  "released_at": "2026-08-25T15:19:08.798Z",
+  "artifact_hash": "sha256:a08f05e2a3d01f86132aea6e35f23bb56d37178407b2cc2469fccce3defed113",
+  "visual_change": true,
+  "released_at": "2026-08-26T08:12:31.382Z",
   "own_values": [
     {
       "value": "170px",
@@ -258,13 +258,13 @@
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
   "uses": {
-    "awds-component-badge": "1.0.1",
-    "awds-component-button": "1.0.3",
-    "awds-component-button-favorites": "1.0.1",
-    "awds-component-focus-selection": "1.0.3",
-    "awds-component-price": "1.0.2",
-    "awds-component-slider": "1.0.1",
-    "awds-component-tooltip": "1.0.1"
+    "awds-component-badge": "1.0.2",
+    "awds-component-button": "1.0.5",
+    "awds-component-button-favorites": "1.0.3",
+    "awds-component-focus-selection": "1.1.0",
+    "awds-component-price": "1.0.3",
+    "awds-component-slider": "1.0.2",
+    "awds-component-tooltip": "1.0.2"
   },
   "contract": {
     "classes": [

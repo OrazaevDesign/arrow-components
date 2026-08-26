@@ -17,17 +17,17 @@
    Карточка — контейнер (<div>), НЕ один <a>. Теней НЕТ. Поэлементные ссылки/hover:
      1. .pcard__image-link (фото → товар): в покое фото scale(0.9) + 3%-скрим;
         по hover фото → scale(1), скрим → 0.
-     2. .pcard__brand (→ бренд): hover → accent-container-on.
-     3. .pcard__name  (→ товар): hover → accent-container-on.
+     2. .pcard__brand (→ бренд): ячейка State link/accent (rest → hover).
+     3. .pcard__name  (→ товар): ячейка State link/accent (rest → hover).
      Строка отзывов .pcard__feedback — статичный блок (НЕ ссылка), как в макете.
      + кнопка «В корзину» — awds-component-button; избранное — .btn-favorites;
        цена — awds-component-price; бейджи — awds-component-badge; индикатор
        галереи — awds-component-slider (dots-mini).
 
    Маппинг (Figma → DS):
-     — бренд / название (link/accent):  surface-on-highest → hover accent-container-on
+     — бренд / название:                --awds-state-link-accent-rest / -hover
      — цена:                            компонент awds-component-price (surface-on-highest)
-     — рейтинг «4.9»:                   surface-on-highest · звезда warning-core
+     — рейтинг «4.9»:                   surface-on-highest · звезда --awds-state-rating-selected-bg-rest
      — 💬 иконка отзывов:                surface-on · счётчик surface-on-high
      — фон медиа:                       surface-bright · скрим (3%→opacity-5) surface-on-highest
 
@@ -252,7 +252,7 @@
   line-height: var(--awds-wysiwyg-wysiwyg-line-height-lead);                    /* .typo-small = 26px */
   letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-lead);
   font-weight: var(--awds-font-weight-semibold);
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--awds-state-link-accent-rest));
   text-decoration: none;
   transition: color 0.15s ease-out;
   display: block;
@@ -278,7 +278,7 @@
   line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                    /* .typo-small = 22px */
   letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--awds-state-link-accent-rest));
   text-decoration: none;
   transition: color 0.15s ease-out;
   display: block;
@@ -289,7 +289,7 @@
 
 .pcard-brand-first .pcard__brand:hover,
 .pcard-brand-first .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--awds-state-link-accent-hover));
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка): ★ warning + рейтинг surface-on-highest +
@@ -305,7 +305,7 @@
   flex-shrink: 0;
   width: var(--awds-space-space-3-5);          /* 14px */
   height: var(--awds-space-space-3-5);
-  color: rgb(var(--warning-core));
+  color: rgb(var(--awds-state-rating-selected-bg-rest));
 }
 .pcard-brand-first .pcard__reviews-icon {
   display: block;
@@ -341,8 +341,8 @@
      • button:  кнопка «В корзину» — awds-component-button (.btn .btn-primary .btn--400/300).
      • stepper: поле количества (Input/Secondary) с ghost-кнопками −/+ внутри
                 + отдельная квадратная кнопка корзины (.btn-addition .btn--icon-only).
-   Маппинг (Figma → DS): input bg/sheen/border → secondary-core / secondary-chroma;
-   число (form-control placehold) → secondary-container-on-high; gap зоны → space-2 (8px);
+   Маппинг (Figma → DS): поле = ячейки State form-control/secondary (bg, chroma, border);
+   число → --awds-state-form-control-secondary-color-rest; gap зоны → space-2 (8px);
    скругление инпута → rectangle-400/300-rounded. Подключи button*.css. */
 
 /* Зона целиком: обе вью (кнопка / степпер) сложены в один слот через grid-stack
@@ -387,8 +387,8 @@
   min-width: 0;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, rgb(var(--secondary-chroma)), rgb(var(--secondary-core)));
-  border: var(--awds-space-space-px) solid rgb(var(--secondary-core));   /* 1px */
+  background: linear-gradient(to right, rgb(var(--awds-state-form-control-secondary-chroma-rest)), rgb(var(--awds-state-form-control-secondary-bg-rest)));
+  border: var(--awds-space-space-px) solid rgb(var(--awds-state-form-control-secondary-bg-rest));   /* 1px */
   border-radius: var(--awds-size-rectangle-400-rounded);
   overflow: hidden;                      /* ghost-кнопки не вылезают за скругление */
 }
@@ -405,7 +405,7 @@
   line-height: var(--awds-typography-typography-line-height-400);          /* 22px */
   letter-spacing: var(--awds-typography-typography-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--secondary-container-on-high));
+  color: rgb(var(--awds-state-form-control-secondary-color-rest));
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   user-select: none;
