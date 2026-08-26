@@ -51,11 +51,14 @@
   --awds-progress-gap: var(--awds-space-space-1-5);
   --awds-progress-color: rgb(var(--surface-on));
   --awds-progress-idle-opacity: var(--awds-opacity-opacity-20);
-  /* Длительность цикла indeterminate. Своё значение компонента: коллекции движения
-     в студии нет, поэтому число живёт здесь и заявлено в own_values меты. 1.4s —
-     тот же ритм, что у спиннера кнопки, чтобы два индикатора на одном экране не
-     спорили друг с другом. */
-  --awds-progress-duration: 1.4s;
+  /* Длительности цикла indeterminate. Свои значения компонента: коллекции движения в
+     студии нет, поэтому числа живут здесь и заявлены в own_values меты. Взяты из
+     material-web, оттуда же ритм: у полосы 2s, у кольца вращение 1.568s и «дыхание»
+     дуги 1.333s — РАЗНЫЕ периоды намеренно, из-за их несовпадения рисунок не
+     повторяется каждый оборот и не читается как механический. */
+  --awds-progress-duration: 2s;
+  --awds-progress-spin-duration: 1.568s;
+  --awds-progress-dash-duration: 1.333s;
 }
 
 /* Позиция бегущей полосы в indeterminate, 0…100. Отдельная переменная от значения
@@ -65,6 +68,14 @@
   syntax: "<number>";
   inherits: true;
   initial-value: 0;
+}
+
+/* Длина бегунка в процентах ширины — тоже число и тоже с регистрацией: в material-web
+   это scaleX, и она меняется отдельно от позиции. */
+@property --awds-progress-run-width {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 8;
 }
 
 .progress-linear {
@@ -158,32 +169,48 @@
 
 /* Участок ПОСЛЕ: от конца бегунка плюс зазор до правого края. */
 .progress-linear--indeterminate .progress-linear__track::after {
-  inset-inline: calc(var(--awds-progress-run) * 1% + var(--awds-progress-run-width) + var(--awds-progress-gap)) 0;
+  inset-inline: calc((var(--awds-progress-run) + var(--awds-progress-run-width)) * 1% + var(--awds-progress-gap)) 0;
 }
 
 .progress-linear--indeterminate .progress-linear__stop {
   display: none;      /* финиша нет — точка-стоп обещала бы известный конец */
 }
 
-/* Позицию ведёт ОДНА анимируемая переменная на корне, а не три параллельные
-   анимации на разных элементах: так бегунок и обе части трека не могут разъехаться
-   между собой ни на кадр. */
+/* Позицию и длину ведут ДВЕ анимации на корне — как в Material Web, где это
+   translateX и scaleX на одной полосе. Ритм там не линейный: полоса стоит, потом
+   рывком уходит, растягиваясь, и сжимается на выходе. Именно это и читается как
+   «материаловская» анимация, а равномерный проезд — нет.
+   Значения кадров и кривые перенесены из material-web (primary bar):
+     translate: 0 → 0 → 83.67% → 200.61%
+     scale:     0.08 → 0.08 → 0.66 → 0.08
+   Две анимации, а не одна на два свойства: у них РАЗНЫЕ точки перелома (20/59.15 у
+   позиции, 36.65/69.15 у длины) — свести их в один набор кадров можно только
+   огрубив обе. Переменные общие для бегунка и обеих частей трека, поэтому
+   разъехаться между собой они всё равно не могут. */
 .progress-linear--indeterminate {
-  --awds-progress-run-width: 33%;
-  animation: progress-linear-run var(--awds-progress-duration) linear infinite;
+  animation:
+    progress-linear-translate var(--awds-progress-duration) infinite,
+    progress-linear-scale var(--awds-progress-duration) infinite;
 }
 
 .progress-linear--indeterminate .progress-linear__active {
   inset-inline-start: calc(var(--awds-progress-run) * 1%);
-  inline-size: var(--awds-progress-run-width);
+  inline-size: calc(var(--awds-progress-run-width) * 1%);
   transition: none;
 }
 
-@keyframes progress-linear-run {
-  /* Стартует за левым краем и уходит за правый: обрезка контейнера превращает это в
-     естественный вылет, а не в прыжок от края к краю. */
-  from { --awds-progress-run: -33; }
-  to   { --awds-progress-run: 100; }
+@keyframes progress-linear-translate {
+  0%     { --awds-progress-run: 0; animation-timing-function: cubic-bezier(0.5, 0, 0.701732, 0.495819); }
+  20%    { --awds-progress-run: 0; animation-timing-function: cubic-bezier(0.5, 0, 0.701732, 0.495819); }
+  59.15% { --awds-progress-run: 83.67142; animation-timing-function: cubic-bezier(0.302435, 0.381352, 0.55, 0.956352); }
+  100%   { --awds-progress-run: 200.611057; }
+}
+
+@keyframes progress-linear-scale {
+  0%     { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
+  36.65% { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
+  69.15% { --awds-progress-run-width: 66.1479; animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1); }
+  100%   { --awds-progress-run-width: 8; }
 }
 
 @keyframes progress-pulse {

@@ -1,16 +1,28 @@
 {
   "component": "progress",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "contract_hash": "sha256:90556a8a4630ff19bd95f84c065af9170ac08c0a0eaaf788842d41aed8656874",
-  "artifact_hash": "sha256:d73c016caa3b1ed8cb5cda2e383f6484570c02d9e375615b4353bc90685c372e",
+  "artifact_hash": "sha256:17992e9fe52bb50d0d1916afa313daf9023cbfa4a7041054590b3c216efb3833",
   "visual_change": true,
-  "released_at": "2026-08-26T16:34:06.622Z",
+  "released_at": "2026-08-26T16:50:57.473Z",
   "own_values": [
     {
-      "value": "1.4s",
+      "value": "2s",
       "where": "--awds-progress-duration",
       "count": 2,
-      "why": "длительность цикла indeterminate: коллекции движения в студии нет. Ритм согласован со спиннером кнопки, чтобы два индикатора на одном экране не спорили"
+      "why": "период цикла линейного indeterminate — из material-web; коллекции движения в студии нет"
+    },
+    {
+      "value": "1.568s",
+      "where": "--awds-progress-spin-duration",
+      "count": 2,
+      "why": "период вращения кольца — из material-web; намеренно не равен периоду дыхания дуги, иначе рисунок повторяется каждый оборот и читается механически"
+    },
+    {
+      "value": "1.333s",
+      "where": "--awds-progress-dash-duration",
+      "count": 2,
+      "why": "период дыхания дуги — из material-web; см. причину у spin-duration"
     }
   ],
   "figma": {
