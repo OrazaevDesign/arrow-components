@@ -97,8 +97,9 @@
   display: block;
   block-size: var(--awds-space-space-3);
   inline-size: 100%;
-  /* Бегунок в indeterminate выезжает из-за левого края и уходит за правый — обрезаем
-     по границам области, иначе он вылезает за пределы полосы. */
+  /* Обрезка нужна точке-стопу у determinate: она лежит внутри трека и на финише должна
+     исчезать вместе с ним. Полосы indeterminate под обрезку НЕ попадают — они
+     ограничены математикой (clamp ниже), иначе край среза съедал бы им скругление. */
   overflow: clip;
 }
 
@@ -177,8 +178,8 @@
   inset-block: 0;
   border-radius: var(--awds-rounded-border-radius-full);
   background: var(--awds-progress-color);
-  inset-inline-start: calc(var(--awds-progress-run-2) * 1%);
-  inline-size: calc(var(--awds-progress-run-2-width) * 1%);
+  inset-inline-start: calc(var(--awds-progress-run-2-left) * 1%);
+  inline-size: calc((var(--awds-progress-run-2-right) - var(--awds-progress-run-2-left)) * 1%);
 }
 
 .progress-linear--indeterminate .progress-linear__stop {
@@ -211,9 +212,21 @@
       calc(var(--awds-progress-duration) * -0.5);
 }
 
+/* ГРАНИЦЫ ПОЛОСЫ СЧИТАЮТСЯ ЧЕРЕЗ clamp, а не обрезаются контейнером.
+   Ритм material-web уводит полосу за правый край (translate до 200%), и обрезка резала
+   бы её прямым срезом — концы теряли бы скругление, что и было видно на финише.
+   Ограничение краями оставляет оба конца круглыми: полоса не «упирается», а укорачивается,
+   ровно как в макете, где у неё всегда круглые концы. */
+.progress-linear--indeterminate {
+  --awds-progress-run-left: clamp(0, var(--awds-progress-run), 100);
+  --awds-progress-run-right: clamp(0, calc(var(--awds-progress-run) + var(--awds-progress-run-width)), 100);
+  --awds-progress-run-2-left: clamp(0, var(--awds-progress-run-2), 100);
+  --awds-progress-run-2-right: clamp(0, calc(var(--awds-progress-run-2) + var(--awds-progress-run-2-width)), 100);
+}
+
 .progress-linear--indeterminate .progress-linear__active {
-  inset-inline-start: calc(var(--awds-progress-run) * 1%);
-  inline-size: calc(var(--awds-progress-run-width) * 1%);
+  inset-inline-start: calc(var(--awds-progress-run-left) * 1%);
+  inline-size: calc((var(--awds-progress-run-right) - var(--awds-progress-run-left)) * 1%);
   transition: none;
 }
 
