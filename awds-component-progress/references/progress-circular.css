@@ -75,6 +75,11 @@
 
 .progress-circular--indeterminate .progress-circular__arc {
   transition: none;
+  /* ОБЯЗАТЕЛЬНО вернуть непрозрачность. Гашение при нуле (stroke-opacity от значения)
+     рассчитано на determinate; у indeterminate значения нет вовсе, переменная равна
+     initial-value: 0 — и дуга оказывалась полностью прозрачной. Симптом выглядел как
+     «анимации нет»: она шла, но по невидимому кольцу. */
+  stroke-opacity: 1;
   animation: progress-circular-dash var(--awds-progress-duration) ease-in-out infinite;
 }
 

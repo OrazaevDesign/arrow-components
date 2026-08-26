@@ -1,10 +1,10 @@
 {
   "component": "progress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "contract_hash": "sha256:90556a8a4630ff19bd95f84c065af9170ac08c0a0eaaf788842d41aed8656874",
-  "artifact_hash": "sha256:b75548026843b16cfe51d98d69aebcf13f75385dd1d5867fa9e7fc7d04a719b6",
-  "visual_change": false,
-  "released_at": "2026-08-26T16:18:11.913Z",
+  "artifact_hash": "sha256:d73c016caa3b1ed8cb5cda2e383f6484570c02d9e375615b4353bc90685c372e",
+  "visual_change": true,
+  "released_at": "2026-08-26T16:34:06.622Z",
   "own_values": [
     {
       "value": "1.4s",
@@ -133,7 +133,17 @@
   ],
   "last_synced": "2026-08-26T16:20:00Z",
   "last_synced_by": "claude",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "f3e6c8c",
+    "pushed_at": "2026-08-26T16:25:00Z",
+    "dev_resources_status": "linked",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-progress/SKILL.md",
+      "linear": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-progress/references/progress-linear.md",
+      "circular": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-progress/references/progress-circular.md"
+    }
+  },
   "asana": {
     "task_gid": "1209711474813789",
     "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1209711474813789",

@@ -58,11 +58,23 @@
   --awds-progress-duration: 1.4s;
 }
 
+/* Позиция бегущей полосы в indeterminate, 0…100. Отдельная переменная от значения
+   прогресса и обязательно @property: анимировать custom property можно только после
+   регистрации с типом, иначе браузер считает её строкой и переключает скачком. */
+@property --awds-progress-run {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 .progress-linear {
   position: relative;
   display: block;
   block-size: var(--awds-space-space-3);
   inline-size: 100%;
+  /* Бегунок в indeterminate выезжает из-за левого края и уходит за правый — обрезаем
+     по границам области, иначе он вылезает за пределы полосы. */
+  overflow: clip;
 }
 
 /* Активная часть: от начала до значения. Полоса центрируется по высоте области —
@@ -117,25 +129,61 @@
    таймлайн, который повторяется, а не переход к состоянию (motion.md).
    ============================================================================= */
 
+/* В макете («Step 2», node 2093:3097) трек в indeterminate РАЗРЕЗАН: участок до
+   бегунка и участок после, с зазором 6px с каждой стороны. Поэтому сам `__track`
+   становится прозрачной рамкой, а две части рисуют его псевдоэлементы — разметка
+   при этом не меняется, то есть переход на indeterminate остаётся сменой класса. */
 .progress-linear--indeterminate .progress-linear__track {
   inset-inline: 0;
+  background: none;
+  opacity: 1;
   transition: none;
+  overflow: visible;
+}
+
+.progress-linear--indeterminate .progress-linear__track::before,
+.progress-linear--indeterminate .progress-linear__track::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: var(--awds-progress-color);
+  opacity: var(--awds-progress-idle-opacity);
+}
+
+/* Участок трека ДО бегунка: от левого края до его позиции минус зазор. */
+.progress-linear--indeterminate .progress-linear__track::before {
+  inset-inline: 0 calc(100% - var(--awds-progress-run) * 1% + var(--awds-progress-gap));
+}
+
+/* Участок ПОСЛЕ: от конца бегунка плюс зазор до правого края. */
+.progress-linear--indeterminate .progress-linear__track::after {
+  inset-inline: calc(var(--awds-progress-run) * 1% + var(--awds-progress-run-width) + var(--awds-progress-gap)) 0;
 }
 
 .progress-linear--indeterminate .progress-linear__stop {
   display: none;      /* финиша нет — точка-стоп обещала бы известный конец */
 }
 
-.progress-linear--indeterminate .progress-linear__active {
-  inline-size: 30%;
-  transition: none;
+/* Позицию ведёт ОДНА анимируемая переменная на корне, а не три параллельные
+   анимации на разных элементах: так бегунок и обе части трека не могут разъехаться
+   между собой ни на кадр. */
+.progress-linear--indeterminate {
+  --awds-progress-run-width: 33%;
   animation: progress-linear-run var(--awds-progress-duration) linear infinite;
 }
 
+.progress-linear--indeterminate .progress-linear__active {
+  inset-inline-start: calc(var(--awds-progress-run) * 1%);
+  inline-size: var(--awds-progress-run-width);
+  transition: none;
+}
+
 @keyframes progress-linear-run {
-  0%   { inset-inline-start: 0;    inline-size: 10%; }
-  50%  { inset-inline-start: 30%;  inline-size: 40%; }
-  100% { inset-inline-start: 100%; inline-size: 10%; }
+  /* Стартует за левым краем и уходит за правый: обрезка контейнера превращает это в
+     естественный вылет, а не в прыжок от края к краю. */
+  from { --awds-progress-run: -33; }
+  to   { --awds-progress-run: 100; }
 }
 
 @keyframes progress-pulse {
