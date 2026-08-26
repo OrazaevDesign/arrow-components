@@ -293,17 +293,17 @@
 
 .list-item-actual-selected {
   --awds-list-item-bg:      transparent;
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));
-  --awds-list-item-color:   rgb(var(--accent-container-on));
-  --awds-list-item-desc:    rgb(var(--accent-container-on-low));
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-actual-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-actual-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-actual-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-actual-icon-check-rest));
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-actual-bg-hover));
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит

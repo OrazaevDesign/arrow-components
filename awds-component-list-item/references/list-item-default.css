@@ -292,35 +292,35 @@
 /* === Variant: default === */
 
 .list-item-default {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
-  --awds-list-item-border:  rgb(var(--secondary-container-core));
-  --awds-list-item-color:   rgb(var(--secondary-container-on));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-bg-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-icon-check-rest));
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-default:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-dim));
-  --awds-list-item-border:  rgb(var(--secondary-dim));
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-border-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-hover));
 }
 
 .list-item-default:focus-visible {
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-focus));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-focus));
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-default:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
-  --awds-list-item-border:  rgb(var(--secondary-container-core));
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-bg-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-description-active));
 }
 
 

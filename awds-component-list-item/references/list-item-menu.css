@@ -294,30 +294,30 @@
 .list-item-menu {
   --awds-list-item-bg:      transparent;
   --awds-list-item-border:  transparent;
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-menu-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-menu-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-menu-icon-check-rest));
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-surface));
-  --awds-list-item-border:  rgb(var(--surface-surface));
-  --awds-list-item-color:   rgb(var(--accent-container-on));
-  --awds-list-item-desc:    rgb(var(--accent-container-on));
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-menu-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-menu-bg-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-menu-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-menu-description-hover));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-menu-icon-check-hover));
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-menu:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-surface));
-  --awds-list-item-border:  rgb(var(--surface-surface));
-  --awds-list-item-color:   rgb(var(--accent-container-on));
-  --awds-list-item-desc:    rgb(var(--accent-container-on));
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-menu-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-menu-bg-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-menu-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-menu-description-active));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-menu-icon-check-active));
 }
 
 

@@ -292,30 +292,30 @@
 /* === Variant: variation-indeterminate === */
 
 .list-item-variation-indeterminate {
-  --awds-list-item-bg:      rgb(var(--surface-bright));
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-indeterminate-variation-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-indeterminate-variation-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-indeterminate-variation-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-indeterminate-variation-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-indeterminate-variation-icon-check-rest));
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));
-  --awds-list-item-border:  rgb(var(--primary-core));
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-indeterminate-variation-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-indeterminate-variation-border-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-indeterminate-variation-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-indeterminate-variation-description-hover));
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-variation-indeterminate:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-bright));
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-indeterminate-variation-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-indeterminate-variation-border-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-indeterminate-variation-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-indeterminate-variation-description-active));
 }
 
 

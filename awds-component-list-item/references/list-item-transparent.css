@@ -294,22 +294,22 @@
 .list-item-transparent {
   --awds-list-item-bg:      transparent;
   --awds-list-item-border:  transparent;
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-transparent-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-unselected-transparent-icon-check-rest));
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-transparent:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
-  --awds-list-item-border:  rgb(var(--secondary-container-core));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-transparent-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-transparent-bg-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-hover));
 }
 
 .list-item-transparent:focus-visible {
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-focus));
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
@@ -317,7 +317,7 @@
 .list-item-transparent:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      transparent;
   --awds-list-item-border:  transparent;
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-transparent-description-active));
 }
 
 

@@ -292,10 +292,10 @@
 /* === Variant: variation === */
 
 .list-item-variation {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-variation-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-variation-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-variation-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-rest));
   --awds-list-item-check:   transparent;
 }
 
@@ -303,23 +303,23 @@
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));
-  --awds-list-item-border:  rgb(var(--primary-core));
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-variation-bg-hover));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-variation-border-hover));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-variation-color-hover));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-hover));
 }
 
 .list-item-variation:focus-visible {
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-focus));
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-variation:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-unselected-variation-bg-active));
+  --awds-list-item-border:  rgb(var(--awds-state-list-unselected-variation-border-active));
+  --awds-list-item-color:   rgb(var(--awds-state-list-unselected-variation-color-active));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-unselected-variation-description-active));
 }
 
 

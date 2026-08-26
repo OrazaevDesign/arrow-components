@@ -292,11 +292,11 @@
 /* === Variant: accent-selected === */
 
 .list-item-accent-selected {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));
-  --awds-list-item-border:  rgb(var(--primary-container-on-lowest));
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-secondary-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-secondary-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-secondary-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-secondary-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-secondary-icon-check-rest));
 }
 
 

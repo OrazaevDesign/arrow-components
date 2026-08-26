@@ -292,11 +292,11 @@
 /* === Variant: menu-selected === */
 
 .list-item-menu-selected {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
-  --awds-list-item-border:  rgb(var(--secondary-container-core));
-  --awds-list-item-color:   rgb(var(--accent-container-on));
-  --awds-list-item-desc:    rgb(var(--accent-container-on));
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-menu-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-menu-bg-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-menu-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-menu-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-menu-icon-check-rest));
 }
 
 

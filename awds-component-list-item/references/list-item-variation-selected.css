@@ -292,11 +292,11 @@
 /* === Variant: variation-selected === */
 
 .list-item-variation-selected {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));
-  --awds-list-item-border:  rgb(var(--primary-core));
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-bg:      rgb(var(--awds-state-list-selected-variation-bg-rest));
+  --awds-list-item-border:  rgb(var(--awds-state-list-selected-variation-border-rest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-variation-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-variation-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-variation-icon-check-rest));
 }
 
 

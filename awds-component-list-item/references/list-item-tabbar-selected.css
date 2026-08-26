@@ -294,26 +294,26 @@
 .list-item-tabbar-selected {
   --awds-list-item-bg:      transparent;
   --awds-list-item-border:  transparent;
-  --awds-list-item-color:   rgb(var(--accent-container-on));
-  --awds-list-item-desc:    rgb(var(--accent-container-on));
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--awds-state-list-selected-tabbar-color-rest));
+  --awds-list-item-desc:    rgb(var(--awds-state-list-selected-tabbar-description-rest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-rest));
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-hover));
 }
 
 .list-item-tabbar-selected:focus-visible {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-focus));
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-tabbar-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--awds-state-list-selected-tabbar-icon-check-active));
 }
 
 
