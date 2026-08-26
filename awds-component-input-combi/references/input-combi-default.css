@@ -457,36 +457,36 @@
 
 .icombi-default {
   /* Rest (map.state.rest.form-control.default) */
-  --awds-icombi-bg:         rgb(var(--secondary-container-core));
-  --awds-icombi-chroma:     rgb(var(--secondary-container-chroma));
-  --awds-icombi-border:     rgb(var(--secondary-container-on-low));
-  --awds-icombi-color:      rgb(var(--secondary-container-on-highest));
-  --awds-icombi-placehold:  rgb(var(--secondary-container-on-high));
-  --awds-icombi-icon-color: rgb(var(--secondary-container-on-high));
+  --awds-icombi-bg:         rgb(var(--awds-state-form-control-default-bg-rest));
+  --awds-icombi-chroma:     rgb(var(--awds-state-form-control-default-chroma-rest));
+  --awds-icombi-border:     rgb(var(--awds-state-form-control-default-border-rest));
+  --awds-icombi-color:      rgb(var(--awds-state-form-control-default-color-rest));
+  --awds-icombi-placehold:  rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-icombi-icon-color: rgb(var(--awds-state-form-control-default-placehold-rest));
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение.
    Селектор потомка, а не прямого ребёнка: поле лежит внутри .icombi__body. */
 .icombi-default:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--secondary-container-on));
+  --awds-icombi-border: rgb(var(--awds-state-form-control-default-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при
    нажатии мышь всё ещё висит над полем, и без него осталась бы hover-рамка
    (secondary-container-on), а в макете при нажатии рамка возвращается к on-low. */
 .icombi-default:active:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--secondary-container-on-low));
+  --awds-icombi-border: rgb(var(--awds-state-form-control-default-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике
    мышью, а не только при табе. */
 .icombi-default:focus-within {
-  --awds-icombi-bg:        rgb(var(--surface-bright));
-  --awds-icombi-chroma:    rgb(var(--primary-container-chroma));
-  --awds-icombi-border:    rgb(var(--primary-dim));
-  --awds-icombi-color:     rgb(var(--primary-container-on-highest));
-  --awds-icombi-placehold: rgb(var(--primary-container-on-high));
+  --awds-icombi-bg:        rgb(var(--awds-state-form-control-default-bg-focus));
+  --awds-icombi-chroma:    rgb(var(--awds-state-form-control-default-chroma-focus));
+  --awds-icombi-border:    rgb(var(--awds-state-form-control-default-border-focus));
+  --awds-icombi-color:     rgb(var(--awds-state-form-control-default-color-focus));
+  --awds-icombi-placehold: rgb(var(--awds-state-form-control-default-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

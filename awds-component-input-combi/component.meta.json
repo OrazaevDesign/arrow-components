@@ -1,10 +1,10 @@
 {
   "component": "input-combi",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "contract_hash": "sha256:7c2a2ea3cdb3933b48b3ce1982aff1d09d70e2499a7e80765258712334ee150d",
-  "artifact_hash": "sha256:2f46d55c990bb085069f41bbecd4df0e3cfedfcfa378ee041ef869ec1e8b8848",
+  "artifact_hash": "sha256:f12430faf2ccc7b0679a63bf948b227b6c4bbc82c67309b2d2272e6738d0960d",
   "visual_change": false,
-  "released_at": "2026-08-25T15:19:08.450Z",
+  "released_at": "2026-08-26T07:49:41.600Z",
   "own_values": [],
   "figma": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
@@ -352,7 +352,7 @@
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
   "uses": {
-    "awds-component-focus-selection": "1.0.3"
+    "awds-component-focus-selection": "1.1.0"
   },
   "contract": {
     "classes": [

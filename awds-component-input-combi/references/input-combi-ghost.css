@@ -466,9 +466,9 @@
   --awds-icombi-bg:         transparent;
   --awds-icombi-chroma:     transparent;
   --awds-icombi-border:     transparent;
-  --awds-icombi-color:      rgb(var(--secondary-container-on-highest));
-  --awds-icombi-placehold:  rgb(var(--secondary-container-on-high));
-  --awds-icombi-icon-color: rgb(var(--secondary-container-on-high));
+  --awds-icombi-color:      rgb(var(--awds-state-form-control-ghost-color-rest));
+  --awds-icombi-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-icombi-icon-color: rgb(var(--awds-state-form-control-ghost-placehold-rest));
 }
 
 /* Hover у ghost НЕ ОБЪЯВЛЕН намеренно: в макете все три ячейки (rest / hover /
@@ -483,9 +483,9 @@
   --awds-icombi-bg:         transparent;
   --awds-icombi-chroma:     transparent;
   --awds-icombi-border:     transparent;
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));
-  --awds-icombi-placehold:  rgb(var(--primary-container-on-high));
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-highest));
+  --awds-icombi-color:      rgb(var(--awds-state-form-control-ghost-color-focus));
+  --awds-icombi-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
+  --awds-icombi-icon-color: rgb(var(--awds-state-form-control-ghost-color-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

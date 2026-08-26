@@ -461,25 +461,25 @@
 
 .icombi-success {
   /* Rest (map.state.rest.form-control.success) */
-  --awds-icombi-bg:         rgb(var(--success-container-core));
-  --awds-icombi-chroma:     rgb(var(--success-container-chroma));
-  --awds-icombi-border:     rgb(var(--success-container-on-low));
-  --awds-icombi-color:      rgb(var(--success-container-on-highest));
-  --awds-icombi-placehold:  rgb(var(--success-container-on-high));
-  --awds-icombi-icon-color: rgb(var(--success-container-on-high));
+  --awds-icombi-bg:         rgb(var(--awds-state-form-control-success-bg-rest));
+  --awds-icombi-chroma:     rgb(var(--awds-state-form-control-success-chroma-rest));
+  --awds-icombi-border:     rgb(var(--awds-state-form-control-success-border-rest));
+  --awds-icombi-color:      rgb(var(--awds-state-form-control-success-color-rest));
+  --awds-icombi-placehold:  rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-icombi-icon-color: rgb(var(--awds-state-form-control-success-placehold-rest));
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение.
    Селектор потомка, а не прямого ребёнка: поле лежит внутри .icombi__body.
    :not(:focus-within) — на сфокусированном поле hover не применяется (см. выше). */
 .icombi-success:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--success-container-on));
+  --awds-icombi-border: rgb(var(--awds-state-form-control-success-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при
    нажатии мышь всё ещё висит над полем, и без него осталась бы hover-рамка. */
 .icombi-success:active:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--success-container-on-low));
+  --awds-icombi-border: rgb(var(--awds-state-form-control-success-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
@@ -487,12 +487,12 @@
    мышью, а не только при табе.
    При фокусе зелёная подсветка полностью уступает брендовой — сверено по ячейке Focus. */
 .icombi-success:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));
-  --awds-icombi-border:     rgb(var(--primary-dim));
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));
-  --awds-icombi-placehold:  rgb(var(--primary-container-on-high));
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));
+  --awds-icombi-bg:         rgb(var(--awds-state-form-control-success-bg-focus));
+  --awds-icombi-chroma:     rgb(var(--awds-state-form-control-success-chroma-focus));
+  --awds-icombi-border:     rgb(var(--awds-state-form-control-success-border-focus));
+  --awds-icombi-color:      rgb(var(--awds-state-form-control-success-color-focus));
+  --awds-icombi-placehold:  rgb(var(--awds-state-form-control-success-placehold-focus));
+  --awds-icombi-icon-color: rgb(var(--awds-state-form-control-success-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

@@ -459,27 +459,27 @@
 
 .icombi-secondary {
   /* Rest (map.state.rest.form-control.secondary) */
-  --awds-icombi-bg:         rgb(var(--secondary-core));
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));
-  --awds-icombi-border:     rgb(var(--secondary-core));
-  --awds-icombi-color:      rgb(var(--secondary-on));
-  --awds-icombi-placehold:  rgb(var(--secondary-on-dim));
-  --awds-icombi-icon-color: rgb(var(--secondary-on));
+  --awds-icombi-bg:         rgb(var(--awds-state-form-control-secondary-bg-rest));
+  --awds-icombi-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-rest));
+  --awds-icombi-border:     rgb(var(--awds-state-form-control-secondary-border-rest));
+  --awds-icombi-color:      rgb(var(--awds-state-form-control-secondary-color-rest));
+  --awds-icombi-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-rest));
+  --awds-icombi-icon-color: rgb(var(--awds-state-form-control-secondary-color-rest));
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение.
    Селектор потомка, а не прямого ребёнка: поле лежит внутри .icombi__body.
    :not(:focus-within) — на сфокусированном поле hover не применяется (см. выше). */
 .icombi-secondary:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-bg:     rgb(var(--secondary-dim));
-  --awds-icombi-border: rgb(var(--secondary-dim));
+  --awds-icombi-bg:     rgb(var(--awds-state-form-control-secondary-bg-hover));
+  --awds-icombi-border: rgb(var(--awds-state-form-control-secondary-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при
    нажатии мышь всё ещё висит над полем, и без него осталась бы hover-рамка. */
 .icombi-secondary:active:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-bg:     rgb(var(--secondary-core));
-  --awds-icombi-border: rgb(var(--secondary-core));
+  --awds-icombi-bg:     rgb(var(--awds-state-form-control-secondary-dim-active));
+  --awds-icombi-border: rgb(var(--awds-state-form-control-secondary-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
@@ -487,12 +487,12 @@
    мышью, а не только при табе.
    Текст и метка при фокусе НЕ меняются — в отличие от остальных вариантов. */
 .icombi-secondary:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));
-  --awds-icombi-border:     rgb(var(--secondary-core));
-  --awds-icombi-color:      rgb(var(--secondary-on));
-  --awds-icombi-placehold:  rgb(var(--secondary-on-dim));
-  --awds-icombi-icon-color: rgb(var(--secondary-on));
+  --awds-icombi-bg:         rgb(var(--awds-state-form-control-secondary-bg-focus));
+  --awds-icombi-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-focus));
+  --awds-icombi-border:     rgb(var(--awds-state-form-control-secondary-border-focus));
+  --awds-icombi-color:      rgb(var(--awds-state-form-control-secondary-color-focus));
+  --awds-icombi-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-focus));
+  --awds-icombi-icon-color: rgb(var(--awds-state-form-control-secondary-color-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
      (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
