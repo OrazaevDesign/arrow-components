@@ -43,9 +43,9 @@
   --awds-range-track-h: var(--awds-space-space-1);
 
   /* fill — одинаков у обоих вариантов */
-  --awds-range-fill-bg:     rgb(var(--primary-core));
-  --awds-range-fill-chroma: rgb(var(--primary-chroma));
-  --awds-range-track: rgb(var(--surface-container-container));
+  --awds-range-fill-bg:     rgb(var(--awds-state-range-bg-rest));
+  --awds-range-fill-chroma: rgb(var(--awds-state-range-chroma-rest));
+  --awds-range-track: rgb(var(--awds-state-range-container-rest));
 
   box-sizing: border-box;
   position: relative;
@@ -156,38 +156,38 @@
 /* === Variant: Default (ползунок — primary) === */
 
 .range-default {
-  --awds-range-thumb-bg:     rgb(var(--primary-core));
-  --awds-range-thumb-chroma: rgb(var(--primary-chroma));
-  --awds-range-thumb-border: rgb(var(--primary-core));
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-default-bg-rest));
+  --awds-range-thumb-chroma: rgb(var(--awds-state-range-default-chroma-rest));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-default-bg-rest));
 }
 
 .range-default:hover {
-  --awds-range-fill-bg:      rgb(var(--primary-dim));
-  --awds-range-thumb-bg:     rgb(var(--primary-dim));
-  --awds-range-thumb-border: rgb(var(--primary-dim));
+  --awds-range-fill-bg:      rgb(var(--awds-state-range-bg-hover));
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-default-bg-hover));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-default-bg-hover));
 }
 
 .range-default:active {
-  --awds-range-fill-chroma:  rgb(var(--primary-core));
-  --awds-range-thumb-chroma: rgb(var(--primary-core));
+  --awds-range-fill-chroma:  rgb(var(--awds-state-range-bg-active));
+  --awds-range-thumb-chroma: rgb(var(--awds-state-range-default-bg-active));
 }
 
 /* === Variant: Light (ползунок — белый с обводкой) === */
 
 .range-light {
-  --awds-range-thumb-bg:     rgb(var(--secondary-container-core));
-  --awds-range-thumb-chroma: rgb(var(--surface-bright));
-  --awds-range-thumb-border: rgb(var(--secondary-container-dim));
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-rest));
+  --awds-range-thumb-chroma: rgb(var(--awds-state-range-light-chroma-rest));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-light-border-rest));
 }
 
 .range-light:hover {
-  --awds-range-fill-bg:      rgb(var(--primary-dim));
-  --awds-range-thumb-bg:     rgb(var(--secondary-container-dim));
-  --awds-range-thumb-border: rgb(var(--secondary-container-dim));
+  --awds-range-fill-bg:      rgb(var(--awds-state-range-bg-hover));
+  --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-hover));
+  --awds-range-thumb-border: rgb(var(--awds-state-range-light-bg-hover));
 }
 
 .range-light:active {
-  --awds-range-fill-chroma:  rgb(var(--primary-core));
+  --awds-range-fill-chroma:  rgb(var(--awds-state-range-bg-active));
 }
 
 /* === Sizes (thumb = square/N/handle; track-h константна 4px) === */
