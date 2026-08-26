@@ -335,33 +335,33 @@
 
 .txa-success {
   /* Rest (map.state.rest.form-control.success) */
-  --awds-txa-bg:         rgb(var(--success-container-core));
-  --awds-txa-chroma:     rgb(var(--success-container-chroma));
-  --awds-txa-border:     rgb(var(--success-container-on-low));
-  --awds-txa-color:      rgb(var(--success-container-on-highest));
-  --awds-txa-placehold:  rgb(var(--success-container-on-high));
+  --awds-txa-bg:         rgb(var(--awds-state-form-control-success-bg-rest));
+  --awds-txa-chroma:     rgb(var(--awds-state-form-control-success-chroma-rest));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-rest));
+  --awds-txa-color:      rgb(var(--awds-state-form-control-success-color-rest));
+  --awds-txa-placehold:  rgb(var(--awds-state-form-control-success-placehold-rest));
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение. */
 .txa-success:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--success-container-on));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при нажатии
    мышь всё ещё висит над полем, и без него осталась бы hover-рамка. */
 .txa-success:active:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--success-container-on-low));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .txa-success:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));
-  --awds-txa-border:     rgb(var(--primary-dim));
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));
-  --awds-txa-placehold:  rgb(var(--primary-container-on-high));
+  --awds-txa-bg:         rgb(var(--awds-state-form-control-success-bg-focus));
+  --awds-txa-chroma:     rgb(var(--awds-state-form-control-success-chroma-focus));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-focus));
+  --awds-txa-color:      rgb(var(--awds-state-form-control-success-color-focus));
+  --awds-txa-placehold:  rgb(var(--awds-state-form-control-success-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

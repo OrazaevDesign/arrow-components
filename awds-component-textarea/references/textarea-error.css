@@ -336,33 +336,33 @@
 
 .txa-error {
   /* Rest (map.state.rest.form-control.error) */
-  --awds-txa-bg:         rgb(var(--error-container-core));
-  --awds-txa-chroma:     rgb(var(--error-container-chroma));
-  --awds-txa-border:     rgb(var(--error-container-on-low));
-  --awds-txa-color:      rgb(var(--error-container-on-highest));
-  --awds-txa-placehold:  rgb(var(--error-container-on-high));
+  --awds-txa-bg:         rgb(var(--awds-state-form-control-error-bg-rest));
+  --awds-txa-chroma:     rgb(var(--awds-state-form-control-error-chroma-rest));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-rest));
+  --awds-txa-color:      rgb(var(--awds-state-form-control-error-color-rest));
+  --awds-txa-placehold:  rgb(var(--awds-state-form-control-error-placehold-rest));
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение. */
 .txa-error:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--error-container-on));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при нажатии
    мышь всё ещё висит над полем, и без него осталась бы hover-рамка. */
 .txa-error:active:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--error-container-on-low));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .txa-error:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));
-  --awds-txa-border:     rgb(var(--primary-dim));
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));
-  --awds-txa-placehold:  rgb(var(--primary-container-on-high));
+  --awds-txa-bg:         rgb(var(--awds-state-form-control-error-bg-focus));
+  --awds-txa-chroma:     rgb(var(--awds-state-form-control-error-chroma-focus));
+  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-focus));
+  --awds-txa-color:      rgb(var(--awds-state-form-control-error-color-focus));
+  --awds-txa-placehold:  rgb(var(--awds-state-form-control-error-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

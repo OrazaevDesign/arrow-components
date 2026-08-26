@@ -334,16 +334,16 @@
   --awds-txa-bg:         transparent;
   --awds-txa-chroma:     transparent;
   --awds-txa-border:     transparent;
-  --awds-txa-color:      rgb(var(--secondary-container-on-highest));
-  --awds-txa-placehold:  rgb(var(--secondary-container-on-high));
+  --awds-txa-color:      rgb(var(--awds-state-form-control-ghost-color-rest));
+  --awds-txa-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .txa-ghost:focus-within {
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));
-  --awds-txa-placehold:  rgb(var(--primary-container-on-high));
+  --awds-txa-color:      rgb(var(--awds-state-form-control-ghost-color-focus));
+  --awds-txa-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
