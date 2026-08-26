@@ -257,33 +257,33 @@
    ============================================================================= */
 
 .obtn-primary {
-  --awds-obtn-bg:     rgb(var(--surface-surface));
-  --awds-obtn-chroma: rgb(var(--surface-bright));
-  --awds-obtn-border: rgb(var(--surface-surface));
-  --awds-obtn-color:  rgb(var(--surface-on));
+  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-rest));
+  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-rest));
+  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-rest));
+  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-rest));
 }
 
 /* Hover: chroma темнеет (surface-dim), текст контрастнее (surface-on-highest) */
 .obtn-primary:hover {
-  --awds-obtn-bg:     rgb(var(--surface-surface));
-  --awds-obtn-chroma: rgb(var(--surface-dim));
-  --awds-obtn-border: rgb(var(--surface-surface));
-  --awds-obtn-color:  rgb(var(--surface-on-highest));
+  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-hover));
+  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-hover));
+  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-hover));
+  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-hover));
 }
 
 .obtn-primary:focus-visible {
-  --awds-obtn-bg:     rgb(var(--surface-surface));
-  --awds-obtn-chroma: rgb(var(--surface-bright));
-  --awds-obtn-border: rgb(var(--surface-surface));
-  --awds-obtn-color:  rgb(var(--surface-on));
+  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-focus));
+  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-focus));
+  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-focus));
+  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-focus));
 }
 
 /* Active: = Rest (в макете нажатие не меняет цвет/тень overhung primary) */
 .obtn-primary:active {
-  --awds-obtn-bg:     rgb(var(--surface-surface));
-  --awds-obtn-chroma: rgb(var(--surface-bright));
-  --awds-obtn-border: rgb(var(--surface-surface));
-  --awds-obtn-color:  rgb(var(--surface-on));
+  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-active));
+  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-active));
+  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-active));
+  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-active));
 }
 
 

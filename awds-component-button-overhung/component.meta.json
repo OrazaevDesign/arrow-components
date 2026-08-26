@@ -1,10 +1,10 @@
 {
   "component": "button-overhung",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "contract_hash": "sha256:734b4e05e7eed9c113df4e28601577eb5812a9cd6b08f0826a83433219589058",
-  "artifact_hash": "sha256:9c972aa829d2ad8cb393b96aeed24b64e9fa6ee2f78da8cf4f06ff7c124a48c1",
+  "artifact_hash": "sha256:863bbdad025af849220fe48fa26819ab063638aeff485cb09c4ebe471e2e8f44",
   "visual_change": false,
-  "released_at": "2026-08-25T17:40:03.176Z",
+  "released_at": "2026-08-26T07:36:47.571Z",
   "own_values": [
     {
       "value": "1.4s",
@@ -154,8 +154,8 @@
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
   "uses": {
-    "awds-component-button": "1.0.3",
-    "awds-component-focus-selection": "1.0.3"
+    "awds-component-button": "1.0.5",
+    "awds-component-focus-selection": "1.1.0"
   },
   "contract": {
     "classes": [
