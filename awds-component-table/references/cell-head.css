@@ -18,25 +18,25 @@
    ============================================================================= */
 
 .cell-head {
-  --awds-cell-bg:          rgb(var(--surface-surface));
-  --awds-cell-border:      rgb(var(--surface-on-lowest));
-  --awds-cell-color:       rgb(var(--surface-on-highest));
-  --awds-cell-description: rgb(var(--surface-on-high));
+  --awds-cell-bg:          rgb(var(--awds-state-cell-default-head-bg-rest));
+  --awds-cell-border:      rgb(var(--awds-state-cell-default-head-border-rest));
+  --awds-cell-color:       rgb(var(--awds-state-cell-default-head-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-default-head-description-rest));
   /* Заголовок жирнее тела — Figma Inter:Semi_Bold (node 2019:930 / таблица 2038:1350) */
   font-weight: var(--awds-font-weight-semibold);
 }
 
 .cell-head:hover {
-  --awds-cell-bg:     rgb(var(--surface-dim));
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-hover));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-hover));
 }
 
 .cell-head:focus-visible {
-  --awds-cell-bg:     rgb(var(--surface-surface));
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-focus));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-focus));
 }
 
 .cell-head:active {
-  --awds-cell-bg:     rgb(var(--surface-surface));
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-active));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-active));
 }

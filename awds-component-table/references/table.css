@@ -51,7 +51,9 @@
 /* --- Var=Light: безрамочная, разделители строк, flush-left первый столбец --- */
 .awds-table--light .cell {
   border: 0;
-  border-bottom: var(--awds-space-space-px) solid rgb(var(--surface-on-lowest));
+  /* разделитель строк: в макете каждая строка light-таблицы несёт border-b
+     цвета cell/default-head/border (нода 2038:1351) */
+  border-bottom: var(--awds-space-space-px) solid rgb(var(--awds-state-cell-default-head-border-rest));
   /* flush-left: левого паддинга нет, только верт. + правый (Figma pr-12 / py-12) */
   padding-inline: 0 var(--awds-space-space-3);
 }
@@ -78,10 +80,10 @@
    конкретный вариант (.cell-light / .cell-head / .cell-default) переопределяет. */
 
 .cell {
-  --awds-cell-bg:          transparent;
-  --awds-cell-border:      transparent;
-  --awds-cell-color:       rgb(var(--surface-on-highest));
-  --awds-cell-description: rgb(var(--surface-on-high));
+  --awds-cell-bg:          rgb(var(--awds-state-cell-light-bg-rest));
+  --awds-cell-border:      rgb(var(--awds-state-cell-light-border-rest));
+  --awds-cell-color:       rgb(var(--awds-state-cell-light-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-light-description-rest));
 
   /* Box & layout */
   padding: var(--awds-space-space-3);                 /* 12px — Figma WYSIWYG/gap/li-top */

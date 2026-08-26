@@ -20,13 +20,13 @@
 .cell-light {
   --awds-cell-bg:          transparent;
   --awds-cell-border:      transparent;
-  --awds-cell-color:       rgb(var(--surface-on-highest));
-  --awds-cell-description: rgb(var(--surface-on-high));
+  --awds-cell-color:       rgb(var(--awds-state-cell-light-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-light-description-rest));
 }
 
 .cell-light:hover {
-  --awds-cell-bg:     rgb(var(--surface-surface));
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+  --awds-cell-bg:     rgb(var(--awds-state-cell-light-bg-hover));
+  --awds-cell-border: rgb(var(--awds-state-cell-light-border-hover));
 }
 
 .cell-light:focus-visible {

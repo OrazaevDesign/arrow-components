@@ -25,23 +25,23 @@
    ============================================================================= */
 
 .cell-default {
-  --awds-cell-bg:          rgb(var(--surface-bright));
-  --awds-cell-border:      rgb(var(--surface-on-lowest));
-  --awds-cell-color:       rgb(var(--surface-on-highest));
-  --awds-cell-description: rgb(var(--surface-on-high));
+  --awds-cell-bg:          rgb(var(--awds-state-cell-default-bg-rest));
+  --awds-cell-border:      rgb(var(--awds-state-cell-default-border-rest));
+  --awds-cell-color:       rgb(var(--awds-state-cell-default-color-rest));
+  --awds-cell-description: rgb(var(--awds-state-cell-default-description-rest));
 }
 
 .cell-default:hover {
-  --awds-cell-bg:     rgb(var(--surface-surface));
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-hover));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-border-hover));
 }
 
 .cell-default:focus-visible {
-  --awds-cell-bg:     rgb(var(--surface-bright));
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-focus));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-border-focus));
 }
 
 .cell-default:active {
-  --awds-cell-bg:     rgb(var(--surface-bright));
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-active));
+  --awds-cell-border: rgb(var(--awds-state-cell-default-border-active));
 }
