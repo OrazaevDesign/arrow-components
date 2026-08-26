@@ -44,7 +44,10 @@
   /* Дефолты аккумуляторов */
   --awds-content-area-ratio:    16 / 9;
   --awds-content-area-radius:   var(--awds-rounded-border-radius-700);
-  --awds-content-area-border:   rgb(var(--extended-shadow-1));   /* роль Extended/Shadow-1 = чёрный 3 % */
+  /* роль Extended/Shadow-1 = чёрный 8 % (в макете та же роль зовётся
+     extended/shadow/opacity3 — сверять по значению, не по имени: роль
+     --extended-shadow-3 это 3 %, другое значение) */
+  --awds-content-area-border:   rgb(var(--extended-shadow-1));
   --awds-content-area-fit:      cover;
   --awds-content-area-position: center;
 
