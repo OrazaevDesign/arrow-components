@@ -609,7 +609,7 @@
     padding: var(--awds-scombi-picker-padding);
     border: 0;
     border-radius: var(--awds-scombi-picker-rounded);
-    background: rgb(var(--surface-bright));
+    background: rgb(var(--awds-state-picker-bg-rest));
     box-shadow: var(--awds-shadow-elevation-3);
 
     /* Ширина РОВНО по обёртке (в макете инстансы контрола и ◆ / Dropdown совпадают),
@@ -624,7 +624,7 @@
     margin-block: var(--awds-space-space-1);
 
     scrollbar-width: thin;
-    scrollbar-color: rgb(var(--surface-on) / var(--awds-opacity-opacity-40)) transparent;
+    scrollbar-color: rgb(var(--awds-state-picker-scrollbar-rest) / var(--awds-opacity-opacity-40)) transparent;
   }
 
   /* --- Пункт: мост «размер селекта → размер list-item» --- */
@@ -660,8 +660,8 @@
      быть та же, что под мышью. У list-item она висит на :hover — повторяем для :focus.
      :not(:checked) — чтобы не гасить выбранный пункт при переходе по нему стрелками. */
   .scombi__field option:not(:checked):focus {
-    --awds-list-item-bg:     rgb(var(--secondary-container-core));
-    --awds-list-item-border: rgb(var(--secondary-container-core));
+    --awds-list-item-bg:     rgb(var(--awds-state-list-unselected-bg-focus));
+    --awds-list-item-border: rgb(var(--awds-state-list-unselected-bg-focus));
   }
 
   /* Выбранный пункт = вариант list-item-accent-selected (роль list/selected-secondary).
@@ -670,11 +670,11 @@
      hover-правило весит (0,4,0), и без двух :not() мост весил бы (0,2,1) и проигрывал —
      выбранный пункт под курсором стал бы серым. */
   .scombi__field option:checked:not(:disabled):not([aria-disabled="true"]) {
-    --awds-list-item-bg:     rgb(var(--primary-container-core));
-    --awds-list-item-border: rgb(var(--primary-container-on-lowest));
-    --awds-list-item-color:  rgb(var(--primary-container-on-highest));
-    --awds-list-item-desc:   rgb(var(--primary-container-on-high));
-    --awds-list-item-check:  rgb(var(--primary-container-on));
+    --awds-list-item-bg:     rgb(var(--awds-state-list-selected-secondary-bg-rest));
+    --awds-list-item-border: rgb(var(--awds-state-list-selected-secondary-border-rest));
+    --awds-list-item-color:  rgb(var(--awds-state-list-selected-secondary-color-rest));
+    --awds-list-item-desc:   rgb(var(--awds-state-list-selected-secondary-description-rest));
+    --awds-list-item-check:  rgb(var(--awds-state-list-selected-secondary-icon-check-rest));
   }
 
   .scombi__field option:disabled {
@@ -701,38 +701,38 @@
 
 .scombi-error {
   /* Rest (map.state.rest.form-control.error) */
-  --awds-scombi-bg:          rgb(var(--error-container-core));
-  --awds-scombi-chroma:      rgb(var(--error-container-chroma));
-  --awds-scombi-border:      rgb(var(--error-container-on-low));
-  --awds-scombi-color:       rgb(var(--error-container-on-highest));
-  --awds-scombi-placehold:   rgb(var(--error-container-on-high));
-  --awds-scombi-chevron:     rgb(var(--error-container-on-high));
-  --awds-scombi-icon-color:  rgb(var(--error-container-on-high));
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-error-bg-rest));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-error-chroma-rest));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-rest));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-error-color-rest));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-error-placehold-rest));
 }
 
 /* :has(:enabled) — отключённый контрол не реагирует на наведение.
    Селектор потомка, а не прямого ребёнка: поле лежит внутри .scombi__body. */
 .scombi-error:hover:not(:focus-within):has(.scombi__field:enabled) {
-  --awds-scombi-border:      rgb(var(--error-container-on));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при нажатии
    мышь всё ещё висит над контролом, и без него осталась бы hover-рамка. */
 .scombi-error:active:not(:focus-within):has(.scombi__field:enabled) {
-  --awds-scombi-border:      rgb(var(--error-container-on-low));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у выпадающего списка «сфокусировано» = активно,
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .scombi-error:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));
-  --awds-scombi-border:      rgb(var(--primary-dim));
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));
-  --awds-scombi-placehold:   rgb(var(--primary-container-on-high));
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));
+  --awds-scombi-bg:          rgb(var(--awds-state-form-control-error-bg-focus));
+  --awds-scombi-chroma:      rgb(var(--awds-state-form-control-error-chroma-focus));
+  --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-focus));
+  --awds-scombi-color:       rgb(var(--awds-state-form-control-error-color-focus));
+  --awds-scombi-placehold:   rgb(var(--awds-state-form-control-error-placehold-focus));
+  --awds-scombi-chevron:     rgb(var(--awds-state-form-control-error-placehold-focus));
+  --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-error-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
@@ -751,13 +751,13 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-error:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));
-    --awds-scombi-border:      rgb(var(--primary-dim));
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));
-    --awds-scombi-placehold:   rgb(var(--primary-container-on-high));
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));
+    --awds-scombi-bg:          rgb(var(--awds-state-form-control-error-bg-focus));
+    --awds-scombi-chroma:      rgb(var(--awds-state-form-control-error-chroma-focus));
+    --awds-scombi-border:      rgb(var(--awds-state-form-control-error-border-focus));
+    --awds-scombi-color:       rgb(var(--awds-state-form-control-error-color-focus));
+    --awds-scombi-placehold:   rgb(var(--awds-state-form-control-error-placehold-focus));
+    --awds-scombi-chevron:     rgb(var(--awds-state-form-control-error-placehold-focus));
+    --awds-scombi-icon-color:  rgb(var(--awds-state-form-control-error-placehold-focus));
 
     /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
        (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
