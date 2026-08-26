@@ -14,10 +14,12 @@
                 -typography-font-size | -line-height | -letter-spacing)
      — скругление: var(--awds-rounded-border-radius-full) (всегда пилюля)
 
-   Variant -> badge-namespace -> роли:
-     Primary   (badge/system/accent)    bg accent-core   chroma accent-chroma   color accent-on
-     Secondary (badge/system/secondary) bg secondary-core chroma secondary-chroma color secondary-on-dim
-     Ghost     (badge/system/ghost)     bg/border transparent                    color surface-on-high
+   Variant -> ячейки State (набор badge/system, тот же, что у бейджей):
+     Primary   --awds-state-badge-system-accent-{bg|chroma|border|color}-rest
+     Secondary --awds-state-badge-system-secondary-{bg|chroma|border|color}-rest
+     Ghost     --awds-state-badge-system-ghost-{bg|chroma|border|color}-rest
+   Ячейки набора badge — не зависимость от компонента badge: у notice свои классы и
+   разметка, общий только набор состояний в студии, поэтому `uses` тут не появляется.
 
    Приватные аккумуляторы компонента: --awds-notice-bg/-chroma/-border/-color и
    -size/-pad-h/-pad-v/-fs/-lh/-ls. (Не путать с DS shape-токенами
@@ -66,28 +68,29 @@
 /* === Variant: Primary (badge/system/accent) === */
 
 .notice-primary {
-  --awds-notice-bg:     rgb(var(--accent-core));
-  --awds-notice-chroma: rgb(var(--accent-chroma));
-  --awds-notice-border: rgb(var(--accent-core));
-  --awds-notice-color:  rgb(var(--accent-on));
+  --awds-notice-bg:     rgb(var(--awds-state-badge-system-accent-bg-rest));
+  --awds-notice-chroma: rgb(var(--awds-state-badge-system-accent-chroma-rest));
+  --awds-notice-border: rgb(var(--awds-state-badge-system-accent-border-rest));
+  --awds-notice-color:  rgb(var(--awds-state-badge-system-accent-color-rest));
 }
 
 /* === Variant: Secondary (badge/system/secondary) === */
 
 .notice-secondary {
-  --awds-notice-bg:     rgb(var(--secondary-core));
-  --awds-notice-chroma: rgb(var(--secondary-chroma));
-  --awds-notice-border: rgb(var(--secondary-core));
-  --awds-notice-color:  rgb(var(--secondary-on-dim));
+  --awds-notice-bg:     rgb(var(--awds-state-badge-system-secondary-bg-rest));
+  --awds-notice-chroma: rgb(var(--awds-state-badge-system-secondary-chroma-rest));
+  --awds-notice-border: rgb(var(--awds-state-badge-system-secondary-border-rest));
+  --awds-notice-color:  rgb(var(--awds-state-badge-system-secondary-color-rest));
 }
 
 /* === Variant: Ghost (badge/system/ghost) — без фона, только число === */
 
 .notice-ghost {
-  --awds-notice-bg:     transparent;
-  --awds-notice-chroma: transparent;
-  --awds-notice-border: transparent;
-  --awds-notice-color:  rgb(var(--surface-on-high));
+  /* прозрачность даёт ячейка (extended-transparent), не литерал transparent */
+  --awds-notice-bg:     rgb(var(--awds-state-badge-system-ghost-bg-rest));
+  --awds-notice-chroma: rgb(var(--awds-state-badge-system-ghost-chroma-rest));
+  --awds-notice-border: rgb(var(--awds-state-badge-system-ghost-border-rest));
+  --awds-notice-color:  rgb(var(--awds-state-badge-system-ghost-color-rest));
 }
 
 /* === Sizes (shape notice; size = диаметр для 1 цифры) === */
