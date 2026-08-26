@@ -376,9 +376,9 @@
   --awds-input-bg:         transparent;
   --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--secondary-container-on-highest));
-  --awds-input-placehold:  rgb(var(--secondary-container-on-high));
-  --awds-input-icon-color: rgb(var(--secondary-container-on-high));
+  --awds-input-color:      rgb(var(--awds-state-form-control-ghost-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-ghost-placehold-rest));
 }
 
 /* Hover у ghost НЕ ОБЪЯВЛЕН намеренно: в макете все три ячейки (rest / hover /
@@ -393,9 +393,9 @@
   --awds-input-bg:         transparent;
   --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--primary-container-on-highest));
-  --awds-input-placehold:  rgb(var(--primary-container-on-high));
-  --awds-input-icon-color: rgb(var(--primary-container-on-highest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-ghost-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-ghost-color-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

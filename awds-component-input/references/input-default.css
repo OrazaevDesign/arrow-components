@@ -369,36 +369,36 @@
 
 .input-default {
   /* Rest (map.state.rest.form-control.default) */
-  --awds-input-bg:         rgb(var(--secondary-container-core));
-  --awds-input-chroma:     rgb(var(--secondary-container-chroma));
-  --awds-input-border:     rgb(var(--secondary-container-on-low));
-  --awds-input-color:      rgb(var(--secondary-container-on-highest));
-  --awds-input-placehold:  rgb(var(--secondary-container-on-high));
-  --awds-input-icon-color: rgb(var(--secondary-container-on-high));
+  --awds-input-bg:         rgb(var(--awds-state-form-control-default-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-default-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-default-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-default-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-default-placehold-rest));
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение.
    :not(:focus-within) — на сфокусированном поле hover не применяется (см. выше). */
 .input-default:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--secondary-container-on));
+  --awds-input-border: rgb(var(--awds-state-form-control-default-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при
    нажатии мышь всё ещё висит над полем, и без него осталась бы hover-рамка
    (secondary-container-on), а в макете при нажатии рамка возвращается к on-low. */
 .input-default:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--secondary-container-on-low));
+  --awds-input-border: rgb(var(--awds-state-form-control-default-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике
    мышью, а не только при табе. */
 .input-default:focus-within {
-  --awds-input-bg:        rgb(var(--surface-bright));
-  --awds-input-chroma:    rgb(var(--primary-container-chroma));
-  --awds-input-border:    rgb(var(--primary-dim));
-  --awds-input-color:     rgb(var(--primary-container-on-highest));
-  --awds-input-placehold: rgb(var(--primary-container-on-high));
+  --awds-input-bg:        rgb(var(--awds-state-form-control-default-bg-focus));
+  --awds-input-chroma:    rgb(var(--awds-state-form-control-default-chroma-focus));
+  --awds-input-border:    rgb(var(--awds-state-form-control-default-border-focus));
+  --awds-input-color:     rgb(var(--awds-state-form-control-default-color-focus));
+  --awds-input-placehold: rgb(var(--awds-state-form-control-default-placehold-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

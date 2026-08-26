@@ -371,26 +371,26 @@
 
 .input-secondary {
   /* Rest (map.state.rest.form-control.secondary) */
-  --awds-input-bg:         rgb(var(--secondary-core));
-  --awds-input-chroma:     rgb(var(--secondary-chroma));
-  --awds-input-border:     rgb(var(--secondary-core));
-  --awds-input-color:      rgb(var(--secondary-on));
-  --awds-input-placehold:  rgb(var(--secondary-on-dim));
-  --awds-input-icon-color: rgb(var(--secondary-on));
+  --awds-input-bg:         rgb(var(--awds-state-form-control-secondary-bg-rest));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-rest));
+  --awds-input-border:     rgb(var(--awds-state-form-control-secondary-border-rest));
+  --awds-input-color:      rgb(var(--awds-state-form-control-secondary-color-rest));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-rest));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-secondary-color-rest));
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение.
    :not(:focus-within) — на сфокусированном поле hover не применяется (см. выше). */
 .input-secondary:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-bg:     rgb(var(--secondary-dim));
-  --awds-input-border: rgb(var(--secondary-dim));
+  --awds-input-bg:     rgb(var(--awds-state-form-control-secondary-bg-hover));
+  --awds-input-border: rgb(var(--awds-state-form-control-secondary-border-hover));
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при
    нажатии мышь всё ещё висит над полем, и без него осталась бы hover-рамка. */
 .input-secondary:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-bg:     rgb(var(--secondary-core));
-  --awds-input-border: rgb(var(--secondary-core));
+  --awds-input-bg:     rgb(var(--awds-state-form-control-secondary-dim-active));
+  --awds-input-border: rgb(var(--awds-state-form-control-secondary-border-active));
 }
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
@@ -398,12 +398,12 @@
    мышью, а не только при табе.
    Текст и placeholder при фокусе НЕ меняются — в отличие от остальных вариантов. */
 .input-secondary:focus-within {
-  --awds-input-bg:         rgb(var(--surface-bright));
-  --awds-input-chroma:     rgb(var(--secondary-chroma));
-  --awds-input-border:     rgb(var(--secondary-core));
-  --awds-input-color:      rgb(var(--secondary-on));
-  --awds-input-placehold:  rgb(var(--secondary-on-dim));
-  --awds-input-icon-color: rgb(var(--secondary-on));
+  --awds-input-bg:         rgb(var(--awds-state-form-control-secondary-bg-focus));
+  --awds-input-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-focus));
+  --awds-input-border:     rgb(var(--awds-state-form-control-secondary-border-focus));
+  --awds-input-color:      rgb(var(--awds-state-form-control-secondary-color-focus));
+  --awds-input-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-focus));
+  --awds-input-icon-color: rgb(var(--awds-state-form-control-secondary-color-focus));
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
      (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
