@@ -1,0 +1,141 @@
+/* ArrowDS · progress@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@keyframes progress-circular-spin {
+  from { transform: rotate(-90deg); }
+  to   { transform: rotate(270deg); }
+}
+
+@keyframes progress-circular-dash {
+  0%   { stroke-dasharray: 5 100; }
+  50%  { stroke-dasharray: 70 100; }
+  100% { stroke-dasharray: 5 100; }
+}
+
+@property --awds-progress-value {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes progress-linear-run {
+  0%   { inset-inline-start: 0;    inline-size: 10%; }
+  50%  { inset-inline-start: 30%;  inline-size: 40%; }
+  100% { inset-inline-start: 100%; inline-size: 10%; }
+}
+
+@keyframes progress-pulse {
+  50% { opacity: 1; }
+}
+
+@layer awds {
+
+.progress {
+  --awds-progress-track: var(--awds-space-space-1);
+  --awds-progress-gap: var(--awds-space-space-1-5);
+  --awds-progress-color: rgb(var(--surface-on));
+  --awds-progress-idle-opacity: var(--awds-opacity-opacity-20);
+  --awds-progress-duration: 1.4s;
+}
+
+.progress-circular {
+  display: block;
+  inline-size: var(--awds-space-space-12);
+  block-size: var(--awds-space-space-12);
+  transform: rotate(-90deg);
+  color: var(--awds-progress-color);
+}
+
+.progress-circular__arc {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--awds-space-space-0-5);
+  stroke-linecap: round;
+  stroke-dasharray: var(--awds-progress-value) 100;
+  stroke-opacity: min(1, calc(var(--awds-progress-value) * 1000));
+  transition: stroke-dasharray 0.3s ease-out;
+}
+
+.progress-circular--indeterminate {
+  animation: progress-circular-spin var(--awds-progress-duration) linear infinite;
+}
+
+.progress-circular--indeterminate .progress-circular__arc {
+  transition: none;
+  animation: progress-circular-dash var(--awds-progress-duration) ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-circular--indeterminate {
+    animation: none;
+  }
+  .progress-circular--indeterminate .progress-circular__arc {
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.progress-linear {
+  position: relative;
+  display: block;
+  block-size: var(--awds-space-space-3);
+  inline-size: 100%;
+}
+
+.progress-linear__active, .progress-linear__track {
+  position: absolute;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  block-size: var(--awds-progress-track);
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: var(--awds-progress-color);
+}
+
+.progress-linear__active {
+  inset-inline-start: 0;
+  inline-size: calc(var(--awds-progress-value) * 1%);
+  transition: inline-size 0.3s ease-out;
+}
+
+.progress-linear__track {
+  inset-inline: calc(var(--awds-progress-value) * 1% + var(--awds-progress-gap)) 0;
+  opacity: var(--awds-progress-idle-opacity);
+  overflow: clip;
+  transition: inset-inline-start 0.3s ease-out;
+}
+
+.progress-linear__stop {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  inline-size: var(--awds-progress-track);
+  block-size: var(--awds-progress-track);
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: var(--awds-progress-color);
+}
+
+.progress-linear--indeterminate .progress-linear__track {
+  inset-inline: 0;
+  transition: none;
+}
+
+.progress-linear--indeterminate .progress-linear__stop {
+  display: none;
+}
+
+.progress-linear--indeterminate .progress-linear__active {
+  inline-size: 30%;
+  transition: none;
+  animation: progress-linear-run var(--awds-progress-duration) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-linear--indeterminate .progress-linear__active {
+    inset-inline: 0;
+    inline-size: auto;
+    opacity: var(--awds-progress-idle-opacity);
+    animation: progress-pulse var(--awds-progress-duration) ease-in-out infinite;
+  }
+}
+
+}

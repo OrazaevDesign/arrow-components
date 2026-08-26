@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 1126 из 3769 объявленных в теме. */
+   Переменных: 1127 из 3769 объявленных в теме. */
 
 :root {
   --primary-core-light: 250 216 22;
@@ -230,6 +230,7 @@
   --awds-layout-layout-market-card-slider-max-mobile: 256px;
   --awds-layout-layout-market-card-slider-max: var(--awds-layout-layout-market-card-slider-max-desktop);
   --awds-opacity-opacity-5: 5%;
+  --awds-opacity-opacity-20: 20%;
   --awds-opacity-opacity-30: 30%;
   --awds-opacity-opacity-40: 40%;
   --awds-opacity-opacity-50: 50%;

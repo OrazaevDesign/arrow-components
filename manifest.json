@@ -348,6 +348,17 @@
       "bytes": 28739
     },
     {
+      "name": "progress",
+      "version": "1.0.0",
+      "variants": [
+        "linear",
+        "circular"
+      ],
+      "sizes": null,
+      "rules": 20,
+      "bytes": 3725
+    },
+    {
       "name": "radio",
       "version": "1.0.3",
       "variants": [
@@ -511,13 +522,13 @@
     }
   ],
   "bundle": {
-    "bytes": 277651,
-    "rules": 963,
-    "hash": "sha256:f319ddefa00e5cc078911157c6aaa8be68b5365b9039af5a5fd224a6667c5768"
+    "bytes": 281284,
+    "rules": 983,
+    "hash": "sha256:9fd6c19862278df53dafd17f542d51e657e2804050de751dc35702c039dcea2e"
   },
   "theme": {
-    "bytes": 105617,
-    "variables_kept": 1126,
+    "bytes": 105651,
+    "variables_kept": 1127,
     "variables_declared": 3769,
     "missing": []
   },
