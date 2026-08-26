@@ -11,10 +11,10 @@
 
 :root {
   --primary-core-light: 250 216 22;
-  --primary-core-dark: 253 224 61;
+  --primary-core-dark: 249 209 11;
   --primary-core: var(--primary-core-light);
   --primary-chroma-light: 252 221 44;
-  --primary-chroma-dark: 254 229 83;
+  --primary-chroma-dark: 250 216 22;
   --primary-chroma: var(--primary-chroma-light);
   --primary-dim-light: 249 209 11;
   --primary-dim-dark: 247 203 8;
@@ -25,58 +25,58 @@
   --primary-on-dim-light: 50 41 17;
   --primary-on-dim-dark: 50 41 17;
   --primary-on-dim: var(--primary-on-dim-light);
-  --primary-container-base-light: 255 255 255;
+  --primary-container-base-light: 253 252 247;
   --primary-container-base-dark: 58 48 19;
   --primary-container-base: var(--primary-container-base-light);
   --primary-container-core-light: 251 249 239;
-  --primary-container-core-dark: 42 34 14;
+  --primary-container-core-dark: 38 30 13;
   --primary-container-core: var(--primary-container-core-light);
-  --primary-container-chroma-light: 253 252 247;
-  --primary-container-chroma-dark: 50 41 17;
+  --primary-container-chroma-light: 251 249 239;
+  --primary-container-chroma-dark: 38 30 13;
   --primary-container-chroma: var(--primary-container-chroma-light);
   --primary-container-dim-light: 242 237 210;
   --primary-container-dim-dark: 30 24 11;
   --primary-container-dim: var(--primary-container-dim-light);
   --primary-container-on-highest-light: 30 24 11;
-  --primary-container-on-highest-dark: 253 252 247;
+  --primary-container-on-highest-dark: 251 249 239;
   --primary-container-on-highest: var(--primary-container-on-highest-light);
   --primary-container-on-high-light: 112 95 33;
-  --primary-container-on-high-dark: 217 206 141;
+  --primary-container-on-high-dark: 227 218 167;
   --primary-container-on-high: var(--primary-container-on-high-light);
   --primary-container-on-light: 167 143 46;
-  --primary-container-on-dark: 253 224 61;
+  --primary-container-on-dark: 112 95 33;
   --primary-container-on: var(--primary-container-on-light);
   --primary-container-on-low-light: 217 206 141;
-  --primary-container-on-low-dark: 112 95 33;
+  --primary-container-on-low-dark: 78 66 25;
   --primary-container-on-low: var(--primary-container-on-low-light);
   --primary-container-on-lowest-light: 227 218 167;
-  --primary-container-on-lowest-dark: 78 66 25;
+  --primary-container-on-lowest-dark: 58 48 19;
   --primary-container-on-lowest: var(--primary-container-on-lowest-light);
   --secondary-core-light: 242 242 242;
   --secondary-core-dark: 31 31 31;
   --secondary-core: var(--secondary-core-light);
-  --secondary-chroma-light: 250 250 250;
+  --secondary-chroma-light: 242 242 242;
   --secondary-chroma-dark: 36 36 36;
   --secondary-chroma: var(--secondary-chroma-light);
   --secondary-dim-light: 237 237 237;
   --secondary-dim-dark: 20 20 20;
   --secondary-dim: var(--secondary-dim-light);
-  --secondary-on-light: 61 61 61;
+  --secondary-on-light: 51 51 51;
   --secondary-on-dark: 237 237 237;
   --secondary-on: var(--secondary-on-light);
-  --secondary-on-dim-light: 128 128 128;
+  --secondary-on-dim-light: 61 61 61;
   --secondary-on-dim-dark: 224 224 224;
   --secondary-on-dim: var(--secondary-on-dim-light);
-  --secondary-container-base-light: 255 255 255;
+  --secondary-container-base-light: 250 250 250;
   --secondary-container-base-dark: 43 43 43;
   --secondary-container-base: var(--secondary-container-base-light);
-  --secondary-container-core-light: 250 250 250;
+  --secondary-container-core-light: 242 242 242;
   --secondary-container-core-dark: 31 31 31;
   --secondary-container-core: var(--secondary-container-core-light);
-  --secondary-container-chroma-light: 250 250 250;
+  --secondary-container-chroma-light: 242 242 242;
   --secondary-container-chroma-dark: 26 26 26;
   --secondary-container-chroma: var(--secondary-container-chroma-light);
-  --secondary-container-dim-light: 242 242 242;
+  --secondary-container-dim-light: 237 237 237;
   --secondary-container-dim-dark: 20 20 20;
   --secondary-container-dim: var(--secondary-container-dim-light);
   --secondary-container-on-highest-light: 20 20 20;
@@ -88,10 +88,10 @@
   --secondary-container-on-light: 128 128 128;
   --secondary-container-on-dark: 143 143 143;
   --secondary-container-on: var(--secondary-container-on-light);
-  --secondary-container-on-low-light: 209 209 209;
+  --secondary-container-on-low-light: 148 148 148;
   --secondary-container-on-low-dark: 61 61 61;
   --secondary-container-on-low: var(--secondary-container-on-low-light);
-  --secondary-container-on-lowest-light: 230 230 230;
+  --secondary-container-on-lowest-light: 224 224 224;
   --secondary-container-on-lowest-dark: 51 51 51;
   --secondary-container-on-lowest: var(--secondary-container-on-lowest-light);
   --tertiary-core-light: 242 244 252;
@@ -439,14 +439,14 @@
   --surface-on-lowest-light: 237 237 237;
   --surface-on-lowest-dark: 51 51 51;
   --surface-on-lowest: var(--surface-on-lowest-light);
-  --extended-shadow-1-light: 0 0 0 / 3%;
-  --extended-shadow-1-dark: 0 0 0 / 3%;
+  --extended-shadow-1-light: 0 0 0 / 8%;
+  --extended-shadow-1-dark: 0 0 0 / 8%;
   --extended-shadow-1: var(--extended-shadow-1-light);
   --extended-shadow-2-light: 0 0 0 / 6%;
   --extended-shadow-2-dark: 0 0 0 / 6%;
   --extended-shadow-2: var(--extended-shadow-2-light);
-  --extended-shadow-3-light: 0 0 0 / 8%;
-  --extended-shadow-3-dark: 0 0 0 / 8%;
+  --extended-shadow-3-light: 0 0 0 / 3%;
+  --extended-shadow-3-dark: 0 0 0 / 3%;
   --extended-shadow-3: var(--extended-shadow-3-light);
   --extended-transparent-light: 255 255 255 / 0%;
   --extended-transparent-dark: 0 0 0 / 0%;
@@ -3747,6 +3747,42 @@
   --awds-state-cell-light-description-focus: var(--surface-on-high);
   --awds-state-cell-light-description-active: var(--surface-on-high);
   --awds-state-cell-light-description: var(--awds-state-cell-light-description-rest);
+  /* Заливка иконки «в избранное», состояние «не в избранном». Потребитель — awds-component-button-favorites (.btn-favorites). */
+  --awds-state-favorites-unselected-fill-rest: var(--surface-bright);
+  --awds-state-favorites-unselected-fill-hover: var(--error-container-dim);
+  --awds-state-favorites-unselected-fill-focus: var(--surface-bright);
+  --awds-state-favorites-unselected-fill-active: var(--error-container-dim);
+  --awds-state-favorites-unselected-fill: var(--awds-state-favorites-unselected-fill-rest);
+  /* Контур иконки «в избранное», состояние «не в избранном». Потребитель — awds-component-button-favorites (.btn-favorites). */
+  --awds-state-favorites-unselected-stroke-rest: var(--surface-on-high);
+  --awds-state-favorites-unselected-stroke-hover: var(--error-container-on);
+  --awds-state-favorites-unselected-stroke-focus: var(--surface-on-high);
+  --awds-state-favorites-unselected-stroke-active: var(--error-container-on);
+  --awds-state-favorites-unselected-stroke: var(--awds-state-favorites-unselected-stroke-rest);
+  /* Заливка иконки «в избранное», состояние «в избранном» ([aria-pressed=true]). Выбор — вариант набора, не мод Active: мод Active компилируется в :active, то есть нажатие. */
+  --awds-state-favorites-selected-fill-rest: var(--error-container-on);
+  --awds-state-favorites-selected-fill-hover: var(--error-container-on);
+  --awds-state-favorites-selected-fill-focus: var(--error-container-on);
+  --awds-state-favorites-selected-fill-active: var(--error-container-on);
+  --awds-state-favorites-selected-fill: var(--awds-state-favorites-selected-fill-rest);
+  /* Контур иконки «в избранное», состояние «в избранном» ([aria-pressed=true]). Выбор — вариант набора, не мод Active. */
+  --awds-state-favorites-selected-stroke-rest: var(--error-container-on);
+  --awds-state-favorites-selected-stroke-hover: var(--error-container-on);
+  --awds-state-favorites-selected-stroke-focus: var(--error-container-on);
+  --awds-state-favorites-selected-stroke-active: var(--error-container-on);
+  --awds-state-favorites-selected-stroke: var(--awds-state-favorites-selected-stroke-rest);
+  /* Фон раскрытого списка ::picker(select). Одно значение на все варианты контрола: в макете фон списка от варианта поля не зависит (у ghost поле прозрачное, список — нет). */
+  --awds-state-picker-bg-rest: var(--surface-bright);
+  --awds-state-picker-bg-hover: var(--surface-bright);
+  --awds-state-picker-bg-focus: var(--surface-bright);
+  --awds-state-picker-bg-active: var(--surface-bright);
+  --awds-state-picker-bg: var(--awds-state-picker-bg-rest);
+  /* Цвет ползунка скроллбара в раскрытом списке. Прозрачность 40% композирует компонент: альфа в студии невыразима. */
+  --awds-state-picker-scrollbar-rest: var(--surface-on);
+  --awds-state-picker-scrollbar-hover: var(--surface-on);
+  --awds-state-picker-scrollbar-focus: var(--surface-on);
+  --awds-state-picker-scrollbar-active: var(--surface-on);
+  --awds-state-picker-scrollbar: var(--awds-state-picker-scrollbar-rest);
 }
 
 .theme-light {
@@ -5316,6 +5352,12 @@
   --awds-state-cell-light-border: var(--awds-state-cell-light-border-rest);
   --awds-state-cell-light-color: var(--awds-state-cell-light-color-rest);
   --awds-state-cell-light-description: var(--awds-state-cell-light-description-rest);
+  --awds-state-favorites-unselected-fill: var(--awds-state-favorites-unselected-fill-rest);
+  --awds-state-favorites-unselected-stroke: var(--awds-state-favorites-unselected-stroke-rest);
+  --awds-state-favorites-selected-fill: var(--awds-state-favorites-selected-fill-rest);
+  --awds-state-favorites-selected-stroke: var(--awds-state-favorites-selected-stroke-rest);
+  --awds-state-picker-bg: var(--awds-state-picker-bg-rest);
+  --awds-state-picker-scrollbar: var(--awds-state-picker-scrollbar-rest);
 }
 
 :is(.btn, .btn-addition, .btn-area, .btn-area-accent, .btn-area-contrast, .btn-area-default, .btn-area-heading, .btn-area-muted, .btn-clean, .btn-contrast, .btn-favorites, .btn-ghost, .btn-pills, .btn-primary, .btn-secondary, .btn-tertiary, .cell, .cell-default, .cell-head, .cell-light, .checkbox, .icombi-autofill, .icombi-default, .icombi-error, .icombi-light, .icombi-secondary, .icombi-success, .input-autofill, .input-default, .input-error, .input-light, .input-secondary, .input-success, .list-item, .list-item-actual-selected, .list-item-default, .list-item-default-selected, .list-item-menu, .list-item-tabbar, .list-item-tabbar-selected, .list-item-transparent, .list-item-variation, .list-item-variation-indeterminate, .lnk, .lnk-accent, .lnk-contrast, .lnk-default, .lnk-heading, .lnk-muted, .obtn, .obtn-primary, .obtn-secondary, .radio, .range-default, .range-light, .scombi-autofill, .scombi-default, .scombi-error, .scombi-light, .scombi-success, .select-autofill, .select-default, .select-error, .select-light, .select-success, .switch, .txa-autofill, .txa-default, .txa-error, .txa-light, .txa-success):hover {
@@ -5682,6 +5724,12 @@
   --awds-state-cell-light-border: var(--awds-state-cell-light-border-hover);
   --awds-state-cell-light-color: var(--awds-state-cell-light-color-hover);
   --awds-state-cell-light-description: var(--awds-state-cell-light-description-hover);
+  --awds-state-favorites-unselected-fill: var(--awds-state-favorites-unselected-fill-hover);
+  --awds-state-favorites-unselected-stroke: var(--awds-state-favorites-unselected-stroke-hover);
+  --awds-state-favorites-selected-fill: var(--awds-state-favorites-selected-fill-hover);
+  --awds-state-favorites-selected-stroke: var(--awds-state-favorites-selected-stroke-hover);
+  --awds-state-picker-bg: var(--awds-state-picker-bg-hover);
+  --awds-state-picker-scrollbar: var(--awds-state-picker-scrollbar-hover);
 }
 
 :is(.btn, .btn-addition, .btn-area, .btn-area-accent, .btn-area-contrast, .btn-area-default, .btn-area-heading, .btn-area-muted, .btn-clean, .btn-contrast, .btn-favorites, .btn-ghost, .btn-pills, .btn-primary, .btn-secondary, .btn-tertiary, .cell, .cell-default, .cell-head, .cell-light, .checkbox, .icombi-autofill, .icombi-default, .icombi-error, .icombi-light, .icombi-secondary, .icombi-success, .input-autofill, .input-default, .input-error, .input-light, .input-secondary, .input-success, .list-item, .list-item-actual-selected, .list-item-default, .list-item-default-selected, .list-item-menu, .list-item-tabbar, .list-item-tabbar-selected, .list-item-transparent, .list-item-variation, .list-item-variation-indeterminate, .lnk, .lnk-accent, .lnk-contrast, .lnk-default, .lnk-heading, .lnk-muted, .obtn, .obtn-primary, .obtn-secondary, .radio, .range-default, .range-light, .scombi-autofill, .scombi-default, .scombi-error, .scombi-light, .scombi-success, .select-autofill, .select-default, .select-error, .select-light, .select-success, .switch, .txa-autofill, .txa-default, .txa-error, .txa-light, .txa-success):focus-visible {
@@ -6048,6 +6096,12 @@
   --awds-state-cell-light-border: var(--awds-state-cell-light-border-focus);
   --awds-state-cell-light-color: var(--awds-state-cell-light-color-focus);
   --awds-state-cell-light-description: var(--awds-state-cell-light-description-focus);
+  --awds-state-favorites-unselected-fill: var(--awds-state-favorites-unselected-fill-focus);
+  --awds-state-favorites-unselected-stroke: var(--awds-state-favorites-unselected-stroke-focus);
+  --awds-state-favorites-selected-fill: var(--awds-state-favorites-selected-fill-focus);
+  --awds-state-favorites-selected-stroke: var(--awds-state-favorites-selected-stroke-focus);
+  --awds-state-picker-bg: var(--awds-state-picker-bg-focus);
+  --awds-state-picker-scrollbar: var(--awds-state-picker-scrollbar-focus);
 }
 
 :is(.btn, .btn-addition, .btn-area, .btn-area-accent, .btn-area-contrast, .btn-area-default, .btn-area-heading, .btn-area-muted, .btn-clean, .btn-contrast, .btn-favorites, .btn-ghost, .btn-pills, .btn-primary, .btn-secondary, .btn-tertiary, .cell, .cell-default, .cell-head, .cell-light, .checkbox, .icombi-autofill, .icombi-default, .icombi-error, .icombi-light, .icombi-secondary, .icombi-success, .input-autofill, .input-default, .input-error, .input-light, .input-secondary, .input-success, .list-item, .list-item-actual-selected, .list-item-default, .list-item-default-selected, .list-item-menu, .list-item-tabbar, .list-item-tabbar-selected, .list-item-transparent, .list-item-variation, .list-item-variation-indeterminate, .lnk, .lnk-accent, .lnk-contrast, .lnk-default, .lnk-heading, .lnk-muted, .obtn, .obtn-primary, .obtn-secondary, .radio, .range-default, .range-light, .scombi-autofill, .scombi-default, .scombi-error, .scombi-light, .scombi-success, .select-autofill, .select-default, .select-error, .select-light, .select-success, .switch, .txa-autofill, .txa-default, .txa-error, .txa-light, .txa-success):active {
@@ -6414,5 +6468,11 @@
   --awds-state-cell-light-border: var(--awds-state-cell-light-border-active);
   --awds-state-cell-light-color: var(--awds-state-cell-light-color-active);
   --awds-state-cell-light-description: var(--awds-state-cell-light-description-active);
+  --awds-state-favorites-unselected-fill: var(--awds-state-favorites-unselected-fill-active);
+  --awds-state-favorites-unselected-stroke: var(--awds-state-favorites-unselected-stroke-active);
+  --awds-state-favorites-selected-fill: var(--awds-state-favorites-selected-fill-active);
+  --awds-state-favorites-selected-stroke: var(--awds-state-favorites-selected-stroke-active);
+  --awds-state-picker-bg: var(--awds-state-picker-bg-active);
+  --awds-state-picker-scrollbar: var(--awds-state-picker-scrollbar-active);
 }
 

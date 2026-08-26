@@ -19,7 +19,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 
 | Коллекция | Токенов | Моды | Группы внутри | Пример имени |
 | --- | --- | --- | --- | --- |
-| **State** | 1452 | Rest · Hover · Focus · Active | list (336), badge (272), form-control (224), button (192), nav-button (48), variation (48), cell (48), check-radio (40), … +10 | `--awds-state-opacity-control-enabled-rest` |
+| **State** | 1476 | Rest · Hover · Focus · Active | list (336), badge (272), form-control (224), button (192), nav-button (48), variation (48), cell (48), check-radio (40), … +12 | `--awds-state-opacity-control-enabled-rest` |
 | **Typography** | 468 | Desktop · Tablet · Mobile | typography (228), body (90), display (60), heading (45), title (45) | `--awds-typography-typography-font-size-50-desktop` |
 | **roles** | 294 | light · dark | Surface (34), Primary (28), Secondary (28), Tertiary (28), Accent (28), Addition (28), Info (28), Success (28), … +3 | `--primary-core-light` |
 | **Size** | 209 | — | rectangle (98), square (40), notice (30), nav (15), tabs (10), dropdown (8), range (3), profile-button (3), … +1 | `--awds-size-rectangle-50-padding` |
@@ -34,7 +34,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **Zindex** | 8 | — | zindex (8) | `--awds-zindex-zindex-dropdown` |
 | **Font** | 7 | — | weight (4), family (3) | `--awds-font-family-system` |
 
-Всего 3004 токенов в 14 коллекциях.
+Всего 3028 токенов в 14 коллекциях.
 
 ## Как из токена получается имя CSS-переменной
 

@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. size → геометрия ступени shape; state → { role, cell }: role это текущий инлайн роли, cell это ячейка слоя State (переход — этап Н6). НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:4060a4b83a867596661ce712ba9e93649c04f4d52d542797364b174c8f64ba5c",
+  "snapshot_hash": "sha256:12c6ae52ccc42225bc5b12e9ae0f6897c3d3912775998cea716bf9a50478af55",
   "size": {
     "rectangle": {
       "50": {
@@ -830,6 +830,20 @@
           "color": "rgb(var(--surface-on-highest))",
           "description": "rgb(var(--surface-on-high))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--surface-bright))",
+          "stroke": "rgb(var(--surface-on-high))"
+        },
+        "selected": {
+          "fill": "rgb(var(--error-container-on))",
+          "stroke": "rgb(var(--error-container-on))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--surface-bright))",
+        "scrollbar": "rgb(var(--surface-on))"
       }
     },
     "hover": {
@@ -1356,6 +1370,20 @@
           "color": "rgb(var(--surface-on-highest))",
           "description": "rgb(var(--surface-on-high))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--error-container-dim))",
+          "stroke": "rgb(var(--error-container-on))"
+        },
+        "selected": {
+          "fill": "rgb(var(--error-container-on))",
+          "stroke": "rgb(var(--error-container-on))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--surface-bright))",
+        "scrollbar": "rgb(var(--surface-on))"
       }
     },
     "focus": {
@@ -1882,6 +1910,20 @@
           "color": "rgb(var(--surface-on-highest))",
           "description": "rgb(var(--surface-on-high))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--surface-bright))",
+          "stroke": "rgb(var(--surface-on-high))"
+        },
+        "selected": {
+          "fill": "rgb(var(--error-container-on))",
+          "stroke": "rgb(var(--error-container-on))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--surface-bright))",
+        "scrollbar": "rgb(var(--surface-on))"
       }
     },
     "active": {
@@ -2408,6 +2450,20 @@
           "color": "rgb(var(--surface-on-highest))",
           "description": "rgb(var(--surface-on-high))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--error-container-dim))",
+          "stroke": "rgb(var(--error-container-on))"
+        },
+        "selected": {
+          "fill": "rgb(var(--error-container-on))",
+          "stroke": "rgb(var(--error-container-on))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--surface-bright))",
+        "scrollbar": "rgb(var(--surface-on))"
       }
     }
   },
@@ -2955,6 +3011,20 @@
           "color": "rgb(var(--awds-state-cell-light-color-rest))",
           "description": "rgb(var(--awds-state-cell-light-description-rest))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--awds-state-favorites-unselected-fill-rest))",
+          "stroke": "rgb(var(--awds-state-favorites-unselected-stroke-rest))"
+        },
+        "selected": {
+          "fill": "rgb(var(--awds-state-favorites-selected-fill-rest))",
+          "stroke": "rgb(var(--awds-state-favorites-selected-stroke-rest))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--awds-state-picker-bg-rest))",
+        "scrollbar": "rgb(var(--awds-state-picker-scrollbar-rest))"
       }
     },
     "hover": {
@@ -3500,6 +3570,20 @@
           "color": "rgb(var(--awds-state-cell-light-color-hover))",
           "description": "rgb(var(--awds-state-cell-light-description-hover))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--awds-state-favorites-unselected-fill-hover))",
+          "stroke": "rgb(var(--awds-state-favorites-unselected-stroke-hover))"
+        },
+        "selected": {
+          "fill": "rgb(var(--awds-state-favorites-selected-fill-hover))",
+          "stroke": "rgb(var(--awds-state-favorites-selected-stroke-hover))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--awds-state-picker-bg-hover))",
+        "scrollbar": "rgb(var(--awds-state-picker-scrollbar-hover))"
       }
     },
     "focus": {
@@ -4045,6 +4129,20 @@
           "color": "rgb(var(--awds-state-cell-light-color-focus))",
           "description": "rgb(var(--awds-state-cell-light-description-focus))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--awds-state-favorites-unselected-fill-focus))",
+          "stroke": "rgb(var(--awds-state-favorites-unselected-stroke-focus))"
+        },
+        "selected": {
+          "fill": "rgb(var(--awds-state-favorites-selected-fill-focus))",
+          "stroke": "rgb(var(--awds-state-favorites-selected-stroke-focus))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--awds-state-picker-bg-focus))",
+        "scrollbar": "rgb(var(--awds-state-picker-scrollbar-focus))"
       }
     },
     "active": {
@@ -4590,6 +4688,20 @@
           "color": "rgb(var(--awds-state-cell-light-color-active))",
           "description": "rgb(var(--awds-state-cell-light-description-active))"
         }
+      },
+      "favorites": {
+        "unselected": {
+          "fill": "rgb(var(--awds-state-favorites-unselected-fill-active))",
+          "stroke": "rgb(var(--awds-state-favorites-unselected-stroke-active))"
+        },
+        "selected": {
+          "fill": "rgb(var(--awds-state-favorites-selected-fill-active))",
+          "stroke": "rgb(var(--awds-state-favorites-selected-stroke-active))"
+        }
+      },
+      "picker": {
+        "bg": "rgb(var(--awds-state-picker-bg-active))",
+        "scrollbar": "rgb(var(--awds-state-picker-scrollbar-active))"
       }
     }
   }
