@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@1.1.0, avatar@1.0.2, badge@1.0.2, button@1.0.5, button-area@1.0.3, button-favorites@1.0.3, button-overhung@1.0.5, checkbox@1.0.3, content-area@1.0.3, formfield@1.0.3, heading@1.0.2, input@1.0.3, input-combi@1.0.3, label@1.0.3, link@1.0.2, list-item@1.0.4, notice@1.0.3, price@1.0.3, product-card@1.0.5, progress@1.0.0, radio@1.0.3, range@1.0.2, select@1.0.6, select-combi@1.0.6, slider@1.0.2, switch@1.0.2, table@1.0.3, textarea@1.0.3, tooltip@1.0.2, uploader@1.0.2 */
+   Состав: focus-selection@1.1.0, avatar@1.0.2, badge@1.0.2, button@1.0.5, button-area@1.0.3, button-favorites@1.0.3, button-overhung@1.0.5, checkbox@1.0.3, content-area@1.0.3, formfield@1.0.3, heading@1.0.2, input@1.0.3, input-combi@1.0.3, label@1.0.3, link@1.0.2, list-item@1.0.4, notice@1.0.3, price@1.0.3, product-card@1.0.5, progress@1.0.1, radio@1.0.3, range@1.0.2, select@1.0.6, select-combi@1.0.6, slider@1.0.2, switch@1.0.2, table@1.0.3, textarea@1.0.3, tooltip@1.0.2, uploader@1.0.2 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -175,10 +175,15 @@
   initial-value: 0;
 }
 
+@property --awds-progress-run {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 @keyframes progress-linear-run {
-  0%   { inset-inline-start: 0;    inline-size: 10%; }
-  50%  { inset-inline-start: 30%;  inline-size: 40%; }
-  100% { inset-inline-start: 100%; inline-size: 10%; }
+  from { --awds-progress-run: -33; }
+  to   { --awds-progress-run: 100; }
 }
 
 @keyframes progress-pulse {
@@ -5024,6 +5029,7 @@
 
 .progress-circular--indeterminate .progress-circular__arc {
   transition: none;
+  stroke-opacity: 1;
   animation: progress-circular-dash var(--awds-progress-duration) ease-in-out infinite;
 }
 
@@ -5041,6 +5047,7 @@
   display: block;
   block-size: var(--awds-space-space-3);
   inline-size: 100%;
+  overflow: clip;
 }
 
 .progress-linear__active, .progress-linear__track {
@@ -5078,17 +5085,42 @@
 
 .progress-linear--indeterminate .progress-linear__track {
   inset-inline: 0;
+  background: none;
+  opacity: 1;
   transition: none;
+  overflow: visible;
+}
+
+.progress-linear--indeterminate .progress-linear__track::before, .progress-linear--indeterminate .progress-linear__track::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: var(--awds-progress-color);
+  opacity: var(--awds-progress-idle-opacity);
+}
+
+.progress-linear--indeterminate .progress-linear__track::before {
+  inset-inline: 0 calc(100% - var(--awds-progress-run) * 1% + var(--awds-progress-gap));
+}
+
+.progress-linear--indeterminate .progress-linear__track::after {
+  inset-inline: calc(var(--awds-progress-run) * 1% + var(--awds-progress-run-width) + var(--awds-progress-gap)) 0;
 }
 
 .progress-linear--indeterminate .progress-linear__stop {
   display: none;
 }
 
-.progress-linear--indeterminate .progress-linear__active {
-  inline-size: 30%;
-  transition: none;
+.progress-linear--indeterminate {
+  --awds-progress-run-width: 33%;
   animation: progress-linear-run var(--awds-progress-duration) linear infinite;
+}
+
+.progress-linear--indeterminate .progress-linear__active {
+  inset-inline-start: calc(var(--awds-progress-run) * 1%);
+  inline-size: var(--awds-progress-run-width);
+  transition: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

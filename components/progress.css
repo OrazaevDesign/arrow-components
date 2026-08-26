@@ -1,4 +1,4 @@
-/* ArrowDS · progress@1.0.0
+/* ArrowDS · progress@1.0.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes progress-circular-spin {
@@ -18,10 +18,15 @@
   initial-value: 0;
 }
 
+@property --awds-progress-run {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
 @keyframes progress-linear-run {
-  0%   { inset-inline-start: 0;    inline-size: 10%; }
-  50%  { inset-inline-start: 30%;  inline-size: 40%; }
-  100% { inset-inline-start: 100%; inline-size: 10%; }
+  from { --awds-progress-run: -33; }
+  to   { --awds-progress-run: 100; }
 }
 
 @keyframes progress-pulse {
@@ -62,6 +67,7 @@
 
 .progress-circular--indeterminate .progress-circular__arc {
   transition: none;
+  stroke-opacity: 1;
   animation: progress-circular-dash var(--awds-progress-duration) ease-in-out infinite;
 }
 
@@ -79,6 +85,7 @@
   display: block;
   block-size: var(--awds-space-space-3);
   inline-size: 100%;
+  overflow: clip;
 }
 
 .progress-linear__active, .progress-linear__track {
@@ -116,17 +123,42 @@
 
 .progress-linear--indeterminate .progress-linear__track {
   inset-inline: 0;
+  background: none;
+  opacity: 1;
   transition: none;
+  overflow: visible;
+}
+
+.progress-linear--indeterminate .progress-linear__track::before, .progress-linear--indeterminate .progress-linear__track::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-full);
+  background: var(--awds-progress-color);
+  opacity: var(--awds-progress-idle-opacity);
+}
+
+.progress-linear--indeterminate .progress-linear__track::before {
+  inset-inline: 0 calc(100% - var(--awds-progress-run) * 1% + var(--awds-progress-gap));
+}
+
+.progress-linear--indeterminate .progress-linear__track::after {
+  inset-inline: calc(var(--awds-progress-run) * 1% + var(--awds-progress-run-width) + var(--awds-progress-gap)) 0;
 }
 
 .progress-linear--indeterminate .progress-linear__stop {
   display: none;
 }
 
-.progress-linear--indeterminate .progress-linear__active {
-  inline-size: 30%;
-  transition: none;
+.progress-linear--indeterminate {
+  --awds-progress-run-width: 33%;
   animation: progress-linear-run var(--awds-progress-duration) linear infinite;
+}
+
+.progress-linear--indeterminate .progress-linear__active {
+  inset-inline-start: calc(var(--awds-progress-run) * 1%);
+  inline-size: var(--awds-progress-run-width);
+  transition: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
