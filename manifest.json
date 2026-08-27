@@ -389,6 +389,18 @@
       "bytes": 4958
     },
     {
+      "name": "rating",
+      "version": "1.0.0",
+      "variants": [],
+      "sizes": [
+        200,
+        300,
+        400
+      ],
+      "rules": 23,
+      "bytes": 3348
+    },
+    {
       "name": "select",
       "version": "1.0.6",
       "variants": [
@@ -522,13 +534,13 @@
     }
   ],
   "bundle": {
-    "bytes": 284998,
-    "rules": 993,
-    "hash": "sha256:53dbbd7400a8ab994143bff04d4c7445f309803b0db676259da2c88b312cab7f"
+    "bytes": 288254,
+    "rules": 1016,
+    "hash": "sha256:a6d42efec1ef2cb5c798b19f7f8ccaca37893292c1694a3d3849e5b3c3510c9f"
   },
   "theme": {
-    "bytes": 105651,
-    "variables_kept": 1127,
+    "bytes": 105987,
+    "variables_kept": 1132,
     "variables_declared": 3769,
     "missing": []
   },

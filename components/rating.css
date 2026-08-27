@@ -1,0 +1,141 @@
+/* ArrowDS · rating@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-rating-picked {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+
+@layer awds {
+
+.rating {
+  --awds-rating-size: var(--awds-space-space-5);
+  --awds-rating-gap:  var(--awds-space-space-1-5);
+  --awds-rating-on:       rgb(var(--awds-state-rating-selected-bg-rest));
+  --awds-rating-on-hover: rgb(var(--awds-state-rating-selected-bg-hover));
+  --awds-rating-off:      rgb(var(--awds-state-rating-unselected-bg-rest));
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-inline-size: 0;
+}
+
+.rating--300 {
+  --awds-rating-size: var(--awds-space-space-4);
+  --awds-rating-gap:  var(--awds-space-space-0-5);
+}
+
+.rating--200 {
+  --awds-rating-size: var(--awds-space-space-3);
+  --awds-rating-gap:  var(--awds-space-space-0-5);
+}
+
+.rating__legend {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.rating__star {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  padding-inline: calc(var(--awds-rating-gap) / 2);
+}
+
+.rating__star:first-of-type { padding-inline-start: 0;
+}
+
+.rating__star:last-of-type { padding-inline-end: 0;
+}
+
+.rating__icon {
+  display: block;
+  inline-size: var(--awds-rating-size);
+  block-size: var(--awds-rating-size);
+}
+
+.rating__ghost, .rating__outline {
+  fill: var(--awds-rating-off);
+  transition: opacity 0.15s ease-out, fill 0.15s ease-out;
+}
+
+.rating__ghost {
+  fill-opacity: var(--awds-opacity-opacity-30);
+}
+
+.rating__solid {
+  fill: var(--awds-rating-on);
+  transition: opacity 0.15s ease-out, fill 0.15s ease-out;
+}
+
+.rating__solid {
+  opacity: var(--awds-rating-picked);
+}
+
+.rating__ghost, .rating__outline {
+  opacity: calc(1 - var(--awds-rating-picked));
+}
+
+.rating:has(.rating__input:checked) .rating__star {
+  --awds-rating-picked: 1;
+}
+
+.rating__star:has(.rating__input:checked) ~ .rating__star {
+  --awds-rating-picked: 0;
+}
+
+.rating__input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .rating:has(.rating__star:hover) .rating__star {
+    --awds-rating-picked: 1;
+    --awds-rating-on: var(--awds-rating-on-hover);
+  }
+  .rating:has(.rating__star:hover) .rating__star:hover ~ .rating__star {
+    --awds-rating-picked: 0;
+  }
+}
+
+.rating__star:has(.rating__input:focus-visible) .rating__icon {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline-offset: var(--awds-focus-offset);
+  border-radius: var(--awds-rounded-border-radius-200);
+}
+
+.rating--readonly .rating__star {
+  cursor: default;
+}
+
+.rating--readonly[data-value="1"] .rating__star:nth-of-type(-n + 1), .rating--readonly[data-value="2"] .rating__star:nth-of-type(-n + 2), .rating--readonly[data-value="3"] .rating__star:nth-of-type(-n + 3), .rating--readonly[data-value="4"] .rating__star:nth-of-type(-n + 4), .rating--readonly[data-value="5"] .rating__star:nth-of-type(-n + 5) {
+  --awds-rating-picked: 1;
+}
+
+.rating--disabled, .rating:has(.rating__input:disabled) {
+  opacity: var(--awds-opacity-opacity-40);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rating__solid,
+  .rating__ghost,
+  .rating__outline {
+    transition: none;
+  }
+}
+
+}

@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 1127 из 3769 объявленных в теме. */
+   Переменных: 1132 из 3769 объявленных в теме. */
 
 :root {
   --primary-core-light: 250 216 22;
@@ -165,6 +165,9 @@
   --warning-core-light: 232 128 23;
   --warning-core-dark: 232 128 23;
   --warning-core: var(--warning-core-light);
+  --warning-dim-light: 217 117 23;
+  --warning-dim-dark: 217 117 23;
+  --warning-dim: var(--warning-dim-light);
   --error-core-light: 211 49 34;
   --error-core-dark: 211 49 34;
   --error-core: var(--error-core-light);
@@ -1092,6 +1095,8 @@
   --awds-state-areabutton-contrast-rest: var(--surface-on-highest);
   --awds-state-areabutton-contrast-hover: var(--surface-on-high);
   --awds-state-rating-selected-bg-rest: var(--warning-core);
+  --awds-state-rating-selected-bg-hover: var(--warning-dim);
+  --awds-state-rating-unselected-bg-rest: var(--surface-container-container);
   --awds-state-cell-default-head-bg-rest: var(--surface-surface);
   --awds-state-cell-default-head-bg-hover: var(--surface-dim);
   --awds-state-cell-default-head-bg-focus: var(--surface-surface);
@@ -1184,6 +1189,7 @@
   --success-container-on: var(--success-container-on-light);
   --success-container-on-low: var(--success-container-on-low-light);
   --warning-core: var(--warning-core-light);
+  --warning-dim: var(--warning-dim-light);
   --error-core: var(--error-core-light);
   --error-container-core: var(--error-container-core-light);
   --error-container-chroma: var(--error-container-chroma-light);
@@ -1260,6 +1266,7 @@
   --success-container-on: var(--success-container-on-dark);
   --success-container-on-low: var(--success-container-on-low-dark);
   --warning-core: var(--warning-core-dark);
+  --warning-dim: var(--warning-dim-dark);
   --error-core: var(--error-core-dark);
   --error-container-core: var(--error-container-core-dark);
   --error-container-chroma: var(--error-container-chroma-dark);
