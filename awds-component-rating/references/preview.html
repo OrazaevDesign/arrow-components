@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="theme-default theme-light" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>rating / storybook</title>
+
+  <!-- Значения темы: снапшот студии плюс слой производных. Без них компонент
+       ссылается в пустоту и рисуется невидимым. -->
+  <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
+  <link rel="stylesheet" href="./rating.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: var(--awds-space-space-8);
+      background: rgb(var(--surface-bright));
+      color: rgb(var(--surface-on-highest));
+      font-family: var(--awds-font-family-system);
+      display: grid;
+      gap: var(--awds-space-space-8);
+    }
+    h1 { font-size: 20px; margin: 0; }
+    h2 { font-size: 14px; margin: 0 0 var(--awds-space-space-3); opacity: .6; font-weight: 400; }
+    p.lead { margin: 0; max-width: 60ch; opacity: .7; font-size: 13px; line-height: 1.5; }
+    .matrix { border-collapse: collapse; }
+    .matrix th { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; opacity: .5; text-align: left; padding: var(--awds-space-space-2) var(--awds-space-space-4); font-weight: 400; }
+    .matrix td { padding: var(--awds-space-space-3) var(--awds-space-space-4); }
+    .size-label { font-family: ui-monospace, monospace; font-size: 12px; opacity: .6; }
+    .dark { padding: var(--awds-space-space-6); border-radius: var(--awds-rounded-border-radius-400); background: rgb(var(--surface-bright)); }
+    .row { display: flex; gap: var(--awds-space-space-6); align-items: center; flex-wrap: wrap; }
+    .out { font-family: ui-monospace, monospace; font-size: 12px; opacity: .6; }
+  </style>
+</head>
+<body>
+  <h1>Rating</h1>
+  <p class="lead">Пять звёзд. Режим выбора — нативные radio внутри звёзд: кликай мышью,
+    ходи стрелками, проверь Tab и фокус. Режим показа — без инпутов, значение в data-value.</p>
+
+  <section>
+    <h2>Выбор · размеры</h2>
+    <table class="matrix"><tbody id="tb-input"></tbody></table>
+    <p class="out" id="picked">выбрано: —</p>
+  </section>
+
+  <section>
+    <h2>Показ · значения 0…5 (размер 300)</h2>
+    <table class="matrix"><tbody id="tb-readonly"></tbody></table>
+  </section>
+
+  <section>
+    <h2>Выключено — атрибут на инпутах, не только класс</h2>
+    <div class="row" id="off"></div>
+  </section>
+
+  <section class="dark theme-default theme-dark">
+    <h2>Тёмный островок</h2>
+    <div class="row" id="dark"></div>
+  </section>
+
+  <script>
+    /* Три контура: дуотон (заливка + контур) для пустой звезды и сплошная для набранной.
+       Видимость переключает CSS переменной --awds-rating-picked. */
+    const GHOST = 'M9.78372 2.45422C9.88018 2.28871 10.1199 2.28867 10.2163 2.45422L12.6382 6.6134C12.6735 6.67401 12.7328 6.71766 12.8013 6.73254L17.5054 7.7511C17.6926 7.79163 17.7666 8.01836 17.6392 8.16125L14.4322 11.7511C14.3855 11.8034 14.3627 11.8728 14.3697 11.9425L14.855 16.7316C14.8743 16.9221 14.6807 17.0626 14.5054 16.9855L10.1011 15.0441C10.0369 15.0158 9.96316 15.0158 9.89896 15.0441L5.49466 16.9855C5.31933 17.0627 5.12575 16.9222 5.14505 16.7316L5.62943 11.9425C5.63643 11.8729 5.61444 11.8034 5.5679 11.7511L2.3599 8.16125C2.23289 8.01841 2.30681 7.79174 2.49369 7.7511L7.19779 6.73254C7.26637 6.71769 7.32555 6.67404 7.36087 6.6134L9.78372 2.45422Z';
+    const OUTLINE = 'M9.18227 1.85051C9.59488 1.32318 10.4055 1.32304 10.818 1.85051L10.9 1.97258L13.2282 5.97161L17.7526 6.9511C18.5324 7.12028 18.8406 8.06778 18.3092 8.66301L15.2252 12.1142L15.6911 16.7187C15.7711 17.5127 14.9654 18.098 14.235 17.7763L9.99965 15.9101L5.76527 17.7763C5.03487 18.0981 4.22912 17.5127 4.30922 16.7187L4.77406 12.1142L1.69105 8.66301C1.15934 8.0677 1.46754 7.12008 2.2477 6.9511L6.77113 5.97161L9.10023 1.97258L9.18227 1.85051ZM8.07191 7.04876C7.92469 7.30122 7.67787 7.48006 7.39223 7.54192L3.64906 8.35149L6.20082 11.2089C6.39562 11.4269 6.48997 11.7169 6.46059 12.0077L6.07387 15.8183L9.57973 14.2734L9.68129 14.2353C9.92242 14.1579 10.1855 14.1704 10.4196 14.2734L13.9245 15.8183L13.5387 12.0077C13.5094 11.717 13.6038 11.4269 13.7985 11.2089L16.3502 8.35149L12.6071 7.54192C12.3215 7.48 12.0746 7.30119 11.9274 7.04876L9.99965 3.73821L8.07191 7.04876Z';
+    const SOLID = 'M9.10047 1.97602C9.50228 1.28616 10.4985 1.28616 10.9003 1.97602L13.2294 5.97407L17.7528 6.95356C18.5328 7.12273 18.8403 8.07122 18.3085 8.66645L15.2255 12.1166L15.6913 16.7211C15.7717 17.5153 14.9657 18.1013 14.2352 17.7797L9.99989 15.9135L5.76551 17.7797C5.03495 18.1017 4.22806 17.5154 4.30848 16.7211L4.77528 12.1166L1.69129 8.66645C1.15936 8.07113 1.46767 7.12253 2.24794 6.95356L6.7704 5.97407L9.10047 1.97602Z';
+    const svg = () => `<svg class="rating__icon" viewBox="0 0 20 20" aria-hidden="true">`
+      + `<path class="rating__ghost" d="${GHOST}"/>`
+      + `<path class="rating__outline" d="${OUTLINE}"/>`
+      + `<path class="rating__solid" d="${SOLID}"/></svg>`;
+
+    function input(size, name) {
+      const stars = [1, 2, 3, 4, 5].map((v) =>
+        `<label class="rating__star">`
+        + `<input class="rating__input" type="radio" name="${name}" value="${v}" aria-label="${v} из 5">`
+        + svg() + `</label>`).join("");
+      return `<fieldset class="rating rating--${size}"><legend class="rating__legend">Оценка</legend>${stars}</fieldset>`;
+    }
+
+    function readonly(size, value) {
+      const stars = [1, 2, 3, 4, 5].map(() => `<span class="rating__star">${svg()}</span>`).join("");
+      return `<div class="rating rating--readonly rating--${size}" data-value="${value}"`
+        + ` role="img" aria-label="Оценка ${value} из 5">${stars}</div>`;
+    }
+
+    const tbIn = document.querySelector("#tb-input");
+    [400, 300, 200].forEach((size) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td class="size-label">${size}</td><td>${input(size, "rate-" + size)}</td>`;
+      tbIn.appendChild(tr);
+    });
+
+    const tbRo = document.querySelector("#tb-readonly");
+    [0, 1, 2, 3, 4, 5].forEach((v) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td class="size-label">${v}</td><td>${readonly(300, v)}</td>`;
+      tbRo.appendChild(tr);
+    });
+
+    /* Выключенное: слева только класс (красит, но клавиатура работает),
+       справа атрибут disabled — он и выключает контрол. */
+    const off = document.querySelector("#off");
+    off.innerHTML = `<div><p class="out">класс .rating--disabled</p>${input(400, "off-cls")}</div>`
+                  + `<div><p class="out">атрибут disabled</p>${input(400, "off-attr")}</div>`;
+    off.querySelectorAll(".rating")[0].classList.add("rating--disabled");
+    off.querySelectorAll(".rating")[1].querySelectorAll(".rating__input").forEach((i) => { i.disabled = true; });
+
+    document.querySelector("#dark").innerHTML = input(400, "dark") + readonly(400, 4);
+
+    /* Проверка, что выбор действительно сохраняется — без единой строки логики в самом
+       компоненте: слушаем change на группе. */
+    document.addEventListener("change", (e) => {
+      if (e.target.classList.contains("rating__input")) {
+        document.querySelector("#picked").textContent =
+          `выбрано: ${e.target.name} = ${e.target.value}`;
+      }
+    });
+  </script>
+</body>
+</html>

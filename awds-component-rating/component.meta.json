@@ -1,0 +1,177 @@
+{
+  "component": "rating",
+  "version": "1.0.0",
+  "contract_hash": "sha256:aae48ac0423a64f1d77f63e82d2d4b2fff952aa6bfc41fd78d82177187511bde",
+  "artifact_hash": "sha256:6b5f55a0f1081a456feaca2cc837ec27991c4244646089945b8f79b454255767",
+  "visual_change": false,
+  "released_at": "2026-08-27T15:49:23.846Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "inline-size / block-size у .rating__legend",
+      "count": 2,
+      "why": "приём visually-hidden: подпись группы должна остаться в дереве доступности, но не занимать места. Это не размер интерфейса, а техническая величина скрытия — в шкале Size ей соответствия нет и быть не должно"
+    }
+  ],
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:3766",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3766",
+    "note": "Оси макета: Size (400/300/200) × Variant (1star…5star). Variant — не вариант компонента, а ЗНАЧЕНИЕ оценки: пять ячеек нужны дизайнеру, чтобы показать шкалу."
+  },
+  "variants": {},
+  "shape": null,
+  "size_scale": [
+    200,
+    300,
+    400
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "disabled"
+  ],
+  "color_tokens": {
+    "selected": "--awds-state-rating-selected-bg-rest",
+    "selected_hover": "--awds-state-rating-selected-bg-hover",
+    "unselected": "--awds-state-rating-unselected-bg-rest"
+  },
+  "size_note": "Размер звезды взят с базовой шкалы Space (20/16/12 = space-5/4/3), а не со ступени Size: square-N-icon даёт 20/20/16, то есть другую прогрессию. Значения из макета; вопрос дизайнеру открыт.",
+  "js": false,
+  "js_note": "Своего JS нет и не планируется: выбор держит нативный <input type=\"radio\"> — клик, стрелки, Tab, отправка формы и объявление скринридером приходят от него.",
+  "preview": {
+    "base_class": "rating",
+    "default_size": 400,
+    "matrix_states": [
+      "выбор",
+      "показ",
+      "выключено"
+    ],
+    "matrix_sizes": [
+      200,
+      300,
+      400
+    ],
+    "toggles": [
+      {
+        "id": "value",
+        "label": "Оценка",
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      }
+    ]
+  },
+  "markup": {
+    "root": {
+      "class": "rating",
+      "tags": [
+        "fieldset",
+        "div"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "rating--{size}",
+      "required": false
+    },
+    "native": {
+      "tag": "input",
+      "class": "rating__input",
+      "type": "radio"
+    },
+    "children": [
+      {
+        "class": "rating__star"
+      }
+    ],
+    "attrs": [],
+    "child_attrs": [
+      {
+        "attr": "aria-label",
+        "child": "rating__input",
+        "why": "без подписи скринридер прочитает «переключатель», не назвав оценку"
+      },
+      {
+        "attr": "disabled",
+        "child": "rating__input",
+        "when": "rating--disabled",
+        "why": "класс только красит; без атрибута стрелки с клавиатуры меняют оценку выключенного контрола"
+      }
+    ],
+    "container": null,
+    "note": "Пять .rating__star в ПРЯМОМ порядке 1→5: приём с обратным DOM и row-reverse даёт ту же картинку, но разворачивает стрелки клавиатуры. В режиме выбора внутри каждой звезды нативный radio с общим name — иначе это пять независимых переключателей. В режиме показа (.rating--readonly) инпутов нет вовсе, значение в data-value, а группе нужен role=img с подписью «Оценка N из 5»."
+  },
+  "ds_token_dependencies": [
+    "--awds-focus-color-formcontrol",
+    "--awds-focus-offset",
+    "--awds-focus-width",
+    "--awds-opacity-opacity-40",
+    "--awds-rating-gap",
+    "--awds-rating-off",
+    "--awds-rating-on",
+    "--awds-rating-on-hover",
+    "--awds-rating-size",
+    "--awds-rounded-border-radius-200",
+    "--awds-space-space-0-5",
+    "--awds-space-space-1-5",
+    "--awds-space-space-3",
+    "--awds-space-space-4",
+    "--awds-space-space-5",
+    "--awds-state-rating-selected-bg-hover",
+    "--awds-state-rating-selected-bg-rest",
+    "--awds-state-rating-unselected-bg-rest"
+  ],
+  "last_synced": "2026-08-27",
+  "last_synced_by": "arrow-components-builder",
+  "asana": {
+    "task_gid": "1209725020469717",
+    "task_url": "https://app.asana.com/0/1203198440472196/1209725020469717/f",
+    "task_name": "💠 Rating",
+    "primary": true,
+    "note": "пять звёзд, выбор нативным radio (JS нет) · показ через data-value · размеры 400/300/200"
+  },
+  "uses": {
+    "awds-component-focus-selection": "1.1.0"
+  },
+  "contract": {
+    "classes": [
+      "rating",
+      "rating--200",
+      "rating--300",
+      "rating--disabled",
+      "rating--readonly",
+      "rating__ghost",
+      "rating__icon",
+      "rating__input",
+      "rating__legend",
+      "rating__outline",
+      "rating__solid",
+      "rating__star"
+    ],
+    "attributes": [
+      "data-value"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [],
+    "sizes": [
+      "200",
+      "300",
+      "400"
+    ],
+    "states": [
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}

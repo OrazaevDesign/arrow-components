@@ -1,0 +1,30 @@
+{
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "primary_node_id": "2093:3766",
+  "frame_name": "Rating",
+  "variant_properties": ["Variant", "Size"],
+  "cells": 15,
+  "variant_node_ids": {
+    "5star/400": "2093:3767", "4star/400": "2093:3773", "3star/400": "2093:3779",
+    "2star/400": "2093:3785", "1star/400": "2093:3791",
+    "5star/300": "2093:3797", "5star/200": "2093:3827"
+  },
+  "variable_defs": {
+    "rating/selected/bg": "#f97316",
+    "rating/unselected/bg": "#ededed",
+    "space/1,5": "6 (размер 400)",
+    "space/0,5": "2 (размеры 300 и 200)"
+  },
+  "geometry": {
+    "star": { "400": 20, "300": 16, "200": 12 },
+    "gap": { "400": 6, "300": 2, "200": 2 },
+    "icon": "ic20-rating-solid — одна форма звезды, различается только заливка"
+  },
+  "non_token_decisions": {
+    "value-not-variant": "Variant=1star…5star — это значение оценки, а не вариант компонента: в коде отмеченный radio или data-value",
+    "size-from-space": "звезда 20/16/12 не ложится на square-N-icon (20/20/16) — взяты значения макета с базовой шкалы Space",
+    "no-js": "выбор держит нативная radio-группа; своего JS у компонента нет",
+    "dom-order": "звёзды в прямом порядке 1→5 ради клавиатуры; подсветка — «покрасить все, погасить хвост после выбранной»"
+  }
+}
