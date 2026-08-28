@@ -92,7 +92,12 @@
   height: var(--awds-range-size);
   border-radius: 50%;
   background: linear-gradient(to right, var(--awds-range-thumb-chroma, var(--awds-range-thumb-bg)), var(--awds-range-thumb-bg));
-  box-shadow: inset 0 0 0 1px var(--awds-range-thumb-border);
+  /* Обводка внутрь плюс подъём: у Light-ручки в макете композит elevation-1 на всех
+     состояниях, у Default тени нет — поэтому подъём приходит переменной варианта, а
+     не жёстко тут. Fallback `0 0 rgb(0 0 0 / 0)` — «тени нет», чтобы список слоёв
+     оставался валидным. */
+  box-shadow: inset 0 0 0 1px var(--awds-range-thumb-border),
+              var(--awds-range-thumb-elevation, 0 0 rgb(0 0 0 / 0));
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: background 0.15s ease-out, box-shadow 0.15s ease-out;
@@ -138,17 +143,31 @@
 }
 .range__input::-moz-range-track { background: transparent; }
 
-/* Фокус с клавиатуры — обводка на визуальном ползунке, ближайшем к активному input.
-   (Подсвечиваем оба thumb-div при фокусе любого input — просто и доступно.) */
-.range:focus-within .range__thumb {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
-     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
-     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+/* Фокус с клавиатуры — кольцо на ТОЙ ручке, чей input в фокусе.
+   Вариант слоя — Formcontrol: в ячейках State=Focus макета стоят
+   `focus-selection/outlineVariant` + `opacity/50`, а это по контракту слоя
+   --awds-focus-color-formcontrol (вариант Default — другой цвет и без прозрачности).
+
+   `:focus-visible`, а не `:focus-within`: кольцо адресовано клавиатуре, при перетаскивании
+   мышью оно только шумит. Браузер сам решает, показывать ли его после тапа и клика.
+
+   Ручка выбирается порядком инпутов, а не своим классом: первый input — from, второй — to,
+   ровно как их читает range.js. Отдельные классы на инпутах решали бы то же, но ценой
+   правки разметки у всех потребителей. */
+.range:not(.range--double):has(.range__input:focus-visible) .range__thumb,
+.range--double:has(.range__input:nth-of-type(1):focus-visible) .range__thumb--from,
+.range--double:has(.range__input:nth-of-type(2):focus-visible) .range__thumb--to {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
   outline-offset: var(--awds-focus-offset);
 }
 
-.range--disabled {
+/* Выключенное состояние. Класс `.range--disabled` красит, а выключает АТРИБУТ `disabled`
+   на нативных инпутах — без него `pointer-events: none` гасит только мышь, а стрелки с
+   клавиатуры продолжают менять значение у визуально неактивного контрола (проверено:
+   value 60 → 61 на «выключенном» слайдере). Поэтому селектор смотрит и на атрибут:
+   потребитель, поставивший только атрибут, получает и внешний вид тоже. */
+.range--disabled,
+.range:has(.range__input:disabled) {
   opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
@@ -178,6 +197,10 @@
   --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-rest));
   --awds-range-thumb-chroma: rgb(var(--awds-state-range-light-chroma-rest));
   --awds-range-thumb-border: rgb(var(--awds-state-range-light-border-rest));
+  /* Подъём из макета: у всех Light-ячеек в variable_defs лежит elevation из трёх слоёв,
+     совпадающий с --awds-shadow-elevation-1 по всем девяти числам (сверено с темой).
+     Белая ручка на светлом треке без тени теряет край. */
+  --awds-range-thumb-elevation: var(--awds-shadow-elevation-1);
 }
 
 .range-light:hover {

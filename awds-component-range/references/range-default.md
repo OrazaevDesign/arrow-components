@@ -21,12 +21,23 @@
 
 ## Цвета
 
-| Элемент | Роль |
+Значения приходят ячейками слоя State, а не ролями напрямую.
+
+| Элемент | Источник |
 |---|---|
-| Рельса | `surface-container-container` |
-| Заливка | `primary-core` (+ sheen `primary-chroma`) |
-| Ползунок | `primary-core` |
-| hover | заливка/ползунок → `primary-dim` |
+| Рельса | `--awds-state-range-container-rest` |
+| Заливка | `--awds-state-range-bg-*` (+ sheen `--awds-state-range-chroma-*`) |
+| Ползунок | `--awds-state-range-default-bg-*` (+ sheen `--awds-state-range-default-chroma-*`) |
+| Обводка ползунка | `--awds-state-range-default-border-*` |
+| hover / active | те же ячейки в срезе `-hover` / `-active` |
+| фокус | `var(--awds-focus-color-formcontrol)`, только `:focus-visible` |
+
+Тени у Default-ползунка нет — в макете композит стоит только у Light.
+
+## Выключенное состояние
+
+Атрибут `disabled` на `<input>` обязателен: класс `.range--disabled` только красит,
+а `pointer-events: none` не мешает клавиатуре менять значение.
 
 ## Размеры
 

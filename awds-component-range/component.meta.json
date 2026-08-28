@@ -1,16 +1,19 @@
 {
   "component": "range",
-  "version": "1.0.2",
-  "contract_hash": "sha256:b4b9d9e11afcea9c6a4e629bf34fb505c866a48d30f2d20b7693bc0e4ae0dccc",
-  "artifact_hash": "sha256:2305d7f774d27479c3a176dfab7b40682f4879e1cc3ad33e4eee6156ede8ffd7",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:48.507Z",
+  "version": "1.0.3",
+  "contract_hash": "sha256:5cbde8f5a101be359a14dc5c269915460f27fbd86acd6f1ec27eba73d135eff0",
+  "artifact_hash": "sha256:582a9a78ed4b3c2e502255d6feec88906c49221d85885b92c1bc9657023957d3",
+  "visual_change": true,
+  "released_at": "2026-08-27T13:58:09.908Z",
   "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
     "primary_node_id": "2093:3494",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3494"
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3494",
+    "page_node_id": "2093:3150",
+    "handle_set_node_id": "2093:3383",
+    "note": "Ползунок вынесен в макете в отдельный Component Set ◆/Handle (2093:3383) с осями Var × Size × State, 50 ячеек. У Handle шкала шире, чем у Range: есть 600 (28px) и 200, тогда как сам Range живёт на 500/400/300."
   },
   "variants": {
     "default": {
@@ -106,7 +109,7 @@
     "--awds-rounded-border-radius-full",
     "--awds-opacity-opacity-40"
   ],
-  "last_synced": "2026-06-18T08:48:51Z",
+  "last_synced": "2026-08-27",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:8cda025fb203d88dd8ae66d0d809f4f1bb02759e9ae7dfa666593811fc4785da",
   "published": {
@@ -140,6 +143,58 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "range",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "range-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "range--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "input",
+      "class": "range__input",
+      "type": "range"
+    },
+    "children": [
+      {
+        "class": "range__track"
+      },
+      {
+        "class": "range__thumb"
+      }
+    ],
+    "attrs": [],
+    "child_attrs": [
+      {
+        "attr": "aria-label",
+        "child": "range__input",
+        "why": "имя контролу даёт нативный input, а не корневой div — на корне атрибут ничего не озвучивает"
+      },
+      {
+        "attr": "disabled",
+        "child": "range__input",
+        "when": "range--disabled",
+        "why": "класс только красит; без атрибута стрелки с клавиатуры меняют значение выключенного контрола"
+      }
+    ],
+    "container": null,
+    "note": "Нативный input type=range обязателен: он несёт значение и управление с клавиатуры, видимые трек и ручка — оформление поверх него. В .range--double инпутов ДВА, и порядок значим: первый — from, второй — to. По этому порядку range.js разводит ручки, и по нему же CSS вешает кольцо фокуса на нужную ручку (:nth-of-type). Выключение — атрибутом disabled на каждом инпуте, а не классом."
+  },
+  "asana": {
+    "task_gid": "1209725020469713",
+    "task_url": "https://app.asana.com/1/15638570680505/task/1209725020469713",
+    "task_name": "💠 Range",
+    "parent_task": "💠 ¹ Elemets",
+    "primary": true
+  },
   "uses": {
     "awds-component-focus-selection": "1.1.0"
   },
@@ -150,6 +205,7 @@
       "range--400",
       "range--500",
       "range--disabled",
+      "range--double",
       "range-default",
       "range-light",
       "range__fill",

@@ -22,14 +22,18 @@ description: Ползунок-регулятор Range ArrowDS: трек, руч
 
 | Что | Источник |
 |---|---|
-| Рельса (track) | `rgb(var(--surface-container-container))`, высота `var(--awds-space-space-1)` (4px) |
-| Заливка (fill) | `rgb(var(--primary-core))` + sheen `rgb(var(--primary-chroma))` |
-| Ползунок Default | `rgb(var(--primary-core))` |
-| Ползунок Light | `rgb(var(--secondary-container-core))` + обводка `rgb(var(--secondary-container-dim))` |
-| Размер ползунка | `var(--awds-square-N-handle)` (500=24, 400=20, 300=20px) |
+| Рельса (track) | `rgb(var(--awds-state-range-container-rest))`, высота `var(--awds-space-space-1)` (4px) |
+| Заливка (fill) | `rgb(var(--awds-state-range-bg-rest))` + sheen `rgb(var(--awds-state-range-chroma-rest))` |
+| Ползунок Default | ячейки `--awds-state-range-default-{bg,chroma,border}-*` |
+| Ползунок Light | ячейки `--awds-state-range-light-{bg,chroma,border}-*` + тень `var(--awds-shadow-elevation-1)` |
+| Размер ползунка | `var(--awds-size-square-N-handle)` (500=24, 400=20, 300=20px) |
 | Скругление | `var(--awds-rounded-border-radius-full)` (рельса/заливка), `50%` (ползунок) |
-| hover | заливка/ползунок темнеют до `primary-dim` (light-ползунок → `secondary-container-dim`) |
-| disabled | `.range--disabled` → `opacity: var(--awds-opacity-opacity-40)` |
+| hover / active | те же ячейки в срезе `-hover` / `-active` |
+| фокус | кольцо слоя, вариант **Formcontrol** — `var(--awds-focus-color-formcontrol)`; только `:focus-visible`, только на ручке в фокусе |
+| disabled | **атрибут `disabled` на `<input>`** — он и выключает контрол; класс `.range--disabled` только красит (`opacity: var(--awds-opacity-opacity-40)`) |
+
+Тень у Light-ползунка — из макета: во всех его ячейках лежит композит из трёх слоёв,
+совпадающий с `elevation-1` по всем девяти числам. У Default-ползунка тени нет.
 
 ## Размеры (3)
 

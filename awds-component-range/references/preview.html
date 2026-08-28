@@ -74,6 +74,9 @@
   <h2>Light</h2>
   <table class="matrix"><thead><tr><th>Size</th><th>Single</th><th>Double</th></tr></thead><tbody id="tb-light"></tbody></table>
 
+  <h2>Disabled — атрибут на инпуте, не только класс</h2>
+  <table class="matrix"><thead><tr><th>Что стоит</th><th>Single</th><th>Double</th></tr></thead><tbody id="tb-off"></tbody></table>
+
   <script>
     const SIZES = [500, 400, 300];
 
@@ -100,6 +103,21 @@
           + `<td>${single(variant, size)}</td>`
           + `<td>${double(variant, size)}</td>`;
         tb.appendChild(tr);
+      });
+    });
+
+    // Выключенный ряд: слева — только класс (красит, но клавиатура работает),
+    // справа — атрибут disabled, который и выключает контрол.
+    const off = document.querySelector('#tb-off');
+    [['класс .range--disabled', 'cls'], ['атрибут disabled', 'attr']].forEach(([label, kind]) => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td class="size-label">${label}</td>`
+        + `<td>${single('default', 400)}</td>`
+        + `<td>${double('light', 400)}</td>`;
+      off.appendChild(tr);
+      tr.querySelectorAll('.range').forEach(r => {
+        if (kind === 'cls') r.classList.add('range--disabled');
+        else r.querySelectorAll('.range__input').forEach(i => { i.disabled = true; });
       });
     });
 
