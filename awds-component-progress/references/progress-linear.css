@@ -186,42 +186,42 @@
   display: none;      /* финиша нет — точка-стоп обещала бы известный конец */
 }
 
-/* Позицию и длину ведут ДВЕ анимации на корне — как в Material Web, где это
-   translateX и scaleX на одной полосе. Ритм там не линейный: полоса стоит, потом
-   рывком уходит, растягиваясь, и сжимается на выходе. Именно это и читается как
+/* Позицию и длину ведут ДВЕ анимации на корне — как в Material Web, где это translateX
+   на самой полосе и scaleX на её внутреннем слое. Ритм там не линейный: полоса стоит,
+   потом рывком уходит, растягиваясь, и сжимается на выходе. Именно это и читается как
    «материаловская» анимация, а равномерный проезд — нет.
-   Значения кадров и кривые перенесены из material-web (primary bar):
+   Кадры и кривые перенесены из material-web без правок (primary bar):
      translate: 0 → 0 → 83.67% → 200.61%
      scale:     0.08 → 0.08 → 0.66 → 0.08
    Две анимации, а не одна на два свойства: у них РАЗНЫЕ точки перелома (20/59.15 у
-   позиции, 36.65/69.15 у длины) — свести их в один набор кадров можно только
-   огрубив обе. Переменные общие для бегунка и обеих частей трека, поэтому
-   разъехаться между собой они всё равно не могут. */
+   позиции, 36.65/69.15 у длины) — свести их в один набор кадров можно только огрубив
+   обе. Переменные общие для бегунка и обеих частей трека, поэтому разъехаться между
+   собой они не могут.
+   `linear` в шорткате — как в оригинале: кривая приходит покадрово через
+   animation-timing-function, и шорткат не должен подмешивать свой `ease`. */
 .progress-linear--indeterminate {
   animation:
-    progress-linear-translate var(--awds-progress-duration) infinite,
-    progress-linear-scale var(--awds-progress-duration) infinite,
-    /* Вторая полоса идёт со сдвигом в ПОЛПЕРИОДА — отрицательный delay, то есть
-       стартует уже разогнанной. Это единственное отклонение от material-web, и оно
-       осознанное: там задержки нет, и в конце цикла обе полосы успевают уйти за край —
-       остаётся ~0.6s пустого трека, который читается как сбой ритма. Со сдвигом в
-       кадре всегда есть хотя бы одна полоса; проверено по фазам. */
-    progress-linear-translate-2 var(--awds-progress-duration) infinite
-      calc(var(--awds-progress-duration) * -0.5),
-    progress-linear-scale-2 var(--awds-progress-duration) infinite
-      calc(var(--awds-progress-duration) * -0.5);
+    progress-linear-translate var(--awds-progress-duration) linear infinite,
+    progress-linear-scale var(--awds-progress-duration) linear infinite,
+    progress-linear-translate-2 var(--awds-progress-duration) linear infinite,
+    progress-linear-scale-2 var(--awds-progress-duration) linear infinite;
 }
 
-/* ГРАНИЦЫ ПОЛОСЫ СЧИТАЮТСЯ ЧЕРЕЗ clamp, а не обрезаются контейнером.
-   Ритм material-web уводит полосу за правый край (translate до 200%), и обрезка резала
-   бы её прямым срезом — концы теряли бы скругление, что и было видно на финише.
-   Ограничение краями оставляет оба конца круглыми: полоса не «упирается», а укорачивается,
-   ровно как в макете, где у неё всегда круглые концы. */
+/* СТАРТОВОЕ СМЕЩЕНИЕ ПОЛОС — вторая половина ритма material-web, без неё кадры врут.
+   Там полоса шириной во весь трек лежит ЗА левым краем: у primary
+   `inset-inline-start: -145.167%`, у secondary `-54.8889%`, и translateX отсчитывается
+   уже от этой позиции (progress/internal/_linear-progress.scss). То есть полоса не
+   стартует у левого края, а въезжает из-за него, и первые 20% цикла primary стоит за
+   краем невидимой — по треку в это время едет secondary.
+   Смещение вычитается из позиции, а границы считаются через clamp — это замена обрезке
+   контейнером: ритм уводит полосу за оба края (translate до 200%), и прямой срез отнимал
+   бы у неё скругление. Полоса не упирается в край, а укорачивается: концы остаются
+   круглыми, как в макете, где у неё всегда stroke-linecap round. */
 .progress-linear--indeterminate {
-  --awds-progress-run-left: clamp(0, var(--awds-progress-run), 100);
-  --awds-progress-run-right: clamp(0, calc(var(--awds-progress-run) + var(--awds-progress-run-width)), 100);
-  --awds-progress-run-2-left: clamp(0, var(--awds-progress-run-2), 100);
-  --awds-progress-run-2-right: clamp(0, calc(var(--awds-progress-run-2) + var(--awds-progress-run-2-width)), 100);
+  --awds-progress-run-left: clamp(0, calc(var(--awds-progress-run) - 145.167), 100);
+  --awds-progress-run-right: clamp(0, calc(var(--awds-progress-run) + var(--awds-progress-run-width) - 145.167), 100);
+  --awds-progress-run-2-left: clamp(0, calc(var(--awds-progress-run-2) - 54.8889), 100);
+  --awds-progress-run-2-right: clamp(0, calc(var(--awds-progress-run-2) + var(--awds-progress-run-2-width) - 54.8889), 100);
 }
 
 .progress-linear--indeterminate .progress-linear__active {
@@ -237,22 +237,19 @@
   100%   { --awds-progress-run: 200.611057; }
 }
 
-/* Отступление от material-web в ОДНОМ кадре: там первый кадр сразу scaleX(0.08), то
-   есть полоса возникает у левого края уже длиной 8% — «из воздуха». Здесь она
-   вырастает из нуля за то время, пока стоит на месте (первые 20% цикла): движения это
-   не меняет, а появление перестаёт быть скачком. Скачка в конце цикла нет — там полоса
-   уже за краем и обрезана clamp до нулевой ширины. */
 @keyframes progress-linear-scale {
-  0%     { --awds-progress-run-width: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1); }
-  20%    { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
+  0%     { --awds-progress-run-width: 8; }
   36.65% { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
   69.15% { --awds-progress-run-width: 66.1479; animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1); }
   100%   { --awds-progress-run-width: 8; }
 }
 
-/* Вторая полоса, кадры и кривые тоже из material-web (secondary bar). Она стартует
-   сразу и уходит раньше первой — за счёт этого в полосе нет ни одного момента без
-   движения. */
+/* Вторая полоса, кадры и кривые тоже из material-web (secondary bar). Она стартует сразу
+   и уходит раньше первой; вместе с primary они закрывают цикл так, как задумано в M3 —
+   с коротким участком чистого трека около 0.3s, это часть ритма, а не пропуск кадров.
+   Кривая на 44.15% выходит за диапазон [0,1] по оси Y (-0.003163 и 1.38179) — так в
+   оригинале: полоса слегка «перелетает» и возвращается. Это допустимо для cubic-bezier
+   и заметно на глаз, поэтому значения не округляем. */
 @keyframes progress-linear-translate-2 {
   0%     { --awds-progress-run-2: 0; animation-timing-function: cubic-bezier(0.15, 0, 0.515058, 0.409685); }
   25%    { --awds-progress-run-2: 37.651913; animation-timing-function: cubic-bezier(0.31033, 0.284058, 0.8, 0.733712); }
@@ -261,10 +258,9 @@
 }
 
 @keyframes progress-linear-scale-2 {
-  0%     { --awds-progress-run-2-width: 0; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
-  8%     { --awds-progress-run-2-width: 8; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
+  0%     { --awds-progress-run-2-width: 8; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
   19.15% { --awds-progress-run-2-width: 45.7104; animation-timing-function: cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315); }
-  44.15% { --awds-progress-run-2-width: 72.796; animation-timing-function: cubic-bezier(0.257759, 0.190373, 0.622109, 0.997137); }
+  44.15% { --awds-progress-run-2-width: 72.796; animation-timing-function: cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179); }
   100%   { --awds-progress-run-2-width: 8; }
 }
 
