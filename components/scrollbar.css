@@ -1,0 +1,54 @@
+/* ArrowDS · scrollbar@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.scrollbar {
+  --awds-scrollbar-size: var(--awds-space-space-1-5);
+  --awds-scrollbar-inset: var(--awds-space-space-px);
+  --awds-scrollbar-track: rgb(var(--surface-dim));
+  --awds-scrollbar-thumb: rgb(var(--surface-on) / var(--awds-opacity-opacity-40));
+  --awds-scrollbar-thumb-hover: rgb(var(--surface-on) / var(--awds-opacity-opacity-70));
+}
+
+.scrollbar-clear {
+  --awds-scrollbar-track: transparent;
+}
+
+.scrollbar::-webkit-scrollbar {
+  inline-size: var(--awds-scrollbar-size);
+  block-size: var(--awds-scrollbar-size);
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: var(--awds-scrollbar-track);
+  border-radius: var(--awds-rounded-border-radius-full);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: var(--awds-scrollbar-thumb);
+  border-radius: var(--awds-rounded-border-radius-full);
+  border: var(--awds-scrollbar-inset) solid transparent;
+  background-clip: content-box;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  background: var(--awds-scrollbar-thumb-hover);
+  background-clip: content-box;
+}
+
+.scrollbar::-webkit-scrollbar-corner {
+  background: var(--awds-scrollbar-track);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--awds-scrollbar-thumb) var(--awds-scrollbar-track);
+  }
+  .scrollbar:hover {
+    scrollbar-color: var(--awds-scrollbar-thumb-hover) var(--awds-scrollbar-track);
+  }
+}
+
+}

@@ -1,4 +1,4 @@
-/* ArrowDS components — 31 компонентов.
+/* ArrowDS components — 32 компонентов.
    Сгенерировано tools/build-dist.mjs — руками не править.
 
    Правила лежат в @layer awds: код потребителя вне слоёв сильнее любого правила
@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@1.1.0, avatar@1.0.2, badge@1.0.2, button@1.0.5, button-area@1.0.3, button-favorites@1.0.3, button-overhung@1.0.5, checkbox@1.0.3, content-area@1.0.3, formfield@1.0.3, heading@1.0.2, input@1.0.3, input-combi@1.0.3, label@1.0.3, link@1.0.2, list-item@1.0.4, notice@1.0.3, price@1.0.3, product-card@1.0.5, progress@1.0.7, radio@1.0.3, range@1.0.2, rating@1.0.0, select@1.0.6, select-combi@1.0.6, slider@1.0.2, switch@1.0.2, table@1.0.3, textarea@1.0.3, tooltip@1.0.2, uploader@1.0.2 */
+   Состав: focus-selection@1.1.0, avatar@1.0.2, badge@1.0.2, button@1.0.5, button-area@1.0.3, button-favorites@1.0.3, button-overhung@1.0.5, checkbox@1.0.3, content-area@1.0.3, formfield@1.0.3, heading@1.0.2, input@1.0.3, input-combi@1.0.3, label@1.0.3, link@1.0.2, list-item@1.0.4, notice@1.0.3, price@1.0.3, product-card@1.0.5, progress@1.0.8, radio@1.0.3, range@1.0.3, rating@1.0.0, scrollbar@1.0.0, select@1.0.6, select-combi@1.0.6, slider@1.0.2, switch@1.0.2, table@1.0.3, textarea@1.0.3, tooltip@1.0.2, uploader@1.0.2 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -207,8 +207,7 @@
 }
 
 @keyframes progress-linear-scale {
-  0%     { --awds-progress-run-width: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1); }
-  20%    { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
+  0%     { --awds-progress-run-width: 8; }
   36.65% { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
   69.15% { --awds-progress-run-width: 66.1479; animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1); }
   100%   { --awds-progress-run-width: 8; }
@@ -222,10 +221,9 @@
 }
 
 @keyframes progress-linear-scale-2 {
-  0%     { --awds-progress-run-2-width: 0; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
-  8%     { --awds-progress-run-2-width: 8; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
+  0%     { --awds-progress-run-2-width: 8; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
   19.15% { --awds-progress-run-2-width: 45.7104; animation-timing-function: cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315); }
-  44.15% { --awds-progress-run-2-width: 72.796; animation-timing-function: cubic-bezier(0.257759, 0.190373, 0.622109, 0.997137); }
+  44.15% { --awds-progress-run-2-width: 72.796; animation-timing-function: cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179); }
   100%   { --awds-progress-run-2-width: 8; }
 }
 
@@ -5157,19 +5155,17 @@
 
 .progress-linear--indeterminate {
   animation:
-    progress-linear-translate var(--awds-progress-duration) infinite,
-    progress-linear-scale var(--awds-progress-duration) infinite,
-    progress-linear-translate-2 var(--awds-progress-duration) infinite
-      calc(var(--awds-progress-duration) * -0.5),
-    progress-linear-scale-2 var(--awds-progress-duration) infinite
-      calc(var(--awds-progress-duration) * -0.5);
+    progress-linear-translate var(--awds-progress-duration) linear infinite,
+    progress-linear-scale var(--awds-progress-duration) linear infinite,
+    progress-linear-translate-2 var(--awds-progress-duration) linear infinite,
+    progress-linear-scale-2 var(--awds-progress-duration) linear infinite;
 }
 
 .progress-linear--indeterminate {
-  --awds-progress-run-left: clamp(0, var(--awds-progress-run), 100);
-  --awds-progress-run-right: clamp(0, calc(var(--awds-progress-run) + var(--awds-progress-run-width)), 100);
-  --awds-progress-run-2-left: clamp(0, var(--awds-progress-run-2), 100);
-  --awds-progress-run-2-right: clamp(0, calc(var(--awds-progress-run-2) + var(--awds-progress-run-2-width)), 100);
+  --awds-progress-run-left: clamp(0, calc(var(--awds-progress-run) - 145.167), 100);
+  --awds-progress-run-right: clamp(0, calc(var(--awds-progress-run) + var(--awds-progress-run-width) - 145.167), 100);
+  --awds-progress-run-2-left: clamp(0, calc(var(--awds-progress-run-2) - 54.8889), 100);
+  --awds-progress-run-2-right: clamp(0, calc(var(--awds-progress-run-2) + var(--awds-progress-run-2-width) - 54.8889), 100);
 }
 
 .progress-linear--indeterminate .progress-linear__active {
@@ -5385,7 +5381,8 @@
   height: var(--awds-range-size);
   border-radius: 50%;
   background: linear-gradient(to right, var(--awds-range-thumb-chroma, var(--awds-range-thumb-bg)), var(--awds-range-thumb-bg));
-  box-shadow: inset 0 0 0 1px var(--awds-range-thumb-border);
+  box-shadow: inset 0 0 0 1px var(--awds-range-thumb-border),
+              var(--awds-range-thumb-elevation, 0 0 rgb(0 0 0 / 0));
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: background 0.15s ease-out, box-shadow 0.15s ease-out;
@@ -5439,12 +5436,12 @@
 .range__input::-moz-range-track { background: transparent;
 }
 
-.range:focus-within .range__thumb {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+.range:not(.range--double):has(.range__input:focus-visible) .range__thumb, .range--double:has(.range__input:nth-of-type(1):focus-visible) .range__thumb--from, .range--double:has(.range__input:nth-of-type(2):focus-visible) .range__thumb--to {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
   outline-offset: var(--awds-focus-offset);
 }
 
-.range--disabled {
+.range--disabled, .range:has(.range__input:disabled) {
   opacity: var(--awds-opacity-opacity-40);
   pointer-events: none;
 }
@@ -5470,6 +5467,7 @@
   --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-rest));
   --awds-range-thumb-chroma: rgb(var(--awds-state-range-light-chroma-rest));
   --awds-range-thumb-border: rgb(var(--awds-state-range-light-border-rest));
+  --awds-range-thumb-elevation: var(--awds-shadow-elevation-1);
 }
 
 .range-light:hover {
@@ -5630,6 +5628,54 @@
   .rating__ghost,
   .rating__outline {
     transition: none;
+  }
+}
+
+.scrollbar {
+  --awds-scrollbar-size: var(--awds-space-space-1-5);
+  --awds-scrollbar-inset: var(--awds-space-space-px);
+  --awds-scrollbar-track: rgb(var(--surface-dim));
+  --awds-scrollbar-thumb: rgb(var(--surface-on) / var(--awds-opacity-opacity-40));
+  --awds-scrollbar-thumb-hover: rgb(var(--surface-on) / var(--awds-opacity-opacity-70));
+}
+
+.scrollbar-clear {
+  --awds-scrollbar-track: transparent;
+}
+
+.scrollbar::-webkit-scrollbar {
+  inline-size: var(--awds-scrollbar-size);
+  block-size: var(--awds-scrollbar-size);
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: var(--awds-scrollbar-track);
+  border-radius: var(--awds-rounded-border-radius-full);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: var(--awds-scrollbar-thumb);
+  border-radius: var(--awds-rounded-border-radius-full);
+  border: var(--awds-scrollbar-inset) solid transparent;
+  background-clip: content-box;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+  background: var(--awds-scrollbar-thumb-hover);
+  background-clip: content-box;
+}
+
+.scrollbar::-webkit-scrollbar-corner {
+  background: var(--awds-scrollbar-track);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--awds-scrollbar-thumb) var(--awds-scrollbar-track);
+  }
+  .scrollbar:hover {
+    scrollbar-color: var(--awds-scrollbar-thumb-hover) var(--awds-scrollbar-track);
   }
 }
 

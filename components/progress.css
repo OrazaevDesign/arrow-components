@@ -1,4 +1,4 @@
-/* ArrowDS · progress@1.0.7
+/* ArrowDS · progress@1.0.8
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes progress-circular-spin {
@@ -50,8 +50,7 @@
 }
 
 @keyframes progress-linear-scale {
-  0%     { --awds-progress-run-width: 0; animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1); }
-  20%    { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
+  0%     { --awds-progress-run-width: 8; }
   36.65% { --awds-progress-run-width: 8; animation-timing-function: cubic-bezier(0.334731, 0.12482, 0.785844, 1); }
   69.15% { --awds-progress-run-width: 66.1479; animation-timing-function: cubic-bezier(0.06, 0.11, 0.6, 1); }
   100%   { --awds-progress-run-width: 8; }
@@ -65,10 +64,9 @@
 }
 
 @keyframes progress-linear-scale-2 {
-  0%     { --awds-progress-run-2-width: 0; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
-  8%     { --awds-progress-run-2-width: 8; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
+  0%     { --awds-progress-run-2-width: 8; animation-timing-function: cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971); }
   19.15% { --awds-progress-run-2-width: 45.7104; animation-timing-function: cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315); }
-  44.15% { --awds-progress-run-2-width: 72.796; animation-timing-function: cubic-bezier(0.257759, 0.190373, 0.622109, 0.997137); }
+  44.15% { --awds-progress-run-2-width: 72.796; animation-timing-function: cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179); }
   100%   { --awds-progress-run-2-width: 8; }
 }
 
@@ -189,19 +187,17 @@
 
 .progress-linear--indeterminate {
   animation:
-    progress-linear-translate var(--awds-progress-duration) infinite,
-    progress-linear-scale var(--awds-progress-duration) infinite,
-    progress-linear-translate-2 var(--awds-progress-duration) infinite
-      calc(var(--awds-progress-duration) * -0.5),
-    progress-linear-scale-2 var(--awds-progress-duration) infinite
-      calc(var(--awds-progress-duration) * -0.5);
+    progress-linear-translate var(--awds-progress-duration) linear infinite,
+    progress-linear-scale var(--awds-progress-duration) linear infinite,
+    progress-linear-translate-2 var(--awds-progress-duration) linear infinite,
+    progress-linear-scale-2 var(--awds-progress-duration) linear infinite;
 }
 
 .progress-linear--indeterminate {
-  --awds-progress-run-left: clamp(0, var(--awds-progress-run), 100);
-  --awds-progress-run-right: clamp(0, calc(var(--awds-progress-run) + var(--awds-progress-run-width)), 100);
-  --awds-progress-run-2-left: clamp(0, var(--awds-progress-run-2), 100);
-  --awds-progress-run-2-right: clamp(0, calc(var(--awds-progress-run-2) + var(--awds-progress-run-2-width)), 100);
+  --awds-progress-run-left: clamp(0, calc(var(--awds-progress-run) - 145.167), 100);
+  --awds-progress-run-right: clamp(0, calc(var(--awds-progress-run) + var(--awds-progress-run-width) - 145.167), 100);
+  --awds-progress-run-2-left: clamp(0, calc(var(--awds-progress-run-2) - 54.8889), 100);
+  --awds-progress-run-2-right: clamp(0, calc(var(--awds-progress-run-2) + var(--awds-progress-run-2-width) - 54.8889), 100);
 }
 
 .progress-linear--indeterminate .progress-linear__active {

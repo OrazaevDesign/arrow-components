@@ -349,14 +349,14 @@
     },
     {
       "name": "progress",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "variants": [
         "linear",
         "circular"
       ],
       "sizes": null,
       "rules": 30,
-      "bytes": 7439
+      "bytes": 7123
     },
     {
       "name": "radio",
@@ -375,7 +375,7 @@
     },
     {
       "name": "range",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "variants": [
         "default",
         "light"
@@ -386,7 +386,7 @@
         500
       ],
       "rules": 25,
-      "bytes": 4958
+      "bytes": 5345
     },
     {
       "name": "rating",
@@ -399,6 +399,17 @@
       ],
       "rules": 23,
       "bytes": 3348
+    },
+    {
+      "name": "scrollbar",
+      "version": "1.0.0",
+      "variants": [
+        "default",
+        "clear"
+      ],
+      "sizes": [],
+      "rules": 8,
+      "bytes": 1503
     },
     {
       "name": "select",
@@ -534,13 +545,13 @@
     }
   ],
   "bundle": {
-    "bytes": 288254,
-    "rules": 1016,
-    "hash": "sha256:a6d42efec1ef2cb5c798b19f7f8ccaca37893292c1694a3d3849e5b3c3510c9f"
+    "bytes": 289736,
+    "rules": 1024,
+    "hash": "sha256:05c53190e7fe8f0f8be37e8d27676d7e47d20afeb76ae40a9d5dbdf9b8705d9f"
   },
   "theme": {
-    "bytes": 105987,
-    "variables_kept": 1132,
+    "bytes": 106021,
+    "variables_kept": 1133,
     "variables_declared": 3769,
     "missing": []
   },
