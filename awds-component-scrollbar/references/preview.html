@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="theme-default theme-light" lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>scrollbar / storybook</title>
+
+  <!-- Значения темы: снапшот студии плюс слой производных. Без них компонент
+       ссылается в пустоту и рисуется невидимым. -->
+  <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="./scrollbar.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: var(--awds-space-space-8);
+      background: rgb(var(--surface-bright));
+      color: rgb(var(--surface-on-highest));
+      font-family: var(--awds-font-family-system);
+      display: grid;
+      gap: var(--awds-space-space-8);
+    }
+    h1 { font-size: 20px; margin: 0; }
+    h2 { font-size: 14px; margin: 0 0 var(--awds-space-space-3); opacity: .6; font-weight: 400; }
+    p.lead { margin: 0; max-width: 64ch; opacity: .7; font-size: 13px; line-height: 1.5; }
+    .row { display: flex; gap: var(--awds-space-space-6); flex-wrap: wrap; align-items: flex-start; }
+    .demo { display: grid; gap: var(--awds-space-space-2); }
+    .demo__label { font-family: ui-monospace, monospace; font-size: 12px; opacity: .6; }
+    /* Прокручиваемые области. Компонент их размеров не задаёт — только красит полосу. */
+    .box {
+      inline-size: 260px;
+      block-size: 140px;
+      overflow: auto;
+      padding: var(--awds-space-space-4);
+      background: rgb(var(--surface-bright));
+      border-radius: var(--awds-rounded-border-radius-400);
+      box-shadow: inset 0 0 0 1px rgb(var(--surface-on) / var(--awds-opacity-opacity-10));
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .box--x { block-size: auto; white-space: nowrap; overflow-x: auto; overflow-y: hidden; }
+    .box--both { white-space: nowrap; }
+    .dark { padding: var(--awds-space-space-6); border-radius: var(--awds-rounded-border-radius-400); }
+    .native { scrollbar-width: auto; }
+  </style>
+</head>
+<body>
+  <h1>Scrollbar</h1>
+  <p class="lead">Класс красит нативную полосу прокрутки: своей разметки у компонента нет,
+    размеры области задаёт потребитель. Покрути колесом, потащи ползунок, проверь клик по
+    треку и Shift+колесо — всё это работа браузера, компонент её не перехватывает.</p>
+
+  <section>
+    <h2>Вертикальная · Default и Clear, рядом — ненастроенная для сравнения</h2>
+    <div class="row" id="vertical"></div>
+  </section>
+
+  <section>
+    <h2>Горизонтальная</h2>
+    <div class="row" id="horizontal"></div>
+  </section>
+
+  <section>
+    <h2>Обе оси сразу — виден угол между полосами</h2>
+    <div class="row" id="both"></div>
+  </section>
+
+  <section class="dark theme-default theme-dark">
+    <h2>Тёмный островок</h2>
+    <div class="row" id="dark"></div>
+  </section>
+
+  <script>
+    const LINES = Array.from({ length: 14 }, (_, i) => `Строка ${i + 1} — прокрути меня колесом или ползунком`);
+    const WIDE = Array.from({ length: 8 }, (_, i) => `фрагмент-${i + 1} длинной строки без переносов`).join(' · ');
+
+    const box = (cls, mod, content) =>
+      `<div class="demo"><span class="demo__label">${cls || 'без класса'}</span>`
+      + `<div class="box ${mod} ${cls}">${content}</div></div>`;
+
+    document.querySelector('#vertical').innerHTML =
+      box('scrollbar', '', LINES.join('<br>'))
+      + box('scrollbar scrollbar-clear', '', LINES.join('<br>'))
+      + box('native', '', LINES.join('<br>'));
+
+    document.querySelector('#horizontal').innerHTML =
+      box('scrollbar', 'box--x', WIDE)
+      + box('scrollbar scrollbar-clear', 'box--x', WIDE);
+
+    document.querySelector('#both').innerHTML =
+      box('scrollbar', 'box--both', LINES.map(() => WIDE).join('<br>'));
+
+    document.querySelector('#dark').innerHTML =
+      box('scrollbar', '', LINES.join('<br>'))
+      + box('scrollbar scrollbar-clear', '', LINES.join('<br>'));
+  </script>
+</body>
+</html>

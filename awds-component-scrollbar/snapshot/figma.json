@@ -1,0 +1,35 @@
+{
+  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+  "file_name": "💠 Comp ↪ ¹ Elemets",
+  "primary_node_id": "2093:4230",
+  "frame_name": "Scrollbar",
+  "variant_properties": ["Type", "Style", "State"],
+  "cells": 8,
+  "variant_node_ids": {
+    "Horizontal/Default/Rest": "2093:4231", "Horizontal/Default/Hover": "2093:4238",
+    "Vertical/Default/Rest": "2093:4245", "Vertical/Default/Hover": "2093:4252",
+    "Horizontal/Clear/Rest": "2093:4259", "Horizontal/Clear/Hover": "2093:4266",
+    "Vertical/Clear/Rest": "2093:4273", "Vertical/Clear/Hover": "2093:4280"
+  },
+  "variable_defs": {
+    "role/surface/on": "#8e8e8e (ползунок)",
+    "role/surface/dim": "#f2f2f2 (трек у Default)",
+    "role/surface/transparent": "#ffffff00 (трек у Clear)",
+    "opacity/40": "rest",
+    "opacity/70": "hover",
+    "space/px": "1 (padding трека)",
+    "border-radius/full": "600"
+  },
+  "geometry": {
+    "bar": 6,
+    "thumb": 4,
+    "inset": 1,
+    "note": "толщина одинакова для обеих осей: 6px по ширине у вертикальной и по высоте у горизонтальной"
+  },
+  "non_token_decisions": {
+    "native-not-custom": "красим нативную полосу, а не рисуем ползунок на div: прокрутка, инерция, клик по треку и клавиатура остаются браузерными",
+    "type-not-variant": "Type=Horizontal/Vertical не стал вариантом — направление задаёт контейнер",
+    "two-apis-split": "::-webkit-scrollbar* и scrollbar-width разведены через @supports: с Chrome 121 второе отключает первое",
+    "hover-on-container": "State=Hover считается по контейнеру: в ползунок 4px курсором не попасть"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "component": "scrollbar",
+  "version": "1.0.0",
+  "contract_hash": "sha256:24d13655eca1b6f1d8ba2cba33bc6f78d0b06933341c4119fb65c8f7d10563d9",
+  "artifact_hash": "sha256:d949f43d1a592570da32ff6dfe76b4a5d6eee1c398f06ee098437e497348c1e2",
+  "visual_change": false,
+  "released_at": "2026-08-28T09:30:09.178Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
+    "file_name": "💠 Comp ↪ ¹ Elemets",
+    "primary_node_id": "2093:4230",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4230",
+    "note": "Оси макета: Type (Horizontal/Vertical) × Style (Default/Clear) × State (Rest/Hover), 8 ячеек. Type не стал вариантом: направление задаёт контейнер, толщина одна для обеих осей."
+  },
+  "variants": {
+    "default": {
+      "node_id": "2093:4245",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4245",
+      "figma_label": "Style=Default"
+    },
+    "clear": {
+      "node_id": "2093:4273",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4273",
+      "figma_label": "Style=Clear"
+    }
+  },
+  "shape": null,
+  "size_scale": [],
+  "states": [
+    "rest",
+    "hover"
+  ],
+  "color_tokens": {
+    "thumb": "--surface-on / --awds-opacity-opacity-40",
+    "thumb_hover": "--surface-on / --awds-opacity-opacity-70",
+    "track": "--surface-dim",
+    "track_clear": "transparent"
+  },
+  "js": false,
+  "js_note": "Своего JS нет: прокрутку целиком ведёт браузер. Компонент красит нативную полосу, а не подменяет её.",
+  "platform_note": "Два несовместимых API: ::-webkit-scrollbar* (точная геометрия, Chrome/Edge/Safari) и scrollbar-width/-color (Firefox). С Chrome 121 наличие scrollbar-width отключает псевдоэлементы, поэтому стандартные свойства объявлены под @supports not selector(::-webkit-scrollbar). В Firefox точная толщина 6px недостижима — соответствующего свойства в стандарте нет.",
+  "preview": {
+    "base_class": "scrollbar",
+    "default_size": null,
+    "matrix_states": [
+      "rest",
+      "hover"
+    ],
+    "matrix_sizes": [],
+    "toggles": [
+      {
+        "id": "style",
+        "label": "Стиль",
+        "options": [
+          "default",
+          "clear"
+        ]
+      },
+      {
+        "id": "axis",
+        "label": "Ось",
+        "options": [
+          "вертикальная",
+          "горизонтальная",
+          "обе"
+        ]
+      }
+    ]
+  },
+  "markup": {
+    "root": {
+      "class": "scrollbar",
+      "tags": [
+        "div",
+        "ul",
+        "ol",
+        "section",
+        "main",
+        "aside",
+        "table",
+        "pre",
+        "textarea"
+      ]
+    },
+    "variant": {
+      "pattern": "scrollbar-{variant}",
+      "required": false
+    },
+    "size": null,
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Класс ставится на элемент, который уже прокручивается: overflow и размеры задаёт потребитель, компонент их не трогает — иначе он менял бы раскладку. Своей разметки и потомков у компонента нет. Для полосы страницы класс не предназначен: глобальную полосу задаёт тема."
+  },
+  "uses": {},
+  "ds_token_dependencies": [
+    "--awds-opacity-opacity-40",
+    "--awds-opacity-opacity-70",
+    "--awds-rounded-border-radius-full",
+    "--awds-scrollbar-inset",
+    "--awds-scrollbar-size",
+    "--awds-scrollbar-thumb",
+    "--awds-scrollbar-thumb-hover",
+    "--awds-scrollbar-track",
+    "--awds-space-space-1-5",
+    "--awds-space-space-px",
+    "--surface-dim",
+    "--surface-on"
+  ],
+  "last_synced": "2026-08-27",
+  "last_synced_by": "arrow-components-builder",
+  "asana": {
+    "task_gid": "1209711474813791",
+    "task_url": "https://app.asana.com/0/1203198440472196/1209711474813791/f",
+    "task_name": "💠 Scrollbar",
+    "primary": true,
+    "note": "красит нативную полосу: 6px, ползунок 4px, стили Default и Clear · своей разметки и JS нет"
+  },
+  "contract": {
+    "classes": [
+      "scrollbar",
+      "scrollbar-clear"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "clear",
+      "default"
+    ],
+    "sizes": [],
+    "states": [
+      "hover",
+      "rest"
+    ]
+  }
+}
