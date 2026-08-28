@@ -94,7 +94,6 @@
     "container": null,
     "note": "Класс ставится на элемент, который уже прокручивается: overflow и размеры задаёт потребитель, компонент их не трогает — иначе он менял бы раскладку. Своей разметки и потомков у компонента нет. Для полосы страницы класс не предназначен: глобальную полосу задаёт тема."
   },
-  "uses": {},
   "ds_token_dependencies": [
     "--awds-opacity-opacity-40",
     "--awds-opacity-opacity-70",
@@ -118,6 +117,19 @@
     "primary": true,
     "note": "красит нативную полосу: 6px, ползунок 4px, стили Default и Clear · своей разметки и JS нет"
   },
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "297dc04",
+    "pushed_at": "2026-08-28T12:45:00Z",
+    "dev_resources_status": "linked",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-scrollbar/SKILL.md",
+      "folder": "https://github.com/OrazaevDesign/arrow-components/tree/main/awds-component-scrollbar",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#scrollbar",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/scrollbar.css"
+    }
+  },
+  "uses": {},
   "contract": {
     "classes": [
       "scrollbar",
