@@ -1,11 +1,11 @@
 ---
 name: awds-component-button-overhung
-description: «Парящие» кнопки Button Overhung ArrowDS (obtn-primary): светлый фон плюс постоянная elevation-тень. Отдельный компонент от button — для нависающей кнопки над медиа или карточкой. Токены ArrowDS, работает и по Figma-ссылке.
+description: Button Overhung ArrowDS (.obtn).
 ---
 
 # Button Overhung ArrowDS
 
-«Парящая» кнопка: светлая поверхность (`surface-*`) + постоянная тень `var(--awds-shadow-elevation-1)`, благодаря которой кнопка приподнята над фоном. Ничего не хардкодит: размеры, цвета, тень и шрифт — токены DS. См. скилл `arrow-design-system` для общей картины токенов.
+«Парящая» кнопка-таблетка: светлая поверхность (`surface-*`), полностью скруглённая форма и постоянная тень `var(--awds-shadow-elevation-1)`, благодаря которой кнопка приподнята над фоном. Ничего не хардкодит: размеры, цвета, тень и шрифт — токены DS. См. скилл `arrow-design-system` для общей картины токенов.
 
 **Это отдельный компонент от `awds-component-button`.** У обычной кнопки заливка ролью `primary-*` без тени; у overhung — нейтральный светлый фон `surface-*` и зашитая elevation-тень. Класс тоже свой — `.obtn` (не `.btn`), чтобы оба компонента сосуществовали на странице без конфликта.
 
@@ -15,11 +15,12 @@ description: «Парящие» кнопки Button Overhung ArrowDS (obtn-prima
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета (bg/chroma/border/color) | `rgb(var(--surface-*))` inline в `.obtn-primary` и его `:hover/:focus-visible/:active` | `references/button-overhung-primary.css` (+ палитра в `css-variables.css` сайта) |
+| Цвета (bg/chroma/border/color) | ячейки слоя State: `rgb(var(--awds-state-overhung-{variant}-{prop}-{state}))` inline в `.obtn-primary` и его `:hover/:focus-visible/:active`; внутри резолвятся в роли `surface-*` | `references/button-overhung-primary.css` (+ палитра в `css-variables.css` сайта) |
 | Парящая тень | `var(--awds-shadow-elevation-1)` в базовом `.obtn` box-shadow | `css-global` (базовая шкала shadow) |
 | Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
-| Размеры (padding/gap/icon/rounded/font) | `var(--awds-rectangle-{N}-*)` (семантические shape-токены) в `.obtn--{N}` | `css-global` (там же резолвятся в базовые шкалы) |
-| `opacity` для disabled | `var(--awds-opacity-opacity-40)` | там же |
+| Размеры (padding/gap/icon/font) | `var(--awds-size-rectangle-{N}-*)` (семантические shape-токены) в `.obtn--{N}` | `css-global` (там же резолвятся в базовые шкалы) |
+| Форма | `var(--awds-rounded-border-radius-full)` в базовом `.obtn` — таблетка на всех ступенях, от размера НЕ зависит | `css-global` (токен равен 600px во всех трёх режимах коллекции Rounded, поэтому режим сайта на overhung не влияет) |
+| Гашение (opacity) | `var(--awds-state-opacity-control-disabled)` на выключенном состоянии | слой State темы, группа `opacity` |
 | Шрифт (family/weight) | `--awds-font-family-system`, `--awds-font-weight-semibold` | там же |
 
 Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление под Figma — через скилл `arrow-components-builder` («обнови awds-component-button-overhung»), не руками.
@@ -35,7 +36,7 @@ description: «Парящие» кнопки Button Overhung ArrowDS (obtn-prima
 
 ## Размерные модификаторы
 
-Добавь к кнопке класс `.obtn--{size}`. Размер задаёт padding, gap, border-radius, font-size, line-height и letter-spacing — через семантические shape-токены `--awds-rectangle-{N}-*`.
+Добавь к кнопке класс `.obtn--{size}`. Размер задаёт padding, gap, font-size, line-height и letter-spacing — через семантические shape-токены `--awds-size-rectangle-{N}-*`. **Скругление размер не меняет:** у overhung оно одно на все ступени — таблетка (`--awds-rounded-border-radius-full`), в `icon-only` соответственно круг.
 
 | Класс | Когда |
 |---|---|
@@ -48,6 +49,23 @@ description: «Парящие» кнопки Button Overhung ArrowDS (obtn-prima
 | `obtn--50`  | Самые компактные контролы |
 
 Конкретные значения каждого размера — в `tokens-map.md` скилла `arrow-design-system`, секция `rectangle`.
+
+## Оси макета
+
+`content=text|icon` · `size=50…600` · `state=rest|hover|focus|active|disabled|loading`,
+плюс булевы слоты `prefix` / `suffix`. Всё на каноне
+`arrow-components-builder/references/props.md`.
+
+**Загрузка — шестое значение оси `state`, отдельной оси `loading` больше нет** (15.09.2026,
+по решению 14.09 — у `button` то же самое). Каждый набор сжался со 140 ячеек до 84:
+`loading=on` осмысленно только в покое, остальные четыре комбинации дублировали друг друга.
+Ячейка `state=rest, loading=on` стала `state=loading`. В коде это по-прежнему модификатор
+`.obtn--loading` — оси Figma и классы CSS один к одному не ложатся и не должны.
+Имя `progress` осталось за компонентом Progress, где это **значение** 0…100, а не флаг.
+
+Размер кольца загрузки и горизонтальный padding в макете привязаны к
+`rectangle/{N}/icon` и `rectangle/{N}/padding` — коллекция `button-input` в компоненте
+больше не используется, поэтому код совпадает с макетом на всех семи ступенях.
 
 ## Состояния
 

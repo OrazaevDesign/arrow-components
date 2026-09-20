@@ -14,6 +14,7 @@
 
   <!-- 3. Варианты этого скилла -->
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
+  <link rel="stylesheet" href="../../awds-component-progress/references/progress-circular.css">
   <link rel="stylesheet" href="./button-overhung-primary.css">
   <link rel="stylesheet" href="./button-overhung-secondary.css">
 
@@ -22,50 +23,50 @@
        :active правил из button-overhung-{variant}.css, чтобы матрица показывала все
        состояния без интерактива. Тень elevation постоянна (в .obtn base). ─── */
     .obtn-primary.is-hover {
-      --awds-obtn-bg:     rgb(var(--surface-surface));
-      --awds-obtn-chroma: rgb(var(--surface-dim));
-      --awds-obtn-border: rgb(var(--surface-surface));
-      --awds-obtn-color:  rgb(var(--surface-on-highest));
+      --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg));
+      --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-hover));
+      --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border));
+      --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-hover));
     }
     .obtn-primary.is-focus {
-      --awds-obtn-bg:     rgb(var(--surface-surface));
-      --awds-obtn-chroma: rgb(var(--surface-bright));
-      --awds-obtn-border: rgb(var(--surface-surface));
-      --awds-obtn-color:  rgb(var(--surface-on));
+      --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg));
+      --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-focus));
+      --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border));
+      --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-focus));
       outline: var(--awds-focus-width) solid var(--awds-focus-color);
       outline-offset: var(--awds-focus-offset);
     }
     .obtn-primary.is-active {
-      --awds-obtn-bg:     rgb(var(--surface-surface));
-      --awds-obtn-chroma: rgb(var(--surface-bright));
-      --awds-obtn-border: rgb(var(--surface-surface));
-      --awds-obtn-color:  rgb(var(--surface-on));
+      --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg));
+      --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-active));
+      --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border));
+      --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-active));
     }
 
     /* ─── Secondary: те же роли, но кнопка приглушена opacity 60% → 90% на hover/focus/active.
        Rest (60%) задаёт сам .obtn-secondary; зеркала уплотняют до 90%. ─── */
     .obtn-secondary.is-hover {
-      --awds-obtn-bg:     rgb(var(--surface-surface));
-      --awds-obtn-chroma: rgb(var(--surface-dim));
-      --awds-obtn-border: rgb(var(--surface-surface));
-      --awds-obtn-color:  rgb(var(--surface-on-highest));
-      opacity: var(--awds-opacity-opacity-90);
+      --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg));
+      --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-hover));
+      --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border));
+      --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-hover));
+      opacity: var(--awds-opacity-90);
     }
     .obtn-secondary.is-focus {
-      --awds-obtn-bg:     rgb(var(--surface-surface));
-      --awds-obtn-chroma: rgb(var(--surface-bright));
-      --awds-obtn-border: rgb(var(--surface-surface));
-      --awds-obtn-color:  rgb(var(--surface-on));
-      opacity: var(--awds-opacity-opacity-90);
+      --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg));
+      --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-focus));
+      --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border));
+      --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-focus));
+      opacity: var(--awds-opacity-90);
       outline: var(--awds-focus-width) solid var(--awds-focus-color);
       outline-offset: var(--awds-focus-offset);
     }
     .obtn-secondary.is-active {
-      --awds-obtn-bg:     rgb(var(--surface-surface));
-      --awds-obtn-chroma: rgb(var(--surface-bright));
-      --awds-obtn-border: rgb(var(--surface-surface));
-      --awds-obtn-color:  rgb(var(--surface-on));
-      opacity: var(--awds-opacity-opacity-90);
+      --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg));
+      --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-active));
+      --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border));
+      --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-active));
+      opacity: var(--awds-opacity-90);
     }
 
     /* ─── Preview-shell ─── */
@@ -200,7 +201,7 @@
 <body>
 
   <h1>button-overhung / storybook</h1>
-  <p class="sub">«Парящая» кнопка: постоянная тень <code>var(--awds-shadow-elevation-1)</code> + светлый фон <code>rgb(var(--surface-*))</code>. Размеры — shape-токены <code>var(--awds-rectangle-{N}-*)</code>. Тень одинакова во всех состояниях; меняется только chroma/текст на hover. Переключи тему / скругление — подтянется из DS.</p>
+  <p class="sub">«Парящая» кнопка: постоянная тень <code>var(--awds-shadow-elevation-1)</code> + светлый фон из ячеек <code>--awds-state-overhung-{variant}-{prop}-{state}</code>. Размеры — shape-токены <code>var(--awds-size-rectangle-{N}-*)</code>, радиус общий — <code>var(--awds-rounded-border-radius-full)</code> (таблетка на всех ступенях). Тень одинакова во всех состояниях; меняется только chroma/текст на hover. Переключи тему — подтянется из DS; режим скругления на overhung не влияет.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -209,7 +210,7 @@
         <option value="dark">dark</option>
       </select>
     </label>
-    <label>Скругление:
+    <label title="Режим скругления темы. На overhung не влияет: радиус привязан к border-radius/full, а он равен 600px во всех трёх режимах.">Скругление (на obtn не влияет):
       <select id="rounded">
         <option value="smooth">smooth</option>
         <option value="none">none</option>
@@ -280,19 +281,17 @@
             <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </button>
         </div>
-        <div class="row" data-label="Загрузка (Progress=True)">
+        <div class="row" data-label="Загрузка (loading=on)">
           <button class="obtn obtn-primary obtn--600 obtn--loading" type="button" disabled aria-busy="true">
             <span class="obtn__content">Загрузка…</span>
-            <svg class="obtn__progress" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-dasharray="40 60" stroke-linecap="round"/>
+            <svg class="obtn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
             </svg>
           </button>
           <button class="obtn obtn-primary obtn--400 obtn--loading" type="button" disabled aria-busy="true">
             <span class="obtn__content">Загрузка…</span>
-            <svg class="obtn__progress" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-dasharray="40 60" stroke-linecap="round"/>
+            <svg class="obtn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
             </svg>
           </button>
         </div>
@@ -309,7 +308,7 @@
         <dl></dl>
       </div>
       <div class="group" data-group="rest">
-        <h3>rest — rgb(var(--surface-*))</h3>
+        <h3>rest — ячейки слоя State (резолвятся в роли surface)</h3>
         <dl></dl>
       </div>
       <div class="group" data-group="hover">
@@ -358,7 +357,7 @@
     const SIZE_400 = [
       ['padding', '--awds-size-rectangle-400-padding'],
       ['gap', '--awds-size-rectangle-400-gap'],
-      ['rounded', '--awds-size-rectangle-400-rounded'],
+      ['rounded (общий, не от размера)', '--awds-rounded-border-radius-full'],
       ['icon', '--awds-size-rectangle-400-icon'],
       ['font-size', '--awds-size-rectangle-400-typography'],
       ['line-height', '--awds-control-line-height-400'],
@@ -410,9 +409,9 @@
     const OTHER = [
       ['--awds-shadow-elevation-1', 'value'],
       ['--surface-on-highest', 'color'],
-      ['--awds-opacity-opacity-40', 'value'],
-      ['--awds-opacity-opacity-60', 'value'],
-      ['--awds-opacity-opacity-90', 'value'],
+      ['--awds-state-opacity-control-disabled', 'value'],
+      ['--awds-opacity-60', 'value'],
+      ['--awds-opacity-90', 'value'],
       ['--awds-font-family-system', 'value'],
       ['--awds-font-weight-semibold', 'value'],
     ];

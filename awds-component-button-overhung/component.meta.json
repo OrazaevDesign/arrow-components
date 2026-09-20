@@ -1,34 +1,34 @@
 {
   "component": "button-overhung",
-  "version": "1.0.5",
+  "version": "2.0.12",
   "contract_hash": "sha256:734b4e05e7eed9c113df4e28601577eb5812a9cd6b08f0826a83433219589058",
-  "artifact_hash": "sha256:863bbdad025af849220fe48fa26819ab063638aeff485cb09c4ebe471e2e8f44",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:47.571Z",
+  "artifact_hash": "sha256:3552fe995d9820c264a3a7a658b79e2ea5cd9bc8e82f113d4b8745391c632101",
+  "visual_change": true,
+  "released_at": "2026-09-15T15:18:54.171Z",
   "own_values": [
     {
-      "value": "1.4s",
-      "where": "animation-duration",
-      "count": 2,
+      "value": "0.15s",
+      "where": "transition",
+      "count": 3,
       "why": "длительность анимации: коллекции движения в студии нет"
     }
   ],
   "figma": {
-    "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
-    "file_name": "💠 Comp ↪ ² Buttons",
-    "primary_node_id": "145:30637",
-    "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=145-30637"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:8",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-8"
   },
   "variants": {
     "primary": {
-      "node_id": "145:30637",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=145-30637",
-      "figma_label": "Button Overhung / Primary"
+      "node_id": "8:24617",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-24617",
+      "figma_label": "button-overhung / primary"
     },
     "secondary": {
-      "node_id": "490:231905",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=490-231905",
-      "figma_label": "Button Overhung / Secondary"
+      "node_id": "8:25206",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-25206",
+      "figma_label": "button-overhung / secondary"
     }
   },
   "shape": "rectangle",
@@ -106,41 +106,65 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-surface",
-    "--color-surface-bright",
-    "--color-surface-dim",
-    "--color-surface-on",
-    "--color-surface-on-highest",
-    "--awds-rectangle-*",
-    "--awds-shadow-elevation-1",
-    "--awds-opacity-opacity-40",
-    "--awds-opacity-opacity-60",
-    "--awds-opacity-opacity-90",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-opacity-40",
+    "--awds-opacity-60",
+    "--awds-opacity-90",
+    "--awds-rounded-border-radius-full",
+    "--awds-shadow-elevation-1",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--surface-bright",
+    "--surface-dim",
+    "--surface-on",
+    "--surface-on-highest",
+    "--surface-surface"
   ],
-  "last_synced": "2026-06-17T12:48:52Z",
-  "last_synced_by": "claude",
-  "snapshot_hash": "sha256:3dfb22886176bf2388ff4999e1b0f805b8f36e56b9c8250f65719a487b53f623",
+  "last_synced": "2026-09-15T17:45:00Z",
+  "last_synced_by": "arrow-components-builder",
+  "snapshot_hash": "sha256:e3165e5d657ac4e1c6741797eb6788164392d3d3eadf0800f07329aeed1f5bee",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "4f82d09",
     "pushed_at": "2026-08-26T10:28:44.000Z",
+    "lags_behind": "Опубликована 2.0.11; в работе 2.0.12. Публикация — волна 7.4 плана 2026-09-14.",
     "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/SKILL.md",
       "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/references/button-overhung-primary.md",
-      "secondary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/references/button-overhung-secondary.md"
+      "secondary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/references/button-overhung-secondary.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#button-overhung",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/button-overhung.css"
     },
     "dev_resources_status": {
       "primary": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "145:30637",
+        "node_id": "8:24617",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/SKILL.md"
       },
       "secondary": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "490:231905",
+        "node_id": "8:25206",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/SKILL.md"
       }
     }
@@ -153,9 +177,81 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "obtn",
+      "tags": [
+        "button",
+        "a"
+      ]
+    },
+    "variant": {
+      "pattern": "obtn-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "obtn--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Отдельный компонент от button: светлый фон плюс постоянная тень. Вариант и размер обязательны по той же причине, что у кнопки. Спиннера своего нет: в слоте .obtn__progress живёт кольцо awds-component-progress — на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate."
+  },
+  "asana": {
+    "task_gid": "1218421798642209",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798642209",
+    "task_name": "💠 button-overhung",
+    "parent_task": "💠 2 · buttons",
+    "primary": true
+  },
+  "family": "buttons",
+  "summary": "Парящая кнопка: светлый фон плюс постоянная elevation-тень",
+  "aliases": [
+    "парящая кнопка",
+    "нависающая кнопка",
+    "кнопка над медиа",
+    "кнопка на фото"
+  ],
+  "questions": [
+    {
+      "id": "obtn-figma-props-canon",
+      "text": "Оси state= и progress= в макете button-overhung не на каноне: state=hovered/focused (канон hover/focus), progress=false|true (канон loading=on|off, как у button). Ось type= уже переименована в content= 31.08.2026 в обоих вариантах. Правка на стороне Figma — код на каноне (.obtn--loading, hover/focus), переносить неканон в CSS нельзя: имя модификатора это публичный API.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217993431163487",
+      "raised_at": "2026-08-31",
+      "answer": "Макет приведён к канону 31.08.2026: content= вместо type=, state=hover/focus вместо hovered/focused, progress=off|on вместо false|true — проверено по 140 ячейкам обоих вариантов. Осталась асимметрия имени внутри семьи: у button та же ось зовётся loading; заведено отдельным вопросом buttons-loading-axis-name."
+    },
+    {
+      "id": "obtn-button-input-padding",
+      "text": "Внешний padding-inline в макете был привязан к коллекции button-input/{N}/padding, которой нет в теме студии; обычный button на этом же месте использует rectangle/{N}/padding.",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "answered",
+      "asana_gid": "1218006456245624",
+      "raised_at": "2026-08-31",
+      "answer": "Макет перевязан на rectangle/{N}/padding 31.08.2026 (проверено по ячейкам 600, 500 и secondary 600). Код не менялся: padding-inline = rectangle padding + gap даёт 24 и 20 на ступенях 600 и 500 — теперь это ровно то, что в макете. Коллекция button-input в теме студии не заводится."
+    },
+    {
+      "id": "buttons-loading-axis-name",
+      "text": "Имя оси флага загрузки в семье кнопок: у button — loading=on|off, у button-overhung (оба варианта) — progress=on|off. Значения на каноне у обоих, расходится только слово. В props.md имя progress закреплено за компонентом Progress, где это значение 0…100, а не флаг. В коде оба компонента используют модификатор --loading, поэтому решение затрагивает только макет и props.md — CSS не меняется, MAJOR не нужен.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218005558943401",
+      "raised_at": "2026-08-31",
+      "answer": "31.08.2026 семья сведена на слово loading: ось в обоих вариантах button-overhung переименована в loading=off|on, как у button и как называется модификатор в коде (--loading). Имя progress остаётся за компонентом Progress, где это значение 0…100. CSS не менялся."
+    }
+  ],
   "uses": {
-    "awds-component-button": "1.0.5",
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.9",
+    "awds-component-progress": "2.0.2"
   },
   "contract": {
     "classes": [

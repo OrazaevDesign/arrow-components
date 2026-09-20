@@ -44,12 +44,17 @@
 </button>
 ```
 
-Состояние загрузки (Figma Progress=True): контент скрывается, поверх — спиннер:
+Состояние загрузки (Figma `loading=on`): контент скрывается, поверх — кольцо
+`awds-component-progress`. Своего спиннера у кнопки нет: классы компонента вешаются на
+тот же `<svg>`, что и слот `.obtn__progress`, а кнопка сообщает ему размер и цвет.
 
 ```html
 <button class="obtn obtn-primary obtn--400 obtn--loading" disabled aria-busy="true">
   <span class="obtn__content">Загрузка…</span>
-  <svg class="obtn__progress" viewBox="0 0 24 24"><!-- spinner path --></svg>
+  <svg class="obtn__progress progress progress-circular progress--indeterminate"
+       viewBox="0 0 24 24" aria-hidden="true">
+    <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
+  </svg>
 </button>
 ```
 
@@ -66,7 +71,7 @@
 | Блок | Что внутри |
 |---|---|
 | Base `.obtn` | Layout (flex), `box-shadow` = `elevation-1` (парящая тень) + inset stroke, фон-градиент, типографика, default size 400, focus-visible, disabled, loading/icon-only |
-| Sizes `.obtn--{N}` | Заполняют `--awds-obtn-{padding,gap,rounded,icon,fs,lh,ls}` через shape-токены `--awds-rectangle-{N}-*` |
+| Sizes `.obtn--{N}` | Заполняют `--awds-obtn-{padding,gap,icon,fs,lh,ls}` через shape-токены `--awds-size-rectangle-{N}-*`. `--awds-obtn-rounded` в набор не входит: радиус общий (таблетка) и объявлен в базовом `.obtn` |
 | Variant `.obtn-primary` | Rest — заполняют `--awds-obtn-{bg,chroma,border,color}` ролями `rgb(var(--surface-*))` |
 | `:hover` / `:focus-visible` / `:active` | Те же accumulators, другие роли (см. ниже) |
 
@@ -78,7 +83,7 @@
 | Hover | `surface-surface` | `surface-dim` | `surface-surface` | `surface-on-highest` | — |
 | Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
 | Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | = Rest |
-| Disabled | = Rest | | | | `opacity: var(--awds-opacity-opacity-40)` + `pointer-events: none` |
+| Disabled | = Rest | | | | `opacity: var(--awds-state-opacity-control-disabled)` + `pointer-events: none` |
 
 Тень `elevation-1` одинакова во всех состояниях (зашита в `.obtn`, не в селекторах) — в макете нажатие не меняет высоту.
 

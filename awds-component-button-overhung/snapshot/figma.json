@@ -1,14 +1,105 @@
 {
-  "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
-  "file_name": "💠 Comp ↪ ² Buttons",
-  "primary_node_id": "145:30637",
-  "frame_name": "Button Overhung / Primary",
-  "variant_node_ids": { "primary": "145:30637", "secondary": "490:231905" },
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "primary_node_id": "5:8",
+  "frame_name": "button-overhung / primary",
+  "page_node_id": "912:35210",
+  "variant_node_ids": {
+    "primary": "145:30637",
+    "secondary": "490:231905"
+  },
   "variant_properties": {
-    "Type": ["Text", "Icon"],
-    "Size": [600, 500, 400, 300, 200, 100, 50],
-    "State": ["Rest", "Hovered", "Focused", "Active", "Disabled"],
-    "Progress": [false, true]
+    "content": [
+      "text",
+      "icon"
+    ],
+    "size": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "state": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "loading"
+    ]
+  },
+  "boolean_properties": [
+    "prefix",
+    "suffix"
+  ],
+  "props_canon_gap": {
+    "status": "оси на каноне props.md; расхождений нет",
+    "history": "С 31.08.2026 content=text|icon, size=50…600, state=rest|hover|focus|active|disabled. 15.09.2026 ось loading=off|on убрана: загрузка стала шестым значением оси state (решение 14.09.2026, у button то же). Каждый набор 140 → 84 ячейки, удалено 112 вариантов на оба набора."
+  },
+  "geometry_per_size": {
+    "50": {
+      "padding": 2,
+      "gap": 2,
+      "icon": 16,
+      "font-size": 12,
+      "line-height": 16,
+      "letter-spacing": 0.1
+    },
+    "100": {
+      "padding": 4,
+      "gap": 2,
+      "icon": 16,
+      "font-size": 13,
+      "line-height": 16,
+      "letter-spacing": 0.1
+    },
+    "200": {
+      "padding": 8,
+      "gap": 4,
+      "icon": 16,
+      "font-size": 13,
+      "line-height": 16,
+      "letter-spacing": 0.1
+    },
+    "300": {
+      "padding": 8,
+      "gap": 6,
+      "icon": 20,
+      "font-size": 14,
+      "line-height": 20,
+      "letter-spacing": 0
+    },
+    "400": {
+      "padding": 10,
+      "gap": 6,
+      "icon": 20,
+      "font-size": 14,
+      "line-height": 20,
+      "letter-spacing": 0
+    },
+    "500": {
+      "padding": 14,
+      "gap": 6,
+      "icon": 20,
+      "font-size": 16,
+      "line-height": 20,
+      "letter-spacing": 0
+    },
+    "600": {
+      "padding": 16,
+      "gap": 8,
+      "icon": 20,
+      "font-size": 16,
+      "line-height": 20,
+      "letter-spacing": 0
+    },
+    "_source": "get_design_context ячеек 231:41384 (600), 231:41412 (400, progress), 231:41436 (50), 145:30638 (icon-only 600)",
+    "_model": "внешний контейнер: padding-inline = rectangle/{N}/padding (перевязан с button-input 31.08.2026); секции prefix/text/suffix: py = rectangle/{N}/padding, px = rectangle/{N}/gap; icon-only: p = rectangle/{N}/padding по кругу",
+    "radius": "border-radius/full = 600px на ВСЕХ ступенях и в icon-only → таблетка",
+    "progress_ring": "31.08.2026 перевязано на rectangle/{N}/icon: 20px на всех ступенях (было 28 на 600 и 24 на 500 через button-input/{N}/icon). Код совпадает: --awds-progress-size = var(--awds-obtn-icon)"
   },
   "variable_defs": {
     "frame_145:30637_rest": {
@@ -16,28 +107,18 @@
       "overhung/primary/chroma": "#ffffff",
       "overhung/primary/border": "#f7f7f7",
       "overhung/primary/color": "#8e8e8e",
-      "overhung/secondary/color": "#080808",
       "focus-selection/outline": "#080808",
       "focus-selection/outlineShow": "true",
       "opacity/control/enabled": "100",
       "opacity/control/disabled": "40",
+      "opacity/0": "0",
       "elevation": "Effect(DROP_SHADOW shadow3/color 0/0 r0 s1); Effect(DROP_SHADOW shadow2/color 0/1 r2 s-1); Effect(DROP_SHADOW shadow1/color 0/2 r2 s0)",
       "shadow1/color": "#00000014",
       "shadow2/color": "#0000000f",
       "shadow3/color": "#00000008",
-      "rectangle/600/padding": "16", "rectangle/600/gap": "8", "rectangle/600/icon": "20",
-      "rectangle/500/padding": "14", "rectangle/500/gap": "6", "rectangle/500/icon": "20",
-      "rectangle/400/padding": "10", "rectangle/400/gap": "6", "rectangle/400/icon": "20",
-      "rectangle/300/padding": "8", "rectangle/300/gap": "6", "rectangle/300/icon": "20",
-      "rectangle/200/padding": "8", "rectangle/200/gap": "4", "rectangle/200/icon": "16",
-      "rectangle/100/padding": "4", "rectangle/100/gap": "2", "rectangle/100/icon": "16",
-      "rectangle/50/padding": "2", "rectangle/50/gap": "2", "rectangle/50/icon": "16",
-      "border-radius/500": "8", "border-radius/400": "8", "border-radius/300": "6", "border-radius/200": "6",
-      "font-family": "Inter", "font-weight": "semibold",
-      "font-size/600": "16", "line-height/600": "20",
-      "font-size/400": "14", "line-height/400": "20",
-      "font-size/300": "13", "line-height/300": "16",
-      "font-size/200": "12", "line-height/200": "16"
+      "border-radius/full": "600",
+      "font-family": "Inter",
+      "font-weight": "semibold"
     },
     "node_231:41552_hovered_600": {
       "overhung/primary/bg": "#f7f7f7",
@@ -45,6 +126,14 @@
       "overhung/primary/border": "#f7f7f7",
       "overhung/primary/color": "#080808",
       "elevation": "same as rest (elevation-1)"
+    },
+    "node_231:41636_focused_600": {
+      "overhung/primary/bg": "#f7f7f7",
+      "overhung/primary/chroma": "#ffffff",
+      "overhung/primary/border": "#f7f7f7",
+      "overhung/primary/color": "#8e8e8e",
+      "focus-selection/outline": "#080808",
+      "focus-selection/outlineShow": "true"
     },
     "node_231:41748_active_600": {
       "overhung/primary/bg": "#f7f7f7",
@@ -58,8 +147,7 @@
       "overhung/primary/chroma": "#ffffff",
       "overhung/primary/border": "#f7f7f7",
       "overhung/primary/color": "#8e8e8e",
-      "opacity/control/disabled": "40",
-      "elevation": "same as rest (elevation-1)"
+      "opacity/control/disabled": "40"
     },
     "frame_490:231905_secondary_rest": {
       "overhung/secondary/bg": "#f7f7f7",
@@ -68,7 +156,7 @@
       "overhung/secondary/color": "#8e8e8e",
       "opacity/overhung/secondary": "60",
       "focus-selection/outline": "#080808",
-      "focus-selection/outlineShow": "true",
+      "border-radius/full": "600",
       "elevation": "same as primary (elevation-1)"
     },
     "node_490:232362_secondary_hovered_600": {
@@ -76,9 +164,68 @@
       "overhung/secondary/chroma": "#f2f2f2",
       "overhung/secondary/border": "#f7f7f7",
       "overhung/secondary/color": "#080808",
+      "opacity/overhung/secondary": "90"
+    },
+    "node_490:232589_secondary_focused_600": {
+      "overhung/secondary/bg": "#f7f7f7",
+      "overhung/secondary/chroma": "#ffffff",
+      "overhung/secondary/border": "#f7f7f7",
+      "overhung/secondary/color": "#8e8e8e",
       "opacity/overhung/secondary": "90",
-      "elevation": "same as primary (elevation-1)"
+      "focus-selection/outline": "#080808"
     }
   },
-  "_note": "Сырые ответы Figma MCP get_metadata + get_variable_defs (фреймы primary 145:30637 и secondary 490:231905 + по-state ноды). Elevation одинакова во всех состояниях и вариантах, маппится на --awds-shadow-elevation-1. Шкала теней DS обновлена 2026-06-17: чёрная база #00000014/0f/08 (раньше #1c1c1c26/1a/0d), третий слой — хайрлайн 0 0 0 1px. Secondary = те же роли surface-*, что primary, но вся кнопка приглушена opacity/overhung/secondary: 60% rest → 90% hover/focus/active. Резолв ролей — через arrow-design-system/references/component-token-map.json (секция overhung)."
+  "_note": "Сырые ответы Figma MCP (get_metadata по странице 912:35210, get_variable_defs по фреймам и ячейкам, get_design_context по ячейкам 231:41384/41396/41552/41412/41436, 145:30638, 490:231914 за раскладкой). Цвета, elevation, opacity, gap, icon и типографика с 17.06 не менялись. Изменилось прочтение радиуса: кнопка привязана к border-radius/full (таблетка), а не к ступени rectangle/{N} — в прошлый заход токен сняли по совпадению номера, а не по привязке узла. Горизонтальный padding 31.08.2026 перевязан автором с коллекции button-input на rectangle/{N}/padding, поэтому код совпадает с макетом на всех семи ступенях. Оси макета 31.08.2026 приведены к канону (content/state, loading=off|on), горизонтальный padding и размер кольца загрузки перевязаны на rectangle/{N}/padding и rectangle/{N}/icon — коллекция button-input в макете компонента больше не используется — ширины ячеек 600 и 500 выросли до 156 и 144 и совпали с кодом. Резолв ролей — arrow-design-system/references/component-token-map.json, секция overhung; в CSS цвета идут ячейками слоя State (--awds-state-overhung-*).",
+  "_axis_debt": "ЗАКРЫТ 15.09.2026. Перед удалением перепись инстансов по всем страницам файла: наборов 8:24617 и 8:25206 не держит ни один инстанс (0 из 10 934 узлов-инстансов), поэтому удаление 112 вариантов ничего не осиротило. Оси после правки: content=icon|text, size=600…50, state=rest|hover|focus|active|disabled|loading плюс булевы show-prefix / show-suffix.",
+  "cells_per_set": 84,
+  "rebind": {
+    "done": "2026-09-15",
+    "what": "28 обводок кольца загрузки (узел progress / circular → Active indicator) переведены со старой библиотеки State/overhung/{primary,secondary}/color на ячейки state/overhung/{primary,secondary}/color-rest",
+    "why": "Код красит кольцо цветом текста кнопки (--awds-progress-color: var(--awds-obtn-color)), а это ячейка color-rest. Старая библиотека давала #8e8e8e, тема даёт surface-on = #737373 — значение в старой библиотеке устарело, и макет расходился и с темой, и с кодом.",
+    "before": 140,
+    "note": "Из 140 старых привязок 112 исчезли вместе с удалёнными вариантами loading=on, поэтому перепривязка шла после слияния осей, а не до. В секции старых привязок больше нет."
+  },
+  "raw_fills": {
+    "count": 0,
+    "note": "Сырых красок в секции нет: найденные белая заливка и чёрная обводка принадлежат рамке самой секции."
+  },
+  "foreign_cell": "У secondary 10 привязок читают state/button/primary/color — чужую группу. Код на неё не ссылается; записано как наблюдение, не исправлено.",
+  "fetched": "2026-09-15",
+  "_pass_2026_09_20": {
+    "date": "2026-09-20",
+    "method": "Три слоя отдельно: привязки переменных, явные моды коллекций (explicitVariableModes), мастера вложенных инстансов. Свап мастера НЕ виден ни в привязках, ни в instance.overrides — его ловит только сверка mainComponent.",
+    "correction": "Запись rebind от 15.09.2026 «в секции старых привязок больше нет» была верна ровно про привязки и создавала ложное впечатление чистоты. Мимо неё прошли 336 чужих частей и 508 мёртвых модов.",
+    "found": {
+      "foreign_parts": 336,
+      "foreign_parts_detail": "По 84 инстанса частей «. / center», «. / prefix», «/ text», «. / suffix» из старого файла — 7 размеров × 12 ячеек на каждую часть, оба набора.",
+      "dead_modes": 508,
+      "dead_modes_detail": {
+        "State": 168,
+        "Shadow": 168,
+        "Font-family": 84,
+        "Font-weight": 84,
+        "Controls": 2,
+        "Corners": 2
+      },
+      "secondary_disabled_opacity": "Выключенная secondary гасилась ячейкой opacity/overhung/secondary-rest (60%), код даёт opacity/control/disabled (40%)."
+    },
+    "fixed": {
+      "swap": "336 инстансов переведены на локальные части «. / prefix», «. / text», «. / suffix», «. / center» (наборы 8:4607, 8:4750, 8:4650, 8:4700 — страница 4 · elements, секция ↪ parts). Свойства перенесены механически: суффиксы id совпадают один в один, различались только имена (corner-notice → show-corner-notice, notice → show-notice, show-iс-a с кириллической «с» → show-ic-a). Сверка по 1486 узлам: габариты, видимость и тексты совпали, расхождений 0.",
+      "modes": "508 модов сняты. Проверка перед снятием формальная: коллекции, читаемые привязками в секции (Sys, rounded, state, shadow, size, control, font, opacity), не пересекаются ни с одной коллекцией снятых модов. Сверка «до/после» по 1486 узлам — заливка, обводка, габариты, радиус, кегль, прозрачность — расхождений 0.",
+      "secondary_disabled": "14 ячеек state=disabled набора secondary переведены на opacity/control/disabled по решению владельца: выключенная кнопка не может быть ярче выключенной primary. Прочитано обратно — 40%. Код не менялся, вид на проде прежний."
+    },
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0,
+      "raw_fills": 0,
+      "cells_per_set": 84
+    },
+    "not_a_defect": {
+      "sys_frame": "Sys/Bg и Sys/Border на самих COMPONENT_SET (8 привязок) — служебная рамка набора в макете. Стоят одинаково на всех 26 наборах страницы 2 · buttons, к компоненту отношения не имеют.",
+      "icon_library": "system-check-cute_regular (252 инстанса) — иконка подключённой библиотеки MGC, не часть."
+    },
+    "foreign_cell_closed": "Наблюдение 15.09.2026 «у secondary 10 привязок читают state/button/primary/color» больше не воспроизводится: замер по обоим наборам показал, что каждый читает только свою группу overhung/{primary,secondary}/*.",
+    "code_match": "CSS не менялся: гейт component-cell-drift — 102 якоря, расхождений нет; component-version — в порядке. Версия осталась 2.0.12."
+  }
 }
