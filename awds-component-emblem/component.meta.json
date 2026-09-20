@@ -1,0 +1,307 @@
+{
+  "component": "emblem",
+  "version": "3.0.5",
+  "contract_hash": "sha256:69c214570b3738cb0413d575c913e1f755c77dd5c211737b1f2487f850b03027",
+  "artifact_hash": "sha256:11a1ff8009406d99120ebfcce5f5d28bb754b4cd9810f1bc352220610835209f",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:18:20.403Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:40",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-40"
+  },
+  "variants": {
+    "initials": {
+      "node_id": "6:340",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-340",
+      "figma_label": "emblem / initials"
+    },
+    "img": {
+      "node_id": "6:361",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-361",
+      "figma_label": "emblem / img"
+    },
+    "placeholder": {
+      "node_id": "6:372",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-372",
+      "figma_label": "emblem / placeholder"
+    },
+    "icon": {
+      "node_id": "6:393",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-393",
+      "figma_label": "emblem / icon"
+    }
+  },
+  "shape": null,
+  "size_scale": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    400,
+    500,
+    600,
+    700
+  ],
+  "size_scale_note": "Шкала компонента — 10 ступеней, но вид icon живёт только на 150 · 100 · 50: других ячеек в макете нет, а ступень без своего значения токена не заводится. Ступени 150 и 250 — законное отклонение от канонного словаря size=, записано в props.md.",
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color"
+  ],
+  "css_files": [
+    "emblem.css"
+  ],
+  "base_class_note": "Базовый класс .emb, а не .emblem. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = emblem они дали бы --awds-emblem-* — имя, которое читается как отменённая прослойка компонентных токенов дизайн-системы, а не как приватная переменная одного компонента. Префикс --awds-emb- в теме не встречается ни разу (проверено по studio-vars.css), поэтому ни token-refs-check, ни возможный грепом-фильтр по чужим префиксам его не поймают. Плюс у эмблемы 10 ступеней × 4 вида: короткий корень экономит четыре символа в каждой из ~50 строк CSS. Тот же приём, что у button-overhung → .obtn, textarea → .txa, label → .lbl.",
+  "rounding_note": "Скругление берётся из ячейки border-radius/full (var(--awds-rounded-border-radius-full)), а не из хардкода 50%, как было у avatar. Прежнее объяснение хардкода («в теме Rounded=None стало бы квадратом») фактически неверно: ячейка отдаёт 600px во всех трёх темах — full-none, full-smooth, full-rounded. Макет привязывает эту же ячейку во всех четырёх наборах.",
+  "rename_note": "До 3.0.0 компонент назывался avatar, базовый класс .avatar, файлы references/avatar*.{css,md}. Переименование — решение Р1 владельца ДС от 01.09.2026: имя сущности берётся у неё, а не у первого потребителя (правило 3 props.md). Круг понадобился флагу языка и пиктограмме, и слово avatar перестало описывать вещь; в Figma сущность уже называлась emblem.",
+  "preview": {
+    "base_class": "emb",
+    "default_size": 400,
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": [
+      700,
+      600,
+      500,
+      400,
+      300,
+      250,
+      200,
+      150,
+      100,
+      50
+    ],
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Содержимое",
+        "options": [
+          "initials",
+          "placeholder",
+          "img",
+          "icon"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Инициалы",
+        "html": "<span class=\"emb emb-initials emb--400\">АК</span>"
+      },
+      {
+        "label": "Placeholder",
+        "html": "<span class=\"emb emb-placeholder emb--400\"><svg>…user…</svg></span>"
+      },
+      {
+        "label": "Фото",
+        "html": "<span class=\"emb emb-img emb--400\"><img src=\"…\" alt=\"…\"></span>"
+      },
+      {
+        "label": "Иконка",
+        "html": "<span class=\"emb emb-icon emb--150\"><svg>…flag…</svg></span>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--awds-control-font-size-600",
+    "--awds-control-font-size-700",
+    "--awds-control-font-size-850",
+    "--awds-control-font-size-900",
+    "--awds-control-font-size-950",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-letter-spacing-700",
+    "--awds-control-letter-spacing-850",
+    "--awds-control-letter-spacing-900",
+    "--awds-control-letter-spacing-950",
+    "--awds-control-line-height-600",
+    "--awds-control-line-height-700",
+    "--awds-control-line-height-850",
+    "--awds-control-line-height-900",
+    "--awds-control-line-height-950",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold",
+    "--awds-opacity-60",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-10",
+    "--awds-space-11",
+    "--awds-space-12",
+    "--awds-space-14",
+    "--awds-space-16",
+    "--awds-space-20",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-7",
+    "--awds-space-8",
+    "--awds-space-9",
+    "--primary-container-chroma",
+    "--primary-container-core",
+    "--primary-container-on",
+    "--primary-container-on-lowest",
+    "--surface-bright"
+  ],
+  "last_synced": "2026-09-15T13:50:00Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:530bd6d3ea711f8e38c69e0db5ffaaf8a8b44bed363970178268a703ef8ac888",
+  "markup": {
+    "root": {
+      "class": "emb",
+      "tags": [
+        "span",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "emb-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "emb--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Вид задаёт содержимое (инициалы / силуэт / фото / произвольная иконка), размер — диаметр: без обоих классов остаётся бесформенный span. У emb-icon допустимы только ступени 150 · 100 · 50; содержимое — квадратный svg или img первым потомком."
+  },
+  "questions": [
+    {
+      "id": "state-groups-missing-for-seven",
+      "text": "У семи компонентов нет группы State в студии — 53 инлайна ролей (product-card 25, slider 9, emblem 8, price 4, tooltip 4, content-area 2, heading 1). Заводить группы в студии или узаконить инлайн ролей записью в own_values?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217960855817768",
+      "raised_at": "2026-08-25",
+      "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25. 01.09.2026 компонент avatar переименован в emblem, число инлайнов у него выросло до 9 (добавился surface-bright у вида icon)",
+      "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
+      "answered_at": "2026-09-15"
+    },
+    {
+      "id": "emblem-icon-content-color",
+      "text": "У вида emblem / icon цвет содержимого в макете не привязан: по умолчанию там цветной флаг со своими заливками. Для монохромной MGC-иконки на подложке surface-bright роли нет — наследовать primary-container-on от базы (как сейчас), взять surface-on, или завести ячейку?",
+      "level": "token",
+      "target": "Roles",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1218050740657898",
+      "raised_at": "2026-09-01",
+      "evidence": "get_variable_defs по 2313:44 / 2313:48 / 2313:52 отдаёт только role/surface/bright, border-radius/full и space/6-8; цветовых привязок содержимого нет. flag/White и flag/Light Gray приходят из самой иконки-инстанса, а не из набора",
+      "answer": null
+    }
+  ],
+  "family": "elements",
+  "summary": "Круг с содержимым: инициалы, фото, силуэт-заглушка или произвольная иконка",
+  "aliases": [
+    "эмблема",
+    "аватар",
+    "аватарка",
+    "юзерпик",
+    "фото профиля",
+    "портрет",
+    "круглая иконка",
+    "флаг в круге"
+  ],
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "cc664a0",
+    "pushed_at": "2026-08-26T10:28:44.000Z",
+    "github_urls": {
+      "initials": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-initials.md",
+      "placeholder": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-placeholder.md",
+      "picture": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-picture.md"
+    },
+    "dev_resources_status": {
+      "initials": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2001:82",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+      },
+      "placeholder": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2001:102",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+      },
+      "picture": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "2001:122",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+      }
+    }
+  },
+  "asana": {
+    "task_gid": "1218421650241050",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421650241050",
+    "task_name": "💠 emblem",
+    "parent_task": "💠 4 · elements",
+    "primary": true
+  },
+  "contract": {
+    "classes": [
+      "emb",
+      "emb--100",
+      "emb--150",
+      "emb--200",
+      "emb--250",
+      "emb--300",
+      "emb--400",
+      "emb--50",
+      "emb--500",
+      "emb--600",
+      "emb--700",
+      "emb-icon",
+      "emb-img",
+      "emb-initials",
+      "emb-placeholder"
+    ],
+    "attributes": [],
+    "elements": [
+      "img",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "icon",
+      "img",
+      "initials",
+      "placeholder"
+    ],
+    "sizes": [
+      "100",
+      "150",
+      "200",
+      "250",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600",
+      "700"
+    ],
+    "states": [
+      "rest"
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "fetched": "2026-09-14",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": "↪ emblem (5:40)",
+  "_structure_note": "Переезд из старого файла «💠 Comp ↪ ¹ Elemets» (UCYhMA1JeNUNuVGsxUEne7), где четыре вида лежали отдельными фреймами прямо на странице 0:1 (initials 2001:81, img 2272:3181, placeholder 2272:3252, icon 2314:50). Теперь это четыре набора внутри одной секции, имена приведены к канону `emblem / вид`. Состав ступеней не менялся.",
+  "sets": {
+    "initials": {
+      "id": "6:340",
+      "cells": 10,
+      "props": "size (VARIANT) + content (TEXT, по умолчанию «АК»)"
+    },
+    "img": {
+      "id": "6:361",
+      "cells": 10,
+      "props": "size (VARIANT)"
+    },
+    "placeholder": {
+      "id": "6:372",
+      "cells": 10,
+      "props": "size (VARIANT)"
+    },
+    "icon": {
+      "id": "6:393",
+      "cells": 3,
+      "props": "size (VARIANT) + content (INSTANCE_SWAP)"
+    }
+  },
+  "axes": {
+    "size_portrait": [
+      "700",
+      "600",
+      "500",
+      "400",
+      "300",
+      "250",
+      "200",
+      "150",
+      "100",
+      "50"
+    ],
+    "size_icon": [
+      "150",
+      "100",
+      "50"
+    ],
+    "_note": "У icon ступеней только три — он компактный круг под пиктограмму, крупных размеров у него нет. Это не пропуск в макете."
+  },
+  "variant_node_ids": {
+    "initials": {
+      "50": "6:359",
+      "100": "6:357",
+      "150": "6:355",
+      "200": "6:353",
+      "250": "6:351",
+      "300": "6:349",
+      "400": "6:347",
+      "500": "6:345",
+      "600": "6:343",
+      "700": "6:341"
+    },
+    "img": {
+      "50": "6:371",
+      "100": "6:370",
+      "150": "6:369",
+      "200": "6:368",
+      "250": "6:367",
+      "300": "6:366",
+      "400": "6:365",
+      "500": "6:364",
+      "600": "6:363",
+      "700": "6:362"
+    },
+    "placeholder": {
+      "50": "6:391",
+      "100": "6:389",
+      "150": "6:387",
+      "200": "6:385",
+      "250": "6:383",
+      "300": "6:381",
+      "400": "6:379",
+      "500": "6:377",
+      "600": "6:375",
+      "700": "6:373"
+    },
+    "icon": {
+      "50": "6:398",
+      "100": "6:396",
+      "150": "6:394"
+    }
+  },
+  "colors": {
+    "_audit": "Сырых заливок у самого компонента ноль. Пятнадцать найденных сырых цветов лежат ВНУТРИ слота content у icon — это дефолтная иконка `ic20-FlagAsiaUAEAE-color`, цветной флаг ОАЭ (#12833b, #ff323e, #262626 и две привязанные ячейки flag/White, flag/Light Gray). Цвета флага и есть сама иконка: перекрасить их в роль значит перестать быть флагом. Не находка аудита хардкода — тот же принцип, что у частей-геометрий.",
+    "portrait_bg": "primary/container-core (#fbf9ef)",
+    "portrait_chroma": "primary/container-chroma — левый край градиента",
+    "portrait_ring": "primary/container-on-lowest (#e3daa7)",
+    "portrait_content": "primary/container-on (#a78f2e)",
+    "placeholder_dim": "opacity/content/placeholder = 60",
+    "icon_bg": "surface/bright (#ffffff), кольца нет",
+    "rounded": "border-radius/full — даёт 600px во всех трёх темах Rounded, круг остаётся кругом"
+  },
+  "size_map": {
+    "50": {
+      "px": 24,
+      "token": "space-6",
+      "type": "control-600",
+      "icon_px": 16
+    },
+    "100": {
+      "px": 28,
+      "token": "space-7",
+      "type": "control-600",
+      "icon_px": 20
+    },
+    "150": {
+      "px": 32,
+      "token": "space-8",
+      "type": "control-600",
+      "icon_px": 24
+    },
+    "200": {
+      "px": 36,
+      "token": "space-9",
+      "type": "control-600"
+    },
+    "250": {
+      "px": 40,
+      "token": "space-10",
+      "type": "control-600"
+    },
+    "300": {
+      "px": 44,
+      "token": "space-11",
+      "type": "control-700"
+    },
+    "400": {
+      "px": 48,
+      "token": "space-12",
+      "type": "control-850"
+    },
+    "500": {
+      "px": 56,
+      "token": "space-14",
+      "type": "control-850"
+    },
+    "600": {
+      "px": 64,
+      "token": "space-16",
+      "type": "control-900"
+    },
+    "700": {
+      "px": 80,
+      "token": "space-20",
+      "type": "control-950"
+    },
+    "_note": "Своего shape-слоя emblem в DS нет, диаметры ссылаются на базовую шкалу Space напрямую. Все ступени точные, подмены нет."
+  },
+  "code_mapping": {
+    "sets": "emblem / initials → .emb-initials, / img → .emb-img, / placeholder → .emb-placeholder, / icon → .emb-icon",
+    "size": "size=N → .emb--N",
+    "content": "TEXT у initials — сами инициалы; INSTANCE_SWAP у icon — подставляемая пиктограмма (флаг, значок)"
+  },
+  "non_token_decisions": {
+    "three-plus-one": "три портретных вида делят один цветовой набор primary-container-* и различаются только содержимым; icon стоит особняком — светлая подложка, нет кольца, три ступени",
+    "no-states": "состояний нет, эмблема статична"
+  },
+  "observations": {
+    "flag-icons-partly-tokenized": "У иконки флага часть цветов привязана к коллекции `flag` (White, Light Gray), часть сырая. Это устройство иконочной библиотеки MGC, а не долг emblem."
+  },
+  "_layer_binding": "15.09.2026 перепроверено: секция привязана полностью — 40 обводок на emblem/border, 20 заливок на emblem/bg, 20 на emblem/chroma, 20 стопов градиента (стоп0 → chroma, стоп1 → bg), 20 текстов на emblem/color, 6 подложек вида icon на emblem/icon/bg, 10 силуэтов на opacity/content/placeholder, шрифты на font/family/system и font/weight/semibold, габариты на space/*, типографика на control/*. Сырых красок в секции две, обе на рамке самой секции (декорация страницы). Рамки четырёх наборов стоят на Sys (Bg, Border) — статус документации, не токены.",
+  "_icon_ring": "У набора emblem / icon обводки нет вовсе: strokes всех трёх ячеек пусты, тогда как у трёх портретных видов 40 обводок стоят на emblem/border. В коде до 15.09.2026 кольцо гасилось цветом transparent в аккумуляторе; теперь снимается правилом .emb-icon::after { box-shadow: none }. Проверить снимком стилей нельзя: кольцо живёт на псевдоэлементе, а снимок обходит только элементы.",
+  "_token_resolution": "Компонент читает роли и базовые шкалы, ячейки слоя State в CSS не упоминаются. Соответствие записано якорями #cell в самих строках; целей семь — emblem/bg, emblem/chroma, emblem/border, emblem/color, emblem/icon/bg, emblem/icon/chroma, opacity/content/placeholder."
+}
