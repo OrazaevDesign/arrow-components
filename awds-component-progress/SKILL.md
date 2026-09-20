@@ -1,6 +1,6 @@
 ---
 name: awds-component-progress
-description: Индикаторы загрузки Progress ArrowDS — линейная полоса и кольцо, determinate (доля известна) и indeterminate (доля неизвестна). Для загрузки файла, ожидания ответа, ползущего прогресса в карточке. Значение приходит числом 0…100 одной переменной. Токены ArrowDS, работает и по Figma-ссылке.
+description: Progress ArrowDS (.progress).
 ---
 
 # Progress — индикаторы загрузки
@@ -14,7 +14,7 @@ description: Индикаторы загрузки Progress ArrowDS — лине
 - [references/preview.html](references/preview.html) — storybook: обе оси, тёмный островок
 
 Механика взята из [Material Web · progress](https://github.com/material-components/material-web/blob/main/docs/components/progress.md),
-геометрия — из [макета](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3033).
+геометрия — из [макета](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-34).
 
 ## Главное про контракт
 
@@ -50,8 +50,11 @@ description: Индикаторы загрузки Progress ArrowDS — лине
 
 Геометрия целиком легла на шкалу Space — ни одного собственного числа:
 `space-3` область, `space-1` полоса и точка, `space-1-5` зазор, `space-0-5` толщина дуги,
-`space-12` диаметр. Радиус — `--awds-rounded-border-radius-full`. Цвет — роль
-`rgb(var(--surface-on))`, трек и точка под `--awds-opacity-opacity-20`.
+`space-12` диаметр. Радиус — `--awds-rounded-border-radius-full`. Цвет компонент
+не решает: `--awds-progress-color` принимает готовый цвет, по умолчанию
+`rgb(var(--primary-core))` — на простой поверхности индикатор брендовый, а место
+со своим тоном переопределяет переменную (так уже делают шесть блоков-слайдеров).
+Трек и точка — тот же цвет под `--awds-opacity-20`.
 
 Свои значения (в `own_values` меты): `1.4s` — длительность цикла indeterminate
 (коллекции движения в студии нет; значение согласовано со спиннером кнопки) и `30%` —
@@ -71,5 +74,6 @@ description: Индикаторы загрузки Progress ArrowDS — лине
 ## Где применять
 
 Ожидание с известной долей — загрузка файла, импорт, шаг мастера. Ожидание без доли —
-запрос к серверу, пересчёт. **Внутри кнопки не нужен:** у кнопки свой спиннер
-(`.btn__progress` при `.btn--loading`).
+запрос к серверу, пересчёт. **Внутри кнопки — тоже он:** `.btn--loading` вкладывает
+`progress--indeterminate` в свой слот `.btn__progress`, размер приходит через
+`--awds-progress-size`. Своего спиннера у кнопки больше нет.

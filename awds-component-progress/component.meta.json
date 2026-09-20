@@ -1,11 +1,17 @@
 {
   "component": "progress",
-  "version": "1.0.8",
-  "contract_hash": "sha256:90556a8a4630ff19bd95f84c065af9170ac08c0a0eaaf788842d41aed8656874",
-  "artifact_hash": "sha256:31054a12129014c5d394d23e21ccd16cd21d7f3772ed30e9a87b7781d1914e2f",
+  "version": "2.0.2",
+  "contract_hash": "sha256:0771c062e92cb622f2ee25ba0ea8399bbf4bdc3978ce7d1faa4fb98dedb7f838",
+  "artifact_hash": "sha256:cf3abd2f37ff059c0b18fb0c28f8b6749cf48412404e183cc328f6a89731d1ee",
   "visual_change": true,
-  "released_at": "2026-08-27T09:30:12.736Z",
+  "released_at": "2026-09-15T11:17:50.886Z",
   "own_values": [
+    {
+      "value": "0.3s",
+      "where": "transition",
+      "count": 3,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
     {
       "value": "2s",
       "where": "--awds-progress-duration",
@@ -20,27 +26,27 @@
     }
   ],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:3033",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3033"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:34",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-34"
   },
   "variants": {
     "linear": {
-      "node_id": "2093:3060",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3060",
-      "figma_label": "Type=Linear, Variant=Determinate, Progress=50"
+      "node_id": "6:443",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-443",
+      "figma_label": "progress / linear"
     },
     "circular": {
-      "node_id": "2093:3126",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3126",
-      "figma_label": "Type=Circular, Variant=Determinate, Progress=50"
+      "node_id": "6:516",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-516",
+      "figma_label": "progress / circular"
     }
   },
   "shape": null,
   "size_scale": null,
   "states": [
-    "determinate",
+    "rest",
     "indeterminate"
   ],
   "color_tokens": [
@@ -51,7 +57,7 @@
     "base_class": "progress",
     "default_size": null,
     "matrix_states": [
-      "determinate",
+      "rest",
       "indeterminate"
     ],
     "matrix_sizes": [],
@@ -128,16 +134,16 @@
     "note": "Шкалы размеров нет: в макете один размер, ступеней Size у прогресса в теме тоже нет. Класс варианта обязателен — .progress сам по себе только объявляет переменные. role=progressbar и aria-label обязательны всегда; aria-valuenow только у determinate: у indeterminate доля неизвестна, и атрибут со значением обещал бы обратное. Значение приходит числом 0…100 в --awds-progress-value, потому что круговому варианту оно нужно для stroke-dasharray с pathLength=100."
   },
   "ds_token_dependencies": [
-    "--surface-on",
-    "--awds-space-space-0-5",
-    "--awds-space-space-1",
-    "--awds-space-space-1-5",
-    "--awds-space-space-3",
-    "--awds-space-space-12",
+    "--awds-opacity-20",
     "--awds-rounded-border-radius-full",
-    "--awds-opacity-opacity-20"
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-12",
+    "--awds-space-3",
+    "--primary-core"
   ],
-  "last_synced": "2026-08-26T16:20:00Z",
+  "last_synced": "2026-08-29T00:00:00Z",
   "last_synced_by": "claude",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
@@ -154,20 +160,30 @@
     }
   },
   "asana": {
-    "task_gid": "1209711474813789",
-    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1209711474813789",
-    "task_name": "💠 Progress Indicators",
-    "primary": true,
-    "note": "linear + circular, каждый determinate / indeterminate; значение числом 0…100 в --awds-progress-value"
+    "task_gid": "1218433190743989",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190743989",
+    "task_name": "💠 progress",
+    "parent_task": "💠 4 · elements",
+    "primary": true
   },
+  "family": "elements",
+  "summary": "Индикатор загрузки: линейная полоса и кольцо, determinate и indeterminate",
+  "aliases": [
+    "прогресс",
+    "загрузка",
+    "индикатор загрузки",
+    "полоса загрузки",
+    "прогресс-бар",
+    "спиннер"
+  ],
+  "uses": {},
   "contract": {
     "classes": [
       "progress",
+      "progress--indeterminate",
       "progress-circular",
-      "progress-circular--indeterminate",
       "progress-circular__arc",
       "progress-linear",
-      "progress-linear--indeterminate",
       "progress-linear__active",
       "progress-linear__stop",
       "progress-linear__track"
@@ -181,8 +197,8 @@
     ],
     "sizes": [],
     "states": [
-      "determinate",
-      "indeterminate"
+      "indeterminate",
+      "rest"
     ]
   }
 }

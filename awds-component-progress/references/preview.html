@@ -15,20 +15,20 @@
   <style>
     body {
       margin: 0;
-      padding: var(--awds-space-space-8);
+      padding: var(--awds-space-8);
       background: rgb(var(--surface-bright));
       color: rgb(var(--surface-on-highest));
       font-family: var(--awds-font-family-system);
       display: grid;
-      gap: var(--awds-space-space-8);
+      gap: var(--awds-space-8);
     }
     h1 { font-size: 20px; margin: 0; }
-    h2 { font-size: 14px; margin: 0 0 var(--awds-space-space-3); opacity: .6; font-weight: 400; }
-    .row { display: grid; gap: var(--awds-space-space-4); max-width: 404px; }
-    .row--circles { display: flex; gap: var(--awds-space-space-6); max-width: none; align-items: center; }
-    .cell { display: grid; gap: var(--awds-space-space-1); }
+    h2 { font-size: 14px; margin: 0 0 var(--awds-space-3); opacity: .6; font-weight: 400; }
+    .row { display: grid; gap: var(--awds-space-4); max-width: 404px; }
+    .row--circles { display: flex; gap: var(--awds-space-6); max-width: none; align-items: center; }
+    .cell { display: grid; gap: var(--awds-space-1); }
     .cell__label { font-size: 12px; opacity: .5; font-variant-numeric: tabular-nums; }
-    .dark { padding: var(--awds-space-space-6); border-radius: var(--awds-rounded-border-radius-400); }
+    .dark { padding: var(--awds-space-6); border-radius: var(--awds-rounded-border-radius-400); }
   </style>
 </head>
 <body>
@@ -42,7 +42,7 @@
   <section>
     <h2>Linear · indeterminate</h2>
     <div class="row">
-      <div class="progress progress-linear progress-linear--indeterminate"
+      <div class="progress progress-linear progress--indeterminate"
            role="progressbar" aria-label="Загрузка">
         <span class="progress-linear__active"></span>
         <span class="progress-linear__track"></span>
@@ -58,7 +58,7 @@
   <section>
     <h2>Circular · indeterminate</h2>
     <div class="row row--circles">
-      <svg class="progress progress-circular progress-circular--indeterminate" viewBox="0 0 48 48"
+      <svg class="progress progress-circular progress--indeterminate" viewBox="0 0 48 48"
            role="progressbar" aria-label="Загрузка">
         <circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/>
       </svg>
@@ -74,7 +74,7 @@
         <span class="progress-linear__track"><span class="progress-linear__stop"></span></span>
       </div>
     </div>
-    <div class="row row--circles" style="margin-top: var(--awds-space-space-4)">
+    <div class="row row--circles" style="margin-top: var(--awds-space-4)">
       <svg class="progress progress-circular" viewBox="0 0 48 48" style="--awds-progress-value: 50"
            role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Загрузка">
         <circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/>

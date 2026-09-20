@@ -1,14 +1,16 @@
 # Progress / Linear
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:3060](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3060)
+**Figma:** [progress / linear → node 6:443](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-443) — секция `↪ progress` (5:34)
 **Механика:** [Material Web · progress](https://github.com/material-components/material-web/blob/main/docs/components/progress.md)
 
 Полоса загрузки. Показывает долю выполненного (`determinate`) или сам факт работы,
 когда доля неизвестна (`indeterminate`).
 
 Всё на токенах: геометрия — шкала Space (`space-3` область, `space-1` полоса,
-`space-1-5` зазор), радиус — `--awds-rounded-border-radius-full`, цвет — роль
-`rgb(var(--surface-on))`, трек — та же роль под `--awds-opacity-opacity-20`.
+`space-1-5` зазор), радиус — `--awds-rounded-border-radius-full`. Цвет задаёт
+место: `--awds-progress-color` принимает готовый цвет, по умолчанию
+`rgb(var(--primary-core))`; трек — тот же цвет под `--awds-opacity-20` через
+`color-mix`.
 
 ---
 
@@ -37,7 +39,7 @@
 ### Indeterminate — доля неизвестна
 
 ```html
-<div class="progress progress-linear progress-linear--indeterminate"
+<div class="progress progress-linear progress--indeterminate"
      role="progressbar" aria-label="Загрузка">
   <span class="progress-linear__active"></span>
   <span class="progress-linear__track"></span>

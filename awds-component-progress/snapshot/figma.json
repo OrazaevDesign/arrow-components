@@ -1,48 +1,74 @@
 {
-  "fetched": "2026-08-26",
-  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-  "component_set": "2093:3033",
-  "axes": {
-    "Type": ["Linear", "Circular"],
-    "Variant": ["Determinate", "Indeterminate"],
-    "Progress": ["0", "10", "30", "50", "80", "100"]
-  },
-  "cells": 18,
-  "variable_defs": {
-    "2093:3060 (Linear Determinate 50)": { "role/surface/on": "#8e8e8e", "opacity/20": "20" },
-    "2093:3126 (Circular Determinate 50)": { "role/surface/on": "#8e8e8e" }
-  },
-  "geometry": {
+  "fetched": "2026-09-14",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": "↪ progress (5:34)",
+  "_structure_note": "Структура изменилась против старого файла. Было: ОДИН набор с осями Type[Linear|Circular] × Variant[Determinate|Indeterminate] × Progress[0…100], 18 ячеек. Стало: ДВА набора с единственной осью progress, куда indeterminate вошёл седьмым значением — 14 ячеек. То есть indeterminate больше не отдельная ось, а значение прогресса.",
+  "sets": {
     "linear": {
-      "container": "404×12",
-      "bar_stroke_width": 4,
-      "bar_linecap": "round",
-      "active_padding": { "left": 2, "right": 6 },
-      "track": { "height": 4, "radius": 8, "opacity": 0.2 },
-      "stop_dot": { "size": 4, "radius": 26 },
-      "segments": "Segment-start 40px · Segment flex · Segment-end 40px — все три прямая линия stroke-width 4, слои названы wave-increment (заготовка M3 под волну, амплитуда 0)"
+      "id": "6:443",
+      "size": "402x12"
     },
     "circular": {
-      "box": "48×48",
-      "arc_stroke_width": 2,
-      "arc_linecap": "round",
-      "track": "в макете отсутствует — нарисована только активная дуга"
+      "id": "6:516",
+      "size": "48x48"
     }
   },
-  "resolved": {
-    "role/surface/on": "rgb(var(--surface-on))",
-    "opacity/20": "var(--awds-opacity-opacity-20)",
-    "12px": "var(--awds-space-space-3)",
-    "6px": "var(--awds-space-space-1-5)",
-    "4px": "var(--awds-space-space-1)",
-    "2px": "var(--awds-space-space-0-5)",
-    "48px": "var(--awds-space-space-12)",
-    "radius pill": "var(--awds-rounded-border-radius-full)"
+  "axes": {
+    "progress": [
+      "0",
+      "10",
+      "30",
+      "50",
+      "80",
+      "100",
+      "indeterminate"
+    ]
   },
-  "notes": [
-    "Своей группы State у прогресса в теме нет — цвет инлайнится ролью.",
-    "Своего shape-семейства в Size нет; ближайшее (size-range) содержит только handle, трека там не выражено. Геометрия взята с базовой шкалы Space, все значения совпали точно.",
-    "Ось Progress в CSS не выражается классами: это значение --awds-progress-value (число 0…100)."
+  "variant_node_ids": {
+    "linear": {
+      "0": "6:444",
+      "10": "6:450",
+      "30": "6:459",
+      "50": "6:470",
+      "80": "6:483",
+      "100": "6:496",
+      "indeterminate": "6:504"
+    },
+    "circular": {
+      "0": "6:517",
+      "10": "6:518",
+      "30": "6:520",
+      "50": "6:522",
+      "80": "6:524",
+      "100": "6:526",
+      "indeterminate": "6:528"
+    }
+  },
+  "layers": {
+    "linear": "progress-linear.css — .progress-linear__track / __active / __stop; модификатор .progress--indeterminate на корне, правило варианта — составной селектор .progress-linear.progress--indeterminate",
+    "circular": "progress-circular.css — .progress-circular__arc; модификатор .progress--indeterminate на корне, правило варианта — составной селектор .progress-circular.progress--indeterminate"
+  },
+  "colors": {
+    "_rule": "Цвет НЕ привязан намеренно: компонент окрашивается тем местом, где стоит. Решение владельца 14.09.2026. Сырой 0,0,0 в этих наборах — не находка аудита хардкода.",
+    "bound": "opacity/20 — прозрачность трека у linear (на ступени 100 трека нет, потому и привязки нет)",
+    "raw_by_design": "Stop shape, track, wave-increment (linear) · Active indicator (circular)",
+    "_audit": "Содержимое: сырых заливок 12, сырых обводок 21, привязанных цветов ноль. Единственная привязка содержимого — opacity/20 (7 вхождений). Контейнеры наборов: 2 сырые заливки и 2 сырые обводки, привязка к чужой библиотеке Sys снята 14.09.2026."
+  },
+  "code_mapping": {
+    "linear": "progress-linear.css — .progress-linear__track / __active / __stop",
+    "circular": "progress-circular.css — .progress-circular__arc",
+    "_axis_note": "Ось Figma `progress` в коде разложена на два механизма: число едет значением (--awds-progress-value), а indeterminate — классом-модификатором. Одной оси в CSS не соответствует.",
+    "progress=indeterminate": "модификатор .progress--indeterminate НА КОРНЕ (с 14.09.2026; было .progress-circular--indeterminate и .progress-linear--indeterminate). Правила варианта остались привязанными к варианту составным селектором .progress-circular.progress--indeterminate — иначе круговая анимация досталась бы линейному."
+  },
+  "non_token_decisions": {
+    "durations": "0.3s переход, 2s период линейного indeterminate, 1.4s период кольца — коллекции движения в студии нет, записаны в own_values",
+    "spin-period": "вращение и протяжка дуги идут ОДНИМ периодом, иначе раскрытие дуги каждый оборот приходится в новую точку",
+    "set-containers": "Оформление контейнеров наборов — литералы. Канва Figma, не дизайн-система; ролями по решению владельца 14.09.2026 не заменяется."
+  },
+  "debts": [
+    "Ось `progress` смешивает числовые значения (0…100) и режим `indeterminate`. В коде число — не класс, а переменная доли, а indeterminate — модификатор: одна ось макета выражена двумя механизмами. Так же устроен rating (ось data-value), и там это признано верным: макет рисует шкалу, а не варианты."
   ],
-  "reference": "https://github.com/material-components/material-web/blob/main/docs/components/progress.md"
+  "_layer_binding": "15.09.2026 секция приведена к коду: 33 краски привязаны к ячейке progress/color, у семи слоёв трека (track ×5, Track shape ×2) непрозрачность привязана к opacity/20 — как в CSS (.progress-linear__track). ДО ЭТОГО СЕКЦИЯ БЫЛА ЧЁРНОЙ: все 33 краски #000000 без единой привязки, имена слоёв материаловские (Stop shape, wave-increment, Active indicator, Track shape) — вставка из чужого кита. Оси и наборы при этом совпадали с кодом, поэтому переписывались только цвета. Сырыми остались 4 краски рамок наборов (#fcfaff / #8638e5 — материаловский фиолетовый): это оформление секции, не компонент."
 }

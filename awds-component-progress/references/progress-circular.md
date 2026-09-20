@@ -1,12 +1,13 @@
 # Progress / Circular
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:3126](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3126)
+**Figma:** [progress / circular → node 6:516](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-516) — секция `↪ progress` (5:34)
 **Механика:** [Material Web · progress](https://github.com/material-components/material-web/blob/main/docs/components/progress.md)
 
 Кольцевой индикатор для мест, где полосе негде лечь: кнопка, иконка, карточка.
 
 Геометрия из макета: диаметр `space-12` (48px), толщина дуги `space-0-5` (2px),
-концы круглые. Цвет — роль `rgb(var(--surface-on))`.
+концы круглые. Цвет задаёт место: `--awds-progress-color` принимает готовый цвет,
+по умолчанию `rgb(var(--primary-core))`.
 
 ---
 
@@ -31,7 +32,7 @@
 ### Indeterminate
 
 ```html
-<svg class="progress progress-circular progress-circular--indeterminate" viewBox="0 0 48 48"
+<svg class="progress progress-circular progress--indeterminate" viewBox="0 0 48 48"
      role="progressbar" aria-label="Загрузка">
   <circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/>
 </svg>
@@ -57,9 +58,20 @@ determinate, а у indeterminate значения нет вовсе — пере
 
 ### В кнопке
 
-У кнопки есть свой спиннер (`.btn__progress` при `.btn--loading`) — там он и
-остаётся. Кольцо отсюда нужно, когда индикатор живёт **сам по себе**: в карточке,
-в пустом состоянии, рядом со статусом.
+Кнопка в состоянии `.btn--loading` показывает **это самое кольцо**, а не своё:
+классы вешаются на тот же `<svg>`, а `.btn .btn__progress` задаёт ему размер и
+цвет через `--awds-progress-size` / `--awds-progress-color`.
+
+```html
+<svg class="btn__progress progress progress-circular progress--indeterminate"
+     viewBox="0 0 24 24" aria-hidden="true">
+  <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
+</svg>
+```
+
+До 29.08.2026 у кнопки был свой спиннер — вращение дуги постоянной длины, то есть
+ровно то, что здесь объявлено нечитаемым («зависло»). Хуже была не дублированность,
+а то, что худший из двух индикаторов показывался пользователю чаще.
 
 ---
 
@@ -68,8 +80,9 @@ determinate, а у indeterminate значения нет вовсе — пере
 - **Трека.** В макете нарисована только активная дуга — фонового кольца нет.
   Дорисовать «для симметрии с линейным» значило бы придумать за макет; появится в
   Figma — приедет при refresh.
-- **Шкалы размеров.** Один диаметр, 48px. Переопределяется переменной, но ступеней
-  Size у прогресса в теме нет.
+- **Шкалы размеров.** Один диаметр, 48px (`--awds-progress-size`, по умолчанию
+  `--awds-space-12`). Переопределяется снаружи — так его берёт кнопка, — но
+  ступеней Size у прогресса в теме нет, и заводить их за макет мы не будем.
 - **`four-color`-режима** из Material (циклическая смена четырёх цветов в
   indeterminate). В макете одна роль.
 
