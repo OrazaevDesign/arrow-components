@@ -158,9 +158,9 @@
       const invalid = opts.invalid ? ' aria-invalid="true"' : '';
       if (kind === 'uploader') {
         return '<div class="upl">' +
-          `<label class="upl__label"><input class="upl__input" type="file" id="${id}" multiple${dis}${descr}>` +
+          `<label class="upl__drop"><input class="upl__input" type="file" id="${id}" multiple${dis}${descr}>` +
           '<span class="input input-default">' +
-          '<input class="input__field" type="text" placeholder="Выберите файл" readonly tabindex="-1">' +
+          '<span class="upl__prompt">Выберите файл или перетащите его сюда</span>' +
           `<span class="input__suffix" aria-hidden="true">${IC_UPLOAD}</span></span></label>` +
           `<ul class="upl__list">${uploaderFile(0)}${uploaderFile(1)}${uploaderFile(2)}</ul>` +
           '</div>';

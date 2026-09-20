@@ -1,11 +1,14 @@
 {
-  "_note": "Сырые ответы Figma MCP, как пришли. Ось одна — Size 300/400/500, три ячейки. Осей Type и State у компонента НЕТ: тип определяется составом (есть пояснение или нет, показана ошибка или нет), состояния живут внутри вложенного контрола. Снято: get_metadata по всем трём ячейкам (оттуда состав, высоты частей и зазоры), variable_defs по всем трём (оттуда типографика пояснения и роли), get_design_context по ◆ / Description (структура: только текст, без иконки) и get_metadata по ◆ / Error (та же структура). Внутри ячеек лежат ИНСТАНСЫ уже реализованных компонентов: Label (awds-component-label) и Input / Default (awds-component-input).",
+  "_note": "Снимок секции ↪ formfield на 17.09.2026 — заход прохода plans/2026-09-14, последний крупный должник по ячейкам (77 ссылок). Прежний снимок читал старый файл Forms; блоки metadata и variable_defs ниже оставлены как были до перечитки.",
   "metadata": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
     "file_name": "💠 Comp ↪ ⁵ Forms",
     "node_id": "395:77494",
     "name": "Formfiled / Input",
-    "frame": { "width": 383, "height": 452 },
+    "frame": {
+      "width": 383,
+      "height": 452
+    },
     "cells": {
       "Size=500": "395:77495",
       "Size=400": "395:77500",
@@ -104,5 +107,69 @@
       "rectangle/300/padding": "8",
       "rectangle/300/rounded": "6"
     }
-  }
+  },
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "3 · forms",
+  "primary_node_id": "71:21455",
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=71-21455",
+  "sets_17_09": {
+    "formfield / input": {
+      "id": "71:23715",
+      "axes": "size=500|400|300 + show-label · show-description · show-error + три слота свопа"
+    },
+    "formfield / select": {
+      "id": "71:23731",
+      "axes": "то же"
+    },
+    "formfield / textarea": {
+      "id": "71:23747",
+      "axes": "то же"
+    },
+    "formfield / fileuploader": {
+      "id": "71:23763",
+      "axes": "size + три булевых; ось type=fileuploader СНЯТА 17.09.2026 — одно значение, дублировавшее имя набора"
+    },
+    "formfield-combi / input": {
+      "id": "71:23779",
+      "axes": "size + show-description · show-error — show-label нет: метка живёт внутри контрола"
+    },
+    "formfield-combi / select": {
+      "id": "71:23792",
+      "axes": "то же"
+    },
+    "formfield-combi / textarea": {
+      "id": "71:23805",
+      "axes": "то же"
+    },
+    "formfield / square": {
+      "id": "71:23818",
+      "axes": "size + три булевых; контрол — чекбокс, радио или тумблер с подписью"
+    }
+  },
+  "parts_swap_17_09": {
+    "решение": "владелец 17.09.2026 — свапнуть на локальные части",
+    "было": "описание и ошибка приходили инстансами СТАРОЙ библиотеки: ◆ / description (24) и ◆ / error (24). В мете это было записано как «рисует своими узлами» — формулировка вопроса оказалась неточной.",
+    "стало": "48 инстансов переведены на . / description (44:79002) и . / error (44:79015) из секции ↪ label",
+    "сверка": "габариты не изменились ни на одной ступени: 303x20 / 303x16 / 303x16; кегли 14/13/12 те же",
+    "побочно": "цвет ошибки переехал с опечатки form-control/error/placehold-rest на исправленное form-control/error/placeholder-rest — значение то же"
+  },
+  "code_17_09": {
+    "ссылок": 77,
+    "якорей": 75,
+    "поломка": "60 элементов превью из 122, 230 свойств. Ломалось не своё, а чужое: formfield почти не имеет собственного оформления, он РАЗДАЁТ размерную ступень вложенным контролам. Поле внутри выходило 20px высотой без скругления и паддингов, подпись 20 вместо 24, гашение выключенного не работало вовсе.",
+    "ячейка": "заведена label/description → surface/on-high: цвет пояснения читался ролью напрямую, а гейт component-cell-drift не пропускает роль без ячейки"
+  },
+  "old_libraries_after": {
+    "◆ / gap": "42 — распорка шириной 0 ВНУТРИ локальных частей . / description и . / error; была там до свапа, чинится в заходе по частям label",
+    ". / content-input": "6 — приходит из мастеров input и select, их собственный долг",
+    ". / content-combi-input": "6 — то же",
+    "Sys": "16 подписей — не переносятся",
+    "иконки": "arrow-down-light 6, ic20-textareaControl-outline 6, arrow-down_small-regular 12, file-file-cute_filled 3, system-check-cute_regular 3"
+  },
+  "raw_fills": 0,
+  "debts": [
+    "привязка макета к новой ячейке label/description ждёт перепубликации библиотеки 📜 tokens ↪ studio"
+  ],
+  "synced": "2026-09-17"
 }

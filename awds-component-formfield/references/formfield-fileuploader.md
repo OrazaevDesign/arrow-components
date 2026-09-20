@@ -26,10 +26,10 @@
   </label>
 
   <div class="upl">
-    <label class="upl__label">
+    <label class="upl__drop">
       <input class="upl__input" type="file" id="docs" multiple aria-describedby="docs-desc">
       <span class="input input-default">
-        <input class="input__field" type="text" placeholder="Выберите файл" readonly tabindex="-1">
+        <span class="upl__prompt">Выберите файл или перетащите его сюда</span>
         <span class="input__suffix" aria-hidden="true"><svg viewBox="0 0 20 20">…</svg></span>
       </span>
     </label>

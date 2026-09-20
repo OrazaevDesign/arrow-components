@@ -1,56 +1,42 @@
 {
   "component": "formfield",
-  "version": "1.0.3",
+  "version": "1.0.11",
   "contract_hash": "sha256:680b38c4bec732edcfeef1fba66588a0b3da26e91b3626ec6c37b9e6c5ed8ce0",
-  "artifact_hash": "sha256:15b9bbfcc3a98b27a23fd87e5fa3e77656ac6fdeda89a996a4e7aa5e199f0b2a",
-  "visual_change": false,
-  "released_at": "2026-08-26T09:40:17.405Z",
+  "artifact_hash": "sha256:db477e45c8c9532cd3acd87d1f61827a83b5057cb61f3b525006bc39290b4be2",
+  "visual_change": true,
+  "released_at": "2026-09-17T11:58:50.516Z",
   "own_values": [],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "395:77494",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77494"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "71:21455",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=71-21455"
   },
   "variants": {
     "input": {
-      "node_id": "395:77494",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77494",
-      "figma_label": "Formfiled / Input (Size)",
-      "token_role": "role/surface/on-high + form-control/error/placehold",
-      "css": "formfield-input.css"
+      "node_id": "71:23715",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=71-23715",
+      "figma_label": "formfield / input"
     },
     "select": {
-      "node_id": "395:77510",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77510",
-      "figma_label": "Formfiled / Select (Size)",
-      "token_role": "role/surface/on-high + form-control/error/placehold",
-      "css": "formfield-input.css",
-      "css_note": "Своего CSS у варианта НЕТ и не должно быть: сверены все три ячейки макета (395:77511 / 395:77516 / 395:77521) — состав, порядок частей, зазор 4 и высоты 124/108/100 совпадают с Input до пикселя. Отличается только вложенный контрол, а его подключает потребитель."
+      "node_id": "71:23731",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=71-23731",
+      "figma_label": "formfield / select"
     },
     "square": {
-      "node_id": "395:77597",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77597",
-      "figma_label": "Formfiled / Square (Size)",
-      "token_role": "role/surface/on-high + form-control/error/placehold",
-      "css": "formfield-input.css",
-      "css_note": "Частей ТРИ, а не четыре: отдельной строки контрола нет, его роль играет подпись с квадратным контролом внутри (чекбокс / радио / переключатель — отсюда «Square»). Высоты ячеек 76/64/60, подпись 28/24/20 (бокс контрола, а не текстовая строка). ЕДИНСТВЕННЫЙ вариант, потребовавший правки общего CSS: ступень до квадратного контрола не доходила, потому что мост подписи срабатывает по классу .lbl--{N}, которого в разметке нет. Добавлены правила .fld--{N} .lbl .checkbox / .radio / .switch — селектор через .lbl весит (0,3,0) и перебивает мост подписи (0,2,0) при любом порядке подключения файлов."
+      "node_id": "71:23818",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=71-23818",
+      "figma_label": "formfield / square"
     },
     "fileuploader": {
-      "node_id": "395:77542",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77542",
-      "figma_label": "Formfiled / FileUploader (Type × Size)",
-      "token_role": "role/surface/on-high + form-control/error/placehold",
-      "css": "formfield-input.css",
-      "css_note": "Своего CSS у варианта НЕТ: сверены все три ячейки (395:77543 / 395:77548 / 395:77553). Состав, порядок и зазор 4 те же, что у Input; высоты 252/236/228 отличаются за счёт контрола — внутри стоит целый awds-component-uploader (176/168/164) вместо одиночного поля. ВАЖНО: ступень проходит на два уровня вниз без единого дополнительного правила — мост .fld--{N} .input написан селектором потомка и достаёт поле, лежащее ВНУТРИ загрузчика (проверено: при .fld--500 оно 48, при .fld--300 — 36)."
+      "node_id": "71:23763",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=71-23763",
+      "figma_label": "formfield / fileuploader"
     },
     "textarea": {
-      "node_id": "395:77526",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77526",
-      "figma_label": "Formfiled / Textarea (Size)",
-      "token_role": "role/surface/on-high + form-control/error/placehold",
-      "css": "formfield-input.css",
-      "css_note": "Своего CSS у варианта НЕТ: сверены все три ячейки (395:77527 / 395:77532 / 395:77537). Состав и зазоры те же, высоты 164/148/140 отличаются от Input ровно на разницу контролов (88/80/76 против 48/40/36)."
+      "node_id": "71:23747",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=71-23747",
+      "figma_label": "formfield / textarea"
     }
   },
   "shape": "rectangle",
@@ -153,52 +139,39 @@
     ]
   },
   "ds_token_dependencies": [
-    "--surface-on-high",
-    "--error-container-on-high",
-    "--awds-space-space-0",
-    "--awds-space-space-0-5",
-    "--awds-space-space-1",
-    "--awds-space-space-4",
-    "--awds-space-space-5",
-    "--awds-size-square-300-icon",
-    "--awds-size-square-300-padding",
-    "--awds-size-square-400-icon",
-    "--awds-size-square-400-padding",
-    "--awds-size-square-500-icon",
-    "--awds-size-square-500-padding",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-icon",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-icon",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
     "--awds-control-font-size-200",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
     "--awds-control-font-size-300",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
     "--awds-control-font-size-400",
-    "--awds-control-line-height-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
     "--awds-control-letter-spacing-400",
-    "--awds-opacity-opacity-40",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--awds-font-weight-regular",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-space-0",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-11",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-8",
+    "--awds-space-9",
+    "--error-container-on-high",
+    "--surface-on-high"
   ],
   "depends_on": {
     "awds-component-checkbox": "Вариант square: чекбокс внутри подписи, ступень через мост .fld--{N} .lbl .checkbox.",
@@ -210,8 +183,8 @@
     "awds-component-select": "Альтернативный контрол — .select, ступень через мост (в макете не снят, добавлен по общей размерной шкале).",
     "awds-component-textarea": "Альтернативный контрол — .txa, ступень через мост (в макете не снят)."
   },
-  "variants_note": "Пять вариантов, ОДИН CSS: Input (снят первым), Select (395:77510), Textarea (395:77526), FileUploader (395:77542) и Square (395:77597) — все сверены по высотам ячеек и закрыты тем же файлом. Разница во вложенном контроле: у первых трёх одиночный контрол, у четвёртого целый awds-component-uploader, у пятого отдельного контрола нет вовсе — его роль играет подпись с квадратным контролом внутри (частей три, а не четыре). Осей палитры у formfield нет: цвет несут контрол и подпись. На той же странице «↪ Form Filed» остаются НЕ реализованными: Formfiled Combi / Input · Select · Textarea (395:77558, 395:77571, 395:77584) — те же поля, но с плавающей меткой вместо внешней подписи (связка с combi-контролами); Formfiled / Square (395:77597); Datepiker (395:77671) и DatepikerRange (395:77760). Отдельно стоят компонент-сеты ◆ / Description (395:77395) и ◆ / Error (395:77445) по три размера — их этот скилл реализует внутри себя.",
-  "last_synced": "2026-08-14T13:37:26Z",
+  "variants_note": "Восемь наборов макета сводятся к пяти вариантам кода: input, select, textarea, fileuploader и square (чекбокс, радио, тумблер с подписью). Три набора formfield-combi отличаются от обычных только тем, что метка живёт внутри контрола, — своего CSS им не нужно, у них нет .lbl сверху. 17.09.2026 у набора fileuploader снята мёртвая ось type=fileuploader: одно значение, дублировавшее имя набора.",
+  "last_synced": "2026-09-17T11:58:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:4c8944112c472faf65aeee3f423898f2dd5081a241ef1f529f9449c9e957a5da",
   "published": {
@@ -260,16 +233,73 @@
       }
     }
   },
+  "markup": {
+    "root": {
+      "class": "fld",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "fld--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Класса варианта нет: вариант поля — это вложенный контрол (input / select / textarea / uploader / square), а CSS у всех пяти один."
+  },
+  "family": "complex-component",
+  "summary": "Поле формы целиком: подпись СНАРУЖИ, контрол, пояснение и текст ошибки",
+  "aliases": [
+    "поле формы целиком",
+    "блок поля",
+    "валидация",
+    "текст ошибки под полем"
+  ],
+  "asana": {
+    "task_gid": "1218421798669854",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798669854",
+    "task_name": "💠 formfield",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "formfield-draws-description-and-error-itself",
+      "text": "Все восемь наборов formfield (input, select, textarea, fileuploader, три formfield-combi и square) рисуют описание и сообщение об ошибке СВОИМИ узлами, а не инстансами частей. Части для этого есть и приведены к канону 16.09.2026 в секции ↪ label: «. / description» (44:79002) и «. / error» (44:79015), по три ячейки на размеры 500/400/300. Замер того же дня: инстансов у обеих частей НОЛЬ на всех страницах файла. Пока так, правка части не доходит до поля: текст описания и ошибки в formfield придётся править восемь раз вручную. Вопрос: перевести восемь наборов на инстансы частей (сверив геометрию по всем трём размерам) или признать части лишними и удалить, оставив узлы formfield источником истины.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218535404453823",
+      "raised_at": "2026-09-16",
+      "answer": "Закрыт 17.09.2026 решением владельца — свапнуть на локальные части. Вопрос при этом был сформулирован неточно: описание и ошибку formfield рисовал НЕ своими узлами, а инстансами СТАРОЙ библиотеки (◆ / description 24 штуки, ◆ / error 24). Свапнуты все 48 на . / description и . / error из секции ↪ label; габариты не изменились ни на одной из трёх ступеней (20/16/16), а цвет ошибки переехал с опечатки form-control/error/placehold-rest на исправленное имя. Теперь правка части доходит до всех восьми наборов.",
+      "answered_at": "2026-09-17"
+    },
+    {
+      "id": "formfield-parts-still-carry-old-gap-spacer",
+      "level": "component",
+      "target": "parts",
+      "severity": "minor",
+      "text": "Внутри локальных частей . / description и . / error (секция ↪ label) сидит распорка ◆ / gap из старой библиотеки — 42 инстанса шириной 0. Свап formfield на локальные части их не добавил и не убрал: они были там до него. Чинится в заходе по частям label, не по formfield. Там же остаются . / content-input (6) и . / content-combi-input (6), которые приходят из мастеров input и select — это их собственный долг.",
+      "raised_at": "2026-09-17",
+      "status": "open",
+      "answer": null,
+      "asana_gid": "1218594258854573"
+    }
+  ],
   "uses": {
-    "awds-component-checkbox": "1.0.3",
-    "awds-component-input": "1.0.3",
-    "awds-component-label": "1.0.3",
-    "awds-component-list-item": "1.0.4",
-    "awds-component-radio": "1.0.3",
-    "awds-component-select": "1.0.6",
-    "awds-component-switch": "1.0.2",
-    "awds-component-textarea": "1.0.3",
-    "awds-component-uploader": "1.0.2"
+    "awds-component-checkbox": "1.0.9",
+    "awds-component-input": "1.0.12",
+    "awds-component-label": "1.0.9",
+    "awds-component-radio": "1.0.9",
+    "awds-component-select": "1.0.17",
+    "awds-component-switch": "1.0.8",
+    "awds-component-textarea": "1.0.13",
+    "awds-component-uploader": "2.0.0"
   },
   "contract": {
     "classes": [

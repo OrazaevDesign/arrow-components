@@ -1,6 +1,6 @@
 ---
 name: awds-component-formfield
-description: Поле формы целиком Formfield ArrowDS: подпись, контрол, пояснение и текст ошибки одной колонкой. Для сборки формы из готовых полей и состояний валидации. Токены ArrowDS, работает и по Figma-ссылке.
+description: Formfield ArrowDS (.fld).
 ---
 
 # Formfield ArrowDS
