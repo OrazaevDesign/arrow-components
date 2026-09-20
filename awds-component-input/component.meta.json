@@ -1,52 +1,59 @@
 {
   "component": "input",
-  "version": "1.0.3",
+  "version": "1.0.12",
   "contract_hash": "sha256:103a13e9ef85dad3cc0d0722ed0f96ee02ba5d5b320bca538155bdfbc75628c4",
-  "artifact_hash": "sha256:606199eb525405a37c7c0365870b6ac422a3dbac479acb06d510d05e315c522e",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:49:41.500Z",
-  "own_values": [],
+  "artifact_hash": "sha256:0ef5ac62ef1bb013bd02d0547b119d203f02825d747b3ac9a5b88de1ca6df52c",
+  "visual_change": true,
+  "released_at": "2026-09-16T13:49:41.569Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 7,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "3:1152",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=3-1152"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:14",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-14"
   },
   "variants": {
     "default": {
-      "node_id": "3:1152",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=3-1152",
-      "figma_label": "Input / Default (Size × State)"
+      "node_id": "23:5735",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-5735",
+      "figma_label": "input / default"
     },
     "light": {
-      "node_id": "322:16305",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-16305",
-      "figma_label": "Input / Light (Size × State)"
+      "node_id": "23:5885",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-5885",
+      "figma_label": "input / light"
     },
     "success": {
-      "node_id": "322:27157",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-27157",
-      "figma_label": "Input / Success (Size × State)"
+      "node_id": "23:6033",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-6033",
+      "figma_label": "input / success"
     },
     "error": {
-      "node_id": "322:32999",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-32999",
-      "figma_label": "Input / Error (Size × State)"
+      "node_id": "23:6181",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-6181",
+      "figma_label": "input / error"
     },
     "autofill": {
-      "node_id": "322:43572",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-43572",
-      "figma_label": "Input / Autofill (Size × State)"
+      "node_id": "23:6477",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-6477",
+      "figma_label": "input / autofill"
     },
     "ghost": {
-      "node_id": "322:38006",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-38006",
-      "figma_label": "Input / Ghost (Size × State)"
+      "node_id": "23:6329",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-6329",
+      "figma_label": "input / ghost"
     },
     "secondary": {
-      "node_id": "322:49551",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-49551",
-      "figma_label": "Input / Secondary (Size × State)"
+      "node_id": "23:6625",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-6625",
+      "figma_label": "input / secondary"
     }
   },
   "shape": "rectangle",
@@ -72,7 +79,7 @@
     "chroma",
     "border",
     "color",
-    "placehold",
+    "placeholder",
     "icon-color"
   ],
   "css_files": [
@@ -86,8 +93,8 @@
   ],
   "geometry_note": "Высота НЕ задаётся явно: calc(2 × rectangle-{N}-padding + rectangle-{N}-typography-line-height). На каждом размере icon == line-height, поэтому высота одинакова со слотами и без них. Ширина — 100% (320px в макете это ширина демо-фрейма). Padding живёт на слотах (prefix / поле / suffix), у контейнера его нет. Горизонтальный отступ текста зависит от наличия иконки рядом: есть иконка → rectangle-{N}-padding (отсчёт от иконки), иконки нет → rectangle-{N}-text-gap (отсчёт от края). text-gap всегда шире (18/18/16/14/14/10/8 против padding 16/14/10/8/8/4/2). В макете это булев проп Padding Icon у компонента Content Input, он переключает ОБА горизонтальных паддинга сразу; в CSS сделано ПО СТОРОНЕ через :has(> .input__prefix) / :has(> .input__suffix), иначе поле с одной иконкой (частый случай — поиск слева) получило бы неверный отступ со второй стороны. Вертикальные паддинги не меняются, высота контрола та же.",
   "typography_note": "Шкала — control, НЕ typography: Figma даёт font-size/600=16 при line-height/600=20, а у typography-600 line-height 26. В CSS берётся семантический var(--awds-rectangle-{N}-typography-*), который в css-global уже ссылается на нужный control-{M}.",
-  "focus_ring_note": "Кольцо отличается от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. В CSS — rgb(var(--primary-core) / var(--awds-opacity-opacity-50)), offset 0.",
-  "icons_note": "В макете слоты заполнены филлером ic20-radio-outline (по две штуки на слот) — это НЕ иконка инпута. Слот принимает любую иконку, одну или несколько; размер — var(--awds-input-icon).",
+  "focus_ring_note": "Кольцо отличается от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. В CSS — rgb(var(--primary-core) / var(--awds-opacity-50)), offset 0.",
+  "icons_note": "В макете слоты заполнены филлером ic20-radio-outline — это НЕ иконка инпута, слот принимает любую. Размер — var(--awds-input-icon) по ячейке rectangle/{N}/icon. Цвет: до 16.09.2026 иконки всех семи тонов красились одной привязкой form-control/default/color-rest (цвет ТЕКСТА тона default) — она стояла на мастере части . / prefix-input / icon и ни один тон её не переопределял. Перепривязано на ячейку своего тона и состояния: {тон}/icon-{состояние} у light, success, error, ghost, autofill; placeholder-{состояние} у default; плоский placeholder у secondary (ячеек icon у этих двух тонов в теме нет). Роль при этом та же, что читал код, — вид не изменился.",
   "preview": {
     "base_class": "input",
     "variant_class": "input-default",
@@ -183,75 +190,76 @@
     ]
   },
   "ds_token_dependencies": [
-    "--secondary-container-core",
-    "--secondary-container-chroma",
-    "--secondary-container-on-low",
-    "--secondary-container-on",
-    "--secondary-container-on-high",
-    "--secondary-container-on-highest",
-    "--surface-bright",
-    "--primary-core",
-    "--primary-dim",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--error-container-chroma",
+    "--error-container-core",
+    "--error-container-on",
+    "--error-container-on-high",
+    "--error-container-on-highest",
+    "--error-container-on-low",
     "--primary-container-chroma",
     "--primary-container-on-high",
     "--primary-container-on-highest",
-    "--awds-size-rectangle-50-padding",
-    "--awds-size-rectangle-50-icon",
-    "--awds-size-rectangle-50-rounded",
-    "--awds-size-rectangle-50-typography",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
-    "--awds-size-rectangle-100-padding",
-    "--awds-size-rectangle-100-icon",
-    "--awds-size-rectangle-100-rounded",
-    "--awds-size-rectangle-100-typography",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-200-padding",
-    "--awds-size-rectangle-200-icon",
-    "--awds-size-rectangle-200-rounded",
-    "--awds-size-rectangle-200-typography",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-icon",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-icon",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-size-rectangle-600-padding",
-    "--awds-size-rectangle-600-icon",
-    "--awds-size-rectangle-600-rounded",
-    "--awds-size-rectangle-600-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-opacity-opacity-40",
-    "--awds-opacity-opacity-50",
-    "--awds-font-family-system",
-    "--awds-font-weight-regular",
-    "--awds-size-rectangle-50-text-gap",
-    "--awds-size-rectangle-100-text-gap",
-    "--awds-size-rectangle-200-text-gap",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-600-text-gap"
+    "--primary-dim",
+    "--secondary-chroma",
+    "--secondary-container-chroma",
+    "--secondary-container-core",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--secondary-container-on-low",
+    "--secondary-core",
+    "--secondary-dim",
+    "--secondary-on",
+    "--secondary-on-dim",
+    "--success-container-chroma",
+    "--success-container-core",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--success-container-on-low",
+    "--surface-bright",
+    "--tertiary-container-chroma",
+    "--tertiary-container-core",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
+    "--tertiary-container-on-low"
   ],
-  "last_synced": "2026-08-13T12:55:54Z",
+  "last_synced": "2026-09-16T13:46:30Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:2d3728206ff334549c8314f62d5cff2df1b2bc0b30c57edd72a3ae18ec229bde",
+  "snapshot_hash": "sha256:b43dca1ded93268b9f99b0d0d43676d8a8efedb770ebbddcdbaddc3f19cd6a0f",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "b3e1258",
@@ -326,9 +334,64 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "input",
+      "tags": [
+        "span",
+        "label",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "input-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "input--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "input",
+      "class": "input__field"
+    },
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Нативный input обязателен: состояния (:focus, :disabled, автозаполнение) переключаются его селекторами. Подпись живёт СНАРУЖИ — если нужна внутри рамки, это input-combi."
+  },
+  "family": "forms",
+  "summary": "Текстовое поле, подпись СНАРУЖИ рамки",
+  "aliases": [
+    "поле ввода",
+    "инпут",
+    "текстовое поле",
+    "поле формы"
+  ],
+  "asana": {
+    "task_gid": "1218421798643467",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798643467",
+    "task_name": "💠 input",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "form-control-focus-drawn-not-read",
+      "text": "У form-control focus нарисован в ячейках, но компонент его не читает: 17 ячеек (dim, chevron, icon у семи тонов) в focus переключаются на primary-container-*, а в CSS полей focus меняет только кольцо. Читать focus в компонентах или снять состояние у ячеек?",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "open",
+      "raised_at": "2026-09-03",
+      "evidence": "state-vocab-analysis 02.09.2026: 17 ячеек группы form-control, read=0 во всех четырёх состояниях; единственное исключение form-control-secondary-dim — active читают input и input-combi. Решение Э1 по этому классу: оставить, вопрос компоненту в Э3",
+      "answer": null,
+      "asana_gid": "1218489020012833"
+    }
+  ],
+  "figma_repair_note": "Заход 16.09.2026, секция ↪ input 5:14. Оси и свойства правок не потребовали. Правки макета: скрыто кольцо фокуса в двух ячейках default/disabled; плейсхолдер тона default привязан к ячейке своего состояния (35 ячеек); иконки слотов перепривязаны по тону и состоянию (490 узлов); толщина рамки привязана к space/px (245 ячеек); переписаны застрявшие переопределения старых библиотек на текстовых диапазонах десяти ячеек size=50 наборов ghost и light (50 привязок). Осталось 24 привязки к старым библиотекам: 14 Sys (подписи документации) и 10 Control/paragraph-spacing/200 (свойства нет в новой библиотеке).",
   "uses": {
-    "awds-component-button": "1.0.5",
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [

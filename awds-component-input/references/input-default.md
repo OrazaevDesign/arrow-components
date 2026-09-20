@@ -1,6 +1,6 @@
 # Input / Default
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 3:1152](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=3-1152)
+**Figma:** [секция ↪ input 5:14 → набор 23:5735](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-5735)
 
 > [!NOTE]
 > Этот файл (`input-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -110,7 +110,7 @@ CSS сам погасит UA-оформление такой кнопки и о�
 
 **Почему высота не зависит от иконок.** На каждом размере `icon == line-height`, поэтому слот с иконкой и поле дают одинаковую высоту — поле с иконками и без них стоят в строке ровно.
 
-**Типографика — шкала `control`, не `typography`.** Figma отдаёт `font-size/600 = 16` и `line-height/600 = 20`. У `--awds-typography-*-600` line-height 26 (адаптивная шкала), у `--awds-control-600` — 20. Совпадают все три метрики только у control. В CSS взят не control напрямую, а `var(--awds-rectangle-{N}-typography-*)`: этот shape-токен в `css-global` уже ссылается на нужный `control-{M}` — так «что значит размер N» остаётся в DS.
+**Типографика — шкала `control`, не `typography`.** Figma отдаёт `font-size/600 = 16` и `line-height/600 = 20`. У `--awds-typography-*-600` line-height 26 (адаптивная шкала), у `--awds-control-600` — 20. Совпадают все три метрики только у control. Ячейка `rectangle/{N}/typography` ведёт на нужный `control-{M}`, и с 16.09.2026 в CSS стоит сам `control-{M}`: ячейки State и Size приватны, их имён в теме нет. Какая ячейка стоит за строкой, говорит якорь `#cell` в комментарии той же строки.
 
 ## Состояния
 
@@ -122,7 +122,7 @@ CSS сам погасит UA-оформление такой кнопки и о�
 | Hover | `.input-default:hover:not(:focus-within):has(> .input__field:enabled)` | border `secondary-container-on` |
 | Active | `.input-default:active:not(:focus-within):has(> .input__field:enabled)` | border `secondary-container-on-low` |
 | Focus | `.input-default:focus-within` | bg `surface-bright`, chroma `primary-container-chroma`, border `primary-dim`, текст `primary-container-on-highest`, placeholder `primary-container-on-high` + кольцо |
-| Disabled | `.input:has(> .input__field:disabled)` | `opacity: var(--awds-opacity-opacity-40)` (на базе — не зависит от варианта) |
+| Disabled | `.input:has(> .input__field:disabled)` | `opacity: var(--awds-opacity-40)  /* #cell opacity/control/disabled */` (на базе — не зависит от варианта) |
 
 Три нюанса:
 
@@ -135,11 +135,11 @@ CSS сам погасит UA-оформление такой кнопки и о�
 | | Кольцо |
 |---|---|
 | button, checkbox, radio, switch | `rgb(var(--surface-on-highest))`, без альфы — тёмное |
-| **input** | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` — брендовое, 50% прозрачности |
+| **input** | `rgb(var(--primary-core) / var(--awds-opacity-50))` — брендовое, 50% прозрачности |
 
 В макете это слой `FocusSelection` с `opacity 50%` и цветом `focus-selection/outlineVariant` (= `primary-core`), а не `outline` (= `surface-on-highest`).
 
-Кольцо целиком отдано слою [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md): вариант **Outside + Formcontrol**, `outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol)` и `outline-offset: var(--awds-focus-offset)`. Геометрия снята с макета в слое (прямоугольник кольца на 1px наружу, stroke 2px OUTSIDE → полоса 1…3px), радиус CSS считает сам из offset — поэтому здесь чисел нет и `focus-selection.css` подключается вместе с `input-default.css`.
+Кольцо целиком отдано слою [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md): вариант **Outside + Formcontrol**, `outline: var(--awds-focus-width) solid var(--awds-focus-color-muted)` и `outline-offset: var(--awds-focus-offset)`. Геометрия снята с макета в слое (прямоугольник кольца на 1px наружу, stroke 2px OUTSIDE → полоса 1…3px), радиус CSS считает сам из offset — поэтому здесь чисел нет и `focus-selection.css` подключается вместе с `input-default.css`.
 
 ## CSS
 
@@ -147,11 +147,11 @@ CSS сам погасит UA-оформление такой кнопки и о�
 
 | Блок | Что внутри |
 |---|---|
-| `@property` | `bg` / `chroma` (inherits:false, живут на контейнере) и `color` / `placehold` / `icon-color` (inherits:true — задаются на контейнере, потребляются в поле, в `::placeholder` и в иконках) |
+| `@property` | `bg` / `chroma` (inherits:false, живут на контейнере) и `color` / `placeholder` / `icon-color` (inherits:true — задаются на контейнере, потребляются в поле, в `::placeholder` и в иконках) |
 | Base `.input` | Контейнер: flex, `inset box-shadow` вместо border, градиент, размерные аккумуляторы (default = 400), transition цветов |
 | `.input__field` | Погашённое UA-оформление, padding, типографика из токенов, `::placeholder` с цветом из токена и `opacity: 1` (иначе Firefox приглушит второй раз), снятый нативный крестик `type="search"` |
 | Слоты | `padding-left` / `padding-right` + `padding-block`, размер `<svg>` от токена (селектор потомка — работает и внутри `<button>`), сброс UA-оформления кнопки + её фокус-кольцо |
-| Sizes `.input--{N}` | Заполняют `--awds-input-{padding,icon,rounded,fs,lh,ls}` через `var(--awds-rectangle-{N}-*)` |
+| Sizes `.input--{N}` | Заполняют `--awds-input-{padding,icon,rounded,fs,lh,ls}` базовыми шкалами по ячейкам `rectangle/{N}/*` |
 | Состояния | Заполняют цветовые аккумуляторы ролями `rgb(var(--*))` |
 | `@media (prefers-reduced-motion)` | Гасит переходы — состояние остаётся различимым, меняется мгновенно |
 

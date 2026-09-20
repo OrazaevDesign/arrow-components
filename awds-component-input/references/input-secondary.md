@@ -1,6 +1,6 @@
 # Input / Secondary
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 322:49551](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-49551)
+**Figma:** [секция ↪ input 5:14 → набор 23:6625](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-6625)
 
 > [!NOTE]
 > Этот файл (`input-secondary.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.

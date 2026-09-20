@@ -1,6 +1,6 @@
 ---
 name: awds-component-input
-description: Текстовые поля ввода ArrowDS (input): размеры, варианты, состояния, иконки, подпись СНАРУЖИ поля. Для поля в форме. Подпись внутри рамки — input-combi. Токены ArrowDS, работает и по Figma-ссылке.
+description: Input ArrowDS (.input).
 ---
 
 # Input ArrowDS
@@ -24,12 +24,12 @@ description: Текстовые поля ввода ArrowDS (input): разме�
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg/chroma/border/текст/placeholder/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-{вариант}.css` |
-| Кольцо фокуса | `var(--awds-focus-color-formcontrol)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` + `opacity/50` |
-| Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
-| Горизонтальный отступ текста | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Input` |
-| Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Цвета состояний (bg/chroma/border/текст/placeholder/иконка) | роли `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline, с якорем ячейки в той же строке | `references/input-{вариант}.css` |
+| Кольцо фокуса | `var(--awds-focus-color-muted)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` + `opacity/50` |
+| Геометрия (padding/icon/rounded) | базовые шкалы `var(--awds-space-*)`, `var(--awds-rounded-border-radius-*)` | ячейки `rectangle/{N}/*`, цель в `component-token-map.json` → `map.size.rectangle` |
+| Горизонтальный отступ текста | `var(--awds-space-*)` по ячейке `rectangle/{N}/text-gap`, а со слотом — по `rectangle/{N}/padding` | Figma: ось `padding-icon` у части `. / content-input` |
+| Типографика | `var(--awds-control-font-size-{M})` и парные line-height / letter-spacing | ячейка `rectangle/{N}/typography` ведёт на `control-{M}` |
+| Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Промежуточный слой `--awds-input-*` в DS НЕ существует.** Внутри CSS вариантов есть приватные `--awds-input-*` accumulators, но они scope'нуты только на компонент. Подробнее — [arrow-components-builder/references/component-skill-contract.md](../arrow-components-builder/references/component-skill-contract.md).
@@ -52,7 +52,7 @@ description: Текстовые поля ввода ArrowDS (input): разме�
 
 1. **Padding — на слотах, а не на контейнере.** Так в auto-layout макета: «край → иконка» даёт padding слота, «иконка → текст» — padding поля. Перенесёшь padding на контейнер — при иконке зазор удвоится.
 2. **Горизонтальный отступ текста — `text-gap`, если с этой стороны нет иконки.** Не тот же `padding`: у голого текста от края до буквы должно быть больше воздуха, чем от иконки до буквы. `text-gap` шире — 18/18/16/14/14/10/8 против `padding` 16/14/10/8/8/4/2. Переключается **по стороне** (`:has(> .input__prefix)` / `:has(> .input__suffix)`), потому что поле с одной иконкой — самый частый случай. Вертикаль всегда `padding`, высота не меняется.
-3. **Типографика — шкала `control`, не `typography`.** Figma даёт `font-size/600 = 16` при `line-height/600 = 20`; у `typography-600` line-height 26. В CSS взят `var(--awds-rectangle-{N}-typography-*)`, который в DS уже маршрутизирован на нужный `control-{M}`.
+3. **Типографика — шкала `control`, не `typography`.** Figma даёт `font-size/600 = 16` при `line-height/600 = 20`; у `typography-600` line-height 26. Ячейка `rectangle/{N}/typography` ведёт на нужный `control-{M}`, и после перевода на цели в CSS стоит сам `control-{M}` — из какой ячейки он пришёл, говорит якорь `#cell` в той же строке.
 4. **Фокус-кольцо у input своё.** Брендовое `primary-core` при 50% прозрачности, а не тёмное `surface-on-highest` как у button / checkbox / radio / switch. Не копируй кольцо из соседнего компонента.
 5. **Фокус гасит hover через `:not(:focus-within)`, а не порядком правил.** `:has()` в hover-селекторе поднимает специфичность выше, чем у `:focus-within`, — без `:not()` наведение на сфокусированное поле подменяло бы брендовую рамку серой.
 
@@ -62,7 +62,7 @@ description: Текстовые поля ввода ArrowDS (input): разме�
 - Подпись обязательна: `<label for>` снаружи либо `aria-label` на самом `<input>`. Placeholder подписью не считается — он исчезает при вводе.
 - Фокус виден при любом способе входа в поле (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Декоративная иконка в слоте → `aria-hidden="true"`. Кликабельная (очистить, показать пароль) → внутри слота настоящий `<button type="button" aria-label="…">`, без `aria-hidden`.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-40)` (ячейка `opacity/control/disabled`) на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 - Размеры 50 и 100 (высота 20 и 24px) меньше тач-минимума — только для мыши и плотных таблиц.
 
 ## Варианты
@@ -122,7 +122,7 @@ ACB зайдёт в Figma по сохранённым ссылкам обоих 
 
 1. Возьми разметку из [references/input-default.md](references/input-default.md) и заведи подпись через `<label for>`.
 2. Подключи CSS нужного варианта (`input-{вариант}.css`) — один раз глобально.
-3. Убедись, что на странице есть DS-токены (`--awds-rectangle-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
+3. Убедись, что на странице есть DS-токены (`--awds-space-*`, `--awds-rounded-*`, `--awds-control-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
 4. Поставь класс варианта (`input-default`, `input-error`, …) — без него поле останется бесцветным, — размерный модификатор `.input--{N}` (если не указан, действует 400) и правильный `type`.
 5. Ширину задай контейнеру-родителю: поле тянется на 100%.
 
