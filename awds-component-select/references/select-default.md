@@ -1,6 +1,6 @@
 # Select / Default
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 394:15271](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15271)
+**Figma:** [470rar5EfRm4n14vHMXbpc → секция ↪ select 5:17, набор 34:45983](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-45983)
 
 > [!NOTE]
 > Этот файл (`select-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -56,7 +56,7 @@
 
 ## Раскрытый список
 
-Список стилизован по компоненту `◆ / Dropdown` из макета — но только там, где движок умеет `appearance: base-select` (Chromium 135+). Всё это живёт в слое `@supports` в конце CSS; где поддержки нет (пока Safari и Firefox), слой не применяется и остаётся системный попап. Контрол при этом один и тот же — отличается только вид раскрытого списка, и ломаться нечему.
+Список стилизован по компоненту `. / dropdown` из макета — но только там, где движок умеет `appearance: base-select` (Chromium 135+). Всё это живёт в слое `@supports` в конце CSS; где поддержки нет (пока Safari и Firefox), слой не применяется и остаётся системный попап. Контрол при этом один и тот же — отличается только вид раскрытого списка, и ломаться нечему.
 
 | Что | Селектор | Из макета |
 |---|---|---|

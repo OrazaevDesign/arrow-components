@@ -1,8 +1,8 @@
 {
-  "_note": "Сырые ответы Figma MCP, как пришли. Оси: Size 50/100/200/300/400/500/600 × State Rest/Hover/Focus/Active/Disabled = 35 ячеек. Снято 11: все пять состояний на размере 600 (оттуда цвета) плюс Rest на каждом из семи размеров (оттуда геометрия и типографика). Разделение намеренное: цвета от размера не зависят, размеры от состояния — тоже. Что цвета не зависят от размера, проверено на соседних компонентах того же семейства form-control (input, input-combi — там сверялись крайние размеры и совпадали побайтово). Отдельно снят компонент ◆ / Dropdown (раскрытый список) — см. секцию dropdown: по нему сделан слой @supports (appearance: base-select).",
-  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-  "file_name": "💠 Comp ↪ ⁵ Forms",
-  "primary_node_id": "394:15271",
+  "_note": "Снимок переписан 16.09.2026 под новый файл «💠 arrow ↪ components» (был «💠 Comp ↪ ⁵ Forms», 4ipeXkifl3Hl6pVZUF4nuJ). Секция «↪ select» 5:17, страница «3 · forms»: шесть наборов по 35 ячеек, оси size=50|100|200|300|400|500|600 × state=rest|hover|focus|active|disabled, плюс два BOOLEAN show-prefix / show-suffix. Оси и свойства уже на каноне props.md — правок не потребовалось. Поля metadata, variable_defs, geometry_resolved, text_gap и variants_fetched ниже — сырые ответы MCP со СТАРОГО файла: значения сверены и совпадают, но id узлов там старые. Актуальные id — в variants_new.",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "primary_node_id": "5:17",
   "metadata": {
     "394:15271": {
       "name": "Select / Default",
@@ -53,7 +53,7 @@
           "height": 52
         },
         {
-          "name": "◆ / Chevrone",
+          "name": ". / chevron",
           "x": 284,
           "width": 36,
           "height": 52
@@ -80,7 +80,7 @@
           "width": 56
         },
         {
-          "name": "◆ / Chevrone",
+          "name": ". / chevron",
           "x": 284,
           "width": 36
         },
@@ -92,7 +92,7 @@
       ]
     },
     "394:15281": {
-      "_name": "◆ / Chevrone (600)",
+      "_name": ". / chevron (600)",
       "width": 36,
       "children": [
         {
@@ -150,7 +150,7 @@
     "394:15277": {
       "_cell": "Size=600, State=Rest",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -165,7 +165,7 @@
     "394:15297": {
       "_cell": "Size=600, State=Hover",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#808080",
@@ -180,7 +180,7 @@
     "394:15398": {
       "_cell": "Size=600, State=Focus",
       "form-control/default/color": "#19110a",
-      "form-control/default/chevrone": "#bb953b",
+      "form-control/default/chevron": "#bb953b",
       "form-control/default/bg": "#ffffff",
       "form-control/default/chroma": "#fffdf6",
       "form-control/default/border": "#fad046",
@@ -199,7 +199,7 @@
     "394:15307": {
       "_cell": "Size=600, State=Active",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -214,7 +214,7 @@
     "394:15287": {
       "_cell": "Size=600, State=Disabled",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -230,7 +230,7 @@
       "_cell": "Size=500, State=Rest",
       "form-control/default/color": "#0f0f0f",
       "form-control/default/placehold": "#555555",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -246,7 +246,7 @@
     "394:15312": {
       "_cell": "Size=400, State=Rest",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -261,7 +261,7 @@
     "394:15332": {
       "_cell": "Size=300, State=Rest",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -276,7 +276,7 @@
     "394:15337": {
       "_cell": "Size=200, State=Rest",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -291,7 +291,7 @@
     "394:15342": {
       "_cell": "Size=100, State=Rest",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -306,7 +306,7 @@
     "394:15347": {
       "_cell": "Size=50, State=Rest",
       "form-control/default/color": "#0f0f0f",
-      "form-control/default/chevrone": "#808080",
+      "form-control/default/chevron": "#808080",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7",
@@ -389,30 +389,31 @@
   "relation_to_family": {
     "shape": "rectangle",
     "identical": "Размерная шкала (семь), геометрия, палитра form-control/*, фокус-кольцо (primary-core при 50%), паддинги на слотах — как у awds-component-input.",
-    "different": "Добавлен слот шеврона справа со своей ролью form-control/{вариант}/chevrone (rest secondary-container-on-high → focus primary-container-on-high). Контрол построен на нативном <select>, поэтому список рисует ОС и не стилизуется, а слоты prefix/suffix здесь декоративные."
+    "different": "Добавлен слот шеврона справа со своей ролью form-control/{вариант}/chevron (rest secondary-container-on-high → focus primary-container-on-high). Контрол построен на нативном <select>, поэтому список рисует ОС и не стилизуется, а слоты prefix/suffix здесь декоративные."
   },
   "future_variants": {
     "_note": "Проверить перед следующим рефрешем: у семейства Select в Figma, по аналогии с Input / *, могут быть фреймы Light / Success / Error / Ghost / Autofill / Secondary. В этот снапшот снят только Default."
   },
   "dropdown": {
-    "_note": "Компонент ◆ / Dropdown (394:15171) с той же страницы «↪ Select» — раскрытый список. Снят отдельно, потому что попап у нативного <select> рисуется браузером: под @supports (appearance: base-select) мы его стилизуем по этому макету, без поддержки остаётся системный.",
-    "node": "394:15171",
-    "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15171",
+    "_note": "Часть «. / dropdown» (38:67577) — раскрытый список. С 16.09.2026 живёт не своей секцией, а среди частей форм: секция «↪ parts» страницы «3 · forms», рядом с «. / chevron». Решение владельца: своего кода у панели нет — это псевдоэлемент ::picker(select) у select и select-combi, а части кода не имеют. Прежде набор звался «select-dropdown» и занимал отдельную секцию «↪ select-dropdown», из-за чего читался тринадцатым компонентом форм. Инстансов у набора ноль — он нарисован впрок, для select, select-combi и пустых пока combobox / combobox-combi.",
+    "node": "38:67577",
+    "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-67577",
     "cells": {
-      "600": "394:15172",
-      "500": "394:15184",
-      "400": "394:15196",
-      "300": "394:15208",
-      "200": "394:15220",
-      "100": "394:15234",
-      "50": "394:15252"
+      "600": "38:67578",
+      "500": "38:67590",
+      "400": "38:67602",
+      "300": "38:67614",
+      "200": "38:67626",
+      "100": "38:67640",
+      "50": "38:67658"
     },
     "structure": "Панель (frame List) + отдельный инстанс Scrollbar 6px справа. Пункты — List-item / Transparent и List-item / Accent-selected, идут вплотную, без зазора.",
     "panel": {
       "bg": "role/surface/bright",
-      "padding": "space/1 = 4 на ВСЕХ семи размерах",
-      "radius": "border-radius/{N}: 600→10, 500→8, 400→8, 300→6, 200→6, 100→6, 50→6",
-      "elevation": "три слоя — 0/6/12/0 #00000014, 0/4/8/−4 #0000000f, 0/0/0/1 #00000008. Совпадает с --awds-shadow-elevation-3: второй и третий слои есть только у неё."
+      "padding": "space/1 = 4 на ВСЕХ семи ступенях; с 16.09.2026 привязано к ячейкам size/dropdown/{N}/padding",
+      "radius": "border-radius/{N}: 600→10, 500→8, 400→8, 300→6, 200→6, 100→6, 50→6; привязано к ячейкам size/dropdown/{N}/border-radius",
+      "elevation": "три слоя — 0/6/12/0 #00000014, 0/4/8/−4 #0000000f, 0/0/0/1 #00000008. Совпадает с --awds-shadow-elevation-3: второй и третий слои есть только у неё.",
+      "правки_16_09": "ДВА ДЕФЕКТА МАКЕТА ЗАКРЫТЫ. (1) blur первого слоя тени у всех семи ступеней был привязан к shadow/shadow1/offset-y — панель рисовалась 0/6/6 вместо 0/6/12; перепривязан на shadow/shadow1/blur-radius. Код был прав, макет догонял: в CSS стоит var(--awds-shadow-elevation-3) целиком. (2) высота скроллбара не сходилась с содержимым — у 600/500/400 он был 320 при списке 312 и обрезался клипом панели, у 100 и 50 был 264 при списке 300 и 302; всем семи поставлено FILL по вертикали. Побочно ступень 300 потеряла лишние 8px: панель была 304 при содержимом 288 — единственная из семи, у кого высота не равнялась контенту плюс паддинг."
     },
     "item_scale": {
       "_read": "Метрики пункта берутся из rectangle НА ШАГ НИЖЕ размера контрола — и padding/rounded, и типографика. Решающая ячейка — 500: пункт набран 14/20 (rectangle-400-typography), а не 16/20, как у самого контрола 500. У 50 шага вниз нет, поэтому rectangle-50.",
@@ -484,7 +485,17 @@
       "thumb": "role/surface/on при opacity/40",
       "radius": "border-radius/full",
       "width": "6 (ползунок 4)",
-      "_реализация": "scrollbar-width: thin + scrollbar-color на ::picker(select). Ширина у thin своя, пиксель-в-пиксель 6/4 не задаётся — цвет и скруглённость совпадают."
+      "_реализация": "scrollbar-width: thin + scrollbar-color на ::picker(select). Ширина у thin своя, пиксель-в-пиксель 6/4 не задаётся — цвет и скруглённость совпадают.",
+      "_высота": "FILL по вертикали у всех семи ступеней (правка 16.09.2026) — полоса равна списку, а не панели и не произвольному числу."
+    },
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "section": "↪ parts (3 · forms)",
+    "props": "size = 50|100|200|300|400|500|600, BOOLEAN «scrollbar» (режим, не показ слота — по канону props.md без префикса show-), INSTANCE_SWAP «chevron» у соседней части",
+    "cells_size": {
+      "_note": "Ячейки Size группы dropdown: было четыре ступени (200–500) из семи, и макет к ним не был привязан вовсе — читал space/1 и rounded/border-radius напрямую. 16.09.2026 группа достроена до семи: заведены dropdown/50, /100, /600 (padding + border-radius, плоские — состояний у панели нет, все isPrivate).",
+      "targets": "padding → var(--awds-space-1) на всех семи; border-radius → var(--awds-rounded-border-radius-{200,200,200,300,400,500,600}) для ступеней 50,100,200,300,400,500,600",
+      "долг": "Привязаны 8 значений из 14: ячейки 200–500 уже были в опубликованной библиотеке «📜 tokens ↪ studio». Ступени 50, 100 и 600 ждут её ПЕРЕПУБЛИКАЦИИ — importVariableByKeyAsync не находит ключ неопубликованной переменной («Variable with key … not found»). После публикации привязать 6 значений: padding и border-radius у 50, 100, 600."
     }
   },
   "text_gap": {
@@ -561,6 +572,39 @@
       "figma_label": "Select / Autofill"
     }
   },
-  "family": "На странице «↪ Select» шесть Component Set варианта (по 35 ячеек, оси Size × State) плюс ◆ / Dropdown (7), ◆ / Chevrone (7) и отдельное семейство Select Combi (6 наборов по 20 ячеек, 4 размера) — последнее в этот скилл не входит.",
-  "rest_crosscheck": "Rest всех пяти новых вариантов снят из макета и сверён с component-token-map: 25 hex из 25 совпали (bg, chroma, border, color, chevrone). Hover/Focus/Active взяты из карты."
+  "family": "На странице «3 · forms» нового файла: секция «↪ select» (6 наборов, оси Size × State), секция «↪ select-combi» (6 наборов, 4 ступени) и части в «↪ parts» — «. / dropdown» (7 ступеней) и «. / chevron» (7 ступеней, 330 инстансов: 210 в select и 120 в select-combi). Прежняя формулировка описывала старый файл (. / dropdown, . / chevron) и страницу «↪ Select».",
+  "rest_crosscheck": "Rest всех пяти новых вариантов снят из макета и сверён с component-token-map: 25 hex из 25 совпали (bg, chroma, border, color, chevron). Hover/Focus/Active взяты из карты.",
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-17",
+  "variants_new": {
+    "_note": "Наборы в новом файле; каждый — 35 ячеек. Имена ячеек вида «size=400, state=rest».",
+    "default": "34:45983",
+    "light": "34:46166",
+    "success": "34:46349",
+    "error": "34:46532",
+    "ghost": "34:46715",
+    "autofill": "34:46898"
+  },
+  "audit_16_09": {
+    "_note": "Разведка и правки макета 16.09.2026, заход по секции 5:17.",
+    "чисто_изначально": "Привязок к старым библиотекам — 0 (первая секция форм без них). Сырых красок — 0. Подписей Sys — 0. Лишних колец фокуса в нефокусных ячейках — 0 (у input, input-combi, textarea и textarea-combi они были).",
+    "толщина_рамки": "210 ячеек держали strokeWeight литералом 1. Привязано к space/px — как в input (245), input-combi (140), textarea (210) и textarea-combi (120). own_value «1px» у компонента закрыт.",
+    "иконки_слотов": "420 узлов (prefix и suffix у 210 ячеек) красились одной привязкой form-control/default/color-rest — не следовали ни тону, ни состоянию. Перепривязаны на {тон}/icon-{состояние}; у тона default ячейки icon нет, там placeholder-{состояние}. Ровно тот же дефект и то же решение, что в ↪ input (490 узлов).",
+    "шеврон": "210 узлов красились form-control/default/chevron-rest во всех шести тонах и во всех пяти состояниях. Ячейки {тон}/chevron-{состояние} есть у всех шести тонов — перепривязаны на них. Этого дефекта у input не было: у него шеврона нет.",
+    "фон_и_рамка": "Уже были верны: фон — линейный градиент, стопы привязаны на {тон}/chroma-{состояние} → {тон}/bg-{состояние}; у light второй стоп — плоская ячейка light/bg; у ghost оба стопа — роль extended/transparent (ячеек ghost/bg в теме нет, код пишет ключевое слово transparent, как в input-ghost). Гашение выключенных — opacity/control/disabled на самой ячейке.",
+    "ловушка_замера": "strokeWeight после привязки исчезает из boundVariables и появляется четырьмя полями strokeTopWeight / strokeBottomWeight / strokeLeftWeight / strokeRightWeight. Проверка по ключу strokeWeight после правки показала «210 литералов осталось» — ложная тревога. По той же причине ложным оказался и первый вывод «42 кольца фокуса с литеральной толщиной»: у focus-selection она привязана по сторонам. Итог замера: привязано 252 из 252."
+  },
+  "code_mapping": {
+    "_note": "Что читает CSS после перевода на цели 16.09.2026: 820 ссылок, 820 якорей #cell, приватных имён --awds-state-* / --awds-size-* не осталось ни одного.",
+    "цвета": "form-control/{тон}/{bg,chroma,border,color,placeholder,chevron,icon}-{состояние} — якорь стоит в комментарии той же строки.",
+    "иконка_и_шеврон": "Код читал {тон}/placeholder-{состояние} и для иконки, и для шеврона. Переведён на свои ячейки: icon-{состояние} у пяти тонов (у default ячейки нет — остаётся placeholder) и chevron-{состояние} у всех шести. Значения при этом не изменились ни в одной точке: в теме icon, chevron и placeholder сейчас совпадают всюду, кроме ghost/focus и autofill/focus, а там код и раньше читал color-focus, равный icon-focus. То есть правка вернула смысл, не тронув вид.",
+    "панель": "size/dropdown/{N}/{padding,border-radius} на всех семи ступенях. До 16.09.2026 ступени 50 и 100 читали чужую ячейку dropdown/200, а 600 — базовую шкалу rounded/border-radius/600, потому что своих ячеек не было; 36 строк переведены на свои.",
+    "пункты_списка": "list/unselected/bg-focus и list/selected-secondary/{bg,border,color,description,icon-check} — панель рисует пункты компонентом list-item.",
+    "панель_фон": "picker/{bg,scrollbar}."
+  },
+  "damage_16_09": "Замер превью до и после перевода: 277 элементов из 383. Контрол рисовался высотой 20px вместо 52, радиус 0 вместо 10, отступов не было, кегль браузерный вместо шкалы, а текст приходил ПОЛНОСТЬЮ ПРОЗРАЧНЫМ (rgba(0,0,0,0)) — цвет читался из несуществующей переменной. По свойствам: цвета 171, высота и габарит 136, кегль 122, радиус 114, вертикальные отступы 90, горизонтальные 88, зазоры 57, тень 51, фон 32, гашение 16. База сравнения — версия CSS из git HEAD.",
+  "debts": {
+    "вопрос_focus": "Открытый вопрос form-control-focus-drawn-not-read (major, 03.09.2026) этим заходом закрыт наполовину: ячейки chevron и icon всех тонов теперь ЧИТАЮТСЯ кодом во всех четырёх состояниях. Непрочитанной остаётся группа dim — её не читает ни один контрол формы, кроме secondary у input и input-combi.",
+    "panel_вне_планки": "Панель стоит на ::picker(select), position-anchor и anchor-size() — это вне Baseline 2024. Решение принято до прохода и здесь не пересматривалось: без поддержки слой @supports просто не применяется и остаётся системный попап.",
+    "secondary": "В теме есть тон form-control/secondary, в макете select его нет — шесть наборов против семи у input. Не заводилось: макет источник структуры."
+  }
 }

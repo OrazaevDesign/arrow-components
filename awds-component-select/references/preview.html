@@ -85,9 +85,9 @@
       --awds-select-chroma:     rgb(var(--primary-container-chroma));
       --awds-select-border:     rgb(var(--primary-dim));
       --awds-select-color:      rgb(var(--primary-container-on-highest));
-      --awds-select-placehold:  rgb(var(--primary-container-on-high));
+      --awds-select-placeholder:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
     .select-light.is-hover {
@@ -100,10 +100,10 @@
       --awds-select-chroma:     rgb(var(--primary-container-chroma));
       --awds-select-border:     rgb(var(--primary-dim));
       --awds-select-color:      rgb(var(--primary-container-on-highest));
-      --awds-select-placehold:  rgb(var(--primary-container-on-high));
+      --awds-select-placeholder:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
     .select-success.is-hover {
@@ -117,10 +117,10 @@
       --awds-select-chroma:     rgb(var(--primary-container-chroma));
       --awds-select-border:     rgb(var(--primary-dim));
       --awds-select-color:      rgb(var(--primary-container-on-highest));
-      --awds-select-placehold:  rgb(var(--primary-container-on-high));
+      --awds-select-placeholder:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
     .select-error.is-hover {
@@ -134,18 +134,18 @@
       --awds-select-chroma:     rgb(var(--primary-container-chroma));
       --awds-select-border:     rgb(var(--primary-dim));
       --awds-select-color:      rgb(var(--primary-container-on-highest));
-      --awds-select-placehold:  rgb(var(--primary-container-on-high));
+      --awds-select-placeholder:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
     .select-ghost.is-focus {
       --awds-select-color:      rgb(var(--primary-container-on-highest));
-      --awds-select-placehold:  rgb(var(--primary-container-on-high));
+      --awds-select-placeholder:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-highest));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
     .select-autofill.is-hover {
@@ -159,10 +159,10 @@
       --awds-select-chroma:     rgb(var(--primary-container-chroma));
       --awds-select-border:     rgb(var(--primary-dim));
       --awds-select-color:      rgb(var(--primary-container-on-highest));
-      --awds-select-placehold:  rgb(var(--primary-container-on-high));
+      --awds-select-placeholder:  rgb(var(--primary-container-on-high));
       --awds-select-chevron:    rgb(var(--primary-container-on-high));
       --awds-select-icon-color: rgb(var(--primary-container-on-highest));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
   </style>
@@ -170,7 +170,7 @@
 <body>
 
   <h1>select / storybook</h1>
-  <p class="sub">Выбор из списка на <b>нативном</b> <code>&lt;select&gt;</code>: тот же контрол-прямоугольник, что и <code>awds-component-input</code>, плюс шеврон справа. Оси Figma: <code>Size</code> 50–600 (семь) × <code>State</code> Rest / Hover / Focus / Active / Disabled. Геометрия и типографика целиком на семантическом слое <code>var(--awds-rectangle-N-*)</code>, высота выводится как <code>2×padding + line-height</code> — как у поля ввода, поэтому рядом в форме они стоят ровно. Шеврон — псевдоэлемент обёртки с <code>mask</code> (цвет — роль <code>chevrone</code>), <code>pointer-events: none</code>: клик по нему открывает список.</p>
+  <p class="sub">Выбор из списка на <b>нативном</b> <code>&lt;select&gt;</code>: тот же контрол-прямоугольник, что и <code>awds-component-input</code>, плюс шеврон справа. Оси Figma: <code>Size</code> 50–600 (семь) × <code>State</code> Rest / Hover / Focus / Active / Disabled. Геометрия и типографика целиком на семантическом слое <code>var(--awds-rectangle-N-*)</code>, высота выводится как <code>2×padding + line-height</code> — как у поля ввода, поэтому рядом в форме они стоят ровно. Шеврон — псевдоэлемент обёртки с <code>mask</code> (цвет — роль <code>chevron</code>), <code>pointer-events: none</code>: клик по нему открывает список.</p>
 
   <div class="toolbar">
     <label>Вариант:
@@ -293,7 +293,7 @@
           <option value="shy" class="list-item list-item-transparent"><span class="list-item__content"><span class="list-item__title">Шымкент</span></span></option>
         </select>
       </span>
-      <p class="field-hint">Пустой <code>option value=""</code> красится ролью placehold — попробуй выбрать город и вернуться к пустому.</p>
+      <p class="field-hint">Пустой <code>option value=""</code> красится ролью placeholder — попробуй выбрать город и вернуться к пустому.</p>
     </div>
 
     <div>
@@ -321,7 +321,7 @@
   </div>
 
   <h2>Раскрытый список</h2>
-  <p class="note" id="picker-note">Открой любой список в живой форме выше — панель, пункты и выбранный вариант нарисованы по компоненту <code>◆ / Dropdown</code> из макета, слоем <code>@supports (appearance: base-select)</code>. Где движок это не умеет (пока Safari и Firefox), слой не применяется и остаётся системный попап: контрол тот же, отличается только вид раскрытого списка.</p>
+  <p class="note" id="picker-note">Открой любой список в живой форме выше — панель, пункты и выбранный вариант нарисованы по компоненту <code>. / dropdown</code> из макета, слоем <code>@supports (appearance: base-select)</code>. Где движок это не умеет (пока Safari и Firefox), слой не применяется и остаётся системный попап: контрол тот же, отличается только вид раскрытого списка.</p>
 
   <h2>Чего этот компонент НЕ делает</h2>
   <p class="note">Мультивыбор и поиск внутри списка. Нужен такой — это другой компонент (кастомный listbox), а не этот. <b>Произвольная вёрстка пункта, наоборот, теперь есть</b> — её даёт <code>awds-component-list-item</code> внутри <code>&lt;option&gt;</code>, но только там, где движок умеет <code>base-select</code>: в системном попапе пункт схлопнется до одной строки текста. Взамен здесь бесплатно работают клавиатура, поиск по первым буквам, скринридеры и мобильные колёса выбора.<br><br>Слоты <code>prefix</code> / <code>suffix</code> — <b>декоративные</b> (<code>pointer-events: none</code>): у нативного контрола кликабельному элементу внутри взяться неоткуда. И отдельно: при использовании <code>suffix</code> клик по шеврону перестаёт открывать список — полосу под ним резервирует обёртка, а не поле. Переключи «Слоты → prefix + suffix» и попробуй в живой форме выше: это единственная известная мёртвая зона, без JS неустранимая.</p>

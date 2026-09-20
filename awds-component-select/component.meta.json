@@ -1,53 +1,54 @@
 {
   "component": "select",
-  "version": "1.0.6",
-  "contract_hash": "sha256:4c9bab587d29276f9af3329b9df97a90c1bcf8e5162a2e796b7753c5760f2af3",
-  "artifact_hash": "sha256:c20d66b45294b1d38dd5ad0c854b63aa49e2b81e40586997911b2a5d2312ebf8",
-  "visual_change": false,
-  "released_at": "2026-08-26T10:17:04.679Z",
-  "own_values": [],
+  "version": "1.0.17",
+  "contract_hash": "sha256:0e22a7c9f7b6f9f4bdf2e551213b40ec9c337e1f9b9d703793d15870cccab6ac",
+  "artifact_hash": "sha256:cc1ea485f1f85a1f4dfd97b5b2b16ff9113451d5ce26c9eccc6ce006b0ef0ed8",
+  "visual_change": true,
+  "released_at": "2026-09-16T16:26:05.526Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 6,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "394:15271",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15271"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:17",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-17"
   },
   "variants": {
     "default": {
-      "node_id": "394:15271",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15271",
-      "figma_label": "Select / Default",
-      "token_role": "form-control/default"
+      "node_id": "34:45983",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-45983",
+      "figma_label": "select / default"
     },
     "light": {
-      "node_id": "394:15454",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15454",
-      "figma_label": "Select / Light",
-      "token_role": "form-control/light"
+      "node_id": "34:46166",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-46166",
+      "figma_label": "select / light"
     },
     "success": {
-      "node_id": "394:15637",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15637",
-      "figma_label": "Select / Success",
-      "token_role": "form-control/success"
+      "node_id": "34:46349",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-46349",
+      "figma_label": "select / success"
     },
     "error": {
-      "node_id": "394:15821",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-15821",
-      "figma_label": "Select / Error",
-      "token_role": "form-control/error"
+      "node_id": "34:46532",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-46532",
+      "figma_label": "select / error"
     },
     "ghost": {
-      "node_id": "394:16004",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16004",
-      "figma_label": "Select / Ghost",
-      "token_role": "form-control/ghost"
+      "node_id": "34:46715",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-46715",
+      "figma_label": "select / ghost"
     },
     "autofill": {
-      "node_id": "394:16187",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16187",
-      "figma_label": "Select / Autofill",
-      "token_role": "form-control/autofill"
+      "node_id": "34:46898",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-46898",
+      "figma_label": "select / autofill"
     }
   },
   "shape": "rectangle",
@@ -73,15 +74,15 @@
     "chroma",
     "border",
     "color",
-    "placehold",
+    "placeholder",
     "chevron",
     "icon-color"
   ],
   "css_files": [
     "select-default.css"
   ],
-  "implementation_note": "Нативный <select>, а не самодельный дропдаун: клавиатура, поиск по первым буквам, скринридеры, мобильные колёса выбора и работа в форме достаются бесплатно и правильно. РАСКРЫТЫЙ СПИСОК ПРИ ЭТОМ СТИЛИЗОВАН — слоем @supports (appearance: base-select) по компоненту ◆ / Dropdown из макета. Где движок не умеет base-select (пока Safari и Firefox), слой не применяется и остаётся системный попап: контрол тот же, отличается только вид раскрытого списка. Полифилла нет и не нужно. Чего компонент по-прежнему не делает: мультивыбор, поиск внутри списка, произвольная вёрстка пункта (иконка + две строки + бейдж) — для этого нужен кастомный listbox, отдельный компонент.",
-  "chevron_note": "Шеврон — псевдоэлемент ОБЁРТКИ (.select::after), а не элемент разметки: у <select> своих псевдоэлементов нет (заменяемый элемент), а отдельным <span> потребитель мог бы его забыть. Цвет меняется по состоянию (роль chevrone), поэтому mask-image, а не background-image — в data-URI цвет пришлось бы зашить. Форма взята из макета (ic20-chevroneBottom-outline, union-path 10×6 в боксе 20×20), не нарисована заново. pointer-events: none — клик по шеврону проходит в <select> и открывает список; полосу под ним резервирует padding-right самого поля.",
+  "implementation_note": "Нативный <select>, а не самодельный дропдаун: клавиатура, поиск по первым буквам, скринридеры, мобильные колёса выбора и работа в форме достаются бесплатно и правильно. РАСКРЫТЫЙ СПИСОК ПРИ ЭТОМ СТИЛИЗОВАН — слоем @supports (appearance: base-select) по компоненту . / dropdown из макета. Где движок не умеет base-select (пока Safari и Firefox), слой не применяется и остаётся системный попап: контрол тот же, отличается только вид раскрытого списка. Полифилла нет и не нужно. Чего компонент по-прежнему не делает: мультивыбор, поиск внутри списка, произвольная вёрстка пункта (иконка + две строки + бейдж) — для этого нужен кастомный listbox, отдельный компонент.",
+  "chevron_note": "Шеврон — псевдоэлемент ОБЁРТКИ (.select::after), а не элемент разметки: у <select> своих псевдоэлементов нет (заменяемый элемент), а отдельным <span> потребитель мог бы его забыть. Цвет меняется по состоянию (роль chevron), поэтому mask-image, а не background-image — в data-URI цвет пришлось бы зашить. Форма взята из макета (ic20-chevroneBottom-outline, union-path 10×6 в боксе 20×20), не нарисована заново. pointer-events: none — клик по шеврону проходит в <select> и открывает список; полосу под ним резервирует padding-right самого поля.",
   "geometry_note": "Высота НЕ задаётся явно: 2 × rectangle-{N}-padding + line-height. Совпадает с awds-component-input того же размера — и padding, и типографика приходят из одних rectangle-токенов. Паддинги живут на слотах (prefix — только слева, suffix — только справа, поле — со всех сторон). Полоса шеврона = 2 × padding + icon: зазор до иконки, иконка, отступ от края — ровно три слагаемых из макета. Горизонтальный отступ текста зависит от наличия иконки рядом: есть иконка → rectangle-{N}-padding (отсчёт от иконки), иконки нет → rectangle-{N}-text-gap (отсчёт от края). text-gap всегда шире (18/18/16/14/14/10/8 против padding 16/14/10/8/8/4/2). В макете это булев проп Padding Icon у компонента Content Input, он переключает ОБА горизонтальных паддинга сразу; в CSS сделано ПО СТОРОНЕ через :has(> .select__prefix) / :has(> .select__suffix), иначе поле с одной иконкой (частый случай — поиск слева) получило бы неверный отступ со второй стороны. Вертикальные паддинги не меняются, высота контрола та же. У селекта СПРАВА всегда padding: там иконка есть всегда — шеврон, полоса под него не меняется. То же правило действует внутри попапа: у пункта списка иконки нет, поэтому его горизонтальный отступ — rectangle-{шаг вниз}-text-gap (14 при rectangle-300), а вертикальный — padding. Сверено и привязкой переменной, и геометрией текста внутри инстанса List-item.",
   "typography_note": "Шкала control, НЕ typography: Figma даёт font-size/600=16 при line-height/600=20, а у typography-600 line-height 26. В CSS взят семантический var(--awds-rectangle-{N}-typography-*), который в css-global уже маршрутизирован на нужный control-{M}.",
   "focus_ring_note": "Кольцо как у input и в отличие от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. offset 0.",
@@ -93,7 +94,7 @@
     "picker": "пункт попапа — awds-component-list-item; ступень и выбранный пункт проверены отдельно (см. picker_note)",
     "measurement_gotcha": "Замер высоты сразу после вставки через innerHTML в живое дерево даёт заниженное значение (32 вместо 52): под appearance: base-select Chromium пересчитывает содержимое кнопки только к следующему кадру. Мерить после requestAnimationFrame либо строить через createElement.",
     "open_state": "Открытый попап проверен вживую на default, ghost и error: поле получает фокусные роли и кольцо, при этом hover перебивается (курсор над контролом). Причина бага — под base-select activeElement уходит в <option>, и :focus-within на обёртке ложен; лечится :has(> .select__field:open) отдельным правилом в своём @supports.",
-    "panel": "Панель сверена с ◆ / Dropdown по всем 7 ячейкам: padding 4 и радиус (10/8/8/6/6/6/6) совпадают, обводки нет, зазора между пунктами нет. Ширина и позиция берутся от ОБЁРТКИ через собственный anchor-name + anchor-scope: у ::picker(select) якорь по умолчанию — сам <select>, который со слотом prefix уже контрола. Проверено на 4 раскладках слотов (нет / одна слева / две слева / слева и справа): панель совпадает с обёрткой по ширине и левому краю, зазор 4 сохраняется. Не перенесено из макета: max-height 320 — сырое число без токена.",
+    "panel": "Панель сверена с . / dropdown по всем 7 ячейкам: padding 4 и радиус (10/8/8/6/6/6/6) совпадают, обводки нет, зазора между пунктами нет. Ширина и позиция берутся от ОБЁРТКИ через собственный anchor-name + anchor-scope: у ::picker(select) якорь по умолчанию — сам <select>, который со слотом prefix уже контрола. Проверено на 4 раскладках слотов (нет / одна слева / две слева / слева и справа): панель совпадает с обёрткой по ширине и левому краю, зазор 4 сохраняется. Не перенесено из макета: max-height 320 — сырое число без токена. 16.09.2026: часть переименована в «. / dropdown» и перенесена в секцию «↪ parts» страницы 3 · forms; группа ячеек size/dropdown достроена до семи ступеней (были 200–500), в макете панель привязана к ним у ступеней 200–500 — 50, 100 и 600 ждут перепубликации библиотеки токенов. В макете починен blur первого слоя тени: он был привязан к shadow1/offset-y и давал 0/6/6 вместо 0/6/12 — код с var(--awds-shadow-elevation-3) был прав.",
     "focus_ring": "Кольцо сверено с геометрией макета по всем 7 размерам: слой outline внутри FocusSelection стоит на 1 наружу от контрола (322x50 при 320x48), обводка 2 OUTSIDE, слой с opacity 0.5, цвет focus-selection/outlineVariant. В CSS это outline 2px + outline-offset 1px; радиус кольца CSS считает сам из offset и он совпадает с макетным (скругление + 1). Проверено настоящим фокусом в браузере, не зеркалом."
   },
   "preview": {
@@ -189,85 +190,75 @@
     ]
   },
   "ds_token_dependencies": [
-    "--secondary-container-core",
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-shadow-elevation-3",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--error-container-chroma",
+    "--error-container-core",
+    "--error-container-on",
+    "--error-container-on-high",
+    "--error-container-on-highest",
+    "--error-container-on-low",
+    "--primary-container-chroma",
+    "--primary-container-core",
+    "--primary-container-on",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--primary-container-on-lowest",
+    "--primary-dim",
     "--secondary-container-chroma",
-    "--secondary-container-on-low",
+    "--secondary-container-core",
     "--secondary-container-on",
     "--secondary-container-on-high",
     "--secondary-container-on-highest",
+    "--secondary-container-on-low",
+    "--success-container-chroma",
+    "--success-container-core",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--success-container-on-low",
     "--surface-bright",
-    "--primary-core",
-    "--primary-dim",
-    "--primary-container-chroma",
-    "--primary-container-on-high",
-    "--primary-container-on-highest",
     "--surface-on",
-    "--primary-container-core",
-    "--primary-container-on-lowest",
-    "--awds-shadow-elevation-3",
-    "--awds-rounded-border-radius-600",
-    "--awds-size-dropdown-200-padding",
-    "--awds-size-dropdown-200-border-radius",
-    "--awds-size-dropdown-300-padding",
-    "--awds-size-dropdown-300-border-radius",
-    "--awds-size-dropdown-400-padding",
-    "--awds-size-dropdown-400-border-radius",
-    "--awds-size-dropdown-500-padding",
-    "--awds-size-dropdown-500-border-radius",
-    "--awds-space-space-1",
-    "--awds-size-rectangle-50-padding",
-    "--awds-size-rectangle-50-icon",
-    "--awds-size-rectangle-50-rounded",
-    "--awds-size-rectangle-50-typography",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
-    "--awds-size-rectangle-100-padding",
-    "--awds-size-rectangle-100-icon",
-    "--awds-size-rectangle-100-rounded",
-    "--awds-size-rectangle-100-typography",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-200-padding",
-    "--awds-size-rectangle-200-icon",
-    "--awds-size-rectangle-200-rounded",
-    "--awds-size-rectangle-200-typography",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-icon",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-icon",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-size-rectangle-600-padding",
-    "--awds-size-rectangle-600-icon",
-    "--awds-size-rectangle-600-rounded",
-    "--awds-size-rectangle-600-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-opacity-opacity-40",
-    "--awds-opacity-opacity-50",
-    "--awds-font-family-system",
-    "--awds-font-weight-regular",
-    "--awds-size-rectangle-50-text-gap",
-    "--awds-size-rectangle-100-text-gap",
-    "--awds-size-rectangle-200-text-gap",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-600-text-gap"
+    "--tertiary-container-chroma",
+    "--tertiary-container-core",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
+    "--tertiary-container-on-low"
   ],
   "last_synced": "2026-08-13T12:55:54Z",
   "last_synced_by": "claude",
@@ -338,9 +329,64 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "select",
+      "tags": [
+        "span",
+        "label",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "select-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "select--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "select",
+      "class": "select__field"
+    },
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Нативный select обязателен: список открывает браузер, компонент оформляет только поле. Пункты кастомного попапа — это list-item."
+  },
+  "family": "forms",
+  "summary": "Выпадающий список, подпись снаружи рамки",
+  "aliases": [
+    "селект",
+    "выпадающий список",
+    "дропдаун",
+    "выбор из перечня"
+  ],
+  "asana": {
+    "task_gid": "1218421650179199",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421650179199",
+    "task_name": "💠 select",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "form-control-focus-drawn-not-read",
+      "text": "У form-control focus нарисован в ячейках, но компонент его не читает: 17 ячеек (dim, chevron, icon у семи тонов) в focus переключаются на primary-container-*, а в CSS полей focus меняет только кольцо. Читать focus в компонентах или снять состояние у ячеек?",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "open",
+      "raised_at": "2026-09-03",
+      "evidence": "state-vocab-analysis 02.09.2026: 17 ячеек группы form-control, read=0 во всех четырёх состояниях; единственное исключение form-control-secondary-dim — active читают input и input-combi. Решение Э1 по этому классу: оставить, вопрос компоненту в Э3",
+      "answer": null,
+      "asana_gid": "1218489020012833"
+    }
+  ],
   "uses": {
-    "awds-component-focus-selection": "1.1.0",
-    "awds-component-list-item": "1.0.4"
+    "awds-component-focus-selection": "2.0.3",
+    "awds-component-list-item": "1.0.6"
   },
   "contract": {
     "classes": [
@@ -363,9 +409,13 @@
       "select__prefix",
       "select__suffix"
     ],
-    "attributes": [],
+    "attributes": [
+      "aria-disabled",
+      "value"
+    ],
     "elements": [
       "option",
+      "select",
       "svg"
     ],
     "public_vars": [],

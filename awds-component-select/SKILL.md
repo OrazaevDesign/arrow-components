@@ -1,6 +1,6 @@
 ---
 name: awds-component-select
-description: Выпадающие списки ArrowDS (select, dropdown): триггер, список, размеры, состояния, подпись снаружи. Для выбора из перечня. Подпись внутри рамки — select-combi. Токены ArrowDS, работает и по Figma-ссылке.
+description: Select ArrowDS (.select).
 ---
 
 # Select ArrowDS
@@ -33,7 +33,7 @@ description: Выпадающие списки ArrowDS (select, dropdown): тр�
 
 Контрол построен на нативном элементе, а не на самодельном дропдауне. Бесплатно и правильно достаются: клавиатура, поиск по первым буквам, экранные читалки, мобильные колёса выбора, работа в форме и автозаполнение.
 
-**Раскрытый список тоже по дизайну — но не во всех браузерах.** В конце CSS есть слой `@supports (appearance: base-select)`: где движок это умеет (Chromium 135+), попап рисуем мы, по компоненту `◆ / Dropdown` из макета — панель, пункты, выбранный, скролл. Где не умеет (пока Safari и Firefox) — слой просто не применяется, и остаётся системный попап. Контрол в обоих случаях один и тот же, отличается только вид раскрытого списка; полифилла нет и не нужно.
+**Раскрытый список тоже по дизайну — но не во всех браузерах.** В конце CSS есть слой `@supports (appearance: base-select)`: где движок это умеет (Chromium 135+), попап рисуем мы, по части `. / dropdown` из макета (секция `↪ parts` страницы `3 · forms`) — панель, пункты, выбранный, скролл. Где не умеет (пока Safari и Firefox) — слой просто не применяется, и остаётся системный попап. Контрол в обоих случаях один и тот же, отличается только вид раскрытого списка; полифилла нет и не нужно.
 
 Это и есть смысл `base-select`: не отказ от нативного элемента ради вида, а его оформление без потери семантики.
 
@@ -45,7 +45,7 @@ description: Выпадающие списки ArrowDS (select, dropdown): тр�
 
 | Что | Чем | Откуда |
 |---|---|---|
-| Панель | `::picker(select)` | фон `surface-bright`, padding `dropdown-{N}-padding` (4 на всех размерах), радиус `dropdown-{N}-border-radius`, тень `elevation-3`, **ширина ровно по контролу** (`width: anchor-size(width)`), **отступ от контрола 4** (`margin-block: space-1`) — всё в CSS селекта |
+| Панель | `::picker(select)` | фон `surface-bright` (ячейка `picker/bg`), padding `dropdown-{N}-padding` (4 на всех семи ступенях), радиус `dropdown-{N}-border-radius`, тень `elevation-3`, **ширина ровно по контролу** (`width: anchor-size(width)`), **отступ от контрола 4** (`margin-block: space-1`) — всё в CSS селекта |
 | Пункт: вид и геометрия | `.list-item.list-item-transparent` на `<option>` | целиком компонент `awds-component-list-item` — селект их не дублирует |
 | Пункт: размерная ступень | правило-мост `.select__field option` | **на ступень ниже** размера контрола; селект кормит `--awds-list-item-*` своими `--awds-select-opt-*` |
 | Наведение | `.list-item-transparent:hover` | из list-item, отдельного правила в селекте нет |
@@ -57,7 +57,7 @@ description: Выпадающие списки ArrowDS (select, dropdown): тр�
 
 **Кольцо фокуса снято с геометрии макета, а не подобрано.** Слой `outline` внутри `FocusSelection` стоит прямоугольником на 1 наружу от контрола (322×50 при 320×48), обводка 2 наружу от него, а сам слой несёт `opacity: 0.5`. CSS-outline рисуется от края бокса, поэтому `outline-offset: var(--awds-focus-offset)` + `width: 2px` дают ровно ту же полосу 1..3. Радиус подтверждает независимо: в макете он равен скруглению контрола + 1 (11 при 10, 9 при 8, 5 при 4), и CSS считает его так же сам, из offset. Сверено по всем семи размерам.
 
-**Панель повторяет ширину контрола точно, а не «не уже» его.** В макете инстансы `Select / Default` и `◆ / Dropdown` оба 297 — ширины совпадают. Поэтому `width`, а не `min-width`: иначе длинный пункт растягивал бы попап шире кнопки и тот переставал бы читаться как её продолжение. Длинный текст при этом не режется — `list-item` переносит его по строкам.
+**Панель повторяет ширину контрола точно, а не «не уже» его.** В макете инстансы `Select / Default` и `. / dropdown` оба 297 — ширины совпадают. Поэтому `width`, а не `min-width`: иначе длинный пункт растягивал бы попап шире кнопки и тот переставал бы читаться как её продолжение. Длинный текст при этом не режется — `list-item` переносит его по строкам.
 
 **Якорь попапа переведён на обёртку.** По умолчанию `::picker(select)` привязан к элементу `<select>`, а он **не равен контролу**: слот `prefix` стоит рядом с полем и отъедает ширину слева. Из-за этого с иконкой панель получалась уже контрола и сдвинутой вправо (замерено: обёртка 340, поле 310 → панель 310). Поэтому на `.select` объявлен `anchor-name`, а попап ссылается на него явно через `position-anchor` и `anchor-size(--awds-select-anchor width)`.
 
@@ -74,16 +74,32 @@ description: Выпадающие списки ArrowDS (select, dropdown): тр�
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/плейсхолдер/иконки) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-default.css` |
-| Цвет шеврона | роль `chevrone`: `secondary-container-on-high` → при фокусе `primary-container-on-high` | `component-token-map.json` → `map.state.*.form-control.default.chevrone` |
-| Фокус-кольцо | `var(--awds-focus-width) solid var(--awds-focus-color-formcontrol)`, `outline-offset: var(--awds-focus-offset)` | Figma `focus-selection/outlineVariant` + `opacity/50`; ширина и offset — с геометрии слоя |
+| Цвет шеврона | роль `chevron`: `secondary-container-on-high` → при фокусе `primary-container-on-high` | `component-token-map.json` → `map.state.*.form-control.default.chevron` |
+| Фокус-кольцо | `var(--awds-focus-width) solid var(--awds-focus-color-muted)`, `outline-offset: var(--awds-focus-offset)` | Figma `focus-selection/outlineVariant` + `opacity/50`; ширина и offset — с геометрии слоя |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `map.size.rectangle` |
 | Горизонтальный отступ текста | слева `text-gap` (с `prefix` — `padding`), справа всегда `padding`: там шеврон | Figma: проп `Padding Icon` у `Content Input` |
-| Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
+| Типографика | `var(--awds-control-font-size-{M})` и парные line-height / letter-spacing | ячейка `rectangle/{N}/typography` ведёт на `control-{M}` |
 | Форма шеврона | union-path из макета (`ic20-chevroneBottom-outline`), вшит маской | `snapshot/figma.json` → `chevron_svg` |
-| Панель попапа | `var(--awds-dropdown-{N}-*)` + `var(--awds-shadow-elevation-3)` | `snapshot/figma.json` → `dropdown` |
+| Панель попапа | `var(--awds-space-1)` и `var(--awds-rounded-border-radius-{N})` + `var(--awds-shadow-elevation-3)` | ячейки `dropdown/{N}/*`, все семь ступеней; `snapshot/figma.json` → `dropdown` |
 | Пункт попапа | компонент `awds-component-list-item`; селект даёт ему ступень `{N−1}` через мост | `awds-component-list-item` |
 | Цвета пунктов | роли `list/unselected-transparent` (покой, hover) и `list/selected-secondary` (выбранный) | `map.state.*.list` |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
+
+### Откуда берутся значения
+
+Компонент читает **роли и базовые шкалы**, а не имена ячеек: коллекции State и Size
+приватны с 03.09.2026, и в опубликованной теме их имён нет. Связь с макетом держит
+якорь `#cell` в комментарии той же строки — 820 штук, их сверяет
+`component-cell-drift.mjs`.
+
+| Что | Источник | Ячейка в якоре |
+|---|---|---|
+| Фон, хрома, рамка, текст, плейсхолдер | роли `rgb(var(--secondary-container-*))` и родственные | `form-control/{тон}/{свойство}-{состояние}` |
+| Шеврон | своя ячейка тона, не плейсхолдер | `form-control/{тон}/chevron-{состояние}` |
+| Иконка слота | своя ячейка тона; у `default` ячейки `icon` нет — там плейсхолдер | `form-control/{тон}/icon-{состояние}` |
+| Геометрия, скругление, кегль | `var(--awds-space-*)`, `var(--awds-rounded-*)`, `var(--awds-control-*)` | `rectangle/{N}/*` |
+| Панель списка | `var(--awds-space-1)`, `var(--awds-rounded-border-radius-{N})` | `dropdown/{N}/*` — все семь ступеней |
+| Пункты панели | роли через `list-item` | `list/unselected/*`, `list/selected-secondary/*` |
 
 ## Размерные модификаторы
 
@@ -119,7 +135,7 @@ description: Выпадающие списки ArrowDS (select, dropdown): тр�
 - Подпись обязательна: `<label for>` снаружи либо `aria-label` на самом `<select>`.
 - Фокус виден при любом способе входа (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Декоративная иконка в слоте → `aria-hidden="true"`.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-40)` (ячейка `opacity/control/disabled`) на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 - Размеры 50 и 100 (высота 20 и 24px) меньше тач-минимума — только для мыши и плотных таблиц.
 
 ## Варианты
