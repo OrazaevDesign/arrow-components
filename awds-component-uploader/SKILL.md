@@ -1,6 +1,6 @@
 ---
 name: awds-component-uploader
-description: Загрузчик файлов Uploader ArrowDS: поле выбора, drag-and-drop, список загруженного, состояния. Для приложенных файлов и фото в отзыве. Токены ArrowDS, работает и по Figma-ссылке.
+description: Uploader ArrowDS (.upl).
 ---
 
 # Uploader ArrowDS

@@ -65,7 +65,7 @@
 <body>
 
   <h1>uploader / storybook</h1>
-  <p class="sub">Загрузка файлов: поле выбора сверху, список загруженного снизу. Оси Figma: <code>Uploader</code> — <code>Size</code> 300 / 400 / 500; <code>Uploader / File</code> — <code>Var</code> (IMG / Default) × <code>Error</code> (Off / On), и то и другое выражено составом разметки. <b>Размер меняет только поле</b>: строка файла всегда 36 px, поэтому список во всех трёх ячейках макета ровно 120. Поле — <code>awds-component-input</code>, кнопка удаления — <code>awds-component-button</code> (ghost, 300, <b>icon-only</b>), круговой индикатор — слот 20×20 под внешний компонент DS.</p>
+  <p class="sub">Загрузка файлов: <b>зона перетаскивания</b> сверху, список загруженного снизу. Зона обведена пунктиром, как в макете: на неё бросают файл мышью или нажимают её — и то и другое работает без скрипта, потому что настоящий <code>&lt;input type="file"&gt;</code> растянут на всю зону и сделан прозрачным. Оси Figma: <code>Uploader</code> — <code>Size</code> 300 / 400 / 500; <code>uploader / file</code> — <code>content</code> (img / file) × <code>error</code> (off / on), и то и другое выражено составом разметки. <b>Размер меняет только зону</b>: строка файла всегда 36 px, поэтому список во всех трёх ячейках макета ровно 120. Зона выглядит как <code>awds-component-input</code>, кнопка удаления — <code>awds-component-button</code> (ghost, 300, <b>icon-only</b>), круговой индикатор — слот 20×20 под внешний компонент DS.</p>
 
   <div class="toolbar">
     <label>Список:
@@ -102,7 +102,7 @@
   <div class="ctx"><ul class="upl__list" id="files"></ul></div>
 
   <h2>Чего этот компонент НЕ делает</h2>
-  <p class="note">Не рисует поле и кнопку удаления — они приходят из <code>awds-component-input</code> и <code>awds-component-button</code>, подключить их CSS обязан потребитель. Не рисует индикатор загрузки: в макете это внешний компонент <code>ProgressIndicators</code> (M3 circular), которого в arrow-components нет — здесь только слот фиксированного бокса, чтобы строка не прыгала. Не грузит файлы и не считает проценты — это работа приложения. И не носит подписи с пояснением: для этого есть <code>awds-component-formfield</code> (в макете — <code>Formfiled / FileUploader</code>).</p>
+  <p class="note">Не рисует вид поля и кнопку удаления — они приходят из <code>awds-component-input</code> и <code>awds-component-button</code>, подключить их CSS обязан потребитель. Не ловит событие <code>dragover</code>: подсветку зона получает классом <code>.upl__drop--over</code>, который вешает потребитель — из CSS перетаскивание не видно. Не рисует индикатор загрузки: в макете это внешний компонент <code>ProgressIndicators</code> (M3 circular), которого в arrow-components нет — здесь только слот фиксированного бокса, чтобы строка не прыгала. Не грузит файлы и не считает проценты — это работа приложения. И не носит подписи с пояснением: для этого есть <code>awds-component-formfield</code> (в макете — <code>Formfiled / FileUploader</code>).</p>
 
   <script>
     const SIZES = [500, 400, 300];
@@ -141,9 +141,9 @@
         list = fileRow({ kind: 'img' }) + fileRow({ kind: 'default' }) + fileRow({ kind: 'default', name: 'akt.pdf', meta: '1.2 Мб' });
       }
       return `<div class="upl upl--${size}">` +
-        `<label class="upl__label"><input class="upl__input" type="file" id="${id}" multiple>` +
+        `<label class="upl__drop"><input class="upl__input" type="file" id="${id}" multiple>` +
         '<span class="input input-default">' +
-        '<input class="input__field" type="text" placeholder="Выберите файл" readonly tabindex="-1">' +
+        '<span class="upl__prompt">Выберите файл или перетащите его сюда</span>' +
         `<span class="input__suffix" aria-hidden="true">${IC_UPLOAD}</span></span></label>` +
         (list ? `<ul class="upl__list">${list}</ul>` : '') +
         '</div>';

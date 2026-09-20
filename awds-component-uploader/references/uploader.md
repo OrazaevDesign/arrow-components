@@ -1,6 +1,6 @@
 # Uploader
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:77614](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77614) · строка файла — [395:77633](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77633)
+**Figma:** [470rar5EfRm4n14vHMXbpc → секция ↪ uploader 5:26](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-26) · строка файла — набор `uploader / file` (оси `content=img|file` × `error=off|on`)
 
 > [!NOTE]
 > Этот файл (`uploader.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -11,10 +11,10 @@
 ## Поле выбора
 
 ```html
-<label class="upl__label">
+<label class="upl__drop">
   <input class="upl__input" type="file" multiple accept="image/*,.pdf">
   <span class="input input-default">
-    <input class="input__field" type="text" placeholder="Выберите файл" readonly tabindex="-1">
+    <span class="upl__prompt">Выберите файл или перетащите его сюда</span>
     <span class="input__suffix" aria-hidden="true">
       <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">…</svg>
     </span>
@@ -22,9 +22,29 @@
 </label>
 ```
 
-- Настоящий `<input type="file">` спрятан визуально (`clip-path`), но остаётся в табе — UA-кнопку «Выберите файл» к виду макета привести нельзя.
-- Текстовое поле внутри — `readonly` и `tabindex="-1"`: это витрина, а не контрол.
+**Это зона, а не поле ввода.** Файл на неё бросают мышью или нажимают её — и то и другое
+работает без скрипта: настоящий `<input type="file">` растянут на всю зону и сделан
+прозрачным, а такой инпут принимает брошенные на него файлы нативно. Он же остаётся в
+табуляции и несёт фокус, поэтому кольцо рисуется правилом `.upl__input:focus-visible + .input`.
+
+- Обводка **пунктиром** — так зона и обозначена в макете (`dashPattern [2,2]` на всех трёх
+  ступенях). Рисуется псевдоэлементом: рамка поля это `inset box-shadow`, а он пунктирным
+  не бывает. Шаг штриха задаёт браузер — макетные 2/2 средствами `border-style` не выражаются.
+- Подпись зоны — обычный `<span class="upl__prompt">`, не `<input readonly>`: читать её как
+  поле ввода незачем.
 - Иконка загрузки (`ic20-upload-outline` в макете) кладётся в слот `.input__suffix`.
+- Пока файл тащат над зоной, потребитель вешает `.upl__drop--over` (на `dragenter`, снимает
+  на `dragleave` и `drop`) — рамка и фон становятся как в фокусе. Событие `dragover` видит
+  только скрипт, из CSS его не поймать.
+
+```js
+const drop = document.querySelector('.upl__drop');
+['dragenter', 'dragover'].forEach(e => drop.addEventListener(e, ev => {
+  ev.preventDefault();
+  drop.classList.add('upl__drop--over');
+}));
+['dragleave', 'drop'].forEach(e => drop.addEventListener(e, () => drop.classList.remove('upl__drop--over')));
+```
 
 ## Строка файла
 

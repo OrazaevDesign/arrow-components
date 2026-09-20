@@ -1,50 +1,27 @@
 {
   "component": "uploader",
-  "version": "1.0.2",
-  "contract_hash": "sha256:bb2ae5003da30935455e45a0b4a079904a5431c4a2a7ae0b16b12e885d6ed119",
-  "artifact_hash": "sha256:c75c8663f49ca64c51683fb391c8e83d232a0a2cd996aec97bfce496d87af054",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:48.967Z",
-  "own_values": [
-    {
-      "value": "1px",
-      "where": "width",
-      "count": 1,
-      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
-    },
-    {
-      "value": "1px",
-      "where": "height",
-      "count": 1,
-      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
-    },
-    {
-      "value": "-1px",
-      "where": "margin",
-      "count": 1,
-      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
-    }
-  ],
+  "version": "2.0.0",
+  "contract_hash": "sha256:36ebe4fa5a79c22c75520e8c51f5985985acb9fcbadd1d3dab5d856b2d6bc1dc",
+  "artifact_hash": "sha256:c9c21e84605fbce668a000d681cc16fb298cabe6bc67fda5c2daeda1bc58a74f",
+  "visual_change": true,
+  "released_at": "2026-09-17T10:26:36.933Z",
+  "own_values": [],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "395:77614",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77614"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:26",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-26"
   },
   "variants": {
     "default": {
-      "node_id": "395:77614",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77614",
-      "figma_label": "Uploader (Size)",
-      "token_role": "role/surface/on-highest + on-high + error/core"
+      "node_id": "44:83665",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-83665",
+      "figma_label": "uploader"
     },
     "file": {
-      "node_id": "395:77633",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77633",
-      "figma_label": "Uploader / File (Var × Error)",
-      "token_role": "role/surface/on-highest + on-high + error/core",
-      "css": "uploader.css",
-      "css_note": "Отдельного скилла строке файла не нужно: она существует только внутри загрузчика и реализована здесь же, классами .upl__file и соседними. Оси Var (IMG / Default) и Error (Off / On) выражены составом разметки и модификатором .upl__file--error."
+      "node_id": "44:83684",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-83684",
+      "figma_label": "uploader / file"
     }
   },
   "shape": "rectangle",
@@ -70,7 +47,7 @@
   "base_class_note": "Базовый класс .upl. Имя .uploader заняло бы слишком общее пространство имён у потребителя, а --awds-uploader-* — длинный префикс в каждой переменной. Тот же приём, что у label → .lbl, textarea → .txa, formfield → .fld.",
   "geometry_note": "Сверено по трём ячейкам загрузчика и четырём ячейкам строки файла. Зазоры: поле → список 8 (space-2), между файлами 6 (space-1-5), внутри строки 6. Бокс превью и бокс иконки типа файла — 36×36; бокс кнопки удаления тоже 36. ВСЕ ТРИ ВЫРАЖЕНЫ ЧЕРЕЗ rectangle-300 (icon 20 + 2 × padding 8), а не через space-9: превью обязано совпадать с боксом кнопки в той же строке, а кнопка — это .btn--300 из awds-component-button, собранная именно по этой формуле. Через общую формулу они останутся равными, даже если шкала поедет. Имя файла 13/16 (control-300), вес 12/16 (control-200) — одинаково на всех размерах.",
   "composition_note": "Компонент НЕ рисует три вещи и это осознанно: (1) поле — awds-component-input любого варианта, приходит готовым, ступень ему раздаёт мост .upl--{N} .input; (2) кнопку удаления — awds-component-button, вариант ghost, размер 300, ОБЯЗАТЕЛЬНО с классом .btn--icon-only (без него кнопка выходит 48×36 вместо 36×36 — проверено замером); (3) круговой индикатор загрузки — в макете это внешний компонент ProgressIndicators (M3 circular) из отдельного файла Figma, в arrow-components его нет, поэтому здесь только слот с фиксированным боксом 20×20, чтобы строка не прыгала при появлении и исчезновении индикатора.",
-  "markup_note": "Нативный <input type=\"file\"> прячется визуально (clip-path, а НЕ display: none и не visibility: hidden — иначе он выпадет из таба), а видимую роль играет обёртка <label> с обычным .input внутри: UA-кнопку «Выберите файл» к виду макета привести нельзя. Фокус спрятанного инпута отражается на видимом поле отдельным правилом .upl__input:focus-visible + .input, иначе при табуляции подсветки не было бы вовсе. Список — настоящий <ul> с <li>: скринридер объявит число загруженных файлов.",
+  "markup_note": "Пунктирная обводка зоны рисуется псевдоэлементом .upl__drop .input::after: рамка поля это inset box-shadow, а он пунктирным не бывает. Подсветку при перетаскивании даёт класс .upl__drop--over, который вешает потребитель — dragover из CSS не виден.",
   "verification": {
     "method": "headless chromium (chrome-devtools MCP), getComputedStyle + getBoundingClientRect",
     "cells": "3 загрузчика × 3 строки файла (превью / иконка / ошибка); 114 замеров",
@@ -123,7 +100,7 @@
     "html_samples": [
       {
         "label": "Загрузчик с файлами",
-        "html": "<div class=\"upl upl--400\"><label class=\"upl__label\"><input class=\"upl__input\" type=\"file\" multiple><span class=\"input input-default\"><input class=\"input__field\" type=\"text\" placeholder=\"Выберите файл\" readonly tabindex=\"-1\"><span class=\"input__suffix\" aria-hidden=\"true\">…</span></span></label><ul class=\"upl__list\"><li class=\"upl__file\">…</li></ul></div>"
+        "html": "<div class=\"upl upl--400\"><label class=\"upl__drop\"><input class=\"upl__input\" type=\"file\" multiple><span class=\"input input-default\"><span class=\"upl__prompt\">Выберите файл или перетащите его сюда</span><span class=\"input__suffix\" aria-hidden=\"true\">…</span></span></label><ul class=\"upl__list\"><li class=\"upl__file\">…</li></ul></div>"
       },
       {
         "label": "Строка файла с превью",
@@ -136,43 +113,37 @@
     ]
   },
   "ds_token_dependencies": [
-    "--surface-on-highest",
-    "--surface-on-high",
-    "--error-core",
-    "--primary-core",
-    "--awds-space-space-1-5",
-    "--awds-space-space-2",
-    "--awds-space-space-5",
-    "--awds-size-rectangle-300-icon",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-icon",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
     "--awds-control-font-size-200",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
     "--awds-control-font-size-300",
-    "--awds-control-line-height-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
     "--awds-control-letter-spacing-300",
-    "--awds-opacity-opacity-50",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--awds-font-weight-regular",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--error-core",
+    "--primary-dim",
+    "--surface-bright",
+    "--surface-on",
+    "--surface-on-high",
+    "--surface-on-highest"
   ],
   "depends_on": {
     "awds-component-input": "Поле выбора — .input любого варианта; ступень задаёт мост .upl--{N} .input. Иконка загрузки кладётся в слот .input__suffix.",
@@ -216,11 +187,81 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "upl",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "upl--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "input",
+      "class": "upl__input",
+      "type": "file"
+    },
+    "children": [
+      {
+        "class": "upl__drop",
+        "required": true
+      },
+      {
+        "class": "upl__prompt",
+        "required": true
+      },
+      {
+        "class": "upl__list",
+        "required": false
+      },
+      {
+        "class": "upl__file",
+        "required": false
+      }
+    ],
+    "attrs": [
+      "multiple",
+      "accept"
+    ],
+    "container": null,
+    "note": "Верхняя часть — ЗОНА перетаскивания .upl__drop, а не поле ввода: настоящий input type=file растянут на всю зону и прозрачен, поэтому работают и клик, и брошенный файл — нативно, без скрипта. До 1.1.0 здесь стоял фиктивный input type=text readonly, а file-инпут был спрятан в углу боксом 1×1, и перетаскивание не работало вовсе. Класса варианта нет — вариантность в составе списка загруженного."
+  },
+  "family": "forms",
+  "summary": "Загрузчик файлов: поле выбора, drag-and-drop, список загруженного",
+  "aliases": [
+    "загрузка файлов",
+    "аплоадер",
+    "прикрепить файл",
+    "drag-and-drop",
+    "фото в отзыве"
+  ],
+  "asana": {
+    "task_gid": "1218422992779399",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992779399",
+    "task_name": "💠 uploader",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "uploader-card-location",
+      "text": "Где живёт карточка uploader: family forms в мете против секции составных на доске",
+      "level": "component",
+      "target": "uploader",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218152061212946",
+      "raised_at": "2026-09-03",
+      "answer": "Внутри форм. Владелец 12.09.2026: «form-filed находится внутри форм». Карточка заведена подзадачей 💠 3 · forms, группа 🔶 form-filed на доске удалена."
+    }
+  ],
   "uses": {
-    "awds-component-button": "1.0.5",
-    "awds-component-focus-selection": "1.1.0",
-    "awds-component-input": "1.0.3",
-    "awds-component-radio": "1.0.3"
+    "awds-component-button": "2.0.2",
+    "awds-component-focus-selection": "2.0.3",
+    "awds-component-input": "1.0.6"
   },
   "contract": {
     "classes": [
@@ -230,6 +271,8 @@
       "upl--400",
       "upl--500",
       "upl__content",
+      "upl__drop",
+      "upl__drop--over",
       "upl__file",
       "upl__file--error",
       "upl__icon",
@@ -238,6 +281,7 @@
       "upl__name",
       "upl__preview",
       "upl__progress",
+      "upl__prompt",
       "upl__remove",
       "upl__size"
     ],
