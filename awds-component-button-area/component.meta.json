@@ -1,55 +1,49 @@
 {
   "component": "button-area",
-  "version": "1.0.3",
-  "contract_hash": "sha256:fdb387f8dadd6a157d624e1496c7d7669868f83a971c79b77be8021217bd0f1f",
-  "artifact_hash": "sha256:3824fedf1882ee53038bbf1f1bf6a8d528bae17fc8029eb1eaeead4ce1d40c1c",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:49:41.400Z",
+  "version": "2.0.6",
+  "contract_hash": "sha256:20b087a266ab23f2cf7d6e6990d2eecbfadd8132856a03495b35b2d343f90904",
+  "artifact_hash": "sha256:776408cf6cb4f5c99bc147ecafce951a1803268e0b2ba4a11c1fbb11368fd1b4",
+  "visual_change": true,
+  "released_at": "2026-09-15T15:29:00.632Z",
   "own_values": [
     {
-      "value": "2px",
-      "where": "border",
-      "count": 1,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
-    },
-    {
-      "value": "1.4s",
-      "where": "animation-duration",
+      "value": "0.15s",
+      "where": "transition",
       "count": 1,
       "why": "длительность анимации: коллекции движения в студии нет"
     }
   ],
   "figma": {
-    "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
-    "file_name": "💠 Comp ↪ ² Buttons",
-    "primary_node_id": "539:48759",
-    "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-48759"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:9",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-9"
   },
   "variants": {
     "default": {
-      "node_id": "539:48759",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-48759",
-      "figma_label": "Button Area/Default"
+      "node_id": "8:29637",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-29637",
+      "figma_label": "button-area / default"
     },
     "muted": {
-      "node_id": "539:49096",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-49096",
-      "figma_label": "Button Area/Muted"
+      "node_id": "8:29974",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-29974",
+      "figma_label": "button-area / muted"
     },
     "contrast": {
-      "node_id": "539:49433",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-49433",
-      "figma_label": "Button Area/Contrast"
+      "node_id": "8:30311",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-30311",
+      "figma_label": "button-area / contrast"
     },
     "accent": {
-      "node_id": "539:49770",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-49770",
-      "figma_label": "Button Area/Accent"
+      "node_id": "8:30648",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-30648",
+      "figma_label": "button-area / accent"
     },
     "heading": {
-      "node_id": "539:50107",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=539-50107",
-      "figma_label": "Button Area/Heading"
+      "node_id": "8:30985",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-30985",
+      "figma_label": "button-area / heading"
     }
   },
   "modifiers": {
@@ -232,24 +226,39 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-tertiary-container-on-high",
-    "--color-tertiary-container-on-highest",
-    "--color-surface-on-high",
-    "--color-surface-on-highest",
-    "--color-accent-container-on",
-    "--awds-rectangle-500-*",
-    "--awds-rectangle-400-*",
-    "--awds-rectangle-100-*",
-    "--awds-rectangle-50-*",
-    "--awds-opacity-opacity-40",
-    "--awds-rounded-border-radius-full",
+    "--accent-container-on",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--awds-font-weight-regular",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-space-0-5",
+    "--awds-space-1-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--surface-on-high",
+    "--surface-on-highest",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest"
   ],
-  "_dependency_note": "Размеры — через shape-слой --awds-rectangle-{500,400,100,50}-{gap,icon,typography-*,rounded}. Цвета — роли inline (= link). Focus-обводка rgb(var(--surface-on-highest)); disabled — var(--awds-opacity-opacity-40); спиннер — var(--awds-rounded-border-radius-full) + @keyframes. Растяжение hit-области — модификаторы --fill*.",
-  "last_synced": "2026-06-30T17:57:53Z",
-  "last_synced_by": "claude",
-  "snapshot_hash": "sha256:3bf955fc5d85d8138594d707b327f5d81196979c4aacca210e4ecd95d1d402ef",
+  "_dependency_note": "Размеры — через shape-слой --awds-rectangle-{500,400,100,50}-{gap,icon,typography-*,rounded}. Цвета — роли inline (= link). Focus-обводка rgb(var(--surface-on-highest)); disabled — var(--awds-state-opacity-control-disabled-rest); спиннер — var(--awds-rounded-border-radius-full) + @keyframes. Растяжение hit-области — модификаторы --fill*.",
+  "last_synced": "2026-09-15T18:40:00Z",
+  "last_synced_by": "arrow-components-builder",
+  "snapshot_hash": "sha256:3df5494e031dca239701630fa58ff13bbad718bd73091f8828864d0f74d00d87",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "9435ade",
@@ -298,8 +307,81 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "btn-area",
+      "tags": [
+        "a",
+        "button"
+      ]
+    },
+    "variant": {
+      "pattern": "btn-area-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "btn-area--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Кликабельная область тянется по ширине; вариант задаёт цвет текста и иконок, размер — высоту строки. Спиннера своего нет: в слоте .btn-area__progress живёт кольцо awds-component-progress — на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate. Класс загрузки — .btn-area--loading (до 2.0.0 назывался --progress)."
+  },
+  "asana": {
+    "task_gid": "1218421798642337",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798642337",
+    "task_name": "💠 button-area",
+    "parent_task": "💠 2 · buttons",
+    "primary": true
+  },
+  "family": "buttons",
+  "summary": "Кликабельная строка-обёртка во всю ширину с иконками",
+  "aliases": [
+    "строка-ссылка",
+    "кликабельная область",
+    "строка меню",
+    "link-area"
+  ],
+  "questions": [
+    {
+      "id": "btn-area-figma-props-canon",
+      "text": "Значения оси загрузки в макете button-area: loading=false|true вместо loading=off|on. Сама ось переименована 31.08.2026 (была progress), type= стал content= — эти два пункта закрыты. Осталось привести значения к on|off, как у button-overhung. Код не зависит: класс .btn-area--loading.",
+      "level": "component",
+      "target": null,
+      "severity": "polish",
+      "status": "answered",
+      "asana_gid": null,
+      "raised_at": "2026-08-31",
+      "answer": "31.08.2026 макет приведён к канону целиком: type= → content=, progress=false|true → loading=off|on (проверено по ячейкам 539:48760, 539:48792, 539:50110). Код был на каноне до правки."
+    },
+    {
+      "id": "btn-area-figma-dead-var-axis",
+      "text": "Во фрейме button-area / heading висит ось var=heading с единственным значением: слово var в стоп-листе props.md, а значение дублирует имя фрейма. Удалить ось, а не переименовывать — 80 ячеек фрейма несут её без смысла.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": null,
+      "raised_at": "2026-08-31",
+      "answer": "Ось var=heading удалена из фрейма button-area / heading 31.08.2026 — проверено по ячейке 539:50110."
+    },
+    {
+      "id": "areabutton-state-group-unused",
+      "text": "Группа State areabutton в теме накрывает только default/muted/contrast и с 2.0.0 не читается ни одним компонентом: макет button-area привязывает группу link целиком, код переведён туда же. Либо группу удалить из студии, либо дополнить ячейками accent/heading и вернуть компонент на неё — два источника с одинаковыми значениями расходятся молча.",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": null,
+      "raised_at": "2026-08-31",
+      "answer": "31.08.2026: группу не удаляем — её читают опубликованные копии CSS до рассылки. Помечена deprecated в arrow-design-system/SKILL.md, раздел «Deprecated: в теме есть, читать не надо»; новый код ссылается только на --awds-state-link-*. Гейта нет: token-refs-check проверяет существование ссылки, а не её отменённость."
+    }
+  ],
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.9",
+    "awds-component-progress": "2.0.2"
   },
   "contract": {
     "classes": [
@@ -313,7 +395,7 @@
       "btn-area--fill-x",
       "btn-area--fill-y",
       "btn-area--icon-only",
-      "btn-area--progress",
+      "btn-area--loading",
       "btn-area-accent",
       "btn-area-contrast",
       "btn-area-default",
@@ -322,7 +404,7 @@
       "btn-area__icon",
       "btn-area__label",
       "btn-area__prefix",
-      "btn-area__spinner",
+      "btn-area__progress",
       "btn-area__suffix"
     ],
     "attributes": [

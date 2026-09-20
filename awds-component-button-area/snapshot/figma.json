@@ -1,39 +1,135 @@
 {
-  "_note": "Сырые ответы Figma MCP для awds-component-button-area. file_key rRCDPR2SJ90wJZCr5rsXAd. 5 наборов (вариантов), оси Type×Size×State×Progress. Цвета вариантов = роли awds-component-link (имена совпадают, Default сверен с Figma); остальные взяты из верифицированного link-маппинга, не из повторного fetch (frugality).",
-  "sets": {
-    "default":  { "node_id": "539:48759", "name": "Button Area/Default" },
-    "muted":    { "node_id": "539:49096", "name": "Button Area/Muted" },
-    "contrast": { "node_id": "539:49433", "name": "Button Area/Contrast" },
-    "accent":   { "node_id": "539:49770", "name": "Button Area/Accent" },
-    "heading":  { "node_id": "539:50107", "name": "Button Area/Heading" }
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page_node_id": "539:48565",
+  "primary_node_id": "5:9",
+  "frame_name": "button-area / default",
+  "variant_node_ids": {
+    "default": "539:48759",
+    "muted": "539:49096",
+    "contrast": "539:49433",
+    "accent": "539:49770",
+    "heading": "539:50107"
   },
-  "axes": {
-    "Type": ["Text", "Icon"],
-    "Size": ["500", "400", "100", "50"],
-    "State": ["Rest", "Hover", "Active", "Disabled", "Focus"],
-    "Progress": ["False", "True"]
+  "variant_properties": {
+    "content": [
+      "text",
+      "icon"
+    ],
+    "size": [
+      500,
+      400,
+      100,
+      50
+    ],
+    "state": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "loading"
+    ]
   },
-  "structure_design_context_539_48760": "div.flex.items-center.justify-center (opacity/control/enabled) > [◆/Prefix icon pr=rectangle/500/gap] + ◆/Text (link/default, font-size/600 16/20, regular) + [◆/Suffix icon pl=rectangle/500/gap]",
-  "variable_defs": {
-    "Default/Text/500/Rest (539:48760)":  { "link/default": "#4764d4", "rectangle/500/icon": 20, "rectangle/500/gap": 6, "font-size/600": 16, "line-height/600": 20, "letter-spacing/600": 0, "border-radius/500": 8, "opacity/control/enabled": 100 },
-    "Default/Text/500/Hover (539:48766)": { "link/default": "#193891" },
-    "Default/Text/500/Active (539:48772)":{ "link/default": "#4764d4" },
-    "Default/Text/500/Focus (539:48784)": { "focus-selection/outline": "#080808", "focus-selection/outlineShow": true },
-    "Default/Text/500/Disabled (539:48778)": { "opacity/control/disabled": 40 }
+  "boolean_properties": [
+    "prefix",
+    "suffix"
+  ],
+  "cells_total": 240,
+  "props_canon_gap": {
+    "status": "оси на каноне props.md; расхождений нет",
+    "history": "С 31.08.2026 content= вместо type=, мёртвая ось var=heading удалена. 15.09.2026 ось loading=off|on убрана: загрузка стала шестым значением оси state (решение 14.09.2026, так же у button и button-overhung). Пять наборов по 80 → 48 ячеек, удалено 160 вариантов. Перед удалением перепись инстансов по всем страницам файла: 37 инстансов (35 на «3 · forms», 2 на «7 · popups»), со значением loading=on — ни одного."
   },
-  "size_to_rectangle": {
-    "_note": "Size N → shape-слой rectangle/N (gap/icon/typography/rounded). Проверено по css-global.",
-    "500": { "gap": "space-1-5 (6)", "icon": "space-5 (20)", "typography": "control-600 (16/20)" },
-    "400": { "gap": "space-1-5 (6)", "icon": "space-5 (20)", "typography": "control-400 (14/20)" },
-    "100": { "gap": "space-0-5 (2)", "icon": "space-4 (16)", "typography": "control-300 (13/16)" },
-    "50":  { "gap": "space-0-5 (2)", "icon": "space-4 (16)", "typography": "control-200 (12/16)" }
+  "colors": {
+    "_source": "get_variable_defs по ячейкам type=text, size=500, state=rest|hover каждого варианта",
+    "_binding": "макет привязывает один токен link/{variant}, значение которого меняется по состоянию — это ячейки слоя State группы link",
+    "default": {
+      "rest": "#4764d4",
+      "hover": "#193891",
+      "cells": "--awds-state-link-default-{rest,hover}",
+      "roles": "tertiary-container-on-high → -highest"
+    },
+    "muted": {
+      "rest": "#646464",
+      "hover": "#080808",
+      "cells": "--awds-state-link-muted-{rest,hover}",
+      "roles": "surface-on-high → surface-on-highest"
+    },
+    "contrast": {
+      "rest": "#080808",
+      "hover": "#646464",
+      "cells": "--awds-state-link-contrast-{rest,hover}",
+      "roles": "surface-on-highest → surface-on-high"
+    },
+    "accent": {
+      "rest": "#080808",
+      "hover": "#cc4033",
+      "cells": "--awds-state-link-accent-{rest,hover}",
+      "roles": "surface-on-highest → accent-container-on"
+    },
+    "heading": {
+      "rest": "#646464",
+      "hover": "#cc4033",
+      "cells": "--awds-state-link-heading-{rest,hover}",
+      "roles": "surface-on-high → accent-container-on"
+    },
+    "_verified": "31.08.2026: роль за каждой ячейкой подтверждена component-token-map.json (map.state.{rest,hover}.link.*), компонент ссылается на ячейки, а не на значения. Hex из макета и hex из снапшота темы НЕ совпадают и не должны: макет несёт мастер-палитру ArrowDS, studio-vars.css — палитру сайта 458 (тема 25). Пример: tertiary-container-on-high = #4764d4 в Figma и #4e64e4 (78 100 228) на 458; surface-on-high = #646464 против #2b2b2b (43 43 43). Сверять по hex между этими двумя источниками нельзя — только по роли."
   },
-  "variant_colors": {
-    "_note": "= awds-component-link роли (rest → hover). focus/active = rest. Сверено с link-*.css.",
-    "default":  { "rest": "tertiary-container-on-high",  "hover": "tertiary-container-on-highest" },
-    "muted":    { "rest": "surface-on-high",             "hover": "surface-on-highest" },
-    "contrast": { "rest": "surface-on-highest",          "hover": "surface-on-high" },
-    "accent":   { "rest": "surface-on-highest",          "hover": "accent-container-on" },
-    "heading":  { "rest": "surface-on-high",             "hover": "accent-container-on" }
+  "geometry_per_size": {
+    "500": {
+      "gap": 6,
+      "icon": 20,
+      "rounded": 8,
+      "font-size": 16,
+      "line-height": 20,
+      "letter-spacing": 0,
+      "font-weight": "regular"
+    },
+    "_source": "get_variable_defs ячеек size=500 + get_design_context ячейки 539:48792 (loading=on) за раскладкой",
+    "_model": "внешний узел — flex, контент центрирован, hug по контенту; секции prefix/suffix несут только зазор до текста (pr/pl = rectangle/{N}/gap), своего padding у области нет"
+  },
+  "loading": {
+    "content": "секции prefix/text/suffix получают opacity/0 — место сохраняется",
+    "indicator": "инстанс progress / circular (общий компонент awds-component-progress), 20px, абсолютный центр",
+    "code": "с 2.0.0 в коде так же: .btn-area--loading гасит контент, .btn-area__progress — слот под тот же <svg>. Свои border + @keyframes btn-area-spin убраны, вместе с ними ушли три own_values (2px, 0.7s, 1.4s)"
+  },
+  "focus": {
+    "variant": "Inside + Default",
+    "note": "кольцо уходит внутрь бокса: область тянется на всю ячейку, снаружи места нет"
+  },
+  "_note": "Сырые ответы Figma MCP: get_metadata по странице 539:48565 (5 фреймов, 400 ячеек), get_variable_defs по ячейкам rest/hover каждого варианта на ступени 500, get_design_context по ячейке 539:48792 за раскладкой загрузки. Значения с 30.06 не менялись — дрифта нет. Изменилось прочтение источника цветов (макет привязывает группу link целиком, код брал три варианта из группы areabutton) и разметки загрузки (в макете общий progress, в коде был свой спиннер). Резолв — arrow-design-system/references/component-token-map.json.",
+  "cells_per_set": 48,
+  "rebind": {
+    "done": "2026-09-15",
+    "ring": "40 обводок кольца загрузки (VECTOR «Active indicator») переведены со старой библиотеки State/link/{тон} на ячейки state/link/{тон}-rest. До слияния осей таких привязок было 200 — 160 исчезли вместе с удалёнными вариантами.",
+    "icons": "360 сырых чёрных заливок иконок (BOOLEAN_OPERATION «Union» внутри ic-a в слотах prefix-area и suffix-area) привязаны к ячейке того же варианта и состояния, что и текст рядом. До правки иконки были #000000 и не участвовали в теме вовсе.",
+    "rule": "Цель бралась не по имени, а зеркалом: какая ячейка привязана к тексту варианта, такая же ставилась иконке и кольцу. Правило текста оказалось строгим — state/link/{тон}-{состояние}, у loading и disabled — суффикс -rest.",
+    "colorShift": "Старая библиотека разошлась с темой по всем пяти тонам: default #4764d4 → #4e64e4, muted и heading #646464 → #2b2b2b, contrast и accent #080808 → #141414. Новые значения совпадают с component-token-map."
+  },
+  "raw_fills": {
+    "count": 0,
+    "before": 600,
+    "note": "После правки сырых красок в секции нет: оставшиеся белая заливка и чёрная обводка принадлежат рамке самой секции. Сравнение с уже пройденным button показало, что там та же иконка ic-a привязана — значит чернота здесь была дефектом, а не соглашением о контенте слота."
+  },
+  "fetched": "2026-09-15",
+  "_page_cleanup_2026_09_20": {
+    "date": "2026-09-20",
+    "note": "Заход по всей странице 2 · buttons 20.09.2026 (решение владельца по объёму). Снималось посекционно, сверка «до/после» по всем узлам секции — заливка, обводка, габариты, радиус, кегль, прозрачность.",
+    "dead_modes_cleared": 490,
+    "detail": {
+      "Font-weight=Regular": 240,
+      "State=Rest": 120,
+      "State=Hover": 40,
+      "State=Focus": 40,
+      "State=Active": 40,
+      "Controls=Focused": 5,
+      "Corners=Smooth": 5
+    },
+    "diff": 0,
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0
+    }
   }
 }

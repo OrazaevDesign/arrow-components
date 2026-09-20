@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
   <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
+  <link rel="stylesheet" href="../../awds-component-progress/references/progress-circular.css">
   <link rel="stylesheet" href="./button-area.css">
 
   <style>
@@ -63,12 +64,17 @@
       const prog = progSel.value === 'on';
       const cls = ['btn-area','btn-area-'+variant,'btn-area--'+size];
       if (iconOnly) cls.push('btn-area--icon-only');
-      if (prog) cls.push('btn-area--progress');
+      if (prog) cls.push('btn-area--loading');
       if (extra) cls.push(extra);
       const inner = iconOnly
         ? `<span class="btn-area__icon">${ICON}</span>`
         : `<span class="btn-area__prefix">${ICON}</span><span class="btn-area__label">Button</span><span class="btn-area__suffix">${ICON}</span>`;
-      const spinner = prog ? '<span class="btn-area__spinner" aria-hidden="true"></span>' : '';
+      /* Кольцо — инстанс awds-component-progress, как в макете: те же классы на том же <svg>.
+         Своего спиннера у области нет с 2.0.0. */
+      const spinner = prog
+        ? '<svg class="btn-area__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">'
+          + '<circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/></svg>'
+        : '';
       return `<a class="${cls.join(' ')}" href="#" ${iconOnly?'aria-label="Button"':''}>${inner}${spinner}</a>`;
     }
 
