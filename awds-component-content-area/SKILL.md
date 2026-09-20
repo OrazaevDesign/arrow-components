@@ -1,24 +1,25 @@
 ---
 name: awds-component-content-area
-description: Медиа-область Content Area ArrowDS: иллюстрация, изображение или видео с выбором соотношения сторон и вписыванием. Для медиа-слота в hero и карточке. Токены ArrowDS, работает и по Figma-ссылке.
+description: Content Area ArrowDS (.content-area).
 ---
 
 # Content Area (медиа-область) ArrowDS
 
-Область с **фиксированным соотношением сторон** и скруглением под два типа контента: изображение (jpg/png/svg) и видео-embed. Ничего не хардкодит: радиус — `--awds-rounded-border-radius-700`, цвета — роли. См. скилл `arrow-design-system`.
+Область с **фиксированным соотношением сторон** и скруглением под три типа контента: брендовая иллюстрация, изображение (jpg/png/svg) и видео-embed. Ничего не хардкодит: радиус — `--awds-rounded-border-radius-700`, цвета — роли. См. скилл `arrow-design-system`.
 
 Компонент **статичный** (без hover/focus/disabled) и **бессhape-ный** (`shape=null`): «размер» — это соотношение сторон, а не size-токены.
 
-## Тип контента (2)
+## Тип контента (3)
 
 | Тип | Класс | Что показывает | Особенности |
 |---|---|---|---|
-| **Image** | `content-area--img` | изображение jpg/png/svg | вписывание cover/contain/fill; hairline-рамка |
-| **Video** | `content-area--video` | responsive iframe (youtube/vimeo/rutube/vk) | фон surface; hairline-рамка |
+| **Illustration** | `content-area-illustration` | брендовый вектор | без рамки и фона; вписывание всегда contain |
+| **Image** | `content-area-img` | изображение jpg/png/svg | вписывание cover/contain/fill; hairline-рамка |
+| **Video** | `content-area-video` | responsive iframe (youtube/vimeo/rutube/vk) | фон surface; hairline-рамка |
 
-Детали каждого — [content-area-img.md](references/content-area-img.md), [content-area-video.md](references/content-area-video.md).
+Детали каждого — [content-area-illustration.md](references/content-area-illustration.md), [content-area-img.md](references/content-area-img.md), [content-area-video.md](references/content-area-video.md).
 
-> SVG-иллюстрации/логотипы вставляются как обычное изображение (`content-area--img`) с `content-area--fit-contain` (вписать целиком). Отдельного типа illustration и API перекраски `awds-ill-*` нет — компонент упрощён до image/video.
+> **Перекраски SVG у компонента нет.** Рисунок остаётся ассетом потребителя; API `awds-ill-*` не заводится. Тип `illustration` отвечает только за бокс: снимает рамку и фон, которые есть у `img`, и вписывает рисунок целиком. Раньше иллюстрации предлагалось вставлять как `content-area-img` с `--fit-contain` — так вокруг прозрачного рисунка оставалась hairline-рамка, которой в макете нет (возвращено 28.08.2026).
 
 ## Соотношение сторон (39 + произвольное)
 
@@ -32,19 +33,24 @@ description: Медиа-область Content Area ArrowDS: иллюстрац�
 **Произвольное соотношение** — инлайн-переменной, без класса:
 
 ```html
-<figure class="content-area content-area--img" style="--awds-content-area-ratio: 7/3">…</figure>
+<figure class="content-area content-area-img" style="--awds-content-area-ratio: 7/3">…</figure>
 ```
 
 ## Структура разметки
 
 ```html
+<!-- Брендовая иллюстрация: без рамки и фона -->
+<figure class="content-area content-area-illustration content-area--16-9">
+  <img class="content-area__img" src="/assets/illustrations/megaphone.svg" alt="">
+</figure>
+
 <!-- Изображение (jpg/png/svg) -->
-<figure class="content-area content-area--img content-area--4-3 content-area--fit-cover">
+<figure class="content-area content-area-img content-area--4-3 content-area--fit-cover">
   <img class="content-area__img" src="…" alt="…">
 </figure>
 
 <!-- Видео -->
-<div class="content-area content-area--video content-area--16-9">
+<div class="content-area content-area-video content-area--16-9">
   <iframe class="content-area__video" src="https://www.youtube.com/embed/ID"
           title="…" allowfullscreen loading="lazy"></iframe>
 </div>
@@ -52,7 +58,7 @@ description: Медиа-область Content Area ArrowDS: иллюстрац�
 
 ## Вписывание картинки (variant img)
 
-`content-area--fit-cover` (дефолт) / `--fit-contain` / `--fit-fill`. Точка привязки — `style="--awds-content-area-position: top"`. Для SVG-логотипов и иллюстраций используйте `--fit-contain` (вписать целиком, без обрезки).
+`content-area--fit-cover` (дефолт) / `--fit-contain` / `--fit-fill`. Точка привязки — `style="--awds-content-area-position: top"`. Для SVG-логотипов подойдёт `--fit-contain`; для брендовых иллюстраций есть отдельный тип `--illustration` — он вписывает целиком и вдобавок снимает рамку.
 
 ## Откуда берутся значения
 
@@ -65,13 +71,13 @@ description: Медиа-область Content Area ArrowDS: иллюстрац�
 
 ## CSS
 
-Один файл — `references/content-area.css` (база `.content-area` + типы `--img/--video` + 39 соотношений + вписывание). Подключается один раз глобально.
+Один файл — `references/content-area.css` (база `.content-area` + типы `--illustration/--img/--video` + 39 соотношений + вписывание). Подключается один раз глобально.
 
 Визуальный QA — `references/preview.html` (storybook, `file://`): активная конфигурация + сетка всех соотношений. Переключатели тип / соотношение / вписывание / тема.
 
 ## Алгоритм использования
 
-1. Выбери тип: `content-area--img` (jpg/png/svg) / `--video`.
+1. Выбери тип: `content-area-illustration` (брендовый вектор) / `--img` (jpg/png/svg) / `--video`.
 2. Собери разметку по шаблону; медиа-слой — `.content-area__img` / `.content-area__video`.
 3. Выбери соотношение: класс `content-area--{R}` или `style="--awds-content-area-ratio: W/H"`. Дефолт 16:9.
 4. Для img — задай вписывание (`--fit-cover/contain/fill`). Для video — сконвертируй ссылку в embed-src (см. [content-area-video.md](references/content-area-video.md)).

@@ -7,7 +7,7 @@
 ## HTML
 
 ```html
-<figure class="content-area content-area--img content-area--4-3 content-area--fit-cover">
+<figure class="content-area content-area-img content-area--4-3 content-area--fit-cover">
   <img class="content-area__img" src="/path/photo.jpg" alt="Описание">
 </figure>
 ```
@@ -25,7 +25,7 @@
 Точка привязки при `cover` — через переменную (по умолчанию `center`):
 
 ```html
-<figure class="content-area content-area--img content-area--16-9"
+<figure class="content-area content-area-img content-area--16-9"
         style="--awds-content-area-position: top">
   <img class="content-area__img" src="…" alt="…">
 </figure>

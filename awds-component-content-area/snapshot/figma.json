@@ -6,9 +6,18 @@
     "name": "Content Area",
     "axis": "var",
     "variants": {
-      "illustration": { "node_id": "2221:60", "figma_label": "var=illustration" },
-      "img":          { "node_id": "2221:69", "figma_label": "var=img" },
-      "video":        { "node_id": "2221:71", "figma_label": "var=video" }
+      "illustration": {
+        "node_id": "2221:60",
+        "figma_label": "var=illustration"
+      },
+      "img": {
+        "node_id": "2221:69",
+        "figma_label": "var=img"
+      },
+      "video": {
+        "node_id": "2221:71",
+        "figma_label": "var=video"
+      }
     }
   },
   "variable_defs": {
@@ -24,11 +33,19 @@
     "2221:60_illustration": {
       "role/primary/container/core": "#fffae7",
       "role/primary/container/on-highest": "#19110a",
-      "role/primary/core": "#fad646",
-      "border-radius/700": "12"
+      "role/primary/core": "#ffeb5a",
+      "border-radius/700": "12",
+      "_note": "primary-core приехал с 25.08.2026 к #ffeb5a — палитра в теме менялась; ролью компонент это подхватывает сам"
     },
-    "2221:69_img":   { "border-radius/700": "12", "role/extended/shadow/opacity3": "#00000008" },
-    "2221:71_video": { "border-radius/700": "12", "role/surface/surface": "#f7f7f7", "role/extended/shadow/opacity3": "#00000008" }
+    "2221:69_img": {
+      "border-radius/700": "12",
+      "role/extended/shadow/opacity3": "#00000008"
+    },
+    "2221:71_video": {
+      "border-radius/700": "12",
+      "role/surface/surface": "#f7f7f7",
+      "role/extended/shadow/opacity3": "#00000008"
+    }
   },
   "structure": {
     "_pattern": "box (full-width) → FixedAspectRatioSpacer (задаёт высоту через aspect-ratio, дефолт 16:9) + абсолютно-позиционированный медиа-слой",
@@ -38,23 +55,76 @@
   },
   "illustration_recolor": {
     "_source": "SVG-экспорт node 2221:62 — пути сгруппированы по id-буквам, fill=var(--fill-0, #hex)",
-    "a": { "hex": "#19110A", "role": "primary-container-on-highest" },
-    "b": { "hex": "#FAD646", "role": "primary-core" },
-    "c": { "hex": "#FFFAE7", "role": "primary-container-core" },
-    "d": { "hex": null, "role": "primary-dim", "_note": "не задействован в эталонном артворке; дефолт-fallback" },
-    "f": { "hex": null, "role": "primary-container-on-low", "_note": "не задействован в эталонном артворке; дефолт-fallback" }
+    "a": {
+      "hex": "#19110A",
+      "role": "primary-container-on-highest"
+    },
+    "b": {
+      "hex": "#FAD646",
+      "role": "primary-core"
+    },
+    "c": {
+      "hex": "#FFFAE7",
+      "role": "primary-container-core"
+    },
+    "d": {
+      "hex": null,
+      "role": "primary-dim",
+      "_note": "не задействован в эталонном артворке; дефолт-fallback"
+    },
+    "f": {
+      "hex": null,
+      "role": "primary-container-on-low",
+      "_note": "не задействован в эталонном артворке; дефолт-fallback"
+    },
+    "_status": "используется вариантом .content-area-illustration (28.08.2026): компонент даёт бокс без рамки и фона, перекраску делает экспорт SVG подменой --fill-N на роль"
   },
   "aspect_ratios": {
     "_source": "Figma SLujhvMwJRHdRWAqZeiEu3 node 741:39415 (FixedAspectRatioSpacer), 39 символов; значения сверены с пиксельными боксами metadata (w/h)",
     "default": "16/9",
-    "numeric": ["1:1","16:9","9:16","4:3","3:4","3:2","2:3","5:4","4:5","16:10","10:16","8:5","9:8","21:9","9:21","32:9","16:5","14:3","8:3","5:2","3:1","2:1","1:2","4:1","6:1","12:1","6:7"],
+    "numeric": [
+      "1:1",
+      "16:9",
+      "9:16",
+      "4:3",
+      "3:4",
+      "3:2",
+      "2:3",
+      "5:4",
+      "4:5",
+      "16:10",
+      "10:16",
+      "8:5",
+      "9:8",
+      "21:9",
+      "9:21",
+      "32:9",
+      "16:5",
+      "14:3",
+      "8:3",
+      "5:2",
+      "3:1",
+      "2:1",
+      "1:2",
+      "4:1",
+      "6:1",
+      "12:1",
+      "6:7"
+    ],
     "named": {
-      "a4-portrait": "210/297", "a4-landscape": "297/210",
-      "a4-half-portrait": "420/297", "a4-half-landscape": "297/105",
-      "letter-portrait": "17/22", "letter-landscape": "22/17",
-      "letter-half-portrait": "17/11", "letter-half-landscape": "44/17",
-      "golden-portrait": "0.618/1", "golden-landscape": "1.618/1",
-      "golden-half-portrait": "1.236/1", "golden-half-landscape": "3.236/1"
+      "a4-portrait": "210/297",
+      "a4-landscape": "297/210",
+      "a4-half-portrait": "420/297",
+      "a4-half-landscape": "297/105",
+      "letter-portrait": "17/22",
+      "letter-landscape": "22/17",
+      "letter-half-portrait": "17/11",
+      "letter-half-landscape": "44/17",
+      "golden-portrait": "0.618/1",
+      "golden-landscape": "1.618/1",
+      "golden-half-portrait": "1.236/1",
+      "golden-half-landscape": "3.236/1"
     }
-  }
+  },
+  "fetched_at": "2026-08-28T13:36:35Z"
 }

@@ -53,7 +53,7 @@
 <body>
 
   <h1>content-area / storybook</h1>
-  <p class="sub">Медиа-область с соотношением сторон. Типы: <code>content-area--img</code> (jpg/png/svg, cover/contain/fill) и <code>content-area--video</code> (responsive iframe). 39 соотношений через хелперы <code>content-area--16-9</code>… или <code>style="--awds-content-area-ratio: 7/3"</code>. Радиус — <code>--awds-rounded-border-radius-700</code>. Статичный. Переключи тему — палитра подтянется.</p>
+  <p class="sub">Медиа-область с соотношением сторон. Типы: <code>content-area-img</code> (jpg/png/svg, cover/contain/fill) и <code>content-area-video</code> (responsive iframe). 39 соотношений через хелперы <code>content-area--16-9</code>… или <code>style="--awds-content-area-ratio: 7/3"</code>. Радиус — <code>--awds-rounded-border-radius-700</code>. Статичный. Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -61,6 +61,7 @@
     </label>
     <label>Тип:
       <select id="variant">
+        <option value="illustration">illustration</option>
         <option value="img">img</option>
         <option value="video">video</option>
       </select>
@@ -106,6 +107,19 @@
         <text x='160' y='128' font-family='sans-serif' font-size='20' text-anchor='middle' fill='%2319110a'>4:3 IMG</text>
       </svg>`);
 
+    /* Демо-иллюстрация: прозрачный фон и своя пропорция (267:207 — как в макете),
+       чтобы на превью было видно и отсутствие рамки, и вписывание contain.
+       Цвета литералами — это заглушка storybook, а не артефакт компонента:
+       настоящий рисунок красится ролями primary-* на стороне потребителя. */
+    const ILL_SRC = "data:image/svg+xml;utf8," + encodeURIComponent(
+      `<svg xmlns='http://www.w3.org/2000/svg' width='267' height='207'>
+        <ellipse cx='133' cy='120' rx='120' ry='42' fill='none' stroke='%2319110a' stroke-width='2'/>
+        <ellipse cx='133' cy='120' rx='90' ry='62' fill='none' stroke='%2319110a' stroke-width='2'/>
+        <path d='M70 150 L150 60 L185 95 L105 175 Z' fill='%23ffeb5a' stroke='%2319110a' stroke-width='3'/>
+        <circle cx='215' cy='55' r='18' fill='%2319110a'/>
+        <circle cx='45' cy='60' r='10' fill='%23ffeb5a' stroke='%2319110a' stroke-width='2'/>
+      </svg>`);
+
     const variantSel = document.querySelector('#variant');
     const ratioSel   = document.querySelector('#ratio');
     const fitSel     = document.querySelector('#fit');
@@ -115,6 +129,9 @@
       if (v === 'video') {
         // реальный iframe (грузится онлайн) — офлайн виден surface-фон бокса
         return `<iframe class="content-area__video" src="https://www.youtube.com/embed/aqz-KE-bpKQ" title="демо" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+      }
+      if (v === 'illustration') {
+        return `<img class="content-area__img" src="${ILL_SRC}" alt="">`;
       }
       return `<img class="content-area__img" src="${IMG_SRC}" alt="демо">`;
     }

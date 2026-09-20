@@ -9,7 +9,7 @@
 ## HTML
 
 ```html
-<div class="content-area content-area--video content-area--16-9">
+<div class="content-area content-area-video content-area--16-9">
   <iframe class="content-area__video"
           src="https://www.youtube.com/embed/VIDEO_ID"
           title="Название ролика"

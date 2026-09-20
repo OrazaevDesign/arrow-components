@@ -1,33 +1,46 @@
 {
   "component": "content-area",
-  "version": "1.0.3",
-  "contract_hash": "sha256:4fec660d0a097043fe02e503b2c1c4508af60418195ad1e75f9282f00e67e923",
-  "artifact_hash": "sha256:219f068d880a8ea9f72c7f839b8643731cfc971759b7ddc2d5d22dfa4a25e2d1",
-  "visual_change": false,
-  "released_at": "2026-08-26T09:38:07.270Z",
-  "own_values": [],
+  "version": "2.0.3",
+  "contract_hash": "sha256:796085dd9550a108ff116f7587354ed6cee067d49dcf7d4a49b84a7a11c2628d",
+  "artifact_hash": "sha256:3c124d1fe89e0ace8d11a70f33afcac11f8a5a55b759aaefead59acbedcf7f6f",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:51.016Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2221:59",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-59",
+    "primary_node_id": "2221:43",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-43",
     "aspect_ratio_source": {
       "file_key": "SLujhvMwJRHdRWAqZeiEu3",
       "node_id": "741:39415",
       "url": "https://www.figma.com/design/SLujhvMwJRHdRWAqZeiEu3/%F0%9F%93%9C-Tokens-%E2%86%AA-%C2%B9-Units?node-id=741-39415",
       "figma_label": "FixedAspectRatioSpacer (39 соотношений)"
-    }
+    },
+    "note": "Осей у вариантов нет — три компонента лежат на странице без обёрток-сетов (figma-mapping.md). Соотношения сторон и вписывание классами не нарисованы: они приходят из FixedAspectRatioSpacer в файле Units."
   },
   "variants": {
+    "illustration": {
+      "node_id": "2221:60",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-60",
+      "figma_label": "content-area / illustration"
+    },
     "img": {
       "node_id": "2221:69",
       "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-69",
-      "figma_label": "var=img"
+      "figma_label": "content-area / img"
     },
     "video": {
       "node_id": "2221:71",
       "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2221-71",
-      "figma_label": "var=video"
+      "figma_label": "content-area / video"
     }
   },
   "_note_dropped": "Вариант illustration (2221:60) и API перекраски awds-ill-* удалены — компонент упрощён до img/video (SVG идёт как img с fit-contain). Figma-набор ещё содержит ноду illustration.",
@@ -151,28 +164,28 @@
     "html_samples": [
       {
         "label": "Картинка 4:3, cover",
-        "html": "<figure class=\"content-area content-area--img content-area--4-3 content-area--fit-cover\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
+        "html": "<figure class=\"content-area content-area-img content-area--4-3 content-area--fit-cover\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
       },
       {
         "label": "Картинка 1:1, contain",
-        "html": "<figure class=\"content-area content-area--img content-area--1-1 content-area--fit-contain\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
+        "html": "<figure class=\"content-area content-area-img content-area--1-1 content-area--fit-contain\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
       },
       {
         "label": "Видео YouTube 16:9",
-        "html": "<div class=\"content-area content-area--video content-area--16-9\"><iframe class=\"content-area__video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" title=\"…\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen loading=\"lazy\"></iframe></div>"
+        "html": "<div class=\"content-area content-area-video content-area--16-9\"><iframe class=\"content-area__video\" src=\"https://www.youtube.com/embed/VIDEO_ID\" title=\"…\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen loading=\"lazy\"></iframe></div>"
       },
       {
         "label": "Произвольное соотношение 7:3",
-        "html": "<figure class=\"content-area content-area--img\" style=\"--awds-content-area-ratio: 7/3\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
+        "html": "<figure class=\"content-area content-area-img\" style=\"--awds-content-area-ratio: 7/3\"><img class=\"content-area__img\" src=\"…\" alt=\"…\"></figure>"
       }
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-surface",
-    "--color-extended-shadow",
-    "--awds-rounded-border-radius-700"
+    "--awds-rounded-border-radius-700",
+    "--extended-shadow-1",
+    "--surface-surface"
   ],
-  "last_synced": "2026-07-07T10:20:47Z",
+  "last_synced": "2026-08-29T00:00:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:ec9c9bff7704973acbe3ddd4fc84354fb2a1880f67191aa64b020a7e9fef4077",
   "published": {
@@ -210,6 +223,57 @@
       }
     }
   },
+  "markup": {
+    "root": {
+      "class": "content-area",
+      "tags": [
+        "figure",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "content-area-{variant}",
+      "required": true
+    },
+    "size": null,
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Вариант задаётся МОДИФИКАТОРОМ (--img / --video), а не суффиксом через дефис. Шкалы размеров нет — размер определяет соотношение сторон (--16-9 и другие) и контейнер."
+  },
+  "questions": [
+    {
+      "id": "state-groups-missing-for-seven",
+      "text": "У семи компонентов нет группы State в студии — 53 инлайна ролей (product-card 25, slider 9, avatar 8, price 4, tooltip 4, content-area 2, heading 1). Заводить группы в студии или узаконить инлайн ролей записью в own_values?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217960855817768",
+      "raised_at": "2026-08-25",
+      "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25",
+      "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
+      "answered_at": "2026-09-15"
+    }
+  ],
+  "asana": {
+    "task_gid": "1218436374096208",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218436374096208",
+    "task_name": "💠 content-area",
+    "parent_task": "💠 4 · elements",
+    "primary": true
+  },
+  "family": "elements",
+  "summary": "Медиа-слот: иллюстрация, изображение или видео с соотношением сторон",
+  "aliases": [
+    "медиа",
+    "картинка",
+    "изображение",
+    "видео",
+    "медиа-область",
+    "слот под фото"
+  ],
   "contract": {
     "classes": [
       "content-area",
@@ -251,12 +315,13 @@
       "content-area--golden-half-portrait",
       "content-area--golden-landscape",
       "content-area--golden-portrait",
-      "content-area--img",
       "content-area--letter-half-landscape",
       "content-area--letter-half-portrait",
       "content-area--letter-landscape",
       "content-area--letter-portrait",
-      "content-area--video",
+      "content-area-illustration",
+      "content-area-img",
+      "content-area-video",
       "content-area__img",
       "content-area__video"
     ],
@@ -264,6 +329,7 @@
     "elements": [],
     "public_vars": [],
     "variants": [
+      "illustration",
       "img",
       "video"
     ],
