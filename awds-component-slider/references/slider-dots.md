@@ -2,7 +2,7 @@
 
 Базовый индикатор пагинации: полупрозрачная frosted-пилюля с рядом точек. Активный слайд — вытянутая в пилюлю тёмная точка, остальные — приглушённые круги.
 
-**Figma:** https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387
+**Figma:** https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1441
 
 ## HTML
 
@@ -24,12 +24,12 @@
 
 | Свойство | Значение |
 |---|---|
-| Фон | `rgb(var(--surface-bright) / var(--awds-opacity-opacity-80))` |
+| Фон | `rgb(var(--surface-bright) / var(--awds-opacity-80))` |
 | Размытие подложки | `backdrop-filter: blur(3px)` (raw, нет DS-токена) |
-| Padding / gap | `var(--awds-space-space-1)` |
+| Padding / gap | `var(--awds-space-1)` |
 | Скругление пилюли | `var(--awds-rounded-border-radius-full)` |
-| Точка | 6px (raw Figma px), `rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-30))` |
-| Активная точка | 12×6, `rgb(var(--surface-on-highest))` |
+| Точка | `var(--awds-space-1-5)` (6px), `rgb(var(--surface-on-highest) / var(--awds-opacity-30))` |
+| Активная точка | `var(--awds-space-3)`×6 (12×6), `rgb(var(--surface-on-highest))` |
 
 ## Состояния
 

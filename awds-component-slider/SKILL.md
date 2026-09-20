@@ -1,6 +1,6 @@
 ---
 name: awds-component-slider
-description: Индикатор пагинации карусели Slider ArrowDS: точки-dots, мини-точки, счётчик «1/N», frosted-стиль. Для позиции слайда. Ползунок-регулятор — range. Токены ArrowDS, работает и по Figma-ссылке.
+description: Slider ArrowDS (.slider).
 ---
 
 # Slider (индикатор пагинации) ArrowDS
@@ -13,26 +13,29 @@ description: Индикатор пагинации карусели Slider Arrow
 |---|---|---|---|
 | **Dots** | `references/slider-dots.md` ✅ | Frosted-пилюля + точки 6px, активная вытянута в 12×6 | Базовый индикатор под слайдером на любом фоне |
 | **Dots Mini** | `references/slider-dots-mini.md` ✅ | Точки 4px **без фона** (только blur поверх контента) | Поверх фото/видео в углу — когда плашка лишняя |
-| **Numbs** | `references/slider-numbs.md` ✅ | Frosted-пилюля + текст «1/2» (текущий/всего) | Много слайдов — точки не помещаются, нужен счётчик |
+| **Numbs** | `references/slider-numbs.md` ✅ | Frosted-пилюля + текст «1/2» (текущий/всего) | Слайдов больше семи — точки не помещаются, нужен счётчик |
 
 ## Откуда берутся значения
 
 | Что | Источник |
 |---|---|
-| Фон пилюли (Dots, Numbs) | `rgb(var(--surface-bright) / var(--awds-opacity-opacity-80))` + `backdrop-filter: blur(3px)` |
-| Точка неактивная | `rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-30))` |
+| Фон пилюли (Dots, Numbs) | `rgb(var(--surface-bright) / var(--awds-opacity-80))` + `backdrop-filter: blur(3px)` |
+| Точка неактивная | `rgb(var(--surface-on-highest) / var(--awds-opacity-30))` |
 | Точка активная | `rgb(var(--surface-on-highest))` (opacity 100) |
 | Текст Numbs | `rgb(var(--surface-on-high))`, типографика `--awds-control-300-*`, semibold |
-| Padding / gap | `var(--awds-space-space-1)` |
+| Padding / gap | `var(--awds-space-1)` |
 | Скругление | `var(--awds-rounded-border-radius-full)` (всегда пилюля) |
 | Цифры Numbs | `font-variant-numeric: tabular-nums` (не прыгают при смене слайда) |
-| Геометрия точек (6px), blur (3px) | raw Figma px — в DS нет токена для этих размеров |
+| Геометрия точек | ступени Space: 6/12 → `space-1-5`/`space-3`, mini 4/8 → `space-1`/`space-2` |
+| Размытие подложки | `blur(3px)` — единственное своё значение: шкалы размытия в DS нет |
 
 Состояний нет (индикатор статичный). «Активную» точку / число задаёт потребитель в разметке. Маппинг variant → роль зафиксирован в `component.meta.json` + `snapshot/figma.json`. Обновление — через `arrow-components-builder` («обнови awds-component-slider»).
 
 ## Размеров нет
 
 `shape: null` — компонент бессайзовый, классов `.slider--N` нет. Размер задаётся количеством точек / длиной счётчика. Геометрия точек различается между вариантами (Dots 6px / Mini 4px) и зашита в самих вариантах.
+
+**Порог: точек не больше семи.** Пилюля растёт вместе с их числом — 5 точек дают 60px, 11 уже 120px, и на узком экране индикатор занимает половину ширины. Прокрутки ленты у компонента нет намеренно: в макете лента длиннее окна и обрезана рамкой, но окна у Dots и Mini разной ширины (5 и 4 позиции) — это рамка макета, а не правило. Ответ на «много слайдов» дизайн-система даёт вариантом **Numbs**: счётчик «1/12» не растёт вовсе.
 
 ## CSS
 
@@ -42,7 +45,7 @@ description: Индикатор пагинации карусели Slider Arrow
 
 ## Алгоритм использования
 
-1. Выбери вариант: базовый под слайдером → `dots`; поверх медиа без плашки → `dots-mini`; много слайдов → `numbs`.
+1. Выбери вариант: базовый под слайдером → `dots`; поверх медиа без плашки → `dots-mini`; слайдов больше семи → `numbs` (точки перестают помещаться, пилюля разъезжается).
 2. Разметка (контейнер `<div>`, точки — `<span>`):
    - **Dots / Dots Mini** — по одному `.slider__dot` на слайд, активному добавь `.slider__dot--active` + `aria-current="true"`:
      ```html
@@ -60,7 +63,7 @@ description: Индикатор пагинации карусели Slider Arrow
      ```
 3. Кликабельность — на стороне потребителя: если точки должны переключать слайд, замени `<span>` на `<button class="slider__dot" aria-label="Слайд N">` и навешай обработчик. Базовый компонент — чистый индикатор без интерактива (как в Figma).
 4. Позиционирование над/поверх слайдера — на стороне потребителя (`position: absolute; bottom; left: 50%; transform: translateX(-50%)`). Сам индикатор — `inline-flex`.
-5. Подключи `references/slider.css`. Нужны `css-variables.css` сайта (роли `--surface-*`) и базовые токены DS (`--awds-space-space-1`, `--awds-rounded-border-radius-full`, `--awds-opacity-*`, `--awds-control-300-*`, `--awds-font-*`).
+5. Подключи `references/slider.css`. Нужны `css-variables.css` сайта (роли `--surface-*`) и базовые токены DS (`--awds-space-1`, `--awds-rounded-border-radius-full`, `--awds-opacity-*`, `--awds-control-300-*`, `--awds-font-*`).
 
 ## Refresh
 

@@ -1,57 +1,51 @@
 {
   "component": "slider",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "contract_hash": "sha256:79d611ccb9a7bde0baf14ce84e859bc121735f7bff4d7ca70e2356304c06f925",
-  "artifact_hash": "sha256:a391b5e3573e6880e23f37aa30c0c86f6dcae95012de596ed7e1abd5fffcf35c",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:48.701Z",
+  "artifact_hash": "sha256:49b35c2795580fda8fcf9734fde75bf36ae440d166dcf9b19f16854eb003140e",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:51.144Z",
   "own_values": [
     {
-      "value": "6px",
-      "where": "--awds-slider-dot-size",
-      "count": 1,
-      "why": "нет ячейки в студии для «--awds-slider-dot-size»: группы этого элемента в коллекции Size не существует"
+      "value": "0.15s",
+      "where": "transition",
+      "count": 2,
+      "why": "длительность анимации: коллекции движения в студии нет"
     },
     {
-      "value": "12px",
-      "where": "--awds-slider-dot-active-w",
+      "value": "3px",
+      "where": "-webkit-backdrop-filter",
       "count": 1,
-      "why": "нет ячейки в студии для «--awds-slider-dot-active-w»: группы этого элемента в коллекции Size не существует"
+      "why": "радиус размытия подложки: шкалы blur в студии нет — ни одна из трёх ячеек (COLOR, NUMBER, DIMENSION) не описывает эффект"
     },
     {
-      "value": "4px",
-      "where": "--awds-slider-dot-size",
+      "value": "3px",
+      "where": "backdrop-filter",
       "count": 1,
-      "why": "нет ячейки в студии для «--awds-slider-dot-size»: группы этого элемента в коллекции Size не существует"
-    },
-    {
-      "value": "8px",
-      "where": "--awds-slider-dot-active-w",
-      "count": 1,
-      "why": "нет ячейки в студии для «--awds-slider-dot-active-w»: группы этого элемента в коллекции Size не существует"
+      "why": "радиус размытия подложки: шкалы blur в студии нет — ни одна из трёх ячеек (COLOR, NUMBER, DIMENSION) не описывает эффект"
     }
   ],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:4387",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:37",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-37"
   },
   "variants": {
     "dots": {
-      "node_id": "2093:4387",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4387",
-      "figma_label": "Variant=Dots"
+      "node_id": "6:1441",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1441",
+      "figma_label": "slider / dots"
     },
     "dots-mini": {
-      "node_id": "2093:4401",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4401",
-      "figma_label": "Variant=Dots Mini"
+      "node_id": "6:1455",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1455",
+      "figma_label": "slider / dots-mini"
     },
     "numbs": {
-      "node_id": "2093:4414",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4414",
-      "figma_label": "Variant=Numbs"
+      "node_id": "6:1468",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1468",
+      "figma_label": "slider / numbs"
     }
   },
   "shape": null,
@@ -109,23 +103,27 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-bright",
-    "--color-surface-on-highest",
-    "--color-surface-on-high",
-    "--awds-space-space-1",
-    "--awds-rounded-border-radius-full",
-    "--awds-opacity-opacity-30",
-    "--awds-opacity-opacity-80",
     "--awds-control-font-size-300",
-    "--awds-control-line-height-300",
     "--awds-control-letter-spacing-300",
+    "--awds-control-line-height-300",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-opacity-30",
+    "--awds-opacity-80",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-3",
+    "--awds-space-9",
+    "--surface-bright",
+    "--surface-on-high",
+    "--surface-on-highest"
   ],
   "notes": "Статичный индикатор пагинации, без size-шкалы (shape=null) и без состояний. Геометрия точек (диаметр 6px, blur 3px) — raw Figma px, в DS нет соответствующего токена. Figma Inter Medium(500) округлён к --awds-font-weight-semibold (нет weight-500).",
-  "last_synced": "2026-06-22T11:33:17Z",
+  "last_synced": "2026-09-14T09:57:06Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:cfb32f017f63fd46432c44393125b738e29b97c086cea26bdffbb58625bb40b2",
+  "snapshot_hash": "sha256:673f8f391a800dbe8d8fee27740b47ef4a59b780379d7be0ea3b6cb67ea9b78a",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "dc1cec3",
@@ -162,6 +160,70 @@
       }
     }
   },
+  "markup": {
+    "root": {
+      "class": "slider",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "slider-{variant}",
+      "required": true
+    },
+    "size": null,
+    "native": null,
+    "children": [],
+    "attrs": [
+      {
+        "attr": "aria-label"
+      }
+    ],
+    "container": null,
+    "note": "Индикатор позиции слайда, не регулятор — регулятор это range. Шкалы размеров нет: вариант (точки / мини-точки / счётчик) задаёт и размер. aria-label обязателен: набор точек иначе безымянный для скринридера."
+  },
+  "asana": {
+    "task_gid": "1218421798695713",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798695713",
+    "task_name": "💠 slider",
+    "parent_task": "💠 4 · elements",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "slider-interactive-dots",
+      "text": "Нужен ли интерактивный вариант точек (button вместо span) — сейчас кликабельность целиком на потребителе, компонент только индикатор",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-08-28",
+      "answer": null,
+      "asana_gid": "1218488852463829"
+    },
+    {
+      "id": "state-groups-missing-for-seven",
+      "text": "У семи компонентов нет группы State в студии — 53 инлайна ролей (product-card 25, slider 9, avatar 8, price 4, tooltip 4, content-area 2, heading 1). Заводить группы в студии или узаконить инлайн ролей записью в own_values?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217960855817768",
+      "raised_at": "2026-08-25",
+      "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25",
+      "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
+      "answered_at": "2026-09-15"
+    }
+  ],
+  "family": "elements",
+  "summary": "Индикатор пагинации карусели: точки, мини-точки, счётчик «1/N»",
+  "aliases": [
+    "точки под каруселью",
+    "пагинация",
+    "дотсы",
+    "индикатор слайда",
+    "карусель"
+  ],
   "contract": {
     "classes": [
       "slider",

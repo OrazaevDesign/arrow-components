@@ -2,7 +2,7 @@
 
 Компактный индикатор без плашки: точки 4px прямо поверх контента (фото/видео). Фон не заливается — только лёгкое размытие подложки. Активная точка вытянута в 8×4.
 
-**Figma:** https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4401
+**Figma:** https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1455
 
 ## HTML
 
@@ -24,9 +24,9 @@
 |---|---|
 | Фон | `transparent` (без заливки) |
 | Размытие подложки | `backdrop-filter: blur(3px)` |
-| Padding / gap | `var(--awds-space-space-1)` |
-| Точка | 4px (`var(--awds-space-space-1)` по факту), `rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-30))` |
-| Активная точка | 8×4, `rgb(var(--surface-on-highest))` |
+| Padding / gap | `var(--awds-space-1)` |
+| Точка | `var(--awds-space-1)` (4px), `rgb(var(--surface-on-highest) / var(--awds-opacity-30))` |
+| Активная точка | `var(--awds-space-2)`×4 (8×4), `rgb(var(--surface-on-highest))` |
 
 ## Когда
 
