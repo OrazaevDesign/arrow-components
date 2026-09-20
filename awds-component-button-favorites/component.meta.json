@@ -1,37 +1,77 @@
 {
   "component": "button-favorites",
-  "version": "1.0.3",
-  "contract_hash": "sha256:e26660cbfb682ff4941e6fa4b0b1ae6a36518d79fb1fba1ace4362b874098997",
-  "artifact_hash": "sha256:eb2ec3d7679dcbc5694ae5c16e42ff4a5541ba4898f430b0fd33226acadebc1d",
-  "visual_change": false,
-  "released_at": "2026-08-26T08:31:22.766Z",
-  "own_values": [],
+  "version": "2.0.0",
+  "contract_hash": "sha256:6374a6b1f3d8929094fc35d0ade50ef659ffe94d9a5c3aa8b9b97cdb15f30b52",
+  "artifact_hash": "sha256:3d87e0244601f6e7473d8a83973333aa97e66e839b4d406bfe94a47950798046",
+  "visual_change": true,
+  "released_at": "2026-09-15T14:01:31.194Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 2,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "0.12s",
+      "where": "transition",
+      "count": 1,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
-    "file_name": "💠 Comp ↪ ² Buttons",
-    "primary_node_id": "856:30471",
-    "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:10",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-10",
+    "sets": {
+      "favorites-unselected": {
+        "node_id": "8:8931",
+        "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-8931",
+        "figma_label": "button / ghost / favorites-unselected"
+      },
+      "favorites-selected": {
+        "node_id": "8:8960",
+        "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-8960",
+        "figma_label": "button / ghost / favorites-selected"
+      }
+    },
+    "sets_note": "В Figma компонент — ДВА публичных набора (не выбрано / выбрано) с осями content=text|icon и size=600…50, по 14 ячеек в каждом. В коде это по-прежнему ОДИН вариант .btn-favorites, а выбранность несёт aria-pressed: мод Active компилируется в :active, то есть в нажатие, а «в избранном» — постоянное состояние. Поэтому в variants остаётся один ключ favorites. Каждый вариант макета — инстанс набора button / ghost с частью-сердцем в слоте иконки."
   },
   "variants": {
     "favorites": {
-      "node_id": "856:30471",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471",
-      "figma_label": "button-favorites (⚙️Favourites, State × View)"
+      "node_id": "8:8931",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-8931",
+      "figma_label": "button / ghost / favorites-unselected",
+      "note": "Точка входа — набор «не выбрано»; парный набор «выбрано» (8:8960) перечислен в figma.sets."
     }
   },
   "shape": "rectangle",
-  "size_scale": null,
-  "based_on": "awds-component-button (.btn icon-only, прозрачный вариант)",
-  "views": [
-    "desktop",
-    "mobile"
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
   ],
+  "based_on": "awds-component-button (гость-кнопка, шкала rectangle)",
+  "views": null,
   "states": [
     "rest",
     "hover",
+    "focus",
+    "active",
     "selected"
   ],
-  "states_note": "Figma State=Active соответствует 'selected' (постоянное «в избранном», [aria-pressed=true]); CSS :active отдан press-feedback. Desktop = дефолт .btn (rect-400, 40px), Mobile = .btn-favorites--mobile (32px).",
+  "states_note": "Оси состояний в макете нет: hover/focus/active живут только в ячейках студии (favorites/unselected/*-{hover,focus,active}). Выбранность — отдельный НАБОР макета, в коде [aria-pressed=true]; CSS :active отдан press-feedback.",
   "color_tokens": [
     "bg",
     "chroma",
@@ -52,70 +92,99 @@
       "hover",
       "selected"
     ],
-    "matrix_sizes": null,
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
     "toggles": [
       {
-        "id": "variant",
-        "label": "Вариант",
+        "id": "content",
+        "label": "Содержимое",
         "options": [
-          "favorites"
-        ]
-      },
-      {
-        "id": "view",
-        "label": "Вью",
-        "options": [
-          "desktop",
-          "mobile"
+          "icon",
+          "text"
         ]
       }
     ],
     "html_samples": [
       {
-        "label": "Desktop, не в избранном",
+        "label": "Только сердце, не в избранном",
         "html": "<button class=\"btn btn-favorites btn--icon-only\" type=\"button\" aria-pressed=\"false\" aria-label=\"В избранное\"><span class=\"btn-favorites__icon\">…heart solid + outline…</span></button>"
       },
       {
-        "label": "Mobile, в избранном",
-        "html": "<button class=\"btn btn-favorites btn-favorites--mobile btn--icon-only\" type=\"button\" aria-pressed=\"true\" aria-label=\"В избранном\"><span class=\"btn-favorites__icon\">…</span></button>"
+        "label": "Сердце с подписью, в избранном",
+        "html": "<button class=\"btn btn-favorites btn--300\" type=\"button\" aria-pressed=\"true\"><span class=\"btn-favorites__icon\">…</span>В избранном</button>"
       }
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-bright",
-    "--color-surface-on-high",
-    "--color-surface-on-highest",
-    "--color-error-container-dim",
-    "--color-error-container-on",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-gap",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
     "--awds-control-letter-spacing-400",
-    "--awds-space-space-5",
-    "--awds-space-space-1-5",
-    "--awds-opacity-opacity-40",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--error-container-dim",
+    "--error-container-on",
+    "--extended-transparent",
+    "--surface-bright",
+    "--surface-on-high",
+    "--surface-on-highest"
   ],
-  "last_synced": "2026-06-22T09:28:25Z",
-  "last_synced_by": "claude",
-  "snapshot_hash": "sha256:e51ed9428008f0037740c04d16e43d134eb48a8622072577104a71c64d9e8459",
+  "last_synced": "2026-09-15T17:10:00Z",
+  "last_synced_by": "arrow-components-builder",
+  "snapshot_hash": "sha256:6eb6c4e463cd3fb960444c7ec74d05d1862c1a3b751ed9730cf7e19bbc6cdd1a",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "cfbca68",
     "pushed_at": "2026-08-26T10:28:44.000Z",
+    "lags_behind": "Опубликована 1.0.8; в работе 2.0.0. Публикация — волна 7.4 плана 2026-09-14.",
     "github_urls": {
-      "favorites": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-favorites/references/button-favorites.md"
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-favorites/SKILL.md",
+      "folder": "https://github.com/OrazaevDesign/arrow-components/tree/main/awds-component-button-favorites",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#button-favorites",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/button-favorites.css"
     },
     "dev_resources_status": {
-      "favorites": {
+      "favorites-unselected": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "856:30471",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-favorites/SKILL.md"
+        "node_id": "8:8931"
+      },
+      "favorites-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:8960"
       }
     }
   },
@@ -127,16 +196,78 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "btn",
+      "tags": [
+        "button"
+      ]
+    },
+    "variant": {
+      "pattern": "btn-favorites",
+      "required": true
+    },
+    "size": {
+      "pattern": "btn--{size}",
+      "required": false
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "btn-favorites__icon"
+      },
+      {
+        "class": "btn-favorites__solid",
+        "within": "btn-favorites__icon"
+      },
+      {
+        "class": "btn-favorites__outline",
+        "within": "btn-favorites__icon"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "aria-pressed"
+      },
+      {
+        "attr": "aria-label"
+      }
+    ],
+    "container": null,
+    "note": "Шкала размеров общая с кнопкой: .btn--{50…600}, дефолт 400; своего класса размера у избранного нет. Обе иконки обязательны — они переключаются состоянием aria-pressed, а не подставляются. Icon-only требует aria-label; у варианта с подписью состояние называет сам текст.",
+    "pending_rework": false
+  },
+  "asana": {
+    "task_gid": "1218433190678568",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190678568",
+    "task_name": "💠 button-favorites",
+    "parent_task": "💠 2 · buttons",
+    "primary": true
+  },
+  "family": "buttons",
+  "summary": "Icon-only heart-toggle: добавить в избранное",
+  "aliases": [
+    "избранное",
+    "сердечко",
+    "лайк",
+    "вишлист"
+  ],
   "uses": {
-    "awds-component-button": "1.0.5",
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-button": "2.2.3",
+    "awds-component-focus-selection": "2.0.9"
   },
   "contract": {
     "classes": [
       "btn",
+      "btn--100",
+      "btn--200",
+      "btn--300",
+      "btn--400",
+      "btn--50",
+      "btn--500",
+      "btn--600",
       "btn--icon-only",
       "btn-favorites",
-      "btn-favorites--mobile",
       "btn-favorites__icon",
       "btn-favorites__outline",
       "btn-favorites__solid"
@@ -152,8 +283,18 @@
     "variants": [
       "favorites"
     ],
-    "sizes": [],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
     "states": [
+      "active",
+      "focus",
       "hover",
       "rest",
       "selected"

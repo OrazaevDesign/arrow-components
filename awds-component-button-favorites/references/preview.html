@@ -40,10 +40,10 @@
 
     table.matrix {
       border-collapse: collapse; background: rgb(var(--surface-container-lowest) / 1);
-      border-radius: 12px; overflow: hidden; width: 100%; max-width: 560px;
+      border-radius: 12px; overflow: hidden; width: 100%; max-width: 720px;
     }
     table.matrix th, table.matrix td {
-      padding: 16px 18px; text-align: center;
+      padding: 14px 18px; text-align: center;
       border-bottom: 1px solid rgb(var(--surface-container-low) / 1); vertical-align: middle;
     }
     table.matrix tr:last-child td { border-bottom: none; }
@@ -53,7 +53,7 @@
     }
     table.matrix td.row-label {
       font-weight: 600; font-family: var(--awds-font-family-code, ui-monospace), monospace;
-      color: rgb(var(--surface-on) / 1); text-align: left;
+      color: rgb(var(--surface-on) / 1); text-align: left; white-space: nowrap;
     }
     /* фото-подложка, чтобы белая заливка rest читалась как на карточке */
     .on-photo { display: inline-flex; border-radius: 10px; background: linear-gradient(135deg, #c9b27a, #8a7a52); }
@@ -65,7 +65,7 @@
 <body>
 
   <h1>button-favorites / storybook</h1>
-  <p class="sub">Кнопка «в избранное» — icon-only вариант компонента <code>Button</code> (<code>.btn .btn-favorites .btn--icon-only</code>), <strong>без фона и бордера</strong>. Внутри две стекнутые иконки heart: <code>solid</code> (заливка) + <code>outline</code> (контур). Состояния: rest (серый на белом) → hover (розовый + красный контур) → selected (сплошной красный, <code>aria-pressed="true"</code>). Вью: Desktop = дефолт <code>.btn</code> (40px), Mobile = <code>.btn-favorites--mobile</code> (32px). Клик по «живому» примеру переключает избранное.</p>
+  <p class="sub">Кнопка «в избранное» — <strong>гость-кнопка</strong> с сердцем-дуотоном (<code>.btn .btn-favorites</code>), без фона и обводки. Внутри две стекнутые иконки heart: <code>solid</code> (заливка) + <code>outline</code> (контур). Состояния: rest (серый на белом) → hover (розовый + красный контур) → selected (сплошной красный, <code>aria-pressed="true"</code>). Шкала размеров общая с кнопкой — <code>.btn--50…600</code>, дефолт 400. Содержимое: только сердце (<code>.btn--icon-only</code>) либо сердце с подписью. Клик по «живому» примеру переключает избранное.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -81,20 +81,26 @@
         <option value="rounded">rounded</option>
       </select>
     </label>
+    <label>Содержимое:
+      <select id="content">
+        <option value="icon">только сердце</option>
+        <option value="text">сердце + подпись</option>
+      </select>
+    </label>
   </div>
 
-  <h2>Состояние × вью</h2>
+  <h2>Размер × состояние</h2>
   <table class="matrix">
     <thead>
-      <tr><th style="width:140px;">Вью</th><th>Rest</th><th>Hover (наведи)</th><th>Selected</th></tr>
+      <tr><th style="width:170px;">Размер</th><th>Rest</th><th>Hover (наведи)</th><th>Selected</th></tr>
     </thead>
     <tbody id="matrix"></tbody>
   </table>
 
   <h2>Живой пример (клик переключает)</h2>
   <div class="live">
-    <span class="on-photo" id="live-desktop"></span>
-    <span class="on-photo" id="live-mobile"></span>
+    <span class="on-photo" id="live-icon"></span>
+    <span class="on-photo" id="live-text"></span>
     <span id="live-status">не в избранном</span>
   </div>
 
@@ -106,35 +112,50 @@
       + `<svg class="btn-favorites__outline" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0928 3.05991C12.7287 1.82393 14.7348 1.67089 16.3496 2.5892C17.9639 3.50742 18.9999 5.38217 19 7.83041C19 10.3627 17.5048 12.5134 15.9102 14.1039C14.295 15.7147 12.4254 16.9035 11.3584 17.5189C10.935 17.765 10.5039 17.9945 10 17.9945C9.49607 17.9945 9.06495 17.765 8.6416 17.5189C7.57455 16.9035 5.70499 15.7147 4.08984 14.1039C2.49516 12.5134 1 10.3627 1 7.83041C1.0001 5.38314 2.03712 3.51291 3.65137 2.59702C5.26481 1.68165 7.26864 1.83336 8.90234 3.06088C9.26444 3.33297 9.62329 3.61272 10 3.86459C10.375 3.61235 10.7323 3.33224 11.0928 3.05991ZM15.3613 4.32846C14.3526 3.7547 13.165 4.00159 12.2734 4.67514C11.8085 5.0264 11.4258 5.31503 11.1309 5.51401C10.794 5.74121 10.4222 5.96072 10.0029 5.96127C9.58341 5.96178 9.21066 5.74344 8.87305 5.51694C8.57711 5.31839 8.19345 5.02989 7.72656 4.67905C6.83401 4.00833 5.64645 3.7647 4.63867 4.33627C3.7728 4.82752 3.00009 5.95047 3 7.83041C3 9.56747 4.04271 11.2324 5.50195 12.6878C6.78251 13.965 8.29529 15.0576 9.88281 15.9242C9.9903 15.9828 10.0097 15.9828 10.1172 15.9242C11.7047 15.0576 13.2175 13.965 14.498 12.6878C15.9573 11.2324 17 9.56748 17 7.83041C16.9999 5.94766 16.2272 4.82117 15.3613 4.32846Z"/></svg>`
       + `</span>`;
 
-    function btn(view, { pressed = false } = {}) {
-      const cls = ['btn', 'btn-favorites', view === 'mobile' ? 'btn-favorites--mobile' : '', 'btn--icon-only'].filter(Boolean).join(' ');
-      return `<button class="${cls}" type="button" aria-pressed="${pressed}" aria-label="В избранное">${HEART}</button>`;
+    // Габарит icon-only = иконка + 2 × padding: считает CSS, здесь только подпись строки.
+    const SIZES = [['600', 52], ['500', 48], ['400', 40], ['300', 36], ['200', 32], ['100', 24], ['50', 20]];
+
+    function btn(size, { pressed = false, content = 'icon' } = {}) {
+      const label = pressed ? 'В избранном' : 'В избранное';
+      const cls = ['btn', 'btn-favorites', `btn--${size}`, content === 'icon' ? 'btn--icon-only' : '']
+        .filter(Boolean).join(' ');
+      const inner = content === 'icon' ? HEART : `${HEART}${label}`;
+      const aria = content === 'icon' ? ` aria-label="${label}"` : '';
+      return `<button class="${cls}" type="button" aria-pressed="${pressed}"${aria}>${inner}</button>`;
     }
 
     const matrix = document.querySelector('#matrix');
-    [['Desktop (.btn, 40px)', 'desktop'], ['Mobile (--mobile, 32px)', 'mobile']].forEach(([label, view]) => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td class="row-label">${label}</td>`
-        + `<td><span class="on-photo">${btn(view)}</span></td>`
-        + `<td><span class="on-photo" title="наведи курсор">${btn(view)}</span></td>`
-        + `<td><span class="on-photo">${btn(view, { pressed: true })}</span></td>`;
-      matrix.appendChild(tr);
-    });
+    function renderMatrix() {
+      const content = document.querySelector('#content').value;
+      matrix.innerHTML = '';
+      SIZES.forEach(([size, px]) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td class="row-label">.btn--${size} · ${px}px</td>`
+          + `<td><span class="on-photo">${btn(size, { content })}</span></td>`
+          + `<td><span class="on-photo" title="наведи курсор">${btn(size, { content })}</span></td>`
+          + `<td><span class="on-photo">${btn(size, { pressed: true, content })}</span></td>`;
+        matrix.appendChild(tr);
+      });
+    }
+    renderMatrix();
 
-    function mountLive(slotId, view) {
+    function mountLive(slotId, content) {
       const slot = document.querySelector(slotId);
-      slot.innerHTML = btn(view);
+      slot.innerHTML = btn('400', { content });
       slot.querySelector('.btn-favorites').addEventListener('click', (e) => {
         const b = e.currentTarget;
         const next = b.getAttribute('aria-pressed') !== 'true';
+        const label = next ? 'В избранном' : 'В избранное';
         b.setAttribute('aria-pressed', String(next));
-        b.setAttribute('aria-label', next ? 'В избранном' : 'В избранное');
+        if (b.hasAttribute('aria-label')) b.setAttribute('aria-label', label);
+        else b.lastChild.textContent = label;
         document.querySelector('#live-status').textContent = next ? 'в избранном ♥' : 'не в избранном';
       });
     }
-    mountLive('#live-desktop', 'desktop');
-    mountLive('#live-mobile', 'mobile');
+    mountLive('#live-icon', 'icon');
+    mountLive('#live-text', 'text');
 
+    document.querySelector('#content').addEventListener('change', renderMatrix);
     document.querySelector('#theme').addEventListener('change', (e) => {
       document.documentElement.classList.remove('theme-light', 'theme-dark');
       document.documentElement.classList.add(`theme-${e.target.value}`);

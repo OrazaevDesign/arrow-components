@@ -1,8 +1,8 @@
-# Button Favorites — heart toggle (на базе Button)
+# Button Favorites — heart toggle (на базе гость-кнопки)
 
-Кнопка «в избранное»: **icon-only вариант компонента Button**, прозрачный (без фона/бордера), с двумя стекнутыми иконками heart. Toggle между «не в избранном» и «в избранном».
+Кнопка «в избранное»: **гость-кнопка** (без фона и обводки) с сердцем-дуотоном из двух стекнутых слоёв. Toggle между «не в избранном» и «в избранном». Размер — общая шкала кнопки `.btn--50…600`, содержимое — только сердце или сердце с подписью.
 
-**Figma:** [button-favorites](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=856-30471)
+**Figma:** [↪ button-favorites](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-10) — два набора, `favorites-unselected` и `favorites-selected`, оси `content=text|icon × size=600…50`.
 
 ## HTML
 
@@ -15,13 +15,34 @@
 </button>
 ```
 
-Структура повторяет компонент Button: `.btn` (база) + `.btn-favorites` (прозрачный вариант) + `.btn--icon-only` (квадрат). Внутри — `.btn-favorites__icon` с двумя SVG-слоями (solid под outline).
+Структура повторяет компонент Button: `.btn` (база) + `.btn-favorites` (гость-поверхность и дуотон) + `.btn--icon-only` (квадрат). Внутри — `.btn-favorites__icon` с двумя SVG-слоями (solid под outline).
 
-### Mobile (32px)
+### С подписью (ось макета `content=text`)
 
 ```html
-<button class="btn btn-favorites btn-favorites--mobile btn--icon-only" type="button" aria-pressed="false" aria-label="В избранное"> … </button>
+<button class="btn btn-favorites" type="button" aria-pressed="false">
+  <span class="btn-favorites__icon"> … два SVG … </span>
+  В избранное
+</button>
 ```
+
+`aria-label` здесь не нужен — состояние называет сама подпись («В избранное» → «В избранном»).
+
+### Размер
+
+| Класс | Габарит icon-only | Сердце |
+|---|---|---|
+| `.btn--600` | 52px | 20px |
+| `.btn--500` | 48px | 20px |
+| `.btn--400` (дефолт) | 40px | 20px |
+| `.btn--300` | 36px | 20px |
+| `.btn--200` | 32px | 16px |
+| `.btn--100` | 24px | 16px |
+| `.btn--50` | 20px | 16px |
+
+Шкала общая с `awds-component-button`; отдельного класса размера у избранного нет.
+
+> **Что было до 2.0.0.** Шкалы не существовало: дефолт 40px плюс самодельный `.btn-favorites--mobile` (32px с сердцем 20px). Класс **удалён** — такой ступени в макете нет. Ближайшая по габариту — `.btn--200` (те же 32px, сердце 16px).
 
 ## Toggle (JS)
 
@@ -38,24 +59,26 @@ CSS сам перекрашивает дуотон по `aria-pressed` — ме�
 
 ## Состояния
 
-| Состояние | Триггер | Заливка / контур |
-|---|---|---|
-| Rest | по умолчанию | `surface-bright` / `surface-on-high` |
-| Hover | `:hover` (не выбрано) | `error-container-dim` / `error-container-on` |
-| Selected | `[aria-pressed="true"]` | `error-container-on` / `error-container-on` |
-| Press | `:active` | без смены цвета, `transform: scale(0.9)` |
-| Focus | `:focus-visible` | обводка `surface-on-highest` (от базы `.btn`) |
-| Disabled | `:disabled` / `[aria-disabled]` | `opacity: var(--awds-opacity-opacity-40)` (от базы `.btn`) |
+| Состояние | Триггер | Заливка / контур сердца | Подпись |
+|---|---|---|---|
+| Rest | по умолчанию | `surface-bright` / `surface-on-high` | `surface-on-high` |
+| Hover | `:hover` (не выбрано) | `error-container-dim` / `error-container-on` | `surface-on-highest` |
+| Focus | `:focus-visible` | как Rest | `surface-on-highest` |
+| Press | `:active` | как Hover, плюс `transform: scale(0.9)` | `surface-on-highest` |
+| Selected | `[aria-pressed="true"]` | `error-container-on` / `error-container-on` | не меняется |
+| Disabled | `:disabled` / `[aria-disabled]` | гасится `opacity` слоя (40%) | — |
 
-Фона и бордера нет ни в одном состоянии (`--awds-btn-bg/-chroma/-border = transparent`). Наведение на уже выбранную кнопку не откатывает цвет к hover-розовому.
+Поверхность прозрачна во всех состояниях, но выражена **ролью** `extended/transparent`, а не ключевым словом `transparent`: роль читается темой. Наведение на уже выбранную кнопку не откатывает цвет к hover-розовому — ячейка выбранности состояний не имеет.
+
+Кольцо фокуса рисует слой `awds-component-focus-selection` (`:where(.btn):focus-visible`); своей обводки компонент не заводит.
 
 ## Доступность
 
-- `aria-pressed` — состояние toggle (обязательно).
-- `aria-label` — меняй по состоянию («В избранное» / «В избранном»), внутри только иконки.
+- `aria-pressed` — состояние toggle (обязательно в обоих вариантах содержимого).
+- `aria-label` — только у icon-only; меняй по состоянию («В избранное» / «В избранном»).
 - SVG помечены `aria-hidden="true"`.
 - Состояние читается не только цветом: форма заливки (контур → сплошное сердце) тоже меняется.
 
 ## Токены
 
-Геометрия — shape-токены кнопки (`rectangle-400` для Desktop, `space-1-5` для Mobile), цвета — роли. Полная карта — в шапке `button-favorites.css`. Поверхность зануляется (`transparent`), поэтому фона нет.
+Геометрия — shape-токены кнопки (`rectangle/{50…600}`), цвета — роли через ячейки `favorites/*` и `button/ghost/*`. Полная карта с якорями `#cell` — в шапке и строках `button-favorites.css`. Прямых значений нет ни одного.
