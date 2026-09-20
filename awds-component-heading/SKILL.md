@@ -1,6 +1,6 @@
 ---
 name: awds-component-heading
-description: Заголовок секции Heading ArrowDS: уровни H1–H5, адаптивная типографика, опциональное действие «Все ›» справа. Для заголовка блока или секции. Токены ArrowDS, работает и по Figma-ссылке.
+description: Heading ArrowDS (.heading).
 ---
 
 # Heading (заголовок секции + действие) ArrowDS
@@ -58,8 +58,8 @@ description: Заголовок секции Heading ArrowDS: уровни H1–
 | Цвет заголовка | `rgb(var(--surface-on-highest))` |
 | Вес | `var(--awds-font-weight-semibold)` |
 | Действие «Все ›» | внешний `awds-component-button-area` (`.btn-area-default` `.btn-area--100` `.btn-area--fill-y`) — он держит цвет (tertiary-container-on-high → hover -on-highest), размер (control-300 13/16), состояния, суффикс-шеврон, полную высоту |
-| Зазор заголовок ↔ действие (desktop) | `var(--awds-space-space-1-5)` (6px) |
-| Зазор текст ↔ шеврон | `var(--awds-space-space-0-5)` (2px); иконка `var(--awds-space-space-4)` (16px) |
+| Зазор заголовок ↔ действие (desktop) | `var(--awds-space-1-5)` (6px) |
+| Зазор текст ↔ шеврон | `var(--awds-space-0-5)` (2px); иконка `var(--awds-space-4)` (16px) |
 | Перенос заголовка | `text-wrap: balance` (MIFB — без сирот) |
 
 ## CSS

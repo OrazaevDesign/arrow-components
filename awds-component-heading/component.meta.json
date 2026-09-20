@@ -1,10 +1,10 @@
 {
   "component": "heading",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "contract_hash": "sha256:18eff919cc75ef8133d7db571a94ccab6fbda27b75d6221280b87adf19c8c9fd",
-  "artifact_hash": "sha256:44a75427a9cb0d34488b817161da2515e79d2009979bbae493c89fd3cd807702",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:47.896Z",
+  "artifact_hash": "sha256:cff1a18c659cc9ff612bf92e739fd682847862f75f453070c7c468fc6fea03df",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:51.079Z",
   "own_values": [],
   "figma": {
     "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
@@ -148,25 +148,25 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-on-highest",
-    "--awds-typography-typography-font-size-920",
-    "--awds-typography-typography-line-height-compact-920",
-    "--awds-typography-typography-letter-spacing-920",
-    "--awds-typography-typography-font-size-910",
-    "--awds-typography-typography-line-height-compact-910",
-    "--awds-typography-typography-letter-spacing-910",
-    "--awds-typography-typography-font-size-900",
-    "--awds-typography-typography-line-height-compact-900",
-    "--awds-typography-typography-letter-spacing-900",
-    "--awds-typography-typography-font-size-800",
-    "--awds-typography-typography-line-height-compact-800",
-    "--awds-typography-typography-letter-spacing-800",
-    "--awds-typography-typography-font-size-600",
-    "--awds-typography-typography-line-height-compact-600",
-    "--awds-typography-typography-letter-spacing-600",
-    "--awds-space-space-1-5",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-space-1-5",
+    "--awds-typography-font-size-600",
+    "--awds-typography-font-size-800",
+    "--awds-typography-font-size-900",
+    "--awds-typography-font-size-910",
+    "--awds-typography-font-size-920",
+    "--awds-typography-letter-spacing-600",
+    "--awds-typography-letter-spacing-800",
+    "--awds-typography-letter-spacing-900",
+    "--awds-typography-letter-spacing-910",
+    "--awds-typography-letter-spacing-920",
+    "--awds-typography-line-height-compact-600",
+    "--awds-typography-line-height-compact-800",
+    "--awds-typography-line-height-compact-900",
+    "--awds-typography-line-height-compact-910",
+    "--awds-typography-line-height-compact-920",
+    "--surface-on-highest"
   ],
   "_dependency_note": "Заголовок — адаптивные примитивы typography (920/910/900/800/600), View Desktop/Tablet/Mobile зашит в их @media. Действие «Все ›» — внешний awds-component-button-area (button-area.css): цвет/размер/состояния/полную высоту держит он сам, heading.css своих стилей действия больше не имеет. Раскладка по View: desktop — действие вплотную к заголовку (gap space-1-5), tablet/mobile — space-between (@media max-width 1067).",
   "last_synced": "2026-06-30T16:34:41Z",
@@ -188,8 +188,62 @@
       }
     }
   },
+  "markup": {
+    "root": {
+      "class": "heading",
+      "tags": [
+        "div",
+        "section",
+        "header"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "heading--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "heading__title"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Размер — это уровень (h1…h5): он задаёт адаптивную типографику, а тег заголовка внутри выбирается по структуре страницы, а не по уровню. Класса варианта нет."
+  },
+  "questions": [
+    {
+      "id": "state-groups-missing-for-seven",
+      "text": "У семи компонентов нет группы State в студии — 53 инлайна ролей (product-card 25, slider 9, avatar 8, price 4, tooltip 4, content-area 2, heading 1). Заводить группы в студии или узаконить инлайн ролей записью в own_values?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217960855817768",
+      "raised_at": "2026-08-25",
+      "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25",
+      "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
+      "answered_at": "2026-09-15"
+    }
+  ],
+  "family": "complex-component",
+  "summary": "Заголовок секции H1–H5 с опциональным действием «Все ›»",
+  "aliases": [
+    "заголовок",
+    "заголовок секции",
+    "шапка блока",
+    "title"
+  ],
+  "asana": {
+    "task_gid": "1218421798640911",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798640911",
+    "task_name": "💠 heading",
+    "parent_task": "💠 1 · core",
+    "primary": true
+  },
   "uses": {
-    "awds-component-button-area": "1.0.3"
+    "awds-component-button-area": "1.0.4"
   },
   "contract": {
     "classes": [
