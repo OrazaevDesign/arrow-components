@@ -1,18 +1,42 @@
 {
-  "_note": "Сырые ответы Figma MCP. ACB-owned, не править руками.",
-  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-  "file_name": "💠 Comp ↪ ⁵ Forms",
-  "primary_node_id": "395:56332",
+  "_note": "Снимок переписан 16.09.2026 под новый файл «💠 arrow ↪ components» (был 4ipeXkifl3Hl6pVZUF4nuJ). Секция «↪ radio» 5:22, страница «3 · forms». Поля metadata, variable_defs, design_context и icons — сырые ответы MCP со старого файла: значения сверены, id узлов там старые. Актуальная структура — в variants_new.",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "primary_node_id": "5:22",
   "fetched_at": "2026-08-13T08:41:11Z",
   "metadata": {
-    "frame": { "id": "395:56332", "name": "Radio", "width": 300, "height": 416 },
+    "frame": {
+      "id": "395:56332",
+      "name": "Radio",
+      "width": 300,
+      "height": 416
+    },
     "axes": {
-      "Type": ["Selected", "Unselected"],
-      "Size": [500, 400, 300, 200],
-      "State": ["Rest", "Hover", "Focus", "Active", "Disabled"]
+      "Type": [
+        "Selected",
+        "Unselected"
+      ],
+      "Size": [
+        500,
+        400,
+        300,
+        200
+      ],
+      "State": [
+        "Rest",
+        "Hover",
+        "Focus",
+        "Active",
+        "Disabled"
+      ]
     },
     "cells": 40,
-    "node_box_px": { "500": 28, "400": 24, "300": 20, "200": 16 },
+    "node_box_px": {
+      "500": 28,
+      "400": 24,
+      "300": 20,
+      "200": 16
+    },
     "sampled_nodes": {
       "Selected/500/Rest": "395:56333",
       "Selected/500/Hover": "395:56365",
@@ -195,22 +219,92 @@
     "square/{200,300,400,500}/{padding,icon,gap}": "var(--awds-square-{N}-{prop})",
     "border-radius/full": "var(--awds-rounded-full) — 600px во всех модах коллекции Rounded (none / smooth / rounded), поэтому радиокнопка остаётся круглой под .rounded-none",
     "check-radio/selected": {
-      "rest": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" },
-      "hover": { "bg": "rgb(var(--primary-dim))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-dim))", "color": "rgb(var(--primary-on))" },
-      "focus": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" },
-      "active": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-core))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" }
+      "rest": {
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-chroma))",
+        "border": "rgb(var(--primary-core))",
+        "color": "rgb(var(--primary-on))"
+      },
+      "hover": {
+        "bg": "rgb(var(--primary-dim))",
+        "chroma": "rgb(var(--primary-chroma))",
+        "border": "rgb(var(--primary-dim))",
+        "color": "rgb(var(--primary-on))"
+      },
+      "focus": {
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-chroma))",
+        "border": "rgb(var(--primary-core))",
+        "color": "rgb(var(--primary-on))"
+      },
+      "active": {
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-core))",
+        "border": "rgb(var(--primary-core))",
+        "color": "rgb(var(--primary-on))"
+      }
     },
     "check-radio/unselected": {
-      "rest": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" },
-      "hover": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on))", "color": "transparent" },
-      "focus": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" },
-      "active": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-dim))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" }
+      "rest": {
+        "bg": "rgb(var(--secondary-container-core))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "transparent"
+      },
+      "hover": {
+        "bg": "rgb(var(--secondary-container-dim))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on))",
+        "color": "transparent"
+      },
+      "focus": {
+        "bg": "rgb(var(--secondary-container-core))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "transparent"
+      },
+      "active": {
+        "bg": "rgb(var(--secondary-container-dim))",
+        "chroma": "rgb(var(--secondary-container-dim))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "transparent"
+      }
     },
     "focus-selection/outline": "rgb(var(--surface-on-highest))",
     "opacity/control/disabled": "var(--awds-opacity-40)"
   },
   "relation_to_checkbox": {
-    "identical": ["shape square (padding / icon / gap)", "палитра check-radio selected + unselected", "прогрессия состояний rest → hover → focus → active → disabled", "focus outline 2px surface-on-highest, offset 0", "disabled = opacity 40% на обёртке"],
-    "different": ["скругление: border-radius/full вместо square/{N}/rounded", "одна иконка-точка вместо галки + прочерка, Indeterminate нет", "снятие выбора кликом невозможно — состояние переключает группа с общим name"]
-  }
+    "identical": [
+      "shape square (padding / icon / gap)",
+      "палитра check-radio selected + unselected",
+      "прогрессия состояний rest → hover → focus → active → disabled",
+      "focus outline 2px surface-on-highest, offset 0",
+      "disabled = opacity 40% на обёртке"
+    ],
+    "different": [
+      "скругление: border-radius/full вместо square/{N}/rounded",
+      "одна иконка-точка вместо галки + прочерка, Indeterminate нет",
+      "снятие выбора кликом невозможно — состояние переключает группа с общим name"
+    ]
+  },
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-22",
+  "variants_new": {
+    "_structure_note": "БЫЛО: один набор «radio» на 40 ячеек с осью-заглушкой type=selected|unselected. СТАЛО (16.09.2026, то же решение владельца, что по чекбоксу): два набора по 20 ячеек (size × state) — выбранность по канону props.md выражается ИМЕНЕМ НАБОРА.",
+    "radio / selected": "401:22206",
+    "radio / unselected": "23:3171 — исходный набор, ключ сохранён: ячейки selected ВЫНЕСЕНЫ, а не пересозданы, поэтому все 3 инстанса в ↪ label целы.",
+    "оси": "size=500|400|300|200 × state=rest|hover|focus|active|disabled, 20 ячеек в каждом наборе.",
+    "порядок_значений": "У вынесенного «selected» порядок состояний канонический, у исходного «unselected» остался прежний (rest, disabled, hover, focus, active) — пересборка ради порядка стоила бы ключа и инстансов."
+  },
+  "audit_16_09": {
+    "чисто_изначально": "Старых библиотек — 0, сырых красок — 0, подписей Sys — 0, лишних колец фокуса — 0.",
+    "толщина_рамки": "40 ячеек держали strokeWeight литералом 1 — привязано к space/px.",
+    "цвета": "Фон — градиент chroma → bg по группе и состоянию, рамка — border-{состояние}, точка — плоская ячейка check-radio/selected/color. Скругление — rounded/border-radius/full, не шкала square.",
+    "точка_невыбранного": "Как и у чекбокса, в ячейках unselected точка лежит с заливкой selected/color и спрятана прозрачностью, а не видимостью."
+  },
+  "code_mapping": {
+    "_note": "39 ссылок, 39 якорей #cell после перевода 16.09.2026; приватных имён не осталось.",
+    "цвета": "check-radio/{selected,unselected}/{bg,chroma,border}-{состояние} и плоская check-radio/selected/color.",
+    "геометрия": "square/{N}/{padding,icon,gap}; скругление круга — var(--awds-rounded-border-radius-full), ячейки под него нет и якоря у строки нет."
+  },
+  "damage_16_09": "Замер превью до и после: 205 элементов из 264. Кружок радио выходил 0x0 — без отступов и без зазора до подписи. По свойствам: габарит 199, высота 170, ширина 131, цвета 48, зазоры 36, заливка точки 32, тень 22, отступы 21, гашение 7."
 }

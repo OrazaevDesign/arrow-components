@@ -96,7 +96,7 @@
 <body>
 
   <h1>radio / storybook</h1>
-  <p class="sub">Радиокнопка на нативном <code>&lt;input type="radio"&gt;</code>. Ось Figma <code>Type</code> (Selected / Unselected) выражена состоянием инпута, а не CSS-вариантами. Палитра и состояния — те же, что у checkbox (<code>check-radio/*</code>), отличия: скругление фиксированное <code>var(--awds-rounded-border-radius-full)</code> (круг во всех модах Rounded), внутри одна точка, снять выбор кликом нельзя. Размеры — shape-токены <code>var(--awds-square-N-*)</code>, круг = иконка + 2×padding (16 / 20 / 24 / 28px).</p>
+  <p class="sub">Радиокнопка на нативном <code>&lt;input type="radio"&gt;</code>. Выбранность в Figma выражена двумя наборами — <code>radio / selected</code> и <code>radio / unselected</code>, — а в коде состоянием инпута, а не CSS-вариантами. Палитра и состояния — те же, что у checkbox (<code>check-radio/*</code>), отличия: скругление фиксированное <code>var(--awds-rounded-border-radius-full)</code> (круг во всех модах Rounded), внутри одна точка, снять выбор кликом нельзя. Размеры — <code>var(--awds-space-*)</code> по ячейкам <code>square/N</code>, круг = иконка + 2×padding (16 / 20 / 24 / 28px).</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -131,7 +131,7 @@
   <h2>Два типа рядом (Size 400)</h2>
   <table class="matrix" id="types">
     <thead>
-      <tr><th style="width:140px;">Type</th><th>Rest</th><th>Hover</th><th>Active</th><th>Disabled</th></tr>
+      <tr><th style="width:140px;">Набор</th><th>Rest</th><th>Hover</th><th>Active</th><th>Disabled</th></tr>
     </thead>
     <tbody></tbody>
   </table>

@@ -1,6 +1,6 @@
 # Radio / default
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:56332](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-56332)
+**Figma:** [470rar5EfRm4n14vHMXbpc → секция ↪ radio 5:22](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-22)
 
 > [!NOTE]
 > Этот файл (`radio-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -64,7 +64,7 @@
 
 ## Состояния
 
-Ось Figma `Type` — состояние инпута, а не CSS-вариант.
+В Figma выбранность выражена двумя наборами — `radio / selected` и `radio / unselected` (разобраны 16.09.2026). В коде это состояние инпута, а не CSS-вариант.
 
 | Состояние | Селектор | Источник |
 |---|---|---|
@@ -75,7 +75,7 @@
 | Selected Hover | `.radio:hover > …:checked` | bg / border `primary-dim` |
 | Selected Active | `.radio:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
 | Focus | `.radio__input:focus-visible + .radio__box` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)`, **`outline-offset: var(--awds-focus-offset)`** |
-| Disabled | `.radio:has(> .radio__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
+| Disabled | `.radio:has(> .radio__input:disabled)` | `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке |
 
 Значения полностью совпадают с `awds-component-checkbox` — это одна пара токенов `check-radio/*`. Кольцо фокуса приходит слоем [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md), вариант **Outside + Default** — тот же, что у button, checkbox и switch.
 
@@ -118,7 +118,7 @@
 | `.radio__input` | Прозрачный инпут на всю обёртку |
 | `.radio__box` | Круг: размер от токенов, `inset box-shadow` вместо border, `rounded-full`, фон-градиент, transition |
 | Sizes `.radio--{N}` | Заполняют `--awds-radio-{padding,icon,gap}` через `var(--awds-square-{N}-*)`; `rounded` не трогают |
-| Type + State | Заполняют `--awds-radio-{bg,chroma,border,color}` ролями `rgb(var(--*))` |
+| Набор + состояние | Заполняют `--awds-radio-{bg,chroma,border,color}` ролями `rgb(var(--*))` |
 | `.radio-group` | Композиция уровня потребителя (в Figma-ноде группы нет): колонка с шагом `square/400/gap` |
 
 ## Refresh

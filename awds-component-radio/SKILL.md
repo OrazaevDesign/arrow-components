@@ -1,6 +1,6 @@
 ---
 name: awds-component-radio
-description: Радиокнопки ArrowDS на нативном input: выбор одного из списка, размеры, состояния. Для способа доставки и оплаты. Несколько вариантов — checkbox. Токены ArrowDS, работает и по Figma-ссылке.
+description: Radio ArrowDS (.radio).
 ---
 
 # Radio ArrowDS
@@ -9,12 +9,12 @@ description: Радиокнопки ArrowDS на нативном input: выб�
 
 ## Главное: радиокнопка живёт только в группе
 
-Ось Figma `Type` (Selected / Unselected) — это **не CSS-варианты**, а состояние инпута. Вариант один, а вид контрола диктует сам `<input>`:
+В Figma выбранность выражена двумя наборами — `radio / selected` и `radio / unselected` (разобраны 16.09.2026: по канону `props.md` выбранность это имя набора, а не ось). В коде им НЕ отвечают CSS-варианты — это состояние инпута: вариант один, а вид контрола диктует сам `<input>`:
 
-| Figma Type | Как получить | Что видно |
+| Набор Figma | Как получить | Что видно |
 |---|---|---|
-| Unselected | дефолт | Серый круг, точки нет |
-| Selected | атрибут `checked` | Жёлтый круг с точкой |
+| `radio / unselected` | дефолт | Серый круг, точки нет |
+| `radio / selected` | атрибут `checked` | Жёлтый круг с точкой |
 
 Взаимное исключение, стрелки клавиатуры и «нельзя снять выбор кликом» дают **общий `name`** у инпутов группы — это поведение платформы, не CSS. Одна радиокнопка вне группы — почти всегда ошибка выбора контрола (нужен checkbox).
 
@@ -26,7 +26,7 @@ description: Радиокнопки ArrowDS на нативном input: выб�
 | Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Размеры (padding/icon/gap) | `var(--awds-square-{N}-*)` | `component-token-map.json` → `map.size.square` |
 | Скругление | `var(--awds-rounded-border-radius-full)` — фиксированное, не размерное | Figma `border-radius/full` |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Гашение (opacity) | выключенное — `var(--awds-state-opacity-control-disabled)` (40%), включённое — парное `var(--awds-state-opacity-control-enabled)` (100%) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Промежуточный слой `--awds-radio-*` в DS НЕ существует.** Внутри `radio.css` есть приватные `--awds-radio-*` accumulators, но они scope'нуты только на компонент. Подробнее — [arrow-components-builder/references/component-skill-contract.md](../arrow-components-builder/references/component-skill-contract.md).
@@ -70,14 +70,14 @@ description: Радиокнопки ArrowDS на нативном input: выб�
 - Группе нужен заголовок: `<fieldset>` + `<legend>` либо `role="radiogroup"` + `aria-labelledby`.
 - Радиокнопка без видимой подписи обязана нести `aria-label` на `<label>`.
 - Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи круга. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `radio.css`.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 - Ставь `checked` на разумный вариант по умолчанию: группа без выбора заставляет пользователя угадывать, а «снять всё» он потом не сможет.
 
 ## CSS-файл
 
 | Вариант | Файл | Что внутри |
 |---|---|---|
-| default | `references/radio.css` | `.radio` base + 4 размера + все Type × State + `.radio-group` |
+| default | `references/radio.css` | `.radio` base + 4 размера + оба набора × состояния + `.radio-group` |
 
 ## Storybook
 

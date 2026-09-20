@@ -1,22 +1,29 @@
 {
   "component": "radio",
-  "version": "1.0.3",
+  "version": "1.0.9",
   "contract_hash": "sha256:2a1517d2bd3f783b554ceb88f46e9a814c046055cdc538b74d7415e2526dcbca",
-  "artifact_hash": "sha256:a3597af84acf1daba61f64fa3a7c25a16141c8666dcc76e1dbd7da7628d5de9e",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:48.455Z",
-  "own_values": [],
+  "artifact_hash": "sha256:29f5c1f2da33f0e019005aefa2be9497cd4575c66fae78f1ce82e7b1d4e8a10a",
+  "visual_change": true,
+  "released_at": "2026-09-16T17:07:50.150Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 1,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "395:56332",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-56332"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:22",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-22"
   },
   "variants": {
     "default": {
-      "node_id": "395:56332",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-56332",
-      "figma_label": "Radio (Type × Size × State)"
+      "node_id": "23:3171",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-3171",
+      "figma_label": "radio"
     }
   },
   "shape": "square",
@@ -104,30 +111,26 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-0",
+    "--awds-space-0-5",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-px",
+    "--primary-chroma",
     "--primary-core",
     "--primary-dim",
-    "--primary-chroma",
     "--primary-on",
+    "--secondary-container-chroma",
     "--secondary-container-core",
     "--secondary-container-dim",
-    "--secondary-container-chroma",
     "--secondary-container-on",
-    "--secondary-container-on-low",
-    "--surface-on-highest",
-    "--awds-rounded-border-radius-full",
-    "--awds-size-square-200-padding",
-    "--awds-size-square-200-icon",
-    "--awds-size-square-200-gap",
-    "--awds-size-square-300-padding",
-    "--awds-size-square-300-icon",
-    "--awds-size-square-300-gap",
-    "--awds-size-square-400-padding",
-    "--awds-size-square-400-icon",
-    "--awds-size-square-400-gap",
-    "--awds-size-square-500-padding",
-    "--awds-size-square-500-icon",
-    "--awds-size-square-500-gap",
-    "--awds-opacity-opacity-40"
+    "--secondary-container-on-low"
   ],
   "last_synced": "2026-08-13T08:41:11Z",
   "last_synced_by": "claude",
@@ -156,8 +159,51 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "radio",
+      "tags": [
+        "label"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "radio--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "input",
+      "class": "radio__input",
+      "type": "radio"
+    },
+    "children": [
+      {
+        "class": "radio__box"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Нативный input type=radio обязателен: выбор одного из группы даёт браузер по общему name. Общий name внутри группы линтер не проверяет — это связь между элементами, а не свойство одного."
+  },
+  "family": "forms",
+  "summary": "Радиокнопка на нативном input: выбор одного из списка",
+  "aliases": [
+    "радио",
+    "радиокнопка",
+    "выбор одного",
+    "способ доставки",
+    "способ оплаты"
+  ],
+  "asana": {
+    "task_gid": "1218433190718216",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190718216",
+    "task_name": "💠 radio",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [],
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [
