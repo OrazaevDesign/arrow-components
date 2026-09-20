@@ -1,31 +1,41 @@
 {
   "component": "rating",
-  "version": "1.0.0",
-  "contract_hash": "sha256:aae48ac0423a64f1d77f63e82d2d4b2fff952aa6bfc41fd78d82177187511bde",
-  "artifact_hash": "sha256:6b5f55a0f1081a456feaca2cc837ec27991c4244646089945b8f79b454255767",
-  "visual_change": false,
-  "released_at": "2026-08-27T15:49:23.846Z",
+  "version": "2.0.9",
+  "contract_hash": "sha256:5e6667dfd3889ded4754ee32b65b1cdbe6614d4b6586b4adfa7f7d275c16ce9c",
+  "artifact_hash": "sha256:a8a454ffe49ad731957d0e653d9d9a5ee7562a791fa42932101ec6c718e4cb85",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:50.430Z",
   "own_values": [
     {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 4,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
       "value": "1px",
-      "where": "inline-size / block-size у .rating__legend",
-      "count": 2,
-      "why": "приём visually-hidden: подпись группы должна остаться в дереве доступности, но не занимать места. Это не размер интерфейса, а техническая величина скрытия — в шкале Size ей соответствия нет и быть не должно"
+      "where": "inline-size",
+      "count": 1,
+      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
+    },
+    {
+      "value": "1px",
+      "where": "block-size",
+      "count": 1,
+      "why": "приём скрытия нативного контрола (бокс 1×1px), а не значение дизайна"
     }
   ],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:3766",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3766",
-    "note": "Оси макета: Size (400/300/200) × Variant (1star…5star). Variant — не вариант компонента, а ЗНАЧЕНИЕ оценки: пять ячеек нужны дизайнеру, чтобы показать шкалу."
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:36",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-36"
   },
   "variants": {},
   "shape": null,
   "size_scale": [
     200,
-    300,
-    400
+    300
   ],
   "states": [
     "rest",
@@ -110,33 +120,24 @@
     "note": "Пять .rating__star в ПРЯМОМ порядке 1→5: приём с обратным DOM и row-reverse даёт ту же картинку, но разворачивает стрелки клавиатуры. В режиме выбора внутри каждой звезды нативный radio с общим name — иначе это пять независимых переключателей. В режиме показа (.rating--readonly) инпутов нет вовсе, значение в data-value, а группе нужен role=img с подписью «Оценка N из 5»."
   },
   "ds_token_dependencies": [
-    "--awds-focus-color-formcontrol",
-    "--awds-focus-offset",
-    "--awds-focus-width",
-    "--awds-opacity-opacity-40",
-    "--awds-rating-gap",
-    "--awds-rating-off",
-    "--awds-rating-on",
-    "--awds-rating-on-hover",
-    "--awds-rating-size",
+    "--awds-opacity-30",
+    "--awds-opacity-40",
     "--awds-rounded-border-radius-200",
-    "--awds-space-space-0-5",
-    "--awds-space-space-1-5",
-    "--awds-space-space-3",
-    "--awds-space-space-4",
-    "--awds-space-space-5",
-    "--awds-state-rating-selected-bg-hover",
-    "--awds-state-rating-selected-bg-rest",
-    "--awds-state-rating-unselected-bg-rest"
+    "--awds-space-0-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--surface-container-container",
+    "--warning-core",
+    "--warning-dim"
   ],
-  "last_synced": "2026-08-27",
+  "last_synced": "2026-09-14T09:55:23Z",
   "last_synced_by": "arrow-components-builder",
   "asana": {
-    "task_gid": "1209725020469717",
-    "task_url": "https://app.asana.com/0/1203198440472196/1209725020469717/f",
-    "task_name": "💠 Rating",
-    "primary": true,
-    "note": "пять звёзд, выбор нативным radio (JS нет) · показ через data-value · размеры 400/300/200"
+    "task_gid": "1218436374095445",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218436374095445",
+    "task_name": "💠 rating",
+    "parent_task": "💠 4 · elements",
+    "primary": true
   },
   "published": {
     "repo": "OrazaevDesign/arrow-components",
@@ -150,8 +151,41 @@
       "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/rating.css"
     }
   },
+  "questions": [
+    {
+      "id": "size-star-scale-missing",
+      "text": "Звёзды 20/16/12 не ложатся на шкалу square-N-icon (20/20/16): заводить ступень в Size или менять размеры звёзд под существующую?",
+      "level": "token",
+      "target": "Size",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217954126293483",
+      "raised_at": "2026-08-28",
+      "answer": "Звёзды подогнаны под существующую шкалу, новых ступеней в Size не заводим. В rating 2.0.0 размер берётся с shape-слоя: square-300-icon (20px) и square-200-icon (16px); ступень 12px убрана, шкала стала 200/300 с дефолтом 300.",
+      "answered_at": "2026-08-29"
+    }
+  ],
+  "divergences": [
+    {
+      "id": "star-gradient-not-implemented",
+      "what": "У звезды в макете вертикальный градиент rating/selected/chroma (сверху) → rating/selected/bg (снизу). В CSS звезда залита плоско, только bg.",
+      "why": "Решено 29.08.2026 не реализовывать. fill в SVG не принимает linear-gradient(), а оба обходных пути платят больше, чем стоит эффект: <linearGradient> вносит id в разметку компонента, который копируется в блоки (два рейтинга на странице — дублирующиеся id, капкан из assembly-traps.md); mask с data-URI требует переписать трёхслойную механику звезды и лишает её редактируемости.",
+      "figma_evidence": "2287:930 → rating/selected/bg #F97316, rating/selected/chroma #FA8330; SVG: linearGradient вертикальный, x1=x2, y 1.46→17.87",
+      "decided_at": "2026-08-29"
+    }
+  ],
+  "family": "elements",
+  "summary": "Оценка звёздами: пять звёзд, выбор и режим показа",
+  "aliases": [
+    "рейтинг",
+    "звёзды",
+    "звёздочки",
+    "оценка",
+    "оценка товара"
+  ],
+  "snapshot_hash": "sha256:d008c619fbb32f2f5a03c40aae3241e72a833b9390d7d6bc8e36f5a134770d4e",
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [
@@ -176,8 +210,7 @@
     "variants": [],
     "sizes": [
       "200",
-      "300",
-      "400"
+      "300"
     ],
     "states": [
       "disabled",

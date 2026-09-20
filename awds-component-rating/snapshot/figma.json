@@ -1,30 +1,88 @@
 {
-  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-  "file_name": "💠 Comp ↪ ¹ Elemets",
-  "primary_node_id": "2093:3766",
-  "frame_name": "Rating",
-  "variant_properties": ["Variant", "Size"],
-  "cells": 15,
+  "fetched": "2026-09-14",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": "↪ rating (5:36)",
+  "_structure_note": "Структура изменилась против старого файла «💠 Comp ↪ ¹ Elemets» (UCYhMA1JeNUNuVGsxUEne7, нода 2093:3766). Было: оси Variant[1star…5star] × Size[400|300|200], 15 ячеек. Стало: оси size[300|200] × data-value[5…1], 10 ячеек. Два изменения, и оба догоняют код: (1) ступень 400 из макета ушла — компонент уже стоял на [200,300]; (2) ось «звёздности» переименована из Variant в data-value, то есть макет признал то, что код делал с самого начала — это ЗНАЧЕНИЕ оценки, а не вариант компонента.",
+  "sets": {
+    "rating": {
+      "id": "6:850",
+      "name": "rating"
+    }
+  },
+  "axes": {
+    "size": [
+      "300",
+      "200"
+    ],
+    "data-value": [
+      "5",
+      "4",
+      "3",
+      "2",
+      "1"
+    ]
+  },
   "variant_node_ids": {
-    "5star/400": "2093:3767", "4star/400": "2093:3773", "3star/400": "2093:3779",
-    "2star/400": "2093:3785", "1star/400": "2093:3791",
-    "5star/300": "2093:3797", "5star/200": "2093:3827"
+    "200": {
+      "1": "6:905",
+      "2": "6:899",
+      "3": "6:893",
+      "4": "6:887",
+      "5": "6:881"
+    },
+    "300": {
+      "1": "6:875",
+      "2": "6:869",
+      "3": "6:863",
+      "4": "6:857",
+      "5": "6:851"
+    }
   },
-  "variable_defs": {
-    "rating/selected/bg": "#f97316",
-    "rating/unselected/bg": "#ededed",
-    "space/1,5": "6 (размер 400)",
-    "space/0,5": "2 (размеры 300 и 200)"
+  "layers": {
+    "_common": "Пять инстансов части `. / star-selected` или `. / star-unselected` (14.09.2026 набор `. / star` разобран надвое: ось `type=selected|unselected` была словом-заглушкой, а выбранность по словарю — имя набора; 30 инстансов встали на selected, 20 на unselected, 0 битых), внутри каждого ОДНА из двух форм: `shape-star-filled` (Union › Star) для набранной, `shape-star-duotone` (Union › Star + Union › alpha) для пустой. Две разные геометрии, а не одна под разным цветом — потому в разметке лежат все три контура сразу, а CSS переключает видимость."
   },
-  "geometry": {
-    "star": { "400": 20, "300": 16, "200": 12 },
-    "gap": { "400": 6, "300": 2, "200": 2 },
-    "icon": "ic20-rating-solid — одна форма звезды, различается только заливка"
+  "colors": {
+    "_audit": "Сырых заливок ноль — проверены SOLID, стопы градиента и обводки (14.09.2026).",
+    "selected": "rating/selected/bg-rest (#e88017)",
+    "unselected": "rating/unselected/bg (#ededed)",
+    "_states_note": "Оси состояний в макете нет: hover/focus/disabled идут срезами тех же ячеек темы.",
+    "_token_resolution": {
+      "_why": "Коллекции State и Size приватные с 03.09.2026 — имён --awds-state-rating-* и --awds-size-square-N-icon в опубликованной теме нет. В Figma ячейки остаются, CSS с 15.09.2026 ссылается на их цели.",
+      "_verified": "Оба цвета совпали по hex с ячейками этого снапшота (studio-vars.css, светлый мод): #e88017 и #ededed. Замена однослойная.",
+      "selected": "rating/selected/bg-rest → rgb(var(--warning-core)) · #e88017; -hover → rgb(var(--warning-dim)) · #d97517",
+      "unselected": "rating/unselected/bg → rgb(var(--surface-container-container)) · #ededed (в тёмном островке превью — #1f1f1f, та же роль)",
+      "disabled": "opacity/control/disabled → var(--awds-opacity-40)"
+    }
+  },
+  "size_map": {
+    "200": {
+      "star_px": 16,
+      "token": "square/200/icon",
+      "gap_px": 2,
+      "gap_token": "space/0-5",
+      "row": "88x16"
+    },
+    "300": {
+      "star_px": 20,
+      "token": "square/300/icon",
+      "gap_px": 2,
+      "gap_token": "space/0-5",
+      "row": "108x20"
+    },
+    "_note": "Звезда встала на shape-шкалу square/N/icon — макет догнал код (в 2.0.0 звёзды подогнали под существующую шкалу иконок, до этого размеры брались с сырой Space и давали 20/16/12). Зазор одинаков на обеих ступенях.",
+    "_token_resolution": "square/300/icon → var(--awds-space-5) = 20px, square/200/icon → var(--awds-space-4) = 16px. До 15.09.2026 CSS читал --awds-size-square-N-icon, которых в теме нет: звезда выходила 0×0, весь набор 8×0px — компонента на странице не было видно."
+  },
+  "code_mapping": {
+    "size": "size=N → .rating--N",
+    "data-value": "НЕ класс: в режиме выбора это отмеченный <input type=radio>, в режиме показа — атрибут data-value на корне. Пять ячеек в макете рисуют шкалу, а не пять вариантов компонента.",
+    "_axis_note": "Имя оси в Figma совпало с именем атрибута в разметке — редкий случай прямой привязки макета к коду."
   },
   "non_token_decisions": {
-    "value-not-variant": "Variant=1star…5star — это значение оценки, а не вариант компонента: в коде отмеченный radio или data-value",
-    "size-from-space": "звезда 20/16/12 не ложится на square-N-icon (20/20/16) — взяты значения макета с базовой шкалы Space",
-    "no-js": "выбор держит нативная radio-группа; своего JS у компонента нет",
-    "dom-order": "звёзды в прямом порядке 1→5 ради клавиатуры; подсветка — «покрасить все, погасить хвост после выбранной»"
+    "no-js": "выбор держит нативная radio-группа, своего JS у компонента нет",
+    "gap-inside-star": "зазор живёт внутри звезды, а не между звёздами: через gap между ними оставалась ничья полоса, и hover на ней подсвечивал всю шкалу",
+    "dom-order": "звёзды в прямом порядке 1→5 ради клавиатуры; подсветка — «покрасить все, погасить хвост после выбранной»",
+    "duotone-opacity": "внутренняя заливка пустой звезды — ступень opacity-30 (в макете 0.3, на шкалу легло точно)"
   }
 }

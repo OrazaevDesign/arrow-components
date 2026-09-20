@@ -1,6 +1,6 @@
 ---
 name: awds-component-rating
-description: Оценка звёздами Rating ArrowDS — пять звёзд, выбор мышью и с клавиатуры, режим показа без выбора. Для оценки товара в отзыве, рейтинга в карточке, формы обратной связи. Ноль строк JS: выбор держит нативный radio. Токены ArrowDS, работает и по Figma-ссылке.
+description: Rating ArrowDS (.rating).
 ---
 
 # Rating — оценка звёздами
@@ -13,7 +13,7 @@ description: Оценка звёздами Rating ArrowDS — пять звёз�
 - [references/rating.md](references/rating.md) — разметка, режимы, поведение
 - [references/preview.html](references/preview.html) — storybook: размеры, значения, тёмный островок
 
-Макет — [Rating, node 2093:3766](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3766).
+Макет — [↪ rating, node 6:850](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-850).
 
 ## Главное про контракт
 
@@ -22,7 +22,7 @@ description: Оценка звёздами Rating ArrowDS — пять звёз�
 которое не нужно переписывать. В компоненте **нет файла JS**.
 
 ```html
-<fieldset class="rating rating--400">
+<fieldset class="rating rating--300">
   <legend class="rating__legend">Оценка</legend>
   <label class="rating__star">
     <input class="rating__input" type="radio" name="rate" value="1" aria-label="1 из 5">
@@ -62,18 +62,28 @@ DOM + row-reverse» даёт ту же картинку, но разворачи
 
 ## Токены
 
-Цвета — ячейки слоя State: `--awds-state-rating-selected-bg-{rest,hover}` и
-`--awds-state-rating-unselected-bg-rest`. Геометрия — базовая шкала Space:
-звезда `space-5 / space-4 / space-3` (20/16/12), зазор `space-1-5 / space-0-5`.
-Своих значений нет.
+Цвета — роли: набранная звезда `rgb(var(--warning-core))`, на наведении
+`rgb(var(--warning-dim))`, пустая `rgb(var(--surface-container-container))`.
+Геометрия — шкала `space`: звезда `space-5 / space-4` (20/16), зазор `space-0-5` (2px).
+Гашение выключенного — `var(--awds-opacity-40)`. Своих значений нет.
 
-**Почему размер не со ступени Size.** Ступени square дают иконку 20 / 20 / 16 для
-400 / 300 / 200, а в макете звёзды 20 / 16 / 12 — прогрессия другая. Взяты значения
-макета; расхождение вынесено дизайнеру вопросом и записано в мете, а не сглажено.
+Роли стоят прямо в CSS, а не ячейками `--awds-state-rating-*` и
+`--awds-size-square-N-icon`: коллекции State и Size приватные с 03.09.2026, этих имён
+в опубликованной теме нет. До 15.09.2026 компонент читал их все и **не рисовался
+вовсе** — звёзды выходили 0×0, а заливка падала в чёрный по умолчанию SVG. Цели взяты
+из `component-token-map.json`, значения не подбирались.
+
+**Почему размер лежит на ступени иконки, а не на произвольном шаге Space.** До 2.0.0
+звёзды были 20/16/12 прямо со шкалы Space и в ступени `square-N-icon` (20/20/16) не
+попадали — расхождение висело открытым вопросом. Закрыто подгонкой звёзд под
+существующую шкалу: 12px больше нет, осталось две ступени. В коде теперь стоят цели
+этих ступеней (`square/300/icon` → `space-5`, `square/200/icon` → `space-4`), но
+смысл прежний: размер звезды двигает тот же токен, что двигает иконки остальных
+компонентов.
 
 ## Размеры
 
-`.rating--{N}`, N — `400 300 200`. Меняются диаметр звезды и зазор. По умолчанию — 400.
+`.rating--{N}`, N — `300 200`. Меняется диаметр звезды, зазор одинаков. По умолчанию — 300.
 
 ## Чего в компоненте нет
 

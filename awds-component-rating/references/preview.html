@@ -15,22 +15,22 @@
   <style>
     body {
       margin: 0;
-      padding: var(--awds-space-space-8);
+      padding: var(--awds-space-8);
       background: rgb(var(--surface-bright));
       color: rgb(var(--surface-on-highest));
       font-family: var(--awds-font-family-system);
       display: grid;
-      gap: var(--awds-space-space-8);
+      gap: var(--awds-space-8);
     }
     h1 { font-size: 20px; margin: 0; }
-    h2 { font-size: 14px; margin: 0 0 var(--awds-space-space-3); opacity: .6; font-weight: 400; }
+    h2 { font-size: 14px; margin: 0 0 var(--awds-space-3); opacity: .6; font-weight: 400; }
     p.lead { margin: 0; max-width: 60ch; opacity: .7; font-size: 13px; line-height: 1.5; }
     .matrix { border-collapse: collapse; }
-    .matrix th { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; opacity: .5; text-align: left; padding: var(--awds-space-space-2) var(--awds-space-space-4); font-weight: 400; }
-    .matrix td { padding: var(--awds-space-space-3) var(--awds-space-space-4); }
+    .matrix th { font-size: 11px; text-transform: uppercase; letter-spacing: .04em; opacity: .5; text-align: left; padding: var(--awds-space-2) var(--awds-space-4); font-weight: 400; }
+    .matrix td { padding: var(--awds-space-3) var(--awds-space-4); }
     .size-label { font-family: ui-monospace, monospace; font-size: 12px; opacity: .6; }
-    .dark { padding: var(--awds-space-space-6); border-radius: var(--awds-rounded-border-radius-400); background: rgb(var(--surface-bright)); }
-    .row { display: flex; gap: var(--awds-space-space-6); align-items: center; flex-wrap: wrap; }
+    .dark { padding: var(--awds-space-6); border-radius: var(--awds-rounded-border-radius-400); background: rgb(var(--surface-bright)); }
+    .row { display: flex; gap: var(--awds-space-6); align-items: center; flex-wrap: wrap; }
     .out { font-family: ui-monospace, monospace; font-size: 12px; opacity: .6; }
   </style>
 </head>
@@ -86,7 +86,7 @@
     }
 
     const tbIn = document.querySelector("#tb-input");
-    [400, 300, 200].forEach((size) => {
+    [300, 200].forEach((size) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `<td class="size-label">${size}</td><td>${input(size, "rate-" + size)}</td>`;
       tbIn.appendChild(tr);
@@ -102,12 +102,12 @@
     /* Выключенное: слева только класс (красит, но клавиатура работает),
        справа атрибут disabled — он и выключает контрол. */
     const off = document.querySelector("#off");
-    off.innerHTML = `<div><p class="out">класс .rating--disabled</p>${input(400, "off-cls")}</div>`
-                  + `<div><p class="out">атрибут disabled</p>${input(400, "off-attr")}</div>`;
+    off.innerHTML = `<div><p class="out">класс .rating--disabled</p>${input(300, "off-cls")}</div>`
+                  + `<div><p class="out">атрибут disabled</p>${input(300, "off-attr")}</div>`;
     off.querySelectorAll(".rating")[0].classList.add("rating--disabled");
     off.querySelectorAll(".rating")[1].querySelectorAll(".rating__input").forEach((i) => { i.disabled = true; });
 
-    document.querySelector("#dark").innerHTML = input(400, "dark") + readonly(400, 4);
+    document.querySelector("#dark").innerHTML = input(300, "dark") + readonly(300, 4);
 
     /* Проверка, что выбор действительно сохраняется — без единой строки логики в самом
        компоненте: слушаем change на группе. */

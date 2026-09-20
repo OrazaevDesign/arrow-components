@@ -1,6 +1,6 @@
 # Rating — разметка и поведение
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:3766](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3766)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 6:850](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-850)
 
 > [!NOTE]
 > `rating.md` — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -8,7 +8,7 @@
 ## Режим выбора
 
 ```html
-<fieldset class="rating rating--400">
+<fieldset class="rating rating--300">
   <legend class="rating__legend">Оценка товара</legend>
   <label class="rating__star">
     <input class="rating__input" type="radio" name="rate" value="1" aria-label="1 из 5">
@@ -127,9 +127,8 @@ CSS не умеет выбирать «предыдущих братьев», п
 
 | Класс | Звезда | Зазор |
 | --- | --- | --- |
-| `.rating--400` (по умолчанию) | 20px (`space-5`) | 6px (`space-1-5`) |
-| `.rating--300` | 16px (`space-4`) | 2px (`space-0-5`) |
-| `.rating--200` | 12px (`space-3`) | 2px (`space-0-5`) |
+| `.rating--300` (по умолчанию) | 20px (`square-300-icon`) | 2px (`space-0-5`) |
+| `.rating--200` | 16px (`square-200-icon`) | 2px (`space-0-5`) |
 
 ## Чего нет
 
