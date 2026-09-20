@@ -1,64 +1,70 @@
 {
   "component": "button",
-  "version": "1.0.5",
-  "contract_hash": "sha256:fe2fa3331abcfa4551fbace225f769709dbea18d8be14baba4dc2f76aa0ee716",
-  "artifact_hash": "sha256:a9dbc2f86956d54f74c330211f7f82dcc20fd20308ecc8465472413c1b1aa877",
+  "version": "2.2.3",
+  "contract_hash": "sha256:b1178d242f4d390a44850a8af06ba94ba17a603fa9f5972dd379f67a9d0e87e0",
+  "artifact_hash": "sha256:998f1539e6f49b902e189246da8541f4314661f3dfa679f80e235499f907de08",
   "visual_change": false,
-  "released_at": "2026-08-26T07:36:47.365Z",
+  "released_at": "2026-09-15T12:27:01.416Z",
   "own_values": [
     {
-      "value": "1.4s",
-      "where": "animation-duration",
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 8,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "0.15s",
+      "where": "transition",
       "count": 8,
       "why": "длительность анимации: коллекции движения в студии нет"
     }
   ],
   "figma": {
-    "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
-    "file_name": "💠 Comp ↪ ² Buttons",
-    "primary_node_id": "1:757",
-    "primary_url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:7",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-7"
   },
   "variants": {
     "primary": {
-      "node_id": "1:757",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=1-757",
-      "figma_label": "Button / Primary"
+      "node_id": "8:4779",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-4779",
+      "figma_label": "button / primary"
     },
     "secondary": {
-      "node_id": "489:59661",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-59661",
-      "figma_label": "Button / Secondary"
+      "node_id": "8:5298",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-5298",
+      "figma_label": "button / secondary"
     },
     "addition": {
-      "node_id": "489:74776",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-74776",
-      "figma_label": "Button / Addition"
+      "node_id": "8:5817",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-5817",
+      "figma_label": "button / addition"
     },
     "contrast": {
-      "node_id": "489:83105",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-83105",
-      "figma_label": "Button / Contrast"
+      "node_id": "8:6336",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-6336",
+      "figma_label": "button / contrast"
     },
     "tertiary": {
-      "node_id": "489:89007",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-89007",
-      "figma_label": "Button / Tertiary"
+      "node_id": "8:6855",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-6855",
+      "figma_label": "button / tertiary"
     },
     "ghost": {
-      "node_id": "489:94401",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-94401",
-      "figma_label": "Button / Ghost"
+      "node_id": "8:7374",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-7374",
+      "figma_label": "button / ghost"
     },
     "clean": {
-      "node_id": "489:119060",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-119060",
-      "figma_label": "Button / Clean"
+      "node_id": "8:7893",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-7893",
+      "figma_label": "button / clean"
     },
     "pills": {
-      "node_id": "811:30987",
-      "url": "https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=811-30987",
-      "figma_label": "Button / Pills"
+      "node_id": "8:8412",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-8412",
+      "figma_label": "button / pills"
     }
   },
   "shape": "rectangle",
@@ -76,7 +82,8 @@
     "hover",
     "focus",
     "active",
-    "disabled"
+    "disabled",
+    "loading"
   ],
   "color_tokens": [
     "bg",
@@ -148,44 +155,72 @@
       },
       {
         "label": "Загрузка",
-        "html": "<button class=\"btn btn-primary btn--400 btn--loading\" type=\"button\" disabled aria-busy=\"true\"><span class=\"btn__content\">Загрузка…</span><svg class=\"btn__progress\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-dasharray=\"40 60\" stroke-linecap=\"round\"/></svg></button>"
+        "html": "<button class=\"btn btn-primary btn--400 btn--loading\" type=\"button\" disabled aria-busy=\"true\"><span class=\"btn__content\">Загрузка…</span><svg class=\"btn__progress progress progress-circular progress--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle class=\"progress-circular__arc\" cx=\"12\" cy=\"12\" r=\"10\" pathLength=\"100\"/></svg></button>"
       }
     ]
   },
   "ds_token_dependencies": [
-    "--primary-core",
-    "--primary-chroma",
-    "--primary-dim",
-    "--primary-on",
-    "--secondary-core",
-    "--secondary-chroma",
-    "--secondary-dim",
-    "--secondary-on",
-    "--addition-core",
+    "--accent-container-on",
     "--addition-chroma",
+    "--addition-core",
     "--addition-dim",
     "--addition-on",
-    "--tertiary-core",
-    "--tertiary-chroma",
-    "--tertiary-dim",
-    "--tertiary-on",
-    "--surface-on-highest",
-    "--surface-on-high",
-    "--surface-bright",
-    "--surface-surface",
-    "--surface-dim",
-    "--accent-container-on",
-    "transparent (ghost bg/border)",
-    "--awds-rectangle-*",
-    "--awds-opacity-opacity-40",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--extended-transparent",
+    "--primary-chroma",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-on",
+    "--secondary-chroma",
+    "--secondary-core",
+    "--secondary-dim",
+    "--secondary-on",
+    "--surface-bright",
+    "--surface-dim",
+    "--surface-on-high",
+    "--surface-on-highest",
+    "--surface-surface",
+    "--tertiary-chroma",
+    "--tertiary-core",
+    "--tertiary-dim",
+    "--tertiary-on"
   ],
   "color_scheme": "rgb-triplet",
   "color_scheme_note": "Роли — RGB-триплеты в переменных без префикса --color- (--primary-core: 246 202 70), под .theme-default.theme-light. В CSS — rgb(var(--primary-core)). surface-transparent → литерал transparent.",
-  "last_synced": "2026-06-16T10:45:29Z",
+  "last_synced": "2026-09-15T14:55:00Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:1e670e1ba360a3f5a56ba1ea081b1fb118ed50b02a81e1f38207dffd2bc2ff0b",
+  "snapshot_hash": "sha256:4783b5b1345ba40ffdec77fc80ae0efd447af3cedf042c5033b217d83f35d950",
   "map_source": "arrow-design-system/references/component-token-map.json",
   "map_snapshot_hash": "sha256:c80e5a80742e563b72540d69fb4196e2cff84f9984e2fae870f03e6c7019c1e1",
   "focus_layer": {
@@ -299,8 +334,85 @@
     "commit": "08012ac",
     "pushed_at": "2026-08-26T10:28:44.000Z"
   },
+  "markup": {
+    "root": {
+      "class": "btn",
+      "tags": [
+        "button",
+        "a"
+      ]
+    },
+    "variant": {
+      "pattern": "btn-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "btn--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "btn__content",
+        "when": "btn--loading"
+      },
+      {
+        "class": "btn__progress",
+        "when": "btn--loading"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "aria-label",
+        "when": "btn--icon-only"
+      },
+      {
+        "attr": "aria-busy",
+        "when": "btn--loading"
+      },
+      {
+        "attr": "type",
+        "tags": [
+          "button"
+        ]
+      }
+    ],
+    "container": null,
+    "note": "Класс варианта обязателен: .btn без .btn-{variant} даёт бесцветную кнопку — цвета инлайнятся ролями в вариантных селекторах. Размер обязателен по той же причине: геометрия приходит только из .btn--{size}. aria-label у icon-only — единственное имя кнопки, текста внутри нет. Спиннера у кнопки своего нет: в слоте .btn__progress живёт кольцо awds-component-progress — на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate, иначе индикатор не крутится, а стоит."
+  },
+  "asana": {
+    "task_gid": "1218422992693893",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992693893",
+    "task_name": "💠 button",
+    "parent_task": "💠 2 · buttons",
+    "primary": true
+  },
+  "family": "buttons",
+  "summary": "Кнопка: primary, secondary, clean, addition; размеры и состояния",
+  "aliases": [
+    "кнопка",
+    "баттон",
+    "кнопка действия",
+    "призыв к действию"
+  ],
+  "questions": [
+    {
+      "id": "button-loading-inside-state-axis",
+      "text": "У button загрузка живёт ЗНАЧЕНИЕМ оси state (rest · hover · focus · active · disabled · loading), а у button-overhung — отдельной осью loading=off|on. Канон props.md держит state закрытым словарём псевдосостояний, и loading в него не входит: это режим работы. Практическое следствие — варианты взаимоисключающи, поэтому макет не может показать «загрузка + наведение», а код может: .btn--loading сочетается с :hover свободно. Приводить button к отдельной оси или узаконить loading внутри state у обоих?",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "raised_at": "2026-09-15",
+      "evidence": "componentPropertyDefinitions, замер 15.09.2026: button / primary (8:4779) → state [VARIANT] rest · hover · focus · active · disabled · loading; button-overhung / primary (8:24617) и / secondary (8:25206) → state [VARIANT] rest…disabled ПЛЮС loading [VARIANT] off · on. Ответ на вопрос buttons-loading-axis-name от 31.08.2026 утверждал, что у button ось уже называется loading=off|on — это оказалось верно только для overhung. Цена приведения: матрица набора вырастет с 2×7×6=84 ячеек до 2×7×5×2=140, то есть +56 ячеек на набор и +448 на восемь наборов. CSS не меняется: модификатор .btn--loading уже есть.",
+      "answer": "Вопрос задан по незнанию уже принятого решения и закрыт в тот же день. 14.09.2026 ось loading у button была убрана НАМЕРЕННО, загрузка стала шестым значением оси state (лог 2026/09/14/15-41). Причина техническая и проверена до правки: владелец сперва согласовал перевод loading в булево свойство, но в ячейке загрузки спиннер виден, а . / prefix, . / text и . / suffix гасятся opacity: 0 ради сохранения ширины кнопки, — а BOOLEAN в Figma управляет только visible слоя и инверсии не имеет. Секция сжалась с 1120 ячеек до 672; из 542 инстансов с осью loading значение on не стояло ни у одного, поэтому удаление 448 ячеек ничего не осиротило. Моя оценка «цена приведения +448 ячеек» описывала не приведение к канону, а откат этого решения. Остаток расхождения — на стороне button-overhung, где ось loading=off|on ещё отдельная; приводится в его заходе. Канон props.md обновлён 15.09.2026: loading — законное шестое значение state.",
+      "asana_gid": "1218498584589096",
+      "answered_at": "2026-09-15"
+    }
+  ],
   "uses": {
-    "awds-component-focus-selection": "1.0.3"
+    "awds-component-focus-selection": "2.0.9",
+    "awds-component-progress": "2.0.2"
   },
   "contract": {
     "classes": [
@@ -314,6 +426,7 @@
       "btn--600",
       "btn--icon-only",
       "btn--loading",
+      "btn--pill",
       "btn-addition",
       "btn-clean",
       "btn-contrast",
@@ -356,6 +469,7 @@
       "disabled",
       "focus",
       "hover",
+      "loading",
       "rest"
     ]
   }

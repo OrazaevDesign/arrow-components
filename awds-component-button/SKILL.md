@@ -1,6 +1,6 @@
 ---
 name: awds-component-button
-description: Кнопки ArrowDS (btn-primary, btn-secondary, btn-clean, btn-addition): варианты, размеры, состояния. Для любой кнопки в блоке или разметке, и по Figma-ссылке на Button. Токены ArrowDS, работает и по Figma-ссылке.
+description: Button ArrowDS (.btn).
 ---
 
 # Кнопки ArrowDS
@@ -16,7 +16,7 @@ description: Кнопки ArrowDS (btn-primary, btn-secondary, btn-clean, btn-ad
 | Цвета вариантов (bg/border/color/chroma) | `var(--color-{role}-*)` inline в `.btn-{variant}` и его `:hover/:focus-visible/:active` | `references/{variant}.css` (+ палитра в `css-variables.css` сайта) |
 | Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Размеры (padding/gap/icon/rounded/font) | `var(--awds-rectangle-{N}-*)` (семантические shape-токены) в `.btn--{N}` | `blocks/arrowds-css/style.css` (там же резолвятся в базовые шкалы) |
-| `opacity` для disabled | `var(--awds-opacity-opacity-40)` | там же |
+| Гашение (opacity) | выключенное — `var(--awds-state-opacity-control-disabled)`, включённое — парное `var(--awds-state-opacity-control-enabled)` | слой State темы, группа `opacity` |
 | Шрифт (family/weight) | `--awds-font-family-system`, `--awds-font-weight-semibold` | там же |
 
 Маппинг variant×state → роль фиксируется в `component.meta.json` + `snapshot/figma.json`. Обновление под Figma — через скилл `arrow-components-builder` («обнови awds-component-button»), не руками.
@@ -51,6 +51,16 @@ description: Кнопки ArrowDS (btn-primary, btn-secondary, btn-clean, btn-ad
 | `btn--50`  | Самые компактные контролы |
 
 Конкретные значения каждого размера — в `tokens-map.md` скилла `arrow-design-system`, секция `rectangle`.
+
+## Модификатор формы
+
+`.btn--pill` делает кнопку пилюлей. Это **независимая ось**: сочетается с любым вариантом и любым размером — `btn-primary btn--500 btn--pill` работает так же, как `btn-ghost btn--200 btn--pill`.
+
+В макете под пилюлю нарисован набор `button / pills`, поэтому его канонический вид — `btn btn-pills btn--pill`. Форма не вшита в тон намеренно: `pills` отличается от `secondary` только акцентным текстом на hover, и имя варианта уже обещает больше, чем даёт.
+
+```html
+<button class="btn btn-pills btn--400 btn--pill" type="button">Фильтр</button>
+```
 
 ## CSS-файлы
 

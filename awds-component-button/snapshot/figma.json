@@ -1,180 +1,190 @@
 {
-  "component": "button",
-  "file_key": "rRCDPR2SJ90wJZCr5rsXAd",
-  "file_name": "💠 Comp ↪ ² Buttons",
-  "fetched_at": "2026-06-16T10:45:29Z",
-  "note": "Мультивариантный снапшот. get_variable_defs возвращает резолвленные значения, не alias-пути — маппинг в базовые/цветовые токены сделан через arrow-design-system/references/component-token-map.json (snapshot sha256:3ca32031358c…). Ключи Figma (button/{variant}/{bg,chroma,border,color}, rectangle/{N}/*, focus-selection/outline, opacity/control/disabled) ищутся в карте, hex не используется.",
-  "metadata_variant_axes": {
-    "Type": ["Text", "Icon"],
-    "Size": [600, 500, 400, 300, 200, 100, 50],
-    "State": ["Rest", "Hover", "Active", "Focus", "Disabled"],
-    "Progress": [false, true]
-  },
-  "structure": {
-    "note": "Контейнер flex items-center justify-center, горизонтальный padding = rectangle/{N}/padding; три ячейки Prefix|Text|Suffix, у каждой py = padding, pl/pr = rectangle/{N}/gap. Фон — linear-gradient chroma→bg, border 1px. Плоский flex-эквивалент: padding-block=padding, padding-inline=padding+gap, gap=gap.",
-    "layers": ["Prefix (. / Prefix)", "Text (. / Text)", "Suffix (. / Suffix)"]
-  },
-  "variants": {
+  "fetched": "2026-09-14",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "2 · buttons",
+  "section": "↪ button (5:7)",
+  "_structure_note": "Переезд из старого файла «💠 Comp ↪ ² Buttons» (rRCDPR2SJ90wJZCr5rsXAd), где тона лежали отдельными наборами с осями Type[Text|Icon] × Size × State × Progress[false|true]. Теперь восемь наборов в одной секции. 14.09.2026 ось Progress/loading убрана как самостоятельная: загрузка стала ШЕСТЫМ значением оси state, и набор сжался со 140 ячеек до 84. Тот же приём, что у progress, где indeterminate стал значением оси, а не отдельной осью.",
+  "sets": {
     "primary": {
-      "node_id": "1:757",
-      "figma_label": "Button / Primary",
-      "state_nodes_sampled": {
-        "rest": "1:758", "hover": "1:800", "focus": "1:889", "active": "1:842", "disabled": "1:946"
-      },
-      "variable_defs": {
-        "rest": {"button/primary/color":"#19110a","rectangle/600/icon":"20","rectangle/600/gap":"8","rectangle/600/padding":"16","opacity/color":"100","letter-spacing/600":"0","font-size/600":"16","font-weight":"semibold","font-family":"Inter","line-height/600":"20","border-radius/500":"8","rectangle/600/rounded":"10","opacity/control/enabled":"100","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
-        "hover": {"button/primary/color":"#19110a","button/primary/chroma":"#fce279","button/primary/bg":"#fad046","button/primary/border":"#fad046"},
-        "active": {"button/primary/color":"#19110a","button/primary/chroma":"#fad646","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
-        "focus": {"button/primary/color":"#19110a","focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"},
-        "disabled": {"button/primary/color":"#19110a","opacity/control/disabled":"40","button/primary/chroma":"#fce279","button/primary/bg":"#fad646","button/primary/border":"#fad646"}
-      }
+      "id": "8:4779",
+      "rest_400": "8:4874"
     },
     "secondary": {
-      "node_id": "489:59661",
-      "figma_label": "Button / Secondary",
-      "fetch_note": "489:59661 — фрейм Component Set (Type×Size×State×Progress symbols). get_variable_defs по фрейму вернул резолвленный rest-набор + геометрию всех size; цветовые ключи button/secondary/* резолвятся по карте на все состояния (структура идентична primary).",
-      "variable_defs": {
-        "rest": {"button/secondary/color":"#555555","button/secondary/bg":"#f2f2f2","button/secondary/chroma":"#f7f7f7","button/secondary/border":"#f2f2f2","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
-        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
-        "disabled": {"opacity/control/disabled":"40"}
-      }
+      "id": "8:5298",
+      "rest_400": "8:5393"
     },
     "addition": {
-      "node_id": "489:74776",
-      "figma_label": "Button / Addition",
-      "fetch_note": "489:74776 — фрейм Component Set (Type×Size×State×Progress symbols). get_variable_defs по фрейму вернул резолвленный rest-набор + геометрию всех size; цветовые ключи button/addition/* резолвятся по карте на все состояния (структура идентична primary). Тёмная высококонтрастная поверхность.",
-      "variable_defs": {
-        "rest": {"button/addition/color":"#ffffff","button/addition/bg":"#0c0d11","button/addition/chroma":"#303442","button/addition/border":"#0c0d11","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
-        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
-        "disabled": {"opacity/control/disabled":"40"}
-      }
+      "id": "8:5817",
+      "rest_400": "8:5912"
     },
     "contrast": {
-      "node_id": "489:83105",
-      "figma_label": "Button / Contrast",
-      "fetch_note": "489:83105 — фрейм Component Set (Type×Size×State×Progress symbols). get_variable_defs по фрейму вернул резолвленный rest-набор + геометрию всех size; цветовые ключи button/contrast/* резолвятся по карте на роли surface (НЕ отдельное семейство --contrast-*). Особенность: chroma схлопывается в bg уже на Hover.",
-      "variable_defs": {
-        "rest": {"button/contrast/color":"#ffffff","button/contrast/bg":"#080808","button/contrast/chroma":"#646464","button/contrast/border":"#080808","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
-        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
-        "disabled": {"opacity/control/disabled":"40"}
-      }
+      "id": "8:6336",
+      "rest_400": "8:6431"
     },
     "tertiary": {
-      "node_id": "489:89007",
-      "figma_label": "Button / Tertiary",
-      "fetch_note": "489:89007 — фрейм Component Set (Type×Size×State×Progress symbols). get_variable_defs по фрейму вернул резолвленный rest-набор + геометрию всех size; цветовые ключи button/tertiary/* резолвятся по карте на роли tertiary (структура идентична primary). Мягкая container-поверхность.",
-      "variable_defs": {
-        "rest": {"button/tertiary/color":"#2642bc","button/tertiary/bg":"#ebf6ff","button/tertiary/chroma":"#f7fcff","button/tertiary/border":"#ebf6ff","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
-        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
-        "disabled": {"opacity/control/disabled":"40"}
-      }
+      "id": "8:6855",
+      "rest_400": "8:6950"
     },
     "ghost": {
-      "node_id": "489:94401",
-      "figma_label": "Button / Ghost",
-      "fetch_note": "489:94401 — фрейм Component Set (Type×Size×State×Progress symbols). bg/chroma/border = #ffffff00 → резолвятся по карте в литерал transparent; цвет текста button/ghost/color → surface-on-high (rest) / surface-on-highest (hover/focus/active). Текстовая кнопка без фона.",
-      "variable_defs": {
-        "rest": {"button/ghost/color":"#646464","button/ghost/bg":"#ffffff00","button/ghost/chroma":"#ffffff00","button/ghost/border":"#ffffff00","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
-        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
-        "disabled": {"opacity/control/disabled":"40"}
-      }
+      "id": "8:7374",
+      "rest_400": "8:7469"
     },
     "clean": {
-      "node_id": "489:119060",
-      "figma_label": "Button / Clean",
-      "fetch_note": "489:119060 — фрейм Component Set (Type×Size×State×Progress symbols). Роли surface; ЕДИНСТВЕННЫЙ вариант с border ≠ bg (border=surface-dim, видимая обводка), chroma=bg (плоский фон). Цвет текста и фон темнеют на hover/active.",
-      "variable_defs": {
-        "rest": {"button/clean/color":"#646464","button/clean/bg":"#ffffff","button/clean/chroma":"#ffffff","button/clean/border":"#f2f2f2","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
-        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
-        "disabled": {"opacity/control/disabled":"40"}
-      }
+      "id": "8:7893",
+      "rest_400": "8:7988"
     },
     "pills": {
-      "node_id": "811:30987",
-      "figma_label": "Button / Pills",
-      "fetch_note": "811:30987 — фрейм Component Set (Type×Size×State×Progress symbols). Цвета и геометрия = Secondary (rectangle rounding, НЕ пилюля — rounded:10); отличие подтверждено на hover-ноде 811:31002: button/pills/color=#cc4033 = accent-container-on (текст краснеет). Имя «Pills» формы в токенах не несёт (по решению пользователя собрано точно по токенам).",
-      "variable_defs": {
-        "rest":  {"button/pills/color":"#555555","button/pills/bg":"#f2f2f2","button/pills/chroma":"#f7f7f7","button/pills/border":"#f2f2f2","rectangle/600/icon":"20","rectangle/600/padding":"16","rectangle/600/rounded":"10","rectangle/600/gap":"8","border-radius/500":"8","opacity/color":"100","opacity/control/enabled":"100","letter-spacing/600":"0","font-size/600":"16","line-height/600":"20","font-weight":"semibold","font-family":"Inter"},
-        "hover": {"button/pills/color":"#cc4033","button/pills/bg":"#ededed","button/pills/chroma":"#f7f7f7","button/pills/border":"#ededed"},
-        "focus": {"focus-selection/outlineShow":"true","outline/600":"11","focus-selection/outline":"#080808"},
-        "disabled": {"opacity/control/disabled":"40"}
-      }
+      "id": "8:8412",
+      "rest_400": "8:8507"
     }
   },
-  "resolved_via_map": {
-    "size_rectangle": {
-      "_source": "component-token-map.json → size.rectangle.{N} (общая геометрия для всех вариантов)",
-      "50":  {"padding":"--awds-space-0-5","gap":"--awds-space-0-5","rounded":"--awds-rounded-50","icon":"--awds-space-4","typography":"--awds-control-200-*"},
-      "100": {"padding":"--awds-space-1","gap":"--awds-space-0-5","rounded":"--awds-rounded-100","icon":"--awds-space-4","typography":"--awds-control-300-*"},
-      "200": {"padding":"--awds-space-2","gap":"--awds-space-1","rounded":"--awds-rounded-200","icon":"--awds-space-4","typography":"--awds-control-300-*"},
-      "300": {"padding":"--awds-space-2","gap":"--awds-space-1-5","rounded":"--awds-rounded-300","icon":"--awds-space-5","typography":"--awds-control-400-*"},
-      "400": {"padding":"--awds-space-2-5","gap":"--awds-space-1-5","rounded":"--awds-rounded-400","icon":"--awds-space-5","typography":"--awds-control-400-*"},
-      "500": {"padding":"--awds-space-3-5","gap":"--awds-space-1-5","rounded":"--awds-rounded-500","icon":"--awds-space-5","typography":"--awds-control-600-*"},
-      "600": {"padding":"--awds-space-4","gap":"--awds-space-2","rounded":"--awds-rounded-600","icon":"--awds-space-5","typography":"--awds-control-600-*"}
+  "axes": {
+    "content": [
+      "text",
+      "icon"
+    ],
+    "size": [
+      "600",
+      "500",
+      "400",
+      "300",
+      "200",
+      "100",
+      "50"
+    ],
+    "state": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled",
+      "loading"
+    ],
+    "_booleans": "show-prefix, show-suffix — показ боковых слотов",
+    "_cells": "2 × 7 × 6 = 84 на набор, 672 на секцию"
+  },
+  "layers": {
+    "text": ". / prefix › ic-a + . / text › text + . / suffix › ic-a",
+    "icon": ". / center › ic-a — у icon-only боковых слотов нет, padding нулевой, бокс квадратный",
+    "loading_on": "добавляется инстанс `progress / circular` › Active indicator — кнопка в загрузке показывает наш же компонент progress, а не свой спиннер",
+    "focus": "добавляется инстанс `focus-selection` › outline — кольцо приходит отдельным слоем, в кнопку не инлайнится",
+    "loading": "state=loading: инстанс `progress / circular` видим и центрирован ABSOLUTE, а `. / prefix`, `. / text`, `. / suffix` гасятся opacity: 0 — ширина кнопки сохраняется. Именно это гашение и не позволило сделать loading булевым свойством: BOOLEAN в Figma управляет только visible."
+  },
+  "colors": {
+    "_audit": "Сплошной обход секции 14.09.2026: 10536 узлов, привязанных заливок 6400, сырых — НОЛЬ. Проверены SOLID, стопы градиента и обводки.",
+    "_pattern": "фон — двухстоповый градиент chroma → bg, обводка сплошная, текст своей ячейкой; у каждого тона своя группа button/{тон}/*",
+    "primary": "grad[button/primary/chroma-rest → bg-rest] · stroke border-rest · text color",
+    "secondary": "grad[button/secondary/chroma-rest → bg-rest] · stroke border-rest · text color",
+    "addition": "grad[button/addition/chroma-rest → bg-rest] · stroke border-rest · text color",
+    "tertiary": "grad[button/tertiary/chroma-rest → bg-rest] · stroke border-rest · text color",
+    "contrast": "grad[button/contrast/chroma-rest → bg] · stroke border · text color",
+    "clean": "grad[button/clean/chroma-rest → bg-rest] · stroke border · text color-rest",
+    "pills": "grad[button/pills/chroma-rest → bg-rest] · stroke border-rest · text color-rest",
+    "ghost": "фон и обводка extended/transparent · text color-rest",
+    "_theme_debt": "Закрыт 14.09.2026: восемь безсрезовых ячеек (primary/secondary/addition/tertiary color, contrast bg/border/color, clean border) доведены до полного набора -rest/-hover/-focus/-active, 874 → 898 ячеек темы. Теперь у всех тонов имя ячейки предсказуемо по правилу, а CSS каждого состояния читает свой срез вместо rest.",
+    "states": "у primary проверены все пять: hover/focus/active берут свои срезы bg/chroma/border, disabled = rest под opacity 0.4 на самом узле"
+  },
+  "size_map": {
+    "50": {
+      "h": 20,
+      "pad_x": 2,
+      "radius": 4,
+      "text_h": 16,
+      "icon_only": "20x20"
     },
-    "state_button_primary": {
-      "_source": "component-token-map.json → state.{state}.button.primary",
-      "rest":     {"bg":"--primary-core","chroma":"--primary-chroma","border":"--primary-core","color":"--primary-on"},
-      "hover":    {"bg":"--primary-dim", "chroma":"--primary-chroma","border":"--primary-dim", "color":"--primary-on"},
-      "focus":    {"bg":"--primary-core","chroma":"--primary-chroma","border":"--primary-core","color":"--primary-on","outline":"--surface-on-highest"},
-      "active":   {"bg":"--primary-core","chroma":"--primary-core", "border":"--primary-core","color":"--primary-on"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    "100": {
+      "h": 24,
+      "pad_x": 4,
+      "radius": 6,
+      "text_h": 16,
+      "icon_only": "24x24"
     },
-    "state_button_secondary": {
-      "_source": "component-token-map.json → state.{state}.button.secondary",
-      "rest":     {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on"},
-      "hover":    {"bg":"--secondary-dim", "chroma":"--secondary-chroma","border":"--secondary-dim", "color":"--secondary-on"},
-      "focus":    {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on","outline":"--surface-on-highest"},
-      "active":   {"bg":"--secondary-core","chroma":"--secondary-core", "border":"--secondary-core","color":"--secondary-on"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    "200": {
+      "h": 32,
+      "pad_x": 8,
+      "radius": 6,
+      "text_h": 16,
+      "icon_only": "32x32"
     },
-    "state_button_addition": {
-      "_source": "component-token-map.json → state.{state}.button.addition",
-      "rest":     {"bg":"--addition-core","chroma":"--addition-chroma","border":"--addition-core","color":"--addition-on"},
-      "hover":    {"bg":"--addition-dim", "chroma":"--addition-chroma","border":"--addition-dim", "color":"--addition-on"},
-      "focus":    {"bg":"--addition-core","chroma":"--addition-chroma","border":"--addition-core","color":"--addition-on","outline":"--surface-on-highest"},
-      "active":   {"bg":"--addition-core","chroma":"--addition-core", "border":"--addition-core","color":"--addition-on"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    "300": {
+      "h": 36,
+      "pad_x": 8,
+      "radius": 6,
+      "text_h": 20,
+      "icon_only": "36x36"
     },
-    "state_button_contrast": {
-      "_source": "component-token-map.json → state.{state}.button.contrast (роли surface)",
-      "rest":     {"bg":"--surface-on-highest","chroma":"--surface-on-high",   "border":"--surface-on-highest","color":"--surface-bright"},
-      "hover":    {"bg":"--surface-on-highest","chroma":"--surface-on-highest","border":"--surface-on-highest","color":"--surface-bright"},
-      "focus":    {"bg":"--surface-on-highest","chroma":"--surface-on-high",   "border":"--surface-on-highest","color":"--surface-bright","outline":"--surface-on-highest"},
-      "active":   {"bg":"--surface-on-highest","chroma":"--surface-on-highest","border":"--surface-on-highest","color":"--surface-bright"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    "400": {
+      "h": 40,
+      "pad_x": 10,
+      "radius": 8,
+      "text_h": 20,
+      "icon_only": "40x40"
     },
-    "state_button_tertiary": {
-      "_source": "component-token-map.json → state.{state}.button.tertiary",
-      "rest":     {"bg":"--tertiary-core","chroma":"--tertiary-chroma","border":"--tertiary-core","color":"--tertiary-on"},
-      "hover":    {"bg":"--tertiary-dim", "chroma":"--tertiary-chroma","border":"--tertiary-dim", "color":"--tertiary-on"},
-      "focus":    {"bg":"--tertiary-core","chroma":"--tertiary-chroma","border":"--tertiary-core","color":"--tertiary-on","outline":"--surface-on-highest"},
-      "active":   {"bg":"--tertiary-core","chroma":"--tertiary-core", "border":"--tertiary-core","color":"--tertiary-on"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    "500": {
+      "h": 48,
+      "pad_x": 14,
+      "radius": 8,
+      "text_h": 20,
+      "icon_only": "48x48"
     },
-    "state_button_ghost": {
-      "_source": "component-token-map.json → state.{state}.button.ghost (фон/обводка — transparent)",
-      "rest":     {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-high"},
-      "hover":    {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest"},
-      "focus":    {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest","outline":"--surface-on-highest"},
-      "active":   {"bg":"transparent","chroma":"transparent","border":"transparent","color":"--surface-on-highest"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    "600": {
+      "h": 52,
+      "pad_x": 16,
+      "radius": 10,
+      "text_h": 20,
+      "icon_only": "52x52"
     },
-    "state_button_clean": {
-      "_source": "component-token-map.json → state.{state}.button.clean (роли surface; border ≠ bg)",
-      "rest":     {"bg":"--surface-bright", "chroma":"--surface-bright", "border":"--surface-dim","color":"--surface-on-high"},
-      "hover":    {"bg":"--surface-surface","chroma":"--surface-surface","border":"--surface-dim","color":"--surface-on-highest"},
-      "focus":    {"bg":"--surface-bright", "chroma":"--surface-bright", "border":"--surface-dim","color":"--surface-on-high","outline":"--surface-on-highest"},
-      "active":   {"bg":"--surface-surface","chroma":"--surface-surface","border":"--surface-dim","color":"--surface-on-highest"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
+    "_note": "Ступени ссылаются на shape-слой rectangle/{N}. Icon-only — квадрат: сторона равна высоте текстовой кнопки той же ступени.",
+    "_icon_px": "иконка в слоте 20px на ступенях 600…300 и 16px на 200…50",
+    "_pills_note": "Набор pills несёт явный мод скругления (explicitVariableModes), в котором ВСЕ ступени border-radius равны 26px — отсюда одинаковый радиус на всех семи размерах против 4…10 у остальных тонов. В коде это независимый модификатор .btn--pill на токене rounded-border-radius-full."
+  },
+  "code_mapping": {
+    "sets": "button / {тон} → .btn-{тон}",
+    "size": "size=N → .btn--N",
+    "content": "content=icon → .btn--icon-only",
+    "state": "hover/focus/active — псевдоклассы, focus через :focus-visible; disabled — атрибут плюс opacity; loading — класс .btn--loading. Ось Figma из шести значений в коде разложена на псевдоклассы, атрибут и класс: один к одному она не ложится, и не должна.",
+    "prefix_suffix": "BOOLEAN-показ слотов; в разметке это наличие узла, класса под них нет",
+    "pill": ".btn--pill — форма-пилюля, независимая ось: сочетается с любым тоном"
+  },
+  "uses": {
+    "awds-component-progress": "кольцо в loading=on — тот же компонент, те же классы на том же <svg>",
+    "awds-component-focus-selection": "кольцо фокуса отдельным слоем"
+  },
+  "debts": {
+    "overhung-on-remote-part": "Соседний button-overhung держит 140 инстансов части `/ text` из СТАРОЙ библиотеки (remote), а не локальной `. / text`. У remote-копии свойство осталось `notice`, у локальной теперь `show-notice` — свап на локальную потеряет показ плашки молча. Переезд button-overhung на локальные части — отдельная работа.",
+    "pills-name-promises-shape": "Имя тона `pills` обещает форму, а различается он с secondary только акцентным цветом текста на hover. Форма вынесена в модификатор .btn--pill, имя тона осталось прежним."
+  },
+  "_layer_binding": "15.09.2026 аудит секции 5:7: 2248 узлов, 14503 привязки, СЫРЫХ КРАСОК НОЛЬ. Коллекции — state, size, rounded, opacity, roles, Sys. Самые частые: opacity/control/enabled ×560, border-radius/200 ×576 (углы), rectangle/{50…600}/padding ×192 на ступень, button/contrast/border-rest ×168, button/clean/border-rest ×168. Вариант ghost стоит на РОЛИ extended/transparent напрямую (168 обводок + 168 стопов градиента), а не на ячейке: ячейки button/ghost/{bg,chroma,border} снесены из студии в Э1 как инвариантные без читателей. Рамки восьми наборов — на Sys (Bg, Border), это статус документации, не токены.",
+  "_token_resolution": "15.09.2026 код переведён с имён ячеек на их цели: 452 ссылки в восьми файлах, 452 якоря #cell. Уникальных ячеек 153 — 35 размерных (rectangle/{50…600}/{padding,gap,rounded,icon,typography}), 116 цветовых (button/{вариант}/{bg,chroma,border,color}-{rest,hover,focus,active}) и 2 тона прозрачности (opacity/control/{enabled,disabled}). Все 153 разрешились в карте без остатка.",
+  "_repair": "До перевода кнопка рисовалась сломанной: замер превью до и после дал 131 изменившийся элемент из 260. Отступы 0, скругление 0, обводки нет, font-size 14 вместо 16, высота 20px вместо 52px — то есть ступень 600 схлопывалась в голую строку текста. Причина та же, что у badge и range: имён --awds-size-* и --awds-state-* в опубликованной теме нет с 03.09.2026.",
+  "_rebind_16_09": "16.09.2026, после публикации библиотеки 📜 tokens ↪ studio: ghost-поверхность переведена с прямых ролей на ячейки слоя state. В наборе button / ghost — 84 обводки на button/ghost/border и 168 стопов градиента на button/ghost/chroma (стоп 0) и button/ghost/bg (стоп 1); соглашение стопов снято чтением семи других тонов, где стоп 0 везде chroma. Плюс переопределения в инстансах: 6 обводок и 56 стопов в button-favorites, 98 стопов в button-group. Цвет не изменился нигде — #ffffff при нулевой альфе.",
+  "_modes_cleanup_2026_09_20": {
+    "date": "2026-09-20",
+    "found": {
+      "dead_modes": 2031,
+      "detail": {
+        "Font-weight": 1007,
+        "State": 672,
+        "Font-family": 336,
+        "Controls": 8,
+        "Corners": 8
+      }
     },
-    "state_button_pills": {
-      "_source": "component-token-map.json → state.{state}.button.pills (= Secondary, но hover-текст accent-container-on)",
-      "rest":     {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on"},
-      "hover":    {"bg":"--secondary-dim", "chroma":"--secondary-chroma","border":"--secondary-dim", "color":"--accent-container-on"},
-      "focus":    {"bg":"--secondary-core","chroma":"--secondary-chroma","border":"--secondary-core","color":"--secondary-on","outline":"--surface-on-highest"},
-      "active":   {"bg":"--secondary-core","chroma":"--secondary-core", "border":"--secondary-core","color":"--secondary-on"},
-      "disabled": {"inherits":"rest","opacity":"--awds-opacity-40"}
-    }
+    "fixed": "2031 мод старых коллекций снят во всех восьми наборах. Сверка «до/после» по 5832 узлам — заливка, обводка, габариты, радиус, кегль, прозрачность — расхождений 0. Снималось двумя вызовами по четыре набора: use_figma транзакционен, и падение на последнем наборе откатило бы уже сверенные.",
+    "kept": "Мод rounded=Rounded (84 шт.) у набора button / pills НЕ снят: коллекция rounded читается привязками этой же секции (1344 своих + 448 внутри инстансов), и мод держит значение — он и делает таблетку. Это ровно тот случай, ради которого проверка перед снятием сверяет коллекции модов с коллекциями привязок.",
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0,
+      "raw_fills": 0,
+      "sets": 8,
+      "cells_per_set": 84
+    },
+    "not_a_defect": {
+      "sys_frame": "Sys/Bg и Sys/Border на восьми COMPONENT_SET (32 привязки) — служебная рамка набора, одинаковая на всех 26 наборах страницы 2 · buttons.",
+      "icon_library": "arrow-down_small-regular (1008 инстансов) — иконка подключённой библиотеки MGC."
+    },
+    "code_match": "Оси всех восьми наборов на каноне: content=text|icon, size=600…50, state=rest|hover|focus|active|disabled|loading, булевы show-prefix / show-suffix. Контракт кода держит те же восемь вариантов, включая pills. Версия осталась 2.2.3, CSS не менялся."
   }
 }

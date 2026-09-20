@@ -14,6 +14,7 @@
 
   <!-- 3. Варианты этого скилла -->
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
+  <link rel="stylesheet" href="../../awds-component-progress/references/progress-circular.css">
   <link rel="stylesheet" href="./button-primary.css">
   <link rel="stylesheet" href="./button-secondary.css">
   <link rel="stylesheet" href="./button-addition.css">
@@ -426,28 +427,25 @@
             <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           </button>
         </div>
-        <div class="row" data-label="Загрузка (Progress=True)">
+        <div class="row" data-label="Загрузка (loading=on)">
           <button class="btn btn-primary btn--600 btn--loading" type="button" disabled aria-busy="true">
             <span class="btn__content">Загрузка…</span>
-            <svg class="btn__progress" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-dasharray="40 60" stroke-linecap="round"/>
+            <svg class="btn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
             </svg>
           </button>
           <button class="btn btn-primary btn--400 btn--loading" type="button" disabled aria-busy="true">
             <span class="btn__content">Загрузка…</span>
-            <svg class="btn__progress" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-dasharray="40 60" stroke-linecap="round"/>
+            <svg class="btn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
             </svg>
           </button>
           <button class="btn btn-primary btn--400 btn--icon-only btn--loading" type="button" disabled aria-busy="true" aria-label="Загрузка">
             <span class="btn__content">
               <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
             </span>
-            <svg class="btn__progress" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-dasharray="40 60" stroke-linecap="round"/>
+            <svg class="btn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
             </svg>
           </button>
         </div>
@@ -546,10 +544,10 @@
 
     /* size 400 → базовые токены (зеркало .btn--400, map.size.rectangle.400). */
     const SIZE_400 = [
-      ['padding', '--awds-space-space-2-5'],
-      ['gap', '--awds-space-space-1-5'],
+      ['padding', '--awds-space-2-5'],
+      ['gap', '--awds-space-1-5'],
       ['rounded', '--awds-rounded-border-radius-400'],
-      ['icon', '--awds-space-space-5'],
+      ['icon', '--awds-space-5'],
       ['font-size', '--awds-control-font-size-400'],
       ['line-height', '--awds-control-line-height-400'],
       ['letter-spacing', '--awds-control-letter-spacing-400'],
@@ -608,7 +606,7 @@
     const COLOR_KEYS = ['bg', 'chroma', 'border', 'color'];
     const OTHER = [
       ['--surface-on-highest', 'color'],
-      ['--awds-opacity-opacity-40', 'value'],
+      ['--awds-state-opacity-control-disabled', 'value'],
       ['--awds-font-family-system', 'value'],
       ['--awds-font-weight-semibold', 'value'],
     ];

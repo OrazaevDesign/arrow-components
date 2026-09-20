@@ -1,10 +1,10 @@
 # Button / Contrast
 
-**Figma:** [rRCDPR2SJ90wJZCr5rsXAd → node 489:83105](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-83105)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 8:6336](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-6336)
 
 Высококонтрастная «чернильная» кнопка — тёмная поверхность на светлом фоне (или инверсия). Максимальный визуальный вес, когда нужно выбить действие из общего ритма.
 
-Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
+Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
 
 Contrast строится на ролях **surface** (`surface-on-highest` для фона, `surface-bright` для текста), а не на отдельном семействе `--contrast-*`. Геометрия, base-механика, loading, icon-only — общие с Primary; `button-contrast.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -44,14 +44,14 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 
 ### Состояние загрузки
 
-Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется `.btn__progress` размером `--awds-btn-icon`.
+Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется кольцо `awds-component-progress`: классы компонента вешаются на тот же `<svg>`, что и слот `.btn__progress`. Кнопка сообщает ему только размер и цвет (`--awds-progress-size` = `--awds-btn-icon`, `--awds-progress-color` = `--awds-btn-color`) — своего спиннера у неё нет.
 
 ```html
 <button class="btn btn-contrast btn--400 btn--loading" type="button" disabled aria-busy="true">
   <span class="btn__content">Загрузка…</span>
-  <svg class="btn__progress" viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-dasharray="40 60" stroke-linecap="round"/>
+  <svg class="btn__progress progress progress-circular progress--indeterminate"
+       viewBox="0 0 24 24" aria-hidden="true">
+    <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
   </svg>
 </button>
 ```
@@ -105,8 +105,8 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 | Hover   | `--surface-on-highest` | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
 | Focus   | `--surface-on-highest` | `--surface-on-high`    | `--surface-on-highest` | `--surface-bright` |
 | Active  | `--surface-on-highest` | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
-| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
-| Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
+| Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
+| Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest`, общая для всех интерактивных элементов сайта.
 

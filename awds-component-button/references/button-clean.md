@@ -1,10 +1,10 @@
 # Button / Clean
 
-**Figma:** [rRCDPR2SJ90wJZCr5rsXAd → node 489:119060](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-119060)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 8:7893](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-7893)
 
 Белая кнопка с тонкой обводкой — для цветных/насыщенных секций (hero, баннеры), где нужна нейтральная светлая поверхность поверх фона.
 
-Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`.
+Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`. Реальную палитру задаёт сайт через `css-variables.css`.
 
 Единственный вариант, где `border ≠ bg`: обводка `surface-dim` тонко, но видимо очерчивает белую кнопку. Реализована через inset box-shadow (не влияет на размер). `chroma = bg` — фон плоский, без градиента.
 
@@ -46,14 +46,14 @@
 
 ### Состояние загрузки
 
-Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется `.btn__progress` размером `--awds-btn-icon`.
+Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется кольцо `awds-component-progress`: классы компонента вешаются на тот же `<svg>`, что и слот `.btn__progress`. Кнопка сообщает ему только размер и цвет (`--awds-progress-size` = `--awds-btn-icon`, `--awds-progress-color` = `--awds-btn-color`) — своего спиннера у неё нет.
 
 ```html
 <button class="btn btn-clean btn--400 btn--loading" type="button" disabled aria-busy="true">
   <span class="btn__content">Загрузка…</span>
-  <svg class="btn__progress" viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-dasharray="40 60" stroke-linecap="round"/>
+  <svg class="btn__progress progress progress-circular progress--indeterminate"
+       viewBox="0 0 24 24" aria-hidden="true">
+    <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
   </svg>
 </button>
 ```
@@ -107,8 +107,8 @@
 | Hover   | `--surface-surface` | `--surface-dim` | `--surface-on-highest` |
 | Focus   | `--surface-bright`  | `--surface-dim` | `--surface-on-high` |
 | Active  | `--surface-surface` | `--surface-dim` | `--surface-on-highest` |
-| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | |
-| Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | |
+| Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | |
+| Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 

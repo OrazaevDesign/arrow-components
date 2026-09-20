@@ -1,12 +1,14 @@
 # Button / Pills
 
-**Figma:** [rRCDPR2SJ90wJZCr5rsXAd → node 811:30987](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=811-30987)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 8:8412](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-8412)
 
 По данным Figma вариант повторяет **Secondary** (серая поверхность, стандартное скругление), но на **hover текст становится акцентным** (`accent-container-on`, красный) — и спиннер тоже. Подходит для удаляемых чипов/фильтров, где наведение сигналит «акцентное/деструктивное» действие.
 
-> Имя «Pills» — название компонента в Figma. **Пилюльной формы в токенах нет** (`rounded` = стандартный `rectangle/{N}`, как у остальных вариантов). Если нужна круглая форма — применяй на странице мод скругления `.rounded-rounded` на `<html>` или оборачивающем контейнере (см. `arrow-design-system/tokens-map.md`).
+> **Форма — отдельный класс `.btn--pill`, а не свойство тона.** В макете набор `button / pills` нарисован под модом скругления, поэтому канонический вид этого варианта — `.btn btn-pills btn--pill`. Без модификатора тон останется прямоугольным: имя «pills» говорит о форме, но различается вариант только акцентным цветом текста на hover, и вшивать форму в тон значило бы закрепить эту неточность в коде.
+>
+> `.btn--pill` сочетается с любым вариантом — пилюльный `primary` или `ghost` делаются тем же классом. Скругление берётся из `--awds-rounded-border-radius-full`; в макете мод даёт 26px, но браузер клампит радиус до половины меньшей стороны (самая высокая кнопка — 52px), поэтому результат совпадает пиксель в пиксель.
 
-Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-container-on))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`.
+Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-container-on))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`.
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-pills.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -46,14 +48,14 @@
 
 ### Состояние загрузки
 
-Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется `.btn__progress` размером `--awds-btn-icon`.
+Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется кольцо `awds-component-progress`: классы компонента вешаются на тот же `<svg>`, что и слот `.btn__progress`. Кнопка сообщает ему только размер и цвет (`--awds-progress-size` = `--awds-btn-icon`, `--awds-progress-color` = `--awds-btn-color`) — своего спиннера у неё нет.
 
 ```html
 <button class="btn btn-pills btn--400 btn--loading" type="button" disabled aria-busy="true">
   <span class="btn__content">Загрузка…</span>
-  <svg class="btn__progress" viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-dasharray="40 60" stroke-linecap="round"/>
+  <svg class="btn__progress progress progress-circular progress--indeterminate"
+       viewBox="0 0 24 24" aria-hidden="true">
+    <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
   </svg>
 </button>
 ```
@@ -107,8 +109,8 @@
 | Hover   | `--secondary-dim`  | `--secondary-chroma` | `--secondary-dim`  | **`--accent-container-on`** (красный) |
 | Focus   | `--secondary-core` | `--secondary-chroma` | `--secondary-core` | `--secondary-on` |
 | Active  | `--secondary-core` | `--secondary-core`   | `--secondary-core` | `--secondary-on` |
-| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
-| Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
+| Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
+| Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)`.
 

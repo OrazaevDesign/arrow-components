@@ -1,10 +1,10 @@
 # Button / Tertiary
 
-**Figma:** [rRCDPR2SJ90wJZCr5rsXAd → node 489:89007](https://www.figma.com/design/rRCDPR2SJ90wJZCr5rsXAd/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B2-Buttons?node-id=489-89007)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 8:6855](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-6855)
 
 Третичное действие — мягкая «container»-поверхность ниже веса Secondary. Подходит для вспомогательной навигации, второстепенных действий в плотных блоках.
 
-Всё на токенах. Цвета → роли `rgb(var(--tertiary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-opacity-opacity-40)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
+Всё на токенах. Цвета → роли `rgb(var(--tertiary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-tertiary.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -44,14 +44,14 @@
 
 ### Состояние загрузки
 
-Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется `.btn__progress` размером `--awds-btn-icon`.
+Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется кольцо `awds-component-progress`: классы компонента вешаются на тот же `<svg>`, что и слот `.btn__progress`. Кнопка сообщает ему только размер и цвет (`--awds-progress-size` = `--awds-btn-icon`, `--awds-progress-color` = `--awds-btn-color`) — своего спиннера у неё нет.
 
 ```html
 <button class="btn btn-tertiary btn--400 btn--loading" type="button" disabled aria-busy="true">
   <span class="btn__content">Загрузка…</span>
-  <svg class="btn__progress" viewBox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-dasharray="40 60" stroke-linecap="round"/>
+  <svg class="btn__progress progress progress-circular progress--indeterminate"
+       viewBox="0 0 24 24" aria-hidden="true">
+    <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
   </svg>
 </button>
 ```
@@ -105,8 +105,8 @@
 | Hover   | `--tertiary-dim`  | `--tertiary-chroma` | `--tertiary-dim`  | `--tertiary-on` |
 | Focus   | `--tertiary-core` | `--tertiary-chroma` | `--tertiary-core` | `--tertiary-on` |
 | Active  | `--tertiary-core` | `--tertiary-core`   | `--tertiary-core` | `--tertiary-on` |
-| Disabled| Rest + `opacity: var(--awds-opacity-opacity-40)` (= 40%) | | | |
-| Loading | Rest + контент `visibility: hidden`, поверх `.btn__progress` размером `--awds-btn-icon` | | | |
+| Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
+| Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 
