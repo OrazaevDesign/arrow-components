@@ -1,6 +1,6 @@
 # Textarea / Ghost
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:41180](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41180)
+**Figma:** [секция ↪ textarea 5:16 → набор 44:74279](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-74279)
 
 > [!NOTE]
 > Этот файл (`textarea-ghost.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.

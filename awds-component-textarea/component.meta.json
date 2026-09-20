@@ -1,53 +1,54 @@
 {
   "component": "textarea",
-  "version": "1.0.3",
+  "version": "1.0.13",
   "contract_hash": "sha256:194322f4d825655c0b9aed58e54f7ec3fc8ec222c2a6d030bd91b1df3a94c38d",
-  "artifact_hash": "sha256:77c37d6076bc77a281b1c8a7231d843d751cd1f908d4cf0995b485c7340e6212",
+  "artifact_hash": "sha256:80208e07c19bca31d2fe28f762efb1715dfa8ed0db6a5d457ca060af39afce5f",
   "visual_change": false,
-  "released_at": "2026-08-26T07:49:41.882Z",
-  "own_values": [],
+  "released_at": "2026-09-16T15:39:59.511Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 6,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "395:40586",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40586"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:16",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-16"
   },
   "variants": {
     "default": {
-      "node_id": "395:40586",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40586",
-      "figma_label": "Textarea / Default (Size × State)",
-      "token_role": "form-control/default"
+      "node_id": "44:73685",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-73685",
+      "figma_label": "textarea / default"
     },
     "light": {
-      "node_id": "395:40736",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40736",
-      "figma_label": "Textarea / Light (Size × State)",
-      "token_role": "form-control/light"
+      "node_id": "44:73835",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-73835",
+      "figma_label": "textarea / light"
     },
     "success": {
-      "node_id": "395:40884",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40884",
-      "figma_label": "Textarea / Success (Size × State)",
-      "token_role": "form-control/success"
+      "node_id": "44:73983",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-73983",
+      "figma_label": "textarea / success"
     },
     "error": {
-      "node_id": "395:41032",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41032",
-      "figma_label": "Textarea / Error (Size × State)",
-      "token_role": "form-control/error"
+      "node_id": "44:74131",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-74131",
+      "figma_label": "textarea / error"
     },
     "ghost": {
-      "node_id": "395:41180",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41180",
-      "figma_label": "Textarea / Ghost (Size × State)",
-      "token_role": "form-control/ghost"
+      "node_id": "44:74279",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-74279",
+      "figma_label": "textarea / ghost"
     },
     "autofill": {
-      "node_id": "395:41328",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41328",
-      "figma_label": "Textarea / Autofill (Size × State)",
-      "token_role": "form-control/autofill"
+      "node_id": "44:74427",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-74427",
+      "figma_label": "textarea / autofill"
     }
   },
   "shape": "rectangle",
@@ -73,7 +74,7 @@
     "chroma",
     "border",
     "color",
-    "placehold"
+    "placeholder"
   ],
   "css_files": [
     "textarea-default.css",
@@ -85,7 +86,7 @@
   ],
   "base_class_note": "Базовый класс .txa, а не .textarea. Приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = textarea они читались бы как чужой компонентный токен --awds-textarea-* (такого слоя в DS нет и быть не должно); плюс .textarea на элементе <textarea> — тавтология. Тот же приём, что у input-combi → .icombi и button-overhung → .obtn.",
   "geometry_note": "Высота не задаётся явно и выводится из ТРЁХ СТРОК: 2 × rectangle-{N}-padding + 3 × line-height. Сверено по всем семи ячейкам макета: 92/88/80/76/64/56/52. В CSS это min-block-size на поле, а не height: три строки — минимум, который может увеличить атрибут rows или сам пользователь ресайзом; height сломал бы и то, и другое. ГОРИЗОНТАЛЬ ВСЕГДА text-gap, без развилки padding/text-gap, знакомой по input и select: слотов prefix/suffix у этого компонента нет вовсе, текст всегда отсчитывается от края. Вертикаль — padding. Ровно так стоит в auto-layout ячейки (px = text-gap, py = padding, items-start).",
-  "handle_note": "Ручка ресайза — псевдоэлемент обёртки (.txa::after) поверх нативного механизма. Нативный ресайзер Chromium (::-webkit-resizer) выключен: он рисует системный уголок из полосок, которого в макете нет; выключен только ВИД, тяга работает — проверено hit-тестом (elementFromPoint в углу возвращает textarea, псевдоэлемент событий не перехватывает благодаря pointer-events: none) и тем, что обёртка следует за высотой поля. Firefox ::-webkit-resizer не поддерживает — там останется системная ручка поверх нашей; работу это не ломает. Форма из макета (ic20-textareaControl-outline: диагональ 9×9 внутри бокса 20×20, union-путь сдвинут на +7/+7). Цвет — роль текста (меняется вместе с ним при фокусе) при opacity 30% = map.state.rest.content.textarea-handle. Бокс 20×20 на ВСЕХ семи размерах — это не rectangle-{N}-icon (у мелких он 16), поэтому в CSS базовая шкала --awds-space-space-5.",
+  "handle_note": "Ручка ресайза — псевдоэлемент обёртки (.txa::after) поверх нативного механизма. Нативный ресайзер Chromium (::-webkit-resizer) выключен: он рисует системный уголок из полосок, которого в макете нет; выключен только ВИД, тяга работает — проверено hit-тестом (elementFromPoint в углу возвращает textarea, псевдоэлемент событий не перехватывает благодаря pointer-events: none) и тем, что обёртка следует за высотой поля. Firefox ::-webkit-resizer не поддерживает — там останется системная ручка поверх нашей; работу это не ломает. Форма из макета (ic20-textareaControl-outline: диагональ 9×9 внутри бокса 20×20, union-путь сдвинут на +7/+7). Цвет — роль текста (меняется вместе с ним при фокусе) при opacity 30% = map.state.rest.content.textarea-handle. Бокс 20×20 на ВСЕХ семи размерах — это не rectangle-{N}-icon (у мелких он 16), поэтому в CSS базовая шкала --awds-space-5.",
   "resize_note": "resize: vertical, а не both — осознанное отклонение от статичной иконки макета: контрол тянется на всю ширину контейнера (width: 100%), и горизонтальная тяга позволила бы вытащить поле за пределы формы. Ось в макете не задана. Для неизменяемого размера есть модификатор .txa--fixed: он снимает и resize, и ручку разом — показывать хват, которого нет, было бы обманом. В состоянии disabled, наоборот, ручка ОСТАЁТСЯ видимой (так в макете: в колонке Disabled уголок нарисован и приглушён вместе со всем контролом), а resize снят.",
   "typography_note": "Шкала control, НЕ typography: Figma даёт font-size/600=16 при line-height/600=20, а у typography-600 line-height 26. В CSS взят семантический var(--awds-rectangle-{N}-typography-*), который в css-global маршрутизирован на нужный control-{M}: 600/500 → 16/20, 400/300 → 14/20, 200/100 → 13/16, 50 → 12/16.",
   "focus_ring_note": "Кольцо как у input, select и их combi-версий и в отличие от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, ширина 2, offset 1.",
@@ -188,89 +189,73 @@
     ]
   },
   "ds_token_dependencies": [
-    "--secondary-container-core",
-    "--secondary-container-chroma",
-    "--secondary-container-on-low",
-    "--secondary-container-on",
-    "--secondary-container-on-high",
-    "--secondary-container-on-highest",
-    "--success-container-core",
-    "--success-container-chroma",
-    "--success-container-on-low",
-    "--success-container-on",
-    "--success-container-on-high",
-    "--success-container-on-highest",
-    "--error-container-core",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-30",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-px",
     "--error-container-chroma",
-    "--error-container-on-low",
+    "--error-container-core",
     "--error-container-on",
     "--error-container-on-high",
     "--error-container-on-highest",
-    "--tertiary-container-core",
-    "--tertiary-container-chroma",
-    "--tertiary-container-on-low",
-    "--tertiary-container-on",
-    "--tertiary-container-on-high",
-    "--tertiary-container-on-highest",
-    "--surface-bright",
-    "--primary-core",
-    "--primary-dim",
+    "--error-container-on-low",
     "--primary-container-chroma",
     "--primary-container-on-high",
     "--primary-container-on-highest",
-    "--awds-space-space-5",
-    "--awds-size-rectangle-50-padding",
-    "--awds-size-rectangle-50-text-gap",
-    "--awds-size-rectangle-50-rounded",
-    "--awds-size-rectangle-50-typography",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
-    "--awds-size-rectangle-100-padding",
-    "--awds-size-rectangle-100-text-gap",
-    "--awds-size-rectangle-100-rounded",
-    "--awds-size-rectangle-100-typography",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-200-padding",
-    "--awds-size-rectangle-200-text-gap",
-    "--awds-size-rectangle-200-rounded",
-    "--awds-size-rectangle-200-typography",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-size-rectangle-600-padding",
-    "--awds-size-rectangle-600-text-gap",
-    "--awds-size-rectangle-600-rounded",
-    "--awds-size-rectangle-600-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-opacity-opacity-30",
-    "--awds-opacity-opacity-40",
-    "--awds-opacity-opacity-50",
-    "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--primary-dim",
+    "--secondary-container-chroma",
+    "--secondary-container-core",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--secondary-container-on-low",
+    "--success-container-chroma",
+    "--success-container-core",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--success-container-on-low",
+    "--surface-bright",
+    "--tertiary-container-chroma",
+    "--tertiary-container-core",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
+    "--tertiary-container-on-low"
   ],
-  "variants_note": "Шесть вариантов — весь набор семейства со страницы «↪ Text Area», по 35 ячеек каждый: Default (395:40586), Light (395:40736), Success (395:40884), Error (395:41032), Ghost (395:41180), Autofill (395:41328). Secondary тут НЕТ, как и у select (у input и input-combi он есть — это разница семейств, а не пропуск). Палитра form-control/* общая с input, select и их combi-версиями. Два варианта ведут себя не как все, и это снято с ячеек: у ghost hover и active НЕ меняют ничего (правил в CSS нет намеренно), у light фокус не переопределяет bg — он уже surface-bright. ОТДЕЛЬНО на той же странице лежит семейство Textarea Combi / * (шесть вариантов, по 20 ячеек = 4 размера × 5 состояний) — многострочное поле с плавающей меткой, ЭТО ДРУГОЙ КОМПОНЕНТ и в данный скилл не входит (как select vs select-combi).",
-  "last_synced": "2026-08-14T12:04:52Z",
+  "variants_note": "Шесть вариантов — весь набор семейства со страницы «↪ Text Area», по 35 ячеек каждый: Default (395:40586), Light (395:40736), Success (395:40884), Error (395:41032), Ghost (395:41180), Autofill (395:41328). Secondary тут НЕТ, как и у select (у input и input-combi он есть — это разница семейств, а не пропуск). Палитра form-control/* общая с input, select и их combi-версиями. Два варианта ведут себя не как все, и это снято с ячеек: у ghost hover и active НЕ меняют ничего (правил в CSS нет намеренно), у light фокус не переопределяет bg — он уже surface-bright. ОТДЕЛЬНО на той же странице лежит секция ↪ textarea-combi (44:75250, шесть наборов по 20 ячеек = 4 размера × 5 состояний) — многострочное поле с меткой ВНУТРИ рамки. Это другой компонент, с 16.09.2026 реализован скиллом awds-component-textarea-combi. Метка там не плавает: у многострочного поля нет центра.",
+  "last_synced": "2026-09-16T18:20:00Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:a99c864b6e4415717512db98e5fa4f3b41d27173678059c726169a059260a21d",
+  "snapshot_hash": "sha256:6b61c301153ff21017aeebe0122b7ddf3bb769c19279822ffde2871dafa0cbc4",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "ce07c49",
@@ -332,8 +317,65 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "txa",
+      "tags": [
+        "span",
+        "label",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "txa-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "txa--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "textarea",
+      "class": "txa__field"
+    },
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Нативный textarea обязателен: многострочный ввод и ресайз даёт браузер."
+  },
+  "family": "forms",
+  "summary": "Многострочное поле: счётчик символов, авто-рост",
+  "aliases": [
+    "текстовая область",
+    "многострочное поле",
+    "комментарий",
+    "отзыв",
+    "адрес"
+  ],
+  "asana": {
+    "task_gid": "1218421798659280",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798659280",
+    "task_name": "💠 textarea",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "form-control-focus-drawn-not-read",
+      "text": "У form-control focus нарисован в ячейках, но компонент его не читает: 17 ячеек (dim, chevron, icon у семи тонов) в focus переключаются на primary-container-*, а в CSS полей focus меняет только кольцо. Читать focus в компонентах или снять состояние у ячеек?",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "open",
+      "raised_at": "2026-09-03",
+      "evidence": "state-vocab-analysis 02.09.2026: 17 ячеек группы form-control, read=0 во всех четырёх состояниях; единственное исключение form-control-secondary-dim — active читают input и input-combi. Решение Э1 по этому классу: оставить, вопрос компоненту в Э3",
+      "answer": null,
+      "asana_gid": "1218489020012833"
+    }
+  ],
+  "figma_repair_note": "Заход 16.09.2026, секция ↪ textarea 5:16. Оси и свойства правок не потребовали. Правки макета: скрыто кольцо фокуса в двух ячейках default/disabled; радиусы этих колец перепривязаны с Rounded/outline/500 на rounded/outline/500 и /600; толщина рамки привязана к space/px (210 ячеек). Дефектов иконок и плейсхолдера, которые чинили в input, здесь не оказалось. Старых библиотек осталось 12 привязок Sys — подписи документации.",
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [

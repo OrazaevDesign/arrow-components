@@ -1,6 +1,6 @@
 ---
 name: awds-component-textarea
-description: Многострочные поля ввода Textarea ArrowDS: размеры, состояния, счётчик символов, авто-рост. Для комментария, отзыва, адреса. Токены ArrowDS, работает и по Figma-ссылке.
+description: Textarea ArrowDS (.txa).
 ---
 
 # Textarea ArrowDS
@@ -16,7 +16,7 @@ description: Многострочные поля ввода Textarea ArrowDS: р
 </span>
 ```
 
-- **Подпись — снаружи.** Combi-версии (метка внутри рамки) у этого компонента в скилле нет; в макете она существует отдельным семейством `Textarea Combi`, это другой компонент.
+- **Подпись — снаружи.** Метка внутри рамки — это [awds-component-textarea-combi](../awds-component-textarea-combi/SKILL.md), отдельный компонент (как `select` vs `select-combi`).
 - **Слотов нет.** У `input` и `select` в обёртку кладут иконки; здесь их не бывает — и поэтому горизонтальный отступ текста всегда `text-gap`, без развилки.
 - **`rows` не обязателен.** Три строки уже заданы через `min-block-size`. `rows="5"` сделает поле выше, `rows="2"` — не сделает ниже.
 
@@ -50,13 +50,13 @@ description: Многострочные поля ввода Textarea ArrowDS: р
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/плейсхолдер) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/textarea-default.css` |
-| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
-| Геометрия (padding/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
-| Горизонтальный отступ текста | `var(--awds-rectangle-{N}-text-gap)` — всегда, слотов нет | Figma: auto-layout ячейки |
-| Типографика | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
-| Приглушение ручки | `var(--awds-opacity-opacity-30)` | `map.state.rest.content.textarea-handle` |
-| Бокс ручки | `var(--awds-space-space-5)` — 20px фикс на всех размерах | базовая шкала, не `rectangle-{N}-icon` |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Геометрия (padding/rounded) | базовые шкалы `var(--awds-space-*)`, `var(--awds-rounded-border-radius-*)` | ячейки `rectangle/{N}/*`, цель в `component-token-map.json` → `map.size.rectangle` |
+| Горизонтальный отступ текста | `var(--awds-space-*)` по ячейке `rectangle/{N}/text-gap` — всегда, слотов нет | Figma: auto-layout ячейки |
+| Типографика | `var(--awds-control-font-size-{M})` и парные line-height / letter-spacing | ячейка `rectangle/{N}/typography` ведёт на `control-{M}` |
+| Приглушение ручки | `var(--awds-opacity-30)` | `map.state.rest.content.textarea-handle` |
+| Бокс ручки | `var(--awds-space-5)` — 20px фикс на всех размерах | базовая шкала, не `rectangle-{N}-icon` |
+| Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Базовый класс — `.txa`, а не `.textarea`.** Приватные аккумуляторы зовутся `--awds-{base_class}-*`; при `base_class = textarea` они читались бы как чужой компонентный токен `--awds-textarea-*` (такого слоя в DS нет), а `.textarea` на элементе `<textarea>` — тавтология.
@@ -75,7 +75,7 @@ description: Многострочные поля ввода Textarea ArrowDS: р
 - Фокус виден при любом способе входа в поле (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Ресайз пользователем — это **функция доступности**: человеку с крупным шрифтом или длинным текстом нужна возможность увеличить поле. Не отключай `.txa--fixed` без причины.
 - Если у поля есть лимит символов, счётчик ставится **снаружи** и связывается через `aria-describedby`; в этом компоненте его нет.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-40)` (ячейка `opacity/control/disabled`) на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 
 ## Варианты
 
@@ -101,7 +101,7 @@ description: Многострочные поля ввода Textarea ArrowDS: р
 
 Ручка ресайза во всех вариантах красится **цветом текста своего варианта** при `opacity: 30%` — отдельного правила у неё нет, она следует за `--awds-txa-color`.
 
-Отдельно на той же странице макета лежит семейство **`Textarea Combi`** — многострочное поле с плавающей меткой. Это **другой компонент** (как `select` vs `select-combi`), в этот скилл он не входит.
+Отдельно на той же странице макета лежит секция **`↪ textarea-combi`** — многострочное поле с меткой внутри рамки. Это **другой компонент**, с 16.09.2026 реализован: [awds-component-textarea-combi](../awds-component-textarea-combi/SKILL.md). Метка там не плавает — у многострочного поля нет центра, который она могла бы занимать.
 
 | Вариант | Файл | Reference |
 |---|---|---|
@@ -130,13 +130,14 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 
 1. Возьми разметку из [references/textarea-default.md](references/textarea-default.md) — обёртка, поле, `<label for>` снаружи.
 2. Подключи CSS нужного варианта (`textarea-{вариант}.css`) — один раз глобально.
-3. Убедись, что на странице есть DS-токены (`--awds-rectangle-*`, `--awds-control-*`, `--awds-opacity-*`, `--awds-space-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
+3. Убедись, что на странице есть DS-токены (`--awds-space-*`, `--awds-rounded-*`, `--awds-control-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
 4. Поставь класс варианта (`txa-default`) — без него поле останется бесцветным — и размерный модификатор `.txa--{N}` (если не указан, действует 400).
 5. Ширину задай контейнеру-родителю: поле тянется на 100%.
 
 ## Соседние компоненты
 
 - **[awds-component-input](../awds-component-input/SKILL.md)** — однострочное поле, семь размеров, семь вариантов. Та же палитра и та же размерная шкала: поля рядом в форме совпадают по горизонтали и типографике.
-- **[awds-component-input-combi](../awds-component-input-combi/SKILL.md)**, **[awds-component-select-combi](../awds-component-select-combi/SKILL.md)** — контролы с плавающей меткой. Если форма построена на них, `Textarea Combi` из макета пока не реализован — используй обычный textarea с подписью снаружи и не смешивай способы подписи в одной форме.
+- **[awds-component-textarea-combi](../awds-component-textarea-combi/SKILL.md)** — то же поле с меткой внутри рамки. Если форма построена на combi-контролах, берётся оно: способы подписи в одной форме не смешивают.
+- **[awds-component-input-combi](../awds-component-input-combi/SKILL.md)**, **[awds-component-select-combi](../awds-component-select-combi/SKILL.md)** — однострочные контролы с плавающей меткой.
 - **[awds-component-select](../awds-component-select/SKILL.md)** — выбор из списка на том же прямоугольнике.
 - **[awds-component-button](../awds-component-button/SKILL.md)** — тот же shape `rectangle`, поэтому кнопка отправки рядом совпадает по скруглению.

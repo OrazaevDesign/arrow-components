@@ -1,285 +1,64 @@
 {
-  "_note2": "Вторым проходом сняты остальные пять вариантов семейства (Light / Success / Error / Ghost / Autofill). По каждому — ячейки Size=500 в состояниях Rest / Hover / Focus (плюс Active у light для проверки, что он совпадает с Rest). Геометрия у вариантов не переснималась: rectangle-токены в снятых ячейках побайтово те же, что у Default — вариант меняет только палитру form-control/{вариант}. В variable_defs ниже для этих пяти оставлены цветовые ключи и ключи кольца фокуса; размерные повторяли бы Default.",
-  "variants_nodes": {
-    "light": "395:40736",
-    "success": "395:40884",
-    "error": "395:41032",
-    "ghost": "395:41180",
-    "autofill": "395:41328"
+  "_note": "Разбор многострочного поля в файле «💠 arrow ↪ components», секция ↪ textarea (5:16), страница 3 · forms. ACB-owned, руками не править.",
+  "fetched_at": "2026-09-16T18:20:00Z",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "3 · forms",
+  "section_node_id": "5:16",
+  "primary_node_id": "44:73685",
+  "_structure_note": {
+    "дата": "2026-09-16",
+    "заход": "двадцать второй компонент прохода; ссылка владельца на секцию 5:16",
+    "предыдущий_файл": "До 16.09.2026 снапшот читал файл «💠 Comp ↪ ⁵ Forms» (4ipeXkifl3Hl6pVZUF4nuJ), нода 395:40586.",
+    "оси_и_свойства": "Правок не потребовалось: оси size (7 ступеней) и state (rest·hover·focus·active·disabled) уже на каноне. Булевых свойств нет — слотов у textarea не существует.",
+    "правки_16_09": [
+      "Кольцо фокуса скрыто в двух ячейках default/disabled (size=500 и 600) — третий раз подряд тот же дефект и ровно в тех же координатах, что в ↪ input и ↪ input-combi.",
+      "Радиусы этих двух колец перепривязаны со старой библиотеки Rounded/outline/500 на rounded/outline/500 и rounded/outline/600: у ступени 600 стояла чужая ступень.",
+      "Толщина рамки привязана к space/px у всех 210 ячеек — была литералом strokeWeight = 1."
+    ],
+    "что_не_трогали": "12 привязок Sys/Bg и Sys/Border на самих наборах — подписи документации, по rebind-rules не переносятся. Других старых библиотек в секции не осталось.",
+    "чего_здесь_НЕ_было": "Дефекта иконок, который чинили в input и input-combi, тут нет: единственная иконка — ручка ресайза, и она честно красится {тон}/color-{состояние}. Плейсхолдер тона default тоже переключается правильно."
   },
-  "variable_defs_variants": {
-    "395:40737 (light Rest)": {
-      "form-control/light/bg": "#ffffff",
-      "form-control/light/chroma": "#ffffff",
-      "form-control/light/border": "#c7c7c7",
-      "form-control/light/color": "#0f0f0f",
-      "form-control/light/placehold": "#555555"
-    },
-    "395:40753 (light Hover)": { "form-control/light/border": "#808080" },
-    "395:40771 (light Active)": { "form-control/light/border": "#c7c7c7" },
-    "395:40761 (light Focus)": {
-      "form-control/light/bg": "#ffffff",
-      "form-control/light/chroma": "#fffdf6",
-      "form-control/light/border": "#fad046",
-      "form-control/light/color": "#19110a",
-      "form-control/light/placehold": "#674d25",
-      "focus-selection/outlineVariant": "#fad646",
-      "opacity/50": "50"
-    },
-    "395:40885 (success Rest)": {
-      "form-control/success/bg": "#e5faf1",
-      "form-control/success/chroma": "#f7fffb",
-      "form-control/success/border": "#a0e4c0",
-      "form-control/success/color": "#224f29",
-      "form-control/success/placehold": "#388e4e"
-    },
-    "395:40901 (success Hover)": { "form-control/success/border": "#57c47f" },
-    "395:40909 (success Focus)": {
-      "form-control/success/bg": "#ffffff",
-      "form-control/success/chroma": "#fffdf6",
-      "form-control/success/border": "#fad046",
-      "form-control/success/color": "#19110a",
-      "form-control/success/placehold": "#674d25",
-      "focus-selection/outlineVariant": "#fad646",
-      "opacity/50": "50"
-    },
-    "395:41033 (error Rest)": {
-      "form-control/error/bg": "#fff2eb",
-      "form-control/error/chroma": "#fff9f5",
-      "form-control/error/border": "#eea28b",
-      "form-control/error/color": "#41141a",
-      "form-control/error/placehold": "#9c2c2a"
-    },
-    "395:41049 (error Hover)": { "form-control/error/border": "#d65745" },
-    "395:41057 (error Focus)": {
-      "form-control/error/bg": "#ffffff",
-      "form-control/error/chroma": "#fffdf6",
-      "form-control/error/border": "#fad046",
-      "form-control/error/color": "#19110a",
-      "form-control/error/placehold": "#674d25",
-      "focus-selection/outlineVariant": "#fad646",
-      "opacity/50": "50"
-    },
-    "395:41181 (ghost Rest)": {
-      "form-control/ghost/bg": "#ffffff00",
-      "form-control/ghost/chroma": "#ffffff00",
-      "form-control/ghost/border": "#ffffff00",
-      "form-control/ghost/color": "#0f0f0f",
-      "form-control/ghost/placehold": "#555555"
-    },
-    "395:41197 (ghost Hover)": {
-      "form-control/ghost/bg": "#ffffff00",
-      "form-control/ghost/chroma": "#ffffff00",
-      "form-control/ghost/border": "#ffffff00",
-      "form-control/ghost/color": "#0f0f0f",
-      "form-control/ghost/placehold": "#555555",
-      "_same_as_rest": true
-    },
-    "395:41205 (ghost Focus)": {
-      "form-control/ghost/bg": "#ffffff00",
-      "form-control/ghost/chroma": "#ffffff00",
-      "form-control/ghost/border": "#ffffff00",
-      "form-control/ghost/color": "#19110a",
-      "form-control/ghost/placehold": "#674d25",
-      "focus-selection/outlineVariant": "#fad646",
-      "opacity/50": "50"
-    },
-    "395:41329 (autofill Rest)": {
-      "form-control/autofill/bg": "#ebf6ff",
-      "form-control/autofill/chroma": "#f7fcff",
-      "form-control/autofill/border": "#90aee0",
-      "form-control/autofill/color": "#193891",
-      "form-control/autofill/placehold": "#4764d4"
-    },
-    "395:41345 (autofill Hover)": { "form-control/autofill/border": "#7897dc" },
-    "395:41353 (autofill Focus)": {
-      "form-control/autofill/bg": "#ffffff",
-      "form-control/autofill/chroma": "#fffdf6",
-      "form-control/autofill/border": "#fad046",
-      "form-control/autofill/color": "#19110a",
-      "form-control/autofill/placehold": "#674d25",
-      "focus-selection/outlineVariant": "#fad646",
-      "opacity/50": "50"
-    }
+  "sets": {
+    "textarea / default": { "node": "44:73685", "cells": 35, "класс": ".txa-default" },
+    "textarea / light": { "node": "44:73835", "cells": 35, "класс": ".txa-light" },
+    "textarea / success": { "node": "44:73983", "cells": 35, "класс": ".txa-success" },
+    "textarea / error": { "node": "44:74131", "cells": 35, "класс": ".txa-error" },
+    "textarea / ghost": { "node": "44:74279", "cells": 35, "класс": ".txa-ghost" },
+    "textarea / autofill": { "node": "44:74427", "cells": 35, "класс": ".txa-autofill" },
+    "_оси": "size = 600|500|400|300|200|100|50, state = rest|hover|focus|active|disabled",
+    "_почему_шесть_тонов": "Тона secondary у textarea нет — в отличие от input и input-combi, где он есть. Многострочное поле на брендовой заливке в макете не рисовали."
   },
-  "_note": "Сырые ответы Figma MCP, как пришли. Оси: Size 50/100/200/300/400/500/600 × State Rest/Hover/Focus/Active/Disabled = 35 ячеек. Снято 11: Rest на каждом из семи размеров (оттуда геометрия и типографика) плюс Hover / Focus / Active / Disabled на размере 500 (оттуда цвета). Разделение намеренное: цвета от размера не зависят, размеры от состояния — тоже; для семейства form-control это уже проверялось побайтово на input, select и их combi-версиях. Разметка снята одним get_design_context по ячейке Size=500, State=Rest: внутри только Content Text Area (px = text-gap, py = padding, items-start) и Handle (20×20 в правом нижнем углу, opacity/content/textarea-handle). Слотов prefix/suffix у этого компонента НЕТ — отсюда отсутствие развилки padding/text-gap: горизонталь всегда text-gap. Палитра form-control/default совпадает со снапшотами awds-component-select и awds-component-input-combi (те же #f7f7f7 / #c7c7c7 / #808080 / #fad046).",
-  "metadata": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "node_id": "395:40586",
-    "name": "Textarea / Default",
-    "frame": { "width": 1760, "height": 732 },
-    "cell_heights": { "600": 92, "500": 88, "400": 80, "300": 76, "200": 64, "100": 56, "50": 52 },
-    "height_formula": "2 × rectangle-{N}-padding + 3 × line-height — сверено по всем семи размерам",
-    "cells_rest": {
-      "600": "395:40591",
-      "500": "395:40587",
-      "400": "395:40631",
-      "300": "395:40652",
-      "200": "395:40656",
-      "100": "395:40660",
-      "50": "395:40664"
-    },
-    "cells_state_500": {
-      "hover": "395:40605",
-      "focus": "395:40613",
-      "active": "395:40623",
-      "disabled": "395:40595"
-    },
-    "structure_from_design_context": {
-      "395:40587": [
-        "Content Text Area (394:11569) — flex-1, min-w-px, items-start, padding-inline rectangle/500/text-gap, padding-block rectangle/500/padding; внутри одна текстовая строка (placeholder) в кегле font-size/600 при line-height/600",
-        "Handle (395:40589) — absolute bottom -1 right -1, size 20×20, opacity/content/textarea-handle; внутри ic20-textareaControl-outline, union — диагональ 9×9 (inset 35%/20%/20%/35% внутри бокса 20)"
-      ],
-      "395:40664": "Size=50: Handle тоже 20×20 (x=300 y=32 при ячейке 320×52) — бокс ручки фиксирован на всех размерах, это не rectangle-{N}-icon"
-    }
+  "structure": {
+    "ячейка": "COMPONENT → INSTANCE «. / content-text-area» (паддинги и текст) + FRAME «Handle» (ручка ресайза 20×20). Слотов prefix / suffix у компонента нет.",
+    "ручка": "20×20 во всех семи ступенях, прозрачность привязана к ячейке opacity/content/textarea-handle (30%), иконка красится {тон}/color-{состояние}",
+    "кольцо": "INSTANCE focus-selection в ячейках state=focus"
   },
-  "variable_defs": {
-    "395:40591": {
-      "form-control/default/placehold": "#555555",
-      "line-height/600": "20",
-      "letter-spacing/600": "0",
-      "font-size/600": "16",
-      "rectangle/600/text-gap": "18",
-      "rectangle/600/padding": "16",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "rectangle/600/rounded": "10",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40587": {
-      "form-control/default/placehold": "#555555",
-      "line-height/600": "20",
-      "letter-spacing/600": "0",
-      "font-size/600": "16",
-      "rectangle/500/text-gap": "18",
-      "rectangle/500/padding": "14",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "rectangle/500/rounded": "8",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40631": {
-      "form-control/default/placehold": "#555555",
-      "line-height/400": "20",
-      "letter-spacing/400": "0",
-      "font-size/400": "14",
-      "rectangle/400/text-gap": "16",
-      "rectangle/400/padding": "10",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "rectangle/400/rounded": "8",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40652": {
-      "form-control/default/placehold": "#555555",
-      "line-height/400": "20",
-      "letter-spacing/400": "0",
-      "font-size/400": "14",
-      "rectangle/300/text-gap": "14",
-      "rectangle/300/padding": "8",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "rectangle/300/rounded": "6",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40656": {
-      "form-control/default/placehold": "#555555",
-      "line-height/300": "16",
-      "letter-spacing/300": "0.10000000149011612",
-      "font-size/300": "13",
-      "rectangle/200/text-gap": "14",
-      "rectangle/200/padding": "8",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "rectangle/200/rounded": "6",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40660": {
-      "form-control/default/placehold": "#555555",
-      "line-height/300": "16",
-      "letter-spacing/300": "0.10000000149011612",
-      "font-size/300": "13",
-      "rectangle/100/text-gap": "10",
-      "rectangle/100/padding": "4",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "rectangle/100/rounded": "6",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40664": {
-      "form-control/default/placehold": "#555555",
-      "line-height/200": "16",
-      "letter-spacing/200": "0.10000000149011612",
-      "font-size/200": "12",
-      "rectangle/50/text-gap": "8",
-      "rectangle/50/padding": "2",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "rectangle/50/rounded": "4",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40605": {
-      "form-control/default/placehold": "#555555",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#808080"
-    },
-    "395:40613": {
-      "form-control/default/placehold": "#674d25",
-      "focus-selection/outlineShow": "true",
-      "outline/500": "9",
-      "focus-selection/outlineVariant": "#fad646",
-      "opacity/50": "50",
-      "form-control/default/color": "#19110a",
-      "opacity/content/textarea-handle": "30",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#ffffff",
-      "form-control/default/chroma": "#fffdf6",
-      "form-control/default/border": "#fad046"
-    },
-    "395:40623": {
-      "form-control/default/placehold": "#555555",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "opacity/control/enabled": "100",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    },
-    "395:40595": {
-      "form-control/default/placehold": "#555555",
-      "form-control/default/color": "#0f0f0f",
-      "opacity/content/textarea-handle": "30",
-      "opacity/50": "50",
-      "opacity/control/disabled": "40",
-      "form-control/default/bg": "#f7f7f7",
-      "form-control/default/chroma": "#f7f7f7",
-      "form-control/default/border": "#c7c7c7"
-    }
-  }
+  "geometry": {
+    "600": { "высота": 92, "padding": "space-4 (16)", "text-gap": "space-4-5 (18)", "кегль": "16/20 (control-600)", "строк": 3 },
+    "500": { "высота": 88, "padding": "space-3-5 (14)", "text-gap": "space-4-5 (18)", "кегль": "16/20 (control-600)", "строк": 3 },
+    "400": { "высота": 80, "padding": "space-2-5 (10)", "text-gap": "space-4 (16)", "кегль": "14/20 (control-400)", "строк": 3 },
+    "300": { "высота": 76, "padding": "space-2 (8)", "text-gap": "space-3-5 (14)", "кегль": "14/20 (control-400)", "строк": 3 },
+    "200": { "высота": 64, "padding": "space-2 (8)", "text-gap": "space-3-5 (14)", "кегль": "13/16 (control-300)", "строк": 3 },
+    "100": { "высота": 56, "padding": "space-1 (4)", "text-gap": "space-2-5 (10)", "кегль": "13/16 (control-300)", "строк": 3 },
+    "50": { "высота": 52, "padding": "space-0-5 (2)", "text-gap": "space-2 (8)", "кегль": "12/16 (control-200)", "строк": 3 },
+    "формула": "высота = 2 × padding + 3 × line-height. Сверено по всем семи ячейкам: 92/88/80/76/64/56/52. В CSS это min-block-size, а не height: три строки — минимум, который увеличивает атрибут rows или сам пользователь ресайзом.",
+    "горизонталь": "Отступ текста всегда text-gap, а не padding: слотов у textarea нет, и отсчёт идёт от края рамки."
+  },
+  "cells_and_roles": {
+    "_общее_с_input": "Группа ячеек та же — form-control, шесть тонов из семи (без secondary), роли совпадают с awds-component-input.",
+    "текст": "form-control/{тон}/color-{состояние}",
+    "плейсхолдер": "form-control/{тон}/placeholder-{состояние} — переключается у всех шести тонов, включая default",
+    "ручка": "иконка {тон}/color-{состояние} при прозрачности opacity/content/textarea-handle (30%)",
+    "opacity": "opacity/control/enabled (100%) и opacity/control/disabled (40%)"
+  },
+  "code_mapping": {
+    "оси": "size → .txa--{N}; state → :hover / :focus-within / :active / :disabled; тон → .txa-{вариант}",
+    "высота": "min-block-size на поле, а не height: макетные три строки это минимум, не фиксация",
+    "ресайз": ".txa--fixed гасит нативный resize — в макете ручка есть всегда, но потребителю иногда нужна фиксированная высота",
+    "якоря": "267 строк, каждая читающая роль или шкалу несёт /* #cell … */"
+  },
+  "debts": [
+    "12 привязок Sys/Bg и Sys/Border на самих наборах — подписи документации, переносу не подлежат."
+  ]
 }

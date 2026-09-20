@@ -1,6 +1,6 @@
 # Textarea / Autofill
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:41328](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-41328)
+**Figma:** [секция ↪ textarea 5:16 → набор 44:74427](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-74427)
 
 > [!NOTE]
 > Этот файл (`textarea-autofill.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.

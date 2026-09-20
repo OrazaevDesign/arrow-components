@@ -1,6 +1,6 @@
 # Textarea / Light
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:40736](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-40736)
+**Figma:** [секция ↪ textarea 5:16 → набор 44:73835](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-73835)
 
 > [!NOTE]
 > Этот файл (`textarea-light.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
