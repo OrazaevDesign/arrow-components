@@ -1,53 +1,54 @@
 {
   "component": "select-combi",
-  "version": "1.0.6",
-  "contract_hash": "sha256:3e4aa466ed519d95d3268d64e775367a127fa963c27b7c2dadd301407dbec337",
-  "artifact_hash": "sha256:90d117d3e81edf9aadde497bf250b4c6555944889ab4001d1efce4a33f68d325",
+  "version": "1.0.18",
+  "contract_hash": "sha256:601ae457dffd96b328670437c9500a7eb2fed5bc7359c4610f056ed23cca15d6",
+  "artifact_hash": "sha256:42e8ef9ec67eaeffadc9ba0c70b53c4a2ff5990632be4a217d71d8c6a745061b",
   "visual_change": false,
-  "released_at": "2026-08-26T10:17:04.731Z",
-  "own_values": [],
+  "released_at": "2026-09-16T16:40:57.842Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 6,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "394:16370",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16370"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:18",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-18"
   },
   "variants": {
     "default": {
-      "node_id": "394:16370",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16370",
-      "figma_label": "Select Combi / Default (Size × State)",
-      "token_role": "form-control/default"
+      "node_id": "38:54127",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54127",
+      "figma_label": "select-combi / default"
     },
     "light": {
-      "node_id": "394:16895",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16895",
-      "figma_label": "Select Combi / Light (Size × State)",
-      "token_role": "form-control/light"
+      "node_id": "38:54652",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54652",
+      "figma_label": "select-combi / light"
     },
     "success": {
-      "node_id": "394:16790",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16790",
-      "figma_label": "Select Combi / Success (Size × State)",
-      "token_role": "form-control/success"
+      "node_id": "38:54547",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54547",
+      "figma_label": "select-combi / success"
     },
     "error": {
-      "node_id": "394:16685",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16685",
-      "figma_label": "Select Combi / Error (Size × State)",
-      "token_role": "form-control/error"
+      "node_id": "38:54442",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54442",
+      "figma_label": "select-combi / error"
     },
     "ghost": {
-      "node_id": "394:16580",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16580",
-      "figma_label": "Select Combi / Ghost (Size × State)",
-      "token_role": "form-control/ghost"
+      "node_id": "38:54337",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54337",
+      "figma_label": "select-combi / ghost"
     },
     "autofill": {
-      "node_id": "394:16475",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16475",
-      "figma_label": "Select Combi / Autofill (Size × State)",
-      "token_role": "form-control/autofill"
+      "node_id": "38:54232",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54232",
+      "figma_label": "select-combi / autofill"
     }
   },
   "shape": "rectangle",
@@ -71,7 +72,7 @@
     "chroma",
     "border",
     "color",
-    "placehold",
+    "placeholder",
     "chevron",
     "icon-color"
   ],
@@ -187,123 +188,81 @@
     ]
   },
   "ds_token_dependencies": [
-    "--secondary-container-core",
-    "--secondary-container-chroma",
-    "--secondary-container-on-low",
-    "--secondary-container-on",
-    "--secondary-container-on-high",
-    "--secondary-container-on-highest",
-    "--success-container-core",
-    "--success-container-chroma",
-    "--success-container-on-low",
-    "--success-container-on",
-    "--success-container-on-high",
-    "--success-container-on-highest",
-    "--error-container-core",
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-shadow-elevation-3",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-5-5",
+    "--awds-space-6",
+    "--awds-space-px",
     "--error-container-chroma",
-    "--error-container-on-low",
+    "--error-container-core",
     "--error-container-on",
     "--error-container-on-high",
     "--error-container-on-highest",
-    "--tertiary-container-core",
+    "--error-container-on-low",
+    "--primary-container-chroma",
+    "--primary-container-core",
+    "--primary-container-on",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--primary-container-on-lowest",
+    "--primary-dim",
+    "--secondary-container-chroma",
+    "--secondary-container-core",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--secondary-container-on-low",
+    "--success-container-chroma",
+    "--success-container-core",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--success-container-on-low",
+    "--surface-bright",
+    "--surface-on",
     "--tertiary-container-chroma",
-    "--tertiary-container-on-low",
+    "--tertiary-container-core",
     "--tertiary-container-on",
     "--tertiary-container-on-high",
     "--tertiary-container-on-highest",
-    "--surface-bright",
-    "--surface-on",
-    "--primary-core",
-    "--primary-dim",
-    "--primary-container-core",
-    "--primary-container-chroma",
-    "--primary-container-on",
-    "--primary-container-on-lowest",
-    "--primary-container-on-high",
-    "--primary-container-on-highest",
-    "--awds-shadow-elevation-3",
-    "--awds-rounded-border-radius-600",
-    "--awds-space-space-1",
-    "--awds-size-dropdown-300-padding",
-    "--awds-size-dropdown-300-border-radius",
-    "--awds-size-dropdown-400-padding",
-    "--awds-size-dropdown-400-border-radius",
-    "--awds-size-dropdown-500-padding",
-    "--awds-size-dropdown-500-border-radius",
-    "--awds-size-rectangle-200-padding",
-    "--awds-size-rectangle-200-icon",
-    "--awds-size-rectangle-200-rounded",
-    "--awds-size-rectangle-200-text-gap",
-    "--awds-size-rectangle-200-typography",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-200-description",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-icon",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-300-description",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-300-combi-label-top",
-    "--awds-size-rectangle-300-combi-input-top",
-    "--awds-size-rectangle-300-combi-input-bottom",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-400-description",
-    "--awds-control-line-height-300",
-    "--awds-control-letter-spacing-300",
-    "--awds-size-rectangle-400-combi-label-top",
-    "--awds-size-rectangle-400-combi-input-top",
-    "--awds-size-rectangle-400-combi-input-bottom",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-icon",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-size-rectangle-500-description",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-500-combi-label-top",
-    "--awds-size-rectangle-500-combi-input-top",
-    "--awds-size-rectangle-500-combi-input-bottom",
-    "--awds-size-rectangle-600-padding",
-    "--awds-size-rectangle-600-icon",
-    "--awds-size-rectangle-600-rounded",
-    "--awds-size-rectangle-600-text-gap",
-    "--awds-size-rectangle-600-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-size-rectangle-600-combi-label-top",
-    "--awds-size-rectangle-600-combi-input-top",
-    "--awds-size-rectangle-600-combi-input-bottom",
-    "--awds-control-font-size-100",
-    "--awds-control-line-height-100",
-    "--awds-control-letter-spacing-100",
-    "--awds-control-font-size-200",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
-    "--awds-opacity-opacity-40",
-    "--awds-opacity-opacity-50",
-    "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--tertiary-container-on-low"
   ],
   "depends_on": {
     "awds-component-list-item": "Пункт раскрытого списка размечается классами .list-item / .list-item-transparent. Селект задаёт пункту только размерную ступень (на одну ниже своей) через мост .scombi__field option, а выбранный пункт переключает на роли list/selected-secondary правилом :checked. Потребителю нужно подключить list-item-transparent.css рядом с select-combi-default.css."
   },
-  "variants_note": "Шесть вариантов — весь набор семейства со страницы «↪ Select» (Default / Light / Success / Error / Ghost / Autofill), по 20 ячеек каждый. Secondary тут НЕТ, в отличие от input и input-combi, где вариантов семь — это разница семейств, а не пропуск (у обычного select так же). Палитра form-control/* общая с awds-component-select, awds-component-input и awds-component-input-combi. Два варианта ведут себя не как все, и это снято с ячеек: у ghost hover и active НЕ меняют ничего (правил в CSS нет намеренно), у light фокус не переопределяет bg — он уже surface-bright. У ghost в ячейке Focus placehold привязан к form-control/error вместо form-control/ghost — опечатка биндинга в Figma; значение то же (#674d25), в CSS взята обычная роль primary-container-on-high.",
+  "variants_note": "Шесть вариантов — весь набор семейства со страницы «↪ Select» (Default / Light / Success / Error / Ghost / Autofill), по 20 ячеек каждый. Secondary тут НЕТ, в отличие от input и input-combi, где вариантов семь — это разница семейств, а не пропуск (у обычного select так же). Палитра form-control/* общая с awds-component-select, awds-component-input и awds-component-input-combi. Два варианта ведут себя не как все, и это снято с ячеек: у ghost hover и active НЕ меняют ничего (правил в CSS нет намеренно), у light фокус не переопределяет bg — он уже surface-bright. У ghost в ячейке Focus placeholder привязан к form-control/error вместо form-control/ghost — опечатка биндинга в Figma; значение то же (#674d25), в CSS взята обычная роль primary-container-on-high.",
   "last_synced": "2026-08-14T11:16:12Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:426f1b56132da495b5ea77f1bda86cb376d829c8e95dc4b7aed06ca4b871b84e",
@@ -368,9 +327,66 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "scombi",
+      "tags": [
+        "span",
+        "label",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "scombi-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "scombi--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "select",
+      "class": "scombi__field"
+    },
+    "children": [
+      {
+        "class": "scombi__label"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "То же, что select, плюс обязательная плавающая метка."
+  },
+  "family": "forms",
+  "summary": "Выпадающий список с плавающей меткой внутри рамки",
+  "aliases": [
+    "селект с плавающей меткой",
+    "дропдаун с подписью внутри"
+  ],
+  "asana": {
+    "task_gid": "1218422992765221",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992765221",
+    "task_name": "💠 select-combi",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "form-control-focus-drawn-not-read",
+      "text": "У form-control focus нарисован в ячейках, но компонент его не читает: 17 ячеек (dim, chevron, icon у семи тонов) в focus переключаются на primary-container-*, а в CSS полей focus меняет только кольцо. Читать focus в компонентах или снять состояние у ячеек?",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "open",
+      "raised_at": "2026-09-03",
+      "evidence": "state-vocab-analysis 02.09.2026: 17 ячеек группы form-control, read=0 во всех четырёх состояниях; единственное исключение form-control-secondary-dim — active читают input и input-combi. Решение Э1 по этому классу: оставить, вопрос компоненту в Э3",
+      "answer": null,
+      "asana_gid": "1218489020012833"
+    }
+  ],
   "uses": {
-    "awds-component-focus-selection": "1.1.0",
-    "awds-component-list-item": "1.0.4"
+    "awds-component-focus-selection": "2.0.3",
+    "awds-component-list-item": "1.0.6"
   },
   "contract": {
     "classes": [
@@ -393,10 +409,12 @@
       "scombi__suffix"
     ],
     "attributes": [
+      "aria-disabled",
       "value"
     ],
     "elements": [
       "option",
+      "select",
       "svg"
     ],
     "public_vars": [],

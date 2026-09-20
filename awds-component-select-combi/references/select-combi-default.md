@@ -74,7 +74,7 @@
 <p class="hint">Сначала выберите город</p>
 ```
 
-Гасится вся обёртка (`opacity: var(--awds-opacity-opacity-40)`), как в макете. Контраст в этом состоянии заведомо ниже AA, поэтому рядом нужен текст-причина, а не только серость. Если контрол не может нести атрибут `disabled` — есть запасной класс `.scombi--disabled`.
+Гасится вся обёртка (`opacity: var(--awds-state-opacity-control-disabled)`), как в макете. Контраст в этом состоянии заведомо ниже AA, поэтому рядом нужен текст-причина, а не только серость. Если контрол не может нести атрибут `disabled` — есть запасной класс `.scombi--disabled`.
 
 ## Состояния
 
@@ -85,9 +85,9 @@
 | Active | рамка возвращается к `secondary-container-on-low` (в макете Active = Rest; правило нужно, чтобы отменить hover при нажатии) | `:active:not(:focus-within):has(…)` |
 | Focus | `bg surface-bright`, `chroma primary-container-chroma`, рамка `primary-dim`, текст `primary-container-on-highest`, метка и шеврон `primary-container-on-high` + кольцо | `:focus-within` |
 | Открыт список | то же, что Focus | `@supports` + `:has(.scombi__field:open)` |
-| Disabled | Rest + `opacity: var(--awds-opacity-opacity-40)` | `:has(.scombi__field:disabled)` |
+| Disabled | Rest + `opacity: var(--awds-state-opacity-control-disabled)` | `:has(.scombi__field:disabled)` |
 
-Кольцо фокуса: `outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol)`, `outline-offset: var(--awds-focus-offset)` — как у `select`, `input` и `input-combi`, и в отличие от остального набора (там `surface-on-highest` без альфы).
+Кольцо фокуса: `outline: var(--awds-focus-width) solid var(--awds-focus-color-muted)`, `outline-offset: var(--awds-focus-offset)` — как у `select`, `input` и `input-combi`, и в отличие от остального набора (там `surface-on-highest` без альфы).
 
 Отдельное правило на `:open` нужно потому, что под `base-select` при раскрытии фокус уходит в `<option>` и `:focus-within` на обёртке становится ложным.
 
@@ -120,7 +120,7 @@
 
 ## Раскрытый список
 
-Под `@supports (appearance: base-select)` панель рисуется по `◆ / Dropdown`: фон `surface-bright`, `padding` и радиус из `--awds-dropdown-{N}-*`, тень `elevation-3`, ширина ровно по обёртке (через собственный `anchor-name` + `anchor-scope`), зазор 4px сверху и снизу.
+Под `@supports (appearance: base-select)` панель рисуется по `. / dropdown`: фон `surface-bright`, `padding` и радиус из `--awds-dropdown-{N}-*`, тень `elevation-3`, ширина ровно по обёртке (через собственный `anchor-name` + `anchor-scope`), зазор 4px сверху и снизу.
 
 Пункт — компонент `list-item`, ступенью ниже размера контрола; ступень подставляет сам селект. Выбранный пункт переключается на роли `list/selected-secondary` мостом на `:checked` — класс в разметке для этого не нужен, выбор меняется в рантайме. UA-галочка (`::checkmark`) погашена: в макете выбор отмечен фоном и рамкой.
 

@@ -1,6 +1,6 @@
 # Select Combi / Ghost
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 394:16580](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16580)
+**Figma:** [470rar5EfRm4n14vHMXbpc → секция ↪ select-combi 5:18, набор 38:54337](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54337)
 
 > [!NOTE]
 > Этот файл (`select-combi-ghost.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.

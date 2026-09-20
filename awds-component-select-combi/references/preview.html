@@ -85,10 +85,10 @@
       --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
       --awds-scombi-border:     rgb(var(--primary-dim));
       --awds-scombi-color:      rgb(var(--primary-container-on-highest));
-      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));
       --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
       --awds-scombi-icon-color: rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
 
@@ -102,10 +102,10 @@
       --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
       --awds-scombi-border:     rgb(var(--primary-dim));
       --awds-scombi-color:      rgb(var(--primary-container-on-highest));
-      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));
       --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
       --awds-scombi-icon-color: rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
 
@@ -120,10 +120,10 @@
       --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
       --awds-scombi-border:     rgb(var(--primary-dim));
       --awds-scombi-color:      rgb(var(--primary-container-on-highest));
-      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));
       --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
       --awds-scombi-icon-color: rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
 
@@ -138,20 +138,20 @@
       --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
       --awds-scombi-border:     rgb(var(--primary-dim));
       --awds-scombi-color:      rgb(var(--primary-container-on-highest));
-      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));
       --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
       --awds-scombi-icon-color: rgb(var(--primary-container-on-high));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
 
     /* У ghost зеркал hover и active НЕТ намеренно: в макете обе ячейки = Rest. */
     .scombi-ghost.is-focus {
       --awds-scombi-color:      rgb(var(--primary-container-on-highest));
-      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));
       --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
       --awds-scombi-icon-color: rgb(var(--primary-container-on-highest));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
 
@@ -166,10 +166,10 @@
       --awds-scombi-chroma:     rgb(var(--primary-container-chroma));
       --awds-scombi-border:     rgb(var(--primary-dim));
       --awds-scombi-color:      rgb(var(--primary-container-on-highest));
-      --awds-scombi-placehold:  rgb(var(--primary-container-on-high));
+      --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));
       --awds-scombi-chevron:    rgb(var(--primary-container-on-high));
       --awds-scombi-icon-color: rgb(var(--primary-container-on-highest));
-      outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+      outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
       outline-offset: var(--awds-focus-offset);
     }
   </style>
@@ -291,7 +291,7 @@
   </div>
 
   <h2>Раскрытый список</h2>
-  <p class="note" id="picker-note">Открой любой список в живой форме выше — панель, пункты и выбранный вариант нарисованы по компоненту <code>◆ / Dropdown</code> из макета, слоем <code>@supports (appearance: base-select)</code>. Ступень пункта на одну ниже размера контрола, её подставляет сам компонент. Где движок не умеет <code>base-select</code> (пока Safari и Firefox), слой не применяется и остаётся системный попап: контрол тот же, отличается только вид раскрытого списка — но пустой вариант там будет видно пустой строкой.</p>
+  <p class="note" id="picker-note">Открой любой список в живой форме выше — панель, пункты и выбранный вариант нарисованы по компоненту <code>. / dropdown</code> из макета, слоем <code>@supports (appearance: base-select)</code>. Ступень пункта на одну ниже размера контрола, её подставляет сам компонент. Где движок не умеет <code>base-select</code> (пока Safari и Firefox), слой не применяется и остаётся системный попап: контрол тот же, отличается только вид раскрытого списка — но пустой вариант там будет видно пустой строкой.</p>
 
   <h2>Чего этот компонент НЕ делает</h2>
   <p class="note">Мультивыбор и поиск внутри списка — для этого нужен кастомный listbox, отдельный компонент. Слоты <code>prefix</code> / <code>suffix</code> здесь <b>декоративные</b> (<code>pointer-events: none</code>): у нативного контрола кликабельному элементу внутри взяться неоткуда. И отдельно: при использовании <code>suffix</code> клик по шеврону перестаёт открывать список — полосу под ним резервирует обёртка, а не поле; переключи «Слоты → prefix + suffix» и попробуй. Без JS это неустранимо, практический вывод — суффикс в селекте лучше не использовать.</p>

@@ -1,12 +1,15 @@
 {
   "_note2": "Вторым проходом сняты остальные пять вариантов семейства (Light / Success / Error / Ghost / Autofill). По каждому — ячейки Size=500 в состояниях Rest / Hover / Focus (плюс Active у light для проверки, что он совпадает с Rest). Геометрия у вариантов не переснималась: rectangle- и combi-токены в снятых ячейках побайтово те же, что у Default — вариант меняет только палитру form-control/{вариант}. В variable_defs ниже для этих пяти оставлены цветовые ключи и ключи кольца фокуса; размерные повторяли бы Default.",
-  "_note": "Сырые ответы Figma MCP, как пришли. Оси: Size 300/400/500/600 × State Rest/Hover/Focus/Active/Disabled = 20 ячеек. Снято 8: Rest на каждом из четырёх размеров (оттуда геометрия и типографика) плюс все пять состояний на размере 500 (оттуда цвета). Разделение намеренное: цвета от размера не зависят, размеры от состояния — тоже; для этого семейства (form-control) это уже проверялось побайтово на input и input-combi. Разметка снята одним get_design_context по ячейке Size=500, State=Rest — из неё структура (Prefix Input / Content Combi Input / Suffix Input / ◆ Chevrone) и auto-layout. Палитра сверена со снапшотом awds-component-select: хексы rest (#f7f7f7 bg, #c7c7c7 border), hover (#808080) и focus (#fad046) совпадают, значит роли form-control/default те же и выводить их заново не требовалось.",
+  "_note": "Снимок переписан 16.09.2026 под новый файл «💠 arrow ↪ components» (был «💠 Comp ↪ ⁵ Forms», 4ipeXkifl3Hl6pVZUF4nuJ). Секция «↪ select-combi» 5:18, страница «3 · forms»: шесть наборов по 20 ячеек, оси size=300|400|500|600 × state=rest|hover|focus|active|disabled плюс show-prefix / show-suffix. Оси и свойства уже на каноне props.md. Поля metadata и variable_defs ниже — сырые ответы MCP со старого файла: значения сверены и совпадают, id узлов там старые. Актуальные id — в variants_new.",
   "metadata": {
     "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
     "file_name": "💠 Comp ↪ ⁵ Forms",
     "node_id": "394:16370",
     "name": "Select Combi / Default",
-    "frame": { "width": 1760, "height": 450 },
+    "frame": {
+      "width": 1760,
+      "height": 450
+    },
     "cells": {
       "Size=600, State=Rest": "394:16376",
       "Size=600, State=Hover": "394:16396",
@@ -34,7 +37,7 @@
         "Prefix Input (391:20673) — flex, shrink-0, padding-left + padding-block = rectangle/500/padding, иконки 20 вплотную",
         "Content Combi Input (394:11247) — flex-1, min-w-px; внутри строка input (padding-top rectangle/500/combi/input-top, padding-bottom …/input-bottom, padding-inline rectangle/500/padding) и слой label (absolute inset-0, items-start, padding-top …/combi/label-top, padding-inline rectangle/500/padding)",
         "Suffix Input (391:20954) — flex, shrink-0, padding-right + padding-block = rectangle/500/padding",
-        "◆ / Chevrone (394:16375) — flex, shrink-0, padding-right + padding-block = rectangle/500/padding, ic20-chevroneBottom-outline 20×20"
+        ". / chevron (394:16375) — flex, shrink-0, padding-right + padding-block = rectangle/500/padding, ic20-chevroneBottom-outline 20×20"
       ]
     }
   },
@@ -54,7 +57,7 @@
       "letter-spacing/200": "0.10000000149011612",
       "font-size/200": "12",
       "rectangle/600/combi/label-top": "8",
-      "form-control/default/chevrone": "#555555",
+      "form-control/default/chevron": "#555555",
       "opacity/control/enabled": "100",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
@@ -75,7 +78,7 @@
       "letter-spacing/200": "0.10000000149011612",
       "font-size/200": "12",
       "rectangle/500/combi/label-top": "6",
-      "form-control/default/chevrone": "#555555",
+      "form-control/default/chevron": "#555555",
       "opacity/control/enabled": "100",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
@@ -96,7 +99,7 @@
       "letter-spacing/100": "0.20000000298023224",
       "font-size/100": "11",
       "rectangle/400/combi/label-top": "4",
-      "form-control/default/chevrone": "#555555",
+      "form-control/default/chevron": "#555555",
       "opacity/control/enabled": "100",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
@@ -117,7 +120,7 @@
       "letter-spacing/100": "0.20000000298023224",
       "font-size/100": "11",
       "rectangle/300/combi/label-top": "2",
-      "form-control/default/chevrone": "#555555",
+      "form-control/default/chevron": "#555555",
       "opacity/control/enabled": "100",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
@@ -138,7 +141,7 @@
       "letter-spacing/200": "0.10000000149011612",
       "font-size/200": "12",
       "rectangle/500/combi/label-top": "6",
-      "form-control/default/chevrone": "#555555",
+      "form-control/default/chevron": "#555555",
       "opacity/control/enabled": "100",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
@@ -159,7 +162,7 @@
       "letter-spacing/200": "0.10000000149011612",
       "font-size/200": "12",
       "rectangle/500/combi/label-top": "6",
-      "form-control/default/chevrone": "#674d25",
+      "form-control/default/chevron": "#674d25",
       "focus-selection/outlineShow": "true",
       "outline/500": "9",
       "focus-selection/outlineVariant": "#fad646",
@@ -184,7 +187,7 @@
       "letter-spacing/200": "0.10000000149011612",
       "font-size/200": "12",
       "rectangle/500/combi/label-top": "6",
-      "form-control/default/chevrone": "#555555",
+      "form-control/default/chevron": "#555555",
       "opacity/control/enabled": "100",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
@@ -196,7 +199,7 @@
       "form-control/light/border": "#c7c7c7",
       "form-control/light/color": "#0f0f0f",
       "form-control/light/placehold": "#555555",
-      "form-control/light/chevrone": "#555555"
+      "form-control/light/chevron": "#555555"
     },
     "394:16916 (light Hover)": {
       "form-control/light/border": "#808080"
@@ -210,7 +213,7 @@
       "form-control/light/border": "#fad046",
       "form-control/light/color": "#19110a",
       "form-control/light/placehold": "#674d25",
-      "form-control/light/chevrone": "#674d25",
+      "form-control/light/chevron": "#674d25",
       "focus-selection/outlineVariant": "#fad646",
       "opacity/50": "50"
     },
@@ -220,7 +223,7 @@
       "form-control/success/border": "#a0e4c0",
       "form-control/success/color": "#224f29",
       "form-control/success/placehold": "#388e4e",
-      "form-control/success/chevrone": "#388e4e"
+      "form-control/success/chevron": "#388e4e"
     },
     "394:16811 (success Hover)": {
       "form-control/success/border": "#57c47f"
@@ -231,7 +234,7 @@
       "form-control/success/border": "#fad046",
       "form-control/success/color": "#19110a",
       "form-control/success/placehold": "#674d25",
-      "form-control/success/chevrone": "#674d25",
+      "form-control/success/chevron": "#674d25",
       "focus-selection/outlineVariant": "#fad646",
       "opacity/50": "50"
     },
@@ -241,7 +244,7 @@
       "form-control/error/border": "#eea28b",
       "form-control/error/color": "#41141a",
       "form-control/error/placehold": "#9c2c2a",
-      "form-control/error/chevrone": "#9c2c2a"
+      "form-control/error/chevron": "#9c2c2a"
     },
     "394:16706 (error Hover)": {
       "form-control/error/border": "#d65745"
@@ -252,7 +255,7 @@
       "form-control/error/border": "#fad046",
       "form-control/error/color": "#19110a",
       "form-control/error/placehold": "#674d25",
-      "form-control/error/chevrone": "#674d25",
+      "form-control/error/chevron": "#674d25",
       "focus-selection/outlineVariant": "#fad646",
       "opacity/50": "50"
     },
@@ -262,7 +265,7 @@
       "form-control/ghost/border": "#ffffff00",
       "form-control/ghost/color": "#0f0f0f",
       "form-control/ghost/placehold": "#555555",
-      "form-control/ghost/chevrone": "#555555"
+      "form-control/ghost/chevron": "#555555"
     },
     "394:16601 (ghost Hover)": {
       "form-control/ghost/bg": "#ffffff00",
@@ -270,7 +273,7 @@
       "form-control/ghost/border": "#ffffff00",
       "form-control/ghost/color": "#0f0f0f",
       "form-control/ghost/placehold": "#555555",
-      "form-control/ghost/chevrone": "#555555",
+      "form-control/ghost/chevron": "#555555",
       "_same_as_rest": true
     },
     "394:16656 (ghost Focus)": {
@@ -279,7 +282,7 @@
       "form-control/ghost/border": "#ffffff00",
       "form-control/ghost/color": "#19110a",
       "form-control/error/placehold": "#674d25",
-      "form-control/ghost/chevrone": "#674d25",
+      "form-control/ghost/chevron": "#674d25",
       "focus-selection/outlineVariant": "#fad646",
       "opacity/50": "50",
       "_note": "placehold в этой ячейке макета привязан к form-control/error — опечатка биндинга в Figma; значение (#674d25) совпадает с остальными вариантами, поэтому в CSS взята роль primary-container-on-high, как везде."
@@ -290,7 +293,7 @@
       "form-control/autofill/border": "#90aee0",
       "form-control/autofill/color": "#193891",
       "form-control/autofill/placehold": "#4764d4",
-      "form-control/autofill/chevrone": "#4764d4"
+      "form-control/autofill/chevron": "#4764d4"
     },
     "394:16496 (autofill Hover)": {
       "form-control/autofill/border": "#7897dc"
@@ -301,7 +304,7 @@
       "form-control/autofill/border": "#fad046",
       "form-control/autofill/color": "#19110a",
       "form-control/autofill/placehold": "#674d25",
-      "form-control/autofill/chevrone": "#674d25",
+      "form-control/autofill/chevron": "#674d25",
       "focus-selection/outlineVariant": "#fad646",
       "opacity/50": "50"
     },
@@ -320,11 +323,46 @@
       "letter-spacing/200": "0.10000000149011612",
       "font-size/200": "12",
       "rectangle/500/combi/label-top": "6",
-      "form-control/default/chevrone": "#555555",
+      "form-control/default/chevron": "#555555",
       "opacity/control/disabled": "40",
       "form-control/default/bg": "#f7f7f7",
       "form-control/default/chroma": "#f7f7f7",
       "form-control/default/border": "#c7c7c7"
     }
-  }
+  },
+  "dropdown": {
+    "_note": "Панель раскрытого списка — общая с select: часть «. / dropdown» (38:67577) в секции «↪ parts» страницы «3 · forms» файла «💠 arrow ↪ components». Своего кода у части нет: это псевдоэлемент ::picker(select), и он описан в CSS обоих контролов. Прежде часть звалась «select-dropdown» и занимала собственную секцию; переименована и перенесена 16.09.2026.",
+    "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-67577",
+    "подробности": "awds-component-select/snapshot/figma.json → блок dropdown: ступени, цвета пунктов, шкала пункта на шаг ниже контрола, ячейки size/dropdown, закрытые дефекты макета и долг по привязке.",
+    "ячейки": "size/dropdown/{50,100,200,300,400,500,600}/{padding,border-radius} — группа достроена до семи ступеней 16.09.2026; select-combi читает четыре из них (300–600)."
+  },
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "primary_node_id": "5:18",
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-18",
+  "variants_new": {
+    "_note": "Наборы в новом файле; каждый — 20 ячеек (4 ступени × 5 состояний).",
+    "default": "38:54127",
+    "autofill": "38:54232",
+    "ghost": "38:54337",
+    "error": "38:54442",
+    "success": "38:54547",
+    "light": "38:54652"
+  },
+  "audit_16_09": {
+    "_note": "Разведка и правки макета 16.09.2026, заход по секции 5:18.",
+    "чисто_изначально": "Привязок к старым библиотекам — 0, сырых красок — 0, подписей Sys — 0, лишних колец фокуса в нефокусных ячейках — 0. Как и у обычного select.",
+    "толщина_рамки": "120 ячеек держали strokeWeight литералом 1 — привязано к space/px.",
+    "иконки_и_шеврон": "240 иконок слотов и 120 шевронов были прибиты к тону default в состоянии rest. Перепривязаны на {тон}/icon-{состояние} (у default — placeholder-{состояние}) и {тон}/chevron-{состояние}.",
+    "текст_и_метка": "У тона default значение И метка стояли на -rest во всех пяти состояниях: поле не темнело ни при наведении, ни в фокусе. У тона light метка в фокусе читала color-focus вместо placeholder-focus — единственная из шести. Обе группы приведены к состояниям: переписано 240 текстовых узлов, фактически изменились 28 привязок (24 у default, 4 у light). Привязка ставится и на узел, и на диапазон: setRangeFills с краской, у которой привязан цвет — setRangeBoundVariable поле fills НЕ принимает (только типографику).",
+    "фон": "Градиент из двух стопов, привязан по тону и состоянию; у light второй стоп — плоская ячейка light/bg; у ghost оба стопа и обводка — роль extended/transparent. Выключенное состояние гасится opacity/control/disabled и цвет берёт от rest."
+  },
+  "code_mapping": {
+    "_note": "Что читает CSS после перевода на цели 16.09.2026: 677 ссылок, 677 якорей #cell, приватных имён не осталось.",
+    "цвета": "form-control/{тон}/{bg,chroma,border,color,placeholder,chevron,icon}-{состояние}.",
+    "вертикали_комби": "rectangle/{N}/combi/{label-top,input-top,input-bottom} — отдельная ветка ячеек под раскладку с меткой внутри рамки.",
+    "панель": "size/dropdown/{N}/{padding,border-radius}; ступень 600 читала базовую шкалу, пока своей ячейки не было.",
+    "пункты_списка": "list/unselected/bg-focus и list/selected-secondary/*; фон панели — picker/{bg,scrollbar}."
+  },
+  "damage_16_09": "Замер превью до и после: 233 элемента из 317. Контрол рисовался высотой 20px вместо 52, радиус 0 вместо 10, рамки не было вовсе (box-shadow: none), текст приходил полностью прозрачным. По свойствам: цвета 139, габарит 136, высота 110, радиус 85, кегль 55, отступы 52, зазоры 33, тень 31, min-height 24, фон 19, гашение 14. База сравнения — состояние файлов перед правкой."
 }

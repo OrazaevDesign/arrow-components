@@ -1,6 +1,6 @@
 # Select Combi / Success
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 394:16790](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=394-16790)
+**Figma:** [470rar5EfRm4n14vHMXbpc → секция ↪ select-combi 5:18, набор 38:54547](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-54547)
 
 > [!NOTE]
 > Этот файл (`select-combi-success.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.

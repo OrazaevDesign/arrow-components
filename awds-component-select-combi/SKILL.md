@@ -1,6 +1,6 @@
 ---
 name: awds-component-select-combi
-description: Выпадающие списки с ПЛАВАЮЩЕЙ МЕТКОЙ ArrowDS (scombi, select-combi): подпись внутри рамки уезжает наверх при выборе. Для компактных форм. Подпись снаружи — select. Токены ArrowDS, работает и по Figma-ссылке.
+description: Select Combi ArrowDS (.scombi).
 ---
 
 # Select Combi ArrowDS
@@ -53,17 +53,31 @@ description: Выпадающие списки с ПЛАВАЮЩЕЙ МЕТКО�
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/метка/шеврон/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-combi-default.css` |
-| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста и метки | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Combi Input` |
 | Вертикаль поля и метки | `var(--awds-rectangle-{N}-combi-{input-top , input-bottom , label-top})` | там же, ветка `combi` |
 | Типографика значения | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
 | Типографика уехавшей метки | `var(--awds-control-200-*)` / `var(--awds-control-100-*)` | **маппинг ручной** — shape-токена нет |
-| Панель списка | `var(--awds-dropdown-{N}-*)`, `var(--awds-shadow-elevation-3)` | Figma `◆ / Dropdown` |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Панель списка | `var(--awds-space-1)` и `var(--awds-rounded-border-radius-{N})`, `var(--awds-shadow-elevation-3)` | ячейки `dropdown/{N}/*`; Figma `. / dropdown` — часть в `↪ parts` |
+| Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Базовый класс — `.scombi`, а не `.select-combi`.** Приватные аккумуляторы по контракту зовутся `--awds-{base_class}-*`; при `base_class = select-combi` они стали бы `--awds-select-combi-*`, что префиксом совпадает с чужим `--awds-select-*` и ложно роняет sanity-check публикации. Тот же приём, что у `input-combi` → `.icombi`.
+
+### Откуда берутся значения
+
+Компонент читает **роли и базовые шкалы**: коллекции State и Size приватны с 03.09.2026,
+и в опубликованной теме их имён нет. Связь с макетом держит якорь `#cell` в комментарии
+той же строки — 677 штук, их сверяет `component-cell-drift.mjs`.
+
+| Что | Источник | Ячейка в якоре |
+|---|---|---|
+| Фон, хрома, рамка, значение, метка | роли `rgb(var(--secondary-container-*))` и родственные | `form-control/{тон}/{свойство}-{состояние}` |
+| Шеврон и иконка слота | свои ячейки тона; у `default` ячейки `icon` нет — там плейсхолдер | `form-control/{тон}/{chevron,icon}-{состояние}` |
+| Вертикали раскладки с меткой | `var(--awds-space-*)` | `rectangle/{N}/combi/{label-top,input-top,input-bottom}` |
+| Геометрия, скругление, кегль | `var(--awds-space-*)`, `var(--awds-rounded-*)`, `var(--awds-control-*)` | `rectangle/{N}/*` |
+| Панель списка | `var(--awds-space-1)`, `var(--awds-rounded-border-radius-{N})` | `dropdown/{N}/*` |
 
 ## Размерные модификаторы
 
@@ -88,7 +102,7 @@ description: Выпадающие списки с ПЛАВАЮЩЕЙ МЕТКО�
 
 ## Раскрытый список
 
-Список остаётся **нативным** — клавиатура, поиск по первым буквам, скринридеры и мобильные колёса выбора работают сами. При этом он **стилизован** слоем `@supports (appearance: base-select)` по компоненту `◆ / Dropdown` из макета: где движок умеет (Chromium 135+), панель и пункты рисуем мы; где не умеет (пока Safari и Firefox) — остаётся системный попап, контрол при этом тот же.
+Список остаётся **нативным** — клавиатура, поиск по первым буквам, скринридеры и мобильные колёса выбора работают сами. При этом он **стилизован** слоем `@supports (appearance: base-select)` по части `. / dropdown` из макета (секция `↪ parts` страницы `3 · forms`): где движок умеет (Chromium 135+), панель и пункты рисуем мы; где не умеет (пока Safari и Firefox) — остаётся системный попап, контрол при этом тот же.
 
 Пункт — это компонент [`awds-component-list-item`](../awds-component-list-item/SKILL.md): **подключи `list-item-transparent.css` рядом**, иначе пункты останутся без стилей. Размерную ступень пункта (на одну ниже размера контрола) подставляет сам компонент — класс `.list-item--{N}` на `<option>` ставить не нужно.
 
@@ -102,7 +116,7 @@ description: Выпадающие списки с ПЛАВАЮЩЕЙ МЕТКО�
 - Фокус виден при любом способе входа (`:focus-within`), при раскрытом списке — отдельным правилом на `:open`; кольцо стоит **в 1px от рамки**, не вплотную.
 - Длинная метка обрезается многоточием. Если подпись не помещается — это сигнал, что контролу нужна внешняя подпись, а не более длинная метка.
 - Декоративная иконка в слоте → `aria-hidden="true"`. Слоты здесь в принципе декоративные: кликабельному элементу внутри нативного селекта взяться неоткуда.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-40)` (ячейка `opacity/control/disabled`) на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 
 ## Варианты
 
@@ -159,7 +173,7 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 
 1. Возьми разметку из [references/select-combi-default.md](references/select-combi-default.md) — с пустым `<option value="">`, `id`/`for` и обёрткой `__body`.
 2. Подключи CSS нужного варианта (`select-combi-{вариант}.css`) и рядом `list-item-transparent.css` (для пунктов раскрытого списка).
-3. Убедись, что на странице есть DS-токены (`--awds-rectangle-*`, `--awds-control-*`, `--awds-dropdown-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
+3. Убедись, что на странице есть DS-токены (`--awds-space-*`, `--awds-rounded-*`, `--awds-control-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
 4. Поставь класс варианта (`scombi-default`) — без него контрол останется бесцветным — и размерный модификатор `.scombi--{N}` (если не указан, действует 400).
 5. Ширину задай контейнеру-родителю: контрол тянется на 100%.
 
