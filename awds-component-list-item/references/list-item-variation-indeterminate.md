@@ -1,6 +1,6 @@
 # List-item / Variaton-indeterminate
 
-**Figma:** [cPyLl9CqwylgJMzMzeyF5g → node 590:22196](https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-22196)
+**Figma:** [470rar5EfRm4n14vHMXbpc → набор 280:24775](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-24775)
 **Роль токенов:** `list/indeterminate-variation`
 
 > [!NOTE]

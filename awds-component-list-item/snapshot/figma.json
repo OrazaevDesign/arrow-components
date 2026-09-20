@@ -1,13 +1,35 @@
 {
-  "_note": "Сырые ответы Figma MCP по семейству List-item (12 фреймов). ACB-owned, не править руками. Блоки nodes / variable_defs / layout сняты подробно по фрейму Transparent — геометрия и анатомия у всей семьи общие; по остальным одиннадцати снят Rest (и точечно Hover/Focus), см. variants_fetched.",
-  "file_key": "cPyLl9CqwylgJMzMzeyF5g",
-  "file_name": "💠 Comp ↪ ⁴ Lists",
-  "primary_node_id": "1:22254",
+  "_note": "Разбор семейства list-item в файле «💠 arrow ↪ components», секция ↪ list-item (5:41). ACB-owned, руками не править. Блок _structure_note описывает заход 15.09.2026; parts_section — разбор частей 15.09.2026.",
+  "_pass_2026_09_19": {
+    "scope": "Заход цикла по ссылке владельца на секцию ↪ list-item (5:41, страница 5 · lists). Разведка: 4555 узлов, 20181 привязка — все на новой библиотеке, старых привязок 0. Закрыты оба открытых вопроса компонента.",
+    "found": {
+      "foreign_parts": "105 инстансов чужой части Content List из старого файла в трёх наборах variation. В остальных девяти наборах на том же месте стоит наша локальная content-list.",
+      "dead_modes": "420 явных модов старой коллекции State на своих узлах — по одному на каждый вариант. После перевода привязок они не резолвят ничего: у новой коллекции state мод один, состояние выражено именем ячейки.",
+      "axis_order": "Порядок значений осей расходился с канвой во всех 12 наборах: size верен только у transparent, state не совпадал нигде — везде focus стоял раньше hover.",
+      "part_defect": "Дефект нашей части content-list: скрытый placeholder во всех 14 вариантах стоял textAutoResize=NONE с фиксированной высотой 80px (64px у ступеней 200 и ниже)."
+    },
+    "fixed": {
+      "content_list": "105 инстансов переведены на content-list / size=N, padding=off с show-description=true. Свойства перенесены по суффиксам id (value#2378:19, placeholder#2378:12 — у старой и новой части они одинаковы). Габариты всех 420 ячеек секции не изменились.",
+      "part_defect": "В 14 вариантах content-list placeholder переведён на textAutoResize=HEIGHT + layoutSizingVertical=HUG. Высоты самих вариантов не изменились (52/48/40/36/32/24/20) — узел скрыт по умолчанию.",
+      "modes": "420 модов State сняты. Сверка до/после по всем 4555 узлам (заливка, обводка, габариты, радиус, число эффектов, кегль) — расхождений 0.",
+      "axis_order": "Все 12 наборов приведены к канве: size 600|500|400|300|200|100|50, state rest|hover|focus|active|disabled."
+    },
+    "axis_order_recipe": "Порядок значений оси хранится отдельно от порядка ячеек: сортировка children через insertChild его НЕ меняет. Рабочий приём — переименовать все ячейки во временные значения, ПРОЧИТАТЬ componentPropertyDefinitions и затем вернуть настоящие имена, обходя children в каноническом порядке. Без чтения между проходами Figma схлопывает переименования в одной транзакции, и порядок остаётся прежним — первая попытка на шести наборах не дала никакого эффекта.",
+    "not_a_defect": {
+      "show_line": "Линия-разделитель и свойство show-line есть только у variation-indeterminate; у variation и variation-selected их нет. Владелец 19.09.2026: так и задумано — не «чинить».",
+      "image_placeholder": "Стиль ListProductApp/1 на 210 узлах Preview внутри prefix-list и suffix-list — витринная заглушка фото, контент, а не токен темы. Тот же класс, что list-product/30 в product-card."
+    },
+    "code_match": "CSS правок не потребовал: .list-item__description задан кеглем и межстрочным без фиксированной высоты, размеры сверены (size=500 → control-font-size-400 = 14px, line-height-400 = 20px — как в макете). Фиксированная высота 80px жила только в Figma.",
+    "section_state": "↪ list-item: старых привязок 0, модов 0, чужих инстансов 0, стилей темы 0 (210 витринных заглушек фото остаются)."
+  },
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "primary_node_id": "8:59676",
   "component_set": {
     "name": "List-item (семейство из 12 фреймов)",
     "axes": [
-      "Size",
-      "State"
+      "size",
+      "state"
     ],
     "sizes": [
       600,
@@ -32,17 +54,37 @@
     },
     "cell_width": 235,
     "cell_width_note": "235 — ширина демо-ячейки, не размер компонента: в бою строка тянется на 100% контейнера.",
-    "note": "Каждый вариант — отдельный Component Set с одинаковыми осями Size × State (35 ячеек). У группы Variaton есть третья ось Var с единственным значением на фрейм, а высоты соответствуют строке С ОПИСАНИЕМ: 74/70/58/54/50/42/38."
+    "note": "Каждый вариант — отдельный Component Set с одинаковыми осями Size × State (35 ячеек). У группы Variaton есть третья ось Var с единственным значением на фрейм, а высоты соответствуют строке С ОПИСАНИЕМ: 74/70/58/54/50/42/38.",
+    "sets": {
+      "transparent": "8:59676",
+      "default": "8:59824",
+      "actual-selected": "8:59972",
+      "accent-selected": "8:60120",
+      "default-selected": "8:60268",
+      "tabbar": "8:60416",
+      "menu": "8:60564",
+      "tabbar-selected": "8:60712",
+      "menu-selected": "8:60860",
+      "variation": "280:24620",
+      "variation-indeterminate": "280:24775",
+      "variation-selected": "280:25000"
+    },
+    "variants_total": 315,
+    "boolean_props": [
+      "show-prefix",
+      "show-suffix",
+      "show-line (только variation-indeterminate)"
+    ]
   },
   "nodes": {
     "size_rest": {
-      "600": "1:22259",
-      "500": "1:22255",
-      "400": "1:22271",
-      "300": "1:22279",
-      "200": "1:22283",
+      "50": "1:22291",
       "100": "1:22287",
-      "50": "1:22291"
+      "200": "1:22283",
+      "300": "1:22279",
+      "400": "1:22271",
+      "500": "1:22255",
+      "600": "1:22259"
     },
     "state_at_500": {
       "Rest": "1:22255",
@@ -60,21 +102,50 @@
   },
   "variable_defs": {
     "size_rest": {
-      "600": {
-        "list/unselected-transparent/color": "#0f0f0f",
-        "list/unselected-transparent/bg": "#ffffff00",
-        "list/unselected-transparent/border": "#ffffff00",
-        "rectangle/600/padding": "16",
-        "rectangle/600/icon": "20",
-        "rectangle/600/rounded": "10",
-        "font-size/600": "16",
-        "line-height/600": "20",
-        "letter-spacing/600": "0",
-        "space/0,5": "2",
-        "opacity/color": "100",
-        "opacity/control/enabled": "100",
-        "font-weight": "regular",
-        "font-family": "Inter"
+      "50": {
+        "rectangle/50/padding": "2",
+        "rectangle/50/icon": "16",
+        "rectangle/50/rounded": "4",
+        "font-size/200": "12",
+        "line-height/200": "16",
+        "letter-spacing/200": "0.1",
+        "rectangle/50/gap": "2"
+      },
+      "100": {
+        "rectangle/100/padding": "4",
+        "rectangle/100/icon": "16",
+        "rectangle/100/rounded": "6",
+        "font-size/300": "13",
+        "line-height/300": "16",
+        "letter-spacing/300": "0.1",
+        "rectangle/100/gap": "2"
+      },
+      "200": {
+        "rectangle/200/padding": "8",
+        "rectangle/200/icon": "16",
+        "rectangle/200/rounded": "6",
+        "font-size/300": "13",
+        "line-height/300": "16",
+        "letter-spacing/300": "0.1",
+        "space/0,5": "2"
+      },
+      "300": {
+        "rectangle/300/padding": "8",
+        "rectangle/300/icon": "20",
+        "rectangle/300/rounded": "6",
+        "font-size/400": "14",
+        "line-height/400": "20",
+        "letter-spacing/400": "0",
+        "space/0,5": "2"
+      },
+      "400": {
+        "rectangle/400/padding": "10",
+        "rectangle/400/icon": "20",
+        "rectangle/400/rounded": "8",
+        "font-size/400": "14",
+        "line-height/400": "20",
+        "letter-spacing/400": "0",
+        "space/0,5": "2"
       },
       "500": {
         "list/unselected-transparent/color": "#0f0f0f",
@@ -90,50 +161,21 @@
         "opacity/color": "100",
         "opacity/control/enabled": "100"
       },
-      "400": {
-        "rectangle/400/padding": "10",
-        "rectangle/400/icon": "20",
-        "rectangle/400/rounded": "8",
-        "font-size/400": "14",
-        "line-height/400": "20",
-        "letter-spacing/400": "0",
-        "space/0,5": "2"
-      },
-      "300": {
-        "rectangle/300/padding": "8",
-        "rectangle/300/icon": "20",
-        "rectangle/300/rounded": "6",
-        "font-size/400": "14",
-        "line-height/400": "20",
-        "letter-spacing/400": "0",
-        "space/0,5": "2"
-      },
-      "200": {
-        "rectangle/200/padding": "8",
-        "rectangle/200/icon": "16",
-        "rectangle/200/rounded": "6",
-        "font-size/300": "13",
-        "line-height/300": "16",
-        "letter-spacing/300": "0.1",
-        "space/0,5": "2"
-      },
-      "100": {
-        "rectangle/100/padding": "4",
-        "rectangle/100/icon": "16",
-        "rectangle/100/rounded": "6",
-        "font-size/300": "13",
-        "line-height/300": "16",
-        "letter-spacing/300": "0.1",
-        "rectangle/100/gap": "2"
-      },
-      "50": {
-        "rectangle/50/padding": "2",
-        "rectangle/50/icon": "16",
-        "rectangle/50/rounded": "4",
-        "font-size/200": "12",
-        "line-height/200": "16",
-        "letter-spacing/200": "0.1",
-        "rectangle/50/gap": "2"
+      "600": {
+        "list/unselected-transparent/color": "#0f0f0f",
+        "list/unselected-transparent/bg": "#ffffff00",
+        "list/unselected-transparent/border": "#ffffff00",
+        "rectangle/600/padding": "16",
+        "rectangle/600/icon": "20",
+        "rectangle/600/rounded": "10",
+        "font-size/600": "16",
+        "line-height/600": "20",
+        "letter-spacing/600": "0",
+        "space/0,5": "2",
+        "opacity/color": "100",
+        "opacity/control/enabled": "100",
+        "font-weight": "regular",
+        "font-family": "Inter"
       }
     },
     "state_at_500": {
@@ -207,23 +249,23 @@
   },
   "derived": {
     "heights": {
-      "600": 52,
-      "500": 48,
-      "400": 40,
-      "300": 36,
-      "200": 32,
+      "50": 20,
       "100": 24,
-      "50": 20
+      "200": 32,
+      "300": 36,
+      "400": 40,
+      "500": 48,
+      "600": 52
     },
     "heights_formula": "2 × padding + line-height; сверено по всем семи ячейкам",
     "heights_with_description": {
-      "600": 74,
-      "500": 70,
-      "400": 58,
-      "300": 54,
-      "200": 50,
+      "50": 38,
       "100": 42,
-      "50": 38
+      "200": 50,
+      "300": 54,
+      "400": 58,
+      "500": 70,
+      "600": 74
     },
     "heights_with_description_formula": "2 × padding + line-height + 2 + line-height описания; сверено по метаданным Content List",
     "gap_title_description": "space/0,5 = 2px, ФИКС на всех размерах — НЕ rectangle/{N}/gap (тот даёт 2/2/4/6/6/6/8)",
@@ -389,5 +431,106 @@
         "description": "#808080 (своя роль)"
       }
     }
+  },
+  "parts_section": {
+    "_note": "Секция ↪ parts страницы 5 · lists (нода 14:74184) — общие части, из которых собран list-item. Разобрана 15.09.2026 в своём заходе волны 1; записано здесь, потому что своего скилла у частей нет, а потребитель их — этот компонент. Правка снапшота версию list-item не поднимает: snapshot в artifact_hash не входит.",
+    "node_id": "14:74184",
+    "page": "5 · lists (4:3)",
+    "sets": {
+      "divider": {
+        "node": "14:73783",
+        "cells": 4,
+        "axis": "gap=both|top|bottom|none"
+      },
+      "prefix-list": {
+        "node": "14:73796",
+        "cells": 35,
+        "axes": "content=icon|text|color|img|preview · size=600…50"
+      },
+      "suffix-list": {
+        "node": "14:73895",
+        "cells": 42,
+        "axes": "content=icon|text|color|img|preview|check · size=600…50"
+      },
+      "content-list": {
+        "node": "14:74008",
+        "cells": 14,
+        "axes": "size=600…50 · padding=on|off, плюс BOOLEAN show-description"
+      },
+      "chapter-list": {
+        "node": "14:74079",
+        "cells": 7,
+        "axes": "size=600…50"
+      },
+      "divider-chapter-list": {
+        "node": "14:74094",
+        "cells": 2,
+        "axis": "space-top=wide|tight"
+      }
+    },
+    "props_canon": {
+      "done": "2026-09-15",
+      "changes": [
+        "type= → content= у prefix-list и suffix-list (слово-заглушка, правило 4). 630 инстансов пережили переименование: проверено поимённо, 0 битых, все читают content.",
+        "значение selected → check у suffix-list: ось говорит, ЧТО показано (галочка ic24-success), а выбранность в нашем словаре выражается именем набора. Инстансов на этом значении не было ни одного.",
+        "ось description=off|on → BOOLEAN show-description у content-list: набор сжался с 28 ячеек до 14. Узел описания ПЕРЕНЕСЁН из on-варианта в off (appendChild), погашен и связан со свойством; on-варианты удалены. Габарит не изменился ни у одного из 14, все 315 инстансов целы и читают show-description=false.",
+        "var=all|top|bottom|zero → gap=both|top|bottom|none у divider.",
+        "ось var=web у chapter-list удалена целиком: одно значение — не ось.",
+        "var=default|var2 → space-top=wide|tight у divider-chapter-list.",
+        "значения padding=true|false → on|off у content-list (15.09.2026, по решению владельца в том же заходе). BOOLEAN здесь не годится: свойство этого типа тянет только visible, а ось меняет горизонтальный отступ 18px против 0. Все 315 инстансов переименование пережили, читают padding=off, высоты не изменились."
+      ],
+      "closed": "Расхождений с каноном в секции не осталось."
+    },
+    "raw_fills": {
+      "count": 0,
+      "note": "Сырых красок, требующих привязки, нет. Найденные при обходе: 28 чёрных заливок на векторах ВНУТРИ boolean-операции, чья собственная заливка привязана, — они не рисуются; 14 серых #c4c4c4 на рамке Color и 56 чёрно-белых на рамках Preview — заглушки слотов, которые потребитель подменяет своим содержимым."
+    },
+    "old_library_debt": {
+      "count": 14,
+      "where": "width и height семи инстансов ic24-success-outline внутри инстанса Invest (suffix-list, content=check) читают Size/rectangle/{N}/icon старой библиотеки.",
+      "why_not_fixed": "Отсюда не чинится в принципе: узлы лежат внутри инстанса, мастер которого REMOTE — набор Invest живёт в другом опубликованном файле. Замер 15.09.2026: setBoundVariable(width) на таком узле не бросает ошибку и не применяется, привязка остаётся прежней. Чинить надо в файле-владельце Invest."
+    }
+  },
+  "section_node_id": "5:41",
+  "_structure_note": {
+    "дата": "2026-09-15",
+    "заход": "четырнадцатый компонент прохода; ссылка владельца на секцию 5:41",
+    "было": "В новом файле лежали девять наборов из двенадцати. Три набора variation остались в старом файле «💠 Comp ↪ ⁴ Lists» — с осью-заглушкой Var=, именами осей с заглавной и опечаткой Variaton в имени набора.",
+    "стало": "Двенадцать наборов в секции 5:41, по 35 ячеек (size 600…50 × state rest·hover·focus·active·disabled = 315 вариантов). Оси size и state в нижнем регистре, значения в нижнем регистре, ось-заглушка Var снята, булевы свойства show-prefix · show-suffix · show-line.",
+    "перенос": "Три набора variation перенёс владелец копипастом: Plugin API чужой файл не читает, копирование между файлами — действие в интерфейсе.",
+    "правки_макета": [
+      "Имена наборов приведены к list-item / {вариант}: снята опечатка Variaton → variation.",
+      "Оси Size/State → size/state, значения Rest/Hover/… → rest/hover/…, ось-заглушка Var удалена переименованием 105 ячеек.",
+      "Булевы свойства Prefix/Suffix/Show Line → show-prefix/show-suffix/show-line (editComponentProperty, связь инстансов сохраняется).",
+      "Удалён лишний узел FocusSelection из 14 hover-ячеек наборов variation и variation-indeterminate: у девяти канонических наборов кольца на hover нет, код его не рисует, а цель outlineShow удалена из студии 14.09.2026. Вместе с ним ушли последние 84 привязки к старым библиотекам.",
+      "Пять заголовков набора variation (ступень 500, все состояния) были привязаны к чужой ячейке list/unselected-transparent/color — переведены на list/unselected-variation/color-{состояние}."
+    ],
+    "сырые_краски": "1260 заливок #000000 на векторах внутри BOOLEAN_OPERATION «Union», чья собственная заливка привязана: такие фигуры красит операция, а не её дети. Не рисуются, дефектом не считаются. Привязанных красок 2286.",
+    "счёт_наборов": {
+      "transparent": "8:59676",
+      "default": "8:59824",
+      "actual-selected": "8:59972",
+      "accent-selected": "8:60120",
+      "default-selected": "8:60268",
+      "tabbar": "8:60416",
+      "menu": "8:60564",
+      "tabbar-selected": "8:60712",
+      "menu-selected": "8:60860",
+      "variation": "280:24620",
+      "variation-indeterminate": "280:24775",
+      "variation-selected": "280:25000"
+    }
+  },
+  "code_mapping": {
+    "ссылок_на_ячейки_было": 708,
+    "якорей_стало": 720,
+    "файлов": 12,
+    "замер_починки": "Превью: 589 элементов, изменилось 460. Высота ступеней 20px → 52·48·40·36·32·24·20; иконок с нулевым размером 100; кегль 13.33px → 16·16·14·14·13·13·12; радиус 0 → 10·8·8·6·6·6·4; смена цвета текста у 81 элемента.",
+    "литералы": "Двенадцать литералов transparent заменены ролью с якорем. Остался один — --awds-list-item-check в variation: узла галочки у наборов variation в макете нет вовсе, значение существует только в коде."
+  },
+  "debts": {
+    "перепривязка_tabbar_selected": "ЗАКРЫТО 16.09.2026. После публикации библиотеки все 35 ячеек набора tabbar-selected переведены с прямой роли extended/transparent на ячейки list/selected-tabbar/bg и /border — 70 привязок, цвет не изменился (#ffffff при нулевой альфе).",
+    "старые_части": "Все 105 инстансов частей в трёх наборах variation — Prefix Boolean, Suffix Boolean, Content List — ведут на remote-мастера старого файла, а не на новые части ↪ parts (prefix-list, content-list, suffix-list). Правки частей до этих наборов не доходят; лечится свопом инстансов.",
+    "порядок_значений_оси": "Порядок значений size и state в панели свойств расходится между наборами (600|500|400|300|200|100|50 против 100|200|300|400|50|500|600) и не совпадает с каноническим словарём. Расхождение досталось от старых файлов, чинится перестановкой слотов — см. props.md, раздел о порядке."
   }
 }

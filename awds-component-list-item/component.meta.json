@@ -1,89 +1,109 @@
 {
   "component": "list-item",
-  "version": "1.0.4",
+  "version": "1.0.10",
   "contract_hash": "sha256:8f957981ee405a1e75dd055737fb2319e8ed02dd480aff4df32ad3a00ec72813",
-  "artifact_hash": "sha256:460505a08cbb121054f6cd2289bff8024b298e9debb39960093e94ec0f0dfc0c",
+  "artifact_hash": "sha256:e12637cebf8fe144ae8edb6fd3c4b7b407a12b16e189fad5cad49cda5d13ccda",
   "visual_change": true,
-  "released_at": "2026-08-26T10:15:37.770Z",
-  "own_values": [],
+  "released_at": "2026-09-15T18:46:02.170Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 24,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 12,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "transparent",
+      "where": "--awds-list-item-check у .list-item-variation",
+      "count": 1,
+      "why": "галочка невыбранной плитки не рисуется; узла галочки у наборов variation в макете нет вовсе — значение существует только в коде, ячейки под него не будет"
+    }
+  ],
   "figma": {
-    "file_key": "cPyLl9CqwylgJMzMzeyF5g",
-    "file_name": "💠 Comp ↪ ⁴ Lists",
-    "primary_node_id": "1:22254",
-    "primary_url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=1-22254"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "section_node_id": "5:41",
+    "primary_node_id": "8:59676",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59676"
   },
   "variants": {
     "transparent": {
-      "node_id": "1:22254",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=1-22254",
-      "figma_label": "List-item / Transparent",
+      "node_id": "8:59676",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59676",
+      "figma_label": "list-item / transparent",
       "token_role": "list/unselected-transparent"
     },
     "default": {
-      "node_id": "590:20398",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20398",
-      "figma_label": "List-item / Default",
+      "node_id": "8:59824",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59824",
+      "figma_label": "list-item / default",
       "token_role": "list/unselected"
     },
-    "default-selected": {
-      "node_id": "590:20401",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20401",
-      "figma_label": "List-item / Default-selected",
-      "token_role": "list/selected"
-    },
     "actual-selected": {
-      "node_id": "590:20399",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20399",
-      "figma_label": "List-item / Actual-selected",
+      "node_id": "8:59972",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59972",
+      "figma_label": "list-item / actual-selected",
       "token_role": "list/unselected-actual"
     },
     "accent-selected": {
-      "node_id": "590:20400",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20400",
-      "figma_label": "List-item / Accent-selected",
+      "node_id": "8:60120",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60120",
+      "figma_label": "list-item / accent-selected",
       "token_role": "list/selected-secondary"
     },
+    "default-selected": {
+      "node_id": "8:60268",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60268",
+      "figma_label": "list-item / default-selected",
+      "token_role": "list/selected"
+    },
     "tabbar": {
-      "node_id": "590:20402",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20402",
-      "figma_label": "List-item / Tabbar",
+      "node_id": "8:60416",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60416",
+      "figma_label": "list-item / tabbar",
       "token_role": "list/unselected-tabbar"
     },
-    "tabbar-selected": {
-      "node_id": "590:20403",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20403",
-      "figma_label": "List-item / Tabbar-selected",
-      "token_role": "list/selected-tabbar"
-    },
     "menu": {
-      "node_id": "590:20410",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20410",
-      "figma_label": "List-item / Menu",
+      "node_id": "8:60564",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60564",
+      "figma_label": "list-item / menu",
       "token_role": "list/unselected-menu"
     },
+    "tabbar-selected": {
+      "node_id": "8:60712",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60712",
+      "figma_label": "list-item / tabbar-selected",
+      "token_role": "list/selected-tabbar"
+    },
     "menu-selected": {
-      "node_id": "590:20558",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20558",
-      "figma_label": "List-item / Menu-selected",
+      "node_id": "8:60860",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60860",
+      "figma_label": "list-item / menu-selected",
       "token_role": "list/selected-menu"
     },
     "variation": {
-      "node_id": "324:77087",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=324-77087",
-      "figma_label": "List-item / Variaton",
+      "node_id": "280:24620",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-24620",
+      "figma_label": "list-item / variation",
       "token_role": "list/unselected-variation"
     },
-    "variation-selected": {
-      "node_id": "590:22197",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-22197",
-      "figma_label": "List-item / Variation-selected",
-      "token_role": "list/selected-variation"
-    },
     "variation-indeterminate": {
-      "node_id": "590:22196",
-      "url": "https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-22196",
-      "figma_label": "List-item / Variaton-indeterminate",
+      "node_id": "280:24775",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-24775",
+      "figma_label": "list-item / variation-indeterminate",
       "token_role": "list/indeterminate-variation"
+    },
+    "variation-selected": {
+      "node_id": "280:25000",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-25000",
+      "figma_label": "list-item / variation-selected",
+      "token_role": "list/selected-variation"
     }
   },
   "shape": "rectangle",
@@ -184,6 +204,41 @@
     "--accent-container-on",
     "--accent-container-on-low",
     "--accent-container-on-lowest",
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--extended-transparent",
     "--primary-container-core",
     "--primary-container-on",
     "--primary-container-on-high",
@@ -196,97 +251,20 @@
     "--secondary-container-on-high",
     "--secondary-container-on-highest",
     "--secondary-container-on-lowest",
-    "--secondary-dim",
     "--surface-bright",
-    "--surface-on-highest",
-    "--surface-surface",
-    "--awds-font-family-system",
-    "--awds-font-weight-regular",
-    "--awds-opacity-opacity-40",
-    "--awds-size-rectangle-100-description",
-    "--awds-control-letter-spacing-200",
-    "--awds-control-line-height-200",
-    "--awds-size-rectangle-100-icon",
-    "--awds-size-rectangle-100-padding",
-    "--awds-size-rectangle-100-rounded",
-    "--awds-size-rectangle-100-text-gap",
-    "--awds-size-rectangle-100-typography",
-    "--awds-control-letter-spacing-300",
-    "--awds-control-line-height-300",
-    "--awds-size-rectangle-200-description",
-    "--awds-control-letter-spacing-200",
-    "--awds-control-line-height-200",
-    "--awds-size-rectangle-200-icon",
-    "--awds-size-rectangle-200-padding",
-    "--awds-size-rectangle-200-rounded",
-    "--awds-size-rectangle-200-text-gap",
-    "--awds-size-rectangle-200-typography",
-    "--awds-control-letter-spacing-300",
-    "--awds-control-line-height-300",
-    "--awds-size-rectangle-300-description",
-    "--awds-control-letter-spacing-300",
-    "--awds-control-line-height-300",
-    "--awds-size-rectangle-300-icon",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-letter-spacing-400",
-    "--awds-control-line-height-400",
-    "--awds-size-rectangle-400-description",
-    "--awds-control-letter-spacing-300",
-    "--awds-control-line-height-300",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-letter-spacing-400",
-    "--awds-control-line-height-400",
-    "--awds-size-rectangle-50-description",
-    "--awds-control-letter-spacing-100",
-    "--awds-control-line-height-100",
-    "--awds-size-rectangle-50-icon",
-    "--awds-size-rectangle-50-padding",
-    "--awds-size-rectangle-50-rounded",
-    "--awds-size-rectangle-50-text-gap",
-    "--awds-size-rectangle-50-typography",
-    "--awds-control-letter-spacing-200",
-    "--awds-control-line-height-200",
-    "--awds-size-rectangle-500-description",
-    "--awds-control-letter-spacing-400",
-    "--awds-control-line-height-400",
-    "--awds-size-rectangle-500-icon",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-letter-spacing-600",
-    "--awds-control-line-height-600",
-    "--awds-size-rectangle-600-description",
-    "--awds-control-letter-spacing-400",
-    "--awds-control-line-height-400",
-    "--awds-size-rectangle-600-icon",
-    "--awds-size-rectangle-600-padding",
-    "--awds-size-rectangle-600-rounded",
-    "--awds-size-rectangle-600-text-gap",
-    "--awds-size-rectangle-600-typography",
-    "--awds-control-letter-spacing-600",
-    "--awds-control-line-height-600",
-    "--awds-space-space-0-5"
+    "--surface-surface"
   ],
   "focus_ring_note": "focus-selection/outline (= surface-on-highest), как у button / checkbox / radio / switch — НЕ вариант input и select с собственным кольцом primary-core при 50%. offset 1px выведен числом: outline/500 = 9 при rounded 8, outline/600 = 11 при rounded 10, то есть радиус кольца = rounded + 1.",
   "open_questions": [
     "Описание во всём семействе привязано к роли list/unselected/description, а не к собственной …/description каждого варианта — проверено в Rest, Hover и Focus у Transparent и Variaton. Исключение: selected-variation и indeterminate-variation используют свои роли. Реализовано как в макете.",
-    "В репозитории токенов у list/unselected/border (Hover) стоит несуществующий алиас {form-control.secondary.dim} — у form-control нет варианта secondary. Макет рендерит #ededed, что равно role.secondary.dim; взято по значению. После правки токенов перегенерировать.",
-    "У selected-variation в ячейке Rest дополнительно включён focus-selection/outlineShow со значением outlineVariant = primary-core — тем же цветом, что и рамка. Трактовано как задублированный контур: в CSS одна рамка, второго кольца не добавляем."
+    "В репозитории токенов у list/unselected/border (Hover) стоит несуществующий алиас {form-control.secondary.dim} — у form-control нет варианта secondary. Макет рендерит #ededed, что равно role.secondary.dim; взято по значению. После правки токенов перегенерировать."
   ],
   "verification": {
     "geometry": "7 размеров × {со слотами, без слотов, только префикс, с описанием} = 84 замера computed px в headless Chromium, совпадение с макетом до пикселя",
     "colors": "Rest всех 12 ролей сверен с hex из макета — совпадение 12/12, включая описания; hover спот-чек на default и tabbar",
     "css_parse": "все 12 файлов разобраны через CSSOM, база байт-в-байт идентична во всех"
   },
-  "last_synced": "2026-08-13T13:58:16Z",
+  "last_synced": "2026-09-15T18:45:26Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:093e0a3b2bf6ecec301c7352bf054c65529356e376697f4983dfa1d264abe480",
   "published": {
@@ -393,8 +371,86 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "list-item",
+      "tags": [
+        "button",
+        "a",
+        "li",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "list-item-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "list-item--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Двенадцать вариантов задают роли строки (меню, вкладка таббара, плитка выбора). Размер — высоту и кегль."
+  },
+  "family": "lists",
+  "summary": "Строка списка: пункт меню, пункт выпадающего списка, вкладка таббара, плитка вариации",
+  "aliases": [
+    "пункт списка",
+    "строка списка",
+    "пункт меню",
+    "вкладка таббара",
+    "элемент списка"
+  ],
+  "asana": {
+    "task_gid": "1218422992787788",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992787788",
+    "task_name": "💠 list-item",
+    "parent_task": "💠 5 · lists",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "list-item-tabbar-selected-bg-bypasses-cells",
+      "text": "Фон и рамка 35 ячеек набора tabbar-selected привязаны прямо к роли extended/transparent в обход слоя ячеек. Ячейки list/selected-tabbar/bg и /border заведены 15.09.2026 в студии и в файле токенов Figma; перепривязка 70 привязок ждёт публикации библиотеки — importVariableByKeyAsync неопубликованную переменную не находит. Тот же долг, что у ghost-поверхности button и button-favorites.",
+      "level": "component",
+      "target": "макет",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218521439907722",
+      "raised_at": "2026-09-15",
+      "answer": "Библиотека 📜 tokens ↪ studio опубликована владельцем 16.09.2026, перепривязка сделана в тот же день. Все 35 ячеек набора list-item / tabbar-selected переведены с прямой роли extended/transparent на ячейки list/selected-tabbar/bg и /border — 70 привязок. Цвет не изменился: #ffffff при нулевой альфе.",
+      "answered_at": "2026-09-16"
+    },
+    {
+      "id": "list-item-variation-parts-are-remote",
+      "text": "Все 105 инстансов частей в трёх наборах variation ведут на remote-мастера старого файла — Prefix Boolean, Suffix Boolean, Content List, — а не на новые части секции ↪ parts (prefix-list, content-list, suffix-list). Правки частей до этих наборов не доходят, а запись в узлы внутри remote-инстанса молча не применяется. Лечится свопом инстансов на новые мастера.",
+      "level": "component",
+      "target": "макет",
+      "severity": "major",
+      "status": "answered",
+      "asana_gid": "1218521570805531",
+      "raised_at": "2026-09-15",
+      "answer": "У локальной части . / content-list есть булево show-description — ровно то, ради чего в variation стоял чужой Content List с осью Description. Свойства родственны (суффиксы id совпадают: value#2378:19, placeholder#2378:12), поэтому 105 инстансов переведены свапом на content-list / size=N, padding=off с show-description=true; тексты перенесены по суффиксам, габариты ячеек не изменились. Попутно найден дефект самой части: скрытый placeholder стоял textAutoResize=NONE с фиксированной высотой 80px (64px у мелких ступеней) — пока описание скрыто, это незаметно, а при show-description строка раздувалась с 70 до 130px. Исправлено во всех 14 вариантах: HEIGHT + HUG.",
+      "answered_at": "2026-09-19"
+    },
+    {
+      "id": "list-item-axis-order-drift",
+      "text": "Порядок значений осей size и state в панели свойств расходится между наборами (600|500|400|300|200|100|50 против 100|200|300|400|50|500|600) и не совпадает с каноническим словарём rest·hover·focus·active·disabled. Досталось от старых файлов, на девяти наборах было и до переноса. Чинится перестановкой слотов — props.md, раздел о порядке значений.",
+      "level": "component",
+      "target": "макет",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218521570816223",
+      "raised_at": "2026-09-15",
+      "answer": "Владелец 19.09.2026: привести обе оси к канве. Канон канвы — size 600|500|400|300|200|100|50 (строки сверху вниз) и state rest|hover|focus|active|disabled (колонки слева направо); по state не совпадал ни один из 12 наборов — везде focus стоял раньше hover. Все 12 наборов пересобраны, геометрия не изменилась. Порядок значений хранится отдельно от порядка ячеек: сортировка children его не меняет, нужен проход через временные имена, причём между проходами обязательно чтение componentPropertyDefinitions — иначе переименования схлопываются в одной транзакции и порядок остаётся прежним.",
+      "answered_at": "2026-09-19"
+    }
+  ],
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [

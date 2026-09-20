@@ -1,6 +1,6 @@
 # List-item / Tabbar-selected
 
-**Figma:** [cPyLl9CqwylgJMzMzeyF5g → node 590:20403](https://www.figma.com/design/cPyLl9CqwylgJMzMzeyF5g/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B4-Lists?node-id=590-20403)
+**Figma:** [470rar5EfRm4n14vHMXbpc → набор 8:60712](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60712)
 **Роль токенов:** `list/selected-tabbar`
 
 > [!NOTE]
