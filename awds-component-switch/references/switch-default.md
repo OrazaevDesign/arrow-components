@@ -1,6 +1,6 @@
 # Switch / default
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:57077](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-57077)
+**Figma:** [470rar5EfRm4n14vHMXbpc → секция ↪ switch 5:23](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-23)
 
 > [!NOTE]
 > Этот файл (`switch-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -10,7 +10,7 @@
 
 `role="switch"` на нативном чекбоксе — скринридер объявит «переключатель, вкл/выкл», а не «флажок, отмечен».
 
-**Var=Default** — пустой бегунок:
+**`show-icon` выключен** — пустой бегунок:
 
 ```html
 <label class="switch switch--400">
@@ -22,7 +22,7 @@
 </label>
 ```
 
-**Var=Icon** — в бегунке галка (вкл) и крестик (выкл). Нужны **обе** иконки, они переключаются по состоянию:
+**`show-icon` включён** — в бегунке галка (вкл) и крестик (выкл). Нужны **обе** иконки, они переключаются по состоянию:
 
 ```html
 <label class="switch switch--600">
@@ -72,7 +72,7 @@
 | `.switch__input` | Нативный `<input type="checkbox" role="switch">`. Прозрачный, растянут на всю обёртку — он же зона клика и источник состояний. Из потока не убран: остаётся в таб-порядке |
 | `.switch__track` | Трек: размер от токенов, фон-градиент, обводка, `rounded-full`. Здесь же задаются все цветовые аккумуляторы |
 | `.switch__handle` | Бегунок: круг, едет через `translateX`. Цвет фона — `handle`, цвет иконки — унаследованный `color` |
-| `.switch__icon--on` / `--off` | Галка и крестик, стекнуты в одну grid-ячейку, переключаются `opacity`. Только для Var=Icon |
+| `.switch__icon--on` / `--off` | Галка и крестик, стекнуты в одну grid-ячейку, переключаются `opacity`. Только когда `show-icon` включён |
 | `.switch__label` | Подпись. **Своей типографики не задаёт** — наследует от места вставки |
 
 Порядок `input` → `track` менять нельзя: состояния навешаны сиблинг-селектором `+`.
@@ -84,7 +84,7 @@
 ```
 трек:    width  = var(--awds-square-{N}-switch-width)
          height = calc(icon + 2 × padding)
-круг:    calc(icon − 2 × var(--awds-space-space-0-5))
+круг:    calc(icon − 2 × var(--awds-space-0-5))
 ход:     calc(switch-width − 2 × padding − icon)
 ```
 
@@ -111,12 +111,12 @@
 | Selected Hover | `.switch:hover > …:checked` | bg / border `primary-dim` |
 | Selected Active | `.switch:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
 | Focus | `.switch__input:focus-visible + .switch__track` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)`, **`outline-offset: var(--awds-focus-offset)`** |
-| Disabled | `.switch:has(> .switch__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
+| Disabled | `.switch:has(> .switch__input:disabled)` | `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке |
 
 Два нюанса из макета:
 
 - **Иконка в бегунке залита цветом трека** (`check-radio/{type}/bg`), а не контрастной ролью — она «выбита» в тёмном или сером круге. Поэтому на hover она уезжает вместе с фоном: `primary-core → primary-dim`.
-- **Цвет бегунка при hover/active не меняется** — только при переключении Type.
+- **Цвет бегунка при hover/active не меняется** — только при переключении выбранности.
 
 ## Switch, checkbox или radio
 
@@ -131,7 +131,7 @@
 
 ## CSS
 
-Подключение: `switch.css` — один файл на весь компонент (base + 5 размеров + все Type × State).
+Подключение: `switch.css` — один файл на весь компонент (base + 5 размеров + оба набора × состояния).
 
 | Блок | Что внутри |
 |---|---|
@@ -141,7 +141,7 @@
 | `.switch__track` | Трек: размеры и `--awds-switch-travel` от токенов, `inset box-shadow` вместо border, градиент, transition цветов |
 | `.switch__handle` | Круг: размер и отступ от токенов, `transition: transform` |
 | Sizes `.switch--{N}` | Заполняют `--awds-switch-{width,icon,padding,gap}` через `var(--awds-square-{N}-*)` |
-| Type + State | Заполняют цветовые аккумуляторы ролями `rgb(var(--*))` |
+| Набор + состояние | Заполняют цветовые аккумуляторы ролями `rgb(var(--*))` |
 | `@media (prefers-reduced-motion)` | Гасит переезд бегунка и перекраску — состояние остаётся различимым, меняется мгновенно |
 
 ## Refresh

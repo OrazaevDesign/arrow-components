@@ -1,22 +1,29 @@
 {
   "component": "switch",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "contract_hash": "sha256:5bb7fca129f6ba8600f29f1d3ec04389a8f512e00f2b9ecaf361ab122b08b28b",
-  "artifact_hash": "sha256:0f5130b109b93bdd515af0459e210b840bf68b4225f05941ea14ccf82d5e0cfc",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:48.753Z",
-  "own_values": [],
+  "artifact_hash": "sha256:3412ee745911c6648c0e956b8a08f80a0bf8eb87156d17e5703d0ee1c5a72247",
+  "visual_change": true,
+  "released_at": "2026-09-16T17:32:51.331Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 1,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "395:57077",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-57077"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:23",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-23"
   },
   "variants": {
     "default": {
-      "node_id": "395:57077",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-57077",
-      "figma_label": "Switch (Type × Var × Size × State)"
+      "node_id": "23:3738",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-3738",
+      "figma_label": "switch"
     }
   },
   "shape": "square",
@@ -116,39 +123,31 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-0",
+    "--awds-space-0-5",
+    "--awds-space-1-5",
+    "--awds-space-11",
+    "--awds-space-13",
+    "--awds-space-2",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-7",
+    "--awds-space-8",
+    "--awds-space-9",
+    "--awds-space-px",
+    "--primary-chroma",
     "--primary-core",
     "--primary-dim",
-    "--primary-chroma",
     "--primary-on-dim",
+    "--secondary-container-chroma",
     "--secondary-container-core",
     "--secondary-container-dim",
-    "--secondary-container-chroma",
     "--secondary-container-on",
-    "--secondary-container-on-low",
-    "--surface-on-highest",
-    "--awds-rounded-border-radius-full",
-    "--awds-space-space-0-5",
-    "--awds-size-square-200-switch-width",
-    "--awds-size-square-200-icon",
-    "--awds-size-square-200-padding",
-    "--awds-size-square-200-gap",
-    "--awds-size-square-300-switch-width",
-    "--awds-size-square-300-icon",
-    "--awds-size-square-300-padding",
-    "--awds-size-square-300-gap",
-    "--awds-size-square-400-switch-width",
-    "--awds-size-square-400-icon",
-    "--awds-size-square-400-padding",
-    "--awds-size-square-400-gap",
-    "--awds-size-square-500-switch-width",
-    "--awds-size-square-500-icon",
-    "--awds-size-square-500-padding",
-    "--awds-size-square-500-gap",
-    "--awds-size-square-600-switch-width",
-    "--awds-size-square-600-icon",
-    "--awds-size-square-600-padding",
-    "--awds-size-square-600-gap",
-    "--awds-opacity-opacity-40"
+    "--secondary-container-on-low"
   ],
   "last_synced": "2026-08-13T08:57:28Z",
   "last_synced_by": "claude",
@@ -177,8 +176,54 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "switch",
+      "tags": [
+        "label"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "switch--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "input",
+      "class": "switch__input",
+      "type": "checkbox"
+    },
+    "children": [
+      {
+        "class": "switch__track"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "role"
+      }
+    ],
+    "container": null,
+    "note": "Нативный checkbox с role=switch: тумблер объявляет себя переключателем, иначе скринридер прочитает его как обычный чекбокс. Класса варианта нет."
+  },
+  "family": "forms",
+  "summary": "Тумблер вкл/выкл: размеры, состояния, подпись",
+  "aliases": [
+    "тумблер",
+    "переключатель",
+    "свитч",
+    "вкл-выкл",
+    "настройка"
+  ],
+  "asana": {
+    "task_gid": "1218421798669723",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798669723",
+    "task_name": "💠 switch",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [

@@ -101,7 +101,7 @@
 <body>
 
   <h1>switch / storybook</h1>
-  <p class="sub">Тумблер на нативном <code>&lt;input type="checkbox" role="switch"&gt;</code>. Оси Figma: <code>Type</code> (Selected / Unselected) — состояние инпута; <code>Var</code> (Default / Icon) — <b>наличие иконок в разметке</b>, отдельного CSS-класса нет; <code>Size</code> 200–600. Геометрия из токенов: трек = <code>switch-width × (icon + 2×padding)</code>, круг = <code>icon − 2×space-0.5</code>, ход = <code>switch-width − 2×padding − icon</code>. Иконка внутри бегунка выбита <b>цветом трека</b>, поэтому на hover уезжает вместе с фоном.</p>
+  <p class="sub">Тумблер на нативном <code>&lt;input type="checkbox" role="switch"&gt;</code>. В Figma выбранность — имя набора (<code>switch / selected</code>, <code>/ unselected</code>), а иконки — булев <code>show-icon</code> у части ручки; в коде первое это состояние инпута, второе — <b>наличие иконок в разметке</b>, отдельного CSS-класса нет. Ступени <code>Size</code> 200–600. Геометрия из токенов: трек = <code>switch-width × (icon + 2×padding)</code>, круг = <code>icon − 2×space-0.5</code>, ход = <code>switch-width − 2×padding − icon</code>. Иконка внутри бегунка выбита <b>цветом трека</b>, поэтому на hover уезжает вместе с фоном.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -116,7 +116,7 @@
         <option value="unselected">Unselected</option>
       </select>
     </label>
-    <label>Var:
+    <label>Иконки:
       <select id="variant">
         <option value="default">Default</option>
         <option value="icon">Icon</option>
@@ -139,10 +139,10 @@
     <tbody></tbody>
   </table>
 
-  <h2>Type × Var (Size 600, Rest)</h2>
+  <h2>Выбранность × иконки (Size 600, Rest)</h2>
   <table class="matrix" id="cross">
     <thead>
-      <tr><th style="width:140px;">Type</th><th>Var=Default</th><th>Var=Icon</th></tr>
+      <tr><th style="width:140px;">Набор</th><th>show-icon выкл</th><th>show-icon вкл</th></tr>
     </thead>
     <tbody></tbody>
   </table>

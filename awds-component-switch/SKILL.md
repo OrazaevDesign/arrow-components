@@ -1,6 +1,6 @@
 ---
 name: awds-component-switch
-description: Тумблеры-переключатели Switch ArrowDS: вкл/выкл, размеры, состояния, подпись. Для настроек и мгновенного переключения режима. Выбор из списка — checkbox или radio. Токены ArrowDS, работает и по Figma-ссылке.
+description: Switch ArrowDS (.switch).
 ---
 
 # Switch ArrowDS
@@ -11,8 +11,8 @@ description: Тумблеры-переключатели Switch ArrowDS: вкл/
 
 | Ось Figma | Значения | В CSS |
 |---|---|---|
-| `Type` | Selected / Unselected | Состояние инпута: `checked` / дефолт |
-| `Var` | Default / Icon | **Наличие иконок в разметке.** Отдельного класса нет — правила CSS одни и те же |
+| набор `switch / selected` · `/ unselected` | выбранность | Состояние инпута: `checked` / дефолт |
+| `show-icon` (BOOLEAN у части `. / handle-*`) | да / нет | **Наличие иконок в разметке.** Отдельного класса нет — правила CSS одни и те же |
 | `Size` | 200 / 300 / 400 / 500 / 600 | `.switch--{N}` |
 | `State` | Rest / Hover / Focus / Active / Disabled | `:hover` / `:focus-visible` / `:active` / `:disabled` |
 
@@ -26,9 +26,9 @@ description: Тумблеры-переключатели Switch ArrowDS: вкл/
 | Цвет бегунка | `rgb(var(--primary-on-dim))` / `rgb(var(--secondary-container-on))` | `component-token-map.json` → `check-radio.*.handle` |
 | Цвет иконки в бегунке | = цвет фона трека (иконка «выбита» в круге) | Figma `check-radio/{type}/bg` |
 | Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
-| Геометрия (ширина/высота/круг/ход) | `var(--awds-square-{N}-{switch-width,icon,padding})` + `var(--awds-space-space-0-5)` | `component-token-map.json` → `map.size.square` |
+| Геометрия (ширина/высота/круг/ход) | `var(--awds-square-{N}-{switch-width,icon,padding})` + `var(--awds-space-0-5)` | `component-token-map.json` → `map.size.square` |
 | Скругление | `var(--awds-rounded-border-radius-full)` — фиксированное, не размерное | Figma `border-radius/full` |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Гашение (opacity) | выключенное — `var(--awds-state-opacity-control-disabled)` (40%), включённое — парное `var(--awds-state-opacity-control-enabled)` (100%) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Промежуточный слой `--awds-switch-*` в DS НЕ существует.** Внутри `switch.css` есть приватные `--awds-switch-*` accumulators, но они scope'нуты только на компонент. Подробнее — [arrow-components-builder/references/component-skill-contract.md](../arrow-components-builder/references/component-skill-contract.md).
@@ -67,14 +67,14 @@ description: Тумблеры-переключатели Switch ArrowDS: вкл/
 - Тумблер без видимой подписи обязан нести `aria-label` на `<label>`.
 - Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи трека. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `switch.css`.
 - Подпись формулируй утверждением, не отрицанием: «выключено» + «Не показывать…» читается как двойное отрицание.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина.
+- Disabled гасится `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина.
 - `@media (prefers-reduced-motion: reduce)` гасит переезд бегунка: состояние остаётся различимым (положение, цвет, иконка), меняется мгновенно.
 
 ## CSS-файл
 
 | Вариант | Файл | Что внутри |
 |---|---|---|
-| default | `references/switch.css` | `.switch` base + 5 размеров + все Type × State + reduced-motion |
+| default | `references/switch.css` | `.switch` base + 5 размеров + оба набора × состояния + reduced-motion |
 
 ## Storybook
 
@@ -95,7 +95,7 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 1. Проверь, что нужен именно switch: эффект применяется **сразу**. Иначе — checkbox.
 2. Возьми разметку из [references/switch-default.md](references/switch-default.md); для `Var=Icon` нужны **обе** иконки — они переключаются по состоянию.
 3. Подключи `references/switch.css` (один раз глобально).
-4. Убедись, что на странице есть DS-токены (`--awds-square-*`, `--awds-rounded-border-radius-full`, `--awds-space-space-0-5`, `--awds-opacity-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
+4. Убедись, что на странице есть DS-токены (`--awds-square-*`, `--awds-rounded-border-radius-full`, `--awds-space-0-5`, `--awds-opacity-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
 5. Добавь размерный модификатор `.switch--{N}` (если не указан — действует 400).
 6. Раскладку строки настроек (подпись слева, тумблер у правого края) задай своим классом-обёрткой — в компоненте её нет.
 
