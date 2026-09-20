@@ -97,7 +97,7 @@
 <body>
 
   <h1>checkbox / storybook</h1>
-  <p class="sub">Чекбокс на нативном <code>&lt;input type="checkbox"&gt;</code>. Ось Figma <code>Type</code> (Selected / Indeterminate / Unselected) выражена состояниями инпута, а не CSS-вариантами: Selected и Indeterminate делят одну палитру <code>check-radio/selected</code> и отличаются иконкой. Размеры — shape-токены <code>var(--awds-square-N-*)</code>, бокс = иконка + 2×padding (16 / 20 / 24 / 28px). Переключи тему — палитра подтянется.</p>
+  <p class="sub">Чекбокс на нативном <code>&lt;input type="checkbox"&gt;</code>. Выбранность в Figma выражена тремя наборами — <code>checkbox / selected</code>, <code>/ indeterminate</code>, <code>/ unselected</code>, — а в коде состояниями инпута, а не CSS-вариантами: наборы <code>selected</code> и <code>indeterminate</code> делят одну палитру <code>check-radio/selected</code> и отличаются глифом. Размеры — shape-токены <code>var(--awds-space-*) / var(--awds-rounded-*) по ячейкам square/N</code>, бокс = иконка + 2×padding (16 / 20 / 24 / 28px). Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -126,7 +126,7 @@
   <h2>Три типа рядом (Size 400)</h2>
   <table class="matrix" id="types">
     <thead>
-      <tr><th style="width:180px;">Type</th><th>Rest</th><th>Hover</th><th>Active</th><th>Disabled</th></tr>
+      <tr><th style="width:180px;">Набор</th><th>Rest</th><th>Hover</th><th>Active</th><th>Disabled</th></tr>
     </thead>
     <tbody></tbody>
   </table>

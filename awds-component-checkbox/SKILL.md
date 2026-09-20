@@ -1,6 +1,6 @@
 ---
 name: awds-component-checkbox
-description: Чекбоксы ArrowDS (checkbox, check-radio) на нативном input: состояния checked и indeterminate, размеры 16–28. Для согласия с условиями, фильтров, «выбрать всё». Тумблер вкл/выкл — switch. Токены ArrowDS, работает и по Figma-ссылке.
+description: Checkbox ArrowDS (.checkbox).
 ---
 
 # Checkbox ArrowDS
@@ -9,24 +9,24 @@ description: Чекбоксы ArrowDS (checkbox, check-radio) на нативн�
 
 ## Главное отличие от других компонент-скиллов
 
-Ось Figma `Type` (Selected / Indeterminate / Unselected) — это **не CSS-варианты**, а состояния инпута. Поэтому здесь нет `.checkbox-primary` / `.checkbox-secondary`: вариант один, а вид контрола диктует сам `<input>`:
+В Figma выбранность выражена **тремя наборами** — `checkbox / selected`, `/ indeterminate`, `/ unselected` (разобраны 16.09.2026: по канону `props.md` выбранность это имя набора, а не ось). В коде им НЕ отвечают CSS-варианты: это состояния инпута, поэтому здесь нет `.checkbox-primary` / `.checkbox-secondary` — вариант один, а вид контрола диктует сам `<input>`:
 
-| Figma Type | Как получить | Что видно |
+| Набор Figma | Как получить | Что видно |
 |---|---|---|
-| Unselected | дефолт | Серый бокс, иконок нет |
-| Selected | атрибут `checked` | Жёлтый бокс, галка |
-| Indeterminate | `input.indeterminate = true` (только из JS) | Жёлтый бокс, прочерк |
+| `checkbox / unselected` | дефолт | Серый бокс, иконок нет |
+| `checkbox / selected` | атрибут `checked` | Жёлтый бокс, галка |
+| `checkbox / indeterminate` | `input.indeterminate = true` (только из JS) | Жёлтый бокс, прочерк |
 
-Selected и Indeterminate делят одну палитру `check-radio/selected` — различаются только иконкой.
+Наборы `selected` и `indeterminate` делят одну палитру `check-radio/selected` — различаются только глифом: галочка против черты. Своей группы ячеек у «частично выбран» в теме нет, и это замысел, а не пропуск.
 
 ## Откуда берутся значения
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg/chroma/border/color) | `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline | `references/checkbox.css` |
+| Цвета состояний (bg/chroma/border/color) | роли `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline, с якорем ячейки `check-radio/{группа}/{свойство}-{состояние}` в той же строке | `references/checkbox.css` |
 | Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
-| Размеры (padding/icon/rounded/gap) | `var(--awds-square-{N}-*)` | `component-token-map.json` → `map.size.square` |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Размеры (padding/icon/rounded/gap) | `var(--awds-space-*)`, `var(--awds-rounded-*)` | ячейки `square/{N}/*`, якорь `#cell` в той же строке |
+| Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Промежуточный слой `--awds-checkbox-*` в DS НЕ существует.** Внутри `checkbox.css` есть приватные `--awds-checkbox-*` accumulators, но они scope'нуты только на компонент. Подробнее — [arrow-components-builder/references/component-skill-contract.md](../arrow-components-builder/references/component-skill-contract.md).
@@ -66,13 +66,13 @@ Selected и Indeterminate делят одну палитру `check-radio/select
 - Инпут остаётся настоящим и в потоке: клавиатура, скринридер, автозаполнение формы работают сами.
 - Чекбокс без видимой подписи обязан нести `aria-label` на `<label>`.
 - Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи бокса. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `checkbox.css`.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — это макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Не используй disabled как способ «объяснить» недоступность: рядом нужен текст-причина.
+- Disabled гасится `opacity: var(--awds-opacity-40)` (ячейка `opacity/control/disabled`) на всей обёртке — это макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Не используй disabled как способ «объяснить» недоступность: рядом нужен текст-причина.
 
 ## CSS-файл
 
 | Вариант | Файл | Что внутри |
 |---|---|---|
-| default | `references/checkbox.css` | `.checkbox` base + 4 размера + все Type × State |
+| default | `references/checkbox.css` | `.checkbox` base + 4 размера + все три набора × состояния |
 
 ## Storybook
 

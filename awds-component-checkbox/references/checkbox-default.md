@@ -1,6 +1,6 @@
 # Checkbox / default
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:43665](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-43665)
+**Figma:** [470rar5EfRm4n14vHMXbpc → секция ↪ checkbox 5:21](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-21)
 
 > [!NOTE]
 > Этот файл (`checkbox-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -59,7 +59,7 @@ document.querySelector('#select-all .checkbox__input').indeterminate = true;
 
 ## Состояния
 
-Ось Figma `Type` — это состояния инпута, а не CSS-варианты. Selected и Indeterminate делят палитру `check-radio/selected`, различаются только иконкой.
+Выбранность в Figma выражена тремя наборами (`checkbox / selected`, `/ indeterminate`, `/ unselected`), а в коде — состояниями инпута, а не CSS-вариантами. Наборы `selected` и `indeterminate` делят палитру `check-radio/selected`, различаются только глифом.
 
 | Состояние | Селектор | Источник |
 |---|---|---|
@@ -70,7 +70,7 @@ document.querySelector('#select-all .checkbox__input').indeterminate = true;
 | Selected / Indeterminate Hover | `.checkbox:hover > …:checked` | bg / border `primary-dim` |
 | Selected / Indeterminate Active | `.checkbox:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
 | Focus | `.checkbox__input:focus-visible + .checkbox__box` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)`, **`outline-offset: var(--awds-focus-offset)`** |
-| Disabled | `.checkbox:has(> .checkbox__input:disabled)` | `opacity: var(--awds-opacity-opacity-40)` на всей обёртке |
+| Disabled | `.checkbox:has(> .checkbox__input:disabled)` | `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке |
 
 Кольцо — слой [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: зазор 1px, толщина 2px, полоса 1…3px снаружи бокса. Значения приходят переменными `--awds-focus-*`, поэтому `focus-selection.css` подключается вместе с `checkbox.css` — без него кольца не будет вовсе.
 
@@ -100,7 +100,7 @@ document.querySelector('#select-all .checkbox__input').indeterminate = true;
 | `.checkbox__input` | Прозрачный инпут на всю обёртку |
 | `.checkbox__box` | Квадрат: размер от токенов, `inset box-shadow` вместо border, фон-градиент, transition |
 | Sizes `.checkbox--{N}` | Заполняют `--awds-checkbox-{padding,icon,rounded,gap}` через `var(--awds-square-{N}-*)` |
-| Type + State | Заполняют `--awds-checkbox-{bg,chroma,border,color}` ролями `rgb(var(--*))` |
+| Набор + состояние | Заполняют `--awds-checkbox-{bg,chroma,border,color}` ролями `rgb(var(--*))` |
 
 ## Refresh
 

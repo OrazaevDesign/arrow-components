@@ -1,18 +1,43 @@
 {
-  "_note": "Сырые ответы Figma MCP. ACB-owned, не править руками.",
-  "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-  "file_name": "💠 Comp ↪ ⁵ Forms",
-  "primary_node_id": "395:43665",
+  "_note": "Снимок переписан 16.09.2026 под новый файл «💠 arrow ↪ components» (был «💠 Comp ↪ ⁵ Forms», 4ipeXkifl3Hl6pVZUF4nuJ). Секция «↪ checkbox» 5:21, страница «3 · forms». Поля metadata, variable_defs, design_context и icons ниже — сырые ответы MCP со СТАРОГО файла: значения сверены и совпадают, id узлов там старые. Актуальная структура — в variants_new и audit_16_09.",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "primary_node_id": "5:21",
   "fetched_at": "2026-08-13T08:12:23Z",
   "metadata": {
-    "frame": { "id": "395:43665", "name": "Checkbox", "width": 300, "height": 604 },
+    "frame": {
+      "id": "395:43665",
+      "name": "Checkbox",
+      "width": 300,
+      "height": 604
+    },
     "axes": {
-      "Type": ["Selected", "Indeterminate", "Unselected"],
-      "Size": [500, 400, 300, 200],
-      "State": ["Rest", "Hover", "Focus", "Active", "Disabled"]
+      "Type": [
+        "Selected",
+        "Indeterminate",
+        "Unselected"
+      ],
+      "Size": [
+        500,
+        400,
+        300,
+        200
+      ],
+      "State": [
+        "Rest",
+        "Hover",
+        "Focus",
+        "Active",
+        "Disabled"
+      ]
     },
     "cells": 60,
-    "node_box_px": { "500": 28, "400": 24, "300": 20, "200": 16 },
+    "node_box_px": {
+      "500": 28,
+      "400": 24,
+      "300": 20,
+      "200": 16
+    },
     "sampled_nodes": {
       "Selected/500/Rest": "395:43666",
       "Selected/500/Hover": "395:43714",
@@ -230,19 +255,82 @@
     "_source": "arrow-design-system/references/component-token-map.json",
     "square/{200,300,400,500}/{padding,icon,rounded,gap}": "var(--awds-square-{N}-{prop})",
     "check-radio/selected": {
-      "rest": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" },
-      "hover": { "bg": "rgb(var(--primary-dim))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-dim))", "color": "rgb(var(--primary-on))" },
-      "focus": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-chroma))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" },
-      "active": { "bg": "rgb(var(--primary-core))", "chroma": "rgb(var(--primary-core))", "border": "rgb(var(--primary-core))", "color": "rgb(var(--primary-on))" }
+      "rest": {
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-chroma))",
+        "border": "rgb(var(--primary-core))",
+        "color": "rgb(var(--primary-on))"
+      },
+      "hover": {
+        "bg": "rgb(var(--primary-dim))",
+        "chroma": "rgb(var(--primary-chroma))",
+        "border": "rgb(var(--primary-dim))",
+        "color": "rgb(var(--primary-on))"
+      },
+      "focus": {
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-chroma))",
+        "border": "rgb(var(--primary-core))",
+        "color": "rgb(var(--primary-on))"
+      },
+      "active": {
+        "bg": "rgb(var(--primary-core))",
+        "chroma": "rgb(var(--primary-core))",
+        "border": "rgb(var(--primary-core))",
+        "color": "rgb(var(--primary-on))"
+      }
     },
     "check-radio/unselected": {
-      "rest": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" },
-      "hover": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on))", "color": "transparent" },
-      "focus": { "bg": "rgb(var(--secondary-container-core))", "chroma": "rgb(var(--secondary-container-chroma))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" },
-      "active": { "bg": "rgb(var(--secondary-container-dim))", "chroma": "rgb(var(--secondary-container-dim))", "border": "rgb(var(--secondary-container-on-low))", "color": "transparent" }
+      "rest": {
+        "bg": "rgb(var(--secondary-container-core))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "transparent"
+      },
+      "hover": {
+        "bg": "rgb(var(--secondary-container-dim))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on))",
+        "color": "transparent"
+      },
+      "focus": {
+        "bg": "rgb(var(--secondary-container-core))",
+        "chroma": "rgb(var(--secondary-container-chroma))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "transparent"
+      },
+      "active": {
+        "bg": "rgb(var(--secondary-container-dim))",
+        "chroma": "rgb(var(--secondary-container-dim))",
+        "border": "rgb(var(--secondary-container-on-low))",
+        "color": "transparent"
+      }
     },
     "focus-selection/outline": "rgb(var(--surface-on-highest))",
     "opacity/control/disabled": "var(--awds-opacity-40)",
     "outline/{N}": "не эмитится в css-global (радиус кольца = rounded/{N} + 1px); CSS считает радиус outline сам"
-  }
+  },
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-21",
+  "variants_new": {
+    "_structure_note": "БЫЛО: один набор «checkbox» на 60 ячеек с осью-заглушкой type=selected|indeterminate|unselected. СТАЛО (решение владельца 16.09.2026): три набора по 20 ячеек (size × state) — выбранность по канону props.md выражается ИМЕНЕМ НАБОРА, а не осью. Так же разобраны «tab / underline-selected» (01.09) и «tab-product / text-indeterminate» (16.09).",
+    "checkbox / selected": "399:2",
+    "checkbox / indeterminate": "399:3",
+    "checkbox / unselected": "23:2893 — исходный набор, у него сохранился ключ: ячейки selected и indeterminate ВЫНЕСЕНЫ, а не пересозданы, поэтому все 6 инстансов (3 в ↪ label, 3 в ↪ formfield) целы и указывают на свои компоненты.",
+    "оси": "size=500|400|300|200 × state=rest|hover|focus|active|disabled, 20 ячеек в каждом наборе.",
+    "порядок_значений": "У вынесенных наборов порядок состояний канонический (rest, hover, focus, active, disabled). У исходного «unselected» он остался прежним (rest, disabled, hover, focus, active): переписать его значило бы пересобрать набор и потерять ключ вместе с инстансами."
+  },
+  "audit_16_09": {
+    "чисто_изначально": "Привязок к старым библиотекам — 0, сырых красок — 0, подписей Sys — 0, лишних колец фокуса — 0.",
+    "толщина_рамки": "60 ячеек держали strokeWeight литералом 1 — привязано к space/px.",
+    "цвета": "Фон — линейный градиент chroma → bg по группе и состоянию; рамка — border-{состояние}; глиф — плоская ячейка check-radio/selected/color. Гашение выключенных — opacity/control/disabled.",
+    "indeterminate_читает_selected": "У типа indeterminate своей группы ячеек в теме нет: все три состояния читают check-radio/selected/*. Это замысел — «частично выбран» окрашен как выбранный, отличается только глиф (черта вместо галочки).",
+    "глиф_невыбранного": "В ячейках unselected лежит инстанс «unselect» с той же чертой, что у indeterminate, и с заливкой check-radio/selected/color, но у него opacity 0 — глиф спрятан прозрачностью, а не видимостью. В коде невыбранный просто не рисует глиф."
+  },
+  "code_mapping": {
+    "_note": "Что читает CSS после перевода на цели 16.09.2026: 43 ссылки, 43 якоря #cell, приватных имён не осталось.",
+    "цвета": "check-radio/{selected,unselected}/{bg,chroma,border}-{состояние} и плоская check-radio/selected/color.",
+    "геометрия": "square/{N}/{padding,icon,rounded,gap} — шкала квадратных контролов, ступени 200…500.",
+    "толщина": "--awds-space-px вместо литерала 1px."
+  },
+  "damage_16_09": "Замер превью до и после: 285 элементов из 333. Квадратик чекбокса выходил 0x0 — без скругления, без отступов, без зазора до подписи; галочка нулевого размера. По свойствам: габарит 279, высота 219, ширина 175, цвета 90, заливка глифа 72, зазоры 35, радиус 35, отступы 25, тень 21, гашение 8."
 }
