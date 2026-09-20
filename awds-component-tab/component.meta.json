@@ -1,0 +1,304 @@
+{
+  "component": "tab",
+  "version": "1.0.5",
+  "contract_hash": "sha256:69896edf45f7997e4b8cdcfc66c08aeb07e031153fabd7a2599299543233f2d4",
+  "artifact_hash": "sha256:7342cb156a02b0e14ab34440265312820b3c43871237c6a3f5652944a0e76ef4",
+  "visual_change": true,
+  "released_at": "2026-09-16T05:00:41.308Z",
+  "own_values": [
+    {
+      "value": "2px",
+      "where": "--awds-tab-underline",
+      "count": 1,
+      "why": "толщина подчёркивания: ячейки толщины линии в студии нет (Space/px — шкала отступов, не толщин). В макете это сырые 2 px на нижней обводке. Держим одним объявлением --awds-tab-underline, чтобы замена на ячейку была правкой в одном месте"
+    },
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 1,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
+  "family": "tabs",
+  "summary": "Одна вкладка с подчёркиванием: выбранная и невыбранная, со счётчиком",
+  "aliases": [
+    "вкладка",
+    "таб",
+    "переключатель разделов",
+    "вкладка раздела",
+    "подчёркнутая вкладка"
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "page": "6 · tabs",
+    "section_node_id": "5:43",
+    "primary_node_id": "8:42820",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-42820"
+  },
+  "variants": {
+    "unselected": {
+      "node_id": "8:42820",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-42820",
+      "figma_label": "tab / underline-unselected",
+      "token_role": "tab/unselected"
+    },
+    "selected": {
+      "node_id": "8:42853",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-42853",
+      "figma_label": "tab / underline-selected",
+      "token_role": "tab/selected"
+    }
+  },
+  "css_note": "Файл один на оба варианта (tab.css), как у notice: в любом таббаре одновременно живут выбранная и невыбранные вкладки, поэтому разложить их по двум файлам значило бы заставить каждого потребителя подключать оба и дважды получить одну и ту же базу.",
+  "shape": "rectangle",
+  "shape_note": "Не 'tabs', хотя такой раздел карты есть. Решение владельца ДС 01.09.2026: геометрия и кегль вкладки берутся из шкалы rectangle — той же, что у остальных контролов. Группа size/tabs/* в теме доехала неполно (в Figma из неё есть только gap-panel на двух ступенях) и её typography даёт у 400 шестнадцать пикселей вместо четырнадцати; она подлежит приведению к rectangle. Из size/tabs берёт значения контейнер (tab-group), а не сама вкладка.",
+  "size_scale": [
+    300,
+    400
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "color_tokens": [
+    "bg",
+    "border",
+    "color"
+  ],
+  "preview": {
+    "base_class": "tab",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "selected",
+          "unselected"
+        ]
+      },
+      {
+        "id": "size",
+        "label": "Ступень",
+        "options": [
+          "400",
+          "300"
+        ]
+      },
+      {
+        "id": "badge",
+        "label": "Счётчик",
+        "options": [
+          "off",
+          "on"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Выбранная",
+        "html": "<button type=\"button\" class=\"tab tab-selected tab--400\" role=\"tab\" aria-selected=\"true\">Отзывы</button>"
+      },
+      {
+        "label": "Невыбранная со счётчиком",
+        "html": "<button type=\"button\" class=\"tab tab-unselected tab--400\" role=\"tab\" aria-selected=\"false\">Характеристики<span class=\"notice notice-accent\">3</span></button>"
+      },
+      {
+        "label": "Выключенная, ступень 300",
+        "html": "<button type=\"button\" class=\"tab tab-unselected tab--300\" role=\"tab\" aria-selected=\"false\" disabled>Доставка</button>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--extended-transparent",
+    "--primary-core",
+    "--primary-dim",
+    "--surface-dim",
+    "--surface-on-high",
+    "--surface-on-highest",
+    "--surface-on-low"
+  ],
+  "last_synced": "2026-09-16T05:00:25Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:6318f1d4180e0ff74885c92c26e7df70423263d1877b6f09fbe6b2ae384141f3",
+  "published": null,
+  "base_class_note": "Базовый класс .tab — полное имя сущности, без сокращения. Соседи по библиотеке сокращают базу только там, где имя одновременно ОБЩЕЕ и ДЛИННОЕ и у него есть очевидное сокращение: .field → .fld, .label → .lbl, .link → .lnk, .textarea → .txa, .product-card → .pcard. У 'tab' сокращения нет: три буквы уже минимум, а .tb ничего не говорит читателю и нарушает правило 5 канона имён (сокращений не бывает). Второй довод — семья: 'tabs' получает .tab, .tab-group и .tab-product одним пространством имён, ровно как buttons получили .btn, .btn-area, .btn-group. Цена решения записана: .tab — распространённое имя в чужом CSS (Bootstrap и темы magazine-вёрстки объявляют .tab и .tab-pane), и коллизия у потребителя проявится молча — правилом, которое не применилось. Вопрос вынесен автору отдельно (questions: base-class-tab-too-generic); переименование после публикации стоит MAJOR.",
+  "markup": {
+    "root": {
+      "class": "tab",
+      "tags": [
+        "button"
+      ]
+    },
+    "variant": {
+      "pattern": "tab-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "tab--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [
+      {
+        "attr": "role",
+        "why": "выбранность вкладки выражена классом варианта, а класс — не семантика: без role=tab скринридер не знает, что перед ним вкладка, и aria-selected на элементе становится невалидным"
+      },
+      {
+        "attr": "aria-selected",
+        "why": "вторая половина того же: role сообщает «вкладка», aria-selected — «эта открыта». Класс .tab-selected красит подчёркивание, но до вспомогательных технологий не доезжает"
+      }
+    ],
+    "container": null,
+    "note": "Корень — нативная <button type=\"button\">, а не ссылка: вкладка переключает панель в пределах страницы, а не ведёт по новому адресу; <a> пообещал бы переход, открытие в новой вкладке и копирование ссылки, которых нет. Кнопка бесплатно даёт активацию с клавиатуры, :disabled и фокус. Выключенная вкладка ОБЯЗАНА нести нативный disabled: .tab:disabled только красит, а pointer-events: none гасит мышь, но не клавиатуру (тот же дефект, что чинили у range). Того, что обеспечивает только группа, в требованиях нет намеренно: role=tablist на обёртке, aria-controls, id панели и роving tabindex — контракт tab-group, одна вкладка не может гарантировать существование панели. Счётчик — не элемент вкладки, а вложенный инстанс notice; класс размера ему не нужен, ступень приезжает мостом .tab--{N} .notice."
+  },
+  "uses_note": "notice — вложенный компонент (exposed-инстанс в макете, слот счётчика в разметке, мост ступени в CSS). focus-selection — слой кольца фокуса. tab-group в uses не появляется: он потребитель вкладки, а не её содержимое.",
+  "questions": [
+    {
+      "id": "base-class-tab-too-generic",
+      "text": "Базовый класс .tab: оставить полное имя или увести в собственное пространство (.awds-tab)? .tab — одно из самых занятых имён в чужом CSS, коллизия у потребителя проявится молча. Против переименования — единство семьи (.tab, .tab-group, .tab-product по образцу .btn, .btn-area, .btn-group) и правило 5 канона: сокращений не бывает, а у 'tab' сокращения и нет. Решать до публикации: после неё правка стоит MAJOR",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "answered",
+      "asana_gid": null,
+      "raised_at": "2026-09-01",
+      "answer": "Оставлен .tab. Решение владельца ДС 01.09.2026: семья вкладок держит одно пространство имён — .tab, .tab-group, .tab-product, как buttons держат .btn, .btn-area, .btn-group, .btn-menu. Отвергнуты: префикс .awds-tab (в библиотеке он есть только у table и сам числится записанным долгом по правилу 11) и собственное сокращение .tbs-* (сокращение ничего не говорит тому, кто его не знает; правило 5 канона только что запретило сокращения). Цена принята осознанно: .tab — занятое имя в чужом CSS, коллизия у потребителя проявится молча. Тот же вопрос у tab-product закрыт этим же решением.",
+      "answered_at": "2026-09-01"
+    },
+    {
+      "id": "tabs-underline-thickness-cell",
+      "text": "Толщина подчёркивания вкладки (2 px) держится своим значением: ячейки толщины линии в теме нет. Заводим ли в студии шкалу толщин (сегодня её нет ни у кого: 1px в box-shadow у list-item, notice и других — тот же долг), или 2 px остаётся own_value",
+      "level": "token",
+      "target": "Size",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1217960733780173",
+      "raised_at": "2026-09-01",
+      "answer": null,
+      "note": "Присоединён к системному вопросу size-border-width-group (подзадача коллекции Size): вопрос тот же — заводить шкалу толщин в студии или узаконить own_value. Один вопрос — одна подзадача."
+    },
+    {
+      "id": "size-tabs-typography-vs-rectangle",
+      "text": "Группа size/tabs/*/typography не используется ни одним компонентом и расходится с rectangle: у 400 она даёт 16 px, а вкладка по решению 01.09.2026 берёт 14 px из rectangle. Приводим size/tabs/*/typography к rectangle или снимаем её из темы совсем",
+      "level": "token",
+      "target": "Size",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1218051016595059",
+      "raised_at": "2026-09-01",
+      "answer": null
+    },
+    {
+      "id": "tab-disabled-takes-focus-tones",
+      "text": "В макете ячейки state=disabled читают border-focus и color-focus, а не rest: у unselected это даёт видимое серое подчёркивание (surface-dim) там, где в покое его нет, у selected — primary-dim вместо primary-core. Код рисует выключенную вкладку тонами покоя с прозрачностью 40%. Либо макет поправить на -rest, либо код научить брать тона focus. Замерено 16.09.2026 на всех 4 ячейках disabled.",
+      "level": "component",
+      "target": "макет",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218531665042659",
+      "raised_at": "2026-09-16",
+      "answer": "Владелец 16.09.2026: у невыбранной вкладки подчёркивание в выключенном состоянии убрать. Правка сделана в макете — две ячейки state=disabled набора tab / underline-unselected переведены с border-focus на border-rest (прозрачная) и с color-focus на color-rest. Код не менялся: :disabled и так трогает только прозрачность, тона остаются от покоя. Половина про selected вынесена в отдельный вопрос tab-selected-disabled-tone.",
+      "answered_at": "2026-09-16"
+    },
+    {
+      "id": "tab-underline-prefix-not-in-class",
+      "text": "Наборы названы tab / underline-unselected и underline-selected, а классы в коде — .tab-unselected и .tab-selected, без тона. Пока тон один, расхождение безобидно; появится второй (pills, как у кнопок), и классы придётся переименовывать с поломкой контракта. Либо убрать underline- из имён наборов, либо заранее ввести тон в класс.",
+      "level": "component",
+      "target": "макет",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218531853625471",
+      "raised_at": "2026-09-16",
+      "answer": "Ответил сам макет, заход по tab-group 16.09.2026: из трёх тонов группы вкладку как компонент держит только underline. Тона boxed и separated собраны из КНОПОК — button / clean + ghost и button / contrast + secondary. Значит второго тона у вкладки не будет, и тон в классе не нужен: .tab-unselected и .tab-selected остаются как есть, а underline- в имени набора честно говорит, к какому тону группы этот набор относится.",
+      "answered_at": "2026-09-16"
+    },
+    {
+      "id": "tab-selected-disabled-tone",
+      "text": "У выбранной вкладки ячейки state=disabled по-прежнему читают border-focus (primary-dim) и color-focus, а не rest (primary-core). Код рисует выключенную выбранную вкладку тонами покоя с прозрачностью 40%, то есть подчёркивание получается primary-core. Расхождение видимое: два разных жёлтых. Половина вопроса tab-disabled-takes-focus-tones, оставшаяся после решения 16.09.2026 по невыбранной.",
+      "level": "component",
+      "target": "макет",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1218531909466667",
+      "raised_at": "2026-09-16",
+      "answer": null
+    }
+  ],
+  "asana": {
+    "task_gid": "1218421798659959",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798659959",
+    "task_name": "💠 tab",
+    "parent_task": "💠 6 · tabs",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-focus-selection": "2.0.3",
+    "awds-component-notice": "1.0.4"
+  },
+  "contract": {
+    "classes": [
+      "notice",
+      "tab",
+      "tab--300",
+      "tab--400",
+      "tab-selected",
+      "tab-unselected"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "selected",
+      "unselected"
+    ],
+    "sizes": [
+      "300",
+      "400"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}

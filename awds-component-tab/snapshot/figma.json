@@ -1,0 +1,81 @@
+{
+  "_note": "Разбор вкладки в файле «💠 arrow ↪ components», секция ↪ tab (5:43), страница 6 · tabs. ACB-owned, руками не править.",
+  "fetched_at": "2026-09-16T04:59:55Z",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "6 · tabs",
+  "section_node_id": "5:43",
+  "primary_node_id": "8:42820",
+  "_structure_note": {
+    "дата": "2026-09-16",
+    "заход": "пятнадцатый компонент прохода; ссылка владельца на секцию 5:43",
+    "состояние": "На момент захода макет правки не требовал: два набора по 10 ячеек, оси size=400|300 и state=rest·hover·focus·active·disabled уже в нижнем регистре и в каноническом порядке, свойства title (TEXT) и show-badge (BOOLEAN) на каноне. Привязок к старым библиотекам нет. Сырых красок две — заливка и обводка самой рамки секции, это не значения компонента. Единственная правка пришла следом, решением владельца — см. правка_16_09.",
+    "предыдущий_файл": "До 16.09.2026 снапшот читал «💠 comp ↪ tabs» (ZRavS7BdPUMDd62kH06E9A), наборы 3001:16394 и 3053:28. Разбивка набора вкладок на два — решение 01.09.2026.",
+    "правка_16_09": "Две ячейки state=disabled набора tab / underline-unselected переведены с ячеек focus на ячейки rest: обводка стала прозрачной, текст — color-rest (то же значение surface-on-high, смены цвета нет). Цели брались чтением ячейки rest того же набора, а не по имени."
+  },
+  "sets": {
+    "tab / underline-unselected": {
+      "node": "8:42820",
+      "cells": 10,
+      "класс": ".tab.tab-unselected",
+      "ячейки": "tab/unselected"
+    },
+    "tab / underline-selected": {
+      "node": "8:42853",
+      "cells": 10,
+      "класс": ".tab.tab-selected",
+      "ячейки": "tab/selected"
+    }
+  },
+  "axes": {
+    "size": "400|300",
+    "state": "rest|hover|focus|active|disabled"
+  },
+  "props": {
+    "title": "TEXT",
+    "show-badge": "BOOLEAN — инстанс notice / accent, по умолчанию скрыт"
+  },
+  "geometry": {
+    "300": {
+      "высота": 36,
+      "padding": "8 сверху и снизу, 0 по бокам",
+      "gap": 6,
+      "подчёркивание": "нижняя обводка 2px"
+    },
+    "400": {
+      "высота": 40,
+      "padding": "10 сверху и снизу, 0 по бокам",
+      "gap": 6,
+      "подчёркивание": "нижняя обводка 2px"
+    },
+    "примечание": "Ширина ячеек в макете 26px — это hug по тексту-заглушке, а не размер компонента."
+  },
+  "cells_by_state": {
+    "unselected": {
+      "rest": "bg + border-rest + color-rest",
+      "hover": "border-hover + color-hover",
+      "focus": "border-focus + color-focus",
+      "active": "border-active + color-active",
+      "disabled": "border-rest (прозрачная) и color-rest — приведено 16.09.2026 по решению владельца: у выключенной невыбранной вкладки подчёркивания нет"
+    },
+    "selected": {
+      "rest": "bg + border-rest + color-rest",
+      "hover": "border-hover + color-hover",
+      "focus": "border-focus + color-focus",
+      "active": "border-active + color-active",
+      "disabled": "макет берёт border-focus и color-focus — вопрос tab-selected-disabled-tone открыт"
+    }
+  },
+  "focus_ring": "INSTANCE focus-selection добавляется только в ячейках state=focus; кольцо читает state/focus-selection/outline, радиус rounded/outline/*, толщину size/outline/width.",
+  "code_mapping": {
+    "ссылок_на_ячейки_было": 43,
+    "якорей_стало": 43,
+    "файлов": 1,
+    "замер_починки": "Превью: 99 элементов, изменилось 58. Высота 20px → 40 и 36; padding 0 → 10 и 8; зазор normal → 6px; подчёркивание выбранной вкладки было прозрачным, стало primary-core. Самопроверка превью (#measure) печатала красную метку о неверной высоте — погасла."
+  },
+  "measured": {
+    "height_400": 40,
+    "height_300": 36,
+    "note": "40 = 10 + 20 + 10, 36 = 8 + 20 + 8. Явной высоты и minWidth в макете нет — габарит считается из padding-block и интерлиньяжа."
+  }
+}
