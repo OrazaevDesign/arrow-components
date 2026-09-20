@@ -1,6 +1,6 @@
 # Input Combi / Default
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 251:16991](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=251-16991)
+**Figma:** [секция ↪ input-combi 5:15 → набор 34:36452](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36452)
 
 > [!NOTE]
 > Этот файл (`input-combi-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -87,7 +87,7 @@
 | 400 | 40 | 10 | 16 / 4 | 4 / 11–16 |
 | 300 | 36 | 8 | 14 / 2 | 2 / 11–16 |
 
-Закономерность макета, проверенная на всех четырёх размерах: `input-top = padding + Δ`, `input-bottom = label-top = padding − Δ`, где Δ = 8 у 500/600 и 6 у 300/400. Строку значения сдвигают вниз, освобождая место метке, и ровно на столько же поднимают низ. Считать это в CSS не нужно — все три числа лежат в `--awds-rectangle-{N}-combi-*`.
+Закономерность макета, проверенная на всех четырёх размерах: `input-top = padding + Δ`, `input-bottom = label-top = padding − Δ`, где Δ = 8 у 500/600 и 6 у 300/400. Строку значения сдвигают вниз, освобождая место метке, и ровно на столько же поднимают низ. Считать это в CSS не нужно — все три числа лежат в ячейках `rectangle/{N}/combi/*`.
 
 В покое метка стоит по центру в кегле значения (`top: padding`), поэтому высота сходится и там: `padding + line-height + padding`.
 

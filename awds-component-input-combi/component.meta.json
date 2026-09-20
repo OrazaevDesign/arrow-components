@@ -1,52 +1,59 @@
 {
   "component": "input-combi",
-  "version": "1.0.3",
+  "version": "1.0.12",
   "contract_hash": "sha256:7c2a2ea3cdb3933b48b3ce1982aff1d09d70e2499a7e80765258712334ee150d",
-  "artifact_hash": "sha256:f12430faf2ccc7b0679a63bf948b227b6c4bbc82c67309b2d2272e6738d0960d",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:49:41.600Z",
-  "own_values": [],
+  "artifact_hash": "sha256:f34b26047cc12be7ef2f4b42228df9be57b7988dbaf21ab20d6ffb762736b493",
+  "visual_change": true,
+  "released_at": "2026-09-16T14:45:54.902Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 14,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "251:16991",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=251-16991"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:15",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-15"
   },
   "variants": {
     "default": {
-      "node_id": "251:16991",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=251-16991",
-      "figma_label": "Input Combi / Default (Size × State)"
+      "node_id": "34:36452",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36452",
+      "figma_label": "input-combi / default"
     },
     "light": {
-      "node_id": "322:59585",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-59585",
-      "figma_label": "Input Combi / Light (Size × State)"
+      "node_id": "34:36539",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36539",
+      "figma_label": "input-combi / light"
     },
     "success": {
-      "node_id": "322:61640",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-61640",
-      "figma_label": "Input Combi / Success (Size × State)"
+      "node_id": "34:36624",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36624",
+      "figma_label": "input-combi / success"
     },
     "error": {
-      "node_id": "322:73149",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-73149",
-      "figma_label": "Input Combi / Error (Size × State)"
+      "node_id": "34:36709",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36709",
+      "figma_label": "input-combi / error"
     },
     "autofill": {
-      "node_id": "322:82353",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-82353",
-      "figma_label": "Input Combi / Autofill (Size × State)"
+      "node_id": "34:36879",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36879",
+      "figma_label": "input-combi / autofill"
     },
     "ghost": {
-      "node_id": "322:78959",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-78959",
-      "figma_label": "Input Combi / Ghost (Size × State)"
+      "node_id": "34:36794",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36794",
+      "figma_label": "input-combi / ghost"
     },
     "secondary": {
-      "node_id": "322:85319",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=322-85319",
-      "figma_label": "Input Combi / Secondary (Size × State)"
+      "node_id": "34:36964",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-36964",
+      "figma_label": "input-combi / secondary"
     }
   },
   "shape": "rectangle",
@@ -70,7 +77,7 @@
     "chroma",
     "border",
     "color",
-    "placehold",
+    "placeholder",
     "icon-color"
   ],
   "css_files": [
@@ -190,97 +197,77 @@
     ]
   },
   "ds_token_dependencies": [
-    "--secondary-container-core",
-    "--secondary-container-chroma",
-    "--secondary-container-on-low",
-    "--secondary-container-on",
-    "--secondary-container-on-high",
-    "--secondary-container-on-highest",
-    "--surface-bright",
-    "--surface-on-highest",
-    "--primary-core",
-    "--primary-dim",
-    "--primary-container-chroma",
-    "--primary-container-on-high",
-    "--primary-container-on-highest",
-    "--success-container-core",
-    "--success-container-chroma",
-    "--success-container-on-low",
-    "--success-container-on",
-    "--success-container-on-high",
-    "--success-container-on-highest",
-    "--error-container-core",
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-5-5",
+    "--awds-space-6",
+    "--awds-space-px",
     "--error-container-chroma",
-    "--error-container-on-low",
+    "--error-container-core",
     "--error-container-on",
     "--error-container-on-high",
     "--error-container-on-highest",
-    "--tertiary-container-core",
-    "--tertiary-container-chroma",
-    "--tertiary-container-on-low",
-    "--tertiary-container-on",
-    "--tertiary-container-on-high",
-    "--tertiary-container-on-highest",
-    "--secondary-core",
+    "--error-container-on-low",
+    "--primary-container-chroma",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--primary-dim",
     "--secondary-chroma",
+    "--secondary-container-chroma",
+    "--secondary-container-core",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--secondary-container-on-low",
+    "--secondary-core",
     "--secondary-dim",
     "--secondary-on",
     "--secondary-on-dim",
-    "--awds-size-rectangle-300-padding",
-    "--awds-size-rectangle-300-icon",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-size-rectangle-300-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-300-combi-label-top",
-    "--awds-size-rectangle-300-combi-input-top",
-    "--awds-size-rectangle-300-combi-input-bottom",
-    "--awds-size-rectangle-400-padding",
-    "--awds-size-rectangle-400-icon",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-400-typography",
-    "--awds-control-line-height-400",
-    "--awds-control-letter-spacing-400",
-    "--awds-size-rectangle-400-combi-label-top",
-    "--awds-size-rectangle-400-combi-input-top",
-    "--awds-size-rectangle-400-combi-input-bottom",
-    "--awds-size-rectangle-500-padding",
-    "--awds-size-rectangle-500-icon",
-    "--awds-size-rectangle-500-rounded",
-    "--awds-size-rectangle-500-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-size-rectangle-500-combi-label-top",
-    "--awds-size-rectangle-500-combi-input-top",
-    "--awds-size-rectangle-500-combi-input-bottom",
-    "--awds-size-rectangle-600-padding",
-    "--awds-size-rectangle-600-icon",
-    "--awds-size-rectangle-600-rounded",
-    "--awds-size-rectangle-600-typography",
-    "--awds-control-line-height-600",
-    "--awds-control-letter-spacing-600",
-    "--awds-size-rectangle-600-combi-label-top",
-    "--awds-size-rectangle-600-combi-input-top",
-    "--awds-size-rectangle-600-combi-input-bottom",
-    "--awds-control-font-size-100",
-    "--awds-control-line-height-100",
-    "--awds-control-letter-spacing-100",
-    "--awds-control-font-size-200",
-    "--awds-control-line-height-200",
-    "--awds-control-letter-spacing-200",
-    "--awds-rounded-border-radius-50",
-    "--awds-opacity-opacity-40",
-    "--awds-opacity-opacity-50",
-    "--awds-font-family-system",
-    "--awds-font-weight-regular",
-    "--awds-size-rectangle-300-text-gap",
-    "--awds-size-rectangle-400-text-gap",
-    "--awds-size-rectangle-500-text-gap",
-    "--awds-size-rectangle-600-text-gap"
+    "--success-container-chroma",
+    "--success-container-core",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--success-container-on-low",
+    "--surface-bright",
+    "--tertiary-container-chroma",
+    "--tertiary-container-core",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
+    "--tertiary-container-on-low"
   ],
-  "last_synced": "2026-08-13T12:55:54Z",
+  "last_synced": "2026-09-16T17:40:00Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:5616438ecf77844afa5cd37015ebb98da44012261de97e440ffc9681aef7a0f7",
+  "snapshot_hash": "sha256:1e3526d345be4e4cd912cd02d3fb7f4ca3f72da4d919ddfa67984b0c31af8910",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "6d1d4f9",
@@ -351,8 +338,69 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "icombi",
+      "tags": [
+        "span",
+        "label",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "icombi-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "icombi--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "input",
+      "class": "icombi__field"
+    },
+    "children": [
+      {
+        "class": "icombi__label"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Плавающая метка обязательна — она и есть смысл компонента: без .icombi__label поле визуально пустое. Инпуту нужен placeholder=\" \", иначе метка не уезжает."
+  },
+  "family": "forms",
+  "summary": "Текстовое поле с плавающей меткой: подпись внутри рамки уезжает наверх",
+  "aliases": [
+    "плавающая метка",
+    "подпись внутри поля",
+    "подпись уезжает наверх",
+    "floating label",
+    "компактная форма"
+  ],
+  "asana": {
+    "task_gid": "1218421798641834",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798641834",
+    "task_name": "💠 input-combi",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "form-control-focus-drawn-not-read",
+      "text": "У form-control focus нарисован в ячейках, но компонент его не читает: 17 ячеек (dim, chevron, icon у семи тонов) в focus переключаются на primary-container-*, а в CSS полей focus меняет только кольцо. Читать focus в компонентах или снять состояние у ячеек?",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "open",
+      "raised_at": "2026-09-03",
+      "evidence": "state-vocab-analysis 02.09.2026: 17 ячеек группы form-control, read=0 во всех четырёх состояниях; единственное исключение form-control-secondary-dim — active читают input и input-combi. Решение Э1 по этому классу: оставить, вопрос компоненту в Э3",
+      "answer": null,
+      "asana_gid": "1218489020012833"
+    }
+  ],
+  "figma_repair_note": "Заход 16.09.2026, секция ↪ input-combi 5:15. Оси и свойства правок не потребовали. Правки макета: ячейка default/600/focus возвращена к 320 FIXED (была 280 HUG, единственная из 140); в мастере части . / content-combi-input выровнен кадр input ступени 600 (120×44 FIXED/HUG MIN/MIN → высота ступени, STRETCH/STRETCH — как у 500, 400 и 300); скрыто кольцо фокуса в двух ячейках default/disabled; радиусы этих колец перепривязаны с Rounded/outline/500 на rounded/outline/500 и /600; толщина рамки привязана к space/px (140 ячеек); иконки слотов перепривязаны по тону и состоянию (280 узлов). Старых библиотек осталось 14 привязок Sys — подписи документации.",
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [

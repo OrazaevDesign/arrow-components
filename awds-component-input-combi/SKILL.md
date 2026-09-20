@@ -1,6 +1,6 @@
 ---
 name: awds-component-input-combi
-description: Поля ввода с ПЛАВАЮЩЕЙ МЕТКОЙ ArrowDS (icombi, input-combi): подпись внутри рамки уезжает наверх при вводе. Для компактных и длинных форм. Подпись снаружи — input. Токены ArrowDS, работает и по Figma-ссылке.
+description: Input Combi ArrowDS (.icombi).
 ---
 
 # Input Combi ArrowDS
@@ -44,13 +44,13 @@ description: Поля ввода с ПЛАВАЮЩЕЙ МЕТКОЙ ArrowDS (ico
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/текст/метка/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-combi-default.css` |
-| Кольцо фокуса | `var(--awds-focus-color-formcontrol)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` | Figma `focus-selection/outlineVariant` + `opacity/50` |
-| Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
-| Горизонтальный отступ текста и метки | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Combi Input` |
-| Вертикаль поля и метки | `var(--awds-rectangle-{N}-combi-{input-top , input-bottom , label-top})` | там же, ветка `combi` |
-| Типографика значения | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
+| Кольцо фокуса | `var(--awds-focus-color-muted)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` | Figma `focus-selection/outlineVariant` + `opacity/50` |
+| Геометрия (padding/icon/rounded) | базовые шкалы `var(--awds-space-*)`, `var(--awds-rounded-border-radius-*)` | ячейки `rectangle/{N}/*`, цель в `component-token-map.json` → `map.size.rectangle` |
+| Горизонтальный отступ текста и метки | `var(--awds-space-*)` по ячейке `rectangle/{N}/text-gap`, а со слотом — по `rectangle/{N}/padding` | Figma: ось `padding-icon` у части `. / content-combi-input` |
+| Вертикаль поля и метки | `var(--awds-space-*)` по ячейкам `rectangle/{N}/combi/{input-top , input-bottom , label-top}` | там же, ветка `combi` |
+| Типографика значения | `var(--awds-control-font-size-{M})` и парные line-height / letter-spacing | ячейка `rectangle/{N}/typography` ведёт на `control-{M}` |
 | Типографика уехавшей метки | `var(--awds-control-200-*)` / `var(--awds-control-100-*)` | **маппинг ручной** — shape-токена нет |
-| Opacity для disabled | `var(--awds-opacity-opacity-40)` | css-global (базовая шкала) |
+| Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
 **Базовый класс — `.icombi`, а не `.input-combi`.** Приватные аккумуляторы по контракту зовутся `--awds-{base_class}-*`; при `base_class = input-combi` они стали бы `--awds-input-combi-*`, что префиксом совпадает с чужим запрещённым `--awds-input-*` и ложно роняет sanity-check публикации. Тот же приём, что у `button-overhung` → `.obtn`.
@@ -84,7 +84,7 @@ description: Поля ввода с ПЛАВАЮЩЕЙ МЕТКОЙ ArrowDS (ico
 - Фокус виден при любом способе входа в поле (`:focus-within`); кольцо стоит **в 1px от рамки**, не вплотную.
 - Длинная метка обрезается многоточием. Если подпись не помещается — это сигнал, что поле требует внешней подписи или подсказки под ним, а не более длинной метки.
 - Декоративная иконка в слоте → `aria-hidden="true"`. Кликабельная (очистить, показать пароль) → внутри слота настоящий `<button type="button" aria-label="…">`.
-- Disabled гасится `opacity: var(--awds-opacity-opacity-40)` на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
+- Disabled гасится `opacity: var(--awds-opacity-40)` (ячейка `opacity/control/disabled`) на всей обёртке — макетное поведение, контраст в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 
 ## Варианты
 
@@ -143,7 +143,7 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 
 1. Возьми разметку из [references/input-combi-default.md](references/input-combi-default.md) — с `placeholder=" "`, `id`/`for` и обёрткой `__body`.
 2. Подключи CSS нужного варианта (`input-combi-{вариант}.css`) — один раз глобально.
-3. Убедись, что на странице есть DS-токены (`--awds-rectangle-*`, `--awds-control-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
+3. Убедись, что на странице есть DS-токены (`--awds-space-*`, `--awds-rounded-*`, `--awds-control-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` с цветовыми ролями под классом `.theme-default.theme-light` на `<html>`.
 4. Поставь класс варианта (`icombi-default`, `icombi-error`, …) — без него поле останется бесцветным, — размерный модификатор `.icombi--{N}` (если не указан, действует 400) и правильный `type`.
 5. Ширину задай контейнеру-родителю: поле тянется на 100%.
 
