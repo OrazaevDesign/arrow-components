@@ -1,0 +1,244 @@
+{
+  "component": "button-menu",
+  "version": "2.0.6",
+  "contract_hash": "sha256:88352d4eb8c0722178e0a80f6ff5d5d6660935ba8f2998721b73f155fd4eb80f",
+  "artifact_hash": "sha256:70cd807979fea4f8771312cc3c2019793c4238206183cd9460a9dc5b71b5a104",
+  "visual_change": true,
+  "released_at": "2026-09-15T15:41:02.936Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 2,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
+  "family": "buttons",
+  "summary": "Кнопка меню: эмблема с аватаром или флагом, шеврон, точка непрочитанных",
+  "aliases": [
+    "кнопка профиля",
+    "профиль",
+    "аватар в шапке",
+    "кнопка аккаунта",
+    "меню пользователя",
+    "переключатель языка",
+    "кнопка языка",
+    "выбор языка",
+    "флаг в шапке"
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:11",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-11"
+  },
+  "variants": {
+    "default": {
+      "node_id": "8:35084",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-35084",
+      "figma_label": "button-menu / default"
+    },
+    "accent-selected": {
+      "node_id": "8:35226",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-35226",
+      "figma_label": "button-menu / accent-selected"
+    }
+  },
+  "shape": "profile-button",
+  "shape_note": "profile-button отдаёт padding и gap одним значением на все ступени, ступеней в коллекции нет вовсе. Размер шеврона макет берёт из rectangle/{N}/icon — оттуда и размерные классы: 400 и 300 читают одно значение (20px), 200 своё (16px).",
+  "size_scale": [
+    200,
+    300,
+    400
+  ],
+  "size_scale_note": "Ступени появились в 2.0.0. До неё их не было: считалось, что вся геометрия приходит из profile-button одним значением. Шеврон в макете привязан к rectangle/{N}/icon, и у ступени 200 там своё значение (16px против 20px) — ступень с собственным значением токена заводится. Диаметр круга по-прежнему приносит эмблема своим классом (emb--150 / --100 / --50).",
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "color_tokens": [
+    "bg",
+    "border",
+    "chevron"
+  ],
+  "content_axis_note": "Ось content = avatar | flag существует в макете и объявлена здесь, но класса у кнопки не имеет: между ячейками avatar и flag у самой кнопки не отличается ничего — габариты, padding, gap, шеврон и все четыре цветовые ячейки совпадают до значения. Значение оси несёт вид вложенной эмблемы: emb-img / emb-initials / emb-placeholder против emb-icon (props.md, правила 8 и 9).",
+  "preview": {
+    "base_class": "btn-menu",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      400,
+      300,
+      200
+    ],
+    "toggles": [
+      {
+        "id": "tone",
+        "label": "Тон",
+        "options": [
+          "default",
+          "accent-selected"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "img",
+          "initials",
+          "placeholder",
+          "flag",
+          "langcode"
+        ]
+      },
+      {
+        "id": "badge",
+        "label": "Точка",
+        "options": [
+          "off",
+          "on"
+        ]
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--primary-container-core",
+    "--primary-container-on-highest",
+    "--primary-container-on-lowest",
+    "--secondary-container-core",
+    "--secondary-container-dim",
+    "--secondary-container-on-highest",
+    "--surface-on-highest"
+  ],
+  "last_synced": "2026-09-15T18:55:00Z",
+  "last_synced_by": "arrow-components-builder",
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "Outside + Default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Вариант снят с инстанса focus-selection в ячейках State=focus (539:63230, 539:63293): инстанс лежит по границам бокса ячейки (0,0 62x40), кольцо снаружи."
+  },
+  "markup": {
+    "root": {
+      "class": "btn-menu",
+      "tags": [
+        "button",
+        "a"
+      ]
+    },
+    "variant": {
+      "pattern": "btn-menu-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "btn-menu--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      "btn-menu__emblem",
+      "btn-menu__chevron"
+    ],
+    "attrs": [
+      "aria-expanded",
+      "aria-haspopup",
+      "aria-label"
+    ],
+    "container": null,
+    "note": "Композит. Тон и ступень обязательны: в базе цветовых значений нет намеренно, подставленный дефолт скрыл бы пропуск класса. В .btn-menu__emblem обязателен инстанс awds-component-emblem со своим классом вида и ступени: content=avatar → emb-img / emb-initials / emb-placeholder, content=flag → emb-icon (языку без флага — emb-initials с кодом языка). Ступень эмблемы обязана соответствовать ступени кнопки: 400→emb--150, 300→emb--100, 200→emb--50. Точка опциональна: слот .btn-menu__badge внутри .btn-menu__emblem с инстансом awds-component-notice (notice notice-accent notice--100), слоту обязателен display:flex. Выбранность — тон .btn-menu-accent-selected вместе с aria-expanded."
+  },
+  "questions": [
+    {
+      "id": "btn-menu-badge-hover-color",
+      "text": "В макете точка-индикатор темнеет на hover кнопки (badge/system/accent/bg #cc4033 → #b4352f), но точка — инстанс чужого компонента awds-component-notice, и её :hover-правила принадлежат ему. Лезть в селектор .notice из кнопки нельзя (правило владения селектором). Варианты: оставить как есть (точка не реагирует на hover кнопки), либо notice получает публичную переменную цвета, которую контейнер вправе задать. Переоткрыто 01.09.2026 при переписывании button-profile → button-menu: расхождение не снялось, компонент только сменил имя.",
+      "level": "component",
+      "target": null,
+      "severity": "polish",
+      "status": "open",
+      "raised_at": "2026-08-31",
+      "answer": null,
+      "asana_gid": "1218488921200874"
+    },
+    {
+      "id": "btn-menu-figma-flag-not-emblem",
+      "text": "Круг у content=flag в макете — не инстанс emblem, а фрейм Flag с иконкой внутри. Свойство свопа flag привязано к иконке ВНУТРИ фрейма, и на набор ссылаются 15 инстансов; замена фрейма инстансом emblem уводит узлы внутрь инстанса, где они не могут носить componentPropertyReferences набора-владельца, — все 15 привязок умирают. Код уже написан под emblem (emb emb-icon emb--{150|100|50}), то есть контракт готов и ждёт макет. Нужно решение: пересобрать свойство свопа поверх инстанса emblem (ценой пересоздания 15 привязок) или оставить фрейм и считать расхождение макета с кодом принятым.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-01",
+      "answer": null,
+      "asana_gid": "1218489019764064"
+    }
+  ],
+  "asana": {
+    "task_gid": "1218421798556856",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798556856",
+    "task_name": "💠 button-menu",
+    "parent_task": "💠 2 · buttons",
+    "primary": true
+  },
+  "snapshot_hash": "sha256:7e72729864081b7cc23bd54f789eb8a3d7d872117b25aa09eeadce8d1914b5a2",
+  "uses": {
+    "awds-component-emblem": "3.0.5",
+    "awds-component-notice": "2.0.3",
+    "awds-component-focus-selection": "2.0.9"
+  },
+  "contract": {
+    "classes": [
+      "btn-menu",
+      "btn-menu--200",
+      "btn-menu--300",
+      "btn-menu--400",
+      "btn-menu-accent-selected",
+      "btn-menu-default",
+      "btn-menu__badge",
+      "btn-menu__chevron",
+      "btn-menu__emblem"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "accent-selected",
+      "default"
+    ],
+    "sizes": [
+      "200",
+      "300",
+      "400"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}

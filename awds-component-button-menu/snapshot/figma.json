@@ -1,0 +1,283 @@
+{
+  "fetched_by": "arrow-components-builder / MCP claude_ai_Figma",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page_node_id": "539:63003",
+  "page_name": "↪ button-menu",
+  "sets": {
+    "default": {
+      "node_id": "539:63199",
+      "name": "button-menu / default",
+      "component_key": "39973cff74d90a064818e1a4348a77c32d39a7af",
+      "cells": 30,
+      "axes": {
+        "size": [
+          "400",
+          "300",
+          "200"
+        ],
+        "state": [
+          "rest",
+          "hover",
+          "focus",
+          "active",
+          "disabled"
+        ],
+        "content": [
+          "avatar",
+          "flag"
+        ]
+      },
+      "geometry": {
+        "200": "50x32",
+        "300": "58x36",
+        "400": "62x40"
+      }
+    },
+    "accent-selected": {
+      "node_id": "1014:348",
+      "name": "button-menu / accent-selected",
+      "component_key": "5c163734fc55c65ee3face5f4958eda446a7a29f",
+      "cells": 30,
+      "axes": {
+        "size": [
+          "400",
+          "300",
+          "200"
+        ],
+        "state": [
+          "rest",
+          "hover",
+          "focus",
+          "active",
+          "disabled"
+        ],
+        "content": [
+          "avatar",
+          "flag"
+        ]
+      },
+      "geometry": {
+        "200": "50x32",
+        "300": "58x36",
+        "400": "62x40"
+      }
+    }
+  },
+  "component_properties": {
+    "note": "Сняты из descriptionMarkdown набора default (публикация библиотеки 31.08.2026 21:26). Figma REST недоступен — токен FIGMA_API_TOKEN истёк, componentPropertyDefinitions не читались напрямую.",
+    "instance_swap": [
+      "avatar-400",
+      "avatar-300",
+      "avatar-200",
+      "flag"
+    ],
+    "boolean": {
+      "badge": false
+    }
+  },
+  "structure": {
+    "cell_avatar": [
+      "instance notice / accent (hidden, 6x6, top-right угол эмблемы)",
+      "instance emblem / img (32|28|24)",
+      "instance icon (шеврон 20|20|16)",
+      "instance focus-selection (только в ячейках state=focus, по границам бокса)"
+    ],
+    "cell_flag": [
+      "frame Flag (32|28|24) → instance ic-color (24|20|16)",
+      "instance icon (шеврон)",
+      "instance notice / accent (hidden)"
+    ],
+    "known_gap": "Круг у content=flag — не инстанс emblem, а фрейм Flag с иконкой внутри: свойство свопа flag привязано к иконке ВНУТРИ фрейма, 15 ссылок на набор. Замена фрейма инстансом убила бы их все. Правка макета отложена, см. отчёт шага В2.2."
+  },
+  "variable_defs": {
+    "default/400/rest/avatar (539:63200)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/unselected/chevron": "#080808",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/unselected/bg": "#f7f7f7",
+      "list/unselected/border": "#f7f7f7"
+    },
+    "default/300/rest/avatar (539:63205)": {
+      "space/7": "28",
+      "border-radius/full": "600",
+      "list/unselected/chevron": "#080808",
+      "rectangle/300/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/unselected/bg": "#f7f7f7",
+      "list/unselected/border": "#f7f7f7"
+    },
+    "default/200/rest/avatar (539:63210)": {
+      "space/6": "24",
+      "border-radius/full": "600",
+      "list/unselected/chevron": "#080808",
+      "rectangle/200/icon": "16",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/unselected/bg": "#f7f7f7",
+      "list/unselected/border": "#f7f7f7"
+    },
+    "default/400/hover/avatar (539:63215)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/unselected/chevron": "#0f0f0f",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/unselected/bg": "#f2f2f2",
+      "list/unselected/border": "#ededed"
+    },
+    "default/400/focus/avatar (539:63230)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/unselected/chevron": "#0f0f0f",
+      "rectangle/400/icon": "20",
+      "focus-selection/outlineShow": "true",
+      "focus-selection/outline": "#080808",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/unselected/bg": "#f7f7f7",
+      "list/unselected/border": "#f7f7f7"
+    },
+    "default/400/active/avatar (539:63248)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/unselected/chevron": "#0f0f0f",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/unselected/bg": "#f7f7f7",
+      "list/unselected/border": "#f7f7f7"
+    },
+    "default/400/disabled/avatar (539:63530)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/unselected/chevron": "#080808",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/disabled": "40",
+      "list/unselected/bg": "#f7f7f7",
+      "list/unselected/border": "#f7f7f7"
+    },
+    "default/400/rest/flag (539:63669)": {
+      "flag/White": "#FFFFFF",
+      "flag/Light Gray": "#E6E6E6",
+      "border-radius/full": "600",
+      "role/surface/bright": "#ffffff",
+      "list/unselected/chevron": "#080808",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/unselected/bg": "#f7f7f7",
+      "list/unselected/border": "#f7f7f7"
+    },
+    "accent-selected/400/rest/avatar (539:63263)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/selected-secondary/placehold": "#674d25",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/selected-secondary/bg": "#fffae7",
+      "list/selected-secondary/border": "#fff2bc"
+    },
+    "accent-selected/400/hover/avatar (539:63278)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/selected-secondary/placehold": "#674d25",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/selected-secondary/bg": "#fffae7",
+      "list/selected-secondary/border": "#fff2bc"
+    },
+    "accent-selected/400/focus/avatar (539:63293)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/selected-secondary/placehold": "#674d25",
+      "rectangle/400/icon": "20",
+      "focus-selection/outlineShow": "true",
+      "focus-selection/outline": "#080808",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/selected-secondary/bg": "#fffae7",
+      "list/selected-secondary/border": "#fff2bc"
+    },
+    "accent-selected/400/active/avatar (539:63311)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/selected-secondary/placehold": "#674d25",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/enabled": "100",
+      "list/selected-secondary/bg": "#fffae7",
+      "list/selected-secondary/border": "#fff2bc"
+    },
+    "accent-selected/400/disabled/avatar (539:63545)": {
+      "space/8": "32",
+      "border-radius/full": "600",
+      "list/selected-secondary/placehold": "#674d25",
+      "rectangle/400/icon": "20",
+      "profile-button/gap": "2",
+      "profile-button/padding": "4",
+      "opacity/control/disabled": "40",
+      "list/selected-secondary/bg": "#fffae7",
+      "list/selected-secondary/border": "#fff2bc"
+    }
+  },
+  "measurements": {
+    "chevron_opacity": "Ячеек opacity/chevron/{shrink,expand} в наборах нет ни в одной из 60 ячеек. Замер тёмнейшего пикселя шеврона по рендеру ячейки: rest #080808, active #0f0f0f — ровно значения list/unselected/chevron, без множителя прозрачности.",
+    "badge_offset": "Точка стоит вплотную к правому верхнему углу бокса эмблемы на всех ступенях: 400 — точка x 30..36 при эмблеме 4..36; 200 — 22..28 при 4..28. Смещения нулевые.",
+    "drift_chevron": "accent-selected биндит list/selected-secondary/placehold (#674d25); код пишет list/selected-secondary/chevron (30 24 11) по решению Р6."
+  },
+  "primary_node_id": "5:11",
+  "fetched": "2026-09-15",
+  "cells_per_set": 30,
+  "axes_note": "Оси: size=400|300|200 · state=rest|hover|focus|active|disabled · content=avatar|flag, плюс BOOLEAN show-badge и три INSTANCE_SWAP аватара с флагом. Оси loading у компонента нет — сведения осей, как у button, overhung и button-area, здесь не требовалось.",
+  "rebind": {
+    "done": "2026-09-15",
+    "what": "60 шевронов (fills на BOOLEAN_OPERATION «Union») переведены со старой библиотеки на ячейки темы: набор default → state/list/unselected/chevron-{state} по состоянию варианта (disabled берёт -rest), набор accent-selected → state/list/selected-secondary/chevron (ячейка без срезов).",
+    "why": "Старая библиотека держала имена с опечатками, снятыми в теме 14.09.2026: chevrone и placehold. Хуже опечатки — адрес: в наборе accent-selected шеврон был привязан к placehold, то есть к ячейке подсказки, а не к своей. Код всё это время читал list/selected-secondary/chevron, то есть был прав.",
+    "colorShift": "default #080808 → #141414 (surface-on-highest), accent-selected #674d25 → #1e180b (primary-container-on-highest). Значения старой библиотеки разошлись с темой.",
+    "imported": "Целевых переменных в файле не было — импортированы по ключу из 📜 tokens ↪ studio (пять ключей: chevron-rest/hover/focus/active и selected-secondary/chevron)."
+  },
+  "raw_fills": {
+    "count": 150,
+    "intentional": true,
+    "where": "Flag / ic-color / AE / Vector — по 30 узлов на каждый из пяти цветов #ffffff, #e6e6e6, #12833b, #262626, #ff323e.",
+    "why": "Это иллюстрация флага ОАЭ внутри слота свопа content=flag, а не поверхность темы. Цвета государственного флага не выводятся из палитры сайта и не должны меняться вместе с ней — тот же случай, что части-геометрии и контент слота в token-resolution.md. Оставлены сырыми намеренно."
+  },
+  "_page_cleanup_2026_09_20": {
+    "date": "2026-09-20",
+    "note": "Заход по всей странице 2 · buttons 20.09.2026 (решение владельца по объёму). Снималось посекционно, сверка «до/после» по всем узлам секции — заливка, обводка, габариты, радиус, кегль, прозрачность.",
+    "dead_modes_cleared": 60,
+    "detail": {
+      "State=Rest": 24,
+      "State=Hover": 12,
+      "State=Focus": 12,
+      "State=Active": 12
+    },
+    "diff": 0,
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0
+    }
+  }
+}
