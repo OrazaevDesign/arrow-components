@@ -1,6 +1,6 @@
 # Link / Heading
 
-**Источник:** ArrowDS токены `State/*/link/heading` (без отдельной Figma-ноды).
+**Источник:** [💠 arrow ↪ components → 4 · elements → ↪ link → `link / heading`](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=454-3498) · значения — ячейки `link/heading-*` темы 21 (студия), в коде читаются ролями с якорями `#cell`.
 
 > [!NOTE]
 > `link-heading.md` — **author-owned**. ACB пишет первичный draft, потом не трогает.

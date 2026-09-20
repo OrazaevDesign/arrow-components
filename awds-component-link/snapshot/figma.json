@@ -1,23 +1,121 @@
 {
-  "file_key": null,
-  "file_name": "ArrowDS tokens (theme.json State/*/link)",
-  "source": "tokens",
-  "_source_note": "Компонент собран НЕ из Figma Component Set, а напрямую из DS-токенов State/*/link (component-token-map.json, секция link). file_key/node_id отсутствуют — link не выгружен отдельным Component Set. При появлении Figma-ноды прописать сюда file_key + node_id и перейти на обычный refresh.",
-  "states": ["rest", "hover", "focus", "active"],
-  "variants": ["default", "muted", "contrast", "accent", "heading"],
-  "color_by_variant_state": {
-    "default":  { "rest": "{role.tertiary.container.on-high}",  "hover": "{role.tertiary.container.on-highest}", "focus": "{role.tertiary.container.on-high}",  "active": "{role.tertiary.container.on-high}" },
-    "muted":    { "rest": "{role.surface.on-high}",             "hover": "{role.surface.on-highest}",            "focus": "{role.surface.on-high}",             "active": "{role.surface.on-high}" },
-    "contrast": { "rest": "{role.surface.on-highest}",          "hover": "{role.surface.on-high}",               "focus": "{role.surface.on-highest}",          "active": "{role.surface.on-highest}" },
-    "accent":   { "rest": "{role.surface.on-highest}",          "hover": "{role.accent.container.on}",           "focus": "{role.surface.on-highest}",          "active": "{role.surface.on-highest}" },
-    "heading":  { "rest": "{role.surface.on-high}",             "hover": "{role.accent.container.on}",           "focus": "{role.surface.on-high}",             "active": "{role.surface.on-high}" }
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": "↪ link (5:28)",
+  "primary_node_id": "453:3471",
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=453-3471",
+  "synced": "2026-09-18",
+  "source": "figma",
+
+  "_structure_note": "Секция ↪ link была ПУСТА с момента создания файла — link оставался единственным компонентом без единого узла в макете (в мете стоял file_key: null, снапшот ссылался на theme.json). Собрана с нуля 18.09.2026 по решению владельца: вариант = отдельный COMPONENT_SET, состояния = ось внутри него. Это принятая в файле манера — так устроены badge (17 наборов), notice (3) и emblem (4), а не таблица-легенда: легенд в файле нет вовсе.",
+
+  "_why_no_inline_component": "Инстанс нельзя вставить внутрь строки текста — в Figma инстанс всегда узел дерева, а текстовый слой атомарен внутри; обёртка вокруг слова сломала бы перенос строки в абзаце. Поэтому инлайн-ссылка в макете остаётся ТЕКСТОМ, а привязка делается на ФРАГМЕНТ: setRangeFills с paint, у которого boundVariables.color (проверено 18.09.2026 на живом файле; setRangeBoundVariable для fills не поддерживается — только fontFamily/fontSize/fontStyle/fontWeight/letterSpacing/lineHeight/paragraphSpacing/paragraphIndent). Набор нужен для отдельно стоящей ссылки: «Все →», футер, заголовок карточки.",
+
+  "sets": {
+    "link / default": {
+      "node_id": "453:3471",
+      "cells": {
+        "state=rest":   { "node_id": "453:3463", "color": "link/default-rest",   "role": "tertiary/container-on-high",    "underline": "UNDERLINE" },
+        "state=hover":  { "node_id": "453:3465", "color": "link/default-hover",  "role": "tertiary/container-on-highest", "underline": "NONE" },
+        "state=focus":  { "node_id": "453:3467", "color": "link/default-focus",  "role": "tertiary/container-on-high",    "underline": "UNDERLINE" },
+        "state=active": { "node_id": "453:3469", "color": "link/default-active", "role": "tertiary/container-on-high",    "underline": "UNDERLINE" }
+      }
+    },
+    "link / muted": {
+      "node_id": "454:3471",
+      "cells": {
+        "state=rest":   { "node_id": "454:3463", "color": "link/muted-rest",   "role": "surface/on-high",    "underline": "UNDERLINE" },
+        "state=hover":  { "node_id": "454:3465", "color": "link/muted-hover",  "role": "surface/on-highest", "underline": "NONE" },
+        "state=focus":  { "node_id": "454:3467", "color": "link/muted-focus",  "role": "surface/on-high",    "underline": "UNDERLINE" },
+        "state=active": { "node_id": "454:3469", "color": "link/muted-active", "role": "surface/on-high",    "underline": "UNDERLINE" }
+      }
+    },
+    "link / contrast": {
+      "node_id": "454:3480",
+      "cells": {
+        "state=rest":   { "node_id": "454:3472", "color": "link/contrast-rest",   "role": "surface/on-highest", "underline": "UNDERLINE" },
+        "state=hover":  { "node_id": "454:3474", "color": "link/contrast-hover",  "role": "surface/on-high",    "underline": "NONE" },
+        "state=focus":  { "node_id": "454:3476", "color": "link/contrast-focus",  "role": "surface/on-highest", "underline": "UNDERLINE" },
+        "state=active": { "node_id": "454:3478", "color": "link/contrast-active", "role": "surface/on-highest", "underline": "UNDERLINE" }
+      }
+    },
+    "link / accent": {
+      "node_id": "454:3489",
+      "cells": {
+        "state=rest":   { "node_id": "454:3481", "color": "link/accent-rest",   "role": "surface/on-highest",  "underline": "UNDERLINE" },
+        "state=hover":  { "node_id": "454:3483", "color": "link/accent-hover",  "role": "accent/container-on", "underline": "NONE" },
+        "state=focus":  { "node_id": "454:3485", "color": "link/accent-focus",  "role": "surface/on-highest",  "underline": "UNDERLINE" },
+        "state=active": { "node_id": "454:3487", "color": "link/accent-active", "role": "surface/on-highest",  "underline": "UNDERLINE" }
+      }
+    },
+    "link / heading": {
+      "node_id": "454:3498",
+      "cells": {
+        "state=rest":   { "node_id": "454:3490", "color": "link/heading-rest",   "role": "surface/on-high",     "underline": "NONE" },
+        "state=hover":  { "node_id": "454:3492", "color": "link/heading-hover",  "role": "accent/container-on", "underline": "NONE" },
+        "state=focus":  { "node_id": "454:3494", "color": "link/heading-focus",  "role": "surface/on-high",     "underline": "NONE" },
+        "state=active": { "node_id": "454:3496", "color": "link/heading-active", "role": "surface/on-high",     "underline": "NONE" }
+      },
+      "underline_note": "Единственный вариант без линии во всех состояниях: .lnk-heading { text-decoration-line: none } — заголовки не подчёркивают. При сборке 18.09.2026 линия была поставлена ошибочно всем четырём состояниям и снята сверкой со снапшотом."
+    }
   },
+
+  "axes": {
+    "state": {
+      "values": ["rest", "hover", "focus", "active"],
+      "why": "Состояния — ось, потому что ради них и заводился макет: 20 ячеек state/link/* нигде в файле не были привязаны. Один набор на вариант ставит покой и наведение в одну колонку — решение владельца 18.09.2026, чтобы accent был отличим от contrast (в покое они дают один цвет)."
+    }
+  },
+
+  "properties": {
+    "label": "TEXT, дефолт «Ссылка» — свой id в каждом наборе (label#455:15 у default, #457:0/5/10/15 у остальных)"
+  },
+
+  "bindings_total": {
+    "color": 20,
+    "font_size": 20,
+    "line_height": 20,
+    "item_spacing": 5,
+    "raw_fills": 0
+  },
+
+  "geometry_resolved": {
+    "font": "Inter Regular, control/font-size/400 (14px) + control/line-height/400 (20px)",
+    "font_note": "Кегль в макете ДЕМОНСТРАЦИОННЫЙ: в коде размер не задаётся вовсе — .lnk наследует font-size/family/weight из контекста (size_scale: null). 14/20 выбраны как типичный размер текста, в котором ссылка встречается.",
+    "gap": "space/1 — между подписью и будущим слотом иконки",
+    "padding": "16 сырой на наборе — рамка витрины набора, в компонент не входит"
+  },
+
+  "code_mapping": {
+    "link / default":  ".lnk.lnk-default",
+    "link / muted":    ".lnk.lnk-muted",
+    "link / contrast": ".lnk.lnk-contrast",
+    "link / accent":   ".lnk.lnk-accent",
+    "link / heading":  ".lnk.lnk-heading",
+    "state=rest":   ":link / базовое состояние",
+    "state=hover":  ":hover",
+    "state=focus":  ":focus-visible",
+    "state=active": ":active"
+  },
+
+  "not_expressed_in_figma": {
+    "underline_style": "Ось стиля линии (--ul-dashed / --ul-dotted) в макете не выражена: Figma умеет у текста только UNDERLINE и NONE, пунктирного подчёркивания текста в ней нет. Пунктир рисуется лишь отдельным узлом с dashPattern, то есть перестал бы быть подчёркиванием. В CSS остаются все пять: solid / dashed / dotted / hover / none.",
+    "underline_behaviour": "Поведение «линия появляется по наведению» (--ul-hover) в макете тоже не выражено — оно обратно дефолтному, а ось state уже занята показом цвета. Дефолт (линия есть и гаснет по наведению) в наборах виден.",
+    "underline_opacity": "В CSS линия рисуется цветом текста на 30% (color-mix с currentColor). В макете линия идёт полным цветом: у Figma нет отдельной непрозрачности подчёркивания.",
+    "icon_slot": "Слот иконки (.lnk > svg, 1em) в макете НЕ выражен. Попытка 18.09.2026: инстанс arrow-right_small-regular вставляется, но покрасить его под цвет ссылки нельзя — поддерево свежеимпортированного библиотечного мастера недоступно Plugin API (children = 0 при children = 1 у мастера, прогрев обходом не помогает). В файле иконки красятся на узле Union внутри локальной обёртки-части (. / icon-area у кнопок); у ссылки такой части нет. Невидимый непокрашенный узел стал бы ловушкой для дизайнера, поэтому слот снят целиком. Заведено вопросом."
+  },
+
+  "debts": {
+    "figma_publish": "Набор создан в неопубликованной библиотеке: пока 💠 arrow ↪ components не перепубликован, файлы-потребители его не увидят (шаг 7.3 плана).",
+    "foreign_binding": "Ячейка link/default-rest читается ЧУЖИМ узлом: иконка . / icon-area → ic-a → Union внутри кнопок на странице 2 · buttons привязана к ней (VariableID 3c15ddb1…/29:719). Кнопка должна читать button/*; это долг секции кнопок, не ссылки. Заведено вопросом."
+  },
+
   "non_token_decisions": {
-    "text-decoration": "underline (default/muted/contrast/accent); none у heading — заголовки не подчёркивают",
-    "text-decoration-thickness": "from-font (метрика шрифта, не хардкод)",
+    "text-decoration-thickness": "var(--awds-space-px) — 1px из шкалы, не хардкод",
     "text-underline-offset": "var(--awds-space-0-5)",
-    "focus-outline": "2px solid rgb(var(--surface-on-highest)), offset 2px, скругление var(--awds-rounded-200)",
-    "size": "нет — ссылка наследует font-size/family/weight из контекста (shape=null, size_scale=null)",
-    "disabled": "нет — в токенах link отсутствует disabled-состояние"
+    "focus-ring": "слой awds-component-focus-selection через --awds-focus-*; в наборах не нарисован — кольцо общее для всех компонентов",
+    "size": "нет — ссылка наследует кегль из контекста (shape: null, size_scale: null)",
+    "disabled": "нет — в ячейках link такого состояния не заведено"
   }
 }

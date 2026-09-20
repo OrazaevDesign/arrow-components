@@ -1,6 +1,6 @@
 # Link / Default
 
-**Источник:** ArrowDS токены `State/*/link/default` (без отдельной Figma-ноды).
+**Источник:** [💠 arrow ↪ components → 4 · elements → ↪ link → `link / default`](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=453-3471) · значения — ячейки `link/default-*` темы 21 (студия), в коде читаются ролями с якорями `#cell`.
 
 > [!NOTE]
 > `link-default.md` — **author-owned**. ACB пишет первичный draft, потом не трогает. CSS и preview генерируются и при refresh затрутся.
