@@ -33,17 +33,20 @@
 
 .tooltip {
   /* size accumulators (Type Default) */
-  --awds-tooltip-pad-inline: var(--awds-space-space-2-5);   /* 10px */
-  --awds-tooltip-pad-block:  var(--awds-space-space-2);     /* 8px */
-  --awds-tooltip-fs:         var(--awds-typography-typography-font-size-400);             /* 14px */
-  --awds-tooltip-lh:         var(--awds-typography-typography-line-height-compact-400);   /* 17px */
-  --awds-tooltip-ls:         var(--awds-typography-typography-letter-spacing-400);
+  --awds-tooltip-pad-inline: var(--awds-space-2-5);   /* 10px */
+  --awds-tooltip-pad-block:  var(--awds-space-2);     /* 8px */
+  --awds-tooltip-fs:         var(--awds-typography-font-size-400);             /* 14px */
+  --awds-tooltip-lh:         var(--awds-typography-line-height-compact-400);   /* 17px */
+  --awds-tooltip-ls:         var(--awds-typography-letter-spacing-400);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);  /* 8px Smooth */
-  --awds-tooltip-tail:       var(--awds-space-space-2);      /* 8px — сторона квадрата хвоста */
-  /* Хайрлайн-обводка хвоста = кольцевой слой тени пузыря (elevation-3: 0 0 0 1px #00000008,
-     чёрный 3%). В DS нет отдельного токена-хайрлайна и нет opacity-3 — повторяем тот же
-     литерал, чтобы контур хвоста точно совпал с обводкой пузыря (на любой теме). */
-  --awds-tooltip-hairline:   rgb(0 0 0 / 3%);
+  --awds-tooltip-tail:       var(--awds-space-2);      /* 8px — сторона квадрата хвоста */
+  /* Хайрлайн-обводка хвоста = кольцевой слой тени пузыря (чёрный 3%), чтобы контур хвоста
+     точно совпал с обводкой пузыря на любой теме. До 15.09.2026 здесь стоял литерал
+     `rgb(0 0 0 / 3%)` с пояснением «в DS нет отдельного токена-хайрлайна». Токен был:
+     роль `extended/shadow-3` равна ровно `0 0 0 / 3%`, и макет всё это время держал
+     обводку именно на ней — литерал был расхождением кода с макетом, а не отсутствием
+     токена. Нашлось при привязке слоёв к ячейкам. */
+  --awds-tooltip-hairline:   rgb(var(--extended-shadow-3));   /* #cell tooltip/hairline */
   /* Ширина прямоугольной области (UX-спека): рекомендация 250px, максимум 500px.
      В DS нет токена для ширины тултипа — литерал, перекрывается переменной у потребителя
      (напр. --awds-tooltip-max-width: 500px для широкого пояснения). Текст переносится. */
@@ -105,24 +108,24 @@
 
 /* === Variant: Default (светлый) === */
 .tooltip-default {
-  --awds-tooltip-bg:    rgb(var(--surface-bright));
-  --awds-tooltip-color: rgb(var(--surface-on-high));
+  --awds-tooltip-bg:    rgb(var(--surface-bright));   /* #cell tooltip/default/bg */
+  --awds-tooltip-color: rgb(var(--surface-on-high));   /* #cell tooltip/default/color */
 }
 
 /* === Variant: Contrast (тёмный) === */
 .tooltip-contrast {
-  --awds-tooltip-bg:    rgb(var(--surface-on-highest));
-  --awds-tooltip-color: rgb(var(--surface-bright));
+  --awds-tooltip-bg:    rgb(var(--surface-on-highest));   /* #cell tooltip/contrast/bg */
+  --awds-tooltip-color: rgb(var(--surface-bright));   /* #cell tooltip/contrast/color */
 }
 
 
 /* === Type: Compact === */
 .tooltip--compact {
-  --awds-tooltip-pad-inline: var(--awds-space-space-1-5);   /* 6px */
-  --awds-tooltip-pad-block:  var(--awds-space-space-1);     /* 4px */
-  --awds-tooltip-fs:         var(--awds-typography-typography-font-size-300);             /* 13px */
-  --awds-tooltip-lh:         var(--awds-typography-typography-line-height-compact-300);   /* 16px */
-  --awds-tooltip-ls:         var(--awds-typography-typography-letter-spacing-300);
+  --awds-tooltip-pad-inline: var(--awds-space-1-5);   /* 6px */
+  --awds-tooltip-pad-block:  var(--awds-space-1);     /* 4px */
+  --awds-tooltip-fs:         var(--awds-typography-font-size-300);             /* 13px */
+  --awds-tooltip-lh:         var(--awds-typography-line-height-compact-300);   /* 16px */
+  --awds-tooltip-ls:         var(--awds-typography-letter-spacing-300);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-300);  /* 6px Smooth */
 }
 

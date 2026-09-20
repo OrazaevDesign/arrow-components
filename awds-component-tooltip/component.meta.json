@@ -1,10 +1,10 @@
 {
   "component": "tooltip",
-  "version": "1.0.2",
-  "contract_hash": "sha256:8a86507521dde227a92b5fa6ed26ad8fbc8a7825762fff58c8bc1b7c5515a91c",
-  "artifact_hash": "sha256:b371a8eb7c3721e73956cc3551f00dbbfda8184c79222d17dd45ede06e8500c0",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:48.914Z",
+  "version": "1.0.7",
+  "contract_hash": "sha256:f57764cace2b5bcdc50496f027b9ada5dd8e6ce1682bb09c954bbc46e7b84d23",
+  "artifact_hash": "sha256:1c51b33d91912ac3ba208725967c9c740bb2445dfe3662fe5f57850582bb7da9",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:50.815Z",
   "own_values": [
     {
       "value": "1px",
@@ -38,21 +38,21 @@
     }
   ],
   "figma": {
-    "file_key": "XfUbnX6GFLFZ6nInMOlyQD",
-    "file_name": "💠 Comp ↪ ⁶ Popup",
-    "primary_node_id": "4001:27067",
-    "primary_url": "https://www.figma.com/design/XfUbnX6GFLFZ6nInMOlyQD/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B6-Popup?node-id=4001-27067"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:46",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-46"
   },
   "variants": {
     "default": {
-      "node_id": "4001:27067",
-      "url": "https://www.figma.com/design/XfUbnX6GFLFZ6nInMOlyQD/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B6-Popup?node-id=4001-27067",
-      "figma_label": "Type=Default, Variant=Default, Side=Top"
+      "node_id": "77:58683",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=77-58683",
+      "figma_label": "tooltip (variant=Default)"
     },
     "contrast": {
-      "node_id": "4001:27091",
-      "url": "https://www.figma.com/design/XfUbnX6GFLFZ6nInMOlyQD/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B6-Popup?node-id=4001-27091",
-      "figma_label": "Type=Default, Variant=Contrast, Side=Top"
+      "node_id": "77:58683",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=77-58683",
+      "figma_label": "tooltip (variant=Contrast)"
     }
   },
   "shape": null,
@@ -118,24 +118,25 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-bright",
-    "--color-surface-on-high",
-    "--color-surface-on-highest",
-    "--awds-shadow-elevation-3",
-    "--awds-space-space-1",
-    "--awds-space-space-1-5",
-    "--awds-space-space-2",
-    "--awds-space-space-2-5",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
     "--awds-rounded-border-radius-300",
     "--awds-rounded-border-radius-400",
-    "--awds-typography-typography-font-size-300",
-    "--awds-typography-typography-line-height-compact-300",
-    "--awds-typography-typography-letter-spacing-300",
-    "--awds-typography-typography-font-size-400",
-    "--awds-typography-typography-line-height-compact-400",
-    "--awds-typography-typography-letter-spacing-400",
-    "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--awds-shadow-elevation-3",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-typography-font-size-300",
+    "--awds-typography-font-size-400",
+    "--awds-typography-letter-spacing-300",
+    "--awds-typography-letter-spacing-400",
+    "--awds-typography-line-height-compact-300",
+    "--awds-typography-line-height-compact-400",
+    "--extended-shadow-3",
+    "--surface-bright",
+    "--surface-on-high",
+    "--surface-on-highest"
   ],
   "notes": "3 независимые оси: variant (default/contrast — цвет), type (default/compact — размер, модификатор .tooltip--compact), side (top/bottom/left/right — хвост, модификатор .tooltip--{side}). Категория body в DS отсутствует → размер из typography, line-height округлён к compact. Хвост — повёрнутый квадрат поверх пузыря, без drop-тени (лежит на тени бокса), по центру стороны; хайрлайн-обводка 1px (Figma shape Stroke) = кольцо тени пузыря (чёрный 3%) на двух внешних гранях, --awds-tooltip-hairline (opacity-3-токена в DS нет → литерал).",
   "last_synced": "2026-06-22T13:26:22Z",
@@ -170,6 +171,62 @@
       }
     }
   },
+  "markup": {
+    "root": {
+      "class": "tooltip",
+      "tags": [
+        "span",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "tooltip-{variant}",
+      "required": true
+    },
+    "size": null,
+    "native": null,
+    "children": [
+      {
+        "class": "tooltip__bubble"
+      },
+      {
+        "class": "tooltip__tail"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Шкалы размеров нет: сторона появления и компактность задаются модификаторами. Пузырь и хвост обязательны — хвост показывает, к чему относится подсказка."
+  },
+  "questions": [
+    {
+      "id": "state-groups-missing-for-seven",
+      "text": "У семи компонентов нет группы State в студии — 53 инлайна ролей (product-card 25, slider 9, avatar 8, price 4, tooltip 4, content-area 2, heading 1). Заводить группы в студии или узаконить инлайн ролей записью в own_values?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217960855817768",
+      "raised_at": "2026-08-25",
+      "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25",
+      "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
+      "answered_at": "2026-09-15"
+    }
+  ],
+  "family": "popups",
+  "summary": "Подсказка-пузырь с хвостом-стрелкой, светлая и contrast",
+  "aliases": [
+    "тултип",
+    "подсказка",
+    "всплывающая подсказка",
+    "хинт"
+  ],
+  "asana": {
+    "task_gid": "1218436374099537",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218436374099537",
+    "task_name": "💠 tooltip",
+    "parent_task": "💠 7 · popups",
+    "primary": true
+  },
   "contract": {
     "classes": [
       "tooltip",
@@ -177,6 +234,7 @@
       "tooltip--compact",
       "tooltip--left",
       "tooltip--right",
+      "tooltip--top",
       "tooltip-contrast",
       "tooltip-default",
       "tooltip__bubble",
