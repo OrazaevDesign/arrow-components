@@ -1,0 +1,153 @@
+{
+  "_note": "Снимок секции ↪ option-datepicker на 17.09.2026 — заход прохода plans/2026-09-14. Компонент собран с нуля: макет в файле был, скилла в репозитории не было (datepicker числился в бэклоге доски «есть в Asana, нет у нас»). Читать вместе с references/datepicker.css: там же записано, почему компонент не несёт календарной логики.",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "3 · forms",
+  "primary_node_id": "44:87012",
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-87012",
+  "section": {
+    "id": "44:87012",
+    "name": "↪ option-datepicker",
+    "nodes": 572
+  },
+  "sets": {
+    "datepicker": {
+      "id": "44:90181",
+      "axis": "view = date | month | year",
+      "variants": {
+        "date": {
+          "id": "44:90182",
+          "size": "304x272",
+          "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90182"
+        },
+        "month": {
+          "id": "44:90234",
+          "size": "304x312",
+          "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90234"
+        },
+        "year": {
+          "id": "44:90252",
+          "size": "304x312",
+          "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90252"
+        }
+      }
+    },
+    "datepicker-range": {
+      "id": "44:90270",
+      "axis": "view = date | month",
+      "variants": {
+        "date": {
+          "id": "44:90271",
+          "size": "632x320",
+          "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90271"
+        },
+        "month": {
+          "id": "44:90378",
+          "size": "632x320",
+          "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90378"
+        }
+      },
+      "structure": "внешний фрейм несёт фон, тень и скругление; внутри Start и End без фона, между ними колонка Divider шириной 8. В коде разделитель — граница второго .dpick__month, отдельного узла ради вертикальной линии не заводится."
+    }
+  },
+  "_structure_note": "Было: ось-заглушка var= у обоих наборов (канон props.md её запрещает); сетка дат в шесть колонок при семи подписях дней недели; blur первого слоя тени привязан к shadow1/offset-y; период между датами нарисован состоянием hover обычной строки списка. Стало: ось view=, сетка семиколоночная, тень равна elevation-3, у периода своя группа ячеек list/range/*. Инстансов у обоих наборов ноль — макет нарисован впрок, ломать было нечего.",
+  "axis_rename": {
+    "before": "var = date | month | year",
+    "after": "view = date | month | year",
+    "why": "слово-заглушка по канону props.md; ось настоящая — она переключает, что показывает панель. Имя выбрал владелец 17.09.2026 из трёх предложенных (view / unit / precision).",
+    "instances_checked": 0
+  },
+  "geometry_resolved": {
+    "панель": "304 ширина; padding 4 (dropdown/400/padding), радиус 8 (dropdown/400/border-radius), фон surface/bright, тень elevation-3",
+    "месяц": "внутренняя колонка, свой padding 4 и gap 4",
+    "шапка": "36 высота; кнопка-стрелка 36x36 = icon 20 + 2 × padding 8 (rectangle/300), заголовок 16/20",
+    "дни недели": "7 колонок по 38.86, высота 24, кегль 13/16 (control-300), цвет surface/on",
+    "сетка дат": "7 колонок, gap 4/4, ячейка 38.85x36",
+    "сетка месяцев и годов": "3 колонки по 96, gap 4/4 — 3 × 96 + 2 × 4 = 296 ровно",
+    "ячейка": "высота 36 = line-height 20 + 2 × padding 8; радиус 6 (rectangle/300/rounded); рамка 1 внутрь"
+  },
+  "grid_fix_17_09": {
+    "было": "ячейки дат 46 шириной с шагом 50 — в ряд помещалось ШЕСТЬ, а подписей дней недели семь (по 40 с шагом 44, последняя кончалась на 304 при ширине панели 296, то есть «Вс» вылезала за край). Числа не стояли под своими днями недели.",
+    "стало": "подписи дней переведены на растяжение (FILL) — легли по 38.86; ячейки дат зафиксированы на 38.85, семь в ряд. 38.85 срезано вниз от точного (296 − 6 × 4) / 7 = 38.857: при округлении вверх строка переносилась бы на шесть.",
+    "следствие": "панель вида date стала 272 высотой вместо 312 — 31 день укладывается в пять рядов, а не в шесть. Виды month и year остались 312.",
+    "тронуто узлов": 114
+  },
+  "shadow_fix_17_09": {
+    "дефект": "blur первого слоя тени был привязан к shadow1/offset-y и давал 0/6/6",
+    "починено": "привязан к shadow1/blur-radius → 0/6/12, тень сошлась с elevation-3",
+    "вариантов": 5,
+    "тот_же_дефект": "чинили 16.09.2026 у части . / dropdown на всех семи ступенях — панель календаря своя рамка, а не инстанс dropdown, и дефект был скопирован отдельно"
+  },
+  "range_cells_17_09": {
+    "дефект": "период между двумя датами нарисован состоянием hover обычной строки — 30 инстансов list-item / transparent / state=hover",
+    "почему это дефект": "«дата внутри выбранного периода» и наведение мышью — разные вещи: на период нельзя навести, он никуда не денется при уходе мыши, и в коде у него отдельный класс. Общая ячейка заставила бы CSS ссылаться на hover там, где наведения нет.",
+    "решение": "владелец 17.09.2026 — завести свою группу ячеек",
+    "заведено": [
+      "list/range/bg → secondary/container-core",
+      "list/range/border → secondary/container-core",
+      "list/range/color → secondary/container-on-highest"
+    ],
+    "вид": "не изменился: значения равны прежнему hover",
+    "долг": "ЗАКРЫТ 17.09.2026: библиотека перепубликована, 30 ячеек привязаны к list/range/{bg,border,color} и переведены с state=hover на state=rest одним проходом. Плюс 5 панелей и 21 подпись дня недели на datepicker/panel/bg и datepicker/weekday/color."
+  },
+  "code_mapping": {
+    ".dpick": "панель — dropdown/400/padding, dropdown/400/border-radius, surface/bright, elevation-3",
+    ".dpick__month": "Start / End в range, единственная колонка в одиночной панели",
+    ".dpick__header": "Header",
+    ".dpick__nav": "button / ghost content=icon size=300 — бокс 36, цвет button/ghost/color",
+    ".dpick__title": "button-area / contrast content=text size=500 — цвет link/contrast",
+    ".dpick__weekdays / .dpick__weekday": "Day / div — подписи дней недели, surface/on",
+    ".dpick__grid": "Grid",
+    ".dpick__cell": "list-item / transparent — list/unselected-transparent/*",
+    ".dpick__cell--today": "list-item / actual-selected — list/unselected-actual/*",
+    ".dpick__cell--selected": "list-item / accent-selected — list/selected-secondary/*",
+    ".dpick__cell--range": "list-item / transparent state=hover в макете → list/range/* в коде (см. range_cells_17_09)"
+  },
+  "census_after": {
+    "bound": 2969,
+    "by_collection": {
+      "size": 1060,
+      "state": 746,
+      "control": 507,
+      "font": 296,
+      "space": 213,
+      "shadow": 75,
+      "roles": 48,
+      "rounded": 20,
+      "Sys": 4
+    },
+    "raw_fills": 0,
+    "old_libraries": "4 привязки Sys (подписи) — не переносятся, как и в соседних секциях"
+  },
+  "parts_used": [
+    "list-item / transparent, actual-selected, accent-selected (size=300)",
+    "content-list (size=300, padding=off)",
+    "button / ghost (content=icon, size=300)",
+    "button-area / contrast (content=text, size=500)",
+    ". / center, . / text-area"
+  ],
+  "instances_in_file": 0,
+  "debts": [
+    "нет — оба долга закрыты 17.09.2026: привязки после перепубликации библиотеки токенов, стрелки свапом (см. arrows_fix_17_09)"
+  ],
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров у компонента нет: ступень одна — ячейка на rectangle/300, панель на dropdown/400. Как у link, tooltip и product-card.",
+  "synced": "2026-09-17",
+  "own_cells_17_09": {
+    "почему": "гейт component-cell-drift не пропускает роль без ячейки: у каждой строки кода, читающей роль, должен быть адрес в студии. Фон панели и подпись дня недели читались surface/bright и surface/on напрямую — и в коде, и в макете.",
+    "заведено": [
+      "datepicker/panel/bg → surface/bright",
+      "datepicker/weekday/color → surface/on"
+    ],
+    "вид": "не изменился: роли те же",
+    "долг": "ЗАКРЫТ 17.09.2026 вместе с остальными привязками."
+  },
+  "cells_added_total": "5 ячеек в коллекцию state темы 21: три list/range/* и две datepicker/*",
+  "arrows_fix_17_09": {
+    "дефект": "обе кнопки листания в шапке несли arrow-down_small-regular — и «предыдущий», и «следующий» месяц показывали стрелку вниз",
+    "почему не поворотом": "Figma не даёт переопределить relative-transform у вложенного инстанса — поворот падает с ошибкой; нужен был свап",
+    "как нашли иконки": "библиотека в использовании — «⭕ supp ↪ icons mgc v1.50 (mini)»; её fileKey в инвентаре нет, а копия MGC F6Bw0j8rIcXo2rnigBKQ3b держит те же имена с ДРУГИМИ ключами (импорт по ним не проходит). Ключи нашлись через search_design_system по имени",
+    "свап": "10 иконок в пяти вариантах → arrow-left_small-regular (817abc17…) и arrow-right_small-regular (8acb2603…)",
+    "код": "уже рисовал направление поворотом маски — форма совпадает, правка только в комментарии"
+  }
+}

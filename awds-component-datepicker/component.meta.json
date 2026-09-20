@@ -1,0 +1,272 @@
+{
+  "component": "datepicker",
+  "version": "1.0.1",
+  "contract_hash": "sha256:7c095f252b9db71ce9c0b845e58bfc4120462d25f788e041f30511d0ca216aa0",
+  "artifact_hash": "sha256:01abba294f4f88bf82dbd3987bf412e06f6793ac189ccf2d0a98c68a0bca3cc3",
+  "visual_change": false,
+  "released_at": "2026-09-17T10:36:44.472Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "44:87012",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-87012"
+  },
+  "variants": {
+    "date": {
+      "node_id": "44:90182",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90182",
+      "figma_label": "datepicker / view=date"
+    },
+    "month": {
+      "node_id": "44:90234",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90234",
+      "figma_label": "datepicker / view=month"
+    },
+    "year": {
+      "node_id": "44:90252",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90252",
+      "figma_label": "datepicker / view=year"
+    },
+    "range": {
+      "node_id": "44:90270",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90270",
+      "figma_label": "datepicker-range / view=date|month"
+    }
+  },
+  "variants_note": "Виды date/month/year — это ось view одного набора, range — второй набор из двух панелей рядом. В коде все четыре живут в одном скилле: решение владельца 17.09.2026. Разметка и базовый класс у них общие, отличие range — вторая панель и подсветка периода; разводить их по скиллам значило бы держать календарную сетку в двух CSS и не заметить, когда они разойдутся.",
+  "shape": "dropdown",
+  "shape_note": "Панель стоит на dropdown/400 — та же ячейка, что у выпадающего списка select: оба поповера. Ячейка даты внутри стоит на rectangle/300.",
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров нет: ступень одна. Как у link, tooltip и product-card.",
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "disabled"
+  ],
+  "states_note": "Состояния живут на ячейке даты, не на панели. Active у ячейки в макете не нарисован — нажатие сразу меняет выбор, промежуточного вида нет. Selected, today и range — не состояния, а признаки даты: они складываются (конец периода это selected поверх range).",
+  "color_tokens": [
+    "bg",
+    "border",
+    "color"
+  ],
+  "css_files": [
+    "datepicker.css"
+  ],
+  "markup": {
+    "root": {
+      "class": "dpick",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "dpick--{view}",
+      "required": true
+    },
+    "size": null,
+    "children": [
+      {
+        "class": "dpick__month",
+        "required": true
+      },
+      {
+        "class": "dpick__header",
+        "required": true
+      },
+      {
+        "class": "dpick__nav",
+        "required": true
+      },
+      {
+        "class": "dpick__title",
+        "required": true
+      },
+      {
+        "class": "dpick__weekdays",
+        "required": false
+      },
+      {
+        "class": "dpick__weekday",
+        "required": false
+      },
+      {
+        "class": "dpick__grid",
+        "required": true
+      },
+      {
+        "class": "dpick__cell",
+        "required": true
+      }
+    ],
+    "attrs": [
+      "role",
+      "aria-label",
+      "aria-selected",
+      "aria-current",
+      "aria-live",
+      "disabled"
+    ],
+    "container": null,
+    "note": "dpick__weekdays нужен только виду date: у месяцев и годов шапки дней недели нет. Первая дата месяца сдвигается grid-column-start, пустых клеток в разметке нет — на них можно было бы нажать."
+  },
+  "preview": {
+    "base_class": "dpick",
+    "variant_class": "dpick--date",
+    "default_size": null,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "today",
+      "selected",
+      "range",
+      "disabled"
+    ],
+    "matrix_sizes": [],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Панель дат",
+        "html": "<div class=\"dpick dpick--date\"><div class=\"dpick__month\">…шапка, дни недели, сетка…</div></div>"
+      },
+      {
+        "label": "Выбор месяца",
+        "html": "<div class=\"dpick dpick--month\"><div class=\"dpick__month\">…шапка и сетка из 12 месяцев…</div></div>"
+      },
+      {
+        "label": "Период",
+        "html": "<div class=\"dpick dpick--date dpick--range\"><div class=\"dpick__month\">…</div><div class=\"dpick__month\">…</div></div>"
+      }
+    ]
+  },
+  "family": "forms",
+  "summary": "Панель выбора даты: дни, месяцы, годы и период из двух панелей",
+  "aliases": [
+    "календарь",
+    "выбор даты",
+    "датапикер",
+    "выбрать период",
+    "диапазон дат",
+    "календарик"
+  ],
+  "last_synced": "2026-09-17T06:30:00Z",
+  "last_synced_by": "claude",
+  "questions": [
+    {
+      "id": "datepicker-header-arrows-point-down",
+      "level": "component",
+      "severity": "minor",
+      "text": "В шапке обе кнопки листания несут иконку arrow-down: и «предыдущий», и «следующий» месяц показывают стрелку вниз. Похоже на недосмотр — направление у них противоположное. В коде направление задано поворотом маски (90° и −90°), поэтому расхождение макета и кода уже есть. Починка в макете требует свапа на arrow-left/arrow-right из файла иконок: поворот не помогает, Figma не даёт переопределить relative-transform у вложенного инстанса.",
+      "status": "answered",
+      "asana_gid": "1218572515659045",
+      "raised_at": "2026-09-17",
+      "answer": "Закрыт 17.09.2026 по решению владельца «надо починить календарь, измени стрелки». Свапнуты 10 иконок в пяти вариантах: arrow-left_small-regular и arrow-right_small-regular вместо arrow-down. Поворотом обойтись было нельзя — Figma не переопределяет relative-transform у вложенного инстанса. Ключи искали через search_design_system: библиотека в использовании — «⭕ supp ↪ icons mgc v1.50 (mini)», её fileKey в инвентаре файлов нет, а одноимённые компоненты в копии MGC F6Bw0j8rIcXo2rnigBKQ3b несут другие ключи и по ним не импортируются. Код не менялся: он рисовал направление поворотом общей маски, и форма совпала — иконки симметричны.",
+      "answered_at": "2026-09-17"
+    },
+    {
+      "id": "datepicker-range-cells-await-token-publish",
+      "level": "token",
+      "severity": "minor",
+      "text": "30 ячеек периода в макете остаются на состоянии hover обычной строки: привязать их к заведённым list/range/* нельзя, пока библиотека 📜 tokens ↪ studio не перепубликована — importVariableByKeyAsync не находит ключ неопубликованной переменной. Обе правки (привязка и перевод hover → rest) идут вместе: переключить на rest без привязки значит стереть подсветку периода. Тот же долг, что у шести ячеек dropdown и шести uploader от 16.09.2026.",
+      "status": "answered",
+      "raised_at": "2026-09-17",
+      "target": "State",
+      "answer": "Закрыт 17.09.2026: владелец перепубликовал библиотеку 📜 tokens ↪ studio, importVariableByKeyAsync начал находить ключи. Привязаны все 30 ячеек периода — фон на list/range/bg, рамка на list/range/border, текст на list/range/color, — и тем же проходом они переведены с state=hover на state=rest, как и планировалось (по отдельности нельзя: rest без привязки стёр бы подсветку). Заодно закрыт остальной долг той же публикации: 5 панелей календаря и 21 подпись дня недели на datepicker/panel/bg и datepicker/weekday/color, 10 узлов строки файла у uploader, 6 привязок панели . / dropdown на ступенях 50, 100 и 600. Значения нигде не сдвинулись — проверено чтением обратно.",
+      "asana_gid": "1218587736309537",
+      "answered_at": "2026-09-17"
+    }
+  ],
+  "asana": {
+    "task_gid": "1218421650220439",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421650220439",
+    "task_name": "💠 option-datepicker",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "ds_token_dependencies": [
+    "--accent-container-on",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-shadow-elevation-3",
+    "--awds-space-1",
+    "--awds-space-2",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--extended-transparent",
+    "--primary-container-core",
+    "--primary-container-on-highest",
+    "--primary-container-on-lowest",
+    "--secondary-container-core",
+    "--secondary-container-on-highest",
+    "--secondary-container-on-lowest",
+    "--surface-bright",
+    "--surface-on",
+    "--surface-on-high",
+    "--surface-on-highest"
+  ],
+  "uses": {
+    "awds-component-focus-selection": "2.0.9"
+  },
+  "contract": {
+    "classes": [
+      "dpick",
+      "dpick--month",
+      "dpick--range",
+      "dpick--year",
+      "dpick__cell",
+      "dpick__cell--range",
+      "dpick__cell--selected",
+      "dpick__cell--today",
+      "dpick__grid",
+      "dpick__header",
+      "dpick__month",
+      "dpick__nav",
+      "dpick__nav--next",
+      "dpick__nav--prev",
+      "dpick__title",
+      "dpick__weekday",
+      "dpick__weekdays"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "date",
+      "month",
+      "range",
+      "year"
+    ],
+    "sizes": [],
+    "states": [
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}
