@@ -1,6 +1,6 @@
 ---
 name: awds-component-label
-description: Подписи к контролам форм Label ArrowDS: размеры, обязательность, состояние ошибки. Для подписи над полем и в составе formfield. Токены ArrowDS, работает и по Figma-ссылке.
+description: Label ArrowDS (.lbl).
 ---
 
 # Label ArrowDS
@@ -42,18 +42,20 @@ description: Подписи к контролам форм Label ArrowDS: раз
 
 Остальные типы — [references/label-default.md](references/label-default.md).
 
-## Восемь типов — это состав, а не классы
+## Вид — это состав, а не классы
 
-| Тип в Figma | Чем выражен |
+| В макете | Чем выражен |
 |---|---|
-| Label | только `.lbl__body` с текстом |
-| Label + Help | + `.lbl__help` после тела |
-| Icon | + `.lbl__icon` перед телом |
-| Checkbox / Radio / Switch | + компонент контрола перед телом |
-| Checkbox + Color | + `.lbl__mark` внутри тела, перед текстом |
-| Checkbox + Flag | + `.lbl__mark.lbl__mark--plain` с иконкой |
+| `control=none` | только `.lbl__body` с текстом |
+| `control=none`, `show-help` | + `.lbl__help` после тела |
+| `control=icon` | + `.lbl__icon` перед телом |
+| `control=checkbox` / `radio` / `switch` | + компонент контрола перед телом |
+| `show-color` | + `.lbl__mark` внутри тела, перед текстом |
+| `show-flag` | + `.lbl__mark.lbl__mark--plain` с иконкой |
 
-Классов под типы нет намеренно: они отличаются только тем, какие элементы стоят в строке. Восемь классов заставляли бы дублировать в атрибуте то, что уже видно в разметке, и держать их синхронными.
+Классов под вид нет намеренно: варианты отличаются только тем, какие элементы стоят в строке. Классы заставляли бы дублировать в атрибуте то, что уже видно в разметке, и держать их синхронными.
+
+Макет приведён к этой же модели 16.09.2026. До неё он держал одну ось `type=` из восьми значений, три из которых были составными (`label+help`, `checkbox+color`, `checkbox+flag`): набор описывал компонент иначе, чем код. Теперь ось `control` называет ведущий элемент, а слоты — булевы `show-*`, и набор сжался с 24 ячеек до 15.
 
 ## Размеры
 
@@ -98,8 +100,8 @@ description: Подписи к контролам форм Label ArrowDS: раз
 | Обводка образца | `rgb(var(--surface-on-lowest))`, скругление `var(--awds-rounded-border-radius-full)` |
 | Заливка образца | **задаёт потребитель** — это цвет товара, а не роль DS |
 | Бокс контрола и образца | `var(--awds-square-{N}-icon)` + `padding` |
-| Зазоры | `var(--awds-space-space-2)` контрол↔текст, `var(--awds-space-space-1-5)` образец↔текст |
-| Disabled | `var(--awds-opacity-opacity-40)` |
+| Зазоры | `var(--awds-space-2)` контрол↔текст, `var(--awds-space-1-5)` образец↔текст |
+| Disabled | `var(--awds-state-opacity-control-disabled)` |
 
 ## Состояний у компонента нет
 

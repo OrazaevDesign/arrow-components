@@ -1,146 +1,55 @@
 {
-  "_note": "Сырые ответы Figma MCP, как пришли. Оси: Size 300/400/500 × Type Label / Label+Help / Icon / Checkbox / Radio / Switch / Checkbox + Color / Checkbox + Flag = 24 ячейки. Оси State у компонента НЕТ: hover/focus/active принадлежат вложенному контролу, а не подписи. Снято: variable_defs по типу Label на всех трёх размерах (оттуда типографика и вертикальный отступ), по Label+Help / Checkbox / Checkbox+Color / Switch на размере 500 (оттуда цвета, space и токены вложенного контрола), плюс get_metadata по ячейкам всех типов на 500 и по Checkbox / Checkbox+Color / Label+Help на 400 и 300 — оттуда геометрия боксов и зазоры. Разметка снята get_design_context по Label+Help (500) и Checkbox + Color (500).",
-  "metadata": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "node_id": "395:77055",
-    "name": "Label",
-    "frame": { "width": 311, "height": 1108 },
-    "cells": {
-      "Size=500, Type=Label": "395:77056",
-      "Size=400, Type=Label": "395:77059",
-      "Size=300, Type=Label": "395:77062",
-      "Size=500, Type=Label+Help": "395:77065",
-      "Size=400, Type=Label+Help": "395:77069",
-      "Size=300, Type=Label+Help": "395:77073",
-      "Size=500, Type=Icon": "395:77077",
-      "Size=400, Type=Icon": "395:77081",
-      "Size=300, Type=Icon": "395:77085",
-      "Size=500, Type=Checkbox": "395:77089",
-      "Size=400, Type=Checkbox": "395:77093",
-      "Size=300, Type=Checkbox": "395:77097",
-      "Size=500, Type=Radio": "395:77101",
-      "Size=400, Type=Radio": "395:77105",
-      "Size=300, Type=Radio": "395:77109",
-      "Size=500, Type=Switch": "395:77113",
-      "Size=400, Type=Switch": "395:77117",
-      "Size=300, Type=Switch": "395:77121",
-      "Size=500, Type=Checkbox + Color": "395:77125",
-      "Size=400, Type=Checkbox + Color": "395:77130",
-      "Size=300, Type=Checkbox + Color": "395:77135",
-      "Size=500, Type=Checkbox + Flag": "427:2604",
-      "Size=400, Type=Checkbox + Flag": "427:2599",
-      "Size=300, Type=Checkbox + Flag": "427:2594"
-    },
-    "geometry_measured": {
-      "500": { "row": 28, "control_box": 28, "gap_control_text": 8, "mark": 24, "gap_mark_text": 6, "help": 20, "text_pad_block": 2, "row_without_control": 24 },
-      "400": { "row": 24, "control_box": 24, "gap_control_text": 8, "mark": 20, "gap_mark_text": 6, "help": 16, "text_pad_block": 2, "row_without_control": 24 },
-      "300": { "row": 20, "control_box": 20, "gap_control_text": 8, "mark": 20, "gap_mark_text": 6, "help": 16, "text_pad_block": 0, "row_without_control": 20 }
-    },
-    "geometry_notes": [
-      "Типографика ОДНА на все три размера: font-size/400 = 14 при line-height/400 = 20 (шкала control).",
-      "gap между контролом и текстом = space/2 (8) на всех размерах — это НЕ square-{N}-gap, где 6 на 300/400 и 8 только на 500. Считано как 36−28 = 32−24 = 28−20.",
-      "Бокс контрола = square-{N}-icon + 2 × square-{N}-padding: 24+4 = 28, 20+4 = 24, 20+0 = 20.",
-      "Образец (color/flag) = square-{N}-icon: 24 / 20 / 20; зазор до текста space/1,5 (6) на всех размерах.",
-      "Подсказка (ic20-questionCircle-outline) 20 на размере 500 и 16 на 400/300 — переменной у неё нет, сырые числа; ближайшие токены space-5 и space-4.",
-      "У типа Label+Help подпись НЕ растянута: иконка стоит вплотную за текстом (x = 36 + 8 = 44 при ширине текста 36).",
-      "У типа без контрола высота = 20 + 2 × text_pad, поэтому размеры 500 и 400 совпадают по всем метрикам."
+  "_note": "Разбор подписи в файле «💠 arrow ↪ components», секция ↪ label (5:13), страница 3 · forms. ACB-owned, руками не править.",
+  "fetched_at": "2026-09-16T11:10:00Z",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "3 · forms",
+  "section_node_id": "5:13",
+  "primary_node_id": "44:78902",
+  "_structure_note": {
+    "дата": "2026-09-16",
+    "заход": "восемнадцатый компонент прохода; ссылка владельца на секцию 5:13",
+    "предыдущий_файл": "До 16.09.2026 снапшот читал файл Forms (4ipeXkifl3Hl6pVZUF4nuJ), нода 395:77055.",
+    "правки_16_09": [
+      "Ось-заглушка type= с восемью значениями разобрана на ось control=none|icon|checkbox|radio|switch и три булевых показа слота show-help, show-color, show-flag. Набор сжался с 24 ячеек до 15.",
+      "Узлы слотов ПЕРЕНЕСЕНЫ, а не пересозданы: подсказка из ячейки label+help, образец цвета из checkbox+color, флаг из checkbox+flag. Девять опустевших ячеек удалены — инстансов на них не было ни одного.",
+      "Починен зашитый размер: у ячейки label+help кадр Label стоял фиксированным на 36px, из-за чего при длинной подписи знак вопроса налезал бы на текст. Стал по содержимому.",
+      "Части . / description и . / error очищены от мёртвых осей: state=rest, var=web, type=description|error — все с единственным значением. Осталась одна ось size.",
+      "В теме заведены три ячейки: label/color, label/mark/border, label/mark/bg (все isPrivate, плоские — состояний у подписи нет)."
     ],
-    "structure_from_design_context": {
-      "395:77065 (Label+Help, 500)": [
-        "обёртка — flex, gap space/2, items-center, opacity/control/enabled",
-        "Label — блок с py = space/0,5; текст 14/20, цвет role/surface/on-highest",
-        "ic20-questionCircle-outline 20×20, цвет link/muted"
-      ],
-      "395:77125 (Checkbox + Color, 500)": [
-        "Checkbox — ИНСТАНС компонента (395:43665, у которого в Figma уже стоит ссылка на awds-component-checkbox), padding square/500/padding, иконка ic24-checkbox-outline 24",
-        "Label — flex-1, gap space/1,5, py space/0,5",
-        "color — круг 24×24: bg белый (плейсхолдер), border role/surface/on-lowest, radius border-radius/full",
-        "текст 14/20, цвет role/surface/on-highest"
-      ]
-    }
+    "что_не_трогали": "6 привязок набора Sys — подписи документации секции, по rebind-rules не переносятся. Других старых библиотек в секции нет."
   },
-  "variable_defs": {
-    "395:77056 (Label, 500)": {
-      "opacity/control/enabled": "100",
-      "role/surface/on-highest": "#080808",
-      "letter-spacing/400": "0",
-      "font-size/400": "14",
-      "font-weight": "regular",
-      "font-family": "Inter",
-      "line-height/400": "20",
-      "space/0,5": "2",
-      "space/2": "8"
-    },
-    "395:77059 (Label, 400)": {
-      "opacity/control/enabled": "100",
-      "role/surface/on-highest": "#080808",
-      "letter-spacing/400": "0",
-      "font-size/400": "14",
-      "line-height/400": "20",
-      "space/0,5": "2",
-      "space/2": "8"
-    },
-    "395:77062 (Label, 300)": {
-      "opacity/control/enabled": "100",
-      "role/surface/on-highest": "#080808",
-      "letter-spacing/400": "0",
-      "font-size/400": "14",
-      "line-height/400": "20",
-      "space/0": "0",
-      "space/2": "8"
-    },
-    "395:77065 (Label+Help, 500)": {
-      "opacity/control/enabled": "100",
-      "role/surface/on-highest": "#080808",
-      "font-size/400": "14",
-      "line-height/400": "20",
-      "space/0,5": "2",
-      "link/muted": "#646464",
-      "space/2": "8"
-    },
-    "395:77089 (Checkbox, 500)": {
-      "check-radio/selected/color": "#19110a",
-      "square/500/icon": "24",
-      "square/500/padding": "2",
-      "square/500/rounded": "8",
-      "opacity/control/enabled": "100",
-      "check-radio/selected/bg": "#ffeb5a",
-      "check-radio/selected/chroma": "#fce279",
-      "check-radio/selected/border": "#ffeb5a",
-      "role/surface/on-highest": "#080808",
-      "font-size/400": "14",
-      "line-height/400": "20",
-      "space/1,5": "6",
-      "space/1": "4",
-      "space/2": "8"
-    },
-    "395:77125 (Checkbox + Color, 500)": {
-      "square/500/icon": "24",
-      "square/500/padding": "2",
-      "square/500/rounded": "8",
-      "border-radius/full": "600",
-      "role/surface/on-lowest": "#ededed",
-      "role/surface/on-highest": "#080808",
-      "font-size/400": "14",
-      "line-height/400": "20",
-      "space/1,5": "6",
-      "space/0,5": "2",
-      "space/2": "8"
-    },
-    "395:77113 (Switch, 500)": {
-      "opacity/content/handle-opacity": "100",
-      "check-radio/selected/handle": "#322414",
-      "space/0,5": "2",
-      "square/500/icon": "24",
-      "square/500/padding": "2",
-      "square/500/switch-width": "44",
-      "border-radius/full": "600",
-      "role/surface/on-highest": "#080808",
-      "font-size/400": "14",
-      "line-height/400": "20",
-      "space/1,5": "6",
-      "space/2": "8"
-    }
+  "sets": {
+    "label": { "node": "44:78902", "cells": 15, "класс": ".lbl", "оси": "size=500|400|300 · control=none|icon|checkbox|radio|switch", "булевы": "show-help, show-color, show-flag (все выключены по умолчанию)" },
+    ". / description": { "node": "44:79002", "cells": 3, "ось": "size=500|400|300", "потребителей": 0 },
+    ". / error": { "node": "44:79015", "cells": 3, "ось": "size=500|400|300", "потребителей": 0 }
+  },
+  "geometry": {
+    "500": { "бокс контрола": 28, "gap": 8, "текст": "14/20", "py текста": 2, "образец": 24, "подсказка": 20, "высота": 28 },
+    "400": { "бокс контрола": 24, "gap": 8, "текст": "14/20", "py текста": 2, "образец": 20, "подсказка": 16, "высота": 24 },
+    "300": { "бокс контрола": 20, "gap": 8, "текст": "14/20", "py текста": 0, "образец": 20, "подсказка": 16, "высота": 20 },
+    "примечание": "Кегль текста один на все три размера — 14/20, шкала control. Размер меняет только вложенный контрол, вертикальный отступ текста и мелкие элементы. Высоты проверены во всех положениях булевых после пересборки: включение образца или флага ряд не растит."
+  },
+  "cells_and_roles": {
+    "label/color": "surface/on-highest — текст подписи",
+    "label/mark/border": "surface/on-lowest — обводка кружка-образца",
+    "label/mark/bg": "surface/bright — подложка образца; заливку задаёт потребитель, это значение видно, когда цвет не задан",
+    "link/muted-rest": "surface/on-high — знак вопроса подсказки, ячейка существовала до захода"
+  },
+  "raw_paints": {
+    "всего": 23,
+    "разбор": "18 — векторы внутри инстансов иконки-флага FlagEuropeAll (контент слота, тот же случай, что флаг ОАЭ у button-menu); 3 — кадры color, образец цвета, заливку которого задаёт потребитель; 2 — заливка и обводка рамки самой секции. Значений компонента среди них нет."
+  },
+  "focus_ring": "INSTANCE focus-selection, вариант Outside + Default, на знаке вопроса. Кольцо читает слой --awds-focus-*.",
+  "code_mapping": {
+    "ссылок_на_ячейки_было": 41,
+    "якорей_стало": 4,
+    "файлов": 1,
+    "почему_якорей_мало": "37 из 41 ссылок были размерными (--awds-size-square-*) и резолвятся в базовые шкалы space и rounded — базовые чтения якорями не помечаются. Цветовых чтений в компоненте четыре, у каждого свой якорь."
+  },
+  "debts": {
+    "parts-have-no-consumers": "Части . / description и . / error не используются нигде: инстансов ноль на всех страницах, а все восемь наборов formfield рисуют описание и ошибку своими узлами. Заведено вопросом formfield-draws-description-and-error-itself в мете formfield.",
+    "label-cells-await-publication": "Три новые ячейки label/* существуют в студии и в карте, но привязка узлов макета к ним уедет за публикацию «📜 tokens ↪ studio» и приём обновления в файле компонентов. Пока текст и образец в макете привязаны к ролям напрямую.",
+    "sys-labels": "6 привязок набора Sys — подписи документации секции, по rebind-rules не переносятся."
   }
 }

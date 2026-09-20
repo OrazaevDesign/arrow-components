@@ -1,30 +1,22 @@
 {
   "component": "label",
-  "version": "1.0.3",
-  "contract_hash": "sha256:39d2f424429f3244c12041c2890c817b0351db8753faf12085aa89cd046a8a9c",
-  "artifact_hash": "sha256:18e7bd2e0147247d9685dc1a967c81042c228624ee8af92eb8e12b443bb7ff66",
-  "visual_change": false,
-  "released_at": "2026-08-26T09:18:55.258Z",
-  "own_values": [
-    {
-      "value": "1px",
-      "where": "border",
-      "count": 1,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
-    }
-  ],
+  "version": "1.0.9",
+  "contract_hash": "sha256:3aad6bc9eb0472d30a5f31d3d5a9685c0a74688751522fe916564f4cc492e638",
+  "artifact_hash": "sha256:157787f54195b51d610643d9b5a28bbae68fb7f4bee5348794ff226fd6f30e18",
+  "visual_change": true,
+  "released_at": "2026-09-16T08:05:03.381Z",
+  "own_values": [],
   "figma": {
-    "file_key": "4ipeXkifl3Hl6pVZUF4nuJ",
-    "file_name": "💠 Comp ↪ ⁵ Forms",
-    "primary_node_id": "395:77055",
-    "primary_url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77055"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:13",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-13"
   },
   "variants": {
     "default": {
-      "node_id": "395:77055",
-      "url": "https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77055",
-      "figma_label": "Label (Size × Type)",
-      "token_role": "role/surface/on-highest + link/muted"
+      "node_id": "44:78902",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-78902",
+      "figma_label": "label"
     }
   },
   "shape": "square",
@@ -121,44 +113,41 @@
     ]
   },
   "ds_token_dependencies": [
-    "--surface-on-highest",
-    "--surface-on-high",
-    "--surface-on-lowest",
-    "--surface-bright",
-    "--awds-space-space-0",
-    "--awds-space-space-0-5",
-    "--awds-space-space-1-5",
-    "--awds-space-space-2",
-    "--awds-space-space-4",
-    "--awds-space-space-5",
-    "--awds-size-square-300-icon",
-    "--awds-size-square-300-padding",
-    "--awds-size-square-300-rounded",
-    "--awds-size-square-300-switch-width",
-    "--awds-size-square-400-icon",
-    "--awds-size-square-400-padding",
-    "--awds-size-square-400-rounded",
-    "--awds-size-square-400-switch-width",
-    "--awds-size-square-500-icon",
-    "--awds-size-square-500-padding",
-    "--awds-size-square-500-rounded",
-    "--awds-size-square-500-switch-width",
     "--awds-control-font-size-400",
-    "--awds-control-line-height-400",
     "--awds-control-letter-spacing-400",
-    "--awds-rounded-border-radius-full",
-    "--awds-rounded-border-radius-50",
-    "--awds-opacity-opacity-40",
+    "--awds-control-line-height-400",
     "--awds-font-family-system",
-    "--awds-font-weight-regular"
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-0",
+    "--awds-space-0-5",
+    "--awds-space-1-5",
+    "--awds-space-11",
+    "--awds-space-2",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-8",
+    "--awds-space-9",
+    "--awds-space-px",
+    "--surface-bright",
+    "--surface-on-high",
+    "--surface-on-highest",
+    "--surface-on-lowest"
   ],
   "depends_on": {
     "awds-component-checkbox": "Тип Checkbox / Checkbox + Color / Checkbox + Flag: контрол размечается классами .checkbox / .checkbox__input / .checkbox__box. Подпись задаёт ему только размерную ступень мостом .lbl--{N} .checkbox. Потребителю нужно подключить checkbox.css рядом с label.css.",
     "awds-component-radio": "Тип Radio: .radio / .radio__input / .radio__box, размер через мост .lbl--{N} .radio.",
     "awds-component-switch": "Тип Switch: .switch / .switch__input / .switch__track, размер через мост .lbl--{N} .switch (включая switch-width)."
   },
-  "variants_note": "У компонента один вариант: осей палитры (Light / Success / Error / …) в макете нет — Label не носит собственного фона и рамки, он только текст и слоты. Поэтому файл один, label.css, как у checkbox / radio / switch.",
-  "last_synced": "2026-08-14T12:28:42Z",
+  "variants_note": "Ключи variants — варианты КОДА. У подписи он один (default): вид задаётся составом разметки, а не классом. В макете это ось control=none|icon|checkbox|radio|switch и три булевых show-help / show-color / show-flag; наборы перечислены в figma_sets.",
+  "last_synced": "2026-09-16T11:05:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:9ea0872be25c9237efb77be8119edb0daeda43503f7297ef6d0f61a593a79cd8",
   "published": {
@@ -187,11 +176,71 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "lbl",
+      "tags": [
+        "label"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "lbl--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "lbl__body"
+      },
+      {
+        "class": "lbl__text",
+        "within": "lbl__body"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "for",
+        "unless_child_any": [
+          "checkbox",
+          "radio",
+          "switch",
+          "input",
+          "icombi",
+          "select",
+          "scombi",
+          "txa"
+        ]
+      }
+    ],
+    "container": null,
+    "note": "Атрибут for обязателен, когда контрол лежит СНАРУЖИ: без связи клик по подписи не фокусирует поле, а скринридер его не назовёт. Когда контрол вложен в label, for не нужен — связь даёт вложенность. Вариант один и класса не имеет."
+  },
+  "family": "forms",
+  "summary": "Подпись к контролу: размеры, обязательность, состояние ошибки",
+  "aliases": [
+    "подпись",
+    "лейбл",
+    "название поля",
+    "подпись над полем"
+  ],
+  "asana": {
+    "task_gid": "1218421650158060",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421650158060",
+    "task_name": "💠 label",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "figma_sets": {
+    "label": "44:78902",
+    ". / description": "44:79002",
+    ". / error": "44:79015"
+  },
   "uses": {
-    "awds-component-checkbox": "1.0.3",
-    "awds-component-focus-selection": "1.1.0",
-    "awds-component-radio": "1.0.3",
-    "awds-component-switch": "1.0.2"
+    "awds-component-checkbox": "1.0.5",
+    "awds-component-focus-selection": "2.0.3",
+    "awds-component-radio": "1.0.5",
+    "awds-component-switch": "1.0.4"
   },
   "contract": {
     "classes": [
@@ -213,6 +262,7 @@
     "attributes": [],
     "elements": [
       "img",
+      "input",
       "svg"
     ],
     "public_vars": [],

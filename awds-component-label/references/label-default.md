@@ -1,6 +1,8 @@
 # Label
 
-**Figma:** [4ipeXkifl3Hl6pVZUF4nuJ → node 395:77055](https://www.figma.com/design/4ipeXkifl3Hl6pVZUF4nuJ/%F0%9F%92%A0-Comp-%E2%86%AA-%E2%81%B5-Forms?node-id=395-77055)
+**Figma:** [секция ↪ label 5:13](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-13) · набор [label 44:78902](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-78902)
+
+Вид задаётся составом разметки. В макете ему отвечают ось `control=none|icon|checkbox|radio|switch` и три булевых `show-help` / `show-color` / `show-flag` — заголовки ниже названы по ним.
 
 > [!NOTE]
 > Этот файл (`label-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -8,7 +10,7 @@
 
 Подпись к контролу формы. CSS: [label.css](label.css). Для типов с контролом рядом нужен CSS соответствующего компонента — [checkbox.css](../../awds-component-checkbox/references/checkbox.css), [radio.css](../../awds-component-radio/references/radio.css), [switch.css](../../awds-component-switch/references/switch.css).
 
-## Type = Label
+## control=none
 
 ```html
 <label class="lbl lbl--400" for="city">
@@ -20,7 +22,7 @@
 
 Обычная подпись к полю. Связь через `for` + `id` обязательна — иначе клик по подписи не сфокусирует поле, а скринридер не назовёт его.
 
-## Type = Label + Help
+## control=none + show-help
 
 ```html
 <label class="lbl lbl--400" for="inn">
@@ -37,7 +39,7 @@
 
 Кнопка, а не `<span>`: за подсказкой стоит объяснение, до него должны доходить клавиатура и скринридер. Сам тултип — [awds-component-tooltip](../../awds-component-tooltip/SKILL.md).
 
-## Type = Icon
+## control=icon
 
 ```html
 <label class="lbl lbl--400">
@@ -50,7 +52,7 @@
 
 Бокс иконки равен боксу чекбокса того же размера (28/24/20) — иначе строки с иконкой и с чекбоксом встали бы по разным вертикалям.
 
-## Type = Checkbox / Radio / Switch
+## control=checkbox / radio / switch
 
 **Внутренности контрола копируются из его скилла 1-в-1, включая иконки** — они часть компонента, а не декорация. Единственное изменение — обёртка `<span>` вместо `<label>`.
 
@@ -105,7 +107,7 @@
 - Размерный класс контролу не нужен — подпись задаёт ступень мостом.
 - Группа радиокнопок по-прежнему требует общего `name` и обёртки `<fieldset>` с `<legend>` — см. скилл радио.
 
-## Type = Checkbox + Color
+## control=checkbox + show-color
 
 ```html
 <label class="lbl lbl--500">
@@ -124,7 +126,7 @@
 
 Название рядом обязательно: цвет сам по себе не читается ни скринридером, ни при дальтонизме.
 
-## Type = Checkbox + Flag
+## control=checkbox + show-flag
 
 ```html
 <label class="lbl lbl--500">
@@ -177,7 +179,7 @@
 </label>
 ```
 
-Ряд гаснет целиком (`opacity: var(--awds-opacity-opacity-40)`). **Этого состояния в макете нет** — правило выведено, иначе рядом стоял бы серый чекбокс с чёрной подписью. Причину недоступности пиши текстом, а не только серостью.
+Ряд гаснет целиком (`opacity: var(--awds-state-opacity-control-disabled)`). **Этого состояния в макете нет** — правило выведено, иначе рядом стоял бы серый чекбокс с чёрной подписью. Причину недоступности пиши текстом, а не только серостью.
 
 ## Проверено
 
