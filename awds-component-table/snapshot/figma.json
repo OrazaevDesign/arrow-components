@@ -1,78 +1,134 @@
 {
-  "file_key": "MzbIinUK3d5C31yhl6TKmB",
-  "file_name": "💠 Comp ↪ ³ Cell",
-  "fetched_at": "2026-06-11T09:32:32Z",
-  "frames": {
-    "cell-light": {
-      "node_id": "74:21636",
-      "states": {
-        "rest":     { "node_id": "74:21645" },
-        "hover":    { "node_id": "74:21757" },
-        "focus":    { "node_id": "360:17774" },
-        "active":   { "node_id": "74:22037" },
-        "disabled": { "node_id": "74:21661" }
-      }
+  "_note": "Разбор таблицы в файле «💠 arrow ↪ components», секция ↪ tables (76:57983), страница 10 · tables. ACB-owned, руками не править.",
+  "fetched_at": "2026-09-16T10:05:00Z",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "10 · tables",
+  "section_node_id": "76:57983",
+  "primary_node_id": "76:57983",
+  "_structure_note": {
+    "дата": "2026-09-16",
+    "заход": "шестнадцатый компонент прохода; ссылка владельца на секцию 76:57983",
+    "предыдущий_файл": "До 16.09.2026 снапшот читал «💠 Comp ↪ ³ Cell» (MzbIinUK3d5C31yhl6TKmB), фреймы 74:21636, 2019:929, 2027:433 и таблицу 2038:1350. Тот файл в реестре перепривязки помечен «не переводился».",
+    "состояние_на_заход": "Пять наборов: три cell по 5 состояний, row (3 варианта) и table (2 варианта). Сырых красок в секции две — заливка и обводка самой рамки секции, это не значения компонента. Оси cell/* уже были каноничны (state в нижнем регистре, полный набор состояний).",
+    "правки_16_09": [
+      "Ось var= переименована в cell у наборов row и table — слово-заглушка запрещено props.md §4. Значения не менялись, editComponentProperty сохраняет id: все 12 инстансов row целы, битых 0.",
+      "Значение cell=default-head у набора row приведено к cell=head — следствие переименования группы темы; после него имя «head» одинаково в макете, теме и коде.",
+      "Слоты переименованы: row slot → cells, table slot → rows (props.md §12, имя нужно каждому свойству).",
+      "Группа ячеек темы cell/default-head/* переименована в cell/head/* (студия, тема 21, коллекция state). Семь ячеек, rename сохраняет id — привязки в макете уцелели. Решение владельца.",
+      "Свап на местных мастеров (второй заход того же дня, решение владельца). Скроллбар — 1:1 на scrollbar / transparent (6:1404). Содержимому ячейки заведена СВОЯ местная часть «. / content-cell» (329:217) с метрикой 46 (12/12): шкала content-list идёт 52·48·40·36·32·24·20, и 46 на ней нет. 69 инстансов свапнуты, подписи сохранены, высоты не изменились. Привязок к старым библиотекам в секции 122 → 10."
+    ],
+    "что_не_трогали": "10 привязок набора Sys (Sys::Bg 5, Sys::Border 5) — подписи документации секции, по rebind-rules не переносятся никогда. Больше в секции старых библиотек нет, удалённых мастеров нет.",
+    "два_корня": "Скилл поставляет два компонента: ячейку (.cell, наборы cell / *) и обёртку таблицы (.awds-table, наборы table и row). Решение владельца 16.09.2026: не делить, корни объявить явно в markup.roots. Долг props.md §11 снят как неверно квалифицированный, формулировка правила уточнена: оно про компонент, а не про скилл."
+  },
+  "sets": {
+    "cell / light": {
+      "node": "76:58104",
+      "cells": 5,
+      "класс": ".cell.cell-light",
+      "ячейки": "cell/light"
     },
-    "cell-head": {
-      "node_id": "2019:929",
-      "states": {
-        "rest":     { "node_id": "2019:930" },
-        "hover":    { "node_id": "2019:934" },
-        "focus":    { "node_id": "2019:938" },
-        "active":   { "node_id": "2019:943" },
-        "disabled": { "node_id": "2019:947" }
-      }
+    "cell / head": {
+      "node": "76:58195",
+      "cells": 5,
+      "класс": ".cell.cell-head",
+      "ячейки": "cell/head"
     },
-    "cell-default": {
-      "node_id": "2027:433",
-      "states": {
-        "rest":     { "node_id": "2027:434" },
-        "hover":    { "node_id": "2027:436" },
-        "focus":    { "node_id": "2027:438" },
-        "active":   { "node_id": "2027:441" },
-        "disabled": { "node_id": "2027:443" }
-      }
+    "cell / default": {
+      "node": "76:58207",
+      "cells": 5,
+      "класс": ".cell.cell-default",
+      "ячейки": "cell/default"
     },
-    "tabel": {
-      "node_id": "2038:1350",
-      "table_variants": {
-        "light":   { "node_id": "2038:1351", "layout": "borderless, row-separators (surface-on-lowest), transparent cells, flush-left first column, bottom scrollbar" },
-        "default": { "node_id": "2038:1390", "layout": "full bordered grid, header = cell-head (surface-surface, semibold), body = cell-default (surface-bright/white), bottom scrollbar" }
-      }
+    "row": {
+      "node": "76:58219",
+      "cells": 3,
+      "класс": "<tr> — своего класса нет",
+      "ось": "cell=light|head|default"
+    },
+    "table": {
+      "node": "76:58116",
+      "cells": 2,
+      "класс": ".awds-table.awds-table--{cell}",
+      "ось": "cell=light|default"
+    },
+    ". / content-cell": {
+      "node": "329:217",
+      "роль": "содержимое ячейки: текст + необязательное описание",
+      "свойства": "value (TEXT), placeholder (TEXT), show-description (BOOLEAN, выкл)",
+      "метрика": "200x46, отступы 12/12 сверху и снизу, VERTICAL",
+      "почему_своя": "строка таблицы 46px, шкала части списков content-list 52·48·40·36·32·24·20 — 46 на ней нет"
     }
   },
-  "variable_defs": {
-    "cell-light/rest (74:21645)": {
-      "cell/light/bg": "#ffffff00",
-      "cell/light/border": "#ffffff00",
-      "font-weight": "regular"
+  "axes": {
+    "cell / *": "state=rest|hover|focus|active|disabled",
+    "row": "cell=light|head|default",
+    "table": "cell=light|default"
+  },
+  "props": {
+    "row": {
+      "cells": "SLOT — содержимое строки"
     },
-    "cell-head/rest (2019:930)": {
-      "cell/default-head/bg": "#f7f7f7",
-      "cell/default-head/border": "#ededed",
-      "cell/default-head/color": "#080808",
-      "font-weight": "semibold"
-    },
-    "tabel (2038:1350)": {
-      "cell/light/bg": "#ffffff00",
-      "cell/light/border": "#ffffff00",
-      "cell/default-head/bg": "#f7f7f7",
-      "cell/default-head/border": "#ededed",
-      "cell/default-head/color": "#080808",
-      "cell/default/bg": "#ffffff",
-      "cell/default/border": "#ededed",
-      "cell/default/color": "#080808",
-      "WYSIWYG/font-size/body": "14",
-      "WYSIWYG/line-height/body": "22",
-      "WYSIWYG/letter-spacing/body": "0",
-      "WYSIWYG/gap/li-top": "12",
-      "WYSIWYG/gap/block-top": "32",
-      "space/px": "1",
-      "role/surface/on": "#8e8e8e",
-      "role/surface/transparent": "#ffffff00",
-      "border-radius/full": "600",
-      "opacity/40": "40"
+    "table": {
+      "rows": "SLOT — строки таблицы",
+      "show-scrollbar": "BOOLEAN — декоративная полоса; в коде её роль играет нативный скролл .awds-table-scroll"
     }
   },
-  "_note": "Нода таблицы 2038:1350 подтвердила cell/default/bg = #ffffff (= surface-bright): отдельный фрейм cell-default (2027:433) мис-привязан к cell/light, но реальный токен cell/default белый. Заголовочные ячейки (cell-head) в таблице — Inter Semi_Bold. Таблица имеет 2 раскладки: light (безрамочная) и default (сетка). Декоративный скроллбар реализован как нативный overflow-x:auto враппер .awds-table-scroll."
+  "geometry": {
+    "ячейка": {
+      "высота": 46,
+      "padding": "по вертикали 0, по горизонтали 12 (у cell/light слева 0 — flush-left)",
+      "обводка": "1px (space/px)",
+      "радиус": 0,
+      "примечание": "Вертикального паддинга у ячейки в макете НЕТ: 46 задаёт часть . / content. Код собирает те же 46 из 12 + 22 + 12 (padding-block + интерлиньяж). Результат совпадает, способ разный."
+    },
+    "таблица": {
+      "padding": "сверху 34, остальные 0",
+      "состав": "слот rows + инстанс scrollbar высотой 6",
+      "примечание": "Верхние 34px — пустой paddingTop над слотом rows, узлов нет. Первая строка 68px из-за переноса подписи на две строки. В коде не смоделировано ни то, ни другое — и, судя по замеру, моделировать нечего."
+    },
+    "ширина_235": "Ширина ячеек в макете 235px — размер заглушки набора, а не размер компонента. В коде min-width = --awds-space-20 (80px)."
+  },
+  "cells_and_roles": {
+    "cell/light": "bg-rest/focus/active = extended/transparent, bg-hover = surface/surface; border-rest/focus/active = extended/transparent, border-hover = surface/on-lowest; color = surface/on-highest; description = surface/on-high",
+    "cell/head": "bg-rest/focus/active = surface/surface, bg-hover = surface/dim; border = surface/on-lowest; color = surface/on-highest; description = surface/on-high",
+    "cell/default": "bg-rest/focus/active = surface/bright, bg-hover = surface/surface; border = surface/on-lowest; color = surface/on-highest; description = surface/on-high",
+    "примечание": "После свапа 16.09.2026 текст каждого набора читает СВОЙ тон: cell/light/color, cell/head/color, cell/default/color, по 5 состояний. Прежняя общая привязка на cell/default-head/color снята. Цвет на экране не изменился — все три резолвятся в surface/on-highest."
+  },
+  "focus_ring": "INSTANCE focusselection, вариант radius=none, offset=inside, tone=default; мастер локальный, страница 4 · elements. Кольцо читает слой --awds-focus-*.",
+  "code_mapping": {
+    "ссылок_на_ячейки_было": 30,
+    "якорей_стало": 35,
+    "файлов": 4,
+    "замер_починки": "Превью: 50 элементов из 126396 по всему дереву. 24 ячейки получили границу (border-style none → solid, ширина 0 → 1px, цвет surface/on-lowest), 24 — заливку (18 surface/bright, 6 surface/surface), 3 выключенные погасли до 40%. Свойства color в диффе нет: унаследованные 20 20 20 совпали с surface/on-highest.",
+    "почему_якорей_больше": "Два литерала transparent в focus и active варианта light стали ссылками на extended/transparent и получили якоря; плюс разделитель строк light-таблицы."
+  },
+  "debts": {
+    "table-top-padding-not-modelled": "ЗАКРЫТО 16.09.2026 замером. Верхние 34px набора table привязаны к wysiwyg/gap/block-top — это отступ блока в потоке статьи, которым владеет блок-потребитель, а не компонент; в коде его нет правильно. Первая строка 68px — честная высота ячейки с двухстрочной подписью: текст 44 = 2×22, ячейка 12+44+12, ровно как считает .cell в коде.",
+    "sys-labels": "10 привязок набора Sys — подписи документации секции, по rebind-rules не переносятся.",
+    "part-lives-in-component-section": "Часть «. / content-cell» лежит ВНУТРИ секции ↪ tables, а не в отдельной секции ↪ parts, как на страницах forms, elements и lists: на странице 10 · tables секции частей нет. Часть используется только таблицей, поэтому отдельную секцию заводить не стали.",
+    "library-names-lag": "Файл компонентов показывает ячейки как cell/default-head/*, хотя в студии и в файле токенов они уже cell/head/*. Ключи и id совпадают, цвета верны — отстают только ИМЕНА, до публикации «📜 tokens ↪ studio» и приёма обновления здесь.",
+    "no-block-consumers": "Классы компонента не потребляет ни один блок: markdown отдаёт таблицы без классов, и awds-wysiwyg с awds-wysiwyg-center зеркалят модель на голые th/td своими селекторами. Вне комментариев вхождений ноль. Значит переименование или разделение контракта сейчас стоит дёшево.",
+    "table-tone-modifier-two-dashes": ".awds-table--light и .awds-table--default записаны двумя дефисами, хотя тона взаимоисключающи и по props.md §1 требуют одного — ячейка того же компонента уже пишется одним (.cell-light). Правка = смена публичного контракта, MAJOR. Потребителей классов в блоках ноль, окно открыто до публикации волны 7."
+  },
+  "_page_cleanup_2026_09_20": {
+    "date": "2026-09-20",
+    "note": "Заход по странице 10 · tables, 269 узлов.",
+    "dead_modes_cleared": 80,
+    "detail": {
+      "State=Rest": 60,
+      "State=Hover": 3,
+      "State=Focus": 3,
+      "State=Active": 3,
+      "Font-weight=600": 11
+    },
+    "cascade_note": "Вызовов clearExplicitVariableModeForCollection прошло 48, а исчезло 80: снятие мода на родителе убирает и записи у потомков-инстансов, которые замер считал отдельно.",
+    "diff": 0,
+    "kept": "60 модов НОВОЙ коллекции state (12 своих, 48 внутри инстансов) не тронуты: коллекция читается привязками секции. У неё один мод Rest, поэтому явное указание ничего не меняет, но правило есть правило.",
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0
+    }
+  }
 }

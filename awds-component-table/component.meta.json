@@ -1,51 +1,55 @@
 {
   "component": "table",
-  "version": "1.0.3",
+  "version": "1.0.10",
   "contract_hash": "sha256:712d664d5b944b411f15559c62a866a3b7096883819ceaba6c1a8fc51afc0a58",
-  "artifact_hash": "sha256:6c78cd02be1e09d7aa68b9d10c3462d2bb1057b384cd79e54a983685c6b5b1df",
+  "artifact_hash": "sha256:ec086751ea440645d8dae8e536f0b8c608316edb364d3cd534cb80c8d80eca24",
   "visual_change": false,
-  "released_at": "2026-08-26T09:30:09.659Z",
+  "released_at": "2026-09-16T07:26:05.619Z",
   "own_values": [
     {
-      "value": "1px",
-      "where": "border",
+      "value": "0.15s",
+      "where": "transition",
       "count": 1,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+      "why": "длительность анимации: коллекции движения в студии нет"
     }
   ],
   "figma": {
-    "file_key": "MzbIinUK3d5C31yhl6TKmB",
-    "file_name": "💠 Comp ↪ ³ Cell",
-    "primary_node_id": "2038:1350",
-    "primary_url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2038-1350"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "76:57983",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-57983"
   },
   "variants": {
     "light": {
-      "node_id": "74:21636",
-      "url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=74-21636",
-      "figma_label": "сell-light"
+      "node_id": "76:58104",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58104",
+      "figma_label": "cell / light"
     },
     "head": {
-      "node_id": "2019:929",
-      "url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2019-929",
-      "figma_label": "cell-head"
+      "node_id": "76:58195",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58195",
+      "figma_label": "cell / head"
     },
     "default": {
-      "node_id": "2027:433",
-      "url": "https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2027-433",
-      "figma_label": "cell-default"
+      "node_id": "76:58207",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58207",
+      "figma_label": "cell / default"
     }
   },
   "table_variants": {
     "light": {
-      "node_id": "2038:1351",
+      "node_id": "76:58117",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58117",
       "class": "awds-table--light",
-      "label": "Безрамочная (разделители строк)"
+      "label": "Безрамочная (разделители строк)",
+      "figma_label": "table / cell=light"
     },
     "default": {
-      "node_id": "2038:1390",
+      "node_id": "76:58156",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58156",
       "class": "awds-table--default",
-      "label": "Сетка (залитая шапка)"
+      "label": "Сетка (залитая шапка)",
+      "figma_label": "table / cell=default"
     }
   },
   "shape": null,
@@ -117,27 +121,28 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-surface",
-    "--color-surface-bright",
-    "--color-surface-dim",
-    "--color-surface-on-lowest",
-    "--color-surface-on-high",
-    "--color-surface-on-highest",
-    "--awds-space-space-1",
-    "--awds-space-space-3",
-    "--awds-space-space-20",
-    "--awds-space-space-px",
-    "--awds-typography-typography-font-size-200",
-    "--awds-typography-typography-line-height-200",
-    "--awds-typography-typography-font-size-400",
-    "--awds-typography-typography-line-height-400",
-    "--awds-typography-typography-letter-spacing-400",
-    "--awds-opacity-opacity-40",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-opacity-40",
+    "--awds-space-1",
+    "--awds-space-20",
+    "--awds-space-3",
+    "--awds-space-px",
+    "--awds-typography-font-size-200",
+    "--awds-typography-font-size-400",
+    "--awds-typography-letter-spacing-400",
+    "--awds-typography-line-height-200",
+    "--awds-typography-line-height-400",
+    "--extended-transparent",
+    "--surface-bright",
+    "--surface-dim",
+    "--surface-on-high",
+    "--surface-on-highest",
+    "--surface-on-lowest",
+    "--surface-surface"
   ],
-  "last_synced": "2026-06-11T09:32:32Z",
+  "last_synced": "2026-09-16T09:40:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:882de90f253d76df4f923153b8ee61d3330b2d995d508713b36709767d4412e5",
   "published": {
@@ -177,13 +182,161 @@
   "focus_layer": {
     "component": "awds-component-focus-selection",
     "variants": [
-      "Inside + Default"
+      "radius=none, offset=inside, tone=default"
     ],
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
-    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
+    "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант снят с инстанса focusselection в макете (ячейки state=focus); мастер локальный, страница 4 · elements."
   },
+  "markup": {
+    "root": {
+      "class": "cell",
+      "tags": [
+        "td",
+        "th"
+      ]
+    },
+    "roots": [
+      {
+        "class": "cell",
+        "tags": [
+          "td",
+          "th"
+        ],
+        "modifiers": [
+          "cell--numeric"
+        ],
+        "variants": [
+          "cell-light",
+          "cell-head",
+          "cell-default"
+        ],
+        "children": [
+          "cell__description"
+        ],
+        "figma": [
+          "cell / light 76:58104",
+          "cell / head 76:58195",
+          "cell / default 76:58207"
+        ],
+        "что": "Ячейка. Самостоятельна: применима к любому th/td, в том числе вне .awds-table."
+      },
+      {
+        "class": "awds-table",
+        "tags": [
+          "table"
+        ],
+        "modifiers": [
+          "awds-table--light",
+          "awds-table--default"
+        ],
+        "container": "awds-table-scroll",
+        "figma": [
+          "table 76:58116",
+          "row 76:58219"
+        ],
+        "что": "Обёртка таблицы. Задаёт разлиновку и раскладку строк; сама по себе без ячеек бессмысленна."
+      }
+    ],
+    "variant": {
+      "pattern": "cell-{variant}",
+      "required": true
+    },
+    "size": null,
+    "native": null,
+    "children": [],
+    "attrs": [
+      {
+        "attr": "scope",
+        "tags": [
+          "th"
+        ]
+      }
+    ],
+    "container": null,
+    "note": "Скилл поставляет ДВА компонента с двумя корнями: ячейку (.cell) и обёртку таблицы (.awds-table). Это не нарушение props.md §11 — то правило про модификатор, уехавший на класс варианта (случай progress), а здесь два разных компонента в одной единице поставки, и в макете им отвечают пять наборов. Решение владельца 16.09.2026: скилл не делить, корни объявить явно. Вариант задаёт роль ячейки (обычная, головная, светлая). Шкалы размеров нет — высота от содержимого. У th обязателен scope: без него связь заголовка со столбцом теряется."
+  },
+  "family": "complex-component",
+  "summary": "Таблица: шапка, строки, выравнивание колонок, зебра, адаптив",
+  "aliases": [
+    "таблица",
+    "характеристики",
+    "сравнение",
+    "тарифы"
+  ],
+  "asana": {
+    "task_gid": "1218421826278966",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421826278966",
+    "task_name": "💠 table",
+    "parent_task": "💠 1 · core",
+    "primary": true
+  },
+  "figma_sets": {
+    "cell / light": "76:58104",
+    "cell / head": "76:58195",
+    "cell / default": "76:58207",
+    "row": "76:58219",
+    "table": "76:58116"
+  },
+  "variants_note": "Ключи variants — ВАРИАНТЫ КОДА (.cell-light / .cell-head / .cell-default), из них считается contract.variants. Наборы макета перечислены отдельно в figma_sets: их пять, и два из них (row, table) не имеют своего варианта ячейки. Раскладки таблицы — в table_variants.",
+  "questions": [
+    {
+      "id": "table-parts-are-remote",
+      "text": "112 привязок секции ↪ tables к старым библиотекам (State, WYSIWYG, Font-family, Font-weight, Roles, Rounded, Opacity) наследуются от УДАЛЁННЫХ мастеров, живущих в старых файлах: часть «. / content» (69 инстансов, 100 привязок) и компонент «scrollbar» (2 инстанса, 12 привязок, мастер ещё со старыми осями Type=/Style=/State=). Сверка показала overridden=false — это наследование, поэтому запись по этим узлам не перепривязала бы их, а создала бы оверрайды и пришпилила значения. Местные мастера в файле есть: content-list (14:74008, страница 5 · lists) и scrollbar / transparent (6:1404, страница 4 · elements). Свап не сделан в этом заходе: модель свойств расходится — у удалённой части показ описания выражен осью description=off, у местной булевым show-description, поэтому свап 69 инстансов потеряет соответствие свойств и требует отдельного разбора.",
+      "level": "component",
+      "target": null,
+      "severity": "major",
+      "status": "answered",
+      "asana_gid": "1218533353846898",
+      "raised_at": "2026-09-16",
+      "answer": "Владелец ДС, 16.09.2026: свап на местных мастеров. Скроллбар перенесён 1:1 — удалённый мастер 131x6 и местный scrollbar / transparent (6:1404, orientation=horizontal, state=rest) совпали по геометрии, 2 инстанса, 12 привязок (Roles, Rounded, Opacity) закрыты. Часть содержимого свапнуть на content-list НЕ удалось: строка таблицы 46px, а шкала content-list идёт 52·48·40·36·32·24·20 — 46 на ней нет, свап поднял бы строку на 6px и развёл макет с кодом. По решению владельца таблице заведена СВОЯ местная часть «. / content-cell» (329:217) с её метрикой 46 (12/12), построенная из удалённого мастера и целиком перепривязанная на «📜 tokens ↪ studio»: wysiwyg body и caption, font/family/system, font/weight/regular (привязка fontStyle снята по канону), state/opacity/control/enabled, цвета ячеек. Свойства: value, placeholder, show-description (BOOLEAN, по умолчанию выключено). 69 инстансов свапнуты, подписи сохранены поимённо, высоты контейнеров не изменились. Итог по секции: привязок к старым библиотекам 122 → 10, и оставшиеся 10 — это Sys::Bg и Sys::Border, подписи документации, которые по rebind-rules не переносятся. Удалённых мастеров в секции не осталось."
+    },
+    {
+      "id": "light-cell-text-reads-head-colour",
+      "text": "Текст светлой ячейки привязан к cell/head/color вместо cell/light/color — наследуется от того же удалённого мастера «. / content». Глазом не видно: обе ячейки резолвятся в surface/on-highest, поэтому расхождение чисто именное и ломает только поиск токена по классу. Чинится тем же свапом, что и table-parts-are-remote; отдельной правки макета не требует.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218533353847218",
+      "raised_at": "2026-09-16",
+      "answer": "Закрыто 16.09.2026 вместе со свапом. Раньше текст всех трёх видов ячейки наследовал от удалённой части единственную привязку cell/default-head/color. Теперь у каждого набора свой тон: cell / light → cell/light/color, cell / head → cell/head/color, cell / default → cell/default/color, по 5 состояний в каждом, сверено чтением. Цвет на экране не изменился — все три ячейки резолвятся в surface/on-highest, — но по классу снова находится свой токен."
+    },
+    {
+      "id": "table-two-base-classes",
+      "text": "Записанный долг props.md §11: у компонента два корневых класса — .cell (мета объявляет его корнем) и .awds-table с модификатором .awds-table--{cell}. Правило требует один базовый класс на компонент, но здесь это не нарушение внутри одного корня, а два разных компонента в одном скилле: ячейка и обёртка таблицы. В макете им соответствуют пять наборов — три cell, row и table. Вопрос: разделять ли скилл на awds-component-cell и awds-component-table, или оставить один скилл и признать два корня в мете явно. Разделение чище по канону, но ломает контракт и рассылку в два блока wysiwyg.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218533259526644",
+      "raised_at": "2026-09-16",
+      "answer": "Владелец ДС, 16.09.2026: скилл НЕ делить, два корня объявить явно. Долг props.md §11 снят как неверно квалифицированный: правило писалось про модификатор, уехавший на класс варианта (случай progress), а здесь два разных компонента в одной единице поставки. Признак различения записан в канон: существует ли часть самостоятельно. Ячейка применима к любому th/td вне .awds-table — значит второй компонент со своим корнем. Корни объявлены в markup.roots, описаны в SKILL.md разделом «Два корня — это намеренно», формулировка §11 уточнена. Отвергнуто: разделение на awds-component-cell и awds-component-table (две карточки навсегда ради разовой чистоты, плюс «cell» в карте компонентов, которого никто так не называет в речи) и сведение к .awds-table__cell (отнимает у ячейки самостоятельность). Замер на момент решения: потребителей классов в блоках НОЛЬ — awds-wysiwyg и awds-wysiwyg-center зеркалят модель на голые th/td, потому что markdown отдаёт таблицы без классов."
+    },
+    {
+      "id": "table-top-padding-not-modelled",
+      "text": "У набора table верхний паддинг 34px. ПРОВЕРЕНО 16.09.2026: это пустое место над слотом rows, узлов в нём нет — прежняя формулировка «место под заголовок таблицы» была догадкой, а не фактом. Рядом второй остаток: первая строка обеих таблиц 68px вместо 46, потому что подпись «Typography / Body» в колонке 125px переносится на две строки (12+22+22+12). Оба числа — свойства демо-картинки, а не компонента, и в коде не смоделированы. Вопрос: снять оба как остатки раскладки, либо объявить 34px заголовком таблицы и завести слот caption с элементом <caption> в коде.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218533244015079",
+      "raised_at": "2026-09-16",
+      "answer": "Закрыто 16.09.2026 замером, правка не потребовалась — обе половины вопроса оказались неверно поставлены мной. 34px НЕ пустой остаток: paddingTop обоих вариантов набора table привязан к wysiwyg/gap/block-top, то есть это отступ блока в потоке статьи. В коде его нет потому, что им владеет блок-потребитель, и оба awds-wysiwyg действительно расставляют отступы сами — компонент таблицы своего внешнего отступа не несёт и нести не должен. 68px первой строки — тоже не артефакт: высота текста 44 = две строки по 22, ячейка = 12 + 44 + 12, ровно как считает код (.cell padding 12, line-height 22). Макет показывает честное поведение ячейки с переносом. Слот caption не заводим: это была бы новая функция, а не починка."
+    },
+    {
+      "id": "table-tone-modifier-two-dashes",
+      "text": "Тона обёртки записаны двумя дефисами — .awds-table--light и .awds-table--default, — хотя это взаимоисключающий выбор, а канон props.md §1 требует для такого один дефис: два дефиса обещают, что класс комбинируется. Ячейка того же компонента уже пишется одним (.cell-light, .cell-head, .cell-default), то есть внутри одного скилла живут оба словаря. Долг записан в самом каноне строкой «Случай: table — записанный долг». Правка переименует .awds-table--light в .awds-table-light и .awds-table--default в .awds-table-default — это смена публичного контракта, MAJOR. Замер 16.09.2026: потребителей классов в блоках ноль, поэтому сейчас правка стоит дёшево; после публикации волны 7 окно закроется.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1218534584383330",
+      "raised_at": "2026-09-16",
+      "answer": null
+    }
+  ],
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [

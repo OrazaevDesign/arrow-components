@@ -2,7 +2,7 @@
 
 Ячейка таблицы ArrowDS. Базовый класс `.cell` + модификатор варианта (`.cell-light` / `.cell-head` / `.cell-default`). Применяется к `<th>` и `<td>`.
 
-Figma: [Cell — light](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=74-21636) · [head](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2019-929) · [default](https://www.figma.com/design/MzbIinUK3d5C31yhl6TKmB/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B3-Cell?node-id=2027-433)
+Figma: [cell / light](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58104) · [cell / head](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58195) · [cell / default](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58207) · [row](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58219) · [table](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58116)
 
 ## HTML
 
@@ -44,7 +44,7 @@ Focus-обводка — `outline: var(--awds-focus-width) solid var(--awds-focu
 
 ## Цвета по вариантам (map.state.*.cell.*)
 
-| | light | head (default-head) | default |
+| | light | head | default |
 |---|---|---|---|
 | **Rest** bg | transparent | `surface-surface` | `surface-bright` |
 | **Rest** border | transparent | `surface-on-lowest` | `surface-on-lowest` |
@@ -53,13 +53,13 @@ Focus-обводка — `outline: var(--awds-focus-width) solid var(--awds-focu
 | color | `surface-on-highest` | `surface-on-highest` | `surface-on-highest` |
 | description | `surface-on-high` | `surface-on-high` | `surface-on-high` |
 
-Active = Rest. Focus = Rest + обводка. Disabled = Rest + `opacity: var(--awds-opacity-opacity-40)`.
+Active = Rest. Focus = Rest + обводка. Disabled = Rest + `opacity: var(--awds-opacity-40)`.
 
 ## Раскладки таблицы
 
-Ячейки кладутся в одну из двух раскладок (Figma-нода `2038:1350`):
+Ячейки кладутся в одну из двух раскладок (набор `table`, `76:58116`, ось `cell`):
 
-- `.awds-table--default` — сетка: все ячейки с границей (`border-collapse`), шапка залита. Паддинг равномерный `--awds-space-space-3`.
+- `.awds-table--default` — сетка: все ячейки с границей (`border-collapse`), шапка залита. Паддинг равномерный `--awds-space-3`.
 - `.awds-table--light` — безрамочная: только `border-bottom` между строками (`surface-on-lowest`), ячейки прозрачные, первый столбец flush-влево (`padding-inline-start: 0`).
 
 Широкую таблицу оборачивай в `.awds-table-scroll` (нативный `overflow-x:auto`).
@@ -67,4 +67,4 @@ Active = Rest. Focus = Rest + обводка. Disabled = Rest + `opacity: var(--
 ## Заметки
 
 - **`cell-head` — semibold** (`--awds-font-weight-semibold`), тело (`cell-light`/`cell-default`) — `regular`. Подтверждено нодой таблицы (head = `Inter:Semi_Bold`).
-- `cell-default` = белая ячейка (`surface-bright`) с границей. Отдельный фрейм `cell-default` (`2027:433`) мис-привязан к `cell/light`, но реальный токен `cell/default` белый — см. таблицу `2038:1350` и шапку [cell-default.css](cell-default.css).
+- `cell-default` = белая ячейка (`surface-bright`) с границей `surface-on-lowest`. Старая мис-привязка фрейма к `cell/light` жила в файле «Comp ↪ ³ Cell» и в секции `76:57983` её нет — см. шапку [cell-default.css](cell-default.css).
