@@ -19,40 +19,41 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 
 | Коллекция | Токенов | Моды | Группы внутри | Пример имени |
 | --- | --- | --- | --- | --- |
-| **State** | 1476 | Rest · Hover · Focus · Active | list (336), badge (272), form-control (224), button (192), nav-button (48), variation (48), cell (48), check-radio (40), … +12 | `--awds-state-opacity-control-enabled-rest` |
-| **Typography** | 468 | Desktop · Tablet · Mobile | typography (228), body (90), display (60), heading (45), title (45) | `--awds-typography-typography-font-size-50-desktop` |
-| **roles** | 294 | light · dark | Surface (34), Primary (28), Secondary (28), Tertiary (28), Accent (28), Addition (28), Info (28), Success (28), … +3 | `--primary-core-light` |
-| **Size** | 209 | — | rectangle (98), square (40), notice (30), nav (15), tabs (10), dropdown (8), range (3), profile-button (3), … +1 | `--awds-size-rectangle-50-padding` |
-| **Layout** | 180 | Desktop · Tablet · Mobile | layout (180) | `--awds-layout-layout-market-section-large-max-desktop` |
-| **WYSIWYG** | 138 | Medium · Small · Large | WYSIWYG (138) | `--awds-wysiwyg-wysiwyg-font-size-h1-medium` |
-| **Rounded** | 72 | Smooth · None · Rounded | border-radius (36), outline (36) | `--awds-rounded-border-radius-50-smooth` |
-| **Shadow** | 60 | elevation-1 · elevation-2 · elevation-3 · elevation-4 | shadow1 (20), shadow2 (20), shadow3 (20) | `--awds-shadow-shadow1-color-elevation-1` |
-| **Space** | 39 | — | space (39) | `--awds-space-space-0` |
-| **Control** | 39 | — | font-size (13), line-height (13), letter-spacing (13) | `--awds-control-font-size-50` |
-| **Opacity** | 21 | — | opacity (21) | `--awds-opacity-opacity-0` |
-| **Breakpoints** | 17 | — | breakpoints (17) | `--awds-breakpoints-breakpoints-market-desktop-large` |
-| **Zindex** | 8 | — | zindex (8) | `--awds-zindex-zindex-dropdown` |
-| **Font** | 7 | — | weight (4), family (3) | `--awds-font-family-system` |
+| **state** | 955 | — | list (186), form-control (184), button (163), badge (68), variation (37), check-radio (27), range (27), cell (24), … +32 | `--awds-state-opacity-chevron-shrink-rest` |
+| **roles** | 324 | light · dark | surface (34), primary (28), secondary (28), tertiary (28), accent (28), addition (28), info (28), success (28), … +4 | `--primary-core-light` |
+| **typography** | 228 | desktop · tablet · mobile | font-size (57), line-height (57), line-height-compact (57), letter-spacing (57) | `--awds-typography-font-size-50-desktop` |
+| **size** | 215 | — | rectangle (98), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +1 | `--awds-size-rectangle-50-padding` |
+| **wysiwyg** | 138 | medium · small · large | font-size (36), line-height (36), letter-spacing (36), gap (30) | `--awds-wysiwyg-font-size-h1-medium` |
+| **layout** | 126 | desktop · tablet · mobile | section (30), card (30), banner (24), blog (24), form (9), productcard (9) | `--awds-layout-section-large-max-desktop` |
+| **rounded** | 72 | smooth · rounded · none | border-radius (36), outline (36) | `--awds-rounded-border-radius-50-smooth` |
+| **shadow** | 60 | elevation-1 · elevation-2 · elevation-3 · elevation-4 | shadow1 (20), shadow2 (20), shadow3 (20) | `--awds-shadow-shadow1-color-elevation-1` |
+| **space** | 39 | — | 0 (1), 1 (1), 2 (1), 3 (1), 4 (1), 5 (1), 6 (1), 7 (1), … +31 | `--awds-space-0` |
+| **control** | 39 | — | font-size (13), line-height (13), letter-spacing (13) | `--awds-control-font-size-50` |
+| **opacity** | 21 | — | 0 (1), 5 (1), 10 (1), 15 (1), 20 (1), 25 (1), 30 (1), 35 (1), … +13 | `--awds-opacity-0` |
+| **breakpoints** | 9 | — | desktop (3), tablet (3), mobile (3) | `--awds-breakpoints-desktop-large` |
+| **zindex** | 8 | — | dropdown (1), sticky (1), fixed (1), backdrop (1), offcanvas (1), modal (1), popover (1), tooltip (1) | `--awds-zindex-dropdown` |
+| **font** | 8 | — | weight (5), family (3) | `--awds-font-family-system` |
 
-Всего 3028 токенов в 14 коллекциях.
+Всего 2242 токенов в 14 коллекциях.
 
 ## Как из токена получается имя CSS-переменной
 
 Имя **не выводится правилами** — оно приходит из студии полем
 `$extensions["io.designstudio"].cssVar` и лежит в карте для ACB
-(`component-token-map.json`). Практический вид: `--awds-{коллекция}-{путь}`, где имя
-коллекции удваивается, если путь начинается с него же:
+(`component-token-map.json`). Практический вид: `--awds-{коллекция}-{путь}`, всё в
+нижнем регистре. До 02.09.2026 сегмент коллекции удваивался (`--awds-space-space-4`) —
+таких имён в теме больше нет, встретил в коде — это обрыв:
 
 | Токен в студии | CSS-переменная |
 | --- | --- |
-| `Space / space / 4` | `--awds-space-space-4` |
-| `Size / rectangle / 600 / padding` | `--awds-size-rectangle-600-padding` |
-| `State / button / primary / bg` [Hover] | `--awds-state-button-primary-bg-hover` |
+| `space / 4` | `--awds-space-4` |
+| `size / rectangle / 600 / padding` | `--awds-size-rectangle-600-padding` |
+| `state / button / primary / bg-hover` (состояние — в имени, слой плоский с 02.09.2026) | `--awds-state-button-primary-bg-hover` |
 | роль `Primary / Core` | `--primary-core` (у ролей своего префикса нет) |
 
 **Цвет — RGB-триплет**, а не готовый цвет: `--primary-core: 250 216 22`. Потреблять
 только через обёртку: `rgb(var(--primary-core))`, с альфой —
-`rgb(var(--primary-core) / var(--awds-opacity-opacity-50))`.
+`rgb(var(--primary-core) / var(--awds-opacity-50))`.
 
 ## Роли
 
@@ -75,8 +76,8 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `@media (max-width: 1067px)` | 1 |
 | `@media (max-width: 615px)` | 1 |
 | `.rounded-smooth` | 1 |
-| `.rounded-none` | 1 |
 | `.rounded-rounded` | 1 |
+| `.rounded-none` | 1 |
 | `.typo-medium` | 1 |
 | `.typo-small` | 1 |
 | `.typo-large` | 1 |
@@ -92,14 +93,15 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | композит тени `--awds-shadow-elevation-1…4` | `references/derived.css` → поле `styles` темы | тень это 18 переменных, ни один из трёх типов (COLOR, NUMBER, DIMENSION) не держит смесь размеров с цветом |
 | контракт кольца фокуса `--awds-focus-*` | компонент `awds-component-focus-selection` | кольцо — часть компонента, а не значение системы |
 | альфа (`роль / 50%`) | там же, в правиле компонента | альфа в студии невыразима |
-| толщина линии, длительность анимации, размер от кегля | `own_values` меты компонента с причиной | ячеек нет; проверка — `node scripts/component-version.mjs --own-values` |
+| длительность и кривая перехода | `references/derived.css` → поле `styles` темы | ни один из трёх типов не держит `0.15s` и `cubic-bezier()`; замер 04.09.2026 |
+| размер от кегля, блюр, одиночная длительность | `own_values` меты компонента с причиной | ячеек нет; проверка — `node scripts/component-version.mjs --own-values`. Толщина линии сюда **не** относится: это `--awds-space-px` (1px) и `--awds-space-0-5` (2px) |
 
 ## Где смотреть значение и чему верить
 
 | Источник | Что это | Когда |
 | --- | --- | --- |
 | `references/studio-vars.css` | офлайн-снапшот `vars` темы, обновляется `scripts/sync-studio-vars.mjs` | обычное чтение, греп |
-| `references/derived.css` | слой производных (композит тени) | когда переменной нет в снапшоте |
+| `references/derived.css` | слой производных: композит тени и движение (`--awds-motion-*`) | когда переменной нет в снапшоте |
 | `GET /themes/21/compiled` | **эталон**: одна компиляция, разная упаковка | спор о значении, сверка |
 | `token-snapshot/theme-tokens.json` | состояние под git, история значений | «что поехало» — `scripts/token-diff.mjs` |
 

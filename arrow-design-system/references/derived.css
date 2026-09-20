@@ -2,10 +2,16 @@
    Не «чего нет в теме», а «что из темы выводится»: студия отдаёт части, а склейку
    делаем мы. Это единственное содержимое поля `styles` темы 21.
 
-   Здесь только композит теней. Три слоя × (4 размера + цвет) — 18 переменных на одну
-   тень; типов у переменной студии три (COLOR, NUMBER, DIMENSION), и ни один не держит
-   смесь размеров с цветом. STRING отвергнут 25.08.2026: строка не может быть ссылкой,
-   поэтому переименование части сломало бы тень молча.
+   Здесь композит теней и слой движения. Причина у обоих одна: типов у переменной
+   студии три (COLOR, NUMBER, DIMENSION), и нужное значение не выражается ни одним.
+   Тень — 18 переменных на одну тень, смесь размеров с цветом. Движение — секунды и
+   кривые: `DIMENSION` отклоняет `0.15s` («введите размер с единицей: 8px, 1.5rem,
+   100%»), `NUMBER` берёт только голое число, а `cubic-bezier(0.2, 0, 0, 1)` не лезет
+   никуда. Замер на теме 21 от 04.09.2026. STRING отвергнут 25.08.2026: строка не
+   может быть ссылкой, поэтому переименование части сломало бы тень молча.
+
+   Что здесь появилось 04.09.2026: слой движения (Э0.1 плана ресета библиотеки). До него
+   длительности и кривые жили в `own_values` компонентов — 268 вхождений у 32 из 37.
 
    Чего здесь нет и почему:
    — контракт кольца фокуса (--awds-focus-*) живёт в компоненте
@@ -20,4 +26,30 @@
   --awds-shadow-elevation-2: var(--awds-shadow-shadow1-offset-x-elevation-2) var(--awds-shadow-shadow1-offset-y-elevation-2) var(--awds-shadow-shadow1-blur-radius-elevation-2) var(--awds-shadow-shadow1-spread-radius-elevation-2) rgb(var(--awds-shadow-shadow1-color-elevation-2)), var(--awds-shadow-shadow2-offset-x-elevation-2) var(--awds-shadow-shadow2-offset-y-elevation-2) var(--awds-shadow-shadow2-blur-radius-elevation-2) var(--awds-shadow-shadow2-spread-radius-elevation-2) rgb(var(--awds-shadow-shadow2-color-elevation-2)), var(--awds-shadow-shadow3-offset-x-elevation-2) var(--awds-shadow-shadow3-offset-y-elevation-2) var(--awds-shadow-shadow3-blur-radius-elevation-2) var(--awds-shadow-shadow3-spread-radius-elevation-2) rgb(var(--awds-shadow-shadow3-color-elevation-2));
   --awds-shadow-elevation-3: var(--awds-shadow-shadow1-offset-x-elevation-3) var(--awds-shadow-shadow1-offset-y-elevation-3) var(--awds-shadow-shadow1-blur-radius-elevation-3) var(--awds-shadow-shadow1-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow1-color-elevation-3)), var(--awds-shadow-shadow2-offset-x-elevation-3) var(--awds-shadow-shadow2-offset-y-elevation-3) var(--awds-shadow-shadow2-blur-radius-elevation-3) var(--awds-shadow-shadow2-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow2-color-elevation-3)), var(--awds-shadow-shadow3-offset-x-elevation-3) var(--awds-shadow-shadow3-offset-y-elevation-3) var(--awds-shadow-shadow3-blur-radius-elevation-3) var(--awds-shadow-shadow3-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow3-color-elevation-3));
   --awds-shadow-elevation-4: var(--awds-shadow-shadow1-offset-x-elevation-4) var(--awds-shadow-shadow1-offset-y-elevation-4) var(--awds-shadow-shadow1-blur-radius-elevation-4) var(--awds-shadow-shadow1-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow1-color-elevation-4)), var(--awds-shadow-shadow2-offset-x-elevation-4) var(--awds-shadow-shadow2-offset-y-elevation-4) var(--awds-shadow-shadow2-blur-radius-elevation-4) var(--awds-shadow-shadow2-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow2-color-elevation-4)), var(--awds-shadow-shadow3-offset-x-elevation-4) var(--awds-shadow-shadow3-offset-y-elevation-4) var(--awds-shadow-shadow3-blur-radius-elevation-4) var(--awds-shadow-shadow3-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow3-color-elevation-4));
+
+  /* --- Движение ---------------------------------------------------------------
+     Ритм системы, одинаковый на всех сайтах: форк движение не переопределяет.
+     Значения отобраны по факту употребления в CSS 37 компонентов (замер 04.09.2026),
+     ступень без своего читателя не заводится. Имена по смыслу, а не по номеру: номер
+     здесь ничего не сказал бы о том, когда ступень брать.
+
+     Осталось в own_values компонентов с причиной: одиночные 1s и 5s (по одному
+     вхождению, оба в loop-сценариях блока), и десять спринговых кривых, которые Figma
+     выдаёт разложенными на сегменты — каждая живёт в одном компоненте и переиспользовать
+     её нечему. 0.12s (7 вхождений) сведён к state: разница в 30 мс на смене состояния
+     контрола не читается глазом, а вторая близкая ступень читателя себе не найдёт. */
+
+  /* длительности */
+  --awds-motion-duration-state: 0.15s;   /* смена состояния контрола: hover, focus, active. 494 вхождения */
+  --awds-motion-duration-quick: 0.2s;    /* короткий отклик поверх состояния. 6 */
+  --awds-motion-duration-enter: 0.3s;    /* появление чанка контента. 13 */
+  --awds-motion-duration-slow: 0.4s;     /* раскрытие панели, крупный элемент. 10 */
+  --awds-motion-duration-spin: 1.4s;     /* оборот спиннера, loop. 3 */
+  --awds-motion-duration-pulse: 2s;      /* пульс индикатора и скелетона, loop. 3 */
+
+  /* кривые */
+  --awds-motion-ease-state: ease-out;                  /* вход в состояние. 504 */
+  --awds-motion-ease-exit: ease-in;                    /* уход состояния, exit короче enter. 6 */
+  --awds-motion-ease-linear: linear;                   /* loop: спиннер, полоса прогресса. 146 */
+  --awds-motion-ease-swap: cubic-bezier(0.2, 0, 0, 1); /* подмена иконки, канон motion.md. 4 */
 }
