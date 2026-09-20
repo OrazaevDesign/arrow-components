@@ -1,0 +1,150 @@
+{
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": {
+    "node_id": "912:38940",
+    "name": "↪ button-group"
+  },
+  "frames": {
+    "primary": {
+      "node_id": "1:6582",
+      "figma_label": "button group / primary"
+    },
+    "secondary": {
+      "node_id": "489:188496",
+      "figma_label": "button group / secondary"
+    },
+    "contrast": {
+      "node_id": "489:202092",
+      "figma_label": "button group/contrast"
+    },
+    "addition": {
+      "node_id": "489:208783",
+      "figma_label": "button group/addition"
+    },
+    "tertiary": {
+      "node_id": "489:212790",
+      "figma_label": "button group/tertiary"
+    },
+    "ghost": {
+      "node_id": "489:216343",
+      "figma_label": "button group/ghost"
+    },
+    "clean": {
+      "node_id": "489:221865",
+      "figma_label": "button group/clean"
+    }
+  },
+  "axes": {
+    "size": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "side": [
+      "end",
+      "start",
+      "startend"
+    ]
+  },
+  "composition": {
+    "1:6583": {
+      "name": "size=600, side=end",
+      "children": [
+        "button / primary (100×52)",
+        "button / primary (52×52)"
+      ]
+    },
+    "1:6593": {
+      "name": "size=600, side=startend",
+      "children": [
+        "button / primary (52×52)",
+        "button / primary (100×52)",
+        "button / primary (52×52)"
+      ]
+    }
+  },
+  "variable_defs": {
+    "1:6593": {
+      "button/primary/color": "#19110a",
+      "button/primary/chroma": "#fce279",
+      "button/primary/bg": "#ffeb5a",
+      "button/primary/border": "#ffeb5a",
+      "rectangle/600/icon": "20",
+      "rectangle/600/padding": "16",
+      "rectangle/600/gap": "8",
+      "rectangle/600/rounded": "10",
+      "border-radius/500": "8",
+      "opacity/control/enabled": "100",
+      "opacity/color": "100",
+      "letter-spacing/600": "0",
+      "font-size/600": "16",
+      "font-weight": "semibold",
+      "font-family": "Inter",
+      "line-height/600": "20"
+    }
+  },
+  "layout": {
+    "container": "flex, items-center, justify-center, isolation: isolate, gap 0",
+    "stacking": "первый ребёнок z-2, второй z-1 — управление наложением обводок на стыке",
+    "note": "Ширины складываются точно (52+100+52=204): кнопки стоят встык, отрицательных отступов нет."
+  },
+  "measured": {
+    "method": "пиксельный замер экспорта PNG, node 1:6593 и 1:7051 (size=50), 489:221893 (clean)",
+    "outer_radius": "следует ступени кнопки: профиль угла при size=600 — [6,4,3,2,1,1,0…], при size=50 — [1,0,0…]; фиксированного радиуса у группы нет",
+    "seam": "clean, size=600, side=startend: внешняя линия 1px (x=0, x=203), шов 2px (x=51–52, x=151–152)"
+  },
+  "resolution_note": "Ни одного собственного значения у группы нет: все токены принадлежат вложенным кнопкам, группы button-group в слое State темы не существует.",
+  "primary_node_id": "5:12",
+  "fetched": "2026-09-15",
+  "sets": {
+    "primary": "8:39314",
+    "secondary": "8:39385",
+    "contrast": "8:39456",
+    "addition": "8:39527",
+    "tertiary": "8:39598",
+    "ghost": "8:39669",
+    "clean": "8:39740"
+  },
+  "cells_per_set": 21,
+  "cells_total": 147,
+  "own_values": {
+    "count": 0,
+    "checked": "2026-09-15",
+    "note": "Обход всей секции: ни одной привязки, принадлежащей самой группе. Всё, что найдено, принадлежит вложенным инстансам button — state/button/{тон}/{bg,chroma,border,color}-rest, size/rectangle/{N}/{padding,gap,icon,rounded}, control/*, font/*, state/opacity/control/enabled. Группы button-group в слое State темы нет."
+  },
+  "old_library": {
+    "count": 0,
+    "note": "Привязок к старым библиотекам в секции нет ни одной — перепривязывать нечего."
+  },
+  "raw_fills": {
+    "count": 0,
+    "note": "Сырые белая заливка и чёрная обводка принадлежат рамке самой секции, не ячейкам."
+  },
+  "tones_vs_button": "У кнопки восемь вариантов, у группы семь: нет pills. Открытый вопрос button-group-pills-missing.",
+  "instances": {
+    "count": 0,
+    "note": "Инстансов наборов группы в файле нет ни одного (обход всех страниц 15.09.2026)."
+  },
+  "_rebind_16_09": "16.09.2026, после публикации библиотеки 📜 tokens ↪ studio: ghost-поверхность переведена с прямых ролей на ячейки слоя state. В наборе button / ghost — 84 обводки на button/ghost/border и 168 стопов градиента на button/ghost/chroma (стоп 0) и button/ghost/bg (стоп 1); соглашение стопов снято чтением семи других тонов, где стоп 0 везде chroma. Плюс переопределения в инстансах: 6 обводок и 56 стопов в button-favorites, 98 стопов в button-group. Цвет не изменился нигде — #ffffff при нулевой альфе.",
+  "_page_cleanup_2026_09_20": {
+    "date": "2026-09-20",
+    "note": "Заход по всей странице 2 · buttons 20.09.2026 (решение владельца по объёму). Снималось посекционно, сверка «до/после» по всем узлам секции — заливка, обводка, габариты, радиус, кегль, прозрачность.",
+    "dead_modes_cleared": 14,
+    "detail": {
+      "Controls=Focused": 7,
+      "Corners=Smooth": 7
+    },
+    "diff": 0,
+    "measurement_note": "Прежний замер по странице давал группе 980 модов — он считал и моды внутри инстансов кнопок, то есть чужие. После чистки мастеров button своих осталось 14.",
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0
+    }
+  }
+}

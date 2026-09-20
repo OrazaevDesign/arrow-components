@@ -1,0 +1,166 @@
+{
+  "component": "button-group",
+  "version": "1.0.3",
+  "contract_hash": "sha256:6a5c47aa1284896d6356ae84b5ef66a5d0db01b9e40ad237acd733fd189a2554",
+  "artifact_hash": "sha256:b3e48790ff53960ffd9e192a986e44ce1a9d44e42be822524f09523c642ada29",
+  "visual_change": false,
+  "released_at": "2026-09-15T17:17:55.310Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:12",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-12",
+    "sets": {
+      "primary": "8:39314",
+      "secondary": "8:39385",
+      "contrast": "8:39456",
+      "addition": "8:39527",
+      "tertiary": "8:39598",
+      "ghost": "8:39669",
+      "clean": "8:39740"
+    },
+    "sets_note": "Семь наборов — это семь ТОНОВ вложенной кнопки, а не варианты группы: своих классов варианта у .btn-group нет, тон приезжает с кнопки. Оси набора: size=600…50 и side=end|start|startend; вторая в коде выражена порядком узлов."
+  },
+  "variants": {},
+  "variants_note": "Вариантов у компонента нет. Семь фреймов в макете — это семь вариантов ВЛОЖЕННОЙ кнопки, а не группы: get_variable_defs на 1:6593 отдаёт только button/primary/* и rectangle/600/*, группы button-group в слое State темы не существует. Заводить .btn-group-{вариант} значило бы пообещать тон без ячейки (props.md, правило 8). Ноды фреймов — в snapshot/figma.json.",
+  "shape": null,
+  "size_scale": [],
+  "states": [],
+  "color_tokens": {},
+  "js": false,
+  "js_note": "Своего JS нет: группа — раскладка. Логика «какая кнопка нажата» принадлежит потребителю.",
+  "preview": {
+    "base_class": "btn-group",
+    "default_size": null,
+    "matrix_states": [],
+    "matrix_sizes": [],
+    "toggles": [
+      {
+        "id": "side",
+        "label": "Раскладка",
+        "options": [
+          "end",
+          "start",
+          "startend"
+        ]
+      },
+      {
+        "id": "variant",
+        "label": "Вариант кнопки внутри",
+        "options": [
+          "primary",
+          "secondary",
+          "addition",
+          "contrast",
+          "tertiary",
+          "ghost",
+          "clean"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Текст плюс иконка",
+        "html": "<div class=\"btn-group\"><button class=\"btn btn-primary btn--600\" type=\"button\">Button</button><button class=\"btn btn-primary btn--600 btn--icon-only\" type=\"button\" aria-label=\"Ещё\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"></svg></button></div>"
+      }
+    ]
+  },
+  "markup": {
+    "root": {
+      "class": "btn-group",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": null,
+    "size": null,
+    "native": null,
+    "children": [
+      {
+        "class": "btn",
+        "when": null
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Вариант и размер ставятся на КАЖДУЮ кнопку внутри (.btn.btn-primary.btn--600), а не на группу: своих классов варианта и размера у .btn-group нет. Группа обязана содержать минимум две кнопки — с одной она бессмысленна, и скругление стыков ничего не изменит. Раскладка side= из макета выражается порядком узлов: иконочная кнопка первая, последняя или обе."
+  },
+  "ds_token_dependencies": [],
+  "ds_token_dependencies_note": "Пусто не по недосмотру: компонент не ссылается ни на один токен. Три правила CSS оперируют раскладкой, радиусом в 0 и z-index — значений в них нет вовсе.",
+  "last_synced": "2026-09-15T20:20:00Z",
+  "last_synced_by": "arrow-components-builder",
+  "questions": [
+    {
+      "id": "button-group-seam-2px",
+      "text": "Шов между кнопками — 2px против 1px по внешнему краю: у каждой кнопки своя обводка box-shadow: inset 0 0 0 1px, и на стыке их две. В макете так же (замер clean/600/startend: край 1px на x=0 и x=203, шов 2px на x=51-52 и x=151-152). Схлопывать до 1px (отрицательный margin у соседей или снятие одной стороны) — обычная практика сегментированных контролов, но это расхождение с макетом.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-08-30",
+      "answer": null,
+      "asana_gid": "1218488921279085"
+    },
+    {
+      "id": "button-group-pills-missing",
+      "text": "У кнопки восемь вариантов, у группы в макете семь — нет pills. Похоже на осознанное решение (склеивать таблетки незачем), но не подтверждено. На код не влияет: классов варианта у группы нет.",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-08-30",
+      "answer": null,
+      "asana_gid": "1218489083212955"
+    },
+    {
+      "id": "state-layer-frozen-at-root",
+      "text": "Слой State не переключается на тёмном островке. Роли объявлены и под .theme-light, и под .theme-dark, а все 1845 ячеек --awds-state-* объявлены ОДИН раз на :root псевдонимом роли — под .theme-dark ни одной. var() внутри объявления на :root подставляется на :root, потомки наследуют уже готовое значение, поэтому переопределение роли на элементе-островке до ячейки не доходит. Замер: на <html class=\"theme-dark\"> ячейка state/button/ghost/color/rest = 230 230 230, на островке <div class=\"theme-default theme-dark\"> она же = 43 43 43 при фоне 43 43 43, то есть контраст 1:1. Задевает всё, что красится через State: кнопки, поля, бейджи, list-item. Сейчас латентно — ни один блок не кладёт .btn внутрь островка, но awds-faq-dark островком уже пользуется. Лечится в студии: выдавать ячейки State под теми же селекторами тем, что и роли.",
+      "level": "token",
+      "target": "State",
+      "severity": "major",
+      "status": "answered",
+      "asana_gid": "1217995403476645",
+      "raised_at": "2026-08-30",
+      "answer": "Снят переводом компонентов на роли, а не правкой студии. Вопрос описывал ячейки --awds-state-*, объявленные один раз на :root псевдонимом роли: var() внутри объявления на :root подставлялся там же, и переопределение роли на островке до ячейки не доходило. С 03.09.2026 коллекции State и Size приватны, а проход волн 1-6 переводит CSS компонентов на САМИ роли — то есть на имена, которые студия объявляет и под .theme-light, и под .theme-dark. Замер 15.09.2026 на переведённом button-ghost: снаружи --surface-on-high = 43 43 43 и цвет кнопки rgb(43,43,43); внутри <div class=\"theme-default theme-dark\"> та же роль = 230 230 230, цвет кнопки rgb(230,230,230) при фоне островка 36 36 36. В исходном замере было 43 43 43 на 43 43 43, то есть контраст 1:1. У непереведённых компонентов вопрос тоже не действует, но по другой причине: имени ячейки в теме нет вовсе, и объявление отбрасывается целиком. Правка студии, которую предлагал вопрос (выдавать ячейки State под теми же селекторами, что и роли), не требуется: слоя State в публикуемом CSS больше нет.",
+      "answered_at": "2026-09-15"
+    }
+  ],
+  "asana": {
+    "task_gid": "1218433190679024",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190679024",
+    "task_name": "💠 button-group",
+    "parent_task": "💠 2 · buttons",
+    "primary": true
+  },
+  "family": "buttons",
+  "summary": "Кнопки встык: внешние углы скруглены, стыки прямые",
+  "aliases": [
+    "группа кнопок",
+    "кнопки встык",
+    "сегментированный контрол",
+    "назад-вперёд"
+  ],
+  "snapshot_hash": "sha256:fb16393de22a0ca075e650656e546ccc716ad5d10b0ab72c3cb78b7030917cb0",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "status": "не публиковался",
+    "dev_resources_status": {
+      "note": "Ссылка на SKILL.md записана в descriptionMarkdown всех семи наборов 15.09.2026; сам компонент в arrow-components ещё не выкладывался — волна 7.4."
+    }
+  },
+  "uses": {
+    "awds-component-button": "2.2.3"
+  },
+  "contract": {
+    "classes": [
+      "btn-group"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [],
+    "sizes": [],
+    "states": []
+  }
+}
