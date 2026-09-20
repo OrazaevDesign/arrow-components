@@ -1,0 +1,309 @@
+{
+  "component": "textarea-combi",
+  "version": "1.0.0",
+  "contract_hash": "sha256:99ce0316fc49bb5c4256fc8f9775561e30ef61e87a890d16933c487a3289479a",
+  "artifact_hash": "sha256:f4bfa3c58ae73cbd8aea0ae76f3c2aafd523ce9af0210625fff7c0238a4cbfc1",
+  "visual_change": false,
+  "released_at": "2026-09-16T15:39:39.300Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 6,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "44:75250",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-75250"
+  },
+  "variants": {
+    "default": {
+      "node_id": "44:76856",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-76856",
+      "figma_label": "textarea-combi / default"
+    },
+    "light": {
+      "node_id": "44:76943",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-76943",
+      "figma_label": "textarea-combi / light"
+    },
+    "success": {
+      "node_id": "44:77028",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-77028",
+      "figma_label": "textarea-combi / success"
+    },
+    "error": {
+      "node_id": "44:77113",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-77113",
+      "figma_label": "textarea-combi / error"
+    },
+    "ghost": {
+      "node_id": "44:77198",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-77198",
+      "figma_label": "textarea-combi / ghost"
+    },
+    "autofill": {
+      "node_id": "44:77283",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-77283",
+      "figma_label": "textarea-combi / autofill"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    300,
+    400,
+    500,
+    600
+  ],
+  "size_scale_note": "Четыре ступени, как у input-combi. У 50/100/200 комби-ячейки в теме стоят в space-0: метке некуда уезжать при высоте контрола 32px и ниже. Ступень меняет кегль значения, кегль метки и три вертикали комби-ветки.",
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "states_note": "Focus реализован через :focus-within (у текстового поля «сфокусировано» = активно, рамка обязана загораться при клике мышью). Фокус гасит hover и active ЯВНО, через :not(:focus-within): :has() поднимает вес селектора выше, чем у :focus-within, и порядок правил не помог бы. Состояния «заполнено» здесь нет и быть не может: метка не плавает, значение видно всегда.",
+  "color_tokens": [
+    "bg",
+    "chroma",
+    "border",
+    "color",
+    "label"
+  ],
+  "css_files": [
+    "textarea-combi-default.css",
+    "textarea-combi-light.css",
+    "textarea-combi-success.css",
+    "textarea-combi-error.css",
+    "textarea-combi-ghost.css",
+    "textarea-combi-autofill.css"
+  ],
+  "variants_note": "Шесть тонов, как у textarea: secondary нет — в отличие от input и input-combi. У ghost ячеек bg, chroma и border в теме нет вовсе, в макете все три привязаны к roles/extended/transparent; в CSS взято ключевое слово transparent, как в input-ghost, — якорить нечего, а роль без якоря гейт не пропустит.",
+  "geometry_note": "Метка НЕ плавает: у многострочного поля нет центра, текст занимает три строки, поэтому метка всегда наверху, значение под ней. Высота = combi/input-top + 3 × line-height + combi/input-bottom, сверено по всем четырём ступеням (76/80/88/92), и задана как min-block-size — три строки это минимум, который увеличивают rows и ресайз. Горизонтальный отступ всегда text-gap: слотов у компонента нет. Ресайз только вертикальный.",
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "offset=outside · tone=muted"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо не инлайнится: компонент ссылается на --awds-focus-*."
+  },
+  "markup": {
+    "root": {
+      "class": "tcombi",
+      "tags": [
+        "label",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "tcombi-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "tcombi--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "textarea",
+      "class": "tcombi__field"
+    },
+    "children": [
+      "tcombi__label",
+      "tcombi__field"
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Корень — <label>: клик по рамке ставит курсор в поле, отдельный for не нужен. Порядок узлов обязателен: метка первой, поле вторым. Подпись снаружи НЕ ставится — она уже внутри рамки."
+  },
+  "preview": {
+    "base_class": "tcombi",
+    "variant_class": "tcombi-default",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "variant",
+        "label": "Тон",
+        "options": [
+          "default",
+          "light",
+          "success",
+          "error",
+          "ghost",
+          "autofill"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "empty",
+          "value"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Комментарий к заказу",
+        "html": "<label class=\"tcombi tcombi-default tcombi--400\">\n  <span class=\"tcombi__label\">Комментарий к заказу</span>\n  <textarea class=\"tcombi__field\" name=\"comment\" rows=\"3\"></textarea>\n</label>"
+      },
+      {
+        "label": "Не принято",
+        "html": "<label class=\"tcombi tcombi-error tcombi--400\">\n  <span class=\"tcombi__label\">Адрес доставки</span>\n  <textarea class=\"tcombi__field\" rows=\"3\">ул.</textarea>\n</label>"
+      },
+      {
+        "label": "Фиксированная высота",
+        "html": "<label class=\"tcombi tcombi-default tcombi--300 tcombi--fixed\">\n  <span class=\"tcombi__label\">Примечание</span>\n  <textarea class=\"tcombi__field\" rows=\"3\"></textarea>\n</label>"
+      }
+    ]
+  },
+  "family": "forms",
+  "summary": "Многострочное поле с подписью ВНУТРИ рамки",
+  "aliases": [
+    "текстовая область с меткой",
+    "комментарий с подписью внутри",
+    "многострочное поле комби",
+    "textarea с плавающей меткой"
+  ],
+  "last_synced": "2026-09-16T18:40:00Z",
+  "last_synced_by": "claude",
+  "questions": [],
+  "snapshot_hash": "sha256:357e333f0cf64cd23d63d0d85cdcf2c476a66d582170e1bddffb8eb8ce6b872f",
+  "ds_token_dependencies": [
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5-5",
+    "--awds-space-6",
+    "--awds-space-px",
+    "--error-container-chroma",
+    "--error-container-core",
+    "--error-container-on",
+    "--error-container-on-high",
+    "--error-container-on-highest",
+    "--error-container-on-low",
+    "--primary-container-chroma",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--primary-dim",
+    "--secondary-container-chroma",
+    "--secondary-container-core",
+    "--secondary-container-on",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--secondary-container-on-low",
+    "--success-container-chroma",
+    "--success-container-core",
+    "--success-container-on",
+    "--success-container-on-high",
+    "--success-container-on-highest",
+    "--success-container-on-low",
+    "--surface-bright",
+    "--tertiary-container-chroma",
+    "--tertiary-container-core",
+    "--tertiary-container-on",
+    "--tertiary-container-on-high",
+    "--tertiary-container-on-highest",
+    "--tertiary-container-on-low"
+  ],
+  "asana": {
+    "task_gid": "1218552368692065",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218552368692065",
+    "task_name": "💠 textarea-combi",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-focus-selection": "2.0.9"
+  },
+  "contract": {
+    "classes": [
+      "tcombi",
+      "tcombi--300",
+      "tcombi--400",
+      "tcombi--500",
+      "tcombi--600",
+      "tcombi--disabled",
+      "tcombi--fixed",
+      "tcombi-autofill",
+      "tcombi-default",
+      "tcombi-error",
+      "tcombi-ghost",
+      "tcombi-light",
+      "tcombi-success",
+      "tcombi__field",
+      "tcombi__label"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "autofill",
+      "default",
+      "error",
+      "ghost",
+      "light",
+      "success"
+    ],
+    "sizes": [
+      "300",
+      "400",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}
