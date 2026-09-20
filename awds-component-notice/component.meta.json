@@ -1,32 +1,41 @@
 {
   "component": "notice",
-  "version": "1.0.3",
-  "contract_hash": "sha256:f224d1fd8e13f8bd8949d8e1d9516ca6b9c5b904d343015941818b47e0b6e565",
-  "artifact_hash": "sha256:f4eff4422eaa0ecf4b7697f37842640ae7d13bac9894a8220b1115ef6063e9d1",
-  "visual_change": false,
-  "released_at": "2026-08-26T08:21:05.805Z",
-  "own_values": [],
+  "version": "2.0.3",
+  "contract_hash": "sha256:bb930a389b20ff35f20dda5945f2a67375d108da0dce776686b012988bc63a8d",
+  "artifact_hash": "sha256:c4637d469cdcf838c26e85e807fa3c242f868054325ab00302c380c5fc8a623c",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:50.746Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:552",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-552"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "page": "4 · elements",
+    "primary_node_id": "6:229",
+    "section_node_id": "5:31",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-229"
   },
   "variants": {
-    "primary": {
-      "node_id": "2093:562",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-562",
-      "figma_label": "Variant=Primary"
+    "accent": {
+      "node_id": "6:229",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-229",
+      "figma_label": "notice / accent"
     },
     "secondary": {
-      "node_id": "2093:577",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-577",
-      "figma_label": "Variant=Secondary"
+      "node_id": "6:246",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-246",
+      "figma_label": "notice / secondary"
     },
     "ghost": {
-      "node_id": "2093:592",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-592",
-      "figma_label": "Variant=Ghost"
+      "node_id": "6:263",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-263",
+      "figma_label": "notice / ghost"
     }
   },
   "shape": "notice",
@@ -69,7 +78,7 @@
         "id": "variant",
         "label": "Вариант",
         "options": [
-          "primary",
+          "accent",
           "secondary",
           "ghost"
         ]
@@ -78,33 +87,59 @@
     "html_samples": [
       {
         "label": "Счётчик",
-        "html": "<span class=\"notice notice-primary notice--400\">9</span>"
+        "html": "<span class=\"notice notice-accent notice--400\">9</span>"
       },
       {
         "label": "Двузначный (пилюля)",
-        "html": "<span class=\"notice notice-primary notice--400\">99</span>"
+        "html": "<span class=\"notice notice-accent notice--400\">99</span>"
       },
       {
         "label": "Точка (без числа)",
-        "html": "<span class=\"notice notice-primary notice--100\"></span>"
+        "html": "<span class=\"notice notice-accent notice--100\"></span>"
       }
     ]
   },
   "ds_token_dependencies": [
-    "--color-accent-core",
-    "--color-accent-chroma",
-    "--color-accent-on",
-    "--color-secondary-core",
-    "--color-secondary-chroma",
-    "--color-secondary-on-dim",
-    "--color-surface-on-high",
-    "--awds-notice-*",
-    "--awds-space-space-0",
-    "--awds-rounded-border-radius-full",
+    "--accent-chroma",
+    "--accent-core",
+    "--accent-on",
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-50",
+    "--awds-control-font-size-500",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-50",
+    "--awds-control-letter-spacing-500",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-50",
+    "--awds-control-line-height-500",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-0",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-7",
+    "--awds-space-px",
+    "--extended-transparent",
+    "--secondary-chroma",
+    "--secondary-core",
+    "--secondary-on-dim",
+    "--surface-on-high"
   ],
-  "last_synced": "2026-06-17T14:52:02Z",
+  "last_synced": "2026-09-14T17:55:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:abd028d0cc1a6a34c45dcbcd3b2b17ee7b6028281530b3074a5982533d21c9b4",
   "published": {
@@ -112,31 +147,75 @@
     "commit": "41e0aea",
     "pushed_at": "2026-08-26T10:28:44.000Z",
     "github_urls": {
-      "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/references/notice-primary.md",
+      "accent": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/references/notice-accent.md",
       "secondary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/references/notice-secondary.md",
       "ghost": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/references/notice-ghost.md"
     },
     "dev_resources_status": {
-      "primary": {
+      "accent": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "2093:562",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/SKILL.md"
+        "node_id": "6:229",
+        "file_key": "470rar5EfRm4n14vHMXbpc",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/references/notice-accent.md"
       },
       "secondary": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "2093:577",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/SKILL.md"
+        "node_id": "6:246",
+        "file_key": "470rar5EfRm4n14vHMXbpc",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/references/notice-secondary.md"
       },
       "ghost": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "2093:592",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/SKILL.md"
-      }
+        "node_id": "6:263",
+        "file_key": "470rar5EfRm4n14vHMXbpc",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-notice/references/notice-ghost.md"
+      },
+      "_note": "Ссылки вписаны в descriptionMarkdown наборов нового файла «💠 arrow ↪ components» 14.09.2026 по шаблону ACP. Прежняя запись содержала ключ `primary` и ссылку на notice-primary.md — такого файла нет с переименования варианта в accent, ссылка вела в 404."
     }
   },
+  "markup": {
+    "root": {
+      "class": "notice",
+      "tags": [
+        "span",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "notice-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "notice--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Счётчик поверх иконки: вариант — цвет, размер — диаметр пилюли."
+  },
+  "asana": {
+    "task_gid": "1218422992779408",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992779408",
+    "task_name": "💠 notice",
+    "parent_task": "💠 4 · elements",
+    "primary": true
+  },
+  "family": "elements",
+  "summary": "Счётчик или точка-индикатор поверх иконки",
+  "aliases": [
+    "счётчик",
+    "бейдж на иконке",
+    "точка",
+    "индикатор непрочитанного",
+    "число на иконке"
+  ],
+  "sync_method": "figma-mcp",
+  "sync_method_note": "Plugin API через use_figma. Цвета и размеры взяты как ЦЕЛИ ячеек State/Size из component-token-map.json: коллекции приватные, в опубликованную тему их имена не едут.",
   "contract": {
     "classes": [
       "notice",
@@ -146,16 +225,16 @@
       "notice--400",
       "notice--500",
       "notice--600",
+      "notice-accent",
       "notice-ghost",
-      "notice-primary",
       "notice-secondary"
     ],
     "attributes": [],
     "elements": [],
     "public_vars": [],
     "variants": [
+      "accent",
       "ghost",
-      "primary",
       "secondary"
     ],
     "sizes": [

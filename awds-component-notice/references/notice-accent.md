@@ -1,18 +1,18 @@
 # Notice / Primary
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:562](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-562)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 6:229](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-229) — секция `↪ notice` (5:31) страницы `4 · elements`
 
 > [!NOTE]
-> `notice-primary.md` — **author-owned**. ACB пишет первичный draft, потом не трогает. CSS (`notice.css`) и preview генерируются и при refresh затрутся.
+> `notice-accent.md` — **author-owned**. ACB пишет первичный draft, потом не трогает. CSS (`notice.css`) и preview генерируются и при refresh затрутся.
 
 Яркий счётчик нотификаций (роль accent — обычно красный). Главный «привлекающий» бейдж: новые уведомления, непрочитанные сообщения.
 
 ## HTML
 
 ```html
-<span class="notice notice-primary notice--400">9</span>
-<span class="notice notice-primary notice--400">99+</span>
-<span class="notice notice-primary notice--100"></span>   <!-- точка-индикатор -->
+<span class="notice notice-accent notice--400">9</span>
+<span class="notice notice-accent notice--400">99+</span>
+<span class="notice notice-accent notice--100"></span>   <!-- точка-индикатор -->
 ```
 
 В углу иконки:
@@ -20,7 +20,7 @@
 ```html
 <span class="bell" style="position:relative;">
   <svg>…</svg>
-  <span class="notice notice-primary notice--200" style="position:absolute;top:-6px;right:-6px;">5</span>
+  <span class="notice notice-accent notice--200" style="position:absolute;top:-6px;right:-6px;">5</span>
 </span>
 ```
 

@@ -1,36 +1,52 @@
 {
-  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-  "file_name": "💠 Comp ↪ ¹ Elemets",
-  "primary_node_id": "2093:552",
-  "frame_name": "Notice",
-  "variant_properties": {
-    "Variant": ["Primary", "Secondary", "Ghost"],
-    "Size": [600, 500, 400, 300, 200, 100]
+  "_source": "Figma Plugin API через MCP use_figma",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": { "id": "5:31", "name": "↪ notice" },
+  "primary_node_id": "6:229",
+  "read_at": "2026-09-14",
+
+  "_structure_note": "Три набора `notice / {accent|secondary|ghost}` по 6 ячеек = 18. Вариант выражен ИМЕНЕМ набора, не осью. Оси: `size[600|500|400|300|200|100]` и текстовое свойство `count`.\n\nПравка 14.09.2026: видимая пилюля приведена к токену `notice/{N}/size`. До правки токен был привязан к ВНЕШНЕЙ рамке ячейки, а сама пилюля лежала внутри с литеральными габаритами и была на 2–4px меньше: 600 → 24 при size 28, 500 → 22 при 24, 400 и 300 → 18 при 20. Код всё это время читал `size` как диаметр пилюли, то есть рисовал правильно, а макет — меньше. Решение владельца: прав код. Внешний зазор (0/1/1/1/2px по ступеням — разброс без системы) убран, `minWidth` и `height` внутреннего фрейма привязаны к `notice/{N}/size`. Внешние габариты ячеек не изменились.\n\nВторая правка того же дня: снята привязка оформления контейнеров к чужой библиотеке `Sys`.",
+
+  "sets": ["notice / accent", "notice / secondary", "notice / ghost"],
+  "axes": { "size": [600, 500, 400, 300, 200, 100], "count": "TEXT — число в плашке" },
+
+  "structure": {
+    "200…600": "COMPONENT (auto-layout, padding 0) > FRAME `notice` — видимая пилюля: minWidth и height ← notice/{N}/size, paddingLeft ← notice/{N}/padding-h, paddingTop ← notice/{N}/padding-v, радиус ← rounded/border-radius/full, заливка-градиент и обводка ← ячейки badge/system/*. Внутри текст `value`.",
+    "100": "Ячейка БЕЗ внутреннего фрейма и без текста — голая точка 6×6. Устроена иначе остальных: габарит держат `maxWidth`/`maxHeight` ← notice/100/size, а не minWidth/height; отступы со всех четырёх сторон привязаны к `notice/100/padding-v` (значение 0). Обе особенности сегодня безвредны — точка рисуется 6×6, как задумано, — но на них нельзя опираться как на общий шаблон ступеней. Не тронуто намеренно: менять режим сайзинга пустому фрейму значит рисковать схлопнуть его в ноль ради нулевой визуальной разницы."
   },
-  "variant_node_ids": {
-    "primary":   { "600": "2093:562", "500": "2093:559", "400": "2093:556", "300": "2093:553", "200": "2093:565", "100": "2093:598" },
-    "secondary": { "600": "2093:577", "500": "2093:574", "400": "2093:571", "300": "2093:568", "200": "2093:580", "100": "2093:599" },
-    "ghost":     { "600": "2093:592", "500": "2093:589", "400": "2093:586", "300": "2093:583", "200": "2093:595", "100": "2093:600" }
-  },
-  "colors_by_variant": {
-    "primary":   { "_badge_ns": "badge/system/accent",    "bg": "{role.accent.core}",     "chroma": "{role.accent.chroma}",     "border": "{role.accent.core}",     "color": "{role.accent.on}" },
-    "secondary": { "_badge_ns": "badge/system/secondary", "bg": "{role.secondary.core}",  "chroma": "{role.secondary.chroma}",  "border": "{role.secondary.core}",  "color": "{role.secondary.on-dim}" },
-    "ghost":     { "_badge_ns": "badge/system/ghost",     "bg": "transparent",            "chroma": "transparent",              "border": "transparent",            "color": "{role.surface.on-high}" }
-  },
+
   "size_map": {
-    "_note": "shape notice (--awds-notice-N-*). size = диаметр для 1 цифры; padding-h раздувает в пилюлю для 2+ цифр. 600=28px(space-7), 100=6px(space-1-5) — точка без числа. typography → control-шкала.",
-    "600": { "size_px": 28, "padding_h": 4, "padding_v": 2, "font_px": 15 },
-    "500": { "size_px": 24 },
-    "400": { "size_px": 20 },
-    "300": { "size_px": 20 },
-    "200": { "size_px": 16 },
-    "100": { "size_px": 6, "note": "точка-индикатор, без числа" }
+    "600": { "pill": 28, "size_token": "notice/600/size → space-7", "padding_h": "space-1 (4px)", "padding_v": "space-0-5 (2px)", "font": "control-font-size-500" },
+    "500": { "pill": 24, "size_token": "notice/500/size → space-6", "padding_h": "space-1", "padding_v": "space-px (1px)", "font": "control-font-size-400" },
+    "400": { "pill": 20, "size_token": "notice/400/size → space-5", "padding_h": "space-1", "padding_v": "space-px", "font": "control-font-size-300", "default": true },
+    "300": { "pill": 20, "size_token": "notice/300/size → space-5", "padding_h": "space-1", "padding_v": "space-px", "font": "control-font-size-200" },
+    "200": { "pill": 16, "size_token": "notice/200/size → space-4", "padding_h": "space-1", "padding_v": "space-0", "font": "control-font-size-100" },
+    "100": { "pill": 6, "size_token": "notice/100/size → space-1-5", "padding_h": "в коде 0, не токен", "padding_v": "space-0", "font": "—, текста нет" },
+    "_300_vs_400": "Ступени 300 и 400 дают ОДИНАКОВЫЙ габарит (20px) и одинаковые отступы — различаются только кеглем цифры (font-size 200 против 300). Это законное различие, а не неразличимая ступень: плашка та же, цифра мельче.",
+    "_100_padding_h": "Токен `notice/100/padding-h` равен space-1 (4px), но код ставит 0: на ступени 100 цифры нет, и горизонтальный отступ раздул бы точку в овал 14×6. Намеренное отклонение от токена, объяснено в notice.css."
   },
-  "non_token_decisions": {
-    "border-radius": "var(--awds-rounded-full) — всегда пилюля/круг (Figma border-radius/full)",
-    "shape": "min-width=size (круг для 1 цифры) + padding-inline (пилюля для 2+ цифр)",
-    "size-100-dot": "padding-h обнулён до var(--awds-space-0): DS notice-100-padding-h=4px дал бы овал 8×6, а точка-индикатор должна быть кругом 6×6",
-    "tabular-nums": "MIFB — динамический счётчик не должен прыгать при смене значения",
-    "states": "нет — бейдж статичный (в Figma нет hover/focus)"
-  }
+
+  "colors": {
+    "_audit": "Содержимое: 51 привязанная заливка (включая стопы градиента), 18 привязанных обводок, сырых — ноль. Контейнеры наборов: 3 сырые заливки и 3 сырые обводки, привязка к `Sys` снята 14.09.2026.",
+    "_cells_are_badges": "Своей группы в слое State у notice НЕТ. Все три варианта читают ячейки `badge/system/{accent|secondary|ghost}/{bg|chroma|border|color}-rest` — и в макете, и в коде одинаково. Это не зависимость от компонента `badge`: у notice своя разметка и свои классы, общий только набор ячеек в студии, поэтому `uses` пуст.",
+    "_gradient": "Заливка — градиент из двух стопов (`chroma` → `bg`), оба привязаны. Аудит цвета обязан читать `gradientStops[i].boundVariables.color`."
+  },
+
+  "code_mapping": {
+    "имя набора": "класс варианта: `notice / accent` → `.notice-accent`",
+    "size=N": ".notice--N",
+    "count": "текстовое содержимое элемента",
+    "радиус": "border-radius: var(--awds-rounded-border-radius-full) — всегда пилюля/круг"
+  },
+
+  "non_token_decisions": [
+    "Оформление контейнеров наборов — литералы. Канва Figma, не дизайн-система; ролями по решению владельца 14.09.2026 не заменяется.",
+    "Горизонтальный отступ на ступени 100 — 0 вместо токена padding-h: цифры нет, отступ превратил бы точку в овал."
+  ],
+
+  "debts": [
+    "Ступень 100 устроена не как остальные: габарит на maxWidth/maxHeight, отступы на padding-v со всех сторон. Работает, но шаблоном ступени служить не может."
+  ]
 }

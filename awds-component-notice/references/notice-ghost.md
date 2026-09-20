@@ -1,6 +1,6 @@
 # Notice / Ghost
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:592](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-592)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 6:263](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-263) — секция `↪ notice` (5:31) страницы `4 · elements`
 
 > [!NOTE]
 > `notice-ghost.md` — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -22,7 +22,7 @@
 
 ## Размеры
 
-`.notice--{N}` — см. SKILL.md. По умолчанию `notice--400`. У ghost точка (`notice--100`) визуально не видна (фон прозрачный) — для индикатора-точки используй `primary`/`secondary`.
+`.notice--{N}` — см. SKILL.md. По умолчанию `notice--400`. У ghost точка (`notice--100`) визуально не видна (фон прозрачный) — для индикатора-точки используй `accent`/`secondary`.
 
 ## Refresh
 

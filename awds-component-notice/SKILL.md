@@ -1,6 +1,6 @@
 ---
 name: awds-component-notice
-description: Бейджи-счётчики Notice ArrowDS: число или точка-индикатор поверх иконки. Для счётчика корзины, уведомлений, непрочитанного. Токены ArrowDS, работает и по Figma-ссылке.
+description: Notice ArrowDS (.notice).
 ---
 
 # Notice (бейдж-счётчик) ArrowDS
@@ -11,7 +11,7 @@ description: Бейджи-счётчики Notice ArrowDS: число или т�
 
 | Вариант | Reference | Цвет | Когда |
 |---|---|---|---|
-| **Primary** | `references/notice-primary.md` ✅ | accent (яркий, обычно красный) | Привлекающий внимание счётчик: новые уведомления, непрочитанные |
+| **Accent** | `references/notice-accent.md` ✅ | accent (яркий, обычно красный) | Привлекающий внимание счётчик: новые уведомления, непрочитанные |
 | **Secondary** | `references/notice-secondary.md` ✅ | secondary (приглушённый серый) | Нейтральный счётчик без акцента |
 | **Ghost** | `references/notice-ghost.md` ✅ | прозрачный фон, только число | Когда фон не нужен — число поверх контента |
 
@@ -36,17 +36,17 @@ description: Бейджи-счётчики Notice ArrowDS: число или т�
 
 ## CSS
 
-Один файл — `references/notice.css` (база `.notice` + 3 варианта `.notice-{primary,secondary,ghost}` + 6 размеров). Подключается один раз глобально.
+Один файл — `references/notice.css` (база `.notice` + 3 варианта `.notice-{accent,secondary,ghost}` + 6 размеров). Подключается один раз глобально.
 
 Визуальный QA — `references/preview.html` (storybook, `file://`): матрица размер × вариант + контекст (число/пилюля/точка, иконка-якорь с бейджем в углу).
 
 ## Алгоритм использования
 
-1. Выбери вариант: яркий счётчик → `primary`; нейтральный → `secondary`; без фона → `ghost`. Только индикатор «есть» → `notice--100` без числа.
+1. Выбери вариант: яркий счётчик → `accent`; нейтральный → `secondary`; без фона → `ghost`. Только индикатор «есть» → `notice--100` без числа.
 2. Разметка (инлайновый `<span>`):
-   - `<span class="notice notice-primary notice--400">9</span>`
-   - двузначный: `<span class="notice notice-primary notice--400">99</span>`
-   - точка: `<span class="notice notice-primary notice--100"></span>`
+   - `<span class="notice notice-accent notice--400">9</span>`
+   - двузначный: `<span class="notice notice-accent notice--400">99</span>`
+   - точка: `<span class="notice notice-accent notice--100"></span>`
 3. Позиционирование в углу иконки/кнопки — на стороне потребителя: контейнер `position: relative`, бейдж `position: absolute; top/right` (см. preview, блок «иконка-якорь»).
 4. Подключи `references/notice.css`. Нужны `css-variables.css` сайта (роли `--accent-*`, `--secondary-*`, `--surface-*`) и базовые токены DS (`--awds-notice-*`, `--awds-rounded-border-radius-full`, `--awds-font-*`).
 

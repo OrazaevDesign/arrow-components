@@ -1,6 +1,6 @@
 # Notice / Secondary
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:577](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-577)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 6:246](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-246) — секция `↪ notice` (5:31) страницы `4 · elements`
 
 > [!NOTE]
 > `notice-secondary.md` — **author-owned**. ACB пишет первичный draft, потом не трогает.
