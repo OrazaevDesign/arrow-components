@@ -15,7 +15,7 @@
 </span>
 ```
 
-Блок `.price__old` опускается. Модификаторы `price--vertical` / `price--currency-left` работают так же.
+Блок `.price__old` опускается. Модификаторы `price--vertical` / `price--currency-start` работают так же.
 
 ## CSS
 

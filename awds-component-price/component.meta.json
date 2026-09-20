@@ -1,10 +1,10 @@
 {
   "component": "price",
-  "version": "1.0.3",
-  "contract_hash": "sha256:a6f3c62ff14eecd79aaccc383a113737af0b111d9900c69e93c23417652605ed",
-  "artifact_hash": "sha256:a004e067f3b295c9606c4ba552402030368e1992d3a857ebfb98e3997ee51cd1",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:48.338Z",
+  "version": "2.0.4",
+  "contract_hash": "sha256:674bf356f4a1c22fa06cee233cec8c91793908638e1d54ecf4473db381c7c966",
+  "artifact_hash": "sha256:e49c555347db99b0b55c9c81ddff7525804d09cda5f0231a8b953401599e519b",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:50.519Z",
   "own_values": [
     {
       "value": "0.2em",
@@ -22,46 +22,24 @@
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:1972",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1972",
-    "sets": {
-      "horizontal": {
-        "node_id": "2093:1971",
-        "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1971",
-        "figma_label": "Price ↔"
-      },
-      "vertical": {
-        "node_id": "2093:912",
-        "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-912",
-        "figma_label": "Price ↕"
-      },
-      "listing": {
-        "node_id": "2217:74",
-        "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2217-74",
-        "figma_label": "Price Listing (масштабируемый; ось Type=Sale/Default/None)",
-        "type_nodes": {
-          "sale": "2217:73",
-          "default": "2217:72",
-          "none": "2217:71"
-        }
-      }
-    }
+    "primary_node_id": "2093:760",
+    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-760"
   },
   "variants": {
     "sale": {
-      "node_id": "2093:1972",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1972",
-      "figma_label": "Size=1100, Type=Sale, Side=Right"
+      "node_id": "2093:1971",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-1971",
+      "figma_label": "price / sale"
     },
     "default": {
-      "node_id": "2093:2148",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-2148",
-      "figma_label": "Size=1100, Type=Default, Side=Right"
+      "node_id": "2093:912",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-912",
+      "figma_label": "price / default"
     },
     "none": {
-      "node_id": "2093:2236",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-2236",
-      "figma_label": "Size=1100, Type=None, Side=Right"
+      "node_id": "2276:4581",
+      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2276-4581",
+      "figma_label": "price / none"
     }
   },
   "modifiers": {
@@ -75,15 +53,16 @@
       },
       "default": "horizontal"
     },
-    "side": {
+    "currency_side": {
       "values": [
-        "right",
-        "left"
+        "end",
+        "start"
       ],
       "class": {
-        "left": "price--currency-left"
+        "start": "price--currency-start"
       },
-      "default": "right"
+      "default": "end",
+      "_note": "Имя логическое, не физическое: реализовано order:-1 во flex-строке, порядок следует направлению письма. В Figma ось side-currency=."
     }
   },
   "shape": null,
@@ -98,17 +77,8 @@
     800,
     900,
     1000,
-    1100,
-    "listing"
+    1100
   ],
-  "size_role_map": {
-    "_note": "Масштабируемый размер .price--listing (Figma «Price Listing» 2217:74). В отличие от фикс size_control_map (Control/Value), main/sec берут РОЛИ WYSIWYG-пресетов --awds-type-* и едут по коллекции .typo-small/medium/large на предке. plc = плейсхолдер типа none (роль body, регуляр).",
-    "listing": {
-      "main": "type-price-listing",
-      "sec": "type-caption",
-      "plc": "type-body"
-    }
-  },
   "size_control_map": {
     "100": {
       "main": 100,
@@ -173,7 +143,6 @@
       "rest"
     ],
     "matrix_sizes": [
-      "listing",
       1100,
       1000,
       900,
@@ -208,23 +177,14 @@
         "id": "side",
         "label": "Валюта",
         "options": [
-          "right",
-          "left"
-        ]
-      },
-      {
-        "id": "typo",
-        "label": "Масштаб",
-        "options": [
-          "small",
-          "medium",
-          "large"
+          "end",
+          "start"
         ]
       }
     ],
     "html_samples": [
       {
-        "label": "Sale, горизонтальная, ₽ справа",
+        "label": "Sale, горизонтальная, валюта end",
         "html": "<span class=\"price price-sale price--600\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>"
       },
       {
@@ -240,42 +200,58 @@
         "html": "<span class=\"price price-sale price--600 price--vertical\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>"
       },
       {
-        "label": "Sale, валюта слева",
-        "html": "<span class=\"price price-sale price--600 price--currency-left\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>"
+        "label": "Sale, валюта start",
+        "html": "<span class=\"price price-sale price--600 price--currency-start\"><span class=\"price__main\"><span class=\"price__current\">1 900</span><span class=\"price__currency\">₽</span></span><span class=\"price__old\"><span class=\"price__old-value\">2 000</span><span class=\"price__old-currency\">₽</span></span></span>"
       }
     ]
   },
   "ds_token_dependencies": [
-    "--color-accent-container-on",
-    "--color-surface-on-highest",
-    "--color-surface-on",
-    "--awds-control-50-*",
-    "--awds-control-100-*",
-    "--awds-control-200-*",
-    "--awds-control-300-*",
-    "--awds-control-400-*",
-    "--awds-control-500-*",
-    "--awds-control-600-*",
-    "--awds-control-700-*",
-    "--awds-control-800-*",
-    "--awds-control-850-*",
-    "--awds-control-900-*",
-    "--awds-control-950-*",
-    "--awds-control-1000-*",
-    "--awds-type-price-listing-fs",
-    "--awds-type-price-listing-lh",
-    "--awds-type-price-listing-ls",
-    "--awds-type-caption-fs",
-    "--awds-type-caption-lh",
-    "--awds-type-caption-ls",
-    "--awds-type-body-fs",
-    "--awds-type-body-lh",
-    "--awds-type-body-ls",
+    "--accent-container-on",
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-1000",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-50",
+    "--awds-control-font-size-500",
+    "--awds-control-font-size-600",
+    "--awds-control-font-size-700",
+    "--awds-control-font-size-800",
+    "--awds-control-font-size-850",
+    "--awds-control-font-size-900",
+    "--awds-control-font-size-950",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-1000",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-50",
+    "--awds-control-letter-spacing-500",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-letter-spacing-700",
+    "--awds-control-letter-spacing-800",
+    "--awds-control-letter-spacing-850",
+    "--awds-control-letter-spacing-900",
+    "--awds-control-letter-spacing-950",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-1000",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-50",
+    "--awds-control-line-height-500",
+    "--awds-control-line-height-600",
+    "--awds-control-line-height-700",
+    "--awds-control-line-height-800",
+    "--awds-control-line-height-850",
+    "--awds-control-line-height-900",
+    "--awds-control-line-height-950",
     "--awds-font-family-system",
     "--awds-font-weight-semibold",
-    "--awds-font-weight-regular"
+    "--surface-on",
+    "--surface-on-highest"
   ],
-  "last_synced": "2026-07-06T13:26:00Z",
+  "last_synced": "2026-08-29T00:00:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:ecd04fd4ffc073314f2be662e5cc679c79618e44bb96a325f118129c64285c65",
   "published": {
@@ -286,22 +262,66 @@
       "sale": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-price/references/price-sale.md",
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-price/references/price-default.md",
       "none": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-price/references/price-none.md"
-    },
-    "dev_resources_status": {
-      "horizontal-set": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "2093:1971",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-price/SKILL.md"
-      },
-      "vertical-set": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "2093:912",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-price/SKILL.md"
-      }
     }
   },
+  "markup": {
+    "root": {
+      "class": "price",
+      "tags": [
+        "span",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "price-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "price--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "price__current"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Вариант решает, показывать ли старую цену, размер — кегль. Текущая цена обязательна: без .price__current компонент бессмыслен."
+  },
+  "asana": {
+    "task_gid": "1218433190798064",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190798064",
+    "task_name": "💠 price",
+    "parent_task": "💠 9 · commerce",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "state-groups-missing-for-seven",
+      "text": "У семи компонентов нет группы State в студии — 53 инлайна ролей (product-card 25, slider 9, avatar 8, price 4, tooltip 4, content-area 2, heading 1). Заводить группы в студии или узаконить инлайн ролей записью в own_values?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217960855817768",
+      "raised_at": "2026-08-25",
+      "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25",
+      "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
+      "answered_at": "2026-09-15"
+    }
+  ],
+  "_figma_note": "snapshot/ снят 30.06.2026 и описывает прежнюю раскладку файла (наборы Price ↔ / ↕ / Listing). node_id в figma.variants обновлены 29.08.2026 по get_metadata после перехода на канон «вариант — отдельный фрейм»; get_variable_defs заново НЕ снимался: привязки токенов не менялись, менялись имена фреймов и осей. Полный refresh — при следующей правке значений.",
+  "family": "elements",
+  "summary": "Цена товара: текущая и старая зачёркнутая, валюта, ориентация",
+  "aliases": [
+    "цена",
+    "стоимость",
+    "ценник",
+    "старая цена",
+    "перечёркнутая цена"
+  ],
   "contract": {
     "classes": [
       "price",
@@ -316,8 +336,7 @@
       "price--700",
       "price--800",
       "price--900",
-      "price--currency-left",
-      "price--listing",
+      "price--currency-start",
       "price--vertical",
       "price-default",
       "price-none",
@@ -349,8 +368,7 @@
       "600",
       "700",
       "800",
-      "900",
-      "listing"
+      "900"
     ],
     "states": [
       "rest"

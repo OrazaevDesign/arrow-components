@@ -65,7 +65,7 @@
 <body>
 
   <h1>price / storybook</h1>
-  <p class="sub">Цена товара. Типы: <code>price-sale</code> (акцент + старая зачёркнутая), <code>price-default</code> (одна цена), <code>price-none</code> («Нет в наличии»). Ориентация — горизонтальная / <code>price--vertical</code>. Знак валюты — справа / <code>price--currency-left</code>. 11 размеров через шкалу <code>--awds-typography-*</code>. Статичный. Переключи тему — палитра подтянется.</p>
+  <p class="sub">Цена товара. Типы: <code>price-sale</code> (акцент + старая зачёркнутая), <code>price-default</code> (одна цена), <code>price-none</code> («Нет в наличии»). Ориентация — горизонтальная / <code>price--vertical</code>. Знак валюты — <code>end</code> / <code>price--currency-start</code>. 11 фикс-размеров по шкале <code>--awds-control-*</code>. Статичный. Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -89,15 +89,8 @@
     </label>
     <label>Валюта:
       <select id="side">
-        <option value="right">right (₽ справа)</option>
-        <option value="left">left (₽ слева)</option>
-      </select>
-    </label>
-    <label>Масштаб (для listing):
-      <select id="typo">
-        <option value="small">small (макет)</option>
-        <option value="medium">medium</option>
-        <option value="large">large</option>
+        <option value="end">end (₽ справа)</option>
+        <option value="start">start (₽ слева)</option>
       </select>
     </label>
   </div>
@@ -114,7 +107,7 @@
   <div class="ctx" id="ctx"></div>
 
   <script>
-    const SIZES = ['listing', 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100];
+    const SIZES = [1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100];
 
     const variantSel = document.querySelector('#variant');
     const orientSel  = document.querySelector('#orientation');
@@ -126,7 +119,7 @@
     function build(variant, size) {
       const mods = [`price--${size}`];
       if (orientSel.value === 'vertical') mods.push('price--vertical');
-      if (sideSel.value === 'left') mods.push('price--currency-left');
+      if (sideSel.value === 'start') mods.push('price--currency-start');
       const cls = `price price-${variant} ${mods.join(' ')}`;
 
       if (variant === 'none') {
@@ -168,12 +161,6 @@
         </div>`;
     }
 
-    // Масштаб (.typo-*) влияет только на размер listing (роли --awds-type-*);
-    // фикс-размеры price--N (Control) не зависят от него.
-    document.querySelector('#typo').addEventListener('change', (e) => {
-      document.documentElement.classList.remove('typo-small', 'typo-medium', 'typo-large');
-      document.documentElement.classList.add(`typo-${e.target.value}`);
-    });
     [variantSel, orientSel, sideSel].forEach(el => el.addEventListener('change', render));
     render();
 

@@ -23,7 +23,7 @@
 <span class="price price-sale price--600 price--vertical"> … </span>
 
 <!-- Валюта слева -->
-<span class="price price-sale price--600 price--currency-left"> … </span>
+<span class="price price-sale price--600 price--currency-start"> … </span>
 ```
 
 ## CSS

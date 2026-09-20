@@ -1,6 +1,6 @@
 ---
 name: awds-component-price
-description: Цена товара Price ArrowDS (price, price-sale): текущая и старая зачёркнутая, ориентация, сторона валюты, размеры. Для цены в карточке, корзине, маркет-гриде. Токены ArrowDS, работает и по Figma-ссылке.
+description: Price ArrowDS (.price).
 ---
 
 # Price (цена товара) ArrowDS
@@ -27,13 +27,13 @@ description: Цена товара Price ArrowDS (price, price-sale): текущ
 ## Сторона знака валюты (2)
 
 - **Right** (по умолчанию) — `1 900 ₽`.
-- **Left** — `price--currency-left`, `₽ 1 900`. Разметка та же (число, валюта); меняется только порядок флекса.
+- **Start** — `price--currency-start`, `₽ 1 900`. Разметка та же (число, валюта); меняется только порядок флекса.
 
-## Размеры (11 фикс + 1 масштабируемый)
+## Размеры (11 фикс-ступеней)
 
 **Фикс-размеры:** `.price--{N}`, N — `100 200 300 400 500 600 700 800 900 1000 1100`. По умолчанию `price--600`. Внутри размера главная цена крупнее, валюта / старая цена / плейсхолдер — на пару ступеней мельче (вторичная шкала). Line-height — компактная ветка (`line-height-compact`), плотный числовой набор как в макете. Размер маппится на пару токенов **Control/Value** (main / secondary), сматченных по значению px — см. `component.meta.json → size_control_map`. Control фикс на всех брейкпоинтах.
 
-**Масштабируемый размер `.price--listing`** (Figma «Price Listing») — исключение из фикс-правила: главное число берёт роль WYSIWYG-пресета `--awds-wysiwyg-wysiwyg-*-price-listing`, валюта/старая цена — роль `--awds-wysiwyg-wysiwyg-*-caption`, плейсхолдер «Нет в наличии» — роль `--awds-wysiwyg-wysiwyg-*-body` (регуляр). Роли переопределяются коллекцией `.typo-large/medium/small` на секции-предке → **цена масштабируется вместе с типографикой блоков/страницы** (в отличие от `price--N`). Без `.typo-*` = `:root` (≈medium); `.typo-small` = число 19/23 (ступень 900), валюта/старая 12/19 (caption), плейсхолдер 14/22 (body). Взаимоисключающ с `price--N` — потребитель выбирает ЛИБО фикс-размер, ЛИБО listing. Комбинируется с типами (`price-sale/-default/-none`) и модификаторами (`--vertical`, `--currency-left`) как обычный размер.
+**Масштаб контекста компонент не знает.** Размер выбирает потребитель классом `.price--{N}`, шкала Control фиксирована на всех брейкпоинтах. Если цена должна ехать вместе с типографикой секции (`.typo-small/medium/large`), это задача **контейнера**, а не price: так делает `product-card`, переопределяя аккумуляторы `--awds-price-fs/-lh/-ls` на вложенной цене. Раньше это жило здесь размером `.price--listing`; вынесено в 2.0.0 — размер, зависящий от контекста, не может быть ступенью шкалы, не зависящей от контекста.
 
 ## Структура разметки
 
@@ -86,7 +86,7 @@ description: Цена товара Price ArrowDS (price, price-sale): текущ
 
 ## CSS
 
-Один файл — `references/price.css` (база `.price` + типы `.price-{sale,default,none}` + ориентация `.price--vertical` + сторона `.price--currency-left` + 11 размеров). Подключается один раз глобально.
+Один файл — `references/price.css` (база `.price` + типы `.price-{sale,default,none}` + ориентация `.price--vertical` + сторона `.price--currency-start` + 11 размеров). Подключается один раз глобально.
 
 Визуальный QA — `references/preview.html` (storybook, `file://`): матрица размеров + переключатели тип / ориентация / сторона валюты + контекст на карточке товара.
 
@@ -95,7 +95,7 @@ description: Цена товара Price ArrowDS (price, price-sale): текущ
 1. Выбери тип: `price-sale` (со скидкой), `price-default` (обычная), `price-none` (нет в наличии).
 2. Собери разметку по шаблону выше; для default опусти `.price__old`, для none — только `.price__placeholder`.
 3. Выбери размер `price--{N}` под контекст (на карточке товара обычно 600–800, в крупном блоке/на странице товара — 900–1100).
-4. При необходимости добавь `price--vertical` (старая цена снизу) и/или `price--currency-left` (`₽` слева).
+4. При необходимости добавь `price--vertical` (старая цена снизу) и/или `price--currency-start` (`₽` слева).
 5. Подключи `references/price.css`. Нужны `css-variables.css` сайта (роли `--accent-container-on`, `--surface-on-highest`, `--surface-on`) и базовые токены DS (`--awds-typography-*`, `--awds-space-*`, `--awds-font-*`).
 
 ## Refresh
