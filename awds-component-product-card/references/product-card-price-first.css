@@ -31,27 +31,27 @@
 
    Две вьюхи (ось "view" = размер): база = Desktop-Tablet, .pcard--mobile = Mobile.
    Различия view: размер бейджей (.badge--100 → .badge--50), оверлей-паддинги и
-   БРЕНД (desktop lead → mobile body). Цена (price--listing), название и фидбэк —
+   БРЕНД (desktop lead → mobile body). Цена (размер от карточки), название и фидбэк —
    одинаковы в обеих вью; их масштаб задаёт .typo-* карточки, а не вью.
 
    Маппинг (component-token-map.json + Figma get_variable_defs):
      — текст цены/валюты:                 rgb(var(--surface-on-highest))
-     — бренд/название:                    --awds-state-link-accent-rest / -hover
+     — бренд/название:                    ячейки link/accent-rest / -hover → surface-on-highest / accent-container-on
      — текст рейтинга:                    rgb(var(--surface-on-high))
      — фон медиа:                         rgb(var(--surface-bright))
-     — скрим над фото (3% → opacity-5):   rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-5))
+     — скрим над фото (3% → opacity-5):   rgb(var(--surface-on-highest) / var(--awds-opacity-5))
      — тени:                              нет (убраны во всех состояниях)
-     — звезда рейтинга:                   --awds-state-rating-selected-bg-rest
+     — звезда рейтинга:                   ячейка rating/selected/bg-rest → warning-core
      — бейджи и избранное:                внешние компоненты (badge.css / button-favorites.css)
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-border-radius-500)            (8px Smooth, border-radius/500)
-     — цена/валюта: компонент awds-component-price, размер price--listing (роль --awds-wysiwyg-wysiwyg-*-price-listing, масштаб по .typo-* — как текст)
-     — бренд:  роль WYSIWYG lead (--awds-wysiwyg-wysiwyg-*-lead) desktop; mobile — роль body (--awds-wysiwyg-wysiwyg-*-body)
-     — название: роль WYSIWYG body (--awds-wysiwyg-wysiwyg-*-body), clamp 2 строки
-     — рейтинг-текст: роль WYSIWYG caption (--awds-wysiwyg-wysiwyg-*-caption), обе вью
-     ↑ текст на РОЛЯХ --awds-wysiwyg-wysiwyg-* → масштабируется коллекцией .typo-large/medium/small
-       на секции-предке (как типографика блоков). Без .typo-* = :root; .typo-small = макет.
+     — цена/валюта: компонент awds-component-price, размер задаёт карточка (роль --awds-wysiwyg-*-price-listing, масштаб по .typo-* — как текст)
+     — бренд:  роль WYSIWYG lead (--awds-wysiwyg-*-lead) desktop; mobile — роль body (--awds-wysiwyg-*-body)
+     — название: роль WYSIWYG body (--awds-wysiwyg-*-body), clamp 2 строки
+     — рейтинг-текст: роль WYSIWYG caption (--awds-wysiwyg-*-caption), обе вью
+     ↑ текст на РОЛЯХ --awds-wysiwyg-* → масштабируется коллекцией .typo-large/medium/small
+       на секции-предке (как типографика блоков). Без .typo-* = :root (medium) — это и есть масштаб макета.
      — бейджи: компонент .badge --100 desktop / --50 mobile (badge.css)
      — иконки: 24px флаг (space-6), 20px сердце (space-5), 16px звезда (space-4)
 
@@ -62,21 +62,21 @@
 /* === Base (= View Desktop-Tablet) === */
 
 .pcard {
-  --awds-pcard-gap: var(--awds-space-space-2-5);   /* 10px медиа↔контент */
+  --awds-pcard-gap: var(--awds-space-2-5);   /* 10px медиа↔контент */
 
   box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: 170px;        /* layout/market/card/slider-min */
+  min-width: var(--awds-layout-card-slider-min);   /* 170px, на мобиле 128 */
   /* Ширина карточки — токен раскладки: у токена есть адаптив (desktop/tablet/mobile),
      число 368px его теряло. Копии в блоках ссылались на токен, компонент отставал. */
-  max-width: var(--awds-layout-layout-market-card-slider-max);
+  max-width: var(--awds-layout-card-slider-max);
   width: 100%;
 
   font-family: var(--awds-font-family-system);
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--surface-on-highest));                        /* #cell product-card/text */
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -109,7 +109,7 @@
 }
 
 .pcard--mobile {
-  --awds-pcard-gap: var(--awds-space-space-2);     /* 8px */
+  --awds-pcard-gap: var(--awds-space-2);     /* 8px */
 }
 
 /* price-first: без зазора медиа↔слайдер↔контент (как в макете — родитель gap 0).
@@ -140,7 +140,7 @@
   display: block;
   overflow: hidden;                          /* клипает фото и скрим в скруглении */
   border-radius: var(--awds-rounded-border-radius-500);
-  background: rgb(var(--surface-bright));
+  background: rgb(var(--surface-bright));                       /* #cell product-card/media/bg */
   text-decoration: none;
   /* Без тени — у карточки её нет ни в одном состоянии. */
   /* Свайп галереи на тач-устройствах (мобила/таблет): вертикаль отдаём нативному
@@ -197,7 +197,7 @@
    точка (space-1) = 12px. Пустой, не кликается. */
 .pcard__slider-spacer {
   align-self: center;
-  height: calc(3 * var(--awds-space-space-1));
+  height: calc(3 * var(--awds-space-1));
   flex-shrink: 0;
 }
 
@@ -212,12 +212,12 @@
 .pcard__slider--many {
   overflow: hidden;
   /* окно ~5 точек + удлинённая активная + зазоры + padding пилюли */
-  max-width: calc(13 * var(--awds-space-space-1));   /* 52px (border-box, padding включён) */
+  max-width: calc(13 * var(--awds-space-1));   /* 52px (border-box, padding включён) */
 }
 .pcard__slider-track {
   display: flex;
   align-items: center;
-  gap: var(--awds-space-space-1);
+  gap: var(--awds-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
   transition: transform 0.2s ease-out;         /* MIFB: плавный сдвиг ленты */
 }
@@ -243,7 +243,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-5));
+  background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); /* #cell product-card/media/overlay */
   transition: opacity 0.3s ease-out;
 }
 .pcard__image-link:hover::after {
@@ -257,12 +257,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(var(--surface-on-high));
-  opacity: var(--awds-opacity-opacity-40);
+  color: rgb(var(--surface-on-high));                           /* #cell product-card/media/placeholder */
+  opacity: var(--awds-opacity-40);
 }
 .pcard__media-placeholder > svg {
-  width: var(--awds-space-space-12);   /* 48px */
-  height: var(--awds-space-space-12);
+  width: var(--awds-space-12);   /* 48px */
+  height: var(--awds-space-12);
 }
 
 /* Верхний оверлей: страна (слева) ↔ избранное (справа) */
@@ -287,23 +287,29 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--awds-space-space-2);          /* 8px desktop → бокс 24+16 = 40px */
+  padding: var(--awds-space-2-5);        /* 10px · #cell rectangle/400/padding — бокс 20+20 = 40px */
 }
 .pcard--mobile .pcard__country {
-  padding: var(--awds-space-space-1);          /* 4px mobile → бокс 24+8 = 32px */
+  padding: var(--awds-space-2);          /* 8px · #cell rectangle/200/padding — бокс 16+16 = 32px */
 }
 .pcard__country > img,
 .pcard__country > svg {
   display: block;
-  width: var(--awds-space-space-6);            /* 24px (ic24) — бокс флага */
-  height: var(--awds-space-space-6);
-  /* Флаг вписан в квадрат 24×24 с сохранением пропорций (3:2 не обрезается, а
-     помещается целиком с полями сверху/снизу), как ic24 в макете. */
+  width: var(--awds-space-5);            /* 20px · #cell rectangle/400/icon */
+  height: var(--awds-space-5);
+  /* Флаг вписан в квадрат с сохранением пропорций (3:2 не обрезается, а помещается
+     целиком с полями сверху/снизу). Размер держат ячейки rectangle/{400,200}/icon —
+     бокс страны остаётся 40px на десктопе и 32px на мобиле, меняется только флаг. */
   object-fit: contain;
+}
+.pcard--mobile .pcard__country > img,
+.pcard--mobile .pcard__country > svg {
+  width: var(--awds-space-4);            /* 16px · #cell rectangle/200/icon */
+  height: var(--awds-space-4);
 }
 
 /* Избранное — отдельный компонент awds-component-button-favorites.
-   В разметке: <button class="btn btn-favorites btn--icon-only"> (mobile: + .btn-favorites--mobile),
+   В разметке: <button class="btn btn-favorites btn--icon-only"> (mobile: + .btn--200),
    подключи button-favorites.css. Геометрия кнопки (10px/6px padding) уже совпадает с оверлеем,
    .pcard__top раскладывает её по правому краю — собственных стилей здесь не нужно. */
 
@@ -317,12 +323,12 @@
   z-index: 1;                            /* над скримом .pcard__image-link::after */
   display: flex;
   align-items: center;
-  gap: var(--awds-space-space-1);              /* 4px */
-  padding: var(--awds-space-space-2);          /* 8px desktop */
+  gap: var(--awds-space-1);              /* 4px */
+  padding: var(--awds-space-2);          /* 8px desktop */
   pointer-events: none;                  /* декоративные — hover/клик проходят к ссылке-фото */
 }
 .pcard--mobile .pcard__badges {
-  padding: var(--awds-space-space-1);          /* 4px mobile */
+  padding: var(--awds-space-1);          /* 4px mobile */
 }
 
 
@@ -335,23 +341,49 @@
 }
 
 /* Цена — отдельный компонент awds-component-price (подключи price.css).
-   В разметке: <span class="price price-default price--listing"> (обе вью;
-   масштаб по .typo-* карточки). price-default = одна цена, цвет surface-on-highest —
-   совпадает с прежним инлайн-вариантом. Размер/типографику/зазоры держит сам
-   компонент; собственных .pcard__price* стилей здесь больше нет. */
+   В разметке: <span class="price price-default"> (обе вью, без размерного класса).
+   price-default = одна цена, цвет surface-on-highest — совпадает с прежним
+   инлайн-вариантом. Начертание, цвета и зазоры держит сам компонент; размер —
+   карточка, правилом ниже. Собственных .pcard__price* стилей здесь нет. */
+
+/* Размер цены задаёт КАРТОЧКА, а не потребитель: цена едет по коллекции
+   .typo-small/medium/large на секции-предке — той же оси, что бренд и название.
+   Переопределяем приватные аккумуляторы price вместо размерного класса: у price
+   шкала Control фиксирована на всех брейкпоинтах и контекста не знает, поэтому
+   зависящий от контекста размер живёт здесь. До price 2.0.0 это был .price--listing.
+   макет стоит в medium: число 24/29 (роль price-listing), валюта/старая 13/21 (caption). */
+.pcard .price {
+  --awds-price-fs:     var(--awds-wysiwyg-font-size-price-listing);
+  --awds-price-lh:     var(--awds-wysiwyg-line-height-price-listing);
+  --awds-price-ls:     var(--awds-wysiwyg-letter-spacing-price-listing);
+  --awds-price-fs-sec: var(--awds-wysiwyg-font-size-caption);
+  --awds-price-lh-sec: var(--awds-wysiwyg-line-height-caption);
+  --awds-price-ls-sec: var(--awds-wysiwyg-letter-spacing-caption);
+}
+
+/* Плейсхолдер «Нет в наличии» — роль body (small = 14/22), РЕГУЛЯР (как в макете,
+   тип none). line-height держим по главной, а не по -sec: высота блока none равна
+   высоте цены, переключение наличия не прыгает. */
+.pcard .price .price__placeholder {
+  font-size:      var(--awds-wysiwyg-font-size-body);
+  line-height:    var(--awds-price-lh);
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
+  font-weight:    var(--awds-font-weight-regular);
+}
+
 
 /* Бренд (одна строка, ссылка link/accent). Типографика — на РОЛИ WYSIWYG-пресета
-   `lead` (`--awds-wysiwyg-wysiwyg-*-lead`), а не на жёсткий шаг шкалы. Роль масштабируется
+   `lead` (`--awds-wysiwyg-*-lead`), а не на жёсткий шаг шкалы. Роль масштабируется
    коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же
    оси, что и типографика блоков (без своего `.typo-*` = наследует от контекста;
-   `.typo-small` = макет 16/26). Mobile бренд мельче — роль `body` (см. ниже). */
+   medium = 18/29 — масштаб макета). Mobile бренд мельче — роль `body` (см. ниже). */
 .pcard__brand {
   margin: 0;
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-lead);                          /* WYSIWYG lead (.typo-small = 16px) */
-  line-height: var(--awds-wysiwyg-wysiwyg-line-height-lead);                        /* .typo-small = 26px */
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-lead);
+  font-size: var(--awds-wysiwyg-font-size-lead);                          /* WYSIWYG lead (medium = 18px) */
+  line-height: var(--awds-wysiwyg-line-height-lead);                        /* medium = 29px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-lead);
   font-weight: var(--awds-font-weight-semibold);
-  color: rgb(var(--awds-state-link-accent-rest));                        /* link/accent rest */
+  color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
   transition: color 0.15s ease-out;                             /* MIFB: явное свойство */
   display: block;                                               /* <a> инлайн — нужен блок для ellipsis */
@@ -360,24 +392,24 @@
   white-space: nowrap;
   max-width: 100%;
 }
-/* Mobile: бренд мельче — роль `body` (.typo-small = 14/22), как в макете */
+/* Mobile: бренд мельче — роль `body` (medium = 16/26), как в макете */
 .pcard--mobile .pcard__brand {
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                          /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                        /* .typo-small = 22px */
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
+  font-size: var(--awds-wysiwyg-font-size-body);                          /* WYSIWYG body (medium = 16px) */
+  line-height: var(--awds-wysiwyg-line-height-body);                        /* medium = 26px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
 }
 
 /* Название (до 2 строк, регуляр, ссылка link/accent). Роль `body`
-   (`--awds-wysiwyg-wysiwyg-*-body`, .typo-small = 14/22) — масштабируется вместе с блоками.
+   (`--awds-wysiwyg-*-body`, medium = 16/26) — масштабируется вместе с блоками.
    Без padding-top — в макете контент-элементы идут вплотную (gap 0),
    вертикальный ритм даёт line-height. */
 .pcard__name {
   margin: 0;
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                          /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                        /* .typo-small = 22px */
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
+  font-size: var(--awds-wysiwyg-font-size-body);                          /* WYSIWYG body (medium = 16px) */
+  line-height: var(--awds-wysiwyg-line-height-body);                        /* medium = 26px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--awds-state-link-accent-rest));                        /* link/accent rest */
+  color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;                                        /* как в макете — без подчёркивания */
   transition: color 0.15s ease-out;
   text-wrap: pretty;                     /* MIFB: короткий параграф без сирот */
@@ -391,7 +423,7 @@
    Hover срабатывает на самой ссылке: rest surface-on-highest → hover accent-container-on. */
 .pcard__brand:hover,
 .pcard__name:hover {
-  color: rgb(var(--awds-state-link-accent-hover));
+  color: rgb(var(--accent-container-on));       /* #cell link/accent-hover */
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка, как в макете). Кластер из 4 элементов:
@@ -402,42 +434,42 @@
 .pcard__feedback {
   display: flex;
   align-items: center;                   /* как в макете — по центру строки */
-  gap: var(--awds-space-space-1);              /* 4px */
-  padding-top: var(--awds-space-space-1);      /* 4px */
+  gap: var(--awds-space-1);              /* 4px */
+  padding-top: var(--awds-space-1);      /* 4px */
   width: fit-content;
 }
-/* Звезда рейтинга — 14px, warning (rating/selected/bg → #f97316 на эталоне) */
+/* Звезда рейтинга — 14px, warning (ячейка rating/selected/bg-rest → warning-core) */
 .pcard__rating-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-space-3-5);          /* 14px */
-  height: var(--awds-space-space-3-5);
-  color: rgb(var(--awds-state-rating-selected-bg-rest));
+  width: var(--awds-space-3-5);          /* 14px */
+  height: var(--awds-space-3-5);
+  color: rgb(var(--warning-core));              /* #cell rating/selected/bg-rest */
 }
 /* Иконка отзывов (пузырёк) — 14px, приглушённая (surface-on) */
 .pcard__reviews-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-space-3-5);          /* 14px */
-  height: var(--awds-space-space-3-5);
-  color: rgb(var(--surface-on));
+  width: var(--awds-space-3-5);          /* 14px */
+  height: var(--awds-space-3-5);
+  color: rgb(var(--surface-on));                                /* #cell product-card/reviews/icon */
 }
-/* Значение рейтинга и счётчик отзывов — роль `caption` (.typo-small = 12/19)
+/* Значение рейтинга и счётчик отзывов — роль `caption` (medium = 13/21)
    semibold, tabular-nums; масштабируется вместе с блоками. */
 .pcard__rating-value,
 .pcard__reviews-count {
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-caption);                   /* WYSIWYG caption (.typo-small = 12px) */
-  line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
+  font-size: var(--awds-wysiwyg-font-size-caption);                   /* WYSIWYG caption (medium = 13px) */
+  line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .pcard__rating-value {
-  color: rgb(var(--surface-on-highest));                    /* рейтинг — тёмный */
+  color: rgb(var(--surface-on-highest));                        /* #cell product-card/rating/value */
 }
 .pcard__reviews-count {
-  color: rgb(var(--surface-on-high));                       /* счётчик — приглушён */
+  color: rgb(var(--surface-on-high));                           /* #cell product-card/reviews/count */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -474,7 +506,7 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: var(--awds-space-space-1);   /* зазор над остриё */
+  margin-bottom: var(--awds-space-1);   /* зазор над остриё */
   z-index: 3;                        /* над бейджами и скримом */
   opacity: 0;
   visibility: hidden;

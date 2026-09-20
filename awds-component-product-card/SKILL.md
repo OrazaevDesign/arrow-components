@@ -1,6 +1,6 @@
 ---
 name: awds-component-product-card
-description: Карточки товара ArrowDS (product-card): фото 3:4 с оверлеями, бейджи, избранное, две вьюхи. Для карточки в гриде и слайдере товаров. Токены ArrowDS, работает и по Figma-ссылке.
+description: Product Card ArrowDS (.pcard).
 ---
 
 # Карточка товара ArrowDS
@@ -21,8 +21,8 @@ description: Карточки товара ArrowDS (product-card): фото 3:4 
 
 | Вью | Класс | Цена | Бренд | Бейдж | Рейтинг-текст |
 |---|---|---|---|---|---|
-| **Desktop-Tablet** (база) | `.pcard` | `price--listing` (масштаб .typo-*) | WYSIWYG lead 16/26 | `rectangle-100` | WYSIWYG caption 12/19 |
-| **Mobile** | `.pcard--mobile` | `price--listing` (масштаб .typo-*) | WYSIWYG body 14/22 | `rectangle-50` | WYSIWYG caption 12/19 |
+| **Desktop-Tablet** (база) | `.pcard` | размер от карточки (масштаб `.typo-*`) | WYSIWYG lead 16/26 | `rectangle-100` | WYSIWYG caption 12/19 |
+| **Mobile** | `.pcard--mobile` | размер от карточки (масштаб `.typo-*`) | WYSIWYG body 14/22 | `rectangle-50` | WYSIWYG caption 12/19 |
 
 ## Откуда берутся значения
 
@@ -36,7 +36,7 @@ description: Карточки товара ArrowDS (product-card): фото 3:4 
 | Бейдж **sale** | bg `primary-core` / sheen `primary-chroma` / border `primary-core` / текст `primary-on` |
 | Избранное | компонент `awds-component-button-favorites` (`.btn-favorites`) — свои цвета/состояния |
 | Скругление медиа | `var(--awds-rounded-border-radius-500)` (8px Smooth) |
-| Бренд / название / фидбэк | **Роли WYSIWYG-пресетов** `--awds-wysiwyg-wysiwyg-*-lead/body/caption-{fs,lh,ls}` (НЕ жёсткий шаг `--awds-typography-*`). Бренд desktop = `lead`, mobile = `body`; название = `body`; фидбэк/рубрика = `caption`. Роли масштабируются коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же оси, что типографика блоков. **Без `.typo-*` = `:root` (≈medium); `.typo-small` = макет** (lead 16/26, body 14/22, caption 12/19). Цена — ось `control-*` (фикс, не масштабируется) |
+| Бренд / название / фидбэк | **Роли WYSIWYG-пресетов** `--awds-wysiwyg-*-lead/body/caption-{fs,lh,ls}` (НЕ жёсткий шаг `--awds-typography-*`). Бренд desktop = `lead`, mobile = `body`; название = `body`; фидбэк/рубрика = `caption`. Роли масштабируются коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же оси, что типографика блоков. **Макет стоит в моде Medium, а это и есть дефолт `:root`** (lead 18/29, body 16/26, caption 13/21) — отдельный класс для совпадения с макетом не нужен; `.typo-small` и `.typo-large` дают соседние ступени. До переезда в новый файл витрина стояла на Small, отсюда прежняя формулировка «`.typo-small` = макет». Цена тоже едет по этой оси: `.pcard .price` переопределяет аккумуляторы price на роли WYSIWYG `price-listing` (24/29 в medium) и `caption` — фикс-шкалы `control-*` у цены внутри карточки нет |
 | Иконки | флаг 20px (`space-5`, как иконка избранного), звезда 16px (`space-4`); сердце — в компоненте button-favorites |
 
 ## Структура и классы
@@ -56,7 +56,7 @@ description: Карточки товара ArrowDS (product-card): фото 3:4 
 ├── .slider.slider-dots-mini.pcard__slider         ← awds-component-slider (индикатор галереи; между медиа и контентом, по центру)
 │       └ одно фото → вместо слайдера .pcard__slider-spacer (резерв высоты, без сдвига)
 └── .pcard__content
-    ├── .price.price-{default|sale|none}.price--listing  ← awds-component-price (default / скидка / нет в наличии; масштабируемый размер, едет по .typo-* карточки)
+    ├── .price.price-{default|sale|none}  ← awds-component-price (default / скидка / нет в наличии; размер задаёт карточка, едет по .typo-*)
     ├── .pcard__brand
     ├── .pcard__name        (clamp 2 строки)
     └── .pcard__feedback ( .pcard__rating-icon + .pcard__rating-value + .pcard__reviews-icon + .pcard__reviews-count )
@@ -72,8 +72,8 @@ description: Карточки товара ArrowDS (product-card): фото 3:4 
 
 1. Корень карточки — `<a class="pcard pcard-price-first" href="…">` (мобильная вью: добавь `.pcard--mobile`).
 2. Медиа: `<img class="pcard__image" alt="…">` или `.pcard__media-placeholder` если фото нет. Несколько фото → галерея: помечай активный кадр `.pcard__image--active` + добавь индикатор `.slider.slider-dots-mini.pcard__slider` (компонент `awds-component-slider`, точек = кадров) и JS-обвязку `wireGallery` (см. `references/product-card-price-first.md`) — она даёт перелистывание по hover-зонам на десктопе **и свайп влево/вправо на мобиле/таблете** (ссылка-фото несёт `touch-action: pan-y`: вертикальный скролл страницы остаётся нативным). **Много кадров (>5)** — оберни точки в `.pcard__slider-track` и добавь `.pcard__slider--many`: фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки уменьшены — индикатор не растягивается. **Одно фото** — слайдера нет, но ставь пустую заглушку `.pcard__slider-spacer` (резерв высоты индикатора), чтобы карточки с 1 и несколькими фото были одной высоты.
-3. Оверлеи опциональны: страна (`.pcard__country`), избранное (`.btn.btn-favorites` — компонент `awds-component-button-favorites`, в мобильной вью `+ .btn-favorites--mobile`), бейджи (`.pcard__badge--percent` / `--sale`).
-4. Контент в порядке price-first. Цена — компонент `awds-component-price`, размер **`price--listing`** (масштабируемый: едет по `.typo-*` карточки вместе с брендом/названием, без раздельного desktop/mobile), подключи `price.css`; выбери тип по данным товара: `price-default` (обычная), `price-sale` (скидка: акцентная + старая зачёркнутая, обычно с бейджем `.badge-market-percent`), `price-none` («Нет в наличии» — при этом скрой бейдж скидки). Название клампится в 2 строки. Между медиа и контентом — индикатор галереи `.pcard__slider` (если несколько фото).
+3. Оверлеи опциональны: страна (`.pcard__country`), избранное (`.btn.btn-favorites` — компонент `awds-component-button-favorites`, в мобильной вью `+ .btn--200`), бейджи (`.pcard__badge--percent` / `--sale`).
+4. Контент в порядке price-first. Цена — компонент `awds-component-price`, размерный класс **не пишется** — его задаёт карточка (цена едет по `.typo-*` вместе с брендом/названием, без раздельного desktop/mobile), подключи `price.css`; выбери тип по данным товара: `price-default` (обычная), `price-sale` (скидка: акцентная + старая зачёркнутая, обычно с бейджем `.badge-market-percent`), `price-none` («Нет в наличии» — при этом скрой бейдж скидки). Название клампится в 2 строки. Между медиа и контентом — индикатор галереи `.pcard__slider` (если несколько фото).
 5. Подключи `references/product-card-price-first.css` **и** CSS используемых компонентов: `awds-component-button-favorites/.../button-favorites.css` (избранное), `awds-component-price/.../price.css` (цена), `awds-component-badge/.../badge.css` (бейджи), `awds-component-slider/.../slider.css` (индикатор галереи), `awds-component-tooltip/.../tooltip.css` (тултипы). Нужны `css-variables.css` сайта (роли) и базовые токены DS (`--awds-space-*`, `--awds-typography-*`, `--awds-rounded-*`, `--awds-shadow-*`, `--awds-font-*`).
 
 ## Зона корзины (buy-now / brand-first)
@@ -84,6 +84,30 @@ description: Карточки товара ArrowDS (product-card): фото 3:4 
 - **stepper** (в корзине): `.pcard__cart-view--stepper` → поле количества `.pcard__stepper` (Input/Secondary) с ghost-кнопками `−`/`+` внутри + квадратная кнопка корзины `.btn-addition`. Кнопки — `awds-component-button` (ghost / addition, `.btn--icon-only`); стилизуется тут только контейнер-инпут и число (`.pcard__stepper-value`, `tabular-nums`). Число при смене получает мягкий bump (`@keyframes pcard-stepper-bump`, ретриггер класса `.pcard__stepper-value--bump`). Готовый `wireStepper` — в `product-card-buy-now.md`.
 
 Скилла form/input в DS нет, поэтому контейнер степпера стилизован в самом product-card на ролях `secondary-core` / `secondary-chroma` (sheen-градиент + бордер) и `secondary-container-on-high` (число). Размеры: `rectangle-400/300-rounded`, gap `space-2`. Подключи дополнительно `button-ghost.css` + `button-addition.css`. Разметка и mobile — в `product-card-buy-now.md` / `product-card-brand-first.md`.
+
+## Словарь частей в макете
+
+Рядом с карточкой лежит секция **`↪ part`** — 15 частей (14 наборов и одиночная `.blog`),
+из которых карточка собрана:
+[↪ part](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-53) на странице `9 · commerce`.
+
+**Словарь богаче кода, и это намеренно** (решение владельца 18.09.2026 — заход закрывал
+проход по компонентам, а не расширял карточку). В коде нет пяти частей:
+
+| Часть макета | Что это | Почему нет в коде |
+|---|---|---|
+| `.colors` | точки цветов товара, ось `count=2…4+` | нет блока-потребителя |
+| `.blog` | дата, счётчик комментариев (скрыт по умолчанию) и просмотров; три текстовых свойства `date`/`comments`/`views`, оси нет | каталог блога, а не товаров |
+| `.course` | эмблема курса | каталог курсов |
+| `.brand-badge` | бренд плашкой вместо текста | карточка держит бренд текстом |
+| `.layout` `kind=app\|course` | пропорции фото 1:1 и 4:3 | код знает только 3:4 |
+
+Вопросы заведены в мете и на доске — реализовывать эти части в обход вопроса не нужно.
+
+**Две сверки, где часть и карточка расходятся:** `.category` в словаре привязана к ячейке
+`link/heading`, а рубрика в самой карточке — к `link/muted` (код следует карточке);
+`.feedback` держит «4.2 · 23 отзыва» одним текстом, а карточка — двумя узлами разного
+тона. Обе расхождения — открытые вопросы, не дефекты кода.
 
 ## Refresh
 

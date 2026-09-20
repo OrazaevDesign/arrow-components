@@ -26,17 +26,18 @@
 
    Маппинг (Figma → DS):
      — цена:                    компонент awds-component-price (surface-on-highest)
-     — название:                --awds-state-link-accent-rest / -hover
-     — рубрика:                 --awds-state-link-muted-rest / -hover
-                                 (hover рубрики задаёт ячейка: surface-on-highest,
-                                  прежний акцентный hover был решением компонента)
-     — рейтинг «4.9»:           surface-on-highest · звезда --awds-state-rating-selected-bg-rest
+     — название:                ячейки link/accent-rest / -hover → surface-on-highest / accent-container-on
+     — рубрика:                 ячейки link/muted-rest / -hover → surface-on-high / surface-on-highest
+                                 (сверено 18.09.2026 по узлу category в самом макете карточки:
+                                  ячейка link/heading стоит только у отдельной части .category
+                                  в секции ↪ part, карточка держит свой текст на link/muted)
+     — рейтинг «4.9»:           surface-on-highest · звезда ячейка rating/selected/bg-rest → warning-core
      — 💬 иконка отзывов:        surface-on · счётчик surface-on-high
      — фон медиа:               surface-bright · скрим (3%→opacity-5) surface-on-highest
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-border-radius-500)
-     — цена:   компонент .price.price-default price--listing (масштаб по .typo-*, обе вью)
+     — цена:   компонент .price.price-default, размер от карточки (масштаб по .typo-*, обе вью)
      — название: 14/22 (typography 400 + line-height 400), 1 строка
      — рубрика:  12/19 (typography 200 + line-height 200, caption), 1 строка
      — рейтинг: caption 12/19 semibold, звезда/иконки 14px
@@ -57,14 +58,14 @@
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: 170px;        /* layout/market/card/slider-min */
+  min-width: var(--awds-layout-card-slider-min);   /* 170px, на мобиле 128 */
   /* Ширина карточки — токен раскладки: у токена есть адаптив (desktop/tablet/mobile),
      число 368px его теряло. Копии в блоках ссылались на токен, компонент отставал. */
-  max-width: var(--awds-layout-layout-market-card-slider-max);
+  max-width: var(--awds-layout-card-slider-max);
   width: 100%;
 
   font-family: var(--awds-font-family-system);
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--surface-on-highest));                        /* #cell product-card/text */
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -109,7 +110,7 @@
   display: block;
   overflow: hidden;
   border-radius: var(--awds-rounded-border-radius-500);
-  background: rgb(var(--surface-bright));
+  background: rgb(var(--surface-bright));                       /* #cell product-card/media/bg */
   text-decoration: none;
   /* Свайп галереи на тач-устройствах: вертикаль — нативному скроллу, горизонталь — JS галереи. */
   touch-action: pan-y;
@@ -144,7 +145,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-opacity-5));
+  background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); /* #cell product-card/media/overlay */
   transition: opacity 0.3s ease-out;
 }
 .pcard-buy-now .pcard__image-link:hover::after {
@@ -158,12 +159,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgb(var(--surface-on-high));
-  opacity: var(--awds-opacity-opacity-40);
+  color: rgb(var(--surface-on-high));                           /* #cell product-card/media/placeholder */
+  opacity: var(--awds-opacity-40);
 }
 .pcard-buy-now .pcard__media-placeholder > svg {
-  width: var(--awds-space-space-12);
-  height: var(--awds-space-space-12);
+  width: var(--awds-space-12);
+  height: var(--awds-space-12);
 }
 
 /* Верхний оверлей: страна (слева) ↔ избранное (справа) */
@@ -187,17 +188,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--awds-space-space-2);          /* 8px desktop → бокс 24+16 = 40px */
+  padding: var(--awds-space-2-5);        /* 10px · #cell rectangle/400/padding — бокс 20+20 = 40px */
 }
 .pcard.pcard-buy-now.pcard--mobile .pcard__country {
-  padding: var(--awds-space-space-1);          /* 4px mobile → бокс 24+8 = 32px */
+  padding: var(--awds-space-2);          /* 8px · #cell rectangle/200/padding — бокс 16+16 = 32px */
 }
 .pcard-buy-now .pcard__country > img,
 .pcard-buy-now .pcard__country > svg {
   display: block;
-  width: var(--awds-space-space-6);            /* 24px (ic24) */
-  height: var(--awds-space-space-6);
+  width: var(--awds-space-5);            /* 20px · #cell rectangle/400/icon */
+  height: var(--awds-space-5);
   object-fit: contain;                   /* флаг вписан с сохранением пропорций */
+}
+.pcard.pcard-buy-now.pcard--mobile .pcard__country > img,
+.pcard.pcard-buy-now.pcard--mobile .pcard__country > svg {
+  width: var(--awds-space-4);            /* 16px · #cell rectangle/200/icon */
+  height: var(--awds-space-4);
 }
 
 /* Нижний оверлей: маркет-бейджи (компонент awds-component-badge), слева снизу */
@@ -208,12 +214,12 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: var(--awds-space-space-1);              /* 4px */
-  padding: var(--awds-space-space-2);          /* 8px desktop */
+  gap: var(--awds-space-1);              /* 4px */
+  padding: var(--awds-space-2);          /* 8px desktop */
   pointer-events: none;                  /* декоративные — hover/клик к ссылке-фото */
 }
 .pcard.pcard-buy-now.pcard--mobile .pcard__badges {
-  padding: var(--awds-space-space-1);          /* 4px mobile */
+  padding: var(--awds-space-1);          /* 4px mobile */
 }
 
 
@@ -226,17 +232,17 @@
 }
 .pcard-buy-now .pcard__slider-spacer {
   align-self: center;
-  height: calc(3 * var(--awds-space-space-1)); /* = высота dots-mini (12px), без сдвига контента */
+  height: calc(3 * var(--awds-space-1)); /* = высота dots-mini (12px), без сдвига контента */
   flex-shrink: 0;
 }
 .pcard-buy-now .pcard__slider--many {
   overflow: hidden;
-  max-width: calc(13 * var(--awds-space-space-1));   /* окно ~5 точек + удлинённая активная */
+  max-width: calc(13 * var(--awds-space-1));   /* окно ~5 точек + удлинённая активная */
 }
 .pcard-buy-now .pcard__slider-track {
   display: flex;
   align-items: center;
-  gap: var(--awds-space-space-1);
+  gap: var(--awds-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
   transition: transform 0.2s ease-out;
 }
@@ -261,18 +267,44 @@
 }
 
 /* Цена — компонент awds-component-price (подключи price.css): .price.price-default,
-   размер price--listing (масштаб по .typo-* карточки, обе вью). Первый блок, без отступа. */
+   без размерного класса — размер задаёт карточка правилом ниже. Первый блок, без отступа. */
+
+/* Размер цены задаёт КАРТОЧКА, а не потребитель: цена едет по коллекции
+   .typo-small/medium/large на секции-предке — той же оси, что бренд и название.
+   Переопределяем приватные аккумуляторы price вместо размерного класса: у price
+   шкала Control фиксирована на всех брейкпоинтах и контекста не знает, поэтому
+   зависящий от контекста размер живёт здесь. До price 2.0.0 это был .price--listing.
+   макет стоит в medium: число 24/29 (роль price-listing), валюта/старая 13/21 (caption). */
+.pcard-buy-now .price {
+  --awds-price-fs:     var(--awds-wysiwyg-font-size-price-listing);
+  --awds-price-lh:     var(--awds-wysiwyg-line-height-price-listing);
+  --awds-price-ls:     var(--awds-wysiwyg-letter-spacing-price-listing);
+  --awds-price-fs-sec: var(--awds-wysiwyg-font-size-caption);
+  --awds-price-lh-sec: var(--awds-wysiwyg-line-height-caption);
+  --awds-price-ls-sec: var(--awds-wysiwyg-letter-spacing-caption);
+}
+
+/* Плейсхолдер «Нет в наличии» — роль body (small = 14/22), РЕГУЛЯР (как в макете,
+   тип none). line-height держим по главной, а не по -sec: высота блока none равна
+   высоте цены, переключение наличия не прыгает. */
+.pcard-buy-now .price .price__placeholder {
+  font-size:      var(--awds-wysiwyg-font-size-body);
+  line-height:    var(--awds-price-lh);
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
+  font-weight:    var(--awds-font-weight-regular);
+}
+
 
 /* #2 название (→ товар). link/accent = surface-on-highest. 1 строка, роль WYSIWYG
-   body (--awds-wysiwyg-wysiwyg-*-body, .typo-small = 14/22), масштабируется с блоками. */
+   body (--awds-wysiwyg-*-body, medium = 16/26), масштабируется с блоками. */
 .pcard-buy-now .pcard__name {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);                      /* WYSIWYG body (.typo-small = 14px) */
-  line-height: var(--awds-wysiwyg-wysiwyg-line-height-body);                    /* .typo-small = 22px */
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
+  font-size: var(--awds-wysiwyg-font-size-body);                      /* WYSIWYG body (medium = 16px) */
+  line-height: var(--awds-wysiwyg-line-height-body);                    /* medium = 26px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--awds-state-link-accent-rest));
+  color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;
   transition: color 0.15s ease-out;
   display: block;
@@ -282,15 +314,15 @@
 }
 
 /* #3 рубрика (→ категория). link/muted = surface-on-high. 1 строка, роль WYSIWYG
-   caption (--awds-wysiwyg-wysiwyg-*-caption, .typo-small = 12/19), масштабируется с блоками. */
+   caption (--awds-wysiwyg-*-caption, medium = 13/21), масштабируется с блоками. */
 .pcard-buy-now .pcard__category {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-caption);                   /* WYSIWYG caption (.typo-small = 12px) */
-  line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
+  font-size: var(--awds-wysiwyg-font-size-caption);                   /* WYSIWYG caption (medium = 13px) */
+  line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--awds-state-link-muted-rest));
+  color: rgb(var(--surface-on-high));           /* #cell link/muted-rest */
   text-decoration: none;
   transition: color 0.15s ease-out;
   display: block;
@@ -300,11 +332,11 @@
 }
 
 .pcard-buy-now .pcard__name:hover {
-  color: rgb(var(--awds-state-link-accent-hover));
+  color: rgb(var(--accent-container-on));       /* #cell link/accent-hover */
 }
 
 .pcard-buy-now .pcard__category:hover {
-  color: rgb(var(--awds-state-link-muted-hover));
+  color: rgb(var(--surface-on-highest));        /* #cell link/muted-hover */
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка): ★ warning + рейтинг surface-on-highest +
@@ -312,34 +344,34 @@
 .pcard-buy-now .pcard__feedback {
   display: inline-flex;
   align-items: center;
-  gap: var(--awds-space-space-1);              /* 4px */
-  padding-top: var(--awds-space-space-1);      /* 4px */
+  gap: var(--awds-space-1);              /* 4px */
+  padding-top: var(--awds-space-1);      /* 4px */
 }
 .pcard-buy-now .pcard__rating-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-space-3-5);          /* 14px */
-  height: var(--awds-space-space-3-5);
-  color: rgb(var(--awds-state-rating-selected-bg-rest));
+  width: var(--awds-space-3-5);          /* 14px */
+  height: var(--awds-space-3-5);
+  color: rgb(var(--warning-core));              /* #cell rating/selected/bg-rest */
 }
 .pcard-buy-now .pcard__reviews-icon {
   display: block;
   flex-shrink: 0;
-  width: var(--awds-space-space-3-5);          /* 14px */
-  height: var(--awds-space-space-3-5);
-  color: rgb(var(--surface-on));
+  width: var(--awds-space-3-5);          /* 14px */
+  height: var(--awds-space-3-5);
+  color: rgb(var(--surface-on));                                /* #cell product-card/reviews/icon */
 }
 .pcard-buy-now .pcard__rating-value,
 .pcard-buy-now .pcard__reviews-count {
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-caption);                   /* WYSIWYG caption (.typo-small = 12px) */
-  line-height: var(--awds-wysiwyg-wysiwyg-line-height-caption);                 /* .typo-small = 19px */
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
+  font-size: var(--awds-wysiwyg-font-size-caption);                   /* WYSIWYG caption (medium = 13px) */
+  line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.pcard-buy-now .pcard__rating-value { color: rgb(var(--surface-on-highest)); }
-.pcard-buy-now .pcard__reviews-count { color: rgb(var(--surface-on-high)); }
+  color: rgb(var(--surface-on-high));                           /* #cell product-card/reviews/count */
+  color: rgb(var(--surface-on-high));                           /* #cell product-card/reviews/count */
 
 /* === Зона корзины (Figma .AddCart) — awds-component-button + степпер количества ===
    Два состояния, переключает потребитель (0 в корзине → button; >0 → stepper):
@@ -347,7 +379,7 @@
      • stepper: поле количества (Input/Secondary) с ghost-кнопками −/+ внутри
                 + отдельная квадратная кнопка корзины (.btn-addition .btn--icon-only).
    Маппинг (Figma → DS): input bg/sheen/border → secondary-core / secondary-chroma;
-   число (form-control placehold) → secondary-container-on-high; gap зоны → space-2 (8px);
+   число (form-control placeholder) → secondary-container-on-high; gap зоны → space-2 (8px);
    скругление инпута → rectangle-400/300-rounded. Подключи button*.css. pt 8px. */
 
 /* Обе вью (кнопка / степпер) сложены в один слот через grid-stack и КРОСС-ФЕЙДЯТСЯ
@@ -358,7 +390,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr);   /* одна колонка на всю ширину */
   width: 100%;
-  padding-top: var(--awds-space-space-2);        /* 8px */
+  padding-top: var(--awds-space-2);        /* 8px */
 }
 
 /* Обе вью — в одной ячейке (стопкой). Скрытая: убрана из клика/таба/AT (visibility)
@@ -368,7 +400,7 @@
   grid-area: 1 / 1;
   display: flex;
   align-items: center;
-  gap: var(--awds-space-space-2);                /* 8px */
+  gap: var(--awds-space-2);                /* 8px */
   min-width: 0;
   opacity: 0;
   visibility: hidden;
@@ -391,25 +423,29 @@
   min-width: 0;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, rgb(var(--awds-state-form-control-secondary-chroma-rest)), rgb(var(--awds-state-form-control-secondary-bg-rest)));
-  border: var(--awds-space-space-px) solid rgb(var(--awds-state-form-control-secondary-bg-rest));   /* 1px */
-  border-radius: var(--awds-size-rectangle-400-rounded);
+  background: linear-gradient(
+    to right,
+    rgb(var(--secondary-chroma)),        /* #cell form-control/secondary/chroma */
+    rgb(var(--secondary-core))           /* #cell form-control/secondary/bg-rest */
+  );
+  border: var(--awds-space-px) solid rgb(var(--secondary-core));   /* 1px · #cell form-control/secondary/bg-rest */
+  border-radius: var(--awds-rounded-border-radius-400);
   overflow: hidden;                      /* ghost-кнопки не вылезают за скругление */
 }
 .pcard.pcard-buy-now.pcard--mobile .pcard__stepper {
-  border-radius: var(--awds-size-rectangle-300-rounded);
+  border-radius: var(--awds-rounded-border-radius-300);
 }
 
-/* Число количества (form-control default placehold). Динамика → tabular-nums. */
+/* Число количества (form-control default placeholder). Динамика → tabular-nums. */
 .pcard-buy-now .pcard__stepper-value {
   flex: 1 1 auto;
   min-width: 0;
   text-align: center;
-  font-size: var(--awds-typography-typography-font-size-400);              /* 14px */
-  line-height: var(--awds-typography-typography-line-height-400);          /* 22px */
-  letter-spacing: var(--awds-typography-typography-letter-spacing-400);
+  font-size: var(--awds-typography-font-size-400);              /* 14px */
+  line-height: var(--awds-typography-line-height-400);          /* 22px */
+  letter-spacing: var(--awds-typography-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--awds-state-form-control-secondary-color-rest));
+  color: rgb(var(--secondary-on));              /* #cell form-control/secondary/color */
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   user-select: none;
@@ -465,7 +501,7 @@
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: var(--awds-space-space-1);
+  margin-bottom: var(--awds-space-1);
   z-index: 3;
   opacity: 0;
   visibility: hidden;

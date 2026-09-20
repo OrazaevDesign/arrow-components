@@ -2,7 +2,7 @@
 
 Карточка товара в раскладке **price-first**: цена → бренд → название → рейтинг. Фото 3:4 с оверлеями (страна-поставщик, избранное, маркет-бейджи).
 
-**Figma:** [product-card / price-first](https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800)
+**Figma:** [product-card / price-first](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59619)
 
 ## HTML
 
@@ -45,9 +45,9 @@
 
   <div class="pcard__content">
     <!-- Цена — компонент awds-component-price (подключи price.css): price-default,
-         размер price--listing (масштабируется по .typo-* карточки, как бренд/название).
+         размерного класса нет — размер задаёт карточка (.typo-*, как бренд/название).
          Цвет surface-on-highest задаёт сам компонент. -->
-    <span class="price price-default price--listing">
+    <span class="price price-default">
       <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
     </span>
     <!-- #2 бренд → страница бренда -->
@@ -71,23 +71,23 @@
 
 ```html
 <!-- Обычная цена -->
-<span class="price price-default price--listing">
+<span class="price price-default">
   <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
 </span>
 
 <!-- Скидка: акцентная цена + старая зачёркнутая (показывай вместе с бейджем .badge-market-percent) -->
-<span class="price price-sale price--listing">
+<span class="price price-sale">
   <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
   <span class="price__old"><span class="price__old-value">2 000</span><span class="price__old-currency">₽</span></span>
 </span>
 
 <!-- Нет в наличии: плейсхолдер вместо цены -->
-<span class="price price-none price--listing">
+<span class="price price-none">
   <span class="price__placeholder">Нет в наличии</span>
 </span>
 ```
 
-- Размер: `price--listing` — масштабируемый, едет по `.typo-*` карточки (как бренд/название), одинаков для всех трёх типов и обеих вью (без раздельного desktop/mobile).
+- Размер: класса нет — его задаёт карточка правилом `.pcard .price` (см. `product-card-*.css`). Цена едет по `.typo-*` карточки, как бренд и название; одинакова для всех трёх типов и обеих вью.
 - **Скидка** (`price-sale`): текущая цена — акцент, старая — зачёркнута; обычно вместе с бейджем скидки `.badge-market-percent` в `.pcard__badges`.
 - **Нет в наличии** (`price-none`): цену заменяет «Нет в наличии». Логично при этом скрыть бейдж скидки и (если есть) отключить корзину/избранное — это на стороне данных потребителя.
 - Все детали типов цены — в скилле `awds-component-price`.
@@ -241,12 +241,12 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
 ### Mobile
 
-В мобильной вью добавь `.pcard--mobile` корню, кнопке избранного — `.btn-favorites--mobile` (32px вместо 40px), а бейджам — `.badge--50` вместо `.badge--100`:
+В мобильной вью добавь `.pcard--mobile` корню, кнопке избранного — `.btn--200` (32px вместо 40px, сердце 16px вместо 20px), а бейджам — `.badge--50` вместо `.badge--100`:
 
 ```html
 <div class="pcard pcard-price-first pcard--mobile">
   …
-  <button class="btn btn-favorites btn-favorites--mobile btn--icon-only" …>…</button>
+  <button class="btn btn-favorites btn--200 btn--icon-only" …>…</button>
   …
   <div class="pcard__badges">
     <span class="badge badge-market-percent badge--50">10%</span>

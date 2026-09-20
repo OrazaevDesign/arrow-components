@@ -1,5 +1,276 @@
 {
   "_note": "Raw Figma MCP responses captured at bootstrap. ACB-owned.",
+  "_cleanup_2026_09_19": {
+    "scope": "Заход по ссылке владельца на набор .feedback (468:59123), «тут теперь вычисти все и проверь». Трёхслойный аудит набора, затем всей страницы 9 · commerce с разделением оверрайд/наследование через instance.overrides.",
+    "method": "Признак «наше или чужое» берётся из instance.overrides корневого инстанса: поле в overriddenFields → наша подмена, поля нет → наследование от мастера. Сверка по имени внешнего мастера (как делалось до 18.09) даёт ложный диагноз, см. tips_swap_override.",
+    "found": {
+      "звезда рейтинга": "Мастер иконки MGC shape-star-filled (6:832) внутри чист: Union залит чёрным, привязок нет. Оранжевый цвет во всех 8 инстансах (2 в .feedback, 6 в карточках) — НАШ оверрайд заливки с привязкой на старую State/rating/selected/bg. Два аудита относили его к «иконкам MGC».",
+      "иконки отзывов": "7 узлов Union внутри инстансов MGC держали наш оверрайд на Roles/role/surface/on (старая библиотека).",
+      "размеры иконок": "5 узлов внутри инстансов input / secondary и button / addition держали наш оверрайд привязок width/height на Size/rectangle/{400,300}/icon."
+    },
+    "fixed": {
+      "rating": "8 звёзд → state/rating/selected/bg-rest. Габариты не изменились (16px в части, 14px в карточках).",
+      "reviews-icon": "7 узлов → roles/surface/on.",
+      "icon-size": "4 узла возвращены к мастеру через resetOverrides() (overriddenFields был только boundVariables) — размер 20px сохранён, привязка теперь приходит от мастера input. У ic-a (оверрайды fills и name) привязки сняты точечно setBoundVariable(f, null), размер 20px зафиксирован значением."
+    },
+    "verified_numbers": {
+      "звезда": "State/rating/selected/bg → Roles/role/warning/core → palette/orange/50 = #f97316; state/rating/selected/bg-rest → roles/warning/core → palettes/orange/40 = #e88017. Сдвиг палитры при переезде темы, CSS ссылается на роль warning-core и правки не требует.",
+      "иконка отзывов": "Roles/role/surface/on → neutral/55 = #8e8e8e; roles/surface/on → neutral/35 = #737373. CSS держит rgb(var(--surface-on)) — совпадает по выбору ячейки.",
+      "размер иконок": "Size/rectangle/{400,300}/icon и size/rectangle/{400,300}/icon резолвятся одинаково — 20px. Вид не изменился."
+    },
+    "api_limits": "setBoundVariable на узле внутри вложенного инстанса ПИШЕТ только снятие (null). Запись новой переменной проходит без ошибки и молча не применяется — проверено чтением после записи, в том числе после importVariableByKeyAsync (ключ импортируется, id тот же, эффекта нет). Поэтому такие узлы чинятся resetOverrides() или снятием привязки, а не перепривязкой.",
+    "page_state": {
+      "свои привязки на старых библиотеках": 0,
+      "свои оверрайды на старых библиотеках": "0 (было 24)",
+      "наследование": "92, всё от input / secondary",
+      "свои моды": "5, все на новой библиотеке (rounded 1, wysiwyg 1, typography 3)",
+      "моды внутри инстансов": "92, все из мастеров (Font-family 36, Font-weight 46, State 10)",
+      "свои стили": "24: 21 контент (HEX/*, list-product/*), 2 palette/divider/default-dim (вопрос course-part-uses-foreign-paint-style), 1 Control/350/Semibold на служебной подписи .preview"
+    },
+    "correction": "Мастер input / secondary — ЛОКАЛЬНЫЙ, в этом же файле (страница ↪ input), remote: false. Формулировка прошлых заходов «чужой долг, править у нас нельзя» неточна: править нельзя ЗДЕСЬ (родится оверрайд), но мастер наш, и заход по input снимет все 92 привязки разом.",
+    "debts": [
+      "92 привязки уйдут с заходом по input / secondary (мастер на странице ↪ input того же файла).",
+      "Текстовый стиль Control/350/Semibold на служебной подписи swap (.preview): снять нельзя — стиль ссылается на шрифт SF Pro Display, которого нет в среде, а любая правка текста требует loadFontAsync.",
+      "Обводка миниатюры .course — palette/divider/default-dim, открытый вопрос course-part-uses-foreign-paint-style."
+    ],
+    "blog_pass": {
+      "scope": "Заход по ссылке владельца на набор .blog (468:59130). Токены чистить не пришлось: 38 привязок, все на новой библиотеке, модов и стилей нет, наследования и оверрайдов нет.",
+      "axis_removed": "Ось view держала единственное значение desktop-tablet, тогда как все соседние части с этой осью (.country, .course, .feedback, .buy, .tips, .tag, .addcart) держат обе ячейки. Владелец выбрал снять ось: часть нигде не используется (инстансов ноль), в коде её нет, блока-потребителя нет. Набор .blog стал одиночным COMPONENT 468:59131 в секции ↪ part.",
+      "props_restored": "Вынос единственной ячейки удаляет COMPONENT_SET автоматически, и вместе с ним пропадают TEXT-свойства, которые жили на наборе: date, comments, views. Откат use_figma структуру вернул, а свойства — нет. Пересозданы на компоненте (date#528:0, comments#528:1, views#528:2) и переназначены на те же текстовые узлы 468:59133 / 59136 / 59139. Значения по умолчанию прежние: 23.01.2026, 0, 23.",
+      "composition": "Три блока: дата (70px), счётчик комментариев (27px, visible=false по умолчанию) и счётчик просмотров (35px). Ширина 111px и высота 16px не изменились. Типографика control/300 (13/16), цвет текста roles/surface/on-high, иконки roles/surface/on, зазор 6px между блоками и 2px внутри блока.",
+      "open": "Описание компонента — «⚙️Category var1», та же метка стоит у .feedback и у .category. Похоже на копипасту, но метки вида «⚙️Name var1», «⚙️Supplier», «⚙️ButtonCart var1» — авторская система владельца, поэтому описание оставлено как есть."
+    },
+    "addcart_pass": {
+      "scope": "Заход по ссылке владельца на набор .addcart (468:59173), «тут старые роли и токены». Это тот узел, откуда шли 92 привязки, которые два аудита относили к долгу input.",
+      "found": "Все шесть частей внутри обоих инстансов input / secondary (size=400 и size=300) подменены swap-оверрайдом на старые внешние: Prefix Input / Type=Button, Content Input, Suffix Input. Мастер input / secondary при этом собран из наших локальных частей — . / prefix-input, . / content-input, . / suffix-input. Кнопки (button / primary, button / addition) чисты, свапов нет.",
+      "why_missed": "Признак через instance.overrides ловит подмены полей, но НЕ ловит swap мастера у вложенного узла: поле mainComponent в overriddenFields не появляется. Поэтому 19.09 утром эти 92 привязки снова были записаны как наследование от input. Признак swap — сверка mainComponent узла с тем же узлом внутри мастера по хвосту id.",
+      "fixed": {
+        "prefix/suffix": "Четыре узла возвращены на . / prefix-input / button и . / suffix-input / button нужного размера (15:74460, 15:74672, 15:74464, 15:74676). Кнопочный вариант выбран не по мастеру input (там стоит icon — стрелка поля), а по смыслу степпера: внутри лежит наш button / ghost, как и описано в CSS карточки («поле количества с ghost-кнопками −/+ внутри»). Габариты совпали с прежними: 40×40 и 36×36.",
+        "content": "Два узла переведены на . / content-input нужного размера, текст «1» перенесён свойством placeholder#2378:12 — суффикс совпадает, части родственны.",
+        "icons": "Иконки восстановлены поимённо через свойство ic-a у вложенного . / center: ic20-indeterminacy-outline (prefix 400), ic20-minus-outline (prefix 300), ic20-plus-outline (оба suffix)."
+      },
+      "property_mapping": "Свойства старой и новой частей отличаются только именами (Show Ic-a → show-ic-a, Bg → show-bg, Divider → show-divider, Placehold → show-placeholder), а суффиксы id одинаковы (#146:168, #72:169, #72:0, #151:644). Перенос делается по суффиксу, а не по имени.",
+      "first_attempt": "Первая попытка вела на . / prefix-input / icon — вариант из мастера input. Габариты ушли с 40 на 30, а ghost-кнопка внутри заменилась статичной иконкой, то есть степпер терял кликабельность. Замечено сверкой с CSS карточки и исправлено вторым свапом на button.",
+      "page_state": "Страница 9 · commerce: старых привязок 0 — и своих, и внутри инстансов (было 92). Моды внутри инстансов 92 (Font-family 36, Font-weight 46, State 10) приходят из мастеров badge, button и input — долг тех компонентов. Свои моды 5, все на новой библиотеке. Свои стили 24: 21 контент, 2 palette/divider/default-dim, 1 Control/350/Semibold.",
+      "code_match": "CSS карточки правок не требует: кнопки степпера — awds-component-button (.btn--400/300), то есть 40 и 36, ровно как в макете после правки."
+    }
+  },
+  "_design_sync_2026_09_18b": {
+    "scope": "Заход по ссылке владельца на секцию ↪ product-card (465:51861). Впервые за проход — числовая сверка кода с макетом по протоколу arrow-figma-reading: get_variable_defs по всем шести ячейкам, get_design_context по price-first desktop, computed-замер превью в chrome-devtools.",
+    "found": {
+      "масштаб витрины": "мод wysiwyg у всех ячеек макета — Medium (lead 18/29, body 16/26, caption 13/21, price-listing 24/29). Документация и превью утверждали «.typo-small = макет» (16/26 · 14/22 · 12/19) — это верно было для СТАРОГО файла; при переезде мод стал дефолтным. Код не менялся: он читает роли, а дефолт :root и есть medium. Превью переведено на typo-medium, восемь пометок в комментариях CSS исправлены",
+      "флаг страны": "макет: icon rectangle/400/icon = 20px + padding rectangle/400/padding = 10px (бокс 40); mobile — rectangle/200/icon = 16px + rectangle/200/padding = 8px (бокс 32). Код держал флаг 24px в обеих вью с паддингами 8 и 4: итоговый бокс совпадал, а сам флаг был крупнее — на мобиле в полтора раза. Переведено на ячейки, добавлено мобильное правило размера",
+      "бренд в brand-first": "макет держит lead (18/29) в ОБЕИХ вью, а код мельчил его на мобиле до body «одинаково во всех вариантах». Переопределение снято: в brand-first бренд стоит первым и он главный. В price-first мобильный бренд действительно body — сверено по узлу",
+      "имена слоёв": "в price-first mobile слои звались .Brand Text и .Name, в .course — image 1. Приведены к brand, name, image"
+    },
+    "verified_numbers": {
+      "desktop": "бренд 18/29, название 16/26, цена 24/29, валюта 13/21, рейтинг 13/21 #141414, отзывы 13 #2b2b2b, флаг 20×20 в боксе 40×40, звезда 14×14 #e88017",
+      "mobile": "price-first бренд 16/26 (body), brand-first бренд 18/29 (lead), название 16/26, цена 24/29, флаг 16×16 в боксе 32×32, кнопка корзины 36 (btn--300), десктопная 40 (btn--400)",
+      "how": "computed-замер в chrome-devtools на обеих вью и двух вариантах; совпало с get_variable_defs по всем позициям"
+    },
+    "not_a_defect": {
+      "скрим 3% против opacity-5": "в макете rgba(0,0,0,0.03), в коде surface-on-highest / opacity-5 (5%). Ступени 3% в шкале opacity нет — округление к ближайшей задокументировано в комментарии CSS",
+      "opacity/30": "не скрим, а точки слайдера внутри чужого инстанса Slider",
+      "бокс страны": "40px на десктопе и 32px на мобиле совпадали и до правки — расходился только состав (паддинг и размер флага)"
+    },
+    "slider_swap": {
+      "why": "Владелец показал панель переменных: страница 9 · commerce всё ещё тянула Rounded, Roles и State из старых библиотек.",
+      "found": "Аудит всей страницы (745 узлов): на мастерах 0 своих привязок, 307 — наследование от чужих мастеров, 114 — подписи Sys у витрин (по правилу не переносятся). Крупнейший источник — инстанс Slider со СТАРЫМ внешним мастером: 132 привязки (Opacity 66, Roles 66)",
+      "done": "Шесть инстансов Slider свапнуты на локальный slider / dots-mini (6:1455). Габариты 40×12, десять точек и BACKGROUND_BLUR сохранились — блюр живёт в самом слайдере, как и записано в комментарии CSS карточки. Остаток страницы: 307 → 185",
+      "rest": {
+        "input / secondary @ 3 · forms": 88,
+        ".tips @ 9 · commerce (внутри неё инстансы badge)": 48,
+        "badge / market-percent @ 4 · elements": 32,
+        "иконки MGC (внешний файл)": 15,
+        "button / addition @ 2 · buttons": 2
+      },
+      "note": "Остаток уйдёт сам, когда переведут секции ↪ input, ↪ badge и ↪ button — править его внутри инстансов нельзя, привязки станут оверрайдами и разойдутся с мастером. Иконки MGC и подписи Sys не переносятся никогда."
+    },
+    "three_layers": {
+      "why": "Владелец: «всё равно какие-то токены остались старые». Привязок своих не было уже после свапа слайдера — значит держало что-то ещё. Проверены ВСЕ способы, которыми узел может ссылаться на библиотеку.",
+      "layer_1_bindings": "0 своих. Наследование 105: input / secondary 88 (внутри мастера input лежат старые части Prefix/Content/Suffix Input, Button / Ghost, . / Center — глубина 2…5, это долг input), иконки MGC 15, button / addition 2. Плюс 114 подписей Sys у витрин",
+      "layer_2_modes": "БЫЛО 67 явных модов старых коллекций (Font-weight 54, State 8, Typography 3, Rounded 1, WYSIWYG 1). Мод держит библиотеку «использованной», даже когда привязок нет. Снимать их можно было только теперь — правило rebind-rules: пока хоть одна привязка не переписана, моды не трогаем. Перед снятием три мода ПЕРЕНЕСЕНЫ на новые коллекции, иначе значение молча ушло бы в дефолт: rounded=Rounded у .brand-badge, wysiwyg=Small у .price, typography=Mobile у трёх мобильных ячеек карточки. СТАЛО 0",
+      "layer_3_styles": "Стили (paint/text), а не переменные — этот слой не проверялся ни разу за проход. Было 28 на своих узлах. Переведены 4: button/clear/default-bg и -border у подложки .course — это прозрачный ffffff/0, то есть roles/extended/transparent, как у ghost-кнопок. Осталось 24, и все они не токены темы: HEX/* (13) — цвета товара, list-product/30 и ListProduct/30 (8) — заглушки фото, Control/350/Semibold (1) — подпись swap в служебном .preview",
+      "open": "palette/divider/default-dim (2) на обводке миниатюры в .course: цвета d1d6db в теме нет вовсе — ближайшие роли отличаются на 13 и дальше, и обе из тёмной схемы. Часть .course в коде не реализована, поэтому роль не подбиралась на глаз",
+      "typography_mobile_check": "Перенос typography=Mobile вид не изменил: ступени 800/600/300/900 одинаковы на desktop/tablet/mobile (18/16/13/19). Проверено по studio-vars до правки"
+    },
+    "tips_swap_override": {
+      "why": "Владелец прислал ссылку на .tips: «тут стейты остались старые». Аудит до этого относил 80 привязок (32 напрямую + 48 через .tips) к долгу badge — это была ОШИБКА классификации.",
+      "found": "Внутри инстансов badge / market-percent в .tips часть . / text подменена swap-оверрайдом на СТАРУЮ внешнюю ◆/Text/Semibold. Мастер badge при этом чист: узел 6:2225 в нём — локальный . / text. То есть подмена наша, а не долг badge",
+      "fixed": "Четыре узла возвращены на ячейки . / text нужного размера (size=100 для десктопа, size=50 для мобилы — взяты из самого мастера badge, чтобы не гадать). Текст «10%» сохранён, высоты 24 и 20 не изменились, ширина +2px из-за трекинга новой части. Шесть таких же узлов в карточке ушли сами — они наследуют от .tips",
+      "result": "Остаток страницы 185 → 105. Весь badge исчез из наследования",
+      "lesson": "Признак «наследование от непереведённого мастера» проверяется не по имени мастера, а сверкой с тем же узлом ВНУТРИ мастера: если там локальная часть, а у нас внешняя — это swap-оверрайд, и чинить его нам"
+    }
+  },
+  "_migration_2026_09_18": {
+    "scope": "Переезд макета в новый файл 💠 arrow ↪ components (470rar5EfRm4n14vHMXbpc), страница «9 · commerce». Две секции: ↪ part (5:53) — словарь частей, ↪ product-card (465:51861) — сама карточка. Заход по ссылке владельца на ↪ part; объём ограничен решением владельца: перевод кода на роли, без реализации новых частей.",
+    "sections": {
+      "part": {
+        "id": "5:53",
+        "name": "↪ part",
+        "sets": 15,
+        "lone_components": [
+          ".preview 468:59184"
+        ]
+      },
+      "card": {
+        "id": "465:51861",
+        "name": "↪ product-card",
+        "sets": 3
+      }
+    },
+    "card_sets": {
+      "price-first": {
+        "id": "468:59619",
+        "cells": {
+          "view=desktop-tablet": "468:59620",
+          "view=mobile": "468:59634"
+        }
+      },
+      "brand-first": {
+        "id": "468:59648",
+        "cells": {
+          "view=desktop-tablet": "468:59649",
+          "view=mobile": "468:59665"
+        },
+        "props": [
+          "show-button:BOOLEAN"
+        ]
+      },
+      "buy-now": {
+        "id": "468:59681",
+        "cells": {
+          "view=desktop-tablet": "468:59682",
+          "view=mobile": "468:59697"
+        }
+      }
+    },
+    "part_sets": {
+      ".layout": {
+        "id": "468:52096",
+        "axis": "kind=web|app|course",
+        "note": "скелет медиа: пропорция фото (web 3:4, app 1:1, course 4:3) + сетка оверлеев 3×3 — девять слотов INSTANCE_SWAP и девять BOOLEAN show-*. В КОДЕ НЕТ."
+      },
+      ".country": {
+        "id": "468:52139",
+        "axis": "view=desktop-tablet|mobile",
+        "note": "флаг страны; в коде .pcard__country"
+      },
+      ".course": {
+        "id": "468:52146",
+        "axis": "view=desktop-tablet|mobile",
+        "note": "эмблема курса. В КОДЕ НЕТ."
+      },
+      ".tips": {
+        "id": "468:52153",
+        "axis": "orientation=vertical|horizontal × view",
+        "note": "пара бейджей скидки: badge/market-percent + badge/market-sale"
+      },
+      ".tag": {
+        "id": "468:52166",
+        "axis": "orientation=vertical|horizontal × view",
+        "note": "бейдж коллекции: badge/market-brand"
+      },
+      ".name": {
+        "id": "468:59063",
+        "axis": "size=900…200",
+        "note": "название; цвет link/accent"
+      },
+      ".category": {
+        "id": "468:59080",
+        "axis": "size=900…200",
+        "note": "рубрика; цвет link/heading — РАСХОДИТСЯ с карточкой, где рубрика на link/muted"
+      },
+      ".brand-text": {
+        "id": "468:59097",
+        "axis": "size=900…200",
+        "note": "бренд текстом; цвет link/accent"
+      },
+      ".brand-badge": {
+        "id": "468:59114",
+        "axis": "size=300|200|100|50",
+        "note": "бренд плашкой badge/market-brand. В КОДЕ НЕТ."
+      },
+      ".feedback": {
+        "id": "468:59123",
+        "axis": "view=desktop-tablet|mobile",
+        "note": "рейтинг+отзывы ОДНИМ текстом на surface/on-high — в карточке это два узла (4.9 on-highest, 23 отзыва on-high)"
+      },
+      ".blog": {
+        "id": "468:59130",
+        "axis": "view=desktop-tablet",
+        "note": "дата и просмотры. В КОДЕ НЕТ. TEXT-свойства views/comments/date"
+      },
+      ".colors": {
+        "id": "468:59140",
+        "axis": "count=4+|4|3|2",
+        "note": "точки цветов товара; заливки точек намеренно сырые — это контент. В КОДЕ НЕТ."
+      },
+      ".addcart": {
+        "id": "468:59173",
+        "axis": "view × cart=stepper|button",
+        "note": "зона корзины; в коде .pcard__cart + data-cart-state"
+      },
+      ".buy": {
+        "id": "468:59186",
+        "axis": "view=desktop-tablet|mobile",
+        "note": "кнопка «Купить» button/secondary"
+      },
+      ".price": {
+        "id": "468:59191",
+        "axis": "offer=sale|default|none × currency=end|start|none",
+        "note": "бывш. price-listing; дублирует компонент awds-component-price, у которого сторона валюты УЖЕ реализована классом .price--currency-start"
+      }
+    },
+    "props_renamed": {
+      "why": "Имена вариантов — публичный API; правки сделаны ДО кода, ответами владельца 18.09.2026.",
+      ".layout": "view → kind (web|app|course): слово view во всей библиотеке значит брейкпоинт, а здесь — тип карточки",
+      ".tips/.tag": "var → orientation",
+      ".addcart": "var → cart (button|stepper); state зарезервировано за псевдосостояниями",
+      ".buy": "ось var=button снята — одно значение выбора не даёт",
+      ".name/.category/.brand-text": "size=20px…12px → 900…200: под px-именами лежат ступени typography, причём «20px» фактически 19px, а шкала адаптивная",
+      ".colors": "variant → count",
+      ".blog": "TEXT-свойства view → views, com → comments (конфликтовали с осью view)",
+      "BOOLEAN": "show sale/show collections → show-sale/show-collections; девять *-view у .layout → show-*",
+      "наборы": ".brand text → .brand-text, .brand badge → .brand-badge, price-listing → .price, «product-card /  buy-now» → без двойного пробела",
+      "карточка": "ось view приведена к desktop-tablet|mobile во всех трёх наборах (было desktop у brand-first и buy-now); BOOLEAN button → show-button",
+      ".price": "type → offer (не kind: слово уже занято осью .layout — своя же коллизия, найденная второй проверкой канона)",
+      "ось view": "во ВСЕХ наборах обеих секций приведена к desktop-tablet|mobile: части держали desktop, карточка desktop-tablet — одно слово с двумя наборами значений в одном файле"
+    },
+    "rebind": {
+      "library": "📜 tokens ↪ studio",
+      "part": "641 привязка переписана (513 полей, 77 заливок, 12 стопов градиента, 39 fontStyle→fontWeight); остаток 125 — наследование от мастеров badge/button/input, которые сами ещё не переведены",
+      "card": "262 привязки переписаны (214 полей, 24 заливки, 24 fontStyle→fontWeight); на мастерах 0, внутри инстансов 192 — наследование (Slider, tooltip, button)",
+      "new_rule": "Коллекция WYSIWYG (заглавными, моды Small/Medium/Large, имена с префиксом WYSIWYG/) — СТАРАЯ библиотека; цель wysiwyg/X. Правила для неё в rebind-rules.md не было.",
+      "layout_rule": "Layout: market/card/* → layout/card/* (группа market снята в студии)"
+    },
+    "swapped_masters": {
+      ".buy": "старый внешний Button (Var=Secondary) → локальный button / secondary, ступени 400/300; свап сбрасывает оверрайды — текст и show-prefix/suffix восстановлены, ширина вернулась к 82/78",
+      ".brand-badge": "старый внешний Badge Market → локальный badge / market-brand, ступени 300/200/100/50",
+      ".layout": "27 слотов .preview с внешнего мастера на локальный .preview 468:59184"
+    },
+    "fixed_defects": {
+      "трекинг ступени 200": "во всех трёх текстовых наборах letter-spacing был привязан к typography/letter-spacing/100 (0.2px) при font-size/200 и line-height-compact/200 — исправлено на /200 (0.1px)",
+      "подпись +4 в .colors": "в boundVariables.fontSize лежал МАССИВ из двух алиасов — старого и нового: setBoundVariable у TEXT не заменяет привязку, а добавляет вторую. Переписано setRangeBoundVariable по всему диапазону."
+    },
+    "debts": [
+      "192 привязки внутри инстансов карточки и 125 внутри частей уйдут сами, когда переведут badge/button/input/slider/tooltip — править их сейчас нельзя: станут оверрайдами и разойдутся с мастером",
+      "инстанс Slider в карточке — внешний старый мастер, свап ждёт перевода секции ↪ slider",
+      "набор .price дублирует компонент awds-component-price: заменить инстансом после публикации библиотеки компонентов (шаг 7.3 плана)",
+      "секции ↪ price в новом файле нет вовсе — макет цены до сих пор в старом файле 💠 Comp ↪ ¹ Elemets"
+    ],
+    "canon_second_pass": {
+      "why": "Владелец 18.09.2026 спросил, всё ли сделано по канону — имена, переменные, токены. Сплошная проверка нашла четыре вещи, три из них не мои.",
+      "found": {
+        "ось view": "части desktop|mobile против карточки desktop-tablet|mobile — расхождение создал я сам, приведя к канону только карточку. Унифицировано на desktop-tablet|mobile в 8 наборах частей",
+        "ось kind": "после замены заглушек слово стало значить тип карточки у .layout и тип цены у .price. Решение владельца: у .price ось → offer",
+        "порядок значений": "у .tips, .tag, .addcart и .price порядок в панели свойств не совпадал с порядком на канве (канон props.md). Было до этого захода. Исправлено рецептом пересоздания слотов: дети упорядочены, слоты созданы заново частичным переименованием, имена возвращены — 4 вызова, инстансы в карточке сохранили свои варианты",
+        "имена слоёв": "24 слоя в мастерах карточки: content писался с КИРИЛЛИЧЕСКОЙ «с», а brand/name/feedback/price/category стояли с заглавной. Переименованы; узлы внутри инстансов не трогались",
+        "литерал 170px": "min-width карточки держался числом с пометкой own_values «нет ячейки в студии». Ячейка есть — layout/card/slider-min (170px desktop/tablet, 128px mobile), и хардкод терял адаптив. Переведён на токен, own_values уменьшился с 7 до 6"
+      },
+      "checked_clean": "hex/rgba в CSS — ноль; px/rem литералов вне комментариев — ноль; ds_token_dependencies совпадает с CSS (43 токена); component-cell-drift — 41 из 41, 4939 якорей, расхождений нет"
+    }
+  },
   "_refresh_2026_07_06": {
     "scope": "Все 3 варианта (price-first 7460:1800, brand-first 7460:2601, buy-now 7460:2602), обе вью. Триггер: «типографика карточки должна переключаться так же, как типографика блоков».",
     "summary": "Текст карточки переведён с жёстких шагов --awds-typography-*-{200,300,400,600} на РОЛИ WYSIWYG-пресетов --awds-type-lead/body/caption-{fs,lh,ls}. Маппинг: бренд desktop=lead, бренд mobile=body, название=body, фидбэк/рубрика=caption. Роли переопределяются коллекцией .typo-large/medium/small (css-global) на секции-предке → текст карточки масштабируется вместе с блоками. Базовое поведение — ЧИСТО НАСЛЕДУЕТ (свой .typo-* карточка не ставит): без предка = :root (≈medium), .typo-small = макет. Проверено вживую get_variable_defs по всем 6 узлам вью + get_design_context desktop: макет соответствует ролям на .typo-small (lead 16/26, body 14/22, caption 12/19) — числовая верификация computed px в preview совпала (small 16/26·14/22·12/19; medium 18/…; large 19/…). brand-first mobile brand мигрирован с фикс typography/300 (13/16 compact) на роль body (по требованию заказчика — чтобы тоже переключался). Цена осталась на awds-component-price (control-* фикс). --awds-typography-*-400 остался только у .pcard__stepper-value (контрол корзины). Preview: добавлен тумблер «Масштаб» (small/medium/large), дефолт small на <html> (= макет), демонстрирует переключение. Правки: 3× {variant}.css, preview.html, SKILL.md, meta (ds_token_dependencies + preview.toggles + _dependency_note). Figma НЕ менялся — это перенос кода на существующую ось масштаба, макет уже был на WYSIWYG-пресетах.",
@@ -41,7 +312,11 @@
     "slider_node_id": "7512:7626",
     "slider_variant": "dots-mini (awds-component-slider)",
     "slider_placement": "flow between .pcard__media and .pcard__content, centered (НЕ overlay)",
-    "feedback_nodes": { "star": "shape-star-filled 14px", "reviews_icon": "contact-chat_1-filled 14px", "typography": "caption fs-200/lh-200 semibold (обе вью)" },
+    "feedback_nodes": {
+      "star": "shape-star-filled 14px",
+      "reviews_icon": "contact-chat_1-filled 14px",
+      "typography": "caption fs-200/lh-200 semibold (обе вью)"
+    },
     "followup_7": "Одно фото у товара: слайдер не выводится, но место под него сохраняется заглушкой .pcard__slider-spacer (между .pcard__media и .pcard__content, высота = высоте dots-mini = 3×space-1 = 12px). Карточки с 1 и несколькими фото получаются одной высоты — контент (цена/бренд/…) не сдвигается в гриде (проверено: price.top совпадает). В preview у тумблера Кадры добавлен вариант 1 (без слайдера).",
     "followup_6": "Цвет иконки отзывов (💬 contact-chat, .pcard__reviews-icon) изменён с surface-on-high на surface-on (по правке заказчика). Рейтинг остаётся surface-on-highest, счётчик отзывов — surface-on-high, звезда — warning/rating-selected.",
     "followup_5": "Много кадров у товара (напр. 10): индикатор галереи не растягивается — при числе кадров > окна (DOTS_WINDOW=5) точки оборачиваются в .pcard__slider-track + класс .pcard__slider--many → фикс-окно из 5 точек (макс-ширина токенами), лента .pcard__slider-track сдвигается на --pcard-dots-shift, держа активную по центру; крайние точки окна .slider__dot--sm уменьшены (scale 0.5, намёк, что есть ещё). Активная точка в окне ОСТАЁТСЯ удлинённой пилюлей (как в dots-mini); центрирование — пиксельное (winW/2 − центр активной по offsetLeft/offsetWidth, не зависит от transform и от разной ширины точек), clamp по краям ленты. Сдвиг и edge-классы ставит wireGallery. Совпадает с замыслом макета (Slider List w-32 overflow-clip). В preview добавлен тумблер Кадры (3/10). CSS — в product-card-price-first.css (.pcard__slider--many/-track); слайдер-компонент не менялся.",
@@ -59,10 +334,25 @@
   "primary_node_id": "7460:1800",
   "frame_name": "product-card / price-first",
   "metadata": {
-    "frame": { "id": "7460:1800", "name": "product-card / price-first", "width": 448, "height": 385 },
+    "frame": {
+      "id": "7460:1800",
+      "name": "product-card / price-first",
+      "width": 448,
+      "height": 385
+    },
     "views": {
-      "desktop-tablet": { "id": "6130:27773", "name": "View=Desktop-Tablet", "width": 174, "height": 345 },
-      "mobile": { "id": "6130:27780", "name": "View=Mobile", "width": 174, "height": 335 }
+      "desktop-tablet": {
+        "id": "6130:27773",
+        "name": "View=Desktop-Tablet",
+        "width": 174,
+        "height": 345
+      },
+      "mobile": {
+        "id": "6130:27780",
+        "name": "View=Mobile",
+        "width": 174,
+        "height": 335
+      }
     }
   },
   "variable_defs": {
@@ -186,7 +476,8 @@
     "_note": "Вариант Product Card / Brand First (node 7460:2601, views Desktop 6130:27833 / Mobile 6130:27842). Центрированный контент, порядок рейтинг→бренд→название→цена→кнопка корзины. Бейджи по центру снизу, флага нет. Hover-модель фото — как у price-first (scale 0.9→1, 3%-скрим, без теней). Свотчи цветов из макета убраны по требованию заказчика.",
     "variable_defs": {
       "desktop": {
-        "badge": "rectangle/100, padding space/2", "favorites": "40px",
+        "badge": "rectangle/100, padding space/2",
+        "favorites": "40px",
         "feedback": "control/300 (13) text surface-on-high, star warning-core 16px",
         "brand": "link/catalog/default (#2E3034) typography/600 — нет catalog-роли в DS → surface-on-high",
         "name": "link/accent (#080808) typography/400 — surface-on-highest, 1 строка",
@@ -194,7 +485,8 @@
         "cart": "Button/Primary rectangle/400 — компонент awds-component-button .btn--400"
       },
       "mobile": {
-        "badge": "rectangle/50, padding space/1", "favorites": "32px (.btn-favorites--mobile)",
+        "badge": "rectangle/50, padding space/1",
+        "favorites": "32px (.btn--200)",
         "feedback": "control/200 (12)",
         "price": "value control/300 (13), currency control/50 (10)",
         "cart": "Button/Primary rectangle/300 — .btn--300",
@@ -217,7 +509,9 @@
     "_note": "Вариант Product Card / Buy Now (node 7460:2602, views Desktop 6130:27887 / Mobile 6130:27896). Контент слева, порядок цена(крупная)→название→рубрика→рейтинг→кнопка корзины. Медиа как у price-first (флаг слева + избранное справа, бейджи слева снизу). Бренда нет — вместо него ссылка на рубрику (link/muted). Hover-модель фото — как у price-first.",
     "variable_defs": {
       "desktop": {
-        "badge": "rectangle/100, padding space/2 (слева снизу)", "favorites": "40px", "country": "флаг 24px слева",
+        "badge": "rectangle/100, padding space/2 (слева снизу)",
+        "favorites": "40px",
+        "country": "флаг 24px слева",
         "price": "value control/850 (20), currency control/300 (13), surface-on-highest",
         "name": "link/accent (#080808) typography/400 — surface-on-highest, 1 строка",
         "category": "link/muted (#646464) typography/300 (13/16) — surface-on-high, 1 строка",
@@ -225,9 +519,11 @@
         "cart": "Button/Primary rectangle/400 — awds-component-button .btn--400"
       },
       "mobile": {
-        "badge": "rectangle/50, padding space/1", "favorites": "32px (.btn-favorites--mobile)",
+        "badge": "rectangle/50, padding space/1",
+        "favorites": "32px (.btn--200)",
         "price": "value control/500 (15), currency control/200 (12)",
-        "category": "typography/300 (13/16)", "feedback": "control/200 (12)",
+        "category": "typography/300 (13/16)",
+        "feedback": "control/200 (12)",
         "cart": "Button/Primary rectangle/300 — .btn--300",
         "content_gap": "space/1,5 (6px)"
       }

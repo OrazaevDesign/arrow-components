@@ -2,9 +2,9 @@
 
 Карточка товара с акцентом на покупку: контент **слева**, порядок цена (крупная) → название → ссылка на рубрику → рейтинг → кнопка «В корзину». Медиа как у `price-first` (флаг страны слева + избранное справа, бейджи слева снизу).
 
-**Figma:** [Product Card / Buy Now](https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2602)
+**Figma:** [product-card / buy-now](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59681)
 
-Отличия от `price-first`: вместо бренда — **ссылка на рубрику** (категория, `link/muted`); снизу **кнопка «В корзину»** (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер `price--listing`, масштабируется по `.typo-*` карточки), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах, спейсер при одном; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), флаг 24px, hover фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
+Отличия от `price-first`: вместо бренда — **ссылка на рубрику** (категория, `link/muted`); снизу **кнопка «В корзину»** (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер задаёт карточка — цена едет по `.typo-*` вместе с брендом и названием), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах, спейсер при одном; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), флаг 24px, hover фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
 
 ## HTML
 
@@ -49,8 +49,8 @@
   <div class="pcard__slider-spacer" aria-hidden="true"></div>
 
   <div class="pcard__content">
-    <!-- цена — компонент awds-component-price (подключи price.css): price--listing (масштаб .typo-*) -->
-    <span class="price price-default price--listing">
+    <!-- цена — компонент awds-component-price (подключи price.css): размер задаёт карточка (.typo-*) -->
+    <span class="price price-default">
       <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
     </span>
     <!-- #2 название → товар -->
@@ -109,12 +109,12 @@
 
 ### Mobile
 
-Добавь `.pcard--mobile` корню; избранному — `.btn-favorites--mobile`; бейджам — `.badge--50`; всем кнопкам зоны корзины (`btn-primary` / `btn-ghost` / `btn-addition`) — `.btn--300` вместо `.btn--400` (скругление инпута степпера подтянется само через `.pcard--mobile`):
+Добавь `.pcard--mobile` корню; избранному — `.btn--200`; бейджам — `.badge--50`; всем кнопкам зоны корзины (`btn-primary` / `btn-ghost` / `btn-addition`) — `.btn--300` вместо `.btn--400` (скругление инпута степпера подтянется само через `.pcard--mobile`):
 
 ```html
 <div class="pcard pcard-buy-now pcard--mobile">
   …
-  <button class="btn btn-favorites btn-favorites--mobile btn--icon-only" …>…</button>
+  <button class="btn btn-favorites btn--200 btn--icon-only" …>…</button>
   …
   <div class="pcard__badges">
     <span class="badge badge-market-percent badge--50">10%</span>
@@ -206,4 +206,4 @@ document.querySelectorAll('.pcard__cart').forEach(wireStepper);
 
 ## Токены
 
-Все значения — через DS. Цвета: название `surface-on-highest` (link/accent); рубрика `surface-on-high` (link/muted) → hover `accent-container-on`; рейтинг «4.9» `surface-on-highest`; 💬 иконка отзывов `surface-on`; счётчик отзывов `surface-on-high`; звезда `warning-core`; фон медиа `surface-bright`; скрим `surface-on-highest` @ `opacity-5` (≈3%); hover названия/рубрики `accent-container-on`. Цена — компонент `awds-component-price` (свои токены). Теней нет. Бейджи, кнопки, избранное — внешние компоненты (`badge.css`, `button.css`, `button-favorites.css`). Степпер (Figma `.AddCart`): контейнер-инпут (Input/Secondary) — sheen-градиент `secondary-chroma → secondary-core` + бордер `secondary-core`; число (form-control placehold) `secondary-container-on-high`; gap зоны `space-2`; скругление инпута `rectangle-400/300-rounded`. Кнопки −/+ и корзины — `awds-component-button` (ghost / addition, `.btn--icon-only`).
+Все значения — через DS. Цвета: название `surface-on-highest` (link/accent); рубрика `surface-on-high` (link/muted) → hover `accent-container-on`; рейтинг «4.9» `surface-on-highest`; 💬 иконка отзывов `surface-on`; счётчик отзывов `surface-on-high`; звезда `warning-core`; фон медиа `surface-bright`; скрим `surface-on-highest` @ `opacity-5` (≈3%); hover названия/рубрики `accent-container-on`. Цена — компонент `awds-component-price` (свои токены). Теней нет. Бейджи, кнопки, избранное — внешние компоненты (`badge.css`, `button.css`, `button-favorites.css`). Степпер (Figma `.AddCart`): контейнер-инпут (Input/Secondary) — sheen-градиент `secondary-chroma → secondary-core` + бордер `secondary-core`; число (form-control placeholder) `secondary-container-on-high`; gap зоны `space-2`; скругление инпута `rectangle-400/300-rounded`. Кнопки −/+ и корзины — `awds-component-button` (ghost / addition, `.btn--icon-only`).

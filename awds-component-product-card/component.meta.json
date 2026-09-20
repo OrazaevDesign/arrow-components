@@ -1,39 +1,74 @@
 {
   "component": "product-card",
-  "version": "1.0.5",
-  "contract_hash": "sha256:70766218c524116f3acf0844fe33aa391872e6eaa1e3d140b0750b794f90732e",
-  "artifact_hash": "sha256:a08f05e2a3d01f86132aea6e35f23bb56d37178407b2cc2469fccce3defed113",
-  "visual_change": true,
-  "released_at": "2026-08-26T08:12:31.382Z",
+  "version": "1.1.10",
+  "contract_hash": "sha256:5676ad9475d59c8df576be6801e9ac603015a291b9ada751126db1017642948b",
+  "artifact_hash": "sha256:0fe96bc47799333b47a8e6d263ec5637a57036b2e0d90cece217f9a351027b3f",
+  "visual_change": false,
+  "released_at": "2026-09-19T06:21:18.884Z",
   "own_values": [
     {
-      "value": "170px",
-      "where": "min-width",
-      "count": 3,
-      "why": "нет ячейки в студии для «min-width»: группы этого элемента в коллекции Size не существует"
+      "value": "0.15s",
+      "where": "transition",
+      "count": 24,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "0.4s",
+      "where": "transition",
+      "count": 9,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "0.3s",
+      "where": "transition",
+      "count": 7,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "0.2s",
+      "where": "transition",
+      "count": 6,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "0.12s",
+      "where": "transition",
+      "count": 6,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "0.15s",
+      "where": "animation",
+      "count": 2,
+      "why": "длительность анимации: коллекции движения в студии нет"
     }
   ],
   "figma": {
-    "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
-    "file_name": "🔶 B2C ↪ ¹ Componets",
-    "primary_node_id": "7460:1800",
-    "primary_url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "468:59619",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59619",
+    "parts_section": {
+      "node_id": "5:53",
+      "name": "↪ part",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-53"
+    }
   },
   "variants": {
     "price-first": {
-      "node_id": "7460:1800",
-      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-1800",
+      "node_id": "468:59619",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59619",
       "figma_label": "product-card / price-first"
     },
     "brand-first": {
-      "node_id": "7460:2601",
-      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2601",
-      "figma_label": "Product Card / Brand First"
+      "node_id": "468:59648",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59648",
+      "figma_label": "product-card / brand-first"
     },
     "buy-now": {
-      "node_id": "7460:2602",
-      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=7460-2602",
-      "figma_label": "Product Card / Buy Now"
+      "node_id": "468:59681",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59681",
+      "figma_label": "product-card / buy-now"
     }
   },
   "shape": null,
@@ -62,7 +97,7 @@
     "awds-component-button (зона .pcard__cart, brand-first и buy-now; требует button.css; --400 desktop / --300 mobile): .btn-primary — кнопка «В корзину» (состояние A); .btn-ghost.btn--icon-only −/+ и .btn-addition.btn--icon-only корзина — в степпере (состояние B)",
     "awds-component-tooltip (.tooltip на .pcard__tip — подсказка на флаге страны (текст = страна из данных; price-first/buy-now) и на избранном («Добавить в избранное»; все варианты); требует tooltip.css; показ по hover/focus с задержкой 400мс, скрытие мгновенно)",
     "awds-component-slider (.slider.slider-dots-mini.pcard__slider — индикатор галереи фото между .pcard__media и .pcard__content, по центру, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует slider.css; точек = числу кадров, активная задаётся классом .slider__dot--active. Перелистывание — JS потребителя (wireGallery): hover-зоны на десктопе (мышь) + свайп влево/вправо на тач-устройствах (мобила/таблет; ссылка-фото несёт touch-action:pan-y, вертикальный скролл страницы остаётся нативным, клик по ссылке после свайпа подавляется). CSS карточки даёт кроссфейд кадров (.pcard__image--active) и центрирование индикатора. МНОГО кадров (>5): точки в .pcard__slider-track + класс .pcard__slider--many → фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки .slider__dot--sm уменьшены; сдвиг --pcard-dots-shift и edge-классы ставит wireGallery)",
-    "awds-component-price (.price.price-{default|sale|none} — цена в .pcard__content, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует price.css; размер price--listing — МАСШТАБИРУЕМЫЙ (роль --awds-type-price-listing, едет по .typo-* карточки вместе с брендом/названием; одинаков в обеих вью, без раздельного desktop/mobile — заменил прежние фикс price--800/600/500). Три состояния по данным товара: price-default (обычная, surface-on-highest), price-sale (скидка: акцентная + старая зачёркнутая, с бейджем .badge-market-percent), price-none («Нет в наличии», скрыть бейдж скидки). Заменил инлайн .pcard__price* — собственных стилей цены в product-card больше нет)"
+    "awds-component-price (.price.price-{default|sale|none} — цена в .pcard__content, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует price.css; размерного класса НЕТ — размер задаёт сама карточка правилом .pcard .price, переопределяя аккумуляторы --awds-price-fs/-lh/-ls на роли WYSIWYG price-listing/caption; цена едет по .typo-* карточки вместе с брендом и названием, одинакова в обеих вью. До price 2.0.0 это был класс .price--listing внутри price. Три состояния по данным товара: price-default (обычная, surface-on-highest), price-sale (скидка: акцентная + старая зачёркнутая, с бейджем .badge-market-percent), price-none («Нет в наличии», скрыть бейдж скидки). Заменил инлайн .pcard__price* — собственных стилей цены в product-card больше нет)"
   ],
   "preview": {
     "base_class": "pcard",
@@ -156,49 +191,52 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-surface-on-highest",
-    "--color-surface-on-high",
-    "--color-surface-on",
-    "--color-surface-bright",
-    "--color-accent-container-on",
-    "--color-warning-core",
-    "--color-secondary-core",
-    "--color-secondary-chroma",
-    "--color-secondary-container-on-high",
-    "--awds-size-rectangle-400-rounded",
-    "--awds-size-rectangle-300-rounded",
-    "--awds-type-lead-fs",
-    "--awds-type-lead-lh",
-    "--awds-type-lead-ls",
-    "--awds-type-body-fs",
-    "--awds-type-body-lh",
-    "--awds-type-body-ls",
-    "--awds-type-caption-fs",
-    "--awds-type-caption-lh",
-    "--awds-type-caption-ls",
-    "--awds-typography-typography-font-size-400",
-    "--awds-typography-typography-line-height-400",
-    "--awds-typography-typography-letter-spacing-400",
-    "--awds-space-space-0-5",
-    "--awds-space-space-px",
-    "--awds-space-space-1",
-    "--awds-space-space-1-5",
-    "--awds-space-space-2",
-    "--awds-space-space-2-5",
-    "--awds-space-space-3-5",
-    "--awds-space-space-4",
-    "--awds-space-space-5",
-    "--awds-space-space-6",
-    "--awds-space-space-12",
-    "--awds-rounded-border-radius-500",
-    "--awds-rounded-border-radius-200",
-    "--awds-opacity-opacity-5",
-    "--awds-opacity-opacity-40",
+    "--accent-container-on",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-layout-card-slider-max",
+    "--awds-layout-card-slider-min",
+    "--awds-opacity-40",
+    "--awds-opacity-5",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-12",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--awds-typography-font-size-400",
+    "--awds-typography-letter-spacing-400",
+    "--awds-typography-line-height-400",
+    "--awds-wysiwyg-font-size-body",
+    "--awds-wysiwyg-font-size-caption",
+    "--awds-wysiwyg-font-size-lead",
+    "--awds-wysiwyg-font-size-price-listing",
+    "--awds-wysiwyg-letter-spacing-body",
+    "--awds-wysiwyg-letter-spacing-caption",
+    "--awds-wysiwyg-letter-spacing-lead",
+    "--awds-wysiwyg-letter-spacing-price-listing",
+    "--awds-wysiwyg-line-height-body",
+    "--awds-wysiwyg-line-height-caption",
+    "--awds-wysiwyg-line-height-lead",
+    "--awds-wysiwyg-line-height-price-listing",
+    "--secondary-chroma",
+    "--secondary-core",
+    "--secondary-on",
+    "--surface-bright",
+    "--surface-on",
+    "--surface-on-high",
+    "--surface-on-highest",
+    "--warning-core"
   ],
-  "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). ТИПОГРАФИКА текста карточки — на РОЛЯХ WYSIWYG-пресетов --awds-type-lead/body/caption-{fs,lh,ls}, а НЕ на жёстком шаге --awds-typography-*: бренд desktop=lead, mobile=body; название=body; фидбэк/рубрика=caption (одинаково во всех вариантах, включая brand-first mobile brand — мигрирован с фикс typography/300 на роль body). Роли масштабируются коллекцией .typo-large/medium/small на секции-предке — карточка едет по той же оси, что типографика блоков (чисто наследует: без .typo-* = :root ≈medium; .typo-small = макет 16/26·14/22·12/19). Прямой --awds-typography-*-400 остался ТОЛЬКО у .pcard__stepper-value (число в поле количества — контрол корзины, не масштабируется). Цену во ВСЕХ вариантах даёт компонент awds-component-price размером price--listing (роль --awds-type-price-listing) — тоже едет по .typo-* карточки, как текст (заменил прежний фикс control price--800/600/500). Флаг 24×24 object-fit:contain. Зона корзины (.pcard__cart, Figma .AddCart 6130:27738) встроена вручную в brand-first/buy-now: контейнер степпера (Input/Secondary) стилизуется в самом product-card на secondary-core/-chroma + secondary-container-on-high (form-скилла нет); кнопки −/+/корзина — composed из awds-component-button (ghost/addition). Refresh product-card по его component-set эту зону НЕ перегенерирует.",
+  "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). ТИПОГРАФИКА текста карточки — на РОЛЯХ WYSIWYG-пресетов --awds-type-lead/body/caption-{fs,lh,ls}, а НЕ на жёстком шаге --awds-typography-*: бренд desktop=lead, mobile=body; название=body; фидбэк/рубрика=caption (одинаково во всех вариантах, включая brand-first mobile brand — мигрирован с фикс typography/300 на роль body). Роли масштабируются коллекцией .typo-large/medium/small на секции-предке — карточка едет по той же оси, что типографика блоков (чисто наследует: без .typo-* = :root ≈medium; .typo-small = макет 16/26·14/22·12/19). Прямой --awds-typography-*-400 остался ТОЛЬКО у .pcard__stepper-value (число в поле количества — контрол корзины, не масштабируется). Цену во ВСЕХ вариантах даёт компонент awds-component-price БЕЗ размерного класса: размер задаёт карточка правилом .pcard .price на ролях WYSIWYG price-listing/caption — тоже едет по .typo-* карточки, как текст. Флаг 24×24 object-fit:contain. Зона корзины (.pcard__cart, Figma .AddCart 6130:27738) встроена вручную в brand-first/buy-now: контейнер степпера (Input/Secondary) стилизуется в самом product-card на secondary-core/-chroma + secondary-container-on-high (form-скилла нет); кнопки −/+/корзина — composed из awds-component-button (ghost/addition). Refresh product-card по его component-set эту зону НЕ перегенерирует.",
   "add_cart": {
     "node_id": "6130:27738",
     "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6130-27738",
@@ -216,9 +254,9 @@
       "Input/Secondary (стилизован в product-card)"
     ]
   },
-  "last_synced": "2026-07-06T12:43:53Z",
+  "last_synced": "2026-09-18T14:56:47Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:23f3cb5c6d79eb88faa01f0790d0f87be9190b6c2738fbc5fa77a41884bdfa6d",
+  "snapshot_hash": "sha256:5d1a0b84312ab8e67f331139a9d1b9be7d69545a2a3ccba75ca54bda63981640",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "e9725a2",
@@ -257,14 +295,140 @@
     "css": "references/focus-selection.css подключается на страницу до этого компонента",
     "note": "Кольцо фокуса не инлайнится: компонент ссылается на --awds-focus-*. Вариант Type/Var снят с инстанса FocusSelection в макете (ячейки State=Focus)."
   },
+  "markup": {
+    "root": {
+      "class": "pcard",
+      "tags": [
+        "div",
+        "article"
+      ]
+    },
+    "variant": {
+      "pattern": "pcard-{variant}",
+      "required": true
+    },
+    "size": null,
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Шкалы размеров нет — карточка тянется по сетке. Вариант задаёт порядок строк (цена или бренд первыми) и наличие кнопки покупки."
+  },
+  "questions": [
+    {
+      "id": "state-groups-missing-for-seven",
+      "text": "У семи компонентов нет группы State в студии — 53 инлайна ролей (product-card 25, slider 9, avatar 8, price 4, tooltip 4, content-area 2, heading 1). Заводить группы в студии или узаконить инлайн ролей записью в own_values?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1217960855817768",
+      "raised_at": "2026-08-25",
+      "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25",
+      "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
+      "answered_at": "2026-09-15"
+    },
+    {
+      "id": "product-card-parts-not-in-code",
+      "text": "В секции ↪ part есть части, которых в коде карточки нет вовсе: .colors (точки цветов товара), .blog (дата и просмотры), .course (эмблема курса), .brand-badge (бренд плашкой) и ось kind=app|course у .layout с сеткой оверлеев 3×3. Реализовывать в CSS или это макет впрок?",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-18",
+      "evidence": "18.09.2026 владелец ограничил заход переводом на роли; макет частей богаче кода на пять элементов и две пропорции фото (app 1:1, course 4:3)",
+      "asana_gid": "1218619064533524"
+    },
+    {
+      "id": "feedback-part-merges-rating-and-reviews",
+      "text": "Часть .feedback держит «4.2 · 23 отзыва» ОДНИМ текстом на surface/on-high, а карточка — двумя узлами: 4.9 на surface/on-highest и «23 отзыва» на surface/on-high. Ячейки студии (product-card/rating/value, /reviews/count) согласны с карточкой. Упростить карточку или разделить часть?",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-18",
+      "evidence": "сверено 18.09.2026 чтением заливок обоих макетов; код совпадает с карточкой и с ячейками",
+      "asana_gid": "1218619055174661"
+    },
+    {
+      "id": "category-cell-differs-part-vs-card",
+      "text": "Рубрика в части .category привязана к ячейке link/heading, а в самой карточке — к link/muted. В покое обе дают surface-on-high, но на наведении расходятся: heading → accent-container-on, muted → surface-on-highest. Какая верна?",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-18",
+      "evidence": "код следует карточке (link/muted); расхождение найдено при переводе 18.09.2026",
+      "asana_gid": "1218629572524260"
+    },
+    {
+      "id": "price-part-duplicates-price-component",
+      "text": "Набор .price (бывш. price-listing) в секции частей дублирует компонент awds-component-price, у которого сторона валюты уже реализована классом .price--currency-start. Решение владельца 18.09.2026 — держать в карточке инстанс; выполнимо после публикации библиотеки компонентов. Секции ↪ price в новом файле пока нет вовсе.",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-18",
+      "evidence": "18.09.2026: в новом файле 15 секций elements, price среди них нет; макет цены в старом файле 💠 Comp ↪ ¹ Elemets",
+      "asana_gid": "1218619055163683"
+    },
+    {
+      "id": "course-part-uses-foreign-paint-style",
+      "text": "Обводка миниатюры в части .course держит чужой стиль palette/divider/default-dim (#d1d6db). Такого цвета в теме нет: ближайшие роли отличаются заметно и обе из тёмной схемы. Заводить роль, брать ближайшую или оставить как есть до реализации части?",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-18",
+      "evidence": "18.09.2026 проверены стили (не переменные) на странице 9 · commerce: из 28 своих переведены 4 (button/clear/* → extended/transparent), 24 остались; 21 из них контент (цвета товара HEX/*, заглушки фото), 2 — эта обводка, 1 — служебная подпись swap",
+      "asana_gid": "1218635843127118"
+    },
+    {
+      "id": "part-descriptions-repeat-category-label",
+      "text": "У частей .blog и .feedback в описании компонента стоит «⚙️Category var1» — та же метка, что у .category. Это ссылка на ту же сущность настроек или копипаста при сборке словаря? Правка описаний по догадке не делается.",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-19",
+      "evidence": "19.09.2026 прочитаны описания всех 16 узлов секции ↪ part: система меток авторская (⚙️Name var1, ⚙️Supplier, ⚙️Brand var2, ⚙️ButtonCart var1 с пояснением), но «⚙️Category var1» встречается трижды — у .category, .feedback и .blog",
+      "asana_gid": "1218650088596574"
+    },
+    {
+      "id": "stepper-minus-icon-differs-by-view",
+      "text": "В степпере .addcart кнопка «минус» на десктопе держит иконку ic20-indeterminacy-outline, а на мобиле — ic20-minus-outline. Обе рисуют горизонтальную черту, но это разные компоненты. Свести к одной? И вторым слоем: обе иконки из старой внешней библиотеки ic20-*, тогда как наши части по умолчанию берут arrow-down_small-regular из другой — менять ли источник иконок степпера.",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-19",
+      "evidence": "19.09.2026 при возврате шести частей input / secondary с подменённых старых на наши локальные иконки восстанавливались поимённо: значения снимались с прежних узлов, и расхождение между вью было видно в снимке (prefix 400 = ic20-indeterminacy-outline 468:54291, prefix 300 = ic20-minus-outline 468:54077)",
+      "asana_gid": "1218650293455543"
+    }
+  ],
+  "family": "complex-component",
+  "summary": "Карточка товара: фото 3:4 с оверлеями, бейджи, избранное, две вьюхи",
+  "aliases": [
+    "карточка товара",
+    "товар",
+    "карточка в гриде",
+    "плитка товара"
+  ],
+  "asana": {
+    "task_gid": "1218422992569426",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992569426",
+    "task_name": "💠 product-card",
+    "parent_task": "💠 1 · core",
+    "primary": true
+  },
   "uses": {
-    "awds-component-badge": "1.0.2",
-    "awds-component-button": "1.0.5",
-    "awds-component-button-favorites": "1.0.3",
-    "awds-component-focus-selection": "1.1.0",
-    "awds-component-price": "1.0.3",
-    "awds-component-slider": "1.0.2",
-    "awds-component-tooltip": "1.0.2"
+    "awds-component-badge": "1.1.1",
+    "awds-component-button": "2.0.2",
+    "awds-component-button-favorites": "1.0.5",
+    "awds-component-focus-selection": "2.0.3",
+    "awds-component-price": "2.0.1",
+    "awds-component-slider": "1.0.4",
+    "awds-component-tooltip": "1.0.3"
   },
   "contract": {
     "classes": [
@@ -304,6 +468,8 @@
       "pcard__stepper-value--bump",
       "pcard__tip",
       "pcard__top",
+      "price",
+      "price__placeholder",
       "slider__dot",
       "slider__dot--sm",
       "tooltip"
