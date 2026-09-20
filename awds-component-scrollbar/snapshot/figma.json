@@ -1,35 +1,79 @@
 {
-  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-  "file_name": "💠 Comp ↪ ¹ Elemets",
-  "primary_node_id": "2093:4230",
-  "frame_name": "Scrollbar",
-  "variant_properties": ["Type", "Style", "State"],
-  "cells": 8,
-  "variant_node_ids": {
-    "Horizontal/Default/Rest": "2093:4231", "Horizontal/Default/Hover": "2093:4238",
-    "Vertical/Default/Rest": "2093:4245", "Vertical/Default/Hover": "2093:4252",
-    "Horizontal/Clear/Rest": "2093:4259", "Horizontal/Clear/Hover": "2093:4266",
-    "Vertical/Clear/Rest": "2093:4273", "Vertical/Clear/Hover": "2093:4280"
+  "fetched": "2026-09-14",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": "↪ scrollbar (5:39)",
+  "_structure_note": "Структура изменилась против старого файла «💠 Comp ↪ ¹ Elemets» (UCYhMA1JeNUNuVGsxUEne7, нода 2093:4230). Было: ОДИН набор с осями Type × Style × State. Стало: ДВА набора по стилю трека, оси orientation[horizontal|vertical] × state[rest|hover], по 4 ячейки. То есть ось Style поднялась из свойства в имя набора, как у остальных компонентов файла.",
+  "sets": {
+    "default": {
+      "id": "6:1375",
+      "name": "scrollbar / default"
+    },
+    "transparent": {
+      "id": "6:1404",
+      "name": "scrollbar / transparent"
+    }
   },
-  "variable_defs": {
-    "role/surface/on": "#8e8e8e (ползунок)",
-    "role/surface/dim": "#f2f2f2 (трек у Default)",
-    "role/surface/transparent": "#ffffff00 (трек у Clear)",
-    "opacity/40": "rest",
-    "opacity/70": "hover",
-    "space/px": "1 (padding трека)",
-    "border-radius/full": "600"
+  "axes": {
+    "orientation": [
+      "horizontal",
+      "vertical"
+    ],
+    "state": [
+      "rest",
+      "hover"
+    ]
+  },
+  "variant_node_ids": {
+    "default": {
+      "horizontal-rest": "6:1376",
+      "horizontal-hover": "6:1383",
+      "vertical-rest": "6:1390",
+      "vertical-hover": "6:1397"
+    },
+    "transparent": {
+      "horizontal-rest": "6:1405",
+      "horizontal-hover": "6:1412",
+      "vertical-rest": "6:1419",
+      "vertical-hover": "6:1426"
+    }
+  },
+  "layers": {
+    "_common": "widthWrap › labelWrap › bar (RECTANGLE, opacity 0.4 в rest / 0.7 в hover) плюс служебный `width ⚙️` › hackyLine — растяжка макета, в коде ей ничего не соответствует.",
+    "_note": "Своей разметки у компонента нет вовсе: CSS красит НАТИВНУЮ полосу прокрутки, а слои макета только показывают, как она должна выглядеть."
+  },
+  "colors": {
+    "_audit": "Сырых заливок ноль — проверены SOLID, стопы градиента и обводки во всех 8 ячейках (14.09.2026, перепроверено 15.09.2026).",
+    "thumb": "surface/on (#737373) под opacity/40 в rest и opacity/70 в hover",
+    "track_default": "surface/dim (#f2f2f2)",
+    "track_transparent": "extended/transparent (#ffffff00)",
+    "_note": "Своей группы State у полосы в теме нет — роли инлайнятся прямо в компонент."
   },
   "geometry": {
-    "bar": 6,
-    "thumb": 4,
-    "inset": 1,
-    "note": "толщина одинакова для обеих осей: 6px по ширине у вертикальной и по высоте у горизонтальной"
+    "bar": {
+      "px": 6,
+      "token": "space-1-5"
+    },
+    "thumb": {
+      "px": 4,
+      "_note": "полоса минус отступ с двух сторон"
+    },
+    "inset": {
+      "px": 1,
+      "token": "space-px"
+    },
+    "rounded": "border-radius/full у трека и ползунка"
+  },
+  "code_mapping": {
+    "sets": "scrollbar / default → .scrollbar, scrollbar / transparent → .scrollbar-transparent",
+    "orientation": "НЕ класс: направление задаёт сам прокручиваемый контейнер, ширина и высота полосы описаны одинаково",
+    "state": "прозрачность ползунка 40% → 70% на :hover"
   },
   "non_token_decisions": {
-    "native-not-custom": "красим нативную полосу, а не рисуем ползунок на div: прокрутка, инерция, клик по треку и клавиатура остаются браузерными",
-    "type-not-variant": "Type=Horizontal/Vertical не стал вариантом — направление задаёт контейнер",
-    "two-apis-split": "::-webkit-scrollbar* и scrollbar-width разведены через @supports: с Chrome 121 второе отключает первое",
-    "hover-on-container": "State=Hover считается по контейнеру: в ползунок 4px курсором не попасть"
-  }
+    "native": "красим нативную полосу, а не рисуем свою: кастомный ползунок означал бы перехват колеса, тача, клавиатуры, drag, инерции и системных привычек",
+    "two-apis": "scrollbar-width/-color объявлены под @supports not selector(::-webkit-scrollbar) — с Chrome 121 наличие scrollbar-width отключает псевдоэлементы, и вместо макетных 6px браузер рисует свою тонкую полосу"
+  },
+  "_layer_binding": "15.09.2026 макет полностью привязан к словарю: 4 трека и 4 трека варианта transparent на ячейках scrollbar/track и scrollbar/transparent/track, 8 ползунков на scrollbar/thumb, НЕПРОЗРАЧНОСТЬ 8 ползунков на opacity/40 (rest) и opacity/70 (hover), паддинги на space/px, радиусы на rounded/border-radius/full. Сырых красок в секции нет. Рамки двух наборов стоят на коллекции Sys (Bg, Border) — это НЕ долг перепривязки: по rebind-rules.md Sys с модами Componets/InProgress/Approval/Ready это статус документации, а не токены, и он намеренно не переводится на 📜 tokens ↪ studio.",
+  "_description": "15.09.2026 описания обоих наборов переписаны: ссылка «Макет» вела на старый файл UCYhMA1JeNUNuVGsxUEne7, версия называлась 2.0.1 (такой никогда не публиковалось — на GitHub лежит 1.0.0), второй стиль назывался Clear. Номер версии из описания убран: он не пересчитывается ничем и соврал у всех девяти компонентов, где стоял."
 }

@@ -1,28 +1,27 @@
 {
   "component": "scrollbar",
-  "version": "1.0.0",
-  "contract_hash": "sha256:24d13655eca1b6f1d8ba2cba33bc6f78d0b06933341c4119fb65c8f7d10563d9",
-  "artifact_hash": "sha256:d949f43d1a592570da32ff6dfe76b4a5d6eee1c398f06ee098437e497348c1e2",
-  "visual_change": false,
-  "released_at": "2026-08-28T09:30:09.178Z",
+  "version": "2.0.6",
+  "contract_hash": "sha256:14ee9db16c0772ffa156a559e4d9d25f5bf2c7b0cec142227989f2fdb87f7e3f",
+  "artifact_hash": "sha256:484efbcadef0c0d3514b32f6cf01275943d915d2d85190ba5e54643b61e05331",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:50.949Z",
   "own_values": [],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:4230",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4230",
-    "note": "Оси макета: Type (Horizontal/Vertical) × Style (Default/Clear) × State (Rest/Hover), 8 ячеек. Type не стал вариантом: направление задаёт контейнер, толщина одна для обеих осей."
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:39",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-39"
   },
   "variants": {
     "default": {
-      "node_id": "2093:4245",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4245",
-      "figma_label": "Style=Default"
+      "node_id": "6:1375",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1375",
+      "figma_label": "scrollbar / default"
     },
-    "clear": {
-      "node_id": "2093:4273",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4273",
-      "figma_label": "Style=Clear"
+    "transparent": {
+      "node_id": "6:1404",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1404",
+      "figma_label": "scrollbar / transparent"
     }
   },
   "shape": null,
@@ -32,10 +31,10 @@
     "hover"
   ],
   "color_tokens": {
-    "thumb": "--surface-on / --awds-opacity-opacity-40",
-    "thumb_hover": "--surface-on / --awds-opacity-opacity-70",
+    "thumb": "--surface-on / --awds-opacity-40",
+    "thumb_hover": "--surface-on / --awds-opacity-70",
     "track": "--surface-dim",
-    "track_clear": "transparent"
+    "track_transparent": "--extended-transparent"
   },
   "js": false,
   "js_note": "Своего JS нет: прокрутку целиком ведёт браузер. Компонент красит нативную полосу, а не подменяет её.",
@@ -54,7 +53,7 @@
         "label": "Стиль",
         "options": [
           "default",
-          "clear"
+          "transparent"
         ]
       },
       {
@@ -95,27 +94,23 @@
     "note": "Класс ставится на элемент, который уже прокручивается: overflow и размеры задаёт потребитель, компонент их не трогает — иначе он менял бы раскладку. Своей разметки и потомков у компонента нет. Для полосы страницы класс не предназначен: глобальную полосу задаёт тема."
   },
   "ds_token_dependencies": [
-    "--awds-opacity-opacity-40",
-    "--awds-opacity-opacity-70",
+    "--awds-opacity-40",
+    "--awds-opacity-70",
     "--awds-rounded-border-radius-full",
-    "--awds-scrollbar-inset",
-    "--awds-scrollbar-size",
-    "--awds-scrollbar-thumb",
-    "--awds-scrollbar-thumb-hover",
-    "--awds-scrollbar-track",
-    "--awds-space-space-1-5",
-    "--awds-space-space-px",
+    "--awds-space-1-5",
+    "--awds-space-px",
+    "--extended-transparent",
     "--surface-dim",
     "--surface-on"
   ],
-  "last_synced": "2026-08-27",
+  "last_synced": "2026-09-15T13:20:00Z",
   "last_synced_by": "arrow-components-builder",
   "asana": {
-    "task_gid": "1209711474813791",
-    "task_url": "https://app.asana.com/0/1203198440472196/1209711474813791/f",
-    "task_name": "💠 Scrollbar",
-    "primary": true,
-    "note": "красит нативную полосу: 6px, ползунок 4px, стили Default и Clear · своей разметки и JS нет"
+    "task_gid": "1218421798697073",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798697073",
+    "task_name": "💠 scrollbar",
+    "parent_task": "💠 4 · elements",
+    "primary": true
   },
   "published": {
     "repo": "OrazaevDesign/arrow-components",
@@ -129,18 +124,27 @@
       "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/scrollbar.css"
     }
   },
+  "family": "elements",
+  "summary": "Красит нативную полосу прокрутки браузера, своей разметки нет",
+  "aliases": [
+    "скроллбар",
+    "полоса прокрутки",
+    "прокрутка",
+    "скролл"
+  ],
+  "snapshot_hash": "sha256:c66adb764fb0119fa15bb6ff3df3fe8d03f1d995631dd777db3a28ca44ce79c3",
   "uses": {},
   "contract": {
     "classes": [
       "scrollbar",
-      "scrollbar-clear"
+      "scrollbar-transparent"
     ],
     "attributes": [],
     "elements": [],
     "public_vars": [],
     "variants": [
-      "clear",
-      "default"
+      "default",
+      "transparent"
     ],
     "sizes": [],
     "states": [

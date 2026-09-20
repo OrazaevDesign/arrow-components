@@ -1,6 +1,6 @@
 ---
 name: awds-component-scrollbar
-description: Полоса прокрутки Scrollbar ArrowDS — класс красит НАТИВНУЮ полосу браузера: толщина 6px, ползунок на роли surface/on, трек surface/dim или прозрачный (Clear). Для скроллящихся областей: списки, таблицы, панели, модалки. Своей разметки и JS нет. Токены ArrowDS, работает и по Figma-ссылке.
+description: Scrollbar ArrowDS (.scrollbar).
 ---
 
 # Scrollbar — полоса прокрутки
@@ -9,15 +9,15 @@ description: Полоса прокрутки Scrollbar ArrowDS — класс к
 нет: он не рисует ползунок, а красит тот, что рисует браузер.
 
 - [references/scrollbar.md](references/scrollbar.md) — применение, стили, ограничения
-- [references/preview.html](references/preview.html) — storybook: обе оси, Default и Clear, тёмный островок
+- [references/preview.html](references/preview.html) — storybook: обе оси, default и transparent, тёмный островок
 
-Макет — [Scrollbar, node 2093:4230](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4230).
+Макет — [↪ scrollbar, node 5:39](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-39).
 
 ## Главное про контракт
 
 ```html
 <div class="scrollbar" style="max-block-size: 240px; overflow: auto;">…</div>
-<div class="scrollbar scrollbar-clear" style="overflow-x: auto;">…</div>
+<div class="scrollbar scrollbar-transparent" style="overflow-x: auto;">…</div>
 ```
 
 **Компонент не задаёт `overflow` и размеры.** Он только красит полосу; где и насколько
@@ -45,12 +45,12 @@ Shift+колесо, стрелки, автоскролл средней кноп
 | --- | --- |
 | толщина | 6px (`space-1-5`), ползунок 4px за счёт прозрачной рамки 1px (`space-px`) с `background-clip: content-box` |
 | наведение | ползунок 40% → 70% прозрачности; считается по **контейнеру**, а не по ползунку — в 4px курсором не попасть |
-| стиль Clear | `.scrollbar-clear` убирает трек, ползунок ложится прямо на содержимое |
+| вариант transparent | `.scrollbar-transparent` убирает трек, ползунок ложится прямо на содержимое |
 | угол между полосами | красится цветом трека — иначе на тёмной подложке остаётся светлый квадрат |
 
 ## Токены
 
-Ползунок — `rgb(var(--surface-on) / var(--awds-opacity-opacity-40))`, при наведении
+Ползунок — `rgb(var(--surface-on) / var(--awds-opacity-40))`, при наведении
 `opacity-70`. Трек — `rgb(var(--surface-dim))`. Радиус — `rounded-full`. Толщина и
 отступ — `space-1-5` и `space-px`. Своих значений нет.
 

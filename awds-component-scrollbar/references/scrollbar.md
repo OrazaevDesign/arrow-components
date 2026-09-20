@@ -1,6 +1,6 @@
 # Scrollbar — применение и ограничения
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:4230](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-4230)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 5:39](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-39)
 
 > [!NOTE]
 > `scrollbar.md` — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -12,7 +12,7 @@
 <ul class="scrollbar" style="max-block-size: 240px; overflow-y: auto;">…</ul>
 
 <!-- горизонтальная лента, трек не нужен -->
-<div class="scrollbar scrollbar-clear" style="overflow-x: auto;">…</div>
+<div class="scrollbar scrollbar-transparent" style="overflow-x: auto;">…</div>
 
 <!-- таблица с обеими осями -->
 <div class="scrollbar" style="max-block-size: 60vh; overflow: auto;"><table>…</table></div>
@@ -25,7 +25,7 @@
 | Класс | Трек | Когда |
 | --- | --- | --- |
 | `.scrollbar` | `surface/dim` | по умолчанию: видно, где полоса, даже когда ползунок короткий |
-| `.scrollbar` + `.scrollbar-clear` | прозрачный | лента, карусель, тёмная подложка — там рамка полосы спорит с содержимым |
+| `.scrollbar` + `.scrollbar-transparent` | прозрачный | лента, карусель, тёмная подложка — там рамка полосы спорит с содержимым |
 
 Ползунок в обоих случаях один: роль `surface/on` под `opacity-40`, при наведении на
 область — `opacity-70`.
@@ -44,7 +44,7 @@
 
 Проверено замером: у настроенной области полоса занимает **6px**, у ненастроенной в том
 же браузере — 15px; переменные резолвятся в `#f2f2f2` (трек Default) и `transparent`
-(Clear).
+(transparent).
 
 ## Два API и почему они разведены
 
