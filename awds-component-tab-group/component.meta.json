@@ -1,0 +1,313 @@
+{
+  "component": "tab-group",
+  "version": "1.0.3",
+  "contract_hash": "sha256:7700a77e0881ebdcd249806522d0850bdceb0d6b53def13004856acb84799219",
+  "artifact_hash": "sha256:77caa615b3d4eecb617e2c62be560f4c1897a23db063212da3c0512913974f5f",
+  "visual_change": true,
+  "released_at": "2026-09-16T05:21:04.344Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "--awds-tab-group-stroke",
+      "count": 1,
+      "why": "толщина обводки плашки boxed: ячейки толщины линии в студии нет (Space/px — шкала отступов, не толщин). В макете это сырой strokeWeight 1 на обеих ячейках набора. Держим одним объявлением --awds-tab-group-stroke, чтобы замена на ячейку была правкой в одном месте. Тот же долг, что у tab-product, button и notice"
+    }
+  ],
+  "family": "tabs",
+  "summary": "Контейнер вкладок: плашка, раздельные кнопки, подчёркивание; прокрутка при переполнении",
+  "aliases": [
+    "группа вкладок",
+    "таббар",
+    "переключатель разделов",
+    "сегментированный контрол",
+    "панель вкладок",
+    "полоса вкладок",
+    "табы"
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "page": "6 · tabs",
+    "section_node_id": "5:44",
+    "primary_node_id": "8:43289",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-43289"
+  },
+  "variants": {
+    "boxed": {
+      "node_id": "8:43289",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-43289",
+      "figma_label": "tab-group / boxed",
+      "token_role": "tab/panel"
+    },
+    "separated": {
+      "node_id": "8:43302",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-43302",
+      "figma_label": "tab-group / separated",
+      "token_role": "—, собран из кнопок"
+    },
+    "underline": {
+      "node_id": "8:43315",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-43315",
+      "figma_label": "tab-group / underline",
+      "token_role": "—, собран из вкладок"
+    }
+  },
+  "shape": "tabs",
+  "shape_note": "Именно 'tabs', в отличие от соседей по семье: tab и tab-product берут геометрию из rectangle, потому что это КОНТРОЛЫ, а группа size/tabs/* описывает КОНТЕЙНЕР. Группа кормится двумя её ячейками: gap-panel (зазор панели у underline — единственный потребитель этой ячейки в библиотеке) и gap-button (зазор между кнопками у separated). Ячейки tabs/{N}/padding, /gap и /typography группа не читает: padding и gap описывают внутренности вкладки, которые уже приходят из rectangle через мост, а typography у 400 даёт 16 px против 14 у rectangle и подлежит приведению (вопрос ведёт компонент tab, size-tabs-typography-vs-rectangle). Плашка boxed берёт отступ из шкалы Space, а радиус из шкалы border-radius — так привязано в макете.",
+  "size_scale": [
+    300,
+    400
+  ],
+  "states": [
+    "rest"
+  ],
+  "states_note": "Состояний у контейнера нет: hover, focus, active и disabled принадлежат вкладкам и приходят из tab и button. Выключенной бывает вкладка, а не панель вкладок — контейнер, погашенный целиком, погасил бы и подписи, которые обязаны остаться читаемыми.",
+  "color_tokens": [],
+  "preview": {
+    "base_class": "tab-group",
+    "default_size": 400,
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": [
+      400,
+      300
+    ],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "size",
+        "label": "Ступень",
+        "options": [
+          "400",
+          "300"
+        ]
+      },
+      {
+        "id": "badge",
+        "label": "Счётчик у вкладки",
+        "options": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "bar",
+        "label": "Полоса прокрутки",
+        "options": [
+          "transparent",
+          "default"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "underline — разделы карточки товара",
+        "html": "<div class=\"tab-group tab-group-underline tab-group--400\"><div class=\"tab-group__track scrollbar scrollbar-transparent\" role=\"tablist\" aria-label=\"Разделы товара\"><button type=\"button\" class=\"tab tab-selected\" role=\"tab\" id=\"tab-descr\" aria-controls=\"panel-descr\" aria-selected=\"true\" tabindex=\"0\">Описание</button><button type=\"button\" class=\"tab tab-unselected\" role=\"tab\" id=\"tab-specs\" aria-controls=\"panel-specs\" aria-selected=\"false\" tabindex=\"-1\">Характеристики<span class=\"notice notice-accent\">12</span></button></div></div>"
+      },
+      {
+        "label": "boxed — сегментированный контрол",
+        "html": "<div class=\"tab-group tab-group-boxed tab-group--400\"><div class=\"tab-group__track scrollbar scrollbar-transparent\" role=\"tablist\" aria-label=\"Вид списка\"><button type=\"button\" class=\"btn btn-clean\" role=\"tab\" id=\"tab-grid\" aria-controls=\"panel-grid\" aria-selected=\"true\" tabindex=\"0\">Плитка</button><button type=\"button\" class=\"btn btn-ghost\" role=\"tab\" id=\"tab-list\" aria-controls=\"panel-list\" aria-selected=\"false\" tabindex=\"-1\">Список</button></div></div>"
+      },
+      {
+        "label": "separated — ряд категорий, ступень 300",
+        "html": "<div class=\"tab-group tab-group-separated tab-group--300\"><div class=\"tab-group__track scrollbar scrollbar-transparent\" role=\"tablist\" aria-label=\"Категории\"><button type=\"button\" class=\"btn btn-contrast\" role=\"tab\" id=\"tab-all\" aria-controls=\"panel-all\" aria-selected=\"true\" tabindex=\"0\">Все</button><button type=\"button\" class=\"btn btn-secondary\" role=\"tab\" id=\"tab-new\" aria-controls=\"panel-new\" aria-selected=\"false\" tabindex=\"-1\">Новинки</button></div></div>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-600",
+    "--awds-shadow-elevation-1",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--surface-dim",
+    "--surface-surface"
+  ],
+  "last_synced": "2026-09-16T05:20:55Z",
+  "last_synced_by": "claude",
+  "published": null,
+  "base_class_note": "Базовый класс .tab-group — полное имя сущности, без сокращения и без префикса. Это РЕШЕНИЕ ПО СЕМЬЕ, принятое владельцем ДС 01.09.2026: семья вкладок держит ОДНО пространство имён — .tab, .tab-group, .tab-product, — ровно как buttons держат .btn, .btn-area, .btn-group, .btn-menu. Отвергнуты два варианта: свой короткий корень (.tbg, .tabs) — сокращение ничего не говорит тому, кто его не знает (правило 5 канона: сокращений не бывает), и выпадает из семьи, читаясь как отдельная сущность; и префикс (.awds-tab-group) — приставка awds- есть в библиотеке только у table и сама числится записанным долгом. НЕ СОКРАЩАТЬ ОБРАТНО: длина имени здесь принятая цена, а не недосмотр, и «оптимизация» короткого корня это откат решения владельца. Цена записана явно: приватные аккумуляторы --awds-tab-group-* префиксом входят в --awds-tab-* соседа awds-component-tab, поэтому греп var(--awds-tab- находит оба компонента сразу — искать нужно точным именем var(--awds-tab-group- либо var(--awds-tab-{свойство}. Коллизии в каскаде нет: имена переменных различны, пересекается только префикс, то есть страдает поиск, а не поведение. Второе следствие: .tab-group — заметное имя в чужом CSS, и если у потребителя оно занято, правило молча не применится; вопрос по этому риску ведёт компонент tab (base-class-tab-too-generic) для всей семьи сразу, дублировать его здесь незачем.",
+  "css_note": "Три файла, по одному на вариант, каждый самодостаточный: база, ступени, вариант, мост. Тот же приём, что у button с его восемью файлами, и ОБРАТНЫЙ приёму tab, notice и tab-product с одним файлом на все варианты. Разница по существу: у вкладки выбранная и невыбранная живут в одном ряду одновременно, поэтому им нужен один файл; вид группы потребитель выбирает один раз, и подключать два файла ради одного вида не за что. Следствие для структуры: плашка boxed и зазоры вариантов объявлены на классе ВАРИАНТА, а не в базе, — иначе потребитель, подключивший tab-group-boxed.css и tab-group-underline.css рядом, получил бы фон плашки и на панели с подчёркиванием.",
+  "variants_note": "Один компонент с тремя вариантами, а не три компонента. У вариантов разный состав узлов (boxed и separated собраны из button, underline — из tab; у boxed вдобавок плашка), и по правилу 2 канона имён это признак ВАРИАНТА: вариантом становится то, что отвечает на вопрос «чем эта вещь является». Правило работает в обе стороны, и разный состав узлов делает варианты, а не компоненты — так устроены price (sale/default/none), emblem (initials/img/placeholder) и tab-product (text/img). Роль у трёх наборов одна, ось одна, значения оси одинаковые; три компонента означали бы три версии, три задачи на доске и три места, где чинится одна и та же прокрутка.",
+  "bridge_note": "Ступень раздаёт группа: .tab-group--{N} .btn кормит size-аккумуляторы кнопки у boxed и separated, .tab-group--{N} .tab — аккумуляторы вкладки у underline, поэтому .btn--400 и .tab--400 в разметке НЕ нужны. Мост весит (0,2,0) против (0,1,0) у size-класса вложенного, то есть внутри группы ступень всегда диктует группа — при любом порядке подключения файлов и даже если потребитель напишет класс руками. Тот же приём и то же следствие, что у formfield с полем и у tab со счётчиком. У underline мост ДВУХЗВЕННЫЙ: .tab-group--{N} .tab .notice (0,3,0) кормит счётчик, потому что собственный мост вкладки (.tab--{N} .notice) не срабатывает — класса .tab--{N} в разметке нет, его заменил мост группы; без второго звена счётчик на ступени 300 остался бы четырёхсотым (дефолт базы .notice), и это было бы видно глазами, но молча. Проверено замером в браузере: 400 → кнопка и вкладка 40 px, радиус кнопки 8, кегль счётчика 13; 300 → 36 px, радиус 6, кегль 12. Отличие от button-group: тот моста не строит осознанно — у него нет оси size вовсе, ступень пишется на каждой кнопке, и группа не хочет знать --awds-btn-rounded. Здесь ось size у группы есть (две ступени в макете), знание ступени приходит сверху, значит и раздавать её обязана группа.",
+  "overflow_note": "Решение Р7 от 01.09.2026: горизонтальная прокрутка плюс покраска полосы компонентом scrollbar; перенос на вторую строку отвергнут (меняет высоту контейнера и ломает шапку). Прокручивается ДОРОЖКА (.tab-group__track), а не корень: у boxed иначе поехала бы плашка. Дорожка же несёт вылет под кольцо фокуса — outline режется контейнером прокрутки, поэтому дорожка получает padding calc(--awds-focus-width + --awds-focus-offset) = 3 px и тут же снимает его равным отрицательным полем: высота ряда остаётся 40 / 36 (замерено). Отвергнуто и почему: scroll-snap — полоса вкладок не карусель, вкладки разной ширины, прилипание спорит со scrollIntoView клавиатурной навигации; краевое затухание маской — mask-image гасит вместе с содержимым кольцо фокуса крайней вкладки, а включать затухание только на переполненной стороне можно лишь скролл-таймлайном (Chrome 115+), при том что аффорданс «есть ещё контент» уже даёт покрашенная полоса, за этим её Р7 и выбрал; кнопки-стрелки — их нет в макете и они требуют своей разметки и своего JS. Заявленная цена: классическая полоса занимает 6 px и на столько же поднимает высоту группы, пока ряд переполнен (Chrome и Firefox на Windows и Linux; на macOS, iOS и Android полоса наложенная). scrollbar-gutter: stable снимает скачок на границе переполнения, но компонент его не ставит — резервирование места меняет раскладку и у группы, которая никогда не переполняется, съело бы 6 px даром; это решение блока.",
+  "a11y_note": "Доступность вкладок — контракт ЭТОЙ группы, а не вкладки: tab намеренно не берёт на себя ничего, что требует существования панели. Обязательно в разметке: role=tablist на ДОРОЖКЕ (не на корне — tablist обязан владеть элементами role=tab напрямую, а между корнем и вкладками стоит обёртка) с aria-label; на каждой вкладке role=tab, aria-selected, id и aria-controls; на каждой панели role=tabpanel, aria-labelledby и tabindex=0; roving tabindex — 0 у выбранной, -1 у остальных, чтобы из группы в порядке табуляции была ровно одна остановка. Поведение (реализует потребитель, своего JS компоненты ArrowDS не возят): стрелки влево-вправо переносят фокус с заворотом по кругу и переставляют tabindex, Home/End — на первую и последнюю, Enter/Space активирует при ручной активации, Tab из вкладки уводит фокус в открытую панель. Автоматическая активация (панель меняется вместе с фокусом) — когда содержимое уже на странице; ручная — когда панель грузится запросом, иначе перебор стрелками выстреливает столько запросов, сколько вкладок. Выключенные вкладки фокус не получают и пропускаются стрелками, и обязаны нести нативный disabled: pointer-events: none гасит мышь, но не клавиатуру. Вкладку, на которую увели фокус, надо подвести в видимую область через scrollIntoView({block:'nearest',inline:'nearest'}) — отступ у обреза компонент уже отвёл через scroll-padding-inline. Если переключение секций это навигация (адрес меняется, страница перезагружается), role=tablist врёт: тогда ряд ссылок в nav, button-area или list-item.",
+  "uses_note": "tab — вкладки варианта underline; button — вкладки вариантов boxed и separated (тона clean/ghost и contrast/secondary); scrollbar — покраска полосы переполнения, класс ставит потребитель на дорожку; focus-selection — слой, из которого берётся вылет дорожки под кольцо (--awds-focus-width, --awds-focus-offset). notice объявлен, хотя счётчик стоит внутри вкладки, а не внутри группы: второе звено моста (.tab-group--{N} .tab .notice) кормит ПРИВАТНЫЕ аккумуляторы счётчика, и переименование любого из них ломает группу молча — то есть зависимость от контракта notice здесь настоящая, а не транзитивная. Первая редакция меты его не объявляла, и это поймал component-usage.mjs --check: факт считается по классам в CSS, и он оказался правее рассуждения.",
+  "markup": {
+    "root": {
+      "class": "tab-group",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "tab-group-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "tab-group--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "tab-group__track",
+        "tag": "div",
+        "required": true,
+        "why": "дорожка прокрутки и носитель role=tablist; она же отводит вылет под кольцо фокуса"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "role=\"tablist\"",
+        "why": "на .tab-group__track, а не на корне: tablist обязан владеть элементами role=tab напрямую, а между корнем и вкладками стоит обёртка"
+      },
+      {
+        "attr": "aria-label",
+        "why": "на дорожке; несколько панелей вкладок на одной странице иначе неразличимы на слух"
+      },
+      {
+        "attr": "role=\"tab\" + aria-selected",
+        "why": "на каждой вкладке: выбранность выражена классом варианта вкладки, а класс — не семантика"
+      },
+      {
+        "attr": "id + aria-controls",
+        "why": "на каждой вкладке: связь «вкладка ↔ панель» существует только в паре с aria-labelledby панели и больше нигде"
+      },
+      {
+        "attr": "tabindex",
+        "why": "roving: 0 у выбранной, -1 у остальных. Без этого из группы вкладок получается столько остановок табуляции, сколько вкладок"
+      }
+    ],
+    "container": null,
+    "note": "Корень — div: у контейнера вкладок нет нативного тега, а fieldset обещал бы форму (его берёт tab-product, где вкладки это радиогруппа). Два элемента вместо одного — прокрутка обрезает по padding-box, поэтому прокручиваться обязана дорожка, а не плашка boxed, иначе фон, радиус и обводка едут вместе с содержимым; и кольцо фокуса в контейнер прокрутки не влезает, поэтому дорожка отводит под него вылет паддингом и снимает его отрицательным полем. Панели (role=tabpanel + aria-labelledby + tabindex=0) в children НЕ объявлены: они лежат ВНЕ группы, рядом с ней, и компонент не может гарантировать их существование — но без них role=tablist врёт, поэтому требование стоит в attrs через aria-controls. Класс scrollbar на дорожке пишет потребитель, а не селектор компонента: CSS-файл полосы подключается отдельно, и навязывать её селектором значило бы ссылаться на файл, которого может не быть. Ступень вложенным (.btn--{N}, .tab--{N}) писать НЕ нужно и не следует — её раздаёт мост группы."
+  },
+  "questions": [
+    {
+      "id": "tab-group-boxed-elevation-owner",
+      "text": "Приподнятость выбранной кнопки в boxed (тень elevation-1) в макете — стиль эффекта elevation, навешенный ПОВЕРХ инстанса button / clean; у самого набора button / clean тени нет, и в button-clean.css её тоже нет. Сейчас тень рисует группа псевдоэлементом .tab-group-boxed .btn-clean::after — иначе пришлось бы дописывать второй слой к box-shadow кнопки через её приватный аккумулятор --awds-btn-border и тем сделать его контрактом. Правильнее ли отдать тень самой кнопке (тон clean получает elevation-1, bump у button), или приподнятость это свойство именно сегментированного контрола и остаётся у группы",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-01",
+      "answer": null,
+      "asana_gid": "1218488921257753"
+    },
+    {
+      "id": "tabs-state-group-unused",
+      "text": "Группа tabbar в слое State (button-selected · button-unselected, свойства bg/border/chevron/color) числится зарезервированной под панель вкладок из кнопок — то есть ровно под boxed и separated. Макет вместо неё берёт тона из группы button (clean/ghost и contrast/secondary), и решение владельца от 01.09.2026 прямо велит переиспользовать button. Значит группа tabbar либо мертва и снимается из темы, либо адресована другому компоненту (нижний таббар мобильного приложения — но его вкладку красит list/*-tabbar у list-item). Что с ней",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218051167002745",
+      "raised_at": "2026-09-01",
+      "answer": "Группы tabbar в слое State больше нет — замер студии 16.09.2026: под вкладки заведены только tab/selected (8 ячеек) и tab/unselected (10). Вопрос снят сам собой уплощением словаря State; резервировать было нечего.",
+      "answered_at": "2026-09-16"
+    },
+    {
+      "id": "tab-group-scrollbar-eats-height",
+      "text": "Р7 велит красить полосу переполнения компонентом scrollbar. Классическая полоса занимает 6 px и на столько же поднимает высоту группы, пока ряд переполнен (Chrome и Firefox на Windows и Linux; на macOS и мобильных полоса наложенная и места не занимает). Держим так и оставляем scrollbar-gutter: stable на усмотрение блока, или группа резервирует 6 px всегда — тогда высота стабильна, но группа, которая никогда не переполняется, платит 6 px даром",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-01",
+      "answer": null,
+      "asana_gid": "1218489020035677"
+    },
+    {
+      "id": "tab-group-boxed-track-has-no-size-cells",
+      "text": "Отступ дорожки тона boxed (space/0-5) и её радиус (rounded/border-radius/600 и /400) читаются из базовых шкал напрямую — и в макете, и в коде. Ячеек размера под дорожку нет: группа size/tabs/*/padding даёт 2 и 2,5, то есть другое значение. Цветовые ячейки дорожки заведены 16.09.2026 (tab/panel/*), размерные — нет.",
+      "level": "token",
+      "target": "Size",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1218532237388617",
+      "raised_at": "2026-09-16",
+      "answer": null
+    },
+    {
+      "id": "tab-group-panel-cells-rebind",
+      "text": "Дорожка тона boxed в макете красится ролями surface/dim и surface/surface напрямую. Ячейки tab/panel/bg-top, bg-bottom и border заведены 16.09.2026 в студии и в файле токенов Figma; перепривязка макета ждёт публикации библиотеки — importVariableByKeyAsync неопубликованную переменную не находит. Тот же долг, что у list/selected-tabbar и ghost-поверхности кнопок.",
+      "level": "component",
+      "target": "макет",
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": "1218532096077177",
+      "raised_at": "2026-09-16",
+      "answer": "Библиотека 📜 tokens ↪ studio опубликована владельцем 16.09.2026, перепривязка сделана в тот же день. Градиент и обводка обеих ячеек набора tab-group / boxed переведены на tab/panel/bg-top, bg-bottom и border. Цвет не изменился: #fafafa снизу, #f2f2f2 сверху и в обводке.",
+      "answered_at": "2026-09-16"
+    }
+  ],
+  "snapshot_hash": "sha256:cc162902e47cd255f741e649c4d18f289baad80c70c53d85b1ee975ea28eb0cb",
+  "asana": {
+    "task_gid": "1218421826367613",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421826367613",
+    "task_name": "💠 tab-group",
+    "parent_task": "💠 6 · tabs",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-tab": "1.0.0",
+    "awds-component-button": "2.0.2",
+    "awds-component-notice": "1.0.4",
+    "awds-component-scrollbar": "2.0.1",
+    "awds-component-focus-selection": "2.0.3"
+  },
+  "contract": {
+    "classes": [
+      "btn",
+      "btn-clean",
+      "notice",
+      "tab",
+      "tab-group",
+      "tab-group--300",
+      "tab-group--400",
+      "tab-group-boxed",
+      "tab-group-separated",
+      "tab-group-underline",
+      "tab-group__track"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "boxed",
+      "separated",
+      "underline"
+    ],
+    "sizes": [
+      "300",
+      "400"
+    ],
+    "states": [
+      "rest"
+    ]
+  }
+}
