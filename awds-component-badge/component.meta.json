@@ -1,37 +1,110 @@
 {
   "component": "badge",
-  "version": "1.0.2",
-  "contract_hash": "sha256:81a96082734f98d326537dae08377409ef539178f600a223275e53ef5e00bfb7",
-  "artifact_hash": "sha256:4359e7d2dbafbe6eaabe54ea5416bccefc0d5eac5843c8376fc08161a844b32e",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:47.292Z",
-  "own_values": [],
+  "version": "1.1.4",
+  "contract_hash": "sha256:34461bf9eed407aefe2f5a504c91b2536a068d5c4da1a78d53ec989087602549",
+  "artifact_hash": "sha256:38226f6f014137a348833c2a250b5fd9a965841cc9f98d474fb906858bf3f7d4",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:50.341Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:5285",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5285"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "page": "4 · elements",
+    "primary_node_id": "5:29",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-29"
   },
   "variants": {
     "market-percent": {
-      "node_id": "2093:5286",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5286",
-      "figma_label": "Type=Text, Var=Percent, Size=600, State=Rest"
+      "node_id": "6:2192",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2192",
+      "figma_label": "badge / market-percent"
     },
     "market-sale": {
-      "node_id": "2093:5417",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5417",
-      "figma_label": "Type=Text, Var=Sale, Size=600, State=Rest"
+      "node_id": "6:2321",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2321",
+      "figma_label": "badge / market-sale"
     },
     "market-new": {
-      "node_id": "2093:5374",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5374",
-      "figma_label": "Type=Text, Var=New, Size=600, State=Rest"
+      "node_id": "6:2278",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2278",
+      "figma_label": "badge / market-new"
     },
     "market-brand": {
-      "node_id": "2093:5331",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5331",
-      "figma_label": "Type=Text, Var=Brand, Size=600, State=Rest"
+      "node_id": "6:2235",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2235",
+      "figma_label": "badge / market-brand"
+    },
+    "system-info": {
+      "node_id": "6:1633",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1633",
+      "figma_label": "badge / system-info"
+    },
+    "system-accent": {
+      "node_id": "6:1676",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1676",
+      "figma_label": "badge / system-accent"
+    },
+    "system-secondary": {
+      "node_id": "6:1719",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1719",
+      "figma_label": "badge / system-secondary"
+    },
+    "system-ghost": {
+      "node_id": "6:1762",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1762",
+      "figma_label": "badge / system-ghost"
+    },
+    "system-success": {
+      "node_id": "6:1891",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1891",
+      "figma_label": "badge / system-success"
+    },
+    "system-warning": {
+      "node_id": "6:1848",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1848",
+      "figma_label": "badge / system-warning"
+    },
+    "system-error": {
+      "node_id": "6:1805",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1805",
+      "figma_label": "badge / system-error"
+    },
+    "status-new": {
+      "node_id": "6:1934",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1934",
+      "figma_label": "badge / status-new"
+    },
+    "status-paid": {
+      "node_id": "6:2149",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2149",
+      "figma_label": "badge / status-paid"
+    },
+    "status-paidclient": {
+      "node_id": "6:2106",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2106",
+      "figma_label": "badge / status-paidclient"
+    },
+    "status-inprogress": {
+      "node_id": "6:2063",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2063",
+      "figma_label": "badge / status-inprogress"
+    },
+    "status-delivered": {
+      "node_id": "6:1977",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1977",
+      "figma_label": "badge / status-delivered"
+    },
+    "status-cancelled": {
+      "node_id": "6:2020",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-2020",
+      "figma_label": "badge / status-cancelled"
     }
   },
   "shape": "rectangle",
@@ -119,23 +192,64 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-accent-core",
-    "--color-accent-chroma",
-    "--color-accent-on",
-    "--color-primary-core",
-    "--color-primary-chroma",
-    "--color-primary-on",
-    "--color-info-core",
-    "--color-info-chroma",
-    "--color-info-on",
-    "--color-secondary-core",
-    "--color-secondary-chroma",
-    "--color-secondary-on",
-    "--awds-rectangle-*",
+    "--accent-chroma",
+    "--accent-core",
+    "--accent-on",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold"
+    "--awds-font-weight-semibold",
+    "--awds-rounded-border-radius-100",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-50",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--error-chroma",
+    "--error-core",
+    "--error-on",
+    "--extended-transparent",
+    "--info-chroma",
+    "--info-container-chroma",
+    "--info-container-core",
+    "--info-container-on-high",
+    "--info-core",
+    "--info-on",
+    "--primary-chroma",
+    "--primary-core",
+    "--primary-on",
+    "--secondary-chroma",
+    "--secondary-core",
+    "--secondary-on",
+    "--secondary-on-dim",
+    "--success-chroma",
+    "--success-core",
+    "--success-on",
+    "--surface-on-high",
+    "--warning-chroma",
+    "--warning-core",
+    "--warning-on"
   ],
-  "last_synced": "2026-06-22T11:02:57Z",
+  "last_synced": "2026-09-14T17:40:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:72aa1559f9bd2bef62ee03eaee11a11b521664297fbeb652410247f9bb75aeaa",
   "published": {
@@ -181,6 +295,94 @@
       }
     }
   },
+  "markup": {
+    "root": {
+      "class": "badge",
+      "tags": [
+        "span",
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "badge-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "badge--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Вариант несёт градиент и цвет метки, размер — кегль и padding."
+  },
+  "asana": {
+    "task_gid": "1218421826211735",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421826211735",
+    "task_name": "💠 badge",
+    "parent_task": "💠 4 · elements",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "roles-error-equals-accent",
+      "text": "error-core совпал с accent-core (211 49 34) — Error и Accent неразличимы. В источнике роли разные: error/core = red.40 (#b4352f), accent/core = red.50 (#cc4033)",
+      "level": "token",
+      "target": "Roles",
+      "severity": "major",
+      "status": "open",
+      "asana_gid": "1217954126464686",
+      "raised_at": "2026-08-28",
+      "answer": null
+    },
+    {
+      "id": "roles-chroma-equals-core",
+      "text": "secondary-chroma = secondary-core и error-chroma = error-core — градиент вырождается в плоскую заливку у пяти бейджей (Secondary, Brand, Delivered, Cancelled, Error). В источнике стопы разные",
+      "level": "token",
+      "target": "Roles",
+      "severity": "major",
+      "status": "open",
+      "asana_gid": "1217954126477892",
+      "raised_at": "2026-08-28",
+      "answer": null
+    },
+    {
+      "id": "badge-delivered-equals-cancelled",
+      "text": "Delivered и Cancelled совпадают по всем четырём ячейкам — «доставлен» и «отменён» выглядят одинаково. В макете так же: задумано или недосмотр?",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1218470050454366",
+      "raised_at": "2026-08-28",
+      "answer": null
+    },
+    {
+      "id": "rounded-100-equals-200",
+      "text": "Ступени 100 и 200 шкалы rounded дают одинаковые значения во всех трёх модах: smooth 6px, rounded 26px, none 0px. Ступень есть, различия нет — та же болезнь, что у range со ступенями 300 и 400 (20px обе). Замечено на бейдже: 34 ячейки size=200 читали rectangle/100/rounded, и подмена была невидима именно потому, что значения совпадают.",
+      "level": "token",
+      "target": "Rounded",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1218470050524779",
+      "raised_at": "2026-09-14",
+      "answer": null
+    }
+  ],
+  "family": "elements",
+  "summary": "Градиентная пилюля для скидки, служебного сообщения и стадии заказа",
+  "aliases": [
+    "бейдж",
+    "плашка",
+    "лейбл",
+    "ярлык",
+    "скидка",
+    "стикер",
+    "статус заказа"
+  ],
+  "sync_method": "figma-mcp",
+  "sync_method_note": "Plugin API через use_figma. Цвета и размеры взяты как ЦЕЛИ ячеек State/Size из component-token-map.json: коллекции приватные, в опубликованную тему их имена не едут.",
   "contract": {
     "classes": [
       "badge",
@@ -195,6 +397,19 @@
       "badge-market-new",
       "badge-market-percent",
       "badge-market-sale",
+      "badge-status-cancelled",
+      "badge-status-delivered",
+      "badge-status-inprogress",
+      "badge-status-new",
+      "badge-status-paid",
+      "badge-status-paidclient",
+      "badge-system-accent",
+      "badge-system-error",
+      "badge-system-ghost",
+      "badge-system-info",
+      "badge-system-secondary",
+      "badge-system-success",
+      "badge-system-warning",
       "badge__icon",
       "badge__label"
     ],
@@ -207,7 +422,20 @@
       "market-brand",
       "market-new",
       "market-percent",
-      "market-sale"
+      "market-sale",
+      "status-cancelled",
+      "status-delivered",
+      "status-inprogress",
+      "status-new",
+      "status-paid",
+      "status-paidclient",
+      "system-accent",
+      "system-error",
+      "system-ghost",
+      "system-info",
+      "system-secondary",
+      "system-success",
+      "system-warning"
     ],
     "sizes": [
       "100",

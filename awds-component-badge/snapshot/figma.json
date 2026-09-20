@@ -1,116 +1,113 @@
 {
-  "source": "Figma MCP — get_metadata + get_variable_defs + get_design_context",
-  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-  "file_name": "💠 Comp ↪ ¹ Elemets",
-  "primary_node_id": "2093:5285",
-  "variants_meta": {
-    "market-percent": {
-      "node_id": "2093:5286",
-      "frame": { "id": "2093:5285", "name": "Badge / Market Precent", "width": 429, "height": 452 }
-    },
-    "market-sale": {
-      "node_id": "2093:5417",
-      "frame": { "id": "2093:5414", "name": "Badge / Market Sale", "width": 429, "height": 452 }
-    },
-    "market-new": {
-      "node_id": "2093:5374",
-      "frame": { "id": "2093:5371", "name": "Badge / Market New", "width": 429, "height": 452 }
-    },
-    "market-brand": {
-      "node_id": "2093:5331",
-      "frame": { "id": "2093:5328", "name": "Badge / Market Brand", "width": 429, "height": 452 }
-    }
+  "_source": "Figma Plugin API через MCP use_figma",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": {
+    "id": "5:29",
+    "name": "↪ badge"
   },
-  "symbols": {
-    "market-percent": [
-      "2093:5286 Type=Text Size=600", "2093:5290 Type=Icon Size=600",
-      "2093:5292 Type=Text Size=500", "2093:5296 Type=Icon Size=500",
-      "2093:5298 Type=Text Size=400", "2093:5302 Type=Icon Size=400",
-      "2093:5304 Type=Text Size=300", "2093:5308 Type=Icon Size=300",
-      "2093:5310 Type=Text Size=200", "2093:5314 Type=Icon Size=200",
-      "2093:5316 Type=Text Size=100", "2093:5320 Type=Icon Size=100",
-      "2093:5322 Type=Text Size=50",  "2093:5326 Type=Icon Size=50"
-    ],
-    "market-sale": [
-      "2093:5417 Type=Text Size=600", "2093:5415 Type=Icon Size=600",
-      "2093:5423 Type=Text Size=500", "2093:5421 Type=Icon Size=500",
-      "2093:5429 Type=Text Size=400", "2093:5427 Type=Icon Size=400",
-      "2093:5435 Type=Text Size=300", "2093:5433 Type=Icon Size=300",
-      "2093:5441 Type=Text Size=200", "2093:5439 Type=Icon Size=200",
-      "2093:5447 Type=Text Size=100", "2093:5445 Type=Icon Size=100",
-      "2093:5453 Type=Text Size=50",  "2093:5451 Type=Icon Size=50"
-    ],
-    "market-new": [
-      "2093:5374 Type=Text Size=600", "2093:5372 Type=Icon Size=600",
-      "2093:5380 Type=Text Size=500", "2093:5378 Type=Icon Size=500",
-      "2093:5386 Type=Text Size=400", "2093:5384 Type=Icon Size=400",
-      "2093:5392 Type=Text Size=300", "2093:5390 Type=Icon Size=300",
-      "2093:5398 Type=Text Size=200", "2093:5396 Type=Icon Size=200",
-      "2093:5404 Type=Text Size=100", "2093:5402 Type=Icon Size=100",
-      "2093:5410 Type=Text Size=50",  "2093:5408 Type=Icon Size=50"
-    ],
-    "market-brand": [
-      "2093:5331 Type=Text Size=600", "2093:5329 Type=Icon Size=600",
-      "2093:5337 Type=Text Size=500", "2093:5335 Type=Icon Size=500",
-      "2093:5343 Type=Text Size=400", "2093:5341 Type=Icon Size=400",
-      "2093:5349 Type=Text Size=300", "2093:5347 Type=Icon Size=300",
-      "2093:5355 Type=Text Size=200", "2093:5353 Type=Icon Size=200",
-      "2093:5361 Type=Text Size=100", "2093:5359 Type=Icon Size=100",
-      "2093:5367 Type=Text Size=50",  "2093:5365 Type=Icon Size=50"
+  "primary_node_id": "5:29",
+  "read_at": "2026-09-14",
+  "_structure_note": "Против прошлого снапшота сменился файл и приведены к канону имена. Было: файл «💠 Comp ↪ ¹ Elemets» (UCYhMA1JeNUNuVGsxUEne7, нода 2093:5285), наборы вида «Badge / Market Precent» (с опечаткой), метки ячеек `Type=Text, Var=Percent` — слово-заглушка в обеих осях. Стало: 17 наборов `badge / {семья}-{вариант}`, оси `content[icon|text]` × `size[600…50]`, 238 ячеек. Заглушки ушли: вариант переехал в имя набора, тип контента стал `content`.\n\nДва изменения внесены 14.09.2026 в этом заходе: (1) ступень `size=200` во всех 34 ячейках читала `rectangle/100/rounded` вместо своей — выровнено на `rectangle/200/rounded`, отрисовка не изменилась, потому что ступени 100 и 200 шкалы rounded совпадают во всех трёх модах; (2) снята привязка оформления контейнеров к чужой библиотеке `Sys`.",
+  "sets": {
+    "_shape": "Все 17 одинаковы по осям: content[icon|text] × size[600|500|400|300|200|100|50] = 14 ячеек, плюс булевы show-prefix и show-suffix.",
+    "_default_content_differs": "У 14 наборов первое значение оси content — `icon`, у трёх (`market-percent`, `status-new`, `system-info`) — `text`. В Figma первое значение и есть дефолт варианта, так что эти три по умолчанию показывают текст, а остальные иконку. На код не влияет (ось выражена наличием разметки, не классом), но при вставке инстанса разница видна.",
+    "names": [
+      "badge / market-brand",
+      "badge / market-new",
+      "badge / market-percent",
+      "badge / market-sale",
+      "badge / status-cancelled",
+      "badge / status-delivered",
+      "badge / status-inprogress",
+      "badge / status-new",
+      "badge / status-paid",
+      "badge / status-paidclient",
+      "badge / system-accent",
+      "badge / system-error",
+      "badge / system-ghost",
+      "badge / system-info",
+      "badge / system-secondary",
+      "badge / system-success",
+      "badge / system-warning"
     ]
   },
-  "variable_defs": {
-    "market-percent": {
-      "badge/market/percent/bg": "#cc4033",
-      "badge/market/percent/chroma": "#d65745",
-      "badge/market/percent/border": "#cc4033",
-      "badge/market/percent/color": "#fff9f5"
-    },
-    "market-sale": {
-      "badge/market/sale/bg": "#fad646",
-      "badge/market/sale/chroma": "#fce279",
-      "badge/market/sale/border": "#fad646",
-      "badge/market/sale/color": "#19110a"
-    },
-    "market-new": {
-      "badge/market/new/bg": "#2e46d1",
-      "badge/market/new/chroma": "#4764d4",
-      "badge/market/new/border": "#2e46d1",
-      "badge/market/new/color": "#f7fcff"
-    },
-    "market-brand": {
-      "badge/market/brand/bg": "#f2f2f2",
-      "badge/market/brand/chroma": "#f7f7f7",
-      "badge/market/brand/border": "#f2f2f2",
-      "badge/market/brand/color": "#555555"
-    },
-    "shared_rectangle": {
-      "rectangle/600/icon": "20", "rectangle/600/gap": "8", "rectangle/600/padding": "16", "rectangle/600/rounded": "10",
-      "rectangle/500/icon": "20", "rectangle/500/gap": "6", "rectangle/500/padding": "14", "rectangle/500/rounded": "8",
-      "rectangle/400/icon": "20", "rectangle/400/gap": "6", "rectangle/400/padding": "10", "rectangle/400/rounded": "8",
-      "rectangle/300/icon": "20", "rectangle/300/gap": "6", "rectangle/300/padding": "8", "rectangle/300/rounded": "6",
-      "rectangle/200/icon": "16", "rectangle/200/gap": "4", "rectangle/200/padding": "8",
-      "rectangle/100/icon": "16", "rectangle/100/gap": "2", "rectangle/100/padding": "4", "rectangle/100/rounded": "6",
-      "rectangle/50/icon": "16", "rectangle/50/gap": "2", "rectangle/50/padding": "2", "rectangle/50/rounded": "4",
-      "font-size/600": "16", "line-height/600": "20", "letter-spacing/600": "0",
-      "font-size/400": "14", "line-height/400": "20", "letter-spacing/400": "0",
-      "font-size/300": "13", "line-height/300": "16", "letter-spacing/300": "0.10000000149011612",
-      "font-size/200": "12", "line-height/200": "16", "letter-spacing/200": "0.10000000149011612"
-    }
+  "structure": {
+    "cell": "COMPONENT (auto-layout HORIZONTAL) > три инстанса частей: `. / prefix` (visible ← show-prefix), `. / text` (текст ← value), `. / suffix` (visible ← show-suffix)",
+    "_parts_are_shared": "Части берутся из секции `↪ parts` той же страницы — той самой, что прошла цикл 14.09.2026. Отступы и зазор живут ВНУТРИ частей и своей оси размера слушаются сами, поэтому на ячейке бейджа привязаны только радиус и цвет.",
+    "icon_layer_name": "Иконка в слоте названа `ic20-a`, хотя свойство зовётся `ic-a`. Число в ИМЕНИ СЛОЯ, не в имени свойства: свойств вида `ic20-*` в бейдже ноль, то есть записанный долг «пиксель в имени слота» здесь закрыт. Имя слоя в код не уезжает и свап не рвёт."
   },
-  "token_resolution": {
-    "badge/market/percent/{bg,border}": "rgb(var(--accent-core))",
-    "badge/market/percent/chroma": "rgb(var(--accent-chroma))",
-    "badge/market/percent/color": "rgb(var(--accent-on))",
-    "badge/market/sale/{bg,border}": "rgb(var(--primary-core))",
-    "badge/market/sale/chroma": "rgb(var(--primary-chroma))",
-    "badge/market/sale/color": "rgb(var(--primary-on))",
-    "badge/market/new/{bg,border}": "rgb(var(--info-core))",
-    "badge/market/new/chroma": "rgb(var(--info-chroma))",
-    "badge/market/new/color": "rgb(var(--info-on))",
-    "badge/market/brand/{bg,border}": "rgb(var(--secondary-core))",
-    "badge/market/brand/chroma": "rgb(var(--secondary-chroma))",
-    "badge/market/brand/color": "rgb(var(--secondary-on))",
-    "rectangle/N/*": "var(--awds-rectangle-N-{padding|gap|icon|rounded|typography-*})"
+  "colors": {
+    "_audit": "Содержимое: 476 привязанных заливок (включая стопы градиента), 238 привязанных обводок, сырых — ноль и тех и других. Контейнеры наборов: 17 сырых заливок и 17 сырых обводок — оформление канвы, привязка к `Sys` снята 14.09.2026.",
+    "_own_family_confirmed": "Проверено по всем 17 наборам: и иконка (`Union`), и текст красятся СВОЕЙ ролью `badge/{семья}/{вариант}/color-rest`. Чужих ролей ноль. Это отменяет записанную 12.09.2026 находку, что у всех семнадцати наборов иконка привязана к `button/primary/color`: в новом файле её нет.",
+    "props_per_variant": [
+      "bg",
+      "chroma",
+      "border",
+      "color"
+    ],
+    "_gradient": "Заливка пилюли — градиент из двух стопов: `bg` и `chroma`. Оба привязаны, поэтому аудит цвета обязан читать `gradientStops[i].boundVariables.color`, а не только `fills[i]`."
+  },
+  "size_map": {
+    "50": {
+      "height": 20,
+      "rounded": "rectangle/50/rounded"
+    },
+    "100": {
+      "height": 24,
+      "rounded": "rectangle/100/rounded"
+    },
+    "200": {
+      "height": 32,
+      "rounded": "rectangle/200/rounded"
+    },
+    "300": {
+      "height": 36,
+      "rounded": "rectangle/300/rounded"
+    },
+    "400": {
+      "height": 40,
+      "rounded": "rectangle/400/rounded",
+      "default": true
+    },
+    "500": {
+      "height": 48,
+      "rounded": "rectangle/500/rounded"
+    },
+    "600": {
+      "height": 52,
+      "rounded": "rectangle/600/rounded"
+    },
+    "_note": "Высота — результат авто-лейаута, не задана. Радиус привязан на ячейке, остальная геометрия — внутри частей."
+  },
+  "code_mapping": {
+    "имя набора": "класс варианта: `badge / status-new` → `.badge-status-new` (следует ТЕМЕ `badge/status/new/*`, а не написанию Figma)",
+    "size=N": ".badge--N",
+    "content=text|icon": "не класс: иконочный бейдж — та же пилюля без текстового узла",
+    "show-prefix / show-suffix": "наличие узла иконки в разметке"
+  },
+  "non_token_decisions": [
+    "Оформление контейнеров наборов (фон и пунктирная рамка) — литералы. Канва Figma, не дизайн-система; ролями по решению владельца 14.09.2026 не заменяется."
+  ],
+  "debts": [
+    "Ступени 100 и 200 шкалы `rounded` дают одинаковые значения во всех трёх модах (6px smooth / 26px rounded / 0px none). Та же болезнь, что у range со ступенями 300 и 400: ступень есть, различия нет. Вопрос уровня токена, не бейджа.",
+    "Имя слоя иконки `ic20-a` обещает 20px, тогда как на ступенях ≤200 подставляется 16px. В именах свойств числа нет, так что это косметика, но при чтении макета глазами вводит в заблуждение."
+  ],
+  "_page_cleanup_2026_09_20": {
+    "date": "2026-09-20",
+    "note": "Заход по всей странице 4 · elements 20.09.2026.",
+    "dead_modes_cleared": 238,
+    "detail": {
+      "Font-family": 119,
+      "Font-weight": 119
+    },
+    "diff": 0,
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0
+    },
+    "not_a_defect": "357 инстансов system-check-cute_regular — иконка библиотеки MGC в слоте, не часть."
   }
 }

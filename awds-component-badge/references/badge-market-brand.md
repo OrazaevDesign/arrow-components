@@ -26,14 +26,18 @@
 </span>
 ```
 
-## Цвета (роль secondary)
+## Цвета
 
-| Свойство | Роль | CSS |
+Берутся из слоя State темы, не ролью инлайном — вариант целиком описан студией.
+
+| Свойство | Ячейка State | Резолвится в |
 |---|---|---|
-| bg | secondary-core | `rgb(var(--secondary-core))` |
-| chroma (дрейф градиента) | secondary-chroma | `rgb(var(--secondary-chroma))` |
-| border | secondary-core | `rgb(var(--secondary-core))` |
-| color (текст/иконки) | secondary-on | `rgb(var(--secondary-on))` |
+| bg | `--awds-state-badge-market-brand-bg-rest` | `secondary-core` |
+| chroma (дрейф градиента) | `--awds-state-badge-market-brand-chroma-rest` | `secondary-chroma` |
+| border | `--awds-state-badge-market-brand-border-rest` | `secondary-core` |
+| color (текст/иконки) | `--awds-state-badge-market-brand-color-rest` | `secondary-on` |
+
+**Градиента нет:** `core` и `chroma` этой роли в теме совпадают, поэтому заливка выходит плоской. В макете стопы разные — расхождение темы с Figma, чинится в студии.
 
 ## Состояния
 

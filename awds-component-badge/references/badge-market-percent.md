@@ -32,15 +32,16 @@
 - вариант `.badge-market-percent` — заполняет аккумуляторы цвета ролью accent;
 - 7 размеров `.badge--{600..50}` — заполняют аккумуляторы размера из shape `rectangle`.
 
-## Цвета (роль accent)
+## Цвета
 
-| Свойство | Роль | CSS |
+Берутся из слоя State темы, не ролью инлайном — вариант целиком описан студией.
+
+| Свойство | Ячейка State | Резолвится в |
 |---|---|---|
-| bg | accent-core | `rgb(var(--accent-core))` |
-| chroma (дрейф градиента) | accent-chroma | `rgb(var(--accent-chroma))` |
-| border | accent-core | `rgb(var(--accent-core))` |
-| color (текст/иконки) | accent-on | `rgb(var(--accent-on))` |
-
+| bg | `--awds-state-badge-market-percent-bg-rest` | `accent-core` |
+| chroma (дрейф градиента) | `--awds-state-badge-market-percent-chroma-rest` | `accent-chroma` |
+| border | `--awds-state-badge-market-percent-border-rest` | `accent-core` |
+| color (текст/иконки) | `--awds-state-badge-market-percent-color-rest` | `accent-on` |
 ## Размеры (shape rectangle)
 
 | Size | padding | gap | icon | rounded |

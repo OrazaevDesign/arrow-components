@@ -26,15 +26,16 @@
 </span>
 ```
 
-## Цвета (роль primary)
+## Цвета
 
-| Свойство | Роль | CSS |
+Берутся из слоя State темы, не ролью инлайном — вариант целиком описан студией.
+
+| Свойство | Ячейка State | Резолвится в |
 |---|---|---|
-| bg | primary-core | `rgb(var(--primary-core))` |
-| chroma (дрейф градиента) | primary-chroma | `rgb(var(--primary-chroma))` |
-| border | primary-core | `rgb(var(--primary-core))` |
-| color (текст/иконки) | primary-on | `rgb(var(--primary-on))` |
-
+| bg | `--awds-state-badge-market-sale-bg-rest` | `primary-core` |
+| chroma (дрейф градиента) | `--awds-state-badge-market-sale-chroma-rest` | `primary-chroma` |
+| border | `--awds-state-badge-market-sale-border-rest` | `primary-core` |
+| color (текст/иконки) | `--awds-state-badge-market-sale-color-rest` | `primary-on` |
 ## Состояния
 
 Нет. Бейдж статичный декоративный — без hover/focus/active/disabled.

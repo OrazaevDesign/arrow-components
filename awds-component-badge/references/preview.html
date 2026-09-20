@@ -64,7 +64,7 @@
 <body>
 
   <h1>badge / storybook</h1>
-  <p class="sub">Маркет-бейдж скидки/распродажи. Варианты: <code>market-percent</code> (роль accent) и <code>market-sale</code> (роль primary). Градиентная пилюля с опциональными иконками-слотами и лейблом. Размеры — shape-токены <code>var(--awds-rectangle-N-*)</code>. Статичный, без состояний. Переключи тему — палитра подтянется.</p>
+  <p class="sub">17 вариантов в трёх семействах: <code>market-*</code> (витрина), <code>system-*</code> (служебное сообщение), <code>status-*</code> (стадия заказа). Градиентная пилюля с опциональными иконками-слотами и лейблом. Цвета — ячейки слоя State темы, размеры — shape-токены <code>var(--awds-size-rectangle-N-*)</code>. Статичный, без состояний. Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -75,13 +75,35 @@
     </label>
     <label>Вариант:
       <select id="variant">
-        <option value="market-percent">market-percent</option>
-        <option value="market-sale">market-sale</option>
-        <option value="market-new">market-new</option>
-        <option value="market-brand">market-brand</option>
+        <optgroup label="Market — витрина">
+          <option value="market-percent">market-percent</option>
+          <option value="market-sale">market-sale</option>
+          <option value="market-new">market-new</option>
+          <option value="market-brand">market-brand</option>
+        </optgroup>
+        <optgroup label="System — служебное сообщение">
+          <option value="system-info">system-info</option>
+          <option value="system-accent">system-accent</option>
+          <option value="system-secondary">system-secondary</option>
+          <option value="system-ghost">system-ghost</option>
+          <option value="system-success">system-success</option>
+          <option value="system-warning">system-warning</option>
+          <option value="system-error">system-error</option>
+        </optgroup>
+        <optgroup label="Status — стадия заказа">
+          <option value="status-new">status-new</option>
+          <option value="status-paid">status-paid</option>
+          <option value="status-paidclient">status-paidclient</option>
+          <option value="status-inprogress">status-inprogress</option>
+          <option value="status-delivered">status-delivered</option>
+          <option value="status-cancelled">status-cancelled</option>
+        </optgroup>
       </select>
     </label>
   </div>
+
+  <h2>Все 17 вариантов</h2>
+  <div class="ctx" id="all" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;"></div>
 
   <h2>Размер × тип</h2>
   <table class="matrix" id="matrix">
@@ -100,11 +122,25 @@
     const ICON = '<svg class="badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 5 5 19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>';
     const TAG  = '<svg class="badge__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12V8H6a2 2 0 0 1 0-4h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><circle cx="16" cy="14" r="2"/></svg>';
     // Демо-лейблы по варианту
-    const LABEL = { 'market-percent': '-30%', 'market-sale': 'SALE', 'market-new': 'NEW', 'market-brand': 'Бренд' };
+    const LABEL = {
+      'market-percent': '-30%', 'market-sale': 'SALE', 'market-new': 'NEW', 'market-brand': 'Бренд',
+      'system-info': 'Инфо', 'system-accent': 'Важно', 'system-secondary': 'Черновик',
+      'system-ghost': 'Без плашки', 'system-success': 'Готово', 'system-warning': 'Внимание',
+      'system-error': 'Ошибка',
+      'status-new': 'Новый', 'status-paid': 'Оплачен', 'status-paidclient': 'Оплачен клиентом',
+      'status-inprogress': 'В работе', 'status-delivered': 'Доставлен', 'status-cancelled': 'Отменён',
+    };
 
     const variantSel = document.querySelector('#variant');
     const tbody = document.querySelector('#matrix tbody');
     const ctx = document.querySelector('#ctx');
+    const all = document.querySelector('#all');
+
+    // Все варианты рядом: только так видно, что Delivered и Cancelled совпадают,
+    // а Error не отличается от Accent — по одному бейджу за раз это незаметно.
+    all.innerHTML = Object.keys(LABEL).map((v) =>
+      `<span class="badge badge-${v} badge--400"><span class="badge__label">${LABEL[v]}</span></span>`
+    ).join('');
 
     function render() {
       const v = variantSel.value;

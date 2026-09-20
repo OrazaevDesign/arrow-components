@@ -26,15 +26,16 @@
 </span>
 ```
 
-## Цвета (роль info)
+## Цвета
 
-| Свойство | Роль | CSS |
+Берутся из слоя State темы, не ролью инлайном — вариант целиком описан студией.
+
+| Свойство | Ячейка State | Резолвится в |
 |---|---|---|
-| bg | info-core | `rgb(var(--info-core))` |
-| chroma (дрейф градиента) | info-chroma | `rgb(var(--info-chroma))` |
-| border | info-core | `rgb(var(--info-core))` |
-| color (текст/иконки) | info-on | `rgb(var(--info-on))` |
-
+| bg | `--awds-state-badge-market-new-bg-rest` | `info-core` |
+| chroma (дрейф градиента) | `--awds-state-badge-market-new-chroma-rest` | `info-chroma` |
+| border | `--awds-state-badge-market-new-border-rest` | `info-core` |
+| color (текст/иконки) | `--awds-state-badge-market-new-color-rest` | `info-on` |
 ## Состояния
 
 Нет. Бейдж статичный декоративный — без hover/focus/active/disabled.
