@@ -1,6 +1,6 @@
 # Range / Light
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:3552](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3552)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 6:771](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-771)
 
 > [!NOTE]
 > `range-light.md` — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -21,17 +21,17 @@
 
 ## Цвета и тень
 
-Значения приходят ячейками слоя State — не ролями напрямую: «какой цвет у Light-ручки
-в hover» решает дизайнер в студии.
+Значения приходят ролями напрямую: ячейки слоя State стали приватными 03.09.2026, их
+имён в теме нет. Ниже — цели тех ячеек, взятые из `component-token-map.json`.
 
 | Элемент | Источник |
 |---|---|
-| Рельса | `--awds-state-range-container-rest` |
-| Заливка | `--awds-state-range-bg-*` (+ sheen `--awds-state-range-chroma-*`) — как у Default |
-| Ползунок | `--awds-state-range-light-bg-*` (+ sheen `--awds-state-range-light-chroma-*`) |
-| Обводка ползунка | `--awds-state-range-light-border-*` |
+| Рельса | `--surface-container-container` |
+| Заливка | `--primary-core` (+ sheen `--primary-chroma`) — как у Default |
+| Ползунок | `--secondary-container-core`, наведение `--secondary-container-dim` (+ sheen `--surface-bright`) |
+| Обводка ползунка | `--secondary-container-dim` |
 | **Тень ползунка** | `var(--awds-shadow-elevation-1)` — из макета, на всех состояниях |
-| фокус | `var(--awds-focus-color-formcontrol)`, только `:focus-visible` |
+| фокус | `var(--awds-focus-color-muted)`, только `:focus-visible` |
 
 **Тень — не украшение.** Ползунок здесь светлый, и трек под ним светлый тоже: без подъёма
 край ручки пропадает. В макете композит стоит во всех Light-ячейках и совпадает с
@@ -48,7 +48,7 @@
 
 ## Размеры
 
-`.range--{N}` — 500/400/300. По умолчанию `range--400`.
+`.range--{N}` — 500/400. По умолчанию `range--400`.
 
 ## Refresh
 

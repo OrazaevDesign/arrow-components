@@ -1,35 +1,44 @@
 {
   "component": "range",
-  "version": "1.0.3",
-  "contract_hash": "sha256:5cbde8f5a101be359a14dc5c269915460f27fbd86acd6f1ec27eba73d135eff0",
-  "artifact_hash": "sha256:582a9a78ed4b3c2e502255d6feec88906c49221d85885b92c1bc9657023957d3",
+  "version": "2.0.9",
+  "contract_hash": "sha256:b5246b2cdd8622a8d81714fe7404c676bd17d401b4c47878982003ec10678a14",
+  "artifact_hash": "sha256:65e7a927aacf46a25bd1af3342d05ce7a5a155fd985ffde849499cfcffee5b76",
   "visual_change": true,
-  "released_at": "2026-08-27T13:58:09.908Z",
-  "own_values": [],
+  "released_at": "2026-09-15T11:17:50.674Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 3,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "1px",
+      "where": "box-shadow",
+      "count": 1,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:3494",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3494",
-    "page_node_id": "2093:3150",
-    "handle_set_node_id": "2093:3383",
-    "note": "Ползунок вынесен в макете в отдельный Component Set ◆/Handle (2093:3383) с осями Var × Size × State, 50 ячеек. У Handle шкала шире, чем у Range: есть 600 (28px) и 200, тогда как сам Range живёт на 500/400/300."
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:35",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-35"
   },
   "variants": {
     "default": {
-      "node_id": "2093:3495",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3495",
-      "figma_label": "Variant=Default"
+      "node_id": "6:732",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-732",
+      "figma_label": "range / default"
     },
     "light": {
-      "node_id": "2093:3552",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3552",
-      "figma_label": "Variant=Light"
+      "node_id": "6:771",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-771",
+      "figma_label": "range / light"
     }
   },
   "shape": "range",
   "size_scale": [
-    300,
     400,
     500
   ],
@@ -61,8 +70,7 @@
     ],
     "matrix_sizes": [
       500,
-      400,
-      300
+      400
     ],
     "toggles": [
       {
@@ -94,24 +102,23 @@
     ]
   },
   "ds_token_dependencies": [
-    "--color-primary-core",
-    "--color-primary-chroma",
-    "--color-primary-dim",
-    "--color-secondary-container-core",
-    "--color-secondary-container-dim",
-    "--color-surface-bright",
-    "--color-surface-container-container",
-    "--color-surface-on-highest",
-    "--awds-size-square-300-handle",
-    "--awds-size-square-400-handle",
-    "--awds-size-square-500-handle",
-    "--awds-space-space-1",
+    "--awds-opacity-40",
     "--awds-rounded-border-radius-full",
-    "--awds-opacity-opacity-40"
+    "--awds-shadow-elevation-1",
+    "--awds-space-1",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--primary-chroma",
+    "--primary-core",
+    "--primary-dim",
+    "--secondary-container-core",
+    "--secondary-container-dim",
+    "--surface-bright",
+    "--surface-container-container"
   ],
-  "last_synced": "2026-08-27",
+  "last_synced": "2026-09-14T09:52:46Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:8cda025fb203d88dd8ae66d0d809f4f1bb02759e9ae7dfa666593811fc4785da",
+  "snapshot_hash": "sha256:55cd322b0bf482102b15a2477801cb98743c02a55adc202fb43f146174fde99a",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "c297645",
@@ -180,19 +187,41 @@
     "note": "Нативный input type=range обязателен: он несёт значение и управление с клавиатуры, видимые трек и ручка — оформление поверх него. В .range--double инпутов ДВА, и порядок значим: первый — from, второй — to. По этому порядку range.js разводит ручки, и по нему же CSS вешает кольцо фокуса на нужную ручку (:nth-of-type). Выключение — атрибутом disabled на каждом инпуте, а не классом."
   },
   "asana": {
-    "task_gid": "1209725020469713",
-    "task_url": "https://app.asana.com/1/15638570680505/task/1209725020469713",
-    "task_name": "💠 Range",
-    "parent_task": "💠 ¹ Elemets",
+    "task_gid": "1218421826367301",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421826367301",
+    "task_name": "💠 range",
+    "parent_task": "💠 4 · elements",
     "primary": true
   },
+  "questions": [
+    {
+      "id": "range-handle-uses-square-scale",
+      "text": "В теме две группы токенов ручки: square/{200..600}/handle и своя range/{300,400,500}/handle. Компонент и макет стоят на square (400=20px, 500=24px), группа range не используется никем и расходится: range-300=16px, range-500=28px. Переводить range на свою группу (тогда 500 станет 28px — правка вида, и ступень 300 со значением 16px имеет смысл вернуть) или группу range/ снять как заброшенную?",
+      "level": "токен",
+      "target": "Size/range",
+      "severity": "minor",
+      "status": "answered",
+      "raised_at": "2026-08-29",
+      "evidence": "studio-vars.css: square-300/400/500-handle = space-5/space-5/space-6 (20/20/24px); range-300/400/500-handle = space-4/space-5/space-7 (16/20/28px). Ссылок на range-*-handle вне component-token-map.json нет. Макет 29.08: handle size=400 → 20px, size=500 → 24px.",
+      "answer": "Верна квадратная шкала: у ручки размеры square (400=20px, 500=24px), компонент и макет стоят правильно. Группа Size/range в студии остаётся заброшенной — на неё не переходим и ступень 300 не возвращаем.",
+      "answered_at": "2026-08-29"
+    }
+  ],
+  "family": "elements",
+  "summary": "Ползунок-регулятор: трек, ручка, диапазон двумя ручками",
+  "aliases": [
+    "ползунок",
+    "регулятор",
+    "фильтр по цене",
+    "диапазон",
+    "слайдер цены"
+  ],
   "uses": {
-    "awds-component-focus-selection": "1.1.0"
+    "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [
       "range",
-      "range--300",
       "range--400",
       "range--500",
       "range--disabled",
@@ -214,7 +243,6 @@
       "light"
     ],
     "sizes": [
-      "300",
       "400",
       "500"
     ],

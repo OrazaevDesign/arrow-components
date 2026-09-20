@@ -1,6 +1,6 @@
 ---
 name: awds-component-range
-description: Ползунок-регулятор Range ArrowDS: трек, ручка, заполнение, диапазон цены двумя ручками. Для фильтра по цене и регулятора значения. Индикатор карусели — slider. Токены ArrowDS, работает и по Figma-ссылке.
+description: Range ArrowDS (.range).
 ---
 
 # Range (слайдер) ArrowDS
@@ -22,22 +22,27 @@ description: Ползунок-регулятор Range ArrowDS: трек, руч
 
 | Что | Источник |
 |---|---|
-| Рельса (track) | `rgb(var(--awds-state-range-container-rest))`, высота `var(--awds-space-space-1)` (4px) |
-| Заливка (fill) | `rgb(var(--awds-state-range-bg-rest))` + sheen `rgb(var(--awds-state-range-chroma-rest))` |
-| Ползунок Default | ячейки `--awds-state-range-default-{bg,chroma,border}-*` |
-| Ползунок Light | ячейки `--awds-state-range-light-{bg,chroma,border}-*` + тень `var(--awds-shadow-elevation-1)` |
-| Размер ползунка | `var(--awds-size-square-N-handle)` (500=24, 400=20, 300=20px) |
+| Рельса (track) | `rgb(var(--surface-container-container))`, высота `var(--awds-space-1)` (4px) |
+| Заливка (fill) | `rgb(var(--primary-core))` + sheen `rgb(var(--primary-chroma))` |
+| Ползунок Default | `rgb(var(--primary-core))`, наведение `rgb(var(--primary-dim))` |
+| Ползунок Light | `rgb(var(--secondary-container-core))` + обводка `rgb(var(--secondary-container-dim))`, sheen `rgb(var(--surface-bright))`, тень `var(--awds-shadow-elevation-1)` |
+| Размер ползунка | `var(--awds-space-5)` (400 = 20px), `var(--awds-space-6)` (500 = 24px) |
 | Скругление | `var(--awds-rounded-border-radius-full)` (рельса/заливка), `50%` (ползунок) |
-| hover / active | те же ячейки в срезе `-hover` / `-active` |
-| фокус | кольцо слоя, вариант **Formcontrol** — `var(--awds-focus-color-formcontrol)`; только `:focus-visible`, только на ручке в фокусе |
-| disabled | **атрибут `disabled` на `<input>`** — он и выключает контрол; класс `.range--disabled` только красит (`opacity: var(--awds-opacity-opacity-40)`) |
+| hover / active | те же роли в других ступенях: `--primary-dim` на наведении, плоская заливка `--primary-core` на нажатии |
+| фокус | кольцо слоя, вариант **Formcontrol** — `var(--awds-focus-color-muted)`; только `:focus-visible`, только на ручке в фокусе |
+| disabled | **атрибут `disabled` на `<input>`** — он и выключает контрол; класс `.range--disabled` только красит (`opacity: var(--awds-opacity-40)`) |
+
+Роли стоят прямо в CSS, а не ячейками `--awds-state-range-*`: коллекции State и Size
+приватные с 03.09.2026, этих имён в опубликованной теме нет. Компонент читал их все и
+до 14.09.2026 рендерился никак — трек прозрачный, ручка 0×0, высота 4px вместо 20/24.
+Цели взяты из `component-token-map.json`, значения не подбирались.
 
 Тень у Light-ползунка — из макета: во всех его ячейках лежит композит из трёх слоёв,
 совпадающий с `elevation-1` по всем девяти числам. У Default-ползунка тени нет.
 
-## Размеры (3)
+## Размеры (2)
 
-`.range--{N}`, N — `500 400 300`. Меняется диаметр ползунка (24 / 20 / 20px); рельса константна 4px. По умолчанию `range--400`.
+`.range--{N}`, N — `500 400`. Меняется диаметр ползунка (24 / 20px); рельса константна 4px. По умолчанию `range--400`.
 
 ## Как работает интерактив
 
@@ -81,7 +86,7 @@ Double (диапазон):
 
 ## CSS / JS
 
-- `references/range.css` — база `.range` + `__track`/`__fill`/`__thumb`/`__input` + 2 варианта + 3 размера + `--double`. Подключается один раз глобально.
+- `references/range.css` — база `.range` + `__track`/`__fill`/`__thumb`/`__input` + 2 варианта + 2 размера + `--double`. Подключается один раз глобально.
 - `references/range.js` — авто-инициализация (синхронизация значений с визуалом). Один раз на странице.
 
 Визуальный QA — `references/preview.html` (storybook, `file://`): Default/Light × размеры × single/double.

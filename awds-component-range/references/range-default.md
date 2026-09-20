@@ -1,6 +1,6 @@
 # Range / Default
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:3495](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-3495)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 6:732](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-732)
 
 > [!NOTE]
 > `range-default.md` — **author-owned**. ACB пишет первичный draft, потом не трогает. CSS (`range.css`) и preview генерируются и при refresh затрутся.
@@ -21,16 +21,17 @@
 
 ## Цвета
 
-Значения приходят ячейками слоя State, а не ролями напрямую.
+Значения приходят ролями напрямую: ячейки слоя State стали приватными 03.09.2026, их
+имён в теме нет. Ниже — цели тех ячеек, взятые из `component-token-map.json`.
 
 | Элемент | Источник |
 |---|---|
-| Рельса | `--awds-state-range-container-rest` |
-| Заливка | `--awds-state-range-bg-*` (+ sheen `--awds-state-range-chroma-*`) |
-| Ползунок | `--awds-state-range-default-bg-*` (+ sheen `--awds-state-range-default-chroma-*`) |
-| Обводка ползунка | `--awds-state-range-default-border-*` |
-| hover / active | те же ячейки в срезе `-hover` / `-active` |
-| фокус | `var(--awds-focus-color-formcontrol)`, только `:focus-visible` |
+| Рельса | `--surface-container-container` |
+| Заливка | `--primary-core` (+ sheen `--primary-chroma`) |
+| Ползунок | `--primary-core` (+ sheen `--primary-chroma`) |
+| Обводка ползунка | `--primary-core` — того же цвета, что заливка ручки |
+| hover / active | наведение — `--primary-dim`; нажатие гасит sheen до `--primary-core`, заливка становится плоской |
+| фокус | `var(--awds-focus-color-muted)`, только `:focus-visible` |
 
 Тени у Default-ползунка нет — в макете композит стоит только у Light.
 
@@ -41,7 +42,7 @@
 
 ## Размеры
 
-`.range--{N}` — 500/400/300 (ползунок 24/20/20px). По умолчанию `range--400`.
+`.range--{N}` — 500/400 (ползунок 24/20px). По умолчанию `range--400`.
 
 ## Refresh
 

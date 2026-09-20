@@ -1,38 +1,105 @@
 {
-  "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-  "file_name": "💠 Comp ↪ ¹ Elemets",
-  "primary_node_id": "2093:3494",
-  "frame_name": "Range",
-  "variant_properties": {
-    "Variant": ["Default", "Light"],
-    "Size": [500, 400, 300],
-    "Double": ["Off", "On"]
+  "fetched": "2026-09-14",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "4 · elements",
+  "section": "↪ range (5:35)",
+  "_structure_note": "Структура изменилась против старого файла «💠 Comp ↪ ¹ Elemets» (UCYhMA1JeNUNuVGsxUEne7, нода 2093:3494). Было: ОДИН набор с осями Variant[Default|Light] × Size[500|400|300] × Double[Off|On], 12 ячеек. Стало: ДВА набора, по одному на вариант, оси size[500|400] × double[off|on], 8 ячеек. Ступень 300 из макета ушла — компонент уже был без неё (решение 29.08.2026: ручка стоит на квадратной шкале square/N/handle, где 300 и 400 дают одинаковые 20px, то есть ступень не различалась визуально).",
+  "sets": {
+    "default": {
+      "id": "6:732",
+      "name": "range / default"
+    },
+    "light": {
+      "id": "6:771",
+      "name": "range / light"
+    }
+  },
+  "axes": {
+    "size": [
+      "500",
+      "400"
+    ],
+    "double": [
+      "off",
+      "on"
+    ]
   },
   "variant_node_ids": {
-    "default": { "500-off": "2093:3495", "500-on": "2093:3504", "400-off": "2093:3514", "400-on": "2093:3523", "300-off": "2093:3533", "300-on": "2093:3542" },
-    "light":   { "500-off": "2093:3552", "500-on": "2093:3561", "400-off": "2093:3571", "400-on": "2093:3580", "300-off": "2093:3590", "300-on": "2093:3599" }
+    "default": {
+      "500-off": "6:733",
+      "500-on": "6:742",
+      "400-off": "6:752",
+      "400-on": "6:761"
+    },
+    "light": {
+      "500-off": "6:772",
+      "500-on": "6:781",
+      "400-off": "6:791",
+      "400-on": "6:800"
+    }
+  },
+  "layers": {
+    "_common": "Container › width-wrap › (bar-wrap › bar) + (width ⚙️ › hackyLine + инстанс ручки). `width ⚙️` — служебный слой раскладки макета, в коде ему ничего не соответствует: позицию ручки считает CSS от --range-from/--range-to.",
+    "default": ". / handle / default › Handle",
+    "light": ". / handle / light › Handle"
   },
   "colors": {
-    "track":      "{role.surface.container.container}   (range/container)",
-    "fill":       { "bg": "{role.primary.core}", "chroma": "{role.primary.chroma}", "_note": "range/bg + range/chroma — одинаково у обоих вариантов" },
-    "thumb_default": { "bg": "{role.primary.core}", "chroma": "{role.primary.chroma}", "border": "{role.primary.core}" },
-    "thumb_light":   { "bg": "{role.secondary.container.core}", "chroma": "{role.surface.bright}", "border": "{role.secondary.container.dim}" },
-    "hover": { "fill_bg": "{role.primary.dim}", "thumb_default": "{role.primary.dim}", "thumb_light": "{role.secondary.container.dim}" },
-    "active": { "chroma": "collapses to core (плоская заливка)" }
+    "_audit": "Сырых заливок ноль — проверены и SOLID, и стопы градиента, и обводки во всех 8 ячейках (14.09.2026).",
+    "track": "range/container (#ededed)",
+    "fill": {
+      "bg": "range/bg-rest (#fad816)",
+      "chroma": "range/chroma-rest (#fcdd2c)",
+      "_note": "одинаково у обоих вариантов — различается только ручка"
+    },
+    "handle_default": {
+      "bg": "range/default/bg-rest",
+      "chroma": "range/default/chroma-rest",
+      "border": "range/default/border-rest",
+      "_note": "все три = #fad816, обводка совпадает с заливкой"
+    },
+    "handle_light": {
+      "bg": "range/light/bg-rest (#f2f2f2)",
+      "chroma": "range/light/chroma (#ffffff)",
+      "border": "range/light/border (#ededed)",
+      "elevation": "shadow1+shadow2+shadow3 = --awds-shadow-elevation-1, девять чисел сверены с темой"
+    },
+    "_states_note": "Оси состояний в макете НЕТ: hover/active/disabled живут срезами тех же ячеек темы (range/*-hover, range/*-active), а не отдельными вариантами.",
+    "_token_resolution": {
+      "_why": "Коллекции State и Size приватные с 03.09.2026 — имён --awds-state-range-* и --awds-size-square-*-handle в опубликованной теме нет. В Figma ячейки остаются (решение владельца 14.09: токены компонентов живут в макете, роли — в коде), а CSS с 14.09.2026 ссылается на их цели.",
+      "_verified": "Семь целей из семи совпали по hex с ячейками этого снапшота (studio-vars.css, светлый мод): чистый однослойный алиас, цвет не сдвинулся.",
+      "track": "range/container → rgb(var(--surface-container-container)) · #ededed",
+      "fill_bg": "range/bg-rest → rgb(var(--primary-core)) · #fad816",
+      "fill_chroma": "range/chroma-rest → rgb(var(--primary-chroma)) · #fcdd2c",
+      "handle_default": "range/default/{bg,chroma,border}-rest → --primary-core / --primary-chroma / --primary-core; hover → --primary-dim (#f9d20d); active гасит sheen до --primary-core",
+      "handle_light": "range/light/bg-rest → --secondary-container-core (#f2f2f2), chroma → --surface-bright (#ffffff), border → --secondary-container-dim (#ededed); hover → --secondary-container-dim",
+      "disabled": "opacity/control/disabled → var(--awds-opacity-40)"
+    }
   },
   "size_map": {
-    "_note": "thumb = square/N/handle (Figma node 500 даёт square/500/handle=24; frame-высоты 500=24,400=20,300=20). track-height=4px (из get_design_context, нода 2093:3504) → --awds-space-1, константна по размерам.",
-    "500": { "thumb_px": 24, "thumb_token": "square-500-handle", "track_h_px": 4 },
-    "400": { "thumb_px": 20, "thumb_token": "square-400-handle", "track_h_px": 4 },
-    "300": { "thumb_px": 20, "thumb_token": "square-300-handle", "track_h_px": 4 }
+    "400": {
+      "handle_px": 20,
+      "token": "square/400/handle",
+      "track_h_px": 4
+    },
+    "500": {
+      "handle_px": 24,
+      "token": "square/500/handle",
+      "track_h_px": 4
+    },
+    "_note": "Диаметр ручки — square/N/handle. Высота рельсы 4px константна по размерам, в Figma не токенизирована, в коде var(--awds-space-1).",
+    "_token_resolution": "square/400/handle → var(--awds-space-5) = 20px, square/500/handle → var(--awds-space-6) = 24px. До 14.09.2026 CSS читал --awds-size-square-N-handle, которых в теме нет: ручка выходила 0×0, а компонент — высотой 4px вместо 20/24."
+  },
+  "code_mapping": {
+    "sets": "набор → класс варианта: range / default → .range-default, range / light → .range-light",
+    "size": "size=N → .range--N",
+    "double": "double=on → .range--double (два инпута и две ручки), double=off → одна ручка, заливка от левого края",
+    "_axis_note": "Ось `double` в Figma — булев признак, выраженный вариантом (значения off|on). В коде это класс-модификатор, а не размерность. Записано в долги канона имён свойств."
   },
   "non_token_decisions": {
-    "structure": "div-based презентационный: .range__track > .range__fill + .range__thumb(--from/--to). Позиции через CSS-vars --range-from/--range-to (0–100%).",
-    "track-height": "var(--awds-space-1) (4px) — в Figma не размер-токенизирована, взята из design_context; константна по размерам (в макете рельсы одинаковой толщины)",
-    "border-radius": "var(--awds-rounded-full) для track/fill (пилюля), 50% для thumb (круг)",
-    "double": ".range--double — два ползунка (--from/--to), заливка между ними; single (Off) — from=0, один ползунок на --range-to",
-    "transition": "только цвет fill/thumb (не позицию left/right — лаг при drag)",
-    "interactivity": "РАБОЧИЙ: прозрачный нативный <input type=range> поверх визуала (single — 1, double — 2) + range.js синхронит value → --range-from/--range-to (доли 0–1). Drag/клавиатура/фокус/ARIA — от нативного input. Позиция thumb считается с учётом ширины (size/2 + (100%-size)*доля), чтобы визуальный и нативный thumb совпадали.",
-    "double-constraint": "Ограничение перемещения ручек (doka.guide): from зажимается <= to, to >= from (не пересекаются). z-index: from по умолчанию сверху (захватываема); to поднимается поверх когда в минимуме. controlFrom/controlTo/setToggleAccessible в range.js."
+    "structure": "Визуальный слой div-ами (.range__track › .range__fill + .range__thumb) плюс прозрачный нативный <input type=range> поверх — он несёт значение, drag, клавиатуру и ARIA. Позиции едут CSS-переменными --range-from/--range-to.",
+    "thumb-position": "центр ручки = size/2 + (100% - size) * доля — повторяет поведение нативного thumb, иначе визуальная и нативная ручки расходятся у краёв",
+    "transition": "анимируется только цвет, не позиция: left/right меняются на каждом кадре drag",
+    "disabled": "выключает атрибут disabled на инпутах, класс .range--disabled только красит"
   }
 }
