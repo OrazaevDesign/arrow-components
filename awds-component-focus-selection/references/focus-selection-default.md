@@ -1,6 +1,6 @@
-# FocusSelection / default
+# focus-selection / default
 
-**Figma:** [UCYhMA1JeNUNuVGsxUEne7 → node 2093:265](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-265)
+**Figma:** [470rar5EfRm4n14vHMXbpc → node 6:36](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-36) — секция `↪ focus-selection` (5:27) страницы `4 · elements`
 
 > [!NOTE]
 > Этот файл (`focus-selection-default.md`) — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -24,16 +24,16 @@
 <a class="link-area focus-selection focus-selection--inside" href="/catalog">Перейти в каталог</a>
 ```
 
-`Formcontrol` — брендовое полупрозрачное кольцо для полей ввода:
+`muted` — брендовое полупрозрачное кольцо для полей ввода:
 
 ```html
-<input class="input__control focus-selection focus-selection--formcontrol" type="text">
+<input class="input__control focus-selection focus-selection-muted" type="text">
 ```
 
 `Tab` — брендовое плотное, для таб-баров и плиток выбора:
 
 ```html
-<button class="tab focus-selection focus-selection--tab" role="tab">Характеристики</button>
+<button class="tab focus-selection focus-selection-accent" role="tab">Характеристики</button>
 ```
 
 Фокус берёт вложенный контрол, а кольцо нужно на обёртке (строка списка с кнопкой внутри):
@@ -52,7 +52,7 @@
 | Случай | Селектор и правило |
 |---|---|
 | Outside + Default | `.btn:focus-visible { outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset) }` |
-| Outside + Formcontrol | `.input:focus-within { outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol); outline-offset: var(--awds-focus-offset) }` |
+| outside + muted | `.input:focus-within { outline: var(--awds-focus-width) solid var(--awds-focus-color-muted); outline-offset: var(--awds-focus-offset) }` |
 | Inside | `.link-area:focus-visible { outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset-inside) }` |
 | Кольцо на соседе | `.checkbox__input:focus-visible + .checkbox__box { outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset) }` |
 | Кольцо на родителе | `.list-item:has(:focus-visible) { outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset) }` |
@@ -62,11 +62,11 @@
 | Переменная | Значение | Ось Figma |
 |---|---|---|
 | `--awds-focus-width` | `2px` | толщина, одна на все ячейки |
-| `--awds-focus-offset` | `1px` | `Type=Outside` |
-| `--awds-focus-offset-inside` | `calc(-1 * var(--awds-focus-width))` | `Type=Inside` |
-| `--awds-focus-color` | `rgb(var(--surface-on-highest))` | `Var=Default` |
-| `--awds-focus-color-formcontrol` | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` | `Var=Formcontrol` |
-| `--awds-focus-color-tab` | `rgb(var(--primary-core))` | `Var=Tab` |
+| `--awds-focus-offset` | `1px` | `offset=outside` |
+| `--awds-focus-offset-inside` | `calc(-1 * var(--awds-focus-width))` | `offset=inside` |
+| `--awds-focus-color` | `rgb(var(--surface-on-highest))` | `tone=default` |
+| `--awds-focus-color-muted` | `rgb(var(--primary-core) / var(--awds-opacity-50))` | `tone=muted` |
+| `--awds-focus-color-accent` | `rgb(var(--primary-core))` | `tone=accent` |
 
 `--awds-focus-offset-inside` считается от ширины, а не задан числом: если макет сменит толщину кольца, внутренний вариант поедет за ней сам.
 
@@ -83,7 +83,9 @@
 
 ## Состояния
 
-Единственное состояние — фокус с клавиатуры. В макете инстанс `FocusSelection` лежит во **всех** ячейках (Rest / Hover / Active / Disabled тоже), а видимость переключает переменная режима `focus-selection/outlineShow` — в CSS её роль играет сам `:focus-visible`. Поэтому при снятии данных из Figma считать нужно только ячейки `State=Focus`: инстанс в ячейке Hover ничего не значит, он там невидим.
+Единственное состояние — фокус с клавиатуры. Инстанс кольца лежит во **всех** ячейках состояний компонента-потребителя (Rest / Hover / Active / Disabled тоже), поэтому при снятии данных из Figma считать нужно только ячейки `State=Focus`.
+
+Прежде видимость переключала переменная `focus-selection/outlineShow`. Замер 14.09.2026: в новом файле `visible` не привязан ни в одной из 54 ячеек набора, а во всём файле нет ни одной привязки к этой переменной — механизм не работал. Ячейки удалены из студии; видимость кольца выражает `:focus-visible`, и это не обходной путь, а точный эквивалент.
 
 | Состояние | Селектор | Источник |
 |---|---|---|
@@ -97,5 +99,5 @@
 - **Не подменять `outline` на `border` или `box-shadow`** «чтобы красивее»: `outline` не влияет на лейаут, поэтому кольцо не сдвигает соседей при фокусе. Border сдвинет, `box-shadow` затрёт существующие тени компонента.
 - **Не гасить фокус через `outline: none`** без замены. Если кольцо мешает на самом контроле — оно переносится на родителя или соседа, но не исчезает.
 - **Не задавать offset числом в компоненте.** Тогда правка макета опять становится правкой 70 файлов — ровно то, ради устранения чего слой заведён.
-- **Не сливать `Formcontrol` и `Tab`**, хотя в Figma они указывают на одну переменную: у `Tab` кольцо плотное, у `Formcontrol` — 50%, потому что рамка поля в фокусе уже брендовая и плотное кольцо поверх неё сливается с ней в толстую полосу.
-- **Не использовать `Inside` на скруглённом контроле** без проверки: `outline-offset: -2px` уменьшает внешний радиус кольца на 2px против макета. При радиусе 0 (оба потребителя `Inside` стоят на `Size=None`) расхождения нет; при ненулевом нужна inset-тень с перечислением существующих теней компонента в том же объявлении.
+- **Не сливать `muted` и `accent`**, хотя в Figma они указывают на одну переменную: у `accent` кольцо плотное, у `muted` — 50%, потому что рамка поля в фокусе уже брендовая и плотное кольцо поверх неё сливается с ней в толстую полосу.
+- **Не использовать `inside` на скруглённом контроле** без проверки: `outline-offset: -2px` уменьшает внешний радиус кольца на 2px против макета. При радиусе 0 (оба потребителя `inside` стоят на `radius=none`) расхождения нет; при ненулевом нужна inset-тень с перечислением существующих теней компонента в том же объявлении.

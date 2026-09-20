@@ -79,8 +79,8 @@
       outline-offset: var(--awds-focus-offset);
     }
     .is-focus.is-inside      { outline-offset: var(--awds-focus-offset-inside); }
-    .is-focus.is-formcontrol { outline-color: var(--awds-focus-color-formcontrol); }
-    .is-focus.is-tab         { outline-color: var(--awds-focus-color-tab); }
+    .is-focus.is-muted { outline-color: var(--awds-focus-color-muted); }
+    .is-focus.is-accent         { outline-color: var(--awds-focus-color-accent); }
 
     /* Живой блок: настоящие фокусируемые контролы, кольцо ставит класс из CSS слоя. */
     .live {
@@ -120,7 +120,7 @@
 <body>
 
   <h1>focus-selection / storybook</h1>
-  <p class="sub">Кольцо фокуса — слой, а не элемент: собственной геометрии у него нет, размер и радиус он берёт у контрола, на который надет. Ось Figma <code>Size</code> (50…600 / Rounded / None) в CSS не выражается — <code>outline</code> следует <code>border-radius</code> и прибавляет <code>outline-offset</code> сам, поэтому боксы с разным радиусом ниже обслуживает одно правило. Оси <code>Type</code> (Inside / Outside) и <code>Var</code> (Default / Formcontrol / Tab) выражены переменными <code>--awds-focus-*</code>. Переключи тему — палитра подтянется.</p>
+  <p class="sub">Кольцо фокуса — слой, а не элемент: собственной геометрии у него нет, размер и радиус он берёт у контрола, на который надет. Ось Figma <code>radius</code> (50…600 / Rounded / None) в CSS не выражается — <code>outline</code> следует <code>border-radius</code> и прибавляет <code>outline-offset</code> сам, поэтому боксы с разным радиусом ниже обслуживает одно правило. Оси <code>offset</code> (inside / outside) и <code>tone</code> (default / muted / accent) выражены переменными <code>--awds-focus-*</code>. Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -134,7 +134,7 @@
   <h2>Var × Type (кольцо показано принудительно)</h2>
   <table class="matrix" id="matrix">
     <thead>
-      <tr><th style="width:170px;">Var</th><th>Type=Outside — offset 1px</th><th>Type=Inside — offset −2px</th></tr>
+      <tr><th style="width:170px;">tone</th><th>offset=outside — offset 1px</th><th>offset=inside — offset −2px</th></tr>
     </thead>
     <tbody></tbody>
   </table>
@@ -143,8 +143,8 @@
   <div class="live">
     <p class="live-hint">Кольцо появляется только от клавиатуры: <code>:focus-visible</code> не срабатывает на клик мышью — это и есть поведение из макета, где <code>outlineShow</code> включён лишь в ячейке Focus.</p>
     <button class="live-btn focus-selection">Outside + Default — кнопка</button>
-    <input class="live-field focus-selection focus-selection--formcontrol" type="text" placeholder="Outside + Formcontrol — поле ввода">
-    <button class="live-btn focus-selection focus-selection--tab" style="background:rgb(var(--surface-container-low) / 1); color:inherit;">Outside + Tab — вкладка</button>
+    <input class="live-field focus-selection focus-selection-muted" type="text" placeholder="outside + muted — поле ввода">
+    <button class="live-btn focus-selection focus-selection-accent" style="background:rgb(var(--surface-container-low) / 1); color:inherit;">Outside + Tab — вкладка</button>
     <a class="live-area focus-selection focus-selection--inside" href="#">Inside + Default — область на всю ширину, снаружи места нет</a>
   </div>
 
@@ -158,7 +158,7 @@
   <script>
     const VARS = [
       { id: 'default',     label: 'Default',     note: 'surface-on-highest' },
-      { id: 'formcontrol', label: 'Formcontrol', note: 'primary-core / 50%' },
+      { id: 'muted', label: 'Muted', note: 'primary-core / 50%' },
       { id: 'tab',         label: 'Tab',         note: 'primary-core' }
     ];
     const RADII = [
@@ -195,15 +195,15 @@
 
     const outside = probe('');
     const inside  = probe('is-inside');
-    const fc      = probe('is-formcontrol');
+    const fc      = probe('is-muted');
 
     const CHECKS = [
       { name: 'Толщина кольца (все 54 ячейки, stroke 2px)', want: '2px',   got: outside.w },
-      { name: 'Type=Outside — зазор до контрола',           want: '1px',   got: outside.off },
-      { name: 'Type=Inside — кольцо вписано внутрь',        want: '-2px',  got: inside.off },
-      { name: 'Var=Formcontrol — кольцо полупрозрачное',    want: 'альфа < 1',
+      { name: 'offset=outside — зазор до контрола',           want: '1px',   got: outside.off },
+      { name: 'offset=inside — кольцо вписано внутрь',        want: '-2px',  got: inside.off },
+      { name: 'tone=muted — кольцо полупрозрачное',    want: 'альфа < 1',
         got: fc.color, pass: /rgba?\([^)]*,\s*0?\.\d+\s*\)/.test(fc.color) },
-      { name: 'Var=Default — кольцо плотное',               want: 'альфа = 1',
+      { name: 'tone=default — кольцо плотное',               want: 'альфа = 1',
         got: outside.color, pass: !/rgba?\([^)]*,\s*0?\.\d+\s*\)/.test(outside.color) }
     ];
 

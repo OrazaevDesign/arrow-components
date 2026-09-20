@@ -1,9 +1,9 @@
 ---
 name: awds-component-focus-selection
-description: Кольцо фокуса FocusSelection ArrowDS — единая обводка для навигации с клавиатуры. Контракт переменных --awds-focus-* для всех компонентов: толщина, отступ (Outside/Inside), цвет (Default/Formcontrol/Tab). Для любого :focus-visible в компоненте или блоке. Токены ArrowDS, работает и по Figma-ссылке.
+description: Focus Selection ArrowDS (.focus-selection).
 ---
 
-# FocusSelection ArrowDS
+# focus-selection ArrowDS
 
 Кольцо, которое появляется на контроле при навигации с клавиатуры. Это **не элемент интерфейса, а слой**: собственной разметки у него нет, он надевается на бокс того контрола, который получил фокус. Значения берутся из токенов DS, ничего не хардкодится. См. `arrow-design-system` за общей картиной токенов и `arrow-components-builder` за регенерацией скилла из Figma.
 
@@ -17,9 +17,9 @@ description: Кольцо фокуса FocusSelection ArrowDS — единая �
 
 | Figma | Значения | Как получить | Что видно |
 |---|---|---|---|
-| `Type` | Inside / **Outside** | `--awds-focus-offset` / `--awds-focus-offset-inside` | кольцо снаружи с зазором 1px / вписано в бокс |
-| `Var` | **Default** / Formcontrol / Tab | `--awds-focus-color{,-formcontrol,-tab}` | нейтральное / брендовое полупрозрачное / брендовое плотное |
-| `Size` | 50…600, Rounded, None | — | в CSS не выражается, радиус берётся у контрола |
+| `offset` | inside / **outside** | `--awds-focus-offset-inside` / `--awds-focus-offset` | кольцо вписано в бокс / снаружи с зазором 1px |
+| `tone` | **default** / muted / accent | `--awds-focus-color{,-muted,-accent}` | нейтральное / брендовое полупрозрачное / брендовое плотное |
+| `radius` | 50…600, full, none | — | в CSS не выражается, радиус берётся у контрола |
 
 Толщина кольца одна на все варианты — 2px во всех 54 ячейках макета.
 
@@ -29,11 +29,11 @@ description: Кольцо фокуса FocusSelection ArrowDS — единая �
 |---|---|---|
 | Толщина, отступы | геометрия макета: `Outside` — прямоугольник на 1px наружу, stroke 2px OUTSIDE; `Inside` — по контуру, stroke 2px INSIDE | `references/focus-selection.css` |
 | Цвет Default | `rgb(var(--surface-on-highest))` | `component-token-map.json` → `map.state.focus.focus-selection.outline` |
-| Цвет Formcontrol | `rgb(var(--primary-core) / var(--awds-opacity-opacity-50))` | там же → `outlineVariant` + opacity применения |
+| Цвет muted | `rgb(var(--primary-core) / var(--awds-opacity-50))` | там же → `outlineVariant` + opacity применения |
 | Цвет Tab | `rgb(var(--primary-core))` | там же → `outlineVariant`, плотный |
 | Видимость | `focus-selection/outlineShow` — переменная режима в Figma | в CSS это сам `:focus-visible` |
 
-`Formcontrol` и `Tab` в Figma указывают на **одну** переменную и различаются только прозрачностью применения. В CSS это две роли — не сливать: у `Tab` кольцо плотное.
+`muted` и `accent` в Figma указывают на **одну** переменную и различаются только прозрачностью применения. В CSS это две роли — не сливать: у `accent` кольцо плотное.
 
 ## Применение
 
@@ -44,7 +44,7 @@ description: Кольцо фокуса FocusSelection ArrowDS — единая �
 ```html
 <button class="btn btn-primary focus-selection">Оформить</button>
 <a class="link-area focus-selection focus-selection--inside" href="#">Строка-ссылка</a>
-<input class="input__control focus-selection focus-selection--formcontrol">
+<input class="input__control focus-selection focus-selection-muted">
 ```
 
 Кольцо рисует не фокусируемый узел (нативный input спрятан, обводку несёт соседний `span`) — класс не поможет, компонент пишет две строки:
@@ -56,16 +56,16 @@ description: Кольцо фокуса FocusSelection ArrowDS — единая �
 }
 ```
 
-Полный набор рецептов (Outside/Inside, Formcontrol, обёртка через `:has(:focus-visible)`) — в [references/focus-selection-default.md](references/focus-selection-default.md).
+Полный набор рецептов (outside/inside, muted, обёртка через `:has(:focus-visible)`) — в [references/focus-selection-default.md](references/focus-selection-default.md).
 
 ## Кто какой вариант носит
 
-Снято с инстансов `FocusSelection` внутри самих компонентов (ячейки `State=Focus`):
+Снято с инстансов набора `focus-selection` внутри самих компонентов (ячейки `State=Focus`):
 
 | Вариант | Компоненты |
 |---|---|
 | **Outside + Default** | `button` (8), `button-overhung` (2), `checkbox`, `radio`, `switch`, `list-item` (12), `input/secondary`, `input-combi/secondary` |
-| **Outside + Formcontrol** | `input`, `input-combi`, `select`, `select-combi`, `textarea`, `uploader` — кроме варианта `secondary` |
+| **outside + muted** | `input`, `input-combi`, `select`, `select-combi`, `textarea`, `uploader` — кроме варианта `secondary` |
 | **Inside + Default** | `button-area` (5), `table` (3) |
 | **канон по умолчанию** (в макете кольца нет) | `button-favorites`, `label`, `link` (5), `product-card` (3), `range` |
 
@@ -78,11 +78,11 @@ description: Кольцо фокуса FocusSelection ArrowDS — единая �
 - `outline: none` без замены не ставится нигде: клавиатурная навигация слепнет. Если кольцо мешает на самом контроле — оно переносится на родителя или соседа, но не гасится.
 - Толщина 2px и полоса 1…3px снаружи дают кольцу непрерывный контур на любом фоне; ниже 2px обводка теряется на плотных фонах.
 - В режиме `forced-colors` (Windows High Contrast) цвета подменяются системным `Highlight` — свой токен там может совпасть с фоном.
-- Кольцо `Formcontrol` полупрозрачное: у поля в фокусе рамка уже брендовая, и плотное кольцо поверх неё сливается с ней в толстую полосу.
+- Кольцо `muted` полупрозрачное: у поля в фокусе рамка уже брендовая, и плотное кольцо поверх неё сливается с ней в толстую полосу.
 
-## Ограничение Type=Inside при ненулевом радиусе
+## Ограничение offset=inside при ненулевом радиусе
 
-CSS считает радиус outline как `border-radius + outline-offset`, поэтому при `offset: -2px` внешний радиус кольца выходит на 2px **меньше** радиуса контрола, а в Figma stroke INSIDE радиус не уменьшает. Расхождение нулевое при радиусе 0 — а оба потребителя `Inside` (`button-area`, `table`) в макете стоят на `Size=None`, то есть радиус 0. Если `Inside` понадобится на скруглённом контроле, кольцо рисуется inset-тенью:
+CSS считает радиус outline как `border-radius + outline-offset`, поэтому при `offset: -2px` внешний радиус кольца выходит на 2px **меньше** радиуса контрола, а в Figma stroke INSIDE радиус не уменьшает. Расхождение нулевое при радиусе 0 — а оба потребителя `inside` (`button-area`, `table`) в макете стоят на `radius=none`, то есть радиус 0. Если `inside` понадобится на скруглённом контроле, кольцо рисуется inset-тенью:
 
 ```css
 box-shadow: inset 0 0 0 var(--awds-focus-width) var(--awds-focus-color);

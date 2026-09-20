@@ -1,42 +1,54 @@
 {
   "component": "focus-selection",
-  "version": "1.1.0",
-  "contract_hash": "sha256:4ed79ba5f9ed1f8fd53b88e924e1c68325c447c3410b40dc04ede14e855b9df7",
-  "artifact_hash": "sha256:35b7508051f1bc3c64b6d678a2e4b0477db58d7809b2d93609e259c9c1fc7acf",
-  "visual_change": false,
-  "released_at": "2026-08-26T07:36:47.759Z",
+  "version": "2.0.9",
+  "contract_hash": "sha256:99d9b0bed61f5e5e49f27d6154f5e5b1a5e05d67baa1df38701d9b7329237938",
+  "artifact_hash": "sha256:ca52f7e98d1c17842c5fe9e911a633f2a683e99765b384b31b772debe1692c6a",
+  "visual_change": true,
+  "released_at": "2026-09-15T11:17:50.603Z",
   "own_values": [],
   "figma": {
-    "file_key": "UCYhMA1JeNUNuVGsxUEne7",
-    "file_name": "💠 Comp ↪ ¹ Elemets",
-    "primary_node_id": "2093:265",
-    "primary_url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-265"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "page": "4 · elements",
+    "section_node_id": "5:27",
+    "primary_node_id": "6:36",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-36"
   },
   "variants": {
     "default": {
-      "node_id": "2093:265",
-      "url": "https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-265",
-      "figma_label": "FocusSelection (Size × Var × Type)"
+      "node_id": "6:55",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-55",
+      "figma_label": "focus-selection · radius=full, offset=outside, tone=default"
+    },
+    "muted": {
+      "node_id": "6:91",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-91",
+      "figma_label": "focus-selection · radius=full, offset=outside, tone=muted"
+    },
+    "accent": {
+      "node_id": "6:127",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-127",
+      "figma_label": "focus-selection · radius=full, offset=outside, tone=accent"
     }
   },
   "shape": null,
-  "shape_note": "Shape-семейства нет: кольцо не имеет собственной геометрии бокса, оно наследует размер и радиус контрола, на который надето. Ось Figma Size (50…600 / Rounded / None) в CSS не эмитится — outline следует border-radius и прибавляет outline-offset сам.",
+  "shape_note": "Shape-семейства нет: кольцо не имеет собственной геометрии бокса, оно наследует размер и радиус контрола, на который надето. Ось Figma называется `radius` (full · 600 · 500 · 400 · 300 · 200 · 100 · 50 · none) и в CSS не эмитится — outline следует border-radius контрола и прибавляет outline-offset сам.",
   "size_scale": [],
   "states": [
     "focus"
   ],
-  "states_note": "Единственное состояние — focus-visible. Кольцо не имеет rest/hover/active: в макете оно лежит во всех ячейках, но видимость переключает переменная focus-selection/outlineShow.",
+  "states_note": "Единственное состояние — focus-visible. Кольцо не имеет rest/hover/active. Прежде здесь было написано, что видимость переключает переменная focus-selection/outlineShow: в новом файле `visible` не привязан ни в одной из 54 ячеек, а сами ячейки outlineShow удалены из студии 14.09.2026 как мёртвые. Видимость кольца выражает селектор :focus-visible.",
   "axes": {
-    "Type": [
-      "Inside",
-      "Outside"
+    "offset": [
+      "inside",
+      "outside"
     ],
-    "Var": [
-      "Default",
-      "Formcontrol",
-      "Tab"
+    "tone": [
+      "default",
+      "muted",
+      "accent"
     ],
-    "Size": "не выражается в CSS"
+    "radius": "не выражается в CSS: outline следует border-radius контрола. В макете 9 значений (full · 600 · 500 · 400 · 300 · 200 · 100 · 50 · none), inside читает rounded/border-radius/{N}, outside — rounded/outline/{N}"
   },
   "color_tokens": [
     "outline",
@@ -52,8 +64,8 @@
     "--awds-focus-offset",
     "--awds-focus-offset-inside",
     "--awds-focus-color",
-    "--awds-focus-color-formcontrol",
-    "--awds-focus-color-tab"
+    "--awds-focus-color-muted",
+    "--awds-focus-color-accent"
   ],
   "preview": {
     "base_class": "focus-selection",
@@ -73,20 +85,20 @@
         ]
       },
       {
-        "id": "type",
-        "label": "Type",
+        "id": "offset",
+        "label": "Offset",
         "options": [
           "outside",
           "inside"
         ]
       },
       {
-        "id": "var",
-        "label": "Var",
+        "id": "tone",
+        "label": "Tone",
         "options": [
           "default",
-          "formcontrol",
-          "tab"
+          "muted",
+          "accent"
         ]
       }
     ],
@@ -101,14 +113,16 @@
       },
       {
         "label": "Поле ввода — брендовое кольцо при 50%",
-        "html": ".input:focus-within { outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol); outline-offset: var(--awds-focus-offset); }"
+        "html": ".input:focus-within { outline: var(--awds-focus-width) solid var(--awds-focus-color-muted); outline-offset: var(--awds-focus-offset); }"
       }
     ]
   },
   "ds_token_dependencies": [
-    "--surface-on-highest",
+    "--awds-opacity-50",
+    "--awds-space-0-5",
+    "--awds-space-px",
     "--primary-core",
-    "--awds-opacity-opacity-50"
+    "--surface-on-highest"
   ],
   "consumers": {
     "outside-default": [
@@ -121,7 +135,7 @@
       "input/secondary",
       "input-combi/secondary"
     ],
-    "outside-formcontrol": [
+    "outside-muted": [
       "input",
       "input-combi",
       "select",
@@ -141,10 +155,10 @@
       "range"
     ]
   },
-  "last_synced": "2026-08-21T08:55:01Z",
+  "last_synced": "2026-09-14T17:11:30Z",
   "last_synced_by": "claude",
-  "sync_method": "figma-rest",
-  "sync_method_note": "MCP Figma в сессии был недоступен — данные снимались Figma REST /v1/files/{key}/nodes по FIGMA_API_TOKEN. variables/local отдаёт 403 (scope), поэтому цвета резолвились по значению через component-token-map.json.",
+  "sync_method": "figma-mcp",
+  "sync_method_note": "Plugin API через use_figma. Цвета и размеры не резолвились по значению — они взяты как ЦЕЛИ ячеек State/Size из component-token-map.json: коллекции приватные, в опубликованную тему их имена не едут.",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "870f2c6",
@@ -156,34 +170,55 @@
       "layer": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "2093:265",
+        "node_id": "6:36",
+        "file_key": "470rar5EfRm4n14vHMXbpc",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md",
-        "note": "PRO plan: ссылка вписана в description и descriptionMarkdown COMPONENT_SET FocusSelection через use_figma. Прежнее описание (🟣 Figma / 📎 Asana) перезаписано — так задумано каноном ACP."
+        "note": "PRO plan: ссылка вписана в descriptionMarkdown набора focus-selection (6:36) нового файла «💠 arrow ↪ components» 14.09.2026. Прежняя запись указывала на ноду 2093:265 старого файла — набор переехал. Текст по шаблону ACP; старые имена тонов (formcontrol/tab) в нём заменены на muted/accent, версия в тексте больше не дублируется."
       }
     }
   },
-  "uses": {
-    "awds-component-button": "1.0.5"
+  "asana": {
+    "task_gid": "1218422992781103",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992781103",
+    "task_name": "💠 focus-selection",
+    "parent_task": "💠 4 · elements",
+    "primary": true
   },
+  "family": "elements",
+  "summary": "Слой-контракт --awds-focus-*: кольцо фокуса для навигации с клавиатуры",
+  "aliases": [
+    "фокус",
+    "обводка",
+    "кольцо фокуса",
+    "focus ring",
+    "клавиатурная навигация"
+  ],
+  "layer": true,
+  "layer_note": "Слой, а не элемент: своей разметки нет, он одевает потребителя правилами на его классы (:where(.btn):focus-visible) и объявляет контракт --awds-focus-* в :root. Для component-usage.mjs это значит «не потребитель»: без флага правило на чужой класс читалось как зависимость и давало цикл button ↔ focus-selection.",
+  "uses": {},
   "contract": {
     "classes": [
+      "btn",
       "focus-selection",
-      "focus-selection--formcontrol",
       "focus-selection--inside",
-      "focus-selection--tab"
+      "focus-selection-accent",
+      "focus-selection-muted",
+      "focus-selection-within"
     ],
     "attributes": [],
     "elements": [],
     "public_vars": [
       "--awds-focus-color",
-      "--awds-focus-color-formcontrol",
-      "--awds-focus-color-tab",
+      "--awds-focus-color-accent",
+      "--awds-focus-color-muted",
       "--awds-focus-offset",
       "--awds-focus-offset-inside",
       "--awds-focus-width"
     ],
     "variants": [
-      "default"
+      "accent",
+      "default",
+      "muted"
     ],
     "sizes": [],
     "states": [
