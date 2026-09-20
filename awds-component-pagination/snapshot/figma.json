@@ -1,0 +1,142 @@
+{
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "8 · navigation",
+  "section": "↪ pagination (5:51)",
+  "primary_node_id": "78:47712",
+  "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=78-47712",
+  "synced": "2026-09-18",
+  "source": "figma",
+  "_note": "Скилл заведён 18.09.2026 — четвёртая сборка с нуля за проход: макет был, карточка на доске была (💠 8 · navigation, решение владельца 12.09.2026 «это компонент, а не блок»), скилла не было.",
+  "sets": {
+    "pagination": {
+      "node_id": "78:47712",
+      "axis": "position",
+      "variants": {
+        "position=center": {
+          "node_id": "78:47713",
+          "pages": 21,
+          "current": 11,
+          "edges": [
+            "start",
+            "end"
+          ]
+        },
+        "position=start": {
+          "node_id": "78:47744",
+          "pages": 21,
+          "current": 1,
+          "edges": [
+            "end"
+          ]
+        },
+        "position=end": {
+          "node_id": "78:47772",
+          "pages": 19,
+          "current": 19,
+          "edges": [
+            "start"
+          ]
+        }
+      }
+    }
+  },
+  "axis_rename": {
+    "was": "var=center|start|end",
+    "now": "position=center|start|end",
+    "why": "«var» — слово-заглушка, запрещённое каноном props.md; решение владельца 18.09.2026. Ось переименована штатно, через editComponentProperty — в отличие от УДАЛЕНИЯ вариантной оси (оно отвечает «Invalid component property name» и делается переименованием вариантов), переименование VARIANT-оси Plugin API поддерживает, и имена вариантов обновляются сами.",
+    "not_in_css": "В CSS модификатора положения нет: положение выражено тем, какие группы стрелок отрисованы. Группа несёт на себе шторку — нет группы, нет и шторки."
+  },
+  "layer_renames_18_09": {
+    "contorls → controls": "опечатка во всех трёх вариантах",
+    "LIST / List → list": "имя расходилось регистром между вариантами",
+    "START / END → start / end": "приведено к нижнему регистру заодно"
+  },
+  "fixes_18_09": {
+    "list_gap": "Зазор ленты был 6 у center и 8 у start и end — один ряд с двумя разными зазорами. Приведён к 6 и привязан к space/1,5 во всех трёх.",
+    "stray_suffix": "У кнопки «20» в вариантах center и start стоял суффикс-слот со стрелкой вниз: кнопка выходила 73px против 44px у соседей, а в варианте end её не было вовсе. Решение владельца 18.09.2026 — случайный оверрайд, снят.",
+    "rebind": "11 привязок переведены со СТАРОЙ библиотеки Roles на 📜 tokens ↪ studio: role/surface/bright → roles/surface/bright (4 стопа), role/surface/transparent → roles/extended/transparent (4 стопа), role/surface/on → roles/surface/on (3 узла). Значения не сдвинулись: старая role/surface/transparent алиасила на palette/base/transparent-white, новая extended/transparent даёт те же 255 255 255 / 0%."
+  },
+  "cells_added_18_09": {
+    "pagination/fade/bg": "surface/bright — непрозрачный край шторки",
+    "pagination/fade/transparent": "extended/transparent — прозрачный край",
+    "pagination/caption/color": "surface/on — подпись",
+    "why": "Гейт component-cell-drift не пропускает роль без ячейки, а своих ячеек у компонента не было ни одной. Все три плоские (состояний у них нет) и приватные.",
+    "why_not_css_transparent": "Прозрачный конец градиента взят ролью, а не ключевым словом CSS transparent: то равно rgba(0,0,0,0) и в переходе даёт серую грязь на светлом фоне."
+  },
+  "geometry_resolved": {
+    "root": "колонка, gap space/3 (12), padding-top space/12 (48), max-width layout/section/medium-max (900), выравнивание по центру",
+    "controls": "ряд, gap space/1,5 (6), ширина 100%",
+    "list": "ряд, gap space/1,5 (6), растягивается, содержимое по центру",
+    "edges": "абсолютные, во всю высоту ряда, ширина 90, gap space/1,5, отступ внутрь space/3 (12)",
+    "buttons": "все btn--300, высота 36; ширина по содержимому — 35px у «1», 45px у «10»",
+    "caption": "control/300 (13/16), letter-spacing/300, family/system, weight/regular, по центру"
+  },
+  "gradients": {
+    "start": "линейный слева направо: surface/bright на 90%, extended/transparent на 100%",
+    "end": "линейный слева направо: extended/transparent на 0%, surface/bright на 9.753%",
+    "in_css": "Обе шторки описаны симметрично — сплошной цвет 90% со стороны края, прозрачность внутрь (у правой через to left). Это тот же рисунок, что 9.753% у левого края правой шторки: разница четверть процента, около 0.2px на 90px, ниже порога видимости. Симметрия важнее точности мышиного перетаскивания."
+  },
+  "code_mapping": {
+    "pagination": ".pgn",
+    "controls": ".pgn__controls",
+    "list": ".pgn__list (+ .pgn__item на каждой странице)",
+    "start": ".pgn__edge.pgn__edge--start",
+    "end": ".pgn__edge.pgn__edge--end",
+    "text": ".pgn__caption",
+    "button / secondary": ".btn.btn-secondary.btn--300 — чужой компонент",
+    "button / primary": ".btn.btn-primary.btn--300 + aria-current=page",
+    "button / ghost": ".btn.btn-ghost.btn--300.btn--icon-only"
+  },
+  "not_expressed_in_figma": {
+    "scroll": "Прокрутки в Figma нет: макет обрезает ленту клипом корня, а в коде прокрутка стоит на .pgn__list. Это тот же рисунок, выраженный доступными средствами.",
+    "safe_center": "justify-content: safe center отвечает за случай, которого в макете не видно: при переполнении обычный center срезает НАЧАЛО ленты."
+  },
+  "census_18_09": {
+    "nodes": 248,
+    "raw_fills": 0,
+    "raw_strokes": 0,
+    "instances": {
+      "button / secondary": 58,
+      "button / primary": 3,
+      "button / ghost": 8
+    },
+    "old_library_left": "2 — Sys/Bg и Sys/Border на фоне и обводке самой витрины набора; тот же класс долга, что в остальных секциях (подписи Sys)."
+  },
+  "debts": {
+    "figma_publish": "Три новые ячейки заведены в студии и залиты в 📜 tokens ↪ studio, но привязать к ним узлы макета можно только после перепубликации библиотеки токенов (шаг 7.3 плана). Пока шторки и подпись держатся за роли напрямую.",
+    "caption_text": "Текст подписи в макете — «Товары 51-100. Всего - 1108»: дефис вместо тире в диапазоне и лишний дефис-связка. В документации и превью написано правильно: «Товары 51–100. Всего 1108»."
+  },
+  "non_token_decisions": {
+    "gradient-stops": "90% и 0/100% — позиции стопов градиента; шкалы для них в DS нет",
+    "size": "шкалы размеров нет — ступень одна, кнопки btn--300",
+    "states": "своих состояний нет: наведение, фокус и нажатие живут в кнопке"
+  },
+  "_rebind_2026_09_20": {
+    "date": "2026-09-20",
+    "note": "Заход по странице 8 · navigation. Секция 240 узлов, три ячейки (position=center|start|end).",
+    "found": {
+      "old_bindings": 29,
+      "detail": {
+        "Space/space/1,5": 5,
+        "Space/space/3": 4,
+        "Space/space/12": 3,
+        "Spacing/3": 3,
+        "Spacing/2": 2,
+        "Layout/layout/market/section/medium-max": 3,
+        "Control/{font-size,line-height,letter-spacing}/300": 9
+      },
+      "dead_modes": 0
+    },
+    "fixed": "Все 29 переведены: Spacing и Space → space (запятая в имени стала дефисом, префикс снят), Control → control (через setRangeBoundVariable — у TEXT привязка живёт и на диапазоне), Layout/layout/market/section/medium-max → layout/section/medium-max (группа market/ в студии снята). Сверка по 240 узлам — габариты, зазоры, паддинги, кегль, maxWidth — расхождений 0. Значения совпали везде, включая 900px максимальной ширины.",
+    "api_note": "variableIds удалённой коллекции перечисляет только импортированные в файл переменные: у layout их было 3 из 42, и по файлу выходило, что section/medium-max в студии нет. Переменная поднята importVariableByKeyAsync по ключу из snapshot/figma-variable-keys.json скилла arrow-tokens-figma-sync.",
+    "measurement_note": "Прежний замер по странице давал 260 мёртвых модов — они принадлежали инстансам кнопок и ушли вместе с чисткой мастеров button 20.09. Своих модов у pagination не было ни одного.",
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0,
+      "foreign_parts": 0,
+      "raw_fills": 0
+    },
+    "not_a_defect": "8 инстансов стрелок (arrow-left-regular, arrow-right-regular, arrow-arrow_to_left-regular, arrow-arrow_to_right-regular) — иконки библиотеки MGC."
+  }
+}

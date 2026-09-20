@@ -1,0 +1,200 @@
+{
+  "component": "pagination",
+  "version": "1.0.0",
+  "contract_hash": "sha256:6de803fa19703c92dd8e92de7f7ca1413e0ccdea51c35979ab28d3f2f22f657c",
+  "artifact_hash": "sha256:17aa464d0fb242c2fe0bac610f21fc603f548f6b2f1d2a42ef1f0a49bcc7256c",
+  "visual_change": false,
+  "released_at": "2026-09-18T07:29:27.315Z",
+  "own_values": [
+    {
+      "value": "90%",
+      "where": "позиция стопа градиента у шторки",
+      "count": 2,
+      "why": "геометрия градиента: шкалы для позиций стопов в DS нет"
+    }
+  ],
+  "family": "navigation",
+  "summary": "Лента страниц с прокруткой: номера, стрелки листания и подпись «сколько из скольких»",
+  "aliases": [
+    "пагинация",
+    "страницы",
+    "постраничная навигация",
+    "листалка",
+    "переключение страниц",
+    "номера страниц"
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "78:47712",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=78-47712"
+  },
+  "variants": {
+    "center": {
+      "node_id": "78:47713",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=78-47713",
+      "figma_label": "position=center"
+    },
+    "start": {
+      "node_id": "78:47744",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=78-47744",
+      "figma_label": "position=start"
+    },
+    "end": {
+      "node_id": "78:47772",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=78-47772",
+      "figma_label": "position=end"
+    }
+  },
+  "variants_note": "В Figma это ось position (переименована из var= 18.09.2026): где сейчас текущая страница. В CSS модификатора положения НЕТ — положение выражено тем, какие группы стрелок отрисованы, а шторка едет на самой группе.",
+  "shape": null,
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров нет: ступень одна — кнопки btn--300. Как у link, tooltip и product-card.",
+  "states": [],
+  "states_note": "Своих состояний нет. Наведение, фокус и нажатие живут в кнопке; у шторки и подписи состояний не бывает.",
+  "color_tokens": [
+    "fade-bg",
+    "fade-transparent",
+    "caption-color"
+  ],
+  "css_files": [
+    "references/pagination.css"
+  ],
+  "markup": {
+    "root": {
+      "class": "pgn",
+      "tags": [
+        "nav"
+      ]
+    },
+    "variant": null,
+    "size": null,
+    "native": null,
+    "children": [
+      {
+        "class": "pgn__controls",
+        "when": "всегда"
+      },
+      {
+        "class": "pgn__list",
+        "when": "всегда"
+      },
+      {
+        "class": "pgn__item",
+        "when": "на каждую страницу"
+      },
+      {
+        "class": "pgn__edge pgn__edge--start",
+        "when": "текущая страница не первая"
+      },
+      {
+        "class": "pgn__edge pgn__edge--end",
+        "when": "текущая страница не последняя"
+      },
+      {
+        "class": "pgn__caption",
+        "when": "есть что сказать про количество"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "aria-label",
+        "tags": [
+          "nav"
+        ]
+      },
+      {
+        "attr": "aria-current",
+        "when": "текущая страница"
+      }
+    ],
+    "container": null,
+    "note": "Номера страниц, текущая страница и стрелки — это awds-component-button: .btn.btn-secondary.btn--300, .btn.btn-primary.btn--300 и .btn.btn-ghost.btn--300.btn--icon-only. Свой CSS их не повторяет, button.css подключается рядом. Страницы — ссылки <a href>, а не кнопки: у страницы каталога есть адрес."
+  },
+  "preview": {
+    "base_class": "pgn",
+    "default_size": null,
+    "matrix_states": null,
+    "matrix_sizes": null,
+    "toggles": [
+      {
+        "id": "position",
+        "label": "Положение",
+        "options": [
+          "center",
+          "start",
+          "end"
+        ],
+        "note": "в CSS не класс, а состав разметки: какие группы стрелок отрисованы"
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Середина ленты",
+        "html": "<nav class=\"pgn\" aria-label=\"Страницы каталога\"><div class=\"pgn__controls\"><ul class=\"pgn__list\"><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"?page=1\">1</a></li><li class=\"pgn__item\"><a class=\"btn btn-primary btn--300\" href=\"?page=2\" aria-current=\"page\">2</a></li></ul><div class=\"pgn__edge pgn__edge--start\"></div><div class=\"pgn__edge pgn__edge--end\"></div></div><p class=\"pgn__caption\">Товары 51–100. Всего 1108</p></nav>"
+      }
+    ]
+  },
+  "ds_token_dependencies": [
+    "--awds-control-font-size-300",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-line-height-300",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-layout-section-medium-max",
+    "--awds-space-1-5",
+    "--awds-space-12",
+    "--awds-space-3",
+    "--extended-transparent",
+    "--surface-bright",
+    "--surface-on"
+  ],
+  "uses": {
+    "awds-component-button": "2.2.3",
+    "awds-component-focus-selection": "2.0.9"
+  },
+  "asana": {
+    "task_gid": "1218422992809185",
+    "task_url": "https://app.asana.com/1/15638570680505/task/1218422992809185",
+    "task_name": "💠 pagination",
+    "parent_task": "💠 8 · navigation",
+    "primary": true
+  },
+  "questions": [
+    {
+      "id": "pagination-list-length-at-scale",
+      "text": "Лента рисует все страницы подряд: при сотнях страниц в DOM будут сотни ссылок",
+      "level": "component",
+      "target": "pagination",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-18",
+      "detail": "Решение владельца 18.09.2026 — лента с прокруткой, как в макете; усечения с многоточием (1 … 10 [11] 12 … 50) нет. Для каталога на 21 страницу это дешевле ветвлений. Вопрос открыт на случай, когда счёт страниц пойдёт на сотни: тогда решать надо заново, а не обходить разметкой на месте.",
+      "asana_gid": "1218630785794781"
+    }
+  ],
+  "last_synced": "2026-09-18T06:20:00Z",
+  "last_synced_by": "claude",
+  "contract": {
+    "classes": [
+      "pgn",
+      "pgn__caption",
+      "pgn__controls",
+      "pgn__edge",
+      "pgn__edge--end",
+      "pgn__edge--start",
+      "pgn__item",
+      "pgn__list"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "center",
+      "end",
+      "start"
+    ],
+    "sizes": [],
+    "states": []
+  }
+}
