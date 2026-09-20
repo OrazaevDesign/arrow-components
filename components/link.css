@@ -1,4 +1,4 @@
-/* ArrowDS · link@1.0.2
+/* ArrowDS · link@1.0.5
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -9,9 +9,9 @@
   cursor: pointer;
   text-decoration-line: underline;
   text-decoration-style: var(--awds-lnk-ul-style, solid);
-  text-decoration-thickness: var(--awds-space-space-px);          
-  text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-opacity-30), transparent);  
-  text-underline-offset: var(--awds-space-space-0-5);
+  text-decoration-thickness: var(--awds-space-px);          
+  text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);  
+  text-underline-offset: var(--awds-space-0-5);
   border-radius: var(--awds-rounded-border-radius-200);
   transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
 }
@@ -31,7 +31,7 @@
 .lnk--ul-hover { text-decoration-color: transparent;
 }
 
-.lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-opacity-30), transparent);
+.lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);
 }
 
 .lnk--ul-none { text-decoration-line: none;
@@ -50,19 +50,19 @@
 }
 
 .lnk-accent {
-  --awds-lnk-color: rgb(var(--awds-state-link-accent-rest));
+  --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
 .lnk-accent:hover {
-  --awds-lnk-color: rgb(var(--awds-state-link-accent-hover));
+  --awds-lnk-color: rgb(var(--accent-container-on));
 }
 
 .lnk-accent:focus-visible {
-  --awds-lnk-color: rgb(var(--awds-state-link-accent-focus));
+  --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
 .lnk-accent:active {
-  --awds-lnk-color: rgb(var(--awds-state-link-accent-active));
+  --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -72,19 +72,19 @@
 }
 
 .lnk-contrast {
-  --awds-lnk-color: rgb(var(--awds-state-link-contrast-rest));
+  --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
 .lnk-contrast:hover {
-  --awds-lnk-color: rgb(var(--awds-state-link-contrast-hover));
+  --awds-lnk-color: rgb(var(--surface-on-high));
 }
 
 .lnk-contrast:focus-visible {
-  --awds-lnk-color: rgb(var(--awds-state-link-contrast-focus));
+  --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
 .lnk-contrast:active {
-  --awds-lnk-color: rgb(var(--awds-state-link-contrast-active));
+  --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
 .lnk {
@@ -93,60 +93,60 @@
   cursor: pointer;
   text-decoration-line: underline;
   text-decoration-style: var(--awds-lnk-ul-style, solid);
-  text-decoration-thickness: var(--awds-space-space-px);          
-  text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-opacity-30), transparent);  
-  text-underline-offset: var(--awds-space-space-0-5);
+  text-decoration-thickness: var(--awds-space-px);          
+  text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);  
+  text-underline-offset: var(--awds-space-0-5);
   border-radius: var(--awds-rounded-border-radius-200);       
   transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
 }
 
 .lnk-default {
-  --awds-lnk-color: rgb(var(--awds-state-link-default-rest));
+  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
 }
 
 .lnk-default:hover {
-  --awds-lnk-color: rgb(var(--awds-state-link-default-hover));
+  --awds-lnk-color: rgb(var(--tertiary-container-on-highest));
 }
 
 .lnk-default:focus-visible {
-  --awds-lnk-color: rgb(var(--awds-state-link-default-focus));
+  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
 }
 
 .lnk-default:active {
-  --awds-lnk-color: rgb(var(--awds-state-link-default-active));
+  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
 }
 
 .lnk-heading {
-  --awds-lnk-color: rgb(var(--awds-state-link-heading-rest));
+  --awds-lnk-color: rgb(var(--surface-on-high));             
   text-decoration-line: none;
 }
 
 .lnk-heading:hover {
-  --awds-lnk-color: rgb(var(--awds-state-link-heading-hover));
+  --awds-lnk-color: rgb(var(--accent-container-on));
 }
 
 .lnk-heading:focus-visible {
-  --awds-lnk-color: rgb(var(--awds-state-link-heading-focus));
+  --awds-lnk-color: rgb(var(--surface-on-high));
 }
 
 .lnk-heading:active {
-  --awds-lnk-color: rgb(var(--awds-state-link-heading-active));
+  --awds-lnk-color: rgb(var(--surface-on-high));
 }
 
 .lnk-muted {
-  --awds-lnk-color: rgb(var(--awds-state-link-muted-rest));
+  --awds-lnk-color: rgb(var(--surface-on-high));
 }
 
 .lnk-muted:hover {
-  --awds-lnk-color: rgb(var(--awds-state-link-muted-hover));
+  --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
 .lnk-muted:focus-visible {
-  --awds-lnk-color: rgb(var(--awds-state-link-muted-focus));
+  --awds-lnk-color: rgb(var(--surface-on-high));
 }
 
 .lnk-muted:active {
-  --awds-lnk-color: rgb(var(--awds-state-link-muted-active));
+  --awds-lnk-color: rgb(var(--surface-on-high));
 }
 
 }

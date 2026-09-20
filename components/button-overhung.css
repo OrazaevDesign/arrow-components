@@ -1,4 +1,4 @@
-/* ArrowDS · button-overhung@1.0.5
+/* ArrowDS · button-overhung@2.0.12
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-obtn-bg {
@@ -13,18 +13,14 @@
   initial-value: transparent;
 }
 
-@keyframes obtn-spin {
-  to { transform: rotate(360deg); }
-}
-
 @layer awds {
 
 .obtn {
-  --awds-obtn-padding: var(--awds-size-rectangle-400-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-400-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-400-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-obtn-padding: var(--awds-space-2-5);   
+  --awds-obtn-gap:     var(--awds-space-1-5);   
+  --awds-obtn-rounded: var(--awds-rounded-border-radius-full);
+  --awds-obtn-icon:    var(--awds-space-5);   
+  --awds-obtn-fs:      var(--awds-control-font-size-400);   
   --awds-obtn-lh:      var(--awds-control-line-height-400);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-400);
   box-sizing: border-box;
@@ -65,7 +61,7 @@
 }
 
 .obtn:disabled, .obtn[aria-disabled="true"] {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);   
   pointer-events: none;
 }
 
@@ -93,130 +89,118 @@
   visibility: hidden;
 }
 
-.obtn__progress {
+.obtn .obtn__progress {
   position: absolute;
   inset: 0;
   margin: auto;
-  width: var(--awds-obtn-icon);
-  height: var(--awds-obtn-icon);
-  color: var(--awds-obtn-color);
   will-change: transform;
-  animation: obtn-spin 0.8s linear infinite;
+  --awds-progress-size:  var(--awds-obtn-icon);
+  --awds-progress-color: var(--awds-obtn-color);
 }
 
 .obtn--600 {
-  --awds-obtn-padding: var(--awds-size-rectangle-600-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-600-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-600-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-600-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-obtn-padding: var(--awds-space-4);   
+  --awds-obtn-gap:     var(--awds-space-2);   
+  --awds-obtn-icon:    var(--awds-space-5);   
+  --awds-obtn-fs:      var(--awds-control-font-size-600);   
   --awds-obtn-lh:      var(--awds-control-line-height-600);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .obtn--500 {
-  --awds-obtn-padding: var(--awds-size-rectangle-500-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-500-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-500-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-500-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-obtn-padding: var(--awds-space-3-5);   
+  --awds-obtn-gap:     var(--awds-space-1-5);   
+  --awds-obtn-icon:    var(--awds-space-5);   
+  --awds-obtn-fs:      var(--awds-control-font-size-600);   
   --awds-obtn-lh:      var(--awds-control-line-height-600);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-600);
 }
 
 .obtn--400 {
-  --awds-obtn-padding: var(--awds-size-rectangle-400-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-400-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-400-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-obtn-padding: var(--awds-space-2-5);   
+  --awds-obtn-gap:     var(--awds-space-1-5);   
+  --awds-obtn-icon:    var(--awds-space-5);   
+  --awds-obtn-fs:      var(--awds-control-font-size-400);   
   --awds-obtn-lh:      var(--awds-control-line-height-400);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .obtn--300 {
-  --awds-obtn-padding: var(--awds-size-rectangle-300-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-300-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-300-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-300-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-obtn-padding: var(--awds-space-2);   
+  --awds-obtn-gap:     var(--awds-space-1-5);   
+  --awds-obtn-icon:    var(--awds-space-5);   
+  --awds-obtn-fs:      var(--awds-control-font-size-400);   
   --awds-obtn-lh:      var(--awds-control-line-height-400);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-400);
 }
 
 .obtn--200 {
-  --awds-obtn-padding: var(--awds-size-rectangle-200-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-200-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-200-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-200-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-obtn-padding: var(--awds-space-2);   
+  --awds-obtn-gap:     var(--awds-space-1);   
+  --awds-obtn-icon:    var(--awds-space-4);   
+  --awds-obtn-fs:      var(--awds-control-font-size-300);   
   --awds-obtn-lh:      var(--awds-control-line-height-300);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .obtn--100 {
-  --awds-obtn-padding: var(--awds-size-rectangle-100-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-100-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-100-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-100-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-obtn-padding: var(--awds-space-1);   
+  --awds-obtn-gap:     var(--awds-space-0-5);   
+  --awds-obtn-icon:    var(--awds-space-4);   
+  --awds-obtn-fs:      var(--awds-control-font-size-300);   
   --awds-obtn-lh:      var(--awds-control-line-height-300);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-300);
 }
 
 .obtn--50 {
-  --awds-obtn-padding: var(--awds-size-rectangle-50-padding);
-  --awds-obtn-gap:     var(--awds-size-rectangle-50-gap);
-  --awds-obtn-rounded: var(--awds-size-rectangle-50-rounded);
-  --awds-obtn-icon:    var(--awds-size-rectangle-50-icon);
-  --awds-obtn-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-obtn-padding: var(--awds-space-0-5);   
+  --awds-obtn-gap:     var(--awds-space-0-5);   
+  --awds-obtn-icon:    var(--awds-space-4);   
+  --awds-obtn-fs:      var(--awds-control-font-size-200);   
   --awds-obtn-lh:      var(--awds-control-line-height-200);
   --awds-obtn-ls:      var(--awds-control-letter-spacing-200);
 }
 
 .obtn-primary {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-rest));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-rest));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-rest));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-rest));
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-bright));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on));
 }
 
 .obtn-primary:hover {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-hover));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-hover));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-hover));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-hover));
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-dim));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on-highest));
 }
 
 .obtn-primary:focus-visible {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-focus));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-focus));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-focus));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-focus));
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-bright));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on));
 }
 
 .obtn-primary:active {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg-active));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-active));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border-active));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-active));
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-bright));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on));
 }
 
 @media (prefers-reduced-motion: reduce) {
   .obtn {
     transition: none;
   }
-  .obtn__progress {
-    animation-duration: 1.4s;
-  }
 }
 
 .obtn-secondary {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg-rest));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-rest));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border-rest));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-rest));
-  opacity: var(--awds-opacity-opacity-60);
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-bright));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on));   
+  opacity: var(--awds-opacity-60);   
   transition: --awds-obtn-bg 0.15s ease-out,
               --awds-obtn-chroma 0.15s ease-out,
               box-shadow 0.15s ease-out,
@@ -225,27 +209,27 @@
 }
 
 .obtn-secondary:hover {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg-hover));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-hover));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border-hover));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-hover));
-  opacity: var(--awds-opacity-opacity-90);
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-dim));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on-highest));   
+  opacity: var(--awds-opacity-90);
 }
 
 .obtn-secondary:focus-visible {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg-focus));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-focus));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border-focus));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-focus));
-  opacity: var(--awds-opacity-opacity-90);
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-bright));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on));   
+  opacity: var(--awds-opacity-90);
 }
 
 .obtn-secondary:active {
-  --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg-active));
-  --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-active));
-  --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border-active));
-  --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-active));
-  opacity: var(--awds-opacity-opacity-90);
+  --awds-obtn-bg:     rgb(var(--surface-surface));   
+  --awds-obtn-chroma: rgb(var(--surface-bright));   
+  --awds-obtn-border: rgb(var(--surface-surface));   
+  --awds-obtn-color:  rgb(var(--surface-on));   
+  opacity: var(--awds-opacity-90);
 }
 
 }

@@ -1,0 +1,26 @@
+/* ArrowDS · button-group@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.btn-group {
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-group > :not(:first-child) {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+.btn-group > :not(:last-child) {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.btn-group > :focus-visible {
+  z-index: 1;
+}
+
+}

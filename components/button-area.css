@@ -1,18 +1,15 @@
-/* ArrowDS · button-area@1.0.3
+/* ArrowDS · button-area@2.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
-
-@keyframes btn-area-spin { to { transform: rotate(360deg); }
-}
 
 @layer awds {
 
 .btn-area {
-  --awds-btn-area-gap:     var(--awds-size-rectangle-500-gap);
-  --awds-btn-area-icon:    var(--awds-size-rectangle-500-icon);
-  --awds-btn-area-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-btn-area-gap:     var(--awds-space-1-5);   
+  --awds-btn-area-icon:    var(--awds-space-5);   
+  --awds-btn-area-fs:      var(--awds-control-font-size-600);   
   --awds-btn-area-lh:      var(--awds-control-line-height-600);
   --awds-btn-area-ls:      var(--awds-control-letter-spacing-600);
-  --awds-btn-area-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-btn-area-rounded: var(--awds-rounded-border-radius-500);   
   --awds-btn-area-color:   currentColor;
   box-sizing: border-box;
   position: relative;
@@ -59,69 +56,69 @@
 }
 
 .btn-area--500 {
-  --awds-btn-area-gap:     var(--awds-size-rectangle-500-gap);
-  --awds-btn-area-icon:    var(--awds-size-rectangle-500-icon);
-  --awds-btn-area-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-btn-area-gap:     var(--awds-space-1-5);   
+  --awds-btn-area-icon:    var(--awds-space-5);   
+  --awds-btn-area-fs:      var(--awds-control-font-size-600);   
   --awds-btn-area-lh:      var(--awds-control-line-height-600);
   --awds-btn-area-ls:      var(--awds-control-letter-spacing-600);
-  --awds-btn-area-rounded: var(--awds-size-rectangle-500-rounded);
+  --awds-btn-area-rounded: var(--awds-rounded-border-radius-500);
 }
 
 .btn-area--400 {
-  --awds-btn-area-gap:     var(--awds-size-rectangle-400-gap);
-  --awds-btn-area-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-btn-area-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-btn-area-gap:     var(--awds-space-1-5);   
+  --awds-btn-area-icon:    var(--awds-space-5);   
+  --awds-btn-area-fs:      var(--awds-control-font-size-400);   
   --awds-btn-area-lh:      var(--awds-control-line-height-400);
   --awds-btn-area-ls:      var(--awds-control-letter-spacing-400);
-  --awds-btn-area-rounded: var(--awds-size-rectangle-400-rounded);
+  --awds-btn-area-rounded: var(--awds-rounded-border-radius-400);
 }
 
 .btn-area--100 {
-  --awds-btn-area-gap:     var(--awds-size-rectangle-100-gap);
-  --awds-btn-area-icon:    var(--awds-size-rectangle-100-icon);
-  --awds-btn-area-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-btn-area-gap:     var(--awds-space-0-5);   
+  --awds-btn-area-icon:    var(--awds-space-4);   
+  --awds-btn-area-fs:      var(--awds-control-font-size-300);   
   --awds-btn-area-lh:      var(--awds-control-line-height-300);
   --awds-btn-area-ls:      var(--awds-control-letter-spacing-300);
-  --awds-btn-area-rounded: var(--awds-size-rectangle-100-rounded);
+  --awds-btn-area-rounded: var(--awds-rounded-border-radius-100);
 }
 
 .btn-area--50 {
-  --awds-btn-area-gap:     var(--awds-size-rectangle-50-gap);
-  --awds-btn-area-icon:    var(--awds-size-rectangle-50-icon);
-  --awds-btn-area-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-btn-area-gap:     var(--awds-space-0-5);   
+  --awds-btn-area-icon:    var(--awds-space-4);   
+  --awds-btn-area-fs:      var(--awds-control-font-size-200);   
   --awds-btn-area-lh:      var(--awds-control-line-height-200);
   --awds-btn-area-ls:      var(--awds-control-letter-spacing-200);
-  --awds-btn-area-rounded: var(--awds-size-rectangle-50-rounded);
+  --awds-btn-area-rounded: var(--awds-rounded-border-radius-50);
 }
 
-.btn-area-default { --awds-btn-area-color: rgb(var(--awds-state-areabutton-default-rest));
+.btn-area-default { --awds-btn-area-color: rgb(var(--tertiary-container-on-high));
 }
 
-.btn-area-default:hover { --awds-btn-area-color: rgb(var(--awds-state-areabutton-default-hover));
+.btn-area-default:hover { --awds-btn-area-color: rgb(var(--tertiary-container-on-highest));
 }
 
-.btn-area-muted { --awds-btn-area-color: rgb(var(--awds-state-areabutton-muted-rest));
+.btn-area-muted { --awds-btn-area-color: rgb(var(--surface-on-high));
 }
 
-.btn-area-muted:hover { --awds-btn-area-color: rgb(var(--awds-state-areabutton-muted-hover));
+.btn-area-muted:hover { --awds-btn-area-color: rgb(var(--surface-on-highest));
 }
 
-.btn-area-contrast { --awds-btn-area-color: rgb(var(--awds-state-areabutton-contrast-rest));
+.btn-area-contrast { --awds-btn-area-color: rgb(var(--surface-on-highest));
 }
 
-.btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--awds-state-areabutton-contrast-hover));
+.btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--surface-on-high));
 }
 
-.btn-area-accent { --awds-btn-area-color: rgb(var(--awds-state-link-accent-rest));
+.btn-area-accent { --awds-btn-area-color: rgb(var(--surface-on-highest));
 }
 
-.btn-area-accent:hover { --awds-btn-area-color: rgb(var(--awds-state-link-accent-hover));
+.btn-area-accent:hover { --awds-btn-area-color: rgb(var(--accent-container-on));
 }
 
-.btn-area-heading { --awds-btn-area-color: rgb(var(--awds-state-link-heading-rest));
+.btn-area-heading { --awds-btn-area-color: rgb(var(--surface-on-high));
 }
 
-.btn-area-heading:hover { --awds-btn-area-color: rgb(var(--awds-state-link-heading-hover));
+.btn-area-heading:hover { --awds-btn-area-color: rgb(var(--accent-container-on));
 }
 
 .btn-area:focus-visible {
@@ -131,7 +128,7 @@
 }
 
 .btn-area:disabled, .btn-area[aria-disabled="true"], .btn-area--disabled {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);   
   pointer-events: none;
   cursor: default;
 }
@@ -145,32 +142,23 @@
 .btn-area--fill-y { display: flex; align-self: stretch;
 }
 
-.btn-area--progress { pointer-events: none;
+.btn-area--loading { pointer-events: none;
 }
 
-.btn-area--progress .btn-area__label, .btn-area--progress .btn-area__prefix, .btn-area--progress .btn-area__suffix, .btn-area--progress .btn-area__icon { opacity: 0;
+.btn-area--loading .btn-area__label, .btn-area--loading .btn-area__prefix, .btn-area--loading .btn-area__suffix, .btn-area--loading .btn-area__icon { opacity: 0;
 }
 
-.btn-area__spinner {
-  display: none;
+.btn-area .btn-area__progress {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  width: var(--awds-btn-area-icon);
-  height: var(--awds-btn-area-icon);
-  margin: calc(var(--awds-btn-area-icon) / -2) 0 0 calc(var(--awds-btn-area-icon) / -2);
-  border-radius: var(--awds-rounded-border-radius-full);
-  border: 2px solid currentColor;
-  border-top-color: transparent;     
-  animation: btn-area-spin 0.7s linear infinite;
-}
-
-.btn-area--progress .btn-area__spinner { display: block;
+  inset: 0;
+  margin: auto;
+  will-change: transform;
+  --awds-progress-size:  var(--awds-btn-area-icon);
+  --awds-progress-color: var(--awds-btn-area-color);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .btn-area { transition: none; }
-  .btn-area__spinner { animation-duration: 1.4s; }
 }
 
 }

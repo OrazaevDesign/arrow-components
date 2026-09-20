@@ -1,13 +1,13 @@
-/* ArrowDS · notice@1.0.3
+/* ArrowDS · notice@2.0.3
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
 
 .notice {
-  --awds-notice-size:  var(--awds-size-notice-400-size);
-  --awds-notice-pad-h: var(--awds-size-notice-400-padding-h);
-  --awds-notice-pad-v: var(--awds-size-notice-400-padding-v);
-  --awds-notice-fs:    var(--awds-size-notice-400-typography);
+  --awds-notice-size:  var(--awds-space-5);
+  --awds-notice-pad-h: var(--awds-space-1);
+  --awds-notice-pad-v: var(--awds-space-px);
+  --awds-notice-fs:    var(--awds-control-font-size-300);
   --awds-notice-lh:    var(--awds-control-line-height-300);
   --awds-notice-ls:    var(--awds-control-letter-spacing-300);
   box-sizing: border-box;
@@ -34,77 +34,77 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.notice-primary {
-  --awds-notice-bg:     rgb(var(--awds-state-badge-system-accent-bg-rest));
-  --awds-notice-chroma: rgb(var(--awds-state-badge-system-accent-chroma-rest));
-  --awds-notice-border: rgb(var(--awds-state-badge-system-accent-border-rest));
-  --awds-notice-color:  rgb(var(--awds-state-badge-system-accent-color-rest));
+.notice-accent {
+  --awds-notice-bg:     rgb(var(--accent-core));   
+  --awds-notice-chroma: rgb(var(--accent-chroma));   
+  --awds-notice-border: rgb(var(--accent-core));   
+  --awds-notice-color:  rgb(var(--accent-on));
 }
 
 .notice-secondary {
-  --awds-notice-bg:     rgb(var(--awds-state-badge-system-secondary-bg-rest));
-  --awds-notice-chroma: rgb(var(--awds-state-badge-system-secondary-chroma-rest));
-  --awds-notice-border: rgb(var(--awds-state-badge-system-secondary-border-rest));
-  --awds-notice-color:  rgb(var(--awds-state-badge-system-secondary-color-rest));
+  --awds-notice-bg:     rgb(var(--secondary-core));   
+  --awds-notice-chroma: rgb(var(--secondary-chroma));   
+  --awds-notice-border: rgb(var(--secondary-core));   
+  --awds-notice-color:  rgb(var(--secondary-on-dim));
 }
 
 .notice-ghost {
-  --awds-notice-bg:     rgb(var(--awds-state-badge-system-ghost-bg-rest));
-  --awds-notice-chroma: rgb(var(--awds-state-badge-system-ghost-chroma-rest));
-  --awds-notice-border: rgb(var(--awds-state-badge-system-ghost-border-rest));
-  --awds-notice-color:  rgb(var(--awds-state-badge-system-ghost-color-rest));
+  --awds-notice-bg:     rgb(var(--extended-transparent));   
+  --awds-notice-chroma: rgb(var(--extended-transparent));   
+  --awds-notice-border: rgb(var(--extended-transparent));   
+  --awds-notice-color:  rgb(var(--surface-on-high));
 }
 
 .notice--600 {
-  --awds-notice-size:  var(--awds-size-notice-600-size);
-  --awds-notice-pad-h: var(--awds-size-notice-600-padding-h);
-  --awds-notice-pad-v: var(--awds-size-notice-600-padding-v);
-  --awds-notice-fs:    var(--awds-size-notice-600-typography);
+  --awds-notice-size:  var(--awds-space-7);
+  --awds-notice-pad-h: var(--awds-space-1);
+  --awds-notice-pad-v: var(--awds-space-0-5);
+  --awds-notice-fs:    var(--awds-control-font-size-500);
   --awds-notice-lh:    var(--awds-control-line-height-500);
   --awds-notice-ls:    var(--awds-control-letter-spacing-500);
 }
 
 .notice--500 {
-  --awds-notice-size:  var(--awds-size-notice-500-size);
-  --awds-notice-pad-h: var(--awds-size-notice-500-padding-h);
-  --awds-notice-pad-v: var(--awds-size-notice-500-padding-v);
-  --awds-notice-fs:    var(--awds-size-notice-500-typography);
+  --awds-notice-size:  var(--awds-space-6);
+  --awds-notice-pad-h: var(--awds-space-1);
+  --awds-notice-pad-v: var(--awds-space-px);
+  --awds-notice-fs:    var(--awds-control-font-size-400);
   --awds-notice-lh:    var(--awds-control-line-height-400);
   --awds-notice-ls:    var(--awds-control-letter-spacing-400);
 }
 
 .notice--400 {
-  --awds-notice-size:  var(--awds-size-notice-400-size);
-  --awds-notice-pad-h: var(--awds-size-notice-400-padding-h);
-  --awds-notice-pad-v: var(--awds-size-notice-400-padding-v);
-  --awds-notice-fs:    var(--awds-size-notice-400-typography);
+  --awds-notice-size:  var(--awds-space-5);
+  --awds-notice-pad-h: var(--awds-space-1);
+  --awds-notice-pad-v: var(--awds-space-px);
+  --awds-notice-fs:    var(--awds-control-font-size-300);
   --awds-notice-lh:    var(--awds-control-line-height-300);
   --awds-notice-ls:    var(--awds-control-letter-spacing-300);
 }
 
 .notice--300 {
-  --awds-notice-size:  var(--awds-size-notice-300-size);
-  --awds-notice-pad-h: var(--awds-size-notice-300-padding-h);
-  --awds-notice-pad-v: var(--awds-size-notice-300-padding-v);
-  --awds-notice-fs:    var(--awds-size-notice-300-typography);
+  --awds-notice-size:  var(--awds-space-5);
+  --awds-notice-pad-h: var(--awds-space-1);
+  --awds-notice-pad-v: var(--awds-space-px);
+  --awds-notice-fs:    var(--awds-control-font-size-200);
   --awds-notice-lh:    var(--awds-control-line-height-200);
   --awds-notice-ls:    var(--awds-control-letter-spacing-200);
 }
 
 .notice--200 {
-  --awds-notice-size:  var(--awds-size-notice-200-size);
-  --awds-notice-pad-h: var(--awds-size-notice-200-padding-h);
-  --awds-notice-pad-v: var(--awds-size-notice-200-padding-v);
-  --awds-notice-fs:    var(--awds-size-notice-200-typography);
+  --awds-notice-size:  var(--awds-space-4);
+  --awds-notice-pad-h: var(--awds-space-1);
+  --awds-notice-pad-v: var(--awds-space-0);
+  --awds-notice-fs:    var(--awds-control-font-size-100);
   --awds-notice-lh:    var(--awds-control-line-height-100);
   --awds-notice-ls:    var(--awds-control-letter-spacing-100);
 }
 
 .notice--100 {
-  --awds-notice-size:  var(--awds-size-notice-100-size);
-  --awds-notice-pad-h: var(--awds-space-space-0);
-  --awds-notice-pad-v: var(--awds-size-notice-100-padding-v);
-  --awds-notice-fs:    var(--awds-size-notice-100-typography);
+  --awds-notice-size:  var(--awds-space-1-5);
+  --awds-notice-pad-h: var(--awds-space-0);
+  --awds-notice-pad-v: var(--awds-space-0);
+  --awds-notice-fs:    var(--awds-control-font-size-50);
   --awds-notice-lh:    var(--awds-control-line-height-50);
   --awds-notice-ls:    var(--awds-control-letter-spacing-50);
 }

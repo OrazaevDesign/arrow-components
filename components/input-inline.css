@@ -1,0 +1,172 @@
+/* ArrowDS · input-inline@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-iinline-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-iinline-placeholder {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.iinline {
+  --awds-iinline-fs: var(--awds-control-font-size-400);   
+  --awds-iinline-lh: var(--awds-control-line-height-400);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-400);
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  appearance: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  margin: 0;
+  color: var(--awds-iinline-color);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-iinline-fs);
+  line-height: var(--awds-iinline-lh);
+  letter-spacing: var(--awds-iinline-ls);
+  font-weight: var(--awds-font-weight-regular);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: --awds-iinline-color 0.15s ease-out,
+              --awds-iinline-placeholder 0.15s ease-out;
+}
+
+.iinline::placeholder {
+  color: var(--awds-iinline-placeholder);
+  opacity: 1;
+}
+
+.iinline:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.iinline::-webkit-search-cancel-button, .iinline::-webkit-search-decoration {
+  appearance: none;
+  display: none;
+}
+
+.iinline--50 {
+  --awds-iinline-fs: var(--awds-control-font-size-200);   
+  --awds-iinline-lh: var(--awds-control-line-height-200);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-200);
+}
+
+.iinline--100 {
+  --awds-iinline-fs: var(--awds-control-font-size-300);   
+  --awds-iinline-lh: var(--awds-control-line-height-300);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-300);
+}
+
+.iinline--200 {
+  --awds-iinline-fs: var(--awds-control-font-size-300);   
+  --awds-iinline-lh: var(--awds-control-line-height-300);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-300);
+}
+
+.iinline--300 {
+  --awds-iinline-fs: var(--awds-control-font-size-400);   
+  --awds-iinline-lh: var(--awds-control-line-height-400);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-400);
+}
+
+.iinline--400 {
+  --awds-iinline-fs: var(--awds-control-font-size-400);   
+  --awds-iinline-lh: var(--awds-control-line-height-400);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-400);
+}
+
+.iinline--500 {
+  --awds-iinline-fs: var(--awds-control-font-size-600);   
+  --awds-iinline-lh: var(--awds-control-line-height-600);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-600);
+}
+
+.iinline--600 {
+  --awds-iinline-fs: var(--awds-control-font-size-600);   
+  --awds-iinline-lh: var(--awds-control-line-height-600);
+  --awds-iinline-ls: var(--awds-control-letter-spacing-600);
+}
+
+.iinline-default {
+  --awds-iinline-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));
+}
+
+.iinline-default:hover:enabled {
+  --awds-iinline-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));
+}
+
+.iinline-default:focus {
+  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+}
+
+.iinline-default:active:not(:focus):enabled {
+  --awds-iinline-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));
+}
+
+.iinline:disabled, .iinline--disabled {
+  opacity: var(--awds-opacity-40);   
+  cursor: default;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iinline {
+    transition: none;
+  }
+}
+
+.iinline-error {
+  --awds-iinline-color:       rgb(var(--error-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--error-container-on-high));
+}
+
+.iinline-error:hover:enabled {
+  --awds-iinline-color:       rgb(var(--error-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--error-container-on-high));
+}
+
+.iinline-error:focus {
+  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+}
+
+.iinline-error:active:not(:focus):enabled {
+  --awds-iinline-color:       rgb(var(--error-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--error-container-on-high));
+}
+
+.iinline-success {
+  --awds-iinline-color:       rgb(var(--success-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--success-container-on-high));
+}
+
+.iinline-success:hover:enabled {
+  --awds-iinline-color:       rgb(var(--success-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--success-container-on-high));
+}
+
+.iinline-success:focus {
+  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+}
+
+.iinline-success:active:not(:focus):enabled {
+  --awds-iinline-color:       rgb(var(--success-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--success-container-on-high));
+}
+
+}

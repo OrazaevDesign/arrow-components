@@ -1,4 +1,4 @@
-/* ArrowDS · input@1.0.3
+/* ArrowDS · input@1.0.12
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-input-bg {
@@ -19,7 +19,7 @@
   initial-value: transparent;
 }
 
-@property --awds-input-placehold {
+@property --awds-input-placeholder {
   syntax: "<color>";
   inherits: true;
   initial-value: transparent;
@@ -34,13 +34,13 @@
 @layer awds {
 
 .input {
-  --awds-input-padding: var(--awds-size-rectangle-400-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-400-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-input-padding: var(--awds-space-2-5);   
+  --awds-input-icon:    var(--awds-space-5);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-input-fs:      var(--awds-control-font-size-400);   
   --awds-input-lh:      var(--awds-control-line-height-400);
   --awds-input-ls:      var(--awds-control-letter-spacing-400);
-  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-input-text-gap: var(--awds-space-4);   
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -48,14 +48,15 @@
   width: 100%;
   border: 0;
   border-radius: var(--awds-input-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-input-border);
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-input-border);
   background: linear-gradient(to right, var(--awds-input-chroma, var(--awds-input-bg)), var(--awds-input-bg));
   color: var(--awds-input-color);
   cursor: text;
+  opacity: var(--awds-opacity-100);   
   transition: --awds-input-bg 0.15s ease-out,
               --awds-input-chroma 0.15s ease-out,
               --awds-input-color 0.15s ease-out,
-              --awds-input-placehold 0.15s ease-out,
+              --awds-input-placeholder 0.15s ease-out,
               --awds-input-icon-color 0.15s ease-out,
               box-shadow 0.15s ease-out;
 }
@@ -84,7 +85,7 @@
 }
 
 .input__field::placeholder {
-  color: var(--awds-input-placehold);
+  color: var(--awds-input-placeholder);
   opacity: 1;
 }
 
@@ -141,105 +142,105 @@
 }
 
 .input--50 {
-  --awds-input-padding: var(--awds-size-rectangle-50-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-50-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-50-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-input-padding: var(--awds-space-0-5);   
+  --awds-input-icon:    var(--awds-space-4);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-50);   
+  --awds-input-fs:      var(--awds-control-font-size-200);   
   --awds-input-lh:      var(--awds-control-line-height-200);
   --awds-input-ls:      var(--awds-control-letter-spacing-200);
-  --awds-input-text-gap: var(--awds-size-rectangle-50-text-gap);
+  --awds-input-text-gap: var(--awds-space-2);
 }
 
 .input--100 {
-  --awds-input-padding: var(--awds-size-rectangle-100-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-100-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-100-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-input-padding: var(--awds-space-1);   
+  --awds-input-icon:    var(--awds-space-4);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-100);   
+  --awds-input-fs:      var(--awds-control-font-size-300);   
   --awds-input-lh:      var(--awds-control-line-height-300);
   --awds-input-ls:      var(--awds-control-letter-spacing-300);
-  --awds-input-text-gap: var(--awds-size-rectangle-100-text-gap);
+  --awds-input-text-gap: var(--awds-space-2-5);
 }
 
 .input--200 {
-  --awds-input-padding: var(--awds-size-rectangle-200-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-200-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-200-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-input-padding: var(--awds-space-2);   
+  --awds-input-icon:    var(--awds-space-4);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-200);   
+  --awds-input-fs:      var(--awds-control-font-size-300);   
   --awds-input-lh:      var(--awds-control-line-height-300);
   --awds-input-ls:      var(--awds-control-letter-spacing-300);
-  --awds-input-text-gap: var(--awds-size-rectangle-200-text-gap);
+  --awds-input-text-gap: var(--awds-space-3-5);
 }
 
 .input--300 {
-  --awds-input-padding: var(--awds-size-rectangle-300-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-300-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-300-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-input-padding: var(--awds-space-2);   
+  --awds-input-icon:    var(--awds-space-5);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-300);   
+  --awds-input-fs:      var(--awds-control-font-size-400);   
   --awds-input-lh:      var(--awds-control-line-height-400);
   --awds-input-ls:      var(--awds-control-letter-spacing-400);
-  --awds-input-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-input-text-gap: var(--awds-space-3-5);
 }
 
 .input--400 {
-  --awds-input-padding: var(--awds-size-rectangle-400-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-400-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-input-padding: var(--awds-space-2-5);   
+  --awds-input-icon:    var(--awds-space-5);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-input-fs:      var(--awds-control-font-size-400);   
   --awds-input-lh:      var(--awds-control-line-height-400);
   --awds-input-ls:      var(--awds-control-letter-spacing-400);
-  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-input-text-gap: var(--awds-space-4);
 }
 
 .input--500 {
-  --awds-input-padding: var(--awds-size-rectangle-500-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-500-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-500-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-input-padding: var(--awds-space-3-5);   
+  --awds-input-icon:    var(--awds-space-5);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-500);   
+  --awds-input-fs:      var(--awds-control-font-size-600);   
   --awds-input-lh:      var(--awds-control-line-height-600);
   --awds-input-ls:      var(--awds-control-letter-spacing-600);
-  --awds-input-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-input-text-gap: var(--awds-space-4-5);
 }
 
 .input--600 {
-  --awds-input-padding: var(--awds-size-rectangle-600-padding);
-  --awds-input-icon:    var(--awds-size-rectangle-600-icon);
-  --awds-input-rounded: var(--awds-size-rectangle-600-rounded);
-  --awds-input-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-input-padding: var(--awds-space-4);   
+  --awds-input-icon:    var(--awds-space-5);   
+  --awds-input-rounded: var(--awds-rounded-border-radius-600);   
+  --awds-input-fs:      var(--awds-control-font-size-600);   
   --awds-input-lh:      var(--awds-control-line-height-600);
   --awds-input-ls:      var(--awds-control-letter-spacing-600);
-  --awds-input-text-gap: var(--awds-size-rectangle-600-text-gap);
+  --awds-input-text-gap: var(--awds-space-4-5);
 }
 
 .input-autofill {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-autofill-bg-rest));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-autofill-chroma-rest));
-  --awds-input-border:     rgb(var(--awds-state-form-control-autofill-border-rest));
-  --awds-input-color:      rgb(var(--awds-state-form-control-autofill-color-rest));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-autofill-placehold-rest));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-autofill-placehold-rest));
+  --awds-input-bg:         rgb(var(--tertiary-container-core));   
+  --awds-input-chroma:     rgb(var(--tertiary-container-chroma));   
+  --awds-input-border:     rgb(var(--tertiary-container-on-low));   
+  --awds-input-color:      rgb(var(--tertiary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--tertiary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--tertiary-container-on-high));
 }
 
 .input-autofill:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-autofill-border-hover));
+  --awds-input-border: rgb(var(--tertiary-container-on));
 }
 
 .input-autofill:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-autofill-border-active));
+  --awds-input-border: rgb(var(--tertiary-container-on-low));
 }
 
 .input-autofill:focus-within {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-autofill-bg-focus));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-autofill-chroma-focus));
-  --awds-input-border:     rgb(var(--awds-state-form-control-autofill-border-focus));
-  --awds-input-color:      rgb(var(--awds-state-form-control-autofill-color-focus));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-autofill-placehold-focus));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-autofill-color-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-input-bg:         rgb(var(--surface-bright));   
+  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-border:     rgb(var(--primary-dim));   
+  --awds-input-color:      rgb(var(--primary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--primary-container-on-highest));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .input:has(> .input__field:disabled), .input--disabled {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);   
   cursor: default;
 }
 
@@ -254,57 +255,57 @@
 }
 
 .input-default {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-default-bg-rest));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-default-chroma-rest));
-  --awds-input-border:     rgb(var(--awds-state-form-control-default-border-rest));
-  --awds-input-color:      rgb(var(--awds-state-form-control-default-color-rest));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-default-placehold-rest));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-input-bg:         rgb(var(--secondary-container-core));   
+  --awds-input-chroma:     rgb(var(--secondary-container-chroma));   
+  --awds-input-border:     rgb(var(--secondary-container-on-low));   
+  --awds-input-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--secondary-container-on-high));
 }
 
 .input-default:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-default-border-hover));
+  --awds-input-border: rgb(var(--secondary-container-on));
 }
 
 .input-default:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-default-border-active));
+  --awds-input-border: rgb(var(--secondary-container-on-low));
 }
 
 .input-default:focus-within {
-  --awds-input-bg:        rgb(var(--awds-state-form-control-default-bg-focus));
-  --awds-input-chroma:    rgb(var(--awds-state-form-control-default-chroma-focus));
-  --awds-input-border:    rgb(var(--awds-state-form-control-default-border-focus));
-  --awds-input-color:     rgb(var(--awds-state-form-control-default-color-focus));
-  --awds-input-placehold: rgb(var(--awds-state-form-control-default-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-input-bg:        rgb(var(--surface-bright));   
+  --awds-input-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-input-border:    rgb(var(--primary-dim));   
+  --awds-input-color:     rgb(var(--primary-container-on-highest));   
+  --awds-input-placeholder: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .input-error {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-error-bg-rest));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-error-chroma-rest));
-  --awds-input-border:     rgb(var(--awds-state-form-control-error-border-rest));
-  --awds-input-color:      rgb(var(--awds-state-form-control-error-color-rest));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-error-placehold-rest));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-input-bg:         rgb(var(--error-container-core));   
+  --awds-input-chroma:     rgb(var(--error-container-chroma));   
+  --awds-input-border:     rgb(var(--error-container-on-low));   
+  --awds-input-color:      rgb(var(--error-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--error-container-on-high));   
+  --awds-input-icon-color: rgb(var(--error-container-on-high));
 }
 
 .input-error:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-error-border-hover));
+  --awds-input-border: rgb(var(--error-container-on));
 }
 
 .input-error:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-error-border-active));
+  --awds-input-border: rgb(var(--error-container-on-low));
 }
 
 .input-error:focus-within {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-error-bg-focus));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-error-chroma-focus));
-  --awds-input-border:     rgb(var(--awds-state-form-control-error-border-focus));
-  --awds-input-color:      rgb(var(--awds-state-form-control-error-color-focus));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-error-placehold-focus));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-error-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-input-bg:         rgb(var(--surface-bright));   
+  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-border:     rgb(var(--primary-dim));   
+  --awds-input-color:      rgb(var(--primary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
@@ -312,105 +313,105 @@
   --awds-input-bg:         transparent;
   --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--awds-state-form-control-ghost-color-rest));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-input-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--secondary-container-on-high));
 }
 
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
   --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--awds-state-form-control-ghost-color-focus));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-ghost-color-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-input-color:      rgb(var(--primary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--primary-container-on-highest));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .input-light {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-light-bg-rest));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-light-chroma-rest));
-  --awds-input-border:     rgb(var(--awds-state-form-control-light-border-rest));
-  --awds-input-color:      rgb(var(--awds-state-form-control-light-color-rest));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-light-placehold-rest));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-light-placehold-rest));
+  --awds-input-bg:         rgb(var(--surface-bright));   
+  --awds-input-chroma:     rgb(var(--surface-bright));   
+  --awds-input-border:     rgb(var(--secondary-container-on-low));   
+  --awds-input-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--secondary-container-on-high));
 }
 
 .input-light:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-light-border-hover));
+  --awds-input-border: rgb(var(--secondary-container-on));
 }
 
 .input-light:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-light-border-active));
+  --awds-input-border: rgb(var(--secondary-container-on-low));
 }
 
 .input-light:focus-within {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-light-bg-focus));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-light-chroma-focus));
-  --awds-input-border:     rgb(var(--awds-state-form-control-light-border-focus));
-  --awds-input-color:      rgb(var(--awds-state-form-control-light-color-focus));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-light-placehold-focus));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-light-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-input-bg:         rgb(var(--surface-bright));   
+  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-border:     rgb(var(--primary-dim));   
+  --awds-input-color:      rgb(var(--primary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .input-secondary {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-secondary-bg-rest));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-rest));
-  --awds-input-border:     rgb(var(--awds-state-form-control-secondary-border-rest));
-  --awds-input-color:      rgb(var(--awds-state-form-control-secondary-color-rest));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-rest));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-secondary-color-rest));
+  --awds-input-bg:         rgb(var(--secondary-core));   
+  --awds-input-chroma:     rgb(var(--secondary-chroma));   
+  --awds-input-border:     rgb(var(--secondary-core));   
+  --awds-input-color:      rgb(var(--secondary-on));   
+  --awds-input-placeholder:  rgb(var(--secondary-on-dim));   
+  --awds-input-icon-color: rgb(var(--secondary-on));
 }
 
 .input-secondary:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-bg:     rgb(var(--awds-state-form-control-secondary-bg-hover));
-  --awds-input-border: rgb(var(--awds-state-form-control-secondary-border-hover));
+  --awds-input-bg:     rgb(var(--secondary-dim));   
+  --awds-input-border: rgb(var(--secondary-dim));
 }
 
 .input-secondary:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-bg:     rgb(var(--awds-state-form-control-secondary-dim-active));
-  --awds-input-border: rgb(var(--awds-state-form-control-secondary-border-active));
+  --awds-input-bg:     rgb(var(--secondary-core));   
+  --awds-input-border: rgb(var(--secondary-core));
 }
 
 .input-secondary:focus-within {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-secondary-bg-focus));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-secondary-chroma-focus));
-  --awds-input-border:     rgb(var(--awds-state-form-control-secondary-border-focus));
-  --awds-input-color:      rgb(var(--awds-state-form-control-secondary-color-focus));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-secondary-placehold-focus));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-secondary-color-focus));
+  --awds-input-bg:         rgb(var(--surface-bright));   
+  --awds-input-chroma:     rgb(var(--secondary-chroma));   
+  --awds-input-border:     rgb(var(--secondary-core));   
+  --awds-input-color:      rgb(var(--secondary-on));   
+  --awds-input-placeholder:  rgb(var(--secondary-on-dim));   
+  --awds-input-icon-color: rgb(var(--secondary-on));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color);
   outline-offset: var(--awds-focus-offset);
 }
 
 .input-success {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-success-bg-rest));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-success-chroma-rest));
-  --awds-input-border:     rgb(var(--awds-state-form-control-success-border-rest));
-  --awds-input-color:      rgb(var(--awds-state-form-control-success-color-rest));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-success-placehold-rest));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-input-bg:         rgb(var(--success-container-core));   
+  --awds-input-chroma:     rgb(var(--success-container-chroma));   
+  --awds-input-border:     rgb(var(--success-container-on-low));   
+  --awds-input-color:      rgb(var(--success-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--success-container-on-high));   
+  --awds-input-icon-color: rgb(var(--success-container-on-high));
 }
 
 .input-success:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-success-border-hover));
+  --awds-input-border: rgb(var(--success-container-on));
 }
 
 .input-success:active:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--awds-state-form-control-success-border-active));
+  --awds-input-border: rgb(var(--success-container-on-low));
 }
 
 .input-success:focus-within {
-  --awds-input-bg:         rgb(var(--awds-state-form-control-success-bg-focus));
-  --awds-input-chroma:     rgb(var(--awds-state-form-control-success-chroma-focus));
-  --awds-input-border:     rgb(var(--awds-state-form-control-success-border-focus));
-  --awds-input-color:      rgb(var(--awds-state-form-control-success-color-focus));
-  --awds-input-placehold:  rgb(var(--awds-state-form-control-success-placehold-focus));
-  --awds-input-icon-color: rgb(var(--awds-state-form-control-success-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-input-bg:         rgb(var(--surface-bright));   
+  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-border:     rgb(var(--primary-dim));   
+  --awds-input-color:      rgb(var(--primary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 

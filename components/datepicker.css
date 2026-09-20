@@ -1,0 +1,204 @@
+/* ArrowDS · datepicker@1.0.1
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.dpick {
+  --awds-dpick-panel-padding: var(--awds-space-1);                        
+  --awds-dpick-panel-rounded: var(--awds-rounded-border-radius-400);      
+  --awds-dpick-gap:           var(--awds-space-1);                        
+  --awds-dpick-cell-padding:  var(--awds-space-2);                        
+  --awds-dpick-cell-rounded:  var(--awds-rounded-border-radius-300);      
+  --awds-dpick-cell-fs:       var(--awds-control-font-size-400);          
+  --awds-dpick-cell-lh:       var(--awds-control-line-height-400);
+  --awds-dpick-cell-ls:       var(--awds-control-letter-spacing-400);
+  --awds-dpick-week-fs:       var(--awds-control-font-size-300);          
+  --awds-dpick-week-lh:       var(--awds-control-line-height-300);
+  --awds-dpick-week-ls:       var(--awds-control-letter-spacing-300);
+  --awds-dpick-nav-icon:      var(--awds-space-5);                        
+  --awds-dpick-nav-padding:   var(--awds-space-2);                        
+  --awds-dpick-title-fs:      var(--awds-control-font-size-600);
+  --awds-dpick-title-lh:      var(--awds-control-line-height-600);
+  --awds-dpick-title-ls:      var(--awds-control-letter-spacing-600);
+  --awds-dpick-columns: 7;
+  --awds-dpick-cell-min: calc(var(--awds-space-5) + 2 * var(--awds-space-2));   
+  display: inline-flex;
+  box-sizing: border-box;
+  gap: var(--awds-dpick-gap);
+  padding: var(--awds-dpick-panel-padding);
+  border-radius: var(--awds-dpick-panel-rounded);
+  background: rgb(var(--surface-bright));                                 
+  box-shadow: var(--awds-shadow-elevation-3);
+  font-family: var(--awds-font-family-system);
+  font-weight: var(--awds-font-weight-regular);
+}
+
+.dpick__month {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  gap: var(--awds-dpick-gap);
+  padding: var(--awds-dpick-panel-padding);
+}
+
+.dpick--range .dpick__month + .dpick__month {
+  border-inline-start: var(--awds-space-px) solid rgb(var(--secondary-container-core));   
+  padding-inline-start: calc(var(--awds-dpick-panel-padding) + var(--awds-space-1));
+}
+
+.dpick__header {
+  display: flex;
+  align-items: center;
+  gap: var(--awds-dpick-gap);
+}
+
+.dpick__nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding: var(--awds-dpick-nav-padding);
+  border: 0;
+  border-radius: var(--awds-dpick-cell-rounded);
+  background: rgb(var(--extended-transparent));                           
+  color: rgb(var(--surface-on-high));                                     
+  cursor: pointer;
+  opacity: var(--awds-opacity-100);
+}
+
+.dpick__nav::before {
+  content: "";
+  display: block;
+  width: var(--awds-dpick-nav-icon);
+  height: var(--awds-dpick-nav-icon);
+  background: currentcolor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M13.2928 7.2968C13.6833 6.9063 14.3163 6.9063 14.7068 7.2968C15.0973 7.6873 15.0973 8.3203 14.7068 8.7109L10.7107 12.707C10.3206 13.0971 9.68829 13.0975 9.29763 12.7079L5.29373 8.7118C4.90292 8.3218 4.90192 7.6887 5.29177 7.2978C5.68182 6.907 6.31491 6.906 6.70584 7.2958L10.0027 10.5868L13.2928 7.2968Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M13.2928 7.2968C13.6833 6.9063 14.3163 6.9063 14.7068 7.2968C15.0973 7.6873 15.0973 8.3203 14.7068 8.7109L10.7107 12.707C10.3206 13.0971 9.68829 13.0975 9.29763 12.7079L5.29373 8.7118C4.90292 8.3218 4.90192 7.6887 5.29177 7.2978C5.68182 6.907 6.31491 6.906 6.70584 7.2958L10.0027 10.5868L13.2928 7.2968Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.dpick__nav--prev::before { rotate: 90deg;
+}
+
+.dpick__nav--next::before { rotate: -90deg;
+}
+
+.dpick__nav:hover {
+  color: rgb(var(--surface-on-highest));
+}
+
+.dpick__nav:focus-visible, .dpick__title:focus-visible, .dpick__cell:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.dpick__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: rgb(var(--extended-transparent));                           
+  color: rgb(var(--surface-on-highest));                                  
+  font-family: inherit;
+  font-size: var(--awds-dpick-title-fs);
+  line-height: var(--awds-dpick-title-lh);
+  letter-spacing: var(--awds-dpick-title-ls);
+  font-weight: var(--awds-font-weight-regular);
+  text-align: center;
+  cursor: pointer;
+}
+
+.dpick__weekdays {
+  display: grid;
+  grid-template-columns: repeat(var(--awds-dpick-columns), minmax(var(--awds-dpick-cell-min), 1fr));
+  gap: var(--awds-dpick-gap);
+}
+
+.dpick__weekday {
+  padding-block: var(--awds-space-1);
+  color: rgb(var(--surface-on));                                          
+  font-size: var(--awds-dpick-week-fs);
+  line-height: var(--awds-dpick-week-lh);
+  letter-spacing: var(--awds-dpick-week-ls);
+  text-align: center;
+}
+
+.dpick__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--awds-dpick-columns), minmax(var(--awds-dpick-cell-min), 1fr));
+  gap: var(--awds-dpick-gap);
+}
+
+.dpick--month, .dpick--year {
+  --awds-dpick-columns: 3;
+}
+
+.dpick__cell {
+  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             
+  --awds-dpick-cell-border: rgb(var(--extended-transparent));             
+  --awds-dpick-cell-color:  rgb(var(--secondary-container-on-highest));   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-block: var(--awds-dpick-cell-padding);
+  padding-inline: 0;
+  border: 0;
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-dpick-cell-border);
+  border-radius: var(--awds-dpick-cell-rounded);
+  background: var(--awds-dpick-cell-bg);
+  color: var(--awds-dpick-cell-color);
+  font-family: inherit;
+  font-size: var(--awds-dpick-cell-fs);
+  line-height: var(--awds-dpick-cell-lh);
+  letter-spacing: var(--awds-dpick-cell-ls);
+  font-weight: var(--awds-font-weight-regular);
+  cursor: pointer;
+  opacity: var(--awds-opacity-100);
+}
+
+.dpick__cell:hover {
+  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         
+  --awds-dpick-cell-border: rgb(var(--secondary-container-core));
+}
+
+.dpick__cell--today {
+  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    
+  --awds-dpick-cell-color:  rgb(var(--accent-container-on));
+}
+
+.dpick__cell--today:hover {
+  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         
+  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));
+}
+
+.dpick__cell--range {
+  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         
+  --awds-dpick-cell-border: rgb(var(--secondary-container-core));         
+  --awds-dpick-cell-color:  rgb(var(--secondary-container-on-highest));
+}
+
+.dpick__cell--selected {
+  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           
+  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      
+  --awds-dpick-cell-color:  rgb(var(--primary-container-on-highest));
+}
+
+.dpick__cell--selected:hover {
+  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           
+  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));
+}
+
+.dpick__cell:disabled, .dpick__cell[aria-disabled="true"] {
+  opacity: var(--awds-opacity-40);                                        
+  cursor: default;
+}
+
+.dpick__cell:disabled:hover, .dpick__cell[aria-disabled="true"]:hover {
+  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             
+  --awds-dpick-cell-border: rgb(var(--extended-transparent));
+}
+
+}

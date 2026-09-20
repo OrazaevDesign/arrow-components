@@ -1,0 +1,158 @@
+/* ArrowDS · tab@1.0.5
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-tab-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-tab-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.tab {
+  --awds-tab-padding: var(--awds-space-2-5);   
+  --awds-tab-gap:     var(--awds-space-1-5);   
+  --awds-tab-fs:      var(--awds-control-font-size-400);   
+  --awds-tab-lh:      var(--awds-control-line-height-400);
+  --awds-tab-ls:      var(--awds-control-letter-spacing-400);
+  --awds-tab-underline: 2px;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: var(--awds-tab-gap);
+  padding-block: var(--awds-tab-padding);
+  padding-inline: 0;
+  appearance: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: inset 0 calc(-1 * var(--awds-tab-underline)) 0 0 var(--awds-tab-border);
+  background: var(--awds-tab-bg);
+  color: var(--awds-tab-color);
+  opacity: var(--awds-opacity-100);   
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-tab-fs);
+  line-height: var(--awds-tab-lh);
+  letter-spacing: var(--awds-tab-ls);
+  font-weight: var(--awds-font-weight-semibold);
+  white-space: nowrap;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: --awds-tab-bg 0.15s ease-out,
+              --awds-tab-border 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out,
+              opacity 0.15s ease-out;
+}
+
+.tab:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.tab:disabled, .tab[aria-disabled="true"] {
+  opacity: var(--awds-opacity-40);   
+  pointer-events: none;
+}
+
+.tab--400 {
+  --awds-tab-padding: var(--awds-space-2-5);   
+  --awds-tab-gap:     var(--awds-space-1-5);   
+  --awds-tab-fs:      var(--awds-control-font-size-400);   
+  --awds-tab-lh:      var(--awds-control-line-height-400);
+  --awds-tab-ls:      var(--awds-control-letter-spacing-400);
+}
+
+.tab--300 {
+  --awds-tab-padding: var(--awds-space-2);   
+  --awds-tab-gap:     var(--awds-space-1-5);   
+  --awds-tab-fs:      var(--awds-control-font-size-400);   
+  --awds-tab-lh:      var(--awds-control-line-height-400);
+  --awds-tab-ls:      var(--awds-control-letter-spacing-400);
+}
+
+.tab--400 .notice {
+  --awds-notice-size:  var(--awds-space-5);   
+  --awds-notice-pad-h: var(--awds-space-1);   
+  --awds-notice-pad-v: var(--awds-space-px);   
+  --awds-notice-fs:    var(--awds-control-font-size-300);   
+  --awds-notice-lh:    var(--awds-control-line-height-300);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-300);
+}
+
+.tab--300 .notice {
+  --awds-notice-size:  var(--awds-space-5);   
+  --awds-notice-pad-h: var(--awds-space-1);   
+  --awds-notice-pad-v: var(--awds-space-px);   
+  --awds-notice-fs:    var(--awds-control-font-size-200);   
+  --awds-notice-lh:    var(--awds-control-line-height-200);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-200);
+}
+
+.tab-unselected {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--extended-transparent));   
+  --awds-tab-color:  rgb(var(--surface-on-high));
+}
+
+.tab-unselected:hover {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--surface-on-low));   
+  --awds-tab-color:  rgb(var(--surface-on-highest));
+}
+
+.tab-unselected:focus-visible {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--surface-dim));   
+  --awds-tab-color:  rgb(var(--surface-on-high));
+}
+
+.tab-unselected:active {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--surface-dim));   
+  --awds-tab-color:  rgb(var(--surface-on-high));
+}
+
+.tab-selected {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--primary-core));   
+  --awds-tab-color:  rgb(var(--surface-on-highest));
+}
+
+.tab-selected:hover {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--primary-dim));   
+  --awds-tab-color:  rgb(var(--surface-on-high));
+}
+
+.tab-selected:focus-visible {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--primary-dim));   
+  --awds-tab-color:  rgb(var(--surface-on-highest));
+}
+
+.tab-selected:active {
+  --awds-tab-bg:     rgb(var(--extended-transparent));   
+  --awds-tab-border: rgb(var(--primary-dim));   
+  --awds-tab-color:  rgb(var(--surface-on-highest));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab {
+    transition: none;
+  }
+}
+
+}

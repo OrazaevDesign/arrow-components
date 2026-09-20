@@ -1,0 +1,108 @@
+/* ArrowDS · button-menu@2.0.6
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.btn-menu {
+  --awds-btn-menu-padding: var(--awds-space-1);   
+  --awds-btn-menu-gap:     var(--awds-space-0-5);   
+  --awds-btn-menu-icon:    var(--awds-space-5);   
+  --awds-btn-menu-rounded: var(--awds-rounded-border-radius-full);
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--awds-btn-menu-gap);
+  padding: var(--awds-btn-menu-padding);
+  appearance: none;
+  border: 0;
+  border-radius: var(--awds-btn-menu-rounded);
+  box-shadow: inset 0 0 0 1px var(--awds-btn-menu-border);
+  background: var(--awds-btn-menu-bg);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s ease-out,
+              box-shadow 0.15s ease-out;
+}
+
+.btn-menu, .btn-menu *, .btn-menu *::before, .btn-menu *::after { box-sizing: border-box;
+}
+
+.btn-menu__emblem {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.btn-menu__badge {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.btn-menu__chevron {
+  display: block;
+  flex-shrink: 0;
+  width: var(--awds-btn-menu-icon);
+  height: var(--awds-btn-menu-icon);
+  color: var(--awds-btn-menu-chevron);
+  transition: color 0.15s ease-out;
+}
+
+.btn-menu--400 { --awds-btn-menu-icon: var(--awds-space-5);
+}
+
+.btn-menu--300 { --awds-btn-menu-icon: var(--awds-space-5);
+}
+
+.btn-menu--200 { --awds-btn-menu-icon: var(--awds-space-4);
+}
+
+.btn-menu:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.btn-menu:disabled, .btn-menu[aria-disabled="true"] {
+  opacity: var(--awds-opacity-40);   
+  pointer-events: none;
+}
+
+.btn-menu-default {
+  --awds-btn-menu-bg:      rgb(var(--secondary-container-core));   
+  --awds-btn-menu-border:  rgb(var(--secondary-container-core));   
+  --awds-btn-menu-chevron: rgb(var(--surface-on-highest));
+}
+
+.btn-menu-default:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-btn-menu-bg:      rgb(var(--secondary-container-dim));   
+  --awds-btn-menu-border:  rgb(var(--secondary-container-dim));   
+  --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));
+}
+
+.btn-menu-default:focus-visible {
+  --awds-btn-menu-bg:      rgb(var(--secondary-container-core));   
+  --awds-btn-menu-border:  rgb(var(--secondary-container-core));   
+  --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));
+}
+
+.btn-menu-default:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-btn-menu-bg:      rgb(var(--secondary-container-core));   
+  --awds-btn-menu-border:  rgb(var(--secondary-container-core));   
+  --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));
+}
+
+.btn-menu-accent-selected {
+  --awds-btn-menu-bg:      rgb(var(--primary-container-core));   
+  --awds-btn-menu-border:  rgb(var(--primary-container-on-lowest));   
+  --awds-btn-menu-chevron: rgb(var(--primary-container-on-highest));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-menu,
+  .btn-menu__chevron { transition: none; }
+}
+
+}

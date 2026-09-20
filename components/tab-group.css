@@ -1,0 +1,149 @@
+/* ArrowDS · tab-group@1.0.3
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.tab-group {
+  --awds-tab-group-gap: 0px;
+  --awds-tab-group-bleed: calc(var(--awds-focus-width) + var(--awds-focus-offset));
+  box-sizing: border-box;
+  display: flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+}
+
+.tab-group__track {
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  gap: var(--awds-tab-group-gap);
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  padding: var(--awds-tab-group-bleed);
+  margin: calc(-1 * var(--awds-tab-group-bleed));
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: var(--awds-tab-group-gap);
+  scroll-behavior: smooth;
+}
+
+.tab-group__track > * {
+  flex: 0 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tab-group__track {
+    scroll-behavior: auto;
+  }
+}
+
+.tab-group-boxed {
+  --awds-tab-group-stroke: 1px;
+  --awds-tab-group-pad:     var(--awds-space-0-5);
+  --awds-tab-group-rounded: var(--awds-rounded-border-radius-600);
+  --awds-tab-group-gap:     0px;
+  padding: var(--awds-tab-group-pad);
+  border-radius: var(--awds-tab-group-rounded);
+  background: linear-gradient(to bottom, rgb(var(--surface-dim)), rgb(var(--surface-surface)));   
+  box-shadow: inset 0 0 0 var(--awds-tab-group-stroke) rgb(var(--surface-dim));
+}
+
+.tab-group-boxed.tab-group--400 {
+  --awds-tab-group-pad:     var(--awds-space-0-5);
+  --awds-tab-group-rounded: var(--awds-rounded-border-radius-600);
+}
+
+.tab-group-boxed.tab-group--300 {
+  --awds-tab-group-pad:     var(--awds-space-0-5);
+  --awds-tab-group-rounded: var(--awds-rounded-border-radius-400);
+}
+
+.tab-group-boxed .btn-clean::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: var(--awds-shadow-elevation-1);
+  pointer-events: none;
+}
+
+.tab-group--400 .btn {
+  --awds-btn-padding: var(--awds-space-2-5);   
+  --awds-btn-gap:     var(--awds-space-1-5);   
+  --awds-btn-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-btn-icon:    var(--awds-space-5);   
+  --awds-btn-fs:      var(--awds-control-font-size-400);   
+  --awds-btn-lh:      var(--awds-control-line-height-400);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-400);
+}
+
+.tab-group--300 .btn {
+  --awds-btn-padding: var(--awds-space-2);   
+  --awds-btn-gap:     var(--awds-space-1-5);   
+  --awds-btn-rounded: var(--awds-rounded-border-radius-300);   
+  --awds-btn-icon:    var(--awds-space-5);   
+  --awds-btn-fs:      var(--awds-control-font-size-400);   
+  --awds-btn-lh:      var(--awds-control-line-height-400);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-400);
+}
+
+.tab-group-separated {
+  --awds-tab-group-gap: var(--awds-space-2);
+}
+
+.tab-group-separated.tab-group--400 {
+  --awds-tab-group-gap: var(--awds-space-2);
+}
+
+.tab-group-separated.tab-group--300 {
+  --awds-tab-group-gap: var(--awds-space-1-5);
+}
+
+.tab-group-underline {
+  --awds-tab-group-gap: var(--awds-space-5);
+}
+
+.tab-group-underline.tab-group--400 {
+  --awds-tab-group-gap: var(--awds-space-5);
+}
+
+.tab-group-underline.tab-group--300 {
+  --awds-tab-group-gap: var(--awds-space-4);
+}
+
+.tab-group--400 .tab {
+  --awds-tab-padding: var(--awds-space-2-5);   
+  --awds-tab-gap:     var(--awds-space-1-5);   
+  --awds-tab-fs:      var(--awds-control-font-size-400);   
+  --awds-tab-lh:      var(--awds-control-line-height-400);
+  --awds-tab-ls:      var(--awds-control-letter-spacing-400);
+}
+
+.tab-group--300 .tab {
+  --awds-tab-padding: var(--awds-space-2);   
+  --awds-tab-gap:     var(--awds-space-1-5);   
+  --awds-tab-fs:      var(--awds-control-font-size-400);   
+  --awds-tab-lh:      var(--awds-control-line-height-400);
+  --awds-tab-ls:      var(--awds-control-letter-spacing-400);
+}
+
+.tab-group--400 .tab .notice {
+  --awds-notice-size:  var(--awds-space-5);   
+  --awds-notice-pad-h: var(--awds-space-1);   
+  --awds-notice-pad-v: var(--awds-space-px);   
+  --awds-notice-fs:    var(--awds-control-font-size-300);   
+  --awds-notice-lh:    var(--awds-control-line-height-300);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-300);
+}
+
+.tab-group--300 .tab .notice {
+  --awds-notice-size:  var(--awds-space-5);   
+  --awds-notice-pad-h: var(--awds-space-1);   
+  --awds-notice-pad-v: var(--awds-space-px);   
+  --awds-notice-fs:    var(--awds-control-font-size-200);   
+  --awds-notice-lh:    var(--awds-control-line-height-200);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-200);
+}
+
+}

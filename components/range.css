@@ -1,4 +1,4 @@
-/* ArrowDS · range@1.0.3
+/* ArrowDS · range@2.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -6,11 +6,11 @@
 .range {
   --range-from: 0;
   --range-to: 0.5;
-  --awds-range-size:    var(--awds-size-square-400-handle);
-  --awds-range-track-h: var(--awds-space-space-1);
-  --awds-range-fill-bg:     rgb(var(--awds-state-range-bg-rest));
-  --awds-range-fill-chroma: rgb(var(--awds-state-range-chroma-rest));
-  --awds-range-track: rgb(var(--awds-state-range-container-rest));
+  --awds-range-size:    var(--awds-space-5);   
+  --awds-range-track-h: var(--awds-space-1);
+  --awds-range-fill-bg:     rgb(var(--primary-core));   
+  --awds-range-fill-chroma: rgb(var(--primary-chroma));   
+  --awds-range-track: rgb(var(--surface-container-container));   
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -108,62 +108,57 @@
 }
 
 .range:not(.range--double):has(.range__input:focus-visible) .range__thumb, .range--double:has(.range__input:nth-of-type(1):focus-visible) .range__thumb--from, .range--double:has(.range__input:nth-of-type(2):focus-visible) .range__thumb--to {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .range--disabled, .range:has(.range__input:disabled) {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);
   pointer-events: none;
 }
 
 .range-default {
-  --awds-range-thumb-bg:     rgb(var(--awds-state-range-default-bg-rest));
-  --awds-range-thumb-chroma: rgb(var(--awds-state-range-default-chroma-rest));
-  --awds-range-thumb-border: rgb(var(--awds-state-range-default-bg-rest));
+  --awds-range-thumb-bg:     rgb(var(--primary-core));   
+  --awds-range-thumb-chroma: rgb(var(--primary-chroma));   
+  --awds-range-thumb-border: rgb(var(--primary-core));
 }
 
 .range-default:hover {
-  --awds-range-fill-bg:      rgb(var(--awds-state-range-bg-hover));
-  --awds-range-thumb-bg:     rgb(var(--awds-state-range-default-bg-hover));
-  --awds-range-thumb-border: rgb(var(--awds-state-range-default-bg-hover));
+  --awds-range-fill-bg:      rgb(var(--primary-dim));   
+  --awds-range-thumb-bg:     rgb(var(--primary-dim));   
+  --awds-range-thumb-border: rgb(var(--primary-dim));
 }
 
 .range-default:active {
-  --awds-range-fill-chroma:  rgb(var(--awds-state-range-bg-active));
-  --awds-range-thumb-chroma: rgb(var(--awds-state-range-default-bg-active));
+  --awds-range-fill-chroma:  rgb(var(--primary-core));   
+  --awds-range-thumb-chroma: rgb(var(--primary-core));
 }
 
 .range-light {
-  --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-rest));
-  --awds-range-thumb-chroma: rgb(var(--awds-state-range-light-chroma-rest));
-  --awds-range-thumb-border: rgb(var(--awds-state-range-light-border-rest));
+  --awds-range-thumb-bg:     rgb(var(--secondary-container-core));   
+  --awds-range-thumb-chroma: rgb(var(--surface-bright));   
+  --awds-range-thumb-border: rgb(var(--secondary-container-dim));   
   --awds-range-thumb-elevation: var(--awds-shadow-elevation-1);
 }
 
 .range-light:hover {
-  --awds-range-fill-bg:      rgb(var(--awds-state-range-bg-hover));
-  --awds-range-thumb-bg:     rgb(var(--awds-state-range-light-bg-hover));
-  --awds-range-thumb-border: rgb(var(--awds-state-range-light-bg-hover));
+  --awds-range-fill-bg:      rgb(var(--primary-dim));   
+  --awds-range-thumb-bg:     rgb(var(--secondary-container-dim));   
+  --awds-range-thumb-border: rgb(var(--secondary-container-dim));
 }
 
 .range-light:active {
-  --awds-range-fill-chroma:  rgb(var(--awds-state-range-bg-active));
+  --awds-range-fill-chroma:  rgb(var(--primary-core));
 }
 
 .range--500 {
-  --awds-range-size:    var(--awds-size-square-500-handle);   
-  --awds-range-track-h: var(--awds-space-space-1);
+  --awds-range-size:    var(--awds-space-6);   
+  --awds-range-track-h: var(--awds-space-1);
 }
 
 .range--400 {
-  --awds-range-size:    var(--awds-size-square-400-handle);   
-  --awds-range-track-h: var(--awds-space-space-1);
-}
-
-.range--300 {
-  --awds-range-size:    var(--awds-size-square-300-handle);   
-  --awds-range-track-h: var(--awds-space-space-1);
+  --awds-range-size:    var(--awds-space-5);   
+  --awds-range-track-h: var(--awds-space-1);
 }
 
 @media (prefers-reduced-motion: reduce) {

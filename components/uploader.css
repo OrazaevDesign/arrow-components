@@ -1,13 +1,13 @@
-/* ArrowDS · uploader@1.0.2
+/* ArrowDS · uploader@2.0.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
 
 .upl, .upl__list, .upl__file {
-  --awds-upl-gap:      var(--awds-space-space-2);
-  --awds-upl-file-gap: var(--awds-space-space-1-5);
-  --awds-upl-box:      calc(var(--awds-size-rectangle-300-icon) + 2 * var(--awds-size-rectangle-300-padding));
-  --awds-upl-progress: var(--awds-space-space-5);
+  --awds-upl-gap:      var(--awds-space-2);
+  --awds-upl-file-gap: var(--awds-space-1-5);
+  --awds-upl-box:      calc(var(--awds-space-5) + 2 * var(--awds-space-2));   
+  --awds-upl-progress: var(--awds-space-5);
   --awds-upl-name-fs:  var(--awds-control-font-size-300);
   --awds-upl-name-lh:  var(--awds-control-line-height-300);
   --awds-upl-name-ls:  var(--awds-control-letter-spacing-300);
@@ -53,7 +53,7 @@
 }
 
 .upl__preview {
-  border-radius: var(--awds-size-rectangle-300-rounded);
+  border-radius: var(--awds-rounded-border-radius-300);
 }
 
 .upl__preview img {
@@ -65,9 +65,9 @@
 
 .upl__icon svg {
   display: block;
-  width: var(--awds-size-rectangle-300-icon);
-  height: var(--awds-size-rectangle-300-icon);
-  color: rgb(var(--surface-on-high));
+  width: var(--awds-space-5);   
+  height: var(--awds-space-5);   
+  color: rgb(var(--surface-on));
 }
 
 .upl__content {
@@ -92,7 +92,7 @@
   font-size: var(--awds-upl-size-fs);
   line-height: var(--awds-upl-size-lh);
   letter-spacing: var(--awds-upl-size-ls);
-  color: rgb(var(--surface-on-high));
+  color: rgb(var(--surface-on-high));   
   font-variant-numeric: tabular-nums;
 }
 
@@ -124,49 +124,85 @@
 }
 
 .upl--300 .input {
-  --awds-input-padding:  var(--awds-size-rectangle-300-padding);
-  --awds-input-icon:     var(--awds-size-rectangle-300-icon);
-  --awds-input-rounded:  var(--awds-size-rectangle-300-rounded);
-  --awds-input-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-input-padding:  var(--awds-space-2);   
+  --awds-input-icon:     var(--awds-space-5);   
+  --awds-input-rounded:  var(--awds-rounded-border-radius-300);   
+  --awds-input-fs:       var(--awds-control-font-size-400);   
   --awds-input-lh:       var(--awds-control-line-height-400);
   --awds-input-ls:       var(--awds-control-letter-spacing-400);
-  --awds-input-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-input-text-gap: var(--awds-space-3-5);
 }
 
 .upl--400 .input {
-  --awds-input-padding:  var(--awds-size-rectangle-400-padding);
-  --awds-input-icon:     var(--awds-size-rectangle-400-icon);
-  --awds-input-rounded:  var(--awds-size-rectangle-400-rounded);
-  --awds-input-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-input-padding:  var(--awds-space-2-5);   
+  --awds-input-icon:     var(--awds-space-5);   
+  --awds-input-rounded:  var(--awds-rounded-border-radius-400);   
+  --awds-input-fs:       var(--awds-control-font-size-400);   
   --awds-input-lh:       var(--awds-control-line-height-400);
   --awds-input-ls:       var(--awds-control-letter-spacing-400);
-  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-input-text-gap: var(--awds-space-4);
 }
 
 .upl--500 .input {
-  --awds-input-padding:  var(--awds-size-rectangle-500-padding);
-  --awds-input-icon:     var(--awds-size-rectangle-500-icon);
-  --awds-input-rounded:  var(--awds-size-rectangle-500-rounded);
-  --awds-input-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-input-padding:  var(--awds-space-3-5);   
+  --awds-input-icon:     var(--awds-space-5);   
+  --awds-input-rounded:  var(--awds-rounded-border-radius-500);   
+  --awds-input-fs:       var(--awds-control-font-size-600);   
   --awds-input-lh:       var(--awds-control-line-height-600);
   --awds-input-ls:       var(--awds-control-letter-spacing-600);
-  --awds-input-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-input-text-gap: var(--awds-space-4-5);
+}
+
+.upl__drop {
+  position: relative;
+  display: block;
 }
 
 .upl__input {
   position: absolute;
-  width: 1px;
-  height: 1px;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
   border: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upl__drop .input {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.upl__drop .input::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: var(--awds-space-px) dashed var(--awds-input-border);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.upl__prompt {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--awds-input-placeholder);
+  font-size: var(--awds-input-fs);
+  line-height: var(--awds-input-lh);
+  letter-spacing: var(--awds-input-ls);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upl__drop--over .input {
+  --awds-input-border: rgb(var(--primary-dim));   
+  --awds-input-bg:     rgb(var(--surface-bright));
 }
 
 .upl__input:focus-visible + .input {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 

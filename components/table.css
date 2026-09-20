@@ -1,73 +1,73 @@
-/* ArrowDS · table@1.0.3
+/* ArrowDS · table@1.0.10
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
 
 .cell-default {
-  --awds-cell-bg:          rgb(var(--awds-state-cell-default-bg-rest));
-  --awds-cell-border:      rgb(var(--awds-state-cell-default-border-rest));
-  --awds-cell-color:       rgb(var(--awds-state-cell-default-color-rest));
-  --awds-cell-description: rgb(var(--awds-state-cell-default-description-rest));
+  --awds-cell-bg:          rgb(var(--surface-bright));     
+  --awds-cell-border:      rgb(var(--surface-on-lowest));  
+  --awds-cell-color:       rgb(var(--surface-on-highest)); 
+  --awds-cell-description: rgb(var(--surface-on-high));
 }
 
 .cell-default:hover {
-  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-hover));
-  --awds-cell-border: rgb(var(--awds-state-cell-default-border-hover));
+  --awds-cell-bg:     rgb(var(--surface-surface));     
+  --awds-cell-border: rgb(var(--surface-on-lowest));
 }
 
 .cell-default:focus-visible {
-  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-focus));
-  --awds-cell-border: rgb(var(--awds-state-cell-default-border-focus));
+  --awds-cell-bg:     rgb(var(--surface-bright));      
+  --awds-cell-border: rgb(var(--surface-on-lowest));
 }
 
 .cell-default:active {
-  --awds-cell-bg:     rgb(var(--awds-state-cell-default-bg-active));
-  --awds-cell-border: rgb(var(--awds-state-cell-default-border-active));
+  --awds-cell-bg:     rgb(var(--surface-bright));      
+  --awds-cell-border: rgb(var(--surface-on-lowest));
 }
 
 .cell-head {
-  --awds-cell-bg:          rgb(var(--awds-state-cell-default-head-bg-rest));
-  --awds-cell-border:      rgb(var(--awds-state-cell-default-head-border-rest));
-  --awds-cell-color:       rgb(var(--awds-state-cell-default-head-color-rest));
-  --awds-cell-description: rgb(var(--awds-state-cell-default-head-description-rest));
+  --awds-cell-bg:          rgb(var(--surface-surface));     
+  --awds-cell-border:      rgb(var(--surface-on-lowest));   
+  --awds-cell-color:       rgb(var(--surface-on-highest));  
+  --awds-cell-description: rgb(var(--surface-on-high));     
   font-weight: var(--awds-font-weight-semibold);
 }
 
 .cell-head:hover {
-  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-hover));
-  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-hover));
+  --awds-cell-bg:     rgb(var(--surface-dim));         
+  --awds-cell-border: rgb(var(--surface-on-lowest));
 }
 
 .cell-head:focus-visible {
-  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-focus));
-  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-focus));
+  --awds-cell-bg:     rgb(var(--surface-surface));     
+  --awds-cell-border: rgb(var(--surface-on-lowest));
 }
 
 .cell-head:active {
-  --awds-cell-bg:     rgb(var(--awds-state-cell-default-head-bg-active));
-  --awds-cell-border: rgb(var(--awds-state-cell-default-head-border-active));
+  --awds-cell-bg:     rgb(var(--surface-surface));     
+  --awds-cell-border: rgb(var(--surface-on-lowest));
 }
 
 .cell-light {
-  --awds-cell-bg:          transparent;
-  --awds-cell-border:      transparent;
-  --awds-cell-color:       rgb(var(--awds-state-cell-light-color-rest));
-  --awds-cell-description: rgb(var(--awds-state-cell-light-description-rest));
+  --awds-cell-bg:          rgb(var(--extended-transparent));   
+  --awds-cell-border:      rgb(var(--extended-transparent));   
+  --awds-cell-color:       rgb(var(--surface-on-highest));     
+  --awds-cell-description: rgb(var(--surface-on-high));
 }
 
 .cell-light:hover {
-  --awds-cell-bg:     rgb(var(--awds-state-cell-light-bg-hover));
-  --awds-cell-border: rgb(var(--awds-state-cell-light-border-hover));
+  --awds-cell-bg:     rgb(var(--surface-surface));     
+  --awds-cell-border: rgb(var(--surface-on-lowest));
 }
 
 .cell-light:focus-visible {
-  --awds-cell-bg:     transparent;
-  --awds-cell-border: transparent;
+  --awds-cell-bg:     rgb(var(--extended-transparent));   
+  --awds-cell-border: rgb(var(--extended-transparent));
 }
 
 .cell-light:active {
-  --awds-cell-bg:     transparent;
-  --awds-cell-border: transparent;
+  --awds-cell-bg:     rgb(var(--extended-transparent));   
+  --awds-cell-border: rgb(var(--extended-transparent));
 }
 
 .awds-table {
@@ -77,13 +77,13 @@
 }
 
 .awds-table .cell {
-  min-width: var(--awds-space-space-20);
+  min-width: var(--awds-space-20);
 }
 
 .awds-table--light .cell {
   border: 0;
-  border-bottom: var(--awds-space-space-px) solid rgb(var(--awds-state-cell-default-head-border-rest));
-  padding-inline: 0 var(--awds-space-space-3);
+  border-bottom: var(--awds-space-px) solid rgb(var(--surface-on-lowest));   
+  padding-inline: 0 var(--awds-space-3);
 }
 
 .awds-table--light tr:last-child .cell {
@@ -96,19 +96,19 @@
 }
 
 .cell {
-  --awds-cell-bg:          rgb(var(--awds-state-cell-light-bg-rest));
-  --awds-cell-border:      rgb(var(--awds-state-cell-light-border-rest));
-  --awds-cell-color:       rgb(var(--awds-state-cell-light-color-rest));
-  --awds-cell-description: rgb(var(--awds-state-cell-light-description-rest));
-  padding: var(--awds-space-space-3);                 
-  border: 1px solid var(--awds-cell-border);
+  --awds-cell-bg:          rgb(var(--extended-transparent));   
+  --awds-cell-border:      rgb(var(--extended-transparent));   
+  --awds-cell-color:       rgb(var(--surface-on-highest));     
+  --awds-cell-description: rgb(var(--surface-on-high));        
+  padding: var(--awds-space-3);                 
+  border: var(--awds-space-px) solid var(--awds-cell-border);
   background-color: var(--awds-cell-bg);
   color: var(--awds-cell-color);
   text-align: start;
   vertical-align: middle;
-  font-size: var(--awds-typography-typography-font-size-400);          
-  line-height: var(--awds-typography-typography-line-height-400);      
-  letter-spacing: var(--awds-typography-typography-letter-spacing-400); 
+  font-size: var(--awds-typography-font-size-400);          
+  line-height: var(--awds-typography-line-height-400);      
+  letter-spacing: var(--awds-typography-letter-spacing-400); 
   font-weight: var(--awds-font-weight-regular);
   text-wrap: pretty;
   transition: background-color 0.15s ease-out,
@@ -122,16 +122,16 @@
 }
 
 .cell:disabled, .cell[aria-disabled="true"] {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);
   pointer-events: none;
 }
 
 .cell__description {
   display: block;
-  margin-block-start: var(--awds-space-space-1);
+  margin-block-start: var(--awds-space-1);
   color: var(--awds-cell-description);
-  font-size: var(--awds-typography-typography-font-size-200);          
-  line-height: var(--awds-typography-typography-line-height-200);      
+  font-size: var(--awds-typography-font-size-200);          
+  line-height: var(--awds-typography-line-height-200);      
   font-weight: var(--awds-font-weight-regular);
 }
 

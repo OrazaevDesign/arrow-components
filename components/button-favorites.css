@@ -1,4 +1,4 @@
-/* ArrowDS · button-favorites@1.0.3
+/* ArrowDS · button-favorites@2.0.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -27,23 +27,15 @@
 
 @layer awds {
 
-.btn:focus-visible {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset);
-}
-
 .btn-favorites {
-  --awds-btn-bg:     transparent;
-  --awds-btn-chroma: transparent;
-  --awds-btn-border: transparent;
-  --awds-btn-color:  transparent;   
-  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-unselected-fill-rest));
-  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-unselected-stroke-rest));
-  transition: transform 0.12s ease-out;
-}
-
-.btn-favorites:active {
-  transform: scale(0.9);
+  --awds-btn-bg:     rgb(var(--extended-transparent));   
+  --awds-btn-chroma: rgb(var(--extended-transparent));   
+  --awds-btn-border: rgb(var(--extended-transparent));   
+  --awds-btn-color:  rgb(var(--surface-on-high));   
+  --awds-btn-fav-fill:   rgb(var(--surface-bright));   
+  --awds-btn-fav-stroke: rgb(var(--surface-on-high));   
+  transition: transform 0.12s ease-out,
+              color 0.15s ease-out;
 }
 
 .btn-favorites__icon {
@@ -69,23 +61,27 @@
 }
 
 .btn-favorites:hover {
-  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-unselected-fill-hover));
-  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-unselected-stroke-hover));
+  --awds-btn-color:      rgb(var(--surface-on-highest));   
+  --awds-btn-fav-fill:   rgb(var(--error-container-dim));   
+  --awds-btn-fav-stroke: rgb(var(--error-container-on));
+}
+
+.btn-favorites:focus-visible {
+  --awds-btn-color:      rgb(var(--surface-on-highest));   
+  --awds-btn-fav-fill:   rgb(var(--surface-bright));   
+  --awds-btn-fav-stroke: rgb(var(--surface-on-high));
+}
+
+.btn-favorites:active {
+  transform: scale(0.9);
+  --awds-btn-color:      rgb(var(--surface-on-highest));   
+  --awds-btn-fav-fill:   rgb(var(--error-container-dim));   
+  --awds-btn-fav-stroke: rgb(var(--error-container-on));
 }
 
 .btn-favorites[aria-pressed="true"] {
-  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-selected-fill-rest));
-  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-selected-stroke-rest));
-}
-
-.btn-favorites[aria-pressed="true"]:hover {
-  --awds-btn-fav-fill:   rgb(var(--awds-state-favorites-selected-fill-hover));
-  --awds-btn-fav-stroke: rgb(var(--awds-state-favorites-selected-stroke-hover));
-}
-
-.btn-favorites--mobile {
-  --awds-btn-padding: var(--awds-space-space-1-5);   
-  --awds-btn-icon:    var(--awds-space-space-5);
+  --awds-btn-fav-fill:   rgb(var(--error-container-on));   
+  --awds-btn-fav-stroke: rgb(var(--error-container-on));
 }
 
 @media (prefers-reduced-motion: reduce) {

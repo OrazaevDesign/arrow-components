@@ -1,4 +1,4 @@
-/* ArrowDS · textarea@1.0.3
+/* ArrowDS · textarea@1.0.13
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-txa-bg {
@@ -19,7 +19,7 @@
   initial-value: transparent;
 }
 
-@property --awds-txa-placehold {
+@property --awds-txa-placeholder {
   syntax: "<color>";
   inherits: true;
   initial-value: transparent;
@@ -28,10 +28,10 @@
 @layer awds {
 
 .txa {
-  --awds-txa-padding:  var(--awds-size-rectangle-400-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-400-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-400-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-txa-padding:  var(--awds-space-2-5);   
+  --awds-txa-text-gap: var(--awds-space-4);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-400);   
+  --awds-txa-fs:       var(--awds-control-font-size-400);   
   --awds-txa-lh:       var(--awds-control-line-height-400);
   --awds-txa-ls:       var(--awds-control-letter-spacing-400);
   box-sizing: border-box;
@@ -40,14 +40,15 @@
   width: 100%;
   border: 0;
   border-radius: var(--awds-txa-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-txa-border);
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-txa-border);
   background: linear-gradient(to right, var(--awds-txa-chroma, var(--awds-txa-bg)), var(--awds-txa-bg));
   color: var(--awds-txa-color);
   cursor: text;
+  opacity: var(--awds-opacity-100);   
   transition: --awds-txa-bg 0.15s ease-out,
               --awds-txa-chroma 0.15s ease-out,
               --awds-txa-color 0.15s ease-out,
-              --awds-txa-placehold 0.15s ease-out,
+              --awds-txa-placeholder 0.15s ease-out,
               box-shadow 0.15s ease-out;
 }
 
@@ -76,7 +77,7 @@
 }
 
 .txa__field::placeholder {
-  color: var(--awds-txa-placehold);
+  color: var(--awds-txa-placeholder);
   opacity: 1;
 }
 
@@ -89,10 +90,10 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  width: var(--awds-space-space-5);
-  height: var(--awds-space-space-5);
+  width: var(--awds-space-5);
+  height: var(--awds-space-5);
   background: var(--awds-txa-color);
-  opacity: var(--awds-opacity-opacity-30);
+  opacity: var(--awds-opacity-30);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
   pointer-events: none;
@@ -107,96 +108,96 @@
 }
 
 .txa--50 {
-  --awds-txa-padding:  var(--awds-size-rectangle-50-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-50-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-50-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-50-typography);
+  --awds-txa-padding:  var(--awds-space-0-5);   
+  --awds-txa-text-gap: var(--awds-space-2);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-50);   
+  --awds-txa-fs:       var(--awds-control-font-size-200);   
   --awds-txa-lh:       var(--awds-control-line-height-200);
   --awds-txa-ls:       var(--awds-control-letter-spacing-200);
 }
 
 .txa--100 {
-  --awds-txa-padding:  var(--awds-size-rectangle-100-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-100-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-100-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-100-typography);
+  --awds-txa-padding:  var(--awds-space-1);   
+  --awds-txa-text-gap: var(--awds-space-2-5);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-100);   
+  --awds-txa-fs:       var(--awds-control-font-size-300);   
   --awds-txa-lh:       var(--awds-control-line-height-300);
   --awds-txa-ls:       var(--awds-control-letter-spacing-300);
 }
 
 .txa--200 {
-  --awds-txa-padding:  var(--awds-size-rectangle-200-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-200-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-200-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-200-typography);
+  --awds-txa-padding:  var(--awds-space-2);   
+  --awds-txa-text-gap: var(--awds-space-3-5);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-200);   
+  --awds-txa-fs:       var(--awds-control-font-size-300);   
   --awds-txa-lh:       var(--awds-control-line-height-300);
   --awds-txa-ls:       var(--awds-control-letter-spacing-300);
 }
 
 .txa--300 {
-  --awds-txa-padding:  var(--awds-size-rectangle-300-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-300-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-300-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-txa-padding:  var(--awds-space-2);   
+  --awds-txa-text-gap: var(--awds-space-3-5);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-300);   
+  --awds-txa-fs:       var(--awds-control-font-size-400);   
   --awds-txa-lh:       var(--awds-control-line-height-400);
   --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .txa--400 {
-  --awds-txa-padding:  var(--awds-size-rectangle-400-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-400-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-400-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-txa-padding:  var(--awds-space-2-5);   
+  --awds-txa-text-gap: var(--awds-space-4);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-400);   
+  --awds-txa-fs:       var(--awds-control-font-size-400);   
   --awds-txa-lh:       var(--awds-control-line-height-400);
   --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .txa--500 {
-  --awds-txa-padding:  var(--awds-size-rectangle-500-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-500-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-500-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-txa-padding:  var(--awds-space-3-5);   
+  --awds-txa-text-gap: var(--awds-space-4-5);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-500);   
+  --awds-txa-fs:       var(--awds-control-font-size-600);   
   --awds-txa-lh:       var(--awds-control-line-height-600);
   --awds-txa-ls:       var(--awds-control-letter-spacing-600);
 }
 
 .txa--600 {
-  --awds-txa-padding:  var(--awds-size-rectangle-600-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-600-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-600-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-600-typography);
+  --awds-txa-padding:  var(--awds-space-4);   
+  --awds-txa-text-gap: var(--awds-space-4-5);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-600);   
+  --awds-txa-fs:       var(--awds-control-font-size-600);   
   --awds-txa-lh:       var(--awds-control-line-height-600);
   --awds-txa-ls:       var(--awds-control-letter-spacing-600);
 }
 
 .txa-autofill {
-  --awds-txa-bg:         rgb(var(--awds-state-form-control-autofill-bg-rest));
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-autofill-chroma-rest));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-autofill-border-rest));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-autofill-color-rest));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-autofill-placehold-rest));
+  --awds-txa-bg:         rgb(var(--tertiary-container-core));   
+  --awds-txa-chroma:     rgb(var(--tertiary-container-chroma));   
+  --awds-txa-border:     rgb(var(--tertiary-container-on-low));   
+  --awds-txa-color:      rgb(var(--tertiary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--tertiary-container-on-high));
 }
 
 .txa-autofill:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-autofill-border-hover));
+  --awds-txa-border:     rgb(var(--tertiary-container-on));
 }
 
 .txa-autofill:active:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-autofill-border-active));
+  --awds-txa-border:     rgb(var(--tertiary-container-on-low));
 }
 
 .txa-autofill:focus-within {
-  --awds-txa-bg:         rgb(var(--awds-state-form-control-autofill-bg-focus));
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-autofill-chroma-focus));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-autofill-border-focus));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-autofill-color-focus));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-autofill-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-txa-bg:         rgb(var(--surface-bright));   
+  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-border:     rgb(var(--primary-dim));   
+  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .txa:has(.txa__field:disabled), .txa--disabled {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);   
   cursor: default;
 }
 
@@ -212,54 +213,54 @@
 }
 
 .txa-default {
-  --awds-txa-bg:        rgb(var(--awds-state-form-control-default-bg-rest));
-  --awds-txa-chroma:    rgb(var(--awds-state-form-control-default-chroma-rest));
-  --awds-txa-border:    rgb(var(--awds-state-form-control-default-border-rest));
-  --awds-txa-color:     rgb(var(--awds-state-form-control-default-color-rest));
-  --awds-txa-placehold: rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-txa-bg:        rgb(var(--secondary-container-core));   
+  --awds-txa-chroma:    rgb(var(--secondary-container-chroma));   
+  --awds-txa-border:    rgb(var(--secondary-container-on-low));   
+  --awds-txa-color:     rgb(var(--secondary-container-on-highest));   
+  --awds-txa-placeholder: rgb(var(--secondary-container-on-high));
 }
 
 .txa-default:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border: rgb(var(--awds-state-form-control-default-border-hover));
+  --awds-txa-border: rgb(var(--secondary-container-on));
 }
 
 .txa-default:active:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border: rgb(var(--awds-state-form-control-default-border-active));
+  --awds-txa-border: rgb(var(--secondary-container-on-low));
 }
 
 .txa-default:focus-within {
-  --awds-txa-bg:        rgb(var(--awds-state-form-control-default-bg-focus));
-  --awds-txa-chroma:    rgb(var(--awds-state-form-control-default-chroma-focus));
-  --awds-txa-border:    rgb(var(--awds-state-form-control-default-border-focus));
-  --awds-txa-color:     rgb(var(--awds-state-form-control-default-color-focus));
-  --awds-txa-placehold: rgb(var(--awds-state-form-control-default-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-txa-bg:        rgb(var(--surface-bright));   
+  --awds-txa-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-txa-border:    rgb(var(--primary-dim));   
+  --awds-txa-color:     rgb(var(--primary-container-on-highest));   
+  --awds-txa-placeholder: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .txa-error {
-  --awds-txa-bg:         rgb(var(--awds-state-form-control-error-bg-rest));
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-error-chroma-rest));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-rest));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-error-color-rest));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-txa-bg:         rgb(var(--error-container-core));   
+  --awds-txa-chroma:     rgb(var(--error-container-chroma));   
+  --awds-txa-border:     rgb(var(--error-container-on-low));   
+  --awds-txa-color:      rgb(var(--error-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--error-container-on-high));
 }
 
 .txa-error:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-hover));
+  --awds-txa-border:     rgb(var(--error-container-on));
 }
 
 .txa-error:active:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-active));
+  --awds-txa-border:     rgb(var(--error-container-on-low));
 }
 
 .txa-error:focus-within {
-  --awds-txa-bg:         rgb(var(--awds-state-form-control-error-bg-focus));
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-error-chroma-focus));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-error-border-focus));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-error-color-focus));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-error-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-txa-bg:         rgb(var(--surface-bright));   
+  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-border:     rgb(var(--primary-dim));   
+  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
@@ -267,65 +268,65 @@
   --awds-txa-bg:         transparent;
   --awds-txa-chroma:     transparent;
   --awds-txa-border:     transparent;
-  --awds-txa-color:      rgb(var(--awds-state-form-control-ghost-color-rest));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));
 }
 
 .txa-ghost:focus-within {
-  --awds-txa-color:      rgb(var(--awds-state-form-control-ghost-color-focus));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .txa-light {
-  --awds-txa-bg:         rgb(var(--awds-state-form-control-light-bg-rest));
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-light-chroma-rest));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-light-border-rest));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-light-color-rest));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-light-placehold-rest));
+  --awds-txa-bg:         rgb(var(--surface-bright));   
+  --awds-txa-chroma:     rgb(var(--surface-bright));   
+  --awds-txa-border:     rgb(var(--secondary-container-on-low));   
+  --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));
 }
 
 .txa-light:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-light-border-hover));
+  --awds-txa-border:     rgb(var(--secondary-container-on));
 }
 
 .txa-light:active:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-light-border-active));
+  --awds-txa-border:     rgb(var(--secondary-container-on-low));
 }
 
 .txa-light:focus-within {
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-light-chroma-focus));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-light-border-focus));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-light-color-focus));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-light-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-border:     rgb(var(--primary-dim));   
+  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 .txa-success {
-  --awds-txa-bg:         rgb(var(--awds-state-form-control-success-bg-rest));
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-success-chroma-rest));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-rest));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-success-color-rest));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-txa-bg:         rgb(var(--success-container-core));   
+  --awds-txa-chroma:     rgb(var(--success-container-chroma));   
+  --awds-txa-border:     rgb(var(--success-container-on-low));   
+  --awds-txa-color:      rgb(var(--success-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--success-container-on-high));
 }
 
 .txa-success:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-hover));
+  --awds-txa-border:     rgb(var(--success-container-on));
 }
 
 .txa-success:active:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-active));
+  --awds-txa-border:     rgb(var(--success-container-on-low));
 }
 
 .txa-success:focus-within {
-  --awds-txa-bg:         rgb(var(--awds-state-form-control-success-bg-focus));
-  --awds-txa-chroma:     rgb(var(--awds-state-form-control-success-chroma-focus));
-  --awds-txa-border:     rgb(var(--awds-state-form-control-success-border-focus));
-  --awds-txa-color:      rgb(var(--awds-state-form-control-success-color-focus));
-  --awds-txa-placehold:  rgb(var(--awds-state-form-control-success-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-txa-bg:         rgb(var(--surface-bright));   
+  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-border:     rgb(var(--primary-dim));   
+  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 

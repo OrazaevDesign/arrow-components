@@ -1,0 +1,368 @@
+/* ArrowDS · textarea-combi@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@property --awds-tcombi-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-tcombi-chroma {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+@property --awds-tcombi-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@property --awds-tcombi-label {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+
+@layer awds {
+
+.tcombi {
+  --awds-tcombi-rounded:      var(--awds-rounded-border-radius-400);   
+  --awds-tcombi-text-gap:     var(--awds-space-4);   
+  --awds-tcombi-input-top:    var(--awds-space-4);   
+  --awds-tcombi-input-bottom: var(--awds-space-1);   
+  --awds-tcombi-label-top:    var(--awds-space-1);   
+  --awds-tcombi-fs:           var(--awds-control-font-size-400);   
+  --awds-tcombi-lh:           var(--awds-control-line-height-400);
+  --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: var(--awds-tcombi-rounded);
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-tcombi-border);
+  background: linear-gradient(to right, var(--awds-tcombi-chroma, var(--awds-tcombi-bg)), var(--awds-tcombi-bg));
+  color: var(--awds-tcombi-color);
+  cursor: text;
+  opacity: var(--awds-opacity-100);   
+  transition: --awds-tcombi-bg 0.15s ease-out,
+              --awds-tcombi-chroma 0.15s ease-out,
+              --awds-tcombi-color 0.15s ease-out,
+              --awds-tcombi-label 0.15s ease-out,
+              box-shadow 0.15s ease-out;
+}
+
+.tcombi__label {
+  position: absolute;
+  inset-block-start: var(--awds-tcombi-label-top);
+  inset-inline: var(--awds-tcombi-text-gap);
+  color: var(--awds-tcombi-label);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-tcombi-label-fs);
+  line-height: var(--awds-tcombi-label-lh);
+  font-weight: var(--awds-font-weight-regular);
+  pointer-events: none;
+  cursor: text;
+}
+
+.tcombi__field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-block-size: calc(3 * var(--awds-tcombi-lh));
+  padding-block: var(--awds-tcombi-input-top) var(--awds-tcombi-input-bottom);
+  padding-inline: var(--awds-tcombi-text-gap);
+  appearance: none;
+  background: none;
+  border: 0;
+  margin: 0;
+  color: var(--awds-tcombi-color);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-tcombi-fs);
+  line-height: var(--awds-tcombi-lh);
+  letter-spacing: var(--awds-tcombi-ls);
+  font-weight: var(--awds-font-weight-regular);
+  resize: vertical;
+}
+
+.tcombi__field:focus {
+  outline: none;
+}
+
+.tcombi__field::placeholder {
+  color: var(--awds-tcombi-label);
+  opacity: 1;
+}
+
+.tcombi--fixed .tcombi__field {
+  resize: none;
+}
+
+.tcombi--300 {
+  --awds-tcombi-rounded:      var(--awds-rounded-border-radius-300);   
+  --awds-tcombi-text-gap:     var(--awds-space-3-5);   
+  --awds-tcombi-input-top:    var(--awds-space-3-5);   
+  --awds-tcombi-input-bottom: var(--awds-space-0-5);   
+  --awds-tcombi-label-top:    var(--awds-space-0-5);   
+  --awds-tcombi-fs:           var(--awds-control-font-size-400);   
+  --awds-tcombi-lh:           var(--awds-control-line-height-400);
+  --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+}
+
+.tcombi--400 {
+  --awds-tcombi-rounded:      var(--awds-rounded-border-radius-400);   
+  --awds-tcombi-text-gap:     var(--awds-space-4);   
+  --awds-tcombi-input-top:    var(--awds-space-4);   
+  --awds-tcombi-input-bottom: var(--awds-space-1);   
+  --awds-tcombi-label-top:    var(--awds-space-1);   
+  --awds-tcombi-fs:           var(--awds-control-font-size-400);   
+  --awds-tcombi-lh:           var(--awds-control-line-height-400);
+  --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+}
+
+.tcombi--500 {
+  --awds-tcombi-rounded:      var(--awds-rounded-border-radius-500);   
+  --awds-tcombi-text-gap:     var(--awds-space-4-5);   
+  --awds-tcombi-input-top:    var(--awds-space-5-5);   
+  --awds-tcombi-input-bottom: var(--awds-space-1-5);   
+  --awds-tcombi-label-top:    var(--awds-space-1-5);   
+  --awds-tcombi-fs:           var(--awds-control-font-size-600);   
+  --awds-tcombi-lh:           var(--awds-control-line-height-600);
+  --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-tcombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-tcombi-label-lh:     var(--awds-control-line-height-200);
+}
+
+.tcombi--600 {
+  --awds-tcombi-rounded:      var(--awds-rounded-border-radius-600);   
+  --awds-tcombi-text-gap:     var(--awds-space-4-5);   
+  --awds-tcombi-input-top:    var(--awds-space-6);   
+  --awds-tcombi-input-bottom: var(--awds-space-2);   
+  --awds-tcombi-label-top:    var(--awds-space-2);   
+  --awds-tcombi-fs:           var(--awds-control-font-size-600);   
+  --awds-tcombi-lh:           var(--awds-control-line-height-600);
+  --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-tcombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-tcombi-label-lh:     var(--awds-control-line-height-200);
+}
+
+.tcombi-autofill {
+  --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--tertiary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--tertiary-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
+}
+
+.tcombi-autofill:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--tertiary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--tertiary-container-on));   
+  --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
+}
+
+.tcombi-autofill:active:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--tertiary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--tertiary-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
+}
+
+.tcombi-autofill:focus-within {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--primary-dim));   
+  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.tcombi:has(> .tcombi__field:disabled), .tcombi--disabled {
+  opacity: var(--awds-opacity-40);   
+  cursor: default;
+}
+
+.tcombi__field:disabled {
+  cursor: default;
+  resize: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tcombi {
+    transition: none;
+  }
+}
+
+.tcombi-default {
+  --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--secondary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-default:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--secondary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--secondary-container-on));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-default:active:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--secondary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-default:focus-within {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--primary-dim));   
+  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.tcombi-error {
+  --awds-tcombi-bg:          rgb(var(--error-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--error-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--error-container-on-high));
+}
+
+.tcombi-error:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--error-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--error-container-on));   
+  --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--error-container-on-high));
+}
+
+.tcombi-error:active:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--error-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--error-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--error-container-on-high));
+}
+
+.tcombi-error:focus-within {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--primary-dim));   
+  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.tcombi-ghost {
+  --awds-tcombi-bg:          transparent;
+  --awds-tcombi-chroma:      transparent;
+  --awds-tcombi-border:      transparent;
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-ghost:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-ghost:active:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-ghost:focus-within {
+  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.tcombi-light {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--surface-bright));   
+  --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-light:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--surface-bright));   
+  --awds-tcombi-border:      rgb(var(--secondary-container-on));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-light:active:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--surface-bright));   
+  --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+}
+
+.tcombi-light:focus-within {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--primary-dim));   
+  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
+  outline-offset: var(--awds-focus-offset);
+}
+
+.tcombi-success {
+  --awds-tcombi-bg:          rgb(var(--success-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--success-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--success-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--success-container-on-high));
+}
+
+.tcombi-success:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--success-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--success-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--success-container-on));   
+  --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--success-container-on-high));
+}
+
+.tcombi-success:active:not(:focus-within):has(> .tcombi__field:enabled) {
+  --awds-tcombi-bg:          rgb(var(--success-container-core));   
+  --awds-tcombi-chroma:      rgb(var(--success-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--success-container-on-low));   
+  --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--success-container-on-high));
+}
+
+.tcombi-success:focus-within {
+  --awds-tcombi-bg:          rgb(var(--surface-bright));   
+  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-border:      rgb(var(--primary-dim));   
+  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
+  outline-offset: var(--awds-focus-offset);
+}
+
+}

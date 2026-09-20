@@ -1,4 +1,4 @@
-/* ArrowDS · formfield@1.0.3
+/* ArrowDS · formfield@1.0.11
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -7,7 +7,7 @@
   --awds-fld-fs: var(--awds-control-font-size-300);
   --awds-fld-lh: var(--awds-control-line-height-300);
   --awds-fld-ls: var(--awds-control-letter-spacing-300);
-  --awds-fld-gap: var(--awds-space-space-1);
+  --awds-fld-gap: var(--awds-space-1);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
 }
 
 .fld__error {
-  color: rgb(var(--awds-state-form-control-error-placehold-rest));
+  color: rgb(var(--error-container-on-high));
 }
 
 .fld--300 {
@@ -52,166 +52,166 @@
 }
 
 .fld--300 .lbl {
-  --awds-lbl-text-pad: var(--awds-space-space-0);
-  --awds-lbl-mark:     var(--awds-size-square-300-icon);
-  --awds-lbl-help:     var(--awds-space-space-4);
-  --awds-lbl-control:  calc(var(--awds-size-square-300-icon) + 2 * var(--awds-size-square-300-padding));
+  --awds-lbl-text-pad: var(--awds-space-0);
+  --awds-lbl-mark:     var(--awds-space-5);   
+  --awds-lbl-help:     var(--awds-space-4);
+  --awds-lbl-control:  calc(var(--awds-space-5) + 2 * var(--awds-space-0));
 }
 
 .fld--400 .lbl {
-  --awds-lbl-text-pad: var(--awds-space-space-0-5);
-  --awds-lbl-mark:     var(--awds-size-square-400-icon);
-  --awds-lbl-help:     var(--awds-space-space-4);
-  --awds-lbl-control:  calc(var(--awds-size-square-400-icon) + 2 * var(--awds-size-square-400-padding));
+  --awds-lbl-text-pad: var(--awds-space-0-5);
+  --awds-lbl-mark:     var(--awds-space-5);   
+  --awds-lbl-help:     var(--awds-space-4);
+  --awds-lbl-control:  calc(var(--awds-space-5) + 2 * var(--awds-space-0-5));
 }
 
 .fld--500 .lbl {
-  --awds-lbl-text-pad: var(--awds-space-space-0-5);
-  --awds-lbl-mark:     var(--awds-size-square-500-icon);
-  --awds-lbl-help:     var(--awds-space-space-5);
-  --awds-lbl-control:  calc(var(--awds-size-square-500-icon) + 2 * var(--awds-size-square-500-padding));
+  --awds-lbl-text-pad: var(--awds-space-0-5);
+  --awds-lbl-mark:     var(--awds-space-6);   
+  --awds-lbl-help:     var(--awds-space-5);
+  --awds-lbl-control:  calc(var(--awds-space-6) + 2 * var(--awds-space-0-5));
 }
 
 .fld--300 .lbl .checkbox {
-  --awds-checkbox-padding: var(--awds-size-square-300-padding);
-  --awds-checkbox-icon:    var(--awds-size-square-300-icon);
-  --awds-checkbox-rounded: var(--awds-size-square-300-rounded);
+  --awds-checkbox-padding: var(--awds-space-0);   
+  --awds-checkbox-icon:    var(--awds-space-5);   
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-300);
 }
 
 .fld--400 .lbl .checkbox {
-  --awds-checkbox-padding: var(--awds-size-square-400-padding);
-  --awds-checkbox-icon:    var(--awds-size-square-400-icon);
-  --awds-checkbox-rounded: var(--awds-size-square-400-rounded);
+  --awds-checkbox-padding: var(--awds-space-0-5);   
+  --awds-checkbox-icon:    var(--awds-space-5);   
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-400);
 }
 
 .fld--500 .lbl .checkbox {
-  --awds-checkbox-padding: var(--awds-size-square-500-padding);
-  --awds-checkbox-icon:    var(--awds-size-square-500-icon);
-  --awds-checkbox-rounded: var(--awds-size-square-500-rounded);
+  --awds-checkbox-padding: var(--awds-space-0-5);   
+  --awds-checkbox-icon:    var(--awds-space-6);   
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-500);
 }
 
 .fld--300 .lbl .radio {
-  --awds-radio-padding: var(--awds-size-square-300-padding);
-  --awds-radio-icon:    var(--awds-size-square-300-icon);
+  --awds-radio-padding: var(--awds-space-0);   
+  --awds-radio-icon:    var(--awds-space-5);
 }
 
 .fld--400 .lbl .radio {
-  --awds-radio-padding: var(--awds-size-square-400-padding);
-  --awds-radio-icon:    var(--awds-size-square-400-icon);
+  --awds-radio-padding: var(--awds-space-0-5);   
+  --awds-radio-icon:    var(--awds-space-5);
 }
 
 .fld--500 .lbl .radio {
-  --awds-radio-padding: var(--awds-size-square-500-padding);
-  --awds-radio-icon:    var(--awds-size-square-500-icon);
+  --awds-radio-padding: var(--awds-space-0-5);   
+  --awds-radio-icon:    var(--awds-space-6);
 }
 
 .fld--300 .lbl .switch {
-  --awds-switch-width:   var(--awds-size-square-300-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-300-icon);
-  --awds-switch-padding: var(--awds-size-square-300-padding);
+  --awds-switch-width:   var(--awds-space-8);   
+  --awds-switch-icon:    var(--awds-space-5);   
+  --awds-switch-padding: var(--awds-space-0);
 }
 
 .fld--400 .lbl .switch {
-  --awds-switch-width:   var(--awds-size-square-400-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-400-icon);
-  --awds-switch-padding: var(--awds-size-square-400-padding);
+  --awds-switch-width:   var(--awds-space-9);   
+  --awds-switch-icon:    var(--awds-space-5);   
+  --awds-switch-padding: var(--awds-space-0-5);
 }
 
 .fld--500 .lbl .switch {
-  --awds-switch-width:   var(--awds-size-square-500-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-500-icon);
-  --awds-switch-padding: var(--awds-size-square-500-padding);
+  --awds-switch-width:   var(--awds-space-11);   
+  --awds-switch-icon:    var(--awds-space-6);   
+  --awds-switch-padding: var(--awds-space-0-5);
 }
 
 .fld--300 .input {
-  --awds-input-padding:  var(--awds-size-rectangle-300-padding);
-  --awds-input-icon:     var(--awds-size-rectangle-300-icon);
-  --awds-input-rounded:  var(--awds-size-rectangle-300-rounded);
-  --awds-input-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-input-padding:  var(--awds-space-2);   
+  --awds-input-icon:     var(--awds-space-5);   
+  --awds-input-rounded:  var(--awds-rounded-border-radius-300);   
+  --awds-input-fs:       var(--awds-control-font-size-400);   
   --awds-input-lh:       var(--awds-control-line-height-400);
   --awds-input-ls:       var(--awds-control-letter-spacing-400);
-  --awds-input-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-input-text-gap: var(--awds-space-3-5);
 }
 
 .fld--400 .input {
-  --awds-input-padding:  var(--awds-size-rectangle-400-padding);
-  --awds-input-icon:     var(--awds-size-rectangle-400-icon);
-  --awds-input-rounded:  var(--awds-size-rectangle-400-rounded);
-  --awds-input-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-input-padding:  var(--awds-space-2-5);   
+  --awds-input-icon:     var(--awds-space-5);   
+  --awds-input-rounded:  var(--awds-rounded-border-radius-400);   
+  --awds-input-fs:       var(--awds-control-font-size-400);   
   --awds-input-lh:       var(--awds-control-line-height-400);
   --awds-input-ls:       var(--awds-control-letter-spacing-400);
-  --awds-input-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-input-text-gap: var(--awds-space-4);
 }
 
 .fld--500 .input {
-  --awds-input-padding:  var(--awds-size-rectangle-500-padding);
-  --awds-input-icon:     var(--awds-size-rectangle-500-icon);
-  --awds-input-rounded:  var(--awds-size-rectangle-500-rounded);
-  --awds-input-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-input-padding:  var(--awds-space-3-5);   
+  --awds-input-icon:     var(--awds-space-5);   
+  --awds-input-rounded:  var(--awds-rounded-border-radius-500);   
+  --awds-input-fs:       var(--awds-control-font-size-600);   
   --awds-input-lh:       var(--awds-control-line-height-600);
   --awds-input-ls:       var(--awds-control-letter-spacing-600);
-  --awds-input-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-input-text-gap: var(--awds-space-4-5);
 }
 
 .fld--300 .select {
-  --awds-select-padding:  var(--awds-size-rectangle-300-padding);
-  --awds-select-icon:     var(--awds-size-rectangle-300-icon);
-  --awds-select-rounded:  var(--awds-size-rectangle-300-rounded);
-  --awds-select-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-select-padding:  var(--awds-space-2);   
+  --awds-select-icon:     var(--awds-space-5);   
+  --awds-select-rounded:  var(--awds-rounded-border-radius-300);   
+  --awds-select-fs:       var(--awds-control-font-size-400);   
   --awds-select-lh:       var(--awds-control-line-height-400);
   --awds-select-ls:       var(--awds-control-letter-spacing-400);
-  --awds-select-text-gap: var(--awds-size-rectangle-300-text-gap);
+  --awds-select-text-gap: var(--awds-space-3-5);
 }
 
 .fld--400 .select {
-  --awds-select-padding:  var(--awds-size-rectangle-400-padding);
-  --awds-select-icon:     var(--awds-size-rectangle-400-icon);
-  --awds-select-rounded:  var(--awds-size-rectangle-400-rounded);
-  --awds-select-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-select-padding:  var(--awds-space-2-5);   
+  --awds-select-icon:     var(--awds-space-5);   
+  --awds-select-rounded:  var(--awds-rounded-border-radius-400);   
+  --awds-select-fs:       var(--awds-control-font-size-400);   
   --awds-select-lh:       var(--awds-control-line-height-400);
   --awds-select-ls:       var(--awds-control-letter-spacing-400);
-  --awds-select-text-gap: var(--awds-size-rectangle-400-text-gap);
+  --awds-select-text-gap: var(--awds-space-4);
 }
 
 .fld--500 .select {
-  --awds-select-padding:  var(--awds-size-rectangle-500-padding);
-  --awds-select-icon:     var(--awds-size-rectangle-500-icon);
-  --awds-select-rounded:  var(--awds-size-rectangle-500-rounded);
-  --awds-select-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-select-padding:  var(--awds-space-3-5);   
+  --awds-select-icon:     var(--awds-space-5);   
+  --awds-select-rounded:  var(--awds-rounded-border-radius-500);   
+  --awds-select-fs:       var(--awds-control-font-size-600);   
   --awds-select-lh:       var(--awds-control-line-height-600);
   --awds-select-ls:       var(--awds-control-letter-spacing-600);
-  --awds-select-text-gap: var(--awds-size-rectangle-500-text-gap);
+  --awds-select-text-gap: var(--awds-space-4-5);
 }
 
 .fld--300 .txa {
-  --awds-txa-padding:  var(--awds-size-rectangle-300-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-300-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-300-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-300-typography);
+  --awds-txa-padding:  var(--awds-space-2);   
+  --awds-txa-text-gap: var(--awds-space-3-5);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-300);   
+  --awds-txa-fs:       var(--awds-control-font-size-400);   
   --awds-txa-lh:       var(--awds-control-line-height-400);
   --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .fld--400 .txa {
-  --awds-txa-padding:  var(--awds-size-rectangle-400-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-400-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-400-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-400-typography);
+  --awds-txa-padding:  var(--awds-space-2-5);   
+  --awds-txa-text-gap: var(--awds-space-4);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-400);   
+  --awds-txa-fs:       var(--awds-control-font-size-400);   
   --awds-txa-lh:       var(--awds-control-line-height-400);
   --awds-txa-ls:       var(--awds-control-letter-spacing-400);
 }
 
 .fld--500 .txa {
-  --awds-txa-padding:  var(--awds-size-rectangle-500-padding);
-  --awds-txa-text-gap: var(--awds-size-rectangle-500-text-gap);
-  --awds-txa-rounded:  var(--awds-size-rectangle-500-rounded);
-  --awds-txa-fs:       var(--awds-size-rectangle-500-typography);
+  --awds-txa-padding:  var(--awds-space-3-5);   
+  --awds-txa-text-gap: var(--awds-space-4-5);   
+  --awds-txa-rounded:  var(--awds-rounded-border-radius-500);   
+  --awds-txa-fs:       var(--awds-control-font-size-600);   
   --awds-txa-lh:       var(--awds-control-line-height-600);
   --awds-txa-ls:       var(--awds-control-letter-spacing-600);
 }
 
 .fld:has(:disabled) .fld__description {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);
 }
 
 }

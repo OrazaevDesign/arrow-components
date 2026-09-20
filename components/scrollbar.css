@@ -1,18 +1,18 @@
-/* ArrowDS · scrollbar@1.0.0
+/* ArrowDS · scrollbar@2.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
 
 .scrollbar {
-  --awds-scrollbar-size: var(--awds-space-space-1-5);
-  --awds-scrollbar-inset: var(--awds-space-space-px);
-  --awds-scrollbar-track: rgb(var(--surface-dim));
-  --awds-scrollbar-thumb: rgb(var(--surface-on) / var(--awds-opacity-opacity-40));
-  --awds-scrollbar-thumb-hover: rgb(var(--surface-on) / var(--awds-opacity-opacity-70));
+  --awds-scrollbar-size: var(--awds-space-1-5);
+  --awds-scrollbar-inset: var(--awds-space-px);
+  --awds-scrollbar-track: rgb(var(--surface-dim));   
+  --awds-scrollbar-thumb: rgb(var(--surface-on) / var(--awds-opacity-40));   
+  --awds-scrollbar-thumb-hover: rgb(var(--surface-on) / var(--awds-opacity-70));
 }
 
-.scrollbar-clear {
-  --awds-scrollbar-track: transparent;
+.scrollbar-transparent {
+  --awds-scrollbar-track: rgb(var(--extended-transparent));
 }
 
 .scrollbar::-webkit-scrollbar {

@@ -1,4 +1,4 @@
-/* ArrowDS · price@1.0.3
+/* ArrowDS · price@2.0.4
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -11,8 +11,8 @@
   --awds-price-lh-sec:  var(--awds-control-line-height-300);
   --awds-price-ls-sec:  var(--awds-control-letter-spacing-300);
   --awds-price-gap:     0.2em;
-  --awds-price-color:   rgb(var(--surface-on-highest));
-  --awds-price-muted:   rgb(var(--surface-on));
+  --awds-price-color:   rgb(var(--surface-on-highest));   
+  --awds-price-muted:   rgb(var(--surface-on));   
   display: inline-flex;
   flex-direction: row;
   align-items: baseline;
@@ -75,7 +75,7 @@
   row-gap: 0;
 }
 
-.price--currency-left .price__currency, .price--currency-left .price__old-currency {
+.price--currency-start .price__currency, .price--currency-start .price__old-currency {
   order: -1;
 }
 
@@ -188,22 +188,6 @@
   --awds-price-fs-sec: var(--awds-control-font-size-50);
   --awds-price-lh-sec: var(--awds-control-line-height-50);
   --awds-price-ls-sec: var(--awds-control-letter-spacing-50);
-}
-
-.price--listing {
-  --awds-price-fs:     var(--awds-wysiwyg-wysiwyg-font-size-price-listing);
-  --awds-price-lh:     var(--awds-wysiwyg-wysiwyg-line-height-price-listing);
-  --awds-price-ls:     var(--awds-wysiwyg-wysiwyg-letter-spacing-price-listing);
-  --awds-price-fs-sec: var(--awds-wysiwyg-wysiwyg-font-size-caption);
-  --awds-price-lh-sec: var(--awds-wysiwyg-wysiwyg-line-height-caption);
-  --awds-price-ls-sec: var(--awds-wysiwyg-wysiwyg-letter-spacing-caption);
-}
-
-.price--listing .price__placeholder {
-  font-size: var(--awds-wysiwyg-wysiwyg-font-size-body);
-  line-height: var(--awds-price-lh);
-  letter-spacing: var(--awds-wysiwyg-wysiwyg-letter-spacing-body);
-  font-weight: var(--awds-font-weight-regular);
 }
 
 }

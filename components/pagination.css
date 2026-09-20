@@ -1,0 +1,100 @@
+/* ArrowDS · pagination@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.pgn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--awds-space-3);
+  padding-top: var(--awds-space-12);
+  max-width: var(--awds-layout-section-medium-max);
+  margin-inline: auto;
+}
+
+.pgn__controls {
+  position: relative;      
+  display: flex;
+  align-items: center;
+  gap: var(--awds-space-1-5);
+  width: 100%;
+  min-width: 0;
+}
+
+.pgn__list {
+  display: flex;
+  align-items: center;
+  gap: var(--awds-space-1-5);
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  justify-content: center;
+  justify-content: safe center;
+}
+
+.pgn__list::-webkit-scrollbar { display: none;
+}
+
+.pgn__item { display: contents;
+}
+
+.pgn__edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--awds-space-1-5);
+  pointer-events: none;
+}
+
+.pgn__edge > * { pointer-events: auto;
+}
+
+.pgn__edge--start {
+  left: 0;
+  padding-right: var(--awds-space-3);
+  background: linear-gradient(
+    to right,
+    rgb(var(--surface-bright)) 90%,        
+    rgb(var(--extended-transparent))       
+  );
+}
+
+.pgn__edge--end {
+  right: 0;
+  padding-left: var(--awds-space-3);
+  background: linear-gradient(
+    to left,
+    rgb(var(--surface-bright)) 90%,        
+    rgb(var(--extended-transparent))       
+  );
+}
+
+.pgn__caption {
+  margin: 0;
+  width: 100%;
+  color: rgb(var(--surface-on));           
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-control-font-size-300);
+  line-height: var(--awds-control-line-height-300);
+  letter-spacing: var(--awds-control-letter-spacing-300);
+  font-weight: var(--awds-font-weight-regular);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pgn__list {
+    scroll-behavior: auto;
+  }
+}
+
+}

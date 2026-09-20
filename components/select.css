@@ -1,4 +1,4 @@
-/* ArrowDS · select@1.0.6
+/* ArrowDS · select@1.0.17
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-select-bg {
@@ -19,7 +19,7 @@
   initial-value: transparent;
 }
 
-@property --awds-select-placehold {
+@property --awds-select-placeholder {
   syntax: "<color>";
   inherits: true;
   initial-value: transparent;
@@ -40,23 +40,23 @@
 @layer awds {
 
 .select {
-  --awds-select-padding: var(--awds-size-rectangle-400-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-400-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-select-padding: var(--awds-space-2-5);   
+  --awds-select-icon:    var(--awds-space-5);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-select-fs:      var(--awds-control-font-size-400);   
   --awds-select-lh:      var(--awds-control-line-height-400);
   --awds-select-ls:      var(--awds-control-letter-spacing-400);
-  --awds-select-text-gap: var(--awds-size-rectangle-400-text-gap);
-  --awds-select-picker-rounded: var(--awds-size-dropdown-400-border-radius);
-  --awds-select-picker-padding: var(--awds-size-dropdown-400-padding);
-  --awds-select-opt-padding: var(--awds-size-rectangle-300-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-300-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-select-text-gap: var(--awds-space-4);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-2);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-300);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-400);   
   --awds-select-opt-lh:      var(--awds-control-line-height-400);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-400);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-300-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-300-description);
+  --awds-select-opt-text-gap: var(--awds-space-3-5);   
+  --awds-select-opt-icon:    var(--awds-space-5);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-300);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-300);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-300);
   box-sizing: border-box;
@@ -66,14 +66,15 @@
   width: 100%;
   border: 0;
   border-radius: var(--awds-select-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-select-border);
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-select-border);
   background: linear-gradient(to right, var(--awds-select-chroma, var(--awds-select-bg)), var(--awds-select-bg));
   color: var(--awds-select-color);
   cursor: pointer;
+  opacity: var(--awds-opacity-100);   
   transition: --awds-select-bg 0.15s ease-out,
               --awds-select-chroma 0.15s ease-out,
               --awds-select-color 0.15s ease-out,
-              --awds-select-placehold 0.15s ease-out,
+              --awds-select-placeholder 0.15s ease-out,
               --awds-select-chevron 0.15s ease-out,
               --awds-select-icon-color 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -118,7 +119,7 @@
 }
 
 .select__field:has(option[value=""]:checked) {
-  color: var(--awds-select-placehold);
+  color: var(--awds-select-placeholder);
 }
 
 .select:has(> .select__prefix) .select__field {
@@ -158,155 +159,155 @@
 }
 
 .select--50 {
-  --awds-select-padding: var(--awds-size-rectangle-50-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-50-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-50-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-select-padding: var(--awds-space-0-5);   
+  --awds-select-icon:    var(--awds-space-4);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-50);   
+  --awds-select-fs:      var(--awds-control-font-size-200);   
   --awds-select-lh:      var(--awds-control-line-height-200);
   --awds-select-ls:      var(--awds-control-letter-spacing-200);
-  --awds-select-text-gap: var(--awds-size-rectangle-50-text-gap);
-  --awds-select-picker-rounded: var(--awds-size-dropdown-200-border-radius);
-  --awds-select-picker-padding: var(--awds-size-dropdown-200-padding);
-  --awds-select-opt-padding: var(--awds-size-rectangle-50-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-50-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-select-text-gap: var(--awds-space-2);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-200);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-0-5);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-50);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-200);   
   --awds-select-opt-lh:      var(--awds-control-line-height-200);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-200);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-50-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-50-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-50-description);
+  --awds-select-opt-text-gap: var(--awds-space-2);   
+  --awds-select-opt-icon:    var(--awds-space-4);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-100);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-100);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-100);
 }
 
 .select--100 {
-  --awds-select-padding: var(--awds-size-rectangle-100-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-100-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-100-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-select-padding: var(--awds-space-1);   
+  --awds-select-icon:    var(--awds-space-4);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-100);   
+  --awds-select-fs:      var(--awds-control-font-size-300);   
   --awds-select-lh:      var(--awds-control-line-height-300);
   --awds-select-ls:      var(--awds-control-letter-spacing-300);
-  --awds-select-text-gap: var(--awds-size-rectangle-100-text-gap);
-  --awds-select-picker-rounded: var(--awds-size-dropdown-200-border-radius);
-  --awds-select-picker-padding: var(--awds-size-dropdown-200-padding);
-  --awds-select-opt-padding: var(--awds-size-rectangle-50-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-50-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-50-typography);
+  --awds-select-text-gap: var(--awds-space-2-5);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-200);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-0-5);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-50);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-200);   
   --awds-select-opt-lh:      var(--awds-control-line-height-200);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-200);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-50-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-50-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-50-description);
+  --awds-select-opt-text-gap: var(--awds-space-2);   
+  --awds-select-opt-icon:    var(--awds-space-4);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-100);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-100);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-100);
 }
 
 .select--200 {
-  --awds-select-padding: var(--awds-size-rectangle-200-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-200-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-200-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-select-padding: var(--awds-space-2);   
+  --awds-select-icon:    var(--awds-space-4);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-200);   
+  --awds-select-fs:      var(--awds-control-font-size-300);   
   --awds-select-lh:      var(--awds-control-line-height-300);
   --awds-select-ls:      var(--awds-control-letter-spacing-300);
-  --awds-select-text-gap: var(--awds-size-rectangle-200-text-gap);
-  --awds-select-picker-rounded: var(--awds-size-dropdown-200-border-radius);
-  --awds-select-picker-padding: var(--awds-size-dropdown-200-padding);
-  --awds-select-opt-padding: var(--awds-size-rectangle-100-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-100-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-100-typography);
+  --awds-select-text-gap: var(--awds-space-3-5);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-200);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-1);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-100);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-300);   
   --awds-select-opt-lh:      var(--awds-control-line-height-300);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-300);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-100-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-100-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-100-description);
+  --awds-select-opt-text-gap: var(--awds-space-2-5);   
+  --awds-select-opt-icon:    var(--awds-space-4);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-200);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-200);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-200);
 }
 
 .select--300 {
-  --awds-select-padding: var(--awds-size-rectangle-300-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-300-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-300-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-select-padding: var(--awds-space-2);   
+  --awds-select-icon:    var(--awds-space-5);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-300);   
+  --awds-select-fs:      var(--awds-control-font-size-400);   
   --awds-select-lh:      var(--awds-control-line-height-400);
   --awds-select-ls:      var(--awds-control-letter-spacing-400);
-  --awds-select-text-gap: var(--awds-size-rectangle-300-text-gap);
-  --awds-select-picker-rounded: var(--awds-size-dropdown-300-border-radius);
-  --awds-select-picker-padding: var(--awds-size-dropdown-300-padding);
-  --awds-select-opt-padding: var(--awds-size-rectangle-200-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-200-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-200-typography);
+  --awds-select-text-gap: var(--awds-space-3-5);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-300);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-2);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-200);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-300);   
   --awds-select-opt-lh:      var(--awds-control-line-height-300);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-300);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-200-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-200-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-200-description);
+  --awds-select-opt-text-gap: var(--awds-space-3-5);   
+  --awds-select-opt-icon:    var(--awds-space-4);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-200);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-200);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-200);
 }
 
 .select--400 {
-  --awds-select-padding: var(--awds-size-rectangle-400-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-400-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-select-padding: var(--awds-space-2-5);   
+  --awds-select-icon:    var(--awds-space-5);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-select-fs:      var(--awds-control-font-size-400);   
   --awds-select-lh:      var(--awds-control-line-height-400);
   --awds-select-ls:      var(--awds-control-letter-spacing-400);
-  --awds-select-text-gap: var(--awds-size-rectangle-400-text-gap);
-  --awds-select-picker-rounded: var(--awds-size-dropdown-400-border-radius);
-  --awds-select-picker-padding: var(--awds-size-dropdown-400-padding);
-  --awds-select-opt-padding: var(--awds-size-rectangle-300-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-300-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-300-typography);
+  --awds-select-text-gap: var(--awds-space-4);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-2);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-300);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-400);   
   --awds-select-opt-lh:      var(--awds-control-line-height-400);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-400);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-300-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-300-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-300-description);
+  --awds-select-opt-text-gap: var(--awds-space-3-5);   
+  --awds-select-opt-icon:    var(--awds-space-5);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-300);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-300);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-300);
 }
 
 .select--500 {
-  --awds-select-padding: var(--awds-size-rectangle-500-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-500-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-500-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-select-padding: var(--awds-space-3-5);   
+  --awds-select-icon:    var(--awds-space-5);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-500);   
+  --awds-select-fs:      var(--awds-control-font-size-600);   
   --awds-select-lh:      var(--awds-control-line-height-600);
   --awds-select-ls:      var(--awds-control-letter-spacing-600);
-  --awds-select-text-gap: var(--awds-size-rectangle-500-text-gap);
-  --awds-select-picker-rounded: var(--awds-size-dropdown-500-border-radius);
-  --awds-select-picker-padding: var(--awds-size-dropdown-500-padding);
-  --awds-select-opt-padding: var(--awds-size-rectangle-400-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-400-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-400-typography);
+  --awds-select-text-gap: var(--awds-space-4-5);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-500);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-2-5);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-400);   
   --awds-select-opt-lh:      var(--awds-control-line-height-400);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-400);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-400-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-400-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-400-description);
+  --awds-select-opt-text-gap: var(--awds-space-4);   
+  --awds-select-opt-icon:    var(--awds-space-5);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-300);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-300);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-300);
 }
 
 .select--600 {
-  --awds-select-padding: var(--awds-size-rectangle-600-padding);
-  --awds-select-icon:    var(--awds-size-rectangle-600-icon);
-  --awds-select-rounded: var(--awds-size-rectangle-600-rounded);
-  --awds-select-fs:      var(--awds-size-rectangle-600-typography);
+  --awds-select-padding: var(--awds-space-4);   
+  --awds-select-icon:    var(--awds-space-5);   
+  --awds-select-rounded: var(--awds-rounded-border-radius-600);   
+  --awds-select-fs:      var(--awds-control-font-size-600);   
   --awds-select-lh:      var(--awds-control-line-height-600);
   --awds-select-ls:      var(--awds-control-letter-spacing-600);
-  --awds-select-text-gap: var(--awds-size-rectangle-600-text-gap);
-  --awds-select-picker-rounded: var(--awds-rounded-border-radius-600);
-  --awds-select-picker-padding: var(--awds-space-space-1);
-  --awds-select-opt-padding: var(--awds-size-rectangle-500-padding);
-  --awds-select-opt-rounded: var(--awds-size-rectangle-500-rounded);
-  --awds-select-opt-fs:      var(--awds-size-rectangle-500-typography);
+  --awds-select-text-gap: var(--awds-space-4-5);   
+  --awds-select-picker-rounded: var(--awds-rounded-border-radius-600);   
+  --awds-select-picker-padding: var(--awds-space-1);   
+  --awds-select-opt-padding: var(--awds-space-3-5);   
+  --awds-select-opt-rounded: var(--awds-rounded-border-radius-500);   
+  --awds-select-opt-fs:      var(--awds-control-font-size-600);   
   --awds-select-opt-lh:      var(--awds-control-line-height-600);
   --awds-select-opt-ls:      var(--awds-control-letter-spacing-600);
-  --awds-select-opt-text-gap: var(--awds-size-rectangle-500-text-gap);
-  --awds-select-opt-icon:    var(--awds-size-rectangle-500-icon);
-  --awds-select-opt-desc-fs: var(--awds-size-rectangle-500-description);
+  --awds-select-opt-text-gap: var(--awds-space-4-5);   
+  --awds-select-opt-icon:    var(--awds-space-5);   
+  --awds-select-opt-desc-fs: var(--awds-control-font-size-400);   
   --awds-select-opt-desc-lh: var(--awds-control-line-height-400);
   --awds-select-opt-desc-ls: var(--awds-control-letter-spacing-400);
 }
@@ -334,13 +335,13 @@
     padding: var(--awds-select-picker-padding);
     border: 0;
     border-radius: var(--awds-select-picker-rounded);
-    background: rgb(var(--awds-state-picker-bg-rest));
+    background: rgb(var(--surface-bright));   
     box-shadow: var(--awds-shadow-elevation-3);
     position-anchor: --awds-select-anchor;
     width: anchor-size(--awds-select-anchor width);
-    margin-block: var(--awds-space-space-1);
+    margin-block: var(--awds-space-1);
     scrollbar-width: thin;
-    scrollbar-color: rgb(var(--awds-state-picker-scrollbar-rest) / var(--awds-opacity-opacity-40)) transparent;
+    scrollbar-color: rgb(var(--surface-on) / var(--awds-opacity-40)) transparent;   
   }
   .select__field option {
     --awds-list-item-padding:  var(--awds-select-opt-padding);
@@ -358,68 +359,68 @@
     display: none;
   }
   .select__field option:not(:checked):focus {
-    --awds-list-item-bg:     rgb(var(--awds-state-list-unselected-bg-focus));
-    --awds-list-item-border: rgb(var(--awds-state-list-unselected-bg-focus));
+    --awds-list-item-bg:     rgb(var(--secondary-container-core));   
+    --awds-list-item-border: rgb(var(--secondary-container-core));   
   }
   .select__field option:checked:not(:disabled):not([aria-disabled="true"]) {
-    --awds-list-item-bg:     rgb(var(--awds-state-list-selected-secondary-bg-rest));
-    --awds-list-item-border: rgb(var(--awds-state-list-selected-secondary-border-rest));
-    --awds-list-item-color:  rgb(var(--awds-state-list-selected-secondary-color-rest));
-    --awds-list-item-desc:   rgb(var(--awds-state-list-selected-secondary-description-rest));
-    --awds-list-item-check:  rgb(var(--awds-state-list-selected-secondary-icon-check-rest));
+    --awds-list-item-bg:     rgb(var(--primary-container-core));   
+    --awds-list-item-border: rgb(var(--primary-container-on-lowest));   
+    --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
+    --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
+    --awds-list-item-check:  rgb(var(--primary-container-on));   
   }
   .select__field option:disabled {
-    opacity: var(--awds-opacity-opacity-40);
+    opacity: var(--awds-opacity-40);   
     cursor: default;
   }
 }
 
 .select-autofill {
-  --awds-select-bg:       rgb(var(--awds-state-form-control-autofill-bg-rest));
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-autofill-chroma-rest));
-  --awds-select-border:   rgb(var(--awds-state-form-control-autofill-border-rest));
-  --awds-select-color:    rgb(var(--awds-state-form-control-autofill-color-rest));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-autofill-placehold-rest));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-autofill-placehold-rest));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-autofill-placehold-rest));
+  --awds-select-bg:       rgb(var(--tertiary-container-core));   
+  --awds-select-chroma:   rgb(var(--tertiary-container-chroma));   
+  --awds-select-border:   rgb(var(--tertiary-container-on-low));   
+  --awds-select-color:    rgb(var(--tertiary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--tertiary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--tertiary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--tertiary-container-on-high));
 }
 
 .select-autofill:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-autofill-border-hover));
+  --awds-select-border:   rgb(var(--tertiary-container-on));
 }
 
 .select-autofill:active:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-autofill-border-active));
+  --awds-select-border:   rgb(var(--tertiary-container-on-low));
 }
 
 .select-autofill:focus-within {
-  --awds-select-bg:       rgb(var(--awds-state-form-control-autofill-bg-focus));
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-autofill-chroma-focus));
-  --awds-select-border:   rgb(var(--awds-state-form-control-autofill-border-focus));
-  --awds-select-color:    rgb(var(--awds-state-form-control-autofill-color-focus));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-autofill-placehold-focus));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-autofill-placehold-focus));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-autofill-color-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-select-bg:       rgb(var(--surface-bright));   
+  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-border:   rgb(var(--primary-dim));   
+  --awds-select-color:    rgb(var(--primary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--awds-state-form-control-autofill-bg-focus));
-    --awds-select-chroma:   rgb(var(--awds-state-form-control-autofill-chroma-focus));
-    --awds-select-border:   rgb(var(--awds-state-form-control-autofill-border-focus));
-    --awds-select-color:    rgb(var(--awds-state-form-control-autofill-color-focus));
-    --awds-select-placehold: rgb(var(--awds-state-form-control-autofill-placehold-focus));
-    --awds-select-chevron:  rgb(var(--awds-state-form-control-autofill-placehold-focus));
-    --awds-select-icon-color: rgb(var(--awds-state-form-control-autofill-color-focus));
-    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    --awds-select-bg:       rgb(var(--surface-bright));   
+    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-border:   rgb(var(--primary-dim));   
+    --awds-select-color:    rgb(var(--primary-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
 }
 
 .select:has(> .select__field:disabled), .select--disabled {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);   
   cursor: default;
 }
 
@@ -434,88 +435,88 @@
 }
 
 .select-default {
-  --awds-select-bg:         rgb(var(--awds-state-form-control-default-bg-rest));
-  --awds-select-chroma:     rgb(var(--awds-state-form-control-default-chroma-rest));
-  --awds-select-border:     rgb(var(--awds-state-form-control-default-border-rest));
-  --awds-select-color:      rgb(var(--awds-state-form-control-default-color-rest));
-  --awds-select-placehold:  rgb(var(--awds-state-form-control-default-placehold-rest));
-  --awds-select-chevron:    rgb(var(--awds-state-form-control-default-placehold-rest));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-default-placehold-rest));
+  --awds-select-bg:         rgb(var(--secondary-container-core));   
+  --awds-select-chroma:     rgb(var(--secondary-container-chroma));   
+  --awds-select-border:     rgb(var(--secondary-container-on-low));   
+  --awds-select-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-select-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-select-chevron:    rgb(var(--secondary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--secondary-container-on-high));
 }
 
 .select-default:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border: rgb(var(--awds-state-form-control-default-border-hover));
+  --awds-select-border: rgb(var(--secondary-container-on));
 }
 
 .select-default:active:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border: rgb(var(--awds-state-form-control-default-border-active));
+  --awds-select-border: rgb(var(--secondary-container-on-low));
 }
 
 .select-default:focus-within {
-  --awds-select-bg:      rgb(var(--awds-state-form-control-default-bg-focus));
-  --awds-select-chroma:  rgb(var(--awds-state-form-control-default-chroma-focus));
-  --awds-select-border:  rgb(var(--awds-state-form-control-default-border-focus));
-  --awds-select-color:   rgb(var(--awds-state-form-control-default-color-focus));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-default-placehold-focus));
-  --awds-select-chevron: rgb(var(--awds-state-form-control-default-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-select-bg:      rgb(var(--surface-bright));   
+  --awds-select-chroma:  rgb(var(--primary-container-chroma));   
+  --awds-select-border:  rgb(var(--primary-dim));   
+  --awds-select-color:   rgb(var(--primary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-select-chevron: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-default:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:         rgb(var(--awds-state-form-control-default-bg-focus));
-    --awds-select-chroma:     rgb(var(--awds-state-form-control-default-chroma-focus));
-    --awds-select-border:     rgb(var(--awds-state-form-control-default-border-focus));
-    --awds-select-color:      rgb(var(--awds-state-form-control-default-color-focus));
-    --awds-select-placehold:  rgb(var(--awds-state-form-control-default-placehold-focus));
-    --awds-select-chevron:    rgb(var(--awds-state-form-control-default-placehold-focus));
-    --awds-select-icon-color: rgb(var(--awds-state-form-control-default-placehold-focus));
-    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    --awds-select-bg:         rgb(var(--surface-bright));   
+    --awds-select-chroma:     rgb(var(--primary-container-chroma));   
+    --awds-select-border:     rgb(var(--primary-dim));   
+    --awds-select-color:      rgb(var(--primary-container-on-highest));   
+    --awds-select-placeholder:  rgb(var(--primary-container-on-high));   
+    --awds-select-chevron:    rgb(var(--primary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
 }
 
 .select-error {
-  --awds-select-bg:       rgb(var(--awds-state-form-control-error-bg-rest));
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-error-chroma-rest));
-  --awds-select-border:   rgb(var(--awds-state-form-control-error-border-rest));
-  --awds-select-color:    rgb(var(--awds-state-form-control-error-color-rest));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-error-placehold-rest));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-error-placehold-rest));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-error-placehold-rest));
+  --awds-select-bg:       rgb(var(--error-container-core));   
+  --awds-select-chroma:   rgb(var(--error-container-chroma));   
+  --awds-select-border:   rgb(var(--error-container-on-low));   
+  --awds-select-color:    rgb(var(--error-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--error-container-on-high));   
+  --awds-select-chevron:  rgb(var(--error-container-on-high));   
+  --awds-select-icon-color: rgb(var(--error-container-on-high));
 }
 
 .select-error:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-error-border-hover));
+  --awds-select-border:   rgb(var(--error-container-on));
 }
 
 .select-error:active:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-error-border-active));
+  --awds-select-border:   rgb(var(--error-container-on-low));
 }
 
 .select-error:focus-within {
-  --awds-select-bg:       rgb(var(--awds-state-form-control-error-bg-focus));
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-error-chroma-focus));
-  --awds-select-border:   rgb(var(--awds-state-form-control-error-border-focus));
-  --awds-select-color:    rgb(var(--awds-state-form-control-error-color-focus));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-error-placehold-focus));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-error-placehold-focus));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-error-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-select-bg:       rgb(var(--surface-bright));   
+  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-border:   rgb(var(--primary-dim));   
+  --awds-select-color:    rgb(var(--primary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-error:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--awds-state-form-control-error-bg-focus));
-    --awds-select-chroma:   rgb(var(--awds-state-form-control-error-chroma-focus));
-    --awds-select-border:   rgb(var(--awds-state-form-control-error-border-focus));
-    --awds-select-color:    rgb(var(--awds-state-form-control-error-color-focus));
-    --awds-select-placehold: rgb(var(--awds-state-form-control-error-placehold-focus));
-    --awds-select-chevron:  rgb(var(--awds-state-form-control-error-placehold-focus));
-    --awds-select-icon-color: rgb(var(--awds-state-form-control-error-placehold-focus));
-    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    --awds-select-bg:       rgb(var(--surface-bright));   
+    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-border:   rgb(var(--primary-dim));   
+    --awds-select-color:    rgb(var(--primary-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
 }
@@ -524,114 +525,114 @@
   --awds-select-bg:       transparent;
   --awds-select-chroma:   transparent;
   --awds-select-border:   transparent;
-  --awds-select-color:    rgb(var(--awds-state-form-control-ghost-color-rest));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-ghost-placehold-rest));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-ghost-placehold-rest));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-ghost-placehold-rest));
+  --awds-select-color:    rgb(var(--secondary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--secondary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--secondary-container-on-high));
 }
 
 .select-ghost:focus-within {
-  --awds-select-color:    rgb(var(--awds-state-form-control-ghost-color-focus));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-ghost-placehold-focus));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-ghost-color-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-select-color:    rgb(var(--primary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-ghost:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-color:    rgb(var(--awds-state-form-control-ghost-color-focus));
-    --awds-select-placehold: rgb(var(--awds-state-form-control-ghost-placehold-focus));
-    --awds-select-chevron:  rgb(var(--awds-state-form-control-ghost-placehold-focus));
-    --awds-select-icon-color: rgb(var(--awds-state-form-control-ghost-color-focus));
-    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    --awds-select-color:    rgb(var(--primary-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
 }
 
 .select-light {
-  --awds-select-bg:       rgb(var(--awds-state-form-control-light-bg-rest));
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-light-chroma-rest));
-  --awds-select-border:   rgb(var(--awds-state-form-control-light-border-rest));
-  --awds-select-color:    rgb(var(--awds-state-form-control-light-color-rest));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-light-placehold-rest));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-light-placehold-rest));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-light-placehold-rest));
+  --awds-select-bg:       rgb(var(--surface-bright));   
+  --awds-select-chroma:   rgb(var(--surface-bright));   
+  --awds-select-border:   rgb(var(--secondary-container-on-low));   
+  --awds-select-color:    rgb(var(--secondary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--secondary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--secondary-container-on-high));
 }
 
 .select-light:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-light-border-hover));
+  --awds-select-border:   rgb(var(--secondary-container-on));
 }
 
 .select-light:active:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-light-border-active));
+  --awds-select-border:   rgb(var(--secondary-container-on-low));
 }
 
 .select-light:focus-within {
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-light-chroma-focus));
-  --awds-select-border:   rgb(var(--awds-state-form-control-light-border-focus));
-  --awds-select-color:    rgb(var(--awds-state-form-control-light-color-focus));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-light-placehold-focus));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-light-placehold-focus));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-light-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-border:   rgb(var(--primary-dim));   
+  --awds-select-color:    rgb(var(--primary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-light:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-chroma:   rgb(var(--awds-state-form-control-light-chroma-focus));
-    --awds-select-border:   rgb(var(--awds-state-form-control-light-border-focus));
-    --awds-select-color:    rgb(var(--awds-state-form-control-light-color-focus));
-    --awds-select-placehold: rgb(var(--awds-state-form-control-light-placehold-focus));
-    --awds-select-chevron:  rgb(var(--awds-state-form-control-light-placehold-focus));
-    --awds-select-icon-color: rgb(var(--awds-state-form-control-light-placehold-focus));
-    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-border:   rgb(var(--primary-dim));   
+    --awds-select-color:    rgb(var(--primary-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
 }
 
 .select-success {
-  --awds-select-bg:       rgb(var(--awds-state-form-control-success-bg-rest));
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-success-chroma-rest));
-  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-rest));
-  --awds-select-color:    rgb(var(--awds-state-form-control-success-color-rest));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-success-placehold-rest));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-success-placehold-rest));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-success-placehold-rest));
+  --awds-select-bg:       rgb(var(--success-container-core));   
+  --awds-select-chroma:   rgb(var(--success-container-chroma));   
+  --awds-select-border:   rgb(var(--success-container-on-low));   
+  --awds-select-color:    rgb(var(--success-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--success-container-on-high));   
+  --awds-select-chevron:  rgb(var(--success-container-on-high));   
+  --awds-select-icon-color: rgb(var(--success-container-on-high));
 }
 
 .select-success:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-hover));
+  --awds-select-border:   rgb(var(--success-container-on));
 }
 
 .select-success:active:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-active));
+  --awds-select-border:   rgb(var(--success-container-on-low));
 }
 
 .select-success:focus-within {
-  --awds-select-bg:       rgb(var(--awds-state-form-control-success-bg-focus));
-  --awds-select-chroma:   rgb(var(--awds-state-form-control-success-chroma-focus));
-  --awds-select-border:   rgb(var(--awds-state-form-control-success-border-focus));
-  --awds-select-color:    rgb(var(--awds-state-form-control-success-color-focus));
-  --awds-select-placehold: rgb(var(--awds-state-form-control-success-placehold-focus));
-  --awds-select-chevron:  rgb(var(--awds-state-form-control-success-placehold-focus));
-  --awds-select-icon-color: rgb(var(--awds-state-form-control-success-placehold-focus));
-  outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+  --awds-select-bg:       rgb(var(--surface-bright));   
+  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-border:   rgb(var(--primary-dim));   
+  --awds-select-color:    rgb(var(--primary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-success:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--awds-state-form-control-success-bg-focus));
-    --awds-select-chroma:   rgb(var(--awds-state-form-control-success-chroma-focus));
-    --awds-select-border:   rgb(var(--awds-state-form-control-success-border-focus));
-    --awds-select-color:    rgb(var(--awds-state-form-control-success-color-focus));
-    --awds-select-placehold: rgb(var(--awds-state-form-control-success-placehold-focus));
-    --awds-select-chevron:  rgb(var(--awds-state-form-control-success-placehold-focus));
-    --awds-select-icon-color: rgb(var(--awds-state-form-control-success-placehold-focus));
-    outline: var(--awds-focus-width) solid var(--awds-focus-color-formcontrol);
+    --awds-select-bg:       rgb(var(--surface-bright));   
+    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-border:   rgb(var(--primary-dim));   
+    --awds-select-color:    rgb(var(--primary-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
+    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
 }

@@ -1,17 +1,17 @@
-/* ArrowDS · tooltip@1.0.2
+/* ArrowDS · tooltip@1.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
 
 .tooltip {
-  --awds-tooltip-pad-inline: var(--awds-space-space-2-5);   
-  --awds-tooltip-pad-block:  var(--awds-space-space-2);     
-  --awds-tooltip-fs:         var(--awds-typography-typography-font-size-400);             
-  --awds-tooltip-lh:         var(--awds-typography-typography-line-height-compact-400);   
-  --awds-tooltip-ls:         var(--awds-typography-typography-letter-spacing-400);
+  --awds-tooltip-pad-inline: var(--awds-space-2-5);   
+  --awds-tooltip-pad-block:  var(--awds-space-2);     
+  --awds-tooltip-fs:         var(--awds-typography-font-size-400);             
+  --awds-tooltip-lh:         var(--awds-typography-line-height-compact-400);   
+  --awds-tooltip-ls:         var(--awds-typography-letter-spacing-400);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);  
-  --awds-tooltip-tail:       var(--awds-space-space-2);      
-  --awds-tooltip-hairline:   rgb(0 0 0 / 3%);
+  --awds-tooltip-tail:       var(--awds-space-2);      
+  --awds-tooltip-hairline:   rgb(var(--extended-shadow-3));   
   --awds-tooltip-max-width:  250px;
   box-sizing: border-box;
   position: relative;
@@ -52,21 +52,21 @@
 }
 
 .tooltip-default {
-  --awds-tooltip-bg:    rgb(var(--surface-bright));
+  --awds-tooltip-bg:    rgb(var(--surface-bright));   
   --awds-tooltip-color: rgb(var(--surface-on-high));
 }
 
 .tooltip-contrast {
-  --awds-tooltip-bg:    rgb(var(--surface-on-highest));
+  --awds-tooltip-bg:    rgb(var(--surface-on-highest));   
   --awds-tooltip-color: rgb(var(--surface-bright));
 }
 
 .tooltip--compact {
-  --awds-tooltip-pad-inline: var(--awds-space-space-1-5);   
-  --awds-tooltip-pad-block:  var(--awds-space-space-1);     
-  --awds-tooltip-fs:         var(--awds-typography-typography-font-size-300);             
-  --awds-tooltip-lh:         var(--awds-typography-typography-line-height-compact-300);   
-  --awds-tooltip-ls:         var(--awds-typography-typography-letter-spacing-300);
+  --awds-tooltip-pad-inline: var(--awds-space-1-5);   
+  --awds-tooltip-pad-block:  var(--awds-space-1);     
+  --awds-tooltip-fs:         var(--awds-typography-font-size-300);             
+  --awds-tooltip-lh:         var(--awds-typography-line-height-compact-300);   
+  --awds-tooltip-ls:         var(--awds-typography-letter-spacing-300);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-300);
 }
 

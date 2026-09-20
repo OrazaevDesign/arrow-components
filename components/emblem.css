@@ -1,0 +1,150 @@
+/* ArrowDS · emblem@3.0.5
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.emb {
+  --awds-emb-size: var(--awds-space-12);            
+  --awds-emb-fs:   var(--awds-control-font-size-850);
+  --awds-emb-lh:   var(--awds-control-line-height-850);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-850);
+  --awds-emb-bg:     rgb(var(--primary-container-core));       
+  --awds-emb-chroma: rgb(var(--primary-container-chroma));     
+  --awds-emb-border: rgb(var(--primary-container-on-lowest));  
+  --awds-emb-color:  rgb(var(--primary-container-on));         
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--awds-emb-size);
+  height: var(--awds-emb-size);
+  border-radius: var(--awds-rounded-border-radius-full);
+  overflow: hidden;                    
+  background: linear-gradient(to right, var(--awds-emb-chroma), var(--awds-emb-bg));
+  color: var(--awds-emb-color);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-emb-fs);
+  line-height: var(--awds-emb-lh);
+  letter-spacing: var(--awds-emb-ls);
+  font-weight: var(--awds-font-weight-semibold);
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+.emb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px var(--awds-emb-border);
+  pointer-events: none;
+}
+
+.emb-initials {
+  text-transform: uppercase;
+}
+
+.emb-placeholder > svg {
+  width: 60%;
+  height: 60%;
+  opacity: var(--awds-opacity-60);
+}
+
+.emb-img > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.emb-icon {
+  --awds-emb-bg:     rgb(var(--surface-bright));   
+  --awds-emb-chroma: rgb(var(--surface-bright));
+}
+
+.emb-icon::after {
+  box-shadow: none;
+}
+
+.emb-icon > svg, .emb-icon > img {
+  display: block;
+  width: var(--awds-emb-icon, 60%);
+  height: var(--awds-emb-icon, 60%);
+}
+
+.emb--700 {
+  --awds-emb-size: var(--awds-space-20);            
+  --awds-emb-fs:   var(--awds-control-font-size-950);
+  --awds-emb-lh:   var(--awds-control-line-height-950);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-950);
+}
+
+.emb--600 {
+  --awds-emb-size: var(--awds-space-16);            
+  --awds-emb-fs:   var(--awds-control-font-size-900);
+  --awds-emb-lh:   var(--awds-control-line-height-900);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-900);
+}
+
+.emb--500 {
+  --awds-emb-size: var(--awds-space-14);            
+  --awds-emb-fs:   var(--awds-control-font-size-850);
+  --awds-emb-lh:   var(--awds-control-line-height-850);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-850);
+}
+
+.emb--400 {
+  --awds-emb-size: var(--awds-space-12);            
+  --awds-emb-fs:   var(--awds-control-font-size-850);
+  --awds-emb-lh:   var(--awds-control-line-height-850);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-850);
+}
+
+.emb--300 {
+  --awds-emb-size: var(--awds-space-11);            
+  --awds-emb-fs:   var(--awds-control-font-size-700);
+  --awds-emb-lh:   var(--awds-control-line-height-700);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-700);
+}
+
+.emb--250 {
+  --awds-emb-size: var(--awds-space-10);            
+  --awds-emb-fs:   var(--awds-control-font-size-600);
+  --awds-emb-lh:   var(--awds-control-line-height-600);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-600);
+}
+
+.emb--200 {
+  --awds-emb-size: var(--awds-space-9);             
+  --awds-emb-fs:   var(--awds-control-font-size-600);
+  --awds-emb-lh:   var(--awds-control-line-height-600);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-600);
+}
+
+.emb--150 {
+  --awds-emb-size: var(--awds-space-8);             
+  --awds-emb-icon: var(--awds-space-6);             
+  --awds-emb-fs:   var(--awds-control-font-size-600);
+  --awds-emb-lh:   var(--awds-control-line-height-600);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-600);
+}
+
+.emb--100 {
+  --awds-emb-size: var(--awds-space-7);             
+  --awds-emb-icon: var(--awds-space-5);             
+  --awds-emb-fs:   var(--awds-control-font-size-600);
+  --awds-emb-lh:   var(--awds-control-line-height-600);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-600);
+}
+
+.emb--50 {
+  --awds-emb-size: var(--awds-space-6);             
+  --awds-emb-icon: var(--awds-space-4);             
+  --awds-emb-fs:   var(--awds-control-font-size-600);
+  --awds-emb-lh:   var(--awds-control-line-height-600);
+  --awds-emb-ls:   var(--awds-control-letter-spacing-600);
+}
+
+}

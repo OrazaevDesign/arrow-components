@@ -1,4 +1,4 @@
-/* ArrowDS · switch@1.0.2
+/* ArrowDS · switch@1.0.8
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-switch-bg {
@@ -28,10 +28,10 @@
 @layer awds {
 
 .switch {
-  --awds-switch-width:   var(--awds-size-square-400-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-400-icon);
-  --awds-switch-padding: var(--awds-size-square-400-padding);
-  --awds-switch-gap:     var(--awds-size-square-400-gap);
+  --awds-switch-width:   var(--awds-space-9);   
+  --awds-switch-icon:    var(--awds-space-5);   
+  --awds-switch-padding: var(--awds-space-0-5);   
+  --awds-switch-gap:     var(--awds-space-1-5);   
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
@@ -39,6 +39,7 @@
   gap: var(--awds-switch-gap);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  opacity: var(--awds-opacity-100);
 }
 
 .switch__input {
@@ -56,11 +57,11 @@
 }
 
 .switch__track {
-  --awds-switch-bg:         rgb(var(--awds-state-check-radio-unselected-bg-rest));
-  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-unselected-chroma-rest));
-  --awds-switch-border:     rgb(var(--awds-state-check-radio-unselected-border-rest));
-  --awds-switch-handle:     rgb(var(--awds-state-check-radio-unselected-handle-rest));
-  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-unselected-bg-rest));
+  --awds-switch-bg:         rgb(var(--secondary-container-core));   
+  --awds-switch-chroma:     rgb(var(--secondary-container-chroma));   
+  --awds-switch-border:     rgb(var(--secondary-container-on-low));   
+  --awds-switch-handle:     rgb(var(--secondary-container-on));   
+  --awds-switch-icon-color: rgb(var(--secondary-container-core));   
   --awds-switch-travel: calc(var(--awds-switch-width) - 2 * var(--awds-switch-padding) - var(--awds-switch-icon));
   box-sizing: border-box;
   position: relative;
@@ -72,7 +73,7 @@
   padding: var(--awds-switch-padding);
   border: 0;
   border-radius: var(--awds-rounded-border-radius-full);
-  box-shadow: inset 0 0 0 1px var(--awds-switch-border);
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-switch-border);
   background: linear-gradient(to right, var(--awds-switch-chroma, var(--awds-switch-bg)), var(--awds-switch-bg));
   transition: --awds-switch-bg 0.15s ease-out,
               --awds-switch-chroma 0.15s ease-out,
@@ -86,9 +87,9 @@
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  margin: var(--awds-space-space-0-5);
-  width:  calc(var(--awds-switch-icon) - 2 * var(--awds-space-space-0-5));
-  height: calc(var(--awds-switch-icon) - 2 * var(--awds-space-space-0-5));
+  margin: var(--awds-space-0-5);
+  width:  calc(var(--awds-switch-icon) - 2 * var(--awds-space-0-5));
+  height: calc(var(--awds-switch-icon) - 2 * var(--awds-space-0-5));
   border-radius: var(--awds-rounded-border-radius-full);
   background: var(--awds-switch-handle);
   color: var(--awds-switch-icon-color);
@@ -108,74 +109,74 @@
 }
 
 .switch--200 {
-  --awds-switch-width:   var(--awds-size-square-200-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-200-icon);
-  --awds-switch-padding: var(--awds-size-square-200-padding);
-  --awds-switch-gap:     var(--awds-size-square-200-gap);
+  --awds-switch-width:   var(--awds-space-7);   
+  --awds-switch-icon:    var(--awds-space-4);   
+  --awds-switch-padding: var(--awds-space-0);   
+  --awds-switch-gap:     var(--awds-space-1-5);
 }
 
 .switch--300 {
-  --awds-switch-width:   var(--awds-size-square-300-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-300-icon);
-  --awds-switch-padding: var(--awds-size-square-300-padding);
-  --awds-switch-gap:     var(--awds-size-square-300-gap);
+  --awds-switch-width:   var(--awds-space-8);   
+  --awds-switch-icon:    var(--awds-space-5);   
+  --awds-switch-padding: var(--awds-space-0);   
+  --awds-switch-gap:     var(--awds-space-1-5);
 }
 
 .switch--400 {
-  --awds-switch-width:   var(--awds-size-square-400-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-400-icon);
-  --awds-switch-padding: var(--awds-size-square-400-padding);
-  --awds-switch-gap:     var(--awds-size-square-400-gap);
+  --awds-switch-width:   var(--awds-space-9);   
+  --awds-switch-icon:    var(--awds-space-5);   
+  --awds-switch-padding: var(--awds-space-0-5);   
+  --awds-switch-gap:     var(--awds-space-1-5);
 }
 
 .switch--500 {
-  --awds-switch-width:   var(--awds-size-square-500-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-500-icon);
-  --awds-switch-padding: var(--awds-size-square-500-padding);
-  --awds-switch-gap:     var(--awds-size-square-500-gap);
+  --awds-switch-width:   var(--awds-space-11);   
+  --awds-switch-icon:    var(--awds-space-6);   
+  --awds-switch-padding: var(--awds-space-0-5);   
+  --awds-switch-gap:     var(--awds-space-2);
 }
 
 .switch--600 {
-  --awds-switch-width:   var(--awds-size-square-600-switch-width);
-  --awds-switch-icon:    var(--awds-size-square-600-icon);
-  --awds-switch-padding: var(--awds-size-square-600-padding);
-  --awds-switch-gap:     var(--awds-size-square-600-gap);
+  --awds-switch-width:   var(--awds-space-13);   
+  --awds-switch-icon:    var(--awds-space-7);   
+  --awds-switch-padding: var(--awds-space-0-5);   
+  --awds-switch-gap:     var(--awds-space-2);
 }
 
 .switch:hover > .switch__input:enabled + .switch__track {
-  --awds-switch-bg:     rgb(var(--awds-state-check-radio-unselected-bg-hover));
-  --awds-switch-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-hover));
-  --awds-switch-border: rgb(var(--awds-state-check-radio-unselected-border-hover));
-  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-unselected-bg-hover));
+  --awds-switch-bg:     rgb(var(--secondary-container-dim));   
+  --awds-switch-chroma: rgb(var(--secondary-container-chroma));   
+  --awds-switch-border: rgb(var(--secondary-container-on));   
+  --awds-switch-icon-color: rgb(var(--secondary-container-dim));
 }
 
 .switch:active > .switch__input:enabled + .switch__track {
-  --awds-switch-bg:     rgb(var(--awds-state-check-radio-unselected-bg-active));
-  --awds-switch-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-active));
-  --awds-switch-border: rgb(var(--awds-state-check-radio-unselected-border-active));
-  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-unselected-bg-active));
+  --awds-switch-bg:     rgb(var(--secondary-container-dim));   
+  --awds-switch-chroma: rgb(var(--secondary-container-dim));   
+  --awds-switch-border: rgb(var(--secondary-container-on-low));   
+  --awds-switch-icon-color: rgb(var(--secondary-container-dim));
 }
 
 .switch__input:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--awds-state-check-radio-selected-bg-rest));
-  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-selected-chroma-rest));
-  --awds-switch-border:     rgb(var(--awds-state-check-radio-selected-border-rest));
-  --awds-switch-handle:     rgb(var(--awds-state-check-radio-selected-handle-rest));
-  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-selected-bg-rest));
+  --awds-switch-bg:         rgb(var(--primary-core));   
+  --awds-switch-chroma:     rgb(var(--primary-chroma));   
+  --awds-switch-border:     rgb(var(--primary-core));   
+  --awds-switch-handle:     rgb(var(--primary-on-dim));   
+  --awds-switch-icon-color: rgb(var(--primary-core));
 }
 
 .switch:hover > .switch__input:enabled:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--awds-state-check-radio-selected-bg-hover));
-  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-selected-chroma-hover));
-  --awds-switch-border:     rgb(var(--awds-state-check-radio-selected-border-hover));
-  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-selected-bg-hover));
+  --awds-switch-bg:         rgb(var(--primary-dim));   
+  --awds-switch-chroma:     rgb(var(--primary-chroma));   
+  --awds-switch-border:     rgb(var(--primary-dim));   
+  --awds-switch-icon-color: rgb(var(--primary-dim));
 }
 
 .switch:active > .switch__input:enabled:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--awds-state-check-radio-selected-bg-active));
-  --awds-switch-chroma:     rgb(var(--awds-state-check-radio-selected-chroma-active));
-  --awds-switch-border:     rgb(var(--awds-state-check-radio-selected-border-active));
-  --awds-switch-icon-color: rgb(var(--awds-state-check-radio-selected-bg-active));
+  --awds-switch-bg:         rgb(var(--primary-core));   
+  --awds-switch-chroma:     rgb(var(--primary-core));   
+  --awds-switch-border:     rgb(var(--primary-core));   
+  --awds-switch-icon-color: rgb(var(--primary-core));
 }
 
 .switch__input:checked + .switch__track .switch__handle {
@@ -196,7 +197,7 @@
 }
 
 .switch:has(> .switch__input:disabled), .switch--disabled {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);   
   cursor: default;
 }
 

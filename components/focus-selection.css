@@ -1,15 +1,15 @@
-/* ArrowDS · focus-selection@1.1.0
+/* ArrowDS · focus-selection@2.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
 
 :root {
-  --awds-focus-width: var(--awds-size-outline-width);
-  --awds-focus-offset: var(--awds-size-outline-offset);
+  --awds-focus-width: var(--awds-space-0-5);
+  --awds-focus-offset: var(--awds-space-px);
   --awds-focus-offset-inside: calc(-1 * var(--awds-focus-width));
-  --awds-focus-color: rgb(var(--awds-state-focus-selection-outline));
-  --awds-focus-color-formcontrol: rgb(var(--awds-state-focus-selection-outlinevariant) / var(--awds-opacity-opacity-50));
-  --awds-focus-color-tab: rgb(var(--awds-state-focus-selection-outlinevariant));
+  --awds-focus-color: rgb(var(--surface-on-highest));   
+  --awds-focus-color-muted: rgb(var(--primary-core) / var(--awds-opacity-50));   
+  --awds-focus-color-accent: rgb(var(--primary-core));
 }
 
 :where(.btn):focus-visible {
@@ -26,12 +26,12 @@
   outline-offset: var(--awds-focus-offset-inside);
 }
 
-.focus-selection--formcontrol:focus-visible {
-  outline-color: var(--awds-focus-color-formcontrol);
+.focus-selection-muted:focus-visible {
+  outline-color: var(--awds-focus-color-muted);
 }
 
-.focus-selection--tab:focus-visible {
-  outline-color: var(--awds-focus-color-tab);
+.focus-selection-accent:focus-visible {
+  outline-color: var(--awds-focus-color-accent);
 }
 
 .focus-selection-within:has(:focus-visible) {
@@ -42,8 +42,8 @@
 @media (forced-colors: active) {
   :root {
     --awds-focus-color: Highlight;
-    --awds-focus-color-formcontrol: Highlight;
-    --awds-focus-color-tab: Highlight;
+    --awds-focus-color-muted: Highlight;
+    --awds-focus-color-accent: Highlight;
   }
 }
 

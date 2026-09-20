@@ -1,4 +1,4 @@
-/* ArrowDS · radio@1.0.3
+/* ArrowDS · radio@1.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-radio-bg {
@@ -16,14 +16,15 @@
 @layer awds {
 
 .radio {
-  --awds-radio-padding: var(--awds-size-square-400-padding);
-  --awds-radio-icon:    var(--awds-size-square-400-icon);
-  --awds-radio-gap:     var(--awds-size-square-400-gap);
+  --awds-radio-padding: var(--awds-space-0-5);   
+  --awds-radio-icon:    var(--awds-space-5);   
+  --awds-radio-gap:     var(--awds-space-1-5);   
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: var(--awds-radio-gap);
+  opacity: var(--awds-opacity-100);   
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -43,9 +44,9 @@
 }
 
 .radio__box {
-  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-rest));
-  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-rest));
-  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-rest));
+  --awds-radio-bg:     rgb(var(--secondary-container-core));   
+  --awds-radio-chroma: rgb(var(--secondary-container-chroma));   
+  --awds-radio-border: rgb(var(--secondary-container-on-low));   
   --awds-radio-color:  transparent;
   box-sizing: border-box;
   display: grid;
@@ -56,7 +57,7 @@
   padding: var(--awds-radio-padding);
   border: 0;
   border-radius: var(--awds-rounded-border-radius-full);
-  box-shadow: inset 0 0 0 1px var(--awds-radio-border);
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-radio-border);
   background: linear-gradient(to right, var(--awds-radio-chroma, var(--awds-radio-bg)), var(--awds-radio-bg));
   color: var(--awds-radio-color);
   transition: --awds-radio-bg 0.15s ease-out,
@@ -73,60 +74,60 @@
 }
 
 .radio--200 {
-  --awds-radio-padding: var(--awds-size-square-200-padding);
-  --awds-radio-icon:    var(--awds-size-square-200-icon);
-  --awds-radio-gap:     var(--awds-size-square-200-gap);
+  --awds-radio-padding: var(--awds-space-0);   
+  --awds-radio-icon:    var(--awds-space-4);   
+  --awds-radio-gap:     var(--awds-space-1-5);
 }
 
 .radio--300 {
-  --awds-radio-padding: var(--awds-size-square-300-padding);
-  --awds-radio-icon:    var(--awds-size-square-300-icon);
-  --awds-radio-gap:     var(--awds-size-square-300-gap);
+  --awds-radio-padding: var(--awds-space-0);   
+  --awds-radio-icon:    var(--awds-space-5);   
+  --awds-radio-gap:     var(--awds-space-1-5);
 }
 
 .radio--400 {
-  --awds-radio-padding: var(--awds-size-square-400-padding);
-  --awds-radio-icon:    var(--awds-size-square-400-icon);
-  --awds-radio-gap:     var(--awds-size-square-400-gap);
+  --awds-radio-padding: var(--awds-space-0-5);   
+  --awds-radio-icon:    var(--awds-space-5);   
+  --awds-radio-gap:     var(--awds-space-1-5);
 }
 
 .radio--500 {
-  --awds-radio-padding: var(--awds-size-square-500-padding);
-  --awds-radio-icon:    var(--awds-size-square-500-icon);
-  --awds-radio-gap:     var(--awds-size-square-500-gap);
+  --awds-radio-padding: var(--awds-space-0-5);   
+  --awds-radio-icon:    var(--awds-space-6);   
+  --awds-radio-gap:     var(--awds-space-2);
 }
 
 .radio:hover > .radio__input:enabled + .radio__box {
-  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-hover));
-  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-hover));
-  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-hover));
+  --awds-radio-bg:     rgb(var(--secondary-container-dim));   
+  --awds-radio-chroma: rgb(var(--secondary-container-chroma));   
+  --awds-radio-border: rgb(var(--secondary-container-on));
 }
 
 .radio:active > .radio__input:enabled + .radio__box {
-  --awds-radio-bg:     rgb(var(--awds-state-check-radio-unselected-bg-active));
-  --awds-radio-chroma: rgb(var(--awds-state-check-radio-unselected-chroma-active));
-  --awds-radio-border: rgb(var(--awds-state-check-radio-unselected-border-active));
+  --awds-radio-bg:     rgb(var(--secondary-container-dim));   
+  --awds-radio-chroma: rgb(var(--secondary-container-dim));   
+  --awds-radio-border: rgb(var(--secondary-container-on-low));
 }
 
 .radio__input:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-rest));
-  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-rest));
-  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-rest));
-  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-rest));
+  --awds-radio-bg:     rgb(var(--primary-core));   
+  --awds-radio-chroma: rgb(var(--primary-chroma));   
+  --awds-radio-border: rgb(var(--primary-core));   
+  --awds-radio-color:  rgb(var(--primary-on));
 }
 
 .radio:hover > .radio__input:enabled:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-hover));
-  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-hover));
-  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-hover));
-  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-hover));
+  --awds-radio-bg:     rgb(var(--primary-dim));   
+  --awds-radio-chroma: rgb(var(--primary-chroma));   
+  --awds-radio-border: rgb(var(--primary-dim));   
+  --awds-radio-color:  rgb(var(--primary-on));
 }
 
 .radio:active > .radio__input:enabled:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--awds-state-check-radio-selected-bg-active));
-  --awds-radio-chroma: rgb(var(--awds-state-check-radio-selected-chroma-active));
-  --awds-radio-border: rgb(var(--awds-state-check-radio-selected-border-active));
-  --awds-radio-color:  rgb(var(--awds-state-check-radio-selected-color-active));
+  --awds-radio-bg:     rgb(var(--primary-core));   
+  --awds-radio-chroma: rgb(var(--primary-core));   
+  --awds-radio-border: rgb(var(--primary-core));   
+  --awds-radio-color:  rgb(var(--primary-on));
 }
 
 .radio__input:checked + .radio__box .radio__dot {
@@ -139,7 +140,7 @@
 }
 
 .radio:has(> .radio__input:disabled), .radio--disabled {
-  opacity: var(--awds-opacity-opacity-40);
+  opacity: var(--awds-opacity-40);   
   cursor: default;
 }
 
@@ -150,7 +151,7 @@
 .radio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--awds-size-square-400-gap);
+  gap: var(--awds-space-1-5);   
   border: 0;
   margin: 0;
   padding: 0;
