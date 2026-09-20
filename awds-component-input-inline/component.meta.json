@@ -1,0 +1,254 @@
+{
+  "component": "input-inline",
+  "version": "1.0.0",
+  "contract_hash": "sha256:a66ad90a3173fe7e5d024e62d6e438323423e88bd3daa407dd2664a9b50ff4e8",
+  "artifact_hash": "sha256:74346bc141b2c092447c49bff95638a4b51e1f9ee4e28365634d18409e469a6e",
+  "visual_change": false,
+  "released_at": "2026-09-16T15:02:01.996Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 3,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "34:41032",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-41032"
+  },
+  "variants": {
+    "default": {
+      "node_id": "34:41077",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-41077",
+      "figma_label": "input-inline / default"
+    },
+    "success": {
+      "node_id": "34:41155",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-41155",
+      "figma_label": "input-inline / success"
+    },
+    "error": {
+      "node_id": "34:41233",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=34-41233",
+      "figma_label": "input-inline / error"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "size_scale_note": "Семь ступеней меняют ТОЛЬКО кегль: высота поля равна строке, поэтому фактических высот две — 16px у 50/100/200 и 20px у 300…600. Расти полю некуда: оно стоит в строке текста.",
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "states_note": "Focus реализован через :focus самого <input>, а не :focus-within: обёртки у компонента нет. Кольцо рисуется на :focus-visible — при клике мышью в поле видно курсор, кольцо там лишнее. Active у тона default совпадает с Rest, но правило нужно: иначе при нажатии осталась бы hover-окраска.",
+  "color_tokens": [
+    "color",
+    "placeholder"
+  ],
+  "css_files": [
+    "input-inline-default.css",
+    "input-inline-success.css",
+    "input-inline-error.css"
+  ],
+  "variants_note": "Три тона — про ВАЛИДАЦИЮ, а не про поверхность: фона и рамки нет ни у одного, поэтому ряда из семи тонов, как у input, здесь быть не может. До 16.09.2026 первый набор звался ghost при ячейках группы default; переименован решением владельца.",
+  "geometry_note": "Высота не задаётся: она равна line-height. Ширина — 100%, 320px в макете это ширина демо-фрейма. Паддингов, рамки, фона и скругления нет вовсе — радиус в макете привязан к rounded/border-radius/none.",
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "radius=none · offset=outside · tone=muted"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо не инлайнится: компонент ссылается на --awds-focus-*. Вариант снят с инстанса focus-selection в ячейках state=focus."
+  },
+  "markup": {
+    "root": {
+      "class": "iinline",
+      "tags": [
+        "input"
+      ]
+    },
+    "variant": {
+      "pattern": "iinline-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "iinline--{size}",
+      "required": true
+    },
+    "native": {
+      "tag": "input",
+      "class": "iinline"
+    },
+    "children": [],
+    "attrs": [],
+    "container": null,
+    "note": "Базовый класс висит на самом <input> — обёртки нет и быть не должно: у компонента нет ни рамки, ни фона, ни слотов, которые обёртке нечего было бы нести. Подпись живёт снаружи и обязательна."
+  },
+  "preview": {
+    "base_class": "iinline",
+    "variant_class": "iinline-default",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "variant",
+        "label": "Тон",
+        "options": [
+          "default",
+          "success",
+          "error"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "placeholder",
+          "value"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Поле с подписью",
+        "html": "<label for=\"qty\">Количество</label>\n<input class=\"iinline iinline-default iinline--400\" id=\"qty\" type=\"text\" placeholder=\"Введите значение\">"
+      },
+      {
+        "label": "В ячейке таблицы",
+        "html": "<td class=\"cell cell-default\"><input class=\"iinline iinline-default iinline--300\" type=\"text\" value=\"1 240,00 ₽\" aria-label=\"Цена\"></td>"
+      },
+      {
+        "label": "Значение не принято",
+        "html": "<input class=\"iinline iinline-error iinline--400\" type=\"text\" value=\"0\" aria-label=\"Количество\">"
+      },
+      {
+        "label": "Выключенное",
+        "html": "<input class=\"iinline iinline-default iinline--400\" type=\"text\" value=\"Недоступно\" disabled>"
+      }
+    ]
+  },
+  "family": "forms",
+  "summary": "Поле ввода без рамки и фона — текст прямо в потоке",
+  "aliases": [
+    "инлайн-поле",
+    "поле без рамки",
+    "редактируемое значение",
+    "правка на месте"
+  ],
+  "last_synced": "2026-09-16T17:55:00Z",
+  "last_synced_by": "claude",
+  "questions": [],
+  "snapshot_hash": "sha256:8f3ee75d0ffefa21e76992ff0dfb64685f6638a1b9355d0e71f96ff9b8ffd8c1",
+  "ds_token_dependencies": [
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-40",
+    "--error-container-on-high",
+    "--error-container-on-highest",
+    "--primary-container-on-high",
+    "--primary-container-on-highest",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--success-container-on-high",
+    "--success-container-on-highest"
+  ],
+  "asana": {
+    "task_gid": "1218550678089922",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218550678089922",
+    "task_name": "💠 input-inline",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-focus-selection": "2.0.9"
+  },
+  "contract": {
+    "classes": [
+      "iinline",
+      "iinline--100",
+      "iinline--200",
+      "iinline--300",
+      "iinline--400",
+      "iinline--50",
+      "iinline--500",
+      "iinline--600",
+      "iinline--disabled",
+      "iinline-default",
+      "iinline-error",
+      "iinline-success"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "default",
+      "error",
+      "success"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}

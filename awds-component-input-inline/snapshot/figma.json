@@ -1,0 +1,60 @@
+{
+  "_note": "Разбор поля без оформления в файле «💠 arrow ↪ components», секция ↪ input-inline (34:41032), страница 3 · forms. ACB-owned, руками не править.",
+  "fetched_at": "2026-09-16T17:55:00Z",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "3 · forms",
+  "section_node_id": "34:41032",
+  "primary_node_id": "34:41077",
+  "_structure_note": {
+    "дата": "2026-09-16",
+    "заход": "двадцать первый компонент прохода; ссылка владельца на секцию 34:41032",
+    "чем_отличается": "Это НЕ перевод существующего скилла, а сборка нового: компонента input-inline в репозитории не было вовсе, о нём знали только меты input и input-combi строкой «отдельные компоненты, в этот скилл не входят».",
+    "решение_владельца": "Заводить отдельный скилл, а не восьмой тон input. Причина: контракт другой — у input базовый класс несёт рамку, фон, паддинги и слоты, и варианту inline пришлось бы всё это обнулять, а шкала размеров стала бы означать разное в разных тонах.",
+    "правки_16_09": [
+      "Набор input-inline / ghost переименован в input-inline / default: он читает ячейки группы form-control/default, а не ghost, и у поля без фона слово «ghost» ничего не отличает. Значения ячеек ghost и default по плейсхолдеру равны во всех четырёх состояниях, так что вид не изменился."
+    ],
+    "что_не_трогали": "6 привязок Sys/Bg и Sys/Border на самих наборах — подписи документации, по rebind-rules не переносятся. Других старых библиотек в секции нет, сырых красок ноль."
+  },
+  "sets": {
+    "input-inline / default": { "node": "34:41077", "cells": 35, "класс": ".iinline-default", "бывшее_имя": "input-inline / ghost" },
+    "input-inline / success": { "node": "34:41155", "cells": 35, "класс": ".iinline-success" },
+    "input-inline / error": { "node": "34:41233", "cells": 35, "класс": ".iinline-error" },
+    "_оси": "size = 600|500|400|300|200|100|50, state = rest|hover|focus|active|disabled",
+    "_свойства": "булевых свойств нет — слотов у компонента не существует"
+  },
+  "structure": {
+    "ячейка": "COMPONENT → INSTANCE «. / content-input» → TEXT «placeholder». Больше внутри ничего: ни рамки, ни фона, ни слотов prefix / suffix.",
+    "часть": ". / content-input — та же, что у awds-component-input; здесь берётся её голый текстовый вариант",
+    "кольцо": "INSTANCE focus-selection появляется только в ячейках state=focus, вариант radius=none · offset=outside · tone=muted, opacity 50%"
+  },
+  "geometry": {
+    "50": { "высота": 16, "кегль": "12/16", "ячейка": "rectangle/50/typography → control-200" },
+    "100": { "высота": 16, "кегль": "13/16", "ячейка": "rectangle/100/typography → control-300" },
+    "200": { "высота": 16, "кегль": "13/16", "ячейка": "rectangle/200/typography → control-300" },
+    "300": { "высота": 20, "кегль": "14/20", "ячейка": "rectangle/300/typography → control-400" },
+    "400": { "высота": 20, "кегль": "14/20", "ячейка": "rectangle/400/typography → control-400" },
+    "500": { "высота": 20, "кегль": "16/20", "ячейка": "rectangle/500/typography → control-600" },
+    "600": { "высота": 20, "кегль": "16/20", "ячейка": "rectangle/600/typography → control-600" },
+    "примечание": "Высота равна line-height, паддингов нет вовсе. Семь ступеней дают две высоты — 16 и 20. Радиус привязан к rounded/border-radius/none, ширина 320px в макете это ширина демо-фрейма.",
+    "текст": "выравнивание LEFT, truncation ENDING → в CSS одна строка с многоточием"
+  },
+  "cells_and_roles": {
+    "default": "color secondary-container-on-highest / focus primary-container-on-highest · placeholder secondary-container-on-high / focus primary-container-on-high",
+    "success": "color success-container-on-highest · placeholder success-container-on-high; hover, focus и active свои",
+    "error": "color error-container-on-highest · placeholder error-container-on-high; hover, focus и active свои",
+    "opacity": "opacity/control/disabled (40%) на ячейках state=disabled; enabled (100%) на остальных",
+    "кольцо": "focus-selection/outlineVariant при opacity 50%, радиус rounded/outline/none, толщина size/outline/width"
+  },
+  "code_mapping": {
+    "оси": "size → .iinline--{N}; state → :hover / :focus / :active / :disabled; тон → .iinline-{вариант}",
+    "почему_без_обёртки": "У компонента нет ни рамки, ни фона, ни слотов — обёртке нечего нести, поэтому базовый класс висит на самом <input>",
+    "почему_focus_а_не_focus_within": "Обёртки нет: состояние держит сам <input>. Кольцо при этом на :focus-visible — при клике мышью курсор в поле и так виден",
+    "выведено_а_не_снято": "В макете показан только плейсхолдер. Цвет ВВЕДЁННОГО значения взят из ячейки {тон}/color-{состояние} по образцу input и input-combi — в макете ячейки с введённым текстом у inline нет.",
+    "якоря": "54 строки в трёх файлах, каждая читающая роль или шкалу несёт /* #cell … */"
+  },
+  "debts": [
+    "6 привязок Sys/Bg и Sys/Border на самих наборах — подписи документации, переносу не подлежат.",
+    "Инстансов компонента в файле ноль: макет нарисован впрок, ни один блок и ни один составной компонент его пока не держит."
+  ]
+}
