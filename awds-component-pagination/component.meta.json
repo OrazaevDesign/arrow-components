@@ -149,10 +149,6 @@
     "--surface-bright",
     "--surface-on"
   ],
-  "uses": {
-    "awds-component-button": "2.2.3",
-    "awds-component-focus-selection": "2.0.9"
-  },
   "asana": {
     "task_gid": "1218422992809185",
     "task_url": "https://app.asana.com/1/15638570680505/task/1218422992809185",
@@ -175,6 +171,40 @@
   ],
   "last_synced": "2026-09-18T06:20:00Z",
   "last_synced_by": "claude",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "793cf75",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-pagination/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#pagination",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/pagination.css"
+    },
+    "dev_resources_status": {
+      "center": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "78:47713",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-pagination/SKILL.md"
+      },
+      "start": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "78:47744",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-pagination/SKILL.md"
+      },
+      "end": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "78:47772",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-pagination/SKILL.md"
+      }
+    }
+  },
+  "uses": {
+    "awds-component-button": "2.2.3",
+    "awds-component-focus-selection": "2.0.9"
+  },
   "contract": {
     "classes": [
       "pgn",

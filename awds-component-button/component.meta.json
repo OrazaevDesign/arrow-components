@@ -233,106 +233,71 @@
   },
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "variants": {
+    "commit": "befc837",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#button",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/button.css",
+      "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-primary.md",
+      "secondary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-secondary.md",
+      "addition": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-addition.md",
+      "contrast": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-contrast.md",
+      "tertiary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-tertiary.md",
+      "ghost": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-ghost.md",
+      "clean": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-clean.md",
+      "pills": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-pills.md"
+    },
+    "dev_resources_status": {
       "primary": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-primary.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "1:757",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: Dev Resources REST (file_dev_resources:write) и MCP Code Connect недоступны (Org/Enterprise). Ссылка вписана в descriptionMarkdown COMPONENT_SET через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:4779",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       },
       "secondary": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-secondary.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "489:59661",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Secondary через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:5298",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       },
       "addition": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-addition.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "489:74776",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Addition через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:5817",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       },
       "contrast": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-contrast.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "489:83105",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Contrast через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:6336",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       },
       "tertiary": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-tertiary.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "489:89007",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Tertiary через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:6855",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       },
       "ghost": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-ghost.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "489:94401",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Ghost через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:7374",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       },
       "clean": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-clean.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "489:119060",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Clean через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:7893",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       },
       "pills": {
-        "commit": "37fcf362d19f6a9b6c86d4fdb70fcd45030ee036",
-        "pushed_at": "2026-08-20T15:35:00Z",
-        "github_url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/references/button-pills.md",
-        "dev_resources": {
-          "status": "linked",
-          "method": "component_description",
-          "node_id": "811:30987",
-          "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md",
-          "note": "PRO plan: ссылка вписана в descriptionMarkdown COMPONENT_SET Button / Pills через use_figma — видна в get_design_context/Dev Mode."
-        }
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:8412",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button/SKILL.md"
       }
-    },
-    "commit": "08012ac",
-    "pushed_at": "2026-08-26T10:28:44.000Z"
+    }
   },
   "markup": {
     "root": {

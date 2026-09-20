@@ -149,7 +149,39 @@
   ],
   "last_synced": "2026-09-16T05:20:55Z",
   "last_synced_by": "claude",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "b8c5155",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-group/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#tab-group",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/tab-group.css",
+      "boxed": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-group/references/tab-group-boxed.md",
+      "separated": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-group/references/tab-group-separated.md",
+      "underline": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-group/references/tab-group-underline.md"
+    },
+    "dev_resources_status": {
+      "boxed": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:43289",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-group/SKILL.md"
+      },
+      "separated": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:43302",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-group/SKILL.md"
+      },
+      "underline": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:43315",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-group/SKILL.md"
+      }
+    }
+  },
   "base_class_note": "Базовый класс .tab-group — полное имя сущности, без сокращения и без префикса. Это РЕШЕНИЕ ПО СЕМЬЕ, принятое владельцем ДС 01.09.2026: семья вкладок держит ОДНО пространство имён — .tab, .tab-group, .tab-product, — ровно как buttons держат .btn, .btn-area, .btn-group, .btn-menu. Отвергнуты два варианта: свой короткий корень (.tbg, .tabs) — сокращение ничего не говорит тому, кто его не знает (правило 5 канона: сокращений не бывает), и выпадает из семьи, читаясь как отдельная сущность; и префикс (.awds-tab-group) — приставка awds- есть в библиотеке только у table и сама числится записанным долгом. НЕ СОКРАЩАТЬ ОБРАТНО: длина имени здесь принятая цена, а не недосмотр, и «оптимизация» короткого корня это откат решения владельца. Цена записана явно: приватные аккумуляторы --awds-tab-group-* префиксом входят в --awds-tab-* соседа awds-component-tab, поэтому греп var(--awds-tab- находит оба компонента сразу — искать нужно точным именем var(--awds-tab-group- либо var(--awds-tab-{свойство}. Коллизии в каскаде нет: имена переменных различны, пересекается только префикс, то есть страдает поиск, а не поведение. Второе следствие: .tab-group — заметное имя в чужом CSS, и если у потребителя оно занято, правило молча не применится; вопрос по этому риску ведёт компонент tab (base-class-tab-too-generic) для всей семьи сразу, дублировать его здесь незачем.",
   "css_note": "Три файла, по одному на вариант, каждый самодостаточный: база, ступени, вариант, мост. Тот же приём, что у button с его восемью файлами, и ОБРАТНЫЙ приёму tab, notice и tab-product с одним файлом на все варианты. Разница по существу: у вкладки выбранная и невыбранная живут в одном ряду одновременно, поэтому им нужен один файл; вид группы потребитель выбирает один раз, и подключать два файла ради одного вида не за что. Следствие для структуры: плашка boxed и зазоры вариантов объявлены на классе ВАРИАНТА, а не в базе, — иначе потребитель, подключивший tab-group-boxed.css и tab-group-underline.css рядом, получил бы фон плашки и на панели с подчёркиванием.",
   "variants_note": "Один компонент с тремя вариантами, а не три компонента. У вариантов разный состав узлов (boxed и separated собраны из button, underline — из tab; у boxed вдобавок плашка), и по правилу 2 канона имён это признак ВАРИАНТА: вариантом становится то, что отвечает на вопрос «чем эта вещь является». Правило работает в обе стороны, и разный состав узлов делает варианты, а не компоненты — так устроены price (sale/default/none), emblem (initials/img/placeholder) и tab-product (text/img). Роль у трёх наборов одна, ось одна, значения оси одинаковые; три компонента означали бы три версии, три задачи на доске и три места, где чинится одна и та же прокрутка.",

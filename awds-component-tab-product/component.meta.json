@@ -300,7 +300,50 @@
   ],
   "last_synced": "2026-09-16T05:48:12Z",
   "last_synced_by": "claude",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "d56b704",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#tab-product",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/tab-product.css",
+      "text": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/references/tab-product-text.md",
+      "img": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/references/tab-product-img.md"
+    },
+    "dev_resources_status": {
+      "text": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:42962",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/SKILL.md"
+      },
+      "img": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:42985",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/SKILL.md"
+      },
+      "unselected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:42962",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/SKILL.md"
+      },
+      "selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:42997",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/SKILL.md"
+      },
+      "indeterminate": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:43020",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab-product/SKILL.md"
+      }
+    }
+  },
   "indeterminate_note": "Плёнки поверх плитки у тона indeterminate НЕТ — решение владельца ДС 01.09.2026, а не пропуск генерации. В макете узел overlay (role/surface/bright при opacity/50, последним потомком, то есть поверх подписи) остаётся: пятнадцать узлов, десять в наборе 3056:34 и пять в 3056:36. Расхождение по структуре записано в plans/2026-08-25 - value-drift-registry.md, Р-18, класс «макет отстал от решения». НЕ возвращать плёнку по макету при следующем refresh: тон читается своими bg, border и color, а плёнка гасила подпись до ≈1,98:1.",
   "asana": {
     "task_gid": "1218421650244449",

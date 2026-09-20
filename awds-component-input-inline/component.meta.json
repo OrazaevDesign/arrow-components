@@ -208,6 +208,39 @@
     "parent_task": "💠 3 · forms",
     "primary": true
   },
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "7c44cee",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-inline/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#input-inline",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/input-inline.css",
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-inline/references/input-inline-default.md",
+      "success": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-inline/references/input-inline-success.md",
+      "error": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-inline/references/input-inline-error.md"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "34:41077",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-inline/SKILL.md"
+      },
+      "success": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "34:41155",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-inline/SKILL.md"
+      },
+      "error": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "34:41233",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-input-inline/SKILL.md"
+      }
+    }
+  },
   "uses": {
     "awds-component-focus-selection": "2.0.9"
   },

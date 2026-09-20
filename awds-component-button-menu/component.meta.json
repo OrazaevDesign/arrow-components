@@ -202,6 +202,30 @@
     "primary": true
   },
   "snapshot_hash": "sha256:7e72729864081b7cc23bd54f789eb8a3d7d872117b25aa09eeadce8d1914b5a2",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "02c71b3",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-menu/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#button-menu",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/button-menu.css"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:35084",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-menu/SKILL.md"
+      },
+      "accent-selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:35226",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-menu/SKILL.md"
+      }
+    }
+  },
   "uses": {
     "awds-component-emblem": "3.0.5",
     "awds-component-notice": "2.0.3",

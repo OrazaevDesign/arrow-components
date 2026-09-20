@@ -144,9 +144,20 @@
   "snapshot_hash": "sha256:fb16393de22a0ca075e650656e546ccc716ad5d10b0ab72c3cb78b7030917cb0",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "status": "не публиковался",
+    "commit": "fa4c64d",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-group/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#button-group",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/button-group.css"
+    },
     "dev_resources_status": {
-      "note": "Ссылка на SKILL.md записана в descriptionMarkdown всех семи наборов 15.09.2026; сам компонент в arrow-components ещё не выкладывался — волна 7.4."
+      "primary": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "5:12",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-group/SKILL.md"
+      }
     }
   },
   "uses": {

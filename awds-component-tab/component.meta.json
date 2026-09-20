@@ -155,7 +155,32 @@
   "last_synced": "2026-09-16T05:00:25Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:6318f1d4180e0ff74885c92c26e7df70423263d1877b6f09fbe6b2ae384141f3",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "1c8d75c",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#tab",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/tab.css",
+      "unselected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab/references/tab-unselected.md",
+      "selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab/references/tab-selected.md"
+    },
+    "dev_resources_status": {
+      "unselected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:42820",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab/SKILL.md"
+      },
+      "selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "8:42853",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-tab/SKILL.md"
+      }
+    }
+  },
   "base_class_note": "Базовый класс .tab — полное имя сущности, без сокращения. Соседи по библиотеке сокращают базу только там, где имя одновременно ОБЩЕЕ и ДЛИННОЕ и у него есть очевидное сокращение: .field → .fld, .label → .lbl, .link → .lnk, .textarea → .txa, .product-card → .pcard. У 'tab' сокращения нет: три буквы уже минимум, а .tb ничего не говорит читателю и нарушает правило 5 канона имён (сокращений не бывает). Второй довод — семья: 'tabs' получает .tab, .tab-group и .tab-product одним пространством имён, ровно как buttons получили .btn, .btn-area, .btn-group. Цена решения записана: .tab — распространённое имя в чужом CSS (Bootstrap и темы magazine-вёрстки объявляют .tab и .tab-pane), и коллизия у потребителя проявится молча — правилом, которое не применилось. Вопрос вынесен автору отдельно (questions: base-class-tab-too-generic); переименование после публикации стоит MAJOR.",
   "markup": {
     "root": {

@@ -223,31 +223,42 @@
   ],
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "cc664a0",
-    "pushed_at": "2026-08-26T10:28:44.000Z",
+    "commit": "e649db6",
+    "pushed_at": "2026-09-20T21:19:37.752Z",
     "github_urls": {
-      "initials": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-initials.md",
-      "placeholder": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-placeholder.md",
-      "picture": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-picture.md"
+      "initials": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/references/emblem-initials.md",
+      "placeholder": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/references/emblem-placeholder.md",
+      "picture": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/references/avatar-picture.md",
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#emblem",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/emblem.css",
+      "img": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/references/emblem-img.md",
+      "icon": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/references/emblem-icon.md"
     },
     "dev_resources_status": {
       "initials": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "2001:82",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+        "node_id": "6:340",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/SKILL.md"
+      },
+      "img": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "6:361",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/SKILL.md"
       },
       "placeholder": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "2001:102",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+        "node_id": "6:372",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/SKILL.md"
       },
-      "picture": {
+      "icon": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "2001:122",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-avatar/SKILL.md"
+        "node_id": "6:393",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-emblem/SKILL.md"
       }
     }
   },
