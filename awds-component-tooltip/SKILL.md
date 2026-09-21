@@ -38,15 +38,22 @@ description: Tooltip ArrowDS (.tooltip).
 - **Сторона появления — справа от элемента.** Если справа не хватает места — выбираем сторону по убыванию приоритета **против часовой стрелки: справа → сверху → слева → снизу**. Можно задать предпочтение (сверху/снизу или слева/справа) явно.
 - **Не менять положение при прокрутке:** в какую сторону тултип изначально открылся — там и остаётся до закрытия (не «перепрыгивает» к другому краю при скролле).
 
-Эти правила (задержка 400 мс, выбор стороны, привязка к якорю, отказ от нативных `title`) реализует JS-контроллер потребителя; CSS-компонент даёт только вид пузыря, хвоста и класс стороны `.tooltip--{side}` для отрисовки хвоста в нужном направлении.
+Эти правила (задержка 400 мс, выбор стороны, привязка к якорю, отказ от нативных `title`) реализует JS-контроллер потребителя; CSS-компонент даёт только вид пузыря, хвоста и класс стороны `.tooltip--side-{side}` для отрисовки хвоста в нужном направлении.
 
-## Три независимые оси
+## Оси
+
+Тон — **имя набора**, как у `button / primary` и `link / contrast`, а не ось: в Figma это
+два набора, `tooltip / default` и `tooltip / contrast`. Осей у каждого две.
 
 | Ось | Класс | Значения |
 |---|---|---|
-| **Variant** (цвет) | `.tooltip-{variant}` | `default` (светлый: фон surface-bright, текст surface-on-high) · `contrast` (тёмный: фон surface-on-highest, текст surface-bright) |
-| **Type** (размер) | `.tooltip--compact` | база = Default (14px, padding 10/8, rounded-400) · `compact` (13px, padding 6/4, rounded-300) |
-| **Side** (хвост) | `.tooltip--{side}` | `top` (по умолчанию) · `bottom` · `left` · `right` |
+| тон (имя набора) | `.tooltip-{тон}` | `default` (светлый: фон surface-bright, текст surface-on-high) · `contrast` (тёмный: островок темы внутри класса — те же роли в dark-значении) |
+| **size** | `.tooltip--{ступень}` | `400` (база: 14/20, padding 10/8, rounded-400) · `300` (13/16, padding 6/4, rounded-300) |
+| **side** | `.tooltip--side-{side}` | `top` (по умолчанию) · `bottom` · `left` · `right` |
+
+До 21.09.2026 оси звались `type` и `variant`, а сторона давала класс `.tooltip--top`. Все три
+против канона `props.md`: `type=` и `variant=` — слова-заглушки (правило 4), а многозначная ось
+обязана нести своё имя в классе (правило 9). Переименование — MAJOR 2.0.0.
 
 **Side = с какой стороны якоря висит тултип, хвост смотрит НА якорь:** `top` → тултип сверху, хвост снизу; `bottom` → снизу, хвост сверху; `left` → слева, хвост справа; `right` → справа, хвост слева.
 
@@ -55,29 +62,29 @@ description: Tooltip ArrowDS (.tooltip).
 | Что | Источник |
 |---|---|
 | Фон / текст (default) | `rgb(var(--surface-bright))` / `rgb(var(--surface-on-high))` |
-| Фон / текст (contrast) | `rgb(var(--surface-on-highest))` / `rgb(var(--surface-bright))` |
+| Фон / текст (contrast) | те же роли, что у default, но в островке: `--surface-bright` → `-dark`, `--surface-on-highest` → `-dark` |
 | Тень | `var(--awds-shadow-elevation-3)` |
-| Padding | `--awds-space-2-5` / `-2` (Default) · `-1-5` / `-1` (Compact) |
-| Текст | `--awds-typography-font-size-400` (Default) / `-300` (Compact) + compact line-height |
-| Скругление | `var(--awds-rounded-border-radius-400)` (Default) / `-300` (Compact) |
+| Padding | `--awds-space-2-5` / `-2` (400) · `-1-5` / `-1` (300) |
+| Текст | шкала **control** (фикс): `--awds-control-font-size-400` 14/20 · `-300` 13/16. Не `typography` и не `wysiwyg`: кегль подсказки не должен плавать вместе с модой контента |
+| Скругление | `var(--awds-rounded-border-radius-400)` (400) / `-300` (300) |
 | Хвост | повёрнутый на 45° квадрат `--awds-space-2` (8px) поверх пузыря, без drop-тени — лежит на тени бокса, по центру стороны; хайрлайн-обводка 1px (чёрный 3%, как кольцо тени пузыря) на двух внешних гранях |
 
 Состояний нет. Маппинг зафиксирован в `component.meta.json` + `snapshot/figma.json`. Обновление — через `arrow-components-builder` («обнови awds-component-tooltip»).
 
 ## CSS
 
-Один файл — `references/tooltip.css` (база `.tooltip` + `.tooltip__bubble` + `.tooltip__tail` + варианты `.tooltip-{default,contrast}` + модификаторы `.tooltip--compact` и `.tooltip--{top,bottom,left,right}`). Подключается один раз глобально.
+Один файл — `references/tooltip.css` (база `.tooltip` + `.tooltip__bubble` + `.tooltip__tail` + тона `.tooltip-{default,contrast}` + ступени `.tooltip--{400,300}` + стороны `.tooltip--side-{top,bottom,left,right}`). Подключается один раз глобально.
 
-Хвост — техника «повёрнутый квадрат поверх пузыря»: квадрат (`z-index` выше пузыря) с тем же фоном, **без drop-тени** — он лежит на тени бокса и перекрывает её у своей стороны; внутренняя половина сливается с пузырём, наружу торчит остриё. Всегда по центру стороны (`left/top: 50%`). **Хайрлайн-обводка** (Figma `shape (Stroke)`) — 1px на двух ВНЕШНИХ гранях квадрата (по видимому остриё), цвет = кольцевой слой тени пузыря (`--awds-shadow-elevation-3`, чёрный 3%) через `--awds-tooltip-hairline`; в DS нет `opacity-3`-токена, поэтому повторяем тот же литерал, чтобы контур остриё совпал с обводкой пузыря. Точную Figma-геометрию (16×6) заменили симметричным 45°-остриём.
+Хвост — техника «повёрнутый квадрат поверх пузыря»: квадрат (`z-index` выше пузыря) с тем же фоном, **без drop-тени** — он лежит на тени бокса и перекрывает её у своей стороны; внутренняя половина сливается с пузырём, наружу торчит остриё. Всегда по центру стороны (`left/top: 50%`). **Хайрлайн-обводка** (в макете узел `hairline`) — 1px на двух ВНЕШНИХ гранях квадрата (по видимому остриё), цвет = кольцевой слой тени пузыря (`--awds-shadow-elevation-3`, чёрный 3%) через `--awds-tooltip-hairline`. У тона `contrast` хайрлайн погашен ролью `extended/transparent`: на тёмном пузыре кольцо чёрного 3% не читается, и в макете у contrast вектора обводки нет вовсе. Точную Figma-геометрию (16×6) заменили симметричным 45°-остриём.
 
-Визуальный QA — `references/preview.html` (storybook): матрица variant × type × side на светлой/тёмной теме.
+Визуальный QA — `references/preview.html` (storybook): матрица тон × size × side на светлой/тёмной теме.
 
 ## Алгоритм использования
 
-1. Выбери: цвет (`default`/`contrast`), тип (`default`/`compact`), сторону (`top`/`bottom`/`left`/`right`).
+1. Выбери: тон (`default`/`contrast`), ступень (`400`/`300`), сторону (`top`/`bottom`/`left`/`right`).
 2. Разметка — обёртка `.tooltip` + хвост `.tooltip__tail` + пузырь `.tooltip__bubble`:
    ```html
-   <span class="tooltip tooltip-default tooltip--top">
+   <span class="tooltip tooltip-default tooltip--400 tooltip--side-top">
      <span class="tooltip__tail"></span>
      <span class="tooltip__bubble">Текст подсказки</span>
    </span>
@@ -85,7 +92,7 @@ description: Tooltip ArrowDS (.tooltip).
    Tail должен идти ПЕРЕД bubble (пузырь рисуется поверх и перекрывает внутреннюю половину хвоста).
 3. Позиционирование рядом с якорем — на стороне потребителя: контейнер `position: relative`, тултип `position: absolute` со смещением по выбранной стороне (или через Popover API / floating-ui). Показ/скрытие — `hidden` / класс видимости по hover/focus триггера.
 4. Доступность: тултипу — `role="tooltip"` + `id`; триггеру — `aria-describedby="<id>"`. Появление по `:focus-visible`, не только hover.
-5. Подключи `references/tooltip.css`. Нужны `css-variables.css` сайта (роли `--surface-*`) и базовые токены DS (`--awds-space-*`, `--awds-rounded-*`, `--awds-shadow-elevation-3`, `--awds-typography-*`, `--awds-font-*`).
+5. Подключи `references/tooltip.css`. Нужны `css-variables.css` сайта (роли `--surface-*`) и базовые токены DS (`--awds-space-*`, `--awds-rounded-*`, `--awds-shadow-elevation-3`, `--awds-control-*`, `--awds-font-*`).
 
 ## Refresh
 

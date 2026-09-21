@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:d4468ee58f34cbf5bca43c54aaf5d1d057e98769fddba6438cfe4efb0ba68caf",
+  "snapshot_hash": "sha256:4423d9faa0525bcc7c15c25e51157d8f335836af5888efd5590f475c6e9fd130",
   "size": {
     "rectangle": {
       "50": {
@@ -855,11 +855,15 @@
           "border": "rgb(var(--success-core))",
           "color": "rgb(var(--success-on))"
         },
-        "error": {
+        "alert": {
           "bg": "rgb(var(--error-core))",
           "chroma": "rgb(var(--error-chroma))",
           "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
+        },
+        "normal": {
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))"
         }
       },
       "accordion": {
@@ -973,8 +977,9 @@
           "color": "rgb(var(--surface-on-high))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))",
+          "hairline": "rgb(var(--extended-transparent))"
         },
         "hairline": "rgb(var(--extended-shadow-3))"
       },
@@ -1471,11 +1476,15 @@
           "border": "rgb(var(--success-core))",
           "color": "rgb(var(--success-on))"
         },
-        "error": {
+        "alert": {
           "bg": "rgb(var(--error-core))",
           "chroma": "rgb(var(--error-chroma))",
           "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
+        },
+        "normal": {
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))"
         }
       },
       "accordion": {
@@ -1589,8 +1598,9 @@
           "color": "rgb(var(--surface-on-high))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))",
+          "hairline": "rgb(var(--extended-transparent))"
         },
         "hairline": "rgb(var(--extended-shadow-3))"
       },
@@ -2087,11 +2097,15 @@
           "border": "rgb(var(--success-core))",
           "color": "rgb(var(--success-on))"
         },
-        "error": {
+        "alert": {
           "bg": "rgb(var(--error-core))",
           "chroma": "rgb(var(--error-chroma))",
           "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
+        },
+        "normal": {
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))"
         }
       },
       "accordion": {
@@ -2196,8 +2210,9 @@
           "color": "rgb(var(--surface-on-high))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))",
+          "hairline": "rgb(var(--extended-transparent))"
         },
         "hairline": "rgb(var(--extended-shadow-3))"
       },
@@ -2694,11 +2709,15 @@
           "border": "rgb(var(--success-core))",
           "color": "rgb(var(--success-on))"
         },
-        "error": {
+        "alert": {
           "bg": "rgb(var(--error-core))",
           "chroma": "rgb(var(--error-chroma))",
           "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
+        },
+        "normal": {
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))"
         }
       },
       "accordion": {
@@ -2803,8 +2822,9 @@
           "color": "rgb(var(--surface-on-high))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--surface-bright))",
+          "color": "rgb(var(--surface-on-highest))",
+          "hairline": "rgb(var(--extended-transparent))"
         },
         "hairline": "rgb(var(--extended-shadow-3))"
       },

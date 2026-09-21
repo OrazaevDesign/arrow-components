@@ -1,10 +1,10 @@
 {
   "component": "tooltip",
-  "version": "1.0.7",
-  "contract_hash": "sha256:f57764cace2b5bcdc50496f027b9ada5dd8e6ce1682bb09c954bbc46e7b84d23",
-  "artifact_hash": "sha256:1c51b33d91912ac3ba208725967c9c740bb2445dfe3662fe5f57850582bb7da9",
-  "visual_change": true,
-  "released_at": "2026-09-15T11:17:50.815Z",
+  "version": "2.0.0",
+  "contract_hash": "sha256:a6dba7ce8823a1741de866052b1a0fad4896955bd1b49b5daf5d46b2df004940",
+  "artifact_hash": "sha256:e7369c6f5145b5da8a2a8c9a3ed0ef7c11984ae04eb68c7da89b19b1424a06b3",
+  "visual_change": false,
+  "released_at": "2026-09-21T11:08:56.933Z",
   "own_values": [
     {
       "value": "1px",
@@ -45,18 +45,21 @@
   },
   "variants": {
     "default": {
-      "node_id": "77:58683",
-      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=77-58683",
-      "figma_label": "tooltip (variant=Default)"
+      "node_id": "598:629",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=598-629",
+      "figma_label": "tooltip / default"
     },
     "contrast": {
-      "node_id": "77:58683",
-      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=77-58683",
-      "figma_label": "tooltip (variant=Contrast)"
+      "node_id": "598:630",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=598-630",
+      "figma_label": "tooltip / contrast"
     }
   },
   "shape": null,
-  "size_scale": null,
+  "size_scale": [
+    "400",
+    "300"
+  ],
   "states": [
     "rest"
   ],
@@ -118,6 +121,12 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
     "--awds-rounded-border-radius-300",
@@ -127,21 +136,17 @@
     "--awds-space-1-5",
     "--awds-space-2",
     "--awds-space-2-5",
-    "--awds-typography-font-size-300",
-    "--awds-typography-font-size-400",
-    "--awds-typography-letter-spacing-300",
-    "--awds-typography-letter-spacing-400",
-    "--awds-typography-line-height-compact-300",
-    "--awds-typography-line-height-compact-400",
     "--extended-shadow-3",
+    "--extended-transparent",
     "--surface-bright",
+    "--surface-bright-dark",
     "--surface-on-high",
-    "--surface-on-highest"
+    "--surface-on-highest-dark"
   ],
-  "notes": "3 независимые оси: variant (default/contrast — цвет), type (default/compact — размер, модификатор .tooltip--compact), side (top/bottom/left/right — хвост, модификатор .tooltip--{side}). Категория body в DS отсутствует → размер из typography, line-height округлён к compact. Хвост — повёрнутый квадрат поверх пузыря, без drop-тени (лежит на тени бокса), по центру стороны; хайрлайн-обводка 1px (Figma shape Stroke) = кольцо тени пузыря (чёрный 3%) на двух внешних гранях, --awds-tooltip-hairline (opacity-3-токена в DS нет → литерал).",
-  "last_synced": "2026-06-22T13:26:22Z",
+  "notes": "3 независимые оси: variant (default/contrast — цвет), type (default/compact — размер, модификатор .tooltip--compact), side (top/bottom/left/right — хвост, модификатор .tooltip--{side}). Категория body в DS отсутствует → размер из typography, line-height округлён к compact. Хвост — повёрнутый квадрат поверх пузыря, без drop-тени (лежит на тени бокса), по центру стороны; хайрлайн-обводка 1px (Figma shape Stroke) = кольцо тени пузыря (чёрный 3%) на двух внешних гранях, --awds-tooltip-hairline (opacity-3-токена в DS нет → литерал). Contrast с 21.09.2026 — островок темы внутри класса, а не инвертированная пара ролей: .tooltip-contrast берёт --surface-bright и --surface-on-highest в dark-значении, ячейки tooltip/contrast/* ведут на роли по назначению. Решение владельца «инверсия происходит на самом компоненте, а не в токенах»; в Figma то же выражено явным модом dark коллекции roles на восьми узлах variant=contrast. Дополнительного класса в разметке не нужно — контракт разметки не менялся.",
+  "last_synced": "2026-09-21T11:00:00Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:f34d4dbc08430e723f18a1b2db52948d8a91f20fa20dc830961ec240b5a3d5ba",
+  "snapshot_hash": "sha256:763b40bf9982e0d1112b6374f0dc594e870f8ecdfe0f3f198466216a9d137eac",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "3bd7bd7",
@@ -233,11 +238,12 @@
   "contract": {
     "classes": [
       "tooltip",
-      "tooltip--bottom",
-      "tooltip--compact",
-      "tooltip--left",
-      "tooltip--right",
-      "tooltip--top",
+      "tooltip--300",
+      "tooltip--400",
+      "tooltip--side-bottom",
+      "tooltip--side-left",
+      "tooltip--side-right",
+      "tooltip--side-top",
       "tooltip-contrast",
       "tooltip-default",
       "tooltip__bubble",
@@ -250,7 +256,10 @@
       "contrast",
       "default"
     ],
-    "sizes": [],
+    "sizes": [
+      "300",
+      "400"
+    ],
     "states": [
       "rest"
     ]

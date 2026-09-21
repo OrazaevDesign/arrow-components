@@ -1,98 +1,116 @@
 {
-  "_note": "Raw Figma MCP responses captured at bootstrap. ACB-owned.",
-  "file_key": "XfUbnX6GFLFZ6nInMOlyQD",
-  "file_name": "💠 Comp ↪ ⁶ Popup",
-  "primary_node_id": "4001:27066",
-  "frame_name": "Tooltip",
-  "fetched_at": "2026-06-22T13:02:41Z",
-  "axes": {
-    "Type": [
-      "Default",
-      "Compact"
-    ],
-    "Variant": [
-      "Default",
-      "Contrast"
-    ],
-    "Side": [
-      "Top",
-      "Bottom",
-      "Left",
-      "Right"
-    ]
+  "_note": "Снимок макета tooltip. ACB-owned. Переписан 21.09.2026 после прохода по циклу плана 2026-09-14 (шаги 1–8).",
+  "_structure_note": "БЫЛО: один набор `tooltip` (77:58683) на 16 ячеек с осями type=default|compact, variant=default|contrast, side=top|bottom|left|right, в файле 💠 Comp ↪ ⁶ Popup (XfUbnX6GFLFZ6nInMOlyQD, снимок июня). СТАЛО: два набора по 8 ячеек в файле 💠 arrow ↪ components — тон вынесен в имя набора, как у button / primary и link / contrast, оси приведены к канону props.md: size=400|300 и side=top|bottom|left|right. Компоненты ПЕРЕНЕСЕНЫ, а не пересозданы; инстансов у набора не было ни на одной странице (проверено на 9 · commerce, 3 · forms, 10 · tables, 5 · lists, 7 · popups).",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "7 · popups",
+  "section": {
+    "name": "↪ tooltip",
+    "node_id": "5:46"
   },
-  "nodes_2x2x4": {
-    "default/default/top": "4001:27067",
-    "default/default/bottom": "4001:27073",
-    "default/default/left": "4001:27079",
-    "default/default/right": "4001:27085",
-    "default/contrast/top": "4001:27091",
-    "default/contrast/bottom": "4001:27097",
-    "default/contrast/left": "4001:27103",
-    "default/contrast/right": "4001:27109",
-    "compact/default/top": "4001:27113",
-    "compact/default/bottom": "4001:27119",
-    "compact/default/left": "4001:27125",
-    "compact/default/right": "4001:27131",
-    "compact/contrast/top": "4001:27137",
-    "compact/contrast/bottom": "4001:27143",
-    "compact/contrast/left": "4001:27149",
-    "compact/contrast/right": "4001:27155"
-  },
-  "structure": {
-    "content (bubble)": "bg surface-bright (Default) / surface-on-highest (Contrast), padding px space/2,5 py space/2 (Type Default), rounded border-radius/300..400, shadow elevation",
-    "text": "Default body/400 (14/20) surface-on-high; Contrast surface-bright",
-    "Tail": "ДВА шейпа: 'shape' (заливка 16x6) + 'shape (Stroke)' (хайрлайн-обводка, добавлен в обновлении). Обводка = кольцевой слой тени пузыря (shadow3 ≈ чёрный 3%). Реализован как повёрнутый квадрат ПОВЕРХ пузыря: фон + хайрлайн на двух внешних гранях; своей drop-тени нет."
-  },
-  "variable_defs": {
-    "default/default/top (4001:27067)": {
-      "role/surface/bright": "#ffffff",
-      "role/surface/on-high": "#646464",
-      "body/font-size/400": "14",
-      "body/line-height/400": "20",
-      "body/letter-spacing/400": "0",
-      "space/2,5": "10",
-      "space/2": "8",
-      "border-radius/300": "6",
-      "border-radius/400": "8",
-      "elevation": "3-layer drop-shadow (shadow1 y6 / shadow2 0 4 8 -4 / shadow3 0 0 0 1)"
+  "fetched_at": "2026-09-21T11:00:00Z",
+  "sets": {
+    "default": {
+      "node_id": "598:629",
+      "name": "tooltip / default",
+      "text_property": "text#598:0",
+      "cells": [
+        "size=400, side=top",
+        "size=400, side=bottom",
+        "size=400, side=left",
+        "size=400, side=right",
+        "size=300, side=top",
+        "size=300, side=bottom",
+        "size=300, side=left",
+        "size=300, side=right"
+      ]
     },
-    "default/contrast/top (4001:27091)": {
-      "role/surface/bright": "#ffffff",
-      "role/surface/on-highest": "#080808",
-      "body/font-size/400": "14",
-      "space/2,5": "10",
-      "space/2": "8",
-      "border-radius/300": "6",
-      "border-radius/400": "8"
-    },
-    "compact/default/top (4001:27113)": {
-      "role/surface/bright": "#ffffff",
-      "role/surface/on-high": "#646464",
-      "body/font-size/300": "13",
-      "body/line-height/300": "18",
-      "body/letter-spacing/300": "0.1",
-      "space/1,5": "6",
-      "space/1": "4",
-      "border-radius/300": "6"
+    "contrast": {
+      "node_id": "598:630",
+      "name": "tooltip / contrast",
+      "text_property": "text#598:9",
+      "explicit_mode": "roles=dark на всех 8 ячейках — островок темы; тёмный вид даёт компонент, а не инвертированная пара ролей",
+      "cells": [
+        "size=400, side=top",
+        "size=400, side=bottom",
+        "size=400, side=left",
+        "size=400, side=right",
+        "size=300, side=top",
+        "size=300, side=bottom",
+        "size=300, side=left",
+        "size=300, side=right"
+      ]
     }
   },
-  "token_resolution": {
-    "_comment": "Figma → DS value used in CSS.",
-    "default/bg": "rgb(var(--surface-bright))",
-    "default/text": "rgb(var(--surface-on-high))",
-    "contrast/bg": "rgb(var(--surface-on-highest))",
-    "contrast/text": "rgb(var(--surface-bright))",
-    "elevation": "var(--awds-shadow-elevation-3)",
-    "type-default/font": "typography-400 (14) + line-height-compact-400 (17, ≈body 20) + letter-spacing-400",
-    "type-default/padding": "space-2-5 (10) inline / space-2 (8) block",
-    "type-default/rounded": "var(--awds-rounded-400)",
-    "type-compact/font": "typography-300 (13) + line-height-compact-300 (16, ≈body 18) + letter-spacing-300",
-    "type-compact/padding": "space-1-5 (6) inline / space-1 (4) block",
-    "type-compact/rounded": "var(--awds-rounded-300)",
-    "tail": "повёрнутый на 45° квадрат space-2 (8px) ПОВЕРХ пузыря (z-index выше), БЕЗ drop-тени — лежит на тени бокса и перекрывает её; фон как у пузыря; всегда по центру стороны. Хайрлайн-обводка (Figma 'shape (Stroke)') = кольцевой слой elevation-3 (чёрный 3%) на двух внешних гранях квадрата → контур видимого остриё совпадает с обводкой пузыря. opacity-3 в DS нет → литерал rgb(0 0 0 / 3%) в --awds-tooltip-hairline. (body line-height 20/18 нет в DS — взяты compact 17/16.)",
-    "width": "UX-спека: рекомендация 250px / максимум 500px — нет DS-токена для ширины тултипа → переменная --awds-tooltip-max-width (default 250px, литерал)",
-    "_notes": "Категория body отсутствует в DS-шкалах (есть typography/control) → размер из typography, line-height округлён к compact. Хвост-стрелка реализован техникой повёрнутого квадрата (несёт box-shadow-токен; точная Figma-геометрия 16x6 заменена 45°-остриём, чтобы не хардкодить drop-shadow). Поведение (триггеры click/hover/focus, задержка hover 400мс, мгновенное скрытие, выбор стороны против часовой от 'справа', фиксация при скролле, замена нативных title/alt) — JS-контроллер потребителя, в CSS не входит; задокументировано в SKILL.md."
+  "axes": {
+    "size": [
+      "400",
+      "300"
+    ],
+    "side": [
+      "top",
+      "bottom",
+      "left",
+      "right"
+    ]
   },
-  "_layer_binding": "15.09.2026 слои привязаны к ячейкам tooltip/*: 48 заливок (default/bg ×16, default/color ×8, contrast/bg ×16, contrast/color ×8) плюс 8 обводок хвоста на tooltip/hairline. Сырых красок нет. Рамка набора (Bg/Border) — старая библиотека, долг перепривязки."
+  "structure": {
+    "content": "пузырь: фон, тень elevation-3, скругление по ступени; в коде .tooltip__bubble",
+    "content > text": "текст подсказки, привязан к TEXT-свойству набора",
+    "tail": "хвост-стрелка; в коде .tooltip__tail",
+    "tail > view-box > shape": "фигура остриё, заливка = фон пузыря",
+    "tail > view-box > hairline": "обводка остриё на tooltip/hairline — ТОЛЬКО у тона default; у contrast этого вектора нет"
+  },
+  "token_resolution": {
+    "default/bg": "state:tooltip/default/bg → roles/surface/bright",
+    "default/color": "state:tooltip/default/color → roles/surface/on-high",
+    "contrast/bg": "state:tooltip/contrast/bg → roles/surface/bright (в моде dark = #262626)",
+    "contrast/color": "state:tooltip/contrast/color → roles/surface/on-highest (в моде dark = #f5f5f5)",
+    "hairline": "state:tooltip/hairline → roles/extended/shadow-3 (0 0 0 / 3%)",
+    "elevation": "shadow/shadow1..3 при явном моде elevation-3",
+    "size=400": "padding space/2-5 × space/2 · rounded border-radius/400 · текст control/font-size|line-height|letter-spacing/400 (14/20)",
+    "size=300": "padding space/1-5 × space/1 · rounded border-radius/300 · текст control/font-size|line-height|letter-spacing/300 (13/16)",
+    "font_family": "font/family/system на диапазоне текста во всех 16 ячейках",
+    "contrast/hairline": "state:tooltip/contrast/hairline → roles/extended/transparent — обводка хвоста у тёмного тона погашена; в макете вектора hairline у contrast нет вовсе, ячейка заведена 21.09.2026 ради правила «роли без ячейки быть не должно»"
+  },
+  "code_mapping": {
+    "tone": ".tooltip-default / .tooltip-contrast — имя набора, не ось",
+    "size": ".tooltip--400 (база) / .tooltip--300",
+    "side": ".tooltip--side-top (база) / --side-bottom / --side-left / --side-right",
+    "contrast_island": "в коде островок выражен чтением сырья --surface-bright-dark и --surface-on-highest-dark; переопределять сами роли нельзя — зависимость пропадает из component-token-deps",
+    "hairline_contrast": "погашен ролью extended/transparent — соответствует отсутствию вектора обводки в макете"
+  },
+  "section_state_2026_09_21": {
+    "own_bindings_old_libraries": 0,
+    "raw_paints": 2,
+    "raw_paints_note": "обе на самой секции ↪ tooltip (подложка #ffffff и обводка #000000/10%) — общее оформление секций файла, не компонент",
+    "explicit_modes": {
+      "shadow": 16,
+      "roles": 8
+    },
+    "masters_inside": []
+  },
+  "fixed_2026_09_21": [
+    "Тень shadow1: blur был привязан к переменной shadow1/offset-y (6px) вместо shadow1/blur-radius (12px при elevation-3) — 18 эффектов перепривязаны, размытие вернулось к значению темы.",
+    "Текст: 16 ячеек переведены с wysiwyg/font-size|line-height|letter-spacing/body (16/26 у ОБЕИХ ступеней) на шкалу control по ступеням — решение владельца 21.09.2026.",
+    "Скругление пузыря: обе ступени читали border-radius/300; теперь 400 → border-radius/400, 300 → border-radius/300.",
+    "Снята ложная привязка border-radius/400 на прозрачном корне ячейки — из-за неё замер показывал, будто ступень 400 читает rounded/400.",
+    "Семейство шрифта привязано у восьми ячеек ступени 300, где его не было.",
+    "Имена узлов: Tail → tail (у двух ячеек contrast было Hint/Tail), shape (Stroke) → hairline.",
+    "Обёртки наборов покрашены ролями surface/bright и surface/on-lowest вместо старой библиотеки Sys:Bg / Sys:Border.",
+    "Заведена ячейка tooltip/contrast/hairline → extended/transparent: код гасил обводку прямой ролью без якоря, что ловил гейт component-cell-drift."
+  ],
+  "debts": [
+    "Секции файла (все девять наборов на странице 7 · popups) держат подложку на старой библиотеке Sys — общий приём оформления, отдельная работа по файлу.",
+    "У тона contrast нет вектора hairline: в коде обводка гасится ролью extended/transparent. Если дизайн решит вернуть кольцо на тёмном пузыре — правится и там, и там."
+  ],
+  "_page_cleanup_2026_09_21": {
+    "date": "2026-09-21",
+    "note": "Заход по странице 7 · popups.",
+    "dead_modes_cleared": 8,
+    "detail": {
+      "Shadow": 8
+    },
+    "diff": 0
+  }
 }

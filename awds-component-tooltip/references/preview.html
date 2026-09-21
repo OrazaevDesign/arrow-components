@@ -52,7 +52,7 @@
 <body>
 
   <h1>tooltip / storybook</h1>
-  <p class="sub">Подсказка: пузырь + хвост-стрелка. Три оси — <b>variant</b> (<code>default</code>/<code>contrast</code>), <b>type</b> (<code>default</code>/<code>compact</code>), <b>side</b> (<code>top</code>/<code>bottom</code>/<code>left</code>/<code>right</code>). Тень — <code>elevation-3</code>. Side = с какой стороны якоря висит тултип; хвост смотрит на якорь. Переключи тему — палитра подтянется.</p>
+  <p class="sub">Подсказка: пузырь + хвост-стрелка. Тон — имя набора (<code>tooltip / default</code> и <code>tooltip / contrast</code>), оси — <b>size</b> (<code>400</code>/<code>300</code>) и <b>side</b> (<code>top</code>/<code>bottom</code>/<code>left</code>/<code>right</code>). Тень — <code>elevation-3</code>. Side = с какой стороны якоря висит тултип; хвост смотрит на якорь. Переключи тему — палитра подтянется.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -61,10 +61,10 @@
         <option value="dark">dark</option>
       </select>
     </label>
-    <label>Тип:
+    <label>Ступень:
       <select id="type">
-        <option value="default">default</option>
-        <option value="compact">compact</option>
+        <option value="400">400</option>
+        <option value="300">300</option>
       </select>
     </label>
   </div>
@@ -79,8 +79,7 @@
     const SIDES = ['top', 'bottom', 'left', 'right'];
 
     function tip(variant, side, type) {
-      const compact = type === 'compact' ? ' tooltip--compact' : '';
-      return `<span class="tooltip tooltip-${variant} tooltip--${side}${compact}">`
+      return `<span class="tooltip tooltip-${variant} tooltip--${type} tooltip--side-${side}">`
         + `<span class="tooltip__tail"></span>`
         + `<span class="tooltip__bubble">Подсказка</span>`
         + `</span>`;
