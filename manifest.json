@@ -675,14 +675,17 @@
     },
     {
       "name": "tooltip",
-      "version": "1.0.7",
+      "version": "2.0.0",
       "variants": [
         "default",
         "contrast"
       ],
-      "sizes": null,
-      "rules": 11,
-      "bytes": 3522
+      "sizes": [
+        "400",
+        "300"
+      ],
+      "rules": 12,
+      "bytes": 3993
     },
     {
       "name": "uploader",
@@ -701,13 +704,13 @@
     }
   ],
   "bundle": {
-    "bytes": 318188,
-    "rules": 1231,
-    "hash": "sha256:14195f7de19f7fc117d957ddb1923f531a2d8f88cc80a20149166a4221124839"
+    "bytes": 318659,
+    "rules": 1232,
+    "hash": "sha256:a9cdb9377fc8c58df36b9864b7ff758e3af475177c2f1a402ba7c8b222843f37"
   },
   "theme": {
-    "bytes": 57357,
-    "variables_kept": 590,
+    "bytes": 56195,
+    "variables_kept": 582,
     "variables_declared": 1409,
     "missing": []
   },

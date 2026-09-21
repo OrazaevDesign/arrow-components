@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.3, button-area@2.0.6, button-favorites@2.0.0, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.1, emblem@3.0.5, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.5, list-item@1.0.10, notice@2.0.3, pagination@1.0.0, price@2.0.4, product-card@1.1.10, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.17, select-combi@1.0.18, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@1.0.7, uploader@2.0.0 */
+   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.3, button-area@2.0.6, button-favorites@2.0.0, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.1, emblem@3.0.5, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.5, list-item@1.0.10, notice@2.0.3, pagination@1.0.0, price@2.0.4, product-card@1.1.10, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.17, select-combi@1.0.18, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -9160,9 +9160,9 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 .tooltip {
   --awds-tooltip-pad-inline: var(--awds-space-2-5);   
   --awds-tooltip-pad-block:  var(--awds-space-2);     
-  --awds-tooltip-fs:         var(--awds-typography-font-size-400);             
-  --awds-tooltip-lh:         var(--awds-typography-line-height-compact-400);   
-  --awds-tooltip-ls:         var(--awds-typography-letter-spacing-400);
+  --awds-tooltip-fs:         var(--awds-control-font-size-400);      
+  --awds-tooltip-lh:         var(--awds-control-line-height-400);    
+  --awds-tooltip-ls:         var(--awds-control-letter-spacing-400);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);  
   --awds-tooltip-tail:       var(--awds-space-2);      
   --awds-tooltip-hairline:   rgb(var(--extended-shadow-3));   
@@ -9211,20 +9211,30 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .tooltip-contrast {
-  --awds-tooltip-bg:    rgb(var(--surface-on-highest));   
-  --awds-tooltip-color: rgb(var(--surface-bright));
+  --awds-tooltip-bg:       rgb(var(--surface-bright-dark));   
+  --awds-tooltip-color:    rgb(var(--surface-on-highest-dark));   
+  --awds-tooltip-hairline: rgb(var(--extended-transparent));
 }
 
-.tooltip--compact {
+.tooltip--400 {
+  --awds-tooltip-pad-inline: var(--awds-space-2-5);   
+  --awds-tooltip-pad-block:  var(--awds-space-2);     
+  --awds-tooltip-fs:         var(--awds-control-font-size-400);      
+  --awds-tooltip-lh:         var(--awds-control-line-height-400);    
+  --awds-tooltip-ls:         var(--awds-control-letter-spacing-400);
+  --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);
+}
+
+.tooltip--300 {
   --awds-tooltip-pad-inline: var(--awds-space-1-5);   
   --awds-tooltip-pad-block:  var(--awds-space-1);     
-  --awds-tooltip-fs:         var(--awds-typography-font-size-300);             
-  --awds-tooltip-lh:         var(--awds-typography-line-height-compact-300);   
-  --awds-tooltip-ls:         var(--awds-typography-letter-spacing-300);
+  --awds-tooltip-fs:         var(--awds-control-font-size-300);      
+  --awds-tooltip-lh:         var(--awds-control-line-height-300);    
+  --awds-tooltip-ls:         var(--awds-control-letter-spacing-300);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-300);
 }
 
-.tooltip--top .tooltip__tail, .tooltip:not(.tooltip--bottom):not(.tooltip--left):not(.tooltip--right) .tooltip__tail {
+.tooltip--side-top .tooltip__tail, .tooltip:not(.tooltip--side-bottom):not(.tooltip--side-left):not(.tooltip--side-right) .tooltip__tail {
   bottom: calc(-0.5 * var(--awds-tooltip-tail));
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-tooltip-tail));
@@ -9232,7 +9242,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   border-bottom: 1px solid var(--awds-tooltip-hairline);
 }
 
-.tooltip--bottom .tooltip__tail {
+.tooltip--side-bottom .tooltip__tail {
   top: calc(-0.5 * var(--awds-tooltip-tail));
   bottom: auto;
   left: 50%;
@@ -9241,7 +9251,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   border-left: 1px solid var(--awds-tooltip-hairline);
 }
 
-.tooltip--left .tooltip__tail {
+.tooltip--side-left .tooltip__tail {
   right: calc(-0.5 * var(--awds-tooltip-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-tooltip-tail));
@@ -9249,7 +9259,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   border-right: 1px solid var(--awds-tooltip-hairline);
 }
 
-.tooltip--right .tooltip__tail {
+.tooltip--side-right .tooltip__tail {
   left: calc(-0.5 * var(--awds-tooltip-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-tooltip-tail));

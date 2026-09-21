@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 590 из 1409 объявленных в теме. */
+   Переменных: 582 из 1409 объявленных в теме. */
 
 :root {
   --primary-core-light: 90 33 222;
@@ -476,14 +476,6 @@
   --awds-typography-line-height-900-tablet: 32px;
   --awds-typography-line-height-900-mobile: 30px;
   --awds-typography-line-height-900: var(--awds-typography-line-height-900-desktop);
-  --awds-typography-line-height-compact-300-desktop: 16px;
-  --awds-typography-line-height-compact-300-tablet: 16px;
-  --awds-typography-line-height-compact-300-mobile: 16px;
-  --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-desktop);
-  --awds-typography-line-height-compact-400-desktop: 17px;
-  --awds-typography-line-height-compact-400-tablet: 17px;
-  --awds-typography-line-height-compact-400-mobile: 17px;
-  --awds-typography-line-height-compact-400: var(--awds-typography-line-height-compact-400-desktop);
   --awds-typography-line-height-compact-600-desktop: 19px;
   --awds-typography-line-height-compact-600-tablet: 19px;
   --awds-typography-line-height-compact-600-mobile: 19px;
@@ -788,8 +780,6 @@
   --awds-typography-line-height-700: var(--awds-typography-line-height-700-desktop);
   --awds-typography-line-height-800: var(--awds-typography-line-height-800-desktop);
   --awds-typography-line-height-900: var(--awds-typography-line-height-900-desktop);
-  --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-desktop);
-  --awds-typography-line-height-compact-400: var(--awds-typography-line-height-compact-400-desktop);
   --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-desktop);
   --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-desktop);
   --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-desktop);
@@ -826,8 +816,6 @@
     --awds-typography-line-height-700: var(--awds-typography-line-height-700-tablet);
     --awds-typography-line-height-800: var(--awds-typography-line-height-800-tablet);
     --awds-typography-line-height-900: var(--awds-typography-line-height-900-tablet);
-    --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-tablet);
-    --awds-typography-line-height-compact-400: var(--awds-typography-line-height-compact-400-tablet);
     --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-tablet);
     --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-tablet);
     --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-tablet);
@@ -865,8 +853,6 @@
     --awds-typography-line-height-700: var(--awds-typography-line-height-700-mobile);
     --awds-typography-line-height-800: var(--awds-typography-line-height-800-mobile);
     --awds-typography-line-height-900: var(--awds-typography-line-height-900-mobile);
-    --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-mobile);
-    --awds-typography-line-height-compact-400: var(--awds-typography-line-height-compact-400-mobile);
     --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-mobile);
     --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-mobile);
     --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-mobile);
