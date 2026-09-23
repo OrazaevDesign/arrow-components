@@ -58,7 +58,7 @@ description: Pagination ArrowDS (.pgn).
 | Зазор ленты и стрелок | `--awds-space-1-5` | там же |
 | Отступ шторки, до подписи | `--awds-space-3` | там же |
 | Отступ сверху | `--awds-space-12` | там же |
-| Предел ширины | `--awds-layout-section-medium-max` (900px) | там же |
+| Предел ширины | `--awds-layout-section-width-medium` (900px) | там же |
 | Кнопки и кольцо фокуса | `awds-component-button`, `awds-component-focus-selection` | свои файлы |
 
 Все три ячейки заведены 18.09.2026 и помечены приватными: до этого компонент читал бы
