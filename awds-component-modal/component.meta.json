@@ -1,0 +1,215 @@
+{
+  "component": "modal",
+  "version": "1.0.1",
+  "contract_hash": "sha256:727392c0ee1d218ec8400b1a70c4dffd9c43452cb57702b7927d6c3fe0dd0b04",
+  "artifact_hash": "sha256:74482be2acf1b80550243332a18376d737947d419451b84900acb5ec045c7506",
+  "visual_change": false,
+  "released_at": "2026-09-23T11:48:42.894Z",
+  "own_values": [
+    {
+      "value": "0.2s",
+      "where": "transition",
+      "count": 3,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    },
+    {
+      "value": "480px",
+      "where": "--awds-mdl-width",
+      "count": 1,
+      "why": "ширина окна: группы окна нет ни в layout, ни в size — в layout/form только gap и group-gap; ручка перекрывается потребителем"
+    }
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:48",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-48"
+  },
+  "variants": {
+    "dialog": {
+      "node_id": "637:48438",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=637-48438",
+      "figma_label": "modal / dialog"
+    },
+    "sidepage": {
+      "node_id": "637:48439",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=637-48439",
+      "figma_label": "modal / sidepage"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров нет: ширину задаёт потребитель ручкой --awds-mdl-width (по умолчанию layout/form/max). Ось view=desktop|tablet|mobile в макете — брейкпоинт, а не ступень: правило 10 канона props.md, класса под неё нет.",
+  "states": [
+    "rest"
+  ],
+  "states_note": "Состояний нет: окно либо открыто (атрибут open у <dialog>), либо закрыто. Наведение и фокус живут у вложенных кнопок.",
+  "color_tokens": [
+    "bg",
+    "backdrop"
+  ],
+  "css_files": [
+    "modal.css"
+  ],
+  "base_class_note": "Базовый класс .mdl, а не .modal. Во-первых, .modal — имя компонента в Bootstrap и почти наверняка занято на стороне потребителя. Во-вторых, приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = modal они дали бы --awds-modal-*, что читается как слой дизайн-системы. Тот же приём, что у label → .lbl, datepicker → .dpick, button-overhung → .obtn.",
+  "preview": {
+    "base_class": "mdl",
+    "default_size": null,
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": null,
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Вид",
+        "options": [
+          "dialog",
+          "sidepage"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Dialog · заголовок и две кнопки",
+        "html": "<dialog class=\"mdl mdl-dialog\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Удалить адрес?</h2><button class=\"btn btn-ghost btn--200 mdl__close\" type=\"button\" aria-label=\"Закрыть\"></button></header><div class=\"mdl__content\"><p class=\"mdl__text\">Это нельзя отменить.</p></div><footer class=\"mdl__footer\"><button class=\"btn btn-secondary btn--300\" type=\"button\">Отмена</button><button class=\"btn btn-primary btn--300\" type=\"button\">Удалить</button></footer></dialog>"
+      },
+      {
+        "label": "Sidepage · содержимое во всю ширину",
+        "html": "<dialog class=\"mdl mdl-sidepage\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Фильтры</h2><button class=\"btn btn-ghost btn--200 mdl__close\" type=\"button\" aria-label=\"Закрыть\"></button></header><div class=\"mdl__content mdl__content--flush\"></div><footer class=\"mdl__footer mdl__footer--reverse\"><button class=\"btn btn-primary btn--300\" type=\"button\">Показать</button><button class=\"btn btn-secondary btn--300\" type=\"button\">Сбросить</button></footer></dialog>"
+      }
+    ]
+  },
+  "notes": "Вид — имя набора (modal / dialog и modal / sidepage), различаются только геометрией: диалог скруглён и стоит по центру, панель прижата к краю без скруглений; ниже 1068px оба становятся шторкой снизу. Ось view=desktop|tablet|mobile в макете — брейкпоинт, а не вариант (правило 10): класса нет, адаптив даёт медиазапрос и адаптивный токен layout/section/side. Компонент строится на нативном <dialog>: ловушка фокуса, Esc и инертность страницы приходят от showModal(), подложка — ::backdrop. Части макета (шапка, содержимое, подвал) 22.09.2026 разобраны с 23 ячеек до 5: комбинации в именах вариантов заменены булевыми show-*, опечатка pozitive и состояние delete-hover сняты, булева ось alter-align=false|true стала reverse=on|off. Заголовок переведён со старой роли title/t5 (18/22 десктоп, 17/20 ниже) на фикс typography-800 + line-height-compact-800 (18/22) — решение владельца.",
+  "last_synced": "2026-09-22T09:40:00Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:1b9b73e37daa4537e6426f5aec56617c882e0c6a4f3b56527af62b942a310b9e",
+  "published": null,
+  "markup": {
+    "root": {
+      "class": "mdl",
+      "tags": [
+        "dialog"
+      ]
+    },
+    "variant": {
+      "pattern": "mdl-{variant}",
+      "required": true
+    },
+    "size": null,
+    "native": "dialog",
+    "children": [
+      {
+        "class": "mdl__header"
+      },
+      {
+        "class": "mdl__content"
+      },
+      {
+        "class": "mdl__footer"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Корень — <dialog>, открывается showModal(). Шапка, содержимое и подвал необязательны по отдельности, но порядок фиксирован. Заголовок — <h2 class=\"mdl__title\">, окну aria-labelledby на него. Кнопки шапки и подвала — инстансы button / button-area, своих цветов компонент им не задаёт. Модификаторы: .mdl__content--flush (содержимое во всю ширину), .mdl__footer--reverse (обратный порядок кнопок)."
+  },
+  "questions": [
+    {
+      "id": "modal-geometry-unified-without-title",
+      "text": "После разбора частей шапка без заголовка получила боковые отступы 24 (раньше крестик стоял в углу без отступов), а пустой подвал — 24 снизу вместо 32. Булевым такое различие в Figma не выразить. Оставляем унифицированную геометрию или заводим ось под «шапку с крестиком в углу»?",
+      "level": "component",
+      "target": "modal",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-22",
+      "evidence": "замер 22.09.2026: ячейки variant=close|empty|back имели padding 32/0/0/0, ячейки с заголовком — 32/24/8/24; у подвала variant=empty было 0/24/32/24 против 8/24/24/24 у остальных. В коде различие снимает :has()",
+      "asana_gid": "1218731217740780"
+    },
+    {
+      "id": "modal-scrollbar-on-foreign-master",
+      "text": "Полоса прокрутки в содержимом стоит на чужом remote-компоненте Scrollbar из старой библиотеки (6 инстансов). Наш scrollbar своей разметки не имеет — он красит нативную полосу. Рисовать полосу в макете нашим компонентом или оставить чужой?",
+      "level": "component",
+      "target": "scrollbar",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-22",
+      "evidence": "замер 22.09.2026: инстансы Scrollbar (Type=Vertical, Style=Clear, State=Rest) remote=true; в коде модалки полосы нет вовсе — прокрутка нативная, красится компонентом scrollbar",
+      "asana_gid": "1218731381722490"
+    }
+  ],
+  "family": "popups",
+  "summary": "Окно поверх страницы: диалог по центру и панель у края, на мобильном — шторка",
+  "aliases": [
+    "модалка",
+    "модальное окно",
+    "диалог",
+    "попап",
+    "сайдпейдж",
+    "боковая панель",
+    "шторка",
+    "окно подтверждения"
+  ],
+  "uses_note": "Кнопки шапки и подвала — инстансы button и button-area: своих цветов и размеров модалка им не задаёт, только место в раскладке. Полосу прокрутки в содержимом красит scrollbar.",
+  "ds_token_dependencies": [
+    "--awds-control-font-size-400",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-line-height-400",
+    "--awds-font-family-system",
+    "--awds-font-weight-bold",
+    "--awds-layout-section-gutter",
+    "--awds-opacity-50",
+    "--awds-rounded-border-radius-600",
+    "--awds-shadow-elevation-4",
+    "--awds-space-12",
+    "--awds-space-2",
+    "--awds-space-3",
+    "--awds-space-6",
+    "--awds-space-8",
+    "--awds-typography-font-size-800",
+    "--awds-typography-letter-spacing-800",
+    "--awds-typography-line-height-compact-800",
+    "--surface-bright",
+    "--surface-on-highest"
+  ],
+  "asana": {
+    "task_gid": "1218731434531418",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218731434531418",
+    "task_name": "💠 modal",
+    "parent_task": "💠 7 · popups",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-button": "2.2.3",
+    "awds-component-button-area": "2.0.6",
+    "awds-component-scrollbar": "2.0.6"
+  },
+  "contract": {
+    "classes": [
+      "mdl",
+      "mdl-dialog",
+      "mdl-sidepage",
+      "mdl__back",
+      "mdl__close",
+      "mdl__content",
+      "mdl__content--flush",
+      "mdl__footer",
+      "mdl__footer--reverse",
+      "mdl__header",
+      "mdl__text",
+      "mdl__title"
+    ],
+    "attributes": [
+      "open"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "dialog",
+      "sidepage"
+    ],
+    "sizes": [],
+    "states": [
+      "rest"
+    ]
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "_note": "Снимок макета modal. ACB-owned. Создан 22.09.2026 проходом по циклу плана 2026-09-14 (шаги 1–8).",
+  "_structure_note": "БЫЛО: набор `modal` (77:60776) на 6 ячеек с осями view=desktop|tablet|mobile и type=modal|sidepage, плюс три части — `. / header` (5 ячеек, variant=close|empty|back|title|title+back), `. / content` (7 ячеек, variant=empty|content|no-gap|text|input|text+input|lang) и `. / footer` (11 ячеек, variant=empty|swap|solo-button|solo-button-area|pozitive|negative|filters|delete|delete-hover × alter-align=false|true). СТАЛО: два набора по виду — `modal / dialog` (637:48438) и `modal / sidepage` (637:48439), по 3 ячейки с осью view; `. / header` — обычный КОМПОНЕНТ с тремя булевыми; `. / content` — набор с осью padding=on|off; `. / footer` — набор с осью reverse=on|off. Ячеек в частях было 23, стало 5. Решения владельца 22.09.2026 по четырём вопросам, заданным до кода.",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "7 · popups",
+  "section": {
+    "name": "↪ modal",
+    "node_id": "5:48"
+  },
+  "fetched_at": "2026-09-22T09:40:00Z",
+  "sets": {
+    "dialog": {
+      "node_id": "637:48438",
+      "name": "modal / dialog",
+      "cells": {
+        "view=desktop": "77:60777",
+        "view=tablet": "77:60785",
+        "view=mobile": "77:60793"
+      },
+      "geometry": "скругление rounded-600 со всех сторон; на view=mobile только верхние углы"
+    },
+    "sidepage": {
+      "node_id": "637:48439",
+      "name": "modal / sidepage",
+      "cells": {
+        "view=desktop": "77:60781",
+        "view=tablet": "77:60789",
+        "view=mobile": "77:60797"
+      },
+      "geometry": "скруглений нет — панель прижата к краю; на view=mobile верхние углы rounded-600, как у диалога"
+    }
+  },
+  "parts": {
+    "header": {
+      "node_id": "77:60810",
+      "type": "COMPONENT",
+      "props": [
+        "show-back (default false)",
+        "show-title (default true)",
+        "show-close (default true)",
+        "title (TEXT)"
+      ],
+      "geometry": "padding 32 сверху, 8 снизу, по бокам layout/section/side; зазор 8; заголовок typography-800 + line-height-compact/800 (18/22)",
+      "note": "Кнопка «назад» — инстанс button-area / muted внутри Heading (как было в ячейке title+back); крестик — button / ghost справа."
+    },
+    "content": {
+      "node_id": "77:60819",
+      "type": "COMPONENT_SET",
+      "axis": "padding=on|off",
+      "props": [
+        "show-swap (true)",
+        "show-text (false)",
+        "show-field (false)",
+        "field (INSTANCE_SWAP)",
+        "swap (INSTANCE_SWAP)",
+        "scrollbar (BOOLEAN)",
+        "text (TEXT)"
+      ],
+      "geometry": "по бокам layout/section/side у padding=on, 0 у padding=off; рамка Text — padding-block 12, зазор 12"
+    },
+    "footer": {
+      "node_id": "77:60845",
+      "type": "COMPONENT_SET",
+      "axis": "reverse=on|off",
+      "props": [
+        "show-swap (false)",
+        "show-start (true)",
+        "show-end (true)",
+        "start (INSTANCE_SWAP)",
+        "end (INSTANCE_SWAP)",
+        "swap (INSTANCE_SWAP)"
+      ],
+      "geometry": "padding 8 сверху, 24 снизу, по бокам layout/section/side; в reverse=on порядок кнопок в ButtonGroup обратный"
+    },
+    "swap": {
+      "node_id": "77:60774",
+      "note": "Часть-заглушка слота, общая для файла: её же держит popover. Живёт в этой секции."
+    }
+  },
+  "axes": {
+    "view": [
+      "desktop",
+      "tablet",
+      "mobile"
+    ],
+    "padding (у содержимого)": [
+      "on",
+      "off"
+    ],
+    "reverse (у подвала)": [
+      "on",
+      "off"
+    ]
+  },
+  "token_resolution": {
+    "bg": "state:modal/bg → roles/surface/bright",
+    "backdrop": "state:modal/backdrop → roles/surface/on-highest; альфа задаётся компонентом (opacity-50)",
+    "border": "state:modal/border → roles/surface/on-lowest — в макете обводки у окна нет, ячейка заведена впрок",
+    "elevation": "shadow/shadow1..3 при явном моде elevation-4",
+    "rounded": "rounded/border-radius/600 (10)",
+    "side": "layout/section/side — 24 на десктопе, 16 на планшете и мобильном; мод коллекции layout выставлен на каждой ячейке по её брейкпоинту",
+    "header_top": "space/8 (32)",
+    "gap": "space/2 (8) — низ шапки и верх подвала",
+    "footer_bottom": "space/6 (24)",
+    "title": "typography/font-size/800 + line-height-compact/800 + letter-spacing/800 (18/22)",
+    "text": "control/font-size|line-height|letter-spacing/400 (14/20)",
+    "color": "state:modal/color → roles/surface/on-highest — ячейка заведена 22.09.2026: текст в макете красился ролью напрямую, а роли без ячейки быть не должно"
+  },
+  "code_mapping": {
+    "base_class": ".mdl — не .modal: имя занято у потребителей (Bootstrap)",
+    "view": ".mdl-dialog / .mdl-sidepage — имя набора, не ось",
+    "breakpoint": "классом НЕ выражается: медиазапрос max-width 1067px превращает оба вида в шторку снизу",
+    "parts": ".mdl__header / .mdl__title / .mdl__content / .mdl__text / .mdl__footer; булевы макета выражены наличием узлов, ось padding — модификатором .mdl__content--flush, ось reverse — .mdl__footer--reverse",
+    "native": "компонент строится на <dialog>: ловушка фокуса, Esc и инертность страницы приходят от showModal(), подложка — ::backdrop",
+    "spacer": "узел zero в макете держит крестик у правого края, когда заголовка нет; в коде ту же роль играет .mdl__header::before"
+  },
+  "section_state_2026_09_22": {
+    "own_bindings_old_libraries": 0,
+    "raw_paints": 0,
+    "explicit_modes": {
+      "shadow": 6,
+      "layout": 6
+    },
+    "instances_of_modal_in_file": 0
+  },
+  "fixed_2026_09_22": [
+    "41 своя привязка переведена со старых библиотек: Sys:Bg/Border на обёртках четырёх наборов и в заглушке . / swap → роли; Layout:layout/market/block/block-top (32) → space/8 (8 привязок); Layout:layout/market/block/gap (24) → space/6 (10 привязок); Typography:title/*/t5 → typography/800 + line-height-compact/800 + letter-spacing/800 (6); Typography:body/*/400 → control/400 (6).",
+    "Тень: blur первого слоя был привязан к shadow1/offset-y вместо blur-radius — 6 эффектов. Пятый случай того же дефекта после tooltip, панели форм, popover и toast.",
+    "Фон шести ячеек переведён с прямой роли surface/bright на ячейку state:modal/bg.",
+    "Ось type=modal|sidepage снята: вид стал именем набора.",
+    "Части разобраны: 23 ячейки с комбинациями (title+back, text+input), опечаткой pozitive, состоянием delete-hover и булевой осью alter-align=false|true → 5 ячеек с булевыми show-* и осями padding / reverse.",
+    "Снят мёртвый явный мод старой коллекции Typography с шести ячеек; моды новой коллекции layout выставлены по брейкпоинту ячейки."
+  ],
+  "debts": [
+    "ПРИВЯЗКА ЯЧЕЙКИ modal/color ЖДЁТ ПУБЛИКАЦИИ библиотеки токенов: три текстовых узла (заголовок шапки и текст обеих ячеек содержимого) пока привязаны напрямую к роли surface/on-highest. Значение от перевода не изменится.",
+    "ГЕОМЕТРИЯ УНИФИЦИРОВАНА, и это видимое изменение. Раньше шапка без заголовка шла без боковых отступов (крестик в углу), а пустой подвал имел 32 снизу вместо 24. Булевым такое различие в Figma не выразить; в коде его снимает :has(), в макете принята «населённая» геометрия — 32/24/8/24 у шапки и 8/24/24/24 у подвала.",
+    "Инстансы кнопок и полей внутри модалки держат 119 привязок к старым библиотекам (Size, Rounded, Opacity, Roles, Typography) — это долги мастеров в секциях ↪ button, ↪ button-area и ↪ formfield, не модалки.",
+    "Полоса прокрутки в содержимом — инстанс ЧУЖОГО remote-компонента Scrollbar (6 штук), а не нашего scrollbar: у нашего своей разметки нет, он красит нативную полосу.",
+    "Строка «Удалить» из ячеек delete / delete-hover снята вместе с двумя инстансами чужого remote-набора Invest. Такое действие собирается кнопкой button-area с иконкой."
+  ]
+}
