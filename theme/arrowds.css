@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 582 из 1409 объявленных в теме. */
+   Переменных: 603 из 1301 объявленных в теме. */
 
 :root {
   --primary-core-light: 90 33 222;
@@ -261,18 +261,22 @@
   --extended-transparent-light: 255 255 255 / 0%;
   --extended-transparent-dark: 0 0 0 / 0%;
   --extended-transparent: var(--extended-transparent-light);
-  --awds-layout-section-medium-max-desktop: 900px;
-  --awds-layout-section-medium-max-tablet: 900px;
-  --awds-layout-section-medium-max-mobile: 900px;
-  --awds-layout-section-medium-max: var(--awds-layout-section-medium-max-desktop);
-  --awds-layout-card-slider-min-desktop: 170px;
-  --awds-layout-card-slider-min-tablet: 170px;
-  --awds-layout-card-slider-min-mobile: 128px;
-  --awds-layout-card-slider-min: var(--awds-layout-card-slider-min-desktop);
-  --awds-layout-card-slider-max-desktop: 368px;
-  --awds-layout-card-slider-max-tablet: 368px;
-  --awds-layout-card-slider-max-mobile: 256px;
-  --awds-layout-card-slider-max: var(--awds-layout-card-slider-max-desktop);
+  --awds-layout-section-width-medium-desktop: 900px;
+  --awds-layout-section-width-medium-tablet: 900px;
+  --awds-layout-section-width-medium-mobile: 900px;
+  --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);
+  --awds-layout-section-gutter-desktop: var(--awds-space-6);
+  --awds-layout-section-gutter-tablet: var(--awds-space-4);
+  --awds-layout-section-gutter-mobile: var(--awds-space-4);
+  --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);
+  --awds-layout-card-product-min-desktop: 170px;
+  --awds-layout-card-product-min-tablet: 170px;
+  --awds-layout-card-product-min-mobile: 128px;
+  --awds-layout-card-product-min: var(--awds-layout-card-product-min-desktop);
+  --awds-layout-card-product-max-desktop: 368px;
+  --awds-layout-card-product-max-tablet: 368px;
+  --awds-layout-card-product-max-mobile: 256px;
+  --awds-layout-card-product-max: var(--awds-layout-card-product-max-desktop);
   --awds-opacity-5: 5%;
   --awds-opacity-20: 20%;
   --awds-opacity-30: 30%;
@@ -321,34 +325,49 @@
   --awds-rounded-border-radius-full: var(--awds-rounded-border-radius-full-smooth);
   --awds-shadow-shadow1-color-elevation-1: var(--extended-shadow-1);
   --awds-shadow-shadow1-color-elevation-3: var(--extended-shadow-1);
+  --awds-shadow-shadow1-color-elevation-4: var(--extended-shadow-1);
   --awds-shadow-shadow1-offset-x-elevation-1: 0px;
   --awds-shadow-shadow1-offset-x-elevation-3: 0px;
+  --awds-shadow-shadow1-offset-x-elevation-4: 0px;
   --awds-shadow-shadow1-offset-y-elevation-1: 2px;
   --awds-shadow-shadow1-offset-y-elevation-3: 6px;
+  --awds-shadow-shadow1-offset-y-elevation-4: 8px;
   --awds-shadow-shadow1-blur-radius-elevation-1: 4px;
   --awds-shadow-shadow1-blur-radius-elevation-3: 12px;
+  --awds-shadow-shadow1-blur-radius-elevation-4: 16px;
   --awds-shadow-shadow1-spread-radius-elevation-1: 0px;
   --awds-shadow-shadow1-spread-radius-elevation-3: 0px;
+  --awds-shadow-shadow1-spread-radius-elevation-4: 0px;
   --awds-shadow-shadow2-color-elevation-1: var(--extended-shadow-2);
   --awds-shadow-shadow2-color-elevation-3: var(--extended-shadow-2);
+  --awds-shadow-shadow2-color-elevation-4: var(--extended-shadow-2);
   --awds-shadow-shadow2-offset-x-elevation-1: 0px;
   --awds-shadow-shadow2-offset-x-elevation-3: 0px;
+  --awds-shadow-shadow2-offset-x-elevation-4: 0px;
   --awds-shadow-shadow2-offset-y-elevation-1: 1px;
   --awds-shadow-shadow2-offset-y-elevation-3: 4px;
+  --awds-shadow-shadow2-offset-y-elevation-4: 8px;
   --awds-shadow-shadow2-blur-radius-elevation-1: 2px;
   --awds-shadow-shadow2-blur-radius-elevation-3: 8px;
+  --awds-shadow-shadow2-blur-radius-elevation-4: 12px;
   --awds-shadow-shadow2-spread-radius-elevation-1: -1px;
   --awds-shadow-shadow2-spread-radius-elevation-3: -4px;
+  --awds-shadow-shadow2-spread-radius-elevation-4: -4px;
   --awds-shadow-shadow3-color-elevation-1: var(--extended-shadow-3);
   --awds-shadow-shadow3-color-elevation-3: var(--extended-shadow-3);
+  --awds-shadow-shadow3-color-elevation-4: var(--extended-shadow-3);
   --awds-shadow-shadow3-offset-x-elevation-1: 0px;
   --awds-shadow-shadow3-offset-x-elevation-3: 0px;
+  --awds-shadow-shadow3-offset-x-elevation-4: 0px;
   --awds-shadow-shadow3-offset-y-elevation-1: 0px;
   --awds-shadow-shadow3-offset-y-elevation-3: 0px;
+  --awds-shadow-shadow3-offset-y-elevation-4: 0px;
   --awds-shadow-shadow3-blur-radius-elevation-1: 0px;
   --awds-shadow-shadow3-blur-radius-elevation-3: 0px;
+  --awds-shadow-shadow3-blur-radius-elevation-4: 0px;
   --awds-shadow-shadow3-spread-radius-elevation-1: 1px;
   --awds-shadow-shadow3-spread-radius-elevation-3: 1px;
+  --awds-shadow-shadow3-spread-radius-elevation-4: 1px;
   --awds-space-0: 0px;
   --awds-space-0-5: 2px;
   --awds-space-px: 1px;
@@ -583,6 +602,7 @@
   --awds-font-family-system: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --awds-font-weight-regular: 400;
   --awds-font-weight-semibold: 600;
+  --awds-font-weight-bold: 700;
 }
 .theme-light {
   --primary-core: var(--primary-core-light);
@@ -761,9 +781,10 @@
   --extended-transparent: var(--extended-transparent-dark);
 }
 .desktop {
-  --awds-layout-section-medium-max: var(--awds-layout-section-medium-max-desktop);
-  --awds-layout-card-slider-min: var(--awds-layout-card-slider-min-desktop);
-  --awds-layout-card-slider-max: var(--awds-layout-card-slider-max-desktop);
+  --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);
+  --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);
+  --awds-layout-card-product-min: var(--awds-layout-card-product-min-desktop);
+  --awds-layout-card-product-max: var(--awds-layout-card-product-max-desktop);
   --awds-typography-font-size-200: var(--awds-typography-font-size-200-desktop);
   --awds-typography-font-size-300: var(--awds-typography-font-size-300-desktop);
   --awds-typography-font-size-400: var(--awds-typography-font-size-400-desktop);
@@ -797,9 +818,10 @@
 }
 @media (max-width: 1067px) {
   :root {
-    --awds-layout-section-medium-max: var(--awds-layout-section-medium-max-tablet);
-    --awds-layout-card-slider-min: var(--awds-layout-card-slider-min-tablet);
-    --awds-layout-card-slider-max: var(--awds-layout-card-slider-max-tablet);
+    --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-tablet);
+    --awds-layout-section-gutter: var(--awds-layout-section-gutter-tablet);
+    --awds-layout-card-product-min: var(--awds-layout-card-product-min-tablet);
+    --awds-layout-card-product-max: var(--awds-layout-card-product-max-tablet);
     --awds-typography-font-size-200: var(--awds-typography-font-size-200-tablet);
     --awds-typography-font-size-300: var(--awds-typography-font-size-300-tablet);
     --awds-typography-font-size-400: var(--awds-typography-font-size-400-tablet);
@@ -834,9 +856,10 @@
 }
 @media (max-width: 615px) {
   :root {
-    --awds-layout-section-medium-max: var(--awds-layout-section-medium-max-mobile);
-    --awds-layout-card-slider-min: var(--awds-layout-card-slider-min-mobile);
-    --awds-layout-card-slider-max: var(--awds-layout-card-slider-max-mobile);
+    --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-mobile);
+    --awds-layout-section-gutter: var(--awds-layout-section-gutter-mobile);
+    --awds-layout-card-product-min: var(--awds-layout-card-product-min-mobile);
+    --awds-layout-card-product-max: var(--awds-layout-card-product-max-mobile);
     --awds-typography-font-size-200: var(--awds-typography-font-size-200-mobile);
     --awds-typography-font-size-300: var(--awds-typography-font-size-300-mobile);
     --awds-typography-font-size-400: var(--awds-typography-font-size-400-mobile);
@@ -947,4 +970,5 @@
 :root {
   --awds-shadow-elevation-1: var(--awds-shadow-shadow1-offset-x-elevation-1) var(--awds-shadow-shadow1-offset-y-elevation-1) var(--awds-shadow-shadow1-blur-radius-elevation-1) var(--awds-shadow-shadow1-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow1-color-elevation-1)), var(--awds-shadow-shadow2-offset-x-elevation-1) var(--awds-shadow-shadow2-offset-y-elevation-1) var(--awds-shadow-shadow2-blur-radius-elevation-1) var(--awds-shadow-shadow2-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow2-color-elevation-1)), var(--awds-shadow-shadow3-offset-x-elevation-1) var(--awds-shadow-shadow3-offset-y-elevation-1) var(--awds-shadow-shadow3-blur-radius-elevation-1) var(--awds-shadow-shadow3-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow3-color-elevation-1));
   --awds-shadow-elevation-3: var(--awds-shadow-shadow1-offset-x-elevation-3) var(--awds-shadow-shadow1-offset-y-elevation-3) var(--awds-shadow-shadow1-blur-radius-elevation-3) var(--awds-shadow-shadow1-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow1-color-elevation-3)), var(--awds-shadow-shadow2-offset-x-elevation-3) var(--awds-shadow-shadow2-offset-y-elevation-3) var(--awds-shadow-shadow2-blur-radius-elevation-3) var(--awds-shadow-shadow2-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow2-color-elevation-3)), var(--awds-shadow-shadow3-offset-x-elevation-3) var(--awds-shadow-shadow3-offset-y-elevation-3) var(--awds-shadow-shadow3-blur-radius-elevation-3) var(--awds-shadow-shadow3-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow3-color-elevation-3));
+  --awds-shadow-elevation-4: var(--awds-shadow-shadow1-offset-x-elevation-4) var(--awds-shadow-shadow1-offset-y-elevation-4) var(--awds-shadow-shadow1-blur-radius-elevation-4) var(--awds-shadow-shadow1-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow1-color-elevation-4)), var(--awds-shadow-shadow2-offset-x-elevation-4) var(--awds-shadow-shadow2-offset-y-elevation-4) var(--awds-shadow-shadow2-blur-radius-elevation-4) var(--awds-shadow-shadow2-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow2-color-elevation-4)), var(--awds-shadow-shadow3-offset-x-elevation-4) var(--awds-shadow-shadow3-offset-y-elevation-4) var(--awds-shadow-shadow3-blur-radius-elevation-4) var(--awds-shadow-shadow3-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow3-color-elevation-4));
 }

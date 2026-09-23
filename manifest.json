@@ -373,6 +373,17 @@
       "bytes": 18077
     },
     {
+      "name": "modal",
+      "version": "1.0.1",
+      "variants": [
+        "dialog",
+        "sidepage"
+      ],
+      "sizes": null,
+      "rules": 17,
+      "bytes": 3817
+    },
+    {
       "name": "notice",
       "version": "2.0.3",
       "variants": [
@@ -393,7 +404,7 @@
     },
     {
       "name": "pagination",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "variants": [
         "center",
         "start",
@@ -401,7 +412,7 @@
       ],
       "sizes": null,
       "rules": 11,
-      "bytes": 1994
+      "bytes": 1996
     },
     {
       "name": "price",
@@ -429,7 +440,7 @@
     },
     {
       "name": "product-card",
-      "version": "1.1.10",
+      "version": "1.1.11",
       "variants": [
         "price-first",
         "brand-first",
@@ -437,7 +448,7 @@
       ],
       "sizes": null,
       "rules": 146,
-      "bytes": 29897
+      "bytes": 29903
     },
     {
       "name": "progress",
@@ -704,14 +715,14 @@
     }
   ],
   "bundle": {
-    "bytes": 318659,
-    "rules": 1232,
-    "hash": "sha256:a9cdb9377fc8c58df36b9864b7ff758e3af475177c2f1a402ba7c8b222843f37"
+    "bytes": 322392,
+    "rules": 1249,
+    "hash": "sha256:bc4426d451026f428509e8eaa4e165b237ade3b8cfc04b7914e8dc3809360ddf"
   },
   "theme": {
-    "bytes": 56195,
-    "variables_kept": 582,
-    "variables_declared": 1409,
+    "bytes": 58382,
+    "variables_kept": 603,
+    "variables_declared": 1301,
     "missing": []
   },
   "skipped_selectors": [

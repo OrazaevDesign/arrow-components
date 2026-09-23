@@ -1,4 +1,4 @@
-/* ArrowDS components — 41 компонентов.
+/* ArrowDS components — 42 компонентов.
    Сгенерировано tools/build-dist.mjs — руками не править.
 
    Правила лежат в @layer awds: код потребителя вне слоёв сильнее любого правила
@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.3, button-area@2.0.6, button-favorites@2.0.0, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.1, emblem@3.0.5, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.5, list-item@1.0.10, notice@2.0.3, pagination@1.0.0, price@2.0.4, product-card@1.1.10, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.17, select-combi@1.0.18, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
+   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.3, button-area@2.0.6, button-favorites@2.0.0, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.1, emblem@3.0.5, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.5, list-item@1.0.10, modal@1.0.1, notice@2.0.3, pagination@1.0.1, price@2.0.4, product-card@1.1.11, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.17, select-combi@1.0.18, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -4295,6 +4295,158 @@
   --awds-list-item-desc:    rgb(var(--secondary-container-on));
 }
 
+.mdl {
+  --awds-mdl-bg:       rgb(var(--surface-bright));   
+  --awds-mdl-backdrop: rgb(var(--surface-on-highest) / var(--awds-opacity-50));   
+  --awds-mdl-rounded:  var(--awds-rounded-border-radius-600);   
+  --awds-mdl-pad-side: var(--awds-layout-section-gutter);   
+  --awds-mdl-pad-top:  var(--awds-space-8);   
+  --awds-mdl-gap:      var(--awds-space-2);   
+  --awds-mdl-pad-bottom: var(--awds-space-6);   
+  --awds-mdl-width:    480px;
+  --awds-mdl-title-fs: var(--awds-typography-font-size-800);            
+  --awds-mdl-title-lh: var(--awds-typography-line-height-compact-800);  
+  --awds-mdl-title-ls: var(--awds-typography-letter-spacing-800);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-block-size: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--awds-mdl-bg);
+  color: rgb(var(--surface-on-highest));   
+  box-shadow: var(--awds-shadow-elevation-4);
+  overflow: hidden;
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-control-font-size-400);
+  line-height: var(--awds-control-line-height-400);
+  letter-spacing: var(--awds-control-letter-spacing-400);
+}
+
+.mdl *, .mdl *::before, .mdl *::after {
+  box-sizing: border-box;
+}
+
+.mdl::backdrop {
+  background: rgb(var(--surface-on-highest) / var(--awds-opacity-50));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mdl,
+  .mdl::backdrop {
+    transition: opacity 0.2s ease-out, translate 0.2s ease-out, overlay 0.2s allow-discrete,
+                display 0.2s allow-discrete;
+  }
+  .mdl:not([open]),
+  .mdl:not([open])::backdrop {
+    opacity: 0;
+  }
+  @starting-style {
+    .mdl[open],
+    .mdl[open]::backdrop {
+      opacity: 0;
+    }
+  }
+}
+
+.mdl-dialog {
+  inline-size: var(--awds-mdl-width);
+  max-inline-size: calc(100% - 2 * var(--awds-mdl-pad-side));
+  margin: auto;
+  border-radius: var(--awds-mdl-rounded);
+}
+
+.mdl-sidepage {
+  inline-size: var(--awds-mdl-width);
+  max-inline-size: calc(100% - var(--awds-mdl-pad-side));
+  block-size: 100%;
+  max-block-size: 100%;
+  margin-block: 0;
+  margin-inline: auto 0;
+  border-radius: 0;
+}
+
+.mdl__header {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  gap: var(--awds-mdl-gap);
+  padding-block: var(--awds-mdl-pad-top) var(--awds-mdl-gap);
+  padding-inline: var(--awds-mdl-pad-side);
+}
+
+.mdl__title {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  margin: 0;
+  font-size: var(--awds-mdl-title-fs);
+  line-height: var(--awds-mdl-title-lh);
+  letter-spacing: var(--awds-mdl-title-ls);
+  font-weight: var(--awds-font-weight-bold);
+  text-wrap: balance;
+}
+
+.mdl__header::before {
+  content: "";
+  flex: 1 1 auto;
+}
+
+.mdl__header:has(.mdl__title)::before {
+  content: none;
+}
+
+.mdl__back, .mdl__close {
+  flex: none;
+}
+
+.mdl__content {
+  flex: 1 1 auto;
+  min-block-size: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-inline: var(--awds-mdl-pad-side);
+}
+
+.mdl__content--flush {
+  padding-inline: 0;
+}
+
+.mdl__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-3);           
+  padding-block: var(--awds-space-3); 
+  margin: 0;
+}
+
+.mdl__footer {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--awds-mdl-gap);
+  padding-block: var(--awds-mdl-gap) var(--awds-mdl-pad-bottom);
+  padding-inline: var(--awds-mdl-pad-side);
+}
+
+.mdl__footer--reverse {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 1067px) {
+  .mdl-dialog,
+  .mdl-sidepage {
+    inline-size: 100%;
+    max-inline-size: 100%;
+    block-size: auto;
+    max-block-size: calc(100% - var(--awds-space-12));   
+    margin: auto 0 0;
+    border-start-start-radius: var(--awds-mdl-rounded);
+    border-start-end-radius: var(--awds-mdl-rounded);
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
+}
+
 .notice {
   --awds-notice-size:  var(--awds-space-5);
   --awds-notice-pad-h: var(--awds-space-1);
@@ -4407,7 +4559,7 @@
   align-items: center;
   gap: var(--awds-space-3);
   padding-top: var(--awds-space-12);
-  max-width: var(--awds-layout-section-medium-max);
+  max-width: var(--awds-layout-section-width-medium);
   margin-inline: auto;
 }
 
@@ -4689,8 +4841,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: var(--awds-layout-card-slider-min);   
-  max-width: var(--awds-layout-card-slider-max);
+  min-width: var(--awds-layout-card-product-min);   
+  max-width: var(--awds-layout-card-product-max);
   width: 100%;
   font-family: var(--awds-font-family-system);
   color: rgb(var(--surface-on-highest));                        
@@ -5060,8 +5212,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: var(--awds-layout-card-slider-min);   
-  max-width: var(--awds-layout-card-slider-max);
+  min-width: var(--awds-layout-card-product-min);   
+  max-width: var(--awds-layout-card-product-max);
   width: 100%;
   font-family: var(--awds-font-family-system);
   color: rgb(var(--surface-on-highest));                        
@@ -5453,8 +5605,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: var(--awds-layout-card-slider-min);   
-  max-width: var(--awds-layout-card-slider-max);
+  min-width: var(--awds-layout-card-product-min);   
+  max-width: var(--awds-layout-card-product-max);
   width: 100%;
   font-family: var(--awds-font-family-system);
   color: rgb(var(--surface-on-highest));                        

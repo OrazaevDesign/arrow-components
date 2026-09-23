@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@1.1.10
+/* ArrowDS · product-card@1.1.11
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes pcard-stepper-bump {
@@ -16,8 +16,8 @@
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: var(--awds-layout-card-slider-min);   
-  max-width: var(--awds-layout-card-slider-max);
+  min-width: var(--awds-layout-card-product-min);   
+  max-width: var(--awds-layout-card-product-max);
   width: 100%;
   font-family: var(--awds-font-family-system);
   color: rgb(var(--surface-on-highest));                        
@@ -387,8 +387,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: var(--awds-layout-card-slider-min);   
-  max-width: var(--awds-layout-card-slider-max);
+  min-width: var(--awds-layout-card-product-min);   
+  max-width: var(--awds-layout-card-product-max);
   width: 100%;
   font-family: var(--awds-font-family-system);
   color: rgb(var(--surface-on-highest));                        
@@ -780,8 +780,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: var(--awds-layout-card-slider-min);   
-  max-width: var(--awds-layout-card-slider-max);
+  min-width: var(--awds-layout-card-product-min);   
+  max-width: var(--awds-layout-card-product-max);
   width: 100%;
   font-family: var(--awds-font-family-system);
   color: rgb(var(--surface-on-highest));                        
