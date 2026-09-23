@@ -84,7 +84,30 @@
   "last_synced": "2026-09-22T09:40:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:1b9b73e37daa4537e6426f5aec56617c882e0c6a4f3b56527af62b942a310b9e",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "d251237",
+    "pushed_at": "2026-09-23T19:05:23.000Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-modal/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#modal",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/modal.css"
+    },
+    "dev_resources_status": {
+      "dialog": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "637:48438",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-modal/SKILL.md"
+      },
+      "sidepage": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "637:48439",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-modal/SKILL.md"
+      }
+    }
+  },
   "markup": {
     "root": {
       "class": "mdl",
