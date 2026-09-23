@@ -19,14 +19,14 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 
 | Коллекция | Токенов | Моды | Группы внутри | Пример имени |
 | --- | --- | --- | --- | --- |
-| **state** | 958 | — | list (186), form-control (184), button (163), badge (68), variation (37), check-radio (27), range (27), cell (24), … +32 | `--awds-state-opacity-chevron-shrink-rest` |
+| **state** | 961 | — | list (186), form-control (184), button (163), badge (68), variation (37), check-radio (27), range (27), cell (24), … +33 | `--awds-state-opacity-chevron-shrink-rest` |
 | **roles** | 296 | light · dark | surface (34), primary (28), secondary (28), tertiary (28), accent (28), addition (28), info (28), success (28), … +3 | `--primary-core-light` |
 | **typography** | 228 | desktop · tablet · mobile | font-size (57), line-height (57), line-height-compact (57), letter-spacing (57) | `--awds-typography-font-size-50-desktop` |
 | **size** | 215 | — | rectangle (98), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +1 | `--awds-size-rectangle-50-padding` |
 | **wysiwyg** | 138 | medium · small · large | font-size (36), line-height (36), letter-spacing (36), gap (30) | `--awds-wysiwyg-font-size-h1-medium` |
-| **layout** | 126 | desktop · tablet · mobile | section (30), card (30), banner (24), blog (24), form (9), productcard (9) | `--awds-layout-section-large-max-desktop` |
 | **rounded** | 72 | smooth · rounded · none | border-radius (36), outline (36) | `--awds-rounded-border-radius-50-smooth` |
 | **shadow** | 60 | elevation-1 · elevation-2 · elevation-3 · elevation-4 | shadow1 (20), shadow2 (20), shadow3 (20) | `--awds-shadow-shadow1-color-elevation-1` |
+| **layout** | 45 | desktop · tablet · mobile | card (24), section (21) | `--awds-layout-section-width-large-desktop` |
 | **space** | 39 | — | 0 (1), 1 (1), 2 (1), 3 (1), 4 (1), 5 (1), 6 (1), 7 (1), … +31 | `--awds-space-0` |
 | **control** | 39 | — | font-size (13), line-height (13), letter-spacing (13) | `--awds-control-font-size-50` |
 | **opacity** | 21 | — | 0 (1), 5 (1), 10 (1), 15 (1), 20 (1), 25 (1), 30 (1), 35 (1), … +13 | `--awds-opacity-0` |
@@ -34,7 +34,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **zindex** | 8 | — | dropdown (1), sticky (1), fixed (1), backdrop (1), offcanvas (1), modal (1), popover (1), tooltip (1) | `--awds-zindex-dropdown` |
 | **font** | 8 | — | weight (5), family (3) | `--awds-font-family-system` |
 
-Всего 2217 токенов в 14 коллекциях.
+Всего 2139 токенов в 14 коллекциях.
 
 ## Как из токена получается имя CSS-переменной
 

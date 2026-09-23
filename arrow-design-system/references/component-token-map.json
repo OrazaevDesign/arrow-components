@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:4423d9faa0525bcc7c15c25e51157d8f335836af5888efd5590f475c6e9fd130",
+  "snapshot_hash": "sha256:01594eff968872d1f29405b820ccc01ead8b474a33710faadcb8c99c8552636e",
   "size": {
     "rectangle": {
       "50": {
@@ -840,7 +840,8 @@
       "modal": {
         "bg": "rgb(var(--surface-bright))",
         "border": "rgb(var(--surface-on-lowest))",
-        "backdrop": "rgb(var(--surface-on-highest))"
+        "backdrop": "rgb(var(--surface-on-highest))",
+        "color": "rgb(var(--surface-on-highest))"
       },
       "toast": {
         "info": {
@@ -1047,6 +1048,10 @@
         "caption": {
           "color": "rgb(var(--surface-on))"
         }
+      },
+      "popover": {
+        "bg": "rgb(var(--surface-bright))",
+        "hairline": "rgb(var(--extended-shadow-3))"
       }
     },
     "hover": {
@@ -1461,7 +1466,8 @@
       "modal": {
         "bg": "rgb(var(--surface-bright))",
         "border": "rgb(var(--surface-on-lowest))",
-        "backdrop": "rgb(var(--surface-on-highest))"
+        "backdrop": "rgb(var(--surface-on-highest))",
+        "color": "rgb(var(--surface-on-highest))"
       },
       "toast": {
         "info": {
@@ -1668,6 +1674,10 @@
         "caption": {
           "color": "rgb(var(--surface-on))"
         }
+      },
+      "popover": {
+        "bg": "rgb(var(--surface-bright))",
+        "hairline": "rgb(var(--extended-shadow-3))"
       }
     },
     "focus": {
@@ -2082,7 +2092,8 @@
       "modal": {
         "bg": "rgb(var(--surface-bright))",
         "border": "rgb(var(--surface-on-lowest))",
-        "backdrop": "rgb(var(--surface-on-highest))"
+        "backdrop": "rgb(var(--surface-on-highest))",
+        "color": "rgb(var(--surface-on-highest))"
       },
       "toast": {
         "info": {
@@ -2280,6 +2291,10 @@
         "caption": {
           "color": "rgb(var(--surface-on))"
         }
+      },
+      "popover": {
+        "bg": "rgb(var(--surface-bright))",
+        "hairline": "rgb(var(--extended-shadow-3))"
       }
     },
     "active": {
@@ -2694,7 +2709,8 @@
       "modal": {
         "bg": "rgb(var(--surface-bright))",
         "border": "rgb(var(--surface-on-lowest))",
-        "backdrop": "rgb(var(--surface-on-highest))"
+        "backdrop": "rgb(var(--surface-on-highest))",
+        "color": "rgb(var(--surface-on-highest))"
       },
       "toast": {
         "info": {
@@ -2892,6 +2908,10 @@
         "caption": {
           "color": "rgb(var(--surface-on))"
         }
+      },
+      "popover": {
+        "bg": "rgb(var(--surface-bright))",
+        "hairline": "rgb(var(--extended-shadow-3))"
       }
     }
   }

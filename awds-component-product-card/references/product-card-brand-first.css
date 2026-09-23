@@ -53,10 +53,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--awds-pcard-gap);
-  min-width: var(--awds-layout-card-slider-min);   /* 170px, на мобиле 128 */
+  min-width: var(--awds-layout-card-product-min);   /* 170px, на мобиле 128 */
   /* Ширина карточки — токен раскладки: у токена есть адаптив (desktop/tablet/mobile),
      число 368px его теряло. Копии в блоках ссылались на токен, компонент отставал. */
-  max-width: var(--awds-layout-card-slider-max);
+  max-width: var(--awds-layout-card-product-max);
   width: 100%;
 
   font-family: var(--awds-font-family-system);
