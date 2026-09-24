@@ -62,10 +62,10 @@ CSS сам перекрашивает дуотон по `aria-pressed` — ме�
 | Состояние | Триггер | Заливка / контур сердца | Подпись |
 |---|---|---|---|
 | Rest | по умолчанию | `surface-bright` / `surface-on-high` | `surface-on-high` |
-| Hover | `:hover` (не выбрано) | `error-container-dim` / `error-container-on` | `surface-on-highest` |
+| Hover | `:hover` (не выбрано) | `error-container-dim` / `error-core` | `surface-on-highest` |
 | Focus | `:focus-visible` | как Rest | `surface-on-highest` |
 | Press | `:active` | как Hover, плюс `transform: scale(0.9)` | `surface-on-highest` |
-| Selected | `[aria-pressed="true"]` | `error-container-on` / `error-container-on` | не меняется |
+| Selected | `[aria-pressed="true"]` | `error-core` / `error-core` | не меняется |
 | Disabled | `:disabled` / `[aria-disabled]` | гасится `opacity` слоя (40%) | — |
 
 Поверхность прозрачна во всех состояниях, но выражена **ролью** `extended/transparent`, а не ключевым словом `transparent`: роль читается темой. Наведение на уже выбранную кнопку не откатывает цвет к hover-розовому — ячейка выбранности состояний не имеет.

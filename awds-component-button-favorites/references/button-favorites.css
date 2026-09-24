@@ -33,10 +33,10 @@
 
    Маппинг состояние × выбранность → роль (map.state.*.favorites):
      не в избранном  Rest    заливка surface-bright     контур surface-on-high
-                     Hover   заливка error-container-dim контур error-container-on
+                     Hover   заливка error-container-dim контур error-core
                      Focus   = Rest
                      Active  = Hover
-     в избранном     любое   заливка и контур error-container-on (сплошной красный)
+     в избранном     любое   заливка и контур error-core (сплошной красный)
 
    Выбранность — ВАРИАНТ набора в макете (favorites-unselected / favorites-selected),
    в коде `[aria-pressed="true"]`. Мод Active коллекции компилируется в `:active`, то
@@ -291,7 +291,7 @@
 .btn-favorites:hover {
   --awds-btn-color:      rgb(var(--surface-on-highest));   /* #cell button/ghost/color-hover */
   --awds-btn-fav-fill:   rgb(var(--error-container-dim));   /* #cell favorites/unselected/fill-hover */
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));   /* #cell favorites/unselected/stroke-hover */
+  --awds-btn-fav-stroke: rgb(var(--error-core));   /* #cell favorites/unselected/stroke-hover */
 }
 
 /* Focus — цвет сердца тот же, что в покое: кольцо рисует слой focus-selection
@@ -307,14 +307,14 @@
   transform: scale(0.9);
   --awds-btn-color:      rgb(var(--surface-on-highest));   /* #cell button/ghost/color-active */
   --awds-btn-fav-fill:   rgb(var(--error-container-dim));   /* #cell favorites/unselected/fill-active */
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));   /* #cell favorites/unselected/stroke-active */
+  --awds-btn-fav-stroke: rgb(var(--error-core));   /* #cell favorites/unselected/stroke-active */
 }
 
 /* В избранном — вариант набора favorites-selected. Ячейка состояний не имеет:
    цвет один на покой, наведение и нажатие, поэтому селектор один. */
 .btn-favorites[aria-pressed="true"] {
-  --awds-btn-fav-fill:   rgb(var(--error-container-on));   /* #cell favorites/selected/fill */
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));   /* #cell favorites/selected/stroke */
+  --awds-btn-fav-fill:   rgb(var(--error-core));   /* #cell favorites/selected/fill */
+  --awds-btn-fav-stroke: rgb(var(--error-core));   /* #cell favorites/selected/stroke */
 }
 
 

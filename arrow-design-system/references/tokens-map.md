@@ -87,9 +87,10 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `state / button / primary / bg-hover` (состояние — в имени, слой плоский с 02.09.2026) | `--awds-state-button-primary-bg-hover` |
 | роль `Primary / Core` | `--primary-core` (у ролей своего префикса нет) |
 
-**Цвет — RGB-триплет**, а не готовый цвет: `--primary-core: 250 216 22`. Потреблять
+**Цвет — RGB-триплет**, а не готовый цвет: роль хранит три числа без функции. Потреблять
 только через обёртку: `rgb(var(--primary-core))`, с альфой —
-`rgb(var(--primary-core) / var(--awds-opacity-50))`.
+`rgb(var(--primary-core) / var(--awds-opacity-50))`. Сами значения — в снапшоте
+`studio-vars.css`, здесь их нет намеренно.
 
 ## Роли
 

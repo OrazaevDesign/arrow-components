@@ -56,7 +56,7 @@ Figma.
 | --- | --- | --- | --- | --- | --- |
 | [button](../awds-component-button/SKILL.md) | Кнопка: primary, secondary, clean, addition; размеры и состояния | кнопка, баттон, кнопка действия, призыв к действию | внутри: focus-selection, progress · входит в: 7 компонентов | 2.2.3 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-7) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992693893) |
 | [button-area](../awds-component-button-area/SKILL.md) | Кликабельная строка-обёртка во всю ширину с иконками | строка-ссылка, кликабельная область, строка меню, link-area | внутри: focus-selection, progress · входит в: heading, modal | 2.0.6 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-9) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798642337) |
-| [button-favorites](../awds-component-button-favorites/SKILL.md) | Icon-only heart-toggle: добавить в избранное | избранное, сердечко, лайк, вишлист | внутри: button, focus-selection · входит в: product-card | 2.0.0 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-10) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190678568) |
+| [button-favorites](../awds-component-button-favorites/SKILL.md) | Icon-only heart-toggle: добавить в избранное | избранное, сердечко, лайк, вишлист | внутри: button, focus-selection · входит в: product-card | 2.0.1 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-10) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190678568) |
 | [button-group](../awds-component-button-group/SKILL.md) | Кнопки встык: внешние углы скруглены, стыки прямые | группа кнопок, кнопки встык, сегментированный контрол, назад-вперёд | внутри: button | 1.0.3 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-12) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218433190679024) |
 | [button-menu](../awds-component-button-menu/SKILL.md) | Кнопка меню: эмблема с аватаром или флагом, шеврон, точка непрочитанных | кнопка профиля, профиль, аватар в шапке, кнопка аккаунта, меню пользователя, переключатель языка, кнопка языка, выбор языка, флаг в шапке | внутри: emblem, notice, focus-selection | 2.0.6 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-11) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798556856) |
 | [button-overhung](../awds-component-button-overhung/SKILL.md) | Парящая кнопка: светлый фон плюс постоянная elevation-тень | парящая кнопка, нависающая кнопка, кнопка над медиа, кнопка на фото | внутри: focus-selection, progress | 2.0.12 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-8) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421798642209) |
@@ -213,11 +213,16 @@ Figma.
 size-класса — точные правила в `bridge_note` меты каждого композита.
 
 **Базовый класс короткий и свой.** `.fld`, а не `.formfield` и не `.field`: общие
-имена почти наверняка заняты у потребителя, а префикс `--awds-form*` ловится
-sanity-check'ом публикации. Причина по каждому — в `base_class_note` меты.
+имена почти наверняка заняты у потребителя. Греп-гейт по префиксу `--awds-form*`
+снят 25.08.2026 — он пересекался с приватными аккумуляторами `--awds-{base_class}-*`
+и блокировал публикацию за легитимное имя; сейчас чужой компонентный токен ловит
+`token-refs-check` (см. [publish-workflow](../arrow-components-publisher/references/publish-workflow.md)).
+Причина по каждому базовому классу — в `base_class_note` меты.
 
 **Прослойки компонентных цветовых токенов нет.** Цвета инлайнятся ролями
-`rgb(var(--primary-core))`, размеры идут через shape-слой. См.
+`rgb(var(--primary-core))`, размеры — целями ступеней Size, резолвленными при сборке
+в шаг публичной шкалы (`--awds-space-*`, `--awds-rounded-border-radius-*`,
+`--awds-control-*`): сам слой Size приватен, его имён в теме нет. См.
 [arrow-design-system](../arrow-design-system/SKILL.md).
 
 ## Как устроена эта карта

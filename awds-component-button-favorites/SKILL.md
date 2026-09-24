@@ -35,10 +35,10 @@ description: Button Favorites ArrowDS (.btn-favorites).
 | Состояние | CSS | Дуотон (заливка / контур) |
 |---|---|---|
 | **Rest** (не в избранном) | `.btn-favorites` | `surface-bright` (белый) / `surface-on-high` (серый) |
-| **Hover** | `.btn-favorites:hover` | `error-container-dim` (розовый) / `error-container-on` (красный) |
+| **Hover** | `.btn-favorites:hover` | `error-container-dim` (розовый) / `error-core` (красный) |
 | **Focus** | `:focus-visible` | как Rest; кольцо рисует слой `focus-selection` |
 | **Press** | `:active` | как Hover, плюс `transform: scale(0.9)` |
-| **Selected** (в избранном) | `.btn-favorites[aria-pressed="true"]` | `error-container-on` / `error-container-on` (сплошной красный) |
+| **Selected** (в избранном) | `.btn-favorites[aria-pressed="true"]` | `error-core` / `error-core` (сплошной красный) |
 
 > В Figma выбранность — **отдельный набор** (`favorites-selected`), а не мод Active: мод Active компилируется в `:active`, то есть в нажатие, а «в избранном» — постоянное состояние. Поэтому в коде это `aria-pressed="true"`, а `:active` отдан press-feedback.
 
