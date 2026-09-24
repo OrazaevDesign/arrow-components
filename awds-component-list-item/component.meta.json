@@ -269,8 +269,8 @@
   "snapshot_hash": "sha256:093e0a3b2bf6ecec301c7352bf054c65529356e376697f4983dfa1d264abe480",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "27307a9",
-    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "commit": "0e8dd87",
+    "pushed_at": "2026-09-24T12:45:00.000Z",
     "github_urls": {
       "transparent": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-transparent.md",
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/references/list-item-default.md",
@@ -288,80 +288,7 @@
       "storybook": "https://orazaevdesign.github.io/arrow-components/#list-item",
       "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/list-item.css"
     },
-    "dev_resources_status": {
-      "transparent": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "1:22254",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "default": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20398",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "default-selected": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20401",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "actual-selected": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20399",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "accent-selected": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20400",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "tabbar": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20402",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "tabbar-selected": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20403",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "menu": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20410",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "menu-selected": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:20558",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "variation": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "324:77087",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "variation-selected": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:22197",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      },
-      "variation-indeterminate": {
-        "status": "linked",
-        "method": "component_description",
-        "node_id": "590:22196",
-        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-list-item/SKILL.md"
-      }
-    }
+    "dev_resources_status": "linked"
   },
   "naming_note": "Имена классов нормализованы: в Figma фреймы называются «Variaton» (опечатка, пропущена i) — в CSS это variation / variation-indeterminate. Точные подписи из макета лежат в variants[].figma_label.",
   "focus_layer": {
