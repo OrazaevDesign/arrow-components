@@ -1,4 +1,4 @@
-/* ArrowDS · button-favorites@2.0.0
+/* ArrowDS · button-favorites@2.0.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -63,7 +63,7 @@
 .btn-favorites:hover {
   --awds-btn-color:      rgb(var(--surface-on-highest));   
   --awds-btn-fav-fill:   rgb(var(--error-container-dim));   
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));
+  --awds-btn-fav-stroke: rgb(var(--error-core));
 }
 
 .btn-favorites:focus-visible {
@@ -76,12 +76,12 @@
   transform: scale(0.9);
   --awds-btn-color:      rgb(var(--surface-on-highest));   
   --awds-btn-fav-fill:   rgb(var(--error-container-dim));   
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));
+  --awds-btn-fav-stroke: rgb(var(--error-core));
 }
 
 .btn-favorites[aria-pressed="true"] {
-  --awds-btn-fav-fill:   rgb(var(--error-container-on));   
-  --awds-btn-fav-stroke: rgb(var(--error-container-on));
+  --awds-btn-fav-fill:   rgb(var(--error-core));   
+  --awds-btn-fav-stroke: rgb(var(--error-core));
 }
 
 @media (prefers-reduced-motion: reduce) {
