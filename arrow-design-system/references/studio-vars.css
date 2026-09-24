@@ -5,6 +5,7 @@
  * Нужен preview.html компонентов: их CSS читает СТУДИЙНЫЕ имена переменных
  * (--awds-size-rectangle-400-padding), а не канон arrow-components-builder.
  * Цвета здесь RGB-триплетами — как требует rgb(var(--role)).
+ * Комментарий после объявления — описание переменной из студии (там, где оно заполнено).
  *
  * НЕ ПРАВЬ ВРУЧНУЮ. Перегенерация: node scripts/sync-studio-vars.mjs 21
  */
@@ -454,864 +455,1149 @@
   --extended-transparent-light: 255 255 255 / 0%;
   --extended-transparent-dark: 0 0 0 / 0%;
   --extended-transparent: var(--extended-transparent-light);
-  --awds-breakpoints-desktop-large: 1488px;
-  --awds-breakpoints-desktop-medium: 1376px;
-  --awds-breakpoints-desktop-small: 1068px;
-  --awds-breakpoints-tablet-large: 1067px;
-  --awds-breakpoints-tablet-medium: 816px;
-  --awds-breakpoints-tablet-small: 616px;
-  --awds-breakpoints-mobile-large: 615px;
-  --awds-breakpoints-mobile-medium: 430px;
-  --awds-breakpoints-mobile-small: 320px;
+  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-desktop-large: 1488px;  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-desktop-medium: 1376px;  /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  /* Граница вьюпорта, desktop small: 1068px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  --awds-breakpoints-desktop-small: 1068px;  /* Граница вьюпорта, desktop small: 1068px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  /* Граница вьюпорта, tablet large: 1067px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-tablet-large: 1067px;  /* Граница вьюпорта, tablet large: 1067px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-tablet-medium: 816px;  /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  /* Граница вьюпорта, tablet small: 616px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  --awds-breakpoints-tablet-small: 616px;  /* Граница вьюпорта, tablet small: 616px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  /* Граница вьюпорта, mobile large: 615px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-mobile-large: 615px;  /* Граница вьюпорта, mobile large: 615px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  /* Граница вьюпорта, mobile medium: 430px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-mobile-medium: 430px;  /* Граница вьюпорта, mobile medium: 430px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  /* Граница вьюпорта, mobile small: 320px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-mobile-small: 320px;  /* Граница вьюпорта, mobile small: 320px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   /* Максимальная ширина колонки, широкая (616 → 1068 → 1488). Поле «Ширина контента» = large, дефолт структурных блоков. */
   --awds-layout-section-width-large-desktop: 1488px;
   --awds-layout-section-width-large-tablet: 1068px;
   --awds-layout-section-width-large-mobile: 616px;
-  --awds-layout-section-width-large: var(--awds-layout-section-width-large-desktop);
+  --awds-layout-section-width-large: var(--awds-layout-section-width-large-desktop);  /* Максимальная ширина колонки, широкая (616 → 1068 → 1488). Поле «Ширина контента» = large, дефолт структурных блоков. */
   /* Максимальная ширина колонки, основная для чтения (900). Поле «Ширина контента» = medium, дефолт контентных блоков. */
   --awds-layout-section-width-medium-desktop: 900px;
   --awds-layout-section-width-medium-tablet: 900px;
   --awds-layout-section-width-medium-mobile: 900px;
-  --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);
+  --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);  /* Максимальная ширина колонки, основная для чтения (900). Поле «Ширина контента» = medium, дефолт контентных блоков. */
   /* Максимальная ширина колонки, узкая (600). Поле блока «Ширина контента» = small. */
   --awds-layout-section-width-small-desktop: 600px;
   --awds-layout-section-width-small-tablet: 600px;
   --awds-layout-section-width-small-mobile: 600px;
-  --awds-layout-section-width-small: var(--awds-layout-section-width-small-desktop);
+  --awds-layout-section-width-small: var(--awds-layout-section-width-small-desktop);  /* Максимальная ширина колонки, узкая (600). Поле блока «Ширина контента» = small. */
   /* Боковое поле колонки: padding-inline на __inner, внутри max-width. Зазор между колонками — section/column-gap. */
   --awds-layout-section-gutter-desktop: var(--awds-space-6);
   --awds-layout-section-gutter-tablet: var(--awds-space-4);
-  --awds-layout-section-gutter-mobile: var(--awds-space-4);
-  --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);
+  --awds-layout-section-gutter-mobile: var(--awds-space-0);
+  --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);  /* Боковое поле колонки: padding-inline на __inner, внутри max-width. Зазор между колонками — section/column-gap. */
   /* Зазор между рядами сетки блока: row-gap на __layer. Зазоры внутри карточки — шкала space. */
   --awds-layout-section-row-gap-desktop: var(--awds-space-6);
   --awds-layout-section-row-gap-tablet: var(--awds-space-4);
   --awds-layout-section-row-gap-mobile: var(--awds-space-4);
-  --awds-layout-section-row-gap: var(--awds-layout-section-row-gap-desktop);
+  --awds-layout-section-row-gap: var(--awds-layout-section-row-gap-desktop);  /* Зазор между рядами сетки блока: row-gap на __layer. Зазоры внутри карточки — шкала space. */
   /* Зазор между колонками сетки блока: column-gap на __layer. */
   --awds-layout-section-column-gap-desktop: var(--awds-space-6);
   --awds-layout-section-column-gap-tablet: var(--awds-space-5);
   --awds-layout-section-column-gap-mobile: var(--awds-space-4);
-  --awds-layout-section-column-gap: var(--awds-layout-section-column-gap-desktop);
+  --awds-layout-section-column-gap: var(--awds-layout-section-column-gap-desktop);  /* Зазор между колонками сетки блока: column-gap на __layer. */
   /* Вертикальный отступ секции блока: padding-block на корне. Боковых полей не несёт — они на __inner. */
   --awds-layout-section-padding-block-desktop: var(--awds-space-13);
   --awds-layout-section-padding-block-tablet: var(--awds-space-11);
   --awds-layout-section-padding-block-mobile: var(--awds-space-9);
-  --awds-layout-section-padding-block: var(--awds-layout-section-padding-block-desktop);
+  --awds-layout-section-padding-block: var(--awds-layout-section-padding-block-desktop);  /* Вертикальный отступ секции блока: padding-block на корне. Боковых полей не несёт — они на __inner. */
   /* Минимальная ширина карточки товара в ленте: min-width элемента слайдера или сетки. */
   --awds-layout-card-product-min-desktop: 170px;
   --awds-layout-card-product-min-tablet: 170px;
   --awds-layout-card-product-min-mobile: 128px;
-  --awds-layout-card-product-min: var(--awds-layout-card-product-min-desktop);
+  --awds-layout-card-product-min: var(--awds-layout-card-product-min-desktop);  /* Минимальная ширина карточки товара в ленте: min-width элемента слайдера или сетки. */
   /* Максимальная ширина карточки товара в ленте: max-width элемента слайдера или сетки. */
   --awds-layout-card-product-max-desktop: 368px;
   --awds-layout-card-product-max-tablet: 368px;
   --awds-layout-card-product-max-mobile: 256px;
-  --awds-layout-card-product-max: var(--awds-layout-card-product-max-desktop);
+  --awds-layout-card-product-max: var(--awds-layout-card-product-max-desktop);  /* Максимальная ширина карточки товара в ленте: max-width элемента слайдера или сетки. */
   /* Минимальная ширина баннера в четверть ряда (четыре в ряд). */
   --awds-layout-card-quarter-min-desktop: 184px;
   --awds-layout-card-quarter-min-tablet: 162px;
   --awds-layout-card-quarter-min-mobile: 128px;
-  --awds-layout-card-quarter-min: var(--awds-layout-card-quarter-min-desktop);
+  --awds-layout-card-quarter-min: var(--awds-layout-card-quarter-min-desktop);  /* Минимальная ширина баннера в четверть ряда (четыре в ряд). */
   /* Максимальная ширина баннера в четверть ряда (четыре в ряд). */
   --awds-layout-card-quarter-max-desktop: 388px;
   --awds-layout-card-quarter-max-tablet: 388px;
   --awds-layout-card-quarter-max-mobile: 388px;
-  --awds-layout-card-quarter-max: var(--awds-layout-card-quarter-max-desktop);
+  --awds-layout-card-quarter-max: var(--awds-layout-card-quarter-max-desktop);  /* Максимальная ширина баннера в четверть ряда (четыре в ряд). */
   /* Минимальная ширина баннера в половину ряда (два в ряд). */
   --awds-layout-card-half-min-desktop: 392px;
   --awds-layout-card-half-min-tablet: 340px;
   --awds-layout-card-half-min-mobile: 272px;
-  --awds-layout-card-half-min: var(--awds-layout-card-half-min-desktop);
+  --awds-layout-card-half-min: var(--awds-layout-card-half-min-desktop);  /* Минимальная ширина баннера в половину ряда (два в ряд). */
   /* Максимальная ширина баннера в половину ряда (два в ряд). */
   --awds-layout-card-half-max-desktop: 800px;
   --awds-layout-card-half-max-tablet: 720px;
   --awds-layout-card-half-max-mobile: 720px;
-  --awds-layout-card-half-max: var(--awds-layout-card-half-max-desktop);
+  --awds-layout-card-half-max: var(--awds-layout-card-half-max-desktop);  /* Максимальная ширина баннера в половину ряда (два в ряд). */
   /* Минимальная ширина карточки статьи в ленте. */
   --awds-layout-card-article-min-desktop: 236px;
   --awds-layout-card-article-min-tablet: 236px;
   --awds-layout-card-article-min-mobile: 136px;
-  --awds-layout-card-article-min: var(--awds-layout-card-article-min-desktop);
+  --awds-layout-card-article-min: var(--awds-layout-card-article-min-desktop);  /* Минимальная ширина карточки статьи в ленте. */
   /* Максимальная ширина карточки статьи в ленте. */
   --awds-layout-card-article-max-desktop: 430px;
   --awds-layout-card-article-max-tablet: 368px;
   --awds-layout-card-article-max-mobile: 368px;
-  --awds-layout-card-article-max: var(--awds-layout-card-article-max-desktop);
-  --awds-opacity-0: 0%;
-  --awds-opacity-5: 5%;
-  --awds-opacity-10: 10%;
-  --awds-opacity-15: 15%;
-  --awds-opacity-20: 20%;
-  --awds-opacity-25: 25%;
-  --awds-opacity-30: 30%;
-  --awds-opacity-35: 35%;
-  --awds-opacity-40: 40%;
-  --awds-opacity-45: 45%;
-  --awds-opacity-50: 50%;
-  --awds-opacity-55: 55%;
-  --awds-opacity-60: 60%;
-  --awds-opacity-65: 65%;
-  --awds-opacity-70: 70%;
-  --awds-opacity-75: 75%;
-  --awds-opacity-80: 80%;
-  --awds-opacity-85: 85%;
-  --awds-opacity-90: 90%;
-  --awds-opacity-95: 95%;
-  --awds-opacity-100: 100%;
+  --awds-layout-card-article-max: var(--awds-layout-card-article-max-desktop);  /* Максимальная ширина карточки статьи в ленте. */
+  /* Прозрачность 0%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-0)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-0: 0%;  /* Прозрачность 0%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-0)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 5%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-5)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-5: 5%;  /* Прозрачность 5%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-5)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 10%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-10)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-10: 10%;  /* Прозрачность 10%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-10)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 15%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-15)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-15: 15%;  /* Прозрачность 15%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-15)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 20%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-20)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-20: 20%;  /* Прозрачность 20%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-20)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 25%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-25)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-25: 25%;  /* Прозрачность 25%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-25)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 30%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-30)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-30: 30%;  /* Прозрачность 30%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-30)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 35%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-35)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-35: 35%;  /* Прозрачность 35%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-35)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 40%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-40)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-40: 40%;  /* Прозрачность 40%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-40)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 45%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-45)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-45: 45%;  /* Прозрачность 45%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-45)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 50%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-50)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-50: 50%;  /* Прозрачность 50%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-50)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 55%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-55)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-55: 55%;  /* Прозрачность 55%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-55)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 60%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-60)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-60: 60%;  /* Прозрачность 60%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-60)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 65%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-65)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-65: 65%;  /* Прозрачность 65%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-65)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 70%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-70)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-70: 70%;  /* Прозрачность 70%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-70)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 75%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-75)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-75: 75%;  /* Прозрачность 75%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-75)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 80%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-80)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-80: 80%;  /* Прозрачность 80%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-80)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 85%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-85)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-85: 85%;  /* Прозрачность 85%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-85)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 90%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-90)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-90: 90%;  /* Прозрачность 90%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-90)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 95%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-95)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-95: 95%;  /* Прозрачность 95%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-95)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Прозрачность 100%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-100)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  --awds-opacity-100: 100%;  /* Прозрачность 100%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-100)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
+  /* Скругление ступени 50: smooth 4px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-50-smooth: 4px;
   --awds-rounded-border-radius-50-rounded: 26px;
   --awds-rounded-border-radius-50-none: 0px;
-  --awds-rounded-border-radius-50: var(--awds-rounded-border-radius-50-smooth);
+  --awds-rounded-border-radius-50: var(--awds-rounded-border-radius-50-smooth);  /* Скругление ступени 50: smooth 4px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 100: smooth 6px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-100-smooth: 6px;
   --awds-rounded-border-radius-100-rounded: 26px;
   --awds-rounded-border-radius-100-none: 0px;
-  --awds-rounded-border-radius-100: var(--awds-rounded-border-radius-100-smooth);
+  --awds-rounded-border-radius-100: var(--awds-rounded-border-radius-100-smooth);  /* Скругление ступени 100: smooth 6px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 200: smooth 6px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-200-smooth: 6px;
   --awds-rounded-border-radius-200-rounded: 26px;
   --awds-rounded-border-radius-200-none: 0px;
-  --awds-rounded-border-radius-200: var(--awds-rounded-border-radius-200-smooth);
+  --awds-rounded-border-radius-200: var(--awds-rounded-border-radius-200-smooth);  /* Скругление ступени 200: smooth 6px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 300: smooth 6px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-300-smooth: 6px;
   --awds-rounded-border-radius-300-rounded: 26px;
   --awds-rounded-border-radius-300-none: 0px;
-  --awds-rounded-border-radius-300: var(--awds-rounded-border-radius-300-smooth);
+  --awds-rounded-border-radius-300: var(--awds-rounded-border-radius-300-smooth);  /* Скругление ступени 300: smooth 6px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 400: smooth 8px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-400-smooth: 8px;
   --awds-rounded-border-radius-400-rounded: 26px;
   --awds-rounded-border-radius-400-none: 0px;
-  --awds-rounded-border-radius-400: var(--awds-rounded-border-radius-400-smooth);
+  --awds-rounded-border-radius-400: var(--awds-rounded-border-radius-400-smooth);  /* Скругление ступени 400: smooth 8px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 500: smooth 8px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-500-smooth: 8px;
   --awds-rounded-border-radius-500-rounded: 26px;
   --awds-rounded-border-radius-500-none: 0px;
-  --awds-rounded-border-radius-500: var(--awds-rounded-border-radius-500-smooth);
+  --awds-rounded-border-radius-500: var(--awds-rounded-border-radius-500-smooth);  /* Скругление ступени 500: smooth 8px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 600: smooth 10px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-600-smooth: 10px;
   --awds-rounded-border-radius-600-rounded: 26px;
   --awds-rounded-border-radius-600-none: 0px;
-  --awds-rounded-border-radius-600: var(--awds-rounded-border-radius-600-smooth);
+  --awds-rounded-border-radius-600: var(--awds-rounded-border-radius-600-smooth);  /* Скругление ступени 600: smooth 10px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 700: smooth 12px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-700-smooth: 12px;
   --awds-rounded-border-radius-700-rounded: 26px;
   --awds-rounded-border-radius-700-none: 0px;
-  --awds-rounded-border-radius-700: var(--awds-rounded-border-radius-700-smooth);
+  --awds-rounded-border-radius-700: var(--awds-rounded-border-radius-700-smooth);  /* Скругление ступени 700: smooth 12px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 800: smooth 16px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-800-smooth: 16px;
   --awds-rounded-border-radius-800-rounded: 26px;
   --awds-rounded-border-radius-800-none: 0px;
-  --awds-rounded-border-radius-800: var(--awds-rounded-border-radius-800-smooth);
+  --awds-rounded-border-radius-800: var(--awds-rounded-border-radius-800-smooth);  /* Скругление ступени 800: smooth 16px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Скругление ступени 900: smooth 20px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
   --awds-rounded-border-radius-900-smooth: 20px;
   --awds-rounded-border-radius-900-rounded: 26px;
   --awds-rounded-border-radius-900-none: 0px;
-  --awds-rounded-border-radius-900: var(--awds-rounded-border-radius-900-smooth);
+  --awds-rounded-border-radius-900: var(--awds-rounded-border-radius-900-smooth);  /* Скругление ступени 900: smooth 20px, rounded 26px, none 0px. Мод коллекции выбирает сайт; в CSS имя без мода, значение приходит из активного. */
+  /* Полное скругление (600px): пилюля и круг. Одинаково во всех модах. */
   --awds-rounded-border-radius-full-smooth: 600px;
   --awds-rounded-border-radius-full-rounded: 600px;
   --awds-rounded-border-radius-full-none: 600px;
-  --awds-rounded-border-radius-full: var(--awds-rounded-border-radius-full-smooth);
+  --awds-rounded-border-radius-full: var(--awds-rounded-border-radius-full-smooth);  /* Полное скругление (600px): пилюля и круг. Одинаково во всех модах. */
+  /* Нулевое скругление во всех модах: явный прямой угол. */
   --awds-rounded-border-radius-none-smooth: 0px;
   --awds-rounded-border-radius-none-rounded: 0px;
   --awds-rounded-border-radius-none-none: 0px;
-  --awds-rounded-border-radius-none: var(--awds-rounded-border-radius-none-smooth);
+  --awds-rounded-border-radius-none: var(--awds-rounded-border-radius-none-smooth);  /* Нулевое скругление во всех модах: явный прямой угол. */
+  /* Радиус кольца фокуса ступени 50: smooth 5px, rounded 26px, none 0px. На 1px больше border-radius/50 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-50-smooth: 5px;
   --awds-rounded-outline-50-rounded: 26px;
   --awds-rounded-outline-50-none: 0px;
-  --awds-rounded-outline-50: var(--awds-rounded-outline-50-smooth);
+  --awds-rounded-outline-50: var(--awds-rounded-outline-50-smooth);  /* Радиус кольца фокуса ступени 50: smooth 5px, rounded 26px, none 0px. На 1px больше border-radius/50 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 100: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/100 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-100-smooth: 7px;
   --awds-rounded-outline-100-rounded: 26px;
   --awds-rounded-outline-100-none: 0px;
-  --awds-rounded-outline-100: var(--awds-rounded-outline-100-smooth);
+  --awds-rounded-outline-100: var(--awds-rounded-outline-100-smooth);  /* Радиус кольца фокуса ступени 100: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/100 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 200: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/200 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-200-smooth: 7px;
   --awds-rounded-outline-200-rounded: 26px;
   --awds-rounded-outline-200-none: 0px;
-  --awds-rounded-outline-200: var(--awds-rounded-outline-200-smooth);
+  --awds-rounded-outline-200: var(--awds-rounded-outline-200-smooth);  /* Радиус кольца фокуса ступени 200: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/200 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 300: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/300 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-300-smooth: 7px;
   --awds-rounded-outline-300-rounded: 26px;
   --awds-rounded-outline-300-none: 0px;
-  --awds-rounded-outline-300: var(--awds-rounded-outline-300-smooth);
+  --awds-rounded-outline-300: var(--awds-rounded-outline-300-smooth);  /* Радиус кольца фокуса ступени 300: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/300 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 400: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/400 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-400-smooth: 9px;
   --awds-rounded-outline-400-rounded: 26px;
   --awds-rounded-outline-400-none: 0px;
-  --awds-rounded-outline-400: var(--awds-rounded-outline-400-smooth);
+  --awds-rounded-outline-400: var(--awds-rounded-outline-400-smooth);  /* Радиус кольца фокуса ступени 400: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/400 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 500: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/500 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-500-smooth: 9px;
   --awds-rounded-outline-500-rounded: 26px;
   --awds-rounded-outline-500-none: 0px;
-  --awds-rounded-outline-500: var(--awds-rounded-outline-500-smooth);
+  --awds-rounded-outline-500: var(--awds-rounded-outline-500-smooth);  /* Радиус кольца фокуса ступени 500: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/500 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 600: smooth 11px, rounded 26px, none 0px. На 1px больше border-radius/600 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-600-smooth: 11px;
   --awds-rounded-outline-600-rounded: 26px;
   --awds-rounded-outline-600-none: 0px;
-  --awds-rounded-outline-600: var(--awds-rounded-outline-600-smooth);
+  --awds-rounded-outline-600: var(--awds-rounded-outline-600-smooth);  /* Радиус кольца фокуса ступени 600: smooth 11px, rounded 26px, none 0px. На 1px больше border-radius/600 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 700: smooth 13px, rounded 26px, none 0px. На 1px больше border-radius/700 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-700-smooth: 13px;
   --awds-rounded-outline-700-rounded: 26px;
   --awds-rounded-outline-700-none: 0px;
-  --awds-rounded-outline-700: var(--awds-rounded-outline-700-smooth);
+  --awds-rounded-outline-700: var(--awds-rounded-outline-700-smooth);  /* Радиус кольца фокуса ступени 700: smooth 13px, rounded 26px, none 0px. На 1px больше border-radius/700 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 800: smooth 17px, rounded 26px, none 0px. На 1px больше border-radius/800 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-800-smooth: 17px;
   --awds-rounded-outline-800-rounded: 26px;
   --awds-rounded-outline-800-none: 0px;
-  --awds-rounded-outline-800: var(--awds-rounded-outline-800-smooth);
+  --awds-rounded-outline-800: var(--awds-rounded-outline-800-smooth);  /* Радиус кольца фокуса ступени 800: smooth 17px, rounded 26px, none 0px. На 1px больше border-radius/800 — кольцо рисуется снаружи рамки. */
+  /* Радиус кольца фокуса ступени 900: smooth 21px, rounded 26px, none 0px. На 1px больше border-radius/900 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-900-smooth: 21px;
   --awds-rounded-outline-900-rounded: 26px;
   --awds-rounded-outline-900-none: 0px;
-  --awds-rounded-outline-900: var(--awds-rounded-outline-900-smooth);
+  --awds-rounded-outline-900: var(--awds-rounded-outline-900-smooth);  /* Радиус кольца фокуса ступени 900: smooth 21px, rounded 26px, none 0px. На 1px больше border-radius/900 — кольцо рисуется снаружи рамки. */
+  /* Полное скругление кольца фокуса (600px) — пара к border-radius/full. */
   --awds-rounded-outline-full-smooth: 600px;
   --awds-rounded-outline-full-rounded: 600px;
   --awds-rounded-outline-full-none: 600px;
-  --awds-rounded-outline-full: var(--awds-rounded-outline-full-smooth);
+  --awds-rounded-outline-full: var(--awds-rounded-outline-full-smooth);  /* Полное скругление кольца фокуса (600px) — пара к border-radius/full. */
+  /* Нулевое скругление во всех модах: явный прямой угол. */
   --awds-rounded-outline-none-smooth: 0px;
   --awds-rounded-outline-none-rounded: 0px;
   --awds-rounded-outline-none-none: 0px;
-  --awds-rounded-outline-none: var(--awds-rounded-outline-none-smooth);
+  --awds-rounded-outline-none: var(--awds-rounded-outline-none-smooth);  /* Нулевое скругление во всех модах: явный прямой угол. */
+  /* Слой 1 композита тени, цвет по ступеням: elevation-1 → extended/shadow-1, elevation-2 → extended/shadow-1, elevation-3 → extended/shadow-1, elevation-4 → extended/shadow-1. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow1-color-elevation-1: var(--extended-shadow-1);
   --awds-shadow-shadow1-color-elevation-2: var(--extended-shadow-1);
   --awds-shadow-shadow1-color-elevation-3: var(--extended-shadow-1);
   --awds-shadow-shadow1-color-elevation-4: var(--extended-shadow-1);
-  --awds-shadow-shadow1-color: var(--awds-shadow-shadow1-color-elevation-1);
+  --awds-shadow-shadow1-color: var(--awds-shadow-shadow1-color-elevation-1);  /* Слой 1 композита тени, цвет по ступеням: elevation-1 → extended/shadow-1, elevation-2 → extended/shadow-1, elevation-3 → extended/shadow-1, elevation-4 → extended/shadow-1. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 1 композита тени, сдвиг по горизонтали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow1-offset-x-elevation-1: 0px;
   --awds-shadow-shadow1-offset-x-elevation-2: 0px;
   --awds-shadow-shadow1-offset-x-elevation-3: 0px;
   --awds-shadow-shadow1-offset-x-elevation-4: 0px;
-  --awds-shadow-shadow1-offset-x: var(--awds-shadow-shadow1-offset-x-elevation-1);
+  --awds-shadow-shadow1-offset-x: var(--awds-shadow-shadow1-offset-x-elevation-1);  /* Слой 1 композита тени, сдвиг по горизонтали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 1 композита тени, сдвиг по вертикали: 2px → 4px → 6px → 8px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow1-offset-y-elevation-1: 2px;
   --awds-shadow-shadow1-offset-y-elevation-2: 4px;
   --awds-shadow-shadow1-offset-y-elevation-3: 6px;
   --awds-shadow-shadow1-offset-y-elevation-4: 8px;
-  --awds-shadow-shadow1-offset-y: var(--awds-shadow-shadow1-offset-y-elevation-1);
+  --awds-shadow-shadow1-offset-y: var(--awds-shadow-shadow1-offset-y-elevation-1);  /* Слой 1 композита тени, сдвиг по вертикали: 2px → 4px → 6px → 8px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 1 композита тени, радиус размытия: 4px → 8px → 12px → 16px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow1-blur-radius-elevation-1: 4px;
   --awds-shadow-shadow1-blur-radius-elevation-2: 8px;
   --awds-shadow-shadow1-blur-radius-elevation-3: 12px;
   --awds-shadow-shadow1-blur-radius-elevation-4: 16px;
-  --awds-shadow-shadow1-blur-radius: var(--awds-shadow-shadow1-blur-radius-elevation-1);
+  --awds-shadow-shadow1-blur-radius: var(--awds-shadow-shadow1-blur-radius-elevation-1);  /* Слой 1 композита тени, радиус размытия: 4px → 8px → 12px → 16px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 1 композита тени, разброс: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow1-spread-radius-elevation-1: 0px;
   --awds-shadow-shadow1-spread-radius-elevation-2: 0px;
   --awds-shadow-shadow1-spread-radius-elevation-3: 0px;
   --awds-shadow-shadow1-spread-radius-elevation-4: 0px;
-  --awds-shadow-shadow1-spread-radius: var(--awds-shadow-shadow1-spread-radius-elevation-1);
+  --awds-shadow-shadow1-spread-radius: var(--awds-shadow-shadow1-spread-radius-elevation-1);  /* Слой 1 композита тени, разброс: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 2 композита тени, цвет по ступеням: elevation-1 → extended/shadow-2, elevation-2 → extended/shadow-2, elevation-3 → extended/shadow-2, elevation-4 → extended/shadow-2. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow2-color-elevation-1: var(--extended-shadow-2);
   --awds-shadow-shadow2-color-elevation-2: var(--extended-shadow-2);
   --awds-shadow-shadow2-color-elevation-3: var(--extended-shadow-2);
   --awds-shadow-shadow2-color-elevation-4: var(--extended-shadow-2);
-  --awds-shadow-shadow2-color: var(--awds-shadow-shadow2-color-elevation-1);
+  --awds-shadow-shadow2-color: var(--awds-shadow-shadow2-color-elevation-1);  /* Слой 2 композита тени, цвет по ступеням: elevation-1 → extended/shadow-2, elevation-2 → extended/shadow-2, elevation-3 → extended/shadow-2, elevation-4 → extended/shadow-2. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 2 композита тени, сдвиг по горизонтали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow2-offset-x-elevation-1: 0px;
   --awds-shadow-shadow2-offset-x-elevation-2: 0px;
   --awds-shadow-shadow2-offset-x-elevation-3: 0px;
   --awds-shadow-shadow2-offset-x-elevation-4: 0px;
-  --awds-shadow-shadow2-offset-x: var(--awds-shadow-shadow2-offset-x-elevation-1);
+  --awds-shadow-shadow2-offset-x: var(--awds-shadow-shadow2-offset-x-elevation-1);  /* Слой 2 композита тени, сдвиг по горизонтали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 2 композита тени, сдвиг по вертикали: 1px → 2px → 4px → 8px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow2-offset-y-elevation-1: 1px;
   --awds-shadow-shadow2-offset-y-elevation-2: 2px;
   --awds-shadow-shadow2-offset-y-elevation-3: 4px;
   --awds-shadow-shadow2-offset-y-elevation-4: 8px;
-  --awds-shadow-shadow2-offset-y: var(--awds-shadow-shadow2-offset-y-elevation-1);
+  --awds-shadow-shadow2-offset-y: var(--awds-shadow-shadow2-offset-y-elevation-1);  /* Слой 2 композита тени, сдвиг по вертикали: 1px → 2px → 4px → 8px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 2 композита тени, радиус размытия: 2px → 4px → 8px → 12px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow2-blur-radius-elevation-1: 2px;
   --awds-shadow-shadow2-blur-radius-elevation-2: 4px;
   --awds-shadow-shadow2-blur-radius-elevation-3: 8px;
   --awds-shadow-shadow2-blur-radius-elevation-4: 12px;
-  --awds-shadow-shadow2-blur-radius: var(--awds-shadow-shadow2-blur-radius-elevation-1);
+  --awds-shadow-shadow2-blur-radius: var(--awds-shadow-shadow2-blur-radius-elevation-1);  /* Слой 2 композита тени, радиус размытия: 2px → 4px → 8px → 12px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 2 композита тени, разброс: -1px → -2px → -4px → -4px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow2-spread-radius-elevation-1: -1px;
   --awds-shadow-shadow2-spread-radius-elevation-2: -2px;
   --awds-shadow-shadow2-spread-radius-elevation-3: -4px;
   --awds-shadow-shadow2-spread-radius-elevation-4: -4px;
-  --awds-shadow-shadow2-spread-radius: var(--awds-shadow-shadow2-spread-radius-elevation-1);
+  --awds-shadow-shadow2-spread-radius: var(--awds-shadow-shadow2-spread-radius-elevation-1);  /* Слой 2 композита тени, разброс: -1px → -2px → -4px → -4px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 3 композита тени, цвет по ступеням: elevation-1 → extended/shadow-3, elevation-2 → extended/shadow-3, elevation-3 → extended/shadow-3, elevation-4 → extended/shadow-3. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow3-color-elevation-1: var(--extended-shadow-3);
   --awds-shadow-shadow3-color-elevation-2: var(--extended-shadow-3);
   --awds-shadow-shadow3-color-elevation-3: var(--extended-shadow-3);
   --awds-shadow-shadow3-color-elevation-4: var(--extended-shadow-3);
-  --awds-shadow-shadow3-color: var(--awds-shadow-shadow3-color-elevation-1);
+  --awds-shadow-shadow3-color: var(--awds-shadow-shadow3-color-elevation-1);  /* Слой 3 композита тени, цвет по ступеням: elevation-1 → extended/shadow-3, elevation-2 → extended/shadow-3, elevation-3 → extended/shadow-3, elevation-4 → extended/shadow-3. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 3 композита тени, сдвиг по горизонтали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow3-offset-x-elevation-1: 0px;
   --awds-shadow-shadow3-offset-x-elevation-2: 0px;
   --awds-shadow-shadow3-offset-x-elevation-3: 0px;
   --awds-shadow-shadow3-offset-x-elevation-4: 0px;
-  --awds-shadow-shadow3-offset-x: var(--awds-shadow-shadow3-offset-x-elevation-1);
+  --awds-shadow-shadow3-offset-x: var(--awds-shadow-shadow3-offset-x-elevation-1);  /* Слой 3 композита тени, сдвиг по горизонтали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 3 композита тени, сдвиг по вертикали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow3-offset-y-elevation-1: 0px;
   --awds-shadow-shadow3-offset-y-elevation-2: 0px;
   --awds-shadow-shadow3-offset-y-elevation-3: 0px;
   --awds-shadow-shadow3-offset-y-elevation-4: 0px;
-  --awds-shadow-shadow3-offset-y: var(--awds-shadow-shadow3-offset-y-elevation-1);
+  --awds-shadow-shadow3-offset-y: var(--awds-shadow-shadow3-offset-y-elevation-1);  /* Слой 3 композита тени, сдвиг по вертикали: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 3 композита тени, радиус размытия: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow3-blur-radius-elevation-1: 0px;
   --awds-shadow-shadow3-blur-radius-elevation-2: 0px;
   --awds-shadow-shadow3-blur-radius-elevation-3: 0px;
   --awds-shadow-shadow3-blur-radius-elevation-4: 0px;
-  --awds-shadow-shadow3-blur-radius: var(--awds-shadow-shadow3-blur-radius-elevation-1);
+  --awds-shadow-shadow3-blur-radius: var(--awds-shadow-shadow3-blur-radius-elevation-1);  /* Слой 3 композита тени, радиус размытия: 0px → 0px → 0px → 0px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Слой 3 композита тени, разброс: 1px → 1px → 1px → 1px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
   --awds-shadow-shadow3-spread-radius-elevation-1: 1px;
   --awds-shadow-shadow3-spread-radius-elevation-2: 1px;
   --awds-shadow-shadow3-spread-radius-elevation-3: 1px;
   --awds-shadow-shadow3-spread-radius-elevation-4: 1px;
-  --awds-shadow-shadow3-spread-radius: var(--awds-shadow-shadow3-spread-radius-elevation-1);
-  --awds-space-0: 0px;
-  --awds-space-0-5: 2px;
-  --awds-space-px: 1px;
-  --awds-space-1: 4px;
-  --awds-space-1-5: 6px;
-  --awds-space-2: 8px;
-  --awds-space-2-5: 10px;
-  --awds-space-3: 12px;
-  --awds-space-3-5: 14px;
-  --awds-space-4: 16px;
-  --awds-space-4-5: 18px;
-  --awds-space-5: 20px;
-  --awds-space-5-5: 22px;
-  --awds-space-6: 24px;
-  --awds-space-7: 28px;
-  --awds-space-8: 32px;
-  --awds-space-9: 36px;
-  --awds-space-10: 40px;
-  --awds-space-11: 44px;
-  --awds-space-12: 48px;
-  --awds-space-13: 52px;
-  --awds-space-14: 56px;
-  --awds-space-15: 60px;
-  --awds-space-16: 64px;
-  --awds-space-20: 80px;
-  --awds-space-24: 96px;
-  --awds-space-28: 112px;
-  --awds-space-32: 128px;
-  --awds-space-36: 144px;
-  --awds-space-40: 160px;
-  --awds-space-44: 176px;
-  --awds-space-48: 192px;
-  --awds-space-52: 208px;
-  --awds-space-56: 224px;
-  --awds-space-60: 240px;
-  --awds-space-64: 256px;
-  --awds-space-72: 288px;
-  --awds-space-80: 320px;
-  --awds-space-96: 384px;
-  --awds-zindex-dropdown: 1030;
-  --awds-zindex-sticky: 1000;
-  --awds-zindex-fixed: 1020;
-  --awds-zindex-backdrop: 1040;
-  --awds-zindex-offcanvas: 1050;
-  --awds-zindex-modal: 1060;
-  --awds-zindex-popover: 1070;
-  --awds-zindex-tooltip: 1080;
-  --awds-control-font-size-50: 10px;
-  --awds-control-font-size-100: 11px;
-  --awds-control-font-size-200: 12px;
-  --awds-control-font-size-300: 13px;
-  --awds-control-font-size-400: 14px;
-  --awds-control-font-size-500: 15px;
-  --awds-control-font-size-600: 16px;
-  --awds-control-font-size-700: 17px;
-  --awds-control-font-size-800: 18px;
-  --awds-control-font-size-850: 20px;
-  --awds-control-font-size-900: 24px;
-  --awds-control-font-size-950: 28px;
-  --awds-control-font-size-1000: 32px;
-  --awds-control-line-height-50: 12px;
-  --awds-control-line-height-100: 16px;
-  --awds-control-line-height-200: 16px;
-  --awds-control-line-height-300: 16px;
-  --awds-control-line-height-400: 20px;
-  --awds-control-line-height-500: 20px;
-  --awds-control-line-height-600: 20px;
-  --awds-control-line-height-700: 24px;
-  --awds-control-line-height-800: 24px;
-  --awds-control-line-height-850: 28px;
-  --awds-control-line-height-900: 32px;
-  --awds-control-line-height-950: 36px;
-  --awds-control-line-height-1000: 40px;
-  --awds-control-letter-spacing-50: 0.3px;
-  --awds-control-letter-spacing-100: 0.2px;
-  --awds-control-letter-spacing-200: 0.1px;
-  --awds-control-letter-spacing-300: 0.1px;
-  --awds-control-letter-spacing-400: 0px;
-  --awds-control-letter-spacing-500: 0px;
-  --awds-control-letter-spacing-600: 0px;
-  --awds-control-letter-spacing-700: 0px;
-  --awds-control-letter-spacing-800: 0px;
-  --awds-control-letter-spacing-850: -0.1px;
-  --awds-control-letter-spacing-900: -0.2px;
-  --awds-control-letter-spacing-950: -0.3px;
-  --awds-control-letter-spacing-1000: -0.4px;
+  --awds-shadow-shadow3-spread-radius: var(--awds-shadow-shadow3-spread-radius-elevation-1);  /* Слой 3 композита тени, разброс: 1px → 1px → 1px → 1px по ступеням elevation-1…4. Сам по себе не применяется: потребитель берёт готовый --awds-shadow-elevation-{1…4} из слоя производных. */
+  /* Ноль шкалы отступов: явный сброс padding, margin или gap — вместо литерала 0. */
+  --awds-space-0: 0px;  /* Ноль шкалы отступов: явный сброс padding, margin или gap — вместо литерала 0. */
+  /* Толщина 2px: кольцо фокуса и жирная обводка. Студия резолвит в неё size/outline/width. */
+  --awds-space-0-5: 2px;  /* Толщина 2px: кольцо фокуса и жирная обводка. Студия резолвит в неё size/outline/width. */
+  /* Хайрлайн 1px: толщина линии, рамки и подчёркивания. Тоньше в шкале ничего нет. */
+  --awds-space-px: 1px;  /* Хайрлайн 1px: толщина линии, рамки и подчёркивания. Тоньше в шкале ничего нет. */
+  /* Шаг шкалы отступов: 4px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-1: 4px;  /* Шаг шкалы отступов: 4px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 6px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-1-5: 6px;  /* Шаг шкалы отступов: 6px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 8px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-2: 8px;  /* Шаг шкалы отступов: 8px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 10px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-2-5: 10px;  /* Шаг шкалы отступов: 10px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 12px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-3: 12px;  /* Шаг шкалы отступов: 12px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 14px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-3-5: 14px;  /* Шаг шкалы отступов: 14px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 16px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-4: 16px;  /* Шаг шкалы отступов: 16px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 18px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-4-5: 18px;  /* Шаг шкалы отступов: 18px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 20px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-5: 20px;  /* Шаг шкалы отступов: 20px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 22px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-5-5: 22px;  /* Шаг шкалы отступов: 22px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 24px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-6: 24px;  /* Шаг шкалы отступов: 24px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 28px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-7: 28px;  /* Шаг шкалы отступов: 28px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 32px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-8: 32px;  /* Шаг шкалы отступов: 32px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 36px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-9: 36px;  /* Шаг шкалы отступов: 36px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 40px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-10: 40px;  /* Шаг шкалы отступов: 40px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 44px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-11: 44px;  /* Шаг шкалы отступов: 44px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 48px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-12: 48px;  /* Шаг шкалы отступов: 48px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 52px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-13: 52px;  /* Шаг шкалы отступов: 52px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 56px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-14: 56px;  /* Шаг шкалы отступов: 56px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 60px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-15: 60px;  /* Шаг шкалы отступов: 60px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 64px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-16: 64px;  /* Шаг шкалы отступов: 64px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 80px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-20: 80px;  /* Шаг шкалы отступов: 80px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 96px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-24: 96px;  /* Шаг шкалы отступов: 96px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 112px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-28: 112px;  /* Шаг шкалы отступов: 112px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 128px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-32: 128px;  /* Шаг шкалы отступов: 128px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 144px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-36: 144px;  /* Шаг шкалы отступов: 144px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 160px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-40: 160px;  /* Шаг шкалы отступов: 160px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 176px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-44: 176px;  /* Шаг шкалы отступов: 176px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 192px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-48: 192px;  /* Шаг шкалы отступов: 192px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 208px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-52: 208px;  /* Шаг шкалы отступов: 208px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 224px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-56: 224px;  /* Шаг шкалы отступов: 224px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 240px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-60: 240px;  /* Шаг шкалы отступов: 240px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 256px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-64: 256px;  /* Шаг шкалы отступов: 256px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 288px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-72: 288px;  /* Шаг шкалы отступов: 288px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 320px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-80: 320px;  /* Шаг шкалы отступов: 320px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 384px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-96: 384px;  /* Шаг шкалы отступов: 384px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Слой наложения: 1030. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-dropdown: 1030;  /* Слой наложения: 1030. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Слой наложения: 1000. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-sticky: 1000;  /* Слой наложения: 1000. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Слой наложения: 1020. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-fixed: 1020;  /* Слой наложения: 1020. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Слой наложения: 1040. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-backdrop: 1040;  /* Слой наложения: 1040. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Слой наложения: 1050. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-offcanvas: 1050;  /* Слой наложения: 1050. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Слой наложения: 1060. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-modal: 1060;  /* Слой наложения: 1060. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Слой наложения: 1070. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-popover: 1070;  /* Слой наложения: 1070. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Слой наложения: 1080. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  --awds-zindex-tooltip: 1080;  /* Слой наложения: 1080. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
+  /* Кегль текста контрола, ступень 50: 10px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/50 (12px). */
+  --awds-control-font-size-50: 10px;  /* Кегль текста контрола, ступень 50: 10px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/50 (12px). */
+  /* Кегль текста контрола, ступень 100: 11px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/100 (16px). */
+  --awds-control-font-size-100: 11px;  /* Кегль текста контрола, ступень 100: 11px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/100 (16px). */
+  /* Кегль текста контрола, ступень 200: 12px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/200 (16px). */
+  --awds-control-font-size-200: 12px;  /* Кегль текста контрола, ступень 200: 12px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/200 (16px). */
+  /* Кегль текста контрола, ступень 300: 13px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/300 (16px). */
+  --awds-control-font-size-300: 13px;  /* Кегль текста контрола, ступень 300: 13px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/300 (16px). */
+  /* Кегль текста контрола, ступень 400: 14px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/400 (20px). */
+  --awds-control-font-size-400: 14px;  /* Кегль текста контрола, ступень 400: 14px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/400 (20px). */
+  /* Кегль текста контрола, ступень 500: 15px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/500 (20px). */
+  --awds-control-font-size-500: 15px;  /* Кегль текста контрола, ступень 500: 15px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/500 (20px). */
+  /* Кегль текста контрола, ступень 600: 16px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/600 (20px). */
+  --awds-control-font-size-600: 16px;  /* Кегль текста контрола, ступень 600: 16px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/600 (20px). */
+  /* Кегль текста контрола, ступень 700: 17px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/700 (24px). */
+  --awds-control-font-size-700: 17px;  /* Кегль текста контрола, ступень 700: 17px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/700 (24px). */
+  /* Кегль текста контрола, ступень 800: 18px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/800 (24px). */
+  --awds-control-font-size-800: 18px;  /* Кегль текста контрола, ступень 800: 18px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/800 (24px). */
+  /* Кегль текста контрола, ступень 850: 20px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/850 (28px). */
+  --awds-control-font-size-850: 20px;  /* Кегль текста контрола, ступень 850: 20px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/850 (28px). */
+  /* Кегль текста контрола, ступень 900: 24px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/900 (32px). */
+  --awds-control-font-size-900: 24px;  /* Кегль текста контрола, ступень 900: 24px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/900 (32px). */
+  /* Кегль текста контрола, ступень 950: 28px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/950 (36px). */
+  --awds-control-font-size-950: 28px;  /* Кегль текста контрола, ступень 950: 28px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/950 (36px). */
+  /* Кегль текста контрола, ступень 1000: 32px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/1000 (40px). */
+  --awds-control-font-size-1000: 32px;  /* Кегль текста контрола, ступень 1000: 32px. Фиксирован — по вьюпорту не меняется, адаптив у контрола идёт сменой ступени Size. Пара: control/line-height/1000 (40px). */
+  /* Интерлиньяж контрола, ступень 50: 12px. Пара к control/font-size/50 (10px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-50: 12px;  /* Интерлиньяж контрола, ступень 50: 12px. Пара к control/font-size/50 (10px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 100: 16px. Пара к control/font-size/100 (11px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-100: 16px;  /* Интерлиньяж контрола, ступень 100: 16px. Пара к control/font-size/100 (11px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 200: 16px. Пара к control/font-size/200 (12px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-200: 16px;  /* Интерлиньяж контрола, ступень 200: 16px. Пара к control/font-size/200 (12px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 300: 16px. Пара к control/font-size/300 (13px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-300: 16px;  /* Интерлиньяж контрола, ступень 300: 16px. Пара к control/font-size/300 (13px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 400: 20px. Пара к control/font-size/400 (14px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-400: 20px;  /* Интерлиньяж контрола, ступень 400: 20px. Пара к control/font-size/400 (14px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 500: 20px. Пара к control/font-size/500 (15px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-500: 20px;  /* Интерлиньяж контрола, ступень 500: 20px. Пара к control/font-size/500 (15px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 600: 20px. Пара к control/font-size/600 (16px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-600: 20px;  /* Интерлиньяж контрола, ступень 600: 20px. Пара к control/font-size/600 (16px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 700: 24px. Пара к control/font-size/700 (17px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-700: 24px;  /* Интерлиньяж контрола, ступень 700: 24px. Пара к control/font-size/700 (17px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 800: 24px. Пара к control/font-size/800 (18px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-800: 24px;  /* Интерлиньяж контрола, ступень 800: 24px. Пара к control/font-size/800 (18px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 850: 28px. Пара к control/font-size/850 (20px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-850: 28px;  /* Интерлиньяж контрола, ступень 850: 28px. Пара к control/font-size/850 (20px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 900: 32px. Пара к control/font-size/900 (24px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-900: 32px;  /* Интерлиньяж контрола, ступень 900: 32px. Пара к control/font-size/900 (24px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 950: 36px. Пара к control/font-size/950 (28px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-950: 36px;  /* Интерлиньяж контрола, ступень 950: 36px. Пара к control/font-size/950 (28px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Интерлиньяж контрола, ступень 1000: 40px. Пара к control/font-size/1000 (32px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  --awds-control-line-height-1000: 40px;  /* Интерлиньяж контрола, ступень 1000: 40px. Пара к control/font-size/1000 (32px); одноимённая ступень typography даёт другое число — шкалы различаются именно интерлиньяжем. */
+  /* Межбуквенный интервал контрола, ступень 50: 0.3px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-50: 0.3px;  /* Межбуквенный интервал контрола, ступень 50: 0.3px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 100: 0.2px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-100: 0.2px;  /* Межбуквенный интервал контрола, ступень 100: 0.2px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 200: 0.1px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-200: 0.1px;  /* Межбуквенный интервал контрола, ступень 200: 0.1px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 300: 0.1px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-300: 0.1px;  /* Межбуквенный интервал контрола, ступень 300: 0.1px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 400: 0px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-400: 0px;  /* Межбуквенный интервал контрола, ступень 400: 0px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 500: 0px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-500: 0px;  /* Межбуквенный интервал контрола, ступень 500: 0px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 600: 0px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-600: 0px;  /* Межбуквенный интервал контрола, ступень 600: 0px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 700: 0px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-700: 0px;  /* Межбуквенный интервал контрола, ступень 700: 0px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 800: 0px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-800: 0px;  /* Межбуквенный интервал контрола, ступень 800: 0px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 850: -0.1px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-850: -0.1px;  /* Межбуквенный интервал контрола, ступень 850: -0.1px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 900: -0.2px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-900: -0.2px;  /* Межбуквенный интервал контрола, ступень 900: -0.2px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 950: -0.3px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-950: -0.3px;  /* Межбуквенный интервал контрола, ступень 950: -0.3px. Фиксирован, как и остальная шкала control. */
+  /* Межбуквенный интервал контрола, ступень 1000: -0.4px. Фиксирован, как и остальная шкала control. */
+  --awds-control-letter-spacing-1000: -0.4px;  /* Межбуквенный интервал контрола, ступень 1000: -0.4px. Фиксирован, как и остальная шкала control. */
+  /* Кегль текста, ступень 50: 10px / 10px / 10px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-50-desktop: 10px;
   --awds-typography-font-size-50-tablet: 10px;
   --awds-typography-font-size-50-mobile: 10px;
-  --awds-typography-font-size-50: var(--awds-typography-font-size-50-desktop);
+  --awds-typography-font-size-50: var(--awds-typography-font-size-50-desktop);  /* Кегль текста, ступень 50: 10px / 10px / 10px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 100: 11px / 11px / 11px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-100-desktop: 11px;
   --awds-typography-font-size-100-tablet: 11px;
   --awds-typography-font-size-100-mobile: 11px;
-  --awds-typography-font-size-100: var(--awds-typography-font-size-100-desktop);
+  --awds-typography-font-size-100: var(--awds-typography-font-size-100-desktop);  /* Кегль текста, ступень 100: 11px / 11px / 11px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 200: 12px / 12px / 12px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-200-desktop: 12px;
   --awds-typography-font-size-200-tablet: 12px;
   --awds-typography-font-size-200-mobile: 12px;
-  --awds-typography-font-size-200: var(--awds-typography-font-size-200-desktop);
+  --awds-typography-font-size-200: var(--awds-typography-font-size-200-desktop);  /* Кегль текста, ступень 200: 12px / 12px / 12px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 300: 13px / 13px / 13px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-300-desktop: 13px;
   --awds-typography-font-size-300-tablet: 13px;
   --awds-typography-font-size-300-mobile: 13px;
-  --awds-typography-font-size-300: var(--awds-typography-font-size-300-desktop);
+  --awds-typography-font-size-300: var(--awds-typography-font-size-300-desktop);  /* Кегль текста, ступень 300: 13px / 13px / 13px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 400: 14px / 14px / 14px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-400-desktop: 14px;
   --awds-typography-font-size-400-tablet: 14px;
   --awds-typography-font-size-400-mobile: 14px;
-  --awds-typography-font-size-400: var(--awds-typography-font-size-400-desktop);
+  --awds-typography-font-size-400: var(--awds-typography-font-size-400-desktop);  /* Кегль текста, ступень 400: 14px / 14px / 14px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 500: 15px / 15px / 15px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-500-desktop: 15px;
   --awds-typography-font-size-500-tablet: 15px;
   --awds-typography-font-size-500-mobile: 15px;
-  --awds-typography-font-size-500: var(--awds-typography-font-size-500-desktop);
+  --awds-typography-font-size-500: var(--awds-typography-font-size-500-desktop);  /* Кегль текста, ступень 500: 15px / 15px / 15px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 600: 16px / 16px / 16px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-600-desktop: 16px;
   --awds-typography-font-size-600-tablet: 16px;
   --awds-typography-font-size-600-mobile: 16px;
-  --awds-typography-font-size-600: var(--awds-typography-font-size-600-desktop);
+  --awds-typography-font-size-600: var(--awds-typography-font-size-600-desktop);  /* Кегль текста, ступень 600: 16px / 16px / 16px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 700: 17px / 17px / 17px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-700-desktop: 17px;
   --awds-typography-font-size-700-tablet: 17px;
   --awds-typography-font-size-700-mobile: 17px;
-  --awds-typography-font-size-700: var(--awds-typography-font-size-700-desktop);
+  --awds-typography-font-size-700: var(--awds-typography-font-size-700-desktop);  /* Кегль текста, ступень 700: 17px / 17px / 17px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 800: 18px / 18px / 18px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-800-desktop: 18px;
   --awds-typography-font-size-800-tablet: 18px;
   --awds-typography-font-size-800-mobile: 18px;
-  --awds-typography-font-size-800: var(--awds-typography-font-size-800-desktop);
+  --awds-typography-font-size-800: var(--awds-typography-font-size-800-desktop);  /* Кегль текста, ступень 800: 18px / 18px / 18px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 900: 19px / 19px / 19px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-900-desktop: 19px;
   --awds-typography-font-size-900-tablet: 19px;
   --awds-typography-font-size-900-mobile: 19px;
-  --awds-typography-font-size-900: var(--awds-typography-font-size-900-desktop);
+  --awds-typography-font-size-900: var(--awds-typography-font-size-900-desktop);  /* Кегль текста, ступень 900: 19px / 19px / 19px (десктоп / планшет / мобайл). Одинаков на всех вьюпортах. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 910: 24px / 20px / 20px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-910-desktop: 24px;
   --awds-typography-font-size-910-tablet: 20px;
   --awds-typography-font-size-910-mobile: 20px;
-  --awds-typography-font-size-910: var(--awds-typography-font-size-910-desktop);
+  --awds-typography-font-size-910: var(--awds-typography-font-size-910-desktop);  /* Кегль текста, ступень 910: 24px / 20px / 20px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 920: 28px / 24px / 22px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-920-desktop: 28px;
   --awds-typography-font-size-920-tablet: 24px;
   --awds-typography-font-size-920-mobile: 22px;
-  --awds-typography-font-size-920: var(--awds-typography-font-size-920-desktop);
+  --awds-typography-font-size-920: var(--awds-typography-font-size-920-desktop);  /* Кегль текста, ступень 920: 28px / 24px / 22px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 930: 34px / 28px / 24px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-930-desktop: 34px;
   --awds-typography-font-size-930-tablet: 28px;
   --awds-typography-font-size-930-mobile: 24px;
-  --awds-typography-font-size-930: var(--awds-typography-font-size-930-desktop);
+  --awds-typography-font-size-930: var(--awds-typography-font-size-930-desktop);  /* Кегль текста, ступень 930: 34px / 28px / 24px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 940: 40px / 34px / 28px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-940-desktop: 40px;
   --awds-typography-font-size-940-tablet: 34px;
   --awds-typography-font-size-940-mobile: 28px;
-  --awds-typography-font-size-940: var(--awds-typography-font-size-940-desktop);
+  --awds-typography-font-size-940: var(--awds-typography-font-size-940-desktop);  /* Кегль текста, ступень 940: 40px / 34px / 28px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 950: 48px / 40px / 30px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-950-desktop: 48px;
   --awds-typography-font-size-950-tablet: 40px;
   --awds-typography-font-size-950-mobile: 30px;
-  --awds-typography-font-size-950: var(--awds-typography-font-size-950-desktop);
+  --awds-typography-font-size-950: var(--awds-typography-font-size-950-desktop);  /* Кегль текста, ступень 950: 48px / 40px / 30px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 960: 52px / 48px / 32px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-960-desktop: 52px;
   --awds-typography-font-size-960-tablet: 48px;
   --awds-typography-font-size-960-mobile: 32px;
-  --awds-typography-font-size-960: var(--awds-typography-font-size-960-desktop);
+  --awds-typography-font-size-960: var(--awds-typography-font-size-960-desktop);  /* Кегль текста, ступень 960: 52px / 48px / 32px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 970: 58px / 52px / 34px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-970-desktop: 58px;
   --awds-typography-font-size-970-tablet: 52px;
   --awds-typography-font-size-970-mobile: 34px;
-  --awds-typography-font-size-970: var(--awds-typography-font-size-970-desktop);
+  --awds-typography-font-size-970: var(--awds-typography-font-size-970-desktop);  /* Кегль текста, ступень 970: 58px / 52px / 34px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 980: 64px / 58px / 40px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-980-desktop: 64px;
   --awds-typography-font-size-980-tablet: 58px;
   --awds-typography-font-size-980-mobile: 40px;
-  --awds-typography-font-size-980: var(--awds-typography-font-size-980-desktop);
+  --awds-typography-font-size-980: var(--awds-typography-font-size-980-desktop);  /* Кегль текста, ступень 980: 64px / 58px / 40px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Кегль текста, ступень 1000: 70px / 64px / 48px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
   --awds-typography-font-size-1000-desktop: 70px;
   --awds-typography-font-size-1000-tablet: 64px;
   --awds-typography-font-size-1000-mobile: 48px;
-  --awds-typography-font-size-1000: var(--awds-typography-font-size-1000-desktop);
+  --awds-typography-font-size-1000: var(--awds-typography-font-size-1000-desktop);  /* Кегль текста, ступень 1000: 70px / 64px / 48px (десктоп / планшет / мобайл). Меняется по вьюпорту через @media. У контролов своя фиксированная шкала control — не эта. */
+  /* Интерлиньяж ступени 50: 16px / 16px / 16px. Обычный вариант для абзаца; плотный — line-height-compact/50. */
   --awds-typography-line-height-50-desktop: 16px;
   --awds-typography-line-height-50-tablet: 16px;
   --awds-typography-line-height-50-mobile: 16px;
-  --awds-typography-line-height-50: var(--awds-typography-line-height-50-desktop);
+  --awds-typography-line-height-50: var(--awds-typography-line-height-50-desktop);  /* Интерлиньяж ступени 50: 16px / 16px / 16px. Обычный вариант для абзаца; плотный — line-height-compact/50. */
+  /* Интерлиньяж ступени 100: 18px / 18px / 18px. Обычный вариант для абзаца; плотный — line-height-compact/100. */
   --awds-typography-line-height-100-desktop: 18px;
   --awds-typography-line-height-100-tablet: 18px;
   --awds-typography-line-height-100-mobile: 18px;
-  --awds-typography-line-height-100: var(--awds-typography-line-height-100-desktop);
+  --awds-typography-line-height-100: var(--awds-typography-line-height-100-desktop);  /* Интерлиньяж ступени 100: 18px / 18px / 18px. Обычный вариант для абзаца; плотный — line-height-compact/100. */
+  /* Интерлиньяж ступени 200: 19px / 19px / 19px. Обычный вариант для абзаца; плотный — line-height-compact/200. */
   --awds-typography-line-height-200-desktop: 19px;
   --awds-typography-line-height-200-tablet: 19px;
   --awds-typography-line-height-200-mobile: 19px;
-  --awds-typography-line-height-200: var(--awds-typography-line-height-200-desktop);
+  --awds-typography-line-height-200: var(--awds-typography-line-height-200-desktop);  /* Интерлиньяж ступени 200: 19px / 19px / 19px. Обычный вариант для абзаца; плотный — line-height-compact/200. */
+  /* Интерлиньяж ступени 300: 21px / 21px / 21px. Обычный вариант для абзаца; плотный — line-height-compact/300. */
   --awds-typography-line-height-300-desktop: 21px;
   --awds-typography-line-height-300-tablet: 21px;
   --awds-typography-line-height-300-mobile: 21px;
-  --awds-typography-line-height-300: var(--awds-typography-line-height-300-desktop);
+  --awds-typography-line-height-300: var(--awds-typography-line-height-300-desktop);  /* Интерлиньяж ступени 300: 21px / 21px / 21px. Обычный вариант для абзаца; плотный — line-height-compact/300. */
+  /* Интерлиньяж ступени 400: 22px / 22px / 22px. Обычный вариант для абзаца; плотный — line-height-compact/400. */
   --awds-typography-line-height-400-desktop: 22px;
   --awds-typography-line-height-400-tablet: 22px;
   --awds-typography-line-height-400-mobile: 22px;
-  --awds-typography-line-height-400: var(--awds-typography-line-height-400-desktop);
+  --awds-typography-line-height-400: var(--awds-typography-line-height-400-desktop);  /* Интерлиньяж ступени 400: 22px / 22px / 22px. Обычный вариант для абзаца; плотный — line-height-compact/400. */
+  /* Интерлиньяж ступени 500: 24px / 24px / 24px. Обычный вариант для абзаца; плотный — line-height-compact/500. */
   --awds-typography-line-height-500-desktop: 24px;
   --awds-typography-line-height-500-tablet: 24px;
   --awds-typography-line-height-500-mobile: 24px;
-  --awds-typography-line-height-500: var(--awds-typography-line-height-500-desktop);
+  --awds-typography-line-height-500: var(--awds-typography-line-height-500-desktop);  /* Интерлиньяж ступени 500: 24px / 24px / 24px. Обычный вариант для абзаца; плотный — line-height-compact/500. */
+  /* Интерлиньяж ступени 600: 26px / 26px / 26px. Обычный вариант для абзаца; плотный — line-height-compact/600. */
   --awds-typography-line-height-600-desktop: 26px;
   --awds-typography-line-height-600-tablet: 26px;
   --awds-typography-line-height-600-mobile: 26px;
-  --awds-typography-line-height-600: var(--awds-typography-line-height-600-desktop);
+  --awds-typography-line-height-600: var(--awds-typography-line-height-600-desktop);  /* Интерлиньяж ступени 600: 26px / 26px / 26px. Обычный вариант для абзаца; плотный — line-height-compact/600. */
+  /* Интерлиньяж ступени 700: 27px / 27px / 27px. Обычный вариант для абзаца; плотный — line-height-compact/700. */
   --awds-typography-line-height-700-desktop: 27px;
   --awds-typography-line-height-700-tablet: 27px;
   --awds-typography-line-height-700-mobile: 27px;
-  --awds-typography-line-height-700: var(--awds-typography-line-height-700-desktop);
+  --awds-typography-line-height-700: var(--awds-typography-line-height-700-desktop);  /* Интерлиньяж ступени 700: 27px / 27px / 27px. Обычный вариант для абзаца; плотный — line-height-compact/700. */
+  /* Интерлиньяж ступени 800: 29px / 29px / 29px. Обычный вариант для абзаца; плотный — line-height-compact/800. */
   --awds-typography-line-height-800-desktop: 29px;
   --awds-typography-line-height-800-tablet: 29px;
   --awds-typography-line-height-800-mobile: 29px;
-  --awds-typography-line-height-800: var(--awds-typography-line-height-800-desktop);
+  --awds-typography-line-height-800: var(--awds-typography-line-height-800-desktop);  /* Интерлиньяж ступени 800: 29px / 29px / 29px. Обычный вариант для абзаца; плотный — line-height-compact/800. */
+  /* Интерлиньяж ступени 900: 32px / 32px / 30px. Обычный вариант для абзаца; плотный — line-height-compact/900. */
   --awds-typography-line-height-900-desktop: 32px;
   --awds-typography-line-height-900-tablet: 32px;
   --awds-typography-line-height-900-mobile: 30px;
-  --awds-typography-line-height-900: var(--awds-typography-line-height-900-desktop);
+  --awds-typography-line-height-900: var(--awds-typography-line-height-900-desktop);  /* Интерлиньяж ступени 900: 32px / 32px / 30px. Обычный вариант для абзаца; плотный — line-height-compact/900. */
+  /* Интерлиньяж ступени 910: 38px / 35px / 32px. Обычный вариант для абзаца; плотный — line-height-compact/910. */
   --awds-typography-line-height-910-desktop: 38px;
   --awds-typography-line-height-910-tablet: 35px;
   --awds-typography-line-height-910-mobile: 32px;
-  --awds-typography-line-height-910: var(--awds-typography-line-height-910-desktop);
+  --awds-typography-line-height-910: var(--awds-typography-line-height-910-desktop);  /* Интерлиньяж ступени 910: 38px / 35px / 32px. Обычный вариант для абзаца; плотный — line-height-compact/910. */
+  /* Интерлиньяж ступени 920: 45px / 38px / 35px. Обычный вариант для абзаца; плотный — line-height-compact/920. */
   --awds-typography-line-height-920-desktop: 45px;
   --awds-typography-line-height-920-tablet: 38px;
   --awds-typography-line-height-920-mobile: 35px;
-  --awds-typography-line-height-920: var(--awds-typography-line-height-920-desktop);
+  --awds-typography-line-height-920: var(--awds-typography-line-height-920-desktop);  /* Интерлиньяж ступени 920: 45px / 38px / 35px. Обычный вариант для абзаца; плотный — line-height-compact/920. */
+  /* Интерлиньяж ступени 930: 54px / 45px / 38px. Обычный вариант для абзаца; плотный — line-height-compact/930. */
   --awds-typography-line-height-930-desktop: 54px;
   --awds-typography-line-height-930-tablet: 45px;
   --awds-typography-line-height-930-mobile: 38px;
-  --awds-typography-line-height-930: var(--awds-typography-line-height-930-desktop);
+  --awds-typography-line-height-930: var(--awds-typography-line-height-930-desktop);  /* Интерлиньяж ступени 930: 54px / 45px / 38px. Обычный вариант для абзаца; плотный — line-height-compact/930. */
+  /* Интерлиньяж ступени 940: 64px / 54px / 45px. Обычный вариант для абзаца; плотный — line-height-compact/940. */
   --awds-typography-line-height-940-desktop: 64px;
   --awds-typography-line-height-940-tablet: 54px;
   --awds-typography-line-height-940-mobile: 45px;
-  --awds-typography-line-height-940: var(--awds-typography-line-height-940-desktop);
+  --awds-typography-line-height-940: var(--awds-typography-line-height-940-desktop);  /* Интерлиньяж ступени 940: 64px / 54px / 45px. Обычный вариант для абзаца; плотный — line-height-compact/940. */
+  /* Интерлиньяж ступени 950: 77px / 64px / 48px. Обычный вариант для абзаца; плотный — line-height-compact/950. */
   --awds-typography-line-height-950-desktop: 77px;
   --awds-typography-line-height-950-tablet: 64px;
   --awds-typography-line-height-950-mobile: 48px;
-  --awds-typography-line-height-950: var(--awds-typography-line-height-950-desktop);
+  --awds-typography-line-height-950: var(--awds-typography-line-height-950-desktop);  /* Интерлиньяж ступени 950: 77px / 64px / 48px. Обычный вариант для абзаца; плотный — line-height-compact/950. */
+  /* Интерлиньяж ступени 960: 83px / 77px / 51px. Обычный вариант для абзаца; плотный — line-height-compact/960. */
   --awds-typography-line-height-960-desktop: 83px;
   --awds-typography-line-height-960-tablet: 77px;
   --awds-typography-line-height-960-mobile: 51px;
-  --awds-typography-line-height-960: var(--awds-typography-line-height-960-desktop);
+  --awds-typography-line-height-960: var(--awds-typography-line-height-960-desktop);  /* Интерлиньяж ступени 960: 83px / 77px / 51px. Обычный вариант для абзаца; плотный — line-height-compact/960. */
+  /* Интерлиньяж ступени 970: 93px / 83px / 54px. Обычный вариант для абзаца; плотный — line-height-compact/970. */
   --awds-typography-line-height-970-desktop: 93px;
   --awds-typography-line-height-970-tablet: 83px;
   --awds-typography-line-height-970-mobile: 54px;
-  --awds-typography-line-height-970: var(--awds-typography-line-height-970-desktop);
+  --awds-typography-line-height-970: var(--awds-typography-line-height-970-desktop);  /* Интерлиньяж ступени 970: 93px / 83px / 54px. Обычный вариант для абзаца; плотный — line-height-compact/970. */
+  /* Интерлиньяж ступени 980: 102px / 93px / 64px. Обычный вариант для абзаца; плотный — line-height-compact/980. */
   --awds-typography-line-height-980-desktop: 102px;
   --awds-typography-line-height-980-tablet: 93px;
   --awds-typography-line-height-980-mobile: 64px;
-  --awds-typography-line-height-980: var(--awds-typography-line-height-980-desktop);
+  --awds-typography-line-height-980: var(--awds-typography-line-height-980-desktop);  /* Интерлиньяж ступени 980: 102px / 93px / 64px. Обычный вариант для абзаца; плотный — line-height-compact/980. */
+  /* Интерлиньяж ступени 1000: 112px / 102px / 77px. Обычный вариант для абзаца; плотный — line-height-compact/1000. */
   --awds-typography-line-height-1000-desktop: 112px;
   --awds-typography-line-height-1000-tablet: 102px;
   --awds-typography-line-height-1000-mobile: 77px;
-  --awds-typography-line-height-1000: var(--awds-typography-line-height-1000-desktop);
+  --awds-typography-line-height-1000: var(--awds-typography-line-height-1000-desktop);  /* Интерлиньяж ступени 1000: 112px / 102px / 77px. Обычный вариант для абзаца; плотный — line-height-compact/1000. */
+  /* Плотный интерлиньяж ступени 50: 12px / 12px / 12px. Для заголовков и однострочных подписей, где обычный line-height/50 даёт лишний воздух. */
   --awds-typography-line-height-compact-50-desktop: 12px;
   --awds-typography-line-height-compact-50-tablet: 12px;
   --awds-typography-line-height-compact-50-mobile: 12px;
-  --awds-typography-line-height-compact-50: var(--awds-typography-line-height-compact-50-desktop);
+  --awds-typography-line-height-compact-50: var(--awds-typography-line-height-compact-50-desktop);  /* Плотный интерлиньяж ступени 50: 12px / 12px / 12px. Для заголовков и однострочных подписей, где обычный line-height/50 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 100: 13px / 13px / 13px. Для заголовков и однострочных подписей, где обычный line-height/100 даёт лишний воздух. */
   --awds-typography-line-height-compact-100-desktop: 13px;
   --awds-typography-line-height-compact-100-tablet: 13px;
   --awds-typography-line-height-compact-100-mobile: 13px;
-  --awds-typography-line-height-compact-100: var(--awds-typography-line-height-compact-100-desktop);
+  --awds-typography-line-height-compact-100: var(--awds-typography-line-height-compact-100-desktop);  /* Плотный интерлиньяж ступени 100: 13px / 13px / 13px. Для заголовков и однострочных подписей, где обычный line-height/100 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 200: 14px / 14px / 14px. Для заголовков и однострочных подписей, где обычный line-height/200 даёт лишний воздух. */
   --awds-typography-line-height-compact-200-desktop: 14px;
   --awds-typography-line-height-compact-200-tablet: 14px;
   --awds-typography-line-height-compact-200-mobile: 14px;
-  --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-desktop);
+  --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-desktop);  /* Плотный интерлиньяж ступени 200: 14px / 14px / 14px. Для заголовков и однострочных подписей, где обычный line-height/200 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 300: 16px / 16px / 16px. Для заголовков и однострочных подписей, где обычный line-height/300 даёт лишний воздух. */
   --awds-typography-line-height-compact-300-desktop: 16px;
   --awds-typography-line-height-compact-300-tablet: 16px;
   --awds-typography-line-height-compact-300-mobile: 16px;
-  --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-desktop);
+  --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-desktop);  /* Плотный интерлиньяж ступени 300: 16px / 16px / 16px. Для заголовков и однострочных подписей, где обычный line-height/300 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 400: 17px / 17px / 17px. Для заголовков и однострочных подписей, где обычный line-height/400 даёт лишний воздух. */
   --awds-typography-line-height-compact-400-desktop: 17px;
   --awds-typography-line-height-compact-400-tablet: 17px;
   --awds-typography-line-height-compact-400-mobile: 17px;
-  --awds-typography-line-height-compact-400: var(--awds-typography-line-height-compact-400-desktop);
+  --awds-typography-line-height-compact-400: var(--awds-typography-line-height-compact-400-desktop);  /* Плотный интерлиньяж ступени 400: 17px / 17px / 17px. Для заголовков и однострочных подписей, где обычный line-height/400 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 500: 18px / 18px / 18px. Для заголовков и однострочных подписей, где обычный line-height/500 даёт лишний воздух. */
   --awds-typography-line-height-compact-500-desktop: 18px;
   --awds-typography-line-height-compact-500-tablet: 18px;
   --awds-typography-line-height-compact-500-mobile: 18px;
-  --awds-typography-line-height-compact-500: var(--awds-typography-line-height-compact-500-desktop);
+  --awds-typography-line-height-compact-500: var(--awds-typography-line-height-compact-500-desktop);  /* Плотный интерлиньяж ступени 500: 18px / 18px / 18px. Для заголовков и однострочных подписей, где обычный line-height/500 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 600: 19px / 19px / 19px. Для заголовков и однострочных подписей, где обычный line-height/600 даёт лишний воздух. */
   --awds-typography-line-height-compact-600-desktop: 19px;
   --awds-typography-line-height-compact-600-tablet: 19px;
   --awds-typography-line-height-compact-600-mobile: 19px;
-  --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-desktop);
+  --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-desktop);  /* Плотный интерлиньяж ступени 600: 19px / 19px / 19px. Для заголовков и однострочных подписей, где обычный line-height/600 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 700: 20px / 20px / 20px. Для заголовков и однострочных подписей, где обычный line-height/700 даёт лишний воздух. */
   --awds-typography-line-height-compact-700-desktop: 20px;
   --awds-typography-line-height-compact-700-tablet: 20px;
   --awds-typography-line-height-compact-700-mobile: 20px;
-  --awds-typography-line-height-compact-700: var(--awds-typography-line-height-compact-700-desktop);
+  --awds-typography-line-height-compact-700: var(--awds-typography-line-height-compact-700-desktop);  /* Плотный интерлиньяж ступени 700: 20px / 20px / 20px. Для заголовков и однострочных подписей, где обычный line-height/700 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 800: 22px / 22px / 22px. Для заголовков и однострочных подписей, где обычный line-height/800 даёт лишний воздух. */
   --awds-typography-line-height-compact-800-desktop: 22px;
   --awds-typography-line-height-compact-800-tablet: 22px;
   --awds-typography-line-height-compact-800-mobile: 22px;
-  --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-desktop);
+  --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-desktop);  /* Плотный интерлиньяж ступени 800: 22px / 22px / 22px. Для заголовков и однострочных подписей, где обычный line-height/800 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 900: 24px / 24px / 23px. Для заголовков и однострочных подписей, где обычный line-height/900 даёт лишний воздух. */
   --awds-typography-line-height-compact-900-desktop: 24px;
   --awds-typography-line-height-compact-900-tablet: 24px;
   --awds-typography-line-height-compact-900-mobile: 23px;
-  --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-desktop);
+  --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-desktop);  /* Плотный интерлиньяж ступени 900: 24px / 24px / 23px. Для заголовков и однострочных подписей, где обычный line-height/900 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 910: 29px / 26px / 24px. Для заголовков и однострочных подписей, где обычный line-height/910 даёт лишний воздух. */
   --awds-typography-line-height-compact-910-desktop: 29px;
   --awds-typography-line-height-compact-910-tablet: 26px;
   --awds-typography-line-height-compact-910-mobile: 24px;
-  --awds-typography-line-height-compact-910: var(--awds-typography-line-height-compact-910-desktop);
+  --awds-typography-line-height-compact-910: var(--awds-typography-line-height-compact-910-desktop);  /* Плотный интерлиньяж ступени 910: 29px / 26px / 24px. Для заголовков и однострочных подписей, где обычный line-height/910 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 920: 34px / 29px / 26px. Для заголовков и однострочных подписей, где обычный line-height/920 даёт лишний воздух. */
   --awds-typography-line-height-compact-920-desktop: 34px;
   --awds-typography-line-height-compact-920-tablet: 29px;
   --awds-typography-line-height-compact-920-mobile: 26px;
-  --awds-typography-line-height-compact-920: var(--awds-typography-line-height-compact-920-desktop);
+  --awds-typography-line-height-compact-920: var(--awds-typography-line-height-compact-920-desktop);  /* Плотный интерлиньяж ступени 920: 34px / 29px / 26px. Для заголовков и однострочных подписей, где обычный line-height/920 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 930: 41px / 34px / 29px. Для заголовков и однострочных подписей, где обычный line-height/930 даёт лишний воздух. */
   --awds-typography-line-height-compact-930-desktop: 41px;
   --awds-typography-line-height-compact-930-tablet: 34px;
   --awds-typography-line-height-compact-930-mobile: 29px;
-  --awds-typography-line-height-compact-930: var(--awds-typography-line-height-compact-930-desktop);
+  --awds-typography-line-height-compact-930: var(--awds-typography-line-height-compact-930-desktop);  /* Плотный интерлиньяж ступени 930: 41px / 34px / 29px. Для заголовков и однострочных подписей, где обычный line-height/930 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 940: 48px / 41px / 34px. Для заголовков и однострочных подписей, где обычный line-height/940 даёт лишний воздух. */
   --awds-typography-line-height-compact-940-desktop: 48px;
   --awds-typography-line-height-compact-940-tablet: 41px;
   --awds-typography-line-height-compact-940-mobile: 34px;
-  --awds-typography-line-height-compact-940: var(--awds-typography-line-height-compact-940-desktop);
+  --awds-typography-line-height-compact-940: var(--awds-typography-line-height-compact-940-desktop);  /* Плотный интерлиньяж ступени 940: 48px / 41px / 34px. Для заголовков и однострочных подписей, где обычный line-height/940 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 950: 58px / 48px / 36px. Для заголовков и однострочных подписей, где обычный line-height/950 даёт лишний воздух. */
   --awds-typography-line-height-compact-950-desktop: 58px;
   --awds-typography-line-height-compact-950-tablet: 48px;
   --awds-typography-line-height-compact-950-mobile: 36px;
-  --awds-typography-line-height-compact-950: var(--awds-typography-line-height-compact-950-desktop);
+  --awds-typography-line-height-compact-950: var(--awds-typography-line-height-compact-950-desktop);  /* Плотный интерлиньяж ступени 950: 58px / 48px / 36px. Для заголовков и однострочных подписей, где обычный line-height/950 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 960: 62px / 58px / 38px. Для заголовков и однострочных подписей, где обычный line-height/960 даёт лишний воздух. */
   --awds-typography-line-height-compact-960-desktop: 62px;
   --awds-typography-line-height-compact-960-tablet: 58px;
   --awds-typography-line-height-compact-960-mobile: 38px;
-  --awds-typography-line-height-compact-960: var(--awds-typography-line-height-compact-960-desktop);
+  --awds-typography-line-height-compact-960: var(--awds-typography-line-height-compact-960-desktop);  /* Плотный интерлиньяж ступени 960: 62px / 58px / 38px. Для заголовков и однострочных подписей, где обычный line-height/960 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 970: 70px / 62px / 41px. Для заголовков и однострочных подписей, где обычный line-height/970 даёт лишний воздух. */
   --awds-typography-line-height-compact-970-desktop: 70px;
   --awds-typography-line-height-compact-970-tablet: 62px;
   --awds-typography-line-height-compact-970-mobile: 41px;
-  --awds-typography-line-height-compact-970: var(--awds-typography-line-height-compact-970-desktop);
+  --awds-typography-line-height-compact-970: var(--awds-typography-line-height-compact-970-desktop);  /* Плотный интерлиньяж ступени 970: 70px / 62px / 41px. Для заголовков и однострочных подписей, где обычный line-height/970 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 980: 77px / 70px / 48px. Для заголовков и однострочных подписей, где обычный line-height/980 даёт лишний воздух. */
   --awds-typography-line-height-compact-980-desktop: 77px;
   --awds-typography-line-height-compact-980-tablet: 70px;
   --awds-typography-line-height-compact-980-mobile: 48px;
-  --awds-typography-line-height-compact-980: var(--awds-typography-line-height-compact-980-desktop);
+  --awds-typography-line-height-compact-980: var(--awds-typography-line-height-compact-980-desktop);  /* Плотный интерлиньяж ступени 980: 77px / 70px / 48px. Для заголовков и однострочных подписей, где обычный line-height/980 даёт лишний воздух. */
+  /* Плотный интерлиньяж ступени 1000: 84px / 76px / 58px. Для заголовков и однострочных подписей, где обычный line-height/1000 даёт лишний воздух. */
   --awds-typography-line-height-compact-1000-desktop: 84px;
   --awds-typography-line-height-compact-1000-tablet: 76px;
   --awds-typography-line-height-compact-1000-mobile: 58px;
-  --awds-typography-line-height-compact-1000: var(--awds-typography-line-height-compact-1000-desktop);
+  --awds-typography-line-height-compact-1000: var(--awds-typography-line-height-compact-1000-desktop);  /* Плотный интерлиньяж ступени 1000: 84px / 76px / 58px. Для заголовков и однострочных подписей, где обычный line-height/1000 даёт лишний воздух. */
+  /* Межбуквенный интервал ступени 50: 0.3px / 0.3px / 0.3px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-50-desktop: 0.3px;
   --awds-typography-letter-spacing-50-tablet: 0.3px;
   --awds-typography-letter-spacing-50-mobile: 0.3px;
-  --awds-typography-letter-spacing-50: var(--awds-typography-letter-spacing-50-desktop);
+  --awds-typography-letter-spacing-50: var(--awds-typography-letter-spacing-50-desktop);  /* Межбуквенный интервал ступени 50: 0.3px / 0.3px / 0.3px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 100: 0.2px / 0.2px / 0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-100-desktop: 0.2px;
   --awds-typography-letter-spacing-100-tablet: 0.2px;
   --awds-typography-letter-spacing-100-mobile: 0.2px;
-  --awds-typography-letter-spacing-100: var(--awds-typography-letter-spacing-100-desktop);
+  --awds-typography-letter-spacing-100: var(--awds-typography-letter-spacing-100-desktop);  /* Межбуквенный интервал ступени 100: 0.2px / 0.2px / 0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 200: 0.1px / 0.1px / 0.1px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-200-desktop: 0.1px;
   --awds-typography-letter-spacing-200-tablet: 0.1px;
   --awds-typography-letter-spacing-200-mobile: 0.1px;
-  --awds-typography-letter-spacing-200: var(--awds-typography-letter-spacing-200-desktop);
+  --awds-typography-letter-spacing-200: var(--awds-typography-letter-spacing-200-desktop);  /* Межбуквенный интервал ступени 200: 0.1px / 0.1px / 0.1px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 300: 0.1px / 0.1px / 0.1px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-300-desktop: 0.1px;
   --awds-typography-letter-spacing-300-tablet: 0.1px;
   --awds-typography-letter-spacing-300-mobile: 0.1px;
-  --awds-typography-letter-spacing-300: var(--awds-typography-letter-spacing-300-desktop);
+  --awds-typography-letter-spacing-300: var(--awds-typography-letter-spacing-300-desktop);  /* Межбуквенный интервал ступени 300: 0.1px / 0.1px / 0.1px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 400: 0px / 0px / 0px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-400-desktop: 0px;
   --awds-typography-letter-spacing-400-tablet: 0px;
   --awds-typography-letter-spacing-400-mobile: 0px;
-  --awds-typography-letter-spacing-400: var(--awds-typography-letter-spacing-400-desktop);
+  --awds-typography-letter-spacing-400: var(--awds-typography-letter-spacing-400-desktop);  /* Межбуквенный интервал ступени 400: 0px / 0px / 0px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 500: 0px / 0px / 0px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-500-desktop: 0px;
   --awds-typography-letter-spacing-500-tablet: 0px;
   --awds-typography-letter-spacing-500-mobile: 0px;
-  --awds-typography-letter-spacing-500: var(--awds-typography-letter-spacing-500-desktop);
+  --awds-typography-letter-spacing-500: var(--awds-typography-letter-spacing-500-desktop);  /* Межбуквенный интервал ступени 500: 0px / 0px / 0px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 600: 0px / 0px / 0px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-600-desktop: 0px;
   --awds-typography-letter-spacing-600-tablet: 0px;
   --awds-typography-letter-spacing-600-mobile: 0px;
-  --awds-typography-letter-spacing-600: var(--awds-typography-letter-spacing-600-desktop);
+  --awds-typography-letter-spacing-600: var(--awds-typography-letter-spacing-600-desktop);  /* Межбуквенный интервал ступени 600: 0px / 0px / 0px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 700: -0.1px / -0.1px / -0.1px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-700-desktop: -0.1px;
   --awds-typography-letter-spacing-700-tablet: -0.1px;
   --awds-typography-letter-spacing-700-mobile: -0.1px;
-  --awds-typography-letter-spacing-700: var(--awds-typography-letter-spacing-700-desktop);
+  --awds-typography-letter-spacing-700: var(--awds-typography-letter-spacing-700-desktop);  /* Межбуквенный интервал ступени 700: -0.1px / -0.1px / -0.1px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 800: -0.2px / -0.2px / -0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-800-desktop: -0.2px;
   --awds-typography-letter-spacing-800-tablet: -0.2px;
   --awds-typography-letter-spacing-800-mobile: -0.2px;
-  --awds-typography-letter-spacing-800: var(--awds-typography-letter-spacing-800-desktop);
+  --awds-typography-letter-spacing-800: var(--awds-typography-letter-spacing-800-desktop);  /* Межбуквенный интервал ступени 800: -0.2px / -0.2px / -0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 900: -0.2px / -0.2px / -0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-900-desktop: -0.2px;
   --awds-typography-letter-spacing-900-tablet: -0.2px;
   --awds-typography-letter-spacing-900-mobile: -0.2px;
-  --awds-typography-letter-spacing-900: var(--awds-typography-letter-spacing-900-desktop);
+  --awds-typography-letter-spacing-900: var(--awds-typography-letter-spacing-900-desktop);  /* Межбуквенный интервал ступени 900: -0.2px / -0.2px / -0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 910: -0.2px / -0.2px / -0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-910-desktop: -0.2px;
   --awds-typography-letter-spacing-910-tablet: -0.2px;
   --awds-typography-letter-spacing-910-mobile: -0.2px;
-  --awds-typography-letter-spacing-910: var(--awds-typography-letter-spacing-910-desktop);
+  --awds-typography-letter-spacing-910: var(--awds-typography-letter-spacing-910-desktop);  /* Межбуквенный интервал ступени 910: -0.2px / -0.2px / -0.2px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 920: -0.3px / -0.3px / -0.3px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-920-desktop: -0.3px;
   --awds-typography-letter-spacing-920-tablet: -0.3px;
   --awds-typography-letter-spacing-920-mobile: -0.3px;
-  --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-desktop);
+  --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-desktop);  /* Межбуквенный интервал ступени 920: -0.3px / -0.3px / -0.3px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 930: -0.4px / -0.4px / -0.4px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-930-desktop: -0.4px;
   --awds-typography-letter-spacing-930-tablet: -0.4px;
   --awds-typography-letter-spacing-930-mobile: -0.4px;
-  --awds-typography-letter-spacing-930: var(--awds-typography-letter-spacing-930-desktop);
+  --awds-typography-letter-spacing-930: var(--awds-typography-letter-spacing-930-desktop);  /* Межбуквенный интервал ступени 930: -0.4px / -0.4px / -0.4px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 940: -0.5px / -0.5px / -0.5px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-940-desktop: -0.5px;
   --awds-typography-letter-spacing-940-tablet: -0.5px;
   --awds-typography-letter-spacing-940-mobile: -0.5px;
-  --awds-typography-letter-spacing-940: var(--awds-typography-letter-spacing-940-desktop);
+  --awds-typography-letter-spacing-940: var(--awds-typography-letter-spacing-940-desktop);  /* Межбуквенный интервал ступени 940: -0.5px / -0.5px / -0.5px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 950: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-950-desktop: -0.6px;
   --awds-typography-letter-spacing-950-tablet: -0.6px;
   --awds-typography-letter-spacing-950-mobile: -0.6px;
-  --awds-typography-letter-spacing-950: var(--awds-typography-letter-spacing-950-desktop);
+  --awds-typography-letter-spacing-950: var(--awds-typography-letter-spacing-950-desktop);  /* Межбуквенный интервал ступени 950: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 960: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-960-desktop: -0.6px;
   --awds-typography-letter-spacing-960-tablet: -0.6px;
   --awds-typography-letter-spacing-960-mobile: -0.6px;
-  --awds-typography-letter-spacing-960: var(--awds-typography-letter-spacing-960-desktop);
+  --awds-typography-letter-spacing-960: var(--awds-typography-letter-spacing-960-desktop);  /* Межбуквенный интервал ступени 960: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 970: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-970-desktop: -0.6px;
   --awds-typography-letter-spacing-970-tablet: -0.6px;
   --awds-typography-letter-spacing-970-mobile: -0.6px;
-  --awds-typography-letter-spacing-970: var(--awds-typography-letter-spacing-970-desktop);
+  --awds-typography-letter-spacing-970: var(--awds-typography-letter-spacing-970-desktop);  /* Межбуквенный интервал ступени 970: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 980: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-980-desktop: -0.6px;
   --awds-typography-letter-spacing-980-tablet: -0.6px;
   --awds-typography-letter-spacing-980-mobile: -0.6px;
-  --awds-typography-letter-spacing-980: var(--awds-typography-letter-spacing-980-desktop);
+  --awds-typography-letter-spacing-980: var(--awds-typography-letter-spacing-980-desktop);  /* Межбуквенный интервал ступени 980: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Межбуквенный интервал ступени 1000: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
   --awds-typography-letter-spacing-1000-desktop: -0.6px;
   --awds-typography-letter-spacing-1000-tablet: -0.6px;
   --awds-typography-letter-spacing-1000-mobile: -0.6px;
-  --awds-typography-letter-spacing-1000: var(--awds-typography-letter-spacing-1000-desktop);
+  --awds-typography-letter-spacing-1000: var(--awds-typography-letter-spacing-1000-desktop);  /* Межбуквенный интервал ступени 1000: -0.6px / -0.6px / -0.6px. Крупные ступени идут в минус — это компенсация кегля, а не стиль. */
+  /* Кегль роли текста h1. Ступени typography по модам масштаба: small → font-size/920, medium → font-size/930, large → font-size/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-h1-medium: var(--awds-typography-font-size-930);
   --awds-wysiwyg-font-size-h1-small: var(--awds-typography-font-size-920);
   --awds-wysiwyg-font-size-h1-large: var(--awds-typography-font-size-940);
-  --awds-wysiwyg-font-size-h1: var(--awds-wysiwyg-font-size-h1-medium);
+  --awds-wysiwyg-font-size-h1: var(--awds-wysiwyg-font-size-h1-medium);  /* Кегль роли текста h1. Ступени typography по модам масштаба: small → font-size/920, medium → font-size/930, large → font-size/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста h2. Ступени typography по модам масштаба: small → font-size/910, medium → font-size/920, large → font-size/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-h2-medium: var(--awds-typography-font-size-920);
   --awds-wysiwyg-font-size-h2-small: var(--awds-typography-font-size-910);
   --awds-wysiwyg-font-size-h2-large: var(--awds-typography-font-size-930);
-  --awds-wysiwyg-font-size-h2: var(--awds-wysiwyg-font-size-h2-medium);
+  --awds-wysiwyg-font-size-h2: var(--awds-wysiwyg-font-size-h2-medium);  /* Кегль роли текста h2. Ступени typography по модам масштаба: small → font-size/910, medium → font-size/920, large → font-size/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста h3. Ступени typography по модам масштаба: small → font-size/900, medium → font-size/910, large → font-size/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-h3-medium: var(--awds-typography-font-size-910);
   --awds-wysiwyg-font-size-h3-small: var(--awds-typography-font-size-900);
   --awds-wysiwyg-font-size-h3-large: var(--awds-typography-font-size-920);
-  --awds-wysiwyg-font-size-h3: var(--awds-wysiwyg-font-size-h3-medium);
+  --awds-wysiwyg-font-size-h3: var(--awds-wysiwyg-font-size-h3-medium);  /* Кегль роли текста h3. Ступени typography по модам масштаба: small → font-size/900, medium → font-size/910, large → font-size/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста h4. Ступени typography по модам масштаба: small → font-size/800, medium → font-size/900, large → font-size/910. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-h4-medium: var(--awds-typography-font-size-900);
   --awds-wysiwyg-font-size-h4-small: var(--awds-typography-font-size-800);
   --awds-wysiwyg-font-size-h4-large: var(--awds-typography-font-size-910);
-  --awds-wysiwyg-font-size-h4: var(--awds-wysiwyg-font-size-h4-medium);
+  --awds-wysiwyg-font-size-h4: var(--awds-wysiwyg-font-size-h4-medium);  /* Кегль роли текста h4. Ступени typography по модам масштаба: small → font-size/800, medium → font-size/900, large → font-size/910. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста h5. Ступени typography по модам масштаба: small → font-size/600, medium → font-size/700, large → font-size/800. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-h5-medium: var(--awds-typography-font-size-700);
   --awds-wysiwyg-font-size-h5-small: var(--awds-typography-font-size-600);
   --awds-wysiwyg-font-size-h5-large: var(--awds-typography-font-size-800);
-  --awds-wysiwyg-font-size-h5: var(--awds-wysiwyg-font-size-h5-medium);
+  --awds-wysiwyg-font-size-h5: var(--awds-wysiwyg-font-size-h5-medium);  /* Кегль роли текста h5. Ступени typography по модам масштаба: small → font-size/600, medium → font-size/700, large → font-size/800. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста h6. Ступени typography по модам масштаба: small → font-size/400, medium → font-size/600, large → font-size/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-h6-medium: var(--awds-typography-font-size-600);
   --awds-wysiwyg-font-size-h6-small: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-h6-large: var(--awds-typography-font-size-700);
-  --awds-wysiwyg-font-size-h6: var(--awds-wysiwyg-font-size-h6-medium);
+  --awds-wysiwyg-font-size-h6: var(--awds-wysiwyg-font-size-h6-medium);  /* Кегль роли текста h6. Ступени typography по модам масштаба: small → font-size/400, medium → font-size/600, large → font-size/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста lead. Ступени typography по модам масштаба: small → font-size/600, medium → font-size/800, large → font-size/900. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-lead-medium: var(--awds-typography-font-size-800);
   --awds-wysiwyg-font-size-lead-small: var(--awds-typography-font-size-600);
   --awds-wysiwyg-font-size-lead-large: var(--awds-typography-font-size-900);
-  --awds-wysiwyg-font-size-lead: var(--awds-wysiwyg-font-size-lead-medium);
+  --awds-wysiwyg-font-size-lead: var(--awds-wysiwyg-font-size-lead-medium);  /* Кегль роли текста lead. Ступени typography по модам масштаба: small → font-size/600, medium → font-size/800, large → font-size/900. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста body. Ступени typography по модам масштаба: small → font-size/400, medium → font-size/600, large → font-size/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-body-medium: var(--awds-typography-font-size-600);
   --awds-wysiwyg-font-size-body-small: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-body-large: var(--awds-typography-font-size-700);
-  --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-medium);
+  --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-medium);  /* Кегль роли текста body. Ступени typography по модам масштаба: small → font-size/400, medium → font-size/600, large → font-size/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста code. Ступени typography по модам масштаба: small → font-size/400, medium → font-size/600, large → font-size/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-code-medium: var(--awds-typography-font-size-600);
   --awds-wysiwyg-font-size-code-small: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-code-large: var(--awds-typography-font-size-700);
-  --awds-wysiwyg-font-size-code: var(--awds-wysiwyg-font-size-code-medium);
+  --awds-wysiwyg-font-size-code: var(--awds-wysiwyg-font-size-code-medium);  /* Кегль роли текста code. Ступени typography по модам масштаба: small → font-size/400, medium → font-size/600, large → font-size/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста quote. Ступени typography по модам масштаба: small → font-size/800, medium → font-size/910, large → font-size/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-quote-medium: var(--awds-typography-font-size-910);
   --awds-wysiwyg-font-size-quote-small: var(--awds-typography-font-size-800);
   --awds-wysiwyg-font-size-quote-large: var(--awds-typography-font-size-930);
-  --awds-wysiwyg-font-size-quote: var(--awds-wysiwyg-font-size-quote-medium);
+  --awds-wysiwyg-font-size-quote: var(--awds-wysiwyg-font-size-quote-medium);  /* Кегль роли текста quote. Ступени typography по модам масштаба: small → font-size/800, medium → font-size/910, large → font-size/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста caption. Ступени typography по модам масштаба: small → font-size/200, medium → font-size/300, large → font-size/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-caption-medium: var(--awds-typography-font-size-300);
   --awds-wysiwyg-font-size-caption-small: var(--awds-typography-font-size-200);
   --awds-wysiwyg-font-size-caption-large: var(--awds-typography-font-size-400);
-  --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);
+  --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);  /* Кегль роли текста caption. Ступени typography по модам масштаба: small → font-size/200, medium → font-size/300, large → font-size/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Кегль роли текста price-listing. Ступени typography по модам масштаба: small → font-size/900, medium → font-size/910, large → font-size/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-font-size-price-listing-medium: var(--awds-typography-font-size-910);
   --awds-wysiwyg-font-size-price-listing-small: var(--awds-typography-font-size-900);
   --awds-wysiwyg-font-size-price-listing-large: var(--awds-typography-font-size-920);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-medium);
+  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-medium);  /* Кегль роли текста price-listing. Ступени typography по модам масштаба: small → font-size/900, medium → font-size/910, large → font-size/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста h1. Ступени typography по модам масштаба: small → line-height-compact/920, medium → line-height-compact/920, large → line-height-compact/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-h1-medium: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-line-height-h1-small: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-line-height-h1-large: var(--awds-typography-line-height-compact-940);
-  --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-medium);
+  --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-medium);  /* Интерлиньяж роли текста h1. Ступени typography по модам масштаба: small → line-height-compact/920, medium → line-height-compact/920, large → line-height-compact/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста h2. Ступени typography по модам масштаба: small → line-height-compact/910, medium → line-height-compact/920, large → line-height-compact/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-h2-medium: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-line-height-h2-small: var(--awds-typography-line-height-compact-910);
   --awds-wysiwyg-line-height-h2-large: var(--awds-typography-line-height-compact-930);
-  --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-medium);
+  --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-medium);  /* Интерлиньяж роли текста h2. Ступени typography по модам масштаба: small → line-height-compact/910, medium → line-height-compact/920, large → line-height-compact/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста h3. Ступени typography по модам масштаба: small → line-height-compact/900, medium → line-height-compact/910, large → line-height-compact/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-h3-medium: var(--awds-typography-line-height-compact-910);
   --awds-wysiwyg-line-height-h3-small: var(--awds-typography-line-height-compact-900);
   --awds-wysiwyg-line-height-h3-large: var(--awds-typography-line-height-compact-920);
-  --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-medium);
+  --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-medium);  /* Интерлиньяж роли текста h3. Ступени typography по модам масштаба: small → line-height-compact/900, medium → line-height-compact/910, large → line-height-compact/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста h4. Ступени typography по модам масштаба: small → line-height-compact/800, medium → line-height-compact/900, large → line-height-compact/910. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-h4-medium: var(--awds-typography-line-height-compact-900);
   --awds-wysiwyg-line-height-h4-small: var(--awds-typography-line-height-compact-800);
   --awds-wysiwyg-line-height-h4-large: var(--awds-typography-line-height-compact-910);
-  --awds-wysiwyg-line-height-h4: var(--awds-wysiwyg-line-height-h4-medium);
+  --awds-wysiwyg-line-height-h4: var(--awds-wysiwyg-line-height-h4-medium);  /* Интерлиньяж роли текста h4. Ступени typography по модам масштаба: small → line-height-compact/800, medium → line-height-compact/900, large → line-height-compact/910. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста h5. Ступени typography по модам масштаба: small → line-height-compact/600, medium → line-height-compact/700, large → line-height-compact/800. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-h5-medium: var(--awds-typography-line-height-compact-700);
   --awds-wysiwyg-line-height-h5-small: var(--awds-typography-line-height-compact-600);
   --awds-wysiwyg-line-height-h5-large: var(--awds-typography-line-height-compact-800);
-  --awds-wysiwyg-line-height-h5: var(--awds-wysiwyg-line-height-h5-medium);
+  --awds-wysiwyg-line-height-h5: var(--awds-wysiwyg-line-height-h5-medium);  /* Интерлиньяж роли текста h5. Ступени typography по модам масштаба: small → line-height-compact/600, medium → line-height-compact/700, large → line-height-compact/800. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста h6. Ступени typography по модам масштаба: small → line-height-compact/400, medium → line-height-compact/600, large → line-height-compact/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-h6-medium: var(--awds-typography-line-height-compact-600);
   --awds-wysiwyg-line-height-h6-small: var(--awds-typography-line-height-compact-400);
   --awds-wysiwyg-line-height-h6-large: var(--awds-typography-line-height-compact-700);
-  --awds-wysiwyg-line-height-h6: var(--awds-wysiwyg-line-height-h6-medium);
+  --awds-wysiwyg-line-height-h6: var(--awds-wysiwyg-line-height-h6-medium);  /* Интерлиньяж роли текста h6. Ступени typography по модам масштаба: small → line-height-compact/400, medium → line-height-compact/600, large → line-height-compact/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста lead. Ступени typography по модам масштаба: small → line-height/600, medium → line-height/800, large → line-height/900. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-lead-medium: var(--awds-typography-line-height-800);
   --awds-wysiwyg-line-height-lead-small: var(--awds-typography-line-height-600);
   --awds-wysiwyg-line-height-lead-large: var(--awds-typography-line-height-900);
-  --awds-wysiwyg-line-height-lead: var(--awds-wysiwyg-line-height-lead-medium);
+  --awds-wysiwyg-line-height-lead: var(--awds-wysiwyg-line-height-lead-medium);  /* Интерлиньяж роли текста lead. Ступени typography по модам масштаба: small → line-height/600, medium → line-height/800, large → line-height/900. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста body. Ступени typography по модам масштаба: small → line-height/400, medium → line-height/600, large → line-height/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-body-medium: var(--awds-typography-line-height-600);
   --awds-wysiwyg-line-height-body-small: var(--awds-typography-line-height-400);
   --awds-wysiwyg-line-height-body-large: var(--awds-typography-line-height-700);
-  --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-medium);
+  --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-medium);  /* Интерлиньяж роли текста body. Ступени typography по модам масштаба: small → line-height/400, medium → line-height/600, large → line-height/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста code. Ступени typography по модам масштаба: small → line-height/400, medium → line-height/600, large → line-height/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-code-medium: var(--awds-typography-line-height-600);
   --awds-wysiwyg-line-height-code-small: var(--awds-typography-line-height-400);
   --awds-wysiwyg-line-height-code-large: var(--awds-typography-line-height-700);
-  --awds-wysiwyg-line-height-code: var(--awds-wysiwyg-line-height-code-medium);
+  --awds-wysiwyg-line-height-code: var(--awds-wysiwyg-line-height-code-medium);  /* Интерлиньяж роли текста code. Ступени typography по модам масштаба: small → line-height/400, medium → line-height/600, large → line-height/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста quote. Ступени typography по модам масштаба: small → line-height/800, medium → line-height/910, large → line-height/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-quote-medium: var(--awds-typography-line-height-910);
   --awds-wysiwyg-line-height-quote-small: var(--awds-typography-line-height-800);
   --awds-wysiwyg-line-height-quote-large: var(--awds-typography-line-height-930);
-  --awds-wysiwyg-line-height-quote: var(--awds-wysiwyg-line-height-quote-medium);
+  --awds-wysiwyg-line-height-quote: var(--awds-wysiwyg-line-height-quote-medium);  /* Интерлиньяж роли текста quote. Ступени typography по модам масштаба: small → line-height/800, medium → line-height/910, large → line-height/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста caption. Ступени typography по модам масштаба: small → line-height/200, medium → line-height/300, large → line-height/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-caption-medium: var(--awds-typography-line-height-300);
   --awds-wysiwyg-line-height-caption-small: var(--awds-typography-line-height-200);
   --awds-wysiwyg-line-height-caption-large: var(--awds-typography-line-height-400);
-  --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);
+  --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);  /* Интерлиньяж роли текста caption. Ступени typography по модам масштаба: small → line-height/200, medium → line-height/300, large → line-height/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Интерлиньяж роли текста price-listing. Ступени typography по модам масштаба: small → line-height-compact/900, medium → line-height-compact/910, large → line-height-compact/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-price-listing-medium: var(--awds-typography-line-height-compact-910);
   --awds-wysiwyg-line-height-price-listing-small: var(--awds-typography-line-height-compact-900);
   --awds-wysiwyg-line-height-price-listing-large: var(--awds-typography-line-height-compact-920);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-medium);
+  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-medium);  /* Интерлиньяж роли текста price-listing. Ступени typography по модам масштаба: small → line-height-compact/900, medium → line-height-compact/910, large → line-height-compact/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста h1. Ступени typography по модам масштаба: small → letter-spacing/920, medium → letter-spacing/920, large → letter-spacing/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-h1-medium: var(--awds-typography-letter-spacing-920);
   --awds-wysiwyg-letter-spacing-h1-small: var(--awds-typography-letter-spacing-920);
   --awds-wysiwyg-letter-spacing-h1-large: var(--awds-typography-letter-spacing-940);
-  --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-medium);
+  --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-medium);  /* Межбуквенный интервал роли текста h1. Ступени typography по модам масштаба: small → letter-spacing/920, medium → letter-spacing/920, large → letter-spacing/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста h2. Ступени typography по модам масштаба: small → letter-spacing/910, medium → letter-spacing/920, large → letter-spacing/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-h2-medium: var(--awds-typography-letter-spacing-920);
   --awds-wysiwyg-letter-spacing-h2-small: var(--awds-typography-letter-spacing-910);
   --awds-wysiwyg-letter-spacing-h2-large: var(--awds-typography-letter-spacing-930);
-  --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-medium);
+  --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-medium);  /* Межбуквенный интервал роли текста h2. Ступени typography по модам масштаба: small → letter-spacing/910, medium → letter-spacing/920, large → letter-spacing/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста h3. Ступени typography по модам масштаба: small → letter-spacing/900, medium → letter-spacing/910, large → letter-spacing/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-h3-medium: var(--awds-typography-letter-spacing-910);
   --awds-wysiwyg-letter-spacing-h3-small: var(--awds-typography-letter-spacing-900);
   --awds-wysiwyg-letter-spacing-h3-large: var(--awds-typography-letter-spacing-920);
-  --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-medium);
+  --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-medium);  /* Межбуквенный интервал роли текста h3. Ступени typography по модам масштаба: small → letter-spacing/900, medium → letter-spacing/910, large → letter-spacing/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста h4. Ступени typography по модам масштаба: small → letter-spacing/800, medium → letter-spacing/900, large → letter-spacing/910. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-h4-medium: var(--awds-typography-letter-spacing-900);
   --awds-wysiwyg-letter-spacing-h4-small: var(--awds-typography-letter-spacing-800);
   --awds-wysiwyg-letter-spacing-h4-large: var(--awds-typography-letter-spacing-910);
-  --awds-wysiwyg-letter-spacing-h4: var(--awds-wysiwyg-letter-spacing-h4-medium);
+  --awds-wysiwyg-letter-spacing-h4: var(--awds-wysiwyg-letter-spacing-h4-medium);  /* Межбуквенный интервал роли текста h4. Ступени typography по модам масштаба: small → letter-spacing/800, medium → letter-spacing/900, large → letter-spacing/910. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста h5. Ступени typography по модам масштаба: small → letter-spacing/600, medium → letter-spacing/700, large → letter-spacing/800. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-h5-medium: var(--awds-typography-letter-spacing-700);
   --awds-wysiwyg-letter-spacing-h5-small: var(--awds-typography-letter-spacing-600);
   --awds-wysiwyg-letter-spacing-h5-large: var(--awds-typography-letter-spacing-800);
-  --awds-wysiwyg-letter-spacing-h5: var(--awds-wysiwyg-letter-spacing-h5-medium);
+  --awds-wysiwyg-letter-spacing-h5: var(--awds-wysiwyg-letter-spacing-h5-medium);  /* Межбуквенный интервал роли текста h5. Ступени typography по модам масштаба: small → letter-spacing/600, medium → letter-spacing/700, large → letter-spacing/800. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста h6. Ступени typography по модам масштаба: small → letter-spacing/400, medium → letter-spacing/600, large → letter-spacing/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-h6-medium: var(--awds-typography-letter-spacing-600);
   --awds-wysiwyg-letter-spacing-h6-small: var(--awds-typography-letter-spacing-400);
   --awds-wysiwyg-letter-spacing-h6-large: var(--awds-typography-letter-spacing-700);
-  --awds-wysiwyg-letter-spacing-h6: var(--awds-wysiwyg-letter-spacing-h6-medium);
+  --awds-wysiwyg-letter-spacing-h6: var(--awds-wysiwyg-letter-spacing-h6-medium);  /* Межбуквенный интервал роли текста h6. Ступени typography по модам масштаба: small → letter-spacing/400, medium → letter-spacing/600, large → letter-spacing/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста lead. Ступени typography по модам масштаба: small → letter-spacing/600, medium → letter-spacing/800, large → letter-spacing/900. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-lead-medium: var(--awds-typography-letter-spacing-800);
   --awds-wysiwyg-letter-spacing-lead-small: var(--awds-typography-letter-spacing-600);
   --awds-wysiwyg-letter-spacing-lead-large: var(--awds-typography-letter-spacing-900);
-  --awds-wysiwyg-letter-spacing-lead: var(--awds-wysiwyg-letter-spacing-lead-medium);
+  --awds-wysiwyg-letter-spacing-lead: var(--awds-wysiwyg-letter-spacing-lead-medium);  /* Межбуквенный интервал роли текста lead. Ступени typography по модам масштаба: small → letter-spacing/600, medium → letter-spacing/800, large → letter-spacing/900. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста body. Ступени typography по модам масштаба: small → letter-spacing/400, medium → letter-spacing/600, large → letter-spacing/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-body-medium: var(--awds-typography-letter-spacing-600);
   --awds-wysiwyg-letter-spacing-body-small: var(--awds-typography-letter-spacing-400);
   --awds-wysiwyg-letter-spacing-body-large: var(--awds-typography-letter-spacing-700);
-  --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-medium);
+  --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-medium);  /* Межбуквенный интервал роли текста body. Ступени typography по модам масштаба: small → letter-spacing/400, medium → letter-spacing/600, large → letter-spacing/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста code. Ступени typography по модам масштаба: small → letter-spacing/400, medium → letter-spacing/600, large → letter-spacing/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-code-medium: var(--awds-typography-letter-spacing-600);
   --awds-wysiwyg-letter-spacing-code-small: var(--awds-typography-letter-spacing-400);
   --awds-wysiwyg-letter-spacing-code-large: var(--awds-typography-letter-spacing-700);
-  --awds-wysiwyg-letter-spacing-code: var(--awds-wysiwyg-letter-spacing-code-medium);
+  --awds-wysiwyg-letter-spacing-code: var(--awds-wysiwyg-letter-spacing-code-medium);  /* Межбуквенный интервал роли текста code. Ступени typography по модам масштаба: small → letter-spacing/400, medium → letter-spacing/600, large → letter-spacing/700. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста quote. Ступени typography по модам масштаба: small → letter-spacing/800, medium → letter-spacing/910, large → letter-spacing/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-quote-medium: var(--awds-typography-letter-spacing-910);
   --awds-wysiwyg-letter-spacing-quote-small: var(--awds-typography-letter-spacing-800);
   --awds-wysiwyg-letter-spacing-quote-large: var(--awds-typography-letter-spacing-930);
-  --awds-wysiwyg-letter-spacing-quote: var(--awds-wysiwyg-letter-spacing-quote-medium);
+  --awds-wysiwyg-letter-spacing-quote: var(--awds-wysiwyg-letter-spacing-quote-medium);  /* Межбуквенный интервал роли текста quote. Ступени typography по модам масштаба: small → letter-spacing/800, medium → letter-spacing/910, large → letter-spacing/930. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста caption. Ступени typography по модам масштаба: small → letter-spacing/200, medium → letter-spacing/300, large → letter-spacing/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-caption-medium: var(--awds-typography-letter-spacing-300);
   --awds-wysiwyg-letter-spacing-caption-small: var(--awds-typography-letter-spacing-200);
   --awds-wysiwyg-letter-spacing-caption-large: var(--awds-typography-letter-spacing-400);
-  --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-medium);
+  --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-medium);  /* Межбуквенный интервал роли текста caption. Ступени typography по модам масштаба: small → letter-spacing/200, medium → letter-spacing/300, large → letter-spacing/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Межбуквенный интервал роли текста price-listing. Ступени typography по модам масштаба: small → letter-spacing/900, medium → letter-spacing/910, large → letter-spacing/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-price-listing-medium: var(--awds-typography-letter-spacing-910);
   --awds-wysiwyg-letter-spacing-price-listing-small: var(--awds-typography-letter-spacing-900);
   --awds-wysiwyg-letter-spacing-price-listing-large: var(--awds-typography-letter-spacing-920);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-medium);
+  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-medium);  /* Межбуквенный интервал роли текста price-listing. Ступени typography по модам масштаба: small → letter-spacing/900, medium → letter-spacing/910, large → letter-spacing/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
+  /* Отступ сверху у блока внутри текста (таблица, список, цитата). По модам масштаба: small → typography/line-height-compact/920, medium → typography/line-height-compact/930, large → typography/line-height-compact/940. */
   --awds-wysiwyg-gap-block-top-medium: var(--awds-typography-line-height-compact-930);
   --awds-wysiwyg-gap-block-top-small: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-gap-block-top-large: var(--awds-typography-line-height-compact-940);
-  --awds-wysiwyg-gap-block-top: var(--awds-wysiwyg-gap-block-top-medium);
+  --awds-wysiwyg-gap-block-top: var(--awds-wysiwyg-gap-block-top-medium);  /* Отступ сверху у блока внутри текста (таблица, список, цитата). По модам масштаба: small → typography/line-height-compact/920, medium → typography/line-height-compact/930, large → typography/line-height-compact/940. */
+  /* Отступ сверху у абзаца. По модам масштаба: small → typography/line-height-compact/400, medium → typography/line-height-compact/600, large → typography/line-height-compact/700. */
   --awds-wysiwyg-gap-typo-top-medium: var(--awds-typography-line-height-compact-600);
   --awds-wysiwyg-gap-typo-top-small: var(--awds-typography-line-height-compact-400);
   --awds-wysiwyg-gap-typo-top-large: var(--awds-typography-line-height-compact-700);
-  --awds-wysiwyg-gap-typo-top: var(--awds-wysiwyg-gap-typo-top-medium);
+  --awds-wysiwyg-gap-typo-top: var(--awds-wysiwyg-gap-typo-top-medium);  /* Отступ сверху у абзаца. По модам масштаба: small → typography/line-height-compact/400, medium → typography/line-height-compact/600, large → typography/line-height-compact/700. */
+  /* Отступ сверху у пункта списка. По модам масштаба: small → typography/line-height-compact/50, medium → typography/line-height-compact/200, large → typography/line-height-compact/300. */
   --awds-wysiwyg-gap-li-top-medium: var(--awds-typography-line-height-compact-200);
   --awds-wysiwyg-gap-li-top-small: var(--awds-typography-line-height-compact-50);
   --awds-wysiwyg-gap-li-top-large: var(--awds-typography-line-height-compact-300);
-  --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-medium);
+  --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-medium);  /* Отступ сверху у пункта списка. По модам масштаба: small → typography/line-height-compact/50, medium → typography/line-height-compact/200, large → typography/line-height-compact/300. */
+  /* Вертикальный срез: на сколько поджать край текстового блока. По модам масштаба: small → typography/line-height-compact/920, medium → typography/line-height-compact/930, large → typography/line-height-compact/940. */
   --awds-wysiwyg-gap-cut-y-medium: var(--awds-typography-line-height-compact-930);
   --awds-wysiwyg-gap-cut-y-small: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-gap-cut-y-large: var(--awds-typography-line-height-compact-940);
-  --awds-wysiwyg-gap-cut-y: var(--awds-wysiwyg-gap-cut-y-medium);
+  --awds-wysiwyg-gap-cut-y: var(--awds-wysiwyg-gap-cut-y-medium);  /* Вертикальный срез: на сколько поджать край текстового блока. По модам масштаба: small → typography/line-height-compact/920, medium → typography/line-height-compact/930, large → typography/line-height-compact/940. */
+  /* Отступ сверху у заголовка h1. По модам масштаба: small → typography/line-height-compact/920, medium → typography/line-height-compact/920, large → typography/line-height-compact/940. Вертикальный ритм текста задаётся здесь, а не в блоке. */
   --awds-wysiwyg-gap-h1-medium: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-gap-h1-small: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-gap-h1-large: var(--awds-typography-line-height-compact-940);
-  --awds-wysiwyg-gap-h1: var(--awds-wysiwyg-gap-h1-medium);
+  --awds-wysiwyg-gap-h1: var(--awds-wysiwyg-gap-h1-medium);  /* Отступ сверху у заголовка h1. По модам масштаба: small → typography/line-height-compact/920, medium → typography/line-height-compact/920, large → typography/line-height-compact/940. Вертикальный ритм текста задаётся здесь, а не в блоке. */
+  /* Отступ сверху у заголовка h2. По модам масштаба: small → typography/line-height-compact/910, medium → typography/line-height-compact/920, large → typography/line-height-compact/930. Вертикальный ритм текста задаётся здесь, а не в блоке. */
   --awds-wysiwyg-gap-h2-medium: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-gap-h2-small: var(--awds-typography-line-height-compact-910);
   --awds-wysiwyg-gap-h2-large: var(--awds-typography-line-height-compact-930);
-  --awds-wysiwyg-gap-h2: var(--awds-wysiwyg-gap-h2-medium);
+  --awds-wysiwyg-gap-h2: var(--awds-wysiwyg-gap-h2-medium);  /* Отступ сверху у заголовка h2. По модам масштаба: small → typography/line-height-compact/910, medium → typography/line-height-compact/920, large → typography/line-height-compact/930. Вертикальный ритм текста задаётся здесь, а не в блоке. */
+  /* Отступ сверху у заголовка h3. По модам масштаба: small → typography/line-height-compact/900, medium → typography/line-height-compact/910, large → typography/line-height-compact/920. Вертикальный ритм текста задаётся здесь, а не в блоке. */
   --awds-wysiwyg-gap-h3-medium: var(--awds-typography-line-height-compact-910);
   --awds-wysiwyg-gap-h3-small: var(--awds-typography-line-height-compact-900);
   --awds-wysiwyg-gap-h3-large: var(--awds-typography-line-height-compact-920);
-  --awds-wysiwyg-gap-h3: var(--awds-wysiwyg-gap-h3-medium);
+  --awds-wysiwyg-gap-h3: var(--awds-wysiwyg-gap-h3-medium);  /* Отступ сверху у заголовка h3. По модам масштаба: small → typography/line-height-compact/900, medium → typography/line-height-compact/910, large → typography/line-height-compact/920. Вертикальный ритм текста задаётся здесь, а не в блоке. */
+  /* Отступ сверху у заголовка h4. По модам масштаба: small → typography/line-height-compact/800, medium → typography/line-height-compact/900, large → typography/line-height-compact/910. Вертикальный ритм текста задаётся здесь, а не в блоке. */
   --awds-wysiwyg-gap-h4-medium: var(--awds-typography-line-height-compact-900);
   --awds-wysiwyg-gap-h4-small: var(--awds-typography-line-height-compact-800);
   --awds-wysiwyg-gap-h4-large: var(--awds-typography-line-height-compact-910);
-  --awds-wysiwyg-gap-h4: var(--awds-wysiwyg-gap-h4-medium);
+  --awds-wysiwyg-gap-h4: var(--awds-wysiwyg-gap-h4-medium);  /* Отступ сверху у заголовка h4. По модам масштаба: small → typography/line-height-compact/800, medium → typography/line-height-compact/900, large → typography/line-height-compact/910. Вертикальный ритм текста задаётся здесь, а не в блоке. */
+  /* Отступ сверху у заголовка h5. По модам масштаба: small → typography/line-height-compact/600, medium → typography/line-height-compact/700, large → typography/line-height-compact/800. Вертикальный ритм текста задаётся здесь, а не в блоке. */
   --awds-wysiwyg-gap-h5-medium: var(--awds-typography-line-height-compact-700);
   --awds-wysiwyg-gap-h5-small: var(--awds-typography-line-height-compact-600);
   --awds-wysiwyg-gap-h5-large: var(--awds-typography-line-height-compact-800);
-  --awds-wysiwyg-gap-h5: var(--awds-wysiwyg-gap-h5-medium);
+  --awds-wysiwyg-gap-h5: var(--awds-wysiwyg-gap-h5-medium);  /* Отступ сверху у заголовка h5. По модам масштаба: small → typography/line-height-compact/600, medium → typography/line-height-compact/700, large → typography/line-height-compact/800. Вертикальный ритм текста задаётся здесь, а не в блоке. */
+  /* Отступ сверху у заголовка h6. По модам масштаба: small → typography/line-height-compact/400, medium → typography/line-height-compact/600, large → typography/line-height-compact/700. Вертикальный ритм текста задаётся здесь, а не в блоке. */
   --awds-wysiwyg-gap-h6-medium: var(--awds-typography-line-height-compact-600);
   --awds-wysiwyg-gap-h6-small: var(--awds-typography-line-height-compact-400);
   --awds-wysiwyg-gap-h6-large: var(--awds-typography-line-height-compact-700);
-  --awds-wysiwyg-gap-h6: var(--awds-wysiwyg-gap-h6-medium);
-  --awds-font-family-system: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --awds-font-family-heading: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --awds-font-family-code: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  --awds-font-weight-light: 300;
-  --awds-font-weight-regular: 400;
-  --awds-font-weight-medium: 500;
-  --awds-font-weight-semibold: 600;
-  --awds-font-weight-bold: 700;
+  --awds-wysiwyg-gap-h6: var(--awds-wysiwyg-gap-h6-medium);  /* Отступ сверху у заголовка h6. По модам масштаба: small → typography/line-height-compact/400, medium → typography/line-height-compact/600, large → typography/line-height-compact/700. Вертикальный ритм текста задаётся здесь, а не в блоке. */
+  /* Системный стек шрифтов для основного текста интерфейса. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
+  --awds-font-family-system: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Системный стек шрифтов для основного текста интерфейса. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
+  /* Системный стек шрифтов для заголовков. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
+  --awds-font-family-heading: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Системный стек шрифтов для заголовков. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
+  /* Системный стек шрифтов для моноширинного текста и кода. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
+  --awds-font-family-code: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;  /* Системный стек шрифтов для моноширинного текста и кода. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
+  /* Начертание light: 300. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  --awds-font-weight-light: 300;  /* Начертание light: 300. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  /* Начертание regular: 400. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  --awds-font-weight-regular: 400;  /* Начертание regular: 400. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  /* Начертание medium: 500. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  --awds-font-weight-medium: 500;  /* Начертание medium: 500. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  /* Начертание semibold: 600. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  --awds-font-weight-semibold: 600;  /* Начертание semibold: 600. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  /* Начертание bold: 700. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
+  --awds-font-weight-bold: 700;  /* Начертание bold: 700. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */
 }
 
 .theme-light {
