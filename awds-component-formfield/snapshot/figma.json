@@ -171,5 +171,6 @@
   "debts": [
     "привязка макета к новой ячейке label/description ждёт перепубликации библиотеки 📜 tokens ↪ studio"
   ],
-  "synced": "2026-09-17"
+  "synced": "2026-09-17",
+  "_label_description_debt_closed": "ЗАКРЫТО 21.09.2026. Три текста описания в наборе . / description переведены с прямой роли surface/on-high на ячейку state/label/description (importVariableByKeyAsync по ключу из figma-variable-keys.json). Цвет на канве 43,43,43 → 38,38,38 — это не сдвиг вида, а приход к актуальной теме: снапшот studio-vars.css в репозитории отставал и описывал прежнюю жёлтую палитру."
 }
