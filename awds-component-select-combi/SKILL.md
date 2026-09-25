@@ -52,7 +52,7 @@ description: Select Combi ArrowDS (.scombi).
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg/chroma/border/текст/метка/шеврон/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-combi-default.css` |
+| Цвета состояний (bg/border/текст/метка/шеврон/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-combi-default.css` |
 | Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста и метки | `var(--awds-rectangle-{N}-text-gap)`, а со слотом — `padding` | Figma: проп `Padding Icon` у `Content Combi Input` |
@@ -138,7 +138,7 @@ description: Select Combi ArrowDS (.scombi).
 **Два варианта ведут себя не как все**, и это сверено по ячейкам макета:
 
 - **ghost** — на hover и active **ничего не подсвечивается** (все три ячейки прозрачны), поэтому правил в CSS нет намеренно. С плавающей меткой он опаснее, чем у обычного селекта: в покое видны только серая метка и шеврон.
-- **light** — фокус **не меняет фон**: он и в покое `surface-bright`. Меняются chroma, рамка и цвета текста.
+- **light** — фокус **не меняет фон**: он и в покое `surface-bright`. Меняются рамка и цвета текста.
 
 У остальных четырёх при фокусе подсветка (зелёная / красная / синяя / серая) **полностью уступает брендовой** — пока пользователь в контроле, важнее «где я», а не «что со значением».
 

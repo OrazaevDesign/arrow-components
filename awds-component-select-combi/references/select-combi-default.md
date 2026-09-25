@@ -80,10 +80,10 @@
 
 | Состояние | Что меняется | Селектор |
 |---|---|---|
-| Rest | `bg secondary-container-core`, `chroma secondary-container-chroma`, рамка `secondary-container-on-low`, текст `secondary-container-on-highest`, метка и шеврон `secondary-container-on-high` | `.scombi-default` |
+| Rest | `bg secondary-container-core`, рамка `secondary-container-on-low`, текст `secondary-container-on-highest`, метка и шеврон `secondary-container-on-high` | `.scombi-default` |
 | Hover | только рамка → `secondary-container-on` | `:hover:not(:focus-within):has(.scombi__field:enabled)` |
 | Active | рамка возвращается к `secondary-container-on-low` (в макете Active = Rest; правило нужно, чтобы отменить hover при нажатии) | `:active:not(:focus-within):has(…)` |
-| Focus | `bg surface-bright`, `chroma primary-container-chroma`, рамка `primary-dim`, текст `primary-container-on-highest`, метка и шеврон `primary-container-on-high` + кольцо | `:focus-within` |
+| Focus | `bg primary-container-base`, рамка `primary-dim`, текст `primary-container-on-highest`, метка и шеврон `primary-container-on-high` + кольцо | `:focus-within` |
 | Открыт список | то же, что Focus | `@supports` + `:has(.scombi__field:open)` |
 | Disabled | Rest + `opacity: var(--awds-state-opacity-control-disabled)` | `:has(.scombi__field:disabled)` |
 
@@ -128,6 +128,6 @@
 
 ## Проверено
 
-Headless Chromium, `getComputedStyle` + `getBoundingClientRect`: 48 экземпляров (4 размера × 4 раскладки слотов × {пусто, выбрано, disabled}), 624 замера, 0 расхождений с макетом. Отдельно вживую: hover (рамка `secondary-container-on`, фон не двигается), настоящий фокус (белый фон, тёплый chroma, брендовая рамка, кольцо `rgba(250,216,20,.5)` с offset 1), раскрытый попап (панель по ширине контрола, пустой пункт скрыт, пункт 40px с заголовком 14/20 при контроле 500).
+Headless Chromium, `getComputedStyle` + `getBoundingClientRect`: 48 экземпляров (4 размера × 4 раскладки слотов × {пусто, выбрано, disabled}), 624 замера, 0 расхождений с макетом. Отдельно вживую: hover (рамка `secondary-container-on`, фон не двигается), настоящий фокус (белый фон, брендовая рамка, кольцо `rgba(250,216,20,.5)` с offset 1), раскрытый попап (панель по ширине контрола, пустой пункт скрыт, пункт 40px с заголовком 14/20 при контроле 500).
 
 Гоча замеров: цветовые аккумуляторы зарегистрированы через `@property` и анимируются — чтение `getComputedStyle` на первом кадре после `focus()` отдаёт ещё старый цвет. Мерить с задержкой ~400 мс.

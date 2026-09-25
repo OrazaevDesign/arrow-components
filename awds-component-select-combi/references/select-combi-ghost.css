@@ -110,7 +110,7 @@
 
    Цвета (map.state.*.form-control.ghost) — те же роли, что у select и input
    того же варианта: в Figma все группы ячеек ссылаются на один form-control/ghost/… :
-     Rest    bg / chroma / border ПРОЗРАЧНЫЕ (в макете #ffffff00)
+     Rest    bg / border ПРОЗРАЧНЫЕ (в макете #ffffff00)
              текст secondary-container-on-highest
              метка secondary-container-on-high   шеврон secondary-container-on-high
      Hover   = Rest, НИЧЕГО не меняется (в макете ячейка совпадает с Rest)
@@ -127,25 +127,20 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-scombi-bg, -chroma, -border, -color, -placeholder, -chevron, -icon-color
+     State: --awds-scombi-bg, -border, -color, -placeholder, -chevron, -icon-color
      Size:  --awds-scombi-padding, -icon, -rounded, -fs, -lh, -ls, -text-gap,
             -label-top, -input-top, -input-bottom, -label-fs, -label-lh, -label-ls,
             -picker-… , -opt-…
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .scombi → inherits: false.
+   bg задаётся и потребляется на .scombi → inherits: false.
    color/placeholder/chevron/icon-color задаются на .scombi, а потребляются НИЖЕ
    (в поле, в метке, в псевдоэлементе, в иконках) → inherits: true, иначе потомок
    взял бы initial-value и стал прозрачным. */
 @property --awds-scombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-scombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -216,7 +211,7 @@
   border: 0;
   border-radius: var(--awds-scombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-scombi-border);
-  background: linear-gradient(to right, var(--awds-scombi-chroma, var(--awds-scombi-bg)), var(--awds-scombi-bg));
+  background: var(--awds-scombi-bg);
   color: var(--awds-scombi-color);
   /* pointer, а не text: контрол не для ввода, а для выбора из списка. */
   cursor: pointer;
@@ -228,7 +223,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-scombi-bg 0.15s ease-out,
-              --awds-scombi-chroma 0.15s ease-out,
               --awds-scombi-color 0.15s ease-out,
               --awds-scombi-placeholder 0.15s ease-out,
               --awds-scombi-chevron 0.15s ease-out,
@@ -735,7 +729,6 @@
 .scombi-ghost {
   /* Rest (map.state.rest.form-control.ghost) */
   --awds-scombi-bg:          transparent;
-  --awds-scombi-chroma:      transparent;
   --awds-scombi-border:      transparent;
   --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/color-rest */
   --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/placeholder-rest */

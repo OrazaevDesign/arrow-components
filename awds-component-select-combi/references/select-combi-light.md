@@ -14,9 +14,9 @@
 
 ## Чем отличается
 
-Только фоном покоя: `surface-bright` вместо `secondary-container-core`, и `chroma` тоже `surface-bright` — то есть градиента в покое фактически нет.
+Только фоном покоя: `surface-bright` вместо `secondary-container-core`.
 
-Из этого следует единственное отличие в CSS: **правило фокуса не переопределяет `bg`** — он уже белый. Меняются `chroma`, рамка и цвета текста. Рамка, hover, active, кольцо фокуса — как у Default (роли `secondary-container-*`).
+Из этого следует отличие в CSS: **правило фокуса не переопределяет `bg`** — у Light он остаётся белым, тогда как Default при фокусе уходит в `primary-container-base`. Меняются рамка и цвета текста. Рамка, hover, active, кольцо фокуса — как у Default (роли `secondary-container-*`).
 
 Всё остальное — разметка с обёрткой `__body`, пустой `<option value="">`, плавающая метка, четыре размера, геометрия, стилизованный попап, доступность — совпадает с Default и описано в [select-combi-default.md](select-combi-default.md).
 

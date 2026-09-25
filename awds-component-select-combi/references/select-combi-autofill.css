@@ -110,13 +110,13 @@
 
    Цвета (map.state.*.form-control.autofill) — те же роли, что у select и input
    того же варианта: в Figma все группы ячеек ссылаются на один form-control/autofill/… :
-     Rest    bg tertiary-container-core   chroma tertiary-container-chroma
+     Rest    bg tertiary-container-core
              border tertiary-container-on-low   текст tertiary-container-on-highest
              метка tertiary-container-on-high   шеврон tertiary-container-on-high
      Hover   = Rest, но border tertiary-container-on
      Active  = Rest (правило нужно, чтобы ОТМЕНИТЬ hover-рамку при нажатии)
      Focus   уходит в БРЕНДОВУЮ подсветку целиком: bg surface-bright,
-             chroma primary-container-chroma, border primary-dim,
+, border primary-dim,
              текст primary-container-on-highest, метка и шеврон primary-container-on-high
      Disabled = Rest + opacity 40%
 
@@ -127,25 +127,20 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-scombi-bg, -chroma, -border, -color, -placeholder, -chevron, -icon-color
+     State: --awds-scombi-bg, -border, -color, -placeholder, -chevron, -icon-color
      Size:  --awds-scombi-padding, -icon, -rounded, -fs, -lh, -ls, -text-gap,
             -label-top, -input-top, -input-bottom, -label-fs, -label-lh, -label-ls,
             -picker-… , -opt-…
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .scombi → inherits: false.
+   bg задаётся и потребляется на .scombi → inherits: false.
    color/placeholder/chevron/icon-color задаются на .scombi, а потребляются НИЖЕ
    (в поле, в метке, в псевдоэлементе, в иконках) → inherits: true, иначе потомок
    взял бы initial-value и стал прозрачным. */
 @property --awds-scombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-scombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -216,7 +211,7 @@
   border: 0;
   border-radius: var(--awds-scombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-scombi-border);
-  background: linear-gradient(to right, var(--awds-scombi-chroma, var(--awds-scombi-bg)), var(--awds-scombi-bg));
+  background: var(--awds-scombi-bg);
   color: var(--awds-scombi-color);
   /* pointer, а не text: контрол не для ввода, а для выбора из списка. */
   cursor: pointer;
@@ -228,7 +223,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-scombi-bg 0.15s ease-out,
-              --awds-scombi-chroma 0.15s ease-out,
               --awds-scombi-color 0.15s ease-out,
               --awds-scombi-placeholder 0.15s ease-out,
               --awds-scombi-chevron 0.15s ease-out,
@@ -737,7 +731,6 @@
 .scombi-autofill {
   /* Rest (map.state.rest.form-control.autofill) */
   --awds-scombi-bg:          rgb(var(--tertiary-container-core));   /* #cell form-control/autofill/bg-rest */
-  --awds-scombi-chroma:      rgb(var(--tertiary-container-chroma));   /* #cell form-control/autofill/chroma-rest */
   --awds-scombi-border:      rgb(var(--tertiary-container-on-low));   /* #cell form-control/autofill/border-rest */
   --awds-scombi-color:       rgb(var(--tertiary-container-on-highest));   /* #cell form-control/autofill/color-rest */
   --awds-scombi-placeholder:   rgb(var(--tertiary-container-on-high));   /* #cell form-control/autofill/placeholder-rest */
@@ -761,8 +754,7 @@
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .scombi-autofill:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));   /* #cell form-control/autofill/bg-focus */
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   /* #cell form-control/autofill/chroma-focus */
+  --awds-scombi-bg:          rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
   --awds-scombi-border:      rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
@@ -786,8 +778,7 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-autofill:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));   /* #cell form-control/autofill/bg-focus */
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   /* #cell form-control/autofill/chroma-focus */
+    --awds-scombi-bg:          rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
     --awds-scombi-border:      rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */

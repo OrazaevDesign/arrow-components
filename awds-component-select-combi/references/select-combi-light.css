@@ -110,13 +110,13 @@
 
    Цвета (map.state.*.form-control.light) — те же роли, что у select и input
    того же варианта: в Figma все группы ячеек ссылаются на один form-control/light/… :
-     Rest    bg surface-bright   chroma surface-bright
+     Rest    bg surface-bright
              border secondary-container-on-low   текст secondary-container-on-highest
              метка secondary-container-on-high   шеврон secondary-container-on-high
      Hover   = Rest, но border secondary-container-on
      Active  = Rest (ячейка есть, значения совпадают — правило нужно, чтобы ОТМЕНИТЬ
              hover-рамку при нажатии)
-     Focus   bg НЕ меняется (уже белый)   chroma primary-container-chroma
+     Focus   bg НЕ меняется (уже белый)
              border primary-dim  текст primary-container-on-highest
              метка primary-container-on-high   шеврон primary-container-on-high
      Disabled = Rest + opacity 40%
@@ -128,25 +128,20 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-scombi-bg, -chroma, -border, -color, -placeholder, -chevron, -icon-color
+     State: --awds-scombi-bg, -border, -color, -placeholder, -chevron, -icon-color
      Size:  --awds-scombi-padding, -icon, -rounded, -fs, -lh, -ls, -text-gap,
             -label-top, -input-top, -input-bottom, -label-fs, -label-lh, -label-ls,
             -picker-… , -opt-…
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .scombi → inherits: false.
+   bg задаётся и потребляется на .scombi → inherits: false.
    color/placeholder/chevron/icon-color задаются на .scombi, а потребляются НИЖЕ
    (в поле, в метке, в псевдоэлементе, в иконках) → inherits: true, иначе потомок
    взял бы initial-value и стал прозрачным. */
 @property --awds-scombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-scombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -217,7 +212,7 @@
   border: 0;
   border-radius: var(--awds-scombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-scombi-border);
-  background: linear-gradient(to right, var(--awds-scombi-chroma, var(--awds-scombi-bg)), var(--awds-scombi-bg));
+  background: var(--awds-scombi-bg);
   color: var(--awds-scombi-color);
   /* pointer, а не text: контрол не для ввода, а для выбора из списка. */
   cursor: pointer;
@@ -229,7 +224,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-scombi-bg 0.15s ease-out,
-              --awds-scombi-chroma 0.15s ease-out,
               --awds-scombi-color 0.15s ease-out,
               --awds-scombi-placeholder 0.15s ease-out,
               --awds-scombi-chevron 0.15s ease-out,
@@ -725,7 +719,7 @@
 /* === Variant: Light ===
    Тот же контрол, но на БЕЛОМ фоне — для случая, когда сам блок уже серый
    (карточка, панель фильтров, модалка). Фон surface-bright и при фокусе не меняется:
-   меняются только chroma, рамка и цвет текста.
+   меняются только фон, рамка и цвет текста.
 
    Цвета живут на классе варианта, а не на базе — как .btn-primary у кнопки.
    Базовый .scombi сам по себе бесцветный: он только структура и размеры.
@@ -739,7 +733,6 @@
 .scombi-light {
   /* Rest (map.state.rest.form-control.light) */
   --awds-scombi-bg:          rgb(var(--surface-bright));   /* #cell form-control/light/bg */
-  --awds-scombi-chroma:      rgb(var(--surface-bright));   /* #cell form-control/light/chroma-rest */
   --awds-scombi-border:      rgb(var(--secondary-container-on-low));   /* #cell form-control/light/border-rest */
   --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   /* #cell form-control/light/color-rest */
   --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   /* #cell form-control/light/placeholder-rest */
@@ -763,7 +756,6 @@
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .scombi-light:focus-within {
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   /* #cell form-control/light/chroma-focus */
   --awds-scombi-border:      rgb(var(--primary-dim));   /* #cell form-control/light/border-focus */
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   /* #cell form-control/light/color-focus */
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   /* #cell form-control/light/placeholder-focus */
@@ -787,7 +779,6 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-light:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   /* #cell form-control/light/chroma-focus */
     --awds-scombi-border:      rgb(var(--primary-dim));   /* #cell form-control/light/border-focus */
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   /* #cell form-control/light/color-focus */
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   /* #cell form-control/light/placeholder-focus */
