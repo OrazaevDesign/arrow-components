@@ -24,7 +24,7 @@ description: Checkbox ArrowDS (.checkbox).
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/color) | роли `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline, с якорем ячейки `check-radio/{группа}/{свойство}-{состояние}` в той же строке | `references/checkbox.css` |
-| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Accent | слой `awds-component-focus-selection` |
 | Размеры (padding/icon/rounded/gap) | `var(--awds-space-*)`, `var(--awds-rounded-*)` | ячейки `square/{N}/*`, якорь `#cell` в той же строке |
 | Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
@@ -65,7 +65,7 @@ description: Checkbox ArrowDS (.checkbox).
 
 - Инпут остаётся настоящим и в потоке: клавиатура, скринридер, автозаполнение формы работают сами.
 - Чекбокс без видимой подписи обязан нести `aria-label` на `<label>`.
-- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи бокса. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `checkbox.css`.
+- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Accent**: полоса 1…3px снаружи бокса. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `checkbox.css`.
 - Disabled гасится `opacity: var(--awds-opacity-40)` (ячейка `opacity/control/disabled`) на всей обёртке — это макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Не используй disabled как способ «объяснить» недоступность: рядом нужен текст-причина.
 
 ## CSS-файл

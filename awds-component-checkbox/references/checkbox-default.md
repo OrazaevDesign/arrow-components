@@ -69,10 +69,10 @@ document.querySelector('#select-all .checkbox__input').indeterminate = true;
 | Selected / Indeterminate Rest | `:checked +`, `:indeterminate +` | bg `primary-core`, chroma `primary-chroma`, border `primary-core`, иконка `primary-on` |
 | Selected / Indeterminate Hover | `.checkbox:hover > …:checked` | bg / border `primary-dim` |
 | Selected / Indeterminate Active | `.checkbox:active > …:checked` | bg = chroma `primary-core` (плоский градиент) |
-| Focus | `.checkbox__input:focus-visible + .checkbox__box` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)`, **`outline-offset: var(--awds-focus-offset)`** |
+| Focus | `.checkbox__input:focus-visible + .checkbox__box` | `outline: var(--awds-focus-width) solid var(--awds-focus-color-accent)`, **`outline-offset: var(--awds-focus-offset)`** |
 | Disabled | `.checkbox:has(> .checkbox__input:disabled)` | `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке |
 
-Кольцо — слой [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: зазор 1px, толщина 2px, полоса 1…3px снаружи бокса. Значения приходят переменными `--awds-focus-*`, поэтому `focus-selection.css` подключается вместе с `checkbox.css` — без него кольца не будет вовсе.
+Кольцо — слой [awds-component-focus-selection](../../awds-component-focus-selection/SKILL.md), вариант **Outside + Accent**: зазор 1px, толщина 2px, полоса 1…3px снаружи бокса. Значения приходят переменными `--awds-focus-*`, поэтому `focus-selection.css` подключается вместе с `checkbox.css` — без него кольца не будет вовсе.
 
 ## Размеры
 

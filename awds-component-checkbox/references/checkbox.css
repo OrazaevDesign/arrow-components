@@ -54,11 +54,11 @@
      Selected /  Rest   bg primary-core  chroma primary-chroma  border primary-core  color primary-on
      Indeterm.   Hover  bg primary-dim   chroma primary-chroma  border primary-dim
                  Active bg primary-core  chroma primary-core (плоский градиент)  border primary-core
-     Focus       = Rest + обводка surface-on-highest
+     Focus       = Rest + кольцо accent (primary-core)
      Disabled    = Rest + opacity 40%
 
-   Фокус-обводка: слой awds-component-focus-selection, вариант Outside + Default
-   (снято с инстанса FocusSelection в макете). Значения приходят переменными
+   Фокус-обводка: слой awds-component-focus-selection, вариант Outside + Accent
+   (тон accent — плотный брендовый). Значения приходят переменными
    --awds-focus-*, своих чисел файл не держит: геометрия кольца правится в слое.
 
    Приватные var:
@@ -273,10 +273,11 @@
 /* === State: Focus === */
 
 .checkbox__input:focus-visible + .checkbox__box {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
-     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Accent:
+     кольцо в полосе 1…3px снаружи бокса, тон accent — плотный брендовый
+     (--awds-focus-color-accent = primary-core), а не нейтральный surface-on-highest.
      Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 
