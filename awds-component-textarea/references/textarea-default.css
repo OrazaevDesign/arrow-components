@@ -86,13 +86,13 @@
    resize, и ручку разом (показывать хват, которого нет, — обман).
 
    Цвета (map.state.*.form-control.default) — те же роли, что у input и select:
-     Rest    bg secondary-container-core   chroma secondary-container-chroma
+     Rest    bg secondary-container-core
              border secondary-container-on-low   текст secondary-container-on-highest
              плейсхолдер secondary-container-on-high
      Hover   = Rest, но border secondary-container-on
      Active  = Rest (ячейка есть, значения совпадают — правило нужно, чтобы ОТМЕНИТЬ
              hover-рамку при нажатии)
-     Focus   bg surface-bright   chroma primary-container-chroma
+     Focus   bg surface-bright
              border primary-dim  текст primary-container-on-highest
              плейсхолдер primary-container-on-high
      Disabled = Rest + opacity 40%
@@ -104,23 +104,18 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-txa-bg, -chroma, -border, -color, -placeholder
+     State: --awds-txa-bg, -border, -color, -placeholder
      Size:  --awds-txa-padding, -text-gap, -rounded, -fs, -lh, -ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .txa → inherits: false.
+   bg задаётся и потребляется на .txa → inherits: false.
    color/placeholder задаются на .txa, а потребляются НИЖЕ (в поле, в плейсхолдере,
    в псевдоэлементе ручки) → inherits: true, иначе потомок взял бы initial-value
    и стал прозрачным. */
 @property --awds-txa-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-txa-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -161,7 +156,7 @@
   border: 0;
   border-radius: var(--awds-txa-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-txa-border);
-  background: linear-gradient(to right, var(--awds-txa-chroma, var(--awds-txa-bg)), var(--awds-txa-bg));
+  background: var(--awds-txa-bg);
   color: var(--awds-txa-color);
   cursor: text;
   /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
@@ -172,7 +167,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-txa-bg 0.15s ease-out,
-              --awds-txa-chroma 0.15s ease-out,
               --awds-txa-color 0.15s ease-out,
               --awds-txa-placeholder 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -354,7 +348,6 @@
 .txa-default {
   /* Rest (map.state.rest.form-control.default) */
   --awds-txa-bg:        rgb(var(--secondary-container-core));   /* #cell form-control/default/bg-rest */
-  --awds-txa-chroma:    rgb(var(--secondary-container-chroma));   /* #cell form-control/default/chroma-rest */
   --awds-txa-border:    rgb(var(--secondary-container-on-low));   /* #cell form-control/default/border-rest */
   --awds-txa-color:     rgb(var(--secondary-container-on-highest));   /* #cell form-control/default/color-rest */
   --awds-txa-placeholder: rgb(var(--secondary-container-on-high));   /* #cell form-control/default/placeholder-rest */
@@ -375,8 +368,7 @@
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .txa-default:focus-within {
-  --awds-txa-bg:        rgb(var(--surface-bright));   /* #cell form-control/default/bg-focus */
-  --awds-txa-chroma:    rgb(var(--primary-container-chroma));   /* #cell form-control/default/chroma-focus */
+  --awds-txa-bg:        rgb(var(--primary-container-base));   /* #cell form-control/default/bg-focus */
   --awds-txa-border:    rgb(var(--primary-dim));   /* #cell form-control/default/border-focus */
   --awds-txa-color:     rgb(var(--primary-container-on-highest));   /* #cell form-control/default/color-focus */
   --awds-txa-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/default/placeholder-focus */

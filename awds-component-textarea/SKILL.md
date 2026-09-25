@@ -49,7 +49,7 @@ description: Textarea ArrowDS (.txa).
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg/chroma/border/текст/плейсхолдер) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/textarea-default.css` |
+| Цвета состояний (bg/border/текст/плейсхолдер) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/textarea-default.css` |
 | Фокус-кольцо | `rgb(var(--primary-core) / var(--awds-opacity-50))`, offset 1 | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/rounded) | базовые шкалы `var(--awds-space-*)`, `var(--awds-rounded-border-radius-*)` | ячейки `rectangle/{N}/*`, цель в `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста | `var(--awds-space-*)` по ячейке `rectangle/{N}/text-gap` — всегда, слотов нет | Figma: auto-layout ячейки |
@@ -97,7 +97,7 @@ description: Textarea ArrowDS (.txa).
 **Два варианта ведут себя не как все**, и это сверено по ячейкам макета:
 
 - **ghost** — на hover и active **ничего не подсвечивается** (все три ячейки прозрачны), правил в CSS нет намеренно. У многострочного поля он рискованнее, чем у кнопки: в покое видны только текст и ручка в углу.
-- **light** — фокус **не меняет фон**: он и в покое `surface-bright`. Меняются chroma, рамка и цвета текста.
+- **light** — фокус **не меняет фон**: он и в покое `surface-bright`. Меняются рамка и цвета текста.
 
 Ручка ресайза во всех вариантах красится **цветом текста своего варианта** при `opacity: 30%` — отдельного правила у неё нет, она следует за `--awds-txa-color`.
 

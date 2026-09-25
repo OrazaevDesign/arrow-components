@@ -60,10 +60,10 @@
 
 | Состояние | Что меняется | Селектор |
 |---|---|---|
-| Rest | `bg secondary-container-core`, `chroma secondary-container-chroma`, рамка `secondary-container-on-low`, текст `secondary-container-on-highest`, плейсхолдер `secondary-container-on-high` | `.txa-default` |
+| Rest | `bg secondary-container-core`, рамка `secondary-container-on-low`, текст `secondary-container-on-highest`, плейсхолдер `secondary-container-on-high` | `.txa-default` |
 | Hover | только рамка → `secondary-container-on` | `:hover:not(:focus-within):has(.txa__field:enabled)` |
 | Active | рамка возвращается к `secondary-container-on-low` (в макете Active = Rest; правило нужно, чтобы отменить hover при нажатии) | `:active:not(:focus-within):has(…)` |
-| Focus | `bg surface-bright`, `chroma primary-container-chroma`, рамка `primary-dim`, текст `primary-container-on-highest`, плейсхолдер `primary-container-on-high` + кольцо; ручка красится вместе с текстом | `:focus-within` |
+| Focus | `bg primary-container-base`, рамка `primary-dim`, текст `primary-container-on-highest`, плейсхолдер `primary-container-on-high` + кольцо; ручка красится вместе с текстом | `:focus-within` |
 | Disabled | Rest + `opacity: var(--awds-opacity-40)` | `:has(.txa__field:disabled)` |
 
 Кольцо фокуса: `outline: var(--awds-focus-width) solid var(--awds-focus-color-muted)`, `outline-offset: var(--awds-focus-offset)` — как у input, select и combi-версий.

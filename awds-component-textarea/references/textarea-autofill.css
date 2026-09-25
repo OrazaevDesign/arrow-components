@@ -87,13 +87,13 @@
 
    Цвета (map.state.*.form-control.autofill) — те же роли, что у input и select
    того же варианта: в Figma все группы ячеек ссылаются на один form-control/autofill/… :
-     Rest    bg tertiary-container-core   chroma tertiary-container-chroma
+     Rest    bg tertiary-container-core
              border tertiary-container-on-low   текст tertiary-container-on-highest
              плейсхолдер tertiary-container-on-high
      Hover   = Rest, но border tertiary-container-on
      Active  = Rest (правило нужно, чтобы ОТМЕНИТЬ hover-рамку при нажатии)
      Focus   уходит в БРЕНДОВУЮ подсветку целиком: bg surface-bright,
-             chroma primary-container-chroma, border primary-dim,
+, border primary-dim,
              текст primary-container-on-highest, плейсхолдер primary-container-on-high
      Disabled = Rest + opacity 40%
 
@@ -104,23 +104,18 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-txa-bg, -chroma, -border, -color, -placeholder
+     State: --awds-txa-bg, -border, -color, -placeholder
      Size:  --awds-txa-padding, -text-gap, -rounded, -fs, -lh, -ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .txa → inherits: false.
+   bg задаётся и потребляется на .txa → inherits: false.
    color/placeholder задаются на .txa, а потребляются НИЖЕ (в поле, в плейсхолдере,
    в псевдоэлементе ручки) → inherits: true, иначе потомок взял бы initial-value
    и стал прозрачным. */
 @property --awds-txa-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-txa-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -161,7 +156,7 @@
   border: 0;
   border-radius: var(--awds-txa-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-txa-border);
-  background: linear-gradient(to right, var(--awds-txa-chroma, var(--awds-txa-bg)), var(--awds-txa-bg));
+  background: var(--awds-txa-bg);
   color: var(--awds-txa-color);
   cursor: text;
   /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
@@ -172,7 +167,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-txa-bg 0.15s ease-out,
-              --awds-txa-chroma 0.15s ease-out,
               --awds-txa-color 0.15s ease-out,
               --awds-txa-placeholder 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -357,7 +351,6 @@
 .txa-autofill {
   /* Rest (map.state.rest.form-control.autofill) */
   --awds-txa-bg:         rgb(var(--tertiary-container-core));   /* #cell form-control/autofill/bg-rest */
-  --awds-txa-chroma:     rgb(var(--tertiary-container-chroma));   /* #cell form-control/autofill/chroma-rest */
   --awds-txa-border:     rgb(var(--tertiary-container-on-low));   /* #cell form-control/autofill/border-rest */
   --awds-txa-color:      rgb(var(--tertiary-container-on-highest));   /* #cell form-control/autofill/color-rest */
   --awds-txa-placeholder:  rgb(var(--tertiary-container-on-high));   /* #cell form-control/autofill/placeholder-rest */
@@ -378,8 +371,7 @@
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .txa-autofill:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));   /* #cell form-control/autofill/bg-focus */
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   /* #cell form-control/autofill/chroma-focus */
+  --awds-txa-bg:         rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
   --awds-txa-border:     rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
