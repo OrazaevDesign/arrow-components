@@ -1,10 +1,10 @@
 {
   "component": "link",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "contract_hash": "sha256:f9e6b1b8aae6cfc984d7f9d9e2e89a82aa63850cd5707ecb12ae44d7f26ed64d",
-  "artifact_hash": "sha256:6a0c780b5d57e0ae8aeab68389e8262a0230186b524f66e6e8533c28e877d8e7",
+  "artifact_hash": "sha256:d54275699c8325c8b476b36b4bdf810054d1f272edda17f0e5aea640d2199a77",
   "visual_change": true,
-  "released_at": "2026-09-18T05:38:03.123Z",
+  "released_at": "2026-09-25T05:54:41.086Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -122,15 +122,14 @@
     ]
   },
   "ds_token_dependencies": [
-    "--accent-container-on",
+    "--accent-core",
     "--awds-opacity-30",
     "--awds-rounded-border-radius-200",
     "--awds-space-0-5",
     "--awds-space-px",
     "--surface-on-high",
     "--surface-on-highest",
-    "--tertiary-container-on-high",
-    "--tertiary-container-on-highest"
+    "--tertiary-on"
   ],
   "last_synced": "2026-09-18T05:40:00Z",
   "last_synced_by": "claude",

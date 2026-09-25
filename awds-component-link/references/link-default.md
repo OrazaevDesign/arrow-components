@@ -25,8 +25,8 @@
 
 | Состояние | color |
 |---|---|
-| Rest / Focus / Active | `rgb(var(--tertiary-container-on-high))` |
-| Hover | `rgb(var(--tertiary-container-on-highest))` |
+| Rest / Focus / Active | `rgb(var(--tertiary-on))` |
+| Hover | `rgb(var(--accent-core))` |
 | Focus | + `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
 
 Размер и шрифт наследуются от окружающего текста. Disabled нет.

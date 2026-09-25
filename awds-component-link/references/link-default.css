@@ -91,19 +91,19 @@
 /* === Variant: Default === */
 
 .lnk-default {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));   /* #cell link/default-rest */
+  --awds-lnk-color: rgb(var(--tertiary-on));   /* #cell link/default-rest */
 }
 
 .lnk-default:hover {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-highest));   /* #cell link/default-hover */
+  --awds-lnk-color: rgb(var(--accent-core));   /* #cell link/default-hover */
 }
 
 .lnk-default:focus-visible {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));   /* #cell link/default-focus */
+  --awds-lnk-color: rgb(var(--tertiary-on));   /* #cell link/default-focus */
 }
 
 .lnk-default:active {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));   /* #cell link/default-active */
+  --awds-lnk-color: rgb(var(--tertiary-on));   /* #cell link/default-active */
 }
 
 

@@ -11,7 +11,7 @@ description: Link ArrowDS (.lnk).
 
 Link — **color-only** компонент: DS задаёт только цвет текста по варианту и состоянию. Размерной шкалы нет (`shape: null`), disabled-состояния в токенах нет. Подчёркивание и focus-обводка — дефолт поверх токенов (значения из шкалы, не хардкод).
 
-Цвет читается **ролью**, а не ячейкой: `rgb(var(--tertiary-container-on-high))`, и каждая такая строка несёт якорь ячейки — `/* #cell link/default-rest */`. Ячейки `link/*` живут в приватной коллекции `state` темы 21, в опубликованной теме их имён нет; якорь держит связь «код ↔ студия ↔ макет», которую иначе не восстановить. Двадцать якорей проверяет `component-cell-drift.mjs`.
+Цвет читается **ролью**, а не ячейкой: `rgb(var(--tertiary-on))`, и каждая такая строка несёт якорь ячейки — `/* #cell link/default-rest */`. Ячейки `link/*` живут в приватной коллекции `state` темы 21, в опубликованной теме их имён нет; якорь держит связь «код ↔ студия ↔ макет», которую иначе не восстановить. Двадцать якорей проверяет `component-cell-drift.mjs`.
 
 | Что | Источник | Где |
 |---|---|---|
@@ -43,11 +43,11 @@ Link — **color-only** компонент: DS задаёт только цве�
 
 | Вариант | Reference | Цвет (rest → hover) | Когда использовать |
 |---|---|---|---|
-| **Default** | `references/link-default.md` ✅ | tertiary-container-on-high → -on-highest | Обычная инлайн-ссылка в тексте (брендовый tertiary) |
+| **Default** | `references/link-default.md` ✅ | tertiary-on → accent-core | Обычная инлайн-ссылка в тексте (брендовый tertiary, акцент на hover) |
 | **Muted** | `references/link-muted.md` ✅ | surface-on-high → -on-highest | Приглушённые ссылки: футер, второстепенная навигация, мета |
 | **Contrast** | `references/link-contrast.md` ✅ | surface-on-highest → -on-high | Сильная ссылка, читается контрастнее текста |
-| **Accent** | `references/link-accent.md` ✅ | surface-on-highest → accent-container-on | Нейтральная ссылка, «загорается» акцентом на hover |
-| **Heading** | `references/link-heading.md` ✅ | surface-on-high → accent-container-on | Кликабельный заголовок (без подчёркивания), акцент на hover |
+| **Accent** | `references/link-accent.md` ✅ | surface-on-highest → accent-core | Нейтральная ссылка, «загорается» акцентом на hover |
+| **Heading** | `references/link-heading.md` ✅ | surface-on-high → accent-core | Кликабельный заголовок (без подчёркивания), акцент на hover |
 
 Подчёркивание есть у всех вариантов, кроме **heading** (заголовки не подчёркивают).
 

@@ -18,7 +18,7 @@
 | Состояние | color |
 |---|---|
 | Rest / Focus / Active | `rgb(var(--surface-on-highest))` |
-| Hover | `rgb(var(--accent-container-on))` |
+| Hover | `rgb(var(--accent-core))` |
 | Focus | + `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
 
 Размер/шрифт наследуются. Disabled нет.

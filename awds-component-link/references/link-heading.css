@@ -85,7 +85,7 @@
 }
 
 .lnk-heading:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));         /* #cell link/heading-hover */
+  --awds-lnk-color: rgb(var(--accent-core));         /* #cell link/heading-hover */
 }
 
 .lnk-heading:focus-visible {

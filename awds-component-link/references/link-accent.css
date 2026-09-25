@@ -83,7 +83,7 @@
 }
 
 .lnk-accent:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));         /* #cell link/accent-hover */
+  --awds-lnk-color: rgb(var(--accent-core));         /* #cell link/accent-hover */
 }
 
 .lnk-accent:focus-visible {
