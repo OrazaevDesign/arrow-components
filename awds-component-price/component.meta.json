@@ -1,10 +1,10 @@
 {
   "component": "price",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "contract_hash": "sha256:674bf356f4a1c22fa06cee233cec8c91793908638e1d54ecf4473db381c7c966",
-  "artifact_hash": "sha256:e49c555347db99b0b55c9c81ddff7525804d09cda5f0231a8b953401599e519b",
+  "artifact_hash": "sha256:21485b749a29bd0dc84c44eb77eff7127f0e2e9b1c0d30cea5d771e4eb12a994",
   "visual_change": true,
-  "released_at": "2026-09-15T11:17:50.519Z",
+  "released_at": "2026-09-25T05:54:41.329Z",
   "own_values": [
     {
       "value": "0.2em",
@@ -206,7 +206,7 @@
     ]
   },
   "ds_token_dependencies": [
-    "--accent-container-on",
+    "--accent-container-on-high",
     "--awds-control-font-size-100",
     "--awds-control-font-size-1000",
     "--awds-control-font-size-200",

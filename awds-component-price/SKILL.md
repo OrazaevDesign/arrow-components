@@ -13,7 +13,7 @@ description: Price ArrowDS (.price).
 
 | Тип | Класс | Что показывает | Цвет текущей цены |
 |---|---|---|---|
-| **Sale** | `price-sale` | текущая цена + старая (зачёркнутая) | `accent-container-on` (акцент) |
+| **Sale** | `price-sale` | текущая цена + старая (зачёркнутая) | `accent-container-on-high` (акцент) |
 | **Default** | `price-default` | одна цена | `surface-on-highest` (нейтральный) |
 | **None** | `price-none` | «Нет в наличии» | — (плейсхолдер `surface-on`) |
 
@@ -76,7 +76,7 @@ description: Price ArrowDS (.price).
 
 | Что | Источник |
 |---|---|
-| Цвет текущей цены | sale → `rgb(var(--accent-container-on))`, default → `rgb(var(--surface-on-highest))` |
+| Цвет текущей цены | sale → `rgb(var(--accent-container-on-high))`, default → `rgb(var(--surface-on-highest))` |
 | Цвет старой цены / плейсхолдера | `rgb(var(--surface-on))` |
 | Размер главного числа | ФИКС-шкала Control/Value: `var(--awds-control-{main}-font-size)` + `-line-height` + `-letter-spacing`. НЕ адаптивная `--awds-typography-*` (она раздувается на десктопе и ломает фикс-размер цены) |
 | Размер валюты / старой цены | вторичная ступень Control `--awds-control-{sec}-*` |
@@ -96,7 +96,7 @@ description: Price ArrowDS (.price).
 2. Собери разметку по шаблону выше; для default опусти `.price__old`, для none — только `.price__placeholder`.
 3. Выбери размер `price--{N}` под контекст (на карточке товара обычно 600–800, в крупном блоке/на странице товара — 900–1100).
 4. При необходимости добавь `price--vertical` (старая цена снизу) и/или `price--currency-start` (`₽` слева).
-5. Подключи `references/price.css`. Нужны `css-variables.css` сайта (роли `--accent-container-on`, `--surface-on-highest`, `--surface-on`) и базовые токены DS (`--awds-typography-*`, `--awds-space-*`, `--awds-font-*`).
+5. Подключи `references/price.css`. Нужны `css-variables.css` сайта (роли `--accent-container-on-high`, `--surface-on-highest`, `--surface-on`) и базовые токены DS (`--awds-typography-*`, `--awds-space-*`, `--awds-font-*`).
 
 ## Refresh
 

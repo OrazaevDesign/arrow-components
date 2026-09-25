@@ -177,7 +177,7 @@
 
 /* Sale: текущая цена — акцент, старая — приглушённая (через --awds-price-muted на .price__old) */
 .price-sale {
-  --awds-price-color: rgb(var(--accent-container-on));   /* #cell price/sale/color */
+  --awds-price-color: rgb(var(--accent-container-on-high));   /* #cell price/sale/color */
 }
 
 /* Default: одна цена нейтральным цветом */

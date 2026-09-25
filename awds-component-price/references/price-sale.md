@@ -28,7 +28,7 @@
 
 ## CSS
 
-- Текущая цена (`.price__main`): `color: rgb(var(--accent-container-on))`.
+- Текущая цена (`.price__main`): `color: rgb(var(--accent-container-on-high))`.
 - Старая цена (`.price__old`): `color: rgb(var(--surface-on))`, `text-decoration: line-through`, вторичная шкала типографики.
 - Главное число — главная шкала размера, валюта — вторичная.
 
