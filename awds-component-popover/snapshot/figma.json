@@ -1,0 +1,84 @@
+{
+  "_note": "Снимок макета popover. ACB-owned. Создан 21.09.2026 проходом по циклу плана 2026-09-14 (шаги 1–8). До этого захода у компонента не было ни скилла, ни кода, ни единого инстанса — набор был нарисован впрок.",
+  "_structure_note": "БЫЛО: секция «↪ dropdown» (5:47) с набором «dropdown» (77:58798) на странице 7 · popups. Имя конфликтовало с частью «. / dropdown» (38:67577) со страницы форм — панелью раскрытого списка select на семи ступенях без хвоста, на которую ссылаются select, select-combi и datepicker. СТАЛО: секция «↪ popover», набор «popover». Решение владельца 21.09.2026: панель с хвостом и слотом контента — это поповер, а имя dropdown в библиотеке уже занято. Узлы НЕ пересоздавались, id сохранены; инстансов у набора не было ни на одной из десяти страниц файла (проверено запросом по mainComponent всех четырёх ячеек).",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "7 · popups",
+  "section": {
+    "name": "↪ popover",
+    "node_id": "5:47"
+  },
+  "fetched_at": "2026-09-21T15:40:00Z",
+  "set": {
+    "node_id": "77:58798",
+    "name": "popover",
+    "cells": {
+      "side=top": "77:58799",
+      "side=bottom": "77:58806",
+      "side=left": "77:58813",
+      "side=right": "77:58820"
+    }
+  },
+  "axes": {
+    "side": ["top", "bottom", "left", "right"]
+  },
+  "properties": {
+    "content": {
+      "id": "content#2950:5",
+      "type": "INSTANCE_SWAP",
+      "default": "77:60774",
+      "note": "Было `swap-content`. Переименовано 21.09.2026: по канону props.md слот зовётся ролью слота (`ic-a`, `avatar`, `chevron`), а `swap` — слово-заглушка из жаргона Figma. Инстансов ноль, цена переименования нулевая. Мастер-заглушка «. / swap» (77:60774) лежит в соседней секции ↪ modal — общая часть файла, не принадлежит поповеру."
+    },
+    "side": {
+      "type": "VARIANT",
+      "options": ["top", "bottom", "left", "right"]
+    }
+  },
+  "structure": {
+    "root": "прозрачный корень ячейки; в коде ему соответствует .pop",
+    "content": "панель: фон, тень elevation-3, скругление border-radius/600, clip; в коде .pop__panel",
+    "content > . / swap": "инстанс части-заглушки — место слота; в коде содержимое приходит от потребителя",
+    "tail": "хвост-стрелка (36×10, повёрнут на 180°); в коде .pop__tail",
+    "tail > view-box > shape": "фигура остриё (16×6), заливка = фон панели",
+    "tail > view-box > hairline": "обводка остриё (16×6) на ячейке popover/hairline"
+  },
+  "token_resolution": {
+    "bg": "state:popover/bg → roles/surface/bright — ячейка заведена 21.09.2026; на неё привязаны 8 узлов: панель content и фигура хвоста tail/shape во всех четырёх ячейках (заливка у них общая — внутренняя половина хвоста сливается с панелью)",
+    "hairline": "state:popover/hairline → roles/extended/shadow-3 (0 0 0 / 3%) — ячейка заведена 21.09.2026, привязаны 4 узла tail/hairline",
+    "rounded": "rounded/border-radius/600 = 10px на узле content",
+    "elevation": "shadow/shadow1..3 при явном моде elevation-3, по эффекту на каждой из четырёх ячеек",
+    "padding": "у панели НЕТ — отступы приносит содержимое слота. Паддинги 12/16, видимые в замере, принадлежат части-заглушке «. / swap», а не поповеру",
+    "tail_geometry": "tail 36×10 · view-box 36×10 · shape 16×6 · hairline 16×6 — совпадает с tooltip узел в узел, поэтому в коде тот же приём: повёрнутый на 45° квадрат space-2"
+  },
+  "code_mapping": {
+    "base_class": ".pop — не .popover: имя занято у потребителей (Bootstrap), а приватные аккумуляторы зовутся --awds-{base_class}-*",
+    "side": ".pop--side-top (база) / --side-bottom / --side-left / --side-right",
+    "panel": ".pop__panel — узел content макета",
+    "tail": ".pop__tail — узлы tail + view-box + shape + hairline макета, заменённые одним повёрнутым квадратом",
+    "native_popover": ".pop[popover] снимает UA-стили нативного поповера (Baseline 2024); позиционирование остаётся потребителю, anchor positioning вне планки"
+  },
+  "section_state_2026_09_21": {
+    "own_bindings_old_libraries": 0,
+    "raw_paints": 2,
+    "raw_paints_note": "обе на самой секции ↪ popover (подложка и обводка) — общее оформление секций файла, не компонент",
+    "explicit_modes": {
+      "shadow": 4
+    },
+    "instances_in_file": 0,
+    "masters_inside": []
+  },
+  "fixed_2026_09_21": [
+    "Тень: blur первого слоя был привязан к переменной shadow/shadow1/offset-y (6px) вместо shadow1/blur-radius (12px при elevation-3) — 4 эффекта перепривязаны, размытие вернулось к значению темы. Тот же дефект чинили у tooltip (18 эффектов) и у части . / dropdown форм (7 ступеней): он копировался вместе с панелью.",
+    "Снята ложная привязка rounded/border-radius/400 на прозрачном корне ячейки — 16 привязок (4 угла × 4 ячейки). Из-за неё замер показывал, будто панель читает rounded/400, тогда как её скругление — rounded/600 на узле content.",
+    "Имена узлов: Tail → tail, shape (Stroke) → hairline — как у tooltip.",
+    "Обёртка набора покрашена ролями surface/bright и surface/on-lowest вместо старой библиотеки Sys:Bg / Sys:Border.",
+    "Свойство слота swap-content → content (роль слота вместо слова-заглушки).",
+    "Секция и набор переименованы: ↪ dropdown → ↪ popover, dropdown → popover.",
+    "Заведены ячейки popover/bg и popover/hairline (приватные, плоские — состояний у панели нет) в студии и в файле токенов Figma.",
+    "После публикации библиотеки токенов владельцем 12 узлов перепривязаны с прямых ролей на ячейки: 4 панели content и 4 фигуры tail/shape → popover/bg (#ffffff), 4 обводки tail/hairline → popover/hairline (чёрный 3%). Прямых ролей в границах компонента не осталось; роли на самом наборе (surface/bright, surface/on-lowest) — это подложка обёртки, оформление файла."
+  ],
+  "debts": [
+    "Часть-заглушка «. / swap» (77:60774) держит привязки на старой библиотеке Sys (BgWhite, Border) — 8 в границах поповера. Это общая часть файла, лежит в секции ↪ modal и чинится вместе с ней.",
+    "Секции файла на странице 7 · popups держат подложку на старой библиотеке Sys — общий приём оформления, отдельная работа по файлу."
+  ]
+}

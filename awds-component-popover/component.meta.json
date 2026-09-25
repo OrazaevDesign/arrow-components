@@ -1,0 +1,190 @@
+{
+  "component": "popover",
+  "version": "1.0.0",
+  "contract_hash": "sha256:094c2cc278ce8e90e18895183dcab76f6a642e4c4b3d2950f31db4854800d5e9",
+  "artifact_hash": "sha256:398261d1fe4d69d24e35cddf7f5299a25a21c61b3102180ecd49af73409b9741",
+  "visual_change": false,
+  "released_at": "2026-09-21T12:47:45.014Z",
+  "own_values": [
+    {
+      "value": "1px",
+      "where": "border-right",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "1px",
+      "where": "border-bottom",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "1px",
+      "where": "border-top",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    },
+    {
+      "value": "1px",
+      "where": "border-left",
+      "count": 2,
+      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
+    }
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:47",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-47"
+  },
+  "variants": {
+    "default": {
+      "node_id": "77:58798",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=77-58798",
+      "figma_label": "popover"
+    }
+  },
+  "shape": null,
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров нет: панель одна, различается только стороной. Как у link, tooltip и product-card. Раскрытый список select живёт на семи ступенях, но это другая вещь — часть «. / dropdown» страницы форм.",
+  "states": [
+    "rest"
+  ],
+  "color_tokens": [
+    "bg",
+    "hairline"
+  ],
+  "css_files": [
+    "popover.css"
+  ],
+  "base_class_note": "Базовый класс .pop, а не .popover. Во-первых, .popover — имя компонента в Bootstrap и почти наверняка занято на стороне потребителя. Во-вторых, приватные аккумуляторы по контракту зовутся --awds-{base_class}-*, и при base_class = popover они дали бы --awds-popover-* — длинное имя, читающееся как слой дизайн-системы. Тот же приём, что у label → .lbl, datepicker → .dpick, button-overhung → .obtn.",
+  "preview": {
+    "base_class": "pop",
+    "default_size": null,
+    "matrix_states": [
+      "rest"
+    ],
+    "matrix_sizes": null,
+    "toggles": [
+      {
+        "id": "side",
+        "label": "Сторона",
+        "options": [
+          "top",
+          "bottom",
+          "left",
+          "right"
+        ]
+      },
+      {
+        "id": "content",
+        "label": "Содержимое",
+        "options": [
+          "menu",
+          "text"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Side top",
+        "html": "<span class=\"pop pop--side-top\"><span class=\"pop__tail\"></span><span class=\"pop__panel\"><ul class=\"menu\">…</ul></span></span>"
+      },
+      {
+        "label": "Side bottom",
+        "html": "<span class=\"pop pop--side-bottom\"><span class=\"pop__tail\"></span><span class=\"pop__panel\"><ul class=\"menu\">…</ul></span></span>"
+      },
+      {
+        "label": "Нативный popover",
+        "html": "<div class=\"pop pop--side-bottom\" id=\"user-menu\" popover><span class=\"pop__tail\"></span><div class=\"pop__panel\">…</div></div>"
+      }
+    ]
+  },
+  "notes": "Одна ось — side (top/bottom/left/right). Содержимое приходит слотом (свойство content, INSTANCE_SWAP в макете), поэтому паддинга у панели нет: отступы приносит контент. Хвост — повёрнутый на 45° квадрат space-2 поверх панели, без drop-тени (лежит на тени бокса); хайрлайн 1px на двух внешних гранях, цвет = кольцевой слой тени (ячейка popover/hairline → extended/shadow-3). Скругление rounded-600 (10px) — на ступень выше тултипа. Компонент заведён 21.09.2026: набор был нарисован впрок, инстансов ноль, кода не было. Имя popover вместо dropdown — решение владельца: dropdown в библиотеке занято панелью списка select (часть «. / dropdown», семь ступеней, без хвоста). Привязка узлов макета к ячейкам popover/* ждёт публикации библиотеки токенов — пока они читают те же роли напрямую.",
+  "last_synced": "2026-09-21T15:40:00Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:958e54ef480c09dd022c8baedcedfe034e1030e360c8bf2318018804dfb36688",
+  "published": null,
+  "markup": {
+    "root": {
+      "class": "pop",
+      "tags": [
+        "span",
+        "div"
+      ]
+    },
+    "variant": null,
+    "size": null,
+    "native": null,
+    "children": [
+      {
+        "class": "pop__panel"
+      },
+      {
+        "class": "pop__tail"
+      }
+    ],
+    "attrs": [],
+    "container": null,
+    "note": "Панель и хвост обязательны, хвост идёт ПЕРЕД панелью: панель рисуется поверх и перекрывает его внутреннюю половину. Содержимое кладётся внутрь .pop__panel потребителем, своих отступов панель не даёт."
+  },
+  "questions": [
+    {
+      "id": "popover-has-no-consumer-yet",
+      "text": "У поповера нет ни одного потребителя: инстансов в макете ноль, в коде панель с хвостом не рисует никто. Меню button-menu и панель datepicker сейчас строят свою геометрию. Переводить их на popover или оставить оболочку впрок?",
+      "level": "component",
+      "target": "popover",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-21",
+      "evidence": "замер 21.09.2026: 0 инстансов набора 77:58798 на всех десяти страницах файла; в CSS button-menu панели нет вовсе, datepicker рисует свою рамку на ячейках size/dropdown/400/*",
+      "asana_gid": "1218692537610776"
+    }
+  ],
+  "family": "popups",
+  "summary": "Панель-поповер с хвостом и слотом под меню, календарь или фильтр",
+  "aliases": [
+    "поповер",
+    "выпадающая панель",
+    "панель меню",
+    "всплывающая панель",
+    "дропдаун-панель"
+  ],
+  "ds_token_dependencies": [
+    "--awds-rounded-border-radius-600",
+    "--awds-shadow-elevation-3",
+    "--awds-space-2",
+    "--extended-shadow-3",
+    "--surface-bright"
+  ],
+  "asana": {
+    "task_gid": "1218693238915653",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218693238915653",
+    "task_name": "💠 popover",
+    "parent_task": "💠 7 · popups",
+    "primary": true
+  },
+  "contract": {
+    "classes": [
+      "pop",
+      "pop--side-bottom",
+      "pop--side-left",
+      "pop--side-right",
+      "pop--side-top",
+      "pop__panel",
+      "pop__tail"
+    ],
+    "attributes": [
+      "popover"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "default"
+    ],
+    "sizes": [],
+    "states": [
+      "rest"
+    ]
+  }
+}
