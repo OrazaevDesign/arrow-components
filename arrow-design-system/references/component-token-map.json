@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:51e49ab2d4550574cd5da3a65f5a72471b07d2e030c587d546ea0773e3e7a266",
+  "snapshot_hash": "sha256:7563f9cc7814e2b0f2de68f3742019907b3379d1a25ca4794f122a5deea0ab54",
   "size": {
     "rectangle": {
       "50": {
@@ -1762,7 +1762,7 @@
       },
       "form-control": {
         "default": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--primary-container-base))",
           "chroma": "rgb(var(--primary-container-chroma))",
           "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
@@ -1781,7 +1781,7 @@
           "bg": "rgb(var(--surface-bright))"
         },
         "success": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--primary-container-base))",
           "chroma": "rgb(var(--primary-container-chroma))",
           "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
@@ -1791,7 +1791,7 @@
           "chevron": "rgb(var(--primary-container-on-high))"
         },
         "error": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--primary-container-base))",
           "chroma": "rgb(var(--primary-container-chroma))",
           "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
@@ -1807,7 +1807,7 @@
           "chevron": "rgb(var(--primary-container-on-high))"
         },
         "autofill": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--primary-container-base))",
           "chroma": "rgb(var(--primary-container-chroma))",
           "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
