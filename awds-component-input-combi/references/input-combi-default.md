@@ -116,8 +116,7 @@
 
 | | Rest / Active | Hover | Focus |
 |---|---|---|---|
-| Фон | `secondary-container-core` | = Rest | `surface-bright` |
-| Chroma | `secondary-container-chroma` | = Rest | `primary-container-chroma` |
+| Фон | `secondary-container-core` | = Rest | `primary-container-base` |
 | Рамка | `secondary-container-on-low` | `secondary-container-on` | `primary-dim` |
 | Текст | `secondary-container-on-highest` | = Rest | `primary-container-on-highest` |
 | Метка | `secondary-container-on-high` | = Rest | `primary-container-on-high` |

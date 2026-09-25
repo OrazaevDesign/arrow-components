@@ -43,7 +43,7 @@ description: Input Combi ArrowDS (.icombi).
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg/chroma/border/текст/метка/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-combi-default.css` |
+| Цвета состояний (bg/border/текст/метка/иконка) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/input-combi-default.css` |
 | Кольцо фокуса | `var(--awds-focus-color-muted)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` | Figma `focus-selection/outlineVariant` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | базовые шкалы `var(--awds-space-*)`, `var(--awds-rounded-border-radius-*)` | ячейки `rectangle/{N}/*`, цель в `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста и метки | `var(--awds-space-*)` по ячейке `rectangle/{N}/text-gap`, а со слотом — по `rectangle/{N}/padding` | Figma: ось `padding-icon` у части `. / content-combi-input` |

@@ -96,13 +96,13 @@
    Цвета — те же роли, что у Input / Success: в Figma обе группы ячеек ссылаются на
    один и тот же form-control/success/…, сверено по Rest / Hover / Focus / Active /
    Disabled (map.state.*.form-control.success):
-     Rest    bg success-container-core   chroma success-container-chroma
+     Rest    bg success-container-core
              border success-container-on-low   текст success-container-on-highest
              метка success-container-on-high
      Hover   = Rest, но border success-container-on
      Active  = Rest (ячейка есть, значения совпадают — правило нужно, чтобы ОТМЕНИТЬ
              hover-рамку при нажатии)
-     Focus   bg surface-bright   chroma primary-container-chroma
+     Focus   bg surface-bright
              border primary-dim  текст primary-container-on-highest
              метка primary-container-on-high
      Disabled = Rest + opacity 40%
@@ -118,24 +118,19 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-icombi-bg, -chroma, -border, -color, -placeholder, -icon-color
+     State: --awds-icombi-bg, -border, -color, -placeholder, -icon-color
      Size:  --awds-icombi-padding, -icon, -rounded, -fs, -lh, -ls,
             -label-top, -input-top, -input-bottom, -label-fs, -label-lh, -label-ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .icombi → inherits: false.
+   bg задаётся и потребляется на .icombi → inherits: false.
    color/placeholder/icon-color задаются на .icombi, а потребляются НИЖЕ (в поле,
    в метке, в иконках) → inherits: true, иначе потомок взял бы initial-value
    и стал прозрачным. */
 @property --awds-icombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-icombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -189,7 +184,7 @@
   border: 0;
   border-radius: var(--awds-icombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-icombi-border);
-  background: linear-gradient(to right, var(--awds-icombi-chroma, var(--awds-icombi-bg)), var(--awds-icombi-bg));
+  background: var(--awds-icombi-bg);
   color: var(--awds-icombi-color);
   cursor: text;
   /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
@@ -200,7 +195,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-icombi-bg 0.15s ease-out,
-              --awds-icombi-chroma 0.15s ease-out,
               --awds-icombi-color 0.15s ease-out,
               --awds-icombi-placeholder 0.15s ease-out,
               --awds-icombi-icon-color 0.15s ease-out,
@@ -490,7 +484,6 @@
 .icombi-success {
   /* Rest (map.state.rest.form-control.success) */
   --awds-icombi-bg:         rgb(var(--success-container-core));   /* #cell form-control/success/bg-rest */
-  --awds-icombi-chroma:     rgb(var(--success-container-chroma));   /* #cell form-control/success/chroma-rest */
   --awds-icombi-border:     rgb(var(--success-container-on-low));   /* #cell form-control/success/border-rest */
   --awds-icombi-color:      rgb(var(--success-container-on-highest));   /* #cell form-control/success/color-rest */
   --awds-icombi-placeholder:  rgb(var(--success-container-on-high));   /* #cell form-control/success/placeholder-rest */
@@ -515,8 +508,7 @@
    мышью, а не только при табе.
    При фокусе зелёная подсветка полностью уступает брендовой — сверено по ячейке Focus. */
 .icombi-success:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));   /* #cell form-control/success/bg-focus */
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   /* #cell form-control/success/chroma-focus */
+  --awds-icombi-bg:         rgb(var(--primary-container-base));   /* #cell form-control/success/bg-focus */
   --awds-icombi-border:     rgb(var(--primary-dim));   /* #cell form-control/success/border-focus */
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   /* #cell form-control/success/color-focus */
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   /* #cell form-control/success/placeholder-focus */

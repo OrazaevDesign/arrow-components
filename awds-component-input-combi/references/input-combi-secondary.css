@@ -96,11 +96,11 @@
    Цвета — те же роли, что у Input / Secondary: в Figma обе группы ячеек ссылаются на
    один и тот же form-control/secondary/…, сверено по Rest / Hover / Focus / Active /
    Disabled (map.state.*.form-control.secondary):
-     Rest    bg secondary-core   chroma secondary-chroma   border secondary-core
+     Rest    bg secondary-core   border secondary-core
              текст secondary-on   метка secondary-on-dim
      Hover   bg И border secondary-dim (см. ниже)
      Active  = Rest
-     Focus   bg surface-bright   chroma secondary-chroma   border secondary-core
+     Focus   bg surface-bright   border secondary-core
              текст и метка НЕ меняются
      Disabled = Rest + opacity 40%
 
@@ -116,24 +116,19 @@
    ФОКУС-ОБВОДКА — см. пункт 3: тёмная, без альфы. Не копируй её в другие варианты.
 
    Приватные var:
-     State: --awds-icombi-bg, -chroma, -border, -color, -placeholder, -icon-color
+     State: --awds-icombi-bg, -border, -color, -placeholder, -icon-color
      Size:  --awds-icombi-padding, -icon, -rounded, -fs, -lh, -ls,
             -label-top, -input-top, -input-bottom, -label-fs, -label-lh, -label-ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .icombi → inherits: false.
+   bg задаётся и потребляется на .icombi → inherits: false.
    color/placeholder/icon-color задаются на .icombi, а потребляются НИЖЕ (в поле,
    в метке, в иконках) → inherits: true, иначе потомок взял бы initial-value
    и стал прозрачным. */
 @property --awds-icombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-icombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -187,7 +182,7 @@
   border: 0;
   border-radius: var(--awds-icombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-icombi-border);
-  background: linear-gradient(to right, var(--awds-icombi-chroma, var(--awds-icombi-bg)), var(--awds-icombi-bg));
+  background: var(--awds-icombi-bg);
   color: var(--awds-icombi-color);
   cursor: text;
   /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
@@ -198,7 +193,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-icombi-bg 0.15s ease-out,
-              --awds-icombi-chroma 0.15s ease-out,
               --awds-icombi-color 0.15s ease-out,
               --awds-icombi-placeholder 0.15s ease-out,
               --awds-icombi-icon-color 0.15s ease-out,
@@ -488,7 +482,6 @@
 .icombi-secondary {
   /* Rest (map.state.rest.form-control.secondary) */
   --awds-icombi-bg:         rgb(var(--secondary-core));   /* #cell form-control/secondary/bg-rest */
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));   /* #cell form-control/secondary/chroma */
   --awds-icombi-border:     rgb(var(--secondary-core));   /* #cell form-control/secondary/border-rest */
   --awds-icombi-color:      rgb(var(--secondary-on));   /* #cell form-control/secondary/color */
   --awds-icombi-placeholder:  rgb(var(--secondary-on-dim));   /* #cell form-control/secondary/placeholder */
@@ -516,7 +509,6 @@
    Текст и метка при фокусе НЕ меняются — в отличие от остальных вариантов. */
 .icombi-secondary:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   /* #cell form-control/secondary/bg-focus */
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));   /* #cell form-control/secondary/chroma */
   --awds-icombi-border:     rgb(var(--secondary-core));   /* #cell form-control/secondary/border-focus */
   --awds-icombi-color:      rgb(var(--secondary-on));   /* #cell form-control/secondary/color */
   --awds-icombi-placeholder:  rgb(var(--secondary-on-dim));   /* #cell form-control/secondary/placeholder */
