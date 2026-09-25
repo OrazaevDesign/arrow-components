@@ -72,26 +72,29 @@
   ],
   "preview": {
     "base_class": "tooltip",
-    "default_size": null,
+    "default_size": "400",
     "matrix_states": [
       "rest"
     ],
-    "matrix_sizes": null,
+    "matrix_sizes": [
+      "400",
+      "300"
+    ],
     "toggles": [
       {
         "id": "variant",
-        "label": "Вариант",
+        "label": "Тон",
         "options": [
           "default",
           "contrast"
         ]
       },
       {
-        "id": "type",
-        "label": "Тип",
+        "id": "size",
+        "label": "Ступень",
         "options": [
-          "default",
-          "compact"
+          "400",
+          "300"
         ]
       },
       {
@@ -107,16 +110,16 @@
     ],
     "html_samples": [
       {
-        "label": "Default / Top",
-        "html": "<span class=\"tooltip tooltip-default tooltip--top\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Подсказка</span></span>"
+        "label": "Default / 400 / Top",
+        "html": "<span class=\"tooltip tooltip-default tooltip--400 tooltip--side-top\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Подсказка</span></span>"
       },
       {
-        "label": "Contrast / Bottom",
-        "html": "<span class=\"tooltip tooltip-contrast tooltip--bottom\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Подсказка</span></span>"
+        "label": "Contrast / 400 / Bottom",
+        "html": "<span class=\"tooltip tooltip-contrast tooltip--400 tooltip--side-bottom\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Подсказка</span></span>"
       },
       {
-        "label": "Compact / Right",
-        "html": "<span class=\"tooltip tooltip-default tooltip--compact tooltip--right\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Инфо</span></span>"
+        "label": "Default / 300 / Right",
+        "html": "<span class=\"tooltip tooltip-default tooltip--300 tooltip--side-right\"><span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">Инфо</span></span>"
       }
     ]
   },
@@ -143,7 +146,7 @@
     "--surface-on-high",
     "--surface-on-highest-dark"
   ],
-  "notes": "3 независимые оси: variant (default/contrast — цвет), type (default/compact — размер, модификатор .tooltip--compact), side (top/bottom/left/right — хвост, модификатор .tooltip--{side}). Категория body в DS отсутствует → размер из typography, line-height округлён к compact. Хвост — повёрнутый квадрат поверх пузыря, без drop-тени (лежит на тени бокса), по центру стороны; хайрлайн-обводка 1px (Figma shape Stroke) = кольцо тени пузыря (чёрный 3%) на двух внешних гранях, --awds-tooltip-hairline (opacity-3-токена в DS нет → литерал). Contrast с 21.09.2026 — островок темы внутри класса, а не инвертированная пара ролей: .tooltip-contrast берёт --surface-bright и --surface-on-highest в dark-значении, ячейки tooltip/contrast/* ведут на роли по назначению. Решение владельца «инверсия происходит на самом компоненте, а не в токенах»; в Figma то же выражено явным модом dark коллекции roles на восьми узлах variant=contrast. Дополнительного класса в разметке не нужно — контракт разметки не менялся.",
+  "notes": "Тон — имя набора (tooltip / default и tooltip / contrast), оси две: size (400 база / 300 компактная) и side (top/bottom/left/right, класс .tooltip--side-{side}). До 2.0.0 оси звались type и variant, сторона давала .tooltip--top — приведено к канону props.md 21.09.2026. Типографика — шкала control (14/20 и 13/16), фикс: кегль подсказки не должен плавать вместе с модой контента. Хвост — повёрнутый квадрат поверх пузыря, без drop-тени (лежит на тени бокса), по центру стороны; хайрлайн-обводка 1px (узел hairline макета) = кольцо тени пузыря, ячейка tooltip/hairline → extended/shadow-3. Contrast — островок темы внутри класса, а не инвертированная пара ролей: .tooltip-contrast берёт --surface-bright и --surface-on-highest в dark-значении, ячейки tooltip/contrast/* ведут на роли по назначению. Решение владельца «инверсия происходит на самом компоненте, а не в токенах»; в Figma то же выражено явным модом dark коллекции roles на восьми узлах набора contrast.",
   "last_synced": "2026-09-21T11:00:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:763b40bf9982e0d1112b6374f0dc594e870f8ecdfe0f3f198466216a9d137eac",
@@ -185,7 +188,10 @@
       "pattern": "tooltip-{variant}",
       "required": true
     },
-    "size": null,
+    "size": {
+      "pattern": "tooltip--{size}",
+      "required": false
+    },
     "native": null,
     "children": [
       {
@@ -197,7 +203,7 @@
     ],
     "attrs": [],
     "container": null,
-    "note": "Шкалы размеров нет: сторона появления и компактность задаются модификаторами. Пузырь и хвост обязательны — хвост показывает, к чему относится подсказка."
+    "note": "Ступень (400 база, 300 компактная) и сторона (tooltip--side-{side}) — модификаторы. Пузырь и хвост обязательны: хвост показывает, к чему относится подсказка."
   },
   "questions": [
     {
