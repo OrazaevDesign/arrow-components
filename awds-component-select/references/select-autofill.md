@@ -35,10 +35,9 @@
 |---|---|---|---|---|
 | Rest | `tertiary-container-core` | `tertiary-container-on-low` | `tertiary-container-on-highest` | `tertiary-container-on-high` |
 | Hover | `tertiary-container-core` | `tertiary-container-on` | `tertiary-container-on-highest` | `tertiary-container-on-high` |
-| Focus | `surface-bright` | `primary-dim` | `primary-container-on-highest` | `primary-container-on-high` |
+| Focus | `primary-container-base` | `primary-dim` | `primary-container-on-highest` | `primary-container-on-high` |
 | Active | `tertiary-container-core` | `tertiary-container-on-low` | `tertiary-container-on-highest` | `tertiary-container-on-high` |
 
-Chroma (левый край градиента): `tertiary-container-chroma` в покое, `primary-container-chroma` при фокусе.
 Плейсхолдер: `tertiary-container-on-high` → `primary-container-on-high`.
 
 ## Замечания

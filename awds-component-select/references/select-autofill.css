@@ -110,10 +110,10 @@
    маршрутизирован на нужный control-{M}.
 
    Цвета (map.state.*.form-control.autofill) — сверено с макетом по Rest:
-     rest   bg tertiary-container-core  chroma tertiary-container-chroma  border tertiary-container-on-low  color tertiary-container-on-highest  placeholder tertiary-container-on-high  chevron tertiary-container-on-high  icon-color tertiary-container-on-high
-     hover  bg tertiary-container-core  chroma tertiary-container-chroma  border tertiary-container-on  color tertiary-container-on-highest  placeholder tertiary-container-on-high  chevron tertiary-container-on-high  icon-color tertiary-container-on-high
-     focus  bg surface-bright  chroma primary-container-chroma  border primary-dim  color primary-container-on-highest  placeholder primary-container-on-high  chevron primary-container-on-high  icon-color primary-container-on-highest
-     active bg tertiary-container-core  chroma tertiary-container-chroma  border tertiary-container-on-low  color tertiary-container-on-highest  placeholder tertiary-container-on-high  chevron tertiary-container-on-high  icon-color tertiary-container-on-high
+     rest   bg tertiary-container-core  border tertiary-container-on-low  color tertiary-container-on-highest  placeholder tertiary-container-on-high  chevron tertiary-container-on-high  icon-color tertiary-container-on-high
+     hover  bg tertiary-container-core  border tertiary-container-on  color tertiary-container-on-highest  placeholder tertiary-container-on-high  chevron tertiary-container-on-high  icon-color tertiary-container-on-high
+     focus  bg surface-bright  border primary-dim  color primary-container-on-highest  placeholder primary-container-on-high  chevron primary-container-on-high  icon-color primary-container-on-highest
+     active bg tertiary-container-core  border tertiary-container-on-low  color tertiary-container-on-highest  placeholder tertiary-container-on-high  chevron tertiary-container-on-high  icon-color tertiary-container-on-high
      Disabled = Rest + opacity 40%
 
    Фокус-обводка: слой awds-component-focus-selection, вариант Outside + Formcontrol
@@ -123,23 +123,18 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-select-bg, -chroma, -border, -color, -placeholder, -chevron, -icon-color
+     State: --awds-select-bg, -border, -color, -placeholder, -chevron, -icon-color
      Size:  --awds-select-padding, -icon, -rounded, -fs, -lh, -ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .select → inherits: false.
+   bg задаётся и потребляется на .select → inherits: false.
    color/placeholder/chevron/icon-color задаются на .select, а потребляются НИЖЕ
    (в поле, в ::after, в иконках) → inherits: true, иначе потомок и псевдоэлемент
    взяли бы initial-value и стали прозрачными. */
 @property --awds-select-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-select-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -204,7 +199,7 @@
   border: 0;
   border-radius: var(--awds-select-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-select-border);
-  background: linear-gradient(to right, var(--awds-select-chroma, var(--awds-select-bg)), var(--awds-select-bg));
+  background: var(--awds-select-bg);
   color: var(--awds-select-color);
   /* pointer, а не text: контрол не для ввода, а для выбора из списка. */
   cursor: pointer;
@@ -216,7 +211,6 @@
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-select-bg 0.15s ease-out,
-              --awds-select-chroma 0.15s ease-out,
               --awds-select-color 0.15s ease-out,
               --awds-select-placeholder 0.15s ease-out,
               --awds-select-chevron 0.15s ease-out,
@@ -711,7 +705,6 @@
 .select-autofill {
   /* Rest (map.state.rest.form-control.autofill) */
   --awds-select-bg:       rgb(var(--tertiary-container-core));   /* #cell form-control/autofill/bg-rest */
-  --awds-select-chroma:   rgb(var(--tertiary-container-chroma));   /* #cell form-control/autofill/chroma-rest */
   --awds-select-border:   rgb(var(--tertiary-container-on-low));   /* #cell form-control/autofill/border-rest */
   --awds-select-color:    rgb(var(--tertiary-container-on-highest));   /* #cell form-control/autofill/color-rest */
   --awds-select-placeholder: rgb(var(--tertiary-container-on-high));   /* #cell form-control/autofill/placeholder-rest */
@@ -734,8 +727,7 @@
 /* :focus-within, а не :focus-visible: у выпадающего списка «сфокусировано» =
    активно, и в макете состояние Focus именно про это. */
 .select-autofill:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));   /* #cell form-control/autofill/bg-focus */
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   /* #cell form-control/autofill/chroma-focus */
+  --awds-select-bg:       rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
   --awds-select-border:   rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
   --awds-select-color:    rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
@@ -773,8 +765,7 @@
 
 @supports (appearance: base-select) {
   .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));   /* #cell form-control/autofill/bg-focus */
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   /* #cell form-control/autofill/chroma-focus */
+    --awds-select-bg:       rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
     --awds-select-border:   rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
     --awds-select-color:    rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */

@@ -37,15 +37,14 @@
 |---|---|---|---|---|
 | Rest | `success-container-core` | `success-container-on-low` | `success-container-on-highest` | `success-container-on-high` |
 | Hover | `success-container-core` | `success-container-on` | `success-container-on-highest` | `success-container-on-high` |
-| Focus | `surface-bright` | `primary-dim` | `primary-container-on-highest` | `primary-container-on-high` |
+| Focus | `primary-container-base` | `primary-dim` | `primary-container-on-highest` | `primary-container-on-high` |
 | Active | `success-container-core` | `success-container-on-low` | `success-container-on-highest` | `success-container-on-high` |
 
-Chroma (левый край градиента): `success-container-chroma` в покое, `primary-container-chroma` при фокусе.
 Плейсхолдер: `success-container-on-high` → `primary-container-on-high`.
 
 ## Замечания
 
-**При фокусе вариант теряет зелёный** — фон уходит в `surface-bright`, рамка в `primary-dim`, как у всех остальных вариантов. Пока пользователь работает с контролом, состояние валидации не показывается: оно про результат, а не про процесс.
+**При фокусе вариант теряет зелёный** — фон уходит в `primary-container-base`, рамка в `primary-dim`, как у всех остальных вариантов. Пока пользователь работает с контролом, состояние валидации не показывается: оно про результат, а не про процесс.
 
 **Цвет — не сообщение.** Рядом нужен текст («Доставка в этот город есть»), иначе для человека с дальтонизмом и для скринридера состояние не существует.
 

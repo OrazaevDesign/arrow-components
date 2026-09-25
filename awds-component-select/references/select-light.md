@@ -40,7 +40,6 @@
 | Focus | `surface-bright` | `primary-dim` | `primary-container-on-highest` | `primary-container-on-high` |
 | Active | `surface-bright` | `secondary-container-on-low` | `secondary-container-on-highest` | `secondary-container-on-high` |
 
-Chroma (левый край градиента): `surface-bright` в покое, `primary-container-chroma` при фокусе.
 Плейсхолдер: `secondary-container-on-high` → `primary-container-on-high`.
 
 ## Замечания

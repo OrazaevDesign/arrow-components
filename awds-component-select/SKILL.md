@@ -73,7 +73,7 @@ description: Select ArrowDS (.select).
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg/chroma/border/текст/плейсхолдер/иконки) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-default.css` |
+| Цвета состояний (bg/border/текст/плейсхолдер/иконки) | `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline | `references/select-default.css` |
 | Цвет шеврона | роль `chevron`: `secondary-container-on-high` → при фокусе `primary-container-on-high` | `component-token-map.json` → `map.state.*.form-control.default.chevron` |
 | Фокус-кольцо | `var(--awds-focus-width) solid var(--awds-focus-color-muted)`, `outline-offset: var(--awds-focus-offset)` | Figma `focus-selection/outlineVariant` + `opacity/50`; ширина и offset — с геометрии слоя |
 | Геометрия (padding/icon/rounded) | `var(--awds-rectangle-{N}-*)` | `map.size.rectangle` |
@@ -153,7 +153,7 @@ description: Select ArrowDS (.select).
 
 **Открытый список — тоже состояние фокуса.** Под `base-select` при раскрытии фокус уходит **в попап**: `document.activeElement` становится `<option>`, а `:focus-within` на обёртке — ложным. Без отдельного правила поле при открытом списке оставалось бы в hover-виде и без кольца (так и было — починено). Ловим через `:has(> .select__field:open)` отдельным правилом в своём `@supports`, а не запятой к `:focus-within`: один невалидный селектор в списке через запятую убил бы всё правило, и в движке без `:open` отвалился бы заодно обычный фокус.
 
-**Общее для всех:** `hover` меняет только рамку, `active` возвращает её к Rest, `focus` уводит контрол в брендовые роли (фон `surface-bright`, рамка `primary-dim`) и зажигает кольцо `primary-core` при 50% — 2px, с отступом 1px от рамки. То есть **состояние валидации при фокусе не показывается** — оно про результат, а не про процесс.
+**Общее для всех:** `hover` меняет только рамку, `active` возвращает её к Rest, `focus` уводит контрол в брендовые роли (фон `primary-container-base`, рамка `primary-dim`) и зажигает кольцо `primary-core` при 50% — 2px, с отступом 1px от рамки. То есть **состояние валидации при фокусе не показывается** — оно про результат, а не про процесс.
 
 **Два исключения у `ghost`:** на наведение он не отвечает вообще (в макете Hover = Rest), а при фокусе не получает ни фона, ни рамки — только кольцо и смену цвета текста. Кольцо здесь единственный видимый контур, не гаси его.
 

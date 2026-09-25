@@ -40,7 +40,6 @@
 | Focus | `transparent` | `transparent` | `primary-container-on-highest` | `primary-container-on-high` |
 | Active | `transparent` | `transparent` | `secondary-container-on-highest` | `secondary-container-on-high` |
 
-Chroma (левый край градиента): `transparent` в покое, `transparent` при фокусе.
 Плейсхолдер: `secondary-container-on-high` → `primary-container-on-high`.
 
 ## Замечания

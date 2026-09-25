@@ -35,10 +35,9 @@
 |---|---|---|---|---|
 | Rest | `error-container-core` | `error-container-on-low` | `error-container-on-highest` | `error-container-on-high` |
 | Hover | `error-container-core` | `error-container-on` | `error-container-on-highest` | `error-container-on-high` |
-| Focus | `surface-bright` | `primary-dim` | `primary-container-on-highest` | `primary-container-on-high` |
+| Focus | `primary-container-base` | `primary-dim` | `primary-container-on-highest` | `primary-container-on-high` |
 | Active | `error-container-core` | `error-container-on-low` | `error-container-on-highest` | `error-container-on-high` |
 
-Chroma (левый край градиента): `error-container-chroma` в покое, `primary-container-chroma` при фокусе.
 Плейсхолдер: `error-container-on-high` → `primary-container-on-high`.
 
 ## Замечания
