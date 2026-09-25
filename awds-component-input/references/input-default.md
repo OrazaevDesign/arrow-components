@@ -118,10 +118,10 @@ CSS сам погасит UA-оформление такой кнопки и о�
 
 | Состояние | Селектор | Источник |
 |---|---|---|
-| Rest | `.input-default` | bg `secondary-container-core`, chroma `secondary-container-chroma`, border `secondary-container-on-low`, текст `secondary-container-on-highest`, placeholder и иконка `secondary-container-on-high` |
+| Rest | `.input-default` | bg `secondary-container-core`, border `secondary-container-on-low`, текст `secondary-container-on-highest`, placeholder и иконка `secondary-container-on-high` |
 | Hover | `.input-default:hover:not(:focus-within):has(> .input__field:enabled)` | border `secondary-container-on` |
 | Active | `.input-default:active:not(:focus-within):has(> .input__field:enabled)` | border `secondary-container-on-low` |
-| Focus | `.input-default:focus-within` | bg `surface-bright`, chroma `primary-container-chroma`, border `primary-dim`, текст `primary-container-on-highest`, placeholder `primary-container-on-high` + кольцо |
+| Focus | `.input-default:focus-within` | bg `primary-container-base`, border `primary-dim`, текст `primary-container-on-highest`, placeholder `primary-container-on-high` + кольцо |
 | Disabled | `.input:has(> .input__field:disabled)` | `opacity: var(--awds-opacity-40)  /* #cell opacity/control/disabled */` (на базе — не зависит от варианта) |
 
 Три нюанса:
@@ -147,7 +147,7 @@ CSS сам погасит UA-оформление такой кнопки и о�
 
 | Блок | Что внутри |
 |---|---|
-| `@property` | `bg` / `chroma` (inherits:false, живут на контейнере) и `color` / `placeholder` / `icon-color` (inherits:true — задаются на контейнере, потребляются в поле, в `::placeholder` и в иконках) |
+| `@property` | `bg` (inherits:false, живёт на контейнере) и `color` / `placeholder` / `icon-color` (inherits:true — задаются на контейнере, потребляются в поле, в `::placeholder` и в иконках) |
 | Base `.input` | Контейнер: flex, `inset box-shadow` вместо border, градиент, размерные аккумуляторы (default = 400), transition цветов |
 | `.input__field` | Погашённое UA-оформление, padding, типографика из токенов, `::placeholder` с цветом из токена и `opacity: 1` (иначе Firefox приглушит второй раз), снятый нативный крестик `type="search"` |
 | Слоты | `padding-left` / `padding-right` + `padding-block`, размер `<svg>` от токена (селектор потомка — работает и внутри `<button>`), сброс UA-оформления кнопки + её фокус-кольцо |

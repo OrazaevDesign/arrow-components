@@ -86,13 +86,13 @@
    Вертикальные паддинги не меняются, высота контрола та же.
 
    Цвета (map.state.*.form-control.default):
-     Rest    bg secondary-container-core   chroma secondary-container-chroma
+     Rest    bg secondary-container-core
              border secondary-container-on-low   текст secondary-container-on-highest
              placeholder secondary-container-on-high   иконка secondary-container-on-high
      Hover   = Rest, но border secondary-container-on
      Active  = Rest (в макете отдельная ячейка, значения совпадают с Rest —
              поэтому :active нужен, чтобы ОТМЕНИТЬ hover-рамку при нажатии)
-     Focus   bg surface-bright   chroma primary-container-chroma
+     Focus   bg surface-bright
              border primary-dim  текст primary-container-on-highest
              placeholder primary-container-on-high
      Disabled = Rest + opacity 40%
@@ -104,23 +104,18 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-input-bg, -chroma, -border, -color, -placeholder, -icon-color
+     State: --awds-input-bg, -border, -color, -placeholder, -icon-color
      Size:  --awds-input-padding, -icon, -rounded, -fs, -lh, -ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .input → inherits: false.
+   bg задаётся и потребляется на .input → inherits: false.
    color/placeholder/icon-color задаются на .input, а потребляются НИЖЕ (в поле,
    в ::placeholder, в иконках) → inherits: true, иначе потомок взял бы
    initial-value и стал прозрачным. Без @property — мгновенная смена. */
 @property --awds-input-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-input-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -168,7 +163,7 @@
   border: 0;
   border-radius: var(--awds-input-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-input-border);
-  background: linear-gradient(to right, var(--awds-input-chroma, var(--awds-input-bg)), var(--awds-input-bg));
+  background: var(--awds-input-bg);
   color: var(--awds-input-color);
   cursor: text;
   /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
@@ -176,11 +171,10 @@
   opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
 
   /* Polish (MIFB): смену состояний анимируем явными свойствами — не transition: all.
-     CSS transition прерываем (interruptible). Фон-градиент и перекраска едут через
+     CSS transition прерываем (interruptible). Фон и перекраска едут через
      @property-аккумуляторы. Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-chroma 0.15s ease-out,
               --awds-input-color 0.15s ease-out,
               --awds-input-placeholder 0.15s ease-out,
               --awds-input-icon-color 0.15s ease-out,
@@ -397,7 +391,6 @@
 .input-default {
   /* Rest (map.state.rest.form-control.default) */
   --awds-input-bg:         rgb(var(--secondary-container-core));   /* #cell form-control/default/bg-rest */
-  --awds-input-chroma:     rgb(var(--secondary-container-chroma));   /* #cell form-control/default/chroma-rest */
   --awds-input-border:     rgb(var(--secondary-container-on-low));   /* #cell form-control/default/border-rest */
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   /* #cell form-control/default/color-rest */
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   /* #cell form-control/default/placeholder-rest */
@@ -421,8 +414,7 @@
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике
    мышью, а не только при табе. */
 .input-default:focus-within {
-  --awds-input-bg:        rgb(var(--surface-bright));   /* #cell form-control/default/bg-focus */
-  --awds-input-chroma:    rgb(var(--primary-container-chroma));   /* #cell form-control/default/chroma-focus */
+  --awds-input-bg:        rgb(var(--primary-container-base));   /* #cell form-control/default/bg-focus */
   --awds-input-border:    rgb(var(--primary-dim));   /* #cell form-control/default/border-focus */
   --awds-input-color:     rgb(var(--primary-container-on-highest));   /* #cell form-control/default/color-focus */
   --awds-input-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/default/placeholder-focus */

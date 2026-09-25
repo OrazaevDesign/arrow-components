@@ -15,10 +15,10 @@
 | Фон в покое | `secondary-container-core` — серый | `surface-bright` — белый |
 | Рамка, текст, placeholder | одинаковые | одинаковые |
 | Геометрия, типографика, размеры | одинаковые | одинаковые |
-| Состояние Focus | `surface-bright` + `primary-container-chroma` | **то же самое** |
+| Фон при фокусе | `primary-container-base` — брендовая подложка | `surface-bright` — остаётся белым |
 | Иконка при фокусе | `secondary-container-on-high` | `primary-container-on-high` |
 
-Сверено по всем пяти состояниям и по контрольному размеру: расходятся только `bg` / `chroma` в покое и цвет иконки при фокусе. Всё остальное совпадает до значения, поэтому база `.input` в обоих CSS-файлах идентична побайтово.
+Сверено по всем пяти состояниям и по контрольному размеру: расходятся `bg` в покое, `bg` при фокусе и цвет иконки при фокусе. Всё остальное совпадает до значения, поэтому база `.input` в обоих CSS-файлах идентична побайтово.
 
 ## Когда какой
 
@@ -57,7 +57,7 @@
 
 | Состояние | Селектор | Отличие от Default |
 |---|---|---|
-| Rest | `.input-light` | bg и chroma `surface-bright` |
+| Rest | `.input-light` | bg `surface-bright` |
 | Hover | `.input-light:hover:not(:focus-within):has(> .input__field:enabled)` | — |
 | Active | `.input-light:active:not(:focus-within):has(> .input__field:enabled)` | — |
 | Focus | `.input-light:focus-within` | иконка `primary-container-on-high` |

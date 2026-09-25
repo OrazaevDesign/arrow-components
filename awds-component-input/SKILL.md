@@ -24,7 +24,7 @@ description: Input ArrowDS (.input).
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg/chroma/border/текст/placeholder/иконка) | роли `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline, с якорем ячейки в той же строке | `references/input-{вариант}.css` |
+| Цвета состояний (bg/border/текст/placeholder/иконка) | роли `rgb(var(--secondary-container-*))`, `rgb(var(--primary-container-*))`, `rgb(var(--surface-bright))` inline, с якорем ячейки в той же строке | `references/input-{вариант}.css` |
 | Кольцо фокуса | `var(--awds-focus-color-muted)`, вариант Outside + Formcontrol | слой `awds-component-focus-selection` + `opacity/50` |
 | Геометрия (padding/icon/rounded) | базовые шкалы `var(--awds-space-*)`, `var(--awds-rounded-border-radius-*)` | ячейки `rectangle/{N}/*`, цель в `component-token-map.json` → `map.size.rectangle` |
 | Горизонтальный отступ текста | `var(--awds-space-*)` по ячейке `rectangle/{N}/text-gap`, а со слотом — по `rectangle/{N}/padding` | Figma: ось `padding-icon` у части `. / content-input` |

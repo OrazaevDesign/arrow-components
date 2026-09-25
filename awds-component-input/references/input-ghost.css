@@ -86,7 +86,7 @@
    Вертикальные паддинги не меняются, высота контрола та же.
 
    Цвета (map.state.*.form-control.ghost):
-     Rest    bg / chroma / border — ПРОЗРАЧНЫЕ
+     Rest    bg / border — ПРОЗРАЧНЫЕ
              текст secondary-container-on-highest
              placeholder и иконка secondary-container-on-high
      Hover   = Rest ЦЕЛИКОМ: рамка не появляется (в Figma #ffffff00 во всех трёх)
@@ -108,23 +108,18 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-input-bg, -chroma, -border, -color, -placeholder, -icon-color
+     State: --awds-input-bg, -border, -color, -placeholder, -icon-color
      Size:  --awds-input-padding, -icon, -rounded, -fs, -lh, -ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .input → inherits: false.
+   bg задаётся и потребляется на .input → inherits: false.
    color/placeholder/icon-color задаются на .input, а потребляются НИЖЕ (в поле,
    в ::placeholder, в иконках) → inherits: true, иначе потомок взял бы
    initial-value и стал прозрачным. Без @property — мгновенная смена. */
 @property --awds-input-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-input-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -172,7 +167,7 @@
   border: 0;
   border-radius: var(--awds-input-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-input-border);
-  background: linear-gradient(to right, var(--awds-input-chroma, var(--awds-input-bg)), var(--awds-input-bg));
+  background: var(--awds-input-bg);
   color: var(--awds-input-color);
   cursor: text;
   /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
@@ -180,11 +175,10 @@
   opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
 
   /* Polish (MIFB): смену состояний анимируем явными свойствами — не transition: all.
-     CSS transition прерываем (interruptible). Фон-градиент и перекраска едут через
+     CSS transition прерываем (interruptible). Фон и перекраска едут через
      @property-аккумуляторы. Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-chroma 0.15s ease-out,
               --awds-input-color 0.15s ease-out,
               --awds-input-placeholder 0.15s ease-out,
               --awds-input-icon-color 0.15s ease-out,
@@ -401,7 +395,6 @@
 .input-ghost {
   /* Rest (map.state.rest.form-control.ghost) */
   --awds-input-bg:         transparent;
-  --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/color-rest */
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/placeholder-rest */
@@ -409,7 +402,7 @@
 }
 
 /* Hover у ghost НЕ ОБЪЯВЛЕН намеренно: в макете все три ячейки (rest / hover /
-   active) дают #ffffff00 — прозрачные фон, chroma и рамку. Наведение здесь
+   active) дают #ffffff00 — прозрачные фон и рамку. Наведение здесь
    ничего не подсвечивает, и пустое правило было бы враньём в коде. */
 
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
@@ -418,7 +411,6 @@
    Фон и рамка при фокусе остаются прозрачными — состояние несут только текст и кольцо. */
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
-  --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
   --awds-input-color:      rgb(var(--primary-container-on-highest));   /* #cell form-control/ghost/color-focus */
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   /* #cell form-control/ghost/placeholder-focus */

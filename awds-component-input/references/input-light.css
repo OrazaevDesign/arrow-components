@@ -86,18 +86,18 @@
    Вертикальные паддинги не меняются, высота контрола та же.
 
    Цвета (map.state.*.form-control.light):
-     Rest    bg surface-bright            chroma surface-bright
+     Rest    bg surface-bright
              border secondary-container-on-low   текст secondary-container-on-highest
              placeholder secondary-container-on-high   иконка secondary-container-on-high
      Hover   = Rest, но border secondary-container-on
      Active  = Rest
-     Focus   брендовый: bg surface-bright, chroma primary-container-chroma,
+     Focus   брендовый: bg surface-bright,,
              border primary-dim, текст primary-container-on-highest,
              placeholder и иконка primary-container-on-high
      Disabled = Rest + opacity 40%
 
    ОТЛИЧИЕ ОТ DEFAULT — ровно в подложке: rest/hover/active берут surface-bright
-   вместо secondary-container-core/-chroma, то есть поле белое, а не серое.
+   вместо secondary-container-core, то есть поле белое, а не серое.
 
    Фокус-обводка: слой awds-component-focus-selection, вариант Outside + Default и Outside + Formcontrol
    (снято с инстанса FocusSelection в макете). Значения приходят переменными
@@ -106,23 +106,18 @@
    и плотное кольцо поверх неё слилось бы с ней в одну полосу.
 
    Приватные var:
-     State: --awds-input-bg, -chroma, -border, -color, -placeholder, -icon-color
+     State: --awds-input-bg, -border, -color, -placeholder, -icon-color
      Size:  --awds-input-padding, -icon, -rounded, -fs, -lh, -ls
    ============================================================================= */
 
 /* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы
-   linear-gradient и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
+   фон и перекраска ИНТЕРПОЛИРОВАЛИСЬ при смене состояния (иначе
    кастом-пропы меняются мгновенно и фон «снапает», рассинхрон с рамкой).
-   bg/chroma задаются и потребляются на .input → inherits: false.
+   bg задаётся и потребляется на .input → inherits: false.
    color/placeholder/icon-color задаются на .input, а потребляются НИЖЕ (в поле,
    в ::placeholder, в иконках) → inherits: true, иначе потомок взял бы
    initial-value и стал прозрачным. Без @property — мгновенная смена. */
 @property --awds-input-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-input-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -170,7 +165,7 @@
   border: 0;
   border-radius: var(--awds-input-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-input-border);
-  background: linear-gradient(to right, var(--awds-input-chroma, var(--awds-input-bg)), var(--awds-input-bg));
+  background: var(--awds-input-bg);
   color: var(--awds-input-color);
   cursor: text;
   /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
@@ -178,11 +173,10 @@
   opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
 
   /* Polish (MIFB): смену состояний анимируем явными свойствами — не transition: all.
-     CSS transition прерываем (interruptible). Фон-градиент и перекраска едут через
+     CSS transition прерываем (interruptible). Фон и перекраска едут через
      @property-аккумуляторы. Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
   transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-chroma 0.15s ease-out,
               --awds-input-color 0.15s ease-out,
               --awds-input-placeholder 0.15s ease-out,
               --awds-input-icon-color 0.15s ease-out,
@@ -399,7 +393,6 @@
 .input-light {
   /* Rest (map.state.rest.form-control.light) */
   --awds-input-bg:         rgb(var(--surface-bright));   /* #cell form-control/light/bg */
-  --awds-input-chroma:     rgb(var(--surface-bright));   /* #cell form-control/light/chroma-rest */
   --awds-input-border:     rgb(var(--secondary-container-on-low));   /* #cell form-control/light/border-rest */
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   /* #cell form-control/light/color-rest */
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   /* #cell form-control/light/placeholder-rest */
@@ -424,7 +417,6 @@
    Значения Focus совпадают с Default; отличается только цвет иконки. */
 .input-light:focus-within {
   --awds-input-bg:         rgb(var(--surface-bright));   /* #cell form-control/light/bg */
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   /* #cell form-control/light/chroma-focus */
   --awds-input-border:     rgb(var(--primary-dim));   /* #cell form-control/light/border-focus */
   --awds-input-color:      rgb(var(--primary-container-on-highest));   /* #cell form-control/light/color-focus */
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   /* #cell form-control/light/placeholder-focus */
