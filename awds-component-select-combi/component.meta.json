@@ -1,10 +1,10 @@
 {
   "component": "select-combi",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "contract_hash": "sha256:601ae457dffd96b328670437c9500a7eb2fed5bc7359c4610f056ed23cca15d6",
-  "artifact_hash": "sha256:42e8ef9ec67eaeffadc9ba0c70b53c4a2ff5990632be4a217d71d8c6a745061b",
-  "visual_change": false,
-  "released_at": "2026-09-16T16:40:57.842Z",
+  "artifact_hash": "sha256:638514a4efa5d9ccdadd75033797b6b07a3730e9540f45f8c74707d2b304dbe6",
+  "visual_change": true,
+  "released_at": "2026-09-25T05:54:41.770Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -233,7 +233,6 @@
     "--error-container-on-low",
     "--primary-container-chroma",
     "--primary-container-core",
-    "--primary-container-on",
     "--primary-container-on-high",
     "--primary-container-on-highest",
     "--primary-container-on-lowest",
