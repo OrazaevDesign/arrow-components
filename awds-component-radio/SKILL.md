@@ -23,7 +23,7 @@ description: Radio ArrowDS (.radio).
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний (bg/chroma/border/color) | `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline | `references/radio.css` |
-| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Accent | слой `awds-component-focus-selection` |
 | Размеры (padding/icon/gap) | `var(--awds-square-{N}-*)` | `component-token-map.json` → `map.size.square` |
 | Скругление | `var(--awds-rounded-border-radius-full)` — фиксированное, не размерное | Figma `border-radius/full` |
 | Гашение (opacity) | выключенное — `var(--awds-state-opacity-control-disabled)` (40%), включённое — парное `var(--awds-state-opacity-control-enabled)` (100%) | слой State темы, группа `opacity` |
@@ -69,7 +69,7 @@ description: Radio ArrowDS (.radio).
 - Инпут остаётся настоящим и в потоке: группировка по `name`, стрелки клавиатуры, скринридер и отправка формы работают сами.
 - Группе нужен заголовок: `<fieldset>` + `<legend>` либо `role="radiogroup"` + `aria-labelledby`.
 - Радиокнопка без видимой подписи обязана нести `aria-label` на `<label>`.
-- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи круга. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `radio.css`.
+- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Accent**: полоса 1…3px снаружи круга. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `radio.css`.
 - Disabled гасится `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 - Ставь `checked` на разумный вариант по умолчанию: группа без выбора заставляет пользователя угадывать, а «снять всё» он потом не сможет.
 
