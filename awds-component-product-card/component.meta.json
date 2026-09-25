@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "1.1.11",
+  "version": "1.1.12",
   "contract_hash": "sha256:5676ad9475d59c8df576be6801e9ac603015a291b9ada751126db1017642948b",
-  "artifact_hash": "sha256:a8fac3e71eaa910b0289413a65dcfc108f6feee21368bdf091673f1f79e511a5",
-  "visual_change": false,
-  "released_at": "2026-09-23T11:48:49.794Z",
+  "artifact_hash": "sha256:a179f1ea0e92b661b4cff66d61fe2a9259f2381d73877fd31a45974123ca5f1c",
+  "visual_change": true,
+  "released_at": "2026-09-25T05:54:41.401Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -191,7 +191,7 @@
     ]
   },
   "ds_token_dependencies": [
-    "--accent-container-on",
+    "--accent-core",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
