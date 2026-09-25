@@ -374,7 +374,7 @@
    и drop. Цвет тот же, что у поля в фокусе: зона уже готова принять файл. */
 .upl__drop--over .input {
   --awds-input-border: rgb(var(--primary-dim));   /* #cell form-control/default/border-focus */
-  --awds-input-bg:     rgb(var(--surface-bright));   /* #cell form-control/default/bg-focus */
+  --awds-input-bg:     rgb(var(--primary-container-base));   /* #cell form-control/default/bg-focus */
 }
 
 /* Видимая часть реагирует на фокус инпута — иначе при табуляции подсветки не было бы. */
