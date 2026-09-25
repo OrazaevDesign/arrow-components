@@ -1,4 +1,4 @@
-/* ArrowDS · radio@1.0.9
+/* ArrowDS · radio@1.0.10
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-radio-bg {
@@ -135,7 +135,7 @@
 }
 
 .radio__input:focus-visible + .radio__box {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 

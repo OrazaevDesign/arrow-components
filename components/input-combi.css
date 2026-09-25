@@ -1,13 +1,7 @@
-/* ArrowDS · input-combi@1.0.12
+/* ArrowDS · input-combi@1.0.14
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-icombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-icombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -55,12 +49,11 @@
   border: 0;
   border-radius: var(--awds-icombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-icombi-border);
-  background: linear-gradient(to right, var(--awds-icombi-chroma, var(--awds-icombi-bg)), var(--awds-icombi-bg));
+  background: var(--awds-icombi-bg);
   color: var(--awds-icombi-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
   transition: --awds-icombi-bg 0.15s ease-out,
-              --awds-icombi-chroma 0.15s ease-out,
               --awds-icombi-color 0.15s ease-out,
               --awds-icombi-placeholder 0.15s ease-out,
               --awds-icombi-icon-color 0.15s ease-out,
@@ -256,7 +249,6 @@
 
 .icombi-autofill {
   --awds-icombi-bg:         rgb(var(--tertiary-container-core));   
-  --awds-icombi-chroma:     rgb(var(--tertiary-container-chroma));   
   --awds-icombi-border:     rgb(var(--tertiary-container-on-low));   
   --awds-icombi-color:      rgb(var(--tertiary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--tertiary-container-on-high));   
@@ -272,8 +264,7 @@
 }
 
 .icombi-autofill:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:         rgb(var(--primary-container-base));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -300,7 +291,6 @@
 
 .icombi-default {
   --awds-icombi-bg:         rgb(var(--secondary-container-core));   
-  --awds-icombi-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-icombi-border:     rgb(var(--secondary-container-on-low));   
   --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -316,8 +306,7 @@
 }
 
 .icombi-default:focus-within {
-  --awds-icombi-bg:        rgb(var(--surface-bright));   
-  --awds-icombi-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:        rgb(var(--primary-container-base));   
   --awds-icombi-border:    rgb(var(--primary-dim));   
   --awds-icombi-color:     rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder: rgb(var(--primary-container-on-high));   
@@ -327,7 +316,6 @@
 
 .icombi-error {
   --awds-icombi-bg:         rgb(var(--error-container-core));   
-  --awds-icombi-chroma:     rgb(var(--error-container-chroma));   
   --awds-icombi-border:     rgb(var(--error-container-on-low));   
   --awds-icombi-color:      rgb(var(--error-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--error-container-on-high));   
@@ -343,8 +331,7 @@
 }
 
 .icombi-error:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:         rgb(var(--primary-container-base));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -355,7 +342,6 @@
 
 .icombi-ghost {
   --awds-icombi-bg:         transparent;
-  --awds-icombi-chroma:     transparent;
   --awds-icombi-border:     transparent;
   --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -364,7 +350,6 @@
 
 .icombi-ghost:focus-within {
   --awds-icombi-bg:         transparent;
-  --awds-icombi-chroma:     transparent;
   --awds-icombi-border:     transparent;
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -375,7 +360,6 @@
 
 .icombi-light {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--surface-bright));   
   --awds-icombi-border:     rgb(var(--secondary-container-on-low));   
   --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -392,7 +376,6 @@
 
 .icombi-light:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -403,7 +386,6 @@
 
 .icombi-secondary {
   --awds-icombi-bg:         rgb(var(--secondary-core));   
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));   
   --awds-icombi-border:     rgb(var(--secondary-core));   
   --awds-icombi-color:      rgb(var(--secondary-on));   
   --awds-icombi-placeholder:  rgb(var(--secondary-on-dim));   
@@ -422,7 +404,6 @@
 
 .icombi-secondary:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));   
   --awds-icombi-border:     rgb(var(--secondary-core));   
   --awds-icombi-color:      rgb(var(--secondary-on));   
   --awds-icombi-placeholder:  rgb(var(--secondary-on-dim));   
@@ -433,7 +414,6 @@
 
 .icombi-success {
   --awds-icombi-bg:         rgb(var(--success-container-core));   
-  --awds-icombi-chroma:     rgb(var(--success-container-chroma));   
   --awds-icombi-border:     rgb(var(--success-container-on-low));   
   --awds-icombi-color:      rgb(var(--success-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--success-container-on-high));   
@@ -449,8 +429,7 @@
 }
 
 .icombi-success:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:         rgb(var(--primary-container-base));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   

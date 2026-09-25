@@ -1,4 +1,4 @@
-/* ArrowDS components — 42 компонентов.
+/* ArrowDS components — 44 компонентов.
    Сгенерировано tools/build-dist.mjs — руками не править.
 
    Правила лежат в @layer awds: код потребителя вне слоёв сильнее любого правила
@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.6, button-area@2.0.6, button-favorites@2.0.1, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.2, emblem@3.0.6, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.6, list-item@1.0.12, modal@1.0.1, notice@2.0.3, pagination@1.0.1, price@2.0.5, product-card@1.1.12, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.18, select-combi@1.0.19, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
+   Состав: focus-selection@2.0.10, badge@1.1.4, button@2.2.6, button-area@2.0.6, button-favorites@2.0.1, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.10, content-area@2.0.3, datepicker@1.0.2, emblem@3.0.6, formfield@1.0.11, heading@1.0.6, input@1.0.14, input-combi@1.0.14, input-inline@1.0.0, label@1.0.9, link@1.0.6, list-item@1.0.12, modal@1.0.1, notice@2.0.3, pagination@1.0.1, popover@1.0.0, price@2.0.5, product-card@1.1.12, progress@2.0.2, radio@1.0.10, range@2.0.10, rating@2.0.9, scrollbar@2.0.6, select@1.0.20, select-combi@1.0.21, slider@1.0.8, switch@1.0.9, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.15, textarea-combi@1.0.2, toast@1.0.0, tooltip@2.0.0, uploader@2.0.1 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -75,12 +75,6 @@
   initial-value: transparent;
 }
 
-@property --awds-input-chroma {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
 @property --awds-input-color {
   syntax: "<color>";
   inherits: true;
@@ -100,12 +94,6 @@
 }
 
 @property --awds-icombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-icombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -256,12 +244,6 @@
   initial-value: transparent;
 }
 
-@property --awds-select-chroma {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
 @property --awds-select-color {
   syntax: "<color>";
   inherits: true;
@@ -287,12 +269,6 @@
 }
 
 @property --awds-scombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-scombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -376,12 +352,6 @@
   initial-value: transparent;
 }
 
-@property --awds-txa-chroma {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
 @property --awds-txa-color {
   syntax: "<color>";
   inherits: true;
@@ -395,12 +365,6 @@
 }
 
 @property --awds-tcombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-tcombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -1769,7 +1733,7 @@
 }
 
 .checkbox__input:focus-visible + .checkbox__box {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 
@@ -2591,12 +2555,11 @@
   border: 0;
   border-radius: var(--awds-input-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-input-border);
-  background: linear-gradient(to right, var(--awds-input-chroma, var(--awds-input-bg)), var(--awds-input-bg));
+  background: var(--awds-input-bg);
   color: var(--awds-input-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
   transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-chroma 0.15s ease-out,
               --awds-input-color 0.15s ease-out,
               --awds-input-placeholder 0.15s ease-out,
               --awds-input-icon-color 0.15s ease-out,
@@ -2755,7 +2718,6 @@
 
 .input-autofill {
   --awds-input-bg:         rgb(var(--tertiary-container-core));   
-  --awds-input-chroma:     rgb(var(--tertiary-container-chroma));   
   --awds-input-border:     rgb(var(--tertiary-container-on-low));   
   --awds-input-color:      rgb(var(--tertiary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--tertiary-container-on-high));   
@@ -2771,8 +2733,7 @@
 }
 
 .input-autofill:focus-within {
-  --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-bg:         rgb(var(--primary-container-base));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -2798,7 +2759,6 @@
 
 .input-default {
   --awds-input-bg:         rgb(var(--secondary-container-core));   
-  --awds-input-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-input-border:     rgb(var(--secondary-container-on-low));   
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -2814,8 +2774,7 @@
 }
 
 .input-default:focus-within {
-  --awds-input-bg:        rgb(var(--surface-bright));   
-  --awds-input-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-input-bg:        rgb(var(--primary-container-base));   
   --awds-input-border:    rgb(var(--primary-dim));   
   --awds-input-color:     rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder: rgb(var(--primary-container-on-high));   
@@ -2825,7 +2784,6 @@
 
 .input-error {
   --awds-input-bg:         rgb(var(--error-container-core));   
-  --awds-input-chroma:     rgb(var(--error-container-chroma));   
   --awds-input-border:     rgb(var(--error-container-on-low));   
   --awds-input-color:      rgb(var(--error-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--error-container-on-high));   
@@ -2841,8 +2799,7 @@
 }
 
 .input-error:focus-within {
-  --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-bg:         rgb(var(--primary-container-base));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -2853,7 +2810,6 @@
 
 .input-ghost {
   --awds-input-bg:         transparent;
-  --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -2862,7 +2818,6 @@
 
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
-  --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -2873,7 +2828,6 @@
 
 .input-light {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--surface-bright));   
   --awds-input-border:     rgb(var(--secondary-container-on-low));   
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -2890,7 +2844,6 @@
 
 .input-light:focus-within {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -2901,7 +2854,6 @@
 
 .input-secondary {
   --awds-input-bg:         rgb(var(--secondary-core));   
-  --awds-input-chroma:     rgb(var(--secondary-chroma));   
   --awds-input-border:     rgb(var(--secondary-core));   
   --awds-input-color:      rgb(var(--secondary-on));   
   --awds-input-placeholder:  rgb(var(--secondary-on-dim));   
@@ -2920,7 +2872,6 @@
 
 .input-secondary:focus-within {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--secondary-chroma));   
   --awds-input-border:     rgb(var(--secondary-core));   
   --awds-input-color:      rgb(var(--secondary-on));   
   --awds-input-placeholder:  rgb(var(--secondary-on-dim));   
@@ -2931,7 +2882,6 @@
 
 .input-success {
   --awds-input-bg:         rgb(var(--success-container-core));   
-  --awds-input-chroma:     rgb(var(--success-container-chroma));   
   --awds-input-border:     rgb(var(--success-container-on-low));   
   --awds-input-color:      rgb(var(--success-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--success-container-on-high));   
@@ -2947,8 +2897,7 @@
 }
 
 .input-success:focus-within {
-  --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-bg:         rgb(var(--primary-container-base));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -2979,12 +2928,11 @@
   border: 0;
   border-radius: var(--awds-icombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-icombi-border);
-  background: linear-gradient(to right, var(--awds-icombi-chroma, var(--awds-icombi-bg)), var(--awds-icombi-bg));
+  background: var(--awds-icombi-bg);
   color: var(--awds-icombi-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
   transition: --awds-icombi-bg 0.15s ease-out,
-              --awds-icombi-chroma 0.15s ease-out,
               --awds-icombi-color 0.15s ease-out,
               --awds-icombi-placeholder 0.15s ease-out,
               --awds-icombi-icon-color 0.15s ease-out,
@@ -3180,7 +3128,6 @@
 
 .icombi-autofill {
   --awds-icombi-bg:         rgb(var(--tertiary-container-core));   
-  --awds-icombi-chroma:     rgb(var(--tertiary-container-chroma));   
   --awds-icombi-border:     rgb(var(--tertiary-container-on-low));   
   --awds-icombi-color:      rgb(var(--tertiary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--tertiary-container-on-high));   
@@ -3196,8 +3143,7 @@
 }
 
 .icombi-autofill:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:         rgb(var(--primary-container-base));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -3224,7 +3170,6 @@
 
 .icombi-default {
   --awds-icombi-bg:         rgb(var(--secondary-container-core));   
-  --awds-icombi-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-icombi-border:     rgb(var(--secondary-container-on-low));   
   --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -3240,8 +3185,7 @@
 }
 
 .icombi-default:focus-within {
-  --awds-icombi-bg:        rgb(var(--surface-bright));   
-  --awds-icombi-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:        rgb(var(--primary-container-base));   
   --awds-icombi-border:    rgb(var(--primary-dim));   
   --awds-icombi-color:     rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder: rgb(var(--primary-container-on-high));   
@@ -3251,7 +3195,6 @@
 
 .icombi-error {
   --awds-icombi-bg:         rgb(var(--error-container-core));   
-  --awds-icombi-chroma:     rgb(var(--error-container-chroma));   
   --awds-icombi-border:     rgb(var(--error-container-on-low));   
   --awds-icombi-color:      rgb(var(--error-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--error-container-on-high));   
@@ -3267,8 +3210,7 @@
 }
 
 .icombi-error:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:         rgb(var(--primary-container-base));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -3279,7 +3221,6 @@
 
 .icombi-ghost {
   --awds-icombi-bg:         transparent;
-  --awds-icombi-chroma:     transparent;
   --awds-icombi-border:     transparent;
   --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -3288,7 +3229,6 @@
 
 .icombi-ghost:focus-within {
   --awds-icombi-bg:         transparent;
-  --awds-icombi-chroma:     transparent;
   --awds-icombi-border:     transparent;
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -3299,7 +3239,6 @@
 
 .icombi-light {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--surface-bright));   
   --awds-icombi-border:     rgb(var(--secondary-container-on-low));   
   --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -3316,7 +3255,6 @@
 
 .icombi-light:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -3327,7 +3265,6 @@
 
 .icombi-secondary {
   --awds-icombi-bg:         rgb(var(--secondary-core));   
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));   
   --awds-icombi-border:     rgb(var(--secondary-core));   
   --awds-icombi-color:      rgb(var(--secondary-on));   
   --awds-icombi-placeholder:  rgb(var(--secondary-on-dim));   
@@ -3346,7 +3283,6 @@
 
 .icombi-secondary:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--secondary-chroma));   
   --awds-icombi-border:     rgb(var(--secondary-core));   
   --awds-icombi-color:      rgb(var(--secondary-on));   
   --awds-icombi-placeholder:  rgb(var(--secondary-on-dim));   
@@ -3357,7 +3293,6 @@
 
 .icombi-success {
   --awds-icombi-bg:         rgb(var(--success-container-core));   
-  --awds-icombi-chroma:     rgb(var(--success-container-chroma));   
   --awds-icombi-border:     rgb(var(--success-container-on-low));   
   --awds-icombi-color:      rgb(var(--success-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--success-container-on-high));   
@@ -3373,8 +3308,7 @@
 }
 
 .icombi-success:focus-within {
-  --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-icombi-bg:         rgb(var(--primary-container-base));   
   --awds-icombi-border:     rgb(var(--primary-dim));   
   --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -4645,6 +4579,83 @@
   .pgn__list {
     scroll-behavior: auto;
   }
+}
+
+.pop {
+  --awds-pop-bg:      rgb(var(--surface-bright));   
+  --awds-pop-hairline: rgb(var(--extended-shadow-3));   
+  --awds-pop-rounded: var(--awds-rounded-border-radius-600);   
+  --awds-pop-tail:    var(--awds-space-2);   
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: max-content;
+}
+
+.pop *, .pop *::before, .pop *::after {
+  box-sizing: border-box;
+}
+
+.pop__panel {
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: var(--awds-pop-rounded);
+  background: var(--awds-pop-bg);
+  box-shadow: var(--awds-shadow-elevation-3);
+  overflow: hidden;
+}
+
+.pop__tail {
+  position: absolute;
+  z-index: 2;
+  width: var(--awds-pop-tail);
+  height: var(--awds-pop-tail);
+  background: var(--awds-pop-bg);
+  transform: rotate(45deg);
+}
+
+.pop[popover] {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.pop--side-top .pop__tail, .pop:not(.pop--side-bottom):not(.pop--side-left):not(.pop--side-right) .pop__tail {
+  bottom: calc(-0.5 * var(--awds-pop-tail));
+  left: 50%;
+  margin-left: calc(-0.5 * var(--awds-pop-tail));
+  border-right:  1px solid var(--awds-pop-hairline);
+  border-bottom: 1px solid var(--awds-pop-hairline);
+}
+
+.pop--side-bottom .pop__tail {
+  top: calc(-0.5 * var(--awds-pop-tail));
+  bottom: auto;
+  left: 50%;
+  margin-left: calc(-0.5 * var(--awds-pop-tail));
+  border-top:  1px solid var(--awds-pop-hairline);
+  border-left: 1px solid var(--awds-pop-hairline);
+}
+
+.pop--side-left .pop__tail {
+  right: calc(-0.5 * var(--awds-pop-tail));
+  top: 50%;
+  margin-top: calc(-0.5 * var(--awds-pop-tail));
+  border-top:   1px solid var(--awds-pop-hairline);
+  border-right: 1px solid var(--awds-pop-hairline);
+}
+
+.pop--side-right .pop__tail {
+  left: calc(-0.5 * var(--awds-pop-tail));
+  top: 50%;
+  margin-top: calc(-0.5 * var(--awds-pop-tail));
+  border-bottom: 1px solid var(--awds-pop-hairline);
+  border-left:   1px solid var(--awds-pop-hairline);
 }
 
 .price {
@@ -6203,7 +6214,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .radio__input:focus-visible + .radio__box {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 
@@ -6239,7 +6250,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   --awds-range-size:    var(--awds-space-5);   
   --awds-range-track-h: var(--awds-space-1);
   --awds-range-fill-bg:     rgb(var(--primary-core));   
-  --awds-range-fill-chroma: rgb(var(--primary-chroma));   
   --awds-range-track: rgb(var(--surface-container-container));   
   box-sizing: border-box;
   position: relative;
@@ -6266,7 +6276,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-from));
   right: calc(100% - (var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-to)));
   border-radius: var(--awds-rounded-border-radius-full);
-  background: linear-gradient(to right, var(--awds-range-fill-chroma), var(--awds-range-fill-bg));
+  background: var(--awds-range-fill-bg);
   pointer-events: none;
   transition: background 0.15s ease-out;
 }
@@ -6281,7 +6291,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   width: var(--awds-range-size);
   height: var(--awds-range-size);
   border-radius: 50%;
-  background: linear-gradient(to right, var(--awds-range-thumb-chroma, var(--awds-range-thumb-bg)), var(--awds-range-thumb-bg));
+  background: var(--awds-range-thumb-bg);
   box-shadow: inset 0 0 0 1px var(--awds-range-thumb-border),
               var(--awds-range-thumb-elevation, 0 0 rgb(0 0 0 / 0));
   transform: translate(-50%, -50%);
@@ -6349,7 +6359,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .range-default {
   --awds-range-thumb-bg:     rgb(var(--primary-core));   
-  --awds-range-thumb-chroma: rgb(var(--primary-chroma));   
   --awds-range-thumb-border: rgb(var(--primary-core));
 }
 
@@ -6360,13 +6369,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .range-default:active {
-  --awds-range-fill-chroma:  rgb(var(--primary-core));   
-  --awds-range-thumb-chroma: rgb(var(--primary-core));
 }
 
 .range-light {
   --awds-range-thumb-bg:     rgb(var(--secondary-container-core));   
-  --awds-range-thumb-chroma: rgb(var(--surface-bright));   
   --awds-range-thumb-border: rgb(var(--secondary-container-dim));   
   --awds-range-thumb-elevation: var(--awds-shadow-elevation-1);
 }
@@ -6378,7 +6384,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .range-light:active {
-  --awds-range-fill-chroma:  rgb(var(--primary-core));
 }
 
 .range--500 {
@@ -6603,12 +6608,11 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   border: 0;
   border-radius: var(--awds-select-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-select-border);
-  background: linear-gradient(to right, var(--awds-select-chroma, var(--awds-select-bg)), var(--awds-select-bg));
+  background: var(--awds-select-bg);
   color: var(--awds-select-color);
   cursor: pointer;
   opacity: var(--awds-opacity-100);   
   transition: --awds-select-bg 0.15s ease-out,
-              --awds-select-chroma 0.15s ease-out,
               --awds-select-color 0.15s ease-out,
               --awds-select-placeholder 0.15s ease-out,
               --awds-select-chevron 0.15s ease-out,
@@ -6913,7 +6917,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .select-autofill {
   --awds-select-bg:       rgb(var(--tertiary-container-core));   
-  --awds-select-chroma:   rgb(var(--tertiary-container-chroma));   
   --awds-select-border:   rgb(var(--tertiary-container-on-low));   
   --awds-select-color:    rgb(var(--tertiary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--tertiary-container-on-high));   
@@ -6930,8 +6933,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-autofill:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-bg:       rgb(var(--primary-container-base));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -6943,8 +6945,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));   
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-bg:       rgb(var(--primary-container-base));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -6972,7 +6973,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .select-default {
   --awds-select-bg:         rgb(var(--secondary-container-core));   
-  --awds-select-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-select-border:     rgb(var(--secondary-container-on-low));   
   --awds-select-color:      rgb(var(--secondary-container-on-highest));   
   --awds-select-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -6989,8 +6989,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-default:focus-within {
-  --awds-select-bg:      rgb(var(--surface-bright));   
-  --awds-select-chroma:  rgb(var(--primary-container-chroma));   
+  --awds-select-bg:      rgb(var(--primary-container-base));   
   --awds-select-border:  rgb(var(--primary-dim));   
   --awds-select-color:   rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -7001,8 +7000,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .select.select-default:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:         rgb(var(--surface-bright));   
-    --awds-select-chroma:     rgb(var(--primary-container-chroma));   
+    --awds-select-bg:         rgb(var(--primary-container-base));   
     --awds-select-border:     rgb(var(--primary-dim));   
     --awds-select-color:      rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder:  rgb(var(--primary-container-on-high));   
@@ -7015,7 +7013,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .select-error {
   --awds-select-bg:       rgb(var(--error-container-core));   
-  --awds-select-chroma:   rgb(var(--error-container-chroma));   
   --awds-select-border:   rgb(var(--error-container-on-low));   
   --awds-select-color:    rgb(var(--error-container-on-highest));   
   --awds-select-placeholder: rgb(var(--error-container-on-high));   
@@ -7032,8 +7029,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-error:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-bg:       rgb(var(--primary-container-base));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -7045,8 +7041,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .select.select-error:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));   
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-bg:       rgb(var(--primary-container-base));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -7059,7 +7054,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .select-ghost {
   --awds-select-bg:       transparent;
-  --awds-select-chroma:   transparent;
   --awds-select-border:   transparent;
   --awds-select-color:    rgb(var(--secondary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
@@ -7089,7 +7083,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .select-light {
   --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--surface-bright));   
   --awds-select-border:   rgb(var(--secondary-container-on-low));   
   --awds-select-color:    rgb(var(--secondary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
@@ -7106,7 +7099,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-light:focus-within {
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -7118,7 +7110,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .select.select-light:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -7131,7 +7122,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .select-success {
   --awds-select-bg:       rgb(var(--success-container-core));   
-  --awds-select-chroma:   rgb(var(--success-container-chroma));   
   --awds-select-border:   rgb(var(--success-container-on-low));   
   --awds-select-color:    rgb(var(--success-container-on-highest));   
   --awds-select-placeholder: rgb(var(--success-container-on-high));   
@@ -7148,8 +7138,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-success:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-bg:       rgb(var(--primary-container-base));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -7161,8 +7150,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .select.select-success:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));   
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-bg:       rgb(var(--primary-container-base));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -7207,12 +7195,11 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   border: 0;
   border-radius: var(--awds-scombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-scombi-border);
-  background: linear-gradient(to right, var(--awds-scombi-chroma, var(--awds-scombi-bg)), var(--awds-scombi-bg));
+  background: var(--awds-scombi-bg);
   color: var(--awds-scombi-color);
   cursor: pointer;
   opacity: var(--awds-opacity-100);   
   transition: --awds-scombi-bg 0.15s ease-out,
-              --awds-scombi-chroma 0.15s ease-out,
               --awds-scombi-color 0.15s ease-out,
               --awds-scombi-placeholder 0.15s ease-out,
               --awds-scombi-chevron 0.15s ease-out,
@@ -7525,7 +7512,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .scombi-autofill {
   --awds-scombi-bg:          rgb(var(--tertiary-container-core));   
-  --awds-scombi-chroma:      rgb(var(--tertiary-container-chroma));   
   --awds-scombi-border:      rgb(var(--tertiary-container-on-low));   
   --awds-scombi-color:       rgb(var(--tertiary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--tertiary-container-on-high));   
@@ -7542,8 +7528,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-autofill:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:          rgb(var(--primary-container-base));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -7555,8 +7540,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .scombi.scombi-autofill:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));   
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:          rgb(var(--primary-container-base));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -7585,7 +7569,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .scombi-default {
   --awds-scombi-bg:         rgb(var(--secondary-container-core));   
-  --awds-scombi-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-scombi-border:     rgb(var(--secondary-container-on-low));   
   --awds-scombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-scombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -7602,8 +7585,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-default:focus-within {
-  --awds-scombi-bg:         rgb(var(--surface-bright));   
-  --awds-scombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:         rgb(var(--primary-container-base));   
   --awds-scombi-border:     rgb(var(--primary-dim));   
   --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -7615,8 +7597,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .scombi.scombi-default:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:         rgb(var(--surface-bright));   
-    --awds-scombi-chroma:     rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:         rgb(var(--primary-container-base));   
     --awds-scombi-border:     rgb(var(--primary-dim));   
     --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -7629,7 +7610,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .scombi-error {
   --awds-scombi-bg:          rgb(var(--error-container-core));   
-  --awds-scombi-chroma:      rgb(var(--error-container-chroma));   
   --awds-scombi-border:      rgb(var(--error-container-on-low));   
   --awds-scombi-color:       rgb(var(--error-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--error-container-on-high));   
@@ -7646,8 +7626,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-error:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:          rgb(var(--primary-container-base));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -7659,8 +7638,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .scombi.scombi-error:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));   
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:          rgb(var(--primary-container-base));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -7673,7 +7651,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .scombi-ghost {
   --awds-scombi-bg:          transparent;
-  --awds-scombi-chroma:      transparent;
   --awds-scombi-border:      transparent;
   --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
@@ -7703,7 +7680,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .scombi-light {
   --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--surface-bright));   
   --awds-scombi-border:      rgb(var(--secondary-container-on-low));   
   --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
@@ -7720,7 +7696,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-light:focus-within {
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -7732,7 +7707,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .scombi.scombi-light:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -7745,7 +7719,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .scombi-success {
   --awds-scombi-bg:          rgb(var(--success-container-core));   
-  --awds-scombi-chroma:      rgb(var(--success-container-chroma));   
   --awds-scombi-border:      rgb(var(--success-container-on-low));   
   --awds-scombi-color:       rgb(var(--success-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--success-container-on-high));   
@@ -7762,8 +7735,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-success:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:          rgb(var(--primary-container-base));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -7775,8 +7747,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 @supports (appearance: base-select) {
   .scombi.scombi-success:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));   
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:          rgb(var(--primary-container-base));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -8010,7 +7981,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .switch__input:focus-visible + .switch__track {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 
@@ -8682,12 +8653,11 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   border: 0;
   border-radius: var(--awds-txa-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-txa-border);
-  background: linear-gradient(to right, var(--awds-txa-chroma, var(--awds-txa-bg)), var(--awds-txa-bg));
+  background: var(--awds-txa-bg);
   color: var(--awds-txa-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
   transition: --awds-txa-bg 0.15s ease-out,
-              --awds-txa-chroma 0.15s ease-out,
               --awds-txa-color 0.15s ease-out,
               --awds-txa-placeholder 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -8813,7 +8783,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .txa-autofill {
   --awds-txa-bg:         rgb(var(--tertiary-container-core));   
-  --awds-txa-chroma:     rgb(var(--tertiary-container-chroma));   
   --awds-txa-border:     rgb(var(--tertiary-container-on-low));   
   --awds-txa-color:      rgb(var(--tertiary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--tertiary-container-on-high));
@@ -8828,8 +8797,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-autofill:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:         rgb(var(--primary-container-base));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
@@ -8855,7 +8823,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .txa-default {
   --awds-txa-bg:        rgb(var(--secondary-container-core));   
-  --awds-txa-chroma:    rgb(var(--secondary-container-chroma));   
   --awds-txa-border:    rgb(var(--secondary-container-on-low));   
   --awds-txa-color:     rgb(var(--secondary-container-on-highest));   
   --awds-txa-placeholder: rgb(var(--secondary-container-on-high));
@@ -8870,8 +8837,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-default:focus-within {
-  --awds-txa-bg:        rgb(var(--surface-bright));   
-  --awds-txa-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:        rgb(var(--primary-container-base));   
   --awds-txa-border:    rgb(var(--primary-dim));   
   --awds-txa-color:     rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder: rgb(var(--primary-container-on-high));   
@@ -8881,7 +8847,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .txa-error {
   --awds-txa-bg:         rgb(var(--error-container-core));   
-  --awds-txa-chroma:     rgb(var(--error-container-chroma));   
   --awds-txa-border:     rgb(var(--error-container-on-low));   
   --awds-txa-color:      rgb(var(--error-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--error-container-on-high));
@@ -8896,8 +8861,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-error:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:         rgb(var(--primary-container-base));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
@@ -8907,7 +8871,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .txa-ghost {
   --awds-txa-bg:         transparent;
-  --awds-txa-chroma:     transparent;
   --awds-txa-border:     transparent;
   --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));
@@ -8922,7 +8885,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .txa-light {
   --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--surface-bright));   
   --awds-txa-border:     rgb(var(--secondary-container-on-low));   
   --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));
@@ -8937,7 +8899,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-light:focus-within {
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
@@ -8947,7 +8908,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .txa-success {
   --awds-txa-bg:         rgb(var(--success-container-core));   
-  --awds-txa-chroma:     rgb(var(--success-container-chroma));   
   --awds-txa-border:     rgb(var(--success-container-on-low));   
   --awds-txa-color:      rgb(var(--success-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--success-container-on-high));
@@ -8962,8 +8922,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-success:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:         rgb(var(--primary-container-base));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
@@ -8989,12 +8948,11 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   border: 0;
   border-radius: var(--awds-tcombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-tcombi-border);
-  background: linear-gradient(to right, var(--awds-tcombi-chroma, var(--awds-tcombi-bg)), var(--awds-tcombi-bg));
+  background: var(--awds-tcombi-bg);
   color: var(--awds-tcombi-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
   transition: --awds-tcombi-bg 0.15s ease-out,
-              --awds-tcombi-chroma 0.15s ease-out,
               --awds-tcombi-color 0.15s ease-out,
               --awds-tcombi-label 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -9100,7 +9058,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-autofill {
   --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--tertiary-container-chroma));   
   --awds-tcombi-border:      rgb(var(--tertiary-container-on-low));   
   --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
@@ -9108,7 +9065,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-autofill:hover:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--tertiary-container-chroma));   
   --awds-tcombi-border:      rgb(var(--tertiary-container-on));   
   --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
@@ -9116,15 +9072,13 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-autofill:active:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--tertiary-container-chroma));   
   --awds-tcombi-border:      rgb(var(--tertiary-container-on-low));   
   --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
 }
 
 .tcombi-autofill:focus-within {
-  --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
   --awds-tcombi-border:      rgb(var(--primary-dim));   
   --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
@@ -9150,7 +9104,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-default {
   --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--secondary-container-chroma));   
   --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
@@ -9158,7 +9111,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-default:hover:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--secondary-container-chroma));   
   --awds-tcombi-border:      rgb(var(--secondary-container-on));   
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
@@ -9166,15 +9118,13 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-default:active:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--secondary-container-chroma));   
   --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
 }
 
 .tcombi-default:focus-within {
-  --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
   --awds-tcombi-border:      rgb(var(--primary-dim));   
   --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
@@ -9184,7 +9134,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-error {
   --awds-tcombi-bg:          rgb(var(--error-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   
   --awds-tcombi-border:      rgb(var(--error-container-on-low));   
   --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--error-container-on-high));
@@ -9192,7 +9141,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-error:hover:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--error-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   
   --awds-tcombi-border:      rgb(var(--error-container-on));   
   --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--error-container-on-high));
@@ -9200,15 +9148,13 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-error:active:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--error-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   
   --awds-tcombi-border:      rgb(var(--error-container-on-low));   
   --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--error-container-on-high));
 }
 
 .tcombi-error:focus-within {
-  --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
   --awds-tcombi-border:      rgb(var(--primary-dim));   
   --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
@@ -9218,7 +9164,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-ghost {
   --awds-tcombi-bg:          transparent;
-  --awds-tcombi-chroma:      transparent;
   --awds-tcombi-border:      transparent;
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
@@ -9243,7 +9188,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-light {
   --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--surface-bright));   
   --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
@@ -9251,7 +9195,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-light:hover:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--surface-bright));   
   --awds-tcombi-border:      rgb(var(--secondary-container-on));   
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
@@ -9259,7 +9202,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-light:active:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--surface-bright));   
   --awds-tcombi-border:      rgb(var(--secondary-container-on-low));   
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
@@ -9267,7 +9209,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-light:focus-within {
   --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
   --awds-tcombi-border:      rgb(var(--primary-dim));   
   --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
@@ -9277,7 +9218,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-success {
   --awds-tcombi-bg:          rgb(var(--success-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--success-container-chroma));   
   --awds-tcombi-border:      rgb(var(--success-container-on-low));   
   --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--success-container-on-high));
@@ -9285,7 +9225,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-success:hover:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--success-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--success-container-chroma));   
   --awds-tcombi-border:      rgb(var(--success-container-on));   
   --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--success-container-on-high));
@@ -9293,20 +9232,146 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-success:active:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--success-container-core));   
-  --awds-tcombi-chroma:      rgb(var(--success-container-chroma));   
   --awds-tcombi-border:      rgb(var(--success-container-on-low));   
   --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--success-container-on-high));
 }
 
 .tcombi-success:focus-within {
-  --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
   --awds-tcombi-border:      rgb(var(--primary-dim));   
   --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
+}
+
+.toast {
+  --awds-toast-pad:     var(--awds-space-2-5);   
+  --awds-toast-gap:     var(--awds-space-1-5);   
+  --awds-toast-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-toast-fs:      var(--awds-control-font-size-400);       
+  --awds-toast-lh:      var(--awds-control-line-height-400);     
+  --awds-toast-ls:      var(--awds-control-letter-spacing-400);
+  --awds-toast-icon:    var(--awds-space-5);     
+  --awds-toast-hover:   var(--awds-opacity-20);  
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: var(--awds-toast-rounded);
+  background: rgb(var(--awds-toast-bg));
+  color: rgb(var(--awds-toast-color));
+  box-shadow: var(--awds-shadow-elevation-3);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-toast-fs);
+  line-height: var(--awds-toast-lh);
+  letter-spacing: var(--awds-toast-ls);
+  font-weight: var(--awds-font-weight-regular);
+  --awds-focus-color: rgb(var(--awds-toast-color));
+}
+
+.toast *, .toast *::before, .toast *::after {
+  box-sizing: border-box;
+}
+
+.toast-normal {
+  --awds-toast-bg:    var(--surface-bright-dark);        
+  --awds-toast-color: var(--surface-on-highest-dark);
+}
+
+.toast-alert {
+  --awds-toast-bg:    var(--error-core);   
+  --awds-toast-color: var(--error-on);
+}
+
+.toast__content {
+  display: flex;
+  align-items: center;
+  min-inline-size: 0;
+  padding-block: var(--awds-toast-pad);
+  padding-inline-start: var(--awds-toast-pad);
+  padding-inline-end: 0;
+}
+
+.toast:not(:has(.toast__action)):not(:has(.toast__close)) .toast__content {
+  padding-inline-end: var(--awds-toast-pad);
+}
+
+.toast__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: var(--awds-toast-gap);
+}
+
+.toast__icon > svg, .toast__icon > img {
+  inline-size: var(--awds-toast-icon);
+  block-size: var(--awds-toast-icon);
+}
+
+.toast__text {
+  padding-inline: var(--awds-toast-gap);
+}
+
+.toast__timer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--awds-toast-icon);
+  block-size: var(--awds-toast-icon);
+}
+
+.toast__timer .progress-circular {
+  --awds-progress-size:  var(--awds-toast-icon);          
+  --awds-progress-color: rgb(var(--awds-toast-color));
+  position: absolute;
+  inset: 0;
+}
+
+.toast__timer-value {
+  position: relative;
+  font-size: var(--awds-control-font-size-200);        
+  line-height: var(--awds-control-line-height-200);    
+  letter-spacing: var(--awds-control-letter-spacing-200);
+  font-variant-numeric: tabular-nums;
+}
+
+.toast__action, .toast__close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--awds-toast-pad);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease-out;
+}
+
+.toast__action:hover, .toast__close:hover {
+  background: rgb(var(--awds-toast-color) / var(--awds-toast-hover));
+}
+
+.toast__action:focus-visible, .toast__close:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset-inside);
+}
+
+.toast__close > svg {
+  inline-size: var(--awds-toast-icon);
+  block-size: var(--awds-toast-icon);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast__action,
+  .toast__close {
+    transition: none;
+  }
 }
 
 .tooltip {
@@ -9614,7 +9679,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .upl__drop--over .input {
   --awds-input-border: rgb(var(--primary-dim));   
-  --awds-input-bg:     rgb(var(--surface-bright));
+  --awds-input-bg:     rgb(var(--primary-container-base));
 }
 
 .upl__input:focus-visible + .input {

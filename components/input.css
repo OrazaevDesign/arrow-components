@@ -1,13 +1,7 @@
-/* ArrowDS · input@1.0.12
+/* ArrowDS · input@1.0.14
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-input-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-input-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -49,12 +43,11 @@
   border: 0;
   border-radius: var(--awds-input-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-input-border);
-  background: linear-gradient(to right, var(--awds-input-chroma, var(--awds-input-bg)), var(--awds-input-bg));
+  background: var(--awds-input-bg);
   color: var(--awds-input-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
   transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-chroma 0.15s ease-out,
               --awds-input-color 0.15s ease-out,
               --awds-input-placeholder 0.15s ease-out,
               --awds-input-icon-color 0.15s ease-out,
@@ -213,7 +206,6 @@
 
 .input-autofill {
   --awds-input-bg:         rgb(var(--tertiary-container-core));   
-  --awds-input-chroma:     rgb(var(--tertiary-container-chroma));   
   --awds-input-border:     rgb(var(--tertiary-container-on-low));   
   --awds-input-color:      rgb(var(--tertiary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--tertiary-container-on-high));   
@@ -229,8 +221,7 @@
 }
 
 .input-autofill:focus-within {
-  --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-bg:         rgb(var(--primary-container-base));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -256,7 +247,6 @@
 
 .input-default {
   --awds-input-bg:         rgb(var(--secondary-container-core));   
-  --awds-input-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-input-border:     rgb(var(--secondary-container-on-low));   
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -272,8 +262,7 @@
 }
 
 .input-default:focus-within {
-  --awds-input-bg:        rgb(var(--surface-bright));   
-  --awds-input-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-input-bg:        rgb(var(--primary-container-base));   
   --awds-input-border:    rgb(var(--primary-dim));   
   --awds-input-color:     rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder: rgb(var(--primary-container-on-high));   
@@ -283,7 +272,6 @@
 
 .input-error {
   --awds-input-bg:         rgb(var(--error-container-core));   
-  --awds-input-chroma:     rgb(var(--error-container-chroma));   
   --awds-input-border:     rgb(var(--error-container-on-low));   
   --awds-input-color:      rgb(var(--error-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--error-container-on-high));   
@@ -299,8 +287,7 @@
 }
 
 .input-error:focus-within {
-  --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-bg:         rgb(var(--primary-container-base));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -311,7 +298,6 @@
 
 .input-ghost {
   --awds-input-bg:         transparent;
-  --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -320,7 +306,6 @@
 
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
-  --awds-input-chroma:     transparent;
   --awds-input-border:     transparent;
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -331,7 +316,6 @@
 
 .input-light {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--surface-bright));   
   --awds-input-border:     rgb(var(--secondary-container-on-low));   
   --awds-input-color:      rgb(var(--secondary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -348,7 +332,6 @@
 
 .input-light:focus-within {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
@@ -359,7 +342,6 @@
 
 .input-secondary {
   --awds-input-bg:         rgb(var(--secondary-core));   
-  --awds-input-chroma:     rgb(var(--secondary-chroma));   
   --awds-input-border:     rgb(var(--secondary-core));   
   --awds-input-color:      rgb(var(--secondary-on));   
   --awds-input-placeholder:  rgb(var(--secondary-on-dim));   
@@ -378,7 +360,6 @@
 
 .input-secondary:focus-within {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--secondary-chroma));   
   --awds-input-border:     rgb(var(--secondary-core));   
   --awds-input-color:      rgb(var(--secondary-on));   
   --awds-input-placeholder:  rgb(var(--secondary-on-dim));   
@@ -389,7 +370,6 @@
 
 .input-success {
   --awds-input-bg:         rgb(var(--success-container-core));   
-  --awds-input-chroma:     rgb(var(--success-container-chroma));   
   --awds-input-border:     rgb(var(--success-container-on-low));   
   --awds-input-color:      rgb(var(--success-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--success-container-on-high));   
@@ -405,8 +385,7 @@
 }
 
 .input-success:focus-within {
-  --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-input-bg:         rgb(var(--primary-container-base));   
   --awds-input-border:     rgb(var(--primary-dim));   
   --awds-input-color:      rgb(var(--primary-container-on-highest));   
   --awds-input-placeholder:  rgb(var(--primary-container-on-high));   

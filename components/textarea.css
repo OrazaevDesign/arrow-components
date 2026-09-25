@@ -1,13 +1,7 @@
-/* ArrowDS · textarea@1.0.13
+/* ArrowDS · textarea@1.0.15
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-txa-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-txa-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -41,12 +35,11 @@
   border: 0;
   border-radius: var(--awds-txa-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-txa-border);
-  background: linear-gradient(to right, var(--awds-txa-chroma, var(--awds-txa-bg)), var(--awds-txa-bg));
+  background: var(--awds-txa-bg);
   color: var(--awds-txa-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
   transition: --awds-txa-bg 0.15s ease-out,
-              --awds-txa-chroma 0.15s ease-out,
               --awds-txa-color 0.15s ease-out,
               --awds-txa-placeholder 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -172,7 +165,6 @@
 
 .txa-autofill {
   --awds-txa-bg:         rgb(var(--tertiary-container-core));   
-  --awds-txa-chroma:     rgb(var(--tertiary-container-chroma));   
   --awds-txa-border:     rgb(var(--tertiary-container-on-low));   
   --awds-txa-color:      rgb(var(--tertiary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--tertiary-container-on-high));
@@ -187,8 +179,7 @@
 }
 
 .txa-autofill:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:         rgb(var(--primary-container-base));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
@@ -214,7 +205,6 @@
 
 .txa-default {
   --awds-txa-bg:        rgb(var(--secondary-container-core));   
-  --awds-txa-chroma:    rgb(var(--secondary-container-chroma));   
   --awds-txa-border:    rgb(var(--secondary-container-on-low));   
   --awds-txa-color:     rgb(var(--secondary-container-on-highest));   
   --awds-txa-placeholder: rgb(var(--secondary-container-on-high));
@@ -229,8 +219,7 @@
 }
 
 .txa-default:focus-within {
-  --awds-txa-bg:        rgb(var(--surface-bright));   
-  --awds-txa-chroma:    rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:        rgb(var(--primary-container-base));   
   --awds-txa-border:    rgb(var(--primary-dim));   
   --awds-txa-color:     rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder: rgb(var(--primary-container-on-high));   
@@ -240,7 +229,6 @@
 
 .txa-error {
   --awds-txa-bg:         rgb(var(--error-container-core));   
-  --awds-txa-chroma:     rgb(var(--error-container-chroma));   
   --awds-txa-border:     rgb(var(--error-container-on-low));   
   --awds-txa-color:      rgb(var(--error-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--error-container-on-high));
@@ -255,8 +243,7 @@
 }
 
 .txa-error:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:         rgb(var(--primary-container-base));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
@@ -266,7 +253,6 @@
 
 .txa-ghost {
   --awds-txa-bg:         transparent;
-  --awds-txa-chroma:     transparent;
   --awds-txa-border:     transparent;
   --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));
@@ -281,7 +267,6 @@
 
 .txa-light {
   --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--surface-bright));   
   --awds-txa-border:     rgb(var(--secondary-container-on-low));   
   --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));
@@ -296,7 +281,6 @@
 }
 
 .txa-light:focus-within {
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
@@ -306,7 +290,6 @@
 
 .txa-success {
   --awds-txa-bg:         rgb(var(--success-container-core));   
-  --awds-txa-chroma:     rgb(var(--success-container-chroma));   
   --awds-txa-border:     rgb(var(--success-container-on-low));   
   --awds-txa-color:      rgb(var(--success-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--success-container-on-high));
@@ -321,8 +304,7 @@
 }
 
 .txa-success:focus-within {
-  --awds-txa-bg:         rgb(var(--surface-bright));   
-  --awds-txa-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-txa-bg:         rgb(var(--primary-container-base));   
   --awds-txa-border:     rgb(var(--primary-dim));   
   --awds-txa-color:      rgb(var(--primary-container-on-highest));   
   --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   

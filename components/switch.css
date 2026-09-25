@@ -1,4 +1,4 @@
-/* ArrowDS · switch@1.0.8
+/* ArrowDS · switch@1.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-switch-bg {
@@ -192,7 +192,7 @@
 }
 
 .switch__input:focus-visible + .switch__track {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 

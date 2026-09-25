@@ -1,13 +1,7 @@
-/* ArrowDS · select-combi@1.0.19
+/* ArrowDS · select-combi@1.0.21
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-scombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -73,12 +67,11 @@
   border: 0;
   border-radius: var(--awds-scombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-scombi-border);
-  background: linear-gradient(to right, var(--awds-scombi-chroma, var(--awds-scombi-bg)), var(--awds-scombi-bg));
+  background: var(--awds-scombi-bg);
   color: var(--awds-scombi-color);
   cursor: pointer;
   opacity: var(--awds-opacity-100);   
   transition: --awds-scombi-bg 0.15s ease-out,
-              --awds-scombi-chroma 0.15s ease-out,
               --awds-scombi-color 0.15s ease-out,
               --awds-scombi-placeholder 0.15s ease-out,
               --awds-scombi-chevron 0.15s ease-out,
@@ -391,7 +384,6 @@
 
 .scombi-autofill {
   --awds-scombi-bg:          rgb(var(--tertiary-container-core));   
-  --awds-scombi-chroma:      rgb(var(--tertiary-container-chroma));   
   --awds-scombi-border:      rgb(var(--tertiary-container-on-low));   
   --awds-scombi-color:       rgb(var(--tertiary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--tertiary-container-on-high));   
@@ -408,8 +400,7 @@
 }
 
 .scombi-autofill:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:          rgb(var(--primary-container-base));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -421,8 +412,7 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-autofill:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));   
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:          rgb(var(--primary-container-base));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -451,7 +441,6 @@
 
 .scombi-default {
   --awds-scombi-bg:         rgb(var(--secondary-container-core));   
-  --awds-scombi-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-scombi-border:     rgb(var(--secondary-container-on-low));   
   --awds-scombi-color:      rgb(var(--secondary-container-on-highest));   
   --awds-scombi-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -468,8 +457,7 @@
 }
 
 .scombi-default:focus-within {
-  --awds-scombi-bg:         rgb(var(--surface-bright));   
-  --awds-scombi-chroma:     rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:         rgb(var(--primary-container-base));   
   --awds-scombi-border:     rgb(var(--primary-dim));   
   --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -481,8 +469,7 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-default:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:         rgb(var(--surface-bright));   
-    --awds-scombi-chroma:     rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:         rgb(var(--primary-container-base));   
     --awds-scombi-border:     rgb(var(--primary-dim));   
     --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
@@ -495,7 +482,6 @@
 
 .scombi-error {
   --awds-scombi-bg:          rgb(var(--error-container-core));   
-  --awds-scombi-chroma:      rgb(var(--error-container-chroma));   
   --awds-scombi-border:      rgb(var(--error-container-on-low));   
   --awds-scombi-color:       rgb(var(--error-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--error-container-on-high));   
@@ -512,8 +498,7 @@
 }
 
 .scombi-error:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:          rgb(var(--primary-container-base));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -525,8 +510,7 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-error:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));   
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:          rgb(var(--primary-container-base));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -539,7 +523,6 @@
 
 .scombi-ghost {
   --awds-scombi-bg:          transparent;
-  --awds-scombi-chroma:      transparent;
   --awds-scombi-border:      transparent;
   --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
@@ -569,7 +552,6 @@
 
 .scombi-light {
   --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--surface-bright));   
   --awds-scombi-border:      rgb(var(--secondary-container-on-low));   
   --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
@@ -586,7 +568,6 @@
 }
 
 .scombi-light:focus-within {
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -598,7 +579,6 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-light:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -611,7 +591,6 @@
 
 .scombi-success {
   --awds-scombi-bg:          rgb(var(--success-container-core));   
-  --awds-scombi-chroma:      rgb(var(--success-container-chroma));   
   --awds-scombi-border:      rgb(var(--success-container-on-low));   
   --awds-scombi-color:       rgb(var(--success-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--success-container-on-high));   
@@ -628,8 +607,7 @@
 }
 
 .scombi-success:focus-within {
-  --awds-scombi-bg:          rgb(var(--surface-bright));   
-  --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+  --awds-scombi-bg:          rgb(var(--primary-container-base));   
   --awds-scombi-border:      rgb(var(--primary-dim));   
   --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
   --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
@@ -641,8 +619,7 @@
 
 @supports (appearance: base-select) {
   .scombi.scombi-success:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--surface-bright));   
-    --awds-scombi-chroma:      rgb(var(--primary-container-chroma));   
+    --awds-scombi-bg:          rgb(var(--primary-container-base));   
     --awds-scombi-border:      rgb(var(--primary-dim));   
     --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
     --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   

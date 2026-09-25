@@ -1,0 +1,83 @@
+/* ArrowDS · popover@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.pop {
+  --awds-pop-bg:      rgb(var(--surface-bright));   
+  --awds-pop-hairline: rgb(var(--extended-shadow-3));   
+  --awds-pop-rounded: var(--awds-rounded-border-radius-600);   
+  --awds-pop-tail:    var(--awds-space-2);   
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: max-content;
+}
+
+.pop *, .pop *::before, .pop *::after {
+  box-sizing: border-box;
+}
+
+.pop__panel {
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-radius: var(--awds-pop-rounded);
+  background: var(--awds-pop-bg);
+  box-shadow: var(--awds-shadow-elevation-3);
+  overflow: hidden;
+}
+
+.pop__tail {
+  position: absolute;
+  z-index: 2;
+  width: var(--awds-pop-tail);
+  height: var(--awds-pop-tail);
+  background: var(--awds-pop-bg);
+  transform: rotate(45deg);
+}
+
+.pop[popover] {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.pop--side-top .pop__tail, .pop:not(.pop--side-bottom):not(.pop--side-left):not(.pop--side-right) .pop__tail {
+  bottom: calc(-0.5 * var(--awds-pop-tail));
+  left: 50%;
+  margin-left: calc(-0.5 * var(--awds-pop-tail));
+  border-right:  1px solid var(--awds-pop-hairline);
+  border-bottom: 1px solid var(--awds-pop-hairline);
+}
+
+.pop--side-bottom .pop__tail {
+  top: calc(-0.5 * var(--awds-pop-tail));
+  bottom: auto;
+  left: 50%;
+  margin-left: calc(-0.5 * var(--awds-pop-tail));
+  border-top:  1px solid var(--awds-pop-hairline);
+  border-left: 1px solid var(--awds-pop-hairline);
+}
+
+.pop--side-left .pop__tail {
+  right: calc(-0.5 * var(--awds-pop-tail));
+  top: 50%;
+  margin-top: calc(-0.5 * var(--awds-pop-tail));
+  border-top:   1px solid var(--awds-pop-hairline);
+  border-right: 1px solid var(--awds-pop-hairline);
+}
+
+.pop--side-right .pop__tail {
+  left: calc(-0.5 * var(--awds-pop-tail));
+  top: 50%;
+  margin-top: calc(-0.5 * var(--awds-pop-tail));
+  border-bottom: 1px solid var(--awds-pop-hairline);
+  border-left:   1px solid var(--awds-pop-hairline);
+}
+
+}

@@ -1,0 +1,134 @@
+/* ArrowDS · toast@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.toast {
+  --awds-toast-pad:     var(--awds-space-2-5);   
+  --awds-toast-gap:     var(--awds-space-1-5);   
+  --awds-toast-rounded: var(--awds-rounded-border-radius-400);   
+  --awds-toast-fs:      var(--awds-control-font-size-400);       
+  --awds-toast-lh:      var(--awds-control-line-height-400);     
+  --awds-toast-ls:      var(--awds-control-letter-spacing-400);
+  --awds-toast-icon:    var(--awds-space-5);     
+  --awds-toast-hover:   var(--awds-opacity-20);  
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: var(--awds-toast-rounded);
+  background: rgb(var(--awds-toast-bg));
+  color: rgb(var(--awds-toast-color));
+  box-shadow: var(--awds-shadow-elevation-3);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-toast-fs);
+  line-height: var(--awds-toast-lh);
+  letter-spacing: var(--awds-toast-ls);
+  font-weight: var(--awds-font-weight-regular);
+  --awds-focus-color: rgb(var(--awds-toast-color));
+}
+
+.toast *, .toast *::before, .toast *::after {
+  box-sizing: border-box;
+}
+
+.toast-normal {
+  --awds-toast-bg:    var(--surface-bright-dark);        
+  --awds-toast-color: var(--surface-on-highest-dark);
+}
+
+.toast-alert {
+  --awds-toast-bg:    var(--error-core);   
+  --awds-toast-color: var(--error-on);
+}
+
+.toast__content {
+  display: flex;
+  align-items: center;
+  min-inline-size: 0;
+  padding-block: var(--awds-toast-pad);
+  padding-inline-start: var(--awds-toast-pad);
+  padding-inline-end: 0;
+}
+
+.toast:not(:has(.toast__action)):not(:has(.toast__close)) .toast__content {
+  padding-inline-end: var(--awds-toast-pad);
+}
+
+.toast__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding-inline-start: var(--awds-toast-gap);
+}
+
+.toast__icon > svg, .toast__icon > img {
+  inline-size: var(--awds-toast-icon);
+  block-size: var(--awds-toast-icon);
+}
+
+.toast__text {
+  padding-inline: var(--awds-toast-gap);
+}
+
+.toast__timer {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: var(--awds-toast-icon);
+  block-size: var(--awds-toast-icon);
+}
+
+.toast__timer .progress-circular {
+  --awds-progress-size:  var(--awds-toast-icon);          
+  --awds-progress-color: rgb(var(--awds-toast-color));
+  position: absolute;
+  inset: 0;
+}
+
+.toast__timer-value {
+  position: relative;
+  font-size: var(--awds-control-font-size-200);        
+  line-height: var(--awds-control-line-height-200);    
+  letter-spacing: var(--awds-control-letter-spacing-200);
+  font-variant-numeric: tabular-nums;
+}
+
+.toast__action, .toast__close {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--awds-toast-pad);
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s ease-out;
+}
+
+.toast__action:hover, .toast__close:hover {
+  background: rgb(var(--awds-toast-color) / var(--awds-toast-hover));
+}
+
+.toast__action:focus-visible, .toast__close:focus-visible {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset-inside);
+}
+
+.toast__close > svg {
+  inline-size: var(--awds-toast-icon);
+  block-size: var(--awds-toast-icon);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast__action,
+  .toast__close {
+    transition: none;
+  }
+}
+
+}

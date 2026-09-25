@@ -4,7 +4,7 @@
   "components": [
     {
       "name": "focus-selection",
-      "version": "2.0.9",
+      "version": "2.0.10",
       "variants": [
         "default",
         "muted",
@@ -12,7 +12,7 @@
       ],
       "sizes": [],
       "rules": 8,
-      "bytes": 1368
+      "bytes": 1369
     },
     {
       "name": "badge",
@@ -154,7 +154,7 @@
     },
     {
       "name": "checkbox",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "variants": [
         "default"
       ],
@@ -165,7 +165,7 @@
         500
       ],
       "rules": 22,
-      "bytes": 5420
+      "bytes": 5428
     },
     {
       "name": "content-area",
@@ -252,7 +252,7 @@
     },
     {
       "name": "input",
-      "version": "1.0.12",
+      "version": "1.0.14",
       "variants": [
         "default",
         "light",
@@ -271,12 +271,12 @@
         500,
         600
       ],
-      "rules": 54,
-      "bytes": 15015
+      "rules": 53,
+      "bytes": 13947
     },
     {
       "name": "input-combi",
-      "version": "1.0.12",
+      "version": "1.0.14",
       "variants": [
         "default",
         "light",
@@ -292,8 +292,8 @@
         500,
         600
       ],
-      "rules": 56,
-      "bytes": 17255
+      "rules": 55,
+      "bytes": 16169
     },
     {
       "name": "input-inline",
@@ -415,6 +415,16 @@
       "bytes": 1996
     },
     {
+      "name": "popover",
+      "version": "1.0.0",
+      "variants": [
+        "default"
+      ],
+      "sizes": null,
+      "rules": 9,
+      "bytes": 2101
+    },
+    {
       "name": "price",
       "version": "2.0.5",
       "variants": [
@@ -463,7 +473,7 @@
     },
     {
       "name": "radio",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "variants": [
         "default"
       ],
@@ -474,11 +484,11 @@
         500
       ],
       "rules": 21,
-      "bytes": 4559
+      "bytes": 4567
     },
     {
       "name": "range",
-      "version": "2.0.9",
+      "version": "2.0.10",
       "variants": [
         "default",
         "light"
@@ -488,7 +498,7 @@
         500
       ],
       "rules": 24,
-      "bytes": 4912
+      "bytes": 4421
     },
     {
       "name": "rating",
@@ -514,7 +524,7 @@
     },
     {
       "name": "select",
-      "version": "1.0.18",
+      "version": "1.0.20",
       "variants": [
         "default",
         "light",
@@ -532,12 +542,12 @@
         500,
         600
       ],
-      "rules": 57,
-      "bytes": 28094
+      "rules": 56,
+      "bytes": 26876
     },
     {
       "name": "select-combi",
-      "version": "1.0.19",
+      "version": "1.0.21",
       "variants": [
         "default",
         "light",
@@ -552,8 +562,8 @@
         500,
         600
       ],
-      "rules": 59,
-      "bytes": 28414
+      "rules": 58,
+      "bytes": 27154
     },
     {
       "name": "slider",
@@ -569,7 +579,7 @@
     },
     {
       "name": "switch",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "variants": [
         "default"
       ],
@@ -581,7 +591,7 @@
         600
       ],
       "rules": 27,
-      "bytes": 6363
+      "bytes": 6370
     },
     {
       "name": "tab",
@@ -643,7 +653,7 @@
     },
     {
       "name": "textarea",
-      "version": "1.0.13",
+      "version": "1.0.15",
       "variants": [
         "default",
         "light",
@@ -661,12 +671,12 @@
         500,
         600
       ],
-      "rules": 44,
-      "bytes": 12017
+      "rules": 43,
+      "bytes": 11140
     },
     {
       "name": "textarea-combi",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "variants": [
         "default",
         "light",
@@ -681,8 +691,19 @@
         500,
         600
       ],
-      "rules": 41,
-      "bytes": 15340
+      "rules": 40,
+      "bytes": 13723
+    },
+    {
+      "name": "toast",
+      "version": "1.0.0",
+      "variants": [
+        "normal",
+        "alert"
+      ],
+      "sizes": null,
+      "rules": 17,
+      "bytes": 3498
     },
     {
       "name": "tooltip",
@@ -700,7 +721,7 @@
     },
     {
       "name": "uploader",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "variants": [
         "default",
         "file"
@@ -711,17 +732,17 @@
         500
       ],
       "rules": 26,
-      "bytes": 5015
+      "bytes": 5023
     }
   ],
   "bundle": {
-    "bytes": 321339,
-    "rules": 1253,
-    "hash": "sha256:6b2ea7a6fca816f7763809b0f5f3d0c2e0f0234d63a635767d6c448be3f13dfa"
+    "bytes": 319169,
+    "rules": 1273,
+    "hash": "sha256:d31ebccd44615828db7ad9f1d3b31f881e32bcfb5bfcdba2d4d9138f9955e57a"
   },
   "theme": {
-    "bytes": 57866,
-    "variables_kept": 597,
+    "bytes": 57258,
+    "variables_kept": 591,
     "variables_declared": 1301,
     "missing": []
   },

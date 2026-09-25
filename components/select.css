@@ -1,13 +1,7 @@
-/* ArrowDS · select@1.0.18
+/* ArrowDS · select@1.0.20
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-select-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-
-@property --awds-select-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -67,12 +61,11 @@
   border: 0;
   border-radius: var(--awds-select-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-select-border);
-  background: linear-gradient(to right, var(--awds-select-chroma, var(--awds-select-bg)), var(--awds-select-bg));
+  background: var(--awds-select-bg);
   color: var(--awds-select-color);
   cursor: pointer;
   opacity: var(--awds-opacity-100);   
   transition: --awds-select-bg 0.15s ease-out,
-              --awds-select-chroma 0.15s ease-out,
               --awds-select-color 0.15s ease-out,
               --awds-select-placeholder 0.15s ease-out,
               --awds-select-chevron 0.15s ease-out,
@@ -377,7 +370,6 @@
 
 .select-autofill {
   --awds-select-bg:       rgb(var(--tertiary-container-core));   
-  --awds-select-chroma:   rgb(var(--tertiary-container-chroma));   
   --awds-select-border:   rgb(var(--tertiary-container-on-low));   
   --awds-select-color:    rgb(var(--tertiary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--tertiary-container-on-high));   
@@ -394,8 +386,7 @@
 }
 
 .select-autofill:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-bg:       rgb(var(--primary-container-base));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -407,8 +398,7 @@
 
 @supports (appearance: base-select) {
   .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));   
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-bg:       rgb(var(--primary-container-base));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -436,7 +426,6 @@
 
 .select-default {
   --awds-select-bg:         rgb(var(--secondary-container-core));   
-  --awds-select-chroma:     rgb(var(--secondary-container-chroma));   
   --awds-select-border:     rgb(var(--secondary-container-on-low));   
   --awds-select-color:      rgb(var(--secondary-container-on-highest));   
   --awds-select-placeholder:  rgb(var(--secondary-container-on-high));   
@@ -453,8 +442,7 @@
 }
 
 .select-default:focus-within {
-  --awds-select-bg:      rgb(var(--surface-bright));   
-  --awds-select-chroma:  rgb(var(--primary-container-chroma));   
+  --awds-select-bg:      rgb(var(--primary-container-base));   
   --awds-select-border:  rgb(var(--primary-dim));   
   --awds-select-color:   rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -465,8 +453,7 @@
 
 @supports (appearance: base-select) {
   .select.select-default:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:         rgb(var(--surface-bright));   
-    --awds-select-chroma:     rgb(var(--primary-container-chroma));   
+    --awds-select-bg:         rgb(var(--primary-container-base));   
     --awds-select-border:     rgb(var(--primary-dim));   
     --awds-select-color:      rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder:  rgb(var(--primary-container-on-high));   
@@ -479,7 +466,6 @@
 
 .select-error {
   --awds-select-bg:       rgb(var(--error-container-core));   
-  --awds-select-chroma:   rgb(var(--error-container-chroma));   
   --awds-select-border:   rgb(var(--error-container-on-low));   
   --awds-select-color:    rgb(var(--error-container-on-highest));   
   --awds-select-placeholder: rgb(var(--error-container-on-high));   
@@ -496,8 +482,7 @@
 }
 
 .select-error:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-bg:       rgb(var(--primary-container-base));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -509,8 +494,7 @@
 
 @supports (appearance: base-select) {
   .select.select-error:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));   
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-bg:       rgb(var(--primary-container-base));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -523,7 +507,6 @@
 
 .select-ghost {
   --awds-select-bg:       transparent;
-  --awds-select-chroma:   transparent;
   --awds-select-border:   transparent;
   --awds-select-color:    rgb(var(--secondary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
@@ -553,7 +536,6 @@
 
 .select-light {
   --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--surface-bright));   
   --awds-select-border:   rgb(var(--secondary-container-on-low));   
   --awds-select-color:    rgb(var(--secondary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
@@ -570,7 +552,6 @@
 }
 
 .select-light:focus-within {
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -582,7 +563,6 @@
 
 @supports (appearance: base-select) {
   .select.select-light:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -595,7 +575,6 @@
 
 .select-success {
   --awds-select-bg:       rgb(var(--success-container-core));   
-  --awds-select-chroma:   rgb(var(--success-container-chroma));   
   --awds-select-border:   rgb(var(--success-container-on-low));   
   --awds-select-color:    rgb(var(--success-container-on-highest));   
   --awds-select-placeholder: rgb(var(--success-container-on-high));   
@@ -612,8 +591,7 @@
 }
 
 .select-success:focus-within {
-  --awds-select-bg:       rgb(var(--surface-bright));   
-  --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+  --awds-select-bg:       rgb(var(--primary-container-base));   
   --awds-select-border:   rgb(var(--primary-dim));   
   --awds-select-color:    rgb(var(--primary-container-on-highest));   
   --awds-select-placeholder: rgb(var(--primary-container-on-high));   
@@ -625,8 +603,7 @@
 
 @supports (appearance: base-select) {
   .select.select-success:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--surface-bright));   
-    --awds-select-chroma:   rgb(var(--primary-container-chroma));   
+    --awds-select-bg:       rgb(var(--primary-container-base));   
     --awds-select-border:   rgb(var(--primary-dim));   
     --awds-select-color:    rgb(var(--primary-container-on-highest));   
     --awds-select-placeholder: rgb(var(--primary-container-on-high));   
