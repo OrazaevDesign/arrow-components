@@ -93,7 +93,32 @@
   "last_synced": "2026-09-21T16:20:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:64bebe291bc315c926499ee42ad6144d516692ab470c3609ac91a339dfead277",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "6753232",
+    "pushed_at": "2026-09-25T07:57:54.127Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-toast/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#toast",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/toast.css",
+      "normal": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-toast/references/toast-normal.md",
+      "alert": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-toast/references/toast-alert.md"
+    },
+    "dev_resources_status": {
+      "normal": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "617:48419",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-toast/SKILL.md"
+      },
+      "alert": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "617:48420",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-toast/SKILL.md"
+      }
+    }
+  },
   "markup": {
     "root": {
       "class": "toast",

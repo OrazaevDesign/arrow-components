@@ -119,8 +119,8 @@
   "snapshot_hash": "sha256:55cd322b0bf482102b15a2477801cb98743c02a55adc202fb43f146174fde99a",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "d6bdc1d",
-    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "commit": "56e58ce",
+    "pushed_at": "2026-09-25T07:58:25.130Z",
     "github_urls": {
       "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/references/range-default.md",
       "light": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/references/range-light.md",
@@ -129,7 +129,20 @@
       "storybook": "https://orazaevdesign.github.io/arrow-components/#range",
       "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/range.css"
     },
-    "dev_resources_status": "linked"
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "6:732",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/SKILL.md"
+      },
+      "light": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "6:771",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-range/SKILL.md"
+      }
+    }
   },
   "focus_layer": {
     "component": "awds-component-focus-selection",

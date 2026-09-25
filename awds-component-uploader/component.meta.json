@@ -156,25 +156,26 @@
   "snapshot_hash": "sha256:6151c3141b9219a91611b182eac4d6fb6647779bb8ebf000e1296f2967da0234",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "13c340e",
-    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "commit": "abdfc90",
+    "pushed_at": "2026-09-25T07:58:50.373Z",
     "github_urls": {
-      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/references/uploader.md",
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/references/uploader-default.md",
       "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/SKILL.md",
       "storybook": "https://orazaevdesign.github.io/arrow-components/#uploader",
-      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/uploader.css"
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/uploader.css",
+      "file": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/references/uploader-file.md"
     },
     "dev_resources_status": {
       "default": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "395:77614",
+        "node_id": "44:83665",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/SKILL.md"
       },
       "file": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "395:77633",
+        "node_id": "44:83684",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-uploader/SKILL.md",
         "note": "Своего скилла у строки файла нет — ссылка ведёт в скилл загрузчика, где она и реализована."
       }

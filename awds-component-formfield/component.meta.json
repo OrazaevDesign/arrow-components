@@ -189,8 +189,8 @@
   "snapshot_hash": "sha256:4c8944112c472faf65aeee3f423898f2dd5081a241ef1f529f9449c9e957a5da",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "7832e46",
-    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "commit": "ad91be8",
+    "pushed_at": "2026-09-25T07:58:50.373Z",
     "github_urls": {
       "input": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/references/formfield-input.md",
       "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
@@ -205,34 +205,34 @@
       "input": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "395:77494",
+        "node_id": "71:23715",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md"
       },
       "select": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "395:77510",
+        "node_id": "71:23731",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
         "note": "Отдельного CSS у варианта нет — та же реализация через мост; ссылка проставлена, чтобы агент, открывший Formfiled / Select, не начал верстать его заново."
       },
       "textarea": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "395:77526",
+        "node_id": "71:23747",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
         "note": "То же, что у select."
       },
       "square": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "395:77597",
+        "node_id": "71:23818",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
         "note": "В описании ноды отмечено, что частей три (контрол живёт в подписи) и что ступень идёт правилом .fld--{N} .lbl .checkbox."
       },
       "fileuploader": {
         "status": "linked",
         "method": "component_description",
-        "node_id": "395:77542",
+        "node_id": "71:23763",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-formfield/SKILL.md",
         "note": "Своего CSS у варианта нет — композиция formfield + uploader; в описании ноды отмечено, что ступень доходит до поля внутри загрузчика и что уровни ошибок разные."
       }

@@ -104,7 +104,25 @@
   "last_synced": "2026-09-21T15:40:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:958e54ef480c09dd022c8baedcedfe034e1030e360c8bf2318018804dfb36688",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "f654502",
+    "pushed_at": "2026-09-25T07:57:54.127Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-popover/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#popover",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/popover.css",
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-popover/references/popover-default.md"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "77:58798",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-popover/SKILL.md"
+      }
+    }
+  },
   "markup": {
     "root": {
       "class": "pop",

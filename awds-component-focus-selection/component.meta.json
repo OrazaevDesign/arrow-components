@@ -161,14 +161,16 @@
   "sync_method_note": "Plugin API через use_figma. Цвета и размеры не резолвились по значению — они взяты как ЦЕЛИ ячеек State/Size из component-token-map.json: коллекции приватные, в опубликованную тему их имена не едут.",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "f810fdd",
-    "pushed_at": "2026-09-20T21:19:37.752Z",
+    "commit": "b3dd0b0",
+    "pushed_at": "2026-09-25T07:58:25.130Z",
     "github_urls": {
       "SKILL": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md",
       "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md",
       "storybook": "https://orazaevdesign.github.io/arrow-components/#focus-selection",
       "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/focus-selection.css",
-      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/references/focus-selection-default.md"
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/references/focus-selection-default.md",
+      "muted": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/references/focus-selection-muted.md",
+      "accent": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/references/focus-selection-accent.md"
     },
     "dev_resources_status": {
       "layer": {
@@ -178,6 +180,24 @@
         "file_key": "470rar5EfRm4n14vHMXbpc",
         "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md",
         "note": "PRO plan: ссылка вписана в descriptionMarkdown набора focus-selection (6:36) нового файла «💠 arrow ↪ components» 14.09.2026. Прежняя запись указывала на ноду 2093:265 старого файла — набор переехал. Текст по шаблону ACP; старые имена тонов (formcontrol/tab) в нём заменены на muted/accent, версия в тексте больше не дублируется."
+      },
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "6:55",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md"
+      },
+      "muted": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "6:91",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md"
+      },
+      "accent": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "6:127",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-focus-selection/SKILL.md"
       }
     }
   },
