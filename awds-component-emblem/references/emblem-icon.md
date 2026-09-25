@@ -26,7 +26,7 @@
 | Фон | `rgb(var(--surface-bright))`, сплошной — градиента нет |
 | Кольцо | нет (`--awds-emb-border: transparent`) |
 | Размер иконки | `var(--awds-space-N)`: 24px на `--150`, 20px на `--100`, 16px на `--50` |
-| Цвет иконки | приносит сама иконка; монохромная на `currentColor` унаследует `primary-container-on` от базы |
+| Цвет иконки | приносит сама иконка; монохромная на `currentColor` унаследует `primary-container-on-high` от базы |
 | Скругление | `var(--awds-rounded-border-radius-full)` (всегда круг) |
 
 **Цвет содержимого в макете не привязан** — в Figma по умолчанию стоит цветной флаг со своими заливками. Для монохромной MGC-иконки роли в теме нет; вопрос открыт в `questions[]` меты (`emblem-icon-content-color`).

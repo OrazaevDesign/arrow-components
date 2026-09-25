@@ -5,7 +5,7 @@
 > [!NOTE]
 > `emblem-initials.md` — **author-owned**. ACB пишет первичный draft, потом не трогает. CSS (`emblem.css`) и preview генерируются и при refresh затрутся.
 
-Эмблема с инициалами — когда нет фото пользователя, но есть имя. Текст центрируется, приводится к верхнему регистру, цвет `primary-container-on`, размер — Control-шкала по размеру эмблемы.
+Эмблема с инициалами — когда нет фото пользователя, но есть имя. Текст центрируется, приводится к верхнему регистру, цвет `primary-container-on-high`, размер — Control-шкала по размеру эмблемы.
 
 ## HTML
 
@@ -21,7 +21,7 @@
 |---|---|
 | Фон | градиент `primary-container-chroma` → `primary-container-core` |
 | Кольцо | `primary-container-on-lowest` (1px, `::after`) |
-| Цвет текста | `primary-container-on` |
+| Цвет текста | `primary-container-on-high` |
 | Размер текста | `var(--awds-control-N-*)` по размеру (700→950/28px … 50→600/16px) |
 | Скругление | `var(--awds-rounded-border-radius-full)` (всегда круг) |
 

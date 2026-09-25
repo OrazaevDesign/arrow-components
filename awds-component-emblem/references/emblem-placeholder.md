@@ -28,7 +28,7 @@
 |---|---|
 | Фон | градиент `primary-container-chroma` → `primary-container-core` |
 | Кольцо | `primary-container-on-lowest` (1px, `::after`) |
-| Цвет силуэта | `primary-container-on` |
+| Цвет силуэта | `primary-container-on-high` |
 | Размер силуэта | 60% диаметра |
 | Непрозрачность | `var(--awds-state-opacity-content-placeholder)` |
 | Скругление | `var(--awds-rounded-border-radius-full)` (всегда круг) |

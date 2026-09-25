@@ -27,7 +27,7 @@ description: Emblem ArrowDS (.emb).
 | Фон (initials · placeholder · img) | `rgb(var(--primary-container-core))` + sheen `rgb(var(--primary-container-chroma))` |
 | Фон (icon) | `rgb(var(--surface-bright))`, без градиента |
 | Кольцо | `rgb(var(--primary-container-on-lowest))` (через `::after` inset box-shadow); у `icon` кольца нет |
-| Инициалы / силуэт | `rgb(var(--primary-container-on))` |
+| Инициалы / силуэт | `rgb(var(--primary-container-on-high))` |
 | Гашение силуэта | `var(--awds-state-opacity-content-placeholder)` — ячейка слоя State за Figma-токеном `opacity/content/placeholder` |
 | Диаметр | `var(--awds-space-N)` (24–80) |
 | Размер инициалов | `var(--awds-control-N-font-size / -line-height / -letter-spacing)` |

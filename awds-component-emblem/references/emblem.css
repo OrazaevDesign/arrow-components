@@ -54,7 +54,7 @@
   --awds-emb-bg:     rgb(var(--primary-container-core));       /* #cell emblem/bg */
   --awds-emb-chroma: rgb(var(--primary-container-chroma));     /* #cell emblem/chroma */
   --awds-emb-border: rgb(var(--primary-container-on-lowest));  /* #cell emblem/border */
-  --awds-emb-color:  rgb(var(--primary-container-on));         /* #cell emblem/color */
+  --awds-emb-color:  rgb(var(--primary-container-on-high));         /* #cell emblem/color */
 
   box-sizing: border-box;
   position: relative;
