@@ -1,4 +1,4 @@
-/* ArrowDS · link@1.0.5
+/* ArrowDS · link@1.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -54,7 +54,7 @@
 }
 
 .lnk-accent:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));
+  --awds-lnk-color: rgb(var(--accent-core));
 }
 
 .lnk-accent:focus-visible {
@@ -101,19 +101,19 @@
 }
 
 .lnk-default {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--tertiary-on));
 }
 
 .lnk-default:hover {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-highest));
+  --awds-lnk-color: rgb(var(--accent-core));
 }
 
 .lnk-default:focus-visible {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--tertiary-on));
 }
 
 .lnk-default:active {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--tertiary-on));
 }
 
 .lnk-heading {
@@ -122,7 +122,7 @@
 }
 
 .lnk-heading:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));
+  --awds-lnk-color: rgb(var(--accent-core));
 }
 
 .lnk-heading:focus-visible {

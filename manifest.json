@@ -181,7 +181,7 @@
     },
     {
       "name": "datepicker",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "variants": [
         "date",
         "month",
@@ -190,11 +190,11 @@
       ],
       "sizes": null,
       "rules": 24,
-      "bytes": 7767
+      "bytes": 7759
     },
     {
       "name": "emblem",
-      "version": "3.0.5",
+      "version": "3.0.6",
       "variants": [
         "initials",
         "img",
@@ -214,7 +214,7 @@
         700
       ],
       "rules": 18,
-      "bytes": 4488
+      "bytes": 4493
     },
     {
       "name": "formfield",
@@ -331,7 +331,7 @@
     },
     {
       "name": "link",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "variants": [
         "default",
         "muted",
@@ -341,11 +341,11 @@
       ],
       "sizes": null,
       "rules": 32,
-      "bytes": 3470
+      "bytes": 3391
     },
     {
       "name": "list-item",
-      "version": "1.0.11",
+      "version": "1.0.12",
       "variants": [
         "transparent",
         "default",
@@ -370,7 +370,7 @@
         600
       ],
       "rules": 55,
-      "bytes": 18077
+      "bytes": 17780
     },
     {
       "name": "modal",
@@ -416,7 +416,7 @@
     },
     {
       "name": "price",
-      "version": "2.0.4",
+      "version": "2.0.5",
       "variants": [
         "sale",
         "default",
@@ -436,11 +436,11 @@
         1100
       ],
       "rules": 23,
-      "bytes": 6558
+      "bytes": 6563
     },
     {
       "name": "product-card",
-      "version": "1.1.11",
+      "version": "1.1.12",
       "variants": [
         "price-first",
         "brand-first",
@@ -448,7 +448,7 @@
       ],
       "sizes": null,
       "rules": 146,
-      "bytes": 29903
+      "bytes": 29879
     },
     {
       "name": "progress",
@@ -514,7 +514,7 @@
     },
     {
       "name": "select",
-      "version": "1.0.17",
+      "version": "1.0.18",
       "variants": [
         "default",
         "light",
@@ -533,11 +533,11 @@
         600
       ],
       "rules": 57,
-      "bytes": 28089
+      "bytes": 28094
     },
     {
       "name": "select-combi",
-      "version": "1.0.18",
+      "version": "1.0.19",
       "variants": [
         "default",
         "light",
@@ -553,7 +553,7 @@
         600
       ],
       "rules": 59,
-      "bytes": 28409
+      "bytes": 28414
     },
     {
       "name": "slider",
@@ -715,13 +715,13 @@
     }
   ],
   "bundle": {
-    "bytes": 321727,
+    "bytes": 321339,
     "rules": 1253,
-    "hash": "sha256:121d5bd4c31760624f666086cbcbaff48a20e0b21e7b56b897248e6a0d0fd1b8"
+    "hash": "sha256:6b2ea7a6fca816f7763809b0f5f3d0c2e0f0234d63a635767d6c448be3f13dfa"
   },
   "theme": {
-    "bytes": 58175,
-    "variables_kept": 600,
+    "bytes": 57866,
+    "variables_kept": 597,
     "variables_declared": 1301,
     "missing": []
   },

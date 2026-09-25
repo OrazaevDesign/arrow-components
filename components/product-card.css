@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@1.1.11
+/* ArrowDS · product-card@1.1.12
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes pcard-stepper-bump {
@@ -213,7 +213,7 @@
 }
 
 .pcard-brand-first .pcard__brand:hover, .pcard-brand-first .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--accent-core));
 }
 
 .pcard-brand-first .pcard__feedback {
@@ -623,7 +623,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .pcard-buy-now .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--accent-core));
 }
 
 .pcard-buy-now .pcard__category:hover {
@@ -1031,7 +1031,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .pcard__brand:hover, .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--accent-core));
 }
 
 .pcard__feedback {

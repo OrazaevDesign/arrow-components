@@ -1,4 +1,4 @@
-/* ArrowDS · price@2.0.4
+/* ArrowDS · price@2.0.5
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -80,7 +80,7 @@
 }
 
 .price-sale {
-  --awds-price-color: rgb(var(--accent-container-on));
+  --awds-price-color: rgb(var(--accent-container-on-high));
 }
 
 .price-default {

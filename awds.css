@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.6, button-area@2.0.6, button-favorites@2.0.1, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.1, emblem@3.0.5, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.5, list-item@1.0.11, modal@1.0.1, notice@2.0.3, pagination@1.0.1, price@2.0.4, product-card@1.1.11, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.17, select-combi@1.0.18, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
+   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.6, button-area@2.0.6, button-favorites@2.0.1, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.2, emblem@3.0.6, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.6, list-item@1.0.12, modal@1.0.1, notice@2.0.3, pagination@1.0.1, price@2.0.5, product-card@1.1.12, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.18, select-combi@1.0.19, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -2128,7 +2128,7 @@
 
 .dpick__cell--today {
   --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    
-  --awds-dpick-cell-color:  rgb(var(--accent-container-on));
+  --awds-dpick-cell-color:  rgb(var(--accent-core));
 }
 
 .dpick__cell--today:hover {
@@ -2171,7 +2171,7 @@
   --awds-emb-bg:     rgb(var(--primary-container-core));       
   --awds-emb-chroma: rgb(var(--primary-container-chroma));     
   --awds-emb-border: rgb(var(--primary-container-on-lowest));  
-  --awds-emb-color:  rgb(var(--primary-container-on));         
+  --awds-emb-color:  rgb(var(--primary-container-on-high));         
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
@@ -3776,7 +3776,7 @@
 }
 
 .lnk-accent:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));
+  --awds-lnk-color: rgb(var(--accent-core));
 }
 
 .lnk-accent:focus-visible {
@@ -3823,19 +3823,19 @@
 }
 
 .lnk-default {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--tertiary-on));
 }
 
 .lnk-default:hover {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-highest));
+  --awds-lnk-color: rgb(var(--accent-core));
 }
 
 .lnk-default:focus-visible {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--tertiary-on));
 }
 
 .lnk-default:active {
-  --awds-lnk-color: rgb(var(--tertiary-container-on-high));
+  --awds-lnk-color: rgb(var(--tertiary-on));
 }
 
 .lnk-heading {
@@ -3844,7 +3844,7 @@
 }
 
 .lnk-heading:hover {
-  --awds-lnk-color: rgb(var(--accent-container-on));
+  --awds-lnk-color: rgb(var(--accent-core));
 }
 
 .lnk-heading:focus-visible {
@@ -4071,7 +4071,7 @@
   --awds-list-item-border:  rgb(var(--primary-container-on-lowest));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-check:   rgb(var(--primary-container-on-high));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4083,9 +4083,9 @@
 .list-item-actual-selected {
   --awds-list-item-bg:      rgb(var(--extended-transparent));   
   --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on-low));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -4117,9 +4117,9 @@
 .list-item-default {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   
   --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on));   
+  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-default:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -4144,9 +4144,9 @@
 .list-item-menu-selected {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   
   --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-menu {
@@ -4154,43 +4154,43 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   
   --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-menu:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   
   --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected {
   --awds-list-item-bg:      rgb(var(--extended-transparent));   
   --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:focus-visible {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar {
@@ -4198,21 +4198,21 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-tabbar:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   
   --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-transparent {
@@ -4220,7 +4220,7 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-transparent:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -4249,7 +4249,7 @@
 
 .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-core));   
+  --awds-list-item-border:  rgb(var(--primary-container-on));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));
 }
@@ -4266,7 +4266,7 @@
   --awds-list-item-border:  rgb(var(--primary-core));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-check:   rgb(var(--primary-container-on-high));
 }
 
 .list-item-variation {
@@ -4279,7 +4279,7 @@
 
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-core));   
+  --awds-list-item-border:  rgb(var(--primary-container-on));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));
 }
@@ -4724,7 +4724,7 @@
 }
 
 .price-sale {
-  --awds-price-color: rgb(var(--accent-container-on));
+  --awds-price-color: rgb(var(--accent-container-on-high));
 }
 
 .price-default {
@@ -5038,7 +5038,7 @@
 }
 
 .pcard-brand-first .pcard__brand:hover, .pcard-brand-first .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--accent-core));
 }
 
 .pcard-brand-first .pcard__feedback {
@@ -5448,7 +5448,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .pcard-buy-now .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--accent-core));
 }
 
 .pcard-buy-now .pcard__category:hover {
@@ -5856,7 +5856,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .pcard__brand:hover, .pcard__name:hover {
-  color: rgb(var(--accent-container-on));
+  color: rgb(var(--accent-core));
 }
 
 .pcard__feedback {
@@ -6903,7 +6903,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
     --awds-list-item-border: rgb(var(--primary-container-on-lowest));   
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
-    --awds-list-item-check:  rgb(var(--primary-container-on));   
+    --awds-list-item-check:  rgb(var(--primary-container-on-high));   
   }
   .select__field option:disabled {
     opacity: var(--awds-opacity-40);   
@@ -7515,7 +7515,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
     --awds-list-item-border: rgb(var(--primary-container-on-lowest));   
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
-    --awds-list-item-check:  rgb(var(--primary-container-on));   
+    --awds-list-item-check:  rgb(var(--primary-container-on-high));   
   }
   .scombi__field option:disabled {
     opacity: var(--awds-opacity-40);   

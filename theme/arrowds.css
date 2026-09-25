@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 600 из 1301 объявленных в теме. */
+   Переменных: 597 из 1301 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -111,15 +111,12 @@
   --accent-on-light: 255 255 255;
   --accent-on-dark: 255 255 255;
   --accent-on: var(--accent-on-light);
+  --accent-container-on-high-light: 189 33 233;
+  --accent-container-on-high-dark: 207 93 240;
+  --accent-container-on-high: var(--accent-container-on-high-light);
   --accent-container-on-light: 192 123 211;
   --accent-container-on-dark: 140 47 166;
   --accent-container-on: var(--accent-container-on-light);
-  --accent-container-on-low-light: 220 177 232;
-  --accent-container-on-low-dark: 107 38 127;
-  --accent-container-on-low: var(--accent-container-on-low-light);
-  --accent-container-on-lowest-light: 235 210 242;
-  --accent-container-on-lowest-dark: 81 30 96;
-  --accent-container-on-lowest: var(--accent-container-on-lowest-light);
   --addition-core-light: 189 33 233;
   --addition-core-dark: 189 33 233;
   --addition-core: var(--addition-core-light);
@@ -638,9 +635,8 @@
   --accent-core: var(--accent-core-light);
   --accent-chroma: var(--accent-chroma-light);
   --accent-on: var(--accent-on-light);
+  --accent-container-on-high: var(--accent-container-on-high-light);
   --accent-container-on: var(--accent-container-on-light);
-  --accent-container-on-low: var(--accent-container-on-low-light);
-  --accent-container-on-lowest: var(--accent-container-on-lowest-light);
   --addition-core: var(--addition-core-light);
   --addition-chroma: var(--addition-chroma-light);
   --addition-dim: var(--addition-dim-light);
@@ -725,9 +721,8 @@
   --accent-core: var(--accent-core-dark);
   --accent-chroma: var(--accent-chroma-dark);
   --accent-on: var(--accent-on-dark);
+  --accent-container-on-high: var(--accent-container-on-high-dark);
   --accent-container-on: var(--accent-container-on-dark);
-  --accent-container-on-low: var(--accent-container-on-low-dark);
-  --accent-container-on-lowest: var(--accent-container-on-lowest-dark);
   --addition-core: var(--addition-core-dark);
   --addition-chroma: var(--addition-chroma-dark);
   --addition-dim: var(--addition-dim-dark);

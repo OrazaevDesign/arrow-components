@@ -1,4 +1,4 @@
-/* ArrowDS · emblem@3.0.5
+/* ArrowDS · emblem@3.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -11,7 +11,7 @@
   --awds-emb-bg:     rgb(var(--primary-container-core));       
   --awds-emb-chroma: rgb(var(--primary-container-chroma));     
   --awds-emb-border: rgb(var(--primary-container-on-lowest));  
-  --awds-emb-color:  rgb(var(--primary-container-on));         
+  --awds-emb-color:  rgb(var(--primary-container-on-high));         
   box-sizing: border-box;
   position: relative;
   display: inline-flex;

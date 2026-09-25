@@ -1,4 +1,4 @@
-/* ArrowDS · select-combi@1.0.18
+/* ArrowDS · select-combi@1.0.19
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
@@ -381,7 +381,7 @@
     --awds-list-item-border: rgb(var(--primary-container-on-lowest));   
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
-    --awds-list-item-check:  rgb(var(--primary-container-on));   
+    --awds-list-item-check:  rgb(var(--primary-container-on-high));   
   }
   .scombi__field option:disabled {
     opacity: var(--awds-opacity-40);   

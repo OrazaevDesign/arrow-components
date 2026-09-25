@@ -1,4 +1,4 @@
-/* ArrowDS · datepicker@1.0.1
+/* ArrowDS · datepicker@1.0.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -166,7 +166,7 @@
 
 .dpick__cell--today {
   --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    
-  --awds-dpick-cell-color:  rgb(var(--accent-container-on));
+  --awds-dpick-cell-color:  rgb(var(--accent-core));
 }
 
 .dpick__cell--today:hover {

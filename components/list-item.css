@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@1.0.11
+/* ArrowDS · list-item@1.0.12
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -215,7 +215,7 @@
   --awds-list-item-border:  rgb(var(--primary-container-on-lowest));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-check:   rgb(var(--primary-container-on-high));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -227,9 +227,9 @@
 .list-item-actual-selected {
   --awds-list-item-bg:      rgb(var(--extended-transparent));   
   --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on-low));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -261,9 +261,9 @@
 .list-item-default {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   
   --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on));   
+  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-default:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -288,9 +288,9 @@
 .list-item-menu-selected {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   
   --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-menu {
@@ -298,43 +298,43 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   
   --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-menu:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   
   --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected {
   --awds-list-item-bg:      rgb(var(--extended-transparent));   
   --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:focus-visible {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar {
@@ -342,21 +342,21 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-tabbar:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   
   --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-container-on));   
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));
+  --awds-list-item-color:   rgb(var(--accent-core));   
+  --awds-list-item-desc:    rgb(var(--accent-core));   
+  --awds-list-item-check:   rgb(var(--accent-core));
 }
 
 .list-item-transparent {
@@ -364,7 +364,7 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));
+  --awds-list-item-check:   rgb(var(--primary-core));
 }
 
 .list-item-transparent:hover:not(:disabled):not([aria-disabled="true"]) {
@@ -393,7 +393,7 @@
 
 .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-core));   
+  --awds-list-item-border:  rgb(var(--primary-container-on));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));
 }
@@ -410,7 +410,7 @@
   --awds-list-item-border:  rgb(var(--primary-core));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-check:   rgb(var(--primary-container-on-high));
 }
 
 .list-item-variation {
@@ -423,7 +423,7 @@
 
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-core));   
+  --awds-list-item-border:  rgb(var(--primary-container-on));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));
 }
