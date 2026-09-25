@@ -1,0 +1,138 @@
+{
+  "_note": "Снимок макета toast. ACB-owned. Создан 21.09.2026 проходом по циклу плана 2026-09-14 (шаги 1–8).",
+  "_structure_note": "БЫЛО: один набор `toast` (77:58591) на 6 ячеек с осями variant=normal|alert и type=icon|control|timer, плюс частный мастер `. / control` (77:58578) на 4 ячейки с осями state=rest|hover и type=action|close. СТАЛО: два набора по тону — `toast / normal` (617:48419) и `toast / alert` (617:48420), по 2 ячейки с осью lead=icon|timer, — и две части, `. / action` (617:631) и `. / close` (617:632), по 2 ячейки с осью state=rest|hover. Решения владельца 21.09.2026: тон — имя набора (как у tooltip и button); ось type кодировала две независимые вещи сразу, и наличие контролов ушло к булевым show-action / show-close, которые уже были; часть `. / control` разбита, потому что кнопка с текстом и крестик — два разных контрола. Компоненты ПЕРЕНЕСЕНЫ, а не пересозданы; инстансов у набора toast не было ни на одной из десяти страниц файла, а все 8 инстансов частей внутри тостов пережили разбор.",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "page": "7 · popups",
+  "section": {
+    "name": "↪ toast",
+    "node_id": "5:49"
+  },
+  "fetched_at": "2026-09-21T16:20:00Z",
+  "sets": {
+    "normal": {
+      "node_id": "617:48419",
+      "name": "toast / normal",
+      "cells": {
+        "lead=icon": "77:58604",
+        "lead=timer": "77:58620"
+      },
+      "explicit_mode": "roles=dark на обеих ячейках — островок темы; тёмный вид даёт компонент, а не инвертированная пара ролей",
+      "colors": "bg #262626 · текст #f5f5f5"
+    },
+    "alert": {
+      "node_id": "617:48420",
+      "name": "toast / alert",
+      "cells": {
+        "lead=icon": "77:58612",
+        "lead=timer": "77:58629"
+      },
+      "explicit_mode": "нет: тон ошибки одинаков в обеих темах",
+      "colors": "bg #a7382e · текст #fdf7f7"
+    }
+  },
+  "parts": {
+    "action": {
+      "node_id": "617:631",
+      "name": ". / action",
+      "cells": [
+        "state=rest",
+        "state=hover"
+      ],
+      "size": "64x40 · padding 10 · текст control-400",
+      "text_property": "text#617:2 (восстановлено после разбора: combineAsVariants теряет свойства набора)",
+      "cells_nodes": {
+        "state=rest": "77:58579",
+        "state=hover": "77:58582"
+      }
+    },
+    "close": {
+      "node_id": "617:632",
+      "name": ". / close",
+      "cells": [
+        "state=rest",
+        "state=hover"
+      ],
+      "size": "40x40 · padding 10 · иконка 20",
+      "cells_nodes": {
+        "state=rest": "77:58585",
+        "state=hover": "77:58588"
+      }
+    },
+    "hover": "подложка — прямоугольник bg, растянут на всю ячейку (ABSOLUTE + STRETCH), заливка = ячейка цвета тона, прозрачность из коллекции opacity: 0 в rest, 20 в hover. Скругления у подложки нет: углы режет клип плашки."
+  },
+  "axes": {
+    "lead": [
+      "icon",
+      "timer"
+    ],
+    "state (у частей)": [
+      "rest",
+      "hover"
+    ]
+  },
+  "properties": {
+    "show-icon": "BOOLEAN, default true — показ левого слота Ic20",
+    "icon": "INSTANCE_SWAP, default 77:58442 (ic20-delete-outline) — только у ячейки lead=icon",
+    "text": "TEXT, default «Сообщение»",
+    "show-action": "BOOLEAN, default true — показ инстанса . / action",
+    "show-close": "BOOLEAN, default true — показ инстанса . / close",
+    "_note": "Все пять пересозданы после разбора наборов и заново привязаны к узлам: combineAsVariants сохраняет только ось варианта."
+  },
+  "structure": {
+    "root": "плашка: фон ячейки тона, скругление border-radius/400, тень elevation-3, clip; в коде .toast",
+    "content": "контент: padding 10 сверху/снизу/слева, 0 справа — дальше идут контролы; в коде .toast__content",
+    "content > Ic20": "левый слот, padding-left 6, сторона 20; в коде .toast__icon",
+    "content > Ic20 > ic20-delete-outline": "иконка (свап), только у lead=icon",
+    "content > Ic20 > ProgressIndicators + text": "кольцо отсчёта и счётчик (control-200), только у lead=timer",
+    "content > Text > text": "текст сообщения, control-400, привязан к TEXT-свойству набора",
+    ". / action": "кнопка действия; в коде .toast__action",
+    ". / close": "крестик; в коде .toast__close"
+  },
+  "token_resolution": {
+    "normal/bg": "state:toast/normal/bg → roles/surface/bright (в моде dark = #262626)",
+    "normal/color": "state:toast/normal/color → roles/surface/on-highest (в моде dark = #f5f5f5)",
+    "alert/bg": "state:toast/alert/bg → roles/error/core",
+    "alert/color": "state:toast/alert/color → roles/error/on",
+    "padding": "size:rectangle/400/padding → space/2-5 (10)",
+    "gap": "size:rectangle/400/gap → space/1-5 (6) — внутренние зазоры заданы паддингами слотов, а не itemSpacing",
+    "rounded": "rounded/border-radius/400 (8)",
+    "text": "control/font-size|line-height|letter-spacing/400 (14/20); счётчик таймера — /200 (12/16)",
+    "elevation": "shadow/shadow1..3 при явном моде elevation-3",
+    "hover": "opacity/20 на подложке контрола"
+  },
+  "code_mapping": {
+    "tone": ".toast-normal / .toast-alert — имя набора, не ось",
+    "lead": "классом НЕ выражается: слот один (.toast__icon), внутрь кладут иконку или .toast__timer",
+    "controls": "классом НЕ выражается: наличие узлов .toast__action / .toast__close; правый отступ контента подхватывает :has()",
+    "island": "в коде островок выражен чтением сырья --surface-bright-dark и --surface-on-highest-dark; переопределять сами роли нельзя — зависимость пропадает из component-token-deps",
+    "timer": "кольцо — компонент awds-component-progress (circular, determinate) с переопределёнными --awds-progress-size и --awds-progress-color; своё кольцо не рисуется",
+    "focus": "--awds-focus-color переопределён цветом контента плашки: на тёмном островке общий surface-on-highest не читался бы"
+  },
+  "section_state_2026_09_21": {
+    "own_bindings_old_libraries": 0,
+    "raw_paints": 2,
+    "raw_paints_note": "обе на самой секции ↪ toast — общее оформление секций файла, не компонент",
+    "explicit_modes": {
+      "shadow": 4,
+      "roles": 2
+    },
+    "instances_of_toast_in_file": 0,
+    "instances_of_parts": 8
+  },
+  "fixed_2026_09_21": [
+    "Тень: blur первого слоя был привязан к переменной shadow/shadow1/offset-y (6px) вместо shadow1/blur-radius (12px при elevation-3) — 4 эффекта перепривязаны. Тот же дефект чинили у tooltip (18), у части . / dropdown форм (7 ступеней) и у popover (4): он копировался вместе с панелью.",
+    "Ось variant=normal|alert снята: тон стал именем набора.",
+    "Ось type=icon|control|timer заменена на lead=icon|timer; ячейки type=icon удалены — их вид даёт выключение булевых show-action и show-close.",
+    "Часть . / control разбита на . / action и . / close; ось type=action|close исчезла, осталась state=rest|hover.",
+    "Имя узла Content → content (как у tooltip и popover).",
+    "Обёртки четырёх наборов покрашены ролями surface/bright и surface/on-lowest вместо старой библиотеки Sys:Bg / Sys:Border.",
+    "Раскладка секции: у всех четырёх наборов вертикальный auto-layout с паддингом 40 и зазором 20."
+  ],
+  "debts": [
+    "Кольцо отсчёта стоит на ЧУЖОМ мастере ProgressIndicators (Type=Circular, Variant=Determinate, Progress=80) из старой библиотеки, а не на нашем progress / circular. Заменить нельзя без ступени 20px: наши ячейки 48×48, а размеры вложенных инстансов Plugin API молча не пишет. В КОДЕ этого долга нет — там кольцо уже берётся у awds-component-progress, размер задаётся ручкой --awds-progress-size.",
+    "Ячейки toast/info/* и toast/success/* в теме есть, а в макете тонов info и success нет вовсе — открытый вопрос.",
+    "Секции файла на странице 7 · popups держат подложку на старой библиотеке Sys — общий приём оформления, отдельная работа по файлу."
+  ],
+  "_id_note": "Ячейки сохранили свои исходные id: при разборе компоненты переносились, а не пересоздавались. Новые id только у четырёх наборов-обёрток."
+}

@@ -1,0 +1,222 @@
+{
+  "component": "toast",
+  "version": "1.0.0",
+  "contract_hash": "sha256:c29f85c0014c1dfa4030d9c4b0467699ebb35f17264fd5413bb0a63819b32b5c",
+  "artifact_hash": "sha256:6e0bb4db559599c639447b46645d3ac80e73cf98cdab1ff361bd7dfed5e95229",
+  "visual_change": false,
+  "released_at": "2026-09-21T14:05:21.942Z",
+  "own_values": [
+    {
+      "value": "0.15s",
+      "where": "transition",
+      "count": 1,
+      "why": "длительность анимации: коллекции движения в студии нет"
+    }
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "5:49",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-49"
+  },
+  "variants": {
+    "normal": {
+      "node_id": "617:48419",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=617-48419",
+      "figma_label": "toast / normal"
+    },
+    "alert": {
+      "node_id": "617:48420",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=617-48420",
+      "figma_label": "toast / alert"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров нет: плашка одна, ступень 400 зашита (padding rectangle/400/padding, текст control-400). Как у link, tooltip и popover.",
+  "states": [
+    "rest",
+    "hover"
+  ],
+  "states_note": "У самой плашки состояний нет — hover есть у контролов (кнопка действия и крестик): подложка цветом контента под opacity-20. В макете это ось state=rest|hover у частей . / action и . / close.",
+  "color_tokens": [
+    "bg",
+    "color"
+  ],
+  "css_files": [
+    "toast.css"
+  ],
+  "base_class_note": "Базовый класс .toast, как у tooltip — по имени вещи. Приватные аккумуляторы --awds-toast-* коротки и в теме не встречаются, а глобальной прослойки с таким префиксом не существует.",
+  "uses_note": "Кольцо обратного отсчёта — компонент awds-component-progress (circular, determinate): размер и цвет у него вынесены ручками --awds-progress-size и --awds-progress-color, поэтому композиция обходится двумя строками. Своё кольцо в тосте не рисуется.",
+  "preview": {
+    "base_class": "toast",
+    "default_size": null,
+    "matrix_states": [
+      "rest",
+      "hover"
+    ],
+    "matrix_sizes": null,
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Тон",
+        "options": [
+          "normal",
+          "alert"
+        ]
+      },
+      {
+        "id": "lead",
+        "label": "Левый слот",
+        "options": [
+          "icon",
+          "timer"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Normal · иконка · с контролами",
+        "html": "<div class=\"toast toast-normal\" role=\"status\"><div class=\"toast__content\"><span class=\"toast__icon\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"></svg></span><span class=\"toast__text\">Товар удалён</span></div><button class=\"toast__action\" type=\"button\">Отменить</button><button class=\"toast__close\" type=\"button\" aria-label=\"Закрыть\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"></svg></button></div>"
+      },
+      {
+        "label": "Alert · без контролов",
+        "html": "<div class=\"toast toast-alert\" role=\"status\"><div class=\"toast__content\"><span class=\"toast__icon\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"></svg></span><span class=\"toast__text\">Не удалось оплатить</span></div></div>"
+      },
+      {
+        "label": "Normal · таймер",
+        "html": "<div class=\"toast toast-normal\" role=\"status\"><div class=\"toast__content\"><span class=\"toast__icon\"><span class=\"toast__timer\"><svg class=\"progress progress-circular\" viewBox=\"0 0 48 48\" style=\"--awds-progress-value: 80\" role=\"progressbar\" aria-label=\"Осталось секунд\"><circle class=\"progress-circular__arc\" cx=\"24\" cy=\"24\" r=\"23\" pathLength=\"100\"/></svg><span class=\"toast__timer-value\">4</span></span></span><span class=\"toast__text\">Товар удалён</span></div><button class=\"toast__action\" type=\"button\">Отменить</button><button class=\"toast__close\" type=\"button\" aria-label=\"Закрыть\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"></svg></button></div>"
+      }
+    ]
+  },
+  "notes": "Тон — имя набора (toast / normal и toast / alert), ось в макете одна: lead=icon|timer. В коде классов под lead и под наличие контролов нет — разницу задаёт состав разметки, правый отступ контента подхватывает :has() (Baseline 2024). Тон normal — островок темы: ячейки ведут на surface/bright и surface/on-highest, а тёмной плашку делает компонент, читая их dark-значения; в Figma то же выражено явным модом roles=dark на ячейках набора. Тон alert островка не имеет: error/core одинаков в обеих темах. Кольцо фокуса у контролов берёт цвет контента плашки — на тёмном островке общий --awds-focus-color не читался бы. До 21.09.2026 набор был один, с осями variant и type; type кодировал две независимые вещи сразу (что в левом слоте и есть ли контролы), при том что второе уже выражали булевы show-action и show-close.",
+  "last_synced": "2026-09-21T16:20:00Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:64bebe291bc315c926499ee42ad6144d516692ab470c3609ac91a339dfead277",
+  "published": null,
+  "markup": {
+    "root": {
+      "class": "toast",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "toast-{variant}",
+      "required": true
+    },
+    "size": null,
+    "native": null,
+    "children": [
+      {
+        "class": "toast__content"
+      },
+      {
+        "class": "toast__icon"
+      },
+      {
+        "class": "toast__text"
+      }
+    ],
+    "attrs": [
+      "role"
+    ],
+    "container": null,
+    "note": "Контент обязателен: слот и текст. Кнопка .toast__action и крестик .toast__close необязательны — без них правый отступ контента возвращается сам. Таймер (.toast__timer) кладётся внутрь слота вместо иконки и несёт инстанс progress / circular. Контейнеру role=\"status\": сообщение объявляется вежливо, не перебивая пользователя."
+  },
+  "questions": [
+    {
+      "id": "toast-timer-ring-on-foreign-master",
+      "text": "Кольцо обратного отсчёта в макете стоит на чужом мастере ProgressIndicators из старой библиотеки, а наш progress / circular существует только ступенью 48px. Заводить ступень 20px у progress и свапать кольцо или оставить чужой мастер?",
+      "level": "component",
+      "target": "progress",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-21",
+      "evidence": "замер 21.09.2026: инстанс в ячейках lead=timer ведёт на remote-компонент Type=Circular, Variant=Determinate, Progress=80; ячейки нашего набора 6:516 — 48×48, размеры вложенных инстансов Plugin API молча не пишет. В коде долга нет: там кольцо уже берётся у awds-component-progress через ручку --awds-progress-size",
+      "asana_gid": "1218700910626969"
+    },
+    {
+      "id": "toast-info-success-cells-without-macro",
+      "text": "В теме есть ячейки toast/info/* и toast/success/* (по четыре на тон), а в макете тонов info и success нет вовсе. Рисовать их или снять ячейки?",
+      "level": "token",
+      "target": "State",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-09-21",
+      "evidence": "замер 21.09.2026: в коллекции state темы 21 лежат toast/info/{bg,chroma,border,color} и toast/success/{bg,chroma,border,color}; в секции ↪ toast два набора — normal и alert",
+      "asana_gid": "1218701167325854"
+    }
+  ],
+  "family": "popups",
+  "summary": "Плашка-уведомление: иконка или таймер, текст, кнопка действия и крестик",
+  "aliases": [
+    "тост",
+    "уведомление",
+    "плашка уведомления",
+    "снекбар",
+    "сообщение о результате",
+    "всплывающее сообщение"
+  ],
+  "ds_token_dependencies": [
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-400",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-400",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-opacity-20",
+    "--awds-rounded-border-radius-400",
+    "--awds-shadow-elevation-3",
+    "--awds-space-1-5",
+    "--awds-space-2-5",
+    "--awds-space-5",
+    "--error-core",
+    "--error-on",
+    "--surface-bright-dark",
+    "--surface-on-highest-dark"
+  ],
+  "asana": {
+    "task_gid": "1218701192164026",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218701192164026",
+    "task_name": "💠 toast",
+    "parent_task": "💠 7 · popups",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-progress": "2.0.2",
+    "awds-component-focus-selection": "2.0.9"
+  },
+  "contract": {
+    "classes": [
+      "progress-circular",
+      "toast",
+      "toast-alert",
+      "toast-normal",
+      "toast__action",
+      "toast__close",
+      "toast__content",
+      "toast__icon",
+      "toast__text",
+      "toast__timer",
+      "toast__timer-value"
+    ],
+    "attributes": [],
+    "elements": [
+      "img",
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "alert",
+      "normal"
+    ],
+    "sizes": [],
+    "states": [
+      "hover",
+      "rest"
+    ]
+  }
+}
