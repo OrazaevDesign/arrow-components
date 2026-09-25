@@ -693,7 +693,7 @@
     --awds-list-item-border: rgb(var(--primary-container-on-lowest));   /* #cell list/selected-secondary/border */
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   /* #cell list/selected-secondary/color */
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   /* #cell list/selected-secondary/description */
-    --awds-list-item-check:  rgb(var(--primary-container-on));   /* #cell list/selected-secondary/icon-check */
+    --awds-list-item-check:  rgb(var(--primary-container-on-high));   /* #cell list/selected-secondary/icon-check */
   }
 
   .select__field option:disabled {

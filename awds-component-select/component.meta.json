@@ -1,10 +1,10 @@
 {
   "component": "select",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "contract_hash": "sha256:0e22a7c9f7b6f9f4bdf2e551213b40ec9c337e1f9b9d703793d15870cccab6ac",
-  "artifact_hash": "sha256:cc1ea485f1f85a1f4dfd97b5b2b16ff9113451d5ce26c9eccc6ce006b0ef0ed8",
+  "artifact_hash": "sha256:7634621a5ae78edbd2af545cbc0b13ecef9313cefba2a50fbea80bad1a4ba634",
   "visual_change": true,
-  "released_at": "2026-09-16T16:26:05.526Z",
+  "released_at": "2026-09-25T05:54:41.584Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -234,7 +234,6 @@
     "--error-container-on-low",
     "--primary-container-chroma",
     "--primary-container-core",
-    "--primary-container-on",
     "--primary-container-on-high",
     "--primary-container-on-highest",
     "--primary-container-on-lowest",

@@ -22,13 +22,13 @@
         "Size=50, State=Rest": "394:15347"
       },
       "cell_heights": {
-        "600": 52,
-        "500": 48,
-        "400": 40,
-        "300": 36,
-        "200": 32,
+        "50": 20,
         "100": 24,
-        "50": 20
+        "200": 32,
+        "300": 36,
+        "400": 40,
+        "500": 48,
+        "600": 52
       }
     },
     "394:15277": {
@@ -320,51 +320,14 @@
     }
   },
   "geometry_resolved": {
-    "_formula": "высота = 2 × rectangle-{N}-padding + line-height; полоса шеврона = 2 × padding + icon",
-    "600": {
-      "padding": 16,
-      "icon": 20,
-      "rounded": 10,
-      "fs": 16,
-      "lh": 20,
-      "height": 52,
-      "chevron_strip": 52
-    },
-    "500": {
-      "padding": 14,
-      "icon": 20,
-      "rounded": 8,
-      "fs": 16,
-      "lh": 20,
-      "height": 48,
-      "chevron_strip": 48
-    },
-    "400": {
-      "padding": 10,
-      "icon": 20,
-      "rounded": 8,
-      "fs": 14,
-      "lh": 20,
-      "height": 40,
-      "chevron_strip": 40
-    },
-    "300": {
-      "padding": 8,
-      "icon": 20,
-      "rounded": 6,
-      "fs": 14,
-      "lh": 20,
-      "height": 36,
-      "chevron_strip": 36
-    },
-    "200": {
-      "padding": 8,
+    "50": {
+      "padding": 2,
       "icon": 16,
-      "rounded": 6,
-      "fs": 13,
+      "rounded": 4,
+      "fs": 12,
       "lh": 16,
-      "height": 32,
-      "chevron_strip": 32
+      "height": 20,
+      "chevron_strip": 20
     },
     "100": {
       "padding": 4,
@@ -375,15 +338,52 @@
       "height": 24,
       "chevron_strip": 24
     },
-    "50": {
-      "padding": 2,
+    "200": {
+      "padding": 8,
       "icon": 16,
-      "rounded": 4,
-      "fs": 12,
+      "rounded": 6,
+      "fs": 13,
       "lh": 16,
-      "height": 20,
-      "chevron_strip": 20
+      "height": 32,
+      "chevron_strip": 32
     },
+    "300": {
+      "padding": 8,
+      "icon": 20,
+      "rounded": 6,
+      "fs": 14,
+      "lh": 20,
+      "height": 36,
+      "chevron_strip": 36
+    },
+    "400": {
+      "padding": 10,
+      "icon": 20,
+      "rounded": 8,
+      "fs": 14,
+      "lh": 20,
+      "height": 40,
+      "chevron_strip": 40
+    },
+    "500": {
+      "padding": 14,
+      "icon": 20,
+      "rounded": 8,
+      "fs": 16,
+      "lh": 20,
+      "height": 48,
+      "chevron_strip": 48
+    },
+    "600": {
+      "padding": 16,
+      "icon": 20,
+      "rounded": 10,
+      "fs": 16,
+      "lh": 20,
+      "height": 52,
+      "chevron_strip": 52
+    },
+    "_formula": "высота = 2 × rectangle-{N}-padding + line-height; полоса шеврона = 2 × padding + icon",
     "_identical_to_input": "Все семь строк совпадают с awds-component-input — и padding, и icon, и rounded, и типографика приходят из одних rectangle-токенов. Поэтому select и input одного размера в форме стоят ровно."
   },
   "relation_to_family": {
@@ -399,13 +399,13 @@
     "node": "38:67577",
     "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=38-67577",
     "cells": {
-      "600": "38:67578",
-      "500": "38:67590",
-      "400": "38:67602",
-      "300": "38:67614",
-      "200": "38:67626",
+      "50": "38:67658",
       "100": "38:67640",
-      "50": "38:67658"
+      "200": "38:67626",
+      "300": "38:67614",
+      "400": "38:67602",
+      "500": "38:67590",
+      "600": "38:67578"
     },
     "structure": "Панель (frame List) + отдельный инстанс Scrollbar 6px справа. Пункты — List-item / Transparent и List-item / Accent-selected, идут вплотную, без зазора.",
     "panel": {
@@ -416,46 +416,13 @@
       "правки_16_09": "ДВА ДЕФЕКТА МАКЕТА ЗАКРЫТЫ. (1) blur первого слоя тени у всех семи ступеней был привязан к shadow/shadow1/offset-y — панель рисовалась 0/6/6 вместо 0/6/12; перепривязан на shadow/shadow1/blur-radius. Код был прав, макет догонял: в CSS стоит var(--awds-shadow-elevation-3) целиком. (2) высота скроллбара не сходилась с содержимым — у 600/500/400 он был 320 при списке 312 и обрезался клипом панели, у 100 и 50 был 264 при списке 300 и 302; всем семи поставлено FILL по вертикали. Побочно ступень 300 потеряла лишние 8px: панель была 304 при содержимом 288 — единственная из семи, у кого высота не равнялась контенту плюс паддинг."
     },
     "item_scale": {
-      "_read": "Метрики пункта берутся из rectangle НА ШАГ НИЖЕ размера контрола — и padding/rounded, и типографика. Решающая ячейка — 500: пункт набран 14/20 (rectangle-400-typography), а не 16/20, как у самого контрола 500. У 50 шага вниз нет, поэтому rectangle-50.",
-      "600": {
-        "item_rectangle": "500",
-        "padding": 14,
-        "rounded": 8,
-        "fs": 16,
-        "lh": 20,
-        "height": 48
-      },
-      "500": {
-        "item_rectangle": "400",
-        "padding": 10,
-        "rounded": 8,
-        "fs": 14,
-        "lh": 20,
-        "height": 40
-      },
-      "400": {
-        "item_rectangle": "300",
-        "padding": 8,
-        "rounded": 6,
-        "fs": 14,
-        "lh": 20,
-        "height": 36
-      },
-      "300": {
-        "item_rectangle": "200",
-        "padding": 8,
-        "rounded": 6,
-        "fs": 13,
+      "50": {
+        "item_rectangle": "50",
+        "padding": 2,
+        "rounded": 4,
+        "fs": 12,
         "lh": 16,
-        "height": 32
-      },
-      "200": {
-        "item_rectangle": "100",
-        "padding": 4,
-        "rounded": 6,
-        "fs": 13,
-        "lh": 16,
-        "height": 24
+        "height": 20
       },
       "100": {
         "item_rectangle": "50",
@@ -465,14 +432,47 @@
         "lh": 16,
         "height": 20
       },
-      "50": {
-        "item_rectangle": "50",
-        "padding": 2,
-        "rounded": 4,
-        "fs": 12,
+      "200": {
+        "item_rectangle": "100",
+        "padding": 4,
+        "rounded": 6,
+        "fs": 13,
         "lh": 16,
-        "height": 20
-      }
+        "height": 24
+      },
+      "300": {
+        "item_rectangle": "200",
+        "padding": 8,
+        "rounded": 6,
+        "fs": 13,
+        "lh": 16,
+        "height": 32
+      },
+      "400": {
+        "item_rectangle": "300",
+        "padding": 8,
+        "rounded": 6,
+        "fs": 14,
+        "lh": 20,
+        "height": 36
+      },
+      "500": {
+        "item_rectangle": "400",
+        "padding": 10,
+        "rounded": 8,
+        "fs": 14,
+        "lh": 20,
+        "height": 40
+      },
+      "600": {
+        "item_rectangle": "500",
+        "padding": 14,
+        "rounded": 8,
+        "fs": 16,
+        "lh": 20,
+        "height": 48
+      },
+      "_read": "Метрики пункта берутся из rectangle НА ШАГ НИЖЕ размера контрола — и padding/rounded, и типографика. Решающая ячейка — 500: пункт набран 14/20 (rectangle-400-typography), а не 16/20, как у самого контрола 500. У 50 шага вниз нет, поэтому rectangle-50."
     },
     "item_colors": {
       "rest": "list/unselected-transparent → bg transparent, border transparent, color secondary-container-on-highest",
@@ -503,33 +503,33 @@
     "Padding Icon=False": "paddingLeft и paddingRight = rectangle/{N}/text-gap; paddingTop/Bottom = rectangle/{N}/padding",
     "Padding Icon=True": "все четыре = rectangle/{N}/padding",
     "values": {
-      "600": {
-        "padding": 16,
-        "text-gap": 18
-      },
-      "500": {
-        "padding": 14,
-        "text-gap": 18
-      },
-      "400": {
-        "padding": 10,
-        "text-gap": 16
-      },
-      "300": {
-        "padding": 8,
-        "text-gap": 14
-      },
-      "200": {
-        "padding": 8,
-        "text-gap": 14
+      "50": {
+        "padding": 2,
+        "text-gap": 8
       },
       "100": {
         "padding": 4,
         "text-gap": 10
       },
-      "50": {
-        "padding": 2,
-        "text-gap": 8
+      "200": {
+        "padding": 8,
+        "text-gap": 14
+      },
+      "300": {
+        "padding": 8,
+        "text-gap": 14
+      },
+      "400": {
+        "padding": 10,
+        "text-gap": 16
+      },
+      "500": {
+        "padding": 14,
+        "text-gap": 18
+      },
+      "600": {
+        "padding": 16,
+        "text-gap": 18
       }
     },
     "_в_css": "Проп переключает обе стороны разом; в CSS раскрыто по стороне через :has() — asymmetric случай (одна иконка) в макете компонентом не выражается, но в вёрстке встречается чаще всего."
@@ -606,5 +606,19 @@
     "вопрос_focus": "Открытый вопрос form-control-focus-drawn-not-read (major, 03.09.2026) этим заходом закрыт наполовину: ячейки chevron и icon всех тонов теперь ЧИТАЮТСЯ кодом во всех четырёх состояниях. Непрочитанной остаётся группа dim — её не читает ни один контрол формы, кроме secondary у input и input-combi.",
     "panel_вне_планки": "Панель стоит на ::picker(select), position-anchor и anchor-size() — это вне Baseline 2024. Решение принято до прохода и здесь не пересматривалось: без поддержки слой @supports просто не применяется и остаётся системный попап.",
     "secondary": "В теме есть тон form-control/secondary, в макете select его нет — шесть наборов против семи у input. Не заводилось: макет источник структуры."
+  },
+  "_dropdown_debt_closed": "ЗАКРЫТО 21.09.2026. Все семь ступеней панели привязаны к своим size/dropdown/{N}/padding и /border-radius — ступени 50, 100 и 600 догнали остальные 17.09.2026 вместе с перепубликацией токенов.",
+  "_dropdown_page_cleanup_2026_09_21": {
+    "date": "2026-09-21",
+    "note": "Секция ↪ dropdown страницы 7 · popups (панель списка — часть select и select-combi).",
+    "dead_modes_cleared": 4,
+    "detail": {
+      "Shadow": 4
+    },
+    "diff": 0,
+    "section_state": {
+      "own_bindings_old_libraries": 0,
+      "dead_modes": 0
+    }
   }
 }
