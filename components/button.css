@@ -1,4 +1,4 @@
-/* ArrowDS · button@2.2.3
+/* ArrowDS · button@2.2.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -195,28 +195,28 @@
 
 .btn-clean {
   --awds-btn-bg:     rgb(var(--surface-bright));   
-  --awds-btn-chroma: rgb(var(--surface-bright));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-high));
 }
 
+.btn.btn-clean {
+  background: var(--awds-btn-bg);
+}
+
 .btn-clean:hover {
   --awds-btn-bg:     rgb(var(--surface-surface));   
-  --awds-btn-chroma: rgb(var(--surface-surface));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-highest));
 }
 
 .btn-clean:focus-visible {
   --awds-btn-bg:     rgb(var(--surface-bright));   
-  --awds-btn-chroma: rgb(var(--surface-bright));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-high));
 }
 
 .btn-clean:active {
   --awds-btn-bg:     rgb(var(--surface-surface));   
-  --awds-btn-chroma: rgb(var(--surface-surface));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-highest));
 }
@@ -279,28 +279,28 @@
 
 .btn-pills {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
+.btn.btn-pills {
+  background: var(--awds-btn-bg);
+}
+
 .btn-pills:hover {
   --awds-btn-bg:     rgb(var(--secondary-dim));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-dim));   
-  --awds-btn-color:  rgb(var(--accent-container-on));
+  --awds-btn-color:  rgb(var(--accent-core));
 }
 
 .btn-pills:focus-visible {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-pills:active {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-core));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
@@ -335,56 +335,56 @@
 
 .btn-secondary {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
+.btn.btn-secondary {
+  background: var(--awds-btn-bg);
+}
+
 .btn-secondary:hover {
   --awds-btn-bg:     rgb(var(--secondary-dim));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-dim));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-secondary:focus-visible {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-secondary:active {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-core));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-tertiary {
   --awds-btn-bg:     rgb(var(--tertiary-core));   
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   
   --awds-btn-border: rgb(var(--tertiary-core));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }
 
+.btn.btn-tertiary {
+  background: var(--awds-btn-bg);
+}
+
 .btn-tertiary:hover {
   --awds-btn-bg:     rgb(var(--tertiary-dim));   
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   
   --awds-btn-border: rgb(var(--tertiary-dim));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }
 
 .btn-tertiary:focus-visible {
   --awds-btn-bg:     rgb(var(--tertiary-core));   
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   
   --awds-btn-border: rgb(var(--tertiary-core));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }
 
 .btn-tertiary:active {
   --awds-btn-bg:     rgb(var(--tertiary-core));   
-  --awds-btn-chroma: rgb(var(--tertiary-core));   
   --awds-btn-border: rgb(var(--tertiary-core));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }

@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 603 из 1301 объявленных в теме. */
+   Переменных: 600 из 1301 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -78,9 +78,6 @@
   --tertiary-core-light: 239 241 251;
   --tertiary-core-dark: 16 21 47;
   --tertiary-core: var(--tertiary-core-light);
-  --tertiary-chroma-light: 239 241 251;
-  --tertiary-chroma-dark: 16 21 47;
-  --tertiary-chroma: var(--tertiary-chroma-light);
   --tertiary-dim-light: 210 215 242;
   --tertiary-dim-dark: 19 24 56;
   --tertiary-dim: var(--tertiary-dim-light);
@@ -630,7 +627,6 @@
   --secondary-container-on-low: var(--secondary-container-on-low-light);
   --secondary-container-on-lowest: var(--secondary-container-on-lowest-light);
   --tertiary-core: var(--tertiary-core-light);
-  --tertiary-chroma: var(--tertiary-chroma-light);
   --tertiary-dim: var(--tertiary-dim-light);
   --tertiary-on: var(--tertiary-on-light);
   --tertiary-container-core: var(--tertiary-container-core-light);
@@ -718,7 +714,6 @@
   --secondary-container-on-low: var(--secondary-container-on-low-dark);
   --secondary-container-on-lowest: var(--secondary-container-on-lowest-dark);
   --tertiary-core: var(--tertiary-core-dark);
-  --tertiary-chroma: var(--tertiary-chroma-dark);
   --tertiary-dim: var(--tertiary-dim-dark);
   --tertiary-on: var(--tertiary-on-dark);
   --tertiary-container-core: var(--tertiary-container-core-dark);

@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.3, button-area@2.0.6, button-favorites@2.0.1, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.1, emblem@3.0.5, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.5, list-item@1.0.11, modal@1.0.1, notice@2.0.3, pagination@1.0.1, price@2.0.4, product-card@1.1.11, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.17, select-combi@1.0.18, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
+   Состав: focus-selection@2.0.9, badge@1.1.4, button@2.2.6, button-area@2.0.6, button-favorites@2.0.1, button-group@1.0.3, button-menu@2.0.6, button-overhung@2.0.12, checkbox@1.0.9, content-area@2.0.3, datepicker@1.0.1, emblem@3.0.5, formfield@1.0.11, heading@1.0.6, input@1.0.12, input-combi@1.0.12, input-inline@1.0.0, label@1.0.9, link@1.0.5, list-item@1.0.11, modal@1.0.1, notice@2.0.3, pagination@1.0.1, price@2.0.4, product-card@1.1.11, progress@2.0.2, radio@1.0.9, range@2.0.9, rating@2.0.9, scrollbar@2.0.6, select@1.0.17, select-combi@1.0.18, slider@1.0.8, switch@1.0.8, tab@1.0.5, tab-group@1.0.3, tab-product@1.0.5, table@1.0.10, textarea@1.0.13, textarea-combi@1.0.0, tooltip@2.0.0, uploader@2.0.0 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -876,28 +876,28 @@
 
 .btn-clean {
   --awds-btn-bg:     rgb(var(--surface-bright));   
-  --awds-btn-chroma: rgb(var(--surface-bright));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-high));
 }
 
+.btn.btn-clean {
+  background: var(--awds-btn-bg);
+}
+
 .btn-clean:hover {
   --awds-btn-bg:     rgb(var(--surface-surface));   
-  --awds-btn-chroma: rgb(var(--surface-surface));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-highest));
 }
 
 .btn-clean:focus-visible {
   --awds-btn-bg:     rgb(var(--surface-bright));   
-  --awds-btn-chroma: rgb(var(--surface-bright));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-high));
 }
 
 .btn-clean:active {
   --awds-btn-bg:     rgb(var(--surface-surface));   
-  --awds-btn-chroma: rgb(var(--surface-surface));   
   --awds-btn-border: rgb(var(--surface-dim));   
   --awds-btn-color:  rgb(var(--surface-on-highest));
 }
@@ -960,28 +960,28 @@
 
 .btn-pills {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
+.btn.btn-pills {
+  background: var(--awds-btn-bg);
+}
+
 .btn-pills:hover {
   --awds-btn-bg:     rgb(var(--secondary-dim));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-dim));   
-  --awds-btn-color:  rgb(var(--accent-container-on));
+  --awds-btn-color:  rgb(var(--accent-core));
 }
 
 .btn-pills:focus-visible {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-pills:active {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-core));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
@@ -1016,56 +1016,56 @@
 
 .btn-secondary {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
+.btn.btn-secondary {
+  background: var(--awds-btn-bg);
+}
+
 .btn-secondary:hover {
   --awds-btn-bg:     rgb(var(--secondary-dim));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-dim));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-secondary:focus-visible {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-secondary:active {
   --awds-btn-bg:     rgb(var(--secondary-core));   
-  --awds-btn-chroma: rgb(var(--secondary-core));   
   --awds-btn-border: rgb(var(--secondary-core));   
   --awds-btn-color:  rgb(var(--secondary-on));
 }
 
 .btn-tertiary {
   --awds-btn-bg:     rgb(var(--tertiary-core));   
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   
   --awds-btn-border: rgb(var(--tertiary-core));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }
 
+.btn.btn-tertiary {
+  background: var(--awds-btn-bg);
+}
+
 .btn-tertiary:hover {
   --awds-btn-bg:     rgb(var(--tertiary-dim));   
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   
   --awds-btn-border: rgb(var(--tertiary-dim));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }
 
 .btn-tertiary:focus-visible {
   --awds-btn-bg:     rgb(var(--tertiary-core));   
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   
   --awds-btn-border: rgb(var(--tertiary-core));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }
 
 .btn-tertiary:active {
   --awds-btn-bg:     rgb(var(--tertiary-core));   
-  --awds-btn-chroma: rgb(var(--tertiary-core));   
   --awds-btn-border: rgb(var(--tertiary-core));   
   --awds-btn-color:  rgb(var(--tertiary-on));
 }

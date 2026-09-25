@@ -50,7 +50,7 @@
     },
     {
       "name": "button",
-      "version": "2.2.3",
+      "version": "2.2.6",
       "variants": [
         "primary",
         "secondary",
@@ -70,8 +70,8 @@
         500,
         600
       ],
-      "rules": 49,
-      "bytes": 12819
+      "rules": 53,
+      "bytes": 12186
     },
     {
       "name": "button-area",
@@ -715,13 +715,13 @@
     }
   ],
   "bundle": {
-    "bytes": 322360,
-    "rules": 1249,
-    "hash": "sha256:103f2a2cb175d1d01c2d4366a31224b5bd16a3072b61a9d758d068bd76da2461"
+    "bytes": 321727,
+    "rules": 1253,
+    "hash": "sha256:121d5bd4c31760624f666086cbcbaff48a20e0b21e7b56b897248e6a0d0fd1b8"
   },
   "theme": {
-    "bytes": 58403,
-    "variables_kept": 603,
+    "bytes": 58175,
+    "variables_kept": 600,
     "variables_declared": 1301,
     "missing": []
   },
