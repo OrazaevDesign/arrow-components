@@ -37,14 +37,9 @@
    ============================================================================= */
 
 /* Polish (MIFB): цветовые аккумуляторы как <color>, чтобы смена состояния
-   интерполировалась. bg и chroma потребляются на корне → inherits: false;
+   интерполировалась. bg потребляется на корне → inherits: false;
    color и label читаются ниже, в поле и в метке → inherits: true. */
 @property --awds-tcombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-tcombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -86,14 +81,13 @@
   border: 0;
   border-radius: var(--awds-tcombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-tcombi-border);
-  background: linear-gradient(to right, var(--awds-tcombi-chroma, var(--awds-tcombi-bg)), var(--awds-tcombi-bg));
+  background: var(--awds-tcombi-bg);
   color: var(--awds-tcombi-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
 
   /* Стандарт PageCraft — 0.15s ease-out (arrow-design-system/references/motion.md). */
   transition: --awds-tcombi-bg 0.15s ease-out,
-              --awds-tcombi-chroma 0.15s ease-out,
               --awds-tcombi-color 0.15s ease-out,
               --awds-tcombi-label 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -220,7 +214,6 @@
 
 .tcombi-error {
   --awds-tcombi-bg:          rgb(var(--error-container-core));   /* #cell form-control/error/bg-rest */
-  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   /* #cell form-control/error/chroma-rest */
   --awds-tcombi-border:      rgb(var(--error-container-on-low));   /* #cell form-control/error/border-rest */
   --awds-tcombi-color:       rgb(var(--error-container-on-highest));   /* #cell form-control/error/color-rest */
   --awds-tcombi-label:       rgb(var(--error-container-on-high));   /* #cell form-control/error/placeholder-rest */
@@ -230,7 +223,6 @@
    :not(:focus-within) — на сфокусированном hover не применяется. */
 .tcombi-error:hover:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--error-container-core));   /* #cell form-control/error/bg-hover */
-  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   /* #cell form-control/error/chroma-hover */
   --awds-tcombi-border:      rgb(var(--error-container-on));   /* #cell form-control/error/border-hover */
   --awds-tcombi-color:       rgb(var(--error-container-on-highest));   /* #cell form-control/error/color-hover */
   --awds-tcombi-label:       rgb(var(--error-container-on-high));   /* #cell form-control/error/placeholder-hover */
@@ -238,7 +230,6 @@
 
 .tcombi-error:active:not(:focus-within):has(> .tcombi__field:enabled) {
   --awds-tcombi-bg:          rgb(var(--error-container-core));   /* #cell form-control/error/bg-active */
-  --awds-tcombi-chroma:      rgb(var(--error-container-chroma));   /* #cell form-control/error/chroma-active */
   --awds-tcombi-border:      rgb(var(--error-container-on-low));   /* #cell form-control/error/border-active */
   --awds-tcombi-color:       rgb(var(--error-container-on-highest));   /* #cell form-control/error/color-active */
   --awds-tcombi-label:       rgb(var(--error-container-on-high));   /* #cell form-control/error/placeholder-active */
@@ -247,8 +238,7 @@
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
    и рамка обязана загораться при клике мышью. */
 .tcombi-error:focus-within {
-  --awds-tcombi-bg:          rgb(var(--surface-bright));   /* #cell form-control/error/bg-focus */
-  --awds-tcombi-chroma:      rgb(var(--primary-container-chroma));   /* #cell form-control/error/chroma-focus */
+  --awds-tcombi-bg:          rgb(var(--primary-container-base));   /* #cell form-control/error/bg-focus */
   --awds-tcombi-border:      rgb(var(--primary-dim));   /* #cell form-control/error/border-focus */
   --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   /* #cell form-control/error/color-focus */
   --awds-tcombi-label:       rgb(var(--primary-container-on-high));   /* #cell form-control/error/placeholder-focus */

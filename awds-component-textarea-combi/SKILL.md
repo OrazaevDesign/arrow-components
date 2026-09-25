@@ -56,7 +56,7 @@ description: Textarea Combi ArrowDS (.tcombi).
 
 | Что | Источник | Где живёт |
 |---|---|---|
-| Цвета состояний (bg / chroma / border / текст / метка) | роли с якорем ячейки `form-control/{тон}/…` | `references/textarea-combi-{тон}.css` |
+| Цвета состояний (bg / border / текст / метка) | роли с якорем ячейки `form-control/{тон}/…` | `references/textarea-combi-{тон}.css` |
 | Вертикали метки и значения | `var(--awds-space-*)` по ячейкам `rectangle/{N}/combi/{label-top, input-top, input-bottom}` | `map.size.rectangle` |
 | Горизонтальный отступ | `var(--awds-space-*)` по ячейке `rectangle/{N}/text-gap` — всегда, слотов нет | там же |
 | Кольцо фокуса | `var(--awds-focus-color-muted)`, вариант `offset=outside · tone=muted` | слой `awds-component-focus-selection` |

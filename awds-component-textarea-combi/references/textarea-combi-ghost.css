@@ -32,8 +32,8 @@
    метке некуда уезжать. Ниже 300 нужен обычный textarea с подписью снаружи.
 
    Горизонтальный отступ — всегда text-gap: слотов у textarea-combi нет.
-   У ghost ни фона, ни рамки, ни chroma: в макете все три привязаны к
-   roles/extended/transparent, и в теме ячеек ghost/bg, /chroma, /border не
+   У ghost ни фона, ни рамки: в макете обе привязаны к
+   roles/extended/transparent, и в теме ячеек ghost/bg, /border не
    существует вовсе. Поэтому аккумуляторы фона и рамки остаются прозрачными во
    всех состояниях, а тон несёт только цвет текста и метки.
 
@@ -41,14 +41,9 @@
    ============================================================================= */
 
 /* Polish (MIFB): цветовые аккумуляторы как <color>, чтобы смена состояния
-   интерполировалась. bg и chroma потребляются на корне → inherits: false;
+   интерполировалась. bg потребляется на корне → inherits: false;
    color и label читаются ниже, в поле и в метке → inherits: true. */
 @property --awds-tcombi-bg {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: transparent;
-}
-@property --awds-tcombi-chroma {
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
@@ -90,14 +85,13 @@
   border: 0;
   border-radius: var(--awds-tcombi-rounded);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-tcombi-border);
-  background: linear-gradient(to right, var(--awds-tcombi-chroma, var(--awds-tcombi-bg)), var(--awds-tcombi-bg));
+  background: var(--awds-tcombi-bg);
   color: var(--awds-tcombi-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
 
   /* Стандарт PageCraft — 0.15s ease-out (arrow-design-system/references/motion.md). */
   transition: --awds-tcombi-bg 0.15s ease-out,
-              --awds-tcombi-chroma 0.15s ease-out,
               --awds-tcombi-color 0.15s ease-out,
               --awds-tcombi-label 0.15s ease-out,
               box-shadow 0.15s ease-out;
@@ -223,12 +217,11 @@
 /* === Тон: ghost === */
 
 .tcombi-ghost {
-  /* Ни фона, ни рамки, ни chroma: в макете все три привязаны к
-     roles/extended/transparent, а ячеек ghost/bg, /chroma, /border в теме нет
+  /* Ни фона, ни рамки: в макете обе привязаны к
+     roles/extended/transparent, а ячеек ghost/bg, /border в теме нет
      вовсе. Берём ключевое слово transparent, как в input-ghost: якорить нечего,
      потому что ячейки не существует, а роль без якоря гейт не пропустит. */
   --awds-tcombi-bg:          transparent;
-  --awds-tcombi-chroma:      transparent;
   --awds-tcombi-border:      transparent;
   --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/color-rest */
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/placeholder-rest */
