@@ -25,7 +25,7 @@ description: Switch ArrowDS (.switch).
 | Цвета трека (bg/chroma/border) | `rgb(var(--primary-*))`, `rgb(var(--secondary-container-*))` inline | `references/switch.css` |
 | Цвет бегунка | `rgb(var(--primary-on-dim))` / `rgb(var(--secondary-container-on))` | `component-token-map.json` → `check-radio.*.handle` |
 | Цвет иконки в бегунке | = цвет фона трека (иконка «выбита» в круге) | Figma `check-radio/{type}/bg` |
-| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
+| Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Accent | слой `awds-component-focus-selection` |
 | Геометрия (ширина/высота/круг/ход) | `var(--awds-square-{N}-{switch-width,icon,padding})` + `var(--awds-space-0-5)` | `component-token-map.json` → `map.size.square` |
 | Скругление | `var(--awds-rounded-border-radius-full)` — фиксированное, не размерное | Figma `border-radius/full` |
 | Гашение (opacity) | выключенное — `var(--awds-state-opacity-control-disabled)` (40%), включённое — парное `var(--awds-state-opacity-control-enabled)` (100%) | слой State темы, группа `opacity` |
@@ -65,7 +65,7 @@ description: Switch ArrowDS (.switch).
 
 - `role="switch"` на нативном чекбоксе: скринридер объявит «переключатель, вкл/выкл» вместо «флажок, отмечен». Клавиатура, таб-порядок и отправка формы работают сами.
 - Тумблер без видимой подписи обязан нести `aria-label` на `<label>`.
-- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Default**: полоса 1…3px снаружи трека. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `switch.css`.
+- Фокус-кольцо приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md), вариант **Outside + Accent**: полоса 1…3px снаружи трека. Своих чисел компонент не держит — `focus-selection.css` подключается вместе с `switch.css`.
 - Подпись формулируй утверждением, не отрицанием: «выключено» + «Не показывать…» читается как двойное отрицание.
 - Disabled гасится `opacity: var(--awds-state-opacity-control-disabled)` на всей обёртке — макетное поведение, контраст подписи в этом состоянии заведомо ниже AA. Рядом нужен текст-причина.
 - `@media (prefers-reduced-motion: reduce)` гасит переезд бегунка: состояние остаётся различимым (положение, цвет, иконка), меняется мгновенно.
