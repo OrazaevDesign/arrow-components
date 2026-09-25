@@ -38,7 +38,7 @@
 | Focus | `transparent` | `transparent` | `secondary-container-on-highest` | `secondary-container-on-high` |
 | Active | `transparent` | `transparent` | `secondary-container-on-highest` | `secondary-container-on-high` |
 
-Галочка (`.list-item__check`): `primary-container-on-lowest` в покое.
+Галочка (`.list-item__check`): `primary-core` в покое.
 
 ## Замечания
 

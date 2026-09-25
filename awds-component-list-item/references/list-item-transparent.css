@@ -310,7 +310,7 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   /* #cell list/unselected-transparent/border-rest */
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   /* #cell list/unselected-transparent/color */
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   /* #cell list/unselected-transparent/description */
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));   /* #cell list/unselected-transparent/icon-check */
+  --awds-list-item-check:   rgb(var(--primary-core));   /* #cell list/unselected-transparent/icon-check */
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через

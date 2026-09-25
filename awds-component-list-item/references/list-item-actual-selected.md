@@ -28,23 +28,23 @@
 
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
-| Rest | `transparent` | `secondary-container-on-lowest` | `accent-container-on` | `accent-container-on-low` |
-| Hover | `secondary-container-core` | `secondary-container-on-lowest` | `accent-container-on` | `accent-container-on-low` |
-| Focus | `transparent` | `secondary-container-on-lowest` | `accent-container-on` | `accent-container-on-low` |
-| Active | `transparent` | `secondary-container-on-lowest` | `accent-container-on` | `accent-container-on-low` |
+| Rest | `transparent` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
+| Hover | `secondary-container-core` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
+| Focus | `transparent` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
+| Active | `transparent` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
 
-Галочка (`.list-item__check`): `primary-container-on-lowest` в покое.
+Галочка (`.list-item__check`): `accent-core` в покое.
 
 ## Замечания
 
 **Меняется только фон при наведении** — обводка и текст остаются на месте. Строка не «загорается», а лишь показывает, что она кликабельна.
 
-**Акцентный текст здесь не значит «ошибка».** Роль `accent-container-on` в этой палитре красная, но семантика у неё — «актуальное, текущее». Под ошибку берётся роль `error-*`, и такого варианта в этом Component Set нет.
+**Акцентный текст здесь не значит «ошибка».** Роль `accent-core` в этой палитре красная, но семантика у неё — «актуальное, текущее». Под ошибку берётся роль `error-*`, и такого варианта в этом Component Set нет.
 
 ## Контраст
 
-- Описание в состоянии **Rest**: `accent-container-on-low` (#eea28b) на `transparent` (фон страницы, взят белый) — **2.06:1** при норме 4.5:1.
-- Описание в состоянии **Hover**: `accent-container-on-low` (#eea28b) на `secondary-container-core` (#f7f7f7) — **1.93:1** при норме 4.5:1.
+- Описание в состоянии **Rest**: `accent-core` (#eea28b) на `transparent` (фон страницы, взят белый) — **2.06:1** при норме 4.5:1.
+- Описание в состоянии **Hover**: `accent-core` (#eea28b) на `secondary-container-core` (#f7f7f7) — **1.93:1** при норме 4.5:1.
 
 Это свойство ролей дизайн-системы, а не вёрстки — чинится в токенах, не здесь.
 

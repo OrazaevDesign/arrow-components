@@ -28,12 +28,12 @@
 
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
-| Rest | `transparent` | `transparent` | `accent-container-on` | `accent-container-on` |
-| Hover | `transparent` | `transparent` | `accent-container-on` | `accent-container-on` |
-| Focus | `transparent` | `transparent` | `accent-container-on` | `accent-container-on` |
-| Active | `transparent` | `transparent` | `accent-container-on` | `accent-container-on` |
+| Rest | `transparent` | `transparent` | `accent-core` | `accent-core` |
+| Hover | `transparent` | `transparent` | `accent-core` | `accent-core` |
+| Focus | `transparent` | `transparent` | `accent-core` | `accent-core` |
+| Active | `transparent` | `transparent` | `accent-core` | `accent-core` |
 
-Галочка (`.list-item__check`): `primary-container-on-lowest` в покое, `accent-container-on-lowest` при наведении.
+Галочка (`.list-item__check`): `accent-core` в покое, `accent-core` при наведении.
 
 ## Замечания
 

@@ -31,11 +31,11 @@
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
 | Rest | `transparent` | `transparent` | `secondary-container-on-highest` | `secondary-container-on-high` |
-| Hover | `surface-surface` | `surface-surface` | `accent-container-on` | `accent-container-on` |
+| Hover | `surface-surface` | `surface-surface` | `accent-core` | `accent-core` |
 | Focus | `transparent` | `transparent` | `secondary-container-on-highest` | `secondary-container-on-high` |
-| Active | `surface-surface` | `surface-surface` | `accent-container-on` | `accent-container-on` |
+| Active | `surface-surface` | `surface-surface` | `accent-core` | `accent-core` |
 
-Галочка (`.list-item__check`): `primary-container-on-lowest` в покое, `accent-container-on-lowest` при наведении.
+Галочка (`.list-item__check`): `primary-core` в покое, `accent-core` при наведении.
 
 ## Замечания
 

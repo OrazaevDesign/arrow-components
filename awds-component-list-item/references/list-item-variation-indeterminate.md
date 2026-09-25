@@ -29,7 +29,7 @@
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
 | Rest | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on` |
-| Hover | `primary-container-core` | `primary-core` | `primary-container-on-highest` | `primary-container-on-high` |
+| Hover | `primary-container-core` | `primary-container-on` | `primary-container-on-highest` | `primary-container-on-high` |
 | Focus | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on` |
 | Active | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on` |
 

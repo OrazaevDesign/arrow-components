@@ -35,7 +35,7 @@
 | Focus | `primary-container-core` | `primary-container-on-lowest` | `primary-container-on-highest` | `primary-container-on-high` |
 | Active | `primary-container-core` | `primary-container-on-lowest` | `primary-container-on-highest` | `primary-container-on-high` |
 
-Галочка (`.list-item__check`): `primary-container-on` в покое.
+Галочка (`.list-item__check`): `primary-container-on-high` в покое.
 
 ## Замечания
 

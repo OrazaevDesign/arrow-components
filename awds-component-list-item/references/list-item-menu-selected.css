@@ -308,9 +308,9 @@
 .list-item-menu-selected {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/selected-menu/bg */
   --awds-list-item-border:  rgb(var(--secondary-container-core));   /* #cell list/selected-menu/bg */
-  --awds-list-item-color:   rgb(var(--accent-container-on));   /* #cell list/selected-menu/color */
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   /* #cell list/selected-menu/description */
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));   /* #cell list/selected-menu/icon-check */
+  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/selected-menu/color */
+  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/selected-menu/description */
+  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/selected-menu/icon-check */
 }
 
 

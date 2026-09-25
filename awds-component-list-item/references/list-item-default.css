@@ -308,9 +308,9 @@
 .list-item-default {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/unselected/bg-rest */
   --awds-list-item-border:  rgb(var(--secondary-container-core));   /* #cell list/unselected/bg-rest */
-  --awds-list-item-color:   rgb(var(--secondary-container-on));   /* #cell list/unselected/color-rest */
+  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   /* #cell list/unselected/color-rest */
   --awds-list-item-desc:    rgb(var(--secondary-container-on));   /* #cell list/unselected/description-rest */
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));   /* #cell list/unselected/icon-check */
+  --awds-list-item-check:   rgb(var(--primary-core));   /* #cell list/unselected/icon-check */
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через

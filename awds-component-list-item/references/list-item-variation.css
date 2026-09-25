@@ -322,7 +322,7 @@
    матчится — правило молча перестало бы работать. */
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   /* #cell list/unselected-variation/bg-hover */
-  --awds-list-item-border:  rgb(var(--primary-core));   /* #cell list/unselected-variation/border-hover */
+  --awds-list-item-border:  rgb(var(--primary-container-on));   /* #cell list/unselected-variation/border-hover */
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   /* #cell list/unselected-variation/color-hover */
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));   /* #cell list/unselected-variation/description-hover */
 }

@@ -310,7 +310,7 @@
   --awds-list-item-border:  rgb(var(--extended-transparent));   /* #cell list/unselected-menu/border-rest */
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   /* #cell list/unselected-menu/color-rest */
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   /* #cell list/unselected-menu/description-rest */
-  --awds-list-item-check:   rgb(var(--primary-container-on-lowest));   /* #cell list/unselected-menu/icon-check-rest */
+  --awds-list-item-check:   rgb(var(--primary-core));   /* #cell list/unselected-menu/icon-check-rest */
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
@@ -319,9 +319,9 @@
 .list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   /* #cell list/unselected-menu/bg-hover */
   --awds-list-item-border:  rgb(var(--surface-surface));   /* #cell list/unselected-menu/bg-hover */
-  --awds-list-item-color:   rgb(var(--accent-container-on));   /* #cell list/unselected-menu/color-hover */
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   /* #cell list/unselected-menu/description-hover */
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));   /* #cell list/unselected-menu/icon-check-hover */
+  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/unselected-menu/color-hover */
+  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/unselected-menu/description-hover */
+  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/unselected-menu/icon-check-hover */
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
@@ -329,9 +329,9 @@
 .list-item-menu:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-surface));   /* #cell list/unselected-menu/bg-active */
   --awds-list-item-border:  rgb(var(--surface-surface));   /* #cell list/unselected-menu/bg-active */
-  --awds-list-item-color:   rgb(var(--accent-container-on));   /* #cell list/unselected-menu/color-active */
-  --awds-list-item-desc:    rgb(var(--accent-container-on));   /* #cell list/unselected-menu/description-active */
-  --awds-list-item-check:   rgb(var(--accent-container-on-lowest));   /* #cell list/unselected-menu/icon-check-active */
+  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/unselected-menu/color-active */
+  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/unselected-menu/description-active */
+  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/unselected-menu/icon-check-active */
 }
 
 

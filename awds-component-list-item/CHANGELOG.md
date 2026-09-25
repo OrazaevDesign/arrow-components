@@ -1,5 +1,9 @@
 # list-item — журнал версий
 
+## 1.0.12 — 2026-09-25 — PATCH · visual
+33 ячейки list/* подтянуты за студией: ховер и актив в tabbar и menu на accent-core, галочки выбора на primary-core и primary-container-on-high, описание в default на secondary-container-on-high, рамка variation-hover на primary-container-on. Замеры контраста в SKILL.md пересчитаны — прежние относились к старым значениям ролей.
+Потребителю: Разметка и классы прежние. Меняются цвета выбора, ховера и описания; описание default в покое теперь 2.78:1 — если текст важнее факта выбора, берите transparent или default-selected. Потребителям с копией CSS нужна пересборка секции.
+
 ## 1.0.11 — 2026-09-24 — PATCH
 Документация: в макете при выключенных слотах padding у content-list включается руками — в Figma нет :has()
 Потребителю: Только SKILL.md, CSS и разметка не менялись

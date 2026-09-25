@@ -29,12 +29,12 @@
 
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
-| Rest | `secondary-container-core` | `secondary-container-core` | `secondary-container-on` | `secondary-container-on` |
+| Rest | `secondary-container-core` | `secondary-container-core` | `secondary-container-on-high` | `secondary-container-on-high` |
 | Hover | `secondary-container-dim` | `secondary-dim` | `secondary-container-on-highest` | `secondary-container-on-high` |
 | Focus | `secondary-container-core` | `secondary-container-core` | `secondary-container-on-highest` | `secondary-container-on-high` |
 | Active | `secondary-container-core` | `secondary-container-core` | `secondary-container-on-highest` | `secondary-container-on-high` |
 
-Галочка (`.list-item__check`): `primary-container-on-lowest` в покое.
+Галочка (`.list-item__check`): `primary-core` в покое.
 
 ## Замечания
 
@@ -44,8 +44,8 @@
 
 ## Контраст
 
-- Заголовок в состоянии **Rest**: `secondary-container-on` (#808080) на `secondary-container-core` (#f7f7f7) — **3.69:1** при норме 4.5:1.
-- Описание в состоянии **Rest**: `secondary-container-on` (#808080) на `secondary-container-core` (#f7f7f7) — **3.69:1** при норме 4.5:1.
+- Заголовок в состоянии **Rest**: `secondary-container-on-high` (#808080) на `secondary-container-core` (#f7f7f7) — **3.69:1** при норме 4.5:1.
+- Описание в состоянии **Rest**: `secondary-container-on-high` (#808080) на `secondary-container-core` (#f7f7f7) — **3.69:1** при норме 4.5:1.
 
 Это свойство ролей дизайн-системы, а не вёрстки — чинится в токенах, не здесь.
 

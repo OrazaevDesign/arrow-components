@@ -1,10 +1,10 @@
 {
   "component": "list-item",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "contract_hash": "sha256:8f957981ee405a1e75dd055737fb2319e8ed02dd480aff4df32ad3a00ec72813",
-  "artifact_hash": "sha256:9609b8fe3ae16db3e46370276be7eba3d3c8c10c8d19955e8f87c43bcc7912d2",
-  "visual_change": false,
-  "released_at": "2026-09-24T09:36:36.097Z",
+  "artifact_hash": "sha256:2200e0b0dad9a5b7de79c5dbb76820f0f5c1377f8b2ee938d5423cee3bc2551a",
+  "visual_change": true,
+  "released_at": "2026-09-25T05:54:41.263Z",
   "own_values": [
     {
       "value": "1px",
@@ -201,9 +201,7 @@
     "default_variant": "transparent"
   },
   "ds_token_dependencies": [
-    "--accent-container-on",
-    "--accent-container-on-low",
-    "--accent-container-on-lowest",
+    "--accent-core",
     "--awds-control-font-size-100",
     "--awds-control-font-size-200",
     "--awds-control-font-size-300",
