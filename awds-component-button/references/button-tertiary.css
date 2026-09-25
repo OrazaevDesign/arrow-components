@@ -22,10 +22,14 @@
    размера иконки — 452 ссылки на восемь файлов.
 
    Маппинг variant × state → роль (Figma node 489:89007):
-     Rest    bg=tertiary-core  chroma=tertiary-chroma  border=tertiary-core  color=tertiary-on
-     Hover   bg=tertiary-dim   chroma=tertiary-chroma  border=tertiary-dim   color=tertiary-on
-     Focus   свои ячейки bg/chroma/border-focus + кольцо слоем focus-selection
-     Active  bg=tertiary-core  chroma=tertiary-core (плоский градиент)  border=tertiary-core  color=tertiary-on
+     Rest    bg=tertiary-core  border=tertiary-core  color=tertiary-on
+     Hover   bg=tertiary-dim   border=tertiary-dim   color=tertiary-on
+     Focus   свои ячейки bg/border-focus + кольцо слоем focus-selection
+     Active  bg=tertiary-core  border=tertiary-core  color=tertiary-on
+
+   ФОН ПЛОСКИЙ, без градиента (правка 25.09.2026, макет 8:6855). База .btn красит фон
+   градиентом chroma→bg, и вариант это переопределяет: background: var(--awds-btn-bg).
+   Ячейки button/tertiary/chroma-* больше не читаются — фон задаёт одна ячейка bg-{state}.
      Disabled = Rest + opacity 40%
 
    Геометрия из Figma (контейнер px=padding | 3 ячейки py=padding, pl/pr=gap)
@@ -262,29 +266,33 @@
 
 .btn-tertiary {
   --awds-btn-bg:     rgb(var(--tertiary-core));   /* #cell button/tertiary/bg-rest */
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   /* #cell button/tertiary/chroma-rest */
   --awds-btn-border: rgb(var(--tertiary-core));   /* #cell button/tertiary/border-rest */
   --awds-btn-color:  rgb(var(--tertiary-on));   /* #cell button/tertiary/color-rest */
 }
 
+/* Плоская заливка вместо градиента базы (макет 8:6855, правка 25.09.2026).
+   Специфичность двух классов, а не одного: файлы вариантов самодостаточны и несут
+   базу .btn каждый, поэтому при склейке нескольких вариантов в одном блоке база
+   из соседнего файла идёт ПОСЛЕ этого правила и при равной специфичности вернула
+   бы градиент. Разметка всегда несёт оба класса (.btn .btn-tertiary). */
+.btn.btn-tertiary {
+  background: var(--awds-btn-bg);
+}
+
 .btn-tertiary:hover {
   --awds-btn-bg:     rgb(var(--tertiary-dim));   /* #cell button/tertiary/bg-hover */
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   /* #cell button/tertiary/chroma-hover */
   --awds-btn-border: rgb(var(--tertiary-dim));   /* #cell button/tertiary/border-hover */
   --awds-btn-color:  rgb(var(--tertiary-on));   /* #cell button/tertiary/color-hover */
 }
 
 .btn-tertiary:focus-visible {
   --awds-btn-bg:     rgb(var(--tertiary-core));   /* #cell button/tertiary/bg-focus */
-  --awds-btn-chroma: rgb(var(--tertiary-chroma));   /* #cell button/tertiary/chroma-focus */
   --awds-btn-border: rgb(var(--tertiary-core));   /* #cell button/tertiary/border-focus */
   --awds-btn-color:  rgb(var(--tertiary-on));   /* #cell button/tertiary/color-focus */
 }
 
-/* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-tertiary:active {
   --awds-btn-bg:     rgb(var(--tertiary-core));   /* #cell button/tertiary/bg-active */
-  --awds-btn-chroma: rgb(var(--tertiary-core));   /* #cell button/tertiary/chroma-active */
   --awds-btn-border: rgb(var(--tertiary-core));   /* #cell button/tertiary/border-active */
   --awds-btn-color:  rgb(var(--tertiary-on));   /* #cell button/tertiary/color-active */
 }

@@ -22,12 +22,16 @@
    размера иконки — 452 ссылки на восемь файлов.
 
    Маппинг variant × state → роль (Figma node 489:119060). Clean строится на ролях
-   surface; border ≠ bg (тонкая видимая обводка surface-dim), chroma = bg (плоский фон):
+   surface; border ≠ bg (тонкая видимая обводка surface-dim), фон плоский:
      Rest    bg=surface-bright   border=surface-dim  color=surface-on-high
      Hover   bg=surface-surface  border=surface-dim  color=surface-on-highest (фон и текст темнеют)
-     Focus   свои ячейки bg/chroma/border-focus + кольцо слоем focus-selection
+     Focus   свои ячейки bg/border-focus + кольцо слоем focus-selection
      Active  bg=surface-surface  border=surface-dim  color=surface-on-highest
      Disabled = Rest + opacity 40%
+
+   ФОН ПЛОСКИЙ, без градиента (правка 25.09.2026, макет 8:7893). База .btn красит фон
+   градиентом chroma→bg, и вариант это переопределяет: background: var(--awds-btn-bg).
+   Ячейки button/clean/chroma-* больше не читаются — фон задаёт одна ячейка bg-{state}.
 
    Геометрия из Figma (контейнер px=padding | 3 ячейки py=padding, pl/pr=gap)
    реализована плоским flex: padding-block=padding, padding-inline=padding+gap,
@@ -264,28 +268,33 @@
 
 .btn-clean {
   --awds-btn-bg:     rgb(var(--surface-bright));   /* #cell button/clean/bg-rest */
-  --awds-btn-chroma: rgb(var(--surface-bright));   /* #cell button/clean/chroma-rest */
   --awds-btn-border: rgb(var(--surface-dim));   /* #cell button/clean/border-rest */
   --awds-btn-color:  rgb(var(--surface-on-high));   /* #cell button/clean/color-rest */
 }
 
+/* Плоская заливка вместо градиента базы (макет 8:7893, правка 25.09.2026).
+   Специфичность двух классов, а не одного: файлы вариантов самодостаточны и несут
+   базу .btn каждый, поэтому при склейке нескольких вариантов в одном блоке база
+   из соседнего файла идёт ПОСЛЕ этого правила и при равной специфичности вернула
+   бы градиент. Разметка всегда несёт оба класса (.btn .btn-clean). */
+.btn.btn-clean {
+  background: var(--awds-btn-bg);
+}
+
 .btn-clean:hover {
   --awds-btn-bg:     rgb(var(--surface-surface));   /* #cell button/clean/bg-hover */
-  --awds-btn-chroma: rgb(var(--surface-surface));   /* #cell button/clean/chroma-hover */
   --awds-btn-border: rgb(var(--surface-dim));   /* #cell button/clean/border-hover */
   --awds-btn-color:  rgb(var(--surface-on-highest));   /* #cell button/clean/color-hover */
 }
 
 .btn-clean:focus-visible {
   --awds-btn-bg:     rgb(var(--surface-bright));   /* #cell button/clean/bg-focus */
-  --awds-btn-chroma: rgb(var(--surface-bright));   /* #cell button/clean/chroma-focus */
   --awds-btn-border: rgb(var(--surface-dim));   /* #cell button/clean/border-focus */
   --awds-btn-color:  rgb(var(--surface-on-high));   /* #cell button/clean/color-focus */
 }
 
 .btn-clean:active {
   --awds-btn-bg:     rgb(var(--surface-surface));   /* #cell button/clean/bg-active */
-  --awds-btn-chroma: rgb(var(--surface-surface));   /* #cell button/clean/chroma-active */
   --awds-btn-border: rgb(var(--surface-dim));   /* #cell button/clean/border-active */
   --awds-btn-color:  rgb(var(--surface-on-highest));   /* #cell button/clean/color-active */
 }

@@ -73,10 +73,11 @@
 Заполняет цветовые аккумуляторы inline-ролями, по состоянию:
 
 ```css
-.btn-tertiary               { --awds-btn-bg: rgb(var(--tertiary-core)); /* chroma/border/color */ }
+.btn.btn-tertiary           { background: var(--awds-btn-bg); } /* плоская заливка вместо градиента базы */
+.btn-tertiary               { --awds-btn-bg: rgb(var(--tertiary-core)); /* border/color */ }
 .btn-tertiary:hover         { --awds-btn-bg: rgb(var(--tertiary-dim));  --awds-btn-border: rgb(var(--tertiary-dim)); }
 .btn-tertiary:focus-visible { --awds-btn-bg: rgb(var(--tertiary-core)); }
-.btn-tertiary:active        { --awds-btn-bg: rgb(var(--tertiary-core)); --awds-btn-chroma: rgb(var(--tertiary-core)); /* плоский */ }
+.btn-tertiary:active        { --awds-btn-bg: rgb(var(--tertiary-core)); }
 ```
 
 ---
@@ -99,18 +100,22 @@
 
 ## Состояния
 
-| Состояние | `--awds-btn-bg` | `--awds-btn-chroma` | `--awds-btn-border` | `--awds-btn-color` |
-|---|---|---|---|---|
-| Rest    | `--tertiary-core` | `--tertiary-chroma` | `--tertiary-core` | `--tertiary-on` |
-| Hover   | `--tertiary-dim`  | `--tertiary-chroma` | `--tertiary-dim`  | `--tertiary-on` |
-| Focus   | `--tertiary-core` | `--tertiary-chroma` | `--tertiary-core` | `--tertiary-on` |
-| Active  | `--tertiary-core` | `--tertiary-core`   | `--tertiary-core` | `--tertiary-on` |
+| Состояние | `--awds-btn-bg` | `--awds-btn-border` | `--awds-btn-color` |
+|---|---|---|---|
+| Rest    | `--tertiary-core` | `--tertiary-core` | `--tertiary-on` |
+| Hover   | `--tertiary-dim`  | `--tertiary-dim`  | `--tertiary-on` |
+| Focus   | `--tertiary-core` | `--tertiary-core` | `--tertiary-on` |
+| Active  | `--tertiary-core` | `--tertiary-core` | `--tertiary-on` |
 | Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 
-В Figma на `Active` `chroma` = `bg` (`--tertiary-core`) — градиент схлопывается в плоский цвет (сигнал «нажато»).
+Фон варианта — **плоская заливка**, без градиента (правка 25.09.2026, макет 8:6855): база `.btn` красит фон
+`linear-gradient(to right, chroma, bg)`, а `.btn.btn-tertiary` переопределяет его на `var(--awds-btn-bg)`.
+Два класса в селекторе, а не один: файлы вариантов самодостаточны и каждый несёт базу `.btn`, поэтому при
+склейке нескольких вариантов в блоке база соседнего файла идёт после и при равной специфичности вернула бы
+градиент. Ячейки `button/tertiary/chroma-*` остались в студии, но компонентом больше не читаются.
 
 ---
 
@@ -128,7 +133,7 @@
 
 ## Полировка (MIFB)
 
-- **Плавная смена состояний.** `--awds-btn-bg` / `--awds-btn-chroma` зарегистрированы через `@property` как `<color>`, поэтому фон-градиент интерполируется при hover/active (а не «снапает»). Переходы — `0.15s ease-out` по конкретным свойствам (не `transition: all`), прерываемые. Спиннер — `@keyframes` + `will-change: transform` (единственный валидный loop-кейс).
+- **Плавная смена состояний.** `--awds-btn-bg` зарегистрирован через `@property` как `<color>`, поэтому плоский фон интерполируется при hover/active (а не «снапает»). Переходы — `0.15s ease-out` по конкретным свойствам (не `transition: all`), прерываемые. Спиннер — `@keyframes` + `will-change: transform` (единственный валидный loop-кейс).
 - **Живые числа в кнопке** — оберни число в `<span style="font-variant-numeric: tabular-nums">`, чтобы цифры не «прыгали». На обычный текстовый лейбл `tabular-nums` не вешаем (MIFB-принцип 5).
 - **Радиусы** — из макета (`--awds-rounded-*` по размеру), концентрию руками не считаем: есть Figma.
 

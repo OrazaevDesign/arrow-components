@@ -27,11 +27,15 @@
    размера иконки — 452 ссылки на восемь файлов.
 
    Маппинг variant × state → роль (Figma node 811:30987):
-     Rest    bg=secondary-core  chroma=secondary-chroma  border=secondary-core  color=secondary-on
-     Hover   bg=secondary-dim   chroma=secondary-chroma  border=secondary-dim   color=accent-container-on (текст краснеет)
-     Focus   свои ячейки bg/chroma/border-focus + кольцо слоем focus-selection
-     Active  bg=secondary-core  chroma=secondary-core (плоский градиент)  border=secondary-core  color=secondary-on
+     Rest    bg=secondary-core  border=secondary-core  color=secondary-on
+     Hover   bg=secondary-dim   border=secondary-dim   color=accent-core (текст краснеет)
+     Focus   свои ячейки bg/border-focus + кольцо слоем focus-selection
+     Active  bg=secondary-core  border=secondary-core  color=secondary-on
      Disabled = Rest + opacity 40%
+
+   ФОН ПЛОСКИЙ, без градиента (правка 25.09.2026, макет 8:8412). База .btn красит фон
+   градиентом chroma→bg, и вариант это переопределяет: background: var(--awds-btn-bg).
+   Ячейки button/pills/chroma-* больше не читаются — фон задаёт одна ячейка bg-{state}.
 
    Файл самодостаточный: base + sizes идентичны button-primary.css (shape=rectangle,
    та же геометрия), отличается только блок варианта Pills.
@@ -264,30 +268,34 @@
 
 .btn-pills {
   --awds-btn-bg:     rgb(var(--secondary-core));   /* #cell button/pills/bg-rest */
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   /* #cell button/pills/chroma-rest */
   --awds-btn-border: rgb(var(--secondary-core));   /* #cell button/pills/border-rest */
   --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/pills/color-rest */
+}
+
+/* Плоская заливка вместо градиента базы (макет 8:8412, правка 25.09.2026).
+   Специфичность двух классов, а не одного: файлы вариантов самодостаточны и несут
+   базу .btn каждый, поэтому при склейке нескольких вариантов в одном блоке база
+   из соседнего файла идёт ПОСЛЕ этого правила и при равной специфичности вернула
+   бы градиент. Разметка всегда несёт оба класса (.btn .btn-pills). */
+.btn.btn-pills {
+  background: var(--awds-btn-bg);
 }
 
 /* Hover: текст краснеет (accent-container-on), фон темнеет до secondary-dim */
 .btn-pills:hover {
   --awds-btn-bg:     rgb(var(--secondary-dim));   /* #cell button/pills/bg-hover */
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   /* #cell button/pills/chroma-hover */
   --awds-btn-border: rgb(var(--secondary-dim));   /* #cell button/pills/border-hover */
-  --awds-btn-color:  rgb(var(--accent-container-on));   /* #cell button/pills/color-hover */
+  --awds-btn-color:  rgb(var(--accent-core));   /* #cell button/pills/color-hover */
 }
 
 .btn-pills:focus-visible {
   --awds-btn-bg:     rgb(var(--secondary-core));   /* #cell button/pills/bg-focus */
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   /* #cell button/pills/chroma-focus */
   --awds-btn-border: rgb(var(--secondary-core));   /* #cell button/pills/border-focus */
   --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/pills/color-focus */
 }
 
-/* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-pills:active {
   --awds-btn-bg:     rgb(var(--secondary-core));   /* #cell button/pills/bg-active */
-  --awds-btn-chroma: rgb(var(--secondary-core));   /* #cell button/pills/chroma-active */
   --awds-btn-border: rgb(var(--secondary-core));   /* #cell button/pills/border-active */
   --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/pills/color-active */
 }

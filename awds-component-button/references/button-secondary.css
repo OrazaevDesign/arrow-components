@@ -21,10 +21,14 @@
    размера иконки — 452 ссылки на восемь файлов.
 
    Маппинг variant × state → роль (Figma node 489:59661):
-     Rest    bg=secondary-core  chroma=secondary-chroma  border=secondary-core  color=secondary-on
-     Hover   bg=secondary-dim   chroma=secondary-chroma  border=secondary-dim   color=secondary-on
-     Focus   свои ячейки bg/chroma/border-focus + кольцо слоем focus-selection
-     Active  bg=secondary-core  chroma=secondary-core (плоский градиент)  border=secondary-core  color=secondary-on
+     Rest    bg=secondary-core  border=secondary-core  color=secondary-on
+     Hover   bg=secondary-dim   border=secondary-dim   color=secondary-on
+     Focus   свои ячейки bg/border-focus + кольцо слоем focus-selection
+     Active  bg=secondary-core  border=secondary-core  color=secondary-on
+
+   ФОН ПЛОСКИЙ, без градиента (правка 24.09.2026, макет 8:5298). База .btn красит
+   фон градиентом chroma→bg, и вариант это переопределяет: background: var(--awds-btn-bg).
+   Ячейки button/secondary/chroma-* больше не читаются — фон задаёт одна ячейка bg-{state}.
      Disabled = Rest + opacity 40%
 
    Геометрия из Figma (контейнер px=padding | 3 ячейки py=padding, pl/pr=gap)
@@ -261,29 +265,33 @@
 
 .btn-secondary {
   --awds-btn-bg:     rgb(var(--secondary-core));   /* #cell button/secondary/bg-rest */
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   /* #cell button/secondary/chroma-rest */
   --awds-btn-border: rgb(var(--secondary-core));   /* #cell button/secondary/border-rest */
   --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/secondary/color-rest */
 }
 
+/* Плоская заливка вместо градиента базы (макет 8:5298, правка 24.09.2026).
+   Специфичность двух классов, а не одного: файлы вариантов самодостаточны и несут
+   базу .btn каждый, поэтому при склейке нескольких вариантов в одном блоке база
+   из соседнего файла идёт ПОСЛЕ этого правила и при равной специфичности вернула
+   бы градиент. Разметка всегда несёт оба класса (.btn .btn-secondary). */
+.btn.btn-secondary {
+  background: var(--awds-btn-bg);
+}
+
 .btn-secondary:hover {
   --awds-btn-bg:     rgb(var(--secondary-dim));   /* #cell button/secondary/bg-hover */
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   /* #cell button/secondary/chroma-hover */
   --awds-btn-border: rgb(var(--secondary-dim));   /* #cell button/secondary/border-hover */
   --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/secondary/color-hover */
 }
 
 .btn-secondary:focus-visible {
   --awds-btn-bg:     rgb(var(--secondary-core));   /* #cell button/secondary/bg-focus */
-  --awds-btn-chroma: rgb(var(--secondary-chroma));   /* #cell button/secondary/chroma-focus */
   --awds-btn-border: rgb(var(--secondary-core));   /* #cell button/secondary/border-focus */
   --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/secondary/color-focus */
 }
 
-/* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-secondary:active {
   --awds-btn-bg:     rgb(var(--secondary-core));   /* #cell button/secondary/bg-active */
-  --awds-btn-chroma: rgb(var(--secondary-core));   /* #cell button/secondary/chroma-active */
   --awds-btn-border: rgb(var(--secondary-core));   /* #cell button/secondary/border-active */
   --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/secondary/color-active */
 }

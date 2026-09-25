@@ -6,7 +6,7 @@
 
 Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`. Реальную палитру задаёт сайт через `css-variables.css`.
 
-Единственный вариант, где `border ≠ bg`: обводка `surface-dim` тонко, но видимо очерчивает белую кнопку. Реализована через inset box-shadow (не влияет на размер). `chroma = bg` — фон плоский, без градиента.
+Единственный вариант, где `border ≠ bg`: обводка `surface-dim` тонко, но видимо очерчивает белую кнопку. Реализована через inset box-shadow (не влияет на размер). Фон плоский, без градиента.
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-clean.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -75,6 +75,7 @@
 Заполняет цветовые аккумуляторы inline-ролями surface, по состоянию:
 
 ```css
+.btn.btn-clean           { background: var(--awds-btn-bg); } /* плоская заливка вместо градиента базы */
 .btn-clean               { --awds-btn-bg: rgb(var(--surface-bright));  --awds-btn-border: rgb(var(--surface-dim)); --awds-btn-color: rgb(var(--surface-on-high)); }
 .btn-clean:hover         { --awds-btn-bg: rgb(var(--surface-surface)); --awds-btn-color: rgb(var(--surface-on-highest)); /* фон и текст темнеют */ }
 .btn-clean:focus-visible { --awds-btn-bg: rgb(var(--surface-bright));  /* = rest */ }
@@ -112,7 +113,14 @@
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 
-`chroma = bg` во всех состояниях → фон плоский (без градиента). Обводка `surface-dim` постоянна и видима — единственный вариант с border ≠ bg.
+Фон варианта — **плоская заливка**, без градиента (правка 25.09.2026, макет 8:7893): база `.btn` красит фон
+`linear-gradient(to right, chroma, bg)`, а `.btn.btn-clean` переопределяет его на `var(--awds-btn-bg)`. Два класса
+в селекторе, а не один: файлы вариантов самодостаточны и каждый несёт базу `.btn`, поэтому при склейке
+нескольких вариантов в блоке база соседнего файла идёт после и при равной специфичности вернула бы градиент.
+У clean градиент и раньше был невидим — `chroma` совпадал с `bg` во всех состояниях; теперь его просто нет.
+Ячейки `button/clean/chroma-*` остались в студии, но компонентом больше не читаются.
+
+Обводка `surface-dim` постоянна и видима — единственный вариант с border ≠ bg.
 
 ---
 
@@ -130,7 +138,7 @@
 
 ## Полировка (MIFB)
 
-- **Плавная смена состояний.** `--awds-btn-bg` / `--awds-btn-chroma` зарегистрированы через `@property` как `<color>`, поэтому фон интерполируется при hover/active. Обводка (`box-shadow`) и цвет текста анимируются явными свойствами (`0.15s ease-out`, не `transition: all`), прерываемо. Спиннер — `@keyframes` + `will-change: transform`.
+- **Плавная смена состояний.** `--awds-btn-bg` зарегистрирован через `@property` как `<color>`, поэтому плоский фон интерполируется при hover/active. Обводка (`box-shadow`) и цвет текста анимируются явными свойствами (`0.15s ease-out`, не `transition: all`), прерываемо. Спиннер — `@keyframes` + `will-change: transform`.
 - **Живые числа в кнопке** — оберни число в `<span style="font-variant-numeric: tabular-nums">`. На обычный текстовый лейбл `tabular-nums` не вешаем (MIFB-принцип 5).
 - **Радиусы** — из макета (`--awds-rounded-*` по размеру), концентрию руками не считаем: есть Figma.
 

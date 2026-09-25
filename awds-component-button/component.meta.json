@@ -1,10 +1,10 @@
 {
   "component": "button",
-  "version": "2.2.3",
+  "version": "2.2.6",
   "contract_hash": "sha256:b1178d242f4d390a44850a8af06ba94ba17a603fa9f5972dd379f67a9d0e87e0",
-  "artifact_hash": "sha256:998f1539e6f49b902e189246da8541f4314661f3dfa679f80e235499f907de08",
-  "visual_change": false,
-  "released_at": "2026-09-15T12:27:01.416Z",
+  "artifact_hash": "sha256:ec6cb906b7df27985c5559b42f47f8d2642d4bf1cdd9bc6eec14dc754e46d379",
+  "visual_change": true,
+  "released_at": "2026-09-25T05:43:49.236Z",
   "own_values": [
     {
       "value": "1px",
@@ -160,7 +160,7 @@
     ]
   },
   "ds_token_dependencies": [
-    "--accent-container-on",
+    "--accent-core",
     "--addition-chroma",
     "--addition-core",
     "--addition-dim",
@@ -202,7 +202,6 @@
     "--primary-core",
     "--primary-dim",
     "--primary-on",
-    "--secondary-chroma",
     "--secondary-core",
     "--secondary-dim",
     "--secondary-on",
@@ -211,7 +210,6 @@
     "--surface-on-high",
     "--surface-on-highest",
     "--surface-surface",
-    "--tertiary-chroma",
     "--tertiary-core",
     "--tertiary-dim",
     "--tertiary-on"

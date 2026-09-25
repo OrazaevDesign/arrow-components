@@ -2,13 +2,13 @@
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → node 8:8412](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-8412)
 
-По данным Figma вариант повторяет **Secondary** (серая поверхность, стандартное скругление), но на **hover текст становится акцентным** (`accent-container-on`, красный) — и спиннер тоже. Подходит для удаляемых чипов/фильтров, где наведение сигналит «акцентное/деструктивное» действие.
+По данным Figma вариант повторяет **Secondary** (серая поверхность, стандартное скругление), но на **hover текст становится акцентным** (`accent-core`, красный) — и спиннер тоже. Подходит для удаляемых чипов/фильтров, где наведение сигналит «акцентное/деструктивное» действие.
 
 > **Форма — отдельный класс `.btn--pill`, а не свойство тона.** В макете набор `button / pills` нарисован под модом скругления, поэтому канонический вид этого варианта — `.btn btn-pills btn--pill`. Без модификатора тон останется прямоугольным: имя «pills» говорит о форме, но различается вариант только акцентным цветом текста на hover, и вшивать форму в тон значило бы закрепить эту неточность в коде.
 >
 > `.btn--pill` сочетается с любым вариантом — пилюльный `primary` или `ghost` делаются тем же классом. Скругление берётся из `--awds-rounded-border-radius-full`; в макете мод даёт 26px, но браузер клампит радиус до половины меньшей стороны (самая высокая кнопка — 52px), поэтому результат совпадает пиксель в пиксель.
 
-Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-container-on))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`.
+Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-core))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`.
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-pills.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -77,10 +77,11 @@
 Заполняет цветовые аккумуляторы inline-ролями; на hover текст переключается на акцентный:
 
 ```css
+.btn.btn-pills           { background: var(--awds-btn-bg); } /* плоская заливка вместо градиента базы */
 .btn-pills               { --awds-btn-bg: rgb(var(--secondary-core)); --awds-btn-color: rgb(var(--secondary-on)); }
-.btn-pills:hover         { --awds-btn-bg: rgb(var(--secondary-dim));  --awds-btn-color: rgb(var(--accent-container-on)); /* текст краснеет */ }
+.btn-pills:hover         { --awds-btn-bg: rgb(var(--secondary-dim));  --awds-btn-color: rgb(var(--accent-core)); /* текст краснеет */ }
 .btn-pills:focus-visible { --awds-btn-bg: rgb(var(--secondary-core)); --awds-btn-color: rgb(var(--secondary-on)); }
-.btn-pills:active        { --awds-btn-bg: rgb(var(--secondary-core)); --awds-btn-chroma: rgb(var(--secondary-core)); /* плоский */ }
+.btn-pills:active        { --awds-btn-bg: rgb(var(--secondary-core)); }
 ```
 
 ---
@@ -103,18 +104,24 @@
 
 ## Состояния
 
-| Состояние | `--awds-btn-bg` | `--awds-btn-chroma` | `--awds-btn-border` | `--awds-btn-color` |
+| Состояние | `--awds-btn-bg` | `--awds-btn-border` | `--awds-btn-color` |
 |---|---|---|---|---|
-| Rest    | `--secondary-core` | `--secondary-chroma` | `--secondary-core` | `--secondary-on` |
-| Hover   | `--secondary-dim`  | `--secondary-chroma` | `--secondary-dim`  | **`--accent-container-on`** (красный) |
-| Focus   | `--secondary-core` | `--secondary-chroma` | `--secondary-core` | `--secondary-on` |
+| Rest    | `--secondary-core` | `--secondary-core` | `--secondary-on` |
+| Hover   | `--secondary-dim`  | `--secondary-dim`  | **`--accent-core`** (красный) |
+| Focus   | `--secondary-core` | `--secondary-core` | `--secondary-on` |
 | Active  | `--secondary-core` | `--secondary-core`   | `--secondary-core` | `--secondary-on` |
 | Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
 | Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)`.
 
-Главное отличие от Secondary — **акцентный (красный) цвет текста на hover** (`accent-container-on`); в остальном идентично. В Figma на `Active` `chroma` = `bg` (плоский градиент).
+Главное отличие от Secondary — **акцентный (красный) цвет текста на hover** (`accent-core`); в остальном идентично.
+
+Фон варианта — **плоская заливка**, без градиента (правка 25.09.2026, макет 8:8412): база `.btn` красит фон
+`linear-gradient(to right, chroma, bg)`, а `.btn.btn-pills` переопределяет его на `var(--awds-btn-bg)`. Два класса
+в селекторе, а не один: файлы вариантов самодостаточны и каждый несёт базу `.btn`, поэтому при склейке
+нескольких вариантов в блоке база соседнего файла идёт после и при равной специфичности вернула бы градиент.
+Ячейки `button/pills/chroma-*` остались в студии, но компонентом больше не читаются.
 
 ---
 
@@ -132,7 +139,7 @@
 
 ## Полировка (MIFB)
 
-- **Плавная смена состояний.** `--awds-btn-bg` / `--awds-btn-chroma` зарегистрированы через `@property` как `<color>`, фон интерполируется. Цвет текста (включая переход в акцент на hover) и обводка анимируются явными свойствами `0.15s ease-out` (не `transition: all`), прерываемо. Спиннер — `@keyframes` + `will-change: transform`; на hover он наследует акцентный цвет текста.
+- **Плавная смена состояний.** `--awds-btn-bg` зарегистрирован через `@property` как `<color>`, плоский фон интерполируется. Цвет текста (включая переход в акцент на hover) и обводка анимируются явными свойствами `0.15s ease-out` (не `transition: all`), прерываемо. Спиннер — `@keyframes` + `will-change: transform`; на hover он наследует акцентный цвет текста.
 - **Живые числа в кнопке** — оберни число в `<span style="font-variant-numeric: tabular-nums">`. На обычный текстовый лейбл `tabular-nums` не вешаем (MIFB-принцип 5).
 - **Радиусы** — из макета (`--awds-rounded-*` по размеру). Круглую «пилюльную» форму при необходимости даёт мод `.rounded-rounded` на `<html>`, а не сам вариант.
 
