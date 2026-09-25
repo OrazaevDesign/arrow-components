@@ -27,8 +27,8 @@
 | Элемент | Источник |
 |---|---|
 | Рельса | `--surface-container-container` |
-| Заливка | `--primary-core` (+ sheen `--primary-chroma`) |
-| Ползунок | `--primary-core` (+ sheen `--primary-chroma`) |
+| Заливка | `--primary-core` |
+| Ползунок | `--primary-core` |
 | Обводка ползунка | `--primary-core` — того же цвета, что заливка ручки |
 | hover / active | наведение — `--primary-dim`; нажатие гасит sheen до `--primary-core`, заливка становится плоской |
 | фокус | `var(--awds-focus-color-muted)`, только `:focus-visible` |

@@ -27,7 +27,7 @@
 | Элемент | Источник |
 |---|---|
 | Рельса | `--surface-container-container` |
-| Заливка | `--primary-core` (+ sheen `--primary-chroma`) — как у Default |
+| Заливка | `--primary-core` — как у Default |
 | Ползунок | `--secondary-container-core`, наведение `--secondary-container-dim` (+ sheen `--surface-bright`) |
 | Обводка ползунка | `--secondary-container-dim` |
 | **Тень ползунка** | `var(--awds-shadow-elevation-1)` — из макета, на всех состояниях |

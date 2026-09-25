@@ -23,7 +23,7 @@ description: Range ArrowDS (.range).
 | Что | Источник |
 |---|---|
 | Рельса (track) | `rgb(var(--surface-container-container))`, высота `var(--awds-space-1)` (4px) |
-| Заливка (fill) | `rgb(var(--primary-core))` + sheen `rgb(var(--primary-chroma))` |
+| Заливка (fill) | `rgb(var(--primary-core))` |
 | Ползунок Default | `rgb(var(--primary-core))`, наведение `rgb(var(--primary-dim))` |
 | Ползунок Light | `rgb(var(--secondary-container-core))` + обводка `rgb(var(--secondary-container-dim))`, sheen `rgb(var(--surface-bright))`, тень `var(--awds-shadow-elevation-1)` |
 | Размер ползунка | `var(--awds-space-5)` (400 = 20px), `var(--awds-space-6)` (500 = 24px) |
