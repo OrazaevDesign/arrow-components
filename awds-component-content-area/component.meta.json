@@ -1,18 +1,11 @@
 {
   "component": "content-area",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "contract_hash": "sha256:796085dd9550a108ff116f7587354ed6cee067d49dcf7d4a49b84a7a11c2628d",
-  "artifact_hash": "sha256:3c124d1fe89e0ace8d11a70f33afcac11f8a5a55b759aaefead59acbedcf7f6f",
-  "visual_change": true,
-  "released_at": "2026-09-15T11:17:51.016Z",
-  "own_values": [
-    {
-      "value": "1px",
-      "where": "box-shadow",
-      "count": 2,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
-    }
-  ],
+  "artifact_hash": "sha256:20014a49eecbd5107fb18d3e1e862e9c7ddf54535c0e36df692874446493de4c",
+  "visual_change": false,
+  "released_at": "2026-09-26T11:03:00.190Z",
+  "own_values": [],
   "figma": {
     "file_key": "UCYhMA1JeNUNuVGsxUEne7",
     "file_name": "💠 Comp ↪ ¹ Elemets",
@@ -182,6 +175,7 @@
   },
   "ds_token_dependencies": [
     "--awds-rounded-border-radius-700",
+    "--awds-space-px",
     "--extended-shadow-1",
     "--surface-surface"
   ],
