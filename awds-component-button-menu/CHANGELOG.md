@@ -2,6 +2,10 @@
 
 > До версии 2.0.0 компонент назывался `button-profile` (базовый класс `.btn-profile`). Запись 1.0.0 говорит о нём. Отдельный компонент `button-lang` слит в этот же 31.08.2026 — своего журнала у него не было.
 
+## 2.0.8 — 2026-09-26 — PATCH
+Толщина обводки перестала быть литералом: 1px заменён на var(--awds-space-px) — цель ячейки size/outline/offset. Значение то же (1px), меняется источник: толщина правится в студии, а не в файле компонента. Обоснование «ячейки толщины в студии нет» в own_values протухло — ячейка заведена, запись снята.
+Потребителю: Пересобрать копию CSS: вид не меняется, 1px остаётся 1px. Разметка, классы и контракт прежние.
+
 ## 2.0.7 — 2026-09-26 — PATCH
 Ячейки группы list переименованы под варианты list-item (решение 26.09.2026): unselected→default, selected→default-selected, unselected-actual→actual-selected, selected-secondary→accent-selected, unselected-transparent→transparent, unselected/selected-tabbar→tabbar/tabbar-selected, unselected/selected-menu→menu/menu-selected, unselected/selected-variation→variation/variation-selected, indeterminate-variation→variation-indeterminate
 Потребителю: Ничего делать не нужно: переименование, значения и вид прежние. Якоря #cell в CSS — комментарии, цвета идут ролями

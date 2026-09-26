@@ -86,7 +86,10 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-btn-menu-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-btn-menu-border);
+  /* Толщина обводки — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-btn-menu-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-btn-menu-border-width) var(--awds-btn-menu-border);
   background: var(--awds-btn-menu-bg);
   cursor: pointer;
   /* Polish (MIFB): гасим серую вспышку тапа на мобильных. */
