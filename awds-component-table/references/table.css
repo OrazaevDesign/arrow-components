@@ -36,8 +36,13 @@
    геометрия фиксированная. Поэтому size-классов .cell--{N} нет.
 
    Источники:
-     — padding:  var(--awds-space-3)              (Figma wysiwyg/gap/li-top = 12px)
-     — типографика: var(--awds-typography-…-400)  (Figma wysiwyg body = 14/22/0)
+     — padding:  var(--awds-wysiwyg-gap-li-top)   (Figma wysiwyg/gap/li-top)
+     — типографика: роли var(--awds-wysiwyg-…-body) (Figma wysiwyg body)
+       Обе ссылки — на РОЛИ, а не на ступени с тем же значением. 26.09.2026 ячейка
+       li-top в студии стала 14px, а роль body — 16/26, и компонент, где стояли
+       --awds-space-3 (12) и typography-400 (14/22) с комментарием «Figma wysiwyg/…»,
+       молча разошёлся с макетом на 8px высоты ячейки. Ссылка на ступень с подходящим
+       значением — это то же число, записанное длиннее: она не следует за темой.
      — цвета:    rgb(var(--surface-*))            (карта map.state.*.cell.*)
      — фокус:    слой --awds-focus-* (focus-selection)
      — disabled: var(--awds-opacity-40)           (map.state.rest.opacity.control.disabled)
@@ -73,8 +78,8 @@
   /* разделитель строк: в макете каждая строка light-таблицы несёт border-b
      цвета головной ячейки (набор table, cell=light) */
   border-bottom: var(--awds-space-px) solid rgb(var(--surface-on-lowest));   /* #cell cell/head/border */
-  /* flush-left: левого паддинга нет, только верт. + правый (Figma pr-12 / py-12) */
-  padding-inline: 0 var(--awds-space-3);
+  /* flush-left: левого паддинга нет, только верт. + правый (Figma pr / py = li-top) */
+  padding-inline: 0 var(--awds-wysiwyg-gap-li-top);
 }
 .awds-table--light tr:last-child .cell {
   border-bottom: 0;
@@ -107,7 +112,7 @@
   --awds-cell-description: rgb(var(--surface-on-high));        /* #cell cell/light/description */
 
   /* Box & layout */
-  padding: var(--awds-space-3);                 /* 12px — Figma wysiwyg/gap/li-top */
+  padding: var(--awds-wysiwyg-gap-li-top);      /* Figma wysiwyg/gap/li-top */
   border: var(--awds-space-px) solid var(--awds-cell-border);
   background-color: var(--awds-cell-bg);
   color: var(--awds-cell-color);
@@ -115,9 +120,9 @@
   vertical-align: middle;
 
   /* Type (Figma wysiwyg/body) — font-weight regular даже у заголовков, по макету */
-  font-size: var(--awds-typography-font-size-400);          /* 14px */
-  line-height: var(--awds-typography-line-height-400);      /* 22px */
-  letter-spacing: var(--awds-typography-letter-spacing-400); /* 0 */
+  font-size: var(--awds-wysiwyg-font-size-body);
+  line-height: var(--awds-wysiwyg-line-height-body);
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
 
   /* Polish (MIFB): короткий ячейный текст — pretty, чтобы не было висячих сирот.
