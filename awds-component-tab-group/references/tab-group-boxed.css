@@ -48,7 +48,8 @@
    `button / clean` тени нет, поэтому и в `button-clean.css` её нет — она
    принадлежит этой группе, а не кнопке. Рисуем псевдоэлементом, а не
    `box-shadow` на кнопке: у кнопки `box-shadow` уже занят обводкой
-   (`inset 0 0 0 1px var(--awds-btn-border)`), и дописать к нему второй слой
+   (`inset 0 0 0 var(--awds-btn-border-width) var(--awds-btn-border)`), и дописать к нему
+   второй слой
    значило бы сослаться на приватный аккумулятор кнопки и сделать его контрактом.
    `border-radius: inherit` берёт радиус кнопки, не называя её переменную.
 
@@ -147,7 +148,7 @@
   /* own_values: толщина обводки плашки. Ячейки толщины линии в теме нет
      (Space/px — шкала отступов, не толщин), в макете это сырой strokeWeight 1.
      Держим одним объявлением, чтобы замена на ячейку была правкой в одном месте. */
-  --awds-tab-group-stroke: 1px;
+  --awds-tab-group-stroke: var(--awds-space-px);   /* #cell outline/offset */
 
   /* Ступень 400 по умолчанию (default_size). */
   --awds-tab-group-pad:     var(--awds-space-0-5);
