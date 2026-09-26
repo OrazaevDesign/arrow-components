@@ -1,4 +1,4 @@
-/* ArrowDS · button-overhung@2.0.12
+/* ArrowDS · button-overhung@2.0.13
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-obtn-bg {
@@ -165,7 +165,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   
   --awds-obtn-chroma: rgb(var(--surface-bright));   
   --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on));
+  --awds-obtn-color:  rgb(var(--surface-on-high));
 }
 
 .obtn-primary:hover {
@@ -179,14 +179,14 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   
   --awds-obtn-chroma: rgb(var(--surface-bright));   
   --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on));
+  --awds-obtn-color:  rgb(var(--surface-on-high));
 }
 
 .obtn-primary:active {
   --awds-obtn-bg:     rgb(var(--surface-surface));   
   --awds-obtn-chroma: rgb(var(--surface-bright));   
   --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on));
+  --awds-obtn-color:  rgb(var(--surface-on-high));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -199,7 +199,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   
   --awds-obtn-chroma: rgb(var(--surface-bright));   
   --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on));   
+  --awds-obtn-color:  rgb(var(--surface-on-high));   
   opacity: var(--awds-opacity-60);   
   transition: --awds-obtn-bg 0.15s ease-out,
               --awds-obtn-chroma 0.15s ease-out,
@@ -220,7 +220,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   
   --awds-obtn-chroma: rgb(var(--surface-bright));   
   --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on));   
+  --awds-obtn-color:  rgb(var(--surface-on-high));   
   opacity: var(--awds-opacity-90);
 }
 
@@ -228,7 +228,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   
   --awds-obtn-chroma: rgb(var(--surface-bright));   
   --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on));   
+  --awds-obtn-color:  rgb(var(--surface-on-high));   
   opacity: var(--awds-opacity-90);
 }
 

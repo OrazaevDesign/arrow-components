@@ -1,4 +1,4 @@
-/* ArrowDS · tab-product@1.0.5
+/* ArrowDS · tab-product@1.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-tab-product-bg {
@@ -63,7 +63,7 @@
 }
 
 .tab-product:has(> .tab-product__input:focus-visible) {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 
