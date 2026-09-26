@@ -1,4 +1,4 @@
-/* ArrowDS · table@1.0.11
+/* ArrowDS · table@1.0.12
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -72,6 +72,7 @@
 
 .awds-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-family: var(--awds-font-family-system);
 }
