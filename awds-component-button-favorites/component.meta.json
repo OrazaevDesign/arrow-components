@@ -1,22 +1,16 @@
 {
   "component": "button-favorites",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "contract_hash": "sha256:6374a6b1f3d8929094fc35d0ade50ef659ffe94d9a5c3aa8b9b97cdb15f30b52",
-  "artifact_hash": "sha256:5ea7c1106621e2f98ca294526246018ae909dfbd47512a3ef81579235d945e94",
-  "visual_change": true,
-  "released_at": "2026-09-24T20:43:53.940Z",
+  "artifact_hash": "sha256:74cb294f0e9787dd6fe9add8a6be5358a2e446f9d1c5d0ade4928e62513072a3",
+  "visual_change": false,
+  "released_at": "2026-09-26T11:03:00.036Z",
   "own_values": [
     {
       "value": "0.15s",
       "where": "transition",
-      "count": 2,
+      "count": 6,
       "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "1px",
-      "where": "box-shadow",
-      "count": 1,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
     },
     {
       "value": "0.12s",
@@ -154,6 +148,7 @@
     "--awds-space-3-5",
     "--awds-space-4",
     "--awds-space-5",
+    "--awds-space-px",
     "--error-container-dim",
     "--error-core",
     "--extended-transparent",
