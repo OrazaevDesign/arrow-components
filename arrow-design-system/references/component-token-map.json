@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:86cef6c22d3e8cb2b89d800f1925ca92bff58c7dedf8541a0228e5b2b3262808",
+  "snapshot_hash": "sha256:77454b8df4c467aa9aacab85969f0d2204ce09f1af3ec676f73989a5489f4753",
   "size": {
     "rectangle": {
       "50": {
@@ -463,11 +463,13 @@
         "bg": "rgb(var(--primary-core))",
         "default": {
           "bg": "rgb(var(--primary-core))",
-          "border": "rgb(var(--primary-core))"
+          "border": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-dim))"
+          "border": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--surface-bright))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
@@ -1127,11 +1129,13 @@
         "bg": "rgb(var(--primary-dim))",
         "default": {
           "bg": "rgb(var(--primary-dim))",
-          "border": "rgb(var(--primary-dim))"
+          "border": "rgb(var(--primary-dim))",
+          "chroma": "rgb(var(--primary-chroma))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-dim))",
-          "border": "rgb(var(--secondary-container-dim))"
+          "border": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--surface-bright))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
@@ -1692,11 +1696,13 @@
         "bg": "rgb(var(--primary-core))",
         "default": {
           "bg": "rgb(var(--primary-core))",
-          "border": "rgb(var(--primary-core))"
+          "border": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-chroma))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-dim))"
+          "border": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--surface-bright))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
@@ -2230,11 +2236,13 @@
         "bg": "rgb(var(--primary-core))",
         "default": {
           "bg": "rgb(var(--primary-core))",
-          "border": "rgb(var(--primary-core))"
+          "border": "rgb(var(--primary-core))",
+          "chroma": "rgb(var(--primary-core))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-dim))",
-          "border": "rgb(var(--secondary-container-dim))"
+          "border": "rgb(var(--secondary-container-dim))",
+          "chroma": "rgb(var(--surface-bright))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
