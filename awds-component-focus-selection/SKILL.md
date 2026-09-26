@@ -65,7 +65,7 @@ description: Focus Selection ArrowDS (.focus-selection).
 | Вариант | Компоненты |
 |---|---|
 | **Outside + Default** | `button` (8), `button-overhung` (2), `list-item` (12), `input/secondary`, `input-combi/secondary` |
-| **Outside + Accent** | `checkbox`, `radio`, `switch` — кольцо плотное брендовое, решение 25.09.2026 |
+| **Outside + Accent** | `checkbox`, `radio`, `switch` — кольцо плотное брендовое, решение 25.09.2026; `tab-product` (9 ячеек) — решение 26.09.2026 |
 | **outside + muted** | `input`, `input-combi`, `select`, `select-combi`, `textarea`, `uploader` — кроме варианта `secondary` |
 | **Inside + Default** | `button-area` (5), `table` (3) |
 | **канон по умолчанию** (в макете кольца нет) | `button-favorites`, `label`, `link` (5), `product-card` (3), `range` |
