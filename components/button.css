@@ -1,4 +1,4 @@
-/* ArrowDS · button@2.2.7
+/* ArrowDS · button@2.2.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -196,7 +196,7 @@
 
 .btn-clean {
   --awds-btn-bg:     rgb(var(--surface-bright));   
-  --awds-btn-border: rgb(var(--surface-dim));   
+  --awds-btn-border: rgb(var(--surface-bright));   
   --awds-btn-color:  rgb(var(--surface-on-high));
 }
 
@@ -206,46 +206,46 @@
 
 .btn-clean:hover {
   --awds-btn-bg:     rgb(var(--surface-surface));   
-  --awds-btn-border: rgb(var(--surface-dim));   
+  --awds-btn-border: rgb(var(--surface-bright));   
   --awds-btn-color:  rgb(var(--surface-on-highest));
 }
 
 .btn-clean:focus-visible {
   --awds-btn-bg:     rgb(var(--surface-bright));   
-  --awds-btn-border: rgb(var(--surface-dim));   
+  --awds-btn-border: rgb(var(--surface-bright));   
   --awds-btn-color:  rgb(var(--surface-on-high));
 }
 
 .btn-clean:active {
   --awds-btn-bg:     rgb(var(--surface-surface));   
-  --awds-btn-border: rgb(var(--surface-dim));   
+  --awds-btn-border: rgb(var(--surface-bright));   
   --awds-btn-color:  rgb(var(--surface-on-highest));
 }
 
 .btn-contrast {
   --awds-btn-bg:     rgb(var(--surface-on-highest));   
-  --awds-btn-chroma: rgb(var(--surface-on-high));   
   --awds-btn-border: rgb(var(--surface-on-highest));   
   --awds-btn-color:  rgb(var(--surface-bright));
 }
 
+.btn.btn-contrast {
+  background: var(--awds-btn-bg);
+}
+
 .btn-contrast:hover {
   --awds-btn-bg:     rgb(var(--surface-on-highest));   
-  --awds-btn-chroma: rgb(var(--surface-on-highest));   
   --awds-btn-border: rgb(var(--surface-on-highest));   
   --awds-btn-color:  rgb(var(--surface-bright));
 }
 
 .btn-contrast:focus-visible {
   --awds-btn-bg:     rgb(var(--surface-on-highest));   
-  --awds-btn-chroma: rgb(var(--surface-on-high));   
   --awds-btn-border: rgb(var(--surface-on-highest));   
   --awds-btn-color:  rgb(var(--surface-bright));
 }
 
 .btn-contrast:active {
   --awds-btn-bg:     rgb(var(--surface-on-highest));   
-  --awds-btn-chroma: rgb(var(--surface-on-highest));   
   --awds-btn-border: rgb(var(--surface-on-highest));   
   --awds-btn-color:  rgb(var(--surface-bright));
 }
