@@ -11,10 +11,10 @@ description: Uploader ArrowDS (.upl).
 
 ```html
 <div class="upl upl--400">
-  <label class="upl__label">
+  <label class="upl__drop">
     <input class="upl__input" type="file" multiple>
     <span class="input input-default">
-      <input class="input__field" type="text" placeholder="Выберите файл" readonly tabindex="-1">
+      <span class="upl__prompt">Выберите файл или перетащите сюда</span>
       <span class="input__suffix" aria-hidden="true">
         <svg viewBox="0 0 20 20"><!-- ic20-upload --></svg>
       </span>
@@ -38,6 +38,13 @@ description: Uploader ArrowDS (.upl).
 ```
 
 Строка файла с иконкой типа вместо превью — `.upl__icon` на месте `.upl__preview`; файл с ошибкой — модификатор `.upl__file--error` на `<li>`.
+
+**Зона выбора — `.upl__drop` с текстовым `.upl__prompt`, а не поле ввода.** До 26.09.2026
+в этом сниппете стояли `.upl__label` и вложенный `<input class="input__field" readonly>`,
+которых нет в `uploader.css` вовсе: скопировавший разметку отсюда получал
+нестилизованный загрузчик. Верным всё это время был сниппет в
+[references/uploader.md](references/uploader.md) — расхождение нашла сверка стенда с
+контрактами компонентов.
 
 ## Почему поле устроено так странно
 
