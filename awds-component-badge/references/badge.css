@@ -64,7 +64,10 @@
   /* Box. Обводку рисуем inset box-shadow (inside-stroke как в Figma) — border
      при auto-height добавлял бы к размеру и давал дробную высоту. */
   border-radius: var(--awds-badge-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-badge-border);
+  /* Толщина обводки — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-badge-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-badge-border-width) var(--awds-badge-border);
   background: linear-gradient(to right, var(--awds-badge-chroma, var(--awds-badge-bg)), var(--awds-badge-bg));
   color: var(--awds-badge-color);
 
