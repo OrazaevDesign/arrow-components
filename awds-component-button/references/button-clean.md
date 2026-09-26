@@ -2,11 +2,11 @@
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → node 8:7893](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-7893)
 
-Белая кнопка с тонкой обводкой — для цветных/насыщенных секций (hero, баннеры), где нужна нейтральная светлая поверхность поверх фона.
+Белая кнопка без видимой обводки в покое — для цветных/насыщенных секций (hero, баннеры), где нужна нейтральная светлая поверхность поверх фона.
 
 Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`. Реальную палитру задаёт сайт через `css-variables.css`.
 
-Единственный вариант, где `border ≠ bg`: обводка `surface-dim` тонко, но видимо очерчивает белую кнопку. Реализована через inset box-shadow (не влияет на размер). Фон плоский, без градиента.
+Обводка `surface-bright` (до 26.09.2026 была `surface-dim`): в покое и фокусе совпадает с фоном и не видна, в ховере и нажатии фон темнеет до `surface-surface` и остаётся светлый кант. Реализована через inset box-shadow (не влияет на размер). Фон плоский, без градиента.
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-clean.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -76,7 +76,7 @@
 
 ```css
 .btn.btn-clean           { background: var(--awds-btn-bg); } /* плоская заливка вместо градиента базы */
-.btn-clean               { --awds-btn-bg: rgb(var(--surface-bright));  --awds-btn-border: rgb(var(--surface-dim)); --awds-btn-color: rgb(var(--surface-on-high)); }
+.btn-clean               { --awds-btn-bg: rgb(var(--surface-bright));  --awds-btn-border: rgb(var(--surface-bright)); --awds-btn-color: rgb(var(--surface-on-high)); }
 .btn-clean:hover         { --awds-btn-bg: rgb(var(--surface-surface)); --awds-btn-color: rgb(var(--surface-on-highest)); /* фон и текст темнеют */ }
 .btn-clean:focus-visible { --awds-btn-bg: rgb(var(--surface-bright));  /* = rest */ }
 .btn-clean:active        { --awds-btn-bg: rgb(var(--surface-surface)); --awds-btn-color: rgb(var(--surface-on-highest)); }
@@ -104,10 +104,10 @@
 
 | Состояние | `--awds-btn-bg` | `--awds-btn-border` | `--awds-btn-color` |
 |---|---|---|---|
-| Rest    | `--surface-bright`  | `--surface-dim` | `--surface-on-high` |
-| Hover   | `--surface-surface` | `--surface-dim` | `--surface-on-highest` |
-| Focus   | `--surface-bright`  | `--surface-dim` | `--surface-on-high` |
-| Active  | `--surface-surface` | `--surface-dim` | `--surface-on-highest` |
+| Rest    | `--surface-bright`  | `--surface-bright` | `--surface-on-high` |
+| Hover   | `--surface-surface` | `--surface-bright` | `--surface-on-highest` |
+| Focus   | `--surface-bright`  | `--surface-bright` | `--surface-on-high` |
+| Active  | `--surface-surface` | `--surface-bright` | `--surface-on-highest` |
 | Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | |
 | Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | |
 
@@ -120,7 +120,7 @@
 У clean градиент и раньше был невидим — `chroma` совпадал с `bg` во всех состояниях; теперь его просто нет.
 Ячейки `button/clean/chroma-*` остались в студии, но компонентом больше не читаются.
 
-Обводка `surface-dim` постоянна и видима — единственный вариант с border ≠ bg.
+Обводка `surface-bright` постоянна: видна только там, где фон темнее неё (hover, active).
 
 ---
 

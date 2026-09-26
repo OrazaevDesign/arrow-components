@@ -73,11 +73,11 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 Заполняет цветовые аккумуляторы inline-ролями surface, по состоянию:
 
 ```css
-.btn-contrast               { --awds-btn-bg: rgb(var(--surface-on-highest)); --awds-btn-chroma: rgb(var(--surface-on-high)); --awds-btn-color: rgb(var(--surface-bright)); }
-.btn-contrast:hover         { --awds-btn-chroma: rgb(var(--surface-on-highest)); /* плоский уже на hover */ }
-.btn-contrast:focus-visible { --awds-btn-chroma: rgb(var(--surface-on-high)); /* = rest */ }
-.btn-contrast:active        { --awds-btn-chroma: rgb(var(--surface-on-highest)); /* плоский */ }
+.btn-contrast        { --awds-btn-bg: rgb(var(--surface-on-highest)); --awds-btn-border: rgb(var(--surface-on-highest)); --awds-btn-color: rgb(var(--surface-bright)); }
+.btn.btn-contrast    { background: var(--awds-btn-bg); } /* плоская заливка вместо градиента базы */
 ```
+
+Фон плоский (с 26.09.2026, макет 8:6336): база `.btn` красит фон `linear-gradient(to right, chroma, bg)`, а `.btn.btn-contrast` переопределяет его на `var(--awds-btn-bg)`. Два класса — чтобы база из соседнего файла варианта, склеенного в тот же блок, не вернула градиент. Ячейки `button/contrast/chroma-*` компонентом больше не читаются. До правки в Rest и Focus был виден градиент `surface-on-high → surface-on-highest`.
 
 ---
 
@@ -99,18 +99,18 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 
 ## Состояния
 
-| Состояние | `--awds-btn-bg` | `--awds-btn-chroma` | `--awds-btn-border` | `--awds-btn-color` |
-|---|---|---|---|---|
-| Rest    | `--surface-on-highest` | `--surface-on-high`    | `--surface-on-highest` | `--surface-bright` |
-| Hover   | `--surface-on-highest` | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
-| Focus   | `--surface-on-highest` | `--surface-on-high`    | `--surface-on-highest` | `--surface-bright` |
-| Active  | `--surface-on-highest` | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
-| Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
-| Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
+| Состояние | `--awds-btn-bg` | `--awds-btn-border` | `--awds-btn-color` |
+|---|---|---|---|
+| Rest    | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
+| Hover   | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
+| Focus   | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
+| Active  | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
+| Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | |
+| Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest`, общая для всех интерактивных элементов сайта.
 
-**Отличие от других вариантов:** chroma схлопывается в bg уже на `Hover` (а не только на `Active`), поэтому едва заметный градиент виден только в `Rest`/`Focus`.
+**Отличие от других вариантов:** фон одинаковый во всех состояниях, ховер и нажатие на цвете не видны — обратную связь дают курсор и кольцо фокуса.
 
 ---
 
@@ -128,7 +128,7 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 
 ## Полировка (MIFB)
 
-- **Плавная смена состояний.** `--awds-btn-bg` / `--awds-btn-chroma` зарегистрированы через `@property` как `<color>`, поэтому фон-градиент интерполируется при hover/active (а не «снапает»). Переходы — `0.15s ease-out` по конкретным свойствам (не `transition: all`), прерываемые. Спиннер — `@keyframes` + `will-change: transform` (единственный валидный loop-кейс).
+- **Плавная смена состояний.** `--awds-btn-bg` / `--awds-btn-chroma` зарегистрированы через `@property` как `<color>`, поэтому фон интерполируется при смене состояния (а не «снапает»). Переходы — `0.15s ease-out` по конкретным свойствам (не `transition: all`), прерываемые. Спиннер — `@keyframes` + `will-change: transform` (единственный валидный loop-кейс).
 - **Живые числа в кнопке** — оберни число в `<span style="font-variant-numeric: tabular-nums">`, чтобы цифры не «прыгали». На обычный текстовый лейбл `tabular-nums` не вешаем (MIFB-принцип 5).
 - **Радиусы** — из макета (`--awds-rounded-*` по размеру), концентрию руками не считаем: есть Figma.
 

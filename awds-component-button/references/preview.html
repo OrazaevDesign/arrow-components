@@ -96,7 +96,7 @@
     }
 
     /* ─── Зеркала псевдо-классов для Contrast (копия :hover/:focus-visible/:active
-       из button-contrast.css). chroma схлопывается уже на hover. ─── */
+       из button-contrast.css). Фон плоский: chroma = bg, база перекрыта .btn.btn-contrast. ─── */
     .btn-contrast.is-hover {
       --awds-btn-bg:     rgb(var(--surface-on-highest));
       --awds-btn-chroma: rgb(var(--surface-on-highest));
@@ -105,7 +105,7 @@
     }
     .btn-contrast.is-focus {
       --awds-btn-bg:     rgb(var(--surface-on-highest));
-      --awds-btn-chroma: rgb(var(--surface-on-high));
+      --awds-btn-chroma: rgb(var(--surface-on-highest));
       --awds-btn-border: rgb(var(--surface-on-highest));
       --awds-btn-color:  rgb(var(--surface-bright));
       outline: var(--awds-focus-width) solid var(--awds-focus-color);
@@ -165,17 +165,17 @@
     }
 
     /* ─── Зеркала псевдо-классов для Clean (копия :hover/:focus-visible/:active
-       из button-clean.css). border ≠ bg (видимая обводка surface-dim). ─── */
+       из button-clean.css). border = surface-bright: в покое сливается с фоном, в ховере и нажатии — светлый кант. ─── */
     .btn-clean.is-hover {
       --awds-btn-bg:     rgb(var(--surface-surface));
       --awds-btn-chroma: rgb(var(--surface-surface));
-      --awds-btn-border: rgb(var(--surface-dim));
+      --awds-btn-border: rgb(var(--surface-bright));
       --awds-btn-color:  rgb(var(--surface-on-highest));
     }
     .btn-clean.is-focus {
       --awds-btn-bg:     rgb(var(--surface-bright));
       --awds-btn-chroma: rgb(var(--surface-bright));
-      --awds-btn-border: rgb(var(--surface-dim));
+      --awds-btn-border: rgb(var(--surface-bright));
       --awds-btn-color:  rgb(var(--surface-on-high));
       outline: var(--awds-focus-width) solid var(--awds-focus-color);
       outline-offset: var(--awds-focus-offset);
@@ -183,7 +183,7 @@
     .btn-clean.is-active {
       --awds-btn-bg:     rgb(var(--surface-surface));
       --awds-btn-chroma: rgb(var(--surface-surface));
-      --awds-btn-border: rgb(var(--surface-dim));
+      --awds-btn-border: rgb(var(--surface-bright));
       --awds-btn-color:  rgb(var(--surface-on-highest));
     }
 
@@ -510,9 +510,9 @@
         active: { bg: '--addition-core', chroma: '--addition-core',   border: '--addition-core', color: '--addition-on' },
       },
       contrast: {
-        rest:   { bg: '--surface-on-highest', chroma: '--surface-on-high',    border: '--surface-on-highest', color: '--surface-bright' },
+        rest:   { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
         hover:  { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
-        focus:  { bg: '--surface-on-highest', chroma: '--surface-on-high',    border: '--surface-on-highest', color: '--surface-bright' },
+        focus:  { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
         active: { bg: '--surface-on-highest', chroma: '--surface-on-highest', border: '--surface-on-highest', color: '--surface-bright' },
       },
       tertiary: {
@@ -528,10 +528,10 @@
         active: { bg: 'transparent', chroma: 'transparent', border: 'transparent', color: '--surface-on-highest' },
       },
       clean: {
-        rest:   { bg: '--surface-bright',  chroma: '--surface-bright',  border: '--surface-dim', color: '--surface-on-high' },
-        hover:  { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-dim', color: '--surface-on-highest' },
-        focus:  { bg: '--surface-bright',  chroma: '--surface-bright',  border: '--surface-dim', color: '--surface-on-high' },
-        active: { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-dim', color: '--surface-on-highest' },
+        rest:   { bg: '--surface-bright',  chroma: '--surface-bright',  border: '--surface-bright', color: '--surface-on-high' },
+        hover:  { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-bright', color: '--surface-on-highest' },
+        focus:  { bg: '--surface-bright',  chroma: '--surface-bright',  border: '--surface-bright', color: '--surface-on-high' },
+        active: { bg: '--surface-surface', chroma: '--surface-surface', border: '--surface-bright', color: '--surface-on-highest' },
       },
       pills: {
         rest:   { bg: '--secondary-core', chroma: '--secondary-chroma', border: '--secondary-core', color: '--secondary-on' },

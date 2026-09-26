@@ -72,7 +72,7 @@ description: Button ArrowDS (.btn).
 | Contrast | `references/button-contrast.css` | `.btn` base + все размеры + `.btn-contrast` со всеми состояниями (inline `rgb(var(--surface-*))`) |
 | Tertiary | `references/button-tertiary.css` | `.btn` base + все размеры + `.btn-tertiary` со всеми состояниями (inline `rgb(var(--tertiary-*))`) |
 | Ghost | `references/button-ghost.css` | `.btn` base + все размеры + `.btn-ghost` (фон/обводка `transparent`, текст `rgb(var(--surface-on-high/-highest))`) |
-| Clean | `references/button-clean.css` | `.btn` base + все размеры + `.btn-clean` (белый фон `surface-bright`, видимая обводка `surface-dim`, текст `surface-on-high/-highest`) |
+| Clean | `references/button-clean.css` | `.btn` base + все размеры + `.btn-clean` (белый фон `surface-bright`, обводка `surface-bright` — в покое сливается с фоном, в ховере светлый кант, текст `surface-on-high/-highest`) |
 | Pills | `references/button-pills.css` | `.btn` base + все размеры + `.btn-pills` (= Secondary; на hover текст `rgb(var(--accent-container-on))`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
