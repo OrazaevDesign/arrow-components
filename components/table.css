@@ -1,4 +1,4 @@
-/* ArrowDS · table@1.0.10
+/* ArrowDS · table@1.0.11
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -83,7 +83,7 @@
 .awds-table--light .cell {
   border: 0;
   border-bottom: var(--awds-space-px) solid rgb(var(--surface-on-lowest));   
-  padding-inline: 0 var(--awds-space-3);
+  padding-inline: 0 var(--awds-wysiwyg-gap-li-top);
 }
 
 .awds-table--light tr:last-child .cell {
@@ -100,15 +100,15 @@
   --awds-cell-border:      rgb(var(--extended-transparent));   
   --awds-cell-color:       rgb(var(--surface-on-highest));     
   --awds-cell-description: rgb(var(--surface-on-high));        
-  padding: var(--awds-space-3);                 
+  padding: var(--awds-wysiwyg-gap-li-top);      
   border: var(--awds-space-px) solid var(--awds-cell-border);
   background-color: var(--awds-cell-bg);
   color: var(--awds-cell-color);
   text-align: start;
   vertical-align: middle;
-  font-size: var(--awds-typography-font-size-400);          
-  line-height: var(--awds-typography-line-height-400);      
-  letter-spacing: var(--awds-typography-letter-spacing-400); 
+  font-size: var(--awds-wysiwyg-font-size-body);
+  line-height: var(--awds-wysiwyg-line-height-body);
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
   text-wrap: pretty;
   transition: background-color 0.15s ease-out,
