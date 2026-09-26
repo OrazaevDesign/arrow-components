@@ -103,7 +103,7 @@
      (Space/px — шкала отступов, не толщин), в макете это сырые 2 px. Держим
      одним объявлением, чтобы значение было в одном месте и заменялось ячейкой
      сразу во всём файле, когда она появится. */
-  --awds-tab-underline: 2px;
+  --awds-tab-underline: var(--awds-space-0-5);   /* #cell outline/width */
 
   box-sizing: border-box;
   position: relative;

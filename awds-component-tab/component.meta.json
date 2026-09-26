@@ -1,21 +1,15 @@
 {
   "component": "tab",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "contract_hash": "sha256:69896edf45f7997e4b8cdcfc66c08aeb07e031153fabd7a2599299543233f2d4",
-  "artifact_hash": "sha256:7342cb156a02b0e14ab34440265312820b3c43871237c6a3f5652944a0e76ef4",
-  "visual_change": true,
-  "released_at": "2026-09-16T05:00:41.308Z",
+  "artifact_hash": "sha256:f751c70243b945e434358b17beab14aecf73909349d6e79e0e9c9aa167a04828",
+  "visual_change": false,
+  "released_at": "2026-09-26T11:03:08.343Z",
   "own_values": [
-    {
-      "value": "2px",
-      "where": "--awds-tab-underline",
-      "count": 1,
-      "why": "толщина подчёркивания: ячейки толщины линии в студии нет (Space/px — шкала отступов, не толщин). В макете это сырые 2 px на нижней обводке. Держим одним объявлением --awds-tab-underline, чтобы замена на ячейку была правкой в одном месте"
-    },
     {
       "value": "0.15s",
       "where": "transition",
-      "count": 1,
+      "count": 5,
       "why": "длительность анимации: коллекции движения в студии нет"
     }
   ],
@@ -138,6 +132,7 @@
     "--awds-font-weight-semibold",
     "--awds-opacity-100",
     "--awds-opacity-40",
+    "--awds-space-0-5",
     "--awds-space-1",
     "--awds-space-1-5",
     "--awds-space-2",
