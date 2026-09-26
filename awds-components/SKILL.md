@@ -145,7 +145,7 @@ Figma.
 
 | Компонент | Что это | Как называют | Состав · входит в | Версия | Ссылки |
 | --- | --- | --- | --- | --- | --- |
-| [list-item](../awds-component-list-item/SKILL.md) | Строка списка: пункт меню, пункт выпадающего списка, вкладка таббара, плитка вариации | пункт списка, строка списка, пункт меню, вкладка таббара, элемент списка | внутри: focus-selection · входит в: select, select-combi | 1.1.0 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59676) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992787788) |
+| [list-item](../awds-component-list-item/SKILL.md) | Строка списка: пункт меню, пункт выпадающего списка, вкладка таббара, плитка вариации | пункт списка, строка списка, пункт меню, вкладка таббара, элемент списка | внутри: focus-selection · входит в: select, select-combi | 1.1.1 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59676) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992787788) |
 
 <!-- /generated -->
 

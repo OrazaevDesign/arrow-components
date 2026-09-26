@@ -112,11 +112,18 @@
 }
 
 .list-item:focus-visible {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default
-     (снято с инстанса FocusSelection в макете): кольцо в полосе 1…3px снаружи бокса.
-     Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset);
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Inside + Accent
+     (снято с инстанса FocusSelection в макете): кольцо вписано в бокс и красится
+     брендовым плотным цветом. Только ссылки на --awds-focus-*: правка макета меняет
+     один файл слоя.
+
+     Кольцо рисуется outline, а не inset-тенью, хотя радиус строки ненулевой и внешний
+     радиус кольца выходит на толщину offset меньше (CSS считает его как
+     border-radius + outline-offset). Две причины: box-shadow у строки уже занят
+     рамкой — он не складывается, и вторая декларация стёрла бы её; и тени не
+     рисуются в forced-colors, где кольцо обязано остаться видимым. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
+  outline-offset: var(--awds-focus-offset-inside);
 }
 
 .list-item:disabled,
