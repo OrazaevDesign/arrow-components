@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@1.1.0
+/* ArrowDS · list-item@1.1.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -53,8 +53,8 @@
 }
 
 .list-item:focus-visible {
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
+  outline-offset: var(--awds-focus-offset-inside);
 }
 
 .list-item:disabled, .list-item[aria-disabled="true"] {
