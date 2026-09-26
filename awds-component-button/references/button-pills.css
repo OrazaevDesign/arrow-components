@@ -88,7 +88,10 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-btn-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-btn-border);
+  /* Толщина обводки — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-btn-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-btn-border-width) var(--awds-btn-border);
   background: linear-gradient(to right, var(--awds-btn-chroma, var(--awds-btn-bg)), var(--awds-btn-bg));
   color: var(--awds-btn-color);
 

@@ -1,21 +1,15 @@
 {
   "component": "button",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "contract_hash": "sha256:b1178d242f4d390a44850a8af06ba94ba17a603fa9f5972dd379f67a9d0e87e0",
-  "artifact_hash": "sha256:ec6cb906b7df27985c5559b42f47f8d2642d4bf1cdd9bc6eec14dc754e46d379",
-  "visual_change": true,
-  "released_at": "2026-09-25T05:43:49.236Z",
+  "artifact_hash": "sha256:89ecc8da725f4fa2ede87de0be2dfa0f1ecf02da131aa20e1d218287c73e84ee",
+  "visual_change": false,
+  "released_at": "2026-09-26T11:02:59.958Z",
   "own_values": [
-    {
-      "value": "1px",
-      "where": "box-shadow",
-      "count": 8,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
-    },
     {
       "value": "0.15s",
       "where": "transition",
-      "count": 8,
+      "count": 32,
       "why": "длительность анимации: коллекции движения в студии нет"
     }
   ],
@@ -197,6 +191,7 @@
     "--awds-space-3-5",
     "--awds-space-4",
     "--awds-space-5",
+    "--awds-space-px",
     "--extended-transparent",
     "--primary-chroma",
     "--primary-core",
