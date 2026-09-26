@@ -21,7 +21,7 @@
 
    Геометрия из макета (все значения легли на шкалу Space, своих чисел нет):
      высота области      12px  → space-3   (место под полосу, тач-зона)
-     толщина полосы       4px  → space-1
+     толщина полосы       4px  → space-1   (цель ячейки progress/bar-width)
      зазор active↔track   6px  → space-1-5 (в макете padding-right активной части)
      точка-стоп           4px  → space-1
      радиус                    → rounded-full (в макете 8px на высоте 4px = pill)
@@ -59,7 +59,7 @@
    может взять только один вариант, а переменные нужны обоим. Дубль схлопывает
    sync-component-css.mjs при рассылке в блоки. */
 .progress {
-  --awds-progress-track: var(--awds-space-1);
+  --awds-progress-track: var(--awds-space-1);   /* #cell progress/bar-width */
   --awds-progress-gap: var(--awds-space-1-5);
   --awds-progress-color: rgb(var(--primary-core));   /* #cell progress/color */
   --awds-progress-idle-opacity: var(--awds-opacity-20);

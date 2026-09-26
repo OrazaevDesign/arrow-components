@@ -12,7 +12,7 @@
 
    Геометрия из макета (снова целиком на шкале Space):
      диаметр      48px → space-12 (по умолчанию; ручка --awds-progress-size)
-     толщина дуги  2px → space-0-5
+     толщина дуги  2px → space-0-5 (цель ячейки progress/ring-width)
    Концы дуги круглые (stroke-linecap: round). Цвет — var(--awds-progress-color),
    по умолчанию rgb(var(--primary-core)); дуга красится через currentColor.
 
@@ -45,7 +45,7 @@
 /* База обоих вариантов — та же, что в progress-linear.css. Дубль намеренный:
    потребитель может взять только круговой вариант. */
 .progress {
-  --awds-progress-track: var(--awds-space-1);
+  --awds-progress-track: var(--awds-space-1);   /* #cell progress/bar-width */
   --awds-progress-gap: var(--awds-space-1-5);
   --awds-progress-color: rgb(var(--primary-core));   /* #cell progress/color */
   --awds-progress-idle-opacity: var(--awds-opacity-20);
@@ -71,7 +71,7 @@
 .progress-circular__arc {
   fill: none;
   stroke: currentColor;
-  stroke-width: var(--awds-space-0-5);
+  stroke-width: var(--awds-space-0-5);   /* #cell progress/ring-width */
   /* Толщина линии НЕ масштабируется вместе с кольцом. Без этого stroke-width — это
      пользовательские единицы viewBox: кольцо в кнопке (20px вместо 48) получало 1.67px
      вместо 2px, а на мелкой ступени выродилось бы в волосок. В Figma так же: инстанс

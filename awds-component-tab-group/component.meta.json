@@ -5,14 +5,7 @@
   "artifact_hash": "sha256:eb6f0aaf63dbe58f17ea4d7928d26baf3fda6f97df5478a0d0e89b4e636b3187",
   "visual_change": false,
   "released_at": "2026-09-26T11:03:39.357Z",
-  "own_values": [
-    {
-      "value": "1px",
-      "where": "--awds-tab-group-stroke",
-      "count": 1,
-      "why": "толщина обводки плашки boxed: ячейки толщины линии в студии нет (Space/px — шкала отступов, не толщин). В макете это сырой strokeWeight 1 на обеих ячейках набора. Держим одним объявлением --awds-tab-group-stroke, чтобы замена на ячейку была правкой в одном месте. Тот же долг, что у tab-product, button и notice"
-    }
-  ],
+  "own_values": [],
   "family": "tabs",
   "summary": "Контейнер вкладок: плашка, раздельные кнопки, подчёркивание; прокрутка при переполнении",
   "aliases": [
