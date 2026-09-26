@@ -102,8 +102,8 @@
 | disabled | как rest | как rest, поверх `state/opacity/control-disabled` |
 
 Кольцо фокуса — слой `awds-component-focus-selection`, вариант `offset=outside` ·
-`tone=default` (снято с инстанса в ячейке `state=focus`, где стоит
-`radius=500, offset=outside, tone=default`). Ось `radius` в CSS не выражается:
+`tone=accent` (снято с инстанса в ячейке `state=focus`, где стоит
+`radius=500, offset=outside, tone=accent`). Ось `radius` в CSS не выражается:
 `outline` следует `border-radius` сам.
 
 ## Чего здесь нет

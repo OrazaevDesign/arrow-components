@@ -116,8 +116,8 @@
    --awds-opacity-40 в обход слоя. Канон от 01.09.2026.
 
    КОЛЬЦО ФОКУСА — слой awds-component-focus-selection, вариант
-   offset=outside · tone=default (снято с инстансов focus-selection в девяти
-   фокусных ячейках макета: radius=400/300/500, offset=outside, tone=default).
+   offset=outside · tone=accent (снято с инстансов focus-selection в девяти
+   фокусных ячейках макета: radius=400/300/500, offset=outside, tone=accent).
    Ось radius в CSS не выражается — outline следует border-radius сам.
    Кольцо надевается на .tab-product, а фокус берёт спрятанный внутри input, поэтому
    селектор — :has(> .tab-product__input:focus-visible), а не :focus-visible.
@@ -229,10 +229,12 @@
 
 .tab-product:has(> .tab-product__input:focus-visible) {
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант offset=outside +
-     tone=default (снят с инстансов focus-selection в фокусных ячейках макета).
+     tone=accent (снят с инстансов focus-selection в фокусных ячейках макета):
+     кольцо плотное брендовое, --awds-focus-color-accent = primary-core, а не
+     нейтральный surface-on-highest.
      Только ссылки на --awds-focus-*: геометрия и цвет кольца правятся в слое,
      здесь чисел быть не должно. */
-  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset);
 }
 

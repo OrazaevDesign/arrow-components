@@ -106,7 +106,7 @@ State темы (`variation/indeterminate`), наравне с `selected` и `uns
 | disabled | те же, что rest | те же | те же, поверх `state/opacity/control-disabled` |
 
 Кольцо фокуса — слой `awds-component-focus-selection`, вариант `offset=outside` ·
-`tone=default`. Надевается на `.tab-product`, а фокус берёт спрятанный внутри `input`,
+`tone=accent`. Надевается на `.tab-product`, а фокус берёт спрятанный внутри `input`,
 поэтому селектор `:has(> .tab-product__input:focus-visible)`.
 
 ## Размеры

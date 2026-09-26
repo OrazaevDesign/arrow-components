@@ -85,7 +85,7 @@ roving-фокус и отправку формы без JS. `role="tab"` поо�
 | радиус `img` | `rounded/border-radius/500` |
 | подложка и плёнка `img` | роли `surface/bright` и `extended/shadow/opacity3` |
 | гашение | `state/opacity/control-{enabled,disabled}` — тон слоя, не литерал `--awds-opacity-40` |
-| кольцо фокуса | слой `awds-component-focus-selection`, `offset=outside · tone=default` |
+| кольцо фокуса | слой `awds-component-focus-selection`, `offset=outside · tone=accent` |
 
 Свои значения — два: `1px` толщины обводки и `0.15s` перехода, оба с причиной в
 `own_values`. Минимальная ширина плитки не литерал, а `calc(2 × padding + lh)`.
