@@ -53,3 +53,72 @@
   --awds-motion-ease-linear: linear;                   /* loop: спиннер, полоса прогресса. 146 */
   --awds-motion-ease-swap: cubic-bezier(0.2, 0, 0, 1); /* подмена иконки, канон motion.md. 4 */
 }
+
+
+/* =============================================================================
+   ВЕБШРИФТЫ — Onest (основной текст) и Geologica (заголовки)
+
+   Роли font/family/* называют эти гарнитуры, но имя само по себе ничего не
+   грузит: без @font-face браузер берёт следующий шаг стека и рисует system-ui.
+   Объявление живёт здесь, потому что поле `styles` темы — единственное место,
+   где мы пишем свой CSS, и оно доезжает до сайта вместе с переменными.
+
+   Шрифты ПЕРЕМЕННЫЕ: один файл несёт всю ось веса, отдельных начертаний не
+   качается ни одного. Диапазон объявлен полным (100–900), хотя словарь знает
+   только 300–700, а библиотека читает 400, 600 и 700: замер 26.09.2026 показал,
+   что файл при любом запрошенном диапазоне один и тот же и весит одинаково —
+   сужать нечего, а запас снимает будущий вопрос «почему вес 500 рисуется
+   подделкой». Синтез начертания браузером (fake bold) при полной оси не
+   возникает вовсе.
+
+   Нарезка по алфавитам: кириллица и латиница врозь, лишний алфавит браузер не
+   скачает. Всего 88 КБ на четыре файла.
+
+   Хранилище — S3 PageCraft: отдаёт font/woff2 и CORS на любой origin,
+   проверено 26.09.2026 с bjjd.ru и thehomestudio.ru. Шрифт с чужого origin
+   без CORS скачается, но применён не будет.
+
+   font-display: swap — текст виден сразу системным и переключается, когда
+   файл приедет. FOIT здесь хуже: LCP-элементом у нас часто оказывается
+   заголовок, и скрытый текст упирается прямо в метрику.
+   ========================================================================== */
+
+/* Onest · cyrillic */
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20260926_84e746c0a143ad96.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Onest · latin */
+@font-face {
+  font-family: 'Onest';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20260926_22496172f68d0185.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Geologica · cyrillic */
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20260926_14f68e70ca8b9991.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Geologica · latin */
+@font-face {
+  font-family: 'Geologica';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20260926_e595ef0251769e84.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}

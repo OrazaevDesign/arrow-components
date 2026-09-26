@@ -1583,10 +1583,10 @@
   --awds-wysiwyg-gap-h6-small: var(--awds-typography-line-height-compact-400);
   --awds-wysiwyg-gap-h6-large: var(--awds-typography-line-height-compact-700);
   --awds-wysiwyg-gap-h6: var(--awds-wysiwyg-gap-h6-medium);  /* Отступ сверху у заголовка h6. По модам масштаба: small → typography/line-height-compact/400, medium → typography/line-height-compact/600, large → typography/line-height-compact/700. Вертикальный ритм текста задаётся здесь, а не в блоке. */
-  /* Системный стек шрифтов для основного текста интерфейса. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
-  --awds-font-family-system: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Системный стек шрифтов для основного текста интерфейса. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
-  /* Системный стек шрифтов для заголовков. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
-  --awds-font-family-heading: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Системный стек шрифтов для заголовков. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
+  /* Основной текст интерфейса: Onest, дальше системный стек. Onest не системный — если сайт не подключил вебшрифт, текст упадёт на system-ui, и это будет выглядеть как «шрифт не поменялся». */
+  --awds-font-family-system: Onest, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Основной текст интерфейса: Onest, дальше системный стек. Onest не системный — если сайт не подключил вебшрифт, текст упадёт на system-ui, и это будет выглядеть как «шрифт не поменялся». */
+  /* Заголовки: Geologica, дальше системный стек. Geologica не системный — без подключённого вебшрифта заголовок отрисуется системным и от основного текста не отличится. */
+  --awds-font-family-heading: Geologica, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Заголовки: Geologica, дальше системный стек. Geologica не системный — без подключённого вебшрифта заголовок отрисуется системным и от основного текста не отличится. */
   /* Системный стек шрифтов для моноширинного текста и кода. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
   --awds-font-family-code: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;  /* Системный стек шрифтов для моноширинного текста и кода. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
   /* Начертание light: 300. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */

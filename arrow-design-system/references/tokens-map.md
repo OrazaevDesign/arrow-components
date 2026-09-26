@@ -19,10 +19,10 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 
 | Коллекция | Токенов | Моды | Группы внутри | Пример имени |
 | --- | --- | --- | --- | --- |
-| **state** | 752 | — | list (144), form-control (120), button (105), badge (68), check-radio (27), cell (24), range (23), tab (21), … +32 | `--awds-state-opacity-chevron-shrink-rest` |
+| **state** | 752 | — | list (144), form-control (120), button (105), badge (68), check-radio (27), cell (24), range (23), tab (21), … +32 | `--awds-state-accordion-collapsed-bg-rest` |
 | **roles** | 296 | light · dark | surface (34), primary (28), secondary (28), tertiary (28), accent (28), addition (28), info (28), success (28), … +3 | `--primary-core-light` |
 | **typography** | 228 | desktop · tablet · mobile | font-size (57), line-height (57), line-height-compact (57), letter-spacing (57) | `--awds-typography-font-size-50-desktop` |
-| **size** | 215 | — | rectangle (98), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +1 | `--awds-size-rectangle-50-padding` |
+| **size** | 217 | — | rectangle (98), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +2 | `--awds-size-rectangle-50-padding` |
 | **wysiwyg** | 138 | medium · small · large | font-size (36), line-height (36), letter-spacing (36), gap (30) | `--awds-wysiwyg-font-size-h1-medium` |
 | **rounded** | 72 | smooth · rounded · none | border-radius (36), outline (36) | `--awds-rounded-border-radius-50-smooth` |
 | **shadow** | 60 | elevation-1 · elevation-2 · elevation-3 · elevation-4 | shadow1 (20), shadow2 (20), shadow3 (20) | `--awds-shadow-shadow1-color-elevation-1` |
@@ -34,7 +34,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **zindex** | 8 | — | dropdown (1), sticky (1), fixed (1), backdrop (1), offcanvas (1), modal (1), popover (1), tooltip (1) | `--awds-zindex-dropdown` |
 | **font** | 8 | — | weight (5), family (3) | `--awds-font-family-system` |
 
-Всего 1930 токенов в 14 коллекциях.
+Всего 1932 токенов в 14 коллекциях.
 
 ## Смысл групп
 
@@ -51,7 +51,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `control` | `font-size` | Кегль текста контрола |
 | `control` | `letter-spacing` | Межбуквенный интервал контрола |
 | `control` | `line-height` | Интерлиньяж контрола |
-| `font` | `family` | Системный стек шрифтов для заголовков. |
+| `font` | `family` | Заголовки: Geologica |
 | `font` | `weight` | Начертание medium |
 | `layout` | `card` | Минимальная ширина баннера в половину ряда (два в ряд). |
 | `layout` | `section` | Боковое поле колонки |
