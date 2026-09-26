@@ -49,6 +49,9 @@
   /* Хайрлайн-обводка хвоста = кольцевой слой тени панели (чёрный 3%), чтобы контур
      хвоста точно совпал с обводкой панели на любой теме. */
   --awds-pop-hairline: rgb(var(--extended-shadow-3));   /* #cell popover/hairline */
+  /* Толщина хайрлайна — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-pop-hairline-width: var(--awds-space-px);   /* #cell outline/offset */
   --awds-pop-rounded: var(--awds-rounded-border-radius-600);   /* 10px Smooth */
   --awds-pop-tail:    var(--awds-space-2);   /* 8px — сторона квадрата хвоста */
 
@@ -119,8 +122,8 @@
   bottom: calc(-0.5 * var(--awds-pop-tail));
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-right:  1px solid var(--awds-pop-hairline);
-  border-bottom: 1px solid var(--awds-pop-hairline);
+  border-right:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
 
 /* Bottom: хвост сверху, смотрит вверх */
@@ -129,8 +132,8 @@
   bottom: auto;
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-top:  1px solid var(--awds-pop-hairline);
-  border-left: 1px solid var(--awds-pop-hairline);
+  border-top:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-left: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
 
 /* Left: хвост справа, смотрит вправо */
@@ -138,8 +141,8 @@
   right: calc(-0.5 * var(--awds-pop-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-top:   1px solid var(--awds-pop-hairline);
-  border-right: 1px solid var(--awds-pop-hairline);
+  border-top:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-right: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
 
 /* Right: хвост слева, смотрит влево */
@@ -147,6 +150,6 @@
   left: calc(-0.5 * var(--awds-pop-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-bottom: 1px solid var(--awds-pop-hairline);
-  border-left:   1px solid var(--awds-pop-hairline);
+  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-left:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
