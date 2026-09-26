@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:7563f9cc7814e2b0f2de68f3742019907b3379d1a25ca4794f122a5deea0ab54",
+  "snapshot_hash": "sha256:571be6ab9eabd5b6c29b76894fc63a9baeb275edc63f48cb7c786c9dc4f617e2",
   "size": {
     "rectangle": {
       "50": {
@@ -342,19 +342,16 @@
           "bg": "rgb(var(--primary-core))",
           "chroma": "rgb(var(--primary-chroma))",
           "border": "rgb(var(--primary-core))",
-          "group-border": "rgb(var(--primary-chroma))",
           "color": "rgb(var(--primary-on))"
         },
         "secondary": {
           "bg": "rgb(var(--secondary-core))",
           "chroma": "rgb(var(--secondary-chroma))",
           "border": "rgb(var(--secondary-core))",
-          "group-color": "rgb(var(--secondary-on))",
           "color": "rgb(var(--secondary-on))"
         },
         "ghost": {
           "color": "rgb(var(--surface-on-high))",
-          "group-color": "rgb(var(--surface-on-high))",
           "bg": "rgb(var(--extended-transparent))",
           "chroma": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
@@ -363,21 +360,15 @@
           "bg": "rgb(var(--addition-core))",
           "chroma": "rgb(var(--addition-chroma))",
           "border": "rgb(var(--addition-core))",
-          "group-border": "rgb(var(--addition-dim))",
-          "group-color": "rgb(var(--addition-on))",
           "color": "rgb(var(--addition-on))"
         },
         "tertiary": {
           "bg": "rgb(var(--tertiary-core))",
-          "chroma": "rgb(var(--tertiary-chroma))",
           "border": "rgb(var(--tertiary-core))",
-          "group-border": "rgb(var(--tertiary-core))",
-          "group-color": "rgb(var(--tertiary-on))",
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
           "chroma": "rgb(var(--surface-on-high))",
-          "group-color": "rgb(var(--surface-bright))",
           "bg": "rgb(var(--surface-on-highest))",
           "border": "rgb(var(--surface-on-highest))",
           "color": "rgb(var(--surface-bright))"
@@ -386,22 +377,17 @@
           "bg": "rgb(var(--surface-bright))",
           "chroma": "rgb(var(--surface-bright))",
           "color": "rgb(var(--surface-on-high))",
-          "group-border": "rgb(var(--surface-bright))",
-          "group-color": "rgb(var(--surface-on-high))",
           "border": "rgb(var(--surface-dim))"
         },
         "pills": {
           "bg": "rgb(var(--secondary-core))",
-          "chroma": "rgb(var(--secondary-chroma))",
           "border": "rgb(var(--secondary-core))",
-          "color": "rgb(var(--secondary-on))",
-          "group-color": "rgb(var(--secondary-on))"
+          "color": "rgb(var(--secondary-on))"
         }
       },
       "form-control": {
         "default": {
           "bg": "rgb(var(--secondary-container-core))",
-          "chroma": "rgb(var(--secondary-container-chroma))",
           "dim": "rgb(var(--secondary-container-dim))",
           "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
@@ -409,8 +395,6 @@
           "chevron": "rgb(var(--secondary-container-on-high))"
         },
         "light": {
-          "chroma": "rgb(var(--surface-bright))",
-          "dim": "rgb(var(--surface-surface))",
           "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "placeholder": "rgb(var(--secondary-container-on-high))",
@@ -420,8 +404,6 @@
         },
         "success": {
           "bg": "rgb(var(--success-container-core))",
-          "chroma": "rgb(var(--success-container-chroma))",
-          "dim": "rgb(var(--success-container-dim))",
           "border": "rgb(var(--success-container-on-low))",
           "color": "rgb(var(--success-container-on-highest))",
           "placeholder": "rgb(var(--success-container-on-high))",
@@ -430,8 +412,6 @@
         },
         "error": {
           "bg": "rgb(var(--error-container-core))",
-          "chroma": "rgb(var(--error-container-chroma))",
-          "dim": "rgb(var(--error-container-dim))",
           "border": "rgb(var(--error-container-on-low))",
           "color": "rgb(var(--error-container-on-highest))",
           "placeholder": "rgb(var(--error-container-on-high))",
@@ -446,8 +426,6 @@
         },
         "autofill": {
           "bg": "rgb(var(--tertiary-container-core))",
-          "chroma": "rgb(var(--tertiary-container-chroma))",
-          "dim": "rgb(var(--tertiary-container-dim))",
           "border": "rgb(var(--tertiary-container-on-low))",
           "color": "rgb(var(--tertiary-container-on-highest))",
           "placeholder": "rgb(var(--tertiary-container-on-high))",
@@ -456,7 +434,6 @@
         },
         "secondary": {
           "bg": "rgb(var(--secondary-core))",
-          "dim": "rgb(var(--secondary-dim))",
           "border": "rgb(var(--secondary-core))",
           "chroma": "rgb(var(--secondary-chroma))",
           "color": "rgb(var(--secondary-on))",
@@ -484,16 +461,13 @@
       },
       "range": {
         "bg": "rgb(var(--primary-core))",
-        "chroma": "rgb(var(--primary-chroma))",
         "default": {
           "bg": "rgb(var(--primary-core))",
-          "chroma": "rgb(var(--primary-chroma))",
           "border": "rgb(var(--primary-core))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-dim))",
-          "chroma": "rgb(var(--surface-bright))"
+          "border": "rgb(var(--secondary-container-dim))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
@@ -509,7 +483,6 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "placeholder": "rgb(var(--secondary-container-on))",
           "description": "rgb(var(--secondary-container-on))",
           "chevron": "rgb(var(--surface-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
@@ -532,26 +505,20 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "placeholder": "rgb(var(--secondary-container-on))",
-          "description": "rgb(var(--secondary-container-on))",
-          "chevron": "rgb(var(--secondary-container-on-highest))"
+          "description": "rgb(var(--secondary-container-on))"
         },
         "indeterminate-variation": {
           "bg": "rgb(var(--surface-bright))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "placeholder": "rgb(var(--secondary-container-on))",
           "description": "rgb(var(--secondary-container-on))",
-          "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-tabbar": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
           "description": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
         },
         "selected-tabbar": {
@@ -565,9 +532,7 @@
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
           "description": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
         },
         "selected-menu": {
@@ -617,13 +582,11 @@
       "variation": {
         "unselected": {
           "bg": "rgb(var(--secondary-container-core))",
-          "chroma": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-dim))",
           "color": "rgb(var(--secondary-container-on-high))"
         },
         "indeterminate": {
           "bg": "rgb(var(--surface-bright))",
-          "chroma": "rgb(var(--surface-bright))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on))"
         },
@@ -757,13 +720,13 @@
       "overhung": {
         "primary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on))",
+          "color": "rgb(var(--surface-on-high))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         },
         "secondary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on))",
+          "color": "rgb(var(--surface-on-high))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         }
@@ -839,7 +802,6 @@
       },
       "modal": {
         "bg": "rgb(var(--surface-bright))",
-        "border": "rgb(var(--surface-on-lowest))",
         "backdrop": "rgb(var(--surface-on-highest))",
         "color": "rgb(var(--surface-on-highest))"
       },
@@ -858,8 +820,6 @@
         },
         "alert": {
           "bg": "rgb(var(--error-core))",
-          "chroma": "rgb(var(--error-chroma))",
-          "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
         },
         "normal": {
@@ -1028,8 +988,7 @@
         },
         "file-error": {
           "color": "rgb(var(--error-core))",
-          "description": "rgb(var(--error-core))",
-          "icon": "rgb(var(--error-core))"
+          "description": "rgb(var(--error-core))"
         }
       },
       "datepicker": {
@@ -1078,19 +1037,15 @@
           "bg": "rgb(var(--primary-dim))",
           "chroma": "rgb(var(--primary-chroma))",
           "border": "rgb(var(--primary-dim))",
-          "group-border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-on))"
         },
         "secondary": {
           "bg": "rgb(var(--secondary-dim))",
-          "chroma": "rgb(var(--secondary-chroma))",
           "border": "rgb(var(--secondary-dim))",
-          "group-color": "rgb(var(--secondary-on-dim))",
           "color": "rgb(var(--secondary-on))"
         },
         "ghost": {
           "color": "rgb(var(--surface-on-highest))",
-          "group-color": "rgb(var(--surface-on-highest))",
           "bg": "rgb(var(--extended-transparent))",
           "chroma": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
@@ -1099,100 +1054,67 @@
           "bg": "rgb(var(--addition-dim))",
           "chroma": "rgb(var(--addition-chroma))",
           "border": "rgb(var(--addition-dim))",
-          "group-border": "rgb(var(--addition-dim))",
-          "group-color": "rgb(var(--addition-on-dim))",
           "color": "rgb(var(--addition-on))"
         },
         "tertiary": {
           "bg": "rgb(var(--tertiary-dim))",
-          "chroma": "rgb(var(--tertiary-chroma))",
           "border": "rgb(var(--tertiary-dim))",
-          "group-border": "rgb(var(--tertiary-dim))",
-          "group-color": "rgb(var(--tertiary-on-dim))",
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
           "chroma": "rgb(var(--surface-on-highest))",
-          "group-color": "rgb(var(--surface-surface))",
           "bg": "rgb(var(--surface-on-highest))",
           "border": "rgb(var(--surface-on-highest))",
           "color": "rgb(var(--surface-bright))"
         },
         "clean": {
           "bg": "rgb(var(--surface-surface))",
-          "chroma": "rgb(var(--surface-surface))",
           "color": "rgb(var(--surface-on-highest))",
-          "group-border": "rgb(var(--surface-surface))",
-          "group-color": "rgb(var(--surface-on-highest))",
           "border": "rgb(var(--surface-dim))"
         },
         "pills": {
           "bg": "rgb(var(--secondary-dim))",
-          "chroma": "rgb(var(--secondary-chroma))",
           "border": "rgb(var(--secondary-dim))",
-          "color": "rgb(var(--accent-core))",
-          "group-color": "rgb(var(--secondary-on-dim))"
+          "color": "rgb(var(--accent-core))"
         }
       },
       "form-control": {
         "default": {
           "bg": "rgb(var(--secondary-container-core))",
-          "chroma": "rgb(var(--secondary-container-chroma))",
-          "dim": "rgb(var(--secondary-container-dim))",
           "border": "rgb(var(--secondary-container-on))",
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-high))"
+          "placeholder": "rgb(var(--secondary-container-on-high))"
         },
         "light": {
-          "chroma": "rgb(var(--surface-bright))",
-          "dim": "rgb(var(--surface-surface))",
           "border": "rgb(var(--secondary-container-on))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "placeholder": "rgb(var(--secondary-container-on-high))",
-          "icon": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-high))",
           "bg": "rgb(var(--surface-bright))"
         },
         "success": {
           "bg": "rgb(var(--success-container-core))",
-          "chroma": "rgb(var(--success-container-chroma))",
-          "dim": "rgb(var(--success-container-dim))",
           "border": "rgb(var(--success-container-on))",
           "color": "rgb(var(--success-container-on-highest))",
-          "placeholder": "rgb(var(--success-container-on-high))",
-          "icon": "rgb(var(--success-container-on-high))",
-          "chevron": "rgb(var(--success-container-on-high))"
+          "placeholder": "rgb(var(--success-container-on-high))"
         },
         "error": {
           "bg": "rgb(var(--error-container-core))",
-          "chroma": "rgb(var(--error-container-chroma))",
-          "dim": "rgb(var(--error-container-dim))",
           "border": "rgb(var(--error-container-on))",
           "color": "rgb(var(--error-container-on-highest))",
-          "placeholder": "rgb(var(--error-container-on-high))",
-          "icon": "rgb(var(--error-container-on-high))",
-          "chevron": "rgb(var(--error-container-on-high))"
+          "placeholder": "rgb(var(--error-container-on-high))"
         },
         "ghost": {
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
-          "icon": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-high))"
+          "placeholder": "rgb(var(--secondary-container-on-high))"
         },
         "autofill": {
           "bg": "rgb(var(--tertiary-container-core))",
-          "chroma": "rgb(var(--tertiary-container-chroma))",
-          "dim": "rgb(var(--tertiary-container-dim))",
           "border": "rgb(var(--tertiary-container-on))",
           "color": "rgb(var(--tertiary-container-on-highest))",
-          "placeholder": "rgb(var(--tertiary-container-on-high))",
-          "icon": "rgb(var(--tertiary-container-on-high))",
-          "chevron": "rgb(var(--tertiary-container-on-high))"
+          "placeholder": "rgb(var(--tertiary-container-on-high))"
         },
         "secondary": {
           "bg": "rgb(var(--secondary-dim))",
-          "dim": "rgb(var(--secondary-dim))",
           "border": "rgb(var(--secondary-dim))",
           "chroma": "rgb(var(--secondary-chroma))",
           "color": "rgb(var(--secondary-on))",
@@ -1220,16 +1142,13 @@
       },
       "range": {
         "bg": "rgb(var(--primary-dim))",
-        "chroma": "rgb(var(--primary-chroma))",
         "default": {
           "bg": "rgb(var(--primary-dim))",
-          "chroma": "rgb(var(--primary-chroma))",
           "border": "rgb(var(--primary-dim))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-dim))",
-          "border": "rgb(var(--secondary-container-dim))",
-          "chroma": "rgb(var(--surface-bright))"
+          "border": "rgb(var(--secondary-container-dim))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
@@ -1245,7 +1164,6 @@
           "bg": "rgb(var(--secondary-container-dim))",
           "border": "rgb(var(--secondary-container-dim))",
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
           "description": "rgb(var(--secondary-container-on-high))",
           "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
@@ -1268,26 +1186,20 @@
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on))",
           "color": "rgb(var(--primary-container-on-highest))",
-          "placeholder": "rgb(var(--primary-container-on-high))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-highest))"
+          "description": "rgb(var(--primary-container-on-high))"
         },
         "indeterminate-variation": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on))",
           "color": "rgb(var(--primary-container-on-highest))",
-          "placeholder": "rgb(var(--primary-container-on-high))",
           "description": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-tabbar": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--accent-core))",
-          "placeholder": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
-          "chevron": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
         "selected-tabbar": {
@@ -1301,9 +1213,7 @@
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))",
           "color": "rgb(var(--accent-core))",
-          "placeholder": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
-          "chevron": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
         "selected-menu": {
@@ -1353,13 +1263,11 @@
       "variation": {
         "unselected": {
           "bg": "rgb(var(--primary-container-core))",
-          "chroma": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-container-on-highest))"
         },
         "indeterminate": {
           "bg": "rgb(var(--primary-container-core))",
-          "chroma": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-container-on-high))"
         },
@@ -1465,7 +1373,6 @@
       },
       "modal": {
         "bg": "rgb(var(--surface-bright))",
-        "border": "rgb(var(--surface-on-lowest))",
         "backdrop": "rgb(var(--surface-on-highest))",
         "color": "rgb(var(--surface-on-highest))"
       },
@@ -1484,8 +1391,6 @@
         },
         "alert": {
           "bg": "rgb(var(--error-core))",
-          "chroma": "rgb(var(--error-chroma))",
-          "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
         },
         "normal": {
@@ -1654,8 +1559,7 @@
         },
         "file-error": {
           "color": "rgb(var(--error-core))",
-          "description": "rgb(var(--error-core))",
-          "icon": "rgb(var(--error-core))"
+          "description": "rgb(var(--error-core))"
         }
       },
       "datepicker": {
@@ -1704,19 +1608,15 @@
           "bg": "rgb(var(--primary-core))",
           "chroma": "rgb(var(--primary-chroma))",
           "border": "rgb(var(--primary-core))",
-          "group-border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-on))"
         },
         "secondary": {
           "bg": "rgb(var(--secondary-core))",
-          "chroma": "rgb(var(--secondary-chroma))",
           "border": "rgb(var(--secondary-core))",
-          "group-color": "rgb(var(--secondary-on))",
           "color": "rgb(var(--secondary-on))"
         },
         "ghost": {
           "color": "rgb(var(--surface-on-highest))",
-          "group-color": "rgb(var(--surface-on-highest))",
           "bg": "rgb(var(--extended-transparent))",
           "chroma": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
@@ -1725,54 +1625,39 @@
           "bg": "rgb(var(--addition-core))",
           "chroma": "rgb(var(--addition-chroma))",
           "border": "rgb(var(--addition-core))",
-          "group-border": "rgb(var(--addition-core))",
-          "group-color": "rgb(var(--addition-on))",
           "color": "rgb(var(--addition-on))"
         },
         "tertiary": {
           "bg": "rgb(var(--tertiary-core))",
-          "chroma": "rgb(var(--tertiary-chroma))",
           "border": "rgb(var(--tertiary-core))",
-          "group-border": "rgb(var(--tertiary-core))",
-          "group-color": "rgb(var(--tertiary-on))",
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
           "chroma": "rgb(var(--surface-on-high))",
-          "group-color": "rgb(var(--surface-bright))",
           "bg": "rgb(var(--surface-on-highest))",
           "border": "rgb(var(--surface-on-highest))",
           "color": "rgb(var(--surface-bright))"
         },
         "clean": {
           "bg": "rgb(var(--surface-bright))",
-          "chroma": "rgb(var(--surface-bright))",
           "color": "rgb(var(--surface-on-high))",
-          "group-border": "rgb(var(--surface-bright))",
-          "group-color": "rgb(var(--surface-on-high))",
           "border": "rgb(var(--surface-dim))"
         },
         "pills": {
           "bg": "rgb(var(--secondary-core))",
-          "chroma": "rgb(var(--secondary-chroma))",
           "border": "rgb(var(--secondary-core))",
-          "color": "rgb(var(--secondary-on))",
-          "group-color": "rgb(var(--secondary-on))"
+          "color": "rgb(var(--secondary-on))"
         }
       },
       "form-control": {
         "default": {
           "bg": "rgb(var(--primary-container-base))",
-          "chroma": "rgb(var(--primary-container-chroma))",
-          "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
           "chevron": "rgb(var(--primary-container-on-high))"
         },
         "light": {
-          "chroma": "rgb(var(--primary-container-chroma))",
-          "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
@@ -1782,8 +1667,6 @@
         },
         "success": {
           "bg": "rgb(var(--primary-container-base))",
-          "chroma": "rgb(var(--primary-container-chroma))",
-          "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
@@ -1792,8 +1675,6 @@
         },
         "error": {
           "bg": "rgb(var(--primary-container-base))",
-          "chroma": "rgb(var(--primary-container-chroma))",
-          "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
@@ -1808,8 +1689,6 @@
         },
         "autofill": {
           "bg": "rgb(var(--primary-container-base))",
-          "chroma": "rgb(var(--primary-container-chroma))",
-          "dim": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
@@ -1818,7 +1697,6 @@
         },
         "secondary": {
           "bg": "rgb(var(--surface-bright))",
-          "dim": "rgb(var(--secondary-core))",
           "border": "rgb(var(--secondary-core))",
           "chroma": "rgb(var(--secondary-chroma))",
           "color": "rgb(var(--secondary-on))",
@@ -1846,16 +1724,13 @@
       },
       "range": {
         "bg": "rgb(var(--primary-core))",
-        "chroma": "rgb(var(--primary-chroma))",
         "default": {
           "bg": "rgb(var(--primary-core))",
-          "chroma": "rgb(var(--primary-chroma))",
           "border": "rgb(var(--primary-core))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-dim))",
-          "chroma": "rgb(var(--surface-bright))"
+          "border": "rgb(var(--secondary-container-dim))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
@@ -1871,7 +1746,6 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
           "description": "rgb(var(--secondary-container-on-high))",
           "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
@@ -1893,28 +1767,17 @@
         "unselected-variation": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-on-lowest))",
-          "color": "rgb(var(--secondary-container-on-high))",
-          "placeholder": "rgb(var(--secondary-container-on))",
-          "description": "rgb(var(--secondary-container-on))",
-          "chevron": "rgb(var(--secondary-container-on-highest))"
+          "description": "rgb(var(--secondary-container-on))"
         },
         "indeterminate-variation": {
           "bg": "rgb(var(--surface-bright))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "placeholder": "rgb(var(--secondary-container-on))",
-          "description": "rgb(var(--secondary-container-on))",
-          "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-tabbar": {
           "bg": "rgb(var(--extended-transparent))",
-          "border": "rgb(var(--extended-transparent))",
-          "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
-          "description": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-highest))",
-          "icon-check": "rgb(var(--primary-core))"
+          "border": "rgb(var(--extended-transparent))"
         },
         "selected-tabbar": {
           "icon-check": "rgb(var(--accent-core))",
@@ -1925,12 +1788,7 @@
         },
         "unselected-menu": {
           "bg": "rgb(var(--extended-transparent))",
-          "border": "rgb(var(--extended-transparent))",
-          "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
-          "description": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-highest))",
-          "icon-check": "rgb(var(--primary-core))"
+          "border": "rgb(var(--extended-transparent))"
         },
         "selected-menu": {
           "bg": "rgb(var(--secondary-container-core))",
@@ -1979,13 +1837,11 @@
       "variation": {
         "unselected": {
           "bg": "rgb(var(--secondary-container-core))",
-          "chroma": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-dim))",
           "color": "rgb(var(--secondary-container-on-high))"
         },
         "indeterminate": {
           "bg": "rgb(var(--surface-bright))",
-          "chroma": "rgb(var(--surface-bright))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on))"
         },
@@ -2009,13 +1865,13 @@
       "overhung": {
         "primary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on))",
+          "color": "rgb(var(--surface-on-high))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         },
         "secondary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on))",
+          "color": "rgb(var(--surface-on-high))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         }
@@ -2091,7 +1947,6 @@
       },
       "modal": {
         "bg": "rgb(var(--surface-bright))",
-        "border": "rgb(var(--surface-on-lowest))",
         "backdrop": "rgb(var(--surface-on-highest))",
         "color": "rgb(var(--surface-on-highest))"
       },
@@ -2110,8 +1965,6 @@
         },
         "alert": {
           "bg": "rgb(var(--error-core))",
-          "chroma": "rgb(var(--error-chroma))",
-          "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
         },
         "normal": {
@@ -2271,8 +2124,7 @@
         },
         "file-error": {
           "color": "rgb(var(--error-core))",
-          "description": "rgb(var(--error-core))",
-          "icon": "rgb(var(--error-core))"
+          "description": "rgb(var(--error-core))"
         }
       },
       "datepicker": {
@@ -2321,19 +2173,15 @@
           "bg": "rgb(var(--primary-core))",
           "chroma": "rgb(var(--primary-core))",
           "border": "rgb(var(--primary-core))",
-          "group-border": "rgb(var(--primary-dim))",
           "color": "rgb(var(--primary-on))"
         },
         "secondary": {
           "bg": "rgb(var(--secondary-core))",
-          "chroma": "rgb(var(--secondary-core))",
           "border": "rgb(var(--secondary-core))",
-          "group-color": "rgb(var(--secondary-on))",
           "color": "rgb(var(--secondary-on))"
         },
         "ghost": {
           "color": "rgb(var(--surface-on-highest))",
-          "group-color": "rgb(var(--surface-on-highest))",
           "bg": "rgb(var(--extended-transparent))",
           "chroma": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
@@ -2342,96 +2190,64 @@
           "bg": "rgb(var(--addition-core))",
           "chroma": "rgb(var(--addition-core))",
           "border": "rgb(var(--addition-core))",
-          "group-border": "rgb(var(--addition-core))",
-          "group-color": "rgb(var(--addition-on))",
           "color": "rgb(var(--addition-on))"
         },
         "tertiary": {
           "bg": "rgb(var(--tertiary-core))",
-          "chroma": "rgb(var(--tertiary-core))",
           "border": "rgb(var(--tertiary-core))",
-          "group-border": "rgb(var(--tertiary-core))",
-          "group-color": "rgb(var(--tertiary-on-dim))",
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
           "chroma": "rgb(var(--surface-on-highest))",
-          "group-color": "rgb(var(--surface-bright))",
           "bg": "rgb(var(--surface-on-highest))",
           "border": "rgb(var(--surface-on-highest))",
           "color": "rgb(var(--surface-bright))"
         },
         "clean": {
           "bg": "rgb(var(--surface-surface))",
-          "chroma": "rgb(var(--surface-surface))",
           "color": "rgb(var(--surface-on-highest))",
-          "group-border": "rgb(var(--surface-surface))",
-          "group-color": "rgb(var(--surface-on-highest))",
           "border": "rgb(var(--surface-dim))"
         },
         "pills": {
           "bg": "rgb(var(--secondary-core))",
-          "chroma": "rgb(var(--secondary-core))",
           "border": "rgb(var(--secondary-core))",
-          "color": "rgb(var(--secondary-on))",
-          "group-color": "rgb(var(--secondary-on))"
+          "color": "rgb(var(--secondary-on))"
         }
       },
       "form-control": {
         "default": {
           "bg": "rgb(var(--secondary-container-core))",
-          "chroma": "rgb(var(--secondary-container-chroma))",
-          "dim": "rgb(var(--secondary-container-dim))",
           "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-high))"
+          "placeholder": "rgb(var(--secondary-container-on-high))"
         },
         "light": {
-          "chroma": "rgb(var(--surface-bright))",
-          "dim": "rgb(var(--surface-surface))",
           "border": "rgb(var(--secondary-container-on-low))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "placeholder": "rgb(var(--secondary-container-on-high))",
-          "icon": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-high))",
           "bg": "rgb(var(--surface-bright))"
         },
         "success": {
           "bg": "rgb(var(--success-container-core))",
-          "chroma": "rgb(var(--success-container-chroma))",
-          "dim": "rgb(var(--success-container-dim))",
           "border": "rgb(var(--success-container-on-low))",
           "color": "rgb(var(--success-container-on-highest))",
-          "placeholder": "rgb(var(--success-container-on-high))",
-          "icon": "rgb(var(--success-container-on-high))",
-          "chevron": "rgb(var(--success-container-on-high))"
+          "placeholder": "rgb(var(--success-container-on-high))"
         },
         "error": {
           "bg": "rgb(var(--error-container-core))",
-          "chroma": "rgb(var(--error-container-chroma))",
-          "dim": "rgb(var(--error-container-dim))",
           "border": "rgb(var(--error-container-on-low))",
           "color": "rgb(var(--error-container-on-highest))",
-          "placeholder": "rgb(var(--error-container-on-high))",
-          "icon": "rgb(var(--error-container-on-high))",
-          "chevron": "rgb(var(--error-container-on-high))"
+          "placeholder": "rgb(var(--error-container-on-high))"
         },
         "ghost": {
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
-          "icon": "rgb(var(--secondary-container-on-high))",
-          "chevron": "rgb(var(--secondary-container-on-high))"
+          "placeholder": "rgb(var(--secondary-container-on-high))"
         },
         "autofill": {
           "bg": "rgb(var(--tertiary-container-core))",
-          "chroma": "rgb(var(--tertiary-container-chroma))",
-          "dim": "rgb(var(--tertiary-container-dim))",
           "border": "rgb(var(--tertiary-container-on-low))",
           "color": "rgb(var(--tertiary-container-on-highest))",
-          "placeholder": "rgb(var(--tertiary-container-on-high))",
-          "icon": "rgb(var(--tertiary-container-on-high))",
-          "chevron": "rgb(var(--tertiary-container-on-high))"
+          "placeholder": "rgb(var(--tertiary-container-on-high))"
         },
         "secondary": {
           "bg": "rgb(var(--secondary-core))",
@@ -2463,16 +2279,13 @@
       },
       "range": {
         "bg": "rgb(var(--primary-core))",
-        "chroma": "rgb(var(--primary-core))",
         "default": {
           "bg": "rgb(var(--primary-core))",
-          "chroma": "rgb(var(--primary-core))",
           "border": "rgb(var(--primary-core))"
         },
         "light": {
           "bg": "rgb(var(--secondary-container-dim))",
-          "border": "rgb(var(--secondary-container-dim))",
-          "chroma": "rgb(var(--surface-bright))"
+          "border": "rgb(var(--secondary-container-dim))"
         },
         "container": "rgb(var(--surface-container-container))"
       },
@@ -2488,7 +2301,6 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
-          "placeholder": "rgb(var(--secondary-container-on-high))",
           "description": "rgb(var(--secondary-container-on-high))",
           "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
@@ -2511,26 +2323,20 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "placeholder": "rgb(var(--secondary-container-on))",
-          "description": "rgb(var(--secondary-container-on))",
-          "chevron": "rgb(var(--secondary-container-on-highest))"
+          "description": "rgb(var(--secondary-container-on))"
         },
         "indeterminate-variation": {
           "bg": "rgb(var(--surface-bright))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "placeholder": "rgb(var(--secondary-container-on))",
           "description": "rgb(var(--secondary-container-on))",
-          "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "unselected-tabbar": {
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))",
           "color": "rgb(var(--accent-core))",
-          "placeholder": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
-          "chevron": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
         "selected-tabbar": {
@@ -2544,9 +2350,7 @@
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))",
           "color": "rgb(var(--accent-core))",
-          "placeholder": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
-          "chevron": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
         "selected-menu": {
@@ -2596,13 +2400,11 @@
       "variation": {
         "unselected": {
           "bg": "rgb(var(--secondary-container-core))",
-          "chroma": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-dim))",
           "color": "rgb(var(--secondary-container-on-high))"
         },
         "indeterminate": {
           "bg": "rgb(var(--surface-bright))",
-          "chroma": "rgb(var(--surface-bright))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on))"
         },
@@ -2626,13 +2428,13 @@
       "overhung": {
         "primary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on))",
+          "color": "rgb(var(--surface-on-high))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         },
         "secondary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on))",
+          "color": "rgb(var(--surface-on-high))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         }
@@ -2708,7 +2510,6 @@
       },
       "modal": {
         "bg": "rgb(var(--surface-bright))",
-        "border": "rgb(var(--surface-on-lowest))",
         "backdrop": "rgb(var(--surface-on-highest))",
         "color": "rgb(var(--surface-on-highest))"
       },
@@ -2727,8 +2528,6 @@
         },
         "alert": {
           "bg": "rgb(var(--error-core))",
-          "chroma": "rgb(var(--error-chroma))",
-          "border": "rgb(var(--error-core))",
           "color": "rgb(var(--error-on))"
         },
         "normal": {
@@ -2888,8 +2687,7 @@
         },
         "file-error": {
           "color": "rgb(var(--error-core))",
-          "description": "rgb(var(--error-core))",
-          "icon": "rgb(var(--error-core))"
+          "description": "rgb(var(--error-core))"
         }
       },
       "datepicker": {
