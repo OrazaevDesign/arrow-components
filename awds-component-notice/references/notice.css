@@ -56,7 +56,10 @@
   border-radius: var(--awds-rounded-border-radius-full);     /* всегда скруглён в пилюлю/круг */
 
   background: linear-gradient(to right, var(--awds-notice-chroma, var(--awds-notice-bg)), var(--awds-notice-bg));
-  box-shadow: inset 0 0 0 1px var(--awds-notice-border);
+  /* Толщина обводки — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-notice-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-notice-border-width) var(--awds-notice-border);
   color: var(--awds-notice-color);
 
   font-family: var(--awds-font-family-system);
