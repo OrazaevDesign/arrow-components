@@ -84,12 +84,26 @@ description: Tooltip ArrowDS (.tooltip).
 1. Выбери: тон (`default`/`contrast`), ступень (`400`/`300`), сторону (`top`/`bottom`/`left`/`right`).
 2. Разметка — обёртка `.tooltip` + хвост `.tooltip__tail` + пузырь `.tooltip__bubble`:
    ```html
-   <span class="tooltip tooltip-default tooltip--400 tooltip--side-top">
+   <span class="tooltip tooltip-default tooltip--400 tooltip--side-top" role="tooltip" id="tip-delivery">
      <span class="tooltip__tail"></span>
      <span class="tooltip__bubble">Текст подсказки</span>
    </span>
    ```
    Tail должен идти ПЕРЕД bubble (пузырь рисуется поверх и перекрывает внутреннюю половину хвоста).
+
+   **`role="tooltip"` и `id` — часть разметки, а не необязательный совет.** Пузырь
+   описывает чужой элемент, и связь с ним существует только в паре `id` ↔
+   `aria-describedby` на триггере:
+
+   ```html
+   <button type="button" class="btn btn-secondary btn--400" aria-describedby="tip-delivery">Доставка</button>
+   ```
+
+   До 26.09.2026 требование стояло только в тексте, а сниппеты его не содержали:
+   собранная по сниппету подсказка была немой для скринридера, и ревью возвращало
+   правку тому, кто следовал документации. Пузырь без триггера (витрина, стенд
+   компонентов) несёт `role` и `id`, но `aria-describedby` ставить не на что —
+   это единственный случай, когда пары нет.
 3. Позиционирование рядом с якорем — на стороне потребителя: контейнер `position: relative`, тултип `position: absolute` со смещением по выбранной стороне (или через Popover API / floating-ui). Показ/скрытие — `hidden` / класс видимости по hover/focus триггера.
 4. Доступность: тултипу — `role="tooltip"` + `id`; триггеру — `aria-describedby="<id>"`. Появление по `:focus-visible`, не только hover.
 5. Подключи `references/tooltip.css`. Нужны `css-variables.css` сайта (роли `--surface-*`) и базовые токены DS (`--awds-space-*`, `--awds-rounded-*`, `--awds-shadow-elevation-3`, `--awds-control-*`, `--awds-font-*`).

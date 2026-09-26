@@ -345,7 +345,11 @@
     },
     "size": {
       "pattern": "input--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "upl__drop"
+      ],
+      "why_optional": "поле внутри загрузчика ступени не несёт: её задаёт сам uploader"
     },
     "native": {
       "tag": "input",

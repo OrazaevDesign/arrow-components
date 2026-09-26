@@ -306,7 +306,14 @@
     },
     "size": {
       "pattern": "btn--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "tab-group__track",
+        "btn-group",
+        "pgn__list",
+        "upl__drop"
+      ],
+      "why_optional": "ступень раздаёт мост родителя: tab-group, btn-group, pagination и uploader кормят вложенные кнопки своей ступенью"
     },
     "native": null,
     "children": [

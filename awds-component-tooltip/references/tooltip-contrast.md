@@ -9,7 +9,7 @@
 ## HTML
 
 ```html
-<span class="tooltip tooltip-contrast tooltip--400 tooltip--side-bottom">
+<span class="tooltip tooltip-contrast tooltip--400 tooltip--side-bottom" role="tooltip" id="tip-status">
   <span class="tooltip__tail"></span>
   <span class="tooltip__bubble">Текст подсказки</span>
 </span>

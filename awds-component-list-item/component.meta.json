@@ -380,7 +380,8 @@
         "button",
         "a",
         "li",
-        "div"
+        "div",
+        "option"
       ]
     },
     "variant": {
@@ -389,7 +390,11 @@
     },
     "size": {
       "pattern": "list-item--{size}",
-      "required": true
+      "required": true,
+      "optional_on_tags": [
+        "option"
+      ],
+      "why_optional": "у <option> своей ступени быть не может: её раздаёт select мостом"
     },
     "native": null,
     "children": [],

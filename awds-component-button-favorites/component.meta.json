@@ -224,7 +224,9 @@
         "attr": "aria-pressed"
       },
       {
-        "attr": "aria-label"
+        "attr": "aria-label",
+        "when": "btn--icon-only",
+        "why": "у варианта с подписью состояние называет сама подпись — скилл запрещает дублировать её в aria-label"
       }
     ],
     "container": null,

@@ -1,10 +1,10 @@
 {
   "component": "tooltip",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "contract_hash": "sha256:a6dba7ce8823a1741de866052b1a0fad4896955bd1b49b5daf5d46b2df004940",
-  "artifact_hash": "sha256:ea97eb86940d499c6dc8611b1042ab45be5ef5a1c8a94885d987251566973184",
+  "artifact_hash": "sha256:e25177ce1efd7dee280812d1ef55df6b47056542e82f02cb8810e1dfc6c743af",
   "visual_change": false,
-  "released_at": "2026-09-26T11:03:00.475Z",
+  "released_at": "2026-09-26T15:30:15.648Z",
   "own_values": [
     {
       "value": "250px",
@@ -178,7 +178,16 @@
         "class": "tooltip__tail"
       }
     ],
-    "attrs": [],
+    "attrs": [
+      {
+        "attr": "role=\"tooltip\"",
+        "why": "пузырь описывает чужой элемент; без роли скринридер читает его как обычный текст"
+      },
+      {
+        "attr": "id",
+        "why": "связь с триггером существует только в паре id ↔ aria-describedby"
+      }
+    ],
     "container": null,
     "note": "Ступень (400 база, 300 компактная) и сторона (tooltip--side-{side}) — модификаторы. Пузырь и хвост обязательны: хвост показывает, к чему относится подсказка."
   },

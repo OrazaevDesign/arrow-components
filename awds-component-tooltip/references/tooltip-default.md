@@ -7,7 +7,7 @@
 ## HTML
 
 ```html
-<span class="tooltip tooltip-default tooltip--400 tooltip--side-top">
+<span class="tooltip tooltip-default tooltip--400 tooltip--side-top" role="tooltip" id="tip-delivery">
   <span class="tooltip__tail"></span>
   <span class="tooltip__bubble">Текст подсказки</span>
 </span>
@@ -16,7 +16,7 @@
 Сторона: `tooltip--side-top` / `--side-bottom` / `--side-left` / `--side-right`. Ступень: `tooltip--400` (база) или `tooltip--300` (компактная).
 
 ```html
-<span class="tooltip tooltip-default tooltip--300 tooltip--side-left">
+<span class="tooltip tooltip-default tooltip--300 tooltip--side-left" role="tooltip" id="tip-info">
   <span class="tooltip__tail"></span>
   <span class="tooltip__bubble">Инфо</span>
 </span>

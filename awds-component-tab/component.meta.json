@@ -190,7 +190,11 @@
     },
     "size": {
       "pattern": "tab--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "tab-group__track"
+      ],
+      "why_optional": "ступень раздаёт мост tab-group — скилл группы прямо запрещает писать её вложенным"
     },
     "native": null,
     "children": [],
