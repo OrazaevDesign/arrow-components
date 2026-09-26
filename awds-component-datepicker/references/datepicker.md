@@ -48,7 +48,7 @@
   <div class="dpick__month">
     <div class="dpick__header">
       <button class="dpick__nav dpick__nav--prev" type="button" aria-label="Предыдущий год"></button>
-      <button class="dpick__title" type="button">2026 год</button>
+      <button class="dpick__title" type="button" aria-live="polite">2026 год</button>
       <button class="dpick__nav dpick__nav--next" type="button" aria-label="Следующий год"></button>
     </div>
     <div class="dpick__grid" role="grid" aria-label="Месяцы 2026 года">
@@ -83,6 +83,10 @@
 <span class="dpick__nav" aria-hidden="true"></span>
 ```
 
+Метки у распорки нет намеренно: `aria-hidden="true"` вынимает её из дерева
+доступности целиком, и `aria-label` на ней не озвучит ничего. Требование метки
+относится к **кнопке** листания, а не к классу `.dpick__nav`.
+
 ## Состояния ячейки
 
 | Класс | Что значит | Откуда цвет |
@@ -110,7 +114,14 @@
   проходит все 31 кнопку подряд, что для календаря долго.
 - Кольцо фокуса приходит слоем [awds-component-focus-selection](../awds-component-focus-selection/SKILL.md):
   компонент своих чисел не держит, `focus-selection.css` подключается рядом.
-- Заголовок с `aria-live="polite"` проговаривает смену месяца при листании.
+- **`aria-label` нужен кнопке листания**, а не всякому `.dpick__nav`: стрелка
+  нарисована маской и текста внутри не несёт. Пустая распорка в режиме периода
+  стоит под `aria-hidden="true"` — она вне дерева доступности, и метка ей не
+  нужна.
+- **`aria-live="polite"` стоит на `.dpick__title` во всех трёх видах.** Заголовок
+  меняется при каждом листании — в датах это месяц, в месяцах и годах год и
+  диапазон, — а меняется он без перевода фокуса, поэтому иначе смена проходит
+  молча.
 
 ## Что должен сделать потребитель
 

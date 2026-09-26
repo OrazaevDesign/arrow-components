@@ -49,6 +49,22 @@ description: Radio ArrowDS (.radio).
 
 Остальные варианты разметки (без подписи, disabled, `role="radiogroup"` вместо fieldset) — в [references/radio-default.md](references/radio-default.md).
 
+**Внутри подписи корень — `<span>`, а не `<label>`:**
+
+```html
+<label class="lbl lbl--400">
+  <span class="radio">
+    <input class="radio__input" type="radio" name="delivery" value="pickup">
+    <span class="radio__box">
+      <svg class="radio__dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
+    </span>
+  </span>
+  <span class="lbl__body"><span class="lbl__text">Самовывоз</span></span>
+</label>
+```
+
+Вложенные `<label>` невалидны: браузер разбирает такую пару непредсказуемо и клик по тексту перестаёт попадать в инпут, а внешняя обёртка нужна именно ради этого клика. Классы к тегу не привязаны, поэтому работает всё то же самое. Так радиокнопка стоит внутри [awds-component-label](../awds-component-label/SKILL.md) и [awds-component-formfield](../awds-component-formfield/SKILL.md); размерный класс там не нужен — ступень раздаёт подпись, а `name` и обёртка группы обязательны по-прежнему.
+
 ## Размерные модификаторы
 
 | Класс | Круг | Когда |

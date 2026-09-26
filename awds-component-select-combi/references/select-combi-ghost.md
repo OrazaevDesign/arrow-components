@@ -26,8 +26,12 @@
 <span class="scombi scombi-ghost scombi--300">
   <span class="scombi__body">
     <select class="scombi__field" id="qty">
-      <option value="1" selected>1 шт</option>
-      <option value="2">2 шт</option>
+      <option value="1" selected class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">1 шт</span></span>
+      </option>
+      <option value="2" class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">2 шт</span></span>
+      </option>
     </select>
     <label class="scombi__label" for="qty">Количество</label>
   </span>

@@ -1,10 +1,10 @@
 {
   "component": "button-menu",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "contract_hash": "sha256:88352d4eb8c0722178e0a80f6ff5d5d6660935ba8f2998721b73f155fd4eb80f",
-  "artifact_hash": "sha256:f253f35516bb4943a9d8a23b2d2482b1236fda1976c0d45f2ab5c17b97b17a33",
+  "artifact_hash": "sha256:f654590bef8a16dab7155cb7ef39ab9c10ed7b907851159490656c7e01e4df90",
   "visual_change": false,
-  "released_at": "2026-09-26T11:03:00.109Z",
+  "released_at": "2026-09-26T16:52:55.906Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -140,8 +140,7 @@
     "root": {
       "class": "btn-menu",
       "tags": [
-        "button",
-        "a"
+        "button"
       ]
     },
     "variant": {
@@ -150,20 +149,59 @@
     },
     "size": {
       "pattern": "btn-menu--{size}",
-      "required": true
+      "required": true,
+      "why": "скилл называет три класса обязательными (база, тон, ступень); база задефолчивает только размер шеврона, а таблица «ступень кнопки ↔ ступень эмблемы» без класса не имеет точки отсчёта"
     },
     "native": null,
     "children": [
-      "btn-menu__emblem",
-      "btn-menu__chevron"
+      {
+        "class": "btn-menu__emblem",
+        "required": true,
+        "why": "круг — не свой узел, а слот: без него кнопка теряет половину композита"
+      },
+      {
+        "class": "btn-menu__chevron",
+        "required": true,
+        "why": "шеврон — признак того, что кнопка раскрывает меню"
+      },
+      {
+        "class": "emb",
+        "required": true,
+        "within": "btn-menu__emblem",
+        "why": "в слоте обязан стоять инстанс awds-component-emblem, а не нарисованный заново круг"
+      },
+      {
+        "class": "btn-menu__badge",
+        "required": false,
+        "when_note": "только когда нужна точка-индикатор; в макете badge=false по умолчанию"
+      }
     ],
     "attrs": [
-      "aria-expanded",
-      "aria-haspopup",
-      "aria-label"
+      {
+        "attr": "type",
+        "tags": [
+          "button"
+        ],
+        "required": true,
+        "why": "без type нативная кнопка внутри формы отправляет её"
+      },
+      {
+        "attr": "aria-haspopup",
+        "required": true,
+        "why": "кнопка раскрывает меню — это её единственное назначение"
+      },
+      {
+        "attr": "aria-expanded",
+        "required": true,
+        "why": "тон .btn-menu-accent-selected отвечает за вид, атрибут — за смысл; меняются вместе"
+      },
+      {
+        "attr": "aria-label",
+        "why": "текста внутри кнопки нет: имя даёт только aria-label"
+      }
     ],
     "container": null,
-    "note": "Композит. Тон и ступень обязательны: в базе цветовых значений нет намеренно, подставленный дефолт скрыл бы пропуск класса. В .btn-menu__emblem обязателен инстанс awds-component-emblem со своим классом вида и ступени: content=avatar → emb-img / emb-initials / emb-placeholder, content=flag → emb-icon (языку без флага — emb-initials с кодом языка). Ступень эмблемы обязана соответствовать ступени кнопки: 400→emb--150, 300→emb--100, 200→emb--50. Точка опциональна: слот .btn-menu__badge внутри .btn-menu__emblem с инстансом awds-component-notice (notice notice-accent notice--100), слоту обязателен display:flex. Выбранность — тон .btn-menu-accent-selected вместе с aria-expanded."
+    "note": "Композит. Тон обязателен: цветовых значений в базе нет намеренно, подставленный дефолт скрыл бы пропуск класса и кнопка вышла бы прозрачной без ошибки. Ступень обязана стоять по скиллу («обязательны три класса»), хотя база и задефолчивает размер шеврона ступенью 400. В .btn-menu__emblem обязателен инстанс awds-component-emblem со своим классом вида: content=avatar → emb-img / emb-initials / emb-placeholder, content=flag → emb-icon (языку без флага — emb-initials с кодом языка); какой именно из видов, проверка не решает — требуется только базовый .emb. Ступень эмблемы обязана соответствовать ступени кнопки (400→emb--150, 300→emb--100, 200→emb--50), но связь двух классов на разных элементах файловой проверке не видна. Точка опциональна: слот .btn-menu__badge внутри .btn-menu__emblem с инстансом awds-component-notice (notice notice-accent notice--100), слоту обязателен display:flex. Выбранность — тон .btn-menu-accent-selected вместе с aria-expanded. Тег только <button>: кнопка раскрывает меню и никуда не ведёт, ссылочных примеров у скилла нет."
   },
   "questions": [
     {

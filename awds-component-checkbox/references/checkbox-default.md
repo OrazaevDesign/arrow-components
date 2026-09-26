@@ -30,6 +30,20 @@
 </label>
 ```
 
+Внутри подписи ([awds-component-label](../../awds-component-label/SKILL.md)) или поля формы ([awds-component-formfield](../../awds-component-formfield/SKILL.md)) корень размечается `<span>`:
+
+```html
+<label class="lbl lbl--400">
+  <span class="checkbox">
+    <input class="checkbox__input" type="checkbox">
+    <span class="checkbox__box"><!-- обе иконки --></span>
+  </span>
+  <span class="lbl__body"><span class="lbl__text">Согласен с условиями</span></span>
+</label>
+```
+
+Вложенные `<label>` невалидны — браузер разбирает такую пару непредсказуемо, и клик по тексту перестаёт переключать инпут, хотя внешняя обёртка нужна ровно ради него. Классы от тега не зависят; размерный класс контролу здесь не ставится — ступень приходит мостом от подписи.
+
 Отмечен изначально / выключен:
 
 ```html

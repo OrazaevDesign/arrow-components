@@ -41,6 +41,20 @@
 </label>
 ```
 
+Внутри подписи ([awds-component-label](../../awds-component-label/SKILL.md)) или поля формы ([awds-component-formfield](../../awds-component-formfield/SKILL.md)) корень размечается `<span>`:
+
+```html
+<label class="lbl lbl--400">
+  <span class="switch">
+    <input class="switch__input" type="checkbox" role="switch">
+    <span class="switch__track"><span class="switch__handle"></span></span>
+  </span>
+  <span class="lbl__body"><span class="lbl__text">Показывать цены с НДС</span></span>
+</label>
+```
+
+Вложенные `<label>` невалидны — браузер разбирает такую пару непредсказуемо, и клик по тексту перестаёт переключать инпут, хотя внешняя обёртка нужна ровно ради него. Классы от тега не зависят; размерный класс контролу здесь не ставится — ступень приходит мостом от подписи. `role="switch"` на инпуте нужен и здесь.
+
 Без подписи (тумблер в строке настроек, подпись отдельным элементом) — обязателен `aria-label`:
 
 ```html

@@ -1,10 +1,10 @@
 {
   "component": "checkbox",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "contract_hash": "sha256:3d8db9e39568dd60d4cc9b9a1625534db7470beb28e750ee3fde9555a05620d3",
-  "artifact_hash": "sha256:575f6245ebd141e3a868f4b434d1152a10fb7a1aeccfb36c1352c4ae455a360a",
-  "visual_change": true,
-  "released_at": "2026-09-25T07:34:03.065Z",
+  "artifact_hash": "sha256:35e3d8f7db0565a04743ce174dd57bfcbb756540943e9b3f9a2bc067148a4adf",
+  "visual_change": false,
+  "released_at": "2026-09-26T16:58:02.904Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -160,13 +160,23 @@
     "root": {
       "class": "checkbox",
       "tags": [
-        "label"
+        "label",
+        "span"
       ]
     },
     "variant": null,
     "size": {
       "pattern": "checkbox--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "lbl--300",
+        "lbl--400",
+        "lbl--500",
+        "fld--300",
+        "fld--400",
+        "fld--500"
+      ],
+      "why_optional": "ступень раздаёт мост родителя: .lbl--{N} .checkbox и .fld--{N} .lbl .checkbox кормят size-аккумуляторы сами, и скиллы label и formfield прямо запрещают ставить размерный класс вложенному контролу"
     },
     "native": {
       "tag": "input",
@@ -175,30 +185,44 @@
     },
     "children": [
       {
-        "class": "checkbox__box"
+        "class": "checkbox__box",
+        "required": true
+      },
+      {
+        "class": "checkbox__icon",
+        "required": true,
+        "within": "checkbox__box"
       },
       {
         "class": "checkbox__icon--check",
+        "required": true,
         "within": "checkbox__box"
       },
       {
         "class": "checkbox__icon--indeterminate",
+        "required": true,
         "within": "checkbox__box"
       }
     ],
     "attrs": [
       {
         "attr": "aria-label",
-        "unless_child": "checkbox__label"
+        "required": true,
+        "unless_child_any": [
+          "checkbox__label",
+          "lbl__text"
+        ],
+        "why": "без видимой подписи у контрола нет имени; подпись даёт либо свой .checkbox__label, либо текст .lbl__text, когда чекбокс стоит внутри компонента label"
       }
     ],
     "container": {
       "any": [
-        "lbl"
+        "lbl",
+        "fld"
       ],
       "required": false
     },
-    "note": "Вариант один и класса не имеет — .checkbox-default не существует, требовать класс варианта нельзя. Нативный input обязателен: состояния переключаются селекторами :checked/:indeterminate, без него компонент мёртв. Обе иконки нужны всегда — они показываются по состоянию, а не подставляются. Без .checkbox__label корню нужен aria-label: иначе у контрола нет имени."
+    "note": "Вариант один и класса не имеет — .checkbox-default не существует, требовать класс варианта нельзя. Нативный <input type=\"checkbox\"> обязателен: состояния (:checked, :indeterminate, :disabled) переключаются его селекторами, без него компонента нет. Обе иконки нужны всегда — они показываются по состоянию, а не подставляются, и базовую геометрию им даёт общий .checkbox__icon. Корень бывает и <span>: внутри .lbl и .fld чекбокс размечается <span class=\"checkbox\">, потому что вложенные <label> невалидны, и размерного класса там не несёт. Порядок input → box обязателен (состояния навешаны сиблинг-селектором +), но файловой проверке без DOM он не виден. Класс .checkbox--disabled в требования НЕ вынесен намеренно: по CSS это запасной вариант для случая, когда инпут не может нести атрибут disabled (aria-disabled), а не парный класс к нему — требовать disabled на .checkbox__input при нём значило бы запретить тот единственный случай, ради которого класс заведён. aria-hidden у иконок в контракт не входит: скилл его не требует, он есть только в примерах."
   },
   "family": "forms",
   "summary": "Чекбокс на нативном input: состояния checked и indeterminate",

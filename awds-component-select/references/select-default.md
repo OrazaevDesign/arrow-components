@@ -18,12 +18,20 @@
 <label for="city">Город доставки</label>
 <span class="select select-default select--400">
   <select class="select__field" id="city">
-    <option value="">Выберите город</option>
-    <option value="ala">Алматы</option>
-    <option value="ast">Астана</option>
+    <option value="" class="list-item list-item-transparent">
+      <span class="list-item__content"><span class="list-item__title">Выберите город</span></span>
+    </option>
+    <option value="ala" class="list-item list-item-transparent">
+      <span class="list-item__content"><span class="list-item__title">Алматы</span></span>
+    </option>
+    <option value="ast" class="list-item list-item-transparent">
+      <span class="list-item__content"><span class="list-item__title">Астана</span></span>
+    </option>
   </select>
 </span>
 ```
+
+**Пункт размечается компонентом [`awds-component-list-item`](../../awds-component-list-item/SKILL.md)** — подключи рядом `list-item-transparent.css`, класс ступени `.list-item--{N}` не ставь (её подставляет селект). Классы работают только под `base-select`; в системном попапе они игнорируются, но и вреда не несут. Голым `<option>` остаётся лишь тот, которого в списке не увидят, — см. «Выключенный» ниже.
 
 **Шеврон в разметке не пишется** — его рисует обёртка своим `::after`. Так сделано не для краткости: у `<select>` нет собственных псевдоэлементов (заменяемый элемент), а отдельным `<span>` шеврон легко забыть — и тогда пропадёт единственный признак, что контрол раскрывается.
 
@@ -54,6 +62,8 @@
 
 Гасится вся обёртка (`opacity: 40%`) — так в макете. Контраст в этом состоянии заведомо ниже AA, поэтому рядом нужен текст-причина, а не только серость.
 
+Пункт здесь голый намеренно: выключенный контрол не раскрывается, и оформлять в попапе нечего — видна только строка закрытого поля, а её рисует сам `.select`.
+
 ## Раскрытый список
 
 Список стилизован по компоненту `. / dropdown` из макета — но только там, где движок умеет `appearance: base-select` (Chromium 135+). Всё это живёт в слое `@supports` в конце CSS; где поддержки нет (пока Safari и Firefox), слой не применяется и остаётся системный попап. Контрол при этом один и тот же — отличается только вид раскрытого списка, и ломаться нечему.
@@ -61,9 +71,10 @@
 | Что | Селектор | Из макета |
 |---|---|---|
 | Панель | `::picker(select)` | фон `surface-bright`, padding `dropdown-{N}-padding` (4 на всех размерах), радиус `dropdown-{N}-border-radius`, тень `elevation-3`, ширина от кнопки |
-| Пункт | `option` | метрики `rectangle` **на шаг ниже** размера контрола |
-| Наведение, клавиатура | `option:hover`, `option:focus` | фон и рамка `secondary-container-core` |
-| Выбранный | `option:checked` | фон `primary-container-core`, рамка `primary-container-on-lowest`, текст `primary-container-on-highest` |
+| Пункт | `.list-item.list-item-transparent` на `<option>` | вид и геометрия целиком из `list-item`; селект даёт только ступень — мостом `.select__field option`, метрики `rectangle` **на шаг ниже** размера контрола |
+| Наведение | `.list-item-transparent:hover` | из `list-item`, своего правила в селекте нет |
+| Клавиатура | `.select__field option:not(:checked):focus` | повтор hover-подсветки: в открытом попапе стрелки двигают `:focus`, а не `:hover` |
+| Выбранный | `.select__field option:checked:not(:disabled):not([aria-disabled="true"])` | подменяет аккумуляторы `list-item`: фон `primary-container-core`, рамка `primary-container-on-lowest`, текст `primary-container-on-highest` |
 | Скролл | `scrollbar-color` | ползунок `surface-on` при 40%, трек прозрачный |
 
 **Метрики пункта — на шаг ниже, и это не описка.** У дропдауна 500 пункт набран 14/20, а не 16/20, как сам контрол; отсюда высоты пунктов 48/40/36/32/24/20/20 против высот контрола 52/48/40/36/32/24/20. Проверено по всем семи ячейкам макета — решающей была именно 500, где две трактовки расходятся.

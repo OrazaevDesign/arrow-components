@@ -97,12 +97,14 @@
 ```html
 <div class="fld fld--400">
   <label class="lbl" for="promo"><span class="lbl__body"><span class="lbl__text">Промокод</span></span></label>
-  <span class="input input-default"><input class="input__field" id="promo" disabled></span>
-  <p class="fld__description">Появится после выбора способа доставки</p>
+  <span class="input input-default"><input class="input__field" id="promo" disabled aria-describedby="promo-desc"></span>
+  <p class="fld__description" id="promo-desc">Появится после выбора способа доставки</p>
 </div>
 ```
 
 Гаснет **только пояснение** (40%): контрол и подпись гасятся своими правилами, а текст ошибки — если он показан — остаётся в полную силу. Этого состояния в макете нет, правило выведено.
+
+Связка `id` + `aria-describedby` нужна и здесь, наравне с остальными полями: в пояснении у выключенного поля стоит причина недоступности, и без связи скринридер её не прочитает — останется только серость.
 
 ## Проверено
 

@@ -18,21 +18,21 @@
 
     <div class="pcard__top">
       <!-- Флаг страны + тултип (awds-component-tooltip): текст = страна из данных карточки -->
-      <span class="pcard__country pcard__tip">
+      <span class="pcard__country pcard__tip" aria-describedby="pcard-123-tip-country">
         <img src="/flags/de.svg" alt="Германия">
-        <span class="tooltip tooltip-contrast tooltip--compact tooltip--top" role="tooltip">
+        <span class="tooltip tooltip-contrast tooltip--300 tooltip--side-top" role="tooltip" id="pcard-123-tip-country">
           <span class="tooltip__tail"></span><span class="tooltip__bubble">Германия</span>
         </span>
       </span>
       <!-- Избранное (awds-component-button-favorites) + тултип «Добавить в избранное» -->
       <span class="pcard__tip">
-      <button type="button" class="btn btn-favorites btn--icon-only" aria-pressed="false" aria-label="В избранное">
+      <button type="button" class="btn btn-favorites btn--icon-only" aria-pressed="false" aria-label="В избранное" aria-describedby="pcard-123-tip-fav">
         <span class="btn-favorites__icon">
           <svg class="btn-favorites__solid" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11.0928 3.05991C12.7287 1.82393 14.7348 1.67089 16.3496 2.5892C17.9639 3.50742 18.9999 5.38217 19 7.83041C19 10.3627 17.5048 12.5134 15.9102 14.1039C14.295 15.7147 12.4254 16.9035 11.3584 17.5189C10.935 17.765 10.5039 17.9945 10 17.9945C9.49607 17.9945 9.06496 17.765 8.6416 17.5189C7.57455 16.9035 5.70499 15.7147 4.08984 14.1039C2.49516 12.5134 1 10.3627 1 7.83041C1.0001 5.38314 2.03712 3.51291 3.65137 2.59702C5.26481 1.68165 7.26864 1.83336 8.90234 3.06088C9.40086 3.43548 9.74153 3.6909 9.9873 3.8558L10.0127 3.85678C10.2575 3.69164 10.5961 3.43517 11.0928 3.05991Z"/></svg>
           <svg class="btn-favorites__outline" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.0928 3.05991C12.7287 1.82393 14.7348 1.67089 16.3496 2.5892C17.9639 3.50742 18.9999 5.38217 19 7.83041C19 10.3627 17.5048 12.5134 15.9102 14.1039C14.295 15.7147 12.4254 16.9035 11.3584 17.5189C10.935 17.765 10.5039 17.9945 10 17.9945C9.49607 17.9945 9.06495 17.765 8.6416 17.5189C7.57455 16.9035 5.70499 15.7147 4.08984 14.1039C2.49516 12.5134 1 10.3627 1 7.83041C1.0001 5.38314 2.03712 3.51291 3.65137 2.59702C5.26481 1.68165 7.26864 1.83336 8.90234 3.06088C9.26444 3.33297 9.62329 3.61272 10 3.86459C10.375 3.61235 10.7323 3.33224 11.0928 3.05991ZM15.3613 4.32846C14.3526 3.7547 13.165 4.00159 12.2734 4.67514C11.8085 5.0264 11.4258 5.31503 11.1309 5.51401C10.794 5.74121 10.4222 5.96072 10.0029 5.96127C9.58341 5.96178 9.21066 5.74344 8.87305 5.51694C8.57711 5.31839 8.19345 5.02989 7.72656 4.67905C6.83401 4.00833 5.64645 3.7647 4.63867 4.33627C3.7728 4.82752 3.00009 5.95047 3 7.83041C3 9.56747 4.04271 11.2324 5.50195 12.6878C6.78251 13.965 8.29529 15.0576 9.88281 15.9242C9.9903 15.9828 10.0097 15.9828 10.1172 15.9242C11.7047 15.0576 13.2175 13.965 14.498 12.6878C15.9573 11.2324 17 9.56748 17 7.83041C16.9999 5.94766 16.2272 4.82117 15.3613 4.32846Z"/></svg>
         </span>
       </button>
-        <span class="tooltip tooltip-contrast tooltip--compact tooltip--top" role="tooltip"><span class="tooltip__tail"></span><span class="tooltip__bubble">Добавить в избранное</span></span>
+        <span class="tooltip tooltip-contrast tooltip--300 tooltip--side-top" role="tooltip" id="pcard-123-tip-fav"><span class="tooltip__tail"></span><span class="tooltip__bubble">Добавить в избранное</span></span>
       </span>
     </div>
 
@@ -263,20 +263,22 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 | Ссылка | href | Поведение по `:hover` |
 |---|---|---|
 | `.pcard__image-link` (#1) | товар | фото `scale(0.9) → scale(1)` (0.4s) — раскрывается до 100% · 3%-скрим `opacity → 0` |
-| `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-container-on` |
-| `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-container-on` |
+| `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-core` |
+| `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-core` |
 | `.pcard__feedback` | — (не ссылка) | статичный: ★ warning · рейтинг surface-on-highest · 💬 иконка surface-on · счётчик surface-on-high |
 
 Фокус-обводка — на каждой ссылке отдельно (`:focus-visible`). Оверлеи над фото: избранное (`.btn-favorites`) — своя кнопка-тоггл (pointer-events:auto); бейджи — `pointer-events:none`, hover/клик проходят к ссылке-фото. Флаг теперь `pointer-events:auto` (ловит hover для тултипа) — зум фото остаётся на остальной площади. Все hover-переходы гасятся при `prefers-reduced-motion: reduce` (зум фото отключается).
 
 ### Тултипы (компонент `awds-component-tooltip`, подключи `tooltip.css`)
 
-Триггер `.pcard__tip` (обёртка). Показ по `:hover`/`:focus-within` с задержкой **400мс**, скрытие почти мгновенно (спека tooltip). Тултип — `contrast`/`compact`/`--top` (выпадает **сверху** от элемента, хвост вниз), центрирован по горизонтали относительно триггера.
+Триггер `.pcard__tip` (обёртка). Показ по `:hover`/`:focus-within` с задержкой **400мс**, скрытие почти мгновенно (спека tooltip). Тултип — `.tooltip-contrast.tooltip--300.tooltip--side-top` (выпадает **сверху** от элемента, хвост вниз), центрирован по горизонтали относительно триггера.
+
+Пузырь несёт `role="tooltip"` и `id`, триггер — `aria-describedby` с этим `id` (спека tooltip): без пары подсказка немая для скринридера. У флага триггер — сам `.pcard__country.pcard__tip`, у избранного — кнопка `.btn-favorites` внутри обёртки. **`id` уникален на странице:** карточек в гриде много, поэтому в блоке к нему подмешивают id товара (`…-tip-country-{{ p.id }}`), а не берут из сниппета как есть.
 
 | Где | `.pcard__tip` на | Текст |
 |---|---|---|
-| Флаг страны | `.pcard__country` | страна (из данных карточки) |
-| Избранное | обёртка вокруг `.btn-favorites` | «Добавить в избранное» |
+| Флаг страны | `.pcard__country` (он же несёт `aria-describedby`) | страна (из данных карточки) |
+| Избранное | обёртка вокруг `.btn-favorites` (`aria-describedby` — на самой кнопке) | «Добавить в избранное» |
 
 Точное избегание выхода тултипа за край экрана — на JS-контроллере (как в спеке tooltip); CSS даёт показ/скрытие и центрирование под триггером.
 

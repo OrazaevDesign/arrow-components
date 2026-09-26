@@ -26,7 +26,9 @@
 <span class="scombi scombi-success scombi--400">
   <span class="scombi__body">
     <select class="scombi__field" id="pvz">
-      <option value="p1" selected>Абая, 150</option>
+      <option value="p1" selected class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">Абая, 150</span></span>
+      </option>
     </select>
     <label class="scombi__label" for="pvz">Пункт выдачи</label>
   </span>

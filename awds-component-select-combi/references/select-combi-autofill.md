@@ -32,8 +32,12 @@
 <span class="scombi scombi-autofill scombi--400">
   <span class="scombi__body">
     <select class="scombi__field" id="city">
-      <option value="ala" selected>Алматы</option>
-      <option value="ast">Астана</option>
+      <option value="ala" selected class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">Алматы</span></span>
+      </option>
+      <option value="ast" class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">Астана</span></span>
+      </option>
     </select>
     <label class="scombi__label" for="city">Город доставки</label>
   </span>

@@ -1,5 +1,9 @@
 # datepicker — журнал версий
 
+## 1.0.4 — 2026-09-26 — PATCH
+Противоречие снято в пользу кода: aria-label требуется у кнопки листания, а не у класса .dpick__nav (пустая распорка стоит под aria-hidden); заголовок несёт aria-live во всех видах.
+Потребителю: Разметка и CSS прежние. Если ставили aria-label на распорку периода — он там ничего не озвучивал; заголовку вида month добавьте aria-live.
+
 ## 1.0.3 — 2026-09-26 — PATCH
 Ячейки группы list переименованы под варианты list-item (решение 26.09.2026): unselected→default, selected→default-selected, unselected-actual→actual-selected, selected-secondary→accent-selected, unselected-transparent→transparent, unselected/selected-tabbar→tabbar/tabbar-selected, unselected/selected-menu→menu/menu-selected, unselected/selected-variation→variation/variation-selected, indeterminate-variation→variation-indeterminate
 Потребителю: Ничего делать не нужно: переименование, значения и вид прежние. Якоря #cell в CSS — комментарии, цвета идут ролями

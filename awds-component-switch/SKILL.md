@@ -47,6 +47,20 @@ description: Switch ArrowDS (.switch).
 
 Вариант с иконками (галка / крестик в бегунке), раскладка «подпись слева, тумблер справа» и версия без подписи — в [references/switch-default.md](references/switch-default.md).
 
+**Внутри подписи корень — `<span>`, а не `<label>`:**
+
+```html
+<label class="lbl lbl--400">
+  <span class="switch">
+    <input class="switch__input" type="checkbox" role="switch">
+    <span class="switch__track"><span class="switch__handle"></span></span>
+  </span>
+  <span class="lbl__body"><span class="lbl__text">Показывать цены с НДС</span></span>
+</label>
+```
+
+Вложенные `<label>` невалидны: браузер разбирает такую пару непредсказуемо и клик по тексту перестаёт попадать в инпут, а внешняя обёртка нужна именно ради этого клика. Классы к тегу не привязаны, поэтому работает всё то же самое. Так тумблер стоит внутри [awds-component-label](../awds-component-label/SKILL.md) и [awds-component-formfield](../awds-component-formfield/SKILL.md); размерный класс там не нужен — ступень раздаёт подпись, а `role="switch"` на инпуте остаётся обязательным.
+
 ## Размерные модификаторы
 
 | Класс | Трек | Круг | Ход | Когда |

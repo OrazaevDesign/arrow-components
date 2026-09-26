@@ -62,9 +62,9 @@ description: Modal ArrowDS (.mdl).
 ## Разметка
 
 ```html
-<dialog class="mdl mdl-dialog">
+<dialog class="mdl mdl-dialog" aria-labelledby="mdl-title">
   <header class="mdl__header">
-    <h2 class="mdl__title">Удалить адрес?</h2>
+    <h2 class="mdl__title" id="mdl-title">Удалить адрес?</h2>
     <button class="btn btn-ghost btn--200 mdl__close" type="button" aria-label="Закрыть">
       <svg viewBox="0 0 20 20" aria-hidden="true"><!-- крестик --></svg>
     </button>
@@ -81,7 +81,7 @@ description: Modal ArrowDS (.mdl).
 </dialog>
 ```
 
-Открывается `dialog.showModal()`, закрывается `dialog.close()`. Кнопка «назад» — `.mdl__back` первой в шапке, кнопки подвала — обычные `awds-component-button`.
+Открывается `dialog.showModal()`, закрывается `dialog.close()`. Имя окну даёт заголовок: `<h2 class="mdl__title">` несёт `id`, а `<dialog>` — `aria-labelledby` на него; без этой пары скринридер объявит окно безымянным. Кнопка «назад» — `.mdl__back` первой в шапке, кнопки подвала — обычные `awds-component-button`.
 
 Содержимое во всю ширину (таблица, список, карта) — `.mdl__content--flush`: боковые отступы приносит само содержимое. Порядок кнопок подвала меняет `.mdl__footer--reverse`.
 

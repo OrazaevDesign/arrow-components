@@ -24,7 +24,7 @@
 - **Пустой `<option value="">` без текста** — состояние «ничего не выбрано». По нему метка возвращается на центр и работает как плейсхолдер; в раскрытом списке пункт скрыт. Текста в нём быть не должно — он лёг бы под метку.
 - **Порядок «поле, потом `<label>`»** — правило метки построено на соседнем комбинаторе `+`.
 - **`__body`** — система координат для абсолютной метки.
-- Классы `list-item list-item-transparent` на `<option>` нужны для стилизованного попапа. Там, где движок не умеет `base-select`, они просто игнорируются.
+- **Классы `list-item list-item-transparent` — у каждого пункта с текстом.** Вид пункта целиком приходит из `list-item`, а UA-галочку у выбранного компонент гасит (в макете выбор отмечен фоном и рамкой) — поэтому голый `<option>` под `base-select` остаётся не отмеченным ничем. Там, где движок `base-select` не умеет, классы игнорируются. У пустого пункта их нет намеренно: он скрыт в списке (`option[value=""] { display: none }`), показывать нечего.
 
 Если значение выбрано всегда — пустой пункт не нужен, метка сразу стоит наверху:
 
@@ -32,8 +32,12 @@
 <span class="scombi scombi-default scombi--500">
   <span class="scombi__body">
     <select class="scombi__field" id="pay">
-      <option value="card" selected>Картой онлайн</option>
-      <option value="cash">Наличными курьеру</option>
+      <option value="card" selected class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">Картой онлайн</span></span>
+      </option>
+      <option value="cash" class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">Наличными курьеру</span></span>
+      </option>
     </select>
     <label class="scombi__label" for="pay">Способ оплаты</label>
   </span>

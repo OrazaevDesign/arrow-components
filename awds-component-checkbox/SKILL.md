@@ -48,6 +48,20 @@ description: Checkbox ArrowDS (.checkbox).
 
 Порядок `input` → `box` фиксирован (состояния навешаны сиблинг-селектором `+`). Обе иконки всегда в DOM — переключаются `opacity`, лейаут не дёргается.
 
+**Внутри подписи корень — `<span>`, а не `<label>`:**
+
+```html
+<label class="lbl lbl--400">
+  <span class="checkbox">
+    <input class="checkbox__input" type="checkbox">
+    <span class="checkbox__box"><!-- обе иконки --></span>
+  </span>
+  <span class="lbl__body"><span class="lbl__text">Согласен с условиями</span></span>
+</label>
+```
+
+Вложенные `<label>` невалидны: браузер разбирает такую пару непредсказуемо и клик по тексту перестаёт попадать в инпут, а внешняя обёртка нужна именно ради этого клика. Классы к тегу не привязаны, поэтому работает всё то же самое. Так чекбокс стоит внутри [awds-component-label](../awds-component-label/SKILL.md) и [awds-component-formfield](../awds-component-formfield/SKILL.md); размерный класс там не нужен — ступень раздаёт подпись.
+
 ## Размерные модификаторы
 
 | Класс | Бокс | Когда |

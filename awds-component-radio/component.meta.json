@@ -1,10 +1,10 @@
 {
   "component": "radio",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "contract_hash": "sha256:2a1517d2bd3f783b554ceb88f46e9a814c046055cdc538b74d7415e2526dcbca",
-  "artifact_hash": "sha256:3eb0d614590a1876c0dd49daa87e85b618014933e76db1414e64dbc780921db7",
-  "visual_change": true,
-  "released_at": "2026-09-25T07:34:03.153Z",
+  "artifact_hash": "sha256:f92866f410f6efab621d6471d86a66f0c8d96852fc045105b16c4259fd389bf2",
+  "visual_change": false,
+  "released_at": "2026-09-26T16:58:02.983Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -166,27 +166,67 @@
     "root": {
       "class": "radio",
       "tags": [
-        "label"
+        "label",
+        "span"
       ]
     },
     "variant": null,
     "size": {
       "pattern": "radio--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "lbl--300",
+        "lbl--400",
+        "lbl--500",
+        "fld--300",
+        "fld--400",
+        "fld--500"
+      ],
+      "why_optional": "ступень раздаёт мост родителя: .lbl--{N} .radio и .fld--{N} .lbl .radio кормят size-аккумуляторы сами, и скиллы label и formfield прямо запрещают ставить размерный класс вложенному контролу"
     },
     "native": {
       "tag": "input",
-      "class": "radio__input",
-      "type": "radio"
+      "type": "radio",
+      "class": "radio__input"
     },
     "children": [
       {
-        "class": "radio__box"
+        "class": "radio__box",
+        "required": true
+      },
+      {
+        "class": "radio__dot",
+        "required": true,
+        "within": "radio__box"
       }
     ],
-    "attrs": [],
-    "container": null,
-    "note": "Нативный input type=radio обязателен: выбор одного из группы даёт браузер по общему name. Общий name внутри группы линтер не проверяет — это связь между элементами, а не свойство одного."
+    "attrs": [
+      {
+        "attr": "aria-label",
+        "required": true,
+        "unless_child_any": [
+          "radio__label",
+          "lbl__text"
+        ],
+        "why": "без видимой подписи у контрола нет имени; подпись даёт либо свой .radio__label, либо текст .lbl__text, когда радиокнопка стоит внутри компонента label"
+      }
+    ],
+    "child_attrs": [
+      {
+        "child": "radio__input",
+        "attr": "name",
+        "why": "взаимное исключение, стрелки клавиатуры и «нельзя снять выбор» даёт общий name у группы; без атрибута радиокнопка не состоит в группе вовсе"
+      }
+    ],
+    "container": {
+      "any": [
+        "radio-group",
+        "lbl",
+        "fld"
+      ],
+      "required": false
+    },
+    "note": "Вариант один и класса не имеет — .radio-default не существует. Нативный <input type=\"radio\"> обязателен: выбор одного из группы даёт браузер по общему name. Проверяется ТОЛЬКО наличие атрибута name на инпуте; совпадение значений внутри группы — связь между элементами, а не свойство одного, линтер её не видит. .radio__dot обязателен всегда: без него кружок остаётся пустым и на радиокнопку не похож — это названо первой из «четырёх ошибок» в скилле label. Корень бывает и <span>: внутри .lbl и .fld радио размечается <span class=\"radio\">, потому что вложенные <label> невалидны, и размерного класса там не несёт. Порядок input → box обязателен (сиблинг-селектор +), файловой проверке он не виден. Обёртка <fieldset class=\"radio-group\"> с <legend> (или role=\"radiogroup\" + aria-labelledby) обязательна по скиллу, но это свойство группы, а не инстанса. Класс .radio--disabled в требования не вынесен: по CSS это запасной вариант для случая, когда инпут не может нести атрибут disabled."
   },
   "family": "forms",
   "summary": "Радиокнопка на нативном input: выбор одного из списка",

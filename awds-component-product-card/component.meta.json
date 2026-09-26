@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "contract_hash": "sha256:5676ad9475d59c8df576be6801e9ac603015a291b9ada751126db1017642948b",
-  "artifact_hash": "sha256:a179f1ea0e92b661b4cff66d61fe2a9259f2381d73877fd31a45974123ca5f1c",
-  "visual_change": true,
-  "released_at": "2026-09-25T05:54:41.401Z",
+  "artifact_hash": "sha256:5a441f51b62d17934a0446b12c12ad25eb2c786da0f5ab7f55dcddf0ff64dbb9",
+  "visual_change": false,
+  "released_at": "2026-09-26T16:52:56.102Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -312,10 +312,103 @@
     },
     "size": null,
     "native": null,
-    "children": [],
+    "children": [
+      {
+        "class": "pcard__media",
+        "required": true
+      },
+      {
+        "class": "pcard__image-link",
+        "required": true
+      },
+      {
+        "class": "pcard__content",
+        "required": true
+      },
+      {
+        "class": "pcard__name",
+        "required": true
+      },
+      {
+        "class": "pcard__feedback",
+        "required": true
+      },
+      {
+        "class": "pcard__brand",
+        "when": "pcard-price-first"
+      },
+      {
+        "class": "pcard__brand",
+        "when": "pcard-brand-first"
+      },
+      {
+        "class": "pcard__price",
+        "when": "pcard-brand-first"
+      },
+      {
+        "class": "pcard__category",
+        "when": "pcard-buy-now"
+      },
+      {
+        "class": "pcard__cart",
+        "when": "pcard-buy-now"
+      },
+      {
+        "class": "pcard__cart",
+        "when": "pcard-brand-first"
+      },
+      {
+        "class": "pcard__cart-view--button",
+        "when": "pcard-buy-now"
+      },
+      {
+        "class": "pcard__cart-view--button",
+        "when": "pcard-brand-first"
+      },
+      {
+        "class": "pcard__cart-view--stepper",
+        "when": "pcard-buy-now"
+      },
+      {
+        "class": "pcard__cart-view--stepper",
+        "when": "pcard-brand-first"
+      }
+    ],
     "attrs": [],
+    "child_attrs": [
+      {
+        "child": "pcard__image-link",
+        "attr": "href",
+        "why": "фото — отдельная ссылка на товар: карточка не кликабельна целиком, корень у неё контейнер"
+      },
+      {
+        "child": "pcard__image-link",
+        "attr": "aria-label",
+        "why": "ссылка без текста — имя ей даёт только подпись"
+      },
+      {
+        "child": "pcard__name",
+        "attr": "href",
+        "why": "название — отдельная ссылка на товар, со своим hover и своим фокусом"
+      },
+      {
+        "child": "pcard__brand",
+        "attr": "href",
+        "why": "бренд — отдельная ссылка на страницу бренда"
+      },
+      {
+        "child": "pcard__category",
+        "attr": "href",
+        "why": "рубрика — отдельная ссылка на категорию"
+      },
+      {
+        "child": "pcard__image",
+        "attr": "alt",
+        "why": "фото товара несёт содержание, а не украшение: без alt в выдаче скринридера остаётся имя файла"
+      }
+    ],
     "container": null,
-    "note": "Шкалы размеров нет — карточка тянется по сетке. Вариант задаёт порядок строк (цена или бренд первыми) и наличие кнопки покупки."
+    "note": "Композит: внутри карточки живут инстансы badge, button-favorites, price, slider и tooltip — их требования описаны в их собственных контрактах и здесь намеренно не повторяются. Вариант обязателен, он задаёт порядок контента и состав: price-first (цена → бренд → название → рейтинг), brand-first (бренд → название → рейтинг → цена → корзина, контент по центру, флага страны нет), buy-now (цена → название → рубрика → рейтинг → корзина, контент слева). Шкалы размеров нет — карточка тянется по сетке; .pcard--mobile это вью, а не ступень: она меняет ступени вложенных компонентов (избранное --200, бейджи --50) и кегли бренда. Корень — контейнер, а НЕ ссылка: кликабельны три отдельные ссылки со своим hover и своим фокусом (фото, бренд или рубрика, название), а строка отзывов .pcard__feedback ссылкой не является. Фото или заглушка: внутри .pcard__image-link стоит либо .pcard__image, либо .pcard__media-placeholder — выбор из двух гейт не выражает, поэтому требования на них нет, зато у картинки требуется alt. Оверлеи необязательны и требованиями не записаны: .pcard__top, .pcard__country, .pcard__badges, кнопка избранного, обёртка тултипа .pcard__tip. Индикатор галереи .pcard__slider ставится только при нескольких кадрах (активный кадр — .pcard__image--active, при числе кадров больше пяти точки заворачиваются в .pcard__slider-track и слайдер получает .pcard__slider--many); при одном кадре вместо него ставят пустой .pcard__slider-spacer, чтобы карточки в гриде были одной высоты. Зона корзины .pcard__cart есть у buy-now и brand-first и держит ОБЕ вью в DOM сразу — .pcard__cart-view--button и .pcard__cart-view--stepper сложены grid-stack и кросс-фейдятся; вью, которой нет в разметке, появиться не из чего, поэтому обе обязательны. Активную выбирает data-cart-state=\"button|stepper\", но сам атрибут необязателен: без него работает button. Порядок и вложенность частей проверке не видны — Liquid без DOM их не даёт, а интерполяция класса (.pcard__image с условным --active) гасит проверку потомков по всему файлу блока."
   },
   "questions": [
     {

@@ -1,10 +1,10 @@
 {
   "component": "select",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "contract_hash": "sha256:0e22a7c9f7b6f9f4bdf2e551213b40ec9c337e1f9b9d703793d15870cccab6ac",
-  "artifact_hash": "sha256:3589ec9838b5d24d594d392092f6b36179a0a117f337063866a3a8df8093593d",
+  "artifact_hash": "sha256:8092facbbebd98d1662e71763ad25c8143c0a9b5c7c1294453549307f3594c2e",
   "visual_change": false,
-  "released_at": "2026-09-26T08:21:57.275Z",
+  "released_at": "2026-09-26T16:58:03.413Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -340,16 +340,32 @@
     },
     "size": {
       "pattern": "select--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "fld--300",
+        "fld--400",
+        "fld--500"
+      ],
+      "why_optional": "ступень раздаёт мост поля формы: .fld--{N} .select заполняет аккумуляторы контрола, и своя ступень внутри formfield не нужна"
     },
     "native": {
       "tag": "select",
+      "type": null,
       "class": "select__field"
     },
     "children": [],
     "attrs": [],
+    "child_attrs": [
+      {
+        "child": "select__field",
+        "attr": "aria-label",
+        "required": false,
+        "when_note": "подписи <label for> снаружи компонента нет — тогда имя даёт aria-label на самом <select>",
+        "why": "подпись обязательна, но её половина лежит вне компонента и гейту не видна"
+      }
+    ],
     "container": null,
-    "note": "Нативный select обязателен: список открывает браузер, компонент оформляет только поле. Пункты кастомного попапа — это list-item."
+    "note": "Нативный select обязателен: список открывает браузер, компонент оформляет только поле. Шеврон в разметке не пишется — его рисует обёртка своим ::after. Пункты размечаются компонентом list-item (.list-item.list-item-transparent на <option>), но требованием это не записано: скилл прямо разрешает и голый <option> — попап тогда останется системным. Подпись обязательна, однако она либо <label for> СНАРУЖИ компонента, либо aria-label на самом <select> — развилку «или-или» гейт выразить не умеет, поэтому в контракте её нет. Класс .select--disabled — запасной путь для случая, когда контрол не может нести атрибут disabled, поэтому требовать атрибут при этом классе нельзя. Слоты .select__prefix / .select__suffix декоративны и необязательны; suffix лучше не использовать вовсе — клик по шеврону перестаёт открывать список."
   },
   "family": "forms",
   "summary": "Выпадающий список, подпись снаружи рамки",

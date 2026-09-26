@@ -1,6 +1,6 @@
 # button-area — кликабельная область (link-area)
 
-Ссылка/кнопка как область нажатия с растяжимой hit-зоной. 5 вариантов (цвет = роли link), 4 размера, состояния, иконки, progress, fill.
+Ссылка/кнопка как область нажатия с растяжимой hit-зоной. 5 вариантов (цвет = роли link), 4 размера, состояния, иконки, загрузка, fill.
 
 ## Разметка
 
@@ -23,9 +23,9 @@
 | `.btn-area--{500\|400\|100\|50}` | Размер (текст/иконка/зазор/радиус через `rectangle/{N}`) |
 | `.btn-area--icon-only` | Только иконка (gap 0) |
 | `.btn-area--fill` / `--fill-x` / `--fill-y` | Растянуть hit-область (обе/ширина/высота); контент центрирован |
-| `.btn-area--progress` | Загрузка: контент скрыт, спиннер по центру, клики гасятся |
+| `.btn-area--loading` | Загрузка: контент погашен (место сохраняется), по центру кольцо `awds-component-progress` в слоте `.btn-area__progress`, клики гасятся |
 | `.btn-area--disabled` / `[aria-disabled]` / `:disabled` | Приглушение 40% + клики гасятся |
-| `.btn-area__prefix` / `__label` / `__suffix` / `__icon` / `__spinner` | Слоты |
+| `.btn-area__prefix` / `__label` / `__suffix` / `__icon` / `__progress` | Слоты |
 
 ## Варианты (цвет rest → hover)
 
@@ -49,4 +49,7 @@
 ## Зависимости
 
 - `button-area.css` — сам компонент.
+- `awds-component-progress` — кольцо загрузки: своего спиннера у области нет, в слоте
+  `.btn-area__progress` стоит тот же `<svg>` с классами `progress progress-circular
+  progress--indeterminate`.
 - DS: `css-variables.css` (роли) + `css-global.css` (rectangle/{N}, opacity-40, rounded-full, control-*).

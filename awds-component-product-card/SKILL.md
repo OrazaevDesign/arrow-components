@@ -7,13 +7,15 @@ description: Product Card ArrowDS (.pcard).
 
 Карточка товара для маркет-грида и слайдера. Композитный layout-компонент: медиа (фото 3:4 с оверлеями) + текстовый контент. Ничего не хардкодит — типографика и отступы из base/Control-шкал, цвета из ролей. См. скилл `arrow-design-system`.
 
-## Варианты (1)
+## Варианты (3)
 
-| Вариант | Reference | Порядок контента |
-|---|---|---|
-| **price-first** | `references/product-card-price-first.md` ✅ | Цена → бренд → название → рейтинг |
+| Вариант | Reference | Порядок контента | Особое |
+|---|---|---|---|
+| **price-first** | `references/product-card-price-first.md` ✅ | Цена → бренд → название → рейтинг | база: контент слева, флаг страны, корзины нет |
+| **brand-first** | `references/product-card-brand-first.md` ✅ | Бренд → название → рейтинг → цена → корзина | контент по центру, бейджи по центру, флага страны нет |
+| **buy-now** | `references/product-card-buy-now.md` ✅ | Цена → название → рубрика → рейтинг → корзина | контент слева, вместо бренда ссылка на рубрику `.pcard__category` |
 
-> Имя варианта = порядок контента. Если в Figma появятся другие раскладки (brand-first, name-first) — это новые варианты того же скилла, не новый скилл.
+> Имя варианта = порядок контента. Класс варианта обязателен: `.pcard-price-first` / `.pcard-brand-first` / `.pcard-buy-now` — он задаёт порядок и состав частей. Новая раскладка в Figma — это новый вариант того же скилла, не новый скилл.
 
 ## Две вьюхи (ось «view» = размер)
 
@@ -42,39 +44,43 @@ description: Product Card ArrowDS (.pcard).
 ## Структура и классы
 
 ```
-.pcard  .pcard-price-first  [.pcard--mobile]        ← корень (обычно <a>)
+.pcard  .pcard-price-first  [.pcard--mobile]        ← корень: контейнер <div>/<article>, НЕ ссылка
 ├── .pcard__media                                   ← фото 3:4 + оверлеи
-│   ├── .pcard__image [.pcard__image--active]  |  .pcard__media-placeholder
+│   ├── a.pcard__image-link[href][aria-label]       ← ссылка #1 → товар (фото без текста, отсюда aria-label)
+│   │   └── .pcard__image[alt] [.pcard__image--active]  |  .pcard__media-placeholder
 │   │       (несколько .pcard__image = галерея; листание: hover-зоны на десктопе, свайп на тач)
 │   ├── .pcard__top
 │   │   ├── .pcard__country  (<img>/<svg> флаг 24px)
 │   │   └── .btn.btn-favorites.btn--icon-only   ← компонент awds-component-button-favorites
 │   │       └── .btn-favorites__icon (solid + outline heart; aria-pressed)
 │   └── .pcard__badges
-│       ├── .pcard__badge.pcard__badge--percent
-│       └── .pcard__badge.pcard__badge--sale
+│       ├── .badge.badge-market-percent.badge--100   ← компонент awds-component-badge
+│       └── .badge.badge-market-sale.badge--100      ← (в мобильной вью .badge--50)
 ├── .slider.slider-dots-mini.pcard__slider         ← awds-component-slider (индикатор галереи; между медиа и контентом, по центру)
 │       └ одно фото → вместо слайдера .pcard__slider-spacer (резерв высоты, без сдвига)
 └── .pcard__content
     ├── .price.price-{default|sale|none}  ← awds-component-price (default / скидка / нет в наличии; размер задаёт карточка, едет по .typo-*)
-    ├── .pcard__brand
-    ├── .pcard__name        (clamp 2 строки)
-    └── .pcard__feedback ( .pcard__rating-icon + .pcard__rating-value + .pcard__reviews-icon + .pcard__reviews-count )
+    ├── a.pcard__brand[href]   ← ссылка #2 → бренд (в buy-now вместо неё a.pcard__category[href] → рубрика)
+    ├── a.pcard__name[href]    ← ссылка #3 → товар (clamp 2 строки)
+    ├── .pcard__feedback ( .pcard__rating-icon + .pcard__rating-value + .pcard__reviews-icon + .pcard__reviews-count ) — статичный блок, не ссылка
+    └── .pcard__cart           ← только brand-first / buy-now (см. «Зона корзины»)
 ```
+
+**Корень — контейнер, а не `<a>`.** Кликабельны три отдельные ссылки: фото, бренд (или рубрика) и название, у каждой свой hover и свой фокус. Обернуть всю карточку в `<a>` нельзя: внутри живут кнопка избранного и кнопка корзины, а интерактивный элемент внутри ссылки — невалидная разметка, и клавиатура до него не доберётся.
 
 ## CSS
 
-Один файл — `references/product-card-price-first.css` (база `.pcard` = Desktop-Tablet + модификатор `.pcard--mobile` + под-элементы). Подключается один раз глобально.
+Файл на вариант — `references/product-card-{price-first,brand-first,buy-now}.css` (база `.pcard` = Desktop-Tablet + модификатор `.pcard--mobile` + под-элементы). Подключается тот, чей вариант стоит на карточке, один раз глобально.
 
 Визуальный QA — `references/preview.html` (storybook, `file://`): обе вьюхи рядом + маркет-грид; тумблеры темы / скругления / избранного / фото.
 
 ## Алгоритм использования
 
-1. Корень карточки — `<a class="pcard pcard-price-first" href="…">` (мобильная вью: добавь `.pcard--mobile`).
-2. Медиа: `<img class="pcard__image" alt="…">` или `.pcard__media-placeholder` если фото нет. Несколько фото → галерея: помечай активный кадр `.pcard__image--active` + добавь индикатор `.slider.slider-dots-mini.pcard__slider` (компонент `awds-component-slider`, точек = кадров) и JS-обвязку `wireGallery` (см. `references/product-card-price-first.md`) — она даёт перелистывание по hover-зонам на десктопе **и свайп влево/вправо на мобиле/таблете** (ссылка-фото несёт `touch-action: pan-y`: вертикальный скролл страницы остаётся нативным). **Много кадров (>5)** — оберни точки в `.pcard__slider-track` и добавь `.pcard__slider--many`: фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки уменьшены — индикатор не растягивается. **Одно фото** — слайдера нет, но ставь пустую заглушку `.pcard__slider-spacer` (резерв высоты индикатора), чтобы карточки с 1 и несколькими фото были одной высоты.
-3. Оверлеи опциональны: страна (`.pcard__country`), избранное (`.btn.btn-favorites` — компонент `awds-component-button-favorites`, в мобильной вью `+ .btn--200`), бейджи (`.pcard__badge--percent` / `--sale`).
+1. Корень карточки — контейнер `<div class="pcard pcard-price-first">` (или `<article>`), **без `href`**: кликабельны три отдельные ссылки внутри — фото, бренд (в buy-now рубрика) и название. Мобильная вью — добавь `.pcard--mobile`.
+2. Медиа: ссылка на товар `<a class="pcard__image-link" href="…" aria-label="…">`, внутри неё `<img class="pcard__image" alt="…">` или `.pcard__media-placeholder`, если фото нет. Несколько фото → галерея: помечай активный кадр `.pcard__image--active` + добавь индикатор `.slider.slider-dots-mini.pcard__slider` (компонент `awds-component-slider`, точек = кадров) и JS-обвязку `wireGallery` (см. `references/product-card-price-first.md`) — она даёт перелистывание по hover-зонам на десктопе **и свайп влево/вправо на мобиле/таблете** (ссылка-фото несёт `touch-action: pan-y`: вертикальный скролл страницы остаётся нативным). **Много кадров (>5)** — оберни точки в `.pcard__slider-track` и добавь `.pcard__slider--many`: фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки уменьшены — индикатор не растягивается. **Одно фото** — слайдера нет, но ставь пустую заглушку `.pcard__slider-spacer` (резерв высоты индикатора), чтобы карточки с 1 и несколькими фото были одной высоты.
+3. Оверлеи опциональны: страна (`.pcard__country`), избранное (`.btn.btn-favorites` — компонент `awds-component-button-favorites`, в мобильной вью `+ .btn--200`), бейджи (`.badge.badge-market-percent` / `.badge.badge-market-sale` — компонент `awds-component-badge`, в мобильной вью `.badge--50` вместо `.badge--100`).
 4. Контент в порядке price-first. Цена — компонент `awds-component-price`, размерный класс **не пишется** — его задаёт карточка (цена едет по `.typo-*` вместе с брендом/названием, без раздельного desktop/mobile), подключи `price.css`; выбери тип по данным товара: `price-default` (обычная), `price-sale` (скидка: акцентная + старая зачёркнутая, обычно с бейджем `.badge-market-percent`), `price-none` («Нет в наличии» — при этом скрой бейдж скидки). Название клампится в 2 строки. Между медиа и контентом — индикатор галереи `.pcard__slider` (если несколько фото).
-5. Подключи `references/product-card-price-first.css` **и** CSS используемых компонентов: `awds-component-button-favorites/.../button-favorites.css` (избранное), `awds-component-price/.../price.css` (цена), `awds-component-badge/.../badge.css` (бейджи), `awds-component-slider/.../slider.css` (индикатор галереи), `awds-component-tooltip/.../tooltip.css` (тултипы). Нужны `css-variables.css` сайта (роли) и базовые токены DS (`--awds-space-*`, `--awds-typography-*`, `--awds-rounded-*`, `--awds-shadow-*`, `--awds-font-*`).
+5. Подключи `references/product-card-{вариант}.css` **и** CSS используемых компонентов: `awds-component-button-favorites/.../button-favorites.css` (избранное), `awds-component-price/.../price.css` (цена), `awds-component-badge/.../badge.css` (бейджи), `awds-component-slider/.../slider.css` (индикатор галереи), `awds-component-tooltip/.../tooltip.css` (тултипы). Нужны `css-variables.css` сайта (роли) и базовые токены DS (`--awds-space-*`, `--awds-typography-*`, `--awds-rounded-*`, `--awds-shadow-*`, `--awds-font-*`).
 
 ## Зона корзины (buy-now / brand-first)
 

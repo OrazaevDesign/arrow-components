@@ -41,6 +41,22 @@
 </label>
 ```
 
+Внутри подписи ([awds-component-label](../../awds-component-label/SKILL.md)) или поля формы ([awds-component-formfield](../../awds-component-formfield/SKILL.md)) корень размечается `<span>`:
+
+```html
+<label class="lbl lbl--400">
+  <span class="radio">
+    <input class="radio__input" type="radio" name="delivery" value="pickup">
+    <span class="radio__box">
+      <svg class="radio__dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
+    </span>
+  </span>
+  <span class="lbl__body"><span class="lbl__text">Самовывоз</span></span>
+</label>
+```
+
+Вложенные `<label>` невалидны — браузер разбирает такую пару непредсказуемо, и клик по тексту перестаёт переключать инпут, хотя внешняя обёртка нужна ровно ради него. Классы от тега не зависят; размерный класс контролу здесь не ставится — ступень приходит мостом от подписи. Общий `name` и обёртка группы остаются обязательными.
+
 Выключенный вариант:
 
 ```html

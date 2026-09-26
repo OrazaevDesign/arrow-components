@@ -92,12 +92,13 @@
 
 ```html
 <button class="btn-menu btn-menu-accent-selected btn-menu--400" type="button"
-        aria-haspopup="menu" aria-expanded="true">…</button>
+        aria-haspopup="menu" aria-expanded="true" aria-label="Меню профиля">…</button>
 ```
 
 Тон меняет фон, обводку и цвет шеврона на группу `list/accent-selected`. Атрибут
 `aria-expanded` живёт рядом и отвечает за доступность: класс — про вид, атрибут — про
-смысл. Меняются вместе.
+смысл. Меняются вместе. `aria-label` остаётся обязательным и в раскрытом состоянии —
+текста внутри кнопки нет ни при каком тоне.
 
 Тон переключается **заменой класса**, а не добавлением модификатора: `.btn-menu-default`
 и `.btn-menu-accent-selected` взаимоисключающие (один дефис), вместе не ставятся.

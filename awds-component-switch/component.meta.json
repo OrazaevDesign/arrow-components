@@ -1,10 +1,10 @@
 {
   "component": "switch",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "contract_hash": "sha256:5bb7fca129f6ba8600f29f1d3ec04389a8f512e00f2b9ecaf361ab122b08b28b",
-  "artifact_hash": "sha256:959243c2f6682d04722636d4eae603054cbd73a4c8bcef83a31689ef21065118",
-  "visual_change": true,
-  "released_at": "2026-09-25T07:34:03.239Z",
+  "artifact_hash": "sha256:d2cd73d0046e056d3e983a959bb01b88d5faa5c8e86da34017a4b4f8d9ecdff6",
+  "visual_change": false,
+  "released_at": "2026-09-26T16:58:03.065Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -183,34 +183,80 @@
     "root": {
       "class": "switch",
       "tags": [
-        "label"
+        "label",
+        "span"
       ]
     },
     "variant": null,
     "size": {
       "pattern": "switch--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "lbl--300",
+        "lbl--400",
+        "lbl--500",
+        "fld--300",
+        "fld--400",
+        "fld--500"
+      ],
+      "why_optional": "ступень раздаёт мост родителя: .lbl--{N} .switch и .fld--{N} .lbl .switch кормят size-аккумуляторы сами, и скиллы label и formfield прямо запрещают ставить размерный класс вложенному контролу"
     },
     "native": {
       "tag": "input",
-      "class": "switch__input",
-      "type": "checkbox"
+      "type": "checkbox",
+      "class": "switch__input"
     },
     "children": [
       {
-        "class": "switch__track"
+        "class": "switch__track",
+        "required": true
+      },
+      {
+        "class": "switch__handle",
+        "required": true,
+        "within": "switch__track"
+      },
+      {
+        "class": "switch__icon--on",
+        "required": false,
+        "when_note": "в бегунке показаны иконки (ось show-icon макета); класса у оси нет, она выражена самим наличием иконок",
+        "within": "switch__handle",
+        "why": "иконки переключаются по состоянию, поэтому нужны обе сразу — одна «вкл», одна «выкл»"
+      },
+      {
+        "class": "switch__icon--off",
+        "required": false,
+        "when_note": "в бегунке показаны иконки (ось show-icon макета); класса у оси нет, она выражена самим наличием иконок",
+        "within": "switch__handle",
+        "why": "иконки переключаются по состоянию, поэтому нужны обе сразу — одна «вкл», одна «выкл»"
       }
     ],
-    "attrs": [],
-    "container": null,
-    "note": "Нативный checkbox с role=switch: тумблер объявляет себя переключателем, иначе скринридер прочитает его как обычный чекбокс. Класса варианта нет.",
+    "attrs": [
+      {
+        "attr": "aria-label",
+        "required": true,
+        "unless_child_any": [
+          "switch__label",
+          "lbl__text"
+        ],
+        "why": "без видимой подписи у тумблера нет имени; подпись даёт либо свой .switch__label, либо текст .lbl__text, когда тумблер стоит внутри компонента label"
+      }
+    ],
     "child_attrs": [
       {
-        "class": "switch__input",
+        "child": "switch__input",
         "attr": "role",
-        "why": "роль на нативном input: корень — <label>, роль на нём ничего не значит"
+        "why": "role=\"switch\" на нативном инпуте: без него скринридер читает тумблер как обычный флажок «отмечен», а не как переключатель «вкл/выкл». Роль нужна именно на инпуте — корень это <label>, на нём она ничего не значит"
       }
-    ]
+    ],
+    "container": {
+      "any": [
+        "lbl",
+        "fld"
+      ],
+      "required": false
+    },
+    "note": "Вариант один и класса не имеет — .switch-default не существует. Нативный <input type=\"checkbox\" role=\"switch\"> обязателен вместе с ролью. Бегунок .switch__handle обязателен наравне с треком: без него переключать нечего, а геометрия хода считается на нём. Иконки .switch__icon--on / --off в требования НЕ входят: ось show-icon отдельного класса не имеет и выражена самим наличием иконок в разметке, то есть законны обе разметки — с иконками и без. Когда иконки есть, нужны ОБЕ: они переключаются по состоянию. Корень бывает и <span>: внутри .lbl и .fld тумблер размечается <span class=\"switch\">, потому что вложенные <label> невалидны, и размерного класса там не несёт. Порядок input → track обязателен (сиблинг-селектор +), файловой проверке он не виден. Раскладка строки настроек (подпись слева, тумблер справа) — зона потребителя, в компоненте её нет. Класс .switch--disabled в требования не вынесен: по CSS это запасной вариант для случая, когда инпут не может нести атрибут disabled. До 26.09.2026 требование роли стояло с ключом \"class\" вместо \"child\" и потому не проверялось вовсе: скрипт читает у child_attrs только поле child."
   },
   "family": "forms",
   "summary": "Тумблер вкл/выкл: размеры, состояния, подпись",

@@ -1,10 +1,10 @@
 {
   "component": "button-area",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "contract_hash": "sha256:20b087a266ab23f2cf7d6e6990d2eecbfadd8132856a03495b35b2d343f90904",
-  "artifact_hash": "sha256:3e295efeb385312eb4bc82f9da73b9ca9619af7c7b207c5777ef0764b603365a",
-  "visual_change": true,
-  "released_at": "2026-09-26T14:17:39.496Z",
+  "artifact_hash": "sha256:309e8b0964d6e38b7b599f4bdf78bbcdb675221c989dd0836cb08a55f6675585",
+  "visual_change": false,
+  "released_at": "2026-09-26T16:52:55.847Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -322,13 +322,47 @@
     },
     "size": {
       "pattern": "btn-area--{size}",
-      "required": true
+      "required": false,
+      "why_optional": "База .btn-area заполняет аккумуляторы ступенью 500 (rectangle/500), без класса область рисуется этой ступенью. Шкала — 500 · 400 · 100 · 50."
     },
     "native": null,
-    "children": [],
-    "attrs": [],
+    "children": [
+      {
+        "class": "btn-area__icon",
+        "when": "btn-area--icon-only",
+        "required": true
+      },
+      {
+        "class": "btn-area__progress",
+        "when": "btn-area--loading",
+        "required": true
+      },
+      {
+        "class": "progress",
+        "when": "btn-area--loading",
+        "required": true
+      },
+      {
+        "class": "progress-circular",
+        "when": "btn-area--loading",
+        "required": true
+      },
+      {
+        "class": "progress--indeterminate",
+        "when": "btn-area--loading",
+        "required": true
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "aria-label",
+        "when": "btn-area--icon-only",
+        "required": true,
+        "why": "у icon-only подписи нет — имя области даёт только атрибут"
+      }
+    ],
     "container": null,
-    "note": "Кликабельная область тянется по ширине; вариант задаёт цвет текста и иконок, размер — высоту строки. Спиннера своего нет: в слоте .btn-area__progress живёт кольцо awds-component-progress — на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate. Класс загрузки — .btn-area--loading (до 2.0.0 назывался --progress)."
+    "note": "Кликабельная область тянется по ширине; вариант задаёт цвет текста и иконок (в базе цветов нет — только currentColor-заглушка, чтобы var() не рушил правило), ступень — кегль, иконку, зазор и радиус. Ступень необязательна: база несёт дефолт 500. Содержимое: текстовый вид обязан нести .btn-area__label, icon-only — .btn-area__icon вместо него; проверяется только второе — «__label обязателен, если инстанс НЕ icon-only» гейту не выразить (отрицательного условия у него нет). .btn-area__prefix и .btn-area__suffix опциональны и в контракт не входят. Загрузка — .btn-area--loading: клики гасит сам CSS (pointer-events: none), поэтому disabled не требуем; спиннера своего нет — в слоте .btn-area__progress живёт кольцо awds-component-progress, и на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate. До 2.0.0 класс загрузки назывался --progress."
   },
   "asana": {
     "task_gid": "1218421798642337",

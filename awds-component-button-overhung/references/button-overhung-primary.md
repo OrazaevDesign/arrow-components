@@ -13,15 +13,20 @@
 Базовая разметка:
 
 ```html
-<button class="obtn obtn-primary obtn--400">
+<button class="obtn obtn-primary obtn--400" type="button">
   Купить
 </button>
 ```
 
+`type="button"` стоит во всех примерах: без него нативная кнопка внутри формы по
+умолчанию `submit` и отправляет форму. Вне формы атрибут ничего не меняет, поэтому он
+и есть безопасный дефолт. У варианта-ссылки (`<a>`) атрибута нет — он бывает только у
+`<button>`.
+
 Иконка слева (текст в `__content` — чтобы лоадер мог его скрыть):
 
 ```html
-<button class="obtn obtn-primary obtn--400">
+<button class="obtn obtn-primary obtn--400" type="button">
   <svg viewBox="0 0 24 24" fill="currentColor"><!-- icon path --></svg>
   <span class="obtn__content">Добавить</span>
 </button>
@@ -30,7 +35,7 @@
 Иконка справа:
 
 ```html
-<button class="obtn obtn-primary obtn--400">
+<button class="obtn obtn-primary obtn--400" type="button">
   <span class="obtn__content">Дальше</span>
   <svg viewBox="0 0 24 24" fill="currentColor"><!-- icon path --></svg>
 </button>
@@ -39,7 +44,7 @@
 Только иконка (квадратная):
 
 ```html
-<button class="obtn obtn-primary obtn--400 obtn--icon-only" aria-label="Опции">
+<button class="obtn obtn-primary obtn--400 obtn--icon-only" type="button" aria-label="Опции">
   <svg viewBox="0 0 24 24" fill="currentColor"><!-- icon path --></svg>
 </button>
 ```
@@ -49,7 +54,7 @@
 тот же `<svg>`, что и слот `.obtn__progress`, а кнопка сообщает ему размер и цвет.
 
 ```html
-<button class="obtn obtn-primary obtn--400 obtn--loading" disabled aria-busy="true">
+<button class="obtn obtn-primary obtn--400 obtn--loading" type="button" disabled aria-busy="true">
   <span class="obtn__content">Загрузка…</span>
   <svg class="obtn__progress progress progress-circular progress--indeterminate"
        viewBox="0 0 24 24" aria-hidden="true">

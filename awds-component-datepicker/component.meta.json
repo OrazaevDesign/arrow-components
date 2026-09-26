@@ -1,10 +1,10 @@
 {
   "component": "datepicker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "contract_hash": "sha256:7c095f252b9db71ce9c0b845e58bfc4120462d25f788e041f30511d0ca216aa0",
-  "artifact_hash": "sha256:ae7fa20f21438da90a0f08088f8ea2d81c962578efa0b79a59868c3103cc36a8",
+  "artifact_hash": "sha256:f80373974682b7d86304f7196dc3c080dc0a0e397428986ac5947dfa6c628f0d",
   "visual_change": false,
-  "released_at": "2026-09-26T08:21:56.892Z",
+  "released_at": "2026-09-26T16:58:03.218Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -62,14 +62,16 @@
       ]
     },
     "variant": {
-      "pattern": "dpick--{view}",
+      "pattern": "dpick--{variant}",
       "required": true
     },
     "size": null,
+    "native": null,
     "children": [
       {
         "class": "dpick__month",
-        "required": true
+        "required": true,
+        "why": "панель месяца; в режиме периода их две — количество гейту не видно"
       },
       {
         "class": "dpick__header",
@@ -84,32 +86,71 @@
         "required": true
       },
       {
-        "class": "dpick__weekdays",
-        "required": false
-      },
-      {
-        "class": "dpick__weekday",
-        "required": false
-      },
-      {
         "class": "dpick__grid",
         "required": true
       },
       {
         "class": "dpick__cell",
         "required": true
+      },
+      {
+        "class": "dpick__weekdays",
+        "required": true,
+        "when": "dpick--date",
+        "when_note": "шапка дней недели есть только у вида date; у месяцев и годов её нет"
+      },
+      {
+        "class": "dpick__weekday",
+        "required": true,
+        "when": "dpick--date"
       }
     ],
-    "attrs": [
-      "role",
-      "aria-label",
-      "aria-selected",
-      "aria-current",
-      "aria-live",
-      "disabled"
+    "attrs": [],
+    "child_attrs": [
+      {
+        "child": "dpick__grid",
+        "attr": "role",
+        "why": "сетка размечена role=grid — иначе ячейки не читаются как таблица дат"
+      },
+      {
+        "child": "dpick__cell",
+        "attr": "role",
+        "why": "ячейка — role=gridcell"
+      },
+      {
+        "child": "dpick__weekday",
+        "attr": "role",
+        "why": "подпись дня недели — role=columnheader"
+      },
+      {
+        "child": "dpick__weekday",
+        "attr": "aria-label",
+        "why": "на экране две буквы, полное название дня идёт в aria-label"
+      },
+      {
+        "child": "dpick__cell--selected",
+        "attr": "aria-selected",
+        "why": "выбранная дата отличается от обычной только цветом — нужен aria-selected=true"
+      },
+      {
+        "child": "dpick__cell--today",
+        "attr": "aria-current",
+        "why": "«сегодня» отличается только цветом текста — нужен aria-current=date"
+      },
+      {
+        "child": "dpick__nav",
+        "attr": "aria-label",
+        "why": "метку несёт кнопка листания; пустая распорка режима периода стоит под aria-hidden и из проверки исключена",
+        "unless_attr": "aria-hidden"
+      },
+      {
+        "child": "dpick__title",
+        "attr": "aria-live",
+        "why": "заголовок меняется при каждом листании и без перевода фокуса — без aria-live смена проходит молча"
+      }
     ],
     "container": null,
-    "note": "dpick__weekdays нужен только виду date: у месяцев и годов шапки дней недели нет. Первая дата месяца сдвигается grid-column-start, пустых клеток в разметке нет — на них можно было бы нажать."
+    "note": "dpick__weekdays нужен только виду date: у месяцев и годов шапки дней недели нет. Первая дата месяца сдвигается grid-column-start, пустых клеток в разметке нет — на них можно было бы нажать. Вид обязателен классом dpick--date / --month / --year; dpick--range добавляется к виду и даёт две панели. Шкалы размеров у компонента нет — ступень одна. Календарной арифметики компонент не несёт, классы состояний ячейки (--today, --selected, --range) проставляет потребитель в рантайме, поэтому требованиями они не записаны. aria-label на .dpick__nav и aria-live на .dpick__title стоят required:false — документацией, а не требованием: в собственных сниппетах скилла есть и пустая распорка <span class=\"dpick__nav\" aria-hidden=\"true\"> без метки, и заголовок вида month без aria-live, то есть эталон компонента этим требованиям не удовлетворяет. До 26.09.2026 в attrs лежал список role/aria-selected/aria-current/aria-live/disabled — он проверялся на КОРНЕ .dpick, где ничего из этого нет; требования перенесены в child_attrs. Там же был вариантный pattern \"dpick--{view}\": подстановку гейт делает только по ключу {variant}, поэтому проверка искала класс с литеральной строкой «{view}» и уронила бы любой инстанс."
   },
   "preview": {
     "base_class": "dpick",

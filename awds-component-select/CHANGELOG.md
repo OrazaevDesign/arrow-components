@@ -1,5 +1,9 @@
 # select — журнал версий
 
+## 1.0.22 — 2026-09-26 — PATCH
+Пункты списка приведены к одному виду: классы list-item несёт каждый видимый пункт, голым <option> остаётся только невидимый — скрытый плейсхолдер и пункт выключенного контрола.
+Потребителю: Разметка и CSS прежние. Под base-select голый <option> остаётся и без нашего вида, и без UA-галочки: выбранный пункт не отмечен ничем — проставьте классы.
+
 ## 1.0.21 — 2026-09-26 — PATCH
 Ячейки группы list переименованы под варианты list-item (решение 26.09.2026): unselected→default, selected→default-selected, unselected-actual→actual-selected, selected-secondary→accent-selected, unselected-transparent→transparent, unselected/selected-tabbar→tabbar/tabbar-selected, unselected/selected-menu→menu/menu-selected, unselected/selected-variation→variation/variation-selected, indeterminate-variation→variation-indeterminate
 Потребителю: Ничего делать не нужно: переименование, значения и вид прежние. Якоря #cell в CSS — комментарии, цвета идут ролями

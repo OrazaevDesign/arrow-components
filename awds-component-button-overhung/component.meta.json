@@ -1,10 +1,10 @@
 {
   "component": "button-overhung",
-  "version": "2.0.14",
+  "version": "2.0.15",
   "contract_hash": "sha256:734b4e05e7eed9c113df4e28601577eb5812a9cd6b08f0826a83433219589058",
-  "artifact_hash": "sha256:a94f778af6af47620b7c52a3513dd79ffa385adc8bb0d76469be045687136e4c",
+  "artifact_hash": "sha256:01069e4471bf10eb4d86ef043cf571717f31f8b04618639fb2534aed4e059b04",
   "visual_change": false,
-  "released_at": "2026-09-26T11:03:08.431Z",
+  "released_at": "2026-09-26T16:52:55.978Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -191,13 +191,72 @@
     },
     "size": {
       "pattern": "obtn--{size}",
-      "required": true
+      "required": false,
+      "why_optional": "База .obtn заполняет size-аккумуляторы ступенью 400 (SKILL.md, шаг 5: «если не указан — obtn--400»). Радиус в шкалу не входит вовсе: таблетка одна на все ступени."
     },
     "native": null,
-    "children": [],
-    "attrs": [],
+    "children": [
+      {
+        "class": "obtn__content",
+        "when": "obtn--loading",
+        "required": true,
+        "why": "правило .obtn--loading .obtn__content прячет контент через visibility: hidden — без слота прятать нечего, и текст останется под кольцом"
+      },
+      {
+        "class": "obtn__progress",
+        "when": "obtn--loading",
+        "required": true
+      },
+      {
+        "class": "progress",
+        "when": "obtn--loading",
+        "required": true
+      },
+      {
+        "class": "progress-circular",
+        "when": "obtn--loading",
+        "required": true
+      },
+      {
+        "class": "progress--indeterminate",
+        "when": "obtn--loading",
+        "required": true,
+        "why": "анимацию ведёт этот класс: без него кольцо не крутится, а стоит"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "aria-label",
+        "when": "obtn--icon-only",
+        "required": true,
+        "why": "текста внутри нет — имя кнопке даёт только атрибут"
+      },
+      {
+        "attr": "aria-busy",
+        "when": "obtn--loading",
+        "required": true,
+        "why": "кольцо декоративное (aria-hidden), о занятости сообщает атрибут"
+      },
+      {
+        "attr": "disabled",
+        "when": "obtn--loading",
+        "tags": [
+          "button"
+        ],
+        "required": true,
+        "why": "класс .obtn--loading только прячет контент, pointer-events он не снимает — без атрибута кнопка в загрузке продолжает нажиматься"
+      },
+      {
+        "attr": "type",
+        "tags": [
+          "button"
+        ],
+        "required": true,
+        "why": "без type нативная кнопка внутри формы по умолчанию submit и отправляет её; у <a> атрибута нет"
+      }
+    ],
     "container": null,
-    "note": "Отдельный компонент от button: светлый фон плюс постоянная тень. Вариант и размер обязательны по той же причине, что у кнопки. Спиннера своего нет: в слоте .obtn__progress живёт кольцо awds-component-progress — на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate."
+    "note": "Отдельный компонент от button: светлый фон surface-* плюс постоянная тень elevation-1, класс свой (.obtn), чтобы оба жили на странице без конфликта. Вариант обязателен: в базе цветовых аккумуляторов нет, .obtn без .obtn-{variant} остаётся без фона и текста. Ступень необязательна — база несёт дефолт 400. Загрузка: контент обязан лежать в .obtn__content, рядом — disabled и aria-busy; спиннера своего нет, в слоте .obtn__progress живёт кольцо awds-component-progress, и на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate. Атрибут type у <button> НЕ требуется: в эталонных сниппетах скилла его нет ни в одном примере (расхождение с awds-component-button, где он есть везде) — решает автор, контракт не опережает скилл. Атрибут type обязателен у корня-<button> и не требуется у корня-<a>: 26.09.2026 он дописан во все сниппеты скилла, до этого расходился с соседями по семейству и со всеми 30 инстансами в блоках."
   },
   "asana": {
     "task_gid": "1218421798642209",

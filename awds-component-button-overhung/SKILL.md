@@ -91,6 +91,7 @@ description: Button Overhung ArrowDS (.obtn).
 3. Подключи `references/button-overhung-primary.css` (один раз глобально).
 4. Убедись, что на странице есть базовые токены DS (`--awds-rectangle-*`, `--awds-shadow-elevation-*`, `--awds-opacity-*`, `--awds-font-*`) и сайтовый `css-variables.css` (даёт `--surface-*` под брендом сайта).
 5. Добавь размерный модификатор `.obtn--{size}` (если не указан — `obtn--400`).
+6. Тег `<button>` пиши с `type="button"`: без атрибута кнопка внутри формы по умолчанию `submit` и отправляет её; вне формы атрибут ничего не меняет. У варианта-ссылки (`<a>`) его нет.
 
 ## Refresh
 

@@ -27,8 +27,12 @@
 
   <span class="select select-default">
     <select class="select__field" id="city" aria-describedby="city-desc">
-      <option value="">Выберите город</option>
-      <option value="ala">Алматы</option>
+      <option value="" class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">Выберите город</span></span>
+      </option>
+      <option value="ala" class="list-item list-item-transparent">
+        <span class="list-item__content"><span class="list-item__title">Алматы</span></span>
+      </option>
     </select>
   </span>
 

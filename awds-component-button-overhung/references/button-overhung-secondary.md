@@ -13,7 +13,7 @@
 Базовая разметка:
 
 ```html
-<button class="obtn obtn-secondary obtn--400">
+<button class="obtn obtn-secondary obtn--400" type="button">
   Отмена
 </button>
 ```
@@ -21,7 +21,7 @@
 Иконка слева (текст в `__content`):
 
 ```html
-<button class="obtn obtn-secondary obtn--400">
+<button class="obtn obtn-secondary obtn--400" type="button">
   <svg viewBox="0 0 24 24" fill="currentColor"><!-- icon path --></svg>
   <span class="obtn__content">Назад</span>
 </button>
