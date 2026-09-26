@@ -60,6 +60,9 @@
      обводку именно на ней — литерал был расхождением кода с макетом, а не отсутствием
      токена. Нашлось при привязке слоёв к ячейкам. */
   --awds-tooltip-hairline:   rgb(var(--extended-shadow-3));   /* #cell tooltip/hairline */
+  /* Толщина хайрлайна — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-tooltip-hairline-width: var(--awds-space-px);   /* #cell outline/offset */
   /* Ширина прямоугольной области (UX-спека): рекомендация 250px, максимум 500px.
      В DS нет токена для ширины тултипа — литерал, перекрывается переменной у потребителя
      (напр. --awds-tooltip-max-width: 500px для широкого пояснения). Текст переносится. */
@@ -179,8 +182,8 @@
   bottom: calc(-0.5 * var(--awds-tooltip-tail));
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-right:  1px solid var(--awds-tooltip-hairline);
-  border-bottom: 1px solid var(--awds-tooltip-hairline);
+  border-right:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
 
 /* Bottom: хвост сверху, смотрит вверх */
@@ -189,8 +192,8 @@
   bottom: auto;
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:  1px solid var(--awds-tooltip-hairline);
-  border-left: 1px solid var(--awds-tooltip-hairline);
+  border-top:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-left: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
 
 /* Left: хвост справа, смотрит вправо */
@@ -198,8 +201,8 @@
   right: calc(-0.5 * var(--awds-tooltip-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:   1px solid var(--awds-tooltip-hairline);
-  border-right: 1px solid var(--awds-tooltip-hairline);
+  border-top:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-right: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
 
 /* Right: хвост слева, смотрит влево */
@@ -207,6 +210,6 @@
   left: calc(-0.5 * var(--awds-tooltip-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-bottom: 1px solid var(--awds-tooltip-hairline);
-  border-left:   1px solid var(--awds-tooltip-hairline);
+  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-left:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
