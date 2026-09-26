@@ -86,7 +86,10 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0 0 0 1px var(--awds-emb-border);
+  /* Толщина обводки — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-emb-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-emb-border-width) var(--awds-emb-border);
   pointer-events: none;
 }
 
