@@ -22,11 +22,15 @@
    поэтому цвета совпадают с awds-component-link по определению, а не по сверке.
    Группа areabutton в теме есть, но накрывает только default/muted/contrast — с 2.0.0
    компонент её не читает, чтобы источник был один:
-     default  rest tertiary-container-on-high   → hover tertiary-container-on-highest
-     muted    rest surface-on-high              → hover surface-on-highest
-     contrast rest surface-on-highest           → hover surface-on-high
-     accent   rest surface-on-highest           → hover accent-container-on
-     heading  rest surface-on-high              → hover accent-container-on
+     default  rest tertiary-on         → hover accent-core
+     muted    rest surface-on-high     → hover surface-on-highest
+     contrast rest surface-on-highest  → hover surface-on-high
+     accent   rest surface-on-highest  → hover accent-core
+     heading  rest surface-on-high     → hover accent-core
+   До 2.0.7 здесь стояли цвета снятой группы areabutton у default (rest и hover) и
+   accent-container-on на наведении у accent и heading — якоря переписали на link
+   31.08.2026, а значения нет. Гейт этого не ловил: правила записаны однострочниками,
+   а он читал только объявления с начала строки.
    (focus/active = rest-цвет; focus добавляет обводку surface-on-highest. Это link-area —
     БЕЗ подчёркивания, в отличие от inline-ссылки awds-component-link.)
 
@@ -141,8 +145,8 @@
 
 /* === Варианты (цвет; rest + hover. focus/active = rest) === */
 
-.btn-area-default  { --awds-btn-area-color: rgb(var(--tertiary-container-on-high));   /* #cell link/default-rest */ }
-.btn-area-default:hover  { --awds-btn-area-color: rgb(var(--tertiary-container-on-highest));   /* #cell link/default-hover */ }
+.btn-area-default  { --awds-btn-area-color: rgb(var(--tertiary-on));   /* #cell link/default-rest */ }
+.btn-area-default:hover  { --awds-btn-area-color: rgb(var(--accent-core));   /* #cell link/default-hover */ }
 
 .btn-area-muted    { --awds-btn-area-color: rgb(var(--surface-on-high));   /* #cell link/muted-rest */ }
 .btn-area-muted:hover    { --awds-btn-area-color: rgb(var(--surface-on-highest));   /* #cell link/muted-hover */ }
@@ -151,10 +155,10 @@
 .btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--surface-on-high));   /* #cell link/contrast-hover */ }
 
 .btn-area-accent   { --awds-btn-area-color: rgb(var(--surface-on-highest));   /* #cell link/accent-rest */ }
-.btn-area-accent:hover   { --awds-btn-area-color: rgb(var(--accent-container-on));   /* #cell link/accent-hover */ }
+.btn-area-accent:hover   { --awds-btn-area-color: rgb(var(--accent-core));   /* #cell link/accent-hover */ }
 
 .btn-area-heading  { --awds-btn-area-color: rgb(var(--surface-on-high));   /* #cell link/heading-rest */ }
-.btn-area-heading:hover  { --awds-btn-area-color: rgb(var(--accent-container-on));   /* #cell link/heading-hover */ }
+.btn-area-heading:hover  { --awds-btn-area-color: rgb(var(--accent-core));   /* #cell link/heading-hover */ }
 
 /* === Состояния === */
 

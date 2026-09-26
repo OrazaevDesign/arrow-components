@@ -1,10 +1,10 @@
 {
   "component": "button-area",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "contract_hash": "sha256:20b087a266ab23f2cf7d6e6990d2eecbfadd8132856a03495b35b2d343f90904",
-  "artifact_hash": "sha256:776408cf6cb4f5c99bc147ecafce951a1803268e0b2ba4a11c1fbb11368fd1b4",
+  "artifact_hash": "sha256:3e295efeb385312eb4bc82f9da73b9ca9619af7c7b207c5777ef0764b603365a",
   "visual_change": true,
-  "released_at": "2026-09-15T15:29:00.632Z",
+  "released_at": "2026-09-26T14:17:39.496Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -226,7 +226,7 @@
     ]
   },
   "ds_token_dependencies": [
-    "--accent-container-on",
+    "--accent-core",
     "--awds-control-font-size-200",
     "--awds-control-font-size-300",
     "--awds-control-font-size-400",
@@ -252,8 +252,7 @@
     "--awds-space-5",
     "--surface-on-high",
     "--surface-on-highest",
-    "--tertiary-container-on-high",
-    "--tertiary-container-on-highest"
+    "--tertiary-on"
   ],
   "_dependency_note": "Размеры — через shape-слой --awds-rectangle-{500,400,100,50}-{gap,icon,typography-*,rounded}. Цвета — роли inline (= link). Focus-обводка rgb(var(--surface-on-highest)); disabled — var(--awds-state-opacity-control-disabled-rest); спиннер — var(--awds-rounded-border-radius-full) + @keyframes. Растяжение hit-области — модификаторы --fill*.",
   "last_synced": "2026-09-15T18:40:00Z",
