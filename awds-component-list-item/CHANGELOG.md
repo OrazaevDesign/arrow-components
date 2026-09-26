@@ -1,5 +1,21 @@
 # list-item — журнал версий
 
+## 1.1.0 — 2026-09-26 — MINOR · visual
+Добавлен вариант variation-img — вариация товара с фотографией. Перенесён из awds-component-tab-product (вариант img): подложка list/variation-img/bg, завеса list/variation-img/veil псевдоэлементом, слот .list-item__img с object-fit: cover. Пропорция 4:5 из tab-product не перенесена — высоту задаёт содержимое
+Потребителю: Новый класс .list-item-variation-img. Ничего из существующего не меняется
+
+## 1.0.15 — 2026-09-26 — PATCH · visual
+Толщина рамки выведена в аккумулятор --awds-list-item-border-width и привязана к ячейкам слоя Size: невыбранные варианты — size/outline/offset (1px), выбранные — size/outline/width (2px). Литерал 1px убран из всех двенадцати вариантов и из own_values
+Потребителю: У шести выбранных вариантов (default-selected, accent-selected, actual-selected, tabbar-selected, menu-selected, variation-selected) рамка стала вдвое толще — 2px вместо 1px. Высота строки не изменилась: рамка рисуется inset box-shadow
+
+## 1.0.14 — 2026-09-26 — PATCH
+Ячейки группы list переименованы под варианты list-item (решение 26.09.2026): unselected→default, selected→default-selected, unselected-actual→actual-selected, selected-secondary→accent-selected, unselected-transparent→transparent, unselected/selected-tabbar→tabbar/tabbar-selected, unselected/selected-menu→menu/menu-selected, unselected/selected-variation→variation/variation-selected, indeterminate-variation→variation-indeterminate
+Потребителю: Ничего делать не нужно: переименование, значения и вид прежние. Якоря #cell в CSS — комментарии, цвета идут ролями
+
+## 1.0.13 — 2026-09-26 — PATCH · visual
+Описание строки переведено на secondary-container-on-high: шесть ячеек list/{unselected,unselected-variation,indeterminate-variation}/description-{rest,focus,active} сдвинуты в студии
+Потребителю: Подпись под заголовком стала читаемой: было 2.78:1 на светлой теме и 3.15:1 на тёмной при норме 4.5:1, стало 4.96:1 и 8.13:1. Приглушённого описания в покое больше нет
+
 ## 1.0.12 — 2026-09-25 — PATCH · visual
 33 ячейки list/* подтянуты за студией: ховер и актив в tabbar и menu на accent-core, галочки выбора на primary-core и primary-container-on-high, описание в default на secondary-container-on-high, рамка variation-hover на primary-container-on. Замеры контраста в SKILL.md пересчитаны — прежние относились к старым значениям ролей.
 Потребителю: Разметка и классы прежние. Меняются цвета выбора, ховера и описания; описание default в покое теперь 2.78:1 — если текст важнее факта выбора, берите transparent или default-selected. Потребителям с копией CSS нужна пересборка секции.

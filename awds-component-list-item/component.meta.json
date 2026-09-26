@@ -1,28 +1,16 @@
 {
   "component": "list-item",
-  "version": "1.0.12",
-  "contract_hash": "sha256:8f957981ee405a1e75dd055737fb2319e8ed02dd480aff4df32ad3a00ec72813",
-  "artifact_hash": "sha256:2200e0b0dad9a5b7de79c5dbb76820f0f5c1377f8b2ee938d5423cee3bc2551a",
+  "version": "1.1.0",
+  "contract_hash": "sha256:40c899e3782386d1b5827f2c2523b6c4b5be618fbc21a1d3d82c2d07b95a99a9",
+  "artifact_hash": "sha256:b867bc352984834d12e5ef8423b7ca56ba129b64af39d929c594ab9c910bfbab",
   "visual_change": true,
-  "released_at": "2026-09-25T05:54:41.263Z",
+  "released_at": "2026-09-26T09:13:54.759Z",
   "own_values": [
-    {
-      "value": "1px",
-      "where": "box-shadow",
-      "count": 24,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
-    },
     {
       "value": "0.15s",
       "where": "transition",
       "count": 12,
       "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "transparent",
-      "where": "--awds-list-item-check у .list-item-variation",
-      "count": 1,
-      "why": "галочка невыбранной плитки не рисуется; узла галочки у наборов variation в макете нет вовсе — значение существует только в коде, ячейки под него не будет"
     }
   ],
   "figma": {
@@ -37,73 +25,80 @@
       "node_id": "8:59676",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59676",
       "figma_label": "list-item / transparent",
-      "token_role": "list/unselected-transparent"
+      "token_role": "list/transparent"
     },
     "default": {
       "node_id": "8:59824",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59824",
       "figma_label": "list-item / default",
-      "token_role": "list/unselected"
+      "token_role": "list/default"
     },
     "actual-selected": {
       "node_id": "8:59972",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59972",
       "figma_label": "list-item / actual-selected",
-      "token_role": "list/unselected-actual"
+      "token_role": "list/actual-selected"
     },
     "accent-selected": {
       "node_id": "8:60120",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60120",
       "figma_label": "list-item / accent-selected",
-      "token_role": "list/selected-secondary"
+      "token_role": "list/accent-selected"
     },
     "default-selected": {
       "node_id": "8:60268",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60268",
       "figma_label": "list-item / default-selected",
-      "token_role": "list/selected"
+      "token_role": "list/default-selected"
     },
     "tabbar": {
       "node_id": "8:60416",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60416",
       "figma_label": "list-item / tabbar",
-      "token_role": "list/unselected-tabbar"
+      "token_role": "list/tabbar"
     },
     "menu": {
       "node_id": "8:60564",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60564",
       "figma_label": "list-item / menu",
-      "token_role": "list/unselected-menu"
+      "token_role": "list/menu"
     },
     "tabbar-selected": {
       "node_id": "8:60712",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60712",
       "figma_label": "list-item / tabbar-selected",
-      "token_role": "list/selected-tabbar"
+      "token_role": "list/tabbar-selected"
     },
     "menu-selected": {
       "node_id": "8:60860",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60860",
       "figma_label": "list-item / menu-selected",
-      "token_role": "list/selected-menu"
+      "token_role": "list/menu-selected"
     },
     "variation": {
       "node_id": "280:24620",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-24620",
       "figma_label": "list-item / variation",
-      "token_role": "list/unselected-variation"
+      "token_role": "list/variation"
     },
     "variation-indeterminate": {
       "node_id": "280:24775",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-24775",
       "figma_label": "list-item / variation-indeterminate",
-      "token_role": "list/indeterminate-variation"
+      "token_role": "list/variation-indeterminate"
     },
     "variation-selected": {
       "node_id": "280:25000",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-25000",
       "figma_label": "list-item / variation-selected",
-      "token_role": "list/selected-variation"
+      "token_role": "list/variation-selected"
+    },
+    "variation-img": {
+      "node_id": "802:5637",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=802-5637",
+      "figma_label": "list-item / variation-img",
+      "token_role": "list/variation + list/variation-img",
+      "note": "Перенесён 26.09.2026 из awds-component-tab-product (вариант img). В макете пять состояний без ступеней размера — как было у tab-product; код несёт всю лестницу семьи."
     }
   },
   "shape": "rectangle",
@@ -236,6 +231,8 @@
     "--awds-space-4",
     "--awds-space-4-5",
     "--awds-space-5",
+    "--awds-space-px",
+    "--extended-shadow-3",
     "--extended-transparent",
     "--primary-container-core",
     "--primary-container-on",
@@ -471,11 +468,13 @@
       "list-item-tabbar-selected",
       "list-item-transparent",
       "list-item-variation",
+      "list-item-variation-img",
       "list-item-variation-indeterminate",
       "list-item-variation-selected",
       "list-item__check",
       "list-item__content",
       "list-item__description",
+      "list-item__img",
       "list-item__prefix",
       "list-item__suffix",
       "list-item__title"
@@ -499,6 +498,7 @@
       "tabbar-selected",
       "transparent",
       "variation",
+      "variation-img",
       "variation-indeterminate",
       "variation-selected"
     ],

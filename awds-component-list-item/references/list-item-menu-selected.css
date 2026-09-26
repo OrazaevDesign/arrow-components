@@ -81,7 +81,10 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-list-item-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-list-item-border);
+  /* Толщина рамки — ячейка size/outline/width (2px): выбранная строка обведена
+     жирно, и это её главный признак. Литерала тут быть не должно. */
+  --awds-list-item-border-width: var(--awds-space-0-5);   /* #cell outline/width */
+  box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
   background: var(--awds-list-item-bg);
   color: var(--awds-list-item-color);
 
@@ -306,11 +309,11 @@
 /* === Variant: menu-selected === */
 
 .list-item-menu-selected {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/selected-menu/bg */
-  --awds-list-item-border:  rgb(var(--secondary-container-core));   /* #cell list/selected-menu/bg */
-  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/selected-menu/color */
-  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/selected-menu/description */
-  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/selected-menu/icon-check */
+  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/menu-selected/bg */
+  --awds-list-item-border:  rgb(var(--secondary-container-core));   /* #cell list/menu-selected/bg */
+  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/menu-selected/color */
+  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/menu-selected/description */
+  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/menu-selected/icon-check */
 }
 
 

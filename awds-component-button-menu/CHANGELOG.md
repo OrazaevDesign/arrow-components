@@ -2,6 +2,10 @@
 
 > До версии 2.0.0 компонент назывался `button-profile` (базовый класс `.btn-profile`). Запись 1.0.0 говорит о нём. Отдельный компонент `button-lang` слит в этот же 31.08.2026 — своего журнала у него не было.
 
+## 2.0.7 — 2026-09-26 — PATCH
+Ячейки группы list переименованы под варианты list-item (решение 26.09.2026): unselected→default, selected→default-selected, unselected-actual→actual-selected, selected-secondary→accent-selected, unselected-transparent→transparent, unselected/selected-tabbar→tabbar/tabbar-selected, unselected/selected-menu→menu/menu-selected, unselected/selected-variation→variation/variation-selected, indeterminate-variation→variation-indeterminate
+Потребителю: Ничего делать не нужно: переименование, значения и вид прежние. Якоря #cell в CSS — комментарии, цвета идут ролями
+
 ## 2.0.6 — 2026-09-15 — PATCH · visual
 Код переведён с приватных ячеек State/Size на роли и базовые шкалы — 29 мёртвых ссылок, 22 якоря #cell. До починки кнопка рисовалась 32×32 без фона, обводки, отступов и зазора вместо 62×40 — 85 элементов превью из 181. В макете 60 шевронов перепривязаны со старой библиотеки: там жили опечатки chevrone и placehold, причём в наборе accent-selected шеврон стоял на ячейке подсказки.
 Потребителю: Классы и разметка не менялись: контракт тот же. Кнопка обретает фон и обводку — если блок рисовал их сам, подгонку надо снять.

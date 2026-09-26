@@ -1,7 +1,7 @@
 # List-item / Actual-selected
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → набор 8:59972](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59972)
-**Роль токенов:** `list/unselected-actual`
+**Роль токенов:** `list/actual-selected`
 
 > [!NOTE]
 > Этот файл — **author-owned**. ACB пишет первичный draft, потом не трогает.

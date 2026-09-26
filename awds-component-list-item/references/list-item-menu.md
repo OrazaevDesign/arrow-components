@@ -1,7 +1,7 @@
 # List-item / Menu
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → набор 8:60564](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60564)
-**Роль токенов:** `list/unselected-menu`
+**Роль токенов:** `list/menu`
 
 > [!NOTE]
 > Этот файл — **author-owned**. ACB пишет первичный draft, потом не трогает.

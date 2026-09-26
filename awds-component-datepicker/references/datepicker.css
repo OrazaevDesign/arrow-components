@@ -128,7 +128,7 @@
   padding: var(--awds-dpick-nav-padding);
   border: 0;
   border-radius: var(--awds-dpick-cell-rounded);
-  background: rgb(var(--extended-transparent));                           /* #cell list/unselected-transparent/bg */
+  background: rgb(var(--extended-transparent));                           /* #cell list/transparent/bg */
   color: rgb(var(--surface-on-high));                                     /* #cell button/ghost/color */
   cursor: pointer;
   opacity: var(--awds-opacity-100);                                       /* #cell opacity/control/enabled */
@@ -169,7 +169,7 @@
   min-width: 0;
   padding: 0;
   border: 0;
-  background: rgb(var(--extended-transparent));                           /* #cell list/unselected-transparent/bg */
+  background: rgb(var(--extended-transparent));                           /* #cell list/transparent/bg */
   color: rgb(var(--surface-on-highest));                                  /* #cell link/contrast */
   font-family: inherit;
   font-size: var(--awds-dpick-title-fs);
@@ -212,9 +212,9 @@
 
 /* === Ячейка === */
 .dpick__cell {
-  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/unselected-transparent/bg */
-  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/unselected-transparent/border */
-  --awds-dpick-cell-color:  rgb(var(--secondary-container-on-highest));   /* #cell list/unselected-transparent/color */
+  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg */
+  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border */
+  --awds-dpick-cell-color:  rgb(var(--secondary-container-on-highest));   /* #cell list/transparent/color */
 
   display: flex;
   align-items: center;
@@ -240,20 +240,20 @@
 }
 
 .dpick__cell:hover {
-  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/unselected-transparent/bg-hover */
-  --awds-dpick-cell-border: rgb(var(--secondary-container-core));         /* #cell list/unselected-transparent/border-hover */
+  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/transparent/bg-hover */
+  --awds-dpick-cell-border: rgb(var(--secondary-container-core));         /* #cell list/transparent/border-hover */
 }
 
 /* Сегодня. Красный текст и серая рамка — ячейка остаётся невыбранной:
    выделение сегодняшнего дня не значит, что его выбрали. */
 .dpick__cell--today {
-  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/unselected-actual/border */
-  --awds-dpick-cell-color:  rgb(var(--accent-core));              /* #cell list/unselected-actual/color */
+  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border */
+  --awds-dpick-cell-color:  rgb(var(--accent-core));              /* #cell list/actual-selected/color */
 }
 
 .dpick__cell--today:hover {
-  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/unselected-actual/bg-hover */
-  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/unselected-actual/border */
+  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/actual-selected/bg-hover */
+  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border */
 }
 
 /* Внутри выбранного периода. Своя группа ячеек, не hover — см. шапку файла. */
@@ -266,14 +266,14 @@
 /* Выбранная дата — и концы периода тоже. Правило идёт после range: конец
    периода обязан выглядеть выбранным, а не подсвеченным. */
 .dpick__cell--selected {
-  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           /* #cell list/selected-secondary/bg */
-  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      /* #cell list/selected-secondary/border */
-  --awds-dpick-cell-color:  rgb(var(--primary-container-on-highest));     /* #cell list/selected-secondary/color */
+  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           /* #cell list/accent-selected/bg */
+  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      /* #cell list/accent-selected/border */
+  --awds-dpick-cell-color:  rgb(var(--primary-container-on-highest));     /* #cell list/accent-selected/color */
 }
 
 .dpick__cell--selected:hover {
-  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           /* #cell list/selected-secondary/bg */
-  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      /* #cell list/selected-secondary/border */
+  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           /* #cell list/accent-selected/bg */
+  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      /* #cell list/accent-selected/border */
 }
 
 /* Ячейка соседнего месяца и дата вне допустимого диапазона. Гашение — то же
@@ -286,6 +286,6 @@
 
 .dpick__cell:disabled:hover,
 .dpick__cell[aria-disabled="true"]:hover {
-  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/unselected-transparent/bg */
-  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/unselected-transparent/border */
+  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg */
+  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border */
 }

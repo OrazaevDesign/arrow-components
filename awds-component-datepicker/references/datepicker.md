@@ -87,10 +87,10 @@
 
 | Класс | Что значит | Откуда цвет |
 |---|---|---|
-| — | обычная дата | `list/unselected-transparent/*` |
-| `:hover` | наведение | `list/unselected-transparent/*-hover` |
-| `dpick__cell--today` | сегодня | `list/unselected-actual/*` |
-| `dpick__cell--selected` | выбранная дата и концы периода | `list/selected-secondary/*` |
+| — | обычная дата | `list/transparent/*` |
+| `:hover` | наведение | `list/transparent/*-hover` |
+| `dpick__cell--today` | сегодня | `list/actual-selected/*` |
+| `dpick__cell--selected` | выбранная дата и концы периода | `list/accent-selected/*` |
 | `dpick__cell--range` | дата внутри выбранного периода | `list/range/*` |
 | `disabled` / `aria-disabled` | вне допустимого диапазона, соседний месяц | гашение `opacity/control/disabled` |
 

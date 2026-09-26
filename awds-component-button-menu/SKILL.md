@@ -56,7 +56,7 @@ description: Button Menu ArrowDS (.btn-menu).
 
 **Выбранность — тон, а не состояние.** «Меню раскрыто» это `.btn-menu-accent-selected`, а
 не модификатор `--selected` и не ось `selected=on|off`: дизайн-система выражает
-выбранность именем варианта (`list/selected-secondary`, `rating/selected`,
+выбранность именем варианта (`list/accent-selected`, `rating/selected`,
 `tab/unselected`), и в макете это два отдельных набора — `button-menu / default` и
 `button-menu / accent-selected`. Имена тонов взяты по образцу `list-item`, у которого те
 же `default` и `accent-selected`.
@@ -112,8 +112,8 @@ padding и gap у всех трёх одни (коллекция `profile-button
 вплотную к углу круга.
 
 **Расхождение с макетом, записанное намеренно.** Цвет шеврона у `accent-selected` код
-берёт из `list/selected-secondary/chevron`, а в макете стоит
-`list/selected-secondary/placeholder`: ячейки `chevron` в переменных Figma нет — экспорт
+берёт из `list/accent-selected/chevron`, а в макете стоит
+`list/accent-selected/placeholder`: ячейки `chevron` в переменных Figma нет — экспорт
 студия → Figma её не довёз. Решение владельца ДС (Р6 плана от 01.09.2026): правильный код
 пишем сейчас, макет догоняет после экспорта. Находка — в
 `plans/2026-08-25 - value-drift-registry.md`, Р-14.
@@ -139,7 +139,7 @@ padding и gap у всех трёх одни (коллекция `profile-button
   `opacity/chevron/{shrink,expand}` (40 → 90 → 100%); в макете этой привязки нет ни в
   одной из 60 ячеек, а `opacity/control/{enabled,disabled}` привязана к самой ячейке, то
   есть к кнопке целиком. Замер: тёмнейший пиксель шеврона в `rest` — `#080808`, ровно
-  значение `list/unselected/chevron-rest`, без множителя.
+  значение `list/default/chevron-rest`, без множителя.
 - **Цвет точки на hover кнопки не меняется**, хотя в макете он темнеет: точка — чужой
   компонент, и её `:hover`-правила принадлежат `awds-component-notice`. Лезть в её
   селектор из кнопки нельзя, поэтому расхождение записано вопросом в мете.

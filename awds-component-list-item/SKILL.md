@@ -38,20 +38,21 @@ description: List Item ArrowDS (.list-item).
 
 | Класс | Роль токенов | Figma | Когда |
 |---|---|---|---|
-| `list-item-transparent` | `unselected-transparent` | Transparent | Поверх готовой поверхности: попап, карточка, сайдбар. Подсветка только под курсором |
-| `list-item-default` | `unselected` | Default | Невыбранная строка на собственной подложке, текст приглушён |
-| `list-item-default-selected` | `selected` | Default-selected | Выбранная строка того же списка: подложка та же, текст на полный контраст |
-| `list-item-actual-selected` | `unselected-actual` | Actual-selected | Текущее, действующее значение: обводка по контуру + акцентный текст |
-| `list-item-accent-selected` | `selected-secondary` | Accent-selected | Выбор с брендовой заливкой — самый заметный. Его же использует попап `select` |
-| `list-item-tabbar` | `unselected-tabbar` | Tabbar | Неактивная вкладка нижней панели |
-| `list-item-tabbar-selected` | `selected-tabbar` | Tabbar-selected | Активная вкладка нижней панели |
-| `list-item-menu` | `unselected-menu` | Menu | Пункт меню: при наведении подложка + акцентный текст |
-| `list-item-menu-selected` | `selected-menu` | Menu-selected | Текущий пункт меню |
-| `list-item-variation` | `unselected-variation` | Variaton | Плитка вариации товара, **всегда с описанием** |
-| `list-item-variation-selected` | `selected-variation` | Variation-selected | Выбранная вариация: брендовая заливка и брендовая обводка |
-| `list-item-variation-indeterminate` | `indeterminate-variation` | Variaton-indeterminate | Вариация выбрана частично |
+| `list-item-transparent` | `transparent` | Transparent | Поверх готовой поверхности: попап, карточка, сайдбар. Подсветка только под курсором |
+| `list-item-default` | `default` | Default | Невыбранная строка на собственной подложке, текст приглушён |
+| `list-item-default-selected` | `default-selected` | Default-selected | Выбранная строка того же списка: подложка та же, текст на полный контраст |
+| `list-item-actual-selected` | `actual-selected` | Actual-selected | Текущее, действующее значение: обводка по контуру + акцентный текст |
+| `list-item-accent-selected` | `accent-selected` | Accent-selected | Выбор с брендовой заливкой — самый заметный. Его же использует попап `select` |
+| `list-item-tabbar` | `tabbar` | Tabbar | Неактивная вкладка нижней панели |
+| `list-item-tabbar-selected` | `tabbar-selected` | Tabbar-selected | Активная вкладка нижней панели |
+| `list-item-menu` | `menu` | Menu | Пункт меню: при наведении подложка + акцентный текст |
+| `list-item-menu-selected` | `menu-selected` | Menu-selected | Текущий пункт меню |
+| `list-item-variation` | `variation` | Variaton | Плитка вариации товара, **всегда с описанием** |
+| `list-item-variation-img` | `variation` + `variation-img` | Variation-img | Вариация, которую узнают по фотографии: расцветка, принт, комплект |
+| `list-item-variation-selected` | `variation-selected` | Variation-selected | Выбранная вариация: брендовая заливка и брендовая обводка |
+| `list-item-variation-indeterminate` | `variation-indeterminate` | Variaton-indeterminate | Вариация выбрана частично |
 
-Полная таблица цветов по состояниям, когда брать и чего избегать — в reference каждого варианта: [transparent](references/list-item-transparent.md), [default](references/list-item-default.md), [default-selected](references/list-item-default-selected.md), [actual-selected](references/list-item-actual-selected.md), [accent-selected](references/list-item-accent-selected.md), [tabbar](references/list-item-tabbar.md), [tabbar-selected](references/list-item-tabbar-selected.md), [menu](references/list-item-menu.md), [menu-selected](references/list-item-menu-selected.md), [variation](references/list-item-variation.md), [variation-selected](references/list-item-variation-selected.md), [variation-indeterminate](references/list-item-variation-indeterminate.md).
+Полная таблица цветов по состояниям, когда брать и чего избегать — в reference каждого варианта: [transparent](references/list-item-transparent.md), [default](references/list-item-default.md), [default-selected](references/list-item-default-selected.md), [actual-selected](references/list-item-actual-selected.md), [accent-selected](references/list-item-accent-selected.md), [tabbar](references/list-item-tabbar.md), [tabbar-selected](references/list-item-tabbar-selected.md), [menu](references/list-item-menu.md), [menu-selected](references/list-item-menu-selected.md), [variation](references/list-item-variation.md), [variation-img](references/list-item-variation-img.md), [variation-selected](references/list-item-variation-selected.md), [variation-indeterminate](references/list-item-variation-indeterminate.md).
 
 **Варианты ходят парами** — невыбранный и выбранный: `default` / `default-selected`, `tabbar` / `tabbar-selected`, `menu` / `menu-selected`, `variation` / `variation-selected`. Держи пару вместе: смешивать `menu` с `default-selected` значит показывать выбор не тем способом, каким его показывает остальной список.
 
@@ -121,7 +122,7 @@ description: List Item ArrowDS (.list-item).
 | Что | Источник | Где живёт |
 |---|---|---|
 | Цвета состояний | `rgb(var(--*))` inline, своя роль на вариант | `references/list-item-{вариант}.css` |
-| Цвет описания | роль `list/unselected/description` (см. ниже) | `map.state.*.list` |
+| Цвет описания | роль `list/default/description` (см. ниже) | `map.state.*.list` |
 | Цвет галочки | роль `icon-check` варианта | `map.state.*.list.{роль}.icon-check` |
 | Кольцо фокуса | `var(--awds-focus-*)`, вариант Outside + Default | слой `awds-component-focus-selection` |
 | Геометрия | `var(--awds-rectangle-{N}-*)` | `map.size.rectangle` |
@@ -162,6 +163,7 @@ description: List Item ArrowDS (.list-item).
 - Кликабельная строка должна быть `<button>` или `<a>` — тогда клавиатура и чтение с экрана работают сами.
 - Декоративная иконка в слоте → `aria-hidden="true"`. Если иконка несёт смысл (статус, «выбрано»), дай ей текстовую подпись.
 - Фокус виден при входе с клавиатуры (`:focus-visible`), кольцо стоит в 1px от края.
+- **Толщина рамки — ячейка, а не литерал** (26.09.2026). Невыбранные варианты берут `size/outline/offset` (1px, хайрлайн), выбранные — `size/outline/width` (2px): жирная обводка и есть главный признак выбора. Аккумулятор `--awds-list-item-border-width`, рамка рисуется `inset box-shadow`, поэтому толщина не влияет на высоту строки. До этого во всех двенадцати вариантах стояло `1px` числом, и выбранная строка отличалась от невыбранной только цветом.
 - Размеры 50 и 100 (20 и 24px) меньше тач-минимума — только для мыши и плотных таблиц.
 - Disabled гасится `opacity: 40%` — контраст заведомо ниже AA. Рядом нужен текст-причина, а не только серость.
 
@@ -171,23 +173,24 @@ description: List Item ArrowDS (.list-item).
 
 | Вариант | Что | Контраст |
 |---|---|---|
-| `default` | описание в Rest, `secondary-container-on` на `secondary-container-core` | **2.78:1** |
 | `actual-selected` | заголовок и описание на hover, `accent-core` на `secondary-container-core` | **4.23:1** |
 
 Что теперь проходит: заголовок `default` в Rest — **4.96:1** (роль уехала на `secondary-container-on-high`),
 описание `transparent` и `variation-indeterminate` — **5.41:1** (та же причина), `actual-selected` в Rest
 на прозрачном фоне — **4.61:1**.
 
-У `default` приглушённое описание в Rest — намеренный приём («ещё не выбрано»), но 2.78:1 читается плохо,
-и после сдвига палитры стало хуже прежнего; при наведении и фокусе описание выходит на
-`secondary-container-on-high` и полный контраст. Если в списке важен сам текст, а не только факт выбора,
-бери `transparent` или `default-selected`.
+**26.09.2026 описание догнало заголовок.** Владелец перевёл на `secondary-container-on-high` шесть ячеек:
+`unselected/description-rest`, `unselected-variation/description-{rest,focus,active}` и
+`indeterminate-variation/description-{rest,active}`. Приглушённого описания в покое больше нет нигде:
+было 2.78:1 на светлой теме и 3.15:1 на тёмной, стало 4.96:1 и 8.13:1. Приём «ещё не выбрано» держался
+на цвете текста и не проходил по контрасту — теперь невыбранность показывают фон и галочка, а не
+блёклая подпись.
 
 ## Три находки в макете и токенах
 
-**1. Описание красится ролью `list/unselected/description`, а не собственной ролью варианта.** Проверено в четырёх независимых ячейках (Transparent Rest; Variaton Rest, Hover и Focus). Следствие: цвет описания **меняется по состоянию** — `secondary-container-on` в покое, `secondary-container-on-high` при наведении и фокусе. Исключение: `variation-selected` и `variation-indeterminate` используют свои роли. Реализовано как в макете.
+**1. Описание красится ролью `list/default/description`, а не собственной ролью варианта.** Проверено в четырёх независимых ячейках (Transparent Rest; Variaton Rest, Hover и Focus). Следствие: цвет описания **меняется по состоянию**. С 26.09.2026 у `unselected` он одинаков во всех состояниях (`secondary-container-on-high`), а у `unselected-variation` и `indeterminate-variation` на наведении уходит в брендовый `primary-container-on-high`. Исключение: `variation-selected` использует свои роли. Реализовано как в макете.
 
-**2. В репозитории токенов битый алиас.** У `list/unselected/border` в состоянии Hover стоит `{form-control.secondary.dim}` — такого пути нет, у `form-control` нет варианта `secondary`. Макет рендерит `#ededed`, что ровно равно `role.secondary.dim`: похоже на опечатку неймспейса. Взято по значению; после правки токенов достаточно перегенерировать скилл.
+**2. В репозитории токенов битый алиас.** У `list/default/border` в состоянии Hover стоит `{form-control.secondary.dim}` — такого пути нет, у `form-control` нет варианта `secondary`. Макет рендерит `#ededed`, что ровно равно `role.secondary.dim`: похоже на опечатку неймспейса. Взято по значению; после правки токенов достаточно перегенерировать скилл.
 
 **3. У `variation-selected` в ячейке Rest включён `focus-selection/outlineShow`** со значением `outlineVariant` = `primary-core` — тем же цветом, что и рамка. Трактовано как задублированный контур: в CSS рамка одна, второго кольца не добавляем, иначе получилось бы две обводки.
 

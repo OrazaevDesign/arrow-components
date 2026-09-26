@@ -1,7 +1,7 @@
 # List-item / Variaton-indeterminate
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → набор 280:24775](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-24775)
-**Роль токенов:** `list/indeterminate-variation`
+**Роль токенов:** `list/variation-indeterminate`
 
 > [!NOTE]
 > Этот файл — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -28,10 +28,10 @@
 
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
-| Rest | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on` |
+| Rest | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 | Hover | `primary-container-core` | `primary-container-on` | `primary-container-on-highest` | `primary-container-on-high` |
-| Focus | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on` |
-| Active | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on` |
+| Focus | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
+| Active | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 
 Галочка (`.list-item__check`): `primary-container-on` в покое.
 
@@ -43,9 +43,9 @@
 
 ## Контраст
 
-- Описание в состоянии **Rest**: `secondary-container-on` (#808080) на `surface-bright` (#ffffff) — **3.95:1** при норме 4.5:1.
+Пересчитано 26.09.2026 по текущим значениям темы.
 
-Это свойство ролей дизайн-системы, а не вёрстки — чинится в токенах, не здесь.
+- Описание в состоянии **Rest**: `secondary-container-on-high` (#6a6a6a) на `surface-bright` (#ffffff) — **5.41:1**, норма 4.5:1 пройдена. Было `secondary-container-on` и 3.95:1; владелец перевёл ячейку на `on-high`.
 
 ## Геометрия, состояния, слоты
 

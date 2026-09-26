@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:571be6ab9eabd5b6c29b76894fc63a9baeb275edc63f48cb7c786c9dc4f617e2",
+  "snapshot_hash": "sha256:86cef6c22d3e8cb2b89d800f1925ca92bff58c7dedf8541a0228e5b2b3262808",
   "size": {
     "rectangle": {
       "50": {
@@ -472,76 +472,76 @@
         "container": "rgb(var(--surface-container-container))"
       },
       "list": {
-        "selected": {
+        "default-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--secondary-container-on))"
         },
-        "unselected": {
+        "default": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "description": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "chevron": "rgb(var(--surface-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-transparent": {
+        "transparent": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-actual": {
+        "actual-selected": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "unselected-variation": {
+        "variation": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "description": "rgb(var(--secondary-container-on))"
+          "description": "rgb(var(--secondary-container-on-high))"
         },
-        "indeterminate-variation": {
+        "variation-indeterminate": {
           "bg": "rgb(var(--surface-bright))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "description": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
-        "unselected-tabbar": {
+        "tabbar": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "selected-tabbar": {
+        "tabbar-selected": {
           "icon-check": "rgb(var(--accent-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
         },
-        "unselected-menu": {
+        "menu": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "selected-menu": {
+        "menu-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-secondary": {
+        "accent-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on-lowest))",
           "chevron": "rgb(var(--primary-container-on-highest))",
@@ -549,12 +549,16 @@
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
         },
-        "selected-variation": {
+        "variation-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-container-on-highest))",
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
+        },
+        "variation-img": {
+          "bg": "rgb(var(--surface-bright))",
+          "veil": "rgb(var(--extended-shadow-3))"
         },
         "range": {
           "bg": "rgb(var(--secondary-container-core))",
@@ -577,27 +581,6 @@
           "bg-top": "rgb(var(--surface-dim))",
           "bg-bottom": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-dim))"
-        }
-      },
-      "variation": {
-        "unselected": {
-          "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-dim))",
-          "color": "rgb(var(--secondary-container-on-high))"
-        },
-        "indeterminate": {
-          "bg": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--surface-on-lowest))",
-          "color": "rgb(var(--surface-on))"
-        },
-        "selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))"
-        },
-        "img": {
-          "bg": "rgb(var(--surface-bright))",
-          "veil": "rgb(var(--extended-shadow-3))"
         }
       },
       "badge": {
@@ -1153,14 +1136,14 @@
         "container": "rgb(var(--surface-container-container))"
       },
       "list": {
-        "selected": {
+        "default-selected": {
           "bg": "rgb(var(--secondary-container-dim))",
           "border": "rgb(var(--secondary-container-dim))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--secondary-container-on))"
         },
-        "unselected": {
+        "default": {
           "bg": "rgb(var(--secondary-container-dim))",
           "border": "rgb(var(--secondary-container-dim))",
           "color": "rgb(var(--secondary-container-on-highest))",
@@ -1168,61 +1151,61 @@
           "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-transparent": {
+        "transparent": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-actual": {
+        "actual-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "unselected-variation": {
+        "variation": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on))",
           "color": "rgb(var(--primary-container-on-highest))",
           "description": "rgb(var(--primary-container-on-high))"
         },
-        "indeterminate-variation": {
+        "variation-indeterminate": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on))",
           "color": "rgb(var(--primary-container-on-highest))",
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
-        "unselected-tabbar": {
+        "tabbar": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-tabbar": {
+        "tabbar-selected": {
           "icon-check": "rgb(var(--accent-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
         },
-        "unselected-menu": {
+        "menu": {
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-menu": {
+        "menu-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-secondary": {
+        "accent-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on-lowest))",
           "chevron": "rgb(var(--primary-container-on-highest))",
@@ -1230,12 +1213,16 @@
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
         },
-        "selected-variation": {
+        "variation-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-container-on-highest))",
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
+        },
+        "variation-img": {
+          "bg": "rgb(var(--surface-bright))",
+          "veil": "rgb(var(--extended-shadow-3))"
         },
         "range": {
           "bg": "rgb(var(--secondary-container-core))",
@@ -1258,27 +1245,6 @@
           "bg-top": "rgb(var(--surface-dim))",
           "bg-bottom": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-dim))"
-        }
-      },
-      "variation": {
-        "unselected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))"
-        },
-        "indeterminate": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-high))"
-        },
-        "selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))"
-        },
-        "img": {
-          "bg": "rgb(var(--surface-bright))",
-          "veil": "rgb(var(--extended-shadow-3))"
         }
       },
       "link": {
@@ -1735,14 +1701,14 @@
         "container": "rgb(var(--surface-container-container))"
       },
       "list": {
-        "selected": {
+        "default-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--secondary-container-on))"
         },
-        "unselected": {
+        "default": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
@@ -1750,53 +1716,53 @@
           "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-transparent": {
+        "transparent": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-actual": {
+        "actual-selected": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "unselected-variation": {
+        "variation": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-on-lowest))",
-          "description": "rgb(var(--secondary-container-on))"
+          "description": "rgb(var(--secondary-container-on-high))"
         },
-        "indeterminate-variation": {
+        "variation-indeterminate": {
           "bg": "rgb(var(--surface-bright))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
-        "unselected-tabbar": {
+        "tabbar": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
         },
-        "selected-tabbar": {
+        "tabbar-selected": {
           "icon-check": "rgb(var(--accent-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
         },
-        "unselected-menu": {
+        "menu": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
         },
-        "selected-menu": {
+        "menu-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-secondary": {
+        "accent-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on-lowest))",
           "chevron": "rgb(var(--primary-container-on-highest))",
@@ -1804,12 +1770,16 @@
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
         },
-        "selected-variation": {
+        "variation-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-container-on-highest))",
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
+        },
+        "variation-img": {
+          "bg": "rgb(var(--surface-bright))",
+          "veil": "rgb(var(--extended-shadow-3))"
         },
         "range": {
           "bg": "rgb(var(--secondary-container-core))",
@@ -1832,27 +1802,6 @@
           "bg-top": "rgb(var(--surface-dim))",
           "bg-bottom": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-dim))"
-        }
-      },
-      "variation": {
-        "unselected": {
-          "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-dim))",
-          "color": "rgb(var(--secondary-container-on-high))"
-        },
-        "indeterminate": {
-          "bg": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--surface-on-lowest))",
-          "color": "rgb(var(--surface-on))"
-        },
-        "selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))"
-        },
-        "img": {
-          "bg": "rgb(var(--surface-bright))",
-          "veil": "rgb(var(--extended-shadow-3))"
         }
       },
       "link": {
@@ -2290,14 +2239,14 @@
         "container": "rgb(var(--surface-container-container))"
       },
       "list": {
-        "selected": {
+        "default-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--secondary-container-on))"
         },
-        "unselected": {
+        "default": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))",
@@ -2305,61 +2254,61 @@
           "chevron": "rgb(var(--secondary-container-on-highest))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-transparent": {
+        "transparent": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
           "color": "rgb(var(--secondary-container-on-highest))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-core))"
         },
-        "unselected-actual": {
+        "actual-selected": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "unselected-variation": {
+        "variation": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "description": "rgb(var(--secondary-container-on))"
+          "description": "rgb(var(--secondary-container-on-high))"
         },
-        "indeterminate-variation": {
+        "variation-indeterminate": {
           "bg": "rgb(var(--surface-bright))",
           "border": "rgb(var(--secondary-container-on-lowest))",
           "color": "rgb(var(--secondary-container-on-high))",
-          "description": "rgb(var(--secondary-container-on))",
+          "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
-        "unselected-tabbar": {
+        "tabbar": {
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-tabbar": {
+        "tabbar-selected": {
           "icon-check": "rgb(var(--accent-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))"
         },
-        "unselected-menu": {
+        "menu": {
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-menu": {
+        "menu-selected": {
           "bg": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--accent-core))",
           "description": "rgb(var(--accent-core))",
           "icon-check": "rgb(var(--accent-core))"
         },
-        "selected-secondary": {
+        "accent-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-container-on-lowest))",
           "chevron": "rgb(var(--primary-container-on-highest))",
@@ -2367,12 +2316,16 @@
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
         },
-        "selected-variation": {
+        "variation-selected": {
           "bg": "rgb(var(--primary-container-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-container-on-highest))",
           "description": "rgb(var(--primary-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on-high))"
+        },
+        "variation-img": {
+          "bg": "rgb(var(--surface-bright))",
+          "veil": "rgb(var(--extended-shadow-3))"
         },
         "range": {
           "bg": "rgb(var(--secondary-container-core))",
@@ -2395,27 +2348,6 @@
           "bg-top": "rgb(var(--surface-dim))",
           "bg-bottom": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-dim))"
-        }
-      },
-      "variation": {
-        "unselected": {
-          "bg": "rgb(var(--secondary-container-core))",
-          "border": "rgb(var(--secondary-container-dim))",
-          "color": "rgb(var(--secondary-container-on-high))"
-        },
-        "indeterminate": {
-          "bg": "rgb(var(--surface-bright))",
-          "border": "rgb(var(--surface-on-lowest))",
-          "color": "rgb(var(--surface-on))"
-        },
-        "selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))"
-        },
-        "img": {
-          "bg": "rgb(var(--surface-bright))",
-          "veil": "rgb(var(--extended-shadow-3))"
         }
       },
       "link": {

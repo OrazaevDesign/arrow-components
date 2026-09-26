@@ -50,7 +50,7 @@ description: Select ArrowDS (.select).
 | Пункт: размерная ступень | правило-мост `.select__field option` | **на ступень ниже** размера контрола; селект кормит `--awds-list-item-*` своими `--awds-select-opt-*` |
 | Наведение | `.list-item-transparent:hover` | из list-item, отдельного правила в селекте нет |
 | Клавиатура | `option:not(:checked):focus` | повтор hover-подсветки: в открытом попапе стрелки двигают `:focus`, а не `:hover` |
-| Выбранный | `option:checked:not(:disabled):not([aria-disabled])` | роли `list/selected-secondary` (= вариант `list-item-accent-selected`) |
+| Выбранный | `option:checked:not(:disabled):not([aria-disabled])` | роли `list/accent-selected` (= вариант `list-item-accent-selected`) |
 | Скролл | `scrollbar-color` | ползунок `surface-on` при 40%, трек прозрачный |
 
 Ступени: селект 600→пункт 500, 500→400, 400→300, 300→200, 200→100, 100→50, 50→50. Высоты пунктов 48/40/36/32/24/20/20 — проверено computed px по всем семи размерам.
@@ -82,7 +82,7 @@ description: Select ArrowDS (.select).
 | Форма шеврона | union-path из макета (`ic20-chevroneBottom-outline`), вшит маской | `snapshot/figma.json` → `chevron_svg` |
 | Панель попапа | `var(--awds-space-1)` и `var(--awds-rounded-border-radius-{N})` + `var(--awds-shadow-elevation-3)` | ячейки `dropdown/{N}/*`, все семь ступеней; `snapshot/figma.json` → `dropdown` |
 | Пункт попапа | компонент `awds-component-list-item`; селект даёт ему ступень `{N−1}` через мост | `awds-component-list-item` |
-| Цвета пунктов | роли `list/unselected-transparent` (покой, hover) и `list/selected-secondary` (выбранный) | `map.state.*.list` |
+| Цвета пунктов | роли `list/transparent` (покой, hover) и `list/accent-selected` (выбранный) | `map.state.*.list` |
 | Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 
 ### Откуда берутся значения
@@ -99,7 +99,7 @@ description: Select ArrowDS (.select).
 | Иконка слота | своя ячейка тона; у `default` ячейки `icon` нет — там плейсхолдер | `form-control/{тон}/icon-{состояние}` |
 | Геометрия, скругление, кегль | `var(--awds-space-*)`, `var(--awds-rounded-*)`, `var(--awds-control-*)` | `rectangle/{N}/*` |
 | Панель списка | `var(--awds-space-1)`, `var(--awds-rounded-border-radius-{N})` | `dropdown/{N}/*` — все семь ступеней |
-| Пункты панели | роли через `list-item` | `list/unselected/*`, `list/selected-secondary/*` |
+| Пункты панели | роли через `list-item` | `list/default/*`, `list/accent-selected/*` |
 
 ## Размерные модификаторы
 

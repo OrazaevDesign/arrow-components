@@ -95,7 +95,7 @@
         aria-haspopup="menu" aria-expanded="true">…</button>
 ```
 
-Тон меняет фон, обводку и цвет шеврона на группу `list/selected-secondary`. Атрибут
+Тон меняет фон, обводку и цвет шеврона на группу `list/accent-selected`. Атрибут
 `aria-expanded` живёт рядом и отвечает за доступность: класс — про вид, атрибут — про
 смысл. Меняются вместе.
 
@@ -118,7 +118,7 @@
 
 | Состояние | Что меняется |
 | --- | --- |
-| rest | `default`: фон и обводка `list/unselected` · шеврон `surface-on-highest`. `accent-selected`: фон `primary-container-core`, обводка `primary-container-on-lowest`, шеврон `primary-container-on-highest` |
+| rest | `default`: фон и обводка `list/default` · шеврон `surface-on-highest`. `accent-selected`: фон `primary-container-core`, обводка `primary-container-on-lowest`, шеврон `primary-container-on-highest` |
 | hover | `default`: фон и обводка темнеют (`secondary-container-dim`) · шеврон `secondary-container-on-highest`. `accent-selected`: без изменений — в теме у всех четырёх состояний одно значение |
 | focus | цвета как в rest + кольцо фокуса снаружи бокса |
 | active | `default`: фон возвращается к `core`, шеврон остаётся контрастным |

@@ -1,7 +1,7 @@
 # List-item / Variation-selected
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → набор 280:25000](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-25000)
-**Роль токенов:** `list/selected-variation`
+**Роль токенов:** `list/variation-selected`
 
 > [!NOTE]
 > Этот файл — **author-owned**. ACB пишет первичный draft, потом не трогает.

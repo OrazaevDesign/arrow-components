@@ -1,7 +1,7 @@
 # List-item / Variaton
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → набор 280:24620](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=280-24620)
-**Роль токенов:** `list/unselected-variation`
+**Роль токенов:** `list/variation`
 
 > [!NOTE]
 > Этот файл — **author-owned**. ACB пишет первичный draft, потом не трогает.
@@ -28,7 +28,7 @@
 
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
-| Rest | `secondary-container-core` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on` |
+| Rest | `secondary-container-core` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 | Hover | `primary-container-core` | `primary-container-on` | `primary-container-on-highest` | `secondary-container-on-high` |
 | Focus | `secondary-container-core` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 | Active | `secondary-container-core` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
@@ -41,13 +41,13 @@
 
 **Тройка с `variation-selected` и `variation-indeterminate`.** Невыбранная, выбранная и неопределённая вариации — один набор, используются вместе.
 
-**Описание привязано к `list/unselected/description`**, а не к собственной роли вариации. Так в макете, проверено в Rest, Hover и Focus.
+**Описание привязано к `list/default/description`**, а не к собственной роли вариации. Так в макете, проверено в Rest, Hover и Focus.
 
 ## Контраст
 
-- Описание в состоянии **Rest**: `secondary-container-on` (#808080) на `secondary-container-core` (#f7f7f7) — **3.69:1** при норме 4.5:1.
+Пересчитано 26.09.2026 по текущим значениям темы.
 
-Это свойство ролей дизайн-системы, а не вёрстки — чинится в токенах, не здесь.
+- Описание в состоянии **Rest**: `secondary-container-on-high` (#6a6a6a) на `secondary-container-core` (#f5f5f5) — **4.96:1**, норма 4.5:1 пройдена. Было `secondary-container-on` и 2.78:1; владелец перевёл ячейку на `on-high`.
 
 ## Геометрия, состояния, слоты
 

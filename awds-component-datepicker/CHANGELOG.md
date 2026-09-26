@@ -1,5 +1,9 @@
 # datepicker — журнал версий
 
+## 1.0.3 — 2026-09-26 — PATCH
+Ячейки группы list переименованы под варианты list-item (решение 26.09.2026): unselected→default, selected→default-selected, unselected-actual→actual-selected, selected-secondary→accent-selected, unselected-transparent→transparent, unselected/selected-tabbar→tabbar/tabbar-selected, unselected/selected-menu→menu/menu-selected, unselected/selected-variation→variation/variation-selected, indeterminate-variation→variation-indeterminate
+Потребителю: Ничего делать не нужно: переименование, значения и вид прежние. Якоря #cell в CSS — комментарии, цвета идут ролями
+
 ## 1.0.2 — 2026-09-25 — PATCH · visual
 Ячейка list/unselected-actual/color подтянута за студией: accent-container-on → accent-core.
 Потребителю: Разметка и классы прежние. Цвет текущей даты в списке стал насыщеннее. Потребителям с копией CSS нужна пересборка секции.

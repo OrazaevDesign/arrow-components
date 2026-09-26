@@ -81,7 +81,10 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-list-item-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-list-item-border);
+  /* Толщина рамки — ячейка size/outline/offset (1px), хайрлайн. Литерала тут быть
+     не должно: толщина правится в студии, а не в файле компонента. */
+  --awds-list-item-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
   background: var(--awds-list-item-bg);
   color: var(--awds-list-item-color);
 
@@ -306,10 +309,10 @@
 /* === Variant: variation === */
 
 .list-item-variation {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/unselected-variation/bg-rest */
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/unselected-variation/border-rest */
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   /* #cell list/unselected-variation/color-rest */
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));   /* #cell list/unselected-variation/description-rest */
+  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/variation/bg-rest */
+  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/variation/border-rest */
+  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   /* #cell list/variation/color-rest */
+  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   /* #cell list/variation/description-rest */
   /* Галочка невыбранной плитки не рисуется. Ячейки под это значение нет и не будет:
      в макете у наборов variation узла галочки нет вовсе — она появляется только у
      variation-selected и variation-indeterminate, где своя ячейка есть. Здесь
@@ -321,23 +324,23 @@
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));   /* #cell list/unselected-variation/bg-hover */
-  --awds-list-item-border:  rgb(var(--primary-container-on));   /* #cell list/unselected-variation/border-hover */
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));   /* #cell list/unselected-variation/color-hover */
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));   /* #cell list/unselected-variation/description-hover */
+  --awds-list-item-bg:      rgb(var(--primary-container-core));   /* #cell list/variation/bg-hover */
+  --awds-list-item-border:  rgb(var(--primary-container-on));   /* #cell list/variation/border-hover */
+  --awds-list-item-color:   rgb(var(--primary-container-on-highest));   /* #cell list/variation/color-hover */
+  --awds-list-item-desc:    rgb(var(--primary-container-on-high));   /* #cell list/variation/description-hover */
 }
 
 .list-item-variation:focus-visible {
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));   /* #cell list/unselected-variation/description-focus */
+  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   /* #cell list/variation/description-focus */
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-variation:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/unselected-variation/bg-active */
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/unselected-variation/border-active */
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   /* #cell list/unselected-variation/color-active */
-  --awds-list-item-desc:    rgb(var(--secondary-container-on));   /* #cell list/unselected-variation/description-active */
+  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/variation/bg-active */
+  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/variation/border-active */
+  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   /* #cell list/variation/color-active */
+  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   /* #cell list/variation/description-active */
 }
 
 

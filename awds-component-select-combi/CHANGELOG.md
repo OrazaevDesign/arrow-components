@@ -1,5 +1,9 @@
 # select-combi — журнал версий
 
+## 1.0.22 — 2026-09-26 — PATCH
+Ячейки группы list переименованы под варианты list-item (решение 26.09.2026): unselected→default, selected→default-selected, unselected-actual→actual-selected, selected-secondary→accent-selected, unselected-transparent→transparent, unselected/selected-tabbar→tabbar/tabbar-selected, unselected/selected-menu→menu/menu-selected, unselected/selected-variation→variation/variation-selected, indeterminate-variation→variation-indeterminate
+Потребителю: Ничего делать не нужно: переименование, значения и вид прежние. Якоря #cell в CSS — комментарии, цвета идут ролями
+
 ## 1.0.21 — 2026-09-25 — PATCH · visual
 Ячейка form-control/{default,success,error,autofill}/bg-focus переехала в студии: --surface-bright → --primary-container-base. Код и документация переведены на новую цель.
 Потребителю: Разметка и классы прежние. Подложка контрола при фокусе стала брендовой вместо белой. Потребителям с копией CSS нужна пересборка секции.

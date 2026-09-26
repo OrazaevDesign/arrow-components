@@ -42,9 +42,9 @@ description: Datepicker ArrowDS (.dpick).
 | Панель: отступ, скругление | `dropdown/400/*` — та же ячейка, что у выпадающего списка `select` | `references/datepicker.css` |
 | Панель: фон и тень | `surface/bright`, `--awds-shadow-elevation-3` | там же |
 | Ячейка: отступ, скругление, кегль | `rectangle/300/*` | там же |
-| Обычная дата | `list/unselected-transparent/*` | слой State темы |
-| Сегодня | `list/unselected-actual/*` | там же |
-| Выбранная дата и концы периода | `list/selected-secondary/*` | там же |
+| Обычная дата | `list/transparent/*` | слой State темы |
+| Сегодня | `list/actual-selected/*` | там же |
+| Выбранная дата и концы периода | `list/accent-selected/*` | там же |
 | Дата внутри периода | `list/range/*` — заведена 17.09.2026 | там же |
 | Стрелка, заголовок | `button/ghost/color`, `link/contrast` | там же |
 | Кольцо фокуса | `var(--awds-focus-*)` | слой `awds-component-focus-selection` |

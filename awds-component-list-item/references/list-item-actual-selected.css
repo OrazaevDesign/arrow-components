@@ -81,7 +81,10 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-list-item-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-list-item-border);
+  /* Толщина рамки — ячейка size/outline/width (2px): выбранная строка обведена
+     жирно, и это её главный признак. Литерала тут быть не должно. */
+  --awds-list-item-border-width: var(--awds-space-0-5);   /* #cell outline/width */
+  box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
   background: var(--awds-list-item-bg);
   color: var(--awds-list-item-color);
 
@@ -306,24 +309,24 @@
 /* === Variant: actual-selected === */
 
 .list-item-actual-selected {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   /* #cell list/unselected-actual/bg-rest */
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/unselected-actual/border */
-  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/unselected-actual/color */
-  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/unselected-actual/description */
-  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/unselected-actual/icon-check */
+  --awds-list-item-bg:      rgb(var(--extended-transparent));   /* #cell list/actual-selected/bg-rest */
+  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/actual-selected/border */
+  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/actual-selected/color */
+  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/actual-selected/description */
+  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/actual-selected/icon-check */
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/unselected-actual/bg-hover */
+  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/actual-selected/bg-hover */
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-actual-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   /* #cell list/unselected-actual/bg-active */
+  --awds-list-item-bg:      rgb(var(--extended-transparent));   /* #cell list/actual-selected/bg-active */
 }
 
 
