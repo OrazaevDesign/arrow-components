@@ -71,7 +71,7 @@ description: Button Overhung ArrowDS (.obtn).
 
 Тень `elevation-1` постоянна во всех состояниях (так в макете — нажатие не «придавливает» кнопку). Меняется только заливка/текст:
 
-- **Rest / Focus / Active** — одинаковы: фон `surface-surface`, sheen-градиент к `surface-bright`, текст `surface-on`. Focus добавляет обводку `surface-on-highest`.
+- **Rest / Focus / Active** — одинаковы: фон `surface-surface`, sheen-градиент к `surface-bright`, текст `surface-on-high`. Focus добавляет обводку `surface-on-highest`.
 - **Hover** — chroma темнеет до `surface-dim`, текст контрастнее (`surface-on-highest`).
 - **Disabled** — Rest + `opacity: 40%`.
 

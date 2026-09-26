@@ -285,7 +285,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/primary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/primary/chroma-rest */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/primary/border */
-  --awds-obtn-color:  rgb(var(--surface-on));   /* #cell overhung/primary/color-rest */
+  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/primary/color-rest */
 }
 
 /* Hover: chroma темнеет (surface-dim), текст контрастнее (surface-on-highest) */
@@ -300,7 +300,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/primary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/primary/chroma-focus */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/primary/border */
-  --awds-obtn-color:  rgb(var(--surface-on));   /* #cell overhung/primary/color-focus */
+  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/primary/color-focus */
 }
 
 /* Active: = Rest (в макете нажатие не меняет цвет/тень overhung primary) */
@@ -308,7 +308,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/primary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/primary/chroma-active */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/primary/border */
-  --awds-obtn-color:  rgb(var(--surface-on));   /* #cell overhung/primary/color-active */
+  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/primary/color-active */
 }
 
 

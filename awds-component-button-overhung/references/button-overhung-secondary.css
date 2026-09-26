@@ -272,7 +272,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/secondary/chroma-rest */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
-  --awds-obtn-color:  rgb(var(--surface-on));   /* #cell overhung/secondary/color-rest */
+  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/secondary/color-rest */
   opacity: var(--awds-opacity-60);   /* #cell opacity/overhung/secondary-rest */
   /* Дописываем opacity к списку перехода базы (он перечисляет свойства явно,
      не transition: all) — иначе уплотнение 60→90% «снапнет». */
@@ -296,7 +296,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/secondary/chroma-focus */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
-  --awds-obtn-color:  rgb(var(--surface-on));   /* #cell overhung/secondary/color-focus */
+  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/secondary/color-focus */
   opacity: var(--awds-opacity-90);   /* #cell opacity/overhung/secondary-focus */
 }
 
@@ -305,7 +305,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/secondary/chroma-active */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
-  --awds-obtn-color:  rgb(var(--surface-on));   /* #cell overhung/secondary/color-active */
+  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/secondary/color-active */
   opacity: var(--awds-opacity-90);   /* #cell opacity/overhung/secondary-active */
 }
 

@@ -79,10 +79,10 @@
 
 | Состояние | bg | chroma | border | color | Доп. |
 |---|---|---|---|---|---|
-| Rest | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | тень `elevation-1` |
+| Rest | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on-high` | тень `elevation-1` |
 | Hover | `surface-surface` | `surface-dim` | `surface-surface` | `surface-on-highest` | — |
-| Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
-| Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | = Rest |
+| Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on-high` | `outline: var(--awds-focus-width) solid var(--awds-focus-color)` |
+| Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on-high` | = Rest |
 | Disabled | = Rest | | | | `opacity: var(--awds-state-opacity-control-disabled)` + `pointer-events: none` |
 
 Тень `elevation-1` одинакова во всех состояниях (зашита в `.obtn`, не в селекторах) — в макете нажатие не меняет высоту.

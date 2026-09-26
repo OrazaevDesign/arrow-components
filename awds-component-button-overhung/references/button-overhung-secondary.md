@@ -44,10 +44,10 @@
 
 | Состояние | bg | chroma | border | color | opacity |
 |---|---|---|---|---|---|
-| Rest | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | **60%** |
+| Rest | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on-high` | **60%** |
 | Hover | `surface-surface` | `surface-dim` | `surface-surface` | `surface-on-highest` | **90%** |
-| Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | **90%** + `outline` |
-| Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on` | **90%** |
+| Focus | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on-high` | **90%** + `outline` |
+| Active | `surface-surface` | `surface-bright` | `surface-surface` | `surface-on-high` | **90%** |
 | Disabled | = Rest цвета | | | | **40%** (`--awds-state-opacity-control-disabled`, база `.obtn:disabled` перекрывает 60% по специфичности) |
 
 Отличие от Primary — только непрозрачность всей кнопки. Цвета, тень и геометрия совпадают. Тень `elevation-1` постоянна.
