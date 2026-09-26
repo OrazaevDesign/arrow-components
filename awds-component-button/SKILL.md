@@ -69,7 +69,7 @@ description: Button ArrowDS (.btn).
 | Primary | `references/button-primary.css` | `.btn` base + все размеры + `.btn-primary` со всеми состояниями (inline `rgb(var(--primary-*))`) |
 | Secondary | `references/button-secondary.css` | `.btn` base + все размеры + `.btn-secondary` со всеми состояниями (inline `rgb(var(--secondary-*))`) |
 | Addition | `references/button-addition.css` | `.btn` base + все размеры + `.btn-addition` со всеми состояниями (inline `rgb(var(--addition-*))`) |
-| Contrast | `references/button-contrast.css` | `.btn` base + все размеры + `.btn-contrast` со всеми состояниями (inline `rgb(var(--surface-*))`) |
+| Contrast | `references/button-contrast.css` | `.btn` base + все размеры + `.btn-contrast` со всеми состояниями (inline `rgb(var(--secondary-*))`) |
 | Tertiary | `references/button-tertiary.css` | `.btn` base + все размеры + `.btn-tertiary` со всеми состояниями (inline `rgb(var(--tertiary-*))`) |
 | Ghost | `references/button-ghost.css` | `.btn` base + все размеры + `.btn-ghost` (фон/обводка `transparent`, текст `rgb(var(--surface-on-high/-highest))`) |
 | Clean | `references/button-clean.css` | `.btn` base + все размеры + `.btn-clean` (белый фон `surface-bright`, обводка `surface-bright` — в покое сливается с фоном, в ховере светлый кант, текст `surface-on-high/-highest`) |

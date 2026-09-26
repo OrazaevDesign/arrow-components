@@ -4,9 +4,9 @@
 
 Высококонтрастная «чернильная» кнопка — тёмная поверхность на светлом фоне (или инверсия). Максимальный визуальный вес, когда нужно выбить действие из общего ритма.
 
-Всё на токенах. Цвета → роли `rgb(var(--surface-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
+Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` inline в селекторах (RGB-триплеты сайта); размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)` (маппинг из `component-token-map.json`, определены в css-global); фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`. Реальную палитру задаёт сайт через `css-variables.css`; базовые шкалы и шрифт зашиты на сайте (зеркало — `arrow-design-system/references/css-global.css`).
 
-Contrast строится на ролях **surface** (`surface-on-highest` для фона, `surface-bright` для текста), а не на отдельном семействе `--contrast-*`. Геометрия, base-механика, loading, icon-only — общие с Primary; `button-contrast.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
+Contrast строится на ролях **secondary** (`secondary-on` для фона, `secondary-core` для текста), а не на отдельном семействе `--contrast-*`. До 26.09.2026 вариант брал роли surface — владелец перевёл ячейки в студии: surface описывает поверхность и текст на ней, а заливка контрола принадлежит семейству роли контрола, иначе форк темы менял вид кнопки, не трогая ни одной «кнопочной» роли. Геометрия, base-механика, loading, icon-only — общие с Primary; `button-contrast.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
 ---
 
@@ -70,10 +70,10 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 Полный код — `references/button-contrast.css`. Три уровня: site colors / семантические shape size-токены → приватные аккумуляторы `--awds-btn-*` → CSS-свойства в `.btn`. Base и size-классы идентичны Primary; ниже — только блок варианта.
 
 ### Variant (`.btn-contrast`)
-Заполняет цветовые аккумуляторы inline-ролями surface, по состоянию:
+Заполняет цветовые аккумуляторы inline-ролями secondary, по состоянию:
 
 ```css
-.btn-contrast        { --awds-btn-bg: rgb(var(--surface-on-highest)); --awds-btn-border: rgb(var(--surface-on-highest)); --awds-btn-color: rgb(var(--surface-bright)); }
+.btn-contrast        { --awds-btn-bg: rgb(var(--secondary-on)); --awds-btn-border: rgb(var(--secondary-on)); --awds-btn-color: rgb(var(--secondary-core)); }
 .btn.btn-contrast    { background: var(--awds-btn-bg); } /* плоская заливка вместо градиента базы */
 ```
 
@@ -101,10 +101,10 @@ Contrast строится на ролях **surface** (`surface-on-highest` дл
 
 | Состояние | `--awds-btn-bg` | `--awds-btn-border` | `--awds-btn-color` |
 |---|---|---|---|
-| Rest    | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
-| Hover   | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
-| Focus   | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
-| Active  | `--surface-on-highest` | `--surface-on-highest` | `--surface-bright` |
+| Rest    | `--secondary-on` | `--secondary-on` | `--secondary-core` |
+| Hover   | `--secondary-on-dim` | `--secondary-on-dim` | `--secondary-core` |
+| Focus   | `--secondary-on-dim` | `--secondary-on` | `--secondary-core` |
+| Active  | `--secondary-on` | `--secondary-on` | `--secondary-core` |
 | Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | |
 | Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | |
 

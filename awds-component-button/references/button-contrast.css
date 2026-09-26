@@ -22,12 +22,19 @@
    размера иконки — 452 ссылки на восемь файлов.
 
    Маппинг variant × state → роль (Figma node 489:83105). Contrast строится на
-   ролях surface, а НЕ на отдельном семействе --contrast-*:
-     Rest    bg=surface-on-highest  border=surface-on-highest  color=surface-bright
-     Hover   bg=surface-on-highest  border=surface-on-highest  color=surface-bright
-     Focus   свои ячейки bg/border-focus + кольцо слоем focus-selection
-     Active  bg=surface-on-highest  border=surface-on-highest  color=surface-bright
+   ролях secondary (правка владельца в студии 26.09.2026; до неё — на surface):
+     Rest    bg=secondary-on      border=secondary-on      color=secondary-core
+     Hover   bg=secondary-on-dim  border=secondary-on-dim  color=secondary-core
+     Focus   bg=secondary-on-dim  border=secondary-on      + кольцо слоем focus-selection
+     Active  bg=secondary-on      border=secondary-on      color=secondary-core
      Disabled = Rest + opacity 40%
+
+   Почему не surface. Раньше вариант брал surface-on-highest на фон и surface-bright
+   на текст — то есть красился «самым тёмным текстовым» и «самым светлым фоновым»
+   цветом поверхности. Роли surface описывают поверхность и текст на ней, а не
+   заливку контрола: форкнув тему, владелец сайта менял фон этой кнопки, не трогая
+   ни одной роли, которая по смыслу отвечает за кнопки. Семейство secondary — роль
+   контрола, и теперь тон кнопки следует за ним.
 
    ФОН ПЛОСКИЙ, без градиента (правка 26.09.2026, макет 8:6336). База .btn красит фон
    градиентом chroma→bg, и вариант это переопределяет: background: var(--awds-btn-bg).
@@ -266,13 +273,13 @@
 }
 
 /* =============================================================================
-   Variant: Contrast  →  inline роли surface (map.state.*.button.contrast)
+   Variant: Contrast  →  inline роли secondary (map.state.*.button.contrast)
    ============================================================================= */
 
 .btn-contrast {
-  --awds-btn-bg:     rgb(var(--surface-on-highest));   /* #cell button/contrast/bg-rest */
-  --awds-btn-border: rgb(var(--surface-on-highest));   /* #cell button/contrast/border-rest */
-  --awds-btn-color:  rgb(var(--surface-bright));   /* #cell button/contrast/color-rest */
+  --awds-btn-bg:     rgb(var(--secondary-on));   /* #cell button/contrast/bg-rest */
+  --awds-btn-border: rgb(var(--secondary-on));   /* #cell button/contrast/border-rest */
+  --awds-btn-color:  rgb(var(--secondary-core));   /* #cell button/contrast/color-rest */
 }
 
 /* Плоская заливка вместо градиента базы (макет 8:6336, правка 26.09.2026).
@@ -285,21 +292,21 @@
 }
 
 .btn-contrast:hover {
-  --awds-btn-bg:     rgb(var(--surface-on-highest));   /* #cell button/contrast/bg-hover */
-  --awds-btn-border: rgb(var(--surface-on-highest));   /* #cell button/contrast/border-hover */
-  --awds-btn-color:  rgb(var(--surface-bright));   /* #cell button/contrast/color-hover */
+  --awds-btn-bg:     rgb(var(--secondary-on-dim));   /* #cell button/contrast/bg-hover */
+  --awds-btn-border: rgb(var(--secondary-on-dim));   /* #cell button/contrast/border-hover */
+  --awds-btn-color:  rgb(var(--secondary-core));   /* #cell button/contrast/color-hover */
 }
 
 .btn-contrast:focus-visible {
-  --awds-btn-bg:     rgb(var(--surface-on-highest));   /* #cell button/contrast/bg-focus */
-  --awds-btn-border: rgb(var(--surface-on-highest));   /* #cell button/contrast/border-focus */
-  --awds-btn-color:  rgb(var(--surface-bright));   /* #cell button/contrast/color-focus */
+  --awds-btn-bg:     rgb(var(--secondary-on-dim));   /* #cell button/contrast/bg-focus */
+  --awds-btn-border: rgb(var(--secondary-on));   /* #cell button/contrast/border-focus */
+  --awds-btn-color:  rgb(var(--secondary-core));   /* #cell button/contrast/color-focus */
 }
 
 .btn-contrast:active {
-  --awds-btn-bg:     rgb(var(--surface-on-highest));   /* #cell button/contrast/bg-active */
-  --awds-btn-border: rgb(var(--surface-on-highest));   /* #cell button/contrast/border-active */
-  --awds-btn-color:  rgb(var(--surface-bright));   /* #cell button/contrast/color-active */
+  --awds-btn-bg:     rgb(var(--secondary-on));   /* #cell button/contrast/bg-active */
+  --awds-btn-border: rgb(var(--secondary-on));   /* #cell button/contrast/border-active */
+  --awds-btn-color:  rgb(var(--secondary-core));   /* #cell button/contrast/color-active */
 }
 
 

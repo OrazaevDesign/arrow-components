@@ -1,10 +1,10 @@
 {
   "component": "button",
-  "version": "2.2.9",
+  "version": "2.2.10",
   "contract_hash": "sha256:b1178d242f4d390a44850a8af06ba94ba17a603fa9f5972dd379f67a9d0e87e0",
-  "artifact_hash": "sha256:c8f128f4bae41ae542ef1b5495660370651ef30ad14f800cb4d65e6bc3510c76",
+  "artifact_hash": "sha256:f7ad16136a6193ce79e81789ae53356eb38fdf1e332d0343e02d9fcb763b9852",
   "visual_change": true,
-  "released_at": "2026-09-26T19:30:28.044Z",
+  "released_at": "2026-09-26T19:55:27.972Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -200,6 +200,7 @@
     "--secondary-core",
     "--secondary-dim",
     "--secondary-on",
+    "--secondary-on-dim",
     "--surface-bright",
     "--surface-on-high",
     "--surface-on-highest",

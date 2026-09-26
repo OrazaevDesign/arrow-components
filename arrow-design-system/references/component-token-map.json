@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:782c7dd997ccceeb6f519539908eea3958d466b5a81eebe85c306e2588b9d764",
+  "snapshot_hash": "sha256:4047a0de23c8ae10797735b1966ad4deb223f93840b5637d11720c94b085ed1d",
   "size": {
     "rectangle": {
       "50": {
@@ -482,9 +482,9 @@
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--secondary-on))",
+          "border": "rgb(var(--secondary-on))",
+          "color": "rgb(var(--secondary-core))"
         },
         "clean": {
           "bg": "rgb(var(--surface-bright))",
@@ -1049,9 +1049,9 @@
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--secondary-on-dim))",
+          "border": "rgb(var(--secondary-on-dim))",
+          "color": "rgb(var(--secondary-core))"
         },
         "clean": {
           "bg": "rgb(var(--surface-surface))",
@@ -1602,9 +1602,9 @@
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--secondary-on-dim))",
+          "border": "rgb(var(--secondary-on))",
+          "color": "rgb(var(--secondary-core))"
         },
         "clean": {
           "bg": "rgb(var(--surface-bright))",
@@ -2151,9 +2151,9 @@
           "color": "rgb(var(--tertiary-on))"
         },
         "contrast": {
-          "bg": "rgb(var(--surface-on-highest))",
-          "border": "rgb(var(--surface-on-highest))",
-          "color": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--secondary-on))",
+          "border": "rgb(var(--secondary-on))",
+          "color": "rgb(var(--secondary-core))"
         },
         "clean": {
           "bg": "rgb(var(--surface-surface))",
