@@ -28,7 +28,7 @@
 |---|---|
 | Рельса | `--surface-container-container` |
 | Заливка | `--primary-core` — как у Default |
-| Ползунок | `--secondary-container-core`, наведение `--secondary-container-dim` (+ sheen `--surface-bright`) |
+| Ползунок | `--secondary-container-core`, наведение `--secondary-container-dim` (+ sheen `--surface-bright`, ячейка `range/light/chroma` — одна на все состояния) |
 | Обводка ползунка | `--secondary-container-dim` |
 | **Тень ползунка** | `var(--awds-shadow-elevation-1)` — из макета, на всех состояниях |
 | фокус | `var(--awds-focus-color-muted)`, только `:focus-visible` |

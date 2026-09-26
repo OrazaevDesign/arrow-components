@@ -1,22 +1,16 @@
 {
   "component": "range",
-  "version": "2.0.10",
+  "version": "2.0.12",
   "contract_hash": "sha256:b5246b2cdd8622a8d81714fe7404c676bd17d401b4c47878982003ec10678a14",
-  "artifact_hash": "sha256:fee78c94648766982a9d33a907b30de1500c9775f76e7849e7fe1ba25516afcb",
-  "visual_change": true,
-  "released_at": "2026-09-25T07:10:27.966Z",
+  "artifact_hash": "sha256:a277d61072269940a4db69188646fd6956e04b98fb20bcebf684404ead192400",
+  "visual_change": false,
+  "released_at": "2026-09-26T11:03:08.500Z",
   "own_values": [
     {
       "value": "0.15s",
       "where": "transition",
       "count": 3,
       "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "1px",
-      "where": "box-shadow",
-      "count": 1,
-      "why": "толщина линии: ячейки толщины в студии нет (Space/px — шкала отступов, не толщин)"
     }
   ],
   "figma": {
@@ -108,10 +102,13 @@
     "--awds-space-1",
     "--awds-space-5",
     "--awds-space-6",
+    "--awds-space-px",
+    "--primary-chroma",
     "--primary-core",
     "--primary-dim",
     "--secondary-container-core",
     "--secondary-container-dim",
+    "--surface-bright",
     "--surface-container-container"
   ],
   "last_synced": "2026-09-14T09:52:46Z",

@@ -22,7 +22,8 @@
      — рельса (track):  rgb(var(--surface-container-container))   (было range/container)
      — заливка (fill):  rgb(var(--primary-core))
                         (range/bg — одинаково у обоих вариантов)
-     — ползунок default: rgb(var(--primary-core)), наведение rgb(var(--primary-dim))
+     — ползунок default: rgb(var(--primary-core)) + sheen rgb(var(--primary-chroma)),
+                         наведение rgb(var(--primary-dim))
      — ползунок light:   rgb(var(--secondary-container-core)) + border
                          rgb(var(--secondary-container-dim)), sheen rgb(var(--surface-bright))
      — размер ползунка: var(--awds-space-5) = 20px (400), var(--awds-space-6) = 24px (500)
@@ -34,7 +35,12 @@
    Позиция ползунка считается с учётом его ширины (как у нативного input: центр
    ходит от size/2 до 100%-size/2), чтобы визуальный и нативный thumb совпадали.
 
-   Приватные аккумуляторы: --awds-range-fill-bg/-track/-thumb-bg/
+   Ручка красится градиентом chroma → bg, заливка трека — плоская. Разное не по
+   недосмотру: у заливки градиент виден полосой в 4px и не читается, у круглой ручки
+   он держит объём. Решение владельца 26.09.2026, ячейки chroma вернулись в словарь
+   только для ручки.
+
+   Приватные аккумуляторы: --awds-range-fill-bg/-track/-thumb-bg/-thumb-chroma/
    -thumb-border/-size/-track-h. (Не путать с DS shape-токенами
    --awds-range-N-... — здесь они не используются; размер ползунка со шкалы square.)
    ============================================================================= */
@@ -98,12 +104,15 @@
   width: var(--awds-range-size);
   height: var(--awds-range-size);
   border-radius: 50%;
-  background: var(--awds-range-thumb-bg);
+  background: linear-gradient(to right, var(--awds-range-thumb-chroma, var(--awds-range-thumb-bg)), var(--awds-range-thumb-bg));
   /* Обводка внутрь плюс подъём: у Light-ручки в макете композит elevation-1 на всех
      состояниях, у Default тени нет — поэтому подъём приходит переменной варианта, а
      не жёстко тут. Fallback `0 0 rgb(0 0 0 / 0)` — «тени нет», чтобы список слоёв
      оставался валидным. */
-  box-shadow: inset 0 0 0 1px var(--awds-range-thumb-border),
+  /* Толщина обводки — ячейка size/outline/offset (1px). Литерала тут быть не
+     должно: толщина правится в студии, а не в файле компонента. */
+  --awds-range-thumb-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-range-thumb-border-width) var(--awds-range-thumb-border),
               var(--awds-range-thumb-elevation, 0 0 rgb(0 0 0 / 0));
   transform: translate(-50%, -50%);
   pointer-events: none;
@@ -183,6 +192,7 @@
 
 .range-default {
   --awds-range-thumb-bg:     rgb(var(--primary-core));   /* #cell range/default/bg */
+  --awds-range-thumb-chroma: rgb(var(--primary-chroma));   /* #cell range/default/chroma */
   --awds-range-thumb-border: rgb(var(--primary-core));   /* #cell range/default/border */
 }
 
@@ -193,12 +203,15 @@
 }
 
 .range-default:active {
+  /* Нажатие гасит sheen до цвета заливки — градиент схлопывается в плоский цвет. */
+  --awds-range-thumb-chroma: rgb(var(--primary-core));   /* #cell range/default/chroma-active */
 }
 
 /* === Variant: Light (ползунок — белый с обводкой) === */
 
 .range-light {
   --awds-range-thumb-bg:     rgb(var(--secondary-container-core));   /* #cell range/light/bg */
+  --awds-range-thumb-chroma: rgb(var(--surface-bright));   /* #cell range/light/chroma */
   --awds-range-thumb-border: rgb(var(--secondary-container-dim));   /* #cell range/light/border */
   /* Подъём из макета: у всех Light-ячеек в variable_defs лежит elevation из трёх слоёв,
      совпадающий с --awds-shadow-elevation-1 по всем девяти числам (сверено с темой).
@@ -210,9 +223,6 @@
   --awds-range-fill-bg:      rgb(var(--primary-dim));   /* #cell range/bg-hover */
   --awds-range-thumb-bg:     rgb(var(--secondary-container-dim));   /* #cell range/light/bg-hover */
   --awds-range-thumb-border: rgb(var(--secondary-container-dim));   /* #cell range/light/border-hover */
-}
-
-.range-light:active {
 }
 
 /* === Sizes ===
