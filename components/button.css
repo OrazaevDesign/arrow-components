@@ -1,4 +1,4 @@
-/* ArrowDS · button@2.2.6
+/* ArrowDS · button@2.2.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -34,7 +34,8 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-btn-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-btn-border);
+  --awds-btn-border-width: var(--awds-space-px);   
+  box-shadow: inset 0 0 0 var(--awds-btn-border-width) var(--awds-btn-border);
   background: linear-gradient(to right, var(--awds-btn-chroma, var(--awds-btn-bg)), var(--awds-btn-bg));
   color: var(--awds-btn-color);
   opacity: var(--awds-opacity-100);   

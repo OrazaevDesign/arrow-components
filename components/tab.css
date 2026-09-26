@@ -1,4 +1,4 @@
-/* ArrowDS · tab@1.0.5
+/* ArrowDS · tab@1.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-tab-bg {
@@ -21,7 +21,7 @@
   --awds-tab-fs:      var(--awds-control-font-size-400);   
   --awds-tab-lh:      var(--awds-control-line-height-400);
   --awds-tab-ls:      var(--awds-control-letter-spacing-400);
-  --awds-tab-underline: 2px;
+  --awds-tab-underline: var(--awds-space-0-5);   
   box-sizing: border-box;
   position: relative;
   display: inline-flex;

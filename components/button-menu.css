@@ -1,4 +1,4 @@
-/* ArrowDS · button-menu@2.0.7
+/* ArrowDS · button-menu@2.0.8
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -17,7 +17,8 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-btn-menu-rounded);
-  box-shadow: inset 0 0 0 1px var(--awds-btn-menu-border);
+  --awds-btn-menu-border-width: var(--awds-space-px);   
+  box-shadow: inset 0 0 0 var(--awds-btn-menu-border-width) var(--awds-btn-menu-border);
   background: var(--awds-btn-menu-bg);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;

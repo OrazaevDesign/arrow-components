@@ -1,4 +1,4 @@
-/* ArrowDS · content-area@2.0.3
+/* ArrowDS · content-area@2.0.4
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -28,7 +28,8 @@
 }
 
 .content-area-img {
-  box-shadow: inset 0 0 0 1px var(--awds-content-area-border);
+  --awds-content-area-border-width: var(--awds-space-px);   
+  box-shadow: inset 0 0 0 var(--awds-content-area-border-width) var(--awds-content-area-border);
 }
 
 .content-area__img {
@@ -55,7 +56,8 @@
 
 .content-area-video {
   background: rgb(var(--surface-surface));   
-  box-shadow: inset 0 0 0 1px var(--awds-content-area-border);
+  --awds-content-area-border-width: var(--awds-space-px);   
+  box-shadow: inset 0 0 0 var(--awds-content-area-border-width) var(--awds-content-area-border);
 }
 
 .content-area__video {

@@ -1,4 +1,4 @@
-/* ArrowDS · tab-group@1.0.3
+/* ArrowDS · tab-group@1.0.4
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -39,7 +39,7 @@
 }
 
 .tab-group-boxed {
-  --awds-tab-group-stroke: 1px;
+  --awds-tab-group-stroke: var(--awds-space-px);   
   --awds-tab-group-pad:     var(--awds-space-0-5);
   --awds-tab-group-rounded: var(--awds-rounded-border-radius-600);
   --awds-tab-group-gap:     0px;

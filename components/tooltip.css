@@ -1,4 +1,4 @@
-/* ArrowDS · tooltip@2.0.0
+/* ArrowDS · tooltip@2.0.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -12,6 +12,7 @@
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);  
   --awds-tooltip-tail:       var(--awds-space-2);      
   --awds-tooltip-hairline:   rgb(var(--extended-shadow-3));   
+  --awds-tooltip-hairline-width: var(--awds-space-px);   
   --awds-tooltip-max-width:  250px;
   box-sizing: border-box;
   position: relative;
@@ -84,8 +85,8 @@
   bottom: calc(-0.5 * var(--awds-tooltip-tail));
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-right:  1px solid var(--awds-tooltip-hairline);
-  border-bottom: 1px solid var(--awds-tooltip-hairline);
+  border-right:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
 
 .tooltip--side-bottom .tooltip__tail {
@@ -93,24 +94,24 @@
   bottom: auto;
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:  1px solid var(--awds-tooltip-hairline);
-  border-left: 1px solid var(--awds-tooltip-hairline);
+  border-top:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-left: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
 
 .tooltip--side-left .tooltip__tail {
   right: calc(-0.5 * var(--awds-tooltip-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:   1px solid var(--awds-tooltip-hairline);
-  border-right: 1px solid var(--awds-tooltip-hairline);
+  border-top:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-right: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
 
 .tooltip--side-right .tooltip__tail {
   left: calc(-0.5 * var(--awds-tooltip-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-bottom: 1px solid var(--awds-tooltip-hairline);
-  border-left:   1px solid var(--awds-tooltip-hairline);
+  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  border-left:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
 }
 
 }

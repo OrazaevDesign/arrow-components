@@ -1,4 +1,4 @@
-/* ArrowDS · popover@1.0.0
+/* ArrowDS · popover@1.0.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -6,6 +6,7 @@
 .pop {
   --awds-pop-bg:      rgb(var(--surface-bright));   
   --awds-pop-hairline: rgb(var(--extended-shadow-3));   
+  --awds-pop-hairline-width: var(--awds-space-px);   
   --awds-pop-rounded: var(--awds-rounded-border-radius-600);   
   --awds-pop-tail:    var(--awds-space-2);   
   box-sizing: border-box;
@@ -51,8 +52,8 @@
   bottom: calc(-0.5 * var(--awds-pop-tail));
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-right:  1px solid var(--awds-pop-hairline);
-  border-bottom: 1px solid var(--awds-pop-hairline);
+  border-right:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
 
 .pop--side-bottom .pop__tail {
@@ -60,24 +61,24 @@
   bottom: auto;
   left: 50%;
   margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-top:  1px solid var(--awds-pop-hairline);
-  border-left: 1px solid var(--awds-pop-hairline);
+  border-top:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-left: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
 
 .pop--side-left .pop__tail {
   right: calc(-0.5 * var(--awds-pop-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-top:   1px solid var(--awds-pop-hairline);
-  border-right: 1px solid var(--awds-pop-hairline);
+  border-top:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-right: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
 
 .pop--side-right .pop__tail {
   left: calc(-0.5 * var(--awds-pop-tail));
   top: 50%;
   margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-bottom: 1px solid var(--awds-pop-hairline);
-  border-left:   1px solid var(--awds-pop-hairline);
+  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  border-left:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
 }
 
 }

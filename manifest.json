@@ -16,7 +16,7 @@
     },
     {
       "name": "badge",
-      "version": "1.1.4",
+      "version": "1.1.5",
       "variants": [
         "market-percent",
         "market-sale",
@@ -46,11 +46,11 @@
         600
       ],
       "rules": 27,
-      "bytes": 8341
+      "bytes": 8422
     },
     {
       "name": "button",
-      "version": "2.2.6",
+      "version": "2.2.7",
       "variants": [
         "primary",
         "secondary",
@@ -71,7 +71,7 @@
         600
       ],
       "rules": 53,
-      "bytes": 12186
+      "bytes": 12263
     },
     {
       "name": "button-area",
@@ -94,7 +94,7 @@
     },
     {
       "name": "button-favorites",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "variants": [
         "favorites"
       ],
@@ -120,7 +120,7 @@
     },
     {
       "name": "button-menu",
-      "version": "2.0.7",
+      "version": "2.0.8",
       "variants": [
         "default",
         "accent-selected"
@@ -131,11 +131,11 @@
         400
       ],
       "rules": 16,
-      "bytes": 3145
+      "bytes": 3232
     },
     {
       "name": "button-overhung",
-      "version": "2.0.13",
+      "version": "2.0.14",
       "variants": [
         "primary",
         "secondary"
@@ -150,7 +150,7 @@
         600
       ],
       "rules": 26,
-      "bytes": 7526
+      "bytes": 7605
     },
     {
       "name": "checkbox",
@@ -169,7 +169,7 @@
     },
     {
       "name": "content-area",
-      "version": "2.0.3",
+      "version": "2.0.4",
       "variants": [
         "illustration",
         "img",
@@ -177,7 +177,7 @@
       ],
       "sizes": null,
       "rules": 50,
-      "bytes": 3936
+      "bytes": 4126
     },
     {
       "name": "datepicker",
@@ -194,7 +194,7 @@
     },
     {
       "name": "emblem",
-      "version": "3.0.6",
+      "version": "3.0.7",
       "variants": [
         "initials",
         "img",
@@ -214,7 +214,7 @@
         700
       ],
       "rules": 18,
-      "bytes": 4493
+      "bytes": 4570
     },
     {
       "name": "formfield",
@@ -386,7 +386,7 @@
     },
     {
       "name": "notice",
-      "version": "2.0.3",
+      "version": "2.0.4",
       "variants": [
         "accent",
         "secondary",
@@ -401,7 +401,7 @@
         600
       ],
       "rules": 10,
-      "bytes": 4039
+      "bytes": 4122
     },
     {
       "name": "pagination",
@@ -417,13 +417,13 @@
     },
     {
       "name": "popover",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "variants": [
         "default"
       ],
       "sizes": null,
       "rules": 9,
-      "bytes": 2101
+      "bytes": 2371
     },
     {
       "name": "price",
@@ -489,7 +489,7 @@
     },
     {
       "name": "range",
-      "version": "2.0.10",
+      "version": "2.0.12",
       "variants": [
         "default",
         "light"
@@ -498,8 +498,8 @@
         400,
         500
       ],
-      "rules": 24,
-      "bytes": 4421
+      "rules": 23,
+      "bytes": 4751
     },
     {
       "name": "rating",
@@ -596,7 +596,7 @@
     },
     {
       "name": "tab",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "variants": [
         "unselected",
         "selected"
@@ -606,11 +606,11 @@
         400
       ],
       "rules": 18,
-      "bytes": 4771
+      "bytes": 4792
     },
     {
       "name": "tab-group",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "variants": [
         "boxed",
         "separated",
@@ -621,7 +621,7 @@
         400
       ],
       "rules": 20,
-      "bytes": 4492
+      "bytes": 4512
     },
     {
       "name": "table",
@@ -691,7 +691,7 @@
     },
     {
       "name": "tooltip",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "variants": [
         "default",
         "contrast"
@@ -701,7 +701,7 @@
         "300"
       ],
       "rules": 12,
-      "bytes": 3993
+      "bytes": 4299
     },
     {
       "name": "uploader",
@@ -720,9 +720,9 @@
     }
   ],
   "bundle": {
-    "bytes": 314788,
-    "rules": 1253,
-    "hash": "sha256:ebdc0b9c481a093c4c24afa46448bcd133b2fa4f2172e3ae3e9c9aee0e4b7297"
+    "bytes": 316409,
+    "rules": 1252,
+    "hash": "sha256:5e2ee5cb1fa867661f9c264f7bb2c213359501ef57296af86d90fbb1eb8d43a6"
   },
   "theme": {
     "bytes": 57258,

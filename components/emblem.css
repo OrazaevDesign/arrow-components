@@ -1,4 +1,4 @@
-/* ArrowDS · emblem@3.0.6
+/* ArrowDS · emblem@3.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -38,7 +38,8 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  box-shadow: inset 0 0 0 1px var(--awds-emb-border);
+  --awds-emb-border-width: var(--awds-space-px);   
+  box-shadow: inset 0 0 0 var(--awds-emb-border-width) var(--awds-emb-border);
   pointer-events: none;
 }
 
