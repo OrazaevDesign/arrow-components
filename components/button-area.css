@@ -1,4 +1,4 @@
-/* ArrowDS · button-area@2.0.6
+/* ArrowDS · button-area@2.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -91,10 +91,10 @@
   --awds-btn-area-rounded: var(--awds-rounded-border-radius-50);
 }
 
-.btn-area-default { --awds-btn-area-color: rgb(var(--tertiary-container-on-high));
+.btn-area-default { --awds-btn-area-color: rgb(var(--tertiary-on));
 }
 
-.btn-area-default:hover { --awds-btn-area-color: rgb(var(--tertiary-container-on-highest));
+.btn-area-default:hover { --awds-btn-area-color: rgb(var(--accent-core));
 }
 
 .btn-area-muted { --awds-btn-area-color: rgb(var(--surface-on-high));
@@ -112,13 +112,13 @@
 .btn-area-accent { --awds-btn-area-color: rgb(var(--surface-on-highest));
 }
 
-.btn-area-accent:hover { --awds-btn-area-color: rgb(var(--accent-container-on));
+.btn-area-accent:hover { --awds-btn-area-color: rgb(var(--accent-core));
 }
 
 .btn-area-heading { --awds-btn-area-color: rgb(var(--surface-on-high));
 }
 
-.btn-area-heading:hover { --awds-btn-area-color: rgb(var(--accent-container-on));
+.btn-area-heading:hover { --awds-btn-area-color: rgb(var(--accent-core));
 }
 
 .btn-area:focus-visible {
