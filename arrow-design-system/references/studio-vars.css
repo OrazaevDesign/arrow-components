@@ -456,6 +456,9 @@
   --extended-transparent-light: 255 255 255 / 0%;
   --extended-transparent-dark: 0 0 0 / 0%;
   --extended-transparent: var(--extended-transparent-light);
+  --extended-overlay-light: 0 0 0 / 24%;
+  --extended-overlay-dark: 0 0 0 / 24%;
+  --extended-overlay: var(--extended-overlay-light);
   /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   --awds-breakpoints-desktop-large: 1488px;  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
@@ -1750,6 +1753,7 @@
   --extended-shadow-3: var(--extended-shadow-3-light);
   --extended-shadow: var(--extended-shadow-light);
   --extended-transparent: var(--extended-transparent-light);
+  --extended-overlay: var(--extended-overlay-light);
 }
 
 .theme-dark {
@@ -1901,6 +1905,7 @@
   --extended-shadow-3: var(--extended-shadow-3-dark);
   --extended-shadow: var(--extended-shadow-dark);
   --extended-transparent: var(--extended-transparent-dark);
+  --extended-overlay: var(--extended-overlay-dark);
 }
 
 .desktop {

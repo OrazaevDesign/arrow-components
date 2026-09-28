@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:4047a0de23c8ae10797735b1966ad4deb223f93840b5637d11720c94b085ed1d",
+  "snapshot_hash": "sha256:06f99b6cc68e8c8187e1a209404b6d6c68e56e49a0f6531cf7fe1af4301042c0",
   "size": {
     "rectangle": {
       "50": {
@@ -600,7 +600,8 @@
           "placeholder": "rgb(var(--secondary-container-on-high))",
           "icon": "rgb(var(--secondary-container-on-high))",
           "chevron": "rgb(var(--secondary-container-on-high))",
-          "bg": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--surface-bright))",
+          "dim": "rgb(var(--surface-surface))"
         },
         "success": {
           "bg": "rgb(var(--success-container-core))",
@@ -608,7 +609,8 @@
           "color": "rgb(var(--success-container-on-highest))",
           "placeholder": "rgb(var(--success-container-on-high))",
           "icon": "rgb(var(--success-container-on-high))",
-          "chevron": "rgb(var(--success-container-on-high))"
+          "chevron": "rgb(var(--success-container-on-high))",
+          "dim": "rgb(var(--success-container-dim))"
         },
         "error": {
           "bg": "rgb(var(--error-container-core))",
@@ -616,7 +618,8 @@
           "color": "rgb(var(--error-container-on-highest))",
           "placeholder": "rgb(var(--error-container-on-high))",
           "icon": "rgb(var(--error-container-on-high))",
-          "chevron": "rgb(var(--error-container-on-high))"
+          "chevron": "rgb(var(--error-container-on-high))",
+          "dim": "rgb(var(--error-container-dim))"
         },
         "ghost": {
           "color": "rgb(var(--secondary-container-on-highest))",
@@ -630,7 +633,8 @@
           "color": "rgb(var(--tertiary-container-on-highest))",
           "placeholder": "rgb(var(--tertiary-container-on-high))",
           "icon": "rgb(var(--tertiary-container-on-high))",
-          "chevron": "rgb(var(--tertiary-container-on-high))"
+          "chevron": "rgb(var(--tertiary-container-on-high))",
+          "dim": "rgb(var(--tertiary-container-dim))"
         },
         "secondary": {
           "bg": "rgb(var(--secondary-core))",
@@ -710,7 +714,7 @@
         "tabbar": {
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--extended-transparent))",
-          "color": "rgb(var(--secondary-container-on-highest))",
+          "color": "rgb(var(--secondary-container-on-high))",
           "description": "rgb(var(--secondary-container-on-high))",
           "icon-check": "rgb(var(--primary-core))"
         },
@@ -1715,7 +1719,8 @@
           "placeholder": "rgb(var(--primary-container-on-high))",
           "icon": "rgb(var(--primary-container-on-high))",
           "chevron": "rgb(var(--primary-container-on-high))",
-          "bg": "rgb(var(--surface-bright))"
+          "bg": "rgb(var(--surface-bright))",
+          "dim": "rgb(var(--primary-container-core))"
         },
         "success": {
           "bg": "rgb(var(--primary-container-base))",
@@ -1723,7 +1728,8 @@
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
           "icon": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-high))"
+          "chevron": "rgb(var(--primary-container-on-high))",
+          "dim": "rgb(var(--primary-container-core))"
         },
         "error": {
           "bg": "rgb(var(--primary-container-base))",
@@ -1731,7 +1737,8 @@
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
           "icon": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-high))"
+          "chevron": "rgb(var(--primary-container-on-high))",
+          "dim": "rgb(var(--primary-container-core))"
         },
         "ghost": {
           "color": "rgb(var(--primary-container-on-highest))",
@@ -1745,7 +1752,8 @@
           "color": "rgb(var(--primary-container-on-highest))",
           "placeholder": "rgb(var(--primary-container-on-high))",
           "icon": "rgb(var(--primary-container-on-highest))",
-          "chevron": "rgb(var(--primary-container-on-high))"
+          "chevron": "rgb(var(--primary-container-on-high))",
+          "dim": "rgb(var(--primary-container-core))"
         },
         "secondary": {
           "bg": "rgb(var(--surface-bright))",
