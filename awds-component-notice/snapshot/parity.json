@@ -1,0 +1,8 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Пилюлю в макете рисует вложенная рамка notice, а не сам вариант — она и корень сверки. Содержимое — голый текст числа из макета.",
+  "root_layer": "notice",
+  "css": ["notice.css"],
+  "tag": "span",
+  "class": "notice notice-{variant}",
+  "axes": { "size": { "*": { "class": "notice--{value}" } } }
+}

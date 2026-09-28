@@ -66,7 +66,9 @@
   font-size: var(--awds-notice-fs);
   line-height: var(--awds-notice-lh);
   letter-spacing: var(--awds-notice-ls);
-  font-weight: var(--awds-font-weight-semibold);
+  /* Вес — bold: в макете надпись привязана к font-weight/bold во всех 18 ячейках (до
+     27.09.2026 здесь стоял semibold, component-figma-check). */
+  font-weight: var(--awds-font-weight-bold);
   /* Polish (MIFB): счётчик — динамическое число, моноширим цифры, чтобы бейдж
      не «прыгал» при смене значения (9 → 10 → 99). */
   font-variant-numeric: tabular-nums;

@@ -1,10 +1,10 @@
 {
   "component": "notice",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "contract_hash": "sha256:bb930a389b20ff35f20dda5945f2a67375d108da0dce776686b012988bc63a8d",
-  "artifact_hash": "sha256:e1c55d8628982037a542fccfc6d8ab3e937d4898a90caa26055bcc2b4d0517c0",
-  "visual_change": false,
-  "released_at": "2026-09-26T11:03:00.339Z",
+  "artifact_hash": "sha256:fc0921542674337b09ba11dc660a340a7de55bd14e72b105fbfc4395c55c7ff5",
+  "visual_change": true,
+  "released_at": "2026-09-27T08:48:38.652Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -115,7 +115,7 @@
     "--awds-control-line-height-50",
     "--awds-control-line-height-500",
     "--awds-font-family-system",
-    "--awds-font-weight-semibold",
+    "--awds-font-weight-bold",
     "--awds-rounded-border-radius-full",
     "--awds-space-0",
     "--awds-space-0-5",
@@ -186,13 +186,17 @@
     },
     "size": {
       "pattern": "notice--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "list-item-tabbar",
+        "list-item-tabbar-selected"
+      ],
+      "why_optional": "Во вкладке нижней панели (list-item 2.0.0) ступень 200 раздаёт мост .list-item-tabbar > .list-item__prefix > .notice — класс ступени рядом не нужен (28.09.2026)."
     },
     "native": null,
     "children": [],
     "attrs": [],
-    "container": null,
-    "note": "Счётчик поверх иконки: вариант — цвет, размер — диаметр пилюли."
+    "note": "Счётчик поверх иконки: вариант — цвет, размер — диаметр пилюли. Оба класса обязательны: без варианта бейдж бесцветный, без ступени бесформенный. Своих потомков у компонента нет — содержимое это голый текст числа («9», «99+»), поэтому проверять внутри нечего. Ступень notice--100 (6px) — точка-индикатор БЕЗ числа, остальные с числом; двузначные раздуваются в пилюлю сами через padding-inline, отдельного класса для этого нет. Позиционирование в углу иконки или кнопки — на стороне потребителя (контейнер position: relative, бейдж absolute), компонент за него не отвечает и в контракт оно не входит. Состояний нет: бейдж статичный."
   },
   "asana": {
     "task_gid": "1218422992779408",
