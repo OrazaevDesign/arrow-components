@@ -1,10 +1,10 @@
 {
   "component": "input",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "contract_hash": "sha256:103a13e9ef85dad3cc0d0722ed0f96ee02ba5d5b320bca538155bdfbc75628c4",
-  "artifact_hash": "sha256:386ac58b579e695babef84f765e65260f8e64d00e170709f4307f3bb8c801cfa",
+  "artifact_hash": "sha256:226dd668d433489824fe016e6f88c8b9229017fe7e9ff2972513cbff4a31ce27",
   "visual_change": true,
-  "released_at": "2026-09-25T07:39:43.084Z",
+  "released_at": "2026-09-28T07:54:40.953Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -94,7 +94,7 @@
   "geometry_note": "Высота НЕ задаётся явно: calc(2 × rectangle-{N}-padding + rectangle-{N}-typography-line-height). На каждом размере icon == line-height, поэтому высота одинакова со слотами и без них. Ширина — 100% (320px в макете это ширина демо-фрейма). Padding живёт на слотах (prefix / поле / suffix), у контейнера его нет. Горизонтальный отступ текста зависит от наличия иконки рядом: есть иконка → rectangle-{N}-padding (отсчёт от иконки), иконки нет → rectangle-{N}-text-gap (отсчёт от края). text-gap всегда шире (18/18/16/14/14/10/8 против padding 16/14/10/8/8/4/2). В макете это булев проп Padding Icon у компонента Content Input, он переключает ОБА горизонтальных паддинга сразу; в CSS сделано ПО СТОРОНЕ через :has(> .input__prefix) / :has(> .input__suffix), иначе поле с одной иконкой (частый случай — поиск слева) получило бы неверный отступ со второй стороны. Вертикальные паддинги не меняются, высота контрола та же.",
   "typography_note": "Шкала — control, НЕ typography: Figma даёт font-size/600=16 при line-height/600=20, а у typography-600 line-height 26. В CSS берётся семантический var(--awds-rectangle-{N}-typography-*), который в css-global уже ссылается на нужный control-{M}.",
   "focus_ring_note": "Кольцо отличается от остального набора: focus-selection/outlineVariant (= primary-core) при opacity 50%, а не outline (= surface-on-highest) без альфы. В CSS — rgb(var(--primary-core) / var(--awds-opacity-50)), offset 0.",
-  "icons_note": "В макете слоты заполнены филлером ic20-radio-outline — это НЕ иконка инпута, слот принимает любую. Размер — var(--awds-input-icon) по ячейке rectangle/{N}/icon. Цвет: до 16.09.2026 иконки всех семи тонов красились одной привязкой form-control/default/color-rest (цвет ТЕКСТА тона default) — она стояла на мастере части . / prefix-input / icon и ни один тон её не переопределял. Перепривязано на ячейку своего тона и состояния: {тон}/icon-{состояние} у light, success, error, ghost, autofill; placeholder-{состояние} у default; плоский placeholder у secondary (ячеек icon у этих двух тонов в теме нет). Роль при этом та же, что читал код, — вид не изменился.",
+  "icons_note": "В макете слоты заполнены филлером ic20-radio-outline — это НЕ иконка инпута, слот принимает любую. Размер — var(--awds-input-icon) по ячейке rectangle/{N}/icon. Цвет: до 16.09.2026 иконки всех семи тонов красились одной привязкой form-control/default/color-rest (цвет ТЕКСТА тона default) — она стояла на мастере части / prefix-input / icon и ни один тон её не переопределял. Перепривязано на ячейку своего тона и состояния: {тон}/icon-{состояние} у light, success, error, ghost, autofill; placeholder-{состояние} у default; плоский placeholder у secondary (ячеек icon у этих двух тонов в теме нет). Роль при этом та же, что читал код, — вид не изменился.",
   "preview": {
     "base_class": "input",
     "variant_class": "input-default",
@@ -217,6 +217,7 @@
     "--awds-space-1",
     "--awds-space-2",
     "--awds-space-2-5",
+    "--awds-space-3",
     "--awds-space-3-5",
     "--awds-space-4",
     "--awds-space-4-5",
@@ -335,7 +336,6 @@
       "class": "input",
       "tags": [
         "span",
-        "label",
         "div"
       ]
     },
@@ -347,9 +347,12 @@
       "pattern": "input--{size}",
       "required": true,
       "optional_inside": [
-        "upl__drop"
+        "upl__drop",
+        "fld--300",
+        "fld--400",
+        "fld--500"
       ],
-      "why_optional": "поле внутри загрузчика ступени не несёт: её задаёт сам uploader"
+      "why_optional": "ступень раздаёт мост родителя: поле внутри загрузчика получает её от uploader, поле внутри .fld — селектором .fld--{N} .input, и скилл formfield прямо говорит, что .input--{N} вложенному контролу ставить не нужно"
     },
     "native": {
       "tag": "input",
@@ -357,8 +360,23 @@
     },
     "children": [],
     "attrs": [],
-    "container": null,
-    "note": "Нативный input обязателен: состояния (:focus, :disabled, автозаполнение) переключаются его селекторами. Подпись живёт СНАРУЖИ — если нужна внутри рамки, это input-combi."
+    "container": {
+      "any": [
+        "fld",
+        "upl__drop"
+      ],
+      "required": false
+    },
+    "note": "Класс варианта обязателен: цвета живут на нём, база .input бесцветна — как .btn / .btn-primary у кнопки. Нативный <input class=\"input__field\"> обязателен: состояния (:hover, :focus-within, :disabled, автозаполнение) переключаются его селекторами, а тип поля задаёт потребитель — type в требования не вынесен, скилл его не фиксирует и в примере выключенного поля его нет. Тег корня — <span> (или <div>), НЕ <label>: оборачивать рамку в label скилл прямо запрещает, вложенный label перехватил бы фокус, а клик по рамке и так ставит курсор в поле. Подпись живёт СНАРУЖИ: <label for> рядом либо aria-label на самом .input__field — условие «или-или», классом не выражается, поэтому в требования не вынесено. Нужна подпись внутри рамки — это другой компонент, input-combi. Слоты .input__prefix / .input__suffix необязательны: поле законно и без иконок. aria-hidden на слоте тоже не требование — он нужен декоративной иконке и, наоборот, снимается, когда внутри слота стоит настоящая <button type=\"button\" aria-label>. Класс .input--disabled в требования не вынесен: по CSS это запасной вариант для случая, когда поле не может нести атрибут disabled. Ограничение проверки: префикс варианта input- совпадает с началом размерного класса input--{N}, поэтому класс размера формально удовлетворяет и требование варианта.",
+    "child_attrs": [
+      {
+        "child": "input__field",
+        "attr": "aria-label",
+        "required": false,
+        "when_note": "снаружи нет <label for>, ссылающегося на это поле",
+        "why": "подпись обязательна: либо <label for> снаружи, либо aria-label на самом поле. Placeholder подписью не считается — он исчезает при вводе. Условие «или-или» классом не выражается, поэтому требование остаётся документацией"
+      }
+    ]
   },
   "family": "forms",
   "summary": "Текстовое поле, подпись СНАРУЖИ рамки",

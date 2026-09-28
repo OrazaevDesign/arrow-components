@@ -1,0 +1,62 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Корень — рамка поля фиксированной ширины (в макете 320), внутри префикс, нативный input и суффикс; обе иконки видны по умолчанию. Надпись в макете — placeholder, в коде ::placeholder нативного поля. hover/active — на корне, focus — :focus-within через фокус input, disabled — атрибут input.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "input-default.css",
+    "input-light.css",
+    "input-success.css",
+    "input-error.css",
+    "input-autofill.css",
+    "input-ghost.css",
+    "input-secondary.css"
+  ],
+  "tag": "span",
+  "class": "input input-{variant}",
+  "style": "",
+  "placeholder_from": ".input__field",
+  "html_all": "<span class=\"input__prefix\" aria-hidden=\"true\">{icon}</span><input class=\"input__field\" type=\"text\" placeholder=\"{text}\" {disabled}><span class=\"input__suffix\" aria-hidden=\"true\">{icon}</span>",
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "input--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          {
+            "on": ".input__field",
+            "cls": [
+              "focus",
+              "focus-visible"
+            ]
+          },
+          {
+            "on": "",
+            "cls": [
+              "focus-within"
+            ]
+          }
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "vars": {
+          "disabled": "disabled"
+        }
+      }
+    }
+  }
+}
