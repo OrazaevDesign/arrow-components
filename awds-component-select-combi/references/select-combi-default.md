@@ -124,7 +124,7 @@
 
 ## Раскрытый список
 
-Под `@supports (appearance: base-select)` панель рисуется по `. / dropdown`: фон `surface-bright`, `padding` и радиус из `--awds-dropdown-{N}-*`, тень `elevation-3`, ширина ровно по обёртке (через собственный `anchor-name` + `anchor-scope`), зазор 4px сверху и снизу.
+Под `@supports (appearance: base-select)` панель рисуется по `/ dropdown`: фон `surface-bright`, `padding` и радиус из `--awds-dropdown-{N}-*`, тень `elevation-3`, ширина ровно по обёртке (через собственный `anchor-name` + `anchor-scope`), зазор 4px сверху и снизу.
 
 Пункт — компонент `list-item`, ступенью ниже размера контрола; ступень подставляет сам селект. Выбранный пункт переключается на роли `list/accent-selected` мостом на `:checked` — класс в разметке для этого не нужен, выбор меняется в рантайме. UA-галочка (`::checkmark`) погашена: в макете выбор отмечен фоном и рамкой.
 

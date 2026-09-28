@@ -462,7 +462,7 @@
 /* === Sizes (shape = rectangle, map.size.rectangle.{N}) ===
    Размеров четыре: у 50/100/200 combi-токены нулевые — см. шапку файла.
    opt-… — ступень пункта в попапе: она на одну НИЖЕ размера контрола (так в макете
-   . / dropdown), считать её потребителю не нужно. */
+   / dropdown), считать её потребителю не нужно. */
 
 .scombi--300 {
   --awds-scombi-padding:      var(--awds-space-2);   /* #cell rectangle/300/padding */
@@ -521,7 +521,7 @@
 }
 
 .scombi--500 {
-  --awds-scombi-padding:      var(--awds-space-3-5);   /* #cell rectangle/500/padding */
+  --awds-scombi-padding:      var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-scombi-icon:         var(--awds-space-5);   /* #cell rectangle/500/icon */
   --awds-scombi-rounded:      var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-scombi-fs:           var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
@@ -564,7 +564,7 @@
   --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
   --awds-scombi-picker-rounded: var(--awds-rounded-border-radius-600);   /* #cell dropdown/600/border-radius */
   --awds-scombi-picker-padding: var(--awds-space-1);   /* #cell dropdown/600/padding */
-  --awds-scombi-opt-padding:  var(--awds-space-3-5);   /* #cell rectangle/500/padding */
+  --awds-scombi-opt-padding:  var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-scombi-opt-rounded:  var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-scombi-opt-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
   --awds-scombi-opt-lh:       var(--awds-control-line-height-600);
@@ -580,7 +580,7 @@
 /* === Список (попап) — прогрессивное улучшение ===
    ===========================================================================
    Слой один в один с awds-component-select: где движок умеет base-select
-   (Chromium 135+) — попап рисуем МЫ, по компоненту . / dropdown из макета; где не
+   (Chromium 135+) — попап рисуем МЫ, по компоненту / dropdown из макета; где не
    умеет (пока Safari и Firefox) — блок не применяется и остаётся системный попап.
    Контрол в обоих случаях одинаков, отличается только вид раскрытого списка.
 
@@ -640,7 +640,7 @@
     background: rgb(var(--surface-bright));   /* #cell picker/bg */
     box-shadow: var(--awds-shadow-elevation-3);
 
-    /* Ширина РОВНО по обёртке (в макете инстансы контрола и . / dropdown совпадают),
+    /* Ширина РОВНО по обёртке (в макете инстансы контрола и / dropdown совпадают),
        якорь указан явно: безымянный anchor-size(width) взял бы ширину самого <select>,
        а она меньше контрола на ширину слота prefix.
        Высоту не фиксируем — сколько пунктов, столько и высоты, дальше скролл. */

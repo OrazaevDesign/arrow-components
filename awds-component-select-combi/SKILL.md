@@ -65,7 +65,7 @@ description: Select Combi ArrowDS (.scombi).
 | Вертикаль поля и метки | `var(--awds-rectangle-{N}-combi-{input-top , input-bottom , label-top})` | там же, ветка `combi` |
 | Типографика значения | `var(--awds-rectangle-{N}-typography-*)` → `control-{M}` | там же |
 | Типографика уехавшей метки | `var(--awds-control-200-*)` / `var(--awds-control-100-*)` | **маппинг ручной** — shape-токена нет |
-| Панель списка | `var(--awds-space-1)` и `var(--awds-rounded-border-radius-{N})`, `var(--awds-shadow-elevation-3)` | ячейки `dropdown/{N}/*`; Figma `. / dropdown` — часть в `↪ parts` |
+| Панель списка | `var(--awds-space-1)` и `var(--awds-rounded-border-radius-{N})`, `var(--awds-shadow-elevation-3)` | ячейки `dropdown/{N}/*`; Figma `/ dropdown` — часть в `↪ parts` |
 | Гашение (opacity) | выключенное — `var(--awds-opacity-40)` (ячейка `opacity/control/disabled`), включённое — парное `var(--awds-opacity-100)` (ячейка `opacity/control/enabled`) | слой State темы, группа `opacity` |
 | Базовая палитра | RGB-триплеты ролей `--{role}` | `css-variables.css` сайта |
 
@@ -108,7 +108,7 @@ description: Select Combi ArrowDS (.scombi).
 
 ## Раскрытый список
 
-Список остаётся **нативным** — клавиатура, поиск по первым буквам, скринридеры и мобильные колёса выбора работают сами. При этом он **стилизован** слоем `@supports (appearance: base-select)` по части `. / dropdown` из макета (секция `↪ parts` страницы `3 · forms`): где движок умеет (Chromium 135+), панель и пункты рисуем мы; где не умеет (пока Safari и Firefox) — остаётся системный попап, контрол при этом тот же.
+Список остаётся **нативным** — клавиатура, поиск по первым буквам, скринридеры и мобильные колёса выбора работают сами. При этом он **стилизован** слоем `@supports (appearance: base-select)` по части `/ dropdown` из макета (секция `↪ parts` страницы `3 · forms`): где движок умеет (Chromium 135+), панель и пункты рисуем мы; где не умеет (пока Safari и Firefox) — остаётся системный попап, контрол при этом тот же.
 
 Пункт — это компонент [`awds-component-list-item`](../awds-component-list-item/SKILL.md): **подключи `list-item-transparent.css` рядом**, иначе пункты останутся без стилей. Размерную ступень пункта (на одну ниже размера контрола) подставляет сам компонент — класс `.list-item--{N}` на `<option>` ставить не нужно.
 

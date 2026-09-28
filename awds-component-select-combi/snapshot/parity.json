@@ -1,0 +1,61 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Выпадающий список с плавающей подписью: в макете во всех состояниях выбрано значение «text», подпись «Select» стоит вверху. Корень — обёртка .scombi фиксированной ширины (320), префикс и суффикс видны, шеврон — ::after обёртки (графика-маска). Значение — текст выбранного пункта (value_from).",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-list-item/references/list-item-transparent.css",
+    "select-combi-default.css",
+    "select-combi-light.css",
+    "select-combi-success.css",
+    "select-combi-error.css",
+    "select-combi-autofill.css",
+    "select-combi-ghost.css"
+  ],
+  "tag": "span",
+  "class": "scombi scombi-{variant}",
+  "value_from": ".scombi__field",
+  "html_all": "<span class=\"scombi__prefix\" aria-hidden=\"true\">{icon}</span><span class=\"scombi__body\"><select class=\"scombi__field\" id=\"s{w}\" {disabled}><option value=\"\"></option><option value=\"v\" class=\"list-item list-item-transparent\" selected>text</option></select><label class=\"scombi__label\">Select</label></span><span class=\"scombi__suffix\" aria-hidden=\"true\">{icon}</span>",
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "scombi--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          {
+            "on": ".scombi__field",
+            "cls": [
+              "focus",
+              "focus-visible"
+            ]
+          },
+          {
+            "on": "",
+            "cls": [
+              "focus-within"
+            ]
+          }
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "vars": {
+          "disabled": "disabled"
+        }
+      }
+    }
+  }
+}
