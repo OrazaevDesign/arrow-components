@@ -1,6 +1,6 @@
 # List-item / Tabbar-selected
 
-**Figma:** [470rar5EfRm4n14vHMXbpc → набор 8:60712](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60712)
+**Figma:** [470rar5EfRm4n14vHMXbpc → набор 872:147738](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=872-147738)
 **Роль токенов:** `list/tabbar-selected`
 
 > [!NOTE]
@@ -9,41 +9,63 @@
 
 ## Когда
 
-Активная вкладка нижней панели: акцентный текст без фона. Показывает, где пользователь находится сейчас.
+Активная вкладка нижней панели: иконка и подпись акцентные уже в покое, фона нет. Показывает, где пользователь сейчас. На ссылке ставь `aria-current="page"`.
 
 ## HTML
 
 ```html
-<button type="button" class="list-item list-item-tabbar-selected list-item--400">
-  <span class="list-item__prefix" aria-hidden="true">
-    <svg viewBox="0 0 20 20" fill="currentColor"><path d="M3 9l7-6 7 6v8a1 1 0 0 1-1 1h-4v-5H8v5H4a1 1 0 0 1-1-1z"/></svg>
-  </span>
-  <span class="list-item__content">
-    <span class="list-item__title">Главная</span>
-  </span>
-</button>
+<nav class="tabbar" aria-label="Разделы">
+  <a href="/catalog" class="list-item list-item-tabbar-selected" aria-current="page">
+    <span class="list-item__prefix" aria-hidden="true">
+      <svg viewBox="0 0 20 20" fill="currentColor">…</svg>
+      <span class="notice notice-accent">3</span>   <!-- счётчик, необязательный -->
+    </span>
+    <span class="list-item__content">
+      <span class="list-item__title">Каталог</span>
+    </span>
+  </a>
+</nav>
 ```
 
 ## Цвета
 
-| Состояние | Фон | Рамка | Заголовок | Описание |
-|---|---|---|---|---|
-| Rest | `transparent` | `transparent` | `accent-core` | `accent-core` |
-| Hover | `transparent` | `transparent` | `accent-core` | `accent-core` |
-| Focus | `transparent` | `transparent` | `accent-core` | `accent-core` |
-| Active | `transparent` | `transparent` | `accent-core` | `accent-core` |
+| Состояние | Фон | Рамка | Подпись и иконка |
+|---|---|---|---|
+| Все | `transparent` | `transparent` | `accent-core` |
+| Disabled | | | прозрачность 40% |
 
-Галочка (`.list-item__check`): `accent-core` в покое, `accent-core` при наведении.
+Ячейки `list/tabbar-selected/*` в студии без состояний. Жирной рамки 2px, как у прежней выбранной вкладки, больше нет.
 
-## Замечания
+## Геометрия
 
-**Активная вкладка отличается от неактивной только цветом текста.** Ни фона, ни подчёркивания в макете нет. Цвет — единственный признак, а это ровно тот случай, который WCAG 1.4.1 просит не оставлять единственным. Практический выход, который применяют в tabbar: заливать иконку активной вкладки (filled), а у неактивной оставлять контурную — тогда состояние читается и по форме. Разметка это позволяет: иконка задаётся автором.
+С 2.0.0 (28.09.2026) вкладка панели устроена иначе, чем остальная семья, и **size-классы
+`.list-item--{N}` на ней не действуют**: панель одна на экран и вместе со списком не
+масштабируется.
 
-**Текущую вкладку объяви программно** — `aria-current="page"` на строке.
+| | Значение |
+|---|---|
+| Раскладка | столбец: иконка над подписью, по центру |
+| Отступ | `var(--awds-space-1-5)` (6px) со всех сторон; в макете привязан к шкале, ступени Size нет |
+| Иконка | `var(--awds-space-5)` (20px, `square/400/icon`), красится цветом подписи |
+| Подпись | control 100 (12/16), regular, в одну строку |
+| Ширина | от 56 (слоты минимум 44 + отступы) и по содержимому; высота 48, без подписи — 32 |
+| Скругление | `var(--awds-rounded-border-radius-400)` — под ним фон нажатой вкладки и кольцо фокуса |
+| Фокус | кольцо `default` (не `accent`), вписано в бокс |
 
-## Геометрия, состояния, слоты
+**Только иконка** — та же разметка без `.list-item__content` (в макете `content=icon`).
+Своего класса нет: без подписи вкладка сама становится 56 × 32. Подпись тогда нужна в
+`aria-label` на кнопке.
 
-Общие для всей семьи и описаны в [SKILL.md](../SKILL.md): высота `2 × padding + line-height`, переключение горизонтали от слотов, `align-items: flex-start`, кольцо фокуса `primary-core` вписано в бокс (Inside + Accent), disabled — `opacity: 40%`.
+**Счётчик** — компонент [notice](../../awds-component-notice/SKILL.md) внутри
+`.list-item__prefix`, класс ступени не нужен: 200-ю ступень раздаёт мост. Встаёт как в
+макете: на 12 от левого края иконки и на 6 выше неё.
+
+**Панель делит ширину контейнер**: оберни вкладки во flex и дай каждой `flex: 1`.
+Подпись не переносится, поэтому длинная вкладка раздвигает панель, а не рвёт слово.
+
+## Пара
+
+`tabbar` — невыбранная вкладка той же панели: раскладка одна, различаются только цвета.
 
 ## Refresh
 

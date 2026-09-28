@@ -1,10 +1,10 @@
 {
   "component": "list-item",
-  "version": "1.1.1",
-  "contract_hash": "sha256:40c899e3782386d1b5827f2c2523b6c4b5be618fbc21a1d3d82c2d07b95a99a9",
-  "artifact_hash": "sha256:19560c0642a4d9f48cd81b4c68d89bcbb9bf66706fa1562a1c6d2bbee39c0ddb",
+  "version": "2.0.0",
+  "contract_hash": "sha256:b2fcaa459f684782767d4dda5face704c66c30826d0ec1035b666847d58d05cb",
+  "artifact_hash": "sha256:592db55f4f8197bafc5de87549cca03d8e741c3df461423a31288b6af61514e3",
   "visual_change": true,
-  "released_at": "2026-09-26T14:30:37.397Z",
+  "released_at": "2026-09-28T06:52:48.870Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -58,8 +58,8 @@
       "token_role": "list/default-selected"
     },
     "tabbar": {
-      "node_id": "8:60416",
-      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60416",
+      "node_id": "853:143851",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=853-143851",
       "figma_label": "list-item / tabbar",
       "token_role": "list/tabbar"
     },
@@ -70,8 +70,8 @@
       "token_role": "list/menu"
     },
     "tabbar-selected": {
-      "node_id": "8:60712",
-      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60712",
+      "node_id": "872:147738",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=872-147738",
       "figma_label": "list-item / tabbar-selected",
       "token_role": "list/tabbar-selected"
     },
@@ -229,8 +229,11 @@
     "--awds-rounded-border-radius-50",
     "--awds-rounded-border-radius-500",
     "--awds-rounded-border-radius-600",
+    "--awds-space-0",
     "--awds-space-0-5",
     "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-11",
     "--awds-space-2",
     "--awds-space-2-5",
     "--awds-space-3-5",
@@ -394,13 +397,26 @@
       "optional_on_tags": [
         "option"
       ],
-      "why_optional": "у <option> своей ступени быть не может: её раздаёт select мостом"
+      "optional_on_classes": [
+        "list-item-tabbar",
+        "list-item-tabbar-selected"
+      ]
     },
     "native": null,
-    "children": [],
+    "children": [
+      {
+        "class": "list-item__content",
+        "required": true,
+        "unless_attr": "aria-label"
+      },
+      {
+        "class": "list-item__title",
+        "required": true,
+        "within": "list-item__content"
+      }
+    ],
     "attrs": [],
-    "container": null,
-    "note": "Двенадцать вариантов задают роли строки (меню, вкладка таббара, плитка выбора). Размер — высоту и кегль."
+    "note": "Двенадцать вариантов задают роли строки (меню, вкладка таббара, плитка выбора). Размер — высоту и кегль. Минимальная законная строка — .list-item__content с .list-item__title внутри: слоты (__prefix, __suffix), описание (__description), галочка (__check) и картинка (__img) опциональны и в требования не вынесены. Ступень не положена только тегу <option>: её раздаёт select мостом — отсюда size.optional_on_tags. Атрибутов в требованиях нет намеренно: роли ARIA (menu/menuitem, listbox/option, aria-current), объявление выбора и навигация стрелками принадлежат КОНТЕЙНЕРУ списка, а не строке — одна и та же строка живёт в разных списках. Кликабельная строка обязана быть <button> или <a>, но проверкой это не выражается: законны все пять тегов, а кликабельность из разметки не видна. Расхождение внутри скилла: «Алгоритм использования» говорит, что без класса ступени действует 400 (база несёт аккумуляторы ступени 400), то есть ступень формально необязательна, — но во ВСЕХ эталонных сниппетах она стоит, и молчаливый дефолт роднит строку лишь с одной ступенью из семи, поэтому требование оставлено обязательным. С 2.0.0 (28.09.2026): вкладка нижней панели (tabbar, tabbar-selected) одной ступени — size.optional_on_classes; вкладка «только иконка» законно живёт без .list-item__content, если кнопка названа aria-label — отсюда unless_attr у потомка."
   },
   "family": "lists",
   "summary": "Строка списка: пункт меню, пункт выпадающего списка, вкладка таббара, плитка вариации",
@@ -457,7 +473,8 @@
     }
   ],
   "uses": {
-    "awds-component-focus-selection": "2.0.3"
+    "awds-component-focus-selection": "2.0.3",
+    "awds-component-notice": "2.0.5"
   },
   "contract": {
     "classes": [
@@ -488,7 +505,8 @@
       "list-item__img",
       "list-item__prefix",
       "list-item__suffix",
-      "list-item__title"
+      "list-item__title",
+      "notice"
     ],
     "attributes": [
       "aria-disabled"

@@ -1,6 +1,6 @@
 # List-item / Tabbar
 
-**Figma:** [470rar5EfRm4n14vHMXbpc → набор 8:60416](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-60416)
+**Figma:** [470rar5EfRm4n14vHMXbpc → набор 853:143851](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=853-143851)
 **Роль токенов:** `list/tabbar`
 
 > [!NOTE]
@@ -9,45 +9,66 @@
 
 ## Когда
 
-Пункт нижней панели вкладок в мобильном интерфейсе — неактивная вкладка. Без фона и рамки: панель держит форму сама, а строки в ней только текст с иконкой.
+Вкладка нижней панели мобильного интерфейса — неактивная. Без фона и рамки: панель держит форму сама, во вкладке только иконка и подпись.
 
-Не для обычных списков: у tabbar своя логика отклика — при наведении меняется цвет текста, а подложка появляется только под нажатием.
+Не для обычных списков: у вкладки своя раскладка (иконка над подписью) и своя логика отклика — при наведении и в фокусе меняется цвет, подложка появляется только под нажатием.
 
 ## HTML
 
 ```html
-<button type="button" class="list-item list-item-tabbar list-item--400">
-  <span class="list-item__prefix" aria-hidden="true">
-    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l7-6 7 6v8a1 1 0 0 1-1 1h-4v-5H8v5H4a1 1 0 0 1-1-1z"/></svg>
-  </span>
-  <span class="list-item__content">
-    <span class="list-item__title">Главная</span>
-  </span>
-</button>
+<nav class="tabbar" aria-label="Разделы">
+  <a href="/catalog" class="list-item list-item-tabbar">
+    <span class="list-item__prefix" aria-hidden="true">
+      <svg viewBox="0 0 20 20" fill="currentColor">…</svg>
+      <span class="notice notice-accent">3</span>   <!-- счётчик, необязательный -->
+    </span>
+    <span class="list-item__content">
+      <span class="list-item__title">Каталог</span>
+    </span>
+  </a>
+</nav>
 ```
 
 ## Цвета
 
-| Состояние | Фон | Рамка | Заголовок | Описание |
-|---|---|---|---|---|
-| Rest | `transparent` | `transparent` | `secondary-container-on-highest` | `secondary-container-on-high` |
-| Hover | `transparent` | `transparent` | `accent-core` | `accent-core` |
-| Focus | `transparent` | `transparent` | `secondary-container-on-highest` | `secondary-container-on-high` |
-| Active | `surface-surface` | `surface-surface` | `accent-core` | `accent-core` |
+| Состояние | Фон | Рамка | Подпись и иконка |
+|---|---|---|---|
+| Rest | `transparent` | `transparent` | `secondary-container-on-high` |
+| Hover | `transparent` | `transparent` | `accent-core` |
+| Focus | `transparent` | `transparent` | `accent-core` — как hover: ячейки `color-focus` в студии нет |
+| Active | `surface-surface` | `surface-surface` | `accent-core` |
+| Disabled | как Rest | | прозрачность 40% |
 
-Галочка (`.list-item__check`): `primary-core` в покое, `accent-core` при наведении.
+## Геометрия
 
-## Замечания
+С 2.0.0 (28.09.2026) вкладка панели устроена иначе, чем остальная семья, и **size-классы
+`.list-item--{N}` на ней не действуют**: панель одна на экран и вместе со списком не
+масштабируется.
 
-**Пара с `tabbar-selected`.** Активная вкладка — отдельный вариант, у которого акцентный текст стоит уже в покое.
+| | Значение |
+|---|---|
+| Раскладка | столбец: иконка над подписью, по центру |
+| Отступ | `var(--awds-space-1-5)` (6px) со всех сторон; в макете привязан к шкале, ступени Size нет |
+| Иконка | `var(--awds-space-5)` (20px, `square/400/icon`), красится цветом подписи |
+| Подпись | control 100 (12/16), regular, в одну строку |
+| Ширина | от 56 (слоты минимум 44 + отступы) и по содержимому; высота 48, без подписи — 32 |
+| Скругление | `var(--awds-rounded-border-radius-400)` — под ним фон нажатой вкладки и кольцо фокуса |
+| Фокус | кольцо `default` (не `accent`), вписано в бокс |
 
-**Иконка красится `currentColor`** и потому уходит в акцент вместе с текстом — так и задумано: во вкладке иконка и подпись читаются как одно целое.
+**Только иконка** — та же разметка без `.list-item__content` (в макете `content=icon`).
+Своего класса нет: без подписи вкладка сама становится 56 × 32. Подпись тогда нужна в
+`aria-label` на кнопке.
 
-**Ширину в панели задаёт контейнер.** Строка тянется на 100%; чтобы вкладки поделили панель поровну, оберни их во flex с `flex: 1` на каждой.
+**Счётчик** — компонент [notice](../../awds-component-notice/SKILL.md) внутри
+`.list-item__prefix`, класс ступени не нужен: 200-ю ступень раздаёт мост. Встаёт как в
+макете: на 12 от левого края иконки и на 6 выше неё.
 
-## Геометрия, состояния, слоты
+**Панель делит ширину контейнер**: оберни вкладки во flex и дай каждой `flex: 1`.
+Подпись не переносится, поэтому длинная вкладка раздвигает панель, а не рвёт слово.
 
-Общие для всей семьи и описаны в [SKILL.md](../SKILL.md): высота `2 × padding + line-height`, переключение горизонтали от слотов, `align-items: flex-start`, кольцо фокуса `primary-core` вписано в бокс (Inside + Accent), disabled — `opacity: 40%`.
+## Пара
+
+`tabbar-selected` — выбранная вкладка той же панели: раскладка одна, различаются только цвета.
 
 ## Refresh
 

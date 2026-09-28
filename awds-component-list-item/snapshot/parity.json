@@ -1,0 +1,91 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Строка: префикс, заголовок и описание, суффикс; в макете обе иконки видны по умолчанию, ширина строки фиксированная (235). У variation* по бокам — образцы Preview 38×38 (в коде — img в слоте). tabbar* (с 2.0.0) — вкладка нижней панели: иконка над подписью, одна ступень, ось content=text|icon (icon — без .list-item__content); счётчик show-notice в макете выключен по умолчанию и здесь не сверяется.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "list-item-accent-selected.css",
+    "list-item-actual-selected.css",
+    "list-item-default-selected.css",
+    "list-item-default.css",
+    "list-item-menu-selected.css",
+    "list-item-menu.css",
+    "list-item-tabbar-selected.css",
+    "list-item-tabbar.css",
+    "list-item-transparent.css",
+    "list-item-variation-img.css",
+    "list-item-variation-indeterminate.css",
+    "list-item-variation-selected.css",
+    "list-item-variation.css"
+  ],
+  "tag": "button",
+  "attrs": "type=\"button\"",
+  "class": "list-item list-item-{variant}",
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "gfx_frames": [
+    "Preview"
+  ],
+  "gfx_selector": ".list-item__prefix > svg, .list-item__suffix > svg, .list-item__prefix > img, .list-item__suffix > img",
+  "html_all": "<span class=\"list-item__prefix\">{icon}</span><span class=\"list-item__content\"><span class=\"list-item__title\">{text}</span><span class=\"list-item__description\">description</span></span><span class=\"list-item__suffix\">{icon}</span>",
+  "variants": {
+    "variation": {
+      "html": "<span class=\"list-item__prefix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span><span class=\"list-item__content\"><span class=\"list-item__title\">{text}</span><span class=\"list-item__description\">description</span></span><span class=\"list-item__suffix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span>"
+    },
+    "variation-indeterminate": {
+      "html": "<span class=\"list-item__prefix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span><span class=\"list-item__content\"><span class=\"list-item__title\">{text}</span><span class=\"list-item__description\">description</span></span><span class=\"list-item__suffix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span>"
+    },
+    "variation-selected": {
+      "html": "<span class=\"list-item__prefix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span><span class=\"list-item__content\"><span class=\"list-item__title\">{text}</span><span class=\"list-item__description\">description</span></span><span class=\"list-item__suffix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span>"
+    },
+    "variation-img": {
+      "html": "<span class=\"list-item__prefix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span><span class=\"list-item__content\"><span class=\"list-item__title\">{text}</span><span class=\"list-item__description\">description</span></span><span class=\"list-item__suffix\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span>"
+    },
+    "tabbar": {
+      "html": "<span class=\"list-item__prefix\">{icon}</span><span class=\"list-item__content\"><span class=\"list-item__title\">{text}</span></span>"
+    },
+    "tabbar-selected": {
+      "html": "<span class=\"list-item__prefix\">{icon}</span><span class=\"list-item__content\"><span class=\"list-item__title\">{text}</span></span>"
+    }
+  },
+  "axes": {
+    "size": {
+      "*": {
+        "class": "list-item--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "attrs": "disabled"
+      }
+    },
+    "content": {
+      "text": {},
+      "icon": {
+        "html": "<span class=\"list-item__prefix\">{icon}</span>"
+      }
+    }
+  },
+  "exceptions": [
+    {
+      "cells": "^variation-img ·",
+      "prop": ".",
+      "why": "решение владельца (list-item-variation-img.md, 26.09.2026): пропорция 4:5 плитки из tab-product не перенесена, высоту задаёт содержимое, у варианта есть заголовок и описание; в макете — плитка 76×95 с одной картинкой. Сверка вида вынесена в отчёт на пересмотр"
+    }
+  ]
+}

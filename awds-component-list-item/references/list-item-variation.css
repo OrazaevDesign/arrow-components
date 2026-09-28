@@ -315,6 +315,45 @@
 
 /* === Variant: variation === */
 
+/* Образец вариации (цвет, фото) — квадрат во всю высоту пункта с отступом img-padding, как
+   Preview в макете: контейнер слота — квадрат высотой с пункт, образец заполняет его за
+   вычетом img-padding (66/62/54/50/46/38/34). Высота пункта у вариации не задаётся явно —
+   она и есть 2 × padding + строка + 2 + строка описания (описание у вариации всегда), так что
+   размер выводится из тех же ячеек и следует за ними. Схему задал владелец 27.09.2026 вместо
+   прежних литералов 42/38/34 без привязки: новая ячейка в студии не понадобилась. */
+.list-item.list-item-variation {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   /* #cell rectangle/400/img-padding */
+  --awds-list-item-preview: calc(2 * var(--awds-list-item-padding) + var(--awds-list-item-lh)
+    + var(--awds-space-0-5) + var(--awds-list-item-desc-lh) - 2 * var(--awds-list-item-img-padding));
+}
+.list-item.list-item-variation.list-item--600 {
+  --awds-list-item-img-padding: var(--awds-space-1);   /* #cell rectangle/600/img-padding */
+}
+.list-item.list-item-variation.list-item--500 {
+  --awds-list-item-img-padding: var(--awds-space-1);   /* #cell rectangle/500/img-padding */
+}
+.list-item.list-item-variation.list-item--300 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   /* #cell rectangle/300/img-padding */
+}
+.list-item.list-item-variation.list-item--200 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   /* #cell rectangle/200/img-padding */
+}
+.list-item.list-item-variation.list-item--100 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   /* #cell rectangle/100/img-padding */
+}
+.list-item.list-item-variation.list-item--50 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   /* #cell rectangle/50/img-padding */
+}
+
+.list-item.list-item-variation > :is(.list-item__prefix, .list-item__suffix):has(> img) {
+  padding: var(--awds-list-item-img-padding);
+}
+.list-item.list-item-variation > .list-item__prefix > img,
+.list-item.list-item-variation > .list-item__suffix > img {
+  width: var(--awds-list-item-preview);
+  height: var(--awds-list-item-preview);
+}
+
 .list-item-variation {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/variation/bg-rest */
   --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/variation/border-rest */

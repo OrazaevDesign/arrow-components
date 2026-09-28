@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
   <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
+  <link rel="stylesheet" href="../../awds-component-notice/references/notice.css">
   <link rel="stylesheet" href="./list-item-transparent.css">
   <link rel="stylesheet" href="./list-item-default.css">
   <link rel="stylesheet" href="./list-item-default-selected.css">
@@ -107,11 +108,14 @@
     .list-item-default-selected.is-active { --awds-list-item-bg: rgb(var(--secondary-container-core)); --awds-list-item-border: rgb(var(--secondary-container-core)); }
     .list-item-actual-selected.is-hover { --awds-list-item-bg: rgb(var(--secondary-container-core)); }
     .list-item-actual-selected.is-active { --awds-list-item-bg: transparent; }
-    .list-item-tabbar.is-hover { --awds-list-item-color: rgb(var(--accent-container-on)); --awds-list-item-desc: rgb(var(--accent-container-on)); --awds-list-item-check: rgb(var(--accent-container-on-lowest)); }
-    .list-item-tabbar.is-active { --awds-list-item-bg: rgb(var(--surface-surface)); --awds-list-item-border: rgb(var(--surface-surface)); --awds-list-item-color: rgb(var(--accent-container-on)); --awds-list-item-desc: rgb(var(--accent-container-on)); --awds-list-item-check: rgb(var(--accent-container-on-lowest)); }
-    .list-item-tabbar-selected.is-hover { --awds-list-item-check: rgb(var(--accent-container-on-lowest)); }
-    .list-item-tabbar-selected.is-focus { --awds-list-item-check: rgb(var(--accent-container-on-lowest)); }
-    .list-item-tabbar-selected.is-active { --awds-list-item-check: rgb(var(--accent-container-on-lowest)); }
+    .list-item-tabbar.is-hover { --awds-list-item-color: rgb(var(--accent-core)); --awds-list-item-desc: rgb(var(--accent-core)); --awds-list-item-check: rgb(var(--accent-core)); }
+    .list-item-tabbar.is-focus { --awds-list-item-color: rgb(var(--accent-core)); }
+    .list-item-tabbar.is-active { --awds-list-item-bg: rgb(var(--surface-surface)); --awds-list-item-border: rgb(var(--surface-surface)); --awds-list-item-color: rgb(var(--accent-core)); --awds-list-item-desc: rgb(var(--accent-core)); --awds-list-item-check: rgb(var(--accent-core)); }
+    .list-item-tabbar-selected.is-hover { --awds-list-item-check: rgb(var(--accent-core)); }
+    .list-item-tabbar-selected.is-focus { --awds-list-item-check: rgb(var(--accent-core)); }
+    .list-item-tabbar-selected.is-active { --awds-list-item-check: rgb(var(--accent-core)); }
+    .tabbar-demo { display: flex; gap: 0; padding: var(--awds-space-1) var(--awds-space-2); border-radius: var(--awds-rounded-border-radius-600); background: rgb(var(--surface-bright)); box-shadow: var(--awds-shadow-elevation-2); width: max-content; }
+    .tabbar-demo > .list-item { flex: 1; }
     .list-item-menu.is-hover { --awds-list-item-bg: rgb(var(--surface-surface)); --awds-list-item-border: rgb(var(--surface-surface)); --awds-list-item-color: rgb(var(--accent-container-on)); --awds-list-item-desc: rgb(var(--accent-container-on)); --awds-list-item-check: rgb(var(--accent-container-on-lowest)); }
     .list-item-menu.is-active { --awds-list-item-bg: rgb(var(--surface-surface)); --awds-list-item-border: rgb(var(--surface-surface)); --awds-list-item-color: rgb(var(--accent-container-on)); --awds-list-item-desc: rgb(var(--accent-container-on)); --awds-list-item-check: rgb(var(--accent-container-on-lowest)); }
     .list-item-variation.is-hover { --awds-list-item-bg: rgb(var(--primary-container-core)); --awds-list-item-border: rgb(var(--primary-core)); --awds-list-item-color: rgb(var(--primary-container-on-highest)); --awds-list-item-desc: rgb(var(--secondary-container-on-high)); }
@@ -185,6 +189,15 @@
 </p>
 <div class="panel"><ul class="plain" id="ctx"></ul></div>
 
+<h2>В контексте: нижняя панель</h2>
+<p class="note">
+  <code>tabbar</code> и <code>tabbar-selected</code> — вкладки нижней панели, одна ступень: size-классы на них не
+  действуют. Иконка над подписью, счётчик — вложенный <code>notice</code> в слоте иконки. Без
+  <code>.list-item__content</code> остаётся только иконка (в макете <code>content=icon</code>).
+</p>
+<nav class="tabbar-demo" id="bar" aria-label="Нижняя панель"></nav>
+<nav class="tabbar-demo" id="bar-icons" aria-label="Нижняя панель, только иконки" style="margin-top:var(--awds-space-3)"></nav>
+
 <h2>Замеры</h2>
 <p class="note">Computed px против макета. Ожидание: высоты 52/48/40/36/32/24/20 без описания.</p>
 <div id="probe">…</div>
@@ -199,7 +212,19 @@ const ICON = '<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-
 document.getElementById('t-variant').innerHTML =
   VARIANTS.map(v => '<option value="' + v + '">' + v + '</option>').join('');
 
+function tab(variant, label, notice, state) {
+  const cls = ['list-item', 'list-item-' + variant];
+  if (state && state !== 'rest') cls.push('is-' + state);
+  const n = notice ? '<span class="notice notice-accent">' + notice + '</span>' : '';
+  return '<button type="button" class="' + cls.join(' ') + '"' + (state === 'disabled' ? ' disabled' : '') +
+    (variant === 'tabbar-selected' ? ' aria-current="page"' : '') + '>' +
+    '<span class="list-item__prefix" aria-hidden="true">' + ICON + n + '</span>' +
+    (label ? '<span class="list-item__content"><span class="list-item__title">' + label + '</span></span>' : '') +
+    '</button>';
+}
+
 function item(size, state, variant) {
+  if (variant.startsWith('tabbar')) return tab(variant, 'Каталог', '', state);
   const slots = document.getElementById('t-slots').value;
   const desc = document.getElementById('t-desc').value === 'on';
   const cls = ['list-item', 'list-item-' + variant, 'list-item--' + size];
@@ -231,6 +256,10 @@ function render() {
     ['Алматы', 'transparent'], ['Астана', 'accent-selected'], ['Шымкент', 'transparent']
   ].map(([city, variant]) =>
     '<li>' + item(300, 'rest', variant).replace('Алматы', city) + '</li>').join('');
+
+  const TABS = [['tabbar', 'Главная', ''], ['tabbar-selected', 'Каталог', ''], ['tabbar', 'Корзина', '3'], ['tabbar', 'Избранное', ''], ['tabbar', 'Профиль', '']];
+  document.getElementById('bar').innerHTML = TABS.map(([v, l, n]) => tab(v, l, n)).join('');
+  document.getElementById('bar-icons').innerHTML = TABS.map(([v, , n]) => tab(v, '', n)).join('');
 
   probe(v);
 }

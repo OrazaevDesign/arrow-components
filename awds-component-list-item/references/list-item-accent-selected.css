@@ -81,9 +81,10 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-list-item-rounded);
-  /* Толщина рамки — ячейка size/outline/width (2px): выбранная строка обведена
-     жирно, и это её главный признак. Литерала тут быть не должно. */
-  --awds-list-item-border-width: var(--awds-space-0-5);   /* #cell outline/width */
+  /* Толщина рамки базы — 1px (size/outline/offset), одинаковая во всех файлах вариантов:
+     база повторена в каждом, и при разной толщине побеждал бы файл, подключённый
+     последним. Жирная рамка выбранной строки — в правиле варианта ниже. */
+  --awds-list-item-border-width: var(--awds-space-px);   /* #cell outline/offset */
   box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
   background: var(--awds-list-item-bg);
   color: var(--awds-list-item-color);
@@ -314,6 +315,14 @@
 
 
 /* === Variant: accent-selected === */
+
+/* Выбранная строка обведена жирно — ячейка size/outline/width (2px), это её главный
+   признак. Два класса, а не один: база .list-item повторена в файле каждого варианта, и
+   при той же специфичности толщину решал бы порядок подключения (component-figma-check,
+   27.09.2026: 2px в макете, 1px на странице). */
+.list-item.list-item-accent-selected {
+  --awds-list-item-border-width: var(--awds-space-0-5);   /* #cell outline/width */
+}
 
 .list-item-accent-selected {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   /* #cell list/accent-selected/bg */
