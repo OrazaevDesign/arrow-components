@@ -1,0 +1,881 @@
+{
+ "fileKey": "470rar5EfRm4n14vHMXbpc",
+ "component": "uploader",
+ "fetched": "2026-09-27",
+ "cells": [
+  {
+   "variant": "default",
+   "name": "size=500",
+   "props": {
+    "size": "500"
+   },
+   "root": {
+    "w": 330,
+    "h": 176,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 14,
+     "w": 294,
+     "h": 20,
+     "chars": "Выберите файл или перетащите сюда",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 58,
+     "w": 220,
+     "h": 16,
+     "chars": "wp2.png",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 74,
+     "w": 220,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 100,
+     "w": 220,
+     "h": 16,
+     "chars": "Тестовое изображе...age 1).jpg",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 116,
+     "w": 220,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 142,
+     "w": 220,
+     "h": 16,
+     "chars": "tokens.json",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 158,
+     "w": 220,
+     "h": 16,
+     "chars": "5.2 Mb вес файла превышен",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 268,
+     "y": 64,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 64,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    },
+    {
+     "x": 268,
+     "y": 106,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 106,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    },
+    {
+     "x": 8,
+     "y": 148,
+     "w": 20,
+     "h": 20,
+     "name": "file"
+    },
+    {
+     "x": 268,
+     "y": 148,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 148,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "size=400",
+   "props": {
+    "size": "400"
+   },
+   "root": {
+    "w": 330,
+    "h": 168,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 16,
+     "y": 10,
+     "w": 298,
+     "h": 20,
+     "chars": "Выберите файл или перетащите сюда",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 50,
+     "w": 220,
+     "h": 16,
+     "chars": "wp2.png",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 66,
+     "w": 220,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 92,
+     "w": 220,
+     "h": 16,
+     "chars": "Тестовое изображе...age 1).jpg",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 108,
+     "w": 220,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 134,
+     "w": 220,
+     "h": 16,
+     "chars": "tokens.json",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 150,
+     "w": 220,
+     "h": 16,
+     "chars": "5.2 Mb вес файла превышен",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 268,
+     "y": 56,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 56,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    },
+    {
+     "x": 268,
+     "y": 98,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 98,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    },
+    {
+     "x": 8,
+     "y": 140,
+     "w": 20,
+     "h": 20,
+     "name": "file"
+    },
+    {
+     "x": 268,
+     "y": 140,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 140,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "size=300",
+   "props": {
+    "size": "300"
+   },
+   "root": {
+    "w": 330,
+    "h": 164,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 14,
+     "y": 8,
+     "w": 302,
+     "h": 20,
+     "chars": "Выберите файл или перетащите сюда",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 46,
+     "w": 220,
+     "h": 16,
+     "chars": "wp2.png",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 62,
+     "w": 220,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 88,
+     "w": 220,
+     "h": 16,
+     "chars": "Тестовое изображ...age 1).jpg",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 104,
+     "w": 220,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 130,
+     "w": 220,
+     "h": 16,
+     "chars": "tokens.json",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 146,
+     "w": 220,
+     "h": 16,
+     "chars": "5.2 Mb вес файла превышен",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 268,
+     "y": 52,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 52,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    },
+    {
+     "x": 268,
+     "y": 94,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 94,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    },
+    {
+     "x": 8,
+     "y": 136,
+     "w": 20,
+     "h": 20,
+     "name": "file"
+    },
+    {
+     "x": 268,
+     "y": 136,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 302,
+     "y": 136,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "file",
+   "name": "content=img, error=off",
+   "props": {
+    "content": "img",
+    "error": "off"
+   },
+   "root": {
+    "w": 197,
+    "h": 36,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 42,
+     "y": 2,
+     "w": 87,
+     "h": 16,
+     "chars": "wp.png изображение 1 (Test image 1)",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 18,
+     "w": 87,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 135,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 169,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "file",
+   "name": "content=file, error=off",
+   "props": {
+    "content": "file",
+    "error": "off"
+   },
+   "root": {
+    "w": 197,
+    "h": 36,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 42,
+     "y": 2,
+     "w": 87,
+     "h": 16,
+     "chars": "wp.png",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 18,
+     "w": 87,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 8,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "file"
+    },
+    {
+     "x": 135,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 169,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "file",
+   "name": "content=img, error=on",
+   "props": {
+    "content": "img",
+    "error": "on"
+   },
+   "root": {
+    "w": 197,
+    "h": 36,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 42,
+     "y": 2,
+     "w": 87,
+     "h": 16,
+     "chars": "wp.png",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 18,
+     "w": 87,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 135,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 169,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "file",
+   "name": "content=file, error=on",
+   "props": {
+    "content": "file",
+    "error": "on"
+   },
+   "root": {
+    "w": 197,
+    "h": 36,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 42,
+     "y": 2,
+     "w": 87,
+     "h": 16,
+     "chars": "wp.png",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    },
+    {
+     "x": 42,
+     "y": 18,
+     "w": 87,
+     "h": 16,
+     "chars": "324 kb",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "e43727ff",
+     "auto": "HEIGHT",
+     "align": "LEFT",
+     "deco": "NONE"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 8,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "file"
+    },
+    {
+     "x": 135,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    },
+    {
+     "x": 169,
+     "y": 8,
+     "w": 20,
+     "h": 20,
+     "name": "ic20-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  }
+ ]
+}

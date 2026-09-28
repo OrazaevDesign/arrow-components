@@ -1,10 +1,10 @@
 {
   "component": "uploader",
-  "version": "2.0.2",
+  "version": "2.0.5",
   "contract_hash": "sha256:36ebe4fa5a79c22c75520e8c51f5985985acb9fcbadd1d3dab5d856b2d6bc1dc",
-  "artifact_hash": "sha256:dcc75bf044e7a7d46e854ffaa77d27bf44aa97f70cddb19f4a2c848ba1470f1a",
-  "visual_change": false,
-  "released_at": "2026-09-26T14:44:55.606Z",
+  "artifact_hash": "sha256:e3eed62ffe15f94d65ca4b3d02d8dc77cec43c49326799feb50241ac8596e634",
+  "visual_change": true,
+  "released_at": "2026-09-28T07:54:41.604Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -133,6 +133,7 @@
     "--awds-space-1-5",
     "--awds-space-2",
     "--awds-space-2-5",
+    "--awds-space-3",
     "--awds-space-3-5",
     "--awds-space-4",
     "--awds-space-4-5",
@@ -203,37 +204,49 @@
     },
     "native": {
       "tag": "input",
-      "class": "upl__input",
-      "type": "file"
+      "type": "file",
+      "class": "upl__input"
     },
     "children": [
       {
         "class": "upl__drop",
-        "required": true
+        "required": true,
+        "why": "зона перетаскивания; на ней же <label>, внутри которого лежит прозрачный file-инпут"
       },
       {
         "class": "upl__prompt",
-        "required": true
+        "required": true,
+        "why": "подпись зоны обычным span, не <input readonly>"
+      },
+      {
+        "class": "input",
+        "required": true,
+        "within": "upl__drop",
+        "why": "вид зоны даёт awds-component-input: <span class=\"input input-default\"> внутри .upl__drop; ступень раздаёт мост .upl--{N} .input"
       },
       {
         "class": "upl__list",
-        "required": false
+        "required": false,
+        "when_note": "есть хотя бы один загруженный файл — у пустого загрузчика списка нет",
+        "why": "настоящий <ul>: скринридер объявит, сколько файлов загружено"
       },
       {
         "class": "upl__file",
-        "required": false
+        "required": false,
+        "when_note": "одна строка на загруженный файл",
+        "why": "строка файла: превью или иконка, имя, вес, кнопка удаления"
       }
     ],
     "attrs": [],
-    "container": null,
-    "note": "Верхняя часть — ЗОНА перетаскивания .upl__drop, а не поле ввода: настоящий input type=file растянут на всю зону и прозрачен, поэтому работают и клик, и брошенный файл — нативно, без скрипта. До 1.1.0 здесь стоял фиктивный input type=text readonly, а file-инпут был спрятан в углу боксом 1×1, и перетаскивание не работало вовсе. Класса варианта нет — вариантность в составе списка загруженного.",
     "child_attrs": [
       {
-        "class": "upl__input",
-        "attr": "multiple",
-        "why": "атрибут на нативном <input type=file>, а не на корне .upl"
+        "child": "upl__remove",
+        "attr": "aria-label",
+        "why": "кнопка удаления обязана называть файл («Удалить wp.png»), иначе в списке из пяти файлов пять одинаковых кнопок"
       }
-    ]
+    ],
+    "container": null,
+    "note": "Верхняя часть — ЗОНА перетаскивания .upl__drop, а не поле ввода: настоящий input type=file растянут на всю зону и прозрачен, поэтому работают и клик, и брошенный файл — нативно, без скрипта. До 1.1.0 здесь стоял фиктивный input type=text readonly, а file-инпут был спрятан в углу боксом 1×1, и перетаскивание не работало вовсе. Класса варианта нет — вариантность в составе списка загруженного. Список .upl__list и строка .upl__file стоят required:false: загрузчик без загруженных файлов законен, условие «файл выбран» классом инстанса не выражается. Кнопка удаления обязана нести btn--icon-only (иначе 48×36 вместо 36×36), но это класс на потомке — такое требование гейт выразить не умеет. Атрибут multiple не требование: один файл — законный сценарий. Модификатор .upl__drop--over вешает потребитель на dragenter. Список .upl__list работает и сам по себе, без обёртки .upl, — тогда это не инстанс загрузчика."
   },
   "family": "forms",
   "summary": "Загрузчик файлов: поле выбора, drag-and-drop, список загруженного",

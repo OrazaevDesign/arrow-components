@@ -15,9 +15,6 @@ description: Uploader ArrowDS (.upl).
     <input class="upl__input" type="file" multiple>
     <span class="input input-default">
       <span class="upl__prompt">Выберите файл или перетащите сюда</span>
-      <span class="input__suffix" aria-hidden="true">
-        <svg viewBox="0 0 20 20"><!-- ic20-upload --></svg>
-      </span>
     </span>
   </label>
 
@@ -36,6 +33,8 @@ description: Uploader ArrowDS (.upl).
   </ul>
 </div>
 ```
+
+Иконки в зоне по макету нет (`show-suffix` выключен у всех ступеней); слот `.input__suffix` рабочий, но это отступление от макета — см. [references/uploader.md](references/uploader.md).
 
 Строка файла с иконкой типа вместо превью — `.upl__icon` на месте `.upl__preview`; файл с ошибкой — модификатор `.upl__file--error` на `<li>`.
 

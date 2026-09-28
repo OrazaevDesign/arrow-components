@@ -1,0 +1,49 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Два набора: uploader (зона выбора + список из трёх файлов, ось size, тексты и порядок строк — как в ячейках) и uploader / file (строка файла: содержимое img|file × error). Превью в макете — рамка с картинкой без потомков, в коде — <img>; сверяется раскладкой (отступ текста), не как графика. Имя «Тестовое изображе...age 1).jpg» в макете — буквальная строка с многоточием, в разметку идёт она же.",
+  "sets": {
+    "default": "44:83665",
+    "file": "44:83684"
+  },
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-input/references/input-default.css",
+    "../../awds-component-button/references/button-ghost.css",
+    "../../awds-component-progress/references/progress-circular.css",
+    "uploader.css"
+  ],
+  "tag": "div",
+  "class": "",
+  "variants": {
+    "default": {
+      "html": "<label class=\"upl__drop\"><input class=\"upl__input\" type=\"file\"><span class=\"input input-default\"><span class=\"upl__prompt\">Выберите файл или перетащите сюда</span></span></label><ul class=\"upl__list\"><li class=\"upl__file\"><span class=\"upl__preview\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span><span class=\"upl__content\"><span class=\"upl__name\">wp2.png</span><span class=\"upl__size\">324 kb</span></span><span class=\"upl__progress\"><svg class=\"progress progress-circular\" viewBox=\"0 0 48 48\" style=\"--awds-progress-value: 60\" role=\"progressbar\" aria-label=\"p\"><circle class=\"progress-circular__arc\" cx=\"24\" cy=\"24\" r=\"23\" pathLength=\"100\"/></svg></span><button type=\"button\" class=\"btn btn-ghost btn--300 btn--icon-only upl__remove\" aria-label=\"x\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button></li><li class=\"upl__file\"><span class=\"upl__preview\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span><span class=\"upl__content\"><span class=\"upl__name\">Тестовое изображе...age 1).jpg</span><span class=\"upl__size\">324 kb</span></span><span class=\"upl__progress\"><svg class=\"progress progress-circular\" viewBox=\"0 0 48 48\" style=\"--awds-progress-value: 60\" role=\"progressbar\" aria-label=\"p\"><circle class=\"progress-circular__arc\" cx=\"24\" cy=\"24\" r=\"23\" pathLength=\"100\"/></svg></span><button type=\"button\" class=\"btn btn-ghost btn--300 btn--icon-only upl__remove\" aria-label=\"x\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button></li><li class=\"upl__file upl__file--error\"><span class=\"upl__icon\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></span><span class=\"upl__content\"><span class=\"upl__name\">tokens.json</span><span class=\"upl__size\">5.2 Mb вес файла превышен</span></span><span class=\"upl__progress\"><svg class=\"progress progress-circular\" viewBox=\"0 0 48 48\" style=\"--awds-progress-value: 60\" role=\"progressbar\" aria-label=\"p\"><circle class=\"progress-circular__arc\" cx=\"24\" cy=\"24\" r=\"23\" pathLength=\"100\"/></svg></span><button type=\"button\" class=\"btn btn-ghost btn--300 btn--icon-only upl__remove\" aria-label=\"x\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button></li></ul>",
+      "class": "upl"
+    },
+    "file": {
+      "tag": "li",
+      "class": "upl__file",
+      "style": "width:{w}px"
+    }
+  },
+  "axes": {
+    "size": {
+      "*": {
+        "class": "upl--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "content": {
+      "img": {
+        "html": "<span class=\"upl__preview\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span><span class=\"upl__content\"><span class=\"upl__name\">{text}</span><span class=\"upl__size\">324 kb</span></span><span class=\"upl__progress\"><svg class=\"progress progress-circular\" viewBox=\"0 0 48 48\" style=\"--awds-progress-value: 60\" role=\"progressbar\" aria-label=\"p\"><circle class=\"progress-circular__arc\" cx=\"24\" cy=\"24\" r=\"23\" pathLength=\"100\"/></svg></span><button type=\"button\" class=\"btn btn-ghost btn--300 btn--icon-only upl__remove\" aria-label=\"x\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button>"
+      },
+      "file": {
+        "html": "<span class=\"upl__icon\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></span><span class=\"upl__content\"><span class=\"upl__name\">{text}</span><span class=\"upl__size\">324 kb</span></span><span class=\"upl__progress\"><svg class=\"progress progress-circular\" viewBox=\"0 0 48 48\" style=\"--awds-progress-value: 60\" role=\"progressbar\" aria-label=\"p\"><circle class=\"progress-circular__arc\" cx=\"24\" cy=\"24\" r=\"23\" pathLength=\"100\"/></svg></span><button type=\"button\" class=\"btn btn-ghost btn--300 btn--icon-only upl__remove\" aria-label=\"x\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button>"
+      }
+    },
+    "error": {
+      "off": {},
+      "on": {
+        "class": "upl__file--error"
+      }
+    }
+  }
+}
