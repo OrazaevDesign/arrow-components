@@ -1,4 +1,4 @@
-/* ArrowDS · uploader@2.0.2
+/* ArrowDS · uploader@2.0.5
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -144,7 +144,7 @@
 }
 
 .upl--500 .input {
-  --awds-input-padding:  var(--awds-space-3-5);   
+  --awds-input-padding:  var(--awds-space-3);   
   --awds-input-icon:     var(--awds-space-5);   
   --awds-input-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-input-fs:       var(--awds-control-font-size-600);   
@@ -187,6 +187,9 @@
 .upl__prompt {
   flex: 1 1 auto;
   min-width: 0;
+  padding-block: var(--awds-input-padding);
+  padding-inline: var(--awds-input-text-gap);
+  font-family: var(--awds-font-family-system);
   color: var(--awds-input-placeholder);
   font-size: var(--awds-input-fs);
   line-height: var(--awds-input-lh);

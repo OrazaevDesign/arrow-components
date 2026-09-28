@@ -1,4 +1,4 @@
-/* ArrowDS · formfield@1.0.12
+/* ArrowDS · formfield@1.0.14
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -105,6 +105,19 @@
   --awds-radio-icon:    var(--awds-space-6);
 }
 
+.fld--300 { --awds-fld-square-indent: calc(var(--awds-space-5) + 2 * var(--awds-space-0) + var(--awds-space-2));
+}
+
+.fld--400 { --awds-fld-square-indent: calc(var(--awds-space-5) + 2 * var(--awds-space-0-5) + var(--awds-space-2));
+}
+
+.fld--500 { --awds-fld-square-indent: calc(var(--awds-space-6) + 2 * var(--awds-space-0-5) + var(--awds-space-2));
+}
+
+.fld:has(> .lbl > :is(.checkbox, .radio)) > :is(.fld__description, .fld__error) {
+  padding-inline-start: var(--awds-fld-square-indent);
+}
+
 .fld--300 .lbl .switch {
   --awds-switch-width:   var(--awds-space-8);   
   --awds-switch-icon:    var(--awds-space-5);   
@@ -144,7 +157,7 @@
 }
 
 .fld--500 .input {
-  --awds-input-padding:  var(--awds-space-3-5);   
+  --awds-input-padding:  var(--awds-space-3);   
   --awds-input-icon:     var(--awds-space-5);   
   --awds-input-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-input-fs:       var(--awds-control-font-size-600);   
@@ -174,7 +187,7 @@
 }
 
 .fld--500 .select {
-  --awds-select-padding:  var(--awds-space-3-5);   
+  --awds-select-padding:  var(--awds-space-3);   
   --awds-select-icon:     var(--awds-space-5);   
   --awds-select-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-select-fs:       var(--awds-control-font-size-600);   
@@ -202,7 +215,7 @@
 }
 
 .fld--500 .txa {
-  --awds-txa-padding:  var(--awds-space-3-5);   
+  --awds-txa-padding:  var(--awds-space-3);   
   --awds-txa-text-gap: var(--awds-space-4-5);   
   --awds-txa-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-txa-fs:       var(--awds-control-font-size-600);   

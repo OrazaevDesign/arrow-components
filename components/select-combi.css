@@ -1,4 +1,4 @@
-/* ArrowDS · select-combi@1.0.23
+/* ArrowDS · select-combi@1.0.25
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
@@ -261,7 +261,7 @@
 }
 
 .scombi--500 {
-  --awds-scombi-padding:      var(--awds-space-3-5);   
+  --awds-scombi-padding:      var(--awds-space-3);   
   --awds-scombi-icon:         var(--awds-space-5);   
   --awds-scombi-rounded:      var(--awds-rounded-border-radius-500);   
   --awds-scombi-fs:           var(--awds-control-font-size-600);   
@@ -304,7 +304,7 @@
   --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
   --awds-scombi-picker-rounded: var(--awds-rounded-border-radius-600);   
   --awds-scombi-picker-padding: var(--awds-space-1);   
-  --awds-scombi-opt-padding:  var(--awds-space-3-5);   
+  --awds-scombi-opt-padding:  var(--awds-space-3);   
   --awds-scombi-opt-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-scombi-opt-fs:       var(--awds-control-font-size-600);   
   --awds-scombi-opt-lh:       var(--awds-control-line-height-600);

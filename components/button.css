@@ -1,4 +1,4 @@
-/* ArrowDS · button@2.2.10
+/* ArrowDS · button@2.2.12
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -61,6 +61,10 @@
   cursor: default;
 }
 
+.btn.btn--loading:disabled, .btn.btn--loading[aria-disabled="true"] {
+  opacity: var(--awds-opacity-100);
+}
+
 .btn svg {
   width: var(--awds-btn-icon);
   height: var(--awds-btn-icon);
@@ -74,6 +78,7 @@
 }
 
 .btn--loading .btn__content {
+  display: contents;
   visibility: hidden;
 }
 
@@ -97,7 +102,7 @@
 }
 
 .btn--500 {
-  --awds-btn-padding: var(--awds-space-3-5);   
+  --awds-btn-padding: var(--awds-space-3);   
   --awds-btn-gap:     var(--awds-space-1-5);   
   --awds-btn-rounded: var(--awds-rounded-border-radius-500);   
   --awds-btn-icon:    var(--awds-space-5);   

@@ -1,4 +1,4 @@
-/* ArrowDS · select@1.0.22
+/* ArrowDS · select@1.0.24
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-select-bg {
@@ -262,7 +262,7 @@
 }
 
 .select--500 {
-  --awds-select-padding: var(--awds-space-3-5);   
+  --awds-select-padding: var(--awds-space-3);   
   --awds-select-icon:    var(--awds-space-5);   
   --awds-select-rounded: var(--awds-rounded-border-radius-500);   
   --awds-select-fs:      var(--awds-control-font-size-600);   
@@ -293,7 +293,7 @@
   --awds-select-text-gap: var(--awds-space-4-5);   
   --awds-select-picker-rounded: var(--awds-rounded-border-radius-600);   
   --awds-select-picker-padding: var(--awds-space-1);   
-  --awds-select-opt-padding: var(--awds-space-3-5);   
+  --awds-select-opt-padding: var(--awds-space-3);   
   --awds-select-opt-rounded: var(--awds-rounded-border-radius-500);   
   --awds-select-opt-fs:      var(--awds-control-font-size-600);   
   --awds-select-opt-lh:      var(--awds-control-line-height-600);

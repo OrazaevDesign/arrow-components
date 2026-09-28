@@ -1,4 +1,4 @@
-/* ArrowDS · input-combi@1.0.14
+/* ArrowDS · input-combi@1.0.15
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-icombi-bg {
@@ -216,7 +216,7 @@
 }
 
 .icombi--500 {
-  --awds-icombi-padding:      var(--awds-space-3-5);   
+  --awds-icombi-padding:      var(--awds-space-3);   
   --awds-icombi-icon:         var(--awds-space-5);   
   --awds-icombi-rounded:      var(--awds-rounded-border-radius-500);   
   --awds-icombi-fs:           var(--awds-control-font-size-600);   

@@ -1,4 +1,4 @@
-/* ArrowDS · textarea@1.0.15
+/* ArrowDS · textarea@1.0.16
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-txa-bg {
@@ -146,7 +146,7 @@
 }
 
 .txa--500 {
-  --awds-txa-padding:  var(--awds-space-3-5);   
+  --awds-txa-padding:  var(--awds-space-3);   
   --awds-txa-text-gap: var(--awds-space-4-5);   
   --awds-txa-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-txa-fs:       var(--awds-control-font-size-600);   

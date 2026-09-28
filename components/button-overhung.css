@@ -1,4 +1,4 @@
-/* ArrowDS · button-overhung@2.0.15
+/* ArrowDS · button-overhung@2.0.17
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-obtn-bg {
@@ -66,6 +66,10 @@
   pointer-events: none;
 }
 
+.obtn.obtn--loading:disabled, .obtn.obtn--loading[aria-disabled="true"] {
+  opacity: var(--awds-opacity-100);
+}
+
 .obtn svg {
   display: block;
   width: var(--awds-obtn-icon);
@@ -109,7 +113,7 @@
 }
 
 .obtn--500 {
-  --awds-obtn-padding: var(--awds-space-3-5);   
+  --awds-obtn-padding: var(--awds-space-3);   
   --awds-obtn-gap:     var(--awds-space-1-5);   
   --awds-obtn-icon:    var(--awds-space-5);   
   --awds-obtn-fs:      var(--awds-control-font-size-600);   
@@ -194,6 +198,10 @@
   .obtn {
     transition: none;
   }
+}
+
+.obtn.obtn-secondary.obtn--loading:disabled, .obtn.obtn-secondary.obtn--loading[aria-disabled="true"] {
+  opacity: var(--awds-opacity-60);
 }
 
 .obtn-secondary {

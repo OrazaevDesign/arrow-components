@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@2.0.0
+/* ArrowDS · list-item@2.0.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -134,7 +134,7 @@
 }
 
 .list-item--500 {
-  --awds-list-item-padding:  var(--awds-space-3-5);   
+  --awds-list-item-padding:  var(--awds-space-3);   
   --awds-list-item-icon:     var(--awds-space-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-list-item-text-gap: var(--awds-space-4-5);   

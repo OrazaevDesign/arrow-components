@@ -50,7 +50,7 @@
     },
     {
       "name": "button",
-      "version": "2.2.10",
+      "version": "2.2.12",
       "variants": [
         "primary",
         "secondary",
@@ -70,8 +70,8 @@
         500,
         600
       ],
-      "rules": 54,
-      "bytes": 12079
+      "rules": 55,
+      "bytes": 12207
     },
     {
       "name": "button-area",
@@ -94,7 +94,7 @@
     },
     {
       "name": "button-favorites",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "variants": [
         "favorites"
       ],
@@ -135,7 +135,7 @@
     },
     {
       "name": "button-overhung",
-      "version": "2.0.15",
+      "version": "2.0.17",
       "variants": [
         "primary",
         "secondary"
@@ -149,8 +149,8 @@
         500,
         600
       ],
-      "rules": 26,
-      "bytes": 7605
+      "rules": 28,
+      "bytes": 7858
     },
     {
       "name": "checkbox",
@@ -218,7 +218,7 @@
     },
     {
       "name": "formfield",
-      "version": "1.0.12",
+      "version": "1.0.14",
       "variants": [
         "input",
         "select",
@@ -231,8 +231,8 @@
         400,
         500
       ],
-      "rules": 29,
-      "bytes": 7300
+      "rules": 33,
+      "bytes": 7786
     },
     {
       "name": "heading",
@@ -252,7 +252,7 @@
     },
     {
       "name": "input",
-      "version": "1.0.14",
+      "version": "1.0.15",
       "variants": [
         "default",
         "light",
@@ -272,11 +272,11 @@
         600
       ],
       "rules": 53,
-      "bytes": 13947
+      "bytes": 13945
     },
     {
       "name": "input-combi",
-      "version": "1.0.14",
+      "version": "1.0.15",
       "variants": [
         "default",
         "light",
@@ -293,7 +293,7 @@
         600
       ],
       "rules": 55,
-      "bytes": 16169
+      "bytes": 16167
     },
     {
       "name": "input-inline",
@@ -345,7 +345,7 @@
     },
     {
       "name": "list-item",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "variants": [
         "transparent",
         "default",
@@ -371,7 +371,7 @@
         600
       ],
       "rules": 107,
-      "bytes": 27036
+      "bytes": 27034
     },
     {
       "name": "modal",
@@ -525,7 +525,7 @@
     },
     {
       "name": "select",
-      "version": "1.0.22",
+      "version": "1.0.24",
       "variants": [
         "default",
         "light",
@@ -544,11 +544,11 @@
         600
       ],
       "rules": 56,
-      "bytes": 26876
+      "bytes": 26872
     },
     {
       "name": "select-combi",
-      "version": "1.0.23",
+      "version": "1.0.25",
       "variants": [
         "default",
         "light",
@@ -564,7 +564,7 @@
         600
       ],
       "rules": 58,
-      "bytes": 27154
+      "bytes": 27150
     },
     {
       "name": "slider",
@@ -637,7 +637,7 @@
     },
     {
       "name": "textarea",
-      "version": "1.0.15",
+      "version": "1.0.16",
       "variants": [
         "default",
         "light",
@@ -656,7 +656,7 @@
         600
       ],
       "rules": 43,
-      "bytes": 11140
+      "bytes": 11138
     },
     {
       "name": "textarea-combi",
@@ -705,7 +705,7 @@
     },
     {
       "name": "uploader",
-      "version": "2.0.2",
+      "version": "2.0.5",
       "variants": [
         "default",
         "file"
@@ -716,13 +716,13 @@
         500
       ],
       "rules": 26,
-      "bytes": 5023
+      "bytes": 5158
     }
   ],
   "bundle": {
-    "bytes": 322362,
-    "rules": 1297,
-    "hash": "sha256:fcc2b2b217300af572ab19292eba5fa20657550bf064ff6fda0939ac013348e2"
+    "bytes": 323348,
+    "rules": 1304,
+    "hash": "sha256:19bdda50bbb2b6859cbac34672d76c12b5dfa58c7ff61ca6a8cce575b8a909e1"
   },
   "theme": {
     "bytes": 59254,
