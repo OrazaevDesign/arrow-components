@@ -1,10 +1,10 @@
 {
   "component": "button-overhung",
-  "version": "2.0.15",
+  "version": "2.0.17",
   "contract_hash": "sha256:734b4e05e7eed9c113df4e28601577eb5812a9cd6b08f0826a83433219589058",
-  "artifact_hash": "sha256:01069e4471bf10eb4d86ef043cf571717f31f8b04618639fb2534aed4e059b04",
-  "visual_change": false,
-  "released_at": "2026-09-26T16:52:55.978Z",
+  "artifact_hash": "sha256:3fd81c967cb2fd7c26ed91460e7167593b12feb5e95a256dd84bc4c8f4a589ad",
+  "visual_change": true,
+  "released_at": "2026-09-28T07:54:40.809Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -120,6 +120,7 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-semibold",
+    "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-opacity-60",
     "--awds-opacity-90",
@@ -130,7 +131,7 @@
     "--awds-space-1-5",
     "--awds-space-2",
     "--awds-space-2-5",
-    "--awds-space-3-5",
+    "--awds-space-3",
     "--awds-space-4",
     "--awds-space-5",
     "--awds-space-px",
@@ -145,8 +146,8 @@
   "snapshot_hash": "sha256:e3165e5d657ac4e1c6741797eb6788164392d3d3eadf0800f07329aeed1f5bee",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "f58c89a",
-    "pushed_at": "2026-09-26T11:08:38.769222Z",
+    "commit": "6665458",
+    "pushed_at": "2026-09-26T16:59:01.339578Z",
     "github_urls": {
       "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/SKILL.md",
       "primary": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-button-overhung/references/button-overhung-primary.md",

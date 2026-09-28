@@ -1,0 +1,57 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Устройство как у кнопки, плюс тени: префикс, надпись, суффикс; обе иконки видны по умолчанию.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-progress/references/progress-circular.css",
+    "button-overhung-primary.css",
+    "button-overhung-secondary.css"
+  ],
+  "tag": "button",
+  "attrs": "type=\"button\"",
+  "class": "obtn obtn-{variant}",
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "obtn--{value}"
+      }
+    },
+    "content": {
+      "text": {
+        "html": "{icon}{text}{icon}"
+      },
+      "icon": {
+        "class": "obtn--icon-only",
+        "html": "{icon}",
+        "attrs": "aria-label=\"icon\""
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "attrs": "disabled"
+      },
+      "loading": {
+        "class": "obtn--loading",
+        "attrs": "disabled aria-busy=\"true\"",
+        "wrap": "<span class=\"obtn__content\">{html}</span><svg class=\"obtn__progress progress progress-circular progress--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle class=\"progress-circular__arc\" cx=\"12\" cy=\"12\" r=\"10\" pathLength=\"100\"/></svg>"
+      }
+    }
+  }
+}

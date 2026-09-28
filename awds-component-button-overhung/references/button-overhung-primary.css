@@ -154,6 +154,14 @@
   pointer-events: none;
 }
 
+/* Загрузка — не гашение. По контракту у загружающейся кнопки стоит disabled, и без этого
+   правила она тускнела до 40 %. В макете state=loading держит прозрачность покоя: 100 %
+   у primary (opacity/control/enabled) — component-figma-check, 27.09.2026. */
+.obtn.obtn--loading:disabled,
+.obtn.obtn--loading[aria-disabled="true"] {
+  opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
+}
+
 .obtn svg {
   /* display: block — страховка от baseline-зазора: внутри flex svg и так блочный,
      но кнопка иногда переопределяется блоком на inline-раскладку. */
@@ -225,7 +233,7 @@
 }
 
 .obtn--500 {
-  --awds-obtn-padding: var(--awds-space-3-5);   /* #cell rectangle/500/padding */
+  --awds-obtn-padding: var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-obtn-gap:     var(--awds-space-1-5);   /* #cell rectangle/500/gap */
   --awds-obtn-icon:    var(--awds-space-5);   /* #cell rectangle/500/icon */
   --awds-obtn-fs:      var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
