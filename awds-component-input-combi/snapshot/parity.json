@@ -1,0 +1,64 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Поле с плавающей подписью: в покое подпись по центру и значения нет (в макете текст значения на opacity 0), в фокусе подпись уезжает вверх и видно значение. Подпись в макете — «Input Combi», значение — «text». Ширина поля в макете фиксированная (320).",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "input-combi-autofill.css",
+    "input-combi-default.css",
+    "input-combi-error.css",
+    "input-combi-ghost.css",
+    "input-combi-light.css",
+    "input-combi-secondary.css",
+    "input-combi-success.css"
+  ],
+  "tag": "span",
+  "class": "icombi icombi-{variant}",
+  "value_from": ".icombi__field",
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "html_all": "<span class=\"icombi__prefix\" aria-hidden=\"true\">{icon}</span><span class=\"icombi__body\"><input class=\"icombi__field\" id=\"f{w}\" type=\"text\" placeholder=\" \" {value} {disabled}><label class=\"icombi__label\">Input Combi</label></span><span class=\"icombi__suffix\" aria-hidden=\"true\">{icon}</span>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "icombi--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          {
+            "on": ".icombi__field",
+            "cls": [
+              "focus",
+              "focus-visible"
+            ]
+          },
+          {
+            "on": "",
+            "cls": [
+              "focus-within"
+            ]
+          }
+        ],
+        "vars": {
+          "value": "value=\"text\""
+        }
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "vars": {
+          "disabled": "disabled"
+        }
+      }
+    }
+  }
+}

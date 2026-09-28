@@ -1,10 +1,10 @@
 {
   "component": "input-combi",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "contract_hash": "sha256:7c2a2ea3cdb3933b48b3ce1982aff1d09d70e2499a7e80765258712334ee150d",
-  "artifact_hash": "sha256:33cdc0030a1b572ee469aaf405756443729ec83875f451087aee45c5ed5f2068",
+  "artifact_hash": "sha256:d2e5bc925d07066a9b9fb61c5ee5aaa844be7e750e60aff5eb225da30948b36f",
   "visual_change": true,
-  "released_at": "2026-09-25T07:39:43.259Z",
+  "released_at": "2026-09-28T07:54:41.057Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -223,6 +223,7 @@
     "--awds-space-1-5",
     "--awds-space-2",
     "--awds-space-2-5",
+    "--awds-space-3",
     "--awds-space-3-5",
     "--awds-space-4",
     "--awds-space-4-5",
@@ -353,16 +354,41 @@
     },
     "native": {
       "tag": "input",
+      "type": null,
       "class": "icombi__field"
     },
     "children": [
       {
-        "class": "icombi__label"
+        "class": "icombi__body",
+        "required": true,
+        "why": "система координат для абсолютной метки: без неё метка отсчитывается от контрола и уезжает под иконку prefix"
+      },
+      {
+        "class": "icombi__label",
+        "required": true,
+        "why": "плавающая метка — смысл компонента; без неё поле визуально пустое"
       }
     ],
     "attrs": [],
+    "child_attrs": [
+      {
+        "child": "icombi__field",
+        "attr": "placeholder",
+        "why": "пустота поля определяется через :placeholder-shown, а он требует атрибута; без него метка залипает наверху над пустым полем. Значение — один пробел, видимого плейсхолдера у компонента нет"
+      },
+      {
+        "child": "icombi__field",
+        "attr": "id",
+        "why": "метка внутри рамки связывается с полем через for + id — скринридер читает её как имя поля"
+      },
+      {
+        "child": "icombi__label",
+        "attr": "for",
+        "why": "то же; pointer-events:none гасит клики по метке, связь держит только for"
+      }
+    ],
     "container": null,
-    "note": "Плавающая метка обязательна — она и есть смысл компонента: без .icombi__label поле визуально пустое. Инпуту нужен placeholder=\" \", иначе метка не уезжает."
+    "note": "Плавающая метка обязательна — она и есть смысл компонента: без .icombi__label поле визуально пустое. Инпуту нужен placeholder=\" \", иначе метка не уезжает. Порядок «поле, потом label» обязателен (правило на соседнем комбинаторе +), но порядок узлов гейту не виден — проверяется глазами. Слоты .icombi__prefix / .icombi__suffix и класс .icombi--disabled необязательны и в контракт не входят."
   },
   "family": "forms",
   "summary": "Текстовое поле с плавающей меткой: подпись внутри рамки уезжает наверх",
