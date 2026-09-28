@@ -1,10 +1,10 @@
 {
   "component": "textarea",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "contract_hash": "sha256:194322f4d825655c0b9aed58e54f7ec3fc8ec222c2a6d030bd91b1df3a94c38d",
-  "artifact_hash": "sha256:55e47545766b51706c962a8155359ca282d8fd19b7819724371431e41eddd0c5",
+  "artifact_hash": "sha256:44af5476623742f96914d034418c838083469992b23b89fcbb3efa3de2a2ed8f",
   "visual_change": true,
-  "released_at": "2026-09-25T07:39:43.766Z",
+  "released_at": "2026-09-28T07:54:41.560Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -217,6 +217,7 @@
     "--awds-space-1",
     "--awds-space-2",
     "--awds-space-2-5",
+    "--awds-space-3",
     "--awds-space-3-5",
     "--awds-space-4",
     "--awds-space-4-5",
@@ -329,16 +330,30 @@
     },
     "size": {
       "pattern": "txa--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "fld--300",
+        "fld--400",
+        "fld--500"
+      ],
+      "why_optional": "ступень раздаёт мост поля формы: .fld--{N} .txa заполняет аккумуляторы контрола, и своя ступень внутри formfield не нужна"
     },
     "native": {
       "tag": "textarea",
+      "type": null,
       "class": "txa__field"
     },
     "children": [],
     "attrs": [],
+    "child_attrs": [
+      {
+        "child": "txa__field",
+        "attr": "id",
+        "why": "подпись обязательна и стоит СНАРУЖИ компонента <label for>; машинно видна только вторая половина связи — id на поле"
+      }
+    ],
     "container": null,
-    "note": "Нативный textarea обязателен: многострочный ввод и ресайз даёт браузер."
+    "note": "Нативный textarea обязателен: многострочный ввод и ресайз даёт браузер. Слотов у компонента нет — иконку внутрь класть некуда, поэтому и развилки padding/text-gap нет. Метка внутри рамки — это другой компонент, textarea-combi. Высота — min-block-size в три строки: rows её увеличивает, height ломает ресайз. Модификатор .txa--fixed (снимает ресайз вместе с ручкой) и .txa--disabled необязательны. Ручка ресайза — псевдоэлемент обёртки, в разметке её нет."
   },
   "family": "forms",
   "summary": "Многострочное поле: счётчик символов, авто-рост",

@@ -1,0 +1,59 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Рамка фиксированного размера (в макете 320×80), нативный textarea; надпись — ::placeholder. Уголок растяжения в макете нарисован иконкой, в коде это нативный хват textarea — не сверяется.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "textarea-autofill.css",
+    "textarea-default.css",
+    "textarea-error.css",
+    "textarea-ghost.css",
+    "textarea-light.css",
+    "textarea-success.css"
+  ],
+  "tag": "span",
+  "class": "txa txa-{variant}",
+  "placeholder_from": ".txa__field",
+  "html_all": "<textarea class=\"txa__field\" placeholder=\"{text}\" {disabled}></textarea>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "txa--{value}",
+        "style": "width:{w}px;height:{h}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          {
+            "on": ".txa__field",
+            "cls": [
+              "focus",
+              "focus-visible"
+            ]
+          },
+          {
+            "on": "",
+            "cls": [
+              "focus-within"
+            ]
+          }
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "vars": {
+          "disabled": "disabled"
+        }
+      }
+    }
+  }
+}
