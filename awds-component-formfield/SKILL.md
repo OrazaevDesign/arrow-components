@@ -52,7 +52,7 @@ description: Formfield ArrowDS (.fld).
 
 Поэтому CSS-файл один — `formfield-input.css`. Пять побайтово одинаковых файлов разъехались бы при первой же правке.
 
-**У Square частей три, а не четыре**: отдельной строки контрола нет, его роль играет подпись с квадратным контролом внутри. Высота подписи там равна боксу контрола (28/24/20), а не текстовой строке.
+**У Square частей три, а не четыре**: отдельной строки контрола нет, его роль играет подпись с квадратным контролом внутри. Высота подписи там равна боксу контрола (28/24/20), а не текстовой строке. Пояснение и ошибка стоят **под текстом подписи**, а не под чекбоксом: отступ слева 36/32/28 — бокс контрола плюс зазор подписи; его даёт само поле (`.fld:has(> .lbl > :is(.checkbox, .radio))`), в разметке ничего добавлять не нужно.
 
 **У загрузчика ступень проходит на два уровня вниз** без единого дополнительного правила: мост написан селектором потомка (`.fld--500 .input`), поэтому достаёт и то поле, которое лежит внутри `.upl`. Проверено замером — 48/40/36.
 
@@ -111,4 +111,4 @@ ACB зайдёт в Figma по сохранённой ссылке (см. `compo
 - **[awds-component-label](../awds-component-label/SKILL.md)** — подпись; она же умеет знак вопроса-подсказку, если объяснение не помещается в одну строку пояснения.
 - **[awds-component-input](../awds-component-input/SKILL.md)**, **[awds-component-select](../awds-component-select/SKILL.md)**, **[awds-component-textarea](../awds-component-textarea/SKILL.md)** — контролы, которые встают в это поле. Все три сверены: состав и зазоры поля одинаковы, меняется только контрол.
 - **[awds-component-input-combi](../awds-component-input-combi/SKILL.md)**, **[awds-component-select-combi](../awds-component-select-combi/SKILL.md)** — контролы с плавающей меткой. В макете для них есть отдельные `Formfiled Combi / *` (подписи снаружи там нет) — этот скилл их не покрывает.
-- **Ещё не реализованы** из той же страницы макета: `Formfiled / FileUploader`, `Uploader`, `Formfiled / Square`, `Datepiker`, `DatepikerRange`.
+- **[awds-component-uploader](../awds-component-uploader/SKILL.md)** — загрузчик в поле `FileUploader`; **[awds-component-datepicker](../awds-component-datepicker/SKILL.md)** — календарь. Все пять видов поля из макета (`Input`, `Select`, `Textarea`, `FileUploader`, `Square`) сверены числом (`component-figma-check`, 27.09.2026).

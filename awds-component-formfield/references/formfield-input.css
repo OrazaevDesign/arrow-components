@@ -222,6 +222,20 @@
   --awds-radio-icon:    var(--awds-space-6);   /* #cell square/500/icon */
 }
 
+/* === Square: пояснение и ошибка — под текстом подписи, а не под чекбоксом ===
+   В макете (formfield / square) у частей description и error отступ слева 36 / 32 / 28 —
+   бокс квадратного контрола (square/{N}/icon + 2 × padding) плюс зазор подписи space-2.
+   Текст подписи начинается там же, поэтому три строки поля стоят на одной вертикали. До
+   27.09.2026 части лежали у левого края, под чекбоксом (component-figma-check).
+   Вычисляется из тех же ячеек, что бокс контрола в .fld--{N} .lbl выше: переменные подписи
+   живут на .lbl, соседним частям их не видно. */
+.fld--300 { --awds-fld-square-indent: calc(var(--awds-space-5) + 2 * var(--awds-space-0) + var(--awds-space-2)); }     /* #cell square/300/icon, /padding */
+.fld--400 { --awds-fld-square-indent: calc(var(--awds-space-5) + 2 * var(--awds-space-0-5) + var(--awds-space-2)); }   /* #cell square/400/icon, /padding */
+.fld--500 { --awds-fld-square-indent: calc(var(--awds-space-6) + 2 * var(--awds-space-0-5) + var(--awds-space-2)); }   /* #cell square/500/icon, /padding */
+.fld:has(> .lbl > :is(.checkbox, .radio)) > :is(.fld__description, .fld__error) {
+  padding-inline-start: var(--awds-fld-square-indent);
+}
+
 .fld--300 .lbl .switch {
   --awds-switch-width:   var(--awds-space-8);   /* #cell square/300/switch-width */
   --awds-switch-icon:    var(--awds-space-5);   /* #cell square/300/icon */
@@ -261,7 +275,7 @@
 }
 
 .fld--500 .input {
-  --awds-input-padding:  var(--awds-space-3-5);   /* #cell rectangle/500/padding */
+  --awds-input-padding:  var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-input-icon:     var(--awds-space-5);   /* #cell rectangle/500/icon */
   --awds-input-rounded:  var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-input-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
@@ -291,7 +305,7 @@
 }
 
 .fld--500 .select {
-  --awds-select-padding:  var(--awds-space-3-5);   /* #cell rectangle/500/padding */
+  --awds-select-padding:  var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-select-icon:     var(--awds-space-5);   /* #cell rectangle/500/icon */
   --awds-select-rounded:  var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-select-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
@@ -319,7 +333,7 @@
 }
 
 .fld--500 .txa {
-  --awds-txa-padding:  var(--awds-space-3-5);   /* #cell rectangle/500/padding */
+  --awds-txa-padding:  var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-txa-text-gap: var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
   --awds-txa-rounded:  var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-txa-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
