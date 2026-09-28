@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:06f99b6cc68e8c8187e1a209404b6d6c68e56e49a0f6531cf7fe1af4301042c0",
+  "snapshot_hash": "sha256:44425bf61ec91442013713e317f9ab4a2d30661fbfbd0441510cbf35049fcecb",
   "size": {
     "rectangle": {
       "50": {
@@ -95,7 +95,7 @@
         }
       },
       "500": {
-        "padding": "var(--awds-space-3-5)",
+        "padding": "var(--awds-space-3)",
         "img-padding": "var(--awds-space-1)",
         "text-gap": "var(--awds-space-4-5)",
         "gap": "var(--awds-space-1-5)",
