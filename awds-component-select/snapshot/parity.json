@@ -1,0 +1,61 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Корень — обёртка .select фиксированной ширины (в макете 320) вокруг нативного <select>; префикс и суффикс видны по умолчанию, шеврон — ::after обёртки (графика-маска). Надпись — текст выбранного пункта-плейсхолдера (value_from). hover/active — на корне, focus — :focus-within через фокус select, disabled — атрибут select.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-list-item/references/list-item-transparent.css",
+    "select-default.css",
+    "select-light.css",
+    "select-success.css",
+    "select-error.css",
+    "select-autofill.css",
+    "select-ghost.css"
+  ],
+  "tag": "span",
+  "class": "select select-{variant}",
+  "value_from": ".select__field",
+  "html_all": "<span class=\"select__prefix\" aria-hidden=\"true\">{icon}</span><select class=\"select__field\" {disabled}><option value=\"v\" class=\"list-item list-item-transparent\">{text}</option></select><span class=\"select__suffix\" aria-hidden=\"true\">{icon}</span>",
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "select--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          {
+            "on": ".select__field",
+            "cls": [
+              "focus",
+              "focus-visible"
+            ]
+          },
+          {
+            "on": "",
+            "cls": [
+              "focus-within"
+            ]
+          }
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "vars": {
+          "disabled": "disabled"
+        }
+      }
+    }
+  }
+}
