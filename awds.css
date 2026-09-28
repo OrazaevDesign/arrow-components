@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.11, badge@1.1.5, button@2.2.10, button-area@2.0.8, button-favorites@2.0.2, button-group@1.0.3, button-menu@2.0.9, button-overhung@2.0.15, checkbox@1.0.11, content-area@2.0.4, datepicker@1.0.4, emblem@3.0.7, formfield@1.0.12, heading@1.0.6, input@1.0.14, input-combi@1.0.14, input-inline@1.0.0, label@1.0.9, link@1.0.6, list-item@1.1.1, modal@1.0.2, notice@2.0.4, pagination@1.0.1, popover@1.0.1, price@2.0.5, product-card@1.1.13, progress@2.0.3, radio@1.0.11, range@2.0.12, rating@2.0.9, scrollbar@2.0.6, select@1.0.22, select-combi@1.0.23, slider@1.0.8, switch@1.0.10, tab@1.0.6, tab-group@1.0.4, table@1.0.12, textarea@1.0.15, textarea-combi@1.0.2, toast@1.0.0, tooltip@2.0.2, uploader@2.0.2 */
+   Состав: focus-selection@2.0.11, badge@1.1.5, button@2.2.10, button-area@2.0.8, button-favorites@2.0.2, button-group@1.0.3, button-menu@2.0.9, button-overhung@2.0.15, checkbox@1.0.11, content-area@2.0.4, datepicker@1.0.4, emblem@3.0.7, formfield@1.0.12, heading@1.0.6, input@1.0.14, input-combi@1.0.14, input-inline@1.0.0, label@1.0.9, link@1.0.6, list-item@2.0.0, modal@1.0.2, notice@2.0.5, pagination@1.0.1, popover@1.0.1, price@2.0.5, product-card@1.1.13, progress@2.0.3, radio@1.0.11, range@2.0.12, rating@2.0.9, scrollbar@2.0.6, select@1.0.22, select-combi@1.0.23, slider@1.0.8, switch@1.0.10, tab@1.0.6, tab-group@1.0.4, table@1.0.12, textarea@1.0.15, textarea-combi@1.0.2, toast@1.0.0, tooltip@2.0.2, uploader@2.0.2 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -3819,7 +3819,7 @@
   appearance: none;
   border: 0;
   border-radius: var(--awds-list-item-rounded);
-  --awds-list-item-border-width: var(--awds-space-0-5);   
+  --awds-list-item-border-width: var(--awds-space-px);   
   box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
   background: var(--awds-list-item-bg);
   color: var(--awds-list-item-color);
@@ -3996,6 +3996,10 @@
   --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-100);
 }
 
+.list-item.list-item-accent-selected {
+  --awds-list-item-border-width: var(--awds-space-0-5);
+}
+
 .list-item-accent-selected {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   
   --awds-list-item-border:  rgb(var(--primary-container-on-lowest));   
@@ -4008,6 +4012,10 @@
   .list-item {
     transition: none;
   }
+}
+
+.list-item.list-item-actual-selected {
+  --awds-list-item-border-width: var(--awds-space-0-5);
 }
 
 .list-item-actual-selected {
@@ -4026,6 +4034,10 @@
   --awds-list-item-bg:      rgb(var(--extended-transparent));
 }
 
+.list-item.list-item-default-selected {
+  --awds-list-item-border-width: var(--awds-space-0-5);
+}
+
 .list-item-default-selected {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   
   --awds-list-item-border:  rgb(var(--secondary-container-core));   
@@ -4042,43 +4054,6 @@
 .list-item-default-selected:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--secondary-container-core));   
   --awds-list-item-border:  rgb(var(--secondary-container-core));
-}
-
-.list-item {
-  --awds-list-item-padding:  var(--awds-space-2-5);   
-  --awds-list-item-icon:     var(--awds-space-5);   
-  --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   
-  --awds-list-item-text-gap: var(--awds-space-4);   
-  --awds-list-item-fs:       var(--awds-control-font-size-400);   
-  --awds-list-item-lh:       var(--awds-control-line-height-400);
-  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
-  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   
-  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
-  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
-  box-sizing: border-box;
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  appearance: none;
-  border: 0;
-  border-radius: var(--awds-list-item-rounded);
-  --awds-list-item-border-width: var(--awds-space-px);   
-  box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
-  background: var(--awds-list-item-bg);
-  color: var(--awds-list-item-color);
-  font-family: var(--awds-font-family-system);
-  font-weight: var(--awds-font-weight-regular);
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-  opacity: var(--awds-opacity-100);   
-  transition: --awds-list-item-bg 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
 }
 
 .list-item-default {
@@ -4106,6 +4081,10 @@
   --awds-list-item-border:  rgb(var(--secondary-container-core));   
   --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+}
+
+.list-item.list-item-menu-selected {
+  --awds-list-item-border-width: var(--awds-space-0-5);
 }
 
 .list-item-menu-selected {
@@ -4140,6 +4119,53 @@
   --awds-list-item-check:   rgb(var(--accent-core));
 }
 
+.list-item.list-item-tabbar-selected {
+  --awds-list-item-icon: var(--awds-space-5);   
+  --awds-list-item-fs:   var(--awds-control-font-size-100);
+  --awds-list-item-lh:   var(--awds-control-line-height-100);
+  --awds-list-item-ls:   var(--awds-control-letter-spacing-100);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-inline-size: max-content;
+  padding: var(--awds-space-1-5);
+  border-radius: var(--awds-rounded-border-radius-400);
+  text-align: center;
+}
+
+.list-item.list-item-tabbar-selected > .list-item__prefix {
+  position: relative;
+  padding: 0;
+  min-inline-size: var(--awds-space-11);
+}
+
+.list-item.list-item-tabbar-selected > .list-item__content {
+  align-self: stretch;
+  padding: 0;
+  min-inline-size: var(--awds-space-11);
+}
+
+.list-item.list-item-tabbar-selected .list-item__title {
+  white-space: nowrap;
+}
+
+.list-item.list-item-tabbar-selected:focus-visible {
+  outline-color: var(--awds-focus-color);
+}
+
+.list-item.list-item-tabbar-selected > .list-item__prefix > .notice {
+  position: absolute;
+  inset-inline-start: calc(50% + var(--awds-list-item-icon) / 2 - var(--awds-space-2));
+  inset-block-start: calc(-1 * var(--awds-space-1-5));
+  --awds-notice-size:  var(--awds-space-4);   
+  --awds-notice-pad-h: var(--awds-space-1);   
+  --awds-notice-pad-v: var(--awds-space-0);   
+  --awds-notice-fs:    var(--awds-control-font-size-100);   
+  --awds-notice-lh:    var(--awds-control-line-height-100);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-100);
+}
+
 .list-item-tabbar-selected {
   --awds-list-item-bg:      rgb(var(--extended-transparent));   
   --awds-list-item-border:  rgb(var(--extended-transparent));   
@@ -4160,10 +4186,57 @@
   --awds-list-item-check:   rgb(var(--accent-core));
 }
 
+.list-item.list-item-tabbar {
+  --awds-list-item-icon: var(--awds-space-5);   
+  --awds-list-item-fs:   var(--awds-control-font-size-100);
+  --awds-list-item-lh:   var(--awds-control-line-height-100);
+  --awds-list-item-ls:   var(--awds-control-letter-spacing-100);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-inline-size: max-content;
+  padding: var(--awds-space-1-5);
+  border-radius: var(--awds-rounded-border-radius-400);
+  text-align: center;
+}
+
+.list-item.list-item-tabbar > .list-item__prefix {
+  position: relative;
+  padding: 0;
+  min-inline-size: var(--awds-space-11);
+}
+
+.list-item.list-item-tabbar > .list-item__content {
+  align-self: stretch;
+  padding: 0;
+  min-inline-size: var(--awds-space-11);
+}
+
+.list-item.list-item-tabbar .list-item__title {
+  white-space: nowrap;
+}
+
+.list-item.list-item-tabbar:focus-visible {
+  outline-color: var(--awds-focus-color);
+}
+
+.list-item.list-item-tabbar > .list-item__prefix > .notice {
+  position: absolute;
+  inset-inline-start: calc(50% + var(--awds-list-item-icon) / 2 - var(--awds-space-2));
+  inset-block-start: calc(-1 * var(--awds-space-1-5));
+  --awds-notice-size:  var(--awds-space-4);   
+  --awds-notice-pad-h: var(--awds-space-1);   
+  --awds-notice-pad-v: var(--awds-space-0);   
+  --awds-notice-fs:    var(--awds-control-font-size-100);   
+  --awds-notice-lh:    var(--awds-control-line-height-100);
+  --awds-notice-ls:    var(--awds-control-letter-spacing-100);
+}
+
 .list-item-tabbar {
   --awds-list-item-bg:      rgb(var(--extended-transparent));   
   --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
   --awds-list-item-check:   rgb(var(--primary-core));
 }
@@ -4172,6 +4245,10 @@
   --awds-list-item-color:   rgb(var(--accent-core));   
   --awds-list-item-desc:    rgb(var(--accent-core));   
   --awds-list-item-check:   rgb(var(--accent-core));
+}
+
+.list-item-tabbar:focus-visible {
+  --awds-list-item-color:   rgb(var(--accent-core));
 }
 
 .list-item-tabbar:active:not(:disabled):not([aria-disabled="true"]) {
@@ -4252,6 +4329,45 @@
   object-fit: cover;
 }
 
+.list-item.list-item-variation-indeterminate {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   
+  --awds-list-item-preview: calc(2 * var(--awds-list-item-padding) + var(--awds-list-item-lh)
+    + var(--awds-space-0-5) + var(--awds-list-item-desc-lh) - 2 * var(--awds-list-item-img-padding));
+}
+
+.list-item.list-item-variation-indeterminate.list-item--600 {
+  --awds-list-item-img-padding: var(--awds-space-1);
+}
+
+.list-item.list-item-variation-indeterminate.list-item--500 {
+  --awds-list-item-img-padding: var(--awds-space-1);
+}
+
+.list-item.list-item-variation-indeterminate.list-item--300 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-indeterminate.list-item--200 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-indeterminate.list-item--100 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-indeterminate.list-item--50 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-indeterminate > :is(.list-item__prefix, .list-item__suffix):has(> img) {
+  padding: var(--awds-list-item-img-padding);
+}
+
+.list-item.list-item-variation-indeterminate > .list-item__prefix > img, .list-item.list-item-variation-indeterminate > .list-item__suffix > img {
+  width: var(--awds-list-item-preview);
+  height: var(--awds-list-item-preview);
+}
+
 .list-item-variation-indeterminate {
   --awds-list-item-bg:      rgb(var(--surface-bright));   
   --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
@@ -4274,12 +4390,94 @@
   --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
 }
 
+.list-item.list-item-variation-selected {
+  --awds-list-item-border-width: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-selected {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   
+  --awds-list-item-preview: calc(2 * var(--awds-list-item-padding) + var(--awds-list-item-lh)
+    + var(--awds-space-0-5) + var(--awds-list-item-desc-lh) - 2 * var(--awds-list-item-img-padding));
+}
+
+.list-item.list-item-variation-selected.list-item--600 {
+  --awds-list-item-img-padding: var(--awds-space-1);
+}
+
+.list-item.list-item-variation-selected.list-item--500 {
+  --awds-list-item-img-padding: var(--awds-space-1);
+}
+
+.list-item.list-item-variation-selected.list-item--300 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-selected.list-item--200 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-selected.list-item--100 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-selected.list-item--50 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation-selected > :is(.list-item__prefix, .list-item__suffix):has(> img) {
+  padding: var(--awds-list-item-img-padding);
+}
+
+.list-item.list-item-variation-selected > .list-item__prefix > img, .list-item.list-item-variation-selected > .list-item__suffix > img {
+  width: var(--awds-list-item-preview);
+  height: var(--awds-list-item-preview);
+}
+
 .list-item-variation-selected {
   --awds-list-item-bg:      rgb(var(--primary-container-core));   
   --awds-list-item-border:  rgb(var(--primary-core));   
   --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
   --awds-list-item-desc:    rgb(var(--primary-container-on-high));   
   --awds-list-item-check:   rgb(var(--primary-container-on-high));
+}
+
+.list-item.list-item-variation {
+  --awds-list-item-img-padding: var(--awds-space-0-5);   
+  --awds-list-item-preview: calc(2 * var(--awds-list-item-padding) + var(--awds-list-item-lh)
+    + var(--awds-space-0-5) + var(--awds-list-item-desc-lh) - 2 * var(--awds-list-item-img-padding));
+}
+
+.list-item.list-item-variation.list-item--600 {
+  --awds-list-item-img-padding: var(--awds-space-1);
+}
+
+.list-item.list-item-variation.list-item--500 {
+  --awds-list-item-img-padding: var(--awds-space-1);
+}
+
+.list-item.list-item-variation.list-item--300 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation.list-item--200 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation.list-item--100 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation.list-item--50 {
+  --awds-list-item-img-padding: var(--awds-space-0-5);
+}
+
+.list-item.list-item-variation > :is(.list-item__prefix, .list-item__suffix):has(> img) {
+  padding: var(--awds-list-item-img-padding);
+}
+
+.list-item.list-item-variation > .list-item__prefix > img, .list-item.list-item-variation > .list-item__suffix > img {
+  width: var(--awds-list-item-preview);
+  height: var(--awds-list-item-preview);
 }
 
 .list-item-variation {
@@ -4485,7 +4683,7 @@
   font-size: var(--awds-notice-fs);
   line-height: var(--awds-notice-lh);
   letter-spacing: var(--awds-notice-ls);
-  font-weight: var(--awds-font-weight-semibold);
+  font-weight: var(--awds-font-weight-bold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   user-select: none;

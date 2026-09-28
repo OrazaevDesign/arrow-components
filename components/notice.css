@@ -1,4 +1,4 @@
-/* ArrowDS · notice@2.0.4
+/* ArrowDS · notice@2.0.5
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -28,7 +28,7 @@
   font-size: var(--awds-notice-fs);
   line-height: var(--awds-notice-lh);
   letter-spacing: var(--awds-notice-ls);
-  font-weight: var(--awds-font-weight-semibold);
+  font-weight: var(--awds-font-weight-bold);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   user-select: none;

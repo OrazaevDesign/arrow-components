@@ -345,7 +345,7 @@
     },
     {
       "name": "list-item",
-      "version": "1.1.1",
+      "version": "2.0.0",
       "variants": [
         "transparent",
         "default",
@@ -370,8 +370,8 @@
         500,
         600
       ],
-      "rules": 63,
-      "bytes": 20878
+      "rules": 107,
+      "bytes": 27036
     },
     {
       "name": "modal",
@@ -386,7 +386,7 @@
     },
     {
       "name": "notice",
-      "version": "2.0.4",
+      "version": "2.0.5",
       "variants": [
         "accent",
         "secondary",
@@ -401,7 +401,7 @@
         600
       ],
       "rules": 10,
-      "bytes": 4122
+      "bytes": 4118
     },
     {
       "name": "pagination",
@@ -720,14 +720,14 @@
     }
   ],
   "bundle": {
-    "bytes": 316208,
-    "rules": 1253,
-    "hash": "sha256:87dc931481b2dc850836b3496c5547e210d2b5724e364bd3d08fef7400b640c1"
+    "bytes": 322362,
+    "rules": 1297,
+    "hash": "sha256:fcc2b2b217300af572ab19292eba5fa20657550bf064ff6fda0939ac013348e2"
   },
   "theme": {
     "bytes": 59254,
     "variables_kept": 604,
-    "variables_declared": 1301,
+    "variables_declared": 1304,
     "missing": []
   },
   "skipped_selectors": [
