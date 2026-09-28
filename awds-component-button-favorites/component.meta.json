@@ -1,10 +1,10 @@
 {
   "component": "button-favorites",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "contract_hash": "sha256:6374a6b1f3d8929094fc35d0ade50ef659ffe94d9a5c3aa8b9b97cdb15f30b52",
-  "artifact_hash": "sha256:74cb294f0e9787dd6fe9add8a6be5358a2e446f9d1c5d0ade4928e62513072a3",
-  "visual_change": false,
-  "released_at": "2026-09-26T11:03:00.036Z",
+  "artifact_hash": "sha256:d09346e6d0e10346975ded83abd8485f8e2db1e8fcbfdfd05d2639dfdcd492b2",
+  "visual_change": true,
+  "released_at": "2026-09-28T07:54:40.736Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -145,7 +145,7 @@
     "--awds-space-1-5",
     "--awds-space-2",
     "--awds-space-2-5",
-    "--awds-space-3-5",
+    "--awds-space-3",
     "--awds-space-4",
     "--awds-space-5",
     "--awds-space-px",
@@ -203,35 +203,49 @@
     },
     "size": {
       "pattern": "btn--{size}",
-      "required": false
+      "required": false,
+      "why_optional": "Шкала общая с кнопкой (.btn--50…600), своего класса ступени у избранного нет; база .btn несёт дефолт 400."
     },
     "native": null,
     "children": [
       {
-        "class": "btn-favorites__icon"
+        "class": "btn-favorites__icon",
+        "required": true
       },
       {
         "class": "btn-favorites__solid",
+        "required": true,
         "within": "btn-favorites__icon"
       },
       {
         "class": "btn-favorites__outline",
+        "required": true,
         "within": "btn-favorites__icon"
       }
     ],
     "attrs": [
       {
-        "attr": "aria-pressed"
+        "attr": "aria-pressed",
+        "required": true,
+        "why": "единственный носитель выбранности: CSS красит дуотон по [aria-pressed=\"true\"], класса для «в избранном» нет"
       },
       {
         "attr": "aria-label",
         "when": "btn--icon-only",
+        "required": true,
         "why": "у варианта с подписью состояние называет сама подпись — скилл запрещает дублировать её в aria-label"
+      },
+      {
+        "attr": "type",
+        "tags": [
+          "button"
+        ],
+        "required": true,
+        "why": "кнопка-тоггл внутри формы карточки без type отправила бы форму"
       }
     ],
     "container": null,
-    "note": "Шкала размеров общая с кнопкой: .btn--{50…600}, дефолт 400; своего класса размера у избранного нет. Обе иконки обязательны — они переключаются состоянием aria-pressed, а не подставляются. Icon-only требует aria-label; у варианта с подписью состояние называет сам текст.",
-    "pending_rework": false
+    "note": "Гость-кнопка компонента Button: база .btn плюс вариант .btn-favorites. Шкала размеров общая с кнопкой (.btn--50…600, дефолт 400), своего класса ступени нет — поэтому ступень необязательна. Обе иконки обязательны: дуотон переключается атрибутом aria-pressed, а не подстановкой другого SVG, — если оставить один слой, «в избранном» и «не в избранном» станут неразличимы. aria-pressed обязателен в обоих видах содержимого. Icon-only требует aria-label (меняется вместе с состоянием: «В избранное» ↔ «В избранном»); у варианта с подписью состояние называет сам текст. Не описано: вложенность слоёв внутри .btn-favorites__icon (within — документация, гейт его не читает) и порядок solid под outline — файловой проверке они не видны. Флаг pending_rework снят: переделка в кнопку со шкалой размеров состоялась (2.0.0), а ключ гейт всё равно не читает."
   },
   "asana": {
     "task_gid": "1218433190678568",
