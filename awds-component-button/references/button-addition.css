@@ -127,6 +127,15 @@
   cursor: default;
 }
 
+/* Загрузка — не гашение. По контракту разметки у загружающейся кнопки стоит disabled
+   (иначе она продолжает нажиматься), и без этого правила она тускнела до 40 %. В макете
+   state=loading держит opacity/control/enabled — 100 %, как у кнопки в покое
+   (component-figma-check, 27.09.2026: 112 ячеек). */
+.btn.btn--loading:disabled,
+.btn.btn--loading[aria-disabled="true"] {
+  opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
+}
+
 .btn svg {
   width: var(--awds-btn-icon);
   height: var(--awds-btn-icon);
@@ -157,6 +166,11 @@
    ============================================================================= */
 
 .btn--loading .btn__content {
+  /* display: contents — иконки и текст внутри остаются флекс-детьми кнопки со своими
+     зазорами. Обычный inline-span собирал их в одну строку: пропадали оба gap, а
+     высота росла по базовой линии svg — кнопка с иконками прыгала при входе в загрузку
+     (400: 45 вместо 40). visibility: hidden детям наследуется. */
+  display: contents;
   visibility: hidden;
 }
 
@@ -187,7 +201,7 @@
 }
 
 .btn--500 {
-  --awds-btn-padding: var(--awds-space-3-5);   /* #cell rectangle/500/padding */
+  --awds-btn-padding: var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-btn-gap:     var(--awds-space-1-5);   /* #cell rectangle/500/gap */
   --awds-btn-rounded: var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-btn-icon:    var(--awds-space-5);   /* #cell rectangle/500/icon */

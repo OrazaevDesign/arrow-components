@@ -1,0 +1,69 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs: как из варианта макета собрать разметку компонента. Пишется руками — это знание о компоненте, генератор его не выводит.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-progress/references/progress-circular.css",
+    "button-primary.css",
+    "button-secondary.css",
+    "button-addition.css",
+    "button-contrast.css",
+    "button-tertiary.css",
+    "button-ghost.css",
+    "button-clean.css",
+    "button-pills.css"
+  ],
+  "tag": "button",
+  "attrs": "type=\"button\"",
+  "class": "btn btn-{variant}",
+  "variants": {
+    "pills": {
+      "class": "btn--pill",
+      "why": "набор button / pills нарисован в моде скругления rounded (все ступени 26px); в коде это независимая ось .btn--pill — button-pills.css, шапка раздела"
+    }
+  },
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "btn--{value}"
+      }
+    },
+    "content": {
+      "text": {
+        "html": "{icon}{text}{icon}"
+      },
+      "icon": {
+        "class": "btn--icon-only",
+        "html": "{icon}",
+        "attrs": "aria-label=\"icon\""
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "attrs": "disabled"
+      },
+      "loading": {
+        "class": "btn--loading",
+        "attrs": "disabled aria-busy=\"true\"",
+        "wrap": "<span class=\"btn__content\">{html}</span><svg class=\"btn__progress progress progress-circular progress--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle class=\"progress-circular__arc\" cx=\"12\" cy=\"12\" r=\"10\" pathLength=\"100\"/></svg>"
+      }
+    }
+  }
+}
