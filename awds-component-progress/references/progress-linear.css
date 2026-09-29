@@ -148,7 +148,10 @@
    без модификатора «завершено». Точка-стоп лежит ВНУТРИ трека и обрезается
    вместе с ним (overflow: clip) — иначе она осталась бы висеть на финише. */
 .progress-linear__track {
-  inset-inline: calc(var(--awds-progress-value) * 1% + var(--awds-progress-gap)) 0;
+  /* Зазор есть только тогда, когда есть активная часть: на нуле трек начинается с края,
+     иначе слева висел пустой просвет 6px (component-figma-check, 27.09.2026). Гасится
+     арифметикой от значения, как дуга кольца: 0 → 0, любое положительное → 1. */
+  inset-inline: calc(var(--awds-progress-value) * 1% + var(--awds-progress-gap) * min(1, var(--awds-progress-value) * 1000)) 0;
   opacity: var(--awds-progress-idle-opacity);
   overflow: clip;
   transition: inset-inline-start 0.3s ease-out;

@@ -1,0 +1,58 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Ось progress в CSS — не вариант, а значение --awds-progress-value; indeterminate — модификатор. Сверяются части: трек и точка-стоп у полосы (прямоугольники), дуга у кольца — только краска и толщина.",
+  "mode": "parts",
+  "css": [
+    "progress-linear.css",
+    "progress-circular.css"
+  ],
+  "tag": "div",
+  "class": "progress progress-{variant}",
+  "variants": {
+    "linear": {
+      "style": "width:{w}px",
+      "html": "<span class=\"progress-linear__active\"></span><span class=\"progress-linear__track\"><span class=\"progress-linear__stop\"></span></span>"
+    },
+    "circular": {
+      "tag": "svg",
+      "html": "<circle class=\"progress-circular__arc\" cx=\"24\" cy=\"24\" r=\"23\" pathLength=\"100\"/>",
+      "attrs": "viewBox=\"0 0 48 48\""
+    }
+  },
+  "axes": {
+    "progress": {
+      "indeterminate": {
+        "class": "progress--indeterminate"
+      },
+      "*": {
+        "style": "--awds-progress-value:{value}"
+      }
+    }
+  },
+  "parts": {
+    "linear": {
+      "track": {
+        "figma": "track",
+        "dom": ".progress-linear__track"
+      },
+      "stop": {
+        "figma": "Stop shape",
+        "dom": ".progress-linear__stop"
+      }
+    },
+    "circular": {
+      "arc": {
+        "figma": "Active indicator",
+        "dom": ".progress-circular__arc",
+        "paint": "stroke",
+        "paint_only": true
+      }
+    }
+  },
+  "exceptions": [
+    {
+      "cells": "^linear · progress=indeterminate$",
+      "prop": "^(track|stop): есть$",
+      "why": "в коде трек indeterminate сплошной на всю ширину, в макете разрезан вокруг одной полосы: полос в коде две, и разрез вокруг каждой превратил бы их в мигающие огрызки — progress-linear.css, раздел Indeterminate"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "component": "progress",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "contract_hash": "sha256:0771c062e92cb622f2ee25ba0ea8399bbf4bdc3978ce7d1faa4fb98dedb7f838",
-  "artifact_hash": "sha256:96c53c9dbe492563087fd9e443b35fb3adbe97476afd652a720302221bea746c",
-  "visual_change": false,
-  "released_at": "2026-09-26T11:25:58.843Z",
+  "artifact_hash": "sha256:d052b2bf9153b6bacd910b6afd631d300d4766a1cc75b4dbb4f0e3658a7e0da4",
+  "visual_change": true,
+  "released_at": "2026-09-27T08:43:57.200Z",
   "own_values": [
     {
       "value": "0.3s",
@@ -111,27 +111,73 @@
     "children": [
       {
         "class": "progress-linear__active",
+        "required": true,
         "when": "progress-linear"
       },
       {
         "class": "progress-linear__track",
+        "required": true,
         "when": "progress-linear"
       },
       {
         "class": "progress-circular__arc",
+        "required": true,
         "when": "progress-circular"
+      },
+      {
+        "class": "progress-linear__stop",
+        "required": false,
+        "when": "progress-linear",
+        "when_note": "только determinate — точка обозначает финиш, у indeterminate её нет; determinate это ОТСУТСТВИЕ класса progress--indeterminate и классом не выражается",
+        "why": "точка-стоп лежит внутри .progress-linear__track и показывает, где заканчивается шкала"
       }
     ],
     "attrs": [
       {
-        "attr": "role"
+        "attr": "role",
+        "required": true,
+        "unless_child_any": [
+          "btn__progress"
+        ],
+        "why": "без role=progressbar это просто div или svg — скринридер не объявит ни факт работы, ни долю. Исключение — кольцо в слоте кнопки (.btn__progress, aria-hidden=\"true\"): имя и статус там несёт сама кнопка"
       },
       {
-        "attr": "aria-label"
+        "attr": "aria-label",
+        "required": true,
+        "unless_child_any": [
+          "btn__progress"
+        ],
+        "why": "индикатор безтекстовый, имя ему даёт только aria-label; в слоте кнопки его нет намеренно — см. role"
+      },
+      {
+        "attr": "aria-valuenow",
+        "required": false,
+        "when_note": "только determinate (у инстанса нет класса progress--indeterminate); у indeterminate атрибут не ставится вовсе — значение обещало бы известную долю",
+        "why": "скринридер не читает CSS: обновление прогресса — всегда две записи, --awds-progress-value и aria-valuenow"
+      },
+      {
+        "attr": "aria-valuemin",
+        "required": false,
+        "when_note": "только determinate, вместе с aria-valuenow",
+        "why": "границы шкалы 0…100 для скринридера"
+      },
+      {
+        "attr": "aria-valuemax",
+        "required": false,
+        "when_note": "только determinate, вместе с aria-valuenow",
+        "why": "границы шкалы 0…100 для скринридера"
       }
     ],
-    "container": null,
-    "note": "Шкалы размеров нет: в макете один размер, ступеней Size у прогресса в теме тоже нет. Класс варианта обязателен — .progress сам по себе только объявляет переменные. role=progressbar и aria-label обязательны всегда; aria-valuenow только у determinate: у indeterminate доля неизвестна, и атрибут со значением обещал бы обратное. Значение приходит числом 0…100 в --awds-progress-value, потому что круговому варианту оно нужно для stroke-dasharray с pathLength=100."
+    "child_attrs": [
+      {
+        "child": "progress-circular__arc",
+        "attr": "pathLength",
+        "when": "progress-circular",
+        "required": true,
+        "why": "pathLength=\"100\" нормализует длину пути, и значение 0…100 уходит в stroke-dasharray как есть; без него дугу пришлось бы считать через 2*pi*r и пересчитывать при смене диаметра"
+      }
+    ],
+    "note": "Шкалы размеров нет: в макете один размер, ступеней Size у прогресса в теме тоже нет — толщина и диаметр переопределяются переменными (--awds-progress-size / -track), .progress--{N} появится только после того, как дизайнер заведёт ступени в студии. Класс варианта обязателен, и он же решает тег корня: linear это <div> с двумя <span>, circular это <svg> с <circle class=\"progress-circular__arc\">. Тег корня со вариантом контракт связать не умеет — tags перечисляет оба, и linear на <svg> гейт не поймает. Значение приходит числом 0…100 в --awds-progress-value (круговому оно нужно для stroke-dasharray при pathLength=100), но инлайн-стиль проверке недоступен. Требования, помеченные required:false, — документация: условие у них «determinate», то есть ОТСУТСТВИЕ класса progress--indeterminate, а «нет класса» полем when не записывается. Исключение по role и aria-label — кольцо в слоте кнопки (.btn__progress с aria-hidden=\"true\"): имя там несёт сама кнопка, и это единственный законный безымянный инстанс. Снято оно файловым unless_child_any, поэтому в блоке, где рядом стоят спиннер кнопки и самостоятельный индикатор, пропущенный aria-label у второго не заметится — цена той же файловой проверки, что у потомков."
   },
   "ds_token_dependencies": [
     "--awds-opacity-20",
