@@ -589,6 +589,11 @@
 
 .list-item-variation-indeterminate {
   box-shadow: none;
+  /* --awds-list-item-border зарегистрирован через @property с inherits: false, и псевдоэлемент
+     его не видит — получил бы initial-value transparent (так и вышло в 2.3.1: рамка пропала).
+     Нерегистрированная переменная наследуется, поэтому цвет пробрасывается через неё; var()
+     резолвится на самой строке, и смена состояния (hover → focus-container-on) доезжает. */
+  --awds-list-item-border-dashed: var(--awds-list-item-border);
 }
 
 .list-item-variation-indeterminate::before {
@@ -596,7 +601,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  border: var(--awds-list-item-border-width) dashed var(--awds-list-item-border);
+  border: var(--awds-list-item-border-width) dashed var(--awds-list-item-border-dashed);
   border-radius: inherit;
   transition: border-color 0.15s ease-out;
 }

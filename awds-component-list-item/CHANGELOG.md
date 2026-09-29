@@ -1,5 +1,9 @@
 # list-item — журнал версий
 
+## 2.3.2 — 2026-09-29 — PATCH · visual
+variation-indeterminate: штриховая рамка снова видна — цвет пробрасывается в псевдоэлемент нерегистрированной переменной; @property с inherits: false в 2.3.1 отдавал ему transparent.
+Потребителю: Ничего делать не нужно. Вид: пунктирная рамка variation-indeterminate вернулась.
+
 ## 2.3.1 — 2026-09-29 — PATCH · visual
 variation-indeterminate: рамка штриховая, как в макете (dashPattern 4/2, хайрлайн) — псевдоэлемент с border dashed вместо inset-тени; узор штриха браузерный, радиус следует за модом темы.
 Потребителю: Ничего делать не нужно. Вид: рамка variation-indeterminate стала пунктирной.
