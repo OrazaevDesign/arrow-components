@@ -1,0 +1,266 @@
+/* =============================================================================
+   Combobox Combi ArrowDS — поле с подсказками при вводе, метка внутри рамки.
+   Figma: 💠 arrow ↪ components, страница 3 · forms, секция ↪ combobox-combi —
+     combobox-combi / default (size 600…300 × open=off|on) и часть combobox / list
+     (size × content=list|empty|loading). Собран 29.09.2026.
+
+   Это КОМПОЗИТ, а не новое поле. Внутри — настоящие компоненты:
+     поле        awds-component-input-combi   (.icombi …)
+     строки      awds-component-list-item     (.list-item.list-item-transparent)
+     загрузка    awds-component-progress      (.progress.progress-circular)
+   Их CSS подключается рядом. Сам компонент добавляет только обёртку, панель и мосты
+   ступени: .cbcombi--{N} кормит поле ступенью N, панель — dropdown/{N}, строки — N−1
+   (как пункт в попапе select). Классы размера на вложенных ставить не нужно — мост
+   весит (0,2,0)…(0,3,0) и перебивает их.
+
+   Данные и поведение — НЕ здесь. Подсказки приходят с сервера, фильтрует и рисует
+   их JS потребителя; компонент даёт вид и ARIA-контракт combobox → listbox:
+     input[role=combobox][aria-expanded][aria-controls][aria-autocomplete=list]
+     [aria-activedescendant] → ul[role=listbox] > li[role=option][aria-selected].
+   Панель видна, когда у поля aria-expanded="true": стиль висит на том же атрибуте,
+   который JS обязан ставить для чтения с экрана, отдельного класса нет.
+
+   Приватные аккумуляторы: --awds-cbcombi-panel-padding, -panel-rounded.
+   ============================================================================= */
+
+/* === Base === */
+
+.cbcombi {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   /* #cell dropdown/400/padding */
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-400);   /* #cell dropdown/400/border-radius */
+
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+
+.cbcombi *,
+.cbcombi *::before,
+.cbcombi *::after {
+  box-sizing: border-box;
+}
+
+/* Поле тянется на ширину компонента: панель равна ему по ширине. */
+.cbcombi > .icombi {
+  display: flex;
+  inline-size: 100%;
+}
+
+
+/* === Панель ===
+   Как попап select (часть / dropdown): фон surface-bright, поля и скругление ступени
+   dropdown/{N}, тень elevation-3, отступ от поля 4 (space-1), ширина ровно по полю.
+   Лежит поверх соседей и не раздвигает форму — в макете панель абсолютная. */
+
+.cbcombi__panel {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: calc(100% + var(--awds-space-1));
+  z-index: var(--awds-zindex-dropdown);
+  display: none;
+  padding: var(--awds-cbcombi-panel-padding);
+  border-radius: var(--awds-cbcombi-panel-rounded);
+  background: rgb(var(--surface-bright));   /* #cell picker/bg */
+  box-shadow: var(--awds-shadow-elevation-3);
+  overflow: hidden;
+}
+
+.cbcombi:has(> .icombi [aria-expanded="true"]) > .cbcombi__panel {
+  display: block;
+}
+
+.cbcombi__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Строка, на которую указывает aria-activedescendant (стрелки с клавиатуры), выглядит
+   так же, как под мышью: те же ячейки list/transparent/*-hover. */
+.cbcombi__list > .list-item-transparent[aria-selected="true"] {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   /* #cell list/transparent/bg-hover */
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   /* #cell list/transparent/border-hover */
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   /* #cell list/transparent/color-hover */
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   /* #cell list/transparent/description-hover */
+  --awds-list-item-check:       rgb(var(--primary-core));   /* #cell list/transparent/icon-check-hover */
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   /* #cell list/transparent/icon-hover */
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));   /* #cell list/transparent/chevron-hover */
+}
+
+/* Совпадение с вводом — полужирным, только в названии. <mark> несёт смысл для чтения
+   с экрана; его UA-фон (жёлтый) и цвет снимаются. */
+.cbcombi__match {
+  background: none;
+  color: inherit;
+  font-weight: var(--awds-font-weight-semibold);
+}
+
+/* «Ничего не нашлось» — строка того же вида, но не вариант выбора: без наведения и
+   курсора. role="status" на ней, чтобы пустую выдачу услышали. */
+.cbcombi__empty {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Загрузка — кольцо progress по центру панели, диаметр по умолчанию (space-12). */
+.cbcombi__loading {
+  display: flex;
+  justify-content: center;
+}
+
+
+/* === Sizes: мосты ступени ===
+   Блоки ниже собраны из исходников input-combi (.icombi--{N}) и list-item
+   (.list-item--{N−1}) — значения и якоря те же, правка ячейки в студии доезжает сюда
+   через arrow-studio-sync так же, как до оригиналов. Без класса размера работает 400. */
+
+.cbcombi--600 .icombi {
+  --awds-icombi-padding:      var(--awds-space-4);   /* #cell rectangle/600/padding */
+  --awds-icombi-icon:         var(--awds-space-5);   /* #cell rectangle/600/icon */
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-600);   /* #cell rectangle/600/rounded */
+  --awds-icombi-fs:           var(--awds-control-font-size-600);   /* #cell rectangle/600/typography */
+  --awds-icombi-lh:           var(--awds-control-line-height-600);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-icombi-text-gap:     var(--awds-space-4-5);   /* #cell rectangle/600/text-gap */
+  --awds-icombi-label-top:    var(--awds-space-2);   /* #cell rectangle/600/combi/label-top */
+  --awds-icombi-input-top:    var(--awds-space-6);   /* #cell rectangle/600/combi/input-top */
+  --awds-icombi-input-bottom: var(--awds-space-2);   /* #cell rectangle/600/combi/input-bottom */
+  --awds-icombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
+}
+
+.cbcombi--500 .icombi {
+  --awds-icombi-padding:      var(--awds-space-3);   /* #cell rectangle/500/padding */
+  --awds-icombi-icon:         var(--awds-space-5);   /* #cell rectangle/500/icon */
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
+  --awds-icombi-fs:           var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
+  --awds-icombi-lh:           var(--awds-control-line-height-600);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-icombi-text-gap:     var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
+  --awds-icombi-label-top:    var(--awds-space-1-5);   /* #cell rectangle/500/combi/label-top */
+  --awds-icombi-input-top:    var(--awds-space-5-5);   /* #cell rectangle/500/combi/input-top */
+  --awds-icombi-input-bottom: var(--awds-space-1-5);   /* #cell rectangle/500/combi/input-bottom */
+  --awds-icombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
+}
+
+.cbcombi--400 .icombi {
+  --awds-icombi-padding:      var(--awds-space-2-5);   /* #cell rectangle/400/padding */
+  --awds-icombi-icon:         var(--awds-space-5);   /* #cell rectangle/400/icon */
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-400);   /* #cell rectangle/400/rounded */
+  --awds-icombi-fs:           var(--awds-control-font-size-400);   /* #cell rectangle/400/typography */
+  --awds-icombi-lh:           var(--awds-control-line-height-400);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-icombi-text-gap:     var(--awds-space-4);   /* #cell rectangle/400/text-gap */
+  --awds-icombi-label-top:    var(--awds-space-1);   /* #cell rectangle/400/combi/label-top */
+  --awds-icombi-input-top:    var(--awds-space-4);   /* #cell rectangle/400/combi/input-top */
+  --awds-icombi-input-bottom: var(--awds-space-1);   /* #cell rectangle/400/combi/input-bottom */
+  --awds-icombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-100);
+}
+
+.cbcombi--300 .icombi {
+  --awds-icombi-padding:      var(--awds-space-2);   /* #cell rectangle/300/padding */
+  --awds-icombi-icon:         var(--awds-space-5);   /* #cell rectangle/300/icon */
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-300);   /* #cell rectangle/300/rounded */
+  --awds-icombi-fs:           var(--awds-control-font-size-400);   /* #cell rectangle/300/typography */
+  --awds-icombi-lh:           var(--awds-control-line-height-400);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-icombi-text-gap:     var(--awds-space-3-5);   /* #cell rectangle/300/text-gap */
+  --awds-icombi-label-top:    var(--awds-space-0-5);   /* #cell rectangle/300/combi/label-top */
+  --awds-icombi-input-top:    var(--awds-space-3-5);   /* #cell rectangle/300/combi/input-top */
+  --awds-icombi-input-bottom: var(--awds-space-0-5);   /* #cell rectangle/300/combi/input-bottom */
+  --awds-icombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-100);
+}
+
+.cbcombi--600 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   /* #cell dropdown/600/padding */
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-600);   /* #cell dropdown/600/border-radius */
+}
+
+.cbcombi--500 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   /* #cell dropdown/500/padding */
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-500);   /* #cell dropdown/500/border-radius */
+}
+
+.cbcombi--400 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   /* #cell dropdown/400/padding */
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-400);   /* #cell dropdown/400/border-radius */
+}
+
+.cbcombi--300 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   /* #cell dropdown/300/padding */
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-300);   /* #cell dropdown/300/border-radius */
+}
+
+.cbcombi--600 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-3);   /* #cell rectangle/500/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/500/icon */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
+  --awds-list-item-text-gap: var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-400);   /* #cell rectangle/500/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
+}
+
+.cbcombi--500 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2-5);   /* #cell rectangle/400/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/400/icon */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   /* #cell rectangle/400/rounded */
+  --awds-list-item-text-gap: var(--awds-space-4);   /* #cell rectangle/400/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/400/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   /* #cell rectangle/400/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.cbcombi--400 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2);   /* #cell rectangle/300/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/300/icon */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-300);   /* #cell rectangle/300/rounded */
+  --awds-list-item-text-gap: var(--awds-space-3-5);   /* #cell rectangle/300/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/300/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   /* #cell rectangle/300/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.cbcombi--300 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2);   /* #cell rectangle/200/padding */
+  --awds-list-item-icon:     var(--awds-space-4);   /* #cell rectangle/200/icon */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-200);   /* #cell rectangle/200/rounded */
+  --awds-list-item-text-gap: var(--awds-space-3-5);   /* #cell rectangle/200/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-300);   /* #cell rectangle/200/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-200);   /* #cell rectangle/200/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.cbcombi:not(.cbcombi--600):not(.cbcombi--500):not(.cbcombi--300) .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2);   /* #cell rectangle/300/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/300/icon */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-300);   /* #cell rectangle/300/rounded */
+  --awds-list-item-text-gap: var(--awds-space-3-5);   /* #cell rectangle/300/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/300/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   /* #cell rectangle/300/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}

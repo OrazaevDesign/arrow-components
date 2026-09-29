@@ -1,0 +1,191 @@
+{
+  "component": "combobox-combi",
+  "version": "1.0.0",
+  "contract_hash": "sha256:05d6af20675c97b30dd000204550b9cff4e109e04244cc85f90ed87951fcd6ac",
+  "artifact_hash": "sha256:eacef20969f7afbf16acf2b2ce006ac6647275696ae93997b31b5eb9bb492c64",
+  "visual_change": false,
+  "released_at": "2026-09-29T15:58:26.137Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "section_node_id": "44:87011",
+    "primary_node_id": "926:49427",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=926-49427"
+  },
+  "variants": {
+    "default": {
+      "node_id": "926:49427",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=926-49427",
+      "figma_label": "combobox-combi / default"
+    }
+  },
+  "parts": {
+    "list": {
+      "node_id": "926:23244",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=926-23244",
+      "figma_label": "combobox / list",
+      "axes": "size=600|500|400|300 × content=list|empty|loading"
+    }
+  },
+  "shape": "rectangle",
+  "size_scale": [
+    300,
+    400,
+    500,
+    600
+  ],
+  "size_scale_note": "Ступени поля — как у input-combi (300…600). Панель берёт dropdown/{N} той же ступени, строки — list-item на ступень ниже (600→500 … 300→200), как пункт в попапе select. Всё раздаётся мостом от .cbcombi--{N}; без класса работает 400.",
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "states_note": "Псевдосостояния поля — у input-combi. Своё у компонента одно: открыт список или нет — ось open=off|on в макете, в коде aria-expanded у поля. Содержимое открытой панели — list, empty или loading (ось content у части combobox / list).",
+  "color_tokens": [
+    "picker/bg",
+    "list/transparent/*-hover"
+  ],
+  "css_files": [
+    "combobox-combi-default.css"
+  ],
+  "variants_note": "Тон один — default: тоны поля (error, success, ghost…) приходят классом input-combi на вложенном .icombi, панели и строкам тона не нужны.",
+  "geometry_note": "Панель абсолютная: отступ от поля 4 (space-1), ширина ровно по полю, лежит поверх соседей и форму не раздвигает — так в макете. Высоту не ограничиваем: сколько подсказок, столько строк; ограничивает число подсказок потребитель.",
+  "markup": {
+    "root": {
+      "class": "cbcombi",
+      "tags": [
+        "div",
+        "span"
+      ]
+    },
+    "variant": null,
+    "size": {
+      "pattern": "cbcombi--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "icombi",
+        "required": true
+      },
+      {
+        "class": "cbcombi__panel",
+        "required": true
+      }
+    ],
+    "attrs": [],
+    "note": "Композит: поле — настоящий input-combi (.icombi …), строки — list-item-transparent, загрузка — progress-circular; их CSS подключается рядом. Панель видна при aria-expanded=\"true\" у поля — отдельного класса открытия нет. ARIA-контракт (role=combobox, aria-autocomplete=list, aria-controls, aria-activedescendant у поля; role=listbox у списка; role=option и aria-selected у строк) требованием гейта не записан: гейт проверяет классы, атрибуты вложенного поля он не видит; контракт описан в SKILL.md. Совпадение с вводом — <mark class=\"cbcombi__match\">. Пустая выдача — .cbcombi__empty с role=status, загрузка — .cbcombi__loading с role=status."
+  },
+  "preview": "references/preview.html",
+  "family": "forms",
+  "summary": "Поле с подсказками при вводе, метка внутри рамки: список из базы, пусто, загрузка",
+  "aliases": [
+    "поле с подсказками",
+    "саджест",
+    "автокомплит",
+    "автодополнение",
+    "комбобокс",
+    "выбор города",
+    "поиск с подсказками"
+  ],
+  "last_synced": "2026-09-29",
+  "last_synced_by": "arrow-components-builder (bootstrap)",
+  "questions": [],
+  "ds_token_dependencies": [
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-weight-semibold",
+    "--awds-rounded-border-radius-200",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-shadow-elevation-3",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3",
+    "--awds-space-3-5",
+    "--awds-space-4",
+    "--awds-space-4-5",
+    "--awds-space-5",
+    "--awds-space-5-5",
+    "--awds-space-6",
+    "--awds-zindex-dropdown",
+    "--primary-core",
+    "--secondary-container-core",
+    "--secondary-container-on-high",
+    "--secondary-container-on-highest",
+    "--surface-bright"
+  ],
+  "asana": {
+    "task_gid": "1218421826131794",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218421826131794",
+    "task_name": "💠 combobox-combi",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-input-combi": "1.0.15",
+    "awds-component-list-item": "2.2.0",
+    "awds-component-progress": "2.0.4"
+  },
+  "contract": {
+    "classes": [
+      "cbcombi",
+      "cbcombi--300",
+      "cbcombi--400",
+      "cbcombi--500",
+      "cbcombi--600",
+      "cbcombi__empty",
+      "cbcombi__list",
+      "cbcombi__loading",
+      "cbcombi__match",
+      "cbcombi__panel",
+      "icombi",
+      "list-item",
+      "list-item-transparent"
+    ],
+    "attributes": [
+      "aria-expanded",
+      "aria-selected"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "default"
+    ],
+    "sizes": [
+      "300",
+      "400",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}

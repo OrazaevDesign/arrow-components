@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru" class="theme-default theme-light smooth rounded-smooth">
+<head>
+  <meta charset="UTF-8">
+  <title>combobox-combi / storybook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
+  <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
+  <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
+  <!-- Композит: поле, строки и кольцо загрузки — свои компоненты, их CSS рядом. -->
+  <link rel="stylesheet" href="../../awds-component-input-combi/references/input-combi-default.css">
+  <link rel="stylesheet" href="../../awds-component-list-item/references/list-item-transparent.css">
+  <link rel="stylesheet" href="../../awds-component-progress/references/progress-circular.css">
+  <link rel="stylesheet" href="./combobox-combi-default.css">
+
+  <style>
+    body {
+      margin: 0; padding: 24px 32px 48px;
+      background: rgb(var(--surface-surface) / 1);
+      color: rgb(var(--surface-on-highest) / 1);
+      font: 14px/1.5 var(--awds-font-family-system, system-ui), sans-serif;
+    }
+    h1 { margin: 0 0 4px; font-size: 22px; font-weight: 700; }
+    h2 { margin: 32px 0 12px; font-size: 16px; font-weight: 600; }
+    .sub { color: rgb(var(--surface-on) / 1); font-size: 13px; margin-bottom: 24px; max-width: 860px; }
+    .toolbar {
+      display: flex; gap: 16px; align-items: center; margin-bottom: 24px;
+      padding: 12px 16px; background: rgb(var(--surface-container-low) / 1);
+      border: 1px solid rgb(var(--surface-container-high) / 1); border-radius: 8px; flex-wrap: wrap;
+    }
+    .toolbar label { font-weight: 600; }
+    .toolbar select { font: inherit; padding: 6px 10px; border-radius: 6px; }
+    .matrix { display: grid; grid-template-columns: 64px repeat(4, 320px); gap: 24px 32px; align-items: start; }
+    .matrix .head { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: rgb(var(--surface-on) / 1); }
+    .matrix .cell { min-block-size: 320px; }
+    .size-label { font: 600 12px/1 ui-monospace, monospace; color: rgb(var(--surface-on) / 1); padding-top: 14px; }
+    .live { inline-size: 320px; min-block-size: 360px; }
+    code { font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h1>combobox-combi</h1>
+  <p class="sub">Поле с подсказками при вводе, метка внутри рамки. Композит: поле — <code>input-combi</code>, строки —
+    <code>list-item-transparent</code> на ступень ниже поля, загрузка — <code>progress-circular</code>. Панель видна при
+    <code>aria-expanded="true"</code> у поля. Данные и фильтрация — JS потребителя; ниже живой пример на статичном списке.</p>
+
+  <div class="toolbar">
+    <label>Тема:
+      <select id="theme"><option value="light">light</option><option value="dark">dark</option></select>
+    </label>
+  </div>
+
+  <h2>Живой пример</h2>
+  <p class="sub">Введите «крас», «мос» или «тро». Стрелки — по строкам, Enter — выбрать, Esc — закрыть. Пустой ввод — список закрыт; нет совпадений — «Ничего не нашлось»; первые 300 мс после ввода — загрузка, как при запросе к серверу.</p>
+  <div class="live" id="live"></div>
+
+  <h2>Ступени × состояния</h2>
+  <div class="matrix" id="matrix"></div>
+
+  <script>
+    const CITIES = [
+      ['Москва', 'Москва'], ['Красногорск', 'Московская область'], ['Краснодар', 'Краснодарский край'],
+      ['Красноярск', 'Красноярский край'], ['Красное Село', 'Санкт-Петербург'], ['Троицк', 'Москва'],
+      ['Троицк', 'Челябинская область'], ['Мосальск', 'Калужская область'], ['Санкт-Петербург', 'Санкт-Петербург'],
+    ];
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const hl = (title, q) => {
+      const i = title.toLowerCase().indexOf(q.toLowerCase());
+      return i < 0 || !q ? esc(title) : esc(title.slice(0, i)) + '<mark class="cbcombi__match">' + esc(title.slice(i, i + q.length)) + '</mark>' + esc(title.slice(i + q.length));
+    };
+    const option = (id, [t, d], q, active) =>
+      `<li class="list-item list-item-transparent" role="option" id="${id}" aria-selected="${active ? 'true' : 'false'}">` +
+      `<span class="list-item__content"><span class="list-item__title">${hl(t, q)}</span>` +
+      `<span class="list-item__description">${esc(d)}</span></span></li>`;
+    const panel = (uid, content, q, rows, active) => {
+      if (content === 'loading') return `<div class="cbcombi__panel" id="${uid}-panel"><div class="cbcombi__loading" role="status">` +
+        `<svg class="progress progress-circular progress--indeterminate" viewBox="0 0 48 48" role="progressbar" aria-label="Ищем города">` +
+        `<circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/></svg></div></div>`;
+      if (content === 'empty') return `<div class="cbcombi__panel" id="${uid}-panel"><div class="list-item list-item-transparent cbcombi__empty" role="status">` +
+        `<span class="list-item__content"><span class="list-item__title">Ничего не нашлось</span>` +
+        `<span class="list-item__description">Проверьте название или введите ближайший город</span></span></div></div>`;
+      return `<div class="cbcombi__panel" id="${uid}-panel"><ul class="cbcombi__list" id="${uid}-list" role="listbox" aria-label="Города">` +
+        rows.map((r, i) => option(`${uid}-opt-${i}`, r, q, i === active)).join('') + `</ul></div>`;
+    };
+    const field = (uid, value, open) =>
+      `<span class="icombi icombi-default"><span class="icombi__body">` +
+      `<input class="icombi__field" id="${uid}" type="text" placeholder=" " value="${esc(value)}" autocomplete="off"` +
+      ` role="combobox" aria-autocomplete="list" aria-controls="${uid}-list" aria-expanded="${open}">` +
+      `<label class="icombi__label" for="${uid}">Город или населенный пункт</label></span></span>`;
+    const box = (uid, size, value, open, content, rows, active) =>
+      `<div class="cbcombi cbcombi--${size}">${field(uid, value, open)}${panel(uid, content, value, rows, active)}</div>`;
+
+    // Матрица
+    const SIZES = ['600', '500', '400', '300'];
+    const KRAS = CITIES.filter(c => c[0].startsWith('Крас'));
+    let m = '<div></div>' + ['open=off', 'список', 'пусто', 'загрузка'].map(h => `<div class="head">${h}</div>`).join('');
+    for (const s of SIZES) {
+      m += `<div class="size-label">${s}</div>`;
+      m += `<div class="cell">${box(`m${s}a`, s, '', false, 'list', [], -1)}</div>`;
+      m += `<div class="cell">${box(`m${s}b`, s, 'Крас', true, 'list', KRAS, 0)}</div>`;
+      m += `<div class="cell">${box(`m${s}c`, s, 'Кросн', true, 'empty')}</div>`;
+      m += `<div class="cell">${box(`m${s}d`, s, 'Крас', true, 'loading')}</div>`;
+    }
+    document.getElementById('matrix').innerHTML = m;
+
+    // Живой пример: то, что делает JS потребителя
+    const live = document.getElementById('live');
+    live.innerHTML = box('city', '500', '', false, 'list', [], -1);
+    const root = live.firstElementChild, input = root.querySelector('input');
+    let rows = [], active = -1, timer = null;
+    const render = (content) => {
+      root.querySelector('.cbcombi__panel').outerHTML = panel('city', content, input.value, rows, active);
+      input.setAttribute('aria-activedescendant', active >= 0 ? `city-opt-${active}` : '');
+    };
+    const close = () => { input.setAttribute('aria-expanded', 'false'); active = -1; input.removeAttribute('aria-activedescendant'); };
+    input.addEventListener('input', () => {
+      const q = input.value.trim();
+      clearTimeout(timer);
+      if (!q) return close();
+      input.setAttribute('aria-expanded', 'true'); render('loading');
+      timer = setTimeout(() => {
+        rows = CITIES.filter(c => c[0].toLowerCase().includes(q.toLowerCase())); active = rows.length ? 0 : -1;
+        render(rows.length ? 'list' : 'empty');
+      }, 300);
+    });
+    input.addEventListener('keydown', (e) => {
+      if (input.getAttribute('aria-expanded') !== 'true') return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); if (!rows.length) return; active = (active + (e.key === 'ArrowDown' ? 1 : -1) + rows.length) % rows.length; render('list'); }
+      if (e.key === 'Enter' && active >= 0) { e.preventDefault(); input.value = rows[active][0]; close(); }
+      if (e.key === 'Escape') close();
+    });
+    root.addEventListener('mousedown', (e) => {
+      const li = e.target.closest('[role="option"]'); if (!li) return;
+      e.preventDefault(); input.value = rows[+li.id.split('-').pop()][0]; close();
+    });
+    input.addEventListener('blur', () => setTimeout(close, 0));
+
+    document.getElementById('theme').addEventListener('change', (e) => {
+      document.documentElement.classList.remove('theme-light', 'theme-dark');
+      document.documentElement.classList.add(`theme-${e.target.value}`);
+    });
+  </script>
+</body>
+</html>
