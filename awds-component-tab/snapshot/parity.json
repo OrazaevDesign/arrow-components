@@ -1,0 +1,54 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Вкладка — нативная <button> с role=tab; выбранность — класс варианта. Подчёркивание в макете — обводка только снизу (bottom 2, INSIDE), в коде — inset-тень; сверяется по сторонам. Счётчик notice в наборах скрыт (show-badge=false) и в сверку не входит.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "tab.css"
+  ],
+  "tag": "button",
+  "class": "tab tab-{variant}",
+  "attrs": "type=\"button\" role=\"tab\"",
+  "variants": {
+    "selected": {
+      "attrs": "aria-selected=\"true\""
+    },
+    "unselected": {
+      "attrs": "aria-selected=\"false\""
+    }
+  },
+  "axes": {
+    "size": {
+      "*": {
+        "class": "tab--{value}"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "attrs": "disabled"
+      }
+    }
+  },
+  "exceptions": [
+    {
+      "cells": ".",
+      "prop": "^(текст )?ширина$",
+      "why": "метрика шрифта, не вёрстка: вкладка обнимает надпись (padding-inline 0 в макете и в коде), а Figma отдаёт ширину auto-текста целым числом вверх и не кернит пару «Ta» — «Tab» 26 (T 9 + ab 17), в Chromium 23.89, без кернинга 24.73. Проверено 27.09.2026"
+    }
+  ]
+}

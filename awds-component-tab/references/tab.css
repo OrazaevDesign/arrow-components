@@ -274,7 +274,7 @@
 
 .tab-selected:focus-visible {
   --awds-tab-bg:     rgb(var(--extended-transparent));   /* #cell tab/selected/bg */
-  --awds-tab-border: rgb(var(--primary-dim));   /* #cell tab/selected/border-focus */
+  --awds-tab-border: rgb(var(--focus-dim));   /* #cell tab/selected/border-focus */
   --awds-tab-color:  rgb(var(--surface-on-highest));   /* #cell tab/selected/color-focus */
 }
 
