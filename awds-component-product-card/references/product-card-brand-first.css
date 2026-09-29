@@ -8,7 +8,7 @@
    Карточка товара с ЦЕНТРИРОВАННЫМ контентом и порядком:
      бренд → название → рейтинг → цена → кнопка «В корзину».
    Отличия от price-first: контент по центру, есть кнопка корзины
-   (компонент awds-component-button); бейджи по центру снизу фото; флага страны нет.
+   (компонент awds-component-button); бейджи по центру снизу фото; флаг страны слева сверху, как у других вариантов.
 
    Все селекторы scoped под .pcard-brand-first — чтобы не конфликтовать с
    product-card-price-first.css при совместной загрузке (storybook). На реальной
@@ -165,18 +165,46 @@
   height: var(--awds-space-12);
 }
 
-/* Верхний оверлей: только избранное (справа); флага страны в brand-first нет */
+/* Верхний оверлей: страна (слева) ↔ избранное (справа), как в price-first и buy-now.
+   До 27.09.2026 здесь было «только избранное, флага страны в brand-first нет» — решение
+   первичной сборки скилла. Текущий макет держит флаг в обеих вьюхах brand-first
+   (component-figma-check: слой .country видим, 40/32 — как у остальных вариантов). */
 .pcard-brand-first .pcard__top {
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
   z-index: 1;                  /* над скримом */
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-between;
   pointer-events: none;
 }
 .pcard-brand-first .pcard__top .btn-favorites {
   pointer-events: auto;        /* избранное — своя кнопка/тоггл */
+}
+
+/* Страна-поставщик — тот же бокс 40/32, что у избранного */
+.pcard-brand-first .pcard__country {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--awds-space-2-5);        /* 10px · #cell rectangle/400/padding — бокс 20+20 = 40px */
+}
+.pcard.pcard-brand-first.pcard--mobile .pcard__country {
+  padding: var(--awds-space-2);          /* 8px · #cell rectangle/200/padding — бокс 16+16 = 32px */
+}
+.pcard-brand-first .pcard__country > img,
+.pcard-brand-first .pcard__country > svg {
+  display: block;
+  width: var(--awds-space-5);            /* 20px · #cell rectangle/400/icon */
+  height: var(--awds-space-5);
+  object-fit: contain;                   /* флаг вписан с сохранением пропорций */
+}
+.pcard.pcard-brand-first.pcard--mobile .pcard__country > img,
+.pcard.pcard-brand-first.pcard--mobile .pcard__country > svg {
+  width: var(--awds-space-4);            /* 16px · #cell rectangle/200/icon */
+  height: var(--awds-space-4);
 }
 
 /* Нижний оверлей: маркет-бейджи (компонент awds-component-badge), ПО ЦЕНТРУ.
@@ -316,11 +344,19 @@
   line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
   letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
+  /* Цифры пропорциональные, как в макете (решение владельца 27.09.2026). */
   white-space: nowrap;
 }
+/* Счётчик отзывов. До 27.09.2026 здесь висели две декларации color вне правила — остаток
+   правки; на верхнем уровне CSS они приклеивались к селектору следующего правила и
+   делали его невалидным: в buy-now браузер отбрасывал всю зону корзины (grid-стопка не
+   собиралась, кнопка и степпер вставали друг под другом, +34px высоты). Нашёл
+   component-figma-check. */
+.pcard-brand-first .pcard__reviews-count {
   color: rgb(var(--surface-on-high));                           /* #cell product-card/reviews/count */
-  color: rgb(var(--surface-on-high));                           /* #cell product-card/reviews/count */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* Цена — компонент awds-component-price (подключи price.css): .price.price-default,
    без размерного класса — размер задаёт карточка правилом ниже. .pcard__price —
@@ -370,12 +406,14 @@
 /* Зона целиком: обе вью (кнопка / степпер) сложены в один слот через grid-stack
    и КРОСС-ФЕЙДЯТСЯ по data-cart-state (переключает потребитель). Прерываемый
    transition (MIFB): повторные add/remove мягко реверсятся, без «выскакивания».
-   Контент центрирован → вью тоже по центру. Дефолт (без атрибута) = button. pt 6px. */
+   Контент центрирован → вью тоже по центру. Дефолт (без атрибута) = button. pt 8px. */
 .pcard-brand-first .pcard__cart {
   display: grid;
   grid-template-columns: minmax(0, 1fr);   /* одна колонка на всю ширину */
   width: 100%;
-  padding-top: var(--awds-space-1-5);      /* 6px */
+  /* 8px, как в макете (.addcart pt 8 в обоих вариантах). До 27.09.2026 здесь стояло 6: оно
+     сводило высоту зоны к макетным 48 при степпере 42 — сумма совпадала, состав нет. */
+  padding-top: var(--awds-space-2);        /* 8px */
 }
 
 /* Обе вью — в одной ячейке (стопкой), контент по центру. Скрытая: убрана из
@@ -414,7 +452,10 @@
     rgb(var(--secondary-chroma)),        /* #cell form-control/secondary/chroma */
     rgb(var(--secondary-core))           /* #cell form-control/secondary/bg-rest */
   );
-  border: var(--awds-space-px) solid rgb(var(--secondary-core));   /* 1px · #cell form-control/secondary/bg-rest */
+  /* Обводка внутренняя (INSIDE в макете): кнопки 40px лежат под рамкой, поле 40px. Border
+     добавлял 2px к высоте, и скрытый степпер растягивал грид-строку зоны корзины до 42 —
+     кнопка «Купить» стояла в строке выше себя (component-figma-check, 27.09.2026). */
+  box-shadow: inset 0 0 0 var(--awds-space-px) rgb(var(--secondary-core));   /* 1px · #cell form-control/secondary/bg-rest */
   border-radius: var(--awds-rounded-border-radius-400);
   overflow: hidden;                      /* ghost-кнопки не вылезают за скругление */
 }
@@ -427,9 +468,11 @@
   flex: 1 1 auto;
   min-width: 0;
   text-align: center;
-  font-size: var(--awds-typography-font-size-400);              /* 14px */
-  line-height: var(--awds-typography-line-height-400);          /* 22px */
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  /* Шкала control, а не typography: степпер — контрол, в макете число на font-size/400 и
+     line-height/400 контролов (14/20). До 27.09.2026 здесь стояла typography-400 (14/22). */
+  font-size: var(--awds-control-font-size-400);                 /* 14px */
+  line-height: var(--awds-control-line-height-400);             /* 20px */
+  letter-spacing: var(--awds-control-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--secondary-on));              /* #cell form-control/secondary/color */
   font-variant-numeric: tabular-nums;
@@ -476,10 +519,11 @@
 
 
 /* === Тултип на избранном (компонент awds-component-tooltip; подключи tooltip.css) ===
-   В brand-first флага страны нет — тултип только на обёртке избранного
-   («Добавить в избранное»). Показ по hover/focus с задержкой 400мс, скрытие мгновенно.
+   Триггер .pcard__tip: флаг страны (текст = страна из данных карточки) и обёртка
+   избранного («Добавить в избранное»). Показ по hover/focus с задержкой 400мс, скрытие мгновенно.
    Тултип — contrast / compact / side top (сверху от элемента). */
 .pcard-brand-first .pcard__tip { position: relative; }
+.pcard-brand-first .pcard__country.pcard__tip { pointer-events: auto; }  /* флаг ловит hover */
 .pcard-brand-first .pcard__tip > .tooltip {
   position: absolute;
   bottom: 100%;

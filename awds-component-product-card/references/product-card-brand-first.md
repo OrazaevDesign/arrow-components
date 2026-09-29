@@ -1,10 +1,10 @@
 # Product Card — brand-first
 
-Карточка товара в раскладке **brand-first**: контент **по центру**, порядок **бренд → название → рейтинг → цена → кнопка «В корзину»**. Фото 3:4 с оверлеями (избранное, маркет-бейджи по центру). Флага страны нет.
+Карточка товара в раскладке **brand-first**: контент **по центру**, порядок **бренд → название → рейтинг → цена → кнопка «В корзину»**. Фото 3:4 с оверлеями (флаг страны слева, избранное справа, маркет-бейджи по центру). До 27.09.2026 здесь стояло «флага страны нет» — решение первичной сборки скилла; текущий макет держит флаг в обеих вьюхах `brand-first`.
 
 **Figma:** [product-card / brand-first](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59648)
 
-Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, флага нет, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер задаёт карточка — цена едет по `.typo-*` вместе с брендом и названием), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), hover-модель фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
+Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер задаёт карточка — цена едет по `.typo-*` вместе с брендом и названием), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), hover-модель фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
 
 ## HTML
 
@@ -19,8 +19,11 @@
     </a>
 
     <div class="pcard__top">
-      <!-- Избранное (awds-component-button-favorites) + тултип «Добавить в избранное».
-           Флага страны в brand-first нет. -->
+      <!-- Флаг страны (слева) + избранное (справа, awds-component-button-favorites), у обоих тултип. -->
+      <span class="pcard__country pcard__tip" aria-describedby="pcard-123-tip-country">
+        <img src="/flags/de.svg" alt="Германия">
+        <span class="tooltip tooltip-contrast tooltip--300 tooltip--side-top" role="tooltip" id="pcard-123-tip-country"><span class="tooltip__tail"></span><span class="tooltip__bubble">Германия</span></span>
+      </span>
       <span class="pcard__tip">
       <button type="button" class="btn btn-favorites btn--icon-only" aria-pressed="false" aria-label="В избранное" aria-describedby="pcard-123-tip-fav">
         <span class="btn-favorites__icon">

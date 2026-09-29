@@ -367,11 +367,19 @@
   line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
   letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
+  /* Цифры пропорциональные, как в макете (решение владельца 27.09.2026). */
   white-space: nowrap;
 }
+/* Счётчик отзывов. До 27.09.2026 здесь висели две декларации color вне правила — остаток
+   правки; на верхнем уровне CSS они приклеивались к селектору следующего правила и
+   делали его невалидным: в buy-now браузер отбрасывал всю зону корзины (grid-стопка не
+   собиралась, кнопка и степпер вставали друг под другом, +34px высоты). Нашёл
+   component-figma-check. */
+.pcard-buy-now .pcard__reviews-count {
   color: rgb(var(--surface-on-high));                           /* #cell product-card/reviews/count */
-  color: rgb(var(--surface-on-high));                           /* #cell product-card/reviews/count */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* === Зона корзины (Figma .AddCart) — awds-component-button + степпер количества ===
    Два состояния, переключает потребитель (0 в корзине → button; >0 → stepper):
@@ -379,7 +387,7 @@
      • stepper: поле количества (Input/Secondary) с ghost-кнопками −/+ внутри
                 + отдельная квадратная кнопка корзины (.btn-addition .btn--icon-only).
    Маппинг (Figma → DS): input bg/sheen/border → secondary-core / secondary-chroma;
-   число (form-control placeholder) → secondary-container-on-high; gap зоны → space-2 (8px);
+   число → ячейка form-control/secondary/color → secondary-on (значение, а не подсказка); gap зоны → space-2 (8px);
    скругление инпута → rectangle-400/300-rounded. Подключи button*.css. pt 8px. */
 
 /* Обе вью (кнопка / степпер) сложены в один слот через grid-stack и КРОСС-ФЕЙДЯТСЯ
@@ -428,7 +436,10 @@
     rgb(var(--secondary-chroma)),        /* #cell form-control/secondary/chroma */
     rgb(var(--secondary-core))           /* #cell form-control/secondary/bg-rest */
   );
-  border: var(--awds-space-px) solid rgb(var(--secondary-core));   /* 1px · #cell form-control/secondary/bg-rest */
+  /* Обводка внутренняя (INSIDE в макете): кнопки 40px лежат под рамкой, поле 40px. Border
+     добавлял 2px к высоте, и скрытый степпер растягивал грид-строку зоны корзины до 42 —
+     кнопка «Купить» стояла в строке выше себя (component-figma-check, 27.09.2026). */
+  box-shadow: inset 0 0 0 var(--awds-space-px) rgb(var(--secondary-core));   /* 1px · #cell form-control/secondary/bg-rest */
   border-radius: var(--awds-rounded-border-radius-400);
   overflow: hidden;                      /* ghost-кнопки не вылезают за скругление */
 }
@@ -441,9 +452,11 @@
   flex: 1 1 auto;
   min-width: 0;
   text-align: center;
-  font-size: var(--awds-typography-font-size-400);              /* 14px */
-  line-height: var(--awds-typography-line-height-400);          /* 22px */
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  /* Шкала control, а не typography: степпер — контрол, в макете число на font-size/400 и
+     line-height/400 контролов (14/20). До 27.09.2026 здесь стояла typography-400 (14/22). */
+  font-size: var(--awds-control-font-size-400);                 /* 14px */
+  line-height: var(--awds-control-line-height-400);             /* 20px */
+  letter-spacing: var(--awds-control-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--secondary-on));              /* #cell form-control/secondary/color */
   font-variant-numeric: tabular-nums;

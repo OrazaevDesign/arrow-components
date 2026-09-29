@@ -455,14 +455,14 @@
   color: rgb(var(--surface-on));                                /* #cell product-card/reviews/icon */
 }
 /* Значение рейтинга и счётчик отзывов — роль `caption` (medium = 13/21)
-   semibold, tabular-nums; масштабируется вместе с блоками. */
+   semibold; масштабируется вместе с блоками. Цифры пропорциональные, как в макете
+   (решение владельца 27.09.2026). */
 .pcard__rating-value,
 .pcard__reviews-count {
   font-size: var(--awds-wysiwyg-font-size-caption);                   /* WYSIWYG caption (medium = 13px) */
   line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
   letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 .pcard__rating-value {

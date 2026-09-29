@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "1.1.13",
+  "version": "1.2.1",
   "contract_hash": "sha256:5676ad9475d59c8df576be6801e9ac603015a291b9ada751126db1017642948b",
-  "artifact_hash": "sha256:5a441f51b62d17934a0446b12c12ad25eb2c786da0f5ab7f55dcddf0ff64dbb9",
-  "visual_change": false,
-  "released_at": "2026-09-26T16:52:56.102Z",
+  "artifact_hash": "sha256:bc67ad9e65e6411ff08880d42601d2b34327a5d60cd6307ff3fd9ab69d91b62c",
+  "visual_change": true,
+  "released_at": "2026-09-27T15:10:45.577Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -192,6 +192,9 @@
   },
   "ds_token_dependencies": [
     "--accent-core",
+    "--awds-control-font-size-400",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-line-height-400",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
@@ -204,7 +207,6 @@
     "--awds-rounded-border-radius-400",
     "--awds-rounded-border-radius-500",
     "--awds-space-1",
-    "--awds-space-1-5",
     "--awds-space-12",
     "--awds-space-2",
     "--awds-space-2-5",
@@ -212,9 +214,6 @@
     "--awds-space-4",
     "--awds-space-5",
     "--awds-space-px",
-    "--awds-typography-font-size-400",
-    "--awds-typography-letter-spacing-400",
-    "--awds-typography-line-height-400",
     "--awds-wysiwyg-font-size-body",
     "--awds-wysiwyg-font-size-caption",
     "--awds-wysiwyg-font-size-lead",
@@ -259,8 +258,8 @@
   "snapshot_hash": "sha256:5d1a0b84312ab8e67f331139a9d1b9be7d69545a2a3ccba75ca54bda63981640",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "8d3c46a",
-    "pushed_at": "2026-09-25T06:02:40.389Z",
+    "commit": "6665458",
+    "pushed_at": "2026-09-26T16:59:01.339578Z",
     "github_urls": {
       "price-first": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/references/product-card-price-first.md",
       "brand-first": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-product-card/references/product-card-brand-first.md",

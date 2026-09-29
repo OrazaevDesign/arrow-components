@@ -64,7 +64,7 @@
 <body>
 
   <h1>product-card / storybook</h1>
-  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — рейтинг → бренд → название → цена → кнопка «В корзину» → цвета, по центру, без флага. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: <code>scale(0.9)→1</code>, скрим уходит, теней нет. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель. Переключи тему / скругление / вариант / корзину.</p>
+  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — рейтинг → бренд → название → цена → кнопка «В корзину» → цвета, по центру, с флагом страны. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: <code>scale(0.9)→1</code>, скрим уходит, теней нет. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель. Переключи тему / скругление / вариант / корзину.</p>
 
   <div class="toolbar">
     <label>Вариант:
@@ -280,7 +280,10 @@
 <div class="pcard pcard-brand-first${mobile ? ' pcard--mobile' : ''}">
   <div class="pcard__media">
     <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
-    <div class="pcard__top">${favBtn(mobile, opts.fav)}</div>
+    <div class="pcard__top">
+      ${country('Германия')}
+      ${favBtn(mobile, opts.fav)}
+    </div>
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
   ${opts.image === 'with' && frames > 1

@@ -12,7 +12,7 @@ description: Product Card ArrowDS (.pcard).
 | Вариант | Reference | Порядок контента | Особое |
 |---|---|---|---|
 | **price-first** | `references/product-card-price-first.md` ✅ | Цена → бренд → название → рейтинг | база: контент слева, флаг страны, корзины нет |
-| **brand-first** | `references/product-card-brand-first.md` ✅ | Бренд → название → рейтинг → цена → корзина | контент по центру, бейджи по центру, флага страны нет |
+| **brand-first** | `references/product-card-brand-first.md` ✅ | Бренд → название → рейтинг → цена → корзина | контент по центру, бейджи по центру, флаг страны слева сверху |
 | **buy-now** | `references/product-card-buy-now.md` ✅ | Цена → название → рубрика → рейтинг → корзина | контент слева, вместо бренда ссылка на рубрику `.pcard__category` |
 
 > Имя варианта = порядок контента. Класс варианта обязателен: `.pcard-price-first` / `.pcard-brand-first` / `.pcard-buy-now` — он задаёт порядок и состав частей. Новая раскладка в Figma — это новый вариант того же скилла, не новый скилл.
@@ -23,8 +23,10 @@ description: Product Card ArrowDS (.pcard).
 
 | Вью | Класс | Цена | Бренд | Бейдж | Рейтинг-текст |
 |---|---|---|---|---|---|
-| **Desktop-Tablet** (база) | `.pcard` | размер от карточки (масштаб `.typo-*`) | WYSIWYG lead 16/26 | `rectangle-100` | WYSIWYG caption 12/19 |
-| **Mobile** | `.pcard--mobile` | размер от карточки (масштаб `.typo-*`) | WYSIWYG body 14/22 | `rectangle-50` | WYSIWYG caption 12/19 |
+| **Desktop-Tablet** (база) | `.pcard` | размер от карточки (масштаб `.typo-*`) | WYSIWYG lead | `rectangle-100` | WYSIWYG caption |
+| **Mobile** | `.pcard--mobile` | размер от карточки (масштаб `.typo-*`) | WYSIWYG body | `rectangle-50` | WYSIWYG caption |
+
+Чисел в таблице нет намеренно: роли дают разные значения по моду масштаба (`.typo-small/medium/large`) и по ширине окна (ступени typography переключаются `@media`). Макет карточки стоит в моде **medium**, мобильная вьюха нарисована мобильными значениями окна — цена там 20/24 против 24/29 на десктопе (сверено `component-figma-check`, 27.09.2026).
 
 ## Откуда берутся значения
 
@@ -89,7 +91,7 @@ description: Product Card ArrowDS (.pcard).
 - **button** (нет в корзине): `.pcard__cart-view--button` → `<button class="btn btn-primary btn--400/300">В корзину</button>` — компонент `awds-component-button`.
 - **stepper** (в корзине): `.pcard__cart-view--stepper` → поле количества `.pcard__stepper` (Input/Secondary) с ghost-кнопками `−`/`+` внутри + квадратная кнопка корзины `.btn-addition`. Кнопки — `awds-component-button` (ghost / addition, `.btn--icon-only`); стилизуется тут только контейнер-инпут и число (`.pcard__stepper-value`, `tabular-nums`). Число при смене получает мягкий bump (`@keyframes pcard-stepper-bump`, ретриггер класса `.pcard__stepper-value--bump`). Готовый `wireStepper` — в `product-card-buy-now.md`.
 
-Скилла form/input в DS нет, поэтому контейнер степпера стилизован в самом product-card на ролях `secondary-core` / `secondary-chroma` (sheen-градиент + бордер) и `secondary-container-on-high` (число). Размеры: `rectangle-400/300-rounded`, gap `space-2`. Подключи дополнительно `button-ghost.css` + `button-addition.css`. Разметка и mobile — в `product-card-buy-now.md` / `product-card-brand-first.md`.
+Контейнер степпера стилизован в самом product-card на ролях `secondary-core` / `secondary-chroma` (sheen-градиент и внутренняя обводка — inset-тень, как INSIDE в макете: поле 40px, кнопки под рамкой) и `secondary-on` (число, ячейка `form-control/secondary/color` — значение, а не подсказка). Число — шкала control 400 (14/20), как у контролов. Размеры: `rectangle-400/300-rounded`, gap `space-2`. Подключи дополнительно `button-ghost.css` + `button-addition.css`. Разметка и mobile — в `product-card-buy-now.md` / `product-card-brand-first.md`.
 
 ## Словарь частей в макете
 
