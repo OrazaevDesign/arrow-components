@@ -297,13 +297,13 @@
    периода обязан выглядеть выбранным, а не подсвеченным. */
 .dpick__cell--selected {
   --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           /* #cell list/accent-selected/bg-rest */
-  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));      /* #cell list/accent-selected/border-rest */
+  --awds-dpick-cell-border: rgb(var(--focus-container-core));      /* #cell list/accent-selected/border-rest */
   --awds-dpick-cell-color:  rgb(var(--focus-container-on-highest));     /* #cell list/accent-selected/color-rest */
 }
 
 .dpick__cell--selected:hover {
   --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           /* #cell list/accent-selected/bg-hover */
-  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));      /* #cell list/accent-selected/border-hover */
+  --awds-dpick-cell-border: rgb(var(--focus-container-core));      /* #cell list/accent-selected/border-hover */
 }
 
 /* Ячейка соседнего месяца и дата вне допустимого диапазона. Гашение — то же
