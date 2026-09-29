@@ -1,0 +1,20 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Кольцо в макете — прямоугольник outline вокруг бокса 32×32; в коде — outline на самом элементе. Радиус оси radius в CSS задаёт хозяин кольца (border-radius), поэтому он выставляется стилем проверочного элемента.",
+  "mode": "ring",
+  "sets": { "all": "6:36" },
+  "css": ["focus-selection.css"],
+  "tag": "span",
+  "attrs": "tabindex=\"0\"",
+  "class": "focus-selection",
+  "style": "display:inline-block;width:32px;height:32px",
+  "axes": {
+    "radius": {
+      "none": { "style": "border-radius:0" },
+      "full": { "style": "border-radius:var(--awds-rounded-border-radius-full)" },
+      "*": { "style": "border-radius:var(--awds-rounded-border-radius-{value})" }
+    },
+    "offset": { "outside": {}, "inside": { "class": "focus-selection--inside" } },
+    "tone": { "default": {}, "muted": { "class": "focus-selection-muted" }, "accent": { "class": "focus-selection-accent" } }
+  },
+  "pseudo_all": ["focus", "focus-visible"]
+}

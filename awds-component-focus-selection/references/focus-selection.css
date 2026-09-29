@@ -40,11 +40,13 @@
    плотное.
 
    Кто какой вариант носит (снято с инстансов FocusSelection в самих компонентах):
-     Outside + Default      button, button-overhung, checkbox, radio, switch,
+     Outside + Default      button, button-area, button-overhung, checkbox, radio, switch,
                             list-item, input/secondary, input-combi/secondary
      outside + muted  input, input-combi, select, select-combi, textarea,
                             uploader (кроме варианта secondary — он Default)
-     Inside  + Default      button-area, table
+     Inside  + Default      table
+   (button-area до 27.09.2026 стояла на Inside, в макете сейчас Outside — перечислена выше
+   в Outside + Default.)
    ============================================================================= */
 
 
@@ -80,12 +82,12 @@
   /* tone=muted     — брендовое полупрозрачное кольцо для полей ввода: рамка поля
      в фокусе уже брендовая, плотное кольцо поверх неё сливается в толстую полосу.
      Ячейка `focus-selection/outlineVariant` → роль primary-core, применяется на 50%. */
-  --awds-focus-color-muted: rgb(var(--primary-core) / var(--awds-opacity-50));   /* #cell focus-selection/outlineVariant */
+  --awds-focus-color-muted: rgb(var(--focus-core) / var(--awds-opacity-50));   /* #cell focus-selection/outlineVariant */
 
   /* tone=accent — брендовое плотное: таб-бары и плитки выбора, где кольцо не спорит
      с рамкой контрола. Та же ячейка, что у muted, но без гашения прозрачностью —
      в CSS это две разные переменные, сливать нельзя. */
-  --awds-focus-color-accent: rgb(var(--primary-core));   /* #cell focus-selection/outlineAccent */
+  --awds-focus-color-accent: rgb(var(--focus-core));   /* #cell focus-selection/outlineAccent */
 }
 
 
