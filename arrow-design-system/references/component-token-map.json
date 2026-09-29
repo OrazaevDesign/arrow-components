@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:46755f6559e4bb0b4940f5bb434bdc7c96300ea28a19dcb68692cb72cfdc6d29",
+  "snapshot_hash": "sha256:9bdeee0e5341f4a8eab535e06adec33ebd13273a25f8b3f01b02730851de3c9d",
   "size": {
     "rectangle": {
       "50": {
@@ -1285,22 +1285,22 @@
           "chevron": "rgb(var(--accent-core))"
         },
         "variation": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-container-on))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-highest))",
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-container-on))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon": "rgb(var(--focus-container-on-high))",
+          "chevron": "rgb(var(--focus-container-on-highest))",
           "icon-check": "rgb(var(--primary-container-on))"
         },
         "variation-indeterminate": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-container-on))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-container-on))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
           "icon-check": "rgb(var(--primary-container-on))",
-          "icon": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-highest))"
+          "icon": "rgb(var(--focus-container-on-high))",
+          "chevron": "rgb(var(--focus-container-on-highest))"
         },
         "tabbar": {
           "bg": "rgb(var(--extended-transparent))",
