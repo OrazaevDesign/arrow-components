@@ -414,11 +414,11 @@
    мышью, а не только при табе.
    При фокусе зелёная подсветка полностью уступает брендовой — сверено по ячейке Focus. */
 .input-success:focus-within {
-  --awds-input-bg:         rgb(var(--primary-container-base));   /* #cell form-control/success/bg-focus */
-  --awds-input-border:     rgb(var(--primary-dim));   /* #cell form-control/success/border-focus */
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   /* #cell form-control/success/color-focus */
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   /* #cell form-control/success/placeholder-focus */
-  --awds-input-icon-color: rgb(var(--primary-container-on-high));   /* #cell form-control/success/icon-focus */
+  --awds-input-bg:         rgb(var(--focus-container-base));   /* #cell form-control/success/bg-focus */
+  --awds-input-border:     rgb(var(--focus-dim));   /* #cell form-control/success/border-focus */
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   /* #cell form-control/success/color-focus */
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   /* #cell form-control/success/placeholder-focus */
+  --awds-input-icon-color: rgb(var(--focus-container-on-high));   /* #cell form-control/success/icon-focus */
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

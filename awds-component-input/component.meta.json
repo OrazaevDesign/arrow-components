@@ -1,10 +1,10 @@
 {
   "component": "input",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "contract_hash": "sha256:103a13e9ef85dad3cc0d0722ed0f96ee02ba5d5b320bca538155bdfbc75628c4",
-  "artifact_hash": "sha256:226dd668d433489824fe016e6f88c8b9229017fe7e9ff2972513cbff4a31ce27",
+  "artifact_hash": "sha256:040d5e1c7a96ec2c4f1e35095c96e5ae42a7e119639c617bf1f82a7c99180654",
   "visual_change": true,
-  "released_at": "2026-09-28T07:54:40.953Z",
+  "released_at": "2026-09-29T15:59:35.536Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -228,10 +228,10 @@
     "--error-container-on-high",
     "--error-container-on-highest",
     "--error-container-on-low",
-    "--primary-container-base",
-    "--primary-container-on-high",
-    "--primary-container-on-highest",
-    "--primary-dim",
+    "--focus-container-base",
+    "--focus-container-on-high",
+    "--focus-container-on-highest",
+    "--focus-dim",
     "--secondary-container-core",
     "--secondary-container-on",
     "--secondary-container-on-high",
