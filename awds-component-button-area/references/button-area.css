@@ -164,12 +164,13 @@
 
 /* Focus — обводка surface-on-highest (focus-selection/outline), радиус из shape-слоя */
 .btn-area:focus-visible {
-  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Inside + Default
-     (снято с инстанса FocusSelection в макете): кольцо уходит внутрь бокса — область тянется
-     на всю ячейку, снаружи места под кольцо нет.
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Default: во всех
+     20 ячейках state=focus макета инстанс стоит на offset=outside (кольцо на 1px снаружи
+     бокса, 3px с толщиной). До 27.09.2026 здесь был Inside — макет с тех пор сменил вариант,
+     сверка числом (component-figma-check) нашла кольцо внутри вместо снаружи.
      Только ссылки на --awds-focus-*: правка макета меняет один файл слоя. */
   outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset-inside);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-btn-area-rounded);
 }
 

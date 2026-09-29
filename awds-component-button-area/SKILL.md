@@ -61,7 +61,7 @@ description: Button Area ArrowDS (.btn-area).
 |---|---|
 | Цвет варианта | ячейки слоя State группы **link** — `rgb(var(--awds-state-link-{variant}-{rest\|hover}))`, те же, что привязаны в макете. Резолвятся: default `tertiary-container-on-high→-highest`, muted `surface-on-high→-on-highest`, contrast `surface-on-highest→-on-high`, accent `surface-on-highest→accent-container-on`, heading `surface-on-high→accent-container-on`. Группа `areabutton` в теме накрывает только default/muted/contrast и с 2.0.0 не читается — источник должен быть один |
 | Размер (текст/иконка/зазор/радиус) | shape-слой `var(--awds-rectangle-{N}-{typography-*,icon,gap,rounded})` |
-| Кольцо фокуса | слой `awds-component-focus-selection`, вариант **Inside + Default**: кольцо уходит внутрь — область тянется на всю ячейку, снаружи места нет |
+| Кольцо фокуса | слой `awds-component-focus-selection`, вариант **Outside + Default**: кольцо на 1px снаружи бокса, как у инстансов в макете (до 27.09.2026 здесь был Inside — макет сменил вариант) |
 | Disabled | `opacity: var(--awds-state-opacity-control-disabled)` + `pointer-events: none` |
 | Индикатор загрузки | компонент `awds-component-progress`, вариант circular indeterminate; область задаёт ему только `--awds-progress-size` (своя ступень) и `--awds-progress-color` (свой цвет текста) |
 | Растяжение | `width/height: 100%` + `align-self: stretch`, контент по центру (`justify-content/align-items: center`) |

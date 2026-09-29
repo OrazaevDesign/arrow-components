@@ -1,0 +1,23 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Устройство как у кнопки без подложки: префикс, надпись, суффикс; обе иконки видны по умолчанию. Загрузка гасит контент opacity 0 и ставит кольцо progress по центру.",
+  "css": ["../../awds-component-focus-selection/references/focus-selection.css", "../../awds-component-progress/references/progress-circular.css", "button-area.css"],
+  "tag": "a",
+  "attrs": "href=\"#\"",
+  "class": "btn-area btn-area-{variant}",
+  "icon": "<svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>",
+  "axes": {
+    "size": { "*": { "class": "btn-area--{value}" } },
+    "content": {
+      "text": { "html": "<span class=\"btn-area__prefix\">{icon}</span><span class=\"btn-area__label\">{text}</span><span class=\"btn-area__suffix\">{icon}</span>" },
+      "icon": { "class": "btn-area--icon-only", "html": "<span class=\"btn-area__icon\">{icon}</span>", "attrs": "aria-label=\"icon\"" }
+    },
+    "state": {
+      "rest": {},
+      "hover": { "pseudo": ["hover"] },
+      "focus": { "pseudo": ["focus", "focus-visible"] },
+      "active": { "pseudo": ["active"] },
+      "disabled": { "attrs": "aria-disabled=\"true\"" },
+      "loading": { "class": "btn-area--loading", "wrap": "{html}<svg class=\"btn-area__progress progress progress-circular progress--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle class=\"progress-circular__arc\" cx=\"12\" cy=\"12\" r=\"10\" pathLength=\"100\"/></svg>" }
+    }
+  }
+}

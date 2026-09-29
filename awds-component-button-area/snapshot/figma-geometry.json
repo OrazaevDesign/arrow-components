@@ -1,0 +1,11627 @@
+{
+ "fileKey": "470rar5EfRm4n14vHMXbpc",
+ "component": "button-area",
+ "fetched": "2026-09-27",
+ "cells": [
+  {
+   "variant": "default",
+   "name": "content=text, size=500, state=rest",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=500, state=loading",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 42,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=500, state=hover",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=500, state=focus",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 104,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 106,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=500, state=active",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=500, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=400, state=rest",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=400, state=loading",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 39,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=400, state=hover",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=400, state=focus",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 97,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 99,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=400, state=active",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=400, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=100, state=rest",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=100, state=loading",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 31,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=100, state=hover",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=100, state=focus",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 79,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 81,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=100, state=active",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=100, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=50, state=rest",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=50, state=loading",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 30,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=50, state=hover",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=50, state=focus",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 76,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 78,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=50, state=active",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=text, size=50, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "2541dfff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=500, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=500, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=500, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=500, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=500, state=active",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=500, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=400, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=400, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=400, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=400, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=400, state=active",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=400, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=100, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=100, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=100, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=100, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=100, state=active",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=100, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=50, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=50, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=50, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=50, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=50, state=active",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "default",
+   "name": "content=icon, size=50, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=500, state=rest",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=500, state=loading",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 42,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=500, state=hover",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=500, state=focus",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 104,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 106,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=500, state=active",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=500, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=400, state=rest",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=400, state=loading",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 39,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=400, state=hover",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=400, state=focus",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 97,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 99,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=400, state=active",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=400, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=100, state=rest",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=100, state=loading",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 31,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=100, state=hover",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=100, state=focus",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 79,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 81,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=100, state=active",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=100, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=50, state=rest",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=50, state=loading",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 30,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=50, state=hover",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=50, state=focus",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 76,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 78,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=50, state=active",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=text, size=50, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=500, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=500, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=500, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=500, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=500, state=active",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=500, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=400, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=400, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=400, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=400, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=400, state=active",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=400, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=100, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=100, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=100, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=100, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=100, state=active",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=100, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=50, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=50, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=50, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=50, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=50, state=active",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "muted",
+   "name": "content=icon, size=50, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=500, state=rest",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=500, state=loading",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 42,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=500, state=hover",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=500, state=focus",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 104,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 106,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=500, state=active",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=500, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=400, state=rest",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=400, state=loading",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 39,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=400, state=hover",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=400, state=focus",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 97,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 99,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=400, state=active",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=400, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=100, state=rest",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=100, state=loading",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 31,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=100, state=hover",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=100, state=focus",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 79,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 81,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=100, state=active",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=100, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=50, state=rest",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=50, state=loading",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 30,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=50, state=hover",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=50, state=focus",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 76,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 78,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=50, state=active",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=text, size=50, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=500, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=500, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=500, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=500, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=500, state=active",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=500, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=400, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=400, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=400, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=400, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=400, state=active",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=400, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=100, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=100, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=100, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=100, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=100, state=active",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=100, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=50, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=50, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=50, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=50, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=50, state=active",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "contrast",
+   "name": "content=icon, size=50, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=500, state=rest",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=500, state=loading",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 42,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=500, state=hover",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=500, state=focus",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 104,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 106,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=500, state=active",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=500, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=400, state=rest",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=400, state=loading",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 39,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=400, state=hover",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=400, state=focus",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 97,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 99,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=400, state=active",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=400, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=100, state=rest",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=100, state=loading",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 31,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=100, state=hover",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=100, state=focus",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 79,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 81,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=100, state=active",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=100, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=50, state=rest",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=50, state=loading",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 30,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=50, state=hover",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=50, state=focus",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 76,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 78,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=50, state=active",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=text, size=50, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "262626ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=500, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=500, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=500, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=500, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=500, state=active",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=500, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=400, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=400, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=400, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=400, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=400, state=active",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=400, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=100, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=100, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=100, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=100, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=100, state=active",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=100, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=50, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=50, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=50, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=50, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=50, state=active",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "accent",
+   "name": "content=icon, size=50, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=500, state=rest",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=500, state=loading",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 42,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=500, state=hover",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=500, state=focus",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 104,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 106,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=500, state=active",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=500, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 104,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 52,
+     "h": 20,
+     "chars": "Button",
+     "fs": 16,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 84,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=400, state=rest",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=400, state=loading",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 39,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=400, state=hover",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=400, state=focus",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 97,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 99,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=400, state=active",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=400, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 97,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 26,
+     "y": 0,
+     "w": 45,
+     "h": 20,
+     "chars": "Button",
+     "fs": 14,
+     "lh": 20,
+     "ls": 0,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 77,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=100, state=rest",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=100, state=loading",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 31,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=100, state=hover",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=100, state=focus",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 79,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 81,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=100, state=active",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=100, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 79,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 43,
+     "h": 16,
+     "chars": "Button",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 63,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=50, state=rest",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=50, state=loading",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 30,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=50, state=hover",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "bd21e9ff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=50, state=focus",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 76,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 78,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=50, state=active",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=text, size=50, state=disabled",
+   "props": {
+    "content": "text",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 76,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 18,
+     "y": 0,
+     "w": 40,
+     "h": 16,
+     "chars": "Button",
+     "fs": 12,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 400,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "WIDTH_AND_HEIGHT",
+     "align": "LEFT"
+    }
+   ],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 60,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=500, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=500, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=500, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=500, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=500, state=active",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=500, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "500",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=400, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "rest"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=400, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "loading"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=400, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "hover"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=400, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "focus"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 22,
+    "h": 22,
+    "r": 9,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=400, state=active",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "active"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=400, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "400",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 20,
+    "h": 20,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 20,
+     "h": 20,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=100, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=100, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=100, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=100, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 7,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=100, state=active",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=100, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "100",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=50, state=rest",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "rest"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=50, state=loading",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "loading"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "progress / circular"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=50, state=hover",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "hover"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=50, state=focus",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "focus"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    },
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "focus-selection"
+    }
+   ],
+   "shapes": [],
+   "parts": {},
+   "ringShape": {
+    "x": -1,
+    "y": -1,
+    "w": 18,
+    "h": 18,
+    "r": 5,
+    "sw": 2,
+    "align": "OUTSIDE",
+    "stroke": {
+     "t": "s",
+     "c": [
+      "262626ff"
+     ]
+    },
+    "op": 1
+   }
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=50, state=active",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "active"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  },
+  {
+   "variant": "heading",
+   "name": "content=icon, size=50, state=disabled",
+   "props": {
+    "content": "icon",
+    "size": "50",
+    "state": "disabled"
+   },
+   "root": {
+    "w": 16,
+    "h": 16,
+    "r": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 0.4,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 16,
+     "h": 16,
+     "name": "ic-a"
+    }
+   ],
+   "shapes": [],
+   "parts": {}
+  }
+ ]
+}
