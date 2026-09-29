@@ -1,10 +1,10 @@
 {
   "component": "price",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "contract_hash": "sha256:674bf356f4a1c22fa06cee233cec8c91793908638e1d54ecf4473db381c7c966",
-  "artifact_hash": "sha256:21485b749a29bd0dc84c44eb77eff7127f0e2e9b1c0d30cea5d771e4eb12a994",
+  "artifact_hash": "sha256:b3bc609b7c2552c95bbe7b4280d0ebe8e16995392a90f4ba427f5677fbc61ae5",
   "visual_change": true,
-  "released_at": "2026-09-25T05:54:41.329Z",
+  "released_at": "2026-09-27T15:10:45.487Z",
   "own_values": [
     {
       "value": "0.2em",
@@ -287,12 +287,58 @@
     "native": null,
     "children": [
       {
-        "class": "price__current"
+        "class": "price__main",
+        "required": true,
+        "when": "price-sale"
+      },
+      {
+        "class": "price__main",
+        "required": true,
+        "when": "price-default"
+      },
+      {
+        "class": "price__current",
+        "required": true,
+        "when": "price-sale"
+      },
+      {
+        "class": "price__current",
+        "required": true,
+        "when": "price-default"
+      },
+      {
+        "class": "price__currency",
+        "required": true,
+        "when": "price-sale"
+      },
+      {
+        "class": "price__currency",
+        "required": true,
+        "when": "price-default"
+      },
+      {
+        "class": "price__old",
+        "required": true,
+        "when": "price-sale"
+      },
+      {
+        "class": "price__old-value",
+        "required": true,
+        "when": "price-sale"
+      },
+      {
+        "class": "price__old-currency",
+        "required": true,
+        "when": "price-sale"
+      },
+      {
+        "class": "price__placeholder",
+        "required": true,
+        "when": "price-none"
       }
     ],
     "attrs": [],
-    "container": null,
-    "note": "Вариант решает, показывать ли старую цену, размер — кегль. Текущая цена обязательна: без .price__current компонент бессмыслен."
+    "note": "Вариант решает, что вообще выводится, размер — кегль; оба класса обязательны. Состав по варианту: sale — .price__main (.price__current + .price__currency) и .price__old (.price__old-value + .price__old-currency); default — тот же .price__main БЕЗ .price__old; none — только .price__placeholder, ни main, ни old не выводятся. Поэтому .price__current требуется при price-sale и price-default, но не при price-none: до 26.09.2026 требование стояло безусловным и на «нет в наличии» было ложным. Модификаторы price--vertical (старая цена строкой ниже) и price--currency-start (знак валюты слева) необязательны и разметку не меняют — у обоих одна и та же структура, меняется только порядок флекса. Зачёркивание старой цены и зазор между атомами (--awds-price-gap) живут в CSS; цифры пропорциональные, как в макете (tabular-nums снят 27.09.2026), потребитель их не ставит. Размер price--listing, зависевший от контекста, снят в 2.0.0: масштаб секции задаёт контейнер (так делает product-card, переопределяя --awds-price-fs/-lh/-ls), а не ступень шкалы."
   },
   "asana": {
     "task_gid": "1218433190798064",

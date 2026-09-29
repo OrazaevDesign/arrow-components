@@ -82,7 +82,7 @@ description: Price ArrowDS (.price).
 | Размер валюты / старой цены | вторичная ступень Control `--awds-control-{sec}-*` |
 | Зазор между атомами | `--awds-price-gap: 0.2em` (font-относительный — пропорционален кеглю на всех 11 размерах) |
 | Шрифт / вес | `var(--awds-font-family-system)`, `var(--awds-font-weight-semibold)` |
-| Цифры | `font-variant-numeric: tabular-nums` (не прыгают при смене значения) |
+| Цифры | пропорциональные, как в макете: `tabular-nums` снят 27.09.2026 решением владельца (ширина цены при пересчёте меняется) |
 
 ## CSS
 

@@ -88,9 +88,9 @@
   font-size: var(--awds-price-fs);
   font-family: var(--awds-font-family-system);
   font-weight: var(--awds-font-weight-semibold);
-  /* Polish (MIFB): цена — динамическое число; моноширим цифры, чтобы ширина не
-     «прыгала» при смене значения (фильтр, обновление, пересчёт корзины). */
-  font-variant-numeric: tabular-nums;
+  /* Цифры пропорциональные, как в макете (решение владельца 27.09.2026). До этого стоял
+     tabular-nums (приём MIFB: ширина не «прыгает» при пересчёте), и «1 900» выходила на
+     8px шире макета — сверка component-figma-check держала это исключением. */
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
 }
