@@ -1,10 +1,10 @@
 {
   "component": "textarea-combi",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "contract_hash": "sha256:99ce0316fc49bb5c4256fc8f9775561e30ef61e87a890d16933c487a3289479a",
-  "artifact_hash": "sha256:09f11ffb1772d53778efa8f59e3d4cf04e561b51bdb2ca41f38b91bc66ed3d7c",
+  "artifact_hash": "sha256:1801d88703942723df315990cc95876123d1c8b1b6c5896f5f0b53824c30f6c9",
   "visual_change": true,
-  "released_at": "2026-09-25T07:39:43.846Z",
+  "released_at": "2026-09-29T15:59:36.256Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -110,15 +110,32 @@
     },
     "native": {
       "tag": "textarea",
+      "type": null,
       "class": "tcombi__field"
     },
     "children": [
-      "tcombi__label",
-      "tcombi__field"
+      {
+        "class": "tcombi__label",
+        "required": true,
+        "why": "подпись внутри рамки; снаружи подпись не ставится — иначе их будет две"
+      },
+      {
+        "class": "tcombi__field",
+        "required": true
+      }
     ],
     "attrs": [],
+    "child_attrs": [
+      {
+        "child": "tcombi__field",
+        "attr": "aria-label",
+        "required": false,
+        "when_note": "корень не <label>, а <div> — тогда связь метки с полем нужно объявить явно",
+        "why": "на <label> связь даёт сам корень, атрибут не нужен"
+      }
+    ],
     "container": null,
-    "note": "Корень — <label>: клик по рамке ставит курсор в поле, отдельный for не нужен. Порядок узлов обязателен: метка первой, поле вторым. Подпись снаружи НЕ ставится — она уже внутри рамки."
+    "note": "Корень — <label>: клик по рамке ставит курсор в поле, отдельный for не нужен. Порядок узлов обязателен: метка первой, поле вторым — гейту он не виден, проверяется глазами. Подпись снаружи НЕ ставится — она уже внутри рамки. Метка здесь не плавает: у многострочного поля нет центра, поэтому ни :placeholder-shown, ни состояния «заполнено» в CSS нет. Если корень не <label>, нужен aria-label на <textarea> — условие «или-или», гейтом не выражается. Слотов prefix/suffix у компонента нет; .tcombi--fixed и .tcombi--disabled необязательны."
   },
   "preview": {
     "base_class": "tcombi",
@@ -199,6 +216,8 @@
     "--awds-control-font-size-200",
     "--awds-control-font-size-400",
     "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
     "--awds-control-letter-spacing-400",
     "--awds-control-letter-spacing-600",
     "--awds-control-line-height-100",
@@ -208,6 +227,7 @@
     "--awds-font-family-system",
     "--awds-font-weight-regular",
     "--awds-opacity-100",
+    "--awds-opacity-30",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-300",
     "--awds-rounded-border-radius-400",
@@ -220,6 +240,7 @@
     "--awds-space-3-5",
     "--awds-space-4",
     "--awds-space-4-5",
+    "--awds-space-5",
     "--awds-space-5-5",
     "--awds-space-6",
     "--awds-space-px",
@@ -228,10 +249,10 @@
     "--error-container-on-high",
     "--error-container-on-highest",
     "--error-container-on-low",
-    "--primary-container-base",
-    "--primary-container-on-high",
-    "--primary-container-on-highest",
-    "--primary-dim",
+    "--focus-container-base",
+    "--focus-container-on-high",
+    "--focus-container-on-highest",
+    "--focus-dim",
     "--secondary-container-core",
     "--secondary-container-on",
     "--secondary-container-on-high",

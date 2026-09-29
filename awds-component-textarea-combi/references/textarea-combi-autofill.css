@@ -70,6 +70,7 @@
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-100);
 
   box-sizing: border-box;
   position: relative;
@@ -108,6 +109,9 @@
   font-family: var(--awds-font-family-system);
   font-size: var(--awds-tcombi-label-fs);
   line-height: var(--awds-tcombi-label-lh);
+  /* Трекинг метки — ступень той же control-шкалы, что кегль: в макете letter-spacing/100 и
+     /200 (до 27.09.2026 его не было — component-figma-check). */
+  letter-spacing: var(--awds-tcombi-label-ls);
   font-weight: var(--awds-font-weight-regular);
   /* Метка не перехватывает клик: он должен ставить курсор в поле. */
   pointer-events: none;
@@ -154,6 +158,38 @@
   resize: none;
 }
 
+/* === Ручка ресайза ===
+   Как у awds-component-textarea: системный уголок Chromium (::-webkit-resizer) выключен —
+   в макете его нет, — а вместо него псевдоэлемент обёртки рисует иконку из макета
+   (ic20-textareaControl-outline: диагональ 9×9 в боксе 20×20, угол корня на всех ступенях).
+   Выключен только ВИД: тяга за угол работает, pointer-events: none оставляет её нативному
+   углу. До 27.09.2026 здесь стоял системный уголок (component-figma-check: 120 ячеек без
+   иконки макета). Firefox ::-webkit-resizer не знает — там системная ручка ляжет поверх. */
+.tcombi__field::-webkit-resizer {
+  display: none;
+}
+
+.tcombi::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  /* Бокс 20×20 на всех ступенях — базовая шкала, не rectangle-{N}-icon. */
+  width: var(--awds-space-5);
+  height: var(--awds-space-5);
+  /* Цвет — роль текста при приглушении 30% (map.state.rest.content.textarea-handle). */
+  background: var(--awds-tcombi-color);
+  opacity: var(--awds-opacity-30);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  pointer-events: none;
+}
+
+/* Ресайз выключен — ручки нет: хват, за который нельзя потянуть, обещал бы действие. */
+.tcombi--fixed::after {
+  content: none;
+}
+
 
 /* === Размеры (shape = rectangle, ступени 300…600) === */
 
@@ -168,6 +204,7 @@
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-100);
 }
 
 .tcombi--400 {
@@ -181,6 +218,7 @@
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-100);
 }
 
 .tcombi--500 {
@@ -194,6 +232,7 @@
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-200);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-200);
 }
 
 .tcombi--600 {
@@ -207,6 +246,7 @@
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-200);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-200);
 }
 
 
@@ -238,10 +278,10 @@
 /* :focus-within, а не :focus-visible: у текстового поля «сфокусировано» = активно,
    и рамка обязана загораться при клике мышью. */
 .tcombi-autofill:focus-within {
-  --awds-tcombi-bg:          rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
-  --awds-tcombi-border:      rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
-  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
-  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
+  --awds-tcombi-bg:          rgb(var(--focus-container-base));   /* #cell form-control/autofill/bg-focus */
+  --awds-tcombi-border:      rgb(var(--focus-dim));   /* #cell form-control/autofill/border-focus */
+  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   /* #cell form-control/autofill/color-focus */
+  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант offset=outside,
      tone=muted. Только ссылки на --awds-focus-*. */

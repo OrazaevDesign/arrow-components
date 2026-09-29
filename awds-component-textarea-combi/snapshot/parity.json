@@ -1,0 +1,59 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Подпись у textarea-combi всегда вверху (кегль 11), значение видно всегда: в макете «Textarea Combi» и «Text». Уголок растяжения — нативный хват textarea, не сверяется.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "textarea-combi-autofill.css",
+    "textarea-combi-default.css",
+    "textarea-combi-error.css",
+    "textarea-combi-ghost.css",
+    "textarea-combi-light.css",
+    "textarea-combi-success.css"
+  ],
+  "tag": "label",
+  "class": "tcombi tcombi-{variant}",
+  "value_from": ".tcombi__field",
+  "html_all": "<span class=\"tcombi__label\">Textarea Combi</span><textarea class=\"tcombi__field\" {disabled}>Text\n\n</textarea>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "tcombi--{value}",
+        "style": "width:{w}px;height:{h}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          {
+            "on": ".tcombi__field",
+            "cls": [
+              "focus",
+              "focus-visible"
+            ]
+          },
+          {
+            "on": "",
+            "cls": [
+              "focus-within"
+            ]
+          }
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "vars": {
+          "disabled": "disabled"
+        }
+      }
+    }
+  }
+}
