@@ -99,11 +99,14 @@
   text-transform: uppercase;
 }
 
-/* === Content: Placeholder (силуэт ~60% диаметра, приглушён) === */
+/* === Content: Placeholder (силуэт ступенями, приглушён) ===
+   Размер силуэта в макете не доля диаметра, а три ступени: 24px у 700–400, 20px у
+   300–200, 16px у 150–50 (до 27.09.2026 здесь стояло 60% — на 700 это 48px вместо 24,
+   component-figma-check). Ступень задаёт класс размера, как у вида icon. */
 
 .emb-placeholder > svg {
-  width: 60%;
-  height: 60%;
+  width: var(--awds-emb-silhouette);
+  height: var(--awds-emb-silhouette);
   opacity: var(--awds-opacity-60);   /* #cell opacity/content/placeholder */
 }
 
@@ -131,9 +134,13 @@
    До 15.09.2026 кольцо гасилось цветом `transparent` в аккумуляторе. Отсутствие кольца
    честнее выражать отсутствием тени: прозрачный цвет требовал бы ячейки, которой в
    словаре нет, и прятал бы от гейта строку без роли. Вид не меняется. */
-.emb-icon::after {
+.emb-icon::after,
+.emb-img::after {
   box-shadow: none;
 }
+/* У img кольца тоже нет: в макете у всех десяти ячеек emblem / img обводки нет вовсе,
+   слой залит фото (component-figma-check, 27.09.2026). Кольцо на портретных видах —
+   это initials и placeholder, 20 обводок на emblem/border. */
 
 .emb-icon > svg,
 .emb-icon > img {
@@ -146,6 +153,7 @@
 
 .emb--700 {
   --awds-emb-size: var(--awds-space-20);            /* 80px */
+  --awds-emb-silhouette: var(--awds-space-6);       /* 24px — силуэт placeholder */
   --awds-emb-fs:   var(--awds-control-font-size-950);
   --awds-emb-lh:   var(--awds-control-line-height-950);
   --awds-emb-ls:   var(--awds-control-letter-spacing-950);
@@ -153,6 +161,7 @@
 
 .emb--600 {
   --awds-emb-size: var(--awds-space-16);            /* 64px */
+  --awds-emb-silhouette: var(--awds-space-6);       /* 24px — силуэт placeholder */
   --awds-emb-fs:   var(--awds-control-font-size-900);
   --awds-emb-lh:   var(--awds-control-line-height-900);
   --awds-emb-ls:   var(--awds-control-letter-spacing-900);
@@ -160,6 +169,7 @@
 
 .emb--500 {
   --awds-emb-size: var(--awds-space-14);            /* 56px */
+  --awds-emb-silhouette: var(--awds-space-6);       /* 24px — силуэт placeholder */
   --awds-emb-fs:   var(--awds-control-font-size-850);
   --awds-emb-lh:   var(--awds-control-line-height-850);
   --awds-emb-ls:   var(--awds-control-letter-spacing-850);
@@ -167,6 +177,7 @@
 
 .emb--400 {
   --awds-emb-size: var(--awds-space-12);            /* 48px */
+  --awds-emb-silhouette: var(--awds-space-6);       /* 24px — силуэт placeholder */
   --awds-emb-fs:   var(--awds-control-font-size-850);
   --awds-emb-lh:   var(--awds-control-line-height-850);
   --awds-emb-ls:   var(--awds-control-letter-spacing-850);
@@ -174,6 +185,7 @@
 
 .emb--300 {
   --awds-emb-size: var(--awds-space-11);            /* 44px */
+  --awds-emb-silhouette: var(--awds-space-5);       /* 20px — силуэт placeholder */
   --awds-emb-fs:   var(--awds-control-font-size-700);
   --awds-emb-lh:   var(--awds-control-line-height-700);
   --awds-emb-ls:   var(--awds-control-letter-spacing-700);
@@ -181,6 +193,7 @@
 
 .emb--250 {
   --awds-emb-size: var(--awds-space-10);            /* 40px */
+  --awds-emb-silhouette: var(--awds-space-5);       /* 20px — силуэт placeholder */
   --awds-emb-fs:   var(--awds-control-font-size-600);
   --awds-emb-lh:   var(--awds-control-line-height-600);
   --awds-emb-ls:   var(--awds-control-letter-spacing-600);
@@ -188,6 +201,7 @@
 
 .emb--200 {
   --awds-emb-size: var(--awds-space-9);             /* 36px */
+  --awds-emb-silhouette: var(--awds-space-5);       /* 20px — силуэт placeholder */
   --awds-emb-fs:   var(--awds-control-font-size-600);
   --awds-emb-lh:   var(--awds-control-line-height-600);
   --awds-emb-ls:   var(--awds-control-letter-spacing-600);
@@ -195,6 +209,7 @@
 
 .emb--150 {
   --awds-emb-size: var(--awds-space-8);             /* 32px */
+  --awds-emb-silhouette: var(--awds-space-4);       /* 16px — силуэт placeholder */
   --awds-emb-icon: var(--awds-space-6);             /* 24px — только у icon */
   --awds-emb-fs:   var(--awds-control-font-size-600);
   --awds-emb-lh:   var(--awds-control-line-height-600);
@@ -203,6 +218,7 @@
 
 .emb--100 {
   --awds-emb-size: var(--awds-space-7);             /* 28px */
+  --awds-emb-silhouette: var(--awds-space-4);       /* 16px — силуэт placeholder */
   --awds-emb-icon: var(--awds-space-5);             /* 20px — только у icon */
   --awds-emb-fs:   var(--awds-control-font-size-600);
   --awds-emb-lh:   var(--awds-control-line-height-600);
@@ -211,6 +227,7 @@
 
 .emb--50 {
   --awds-emb-size: var(--awds-space-6);             /* 24px */
+  --awds-emb-silhouette: var(--awds-space-4);       /* 16px — силуэт placeholder */
   --awds-emb-icon: var(--awds-space-4);             /* 16px — только у icon */
   --awds-emb-fs:   var(--awds-control-font-size-600);
   --awds-emb-lh:   var(--awds-control-line-height-600);
