@@ -1,0 +1,16 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Компонент красит нативную полосу (::-webkit-scrollbar), своей разметки нет: проверочный элемент — прокручиваемый контейнер на белом фоне, полоса меряется пикселями поперёк через ползунок. Ось orientation в CSS не вариант — направление задаёт контейнер.",
+  "mode": "native-scrollbar",
+  "css": ["scrollbar.css"],
+  "tag": "div",
+  "class": "scrollbar",
+  "variants": { "transparent": { "class": "scrollbar-transparent" } },
+  "axes": {
+    "orientation": {
+      "horizontal": { "style": "width:{w}px;height:40px;overflow-x:scroll;overflow-y:hidden;background:#fff", "html": "<div style=\"width:{w2}px;height:1px\"></div>" },
+      "vertical": { "style": "width:40px;height:{h}px;overflow-y:scroll;overflow-x:hidden;background:#fff", "html": "<div style=\"height:{h2}px;width:1px\"></div>" }
+    },
+    "state": { "rest": {}, "hover": { "pseudo": ["hover"] } }
+  },
+  "parts": { "default": { "bar": { "figma": "bar", "dom": ".scrollbar" } }, "transparent": { "bar": { "figma": "bar", "dom": ".scrollbar" } } }
+}
