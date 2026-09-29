@@ -1,4 +1,4 @@
-/* ArrowDS · heading@1.0.6
+/* ArrowDS · heading@1.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -54,7 +54,7 @@
   --awds-heading-ls: var(--awds-typography-letter-spacing-600);
 }
 
-@media (max-width: 1067px) {
+@media (max-width: 1023px) {
   .heading {
     justify-content: space-between;
   }

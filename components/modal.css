@@ -1,4 +1,4 @@
-/* ArrowDS · modal@1.2.0
+/* ArrowDS · modal@1.2.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -151,7 +151,7 @@
   padding-block-start: 0;
 }
 
-@media (max-width: 1067px) {
+@media (max-width: 1023px) {
   .mdl-dialog,
   .mdl-sidepage {
     inline-size: 100%;

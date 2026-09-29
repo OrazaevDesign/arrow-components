@@ -837,7 +837,7 @@
   --awds-typography-letter-spacing-910: var(--awds-typography-letter-spacing-910-desktop);
   --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-desktop);
 }
-@media (max-width: 1067px) {
+@media (max-width: 1023px) {
   :root {
     --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-tablet);
     --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-tablet);
