@@ -1,0 +1,43 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Три вида группы: boxed (плашка, выбранная — button clean, остальные ghost), separated (выбранная — contrast, остальные secondary), underline (вкладки tab). Ось size. Вкладки лежат в дорожке .tab-group__track с вылетом под кольцо фокуса — kids сверяет их от корня (rel_root). Надписи — как в ячейках.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-notice/references/notice.css",
+    "../../awds-component-scrollbar/references/scrollbar.css",
+    "../../awds-component-tab/references/tab.css",
+    "../../awds-component-button/references/button-clean.css",
+    "../../awds-component-button/references/button-ghost.css",
+    "../../awds-component-button/references/button-contrast.css",
+    "../../awds-component-button/references/button-secondary.css",
+    "tab-group-boxed.css",
+    "tab-group-separated.css",
+    "tab-group-underline.css"
+  ],
+  "tag": "div",
+  "class": "tab-group tab-group-{variant}",
+  "kids": [
+    {
+      "figma": null,
+      "dom": ".tab-group__track",
+      "rel_root": true
+    }
+  ],
+  "variants": {
+    "boxed": {
+      "html": "<div class=\"tab-group__track scrollbar scrollbar-transparent\" role=\"tablist\" aria-label=\"t\"><button type=\"button\" class=\"btn btn-clean\" role=\"tab\" aria-selected=\"true\">One</button><button type=\"button\" class=\"btn btn-ghost\" role=\"tab\" aria-selected=\"false\">Two</button><button type=\"button\" class=\"btn btn-ghost\" role=\"tab\" aria-selected=\"false\">Three</button><button type=\"button\" class=\"btn btn-ghost\" role=\"tab\" aria-selected=\"false\">Four</button><button type=\"button\" class=\"btn btn-ghost\" role=\"tab\" aria-selected=\"false\">Five</button></div>"
+    },
+    "separated": {
+      "html": "<div class=\"tab-group__track scrollbar scrollbar-transparent\" role=\"tablist\" aria-label=\"t\"><button type=\"button\" class=\"btn btn-contrast\" role=\"tab\" aria-selected=\"true\">One</button><button type=\"button\" class=\"btn btn-secondary\" role=\"tab\" aria-selected=\"false\">Two</button><button type=\"button\" class=\"btn btn-secondary\" role=\"tab\" aria-selected=\"false\">Three</button><button type=\"button\" class=\"btn btn-secondary\" role=\"tab\" aria-selected=\"false\">Four</button><button type=\"button\" class=\"btn btn-secondary\" role=\"tab\" aria-selected=\"false\">Five</button></div>"
+    },
+    "underline": {
+      "html": "<div class=\"tab-group__track scrollbar scrollbar-transparent\" role=\"tablist\" aria-label=\"t\"><button type=\"button\" class=\"tab tab-selected\" role=\"tab\" aria-selected=\"true\">Tab One</button><button type=\"button\" class=\"tab tab-unselected\" role=\"tab\" aria-selected=\"false\">Tab Two</button><button type=\"button\" class=\"tab tab-unselected\" role=\"tab\" aria-selected=\"false\">Tab Three</button><button type=\"button\" class=\"tab tab-unselected\" role=\"tab\" aria-selected=\"false\">Tab Four</button><button type=\"button\" class=\"tab tab-unselected\" role=\"tab\" aria-selected=\"false\">Tab Five</button></div>"
+    }
+  },
+  "axes": {
+    "size": {
+      "*": {
+        "class": "tab-group--{value}"
+      }
+    }
+  }
+}
