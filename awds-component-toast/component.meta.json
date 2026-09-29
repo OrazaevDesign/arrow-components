@@ -1,10 +1,10 @@
 {
   "component": "toast",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "contract_hash": "sha256:c29f85c0014c1dfa4030d9c4b0467699ebb35f17264fd5413bb0a63819b32b5c",
-  "artifact_hash": "sha256:6e0bb4db559599c639447b46645d3ac80e73cf98cdab1ff361bd7dfed5e95229",
-  "visual_change": false,
-  "released_at": "2026-09-21T14:05:21.942Z",
+  "artifact_hash": "sha256:92fb425a47d3598a8a482527097bc90e64ffa7cd4a096d31a0d40bc3a3c4c6dc",
+  "visual_change": true,
+  "released_at": "2026-09-27T09:57:28.295Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -134,20 +134,33 @@
     "native": null,
     "children": [
       {
-        "class": "toast__content"
+        "class": "toast__content",
+        "required": true
       },
       {
-        "class": "toast__icon"
+        "class": "toast__icon",
+        "required": true
       },
       {
-        "class": "toast__text"
+        "class": "toast__text",
+        "required": true
       }
     ],
     "attrs": [
-      "role"
+      {
+        "attr": "role",
+        "why": "плашке нужен role=\"status\": сообщение объявляется вежливо и не перебивает пользователя. Значение гейту не видно — проверяется только наличие атрибута"
+      }
+    ],
+    "child_attrs": [
+      {
+        "child": "toast__close",
+        "attr": "aria-label",
+        "why": "крестик — кнопка без текста; без подписи скринридер прочитает просто «кнопка»"
+      }
     ],
     "container": null,
-    "note": "Контент обязателен: слот и текст. Кнопка .toast__action и крестик .toast__close необязательны — без них правый отступ контента возвращается сам. Таймер (.toast__timer) кладётся внутрь слота вместо иконки и несёт инстанс progress / circular. Контейнеру role=\"status\": сообщение объявляется вежливо, не перебивая пользователя."
+    "note": "Контент обязателен целиком: обёртка .toast__content, левый слот .toast__icon и текст .toast__text. Кнопка .toast__action и крестик .toast__close необязательны — без них правый отступ контента возвращается сам через :has(), поэтому требованиями они не записаны; когда крестик есть, ему нужен aria-label. Таймер (.toast__timer) кладётся внутрь слота вместо иконки и несёт инстанс progress / circular со своим контрактом — своего кольца тост не рисует, это была бы вторая реализация той же вещи. Тон обязателен: фон и цвет текста живут только в .toast-normal (тёмный островок темы) и .toast-alert (error-core); .toast-normal остаётся тёмной и в тёмной теме. Шкалы размеров нет. Ось lead=icon|timer и булевы show-action / show-close классов не имеют: разницу несёт состав узлов, и проверить её нечем. Показ, очередь, автоскрытие и отсчёт — на стороне потребителя."
   },
   "questions": [
     {
@@ -192,6 +205,7 @@
     "--awds-control-line-height-400",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
+    "--awds-font-weight-semibold",
     "--awds-opacity-20",
     "--awds-rounded-border-radius-400",
     "--awds-shadow-elevation-3",

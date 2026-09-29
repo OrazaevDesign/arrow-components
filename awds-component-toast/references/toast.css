@@ -30,7 +30,8 @@
      тень      var(--awds-shadow-elevation-3) — трёхслойная
      скругление rounded-400 (8)
      отступы   padding space-2-5 (10) · внутренние зазоры space-1-5 (6)
-     текст     control-400 (14/20); счётчик таймера control-200 (12/16)
+     текст     control-400 (14/20), сообщение regular, действие semibold;
+               счётчик таймера control-200 (12/16) semibold
      иконка    space-5 (20)
      подложка контрола при наведении — цвет контента под opacity-20
 
@@ -173,6 +174,8 @@
   letter-spacing: var(--awds-control-letter-spacing-200);
   /* Цифры не должны прыгать по ширине при смене секунды (MIFB). */
   font-variant-numeric: tabular-nums;
+  /* Цифра таймера — Semi Bold, как в макете (lead=timer обоих тонов). */
+  font-weight: var(--awds-font-weight-semibold);
 }
 
 /* === Контролы: действие и закрытие ===
@@ -191,6 +194,11 @@
   color: inherit;
   font: inherit;
   cursor: pointer;
+}
+/* Действие — Semi Bold, как в макете во всех четырёх ячейках тоста и в части . / action;
+   сообщение остаётся regular (component-figma-check, 27.09.2026). */
+.toast__action {
+  font-weight: var(--awds-font-weight-semibold);
   /* Перечисляем свойства поимённо: transition: all цепляет и то, что меняться не должно. */
   transition: background-color 0.15s ease-out;
 }
