@@ -1,5 +1,9 @@
 # input-combi — журнал версий
 
+## 1.0.16 — 2026-09-29 — PATCH · visual
+Ячейки состояния Focus перенаправлены в студии с роли primary на новую роль focus (form-control/*-focus, focus-selection/outlineVariant|outlineAccent, tab/selected/border-focus); код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: на темах, где focus = primary, без изменений; на shopotam поле и кольцо в фокусе стали синими вместо красного, чтобы не читаться как ошибка.
+
 ## 1.0.15 — 2026-09-28 — PATCH · visual
 Ячейка rectangle/500/padding перенаправлена в студии: space-3-5 (14px) → space-3 (12px); код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: у ступени 500 внутренний отступ 14px → 12px, контрол ниже на 4px.

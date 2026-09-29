@@ -509,10 +509,10 @@
    Значения Focus совпадают с Default; отличается только цвет иконки. */
 .icombi-light:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   /* #cell form-control/light/bg */
-  --awds-icombi-border:     rgb(var(--primary-dim));   /* #cell form-control/light/border-focus */
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   /* #cell form-control/light/color-focus */
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   /* #cell form-control/light/placeholder-focus */
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));   /* #cell form-control/light/icon-focus */
+  --awds-icombi-border:     rgb(var(--focus-dim));   /* #cell form-control/light/border-focus */
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   /* #cell form-control/light/color-focus */
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   /* #cell form-control/light/placeholder-focus */
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-high));   /* #cell form-control/light/icon-focus */
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

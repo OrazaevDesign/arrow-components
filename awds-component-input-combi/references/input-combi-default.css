@@ -503,10 +503,10 @@
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике
    мышью, а не только при табе. */
 .icombi-default:focus-within {
-  --awds-icombi-bg:        rgb(var(--primary-container-base));   /* #cell form-control/default/bg-focus */
-  --awds-icombi-border:    rgb(var(--primary-dim));   /* #cell form-control/default/border-focus */
-  --awds-icombi-color:     rgb(var(--primary-container-on-highest));   /* #cell form-control/default/color-focus */
-  --awds-icombi-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/default/placeholder-focus */
+  --awds-icombi-bg:        rgb(var(--focus-container-base));   /* #cell form-control/default/bg-focus */
+  --awds-icombi-border:    rgb(var(--focus-dim));   /* #cell form-control/default/border-focus */
+  --awds-icombi-color:     rgb(var(--focus-container-on-highest));   /* #cell form-control/default/color-focus */
+  --awds-icombi-placeholder: rgb(var(--focus-container-on-high));   /* #cell form-control/default/placeholder-focus */
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
