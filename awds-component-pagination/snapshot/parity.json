@@ -1,0 +1,52 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Три ячейки position — это положение ленты, а не класс: start — первая страница (только правые стрелки), center — середина (обе группы), end — последняя (только левые). Положение ленты в коде задаёт прокрутка, её делает потребитель; здесь её ставит script: start — к началу, center — на середину, end — к концу. Ширина рамки — из макета (899), подпись — буквальная строка макета.",
+  "sets": {
+    "center": "78:47713",
+    "start": "78:47744",
+    "end": "78:47772"
+  },
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-button/references/button-primary.css",
+    "../../awds-component-button/references/button-secondary.css",
+    "../../awds-component-button/references/button-ghost.css",
+    "pagination.css"
+  ],
+  "tag": "nav",
+  "class": "pgn",
+  "attrs": "aria-label=\"p\"",
+  "style": "width:{w}px;max-width:none",
+  "variants": {
+    "center": {
+      "html": "<div class=\"pgn__controls\"><ul class=\"pgn__list\"><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">1</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">2</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">3</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">4</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">5</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">6</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">7</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">8</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">9</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">10</a></li><li class=\"pgn__item\"><a class=\"btn btn-primary btn--300\" href=\"#\" aria-current=\"page\">11</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">12</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">13</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">14</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">15</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">16</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">17</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">18</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">19</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">20</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">21</a></li></ul><div class=\"pgn__edge pgn__edge--start\"><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a></div><div class=\"pgn__edge pgn__edge--end\"><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a></div></div><p class=\"pgn__caption\">Товары 51-100. Всего - 1108</p>"
+    },
+    "start": {
+      "html": "<div class=\"pgn__controls\"><ul class=\"pgn__list\"><li class=\"pgn__item\"><a class=\"btn btn-primary btn--300\" href=\"#\" aria-current=\"page\">1</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">2</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">3</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">4</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">5</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">6</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">7</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">8</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">9</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">10</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">11</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">12</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">13</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">14</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">15</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">16</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">17</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">18</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">19</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">20</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">21</a></li></ul><div class=\"pgn__edge pgn__edge--end\"><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a></div></div><p class=\"pgn__caption\">Товары 51-100. Всего - 1108</p>"
+    },
+    "end": {
+      "html": "<div class=\"pgn__controls\"><ul class=\"pgn__list\"><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">1</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">2</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">3</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">4</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">5</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">6</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">7</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">8</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">9</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">10</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">11</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">12</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">13</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">14</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">15</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">16</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">17</a></li><li class=\"pgn__item\"><a class=\"btn btn-secondary btn--300\" href=\"#\">18</a></li><li class=\"pgn__item\"><a class=\"btn btn-primary btn--300\" href=\"#\" aria-current=\"page\">19</a></li></ul><div class=\"pgn__edge pgn__edge--start\"><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a><a class=\"btn btn-ghost btn--300 btn--icon-only\" href=\"#\" aria-label=\"g\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></a></div></div><p class=\"pgn__caption\">Товары 51-100. Всего - 1108</p>"
+    }
+  },
+  "script": "document.querySelectorAll('[data-v]').forEach(h => { const l = h.querySelector('.pgn__list'); l.style.scrollBehavior = 'auto'; const max = l.scrollWidth - l.clientWidth; l.scrollLeft = h.dataset.v === 'start' ? 0 : h.dataset.v === 'end' ? max : max / 2; });",
+  "kids": [
+    {
+      "figma": "controls",
+      "dom": ".pgn__controls",
+      "x": true
+    },
+    {
+      "figma": "list",
+      "dom": ".pgn__list"
+    },
+    {
+      "figma": "start",
+      "dom": ".pgn__edge--start"
+    },
+    {
+      "figma": "end",
+      "dom": ".pgn__edge--end"
+    }
+  ],
+  "rows": false,
+  "rows_why": "шторки со стрелками лежат поверх ленты страниц: в сортировке по x стрелки и номера разных слоёв перемешиваются, и зазоры между ними ничего не значат. Раскладку сверяет kids по группам: положение ленты и шторок внутри controls, ширина кнопок и зазоры между ними внутри ленты и шторок"
+}
