@@ -1,0 +1,49 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Корень сверки — пузырь: в макете рамка content, в коде .tooltip__bubble. Хвост в макете — треугольник-вектор, в коде — повёрнутый квадрат; сверяется видимое снаружи пузыря: сторона, вынос, основание, смещение.",
+  "root_layer": "content",
+  "dom_root": ".tooltip__bubble",
+  "css": [
+    "tooltip.css"
+  ],
+  "tag": "span",
+  "attrs": "role=\"tooltip\"",
+  "class": "tooltip tooltip-{variant}",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "tooltip--{value}"
+      }
+    },
+    "side": {
+      "*": {
+        "class": "tooltip--side-{value}"
+      }
+    }
+  },
+  "variants": {
+    "default": {
+      "html": "<span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">{text}</span>"
+    },
+    "contrast": {
+      "html": "<span class=\"tooltip__tail\"></span><span class=\"tooltip__bubble\">{text}</span>"
+    }
+  },
+  "parts": {
+    "default": {
+      "tail": {
+        "figma": "shape",
+        "dom": ".tooltip__tail",
+        "outside": true,
+        "pseudo": "::after"
+      }
+    },
+    "contrast": {
+      "tail": {
+        "figma": "shape",
+        "dom": ".tooltip__tail",
+        "outside": true,
+        "pseudo": "::after"
+      }
+    }
+  }
+}

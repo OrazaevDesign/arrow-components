@@ -52,7 +52,11 @@
   --awds-tooltip-lh:         var(--awds-control-line-height-400);    /* 20px */
   --awds-tooltip-ls:         var(--awds-control-letter-spacing-400);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);  /* 8px Smooth */
-  --awds-tooltip-tail:       var(--awds-space-2);      /* 8px — сторона квадрата хвоста */
+  /* Хвост — треугольник 16×6 (основание × вынос), как вектор shape в макете. До 27.09.2026
+     здесь был квадрат 8px, повёрнутый на 45°: вынос сходился (≈6), а основание выходило
+     11.3 вместо 16 — прямой угол при вершине треугольник 16×6 не даёт (component-figma-check). */
+  --awds-tooltip-tail-base:  var(--awds-space-4);      /* 16px */
+  --awds-tooltip-tail-depth: var(--awds-space-1-5);    /* 6px */
   /* Хайрлайн-обводка хвоста = кольцевой слой тени пузыря (чёрный 3%), чтобы контур хвоста
      точно совпал с обводкой пузыря на любой теме. До 15.09.2026 здесь стоял литерал
      `rgb(0 0 0 / 3%)` с пояснением «в DS нет отдельного токена-хайрлайна». Токен был:
@@ -105,20 +109,33 @@
   text-wrap: pretty;
 }
 
-/* Хвост — повёрнутый квадрат ПОВЕРХ пузыря (z-index выше). Своей ТЕНИ (drop) НЕТ:
-   он лежит на тени бокса и перекрывает её у своей стороны. Тот же фон, что у пузыря, —
-   внутренняя половина квадрата сливается с пузырём, наружу торчит остриё.
-   Хайрлайн-обводка (1px, как кольцо тени пузыря) навешивается ТОЛЬКО на две внешние
-   грани квадрата в Side-правилах — чтобы контур шёл по видимому V, а внутренние грани
-   оставались без линии (сливались с пузырём). box-sizing:border-box → грани не растят квадрат.
-   Центрируется по середине нужной стороны. */
+/* Хвост — треугольник снаружи ребра пузыря. Сам элемент прозрачен и задаёт только бокс
+   (16×6 или 6×16 у боковых сторон) — ровно бокс вектора shape в макете. Рисуют псевдоэлементы:
+   ::after — треугольник цветом пузыря, ::before — такой же треугольник цветом хайрлайна,
+   сдвинутый на толщину линии наружу; из-под ::after он виден только по двум внешним граням,
+   как вектор hairline в макете (лежит под shape со сдвигом 1px). Своей тени у хвоста нет. */
 .tooltip__tail {
   position: absolute;
   z-index: 2;
-  width: var(--awds-tooltip-tail);
-  height: var(--awds-tooltip-tail);
+  width: var(--awds-tooltip-tail-base);
+  height: var(--awds-tooltip-tail-depth);
+}
+
+.tooltip__tail::before,
+.tooltip__tail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: var(--awds-tooltip-tail-shape);
+}
+
+.tooltip__tail::before {
+  background: var(--awds-tooltip-hairline);
+  translate: var(--awds-tooltip-tail-shift);
+}
+
+.tooltip__tail::after {
   background: var(--awds-tooltip-bg);
-  transform: rotate(45deg);
 }
 
 
@@ -169,47 +186,48 @@
 }
 
 
-/* === Side: положение, направление и хайрлайн-обводка хвоста ===
-   Квадрат центрируется на нужном ребре пузыря: внутренняя половина уходит под пузырь
-   (перекрыта непрозрачным фоном), наружу торчит остриё. Хайрлайн вешаем на две ВНЕШНИЕ
-   грани квадрата (повёрнут на 45°), формирующие видимое остриё; внутренние грани — без
-   линии (сливаются с пузырём). Соответствие угол→грани после rotate(45deg):
-   остриё-вниз = right+bottom, вверх = top+left, вправо = top+right, влево = bottom+left. */
+/* === Side: положение и направление хвоста ===
+   Хвост стоит снаружи нужного ребра пузыря, по его середине. Сторона задаёт форму
+   треугольника (--awds-tooltip-tail-shape) и направление сдвига хайрлайна наружу
+   (--awds-tooltip-tail-shift); у боковых сторон бокс хвоста поворачивается в 6×16. */
 
-/* Top (по умолчанию): хвост снизу, смотрит вниз */
+/* Top (по умолчанию): хвост снизу, остриём вниз */
 .tooltip--side-top .tooltip__tail,
 .tooltip:not(.tooltip--side-bottom):not(.tooltip--side-left):not(.tooltip--side-right) .tooltip__tail {
-  bottom: calc(-0.5 * var(--awds-tooltip-tail));
+  top: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-right:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  margin-left: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(0 0, 100% 0, 50% 100%);
+  --awds-tooltip-tail-shift: 0 var(--awds-tooltip-hairline-width);
 }
 
-/* Bottom: хвост сверху, смотрит вверх */
+/* Bottom: хвост сверху, остриём вверх */
 .tooltip--side-bottom .tooltip__tail {
-  top: calc(-0.5 * var(--awds-tooltip-tail));
-  bottom: auto;
+  bottom: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-left: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  margin-left: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(50% 0, 100% 100%, 0 100%);
+  --awds-tooltip-tail-shift: 0 calc(-1 * var(--awds-tooltip-hairline-width));
 }
 
-/* Left: хвост справа, смотрит вправо */
+/* Left: хвост справа, остриём вправо */
 .tooltip--side-left .tooltip__tail {
-  right: calc(-0.5 * var(--awds-tooltip-tail));
+  left: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-right: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  width: var(--awds-tooltip-tail-depth);
+  height: var(--awds-tooltip-tail-base);
+  margin-top: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(0 0, 100% 50%, 0 100%);
+  --awds-tooltip-tail-shift: var(--awds-tooltip-hairline-width) 0;
 }
 
-/* Right: хвост слева, смотрит влево */
+/* Right: хвост слева, остриём влево */
 .tooltip--side-right .tooltip__tail {
-  left: calc(-0.5 * var(--awds-tooltip-tail));
+  right: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-left:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  width: var(--awds-tooltip-tail-depth);
+  height: var(--awds-tooltip-tail-base);
+  margin-top: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(100% 0, 100% 100%, 0 50%);
+  --awds-tooltip-tail-shift: calc(-1 * var(--awds-tooltip-hairline-width)) 0;
 }
