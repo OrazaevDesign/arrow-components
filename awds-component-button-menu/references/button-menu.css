@@ -234,7 +234,7 @@
 
 .btn-menu-accent-selected {
   --awds-btn-menu-bg:      rgb(var(--focus-container-core));   /* #cell list/accent-selected/bg-rest */
-  --awds-btn-menu-border:  rgb(var(--focus-container-on-lowest));   /* #cell list/accent-selected/border-rest */
+  --awds-btn-menu-border:  rgb(var(--focus-container-core));   /* #cell list/accent-selected/border-rest */
   --awds-btn-menu-chevron: rgb(var(--focus-container-on-highest));   /* #cell list/accent-selected/chevron-rest */
 }
 
