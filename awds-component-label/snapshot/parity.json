@@ -1,0 +1,37 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Подпись — композиция: вид задаёт состав разметки (ось control), не класс. Вложенные checkbox/radio/switch — разметка из их скиллов (отмеченные, как в ячейках набора); их собственную геометрию сверяют их скиллы, здесь — строка: бокс, зазор, отступ текста. Ширина корня — из макета (в коде .lbl width 100%).",
+  "css": [
+    "../../awds-component-checkbox/references/checkbox.css",
+    "../../awds-component-radio/references/radio.css",
+    "../../awds-component-switch/references/switch.css",
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "label.css"
+  ],
+  "tag": "label",
+  "class": "lbl",
+  "style": "width:{w}px",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "lbl--{value}"
+      }
+    },
+    "control": {
+      "none": {
+        "html": "<span class=\"lbl__body\"><span class=\"lbl__text\">{text}</span></span>"
+      },
+      "icon": {
+        "html": "<span class=\"lbl__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg></span><span class=\"lbl__body\"><span class=\"lbl__text\">{text}</span></span>"
+      },
+      "checkbox": {
+        "html": "<span class=\"checkbox\"><input class=\"checkbox__input\" type=\"checkbox\" checked><span class=\"checkbox__box\"><svg class=\"checkbox__icon checkbox__icon--check\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M17.3 7.3a1 1 0 0 1 1.4 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.3z\"/></svg></span></span><span class=\"lbl__body\"><span class=\"lbl__text\">{text}</span></span>"
+      },
+      "radio": {
+        "html": "<span class=\"radio\"><input class=\"radio__input\" type=\"radio\" checked><span class=\"radio__box\"><svg class=\"radio__dot\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"5\"/></svg></span></span><span class=\"lbl__body\"><span class=\"lbl__text\">{text}</span></span>"
+      },
+      "switch": {
+        "html": "<span class=\"switch\"><input class=\"switch__input\" type=\"checkbox\" role=\"switch\" checked><span class=\"switch__track\"><span class=\"switch__handle\"></span></span></span><span class=\"lbl__body\"><span class=\"lbl__text\">{text}</span></span>"
+      }
+    }
+  }
+}
