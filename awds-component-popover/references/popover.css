@@ -13,7 +13,7 @@
    Чем отличается от соседей:
      — tooltip     — та же геометрия пузыря и хвоста, но внутри ТОЛЬКО текст, со
                      своим кеглем и паддингами; у поповера паддинг приносит контент.
-     — . / dropdown — панель раскрытого списка select (7 ступеней, БЕЗ хвоста),
+     — / dropdown — панель раскрытого списка select (7 ступеней, БЕЗ хвоста),
                      рисуется псевдоэлементом ::picker(select) и своего кода не имеет.
 
    Ось (канон props.md, правило 9 — многозначная ось несёт имя в классе):
@@ -27,11 +27,10 @@
      тень         var(--awds-shadow-elevation-3) — трёхслойная
      скругление   rounded/border-radius/600 = 10px — на ступень выше тултипа (8px):
                   панель крупнее пузыря подсказки, и в макете это разные токены
-     хвост        повёрнутый на 45° квадрат space-2 (8px) ПОВЕРХ панели, БЕЗ своей
-                  тени — лежит на тени бокса и перекрывает её у своей стороны; тот
-                  же фон, что у панели. Геометрия узла в макете (16×6) заменена
-                  симметричным 45°-остриём — как у tooltip, узлы там совпадают
-                  один в один (tail 36×10, view-box 36×10, shape 16×6).
+     хвост        треугольник 16×6 снаружи ребра панели, БЕЗ своей тени — лежит на
+                  тени бокса; тот же фон, что у панели, хайрлайн — такой же треугольник
+                  со сдвигом 1px наружу. Узлы в макете совпадают с tooltip один в один
+                  (tail 36×10, view-box 36×10, shape 16×6), приём тот же.
      ПАДДИНГА НЕТ: в макете у панели его нет вовсе, отступы приносит вложенный
      контент (у списка — свои, у календаря — свои). Ставить его здесь значило бы
      складывать два паддинга у каждого потребителя.
@@ -39,7 +38,7 @@
    Структура: .pop > .pop__tail (стрелка) + .pop__panel (панель, поверх).
    В макете те же узлы зовутся tail / content, обводка хвоста — hairline.
    Базовый класс .pop, а не .popover — см. base_class_note в component.meta.json.
-   Приватные аккумуляторы: --awds-pop-bg, -hairline, -rounded, -tail.
+   Приватные аккумуляторы: --awds-pop-bg, -hairline, -rounded, -tail-base, -tail-depth.
    ============================================================================= */
 
 /* === Base === */
@@ -53,7 +52,10 @@
      должно: толщина правится в студии, а не в файле компонента. */
   --awds-pop-hairline-width: var(--awds-space-px);   /* #cell outline/offset */
   --awds-pop-rounded: var(--awds-rounded-border-radius-600);   /* 10px Smooth */
-  --awds-pop-tail:    var(--awds-space-2);   /* 8px — сторона квадрата хвоста */
+  /* Хвост — треугольник 16×6 (основание × вынос), как вектор shape в макете; до 27.09.2026
+     был повёрнутый квадрат 8px с основанием 11.3 вместо 16 (component-figma-check). */
+  --awds-pop-tail-base:  var(--awds-space-4);     /* 16px */
+  --awds-pop-tail-depth: var(--awds-space-1-5);   /* 6px */
 
   box-sizing: border-box;
   position: relative;
@@ -80,19 +82,32 @@
   overflow: hidden;
 }
 
-/* Хвост — повёрнутый квадрат ПОВЕРХ панели (z-index выше). Своей ТЕНИ (drop) НЕТ:
-   он лежит на тени бокса и перекрывает её у своей стороны. Тот же фон, что у панели, —
-   внутренняя половина квадрата сливается с панелью, наружу торчит остриё.
-   Хайрлайн-обводка (1px, как кольцо тени панели) навешивается ТОЛЬКО на две внешние
-   грани квадрата в Side-правилах — чтобы контур шёл по видимому V, а внутренние грани
-   оставались без линии. box-sizing: border-box → грани не растят квадрат. */
+/* Хвост — треугольник снаружи ребра панели. Элемент прозрачен и задаёт только бокс (16×6,
+   у боковых сторон 6×16) — бокс вектора shape в макете. ::after — треугольник цветом панели,
+   ::before — такой же цветом хайрлайна, сдвинутый на толщину линии наружу: из-под основного
+   виден только по двум внешним граням, как вектор hairline в макете. */
 .pop__tail {
   position: absolute;
   z-index: 2;
-  width: var(--awds-pop-tail);
-  height: var(--awds-pop-tail);
+  width: var(--awds-pop-tail-base);
+  height: var(--awds-pop-tail-depth);
+}
+
+.pop__tail::before,
+.pop__tail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: var(--awds-pop-tail-shape);
+}
+
+.pop__tail::before {
+  background: var(--awds-pop-hairline);
+  translate: var(--awds-pop-tail-shift);
+}
+
+.pop__tail::after {
   background: var(--awds-pop-bg);
-  transform: rotate(45deg);
 }
 
 /* Нативный popover (Baseline 2024): снимаем стили браузера по умолчанию — рамку,
@@ -109,47 +124,47 @@
   overflow: visible;
 }
 
-/* === Side: положение, направление и хайрлайн-обводка хвоста ===
-   Квадрат центрируется на нужном ребре панели: внутренняя половина уходит под панель
-   (перекрыта непрозрачным фоном), наружу торчит остриё. Хайрлайн вешаем на две ВНЕШНИЕ
-   грани квадрата (повёрнут на 45°), формирующие видимое остриё; внутренние грани — без
-   линии. Соответствие угол→грани после rotate(45deg):
-   остриё-вниз = right+bottom, вверх = top+left, вправо = top+right, влево = bottom+left. */
+/* === Side: положение и направление хвоста ===
+   Хвост стоит снаружи нужного ребра панели, по его середине и смотрит на якорь. Сторона
+   задаёт форму треугольника и направление сдвига хайрлайна; у боковых бокс 6×16. */
 
-/* Top (по умолчанию): хвост снизу, смотрит вниз */
+/* Top (база): панель над якорем — хвост снизу, остриём вниз */
 .pop--side-top .pop__tail,
 .pop:not(.pop--side-bottom):not(.pop--side-left):not(.pop--side-right) .pop__tail {
-  bottom: calc(-0.5 * var(--awds-pop-tail));
+  top: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-right:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  margin-left: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(0 0, 100% 0, 50% 100%);
+  --awds-pop-tail-shift: 0 var(--awds-pop-hairline-width);
 }
 
-/* Bottom: хвост сверху, смотрит вверх */
+/* Bottom: панель под якорем — хвост сверху, остриём вверх */
 .pop--side-bottom .pop__tail {
-  top: calc(-0.5 * var(--awds-pop-tail));
-  bottom: auto;
+  bottom: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-top:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-left: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  margin-left: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(50% 0, 100% 100%, 0 100%);
+  --awds-pop-tail-shift: 0 calc(-1 * var(--awds-pop-hairline-width));
 }
 
-/* Left: хвост справа, смотрит вправо */
+/* Left: панель слева от якоря — хвост справа, остриём вправо */
 .pop--side-left .pop__tail {
-  right: calc(-0.5 * var(--awds-pop-tail));
+  left: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-top:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-right: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  width: var(--awds-pop-tail-depth);
+  height: var(--awds-pop-tail-base);
+  margin-top: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(0 0, 100% 50%, 0 100%);
+  --awds-pop-tail-shift: var(--awds-pop-hairline-width) 0;
 }
 
-/* Right: хвост слева, смотрит влево */
+/* Right: панель справа от якоря — хвост слева, остриём влево */
 .pop--side-right .pop__tail {
-  left: calc(-0.5 * var(--awds-pop-tail));
+  right: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-left:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  width: var(--awds-pop-tail-depth);
+  height: var(--awds-pop-tail-base);
+  margin-top: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(100% 0, 100% 100%, 0 50%);
+  --awds-pop-tail-shift: calc(-1 * var(--awds-pop-hairline-width)) 0;
 }

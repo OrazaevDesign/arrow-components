@@ -1,0 +1,14 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Корень сверки — панель: в макете рамка content, в коде .pop__panel. Содержимое — слот: в макете образец «. / swap», на проверочной странице блок того же размера, текст образца не сверяется. Хвост — видимое снаружи панели.",
+  "root_layer": "content",
+  "dom_root": ".pop__panel",
+  "skip_texts": true,
+  "css": ["popover.css"],
+  "tag": "span",
+  "class": "pop",
+  "axes": { "side": { "*": { "class": "pop--side-{value}" } } },
+  "variants": {
+    "default": { "html": "<span class=\"pop__tail\"></span><span class=\"pop__panel\"><span style=\"display:block;width:{w}px;height:{h}px\"></span></span>" }
+  },
+  "parts": { "default": { "tail": { "figma": "shape", "dom": ".pop__tail", "outside": true, "pseudo": "::after" } } }
+}

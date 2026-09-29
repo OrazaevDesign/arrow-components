@@ -78,6 +78,12 @@
         <option value="text">текст</option>
       </select>
     </label>
+    <label>Хвост:
+      <select id="tail">
+        <option value="on">show-tail=on</option>
+        <option value="off">show-tail=off</option>
+      </select>
+    </label>
   </div>
 
   <h2>Четыре стороны</h2>
@@ -90,21 +96,23 @@
       text: '<div class="demo-text">Панель держит любое содержимое: меню, календарь, фильтр.</div>',
     };
 
-    function pop(side, kind) {
+    function pop(side, kind, tail) {
       return `<span class="pop pop--side-${side}">`
-        + `<span class="pop__tail"></span>`
+        + (tail === 'off' ? '' : `<span class="pop__tail"></span>`)
         + `<span class="pop__panel">${CONTENT[kind]}</span>`
         + `</span>`;
     }
 
     function render() {
       const kind = document.querySelector('#content').value;
+      const tail = document.querySelector('#tail').value;
       document.querySelector('#grid').innerHTML = SIDES.map(side =>
-        `<div class="cell">${pop(side, kind)}<span class="label">${side}</span></div>`
+        `<div class="cell">${pop(side, kind, tail)}<span class="label">${side}</span></div>`
       ).join('');
     }
 
     document.querySelector('#content').addEventListener('change', render);
+    document.querySelector('#tail').addEventListener('change', render);
     document.querySelector('#theme').addEventListener('change', (e) => {
       document.documentElement.classList.remove('theme-light', 'theme-dark');
       document.documentElement.classList.add(`theme-${e.target.value}`);

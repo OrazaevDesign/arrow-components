@@ -55,7 +55,7 @@
 | Хайрлайн хвоста | `rgb(var(--extended-shadow-3))` — ячейка `popover/hairline` |
 | Тень | `var(--awds-shadow-elevation-3)` |
 | Скругление | `var(--awds-rounded-border-radius-600)` (10px) |
-| Хвост | квадрат `var(--awds-space-2)` (8px), повёрнут на 45° |
+| Хвост | треугольник 16×6: `--awds-pop-tail-base` (space-4) × `--awds-pop-tail-depth` (space-1-5) |
 
 ## Состояния
 
