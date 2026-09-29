@@ -1,5 +1,9 @@
 # select-combi — журнал версий
 
+## 1.0.29 — 2026-09-29 — PATCH · visual
+Ячейки list/accent-selected/border-* перенаправлены в студии на focus/container-core — обводка выбранного пункта accent того же цвета, что фон; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: у выбранного пункта accent пропала заметная обводка, рамка слилась с фоном.
+
 ## 1.0.28 — 2026-09-29 — PATCH · visual
 Ячейки list/accent-selected/* и list/variation-selected/* перенаправлены в студии с роли primary на роль focus; код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: выбранные пункты accent и variation на темах, где focus = primary, без изменений; на shopotam стали синими вместо красного.
