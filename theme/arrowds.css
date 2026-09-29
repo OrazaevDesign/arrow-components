@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 616 из 1354 объявленных в теме. */
+   Переменных: 622 из 1354 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -252,12 +252,18 @@
   --focus-container-base-light: 249 247 253;
   --focus-container-base-dark: 38 23 71;
   --focus-container-base: var(--focus-container-base-light);
+  --focus-container-core-light: 242 239 251;
+  --focus-container-core-dark: 21 13 38;
+  --focus-container-core: var(--focus-container-core-light);
   --focus-container-on-highest-light: 47 29 90;
   --focus-container-on-highest-dark: 232 226 247;
   --focus-container-on-highest: var(--focus-container-on-highest-light);
   --focus-container-on-high-light: 96 54 194;
   --focus-container-on-high-dark: 185 167 227;
   --focus-container-on-high: var(--focus-container-on-high-light);
+  --focus-container-on-lowest-light: 219 210 242;
+  --focus-container-on-lowest-dark: 47 29 90;
+  --focus-container-on-lowest: var(--focus-container-on-lowest-light);
   --awds-layout-section-width-medium-desktop: 900px;
   --awds-layout-section-width-medium-tablet: 900px;
   --awds-layout-section-width-medium-mobile: 900px;
@@ -701,8 +707,10 @@
   --focus-core: var(--focus-core-light);
   --focus-dim: var(--focus-dim-light);
   --focus-container-base: var(--focus-container-base-light);
+  --focus-container-core: var(--focus-container-core-light);
   --focus-container-on-highest: var(--focus-container-on-highest-light);
   --focus-container-on-high: var(--focus-container-on-high-light);
+  --focus-container-on-lowest: var(--focus-container-on-lowest-light);
 }
 .theme-dark {
   --primary-core: var(--primary-core-dark);
@@ -788,8 +796,10 @@
   --focus-core: var(--focus-core-dark);
   --focus-dim: var(--focus-dim-dark);
   --focus-container-base: var(--focus-container-base-dark);
+  --focus-container-core: var(--focus-container-core-dark);
   --focus-container-on-highest: var(--focus-container-on-highest-dark);
   --focus-container-on-high: var(--focus-container-on-high-dark);
+  --focus-container-on-lowest: var(--focus-container-on-lowest-dark);
 }
 .desktop {
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);

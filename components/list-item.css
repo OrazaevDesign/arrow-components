@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@2.0.1
+/* ArrowDS · list-item@2.2.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -52,18 +52,19 @@
               color 0.15s ease-out;
 }
 
-.list-item:focus-visible {
+.list-item:focus-visible, .list-item:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
   outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
   outline-offset: var(--awds-focus-offset-inside);
 }
 
-.list-item:disabled, .list-item[aria-disabled="true"] {
+.list-item:disabled, .list-item[aria-disabled="true"], .list-item:has(> .list-item__prefix > :is(.checkbox, .radio) > input:disabled) {
   opacity: var(--awds-opacity-40);   
   pointer-events: none;
 }
 
 .list-item__prefix, .list-item__suffix {
   box-sizing: border-box;
+  color: var(--awds-list-item-icon-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,6 +82,92 @@
 
 .list-item__check {
   color: var(--awds-list-item-check);
+}
+
+.list-item__chevron {
+  color: var(--awds-list-item-chevron);
+}
+
+.list-item .list-item__prefix > .checkbox, .list-item--600 .list-item__prefix > .checkbox, .list-item--500 .list-item__prefix > .checkbox, .list-item--400 .list-item__prefix > .checkbox, .list-item--300 .list-item__prefix > .checkbox {
+  --awds-checkbox-padding: var(--awds-space-0);   
+  --awds-checkbox-icon:    var(--awds-space-5);   
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-300);
+}
+
+.list-item--200 .list-item__prefix > .checkbox, .list-item--100 .list-item__prefix > .checkbox, .list-item--50 .list-item__prefix > .checkbox {
+  --awds-checkbox-padding: var(--awds-space-0);   
+  --awds-checkbox-icon:    var(--awds-space-4);   
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-200);
+}
+
+.list-item .list-item__prefix > .radio, .list-item--600 .list-item__prefix > .radio, .list-item--500 .list-item__prefix > .radio, .list-item--400 .list-item__prefix > .radio, .list-item--300 .list-item__prefix > .radio {
+  --awds-radio-padding: var(--awds-space-0);   
+  --awds-radio-icon:    var(--awds-space-5);
+}
+
+.list-item--200 .list-item__prefix > .radio, .list-item--100 .list-item__prefix > .radio, .list-item--50 .list-item__prefix > .radio {
+  --awds-radio-padding: var(--awds-space-0);   
+  --awds-radio-icon:    var(--awds-space-4);
+}
+
+.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   
+  --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   
+  --awds-checkbox-border: rgb(var(--secondary-container-on));
+}
+
+.list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   
+  --awds-checkbox-chroma: rgb(var(--secondary-container-dim));   
+  --awds-checkbox-border: rgb(var(--secondary-container-on-low));
+}
+
+.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--primary-dim));   
+  --awds-checkbox-chroma: rgb(var(--primary-chroma));   
+  --awds-checkbox-border: rgb(var(--primary-dim));
+}
+
+.list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--primary-core));   
+  --awds-checkbox-chroma: rgb(var(--primary-core));   
+  --awds-checkbox-border: rgb(var(--primary-core));
+}
+
+.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+  --awds-radio-bg:     rgb(var(--secondary-container-dim));   
+  --awds-radio-chroma: rgb(var(--secondary-container-chroma));   
+  --awds-radio-border: rgb(var(--secondary-container-on));
+}
+
+.list-item:active > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+  --awds-radio-bg:     rgb(var(--secondary-container-dim));   
+  --awds-radio-chroma: rgb(var(--secondary-container-dim));   
+  --awds-radio-border: rgb(var(--secondary-container-on-low));
+}
+
+.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--primary-dim));   
+  --awds-radio-chroma: rgb(var(--primary-chroma));   
+  --awds-radio-border: rgb(var(--primary-dim));
+}
+
+.list-item:active > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--primary-core));   
+  --awds-radio-chroma: rgb(var(--primary-core));   
+  --awds-radio-border: rgb(var(--primary-core));
+}
+
+.list-item__prefix > .checkbox > .checkbox__input:focus-visible + .checkbox__box, .list-item__prefix > .radio > .radio__input:focus-visible + .radio__box {
+  outline: none;
+}
+
+.list-item__prefix > .checkbox:has(> .checkbox__input:disabled), .list-item__prefix > .radio:has(> .radio__input:disabled) {
+  opacity: var(--awds-opacity-100);
+}
+
+.list-item:has(> .list-item__prefix > :is(.checkbox, .radio)) .list-item__check {
+  display: none;
 }
 
 .list-item__content {
@@ -216,11 +303,43 @@
 }
 
 .list-item-accent-selected {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+}
+
+.list-item-accent-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+}
+
+.list-item-accent-selected:focus-visible, .list-item-accent-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+}
+
+.list-item-accent-selected:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -234,19 +353,43 @@
 }
 
 .list-item-actual-selected {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--accent-core));   
-  --awds-list-item-desc:    rgb(var(--accent-core));   
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
+}
+
+.list-item-actual-selected:focus-visible, .list-item-actual-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item-actual-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item.list-item-default-selected {
@@ -254,48 +397,83 @@
 }
 
 .list-item-default-selected {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--secondary-container-on));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--secondary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-default-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-dim));   
-  --awds-list-item-border:  rgb(var(--secondary-container-dim));
+  --awds-list-item-bg:          rgb(var(--secondary-container-dim));   
+  --awds-list-item-border:      rgb(var(--secondary-container-dim));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--secondary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
+}
+
+.list-item-default-selected:focus-visible, .list-item-default-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--secondary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-default-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-core));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--secondary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-default {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-core));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--surface-on-highest));
 }
 
 .list-item-default:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-dim));   
-  --awds-list-item-border:  rgb(var(--secondary-container-dim));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--secondary-container-dim));   
+  --awds-list-item-border:      rgb(var(--secondary-container-dim));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
-.list-item-default:focus-visible {
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+.list-item-default:focus-visible, .list-item-default:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-default:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item.list-item-menu-selected {
@@ -303,35 +481,83 @@
 }
 
 .list-item-menu-selected {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-color:   rgb(var(--accent-core));   
-  --awds-list-item-desc:    rgb(var(--accent-core));   
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
+}
+
+.list-item-menu-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
+}
+
+.list-item-menu-selected:focus-visible, .list-item-menu-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
+}
+
+.list-item-menu-selected:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item-menu {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   
-  --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-surface));   
-  --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-core));   
-  --awds-list-item-desc:    rgb(var(--accent-core));   
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--surface-surface));   
+  --awds-list-item-border:      rgb(var(--surface-surface));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
+}
+
+.list-item-menu:focus-visible, .list-item-menu:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-menu:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-surface));   
-  --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-core));   
-  --awds-list-item-desc:    rgb(var(--accent-core));   
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--surface-surface));   
+  --awds-list-item-border:      rgb(var(--surface-surface));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item.list-item-tabbar-selected {
@@ -382,23 +608,43 @@
 }
 
 .list-item-tabbar-selected {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   
-  --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-color:   rgb(var(--accent-core));   
-  --awds-list-item-desc:    rgb(var(--accent-core));   
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
-.list-item-tabbar-selected:focus-visible {
-  --awds-list-item-check:   rgb(var(--accent-core));
+.list-item-tabbar-selected:focus-visible, .list-item-tabbar-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item-tabbar-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item.list-item-tabbar {
@@ -449,79 +695,123 @@
 }
 
 .list-item-tabbar {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   
-  --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-tabbar:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-color:   rgb(var(--accent-core));   
-  --awds-list-item-desc:    rgb(var(--accent-core));   
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
-.list-item-tabbar:focus-visible {
-  --awds-list-item-color:   rgb(var(--accent-core));
+.list-item-tabbar:focus-visible, .list-item-tabbar:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item-tabbar:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-surface));   
-  --awds-list-item-border:  rgb(var(--surface-surface));   
-  --awds-list-item-color:   rgb(var(--accent-core));   
-  --awds-list-item-desc:    rgb(var(--accent-core));   
-  --awds-list-item-check:   rgb(var(--accent-core));
+  --awds-list-item-bg:          rgb(var(--surface-surface));   
+  --awds-list-item-border:      rgb(var(--surface-surface));   
+  --awds-list-item-color:       rgb(var(--accent-core));   
+  --awds-list-item-desc:        rgb(var(--accent-core));   
+  --awds-list-item-check:       rgb(var(--accent-core));   
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   
+  --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
 .list-item-transparent {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   
-  --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-core));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-transparent:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-core));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
-.list-item-transparent:focus-visible {
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+.list-item-transparent:focus-visible, .list-item-transparent:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-transparent:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   
-  --awds-list-item-border:  rgb(var(--extended-transparent));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   
+  --awds-list-item-border:      rgb(var(--extended-transparent));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
 .list-item-variation-img {
   --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
   --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-variation-img:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:  rgb(var(--primary-container-on));   
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));
+  --awds-list-item-border:      rgb(var(--primary-container-on));   
+  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
 }
 
-.list-item-variation-img:focus-visible {
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+.list-item-variation-img:focus-visible, .list-item-variation-img:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:      rgb(var(--surface-bright));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-variation-img:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-variation-img {
@@ -584,25 +874,43 @@
 }
 
 .list-item-variation-indeterminate {
-  --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on));
+  --awds-list-item-bg:          rgb(var(--surface-bright));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-container-on));   
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--primary-container-core));   
+  --awds-list-item-border:      rgb(var(--primary-container-on));   
+  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
+}
+
+.list-item-variation-indeterminate:focus-visible, .list-item-variation-indeterminate:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--surface-bright));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-variation-indeterminate:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--surface-bright));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-container-on));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item.list-item-variation-selected {
@@ -649,11 +957,43 @@
 }
 
 .list-item-variation-selected {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-core));   
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));   
-  --awds-list-item-check:   rgb(var(--primary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-core));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+}
+
+.list-item-variation-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-core));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+}
+
+.list-item-variation-selected:focus-visible, .list-item-variation-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-core));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+}
+
+.list-item-variation-selected:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-core));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 .list-item.list-item-variation {
@@ -696,29 +1036,43 @@
 }
 
 .list-item-variation {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));   
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
   --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--primary-container-core));   
-  --awds-list-item-border:  rgb(var(--primary-container-on));   
-  --awds-list-item-color:   rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:    rgb(var(--primary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--primary-container-core));   
+  --awds-list-item-border:      rgb(var(--primary-container-on));   
+  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
 }
 
-.list-item-variation:focus-visible {
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+.list-item-variation:focus-visible, .list-item-variation:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 .list-item-variation:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:   rgb(var(--secondary-container-on-high));   
-  --awds-list-item-desc:    rgb(var(--secondary-container-on-high));
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-high));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:   transparent;
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
 }

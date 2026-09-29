@@ -1,4 +1,4 @@
-/* ArrowDS · button-menu@2.0.9
+/* ArrowDS · button-menu@2.0.11
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -96,9 +96,9 @@
 }
 
 .btn-menu-accent-selected {
-  --awds-btn-menu-bg:      rgb(var(--primary-container-core));   
-  --awds-btn-menu-border:  rgb(var(--primary-container-on-lowest));   
-  --awds-btn-menu-chevron: rgb(var(--primary-container-on-highest));
+  --awds-btn-menu-bg:      rgb(var(--focus-container-core));   
+  --awds-btn-menu-border:  rgb(var(--focus-container-on-lowest));   
+  --awds-btn-menu-chevron: rgb(var(--focus-container-on-highest));
 }
 
 @media (prefers-reduced-motion: reduce) {

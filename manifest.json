@@ -120,7 +120,7 @@
     },
     {
       "name": "button-menu",
-      "version": "2.0.9",
+      "version": "2.0.11",
       "variants": [
         "default",
         "accent-selected"
@@ -131,7 +131,7 @@
         400
       ],
       "rules": 16,
-      "bytes": 3232
+      "bytes": 3227
     },
     {
       "name": "button-overhung",
@@ -181,7 +181,7 @@
     },
     {
       "name": "datepicker",
-      "version": "1.0.4",
+      "version": "1.0.7",
       "variants": [
         "date",
         "month",
@@ -189,8 +189,8 @@
         "range"
       ],
       "sizes": null,
-      "rules": 24,
-      "bytes": 7759
+      "rules": 27,
+      "bytes": 8122
     },
     {
       "name": "emblem",
@@ -345,7 +345,7 @@
     },
     {
       "name": "list-item",
-      "version": "2.0.1",
+      "version": "2.2.1",
       "variants": [
         "transparent",
         "default",
@@ -370,8 +370,8 @@
         500,
         600
       ],
-      "rules": 107,
-      "bytes": 27034
+      "rules": 136,
+      "bytes": 49611
     },
     {
       "name": "modal",
@@ -525,7 +525,7 @@
     },
     {
       "name": "select",
-      "version": "1.0.26",
+      "version": "1.0.27",
       "variants": [
         "default",
         "light",
@@ -544,11 +544,11 @@
         600
       ],
       "rules": 56,
-      "bytes": 26895
+      "bytes": 26881
     },
     {
       "name": "select-combi",
-      "version": "1.0.27",
+      "version": "1.0.28",
       "variants": [
         "default",
         "light",
@@ -564,7 +564,7 @@
         600
       ],
       "rules": 58,
-      "bytes": 27171
+      "bytes": 27157
     },
     {
       "name": "slider",
@@ -720,13 +720,13 @@
     }
   ],
   "bundle": {
-    "bytes": 324803,
-    "rules": 1307,
-    "hash": "sha256:f58d5465c15de096cf2634bdfd466aed9c779ff304a1870b82c60952478681da"
+    "bytes": 347710,
+    "rules": 1339,
+    "hash": "sha256:d664133c94f7c7dcba2d22276e0c38529250c9009966c0fa9120e08c4a26e8eb"
   },
   "theme": {
-    "bytes": 60217,
-    "variables_kept": 616,
+    "bytes": 60793,
+    "variables_kept": 622,
     "variables_declared": 1354,
     "missing": []
   },

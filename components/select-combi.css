@@ -1,4 +1,4 @@
-/* ArrowDS · select-combi@1.0.27
+/* ArrowDS · select-combi@1.0.28
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
@@ -370,13 +370,13 @@
     --awds-list-item-border: rgb(var(--secondary-container-core));   
   }
   .scombi__field option:checked:not(:disabled):not([aria-disabled="true"]) {
-    --awds-list-item-bg:     rgb(var(--primary-container-core));   
-    --awds-list-item-border: rgb(var(--primary-container-on-lowest));   
-    --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
-    --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
-    --awds-list-item-check:  rgb(var(--primary-container-on-high));   
-    --awds-list-item-icon-color: rgb(var(--primary-container-on-highest));   
-    --awds-list-item-chevron: rgb(var(--primary-container-on-highest));   
+    --awds-list-item-bg:     rgb(var(--focus-container-core));   
+    --awds-list-item-border: rgb(var(--focus-container-on-lowest));   
+    --awds-list-item-color:  rgb(var(--focus-container-on-highest));   
+    --awds-list-item-desc:   rgb(var(--focus-container-on-high));   
+    --awds-list-item-check:  rgb(var(--focus-container-on-high));   
+    --awds-list-item-icon-color: rgb(var(--focus-container-on-highest));   
+    --awds-list-item-chevron: rgb(var(--focus-container-on-highest));   
   }
   .scombi__field option:disabled {
     opacity: var(--awds-opacity-40);   

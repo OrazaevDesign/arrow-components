@@ -1,4 +1,4 @@
-/* ArrowDS · datepicker@1.0.4
+/* ArrowDS · datepicker@1.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -43,9 +43,21 @@
   padding: var(--awds-dpick-panel-padding);
 }
 
+.dpick:not(.dpick--range) > .dpick__month {
+  padding: 0;
+}
+
 .dpick--range .dpick__month + .dpick__month {
-  border-inline-start: var(--awds-space-px) solid rgb(var(--secondary-container-core));   
-  padding-inline-start: calc(var(--awds-dpick-panel-padding) + var(--awds-space-1));
+  position: relative;
+  margin-inline-start: calc(var(--awds-space-2) + var(--awds-space-1));
+}
+
+.dpick--range .dpick__month + .dpick__month::before {
+  content: "";
+  position: absolute;
+  inset-block: var(--awds-space-6);
+  inset-inline-start: calc(-1 * var(--awds-space-2));
+  border-inline-start: var(--awds-space-px) solid rgb(var(--secondary-container-core));
 }
 
 .dpick__header {
@@ -96,6 +108,7 @@
 
 .dpick__title {
   flex: 1 1 auto;
+  align-self: stretch;
   min-width: 0;
   padding: 0;
   border: 0;
@@ -133,6 +146,10 @@
 
 .dpick--month, .dpick--year {
   --awds-dpick-columns: 3;
+}
+
+.dpick--month .dpick__cell, .dpick--year .dpick__cell {
+  min-block-size: var(--awds-space-13);
 }
 
 .dpick__cell {
@@ -181,14 +198,14 @@
 }
 
 .dpick__cell--selected {
-  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           
-  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      
-  --awds-dpick-cell-color:  rgb(var(--primary-container-on-highest));
+  --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           
+  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));      
+  --awds-dpick-cell-color:  rgb(var(--focus-container-on-highest));
 }
 
 .dpick__cell--selected:hover {
-  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           
-  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));
+  --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           
+  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));
 }
 
 .dpick__cell:disabled, .dpick__cell[aria-disabled="true"] {
