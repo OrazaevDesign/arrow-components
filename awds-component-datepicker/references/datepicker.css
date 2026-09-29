@@ -102,12 +102,30 @@
   padding: var(--awds-dpick-panel-padding);
 }
 
-/* Две панели в режиме периода разделены линией. В макете это отдельная колонка
-   Divider шириной 8; здесь — граница второго месяца с тем же отступом, лишний
-   узел ради вертикальной линии не нужен. */
+/* У одиночного вида месяц стоит прямо в панели: отступ даёт панель (4px), своего у месяца
+   нет — в макете содержимое сразу в корне. У периода месяцев два, и отступ каждого
+   нужен — там в макете колонки Start и End со своим padding. До 27.09.2026 у одиночного
+   вида отступ складывался вдвое (8px вместо 4). */
+.dpick:not(.dpick--range) > .dpick__month {
+  padding: 0;
+}
+
+/* Две панели в режиме периода разделены линией. В макете между колонками Start и End —
+   зазор 4, колонка Divider шириной 8 с линией по центру и ещё зазор 4: 16px от края до края.
+   Здесь — внешний отступ второго месяца (8 + 4 поверх gap панели) и линия псевдоэлементом
+   посередине промежутка. До 27.09.2026 линия была рамкой второго месяца и съедала его
+   внутренний отступ: период выходил 620 вместо 632 (component-figma-check). */
 .dpick--range .dpick__month + .dpick__month {
+  position: relative;
+  margin-inline-start: calc(var(--awds-space-2) + var(--awds-space-1));
+}
+
+.dpick--range .dpick__month + .dpick__month::before {
+  content: "";
+  position: absolute;
+  inset-block: var(--awds-space-6);
+  inset-inline-start: calc(-1 * var(--awds-space-2));
   border-inline-start: var(--awds-space-px) solid rgb(var(--secondary-container-core));   /* #cell list/range/border */
-  padding-inline-start: calc(var(--awds-dpick-panel-padding) + var(--awds-space-1));
 }
 
 /* === Шапка === */
@@ -128,7 +146,7 @@
   padding: var(--awds-dpick-nav-padding);
   border: 0;
   border-radius: var(--awds-dpick-cell-rounded);
-  background: rgb(var(--extended-transparent));                           /* #cell list/transparent/bg */
+  background: rgb(var(--extended-transparent));                           /* #cell list/transparent/bg-rest */
   color: rgb(var(--surface-on-high));                                     /* #cell button/ghost/color */
   cursor: pointer;
   opacity: var(--awds-opacity-100);                                       /* #cell opacity/control/enabled */
@@ -166,10 +184,13 @@
 /* Заголовок — кнопка: клик переключает вид на месяцы, затем на годы. */
 .dpick__title {
   flex: 1 1 auto;
+  /* На всю высоту шапки: в макете заголовок — button-area высотой 36, это его зона нажатия
+     (до 27.09.2026 кнопка была высотой строки, 20px — component-figma-check). */
+  align-self: stretch;
   min-width: 0;
   padding: 0;
   border: 0;
-  background: rgb(var(--extended-transparent));                           /* #cell list/transparent/bg */
+  background: rgb(var(--extended-transparent));                           /* #cell list/transparent/bg-rest */
   color: rgb(var(--surface-on-highest));                                  /* #cell link/contrast */
   font-family: inherit;
   font-size: var(--awds-dpick-title-fs);
@@ -210,11 +231,20 @@
   --awds-dpick-columns: 3;
 }
 
+/* Ячейка месяца и года — 52px: в макете она зафиксирована на этой высоте, а подпись
+   36px стоит в ней по центру — мишень под палец крупнее, чем у дня (component-figma-check,
+   27.09.2026: было 36). Высоту панели макет держит фиксированной (312), здесь она
+   выводится из сетки. */
+.dpick--month .dpick__cell,
+.dpick--year .dpick__cell {
+  min-block-size: var(--awds-space-13);
+}
+
 /* === Ячейка === */
 .dpick__cell {
-  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg */
-  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border */
-  --awds-dpick-cell-color:  rgb(var(--secondary-container-on-highest));   /* #cell list/transparent/color */
+  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg-rest */
+  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border-rest */
+  --awds-dpick-cell-color:  rgb(var(--secondary-container-on-highest));   /* #cell list/transparent/color-rest */
 
   display: flex;
   align-items: center;
@@ -247,13 +277,13 @@
 /* Сегодня. Красный текст и серая рамка — ячейка остаётся невыбранной:
    выделение сегодняшнего дня не значит, что его выбрали. */
 .dpick__cell--today {
-  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border */
-  --awds-dpick-cell-color:  rgb(var(--accent-core));              /* #cell list/actual-selected/color */
+  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border-rest */
+  --awds-dpick-cell-color:  rgb(var(--accent-core));              /* #cell list/actual-selected/color-rest */
 }
 
 .dpick__cell--today:hover {
   --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/actual-selected/bg-hover */
-  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border */
+  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border-hover */
 }
 
 /* Внутри выбранного периода. Своя группа ячеек, не hover — см. шапку файла. */
@@ -266,14 +296,14 @@
 /* Выбранная дата — и концы периода тоже. Правило идёт после range: конец
    периода обязан выглядеть выбранным, а не подсвеченным. */
 .dpick__cell--selected {
-  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           /* #cell list/accent-selected/bg */
-  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      /* #cell list/accent-selected/border */
-  --awds-dpick-cell-color:  rgb(var(--primary-container-on-highest));     /* #cell list/accent-selected/color */
+  --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           /* #cell list/accent-selected/bg-rest */
+  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));      /* #cell list/accent-selected/border-rest */
+  --awds-dpick-cell-color:  rgb(var(--focus-container-on-highest));     /* #cell list/accent-selected/color-rest */
 }
 
 .dpick__cell--selected:hover {
-  --awds-dpick-cell-bg:     rgb(var(--primary-container-core));           /* #cell list/accent-selected/bg */
-  --awds-dpick-cell-border: rgb(var(--primary-container-on-lowest));      /* #cell list/accent-selected/border */
+  --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           /* #cell list/accent-selected/bg-hover */
+  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));      /* #cell list/accent-selected/border-hover */
 }
 
 /* Ячейка соседнего месяца и дата вне допустимого диапазона. Гашение — то же
@@ -286,6 +316,6 @@
 
 .dpick__cell:disabled:hover,
 .dpick__cell[aria-disabled="true"]:hover {
-  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg */
-  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border */
+  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg-rest */
+  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border-rest */
 }

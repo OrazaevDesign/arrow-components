@@ -1,10 +1,10 @@
 {
   "component": "datepicker",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "contract_hash": "sha256:7c095f252b9db71ce9c0b845e58bfc4120462d25f788e041f30511d0ca216aa0",
-  "artifact_hash": "sha256:f80373974682b7d86304f7196dc3c080dc0a0e397428986ac5947dfa6c628f0d",
-  "visual_change": false,
-  "released_at": "2026-09-26T16:58:03.218Z",
+  "artifact_hash": "sha256:1ac8dd5799ee085c2a7d5dcc20a8d4ea5e2d3a3c30610dcaeae5956eb00090ed",
+  "visual_change": true,
+  "released_at": "2026-09-29T18:28:57.624Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -222,7 +222,7 @@
       "status": "answered",
       "raised_at": "2026-09-17",
       "target": "State",
-      "answer": "Закрыт 17.09.2026: владелец перепубликовал библиотеку 📜 tokens ↪ studio, importVariableByKeyAsync начал находить ключи. Привязаны все 30 ячеек периода — фон на list/range/bg, рамка на list/range/border, текст на list/range/color, — и тем же проходом они переведены с state=hover на state=rest, как и планировалось (по отдельности нельзя: rest без привязки стёр бы подсветку). Заодно закрыт остальной долг той же публикации: 5 панелей календаря и 21 подпись дня недели на datepicker/panel/bg и datepicker/weekday/color, 10 узлов строки файла у uploader, 6 привязок панели . / dropdown на ступенях 50, 100 и 600. Значения нигде не сдвинулись — проверено чтением обратно.",
+      "answer": "Закрыт 17.09.2026: владелец перепубликовал библиотеку 📜 tokens ↪ studio, importVariableByKeyAsync начал находить ключи. Привязаны все 30 ячеек периода — фон на list/range/bg, рамка на list/range/border, текст на list/range/color, — и тем же проходом они переведены с state=hover на state=rest, как и планировалось (по отдельности нельзя: rest без привязки стёр бы подсветку). Заодно закрыт остальной долг той же публикации: 5 панелей календаря и 21 подпись дня недели на datepicker/panel/bg и datepicker/weekday/color, 10 узлов строки файла у uploader, 6 привязок панели / dropdown на ступенях 50, 100 и 600. Значения нигде не сдвинулись — проверено чтением обратно.",
       "asana_gid": "1218587736309537",
       "answered_at": "2026-09-17"
     }
@@ -253,13 +253,15 @@
     "--awds-rounded-border-radius-400",
     "--awds-shadow-elevation-3",
     "--awds-space-1",
+    "--awds-space-13",
     "--awds-space-2",
     "--awds-space-5",
+    "--awds-space-6",
     "--awds-space-px",
     "--extended-transparent",
-    "--primary-container-core",
-    "--primary-container-on-highest",
-    "--primary-container-on-lowest",
+    "--focus-container-core",
+    "--focus-container-on-highest",
+    "--focus-container-on-lowest",
     "--secondary-container-core",
     "--secondary-container-on-highest",
     "--secondary-container-on-lowest",
@@ -270,8 +272,8 @@
   ],
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "6925222",
-    "pushed_at": "2026-09-26T10:14:28.960090Z",
+    "commit": "6665458",
+    "pushed_at": "2026-09-26T16:59:01.339578Z",
     "github_urls": {
       "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-datepicker/SKILL.md",
       "storybook": "https://orazaevdesign.github.io/arrow-components/#datepicker",

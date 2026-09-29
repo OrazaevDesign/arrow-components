@@ -1,0 +1,119 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Составной компонент — сверяется в собственном превью скилла (preview_map), где календарь собран настоящей разметкой. Сверяются корень и части: шапка, стрелка, заголовок, строка дней недели, сетка, первая ячейка, выбранная ячейка (только размер и цвет — её место зависит от даты). Набор datepicker-range · view=month (период месяцев) в коде не реализован — не сверяется. Первая ячейка дня сверяется только размером: 1 сентября 2026 — вторник, а макет рисует «1» под понедельником (место в сетке зависит от даты, не от вёрстки).",
+  "css": [],
+  "preview_map": {
+    "date": "#views .case:nth-child(1) .dpick",
+    "month": "#views .case:nth-child(2) .dpick",
+    "year": "#views .case:nth-child(3) .dpick",
+    "range · view=date": "#range .dpick"
+  },
+  "skip_content": true,
+  "parts": {
+    "date": {
+      "header": {
+        "figma": "Header",
+        "dom": ".dpick__header"
+      },
+      "prev": {
+        "figma": "button / ghost",
+        "dom": ".dpick__nav"
+      },
+      "title": {
+        "figma": "button-area / contrast",
+        "dom": ".dpick__title"
+      },
+      "weekdays": {
+        "figma": "Day",
+        "dom": ".dpick__weekdays"
+      },
+      "grid": {
+        "figma": "Grid",
+        "dom": ".dpick__grid"
+      },
+      "cell": {
+        "figma": "list-item / transparent",
+        "dom": ".dpick__cell",
+        "size_only": true
+      },
+      "selected": {
+        "figma": "list-item / accent-selected",
+        "dom": ".dpick__cell--selected",
+        "size_only": true
+      }
+    },
+    "month": {
+      "header": {
+        "figma": "Header",
+        "dom": ".dpick__header"
+      },
+      "title": {
+        "figma": "button-area / contrast",
+        "dom": ".dpick__title"
+      },
+      "grid": {
+        "figma": "Grid",
+        "dom": ".dpick__grid"
+      },
+      "cell": {
+        "figma": "list-item / transparent",
+        "dom": ".dpick__cell",
+        "size_only": true
+      },
+      "selected": {
+        "figma": "list-item / accent-selected",
+        "dom": ".dpick__cell--selected",
+        "size_only": true
+      }
+    },
+    "year": {
+      "header": {
+        "figma": "Header",
+        "dom": ".dpick__header"
+      },
+      "title": {
+        "figma": "button-area / contrast",
+        "dom": ".dpick__title"
+      },
+      "grid": {
+        "figma": "Grid",
+        "dom": ".dpick__grid"
+      },
+      "cell": {
+        "figma": "list-item / transparent",
+        "dom": ".dpick__cell",
+        "size_only": true
+      },
+      "selected": {
+        "figma": "list-item / accent-selected",
+        "dom": ".dpick__cell--selected",
+        "size_only": true
+      }
+    },
+    "range": {
+      "header": {
+        "figma": "Header",
+        "dom": ".dpick__header"
+      },
+      "weekdays": {
+        "figma": "Day",
+        "dom": ".dpick__weekdays"
+      },
+      "grid": {
+        "figma": "Grid",
+        "dom": ".dpick__grid"
+      },
+      "cell": {
+        "figma": "list-item / transparent",
+        "dom": ".dpick__cell",
+        "size_only": true
+      }
+    }
+  },
+  "exceptions": [
+    {
+      "cells": "^(month|year) ·",
+      "prop": "^(высота|grid: (y|h)|cell: y|selected: y)$",
+      "why": "в макете панель month/year зафиксирована на 312 и сетка центрируется в свободном месте; в коде высота выводится из сетки — строки те же, лишнего воздуха нет"
+    }
+  ]
+}

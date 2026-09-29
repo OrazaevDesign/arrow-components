@@ -1,0 +1,697 @@
+{
+ "fileKey": "470rar5EfRm4n14vHMXbpc",
+ "component": "datepicker",
+ "fetched": "2026-09-27",
+ "cells": [
+  {
+   "variant": "date",
+   "name": "view=date",
+   "props": {
+    "view": "date"
+   },
+   "root": {
+    "w": 304,
+    "h": 272,
+    "r": [
+     8,
+     8,
+     8,
+     8
+    ],
+    "fill": [
+     {
+      "t": "s",
+      "c": [
+       "ffffffff"
+      ]
+     }
+    ],
+    "stroke": null,
+    "op": 1,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "r": 0,
+      "s": 1,
+      "x": 0,
+      "y": 0,
+      "c": "00000008"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 8,
+      "s": -4,
+      "x": 0,
+      "y": 4,
+      "c": "0000000f"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 12,
+      "s": 0,
+      "x": 0,
+      "y": 6,
+      "c": "00000014"
+     }
+    ]
+   },
+   "texts": [],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "Header": {
+     "x": 4,
+     "y": 4,
+     "w": 296,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "button / ghost": {
+     "x": 4,
+     "y": 4,
+     "w": 36,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "g",
+      "c": [
+       "ffffff00",
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "button-area / contrast": {
+     "x": 44,
+     "y": 4,
+     "w": 216,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "Day": {
+     "x": 4,
+     "y": 44,
+     "w": 296,
+     "h": 24,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "Grid": {
+     "x": 4,
+     "y": 72,
+     "w": 296,
+     "h": 196,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / transparent": {
+     "x": 4,
+     "y": 72,
+     "w": 38.85,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / accent-selected": {
+     "x": 89.7,
+     "y": 112,
+     "w": 38.85,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "f2effbff"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    }
+   }
+  },
+  {
+   "variant": "month",
+   "name": "view=month",
+   "props": {
+    "view": "month"
+   },
+   "root": {
+    "w": 304,
+    "h": 312,
+    "r": [
+     8,
+     8,
+     8,
+     8
+    ],
+    "fill": [
+     {
+      "t": "s",
+      "c": [
+       "ffffffff"
+      ]
+     }
+    ],
+    "stroke": null,
+    "op": 1,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "r": 0,
+      "s": 1,
+      "x": 0,
+      "y": 0,
+      "c": "00000008"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 8,
+      "s": -4,
+      "x": 0,
+      "y": 4,
+      "c": "0000000f"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 12,
+      "s": 0,
+      "x": 0,
+      "y": 6,
+      "c": "00000014"
+     }
+    ]
+   },
+   "texts": [],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "Header": {
+     "x": 4,
+     "y": 4,
+     "w": 296,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "button / ghost": {
+     "x": 4,
+     "y": 4,
+     "w": 36,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "g",
+      "c": [
+       "ffffff00",
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "button-area / contrast": {
+     "x": 44,
+     "y": 4,
+     "w": 216,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "Grid": {
+     "x": 4,
+     "y": 44,
+     "w": 296,
+     "h": 264,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / transparent": {
+     "x": 4,
+     "y": 66,
+     "w": 96,
+     "h": 52,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / accent-selected": {
+     "x": 204,
+     "y": 66,
+     "w": 96,
+     "h": 52,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "f2effbff"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    }
+   }
+  },
+  {
+   "variant": "year",
+   "name": "view=year",
+   "props": {
+    "view": "year"
+   },
+   "root": {
+    "w": 304,
+    "h": 312,
+    "r": [
+     8,
+     8,
+     8,
+     8
+    ],
+    "fill": [
+     {
+      "t": "s",
+      "c": [
+       "ffffffff"
+      ]
+     }
+    ],
+    "stroke": null,
+    "op": 1,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "r": 0,
+      "s": 1,
+      "x": 0,
+      "y": 0,
+      "c": "00000008"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 8,
+      "s": -4,
+      "x": 0,
+      "y": 4,
+      "c": "0000000f"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 12,
+      "s": 0,
+      "x": 0,
+      "y": 6,
+      "c": "00000014"
+     }
+    ]
+   },
+   "texts": [],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "Header": {
+     "x": 4,
+     "y": 4,
+     "w": 296,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "button / ghost": {
+     "x": 4,
+     "y": 4,
+     "w": 36,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "g",
+      "c": [
+       "ffffff00",
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "button-area / contrast": {
+     "x": 44,
+     "y": 4,
+     "w": 216,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "Grid": {
+     "x": 4,
+     "y": 44,
+     "w": 296,
+     "h": 264,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / transparent": {
+     "x": 4,
+     "y": 66,
+     "w": 96,
+     "h": 52,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / accent-selected": {
+     "x": 204,
+     "y": 234,
+     "w": 96,
+     "h": 52,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "f2effbff"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    }
+   }
+  },
+  {
+   "variant": "range",
+   "name": "view=date",
+   "props": {
+    "view": "date"
+   },
+   "root": {
+    "w": 632,
+    "h": 280,
+    "r": [
+     8,
+     8,
+     8,
+     8
+    ],
+    "fill": [
+     {
+      "t": "s",
+      "c": [
+       "ffffffff"
+      ]
+     }
+    ],
+    "stroke": null,
+    "op": 1,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "r": 0,
+      "s": 1,
+      "x": 0,
+      "y": 0,
+      "c": "00000008"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 8,
+      "s": -4,
+      "x": 0,
+      "y": 4,
+      "c": "0000000f"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 12,
+      "s": 0,
+      "x": 0,
+      "y": 6,
+      "c": "00000014"
+     }
+    ]
+   },
+   "texts": [],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "Header": {
+     "x": 8,
+     "y": 8,
+     "w": 296,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "button / ghost": {
+     "x": 8,
+     "y": 8,
+     "w": 36,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "g",
+      "c": [
+       "ffffff00",
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "button-area / contrast": {
+     "x": 48,
+     "y": 8,
+     "w": 216,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "Day": {
+     "x": 8,
+     "y": 48,
+     "w": 296,
+     "h": 24,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "Grid": {
+     "x": 8,
+     "y": 76,
+     "w": 296,
+     "h": 196,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / transparent": {
+     "x": 8,
+     "y": 76,
+     "w": 38.85,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / accent-selected": {
+     "x": 93.7,
+     "y": 116,
+     "w": 38.85,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "f2effbff"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    }
+   }
+  },
+  {
+   "variant": "range",
+   "name": "view=month",
+   "props": {
+    "view": "month"
+   },
+   "root": {
+    "w": 632,
+    "h": 320,
+    "r": [
+     8,
+     8,
+     8,
+     8
+    ],
+    "fill": [
+     {
+      "t": "s",
+      "c": [
+       "ffffffff"
+      ]
+     }
+    ],
+    "stroke": null,
+    "op": 1,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "r": 0,
+      "s": 1,
+      "x": 0,
+      "y": 0,
+      "c": "00000008"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 8,
+      "s": -4,
+      "x": 0,
+      "y": 4,
+      "c": "0000000f"
+     },
+     {
+      "t": "DROP_SHADOW",
+      "r": 12,
+      "s": 0,
+      "x": 0,
+      "y": 6,
+      "c": "00000014"
+     }
+    ]
+   },
+   "texts": [],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "Header": {
+     "x": 8,
+     "y": 8,
+     "w": 296,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "button / ghost": {
+     "x": 8,
+     "y": 8,
+     "w": 36,
+     "h": 36,
+     "op": 1,
+     "fill": {
+      "t": "g",
+      "c": [
+       "ffffff00",
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "button-area / contrast": {
+     "x": 48,
+     "y": 8,
+     "w": 216,
+     "h": 36,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "Grid": {
+     "x": 8,
+     "y": 48,
+     "w": 296,
+     "h": 264,
+     "op": 1,
+     "fill": null,
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / transparent": {
+     "x": 8,
+     "y": 70,
+     "w": 96,
+     "h": 52,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "ffffff00"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "list-item / accent-selected": {
+     "x": 208,
+     "y": 70,
+     "w": 96,
+     "h": 52,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "f2effbff"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    }
+   }
+  }
+ ]
+}
