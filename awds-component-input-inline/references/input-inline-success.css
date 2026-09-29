@@ -169,8 +169,8 @@
 
 /* :focus-within у поля без обёртки не нужен — состояние держит сам <input>. */
 .iinline-success:focus {
-  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   /* #cell form-control/success/color-focus */
-  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/success/placeholder-focus */
+  --awds-iinline-color:       rgb(var(--focus-container-on-highest));   /* #cell form-control/success/color-focus */
+  --awds-iinline-placeholder: rgb(var(--focus-container-on-high));   /* #cell form-control/success/placeholder-focus */
 }
 
 /* В макете Active отличается от Rest только у success и error; у default значения

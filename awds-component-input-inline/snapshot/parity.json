@@ -1,0 +1,44 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Корень — сам нативный input (класс на нём), без рамки; надпись — ::placeholder. Ширина в макете фиксированная (320).",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "input-inline-default.css",
+    "input-inline-error.css",
+    "input-inline-success.css"
+  ],
+  "tag": "input",
+  "attrs": "type=\"text\" placeholder=\"Input Inline\"",
+  "class": "iinline iinline-{variant}",
+  "placeholder_from": ".iinline",
+  "html_all": "",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "iinline--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "attrs": "disabled"
+      }
+    }
+  }
+}
