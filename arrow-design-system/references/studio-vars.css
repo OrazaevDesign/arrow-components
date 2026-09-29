@@ -506,9 +506,9 @@
   /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   --awds-breakpoints-desktop-medium: 1376px;  /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   /* Граница вьюпорта, desktop small: 1068px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
-  --awds-breakpoints-desktop-small: 1068px;  /* Граница вьюпорта, desktop small: 1068px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  --awds-breakpoints-desktop-small: 1024px;  /* Граница вьюпорта, desktop small: 1068px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
   /* Граница вьюпорта, tablet large: 1067px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-tablet-large: 1067px;  /* Граница вьюпорта, tablet large: 1067px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  --awds-breakpoints-tablet-large: 1023px;  /* Граница вьюпорта, tablet large: 1067px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   --awds-breakpoints-tablet-medium: 816px;  /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   /* Граница вьюпорта, tablet small: 616px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
@@ -2084,7 +2084,7 @@
   --awds-typography-letter-spacing-1000: var(--awds-typography-letter-spacing-1000-desktop);
 }
 
-@media (max-width: 1067px) { :root { 
+@media (max-width: 1023px) { :root { 
   --awds-layout-section-width-large: var(--awds-layout-section-width-large-tablet);
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-tablet);
   --awds-layout-section-width-small: var(--awds-layout-section-width-small-tablet);

@@ -110,7 +110,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `.theme-light` | 1 |
 | `.theme-dark` | 1 |
 | `.desktop` | 1 |
-| `@media (max-width: 1067px)` | 1 |
+| `@media (max-width: 1023px)` | 1 |
 | `@media (max-width: 615px)` | 1 |
 | `.rounded-smooth` | 1 |
 | `.rounded-rounded` | 1 |
