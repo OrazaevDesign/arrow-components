@@ -1,4 +1,4 @@
-/* ArrowDS · toast@1.0.0
+/* ArrowDS · toast@1.0.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -94,6 +94,7 @@
   line-height: var(--awds-control-line-height-200);    
   letter-spacing: var(--awds-control-letter-spacing-200);
   font-variant-numeric: tabular-nums;
+  font-weight: var(--awds-font-weight-semibold);
 }
 
 .toast__action, .toast__close {
@@ -107,6 +108,10 @@
   color: inherit;
   font: inherit;
   cursor: pointer;
+}
+
+.toast__action {
+  font-weight: var(--awds-font-weight-semibold);
   transition: background-color 0.15s ease-out;
 }
 

@@ -1,4 +1,4 @@
-/* ArrowDS · tooltip@2.0.2
+/* ArrowDS · tooltip@2.0.3
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -10,7 +10,8 @@
   --awds-tooltip-lh:         var(--awds-control-line-height-400);    
   --awds-tooltip-ls:         var(--awds-control-letter-spacing-400);
   --awds-tooltip-rounded:    var(--awds-rounded-border-radius-400);  
-  --awds-tooltip-tail:       var(--awds-space-2);      
+  --awds-tooltip-tail-base:  var(--awds-space-4);      
+  --awds-tooltip-tail-depth: var(--awds-space-1-5);    
   --awds-tooltip-hairline:   rgb(var(--extended-shadow-3));   
   --awds-tooltip-hairline-width: var(--awds-space-px);   
   --awds-tooltip-max-width:  250px;
@@ -46,10 +47,24 @@
 .tooltip__tail {
   position: absolute;
   z-index: 2;
-  width: var(--awds-tooltip-tail);
-  height: var(--awds-tooltip-tail);
+  width: var(--awds-tooltip-tail-base);
+  height: var(--awds-tooltip-tail-depth);
+}
+
+.tooltip__tail::before, .tooltip__tail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: var(--awds-tooltip-tail-shape);
+}
+
+.tooltip__tail::before {
+  background: var(--awds-tooltip-hairline);
+  translate: var(--awds-tooltip-tail-shift);
+}
+
+.tooltip__tail::after {
   background: var(--awds-tooltip-bg);
-  transform: rotate(45deg);
 }
 
 .tooltip-default {
@@ -82,36 +97,39 @@
 }
 
 .tooltip--side-top .tooltip__tail, .tooltip:not(.tooltip--side-bottom):not(.tooltip--side-left):not(.tooltip--side-right) .tooltip__tail {
-  bottom: calc(-0.5 * var(--awds-tooltip-tail));
+  top: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-right:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  margin-left: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(0 0, 100% 0, 50% 100%);
+  --awds-tooltip-tail-shift: 0 var(--awds-tooltip-hairline-width);
 }
 
 .tooltip--side-bottom .tooltip__tail {
-  top: calc(-0.5 * var(--awds-tooltip-tail));
-  bottom: auto;
+  bottom: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:  var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-left: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  margin-left: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(50% 0, 100% 100%, 0 100%);
+  --awds-tooltip-tail-shift: 0 calc(-1 * var(--awds-tooltip-hairline-width));
 }
 
 .tooltip--side-left .tooltip__tail {
-  right: calc(-0.5 * var(--awds-tooltip-tail));
+  left: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-top:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-right: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  width: var(--awds-tooltip-tail-depth);
+  height: var(--awds-tooltip-tail-base);
+  margin-top: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(0 0, 100% 50%, 0 100%);
+  --awds-tooltip-tail-shift: var(--awds-tooltip-hairline-width) 0;
 }
 
 .tooltip--side-right .tooltip__tail {
-  left: calc(-0.5 * var(--awds-tooltip-tail));
+  right: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-tooltip-tail));
-  border-bottom: var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
-  border-left:   var(--awds-tooltip-hairline-width) solid var(--awds-tooltip-hairline);
+  width: var(--awds-tooltip-tail-depth);
+  height: var(--awds-tooltip-tail-base);
+  margin-top: calc(-0.5 * var(--awds-tooltip-tail-base));
+  --awds-tooltip-tail-shape: polygon(100% 0, 100% 100%, 0 50%);
+  --awds-tooltip-tail-shift: calc(-1 * var(--awds-tooltip-hairline-width)) 0;
 }
 
 }

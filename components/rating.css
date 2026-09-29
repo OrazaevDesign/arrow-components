@@ -1,4 +1,4 @@
-/* ArrowDS · rating@2.0.9
+/* ArrowDS · rating@2.0.10
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-rating-picked {
@@ -69,7 +69,7 @@
 }
 
 .rating__ghost {
-  fill-opacity: var(--awds-opacity-30);
+  fill-opacity: var(--awds-opacity-100);
 }
 
 .rating__solid {

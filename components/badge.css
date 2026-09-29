@@ -1,4 +1,4 @@
-/* ArrowDS · badge@1.1.5
+/* ArrowDS · badge@1.2.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -29,7 +29,6 @@
   line-height: var(--awds-badge-lh);
   letter-spacing: var(--awds-badge-ls);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
   white-space: nowrap;
   user-select: none;
   -webkit-font-smoothing: antialiased;
@@ -39,6 +38,10 @@
   width: var(--awds-badge-icon);
   height: var(--awds-badge-icon);
   flex-shrink: 0;
+}
+
+.badge--icon-only {
+  padding: var(--awds-badge-padding);
 }
 
 .badge__label {

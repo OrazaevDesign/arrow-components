@@ -1,4 +1,4 @@
-/* ArrowDS · button-area@2.0.8
+/* ArrowDS · button-area@2.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -123,7 +123,7 @@
 
 .btn-area:focus-visible {
   outline: var(--awds-focus-width) solid var(--awds-focus-color);
-  outline-offset: var(--awds-focus-offset-inside);
+  outline-offset: var(--awds-focus-offset);
   border-radius: var(--awds-btn-area-rounded);
 }
 

@@ -1,4 +1,4 @@
-/* ArrowDS · popover@1.0.1
+/* ArrowDS · popover@1.0.4
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -8,7 +8,8 @@
   --awds-pop-hairline: rgb(var(--extended-shadow-3));   
   --awds-pop-hairline-width: var(--awds-space-px);   
   --awds-pop-rounded: var(--awds-rounded-border-radius-600);   
-  --awds-pop-tail:    var(--awds-space-2);   
+  --awds-pop-tail-base:  var(--awds-space-4);     
+  --awds-pop-tail-depth: var(--awds-space-1-5);   
   box-sizing: border-box;
   position: relative;
   display: inline-block;
@@ -32,10 +33,24 @@
 .pop__tail {
   position: absolute;
   z-index: 2;
-  width: var(--awds-pop-tail);
-  height: var(--awds-pop-tail);
+  width: var(--awds-pop-tail-base);
+  height: var(--awds-pop-tail-depth);
+}
+
+.pop__tail::before, .pop__tail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: var(--awds-pop-tail-shape);
+}
+
+.pop__tail::before {
+  background: var(--awds-pop-hairline);
+  translate: var(--awds-pop-tail-shift);
+}
+
+.pop__tail::after {
   background: var(--awds-pop-bg);
-  transform: rotate(45deg);
 }
 
 .pop[popover] {
@@ -49,36 +64,39 @@
 }
 
 .pop--side-top .pop__tail, .pop:not(.pop--side-bottom):not(.pop--side-left):not(.pop--side-right) .pop__tail {
-  bottom: calc(-0.5 * var(--awds-pop-tail));
+  top: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-right:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  margin-left: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(0 0, 100% 0, 50% 100%);
+  --awds-pop-tail-shift: 0 var(--awds-pop-hairline-width);
 }
 
 .pop--side-bottom .pop__tail {
-  top: calc(-0.5 * var(--awds-pop-tail));
-  bottom: auto;
+  bottom: 100%;
   left: 50%;
-  margin-left: calc(-0.5 * var(--awds-pop-tail));
-  border-top:  var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-left: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  margin-left: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(50% 0, 100% 100%, 0 100%);
+  --awds-pop-tail-shift: 0 calc(-1 * var(--awds-pop-hairline-width));
 }
 
 .pop--side-left .pop__tail {
-  right: calc(-0.5 * var(--awds-pop-tail));
+  left: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-top:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-right: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  width: var(--awds-pop-tail-depth);
+  height: var(--awds-pop-tail-base);
+  margin-top: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(0 0, 100% 50%, 0 100%);
+  --awds-pop-tail-shift: var(--awds-pop-hairline-width) 0;
 }
 
 .pop--side-right .pop__tail {
-  left: calc(-0.5 * var(--awds-pop-tail));
+  right: 100%;
   top: 50%;
-  margin-top: calc(-0.5 * var(--awds-pop-tail));
-  border-bottom: var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
-  border-left:   var(--awds-pop-hairline-width) solid var(--awds-pop-hairline);
+  width: var(--awds-pop-tail-depth);
+  height: var(--awds-pop-tail-base);
+  margin-top: calc(-0.5 * var(--awds-pop-tail-base));
+  --awds-pop-tail-shape: polygon(100% 0, 100% 100%, 0 50%);
+  --awds-pop-tail-shift: calc(-1 * var(--awds-pop-hairline-width)) 0;
 }
 
 }

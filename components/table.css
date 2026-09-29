@@ -1,4 +1,4 @@
-/* ArrowDS · table@1.0.12
+/* ArrowDS · table@1.0.13
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -85,10 +85,16 @@
   border: 0;
   border-bottom: var(--awds-space-px) solid rgb(var(--surface-on-lowest));   
   padding-inline: 0 var(--awds-wysiwyg-gap-li-top);
+  padding-block: var(--awds-wysiwyg-gap-li-top) calc(var(--awds-wysiwyg-gap-li-top) - var(--awds-space-px));
 }
 
 .awds-table--light tr:last-child .cell {
   border-bottom: 0;
+  padding-block-end: var(--awds-wysiwyg-gap-li-top);
+}
+
+.awds-table--light .cell-light {
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-cell-border);
 }
 
 .awds-table-scroll {
@@ -101,7 +107,7 @@
   --awds-cell-border:      rgb(var(--extended-transparent));   
   --awds-cell-color:       rgb(var(--surface-on-highest));     
   --awds-cell-description: rgb(var(--surface-on-high));        
-  padding: var(--awds-wysiwyg-gap-li-top);      
+  padding: calc(var(--awds-wysiwyg-gap-li-top) - var(--awds-space-px));   
   border: var(--awds-space-px) solid var(--awds-cell-border);
   background-color: var(--awds-cell-bg);
   color: var(--awds-cell-color);
@@ -114,7 +120,8 @@
   text-wrap: pretty;
   transition: background-color 0.15s ease-out,
               border-color 0.15s ease-out,
-              color 0.15s ease-out;
+              color 0.15s ease-out,
+              box-shadow 0.15s ease-out;
 }
 
 .cell:focus-visible {

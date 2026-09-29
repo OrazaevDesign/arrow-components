@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@1.1.13
+/* ArrowDS · product-card@1.2.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes pcard-stepper-bump {
@@ -111,15 +111,40 @@
 .pcard-brand-first .pcard__top {
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
   z-index: 1;                  
   display: flex;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: space-between;
   pointer-events: none;
 }
 
 .pcard-brand-first .pcard__top .btn-favorites {
   pointer-events: auto;
+}
+
+.pcard-brand-first .pcard__country {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--awds-space-2-5);
+}
+
+.pcard.pcard-brand-first.pcard--mobile .pcard__country {
+  padding: var(--awds-space-2);
+}
+
+.pcard-brand-first .pcard__country > img, .pcard-brand-first .pcard__country > svg {
+  display: block;
+  width: var(--awds-space-5);            
+  height: var(--awds-space-5);
+  object-fit: contain;
+}
+
+.pcard.pcard-brand-first.pcard--mobile .pcard__country > img, .pcard.pcard-brand-first.pcard--mobile .pcard__country > svg {
+  width: var(--awds-space-4);            
+  height: var(--awds-space-4);
 }
 
 .pcard-brand-first .pcard__badges {
@@ -244,11 +269,16 @@
   line-height: var(--awds-wysiwyg-line-height-caption);                 
   letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-brand-first .price {
+.pcard-brand-first .pcard__reviews-count {
+  color: rgb(var(--surface-on-high));                           
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pcard-brand-first .price {
   --awds-price-fs:     var(--awds-wysiwyg-font-size-price-listing);
   --awds-price-lh:     var(--awds-wysiwyg-line-height-price-listing);
   --awds-price-ls:     var(--awds-wysiwyg-letter-spacing-price-listing);
@@ -275,7 +305,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   display: grid;
   grid-template-columns: minmax(0, 1fr);   
   width: 100%;
-  padding-top: var(--awds-space-1-5);
+  padding-top: var(--awds-space-2);
 }
 
 .pcard-brand-first .pcard__cart-view {
@@ -310,7 +340,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
     rgb(var(--secondary-chroma)),        
     rgb(var(--secondary-core))           
   );
-  border: var(--awds-space-px) solid rgb(var(--secondary-core));   
+  box-shadow: inset 0 0 0 var(--awds-space-px) rgb(var(--secondary-core));   
   border-radius: var(--awds-rounded-border-radius-400);
   overflow: hidden;
 }
@@ -323,9 +353,9 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   flex: 1 1 auto;
   min-width: 0;
   text-align: center;
-  font-size: var(--awds-typography-font-size-400);              
-  line-height: var(--awds-typography-line-height-400);          
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  font-size: var(--awds-control-font-size-400);                 
+  line-height: var(--awds-control-line-height-400);             
+  letter-spacing: var(--awds-control-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--secondary-on));              
   font-variant-numeric: tabular-nums;
@@ -359,6 +389,9 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .pcard-brand-first .pcard__tip { position: relative;
+}
+
+.pcard-brand-first .pcard__country.pcard__tip { pointer-events: auto;
 }
 
 .pcard-brand-first .pcard__tip > .tooltip {
@@ -658,11 +691,16 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   line-height: var(--awds-wysiwyg-line-height-caption);                 
   letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-buy-now .pcard__cart {
+.pcard-buy-now .pcard__reviews-count {
+  color: rgb(var(--surface-on-high));                           
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pcard-buy-now .pcard__cart {
   display: grid;
   grid-template-columns: minmax(0, 1fr);   
   width: 100%;
@@ -700,7 +738,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
     rgb(var(--secondary-chroma)),        
     rgb(var(--secondary-core))           
   );
-  border: var(--awds-space-px) solid rgb(var(--secondary-core));   
+  box-shadow: inset 0 0 0 var(--awds-space-px) rgb(var(--secondary-core));   
   border-radius: var(--awds-rounded-border-radius-400);
   overflow: hidden;
 }
@@ -713,9 +751,9 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   flex: 1 1 auto;
   min-width: 0;
   text-align: center;
-  font-size: var(--awds-typography-font-size-400);              
-  line-height: var(--awds-typography-line-height-400);          
-  letter-spacing: var(--awds-typography-letter-spacing-400);
+  font-size: var(--awds-control-font-size-400);                 
+  line-height: var(--awds-control-line-height-400);             
+  letter-spacing: var(--awds-control-letter-spacing-400);
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--secondary-on));              
   font-variant-numeric: tabular-nums;
@@ -1063,7 +1101,6 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   line-height: var(--awds-wysiwyg-line-height-caption);                 
   letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 

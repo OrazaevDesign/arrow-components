@@ -1,4 +1,4 @@
-/* ArrowDS · modal@1.0.2
+/* ArrowDS · modal@1.1.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -7,10 +7,12 @@
   --awds-mdl-bg:       rgb(var(--surface-bright));   
   --awds-mdl-backdrop: rgb(var(--surface-on-highest) / var(--awds-opacity-50));   
   --awds-mdl-rounded:  var(--awds-rounded-border-radius-600);   
-  --awds-mdl-pad-side: var(--awds-layout-section-gutter);   
-  --awds-mdl-pad-top:  var(--awds-space-8);   
-  --awds-mdl-gap:      var(--awds-space-2);   
-  --awds-mdl-pad-bottom: var(--awds-space-6);   
+  --awds-mdl-pad-side:    var(--awds-layout-section-gutter-modal);   
+  --awds-mdl-content-side: var(--awds-layout-section-gutter-modal);   
+  --awds-mdl-pad-top:     var(--awds-layout-section-gutter-modal);   
+  --awds-mdl-gap:         var(--awds-space-2);   
+  --awds-mdl-footer-gap:  var(--awds-space-3);   
+  --awds-mdl-pad-bottom:  var(--awds-layout-section-gutter-modal);   
   --awds-mdl-width:    480px;
   --awds-mdl-title-fs: var(--awds-typography-font-size-800);            
   --awds-mdl-title-lh: var(--awds-typography-line-height-compact-800);  
@@ -112,7 +114,7 @@
   min-block-size: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-inline: var(--awds-mdl-pad-side);
+  padding-inline: var(--awds-mdl-content-side);
 }
 
 .mdl__content--flush {
@@ -131,13 +133,18 @@
   display: flex;
   flex: none;
   align-items: center;
-  gap: var(--awds-mdl-gap);
+  gap: var(--awds-mdl-footer-gap);
   padding-block: var(--awds-mdl-gap) var(--awds-mdl-pad-bottom);
   padding-inline: var(--awds-mdl-pad-side);
 }
 
 .mdl__footer--reverse {
   flex-direction: row-reverse;
+}
+
+.mdl__footer--stretch > * {
+  flex: 1 1 0;
+  min-inline-size: 0;
 }
 
 @media (max-width: 1067px) {

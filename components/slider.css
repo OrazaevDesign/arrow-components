@@ -1,4 +1,4 @@
-/* ArrowDS · slider@1.0.8
+/* ArrowDS · slider@1.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -49,7 +49,7 @@
   font-size: var(--awds-control-font-size-300);
   line-height: var(--awds-control-line-height-300);
   letter-spacing: var(--awds-control-letter-spacing-300);
-  font-weight: var(--awds-font-weight-semibold);
+  font-weight: var(--awds-font-weight-medium);
   color: rgb(var(--surface-on-high));   
   font-variant-numeric: tabular-nums;
   white-space: nowrap;

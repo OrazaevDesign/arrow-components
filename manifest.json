@@ -16,7 +16,7 @@
     },
     {
       "name": "badge",
-      "version": "1.1.5",
+      "version": "1.2.1",
       "variants": [
         "market-percent",
         "market-sale",
@@ -45,8 +45,8 @@
         500,
         600
       ],
-      "rules": 27,
-      "bytes": 8422
+      "rules": 28,
+      "bytes": 8445
     },
     {
       "name": "button",
@@ -75,7 +75,7 @@
     },
     {
       "name": "button-area",
-      "version": "2.0.8",
+      "version": "2.0.9",
       "variants": [
         "default",
         "muted",
@@ -90,7 +90,7 @@
         500
       ],
       "rules": 29,
-      "bytes": 4997
+      "bytes": 4990
     },
     {
       "name": "button-favorites",
@@ -168,6 +168,21 @@
       "bytes": 5428
     },
     {
+      "name": "combobox-combi",
+      "version": "1.0.0",
+      "variants": [
+        "default"
+      ],
+      "sizes": [
+        300,
+        400,
+        500,
+        600
+      ],
+      "rules": 23,
+      "bytes": 9318
+    },
+    {
       "name": "content-area",
       "version": "2.0.4",
       "variants": [
@@ -194,7 +209,7 @@
     },
     {
       "name": "emblem",
-      "version": "3.0.7",
+      "version": "3.0.8",
       "variants": [
         "initials",
         "img",
@@ -214,7 +229,7 @@
         700
       ],
       "rules": 18,
-      "bytes": 4570
+      "bytes": 5163
     },
     {
       "name": "formfield",
@@ -331,7 +346,7 @@
     },
     {
       "name": "link",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "variants": [
         "default",
         "muted",
@@ -340,8 +355,8 @@
         "heading"
       ],
       "sizes": null,
-      "rules": 32,
-      "bytes": 3391
+      "rules": 33,
+      "bytes": 3400
     },
     {
       "name": "list-item",
@@ -375,14 +390,14 @@
     },
     {
       "name": "modal",
-      "version": "1.0.2",
+      "version": "1.1.1",
       "variants": [
         "dialog",
         "sidepage"
       ],
       "sizes": null,
-      "rules": 17,
-      "bytes": 3817
+      "rules": 18,
+      "bytes": 4073
     },
     {
       "name": "notice",
@@ -417,17 +432,17 @@
     },
     {
       "name": "popover",
-      "version": "1.0.1",
+      "version": "1.0.4",
       "variants": [
         "default"
       ],
       "sizes": null,
-      "rules": 9,
-      "bytes": 2371
+      "rules": 12,
+      "bytes": 2565
     },
     {
       "name": "price",
-      "version": "2.0.5",
+      "version": "2.0.6",
       "variants": [
         "sale",
         "default",
@@ -447,30 +462,30 @@
         1100
       ],
       "rules": 23,
-      "bytes": 6563
+      "bytes": 6525
     },
     {
       "name": "product-card",
-      "version": "1.1.13",
+      "version": "1.2.1",
       "variants": [
         "price-first",
         "brand-first",
         "buy-now"
       ],
       "sizes": null,
-      "rules": 146,
-      "bytes": 29879
+      "rules": 153,
+      "bytes": 30703
     },
     {
       "name": "progress",
-      "version": "2.0.3",
+      "version": "2.0.4",
       "variants": [
         "linear",
         "circular"
       ],
       "sizes": null,
       "rules": 30,
-      "bytes": 7317
+      "bytes": 7361
     },
     {
       "name": "radio",
@@ -503,14 +518,14 @@
     },
     {
       "name": "rating",
-      "version": "2.0.9",
+      "version": "2.0.10",
       "variants": [],
       "sizes": [
         200,
         300
       ],
       "rules": 23,
-      "bytes": 3261
+      "bytes": 3263
     },
     {
       "name": "scrollbar",
@@ -568,7 +583,7 @@
     },
     {
       "name": "slider",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "variants": [
         "dots",
         "dots-mini",
@@ -576,7 +591,7 @@
       ],
       "sizes": null,
       "rules": 7,
-      "bytes": 1758
+      "bytes": 1756
     },
     {
       "name": "switch",
@@ -625,15 +640,15 @@
     },
     {
       "name": "table",
-      "version": "1.0.12",
+      "version": "1.0.13",
       "variants": [
         "light",
         "head",
         "default"
       ],
       "sizes": null,
-      "rules": 23,
-      "bytes": 4211
+      "rules": 24,
+      "bytes": 4548
     },
     {
       "name": "textarea",
@@ -680,18 +695,18 @@
     },
     {
       "name": "toast",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "variants": [
         "normal",
         "alert"
       ],
       "sizes": null,
-      "rules": 17,
-      "bytes": 3498
+      "rules": 18,
+      "bytes": 3616
     },
     {
       "name": "tooltip",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "variants": [
         "default",
         "contrast"
@@ -700,8 +715,8 @@
         "400",
         "300"
       ],
-      "rules": 12,
-      "bytes": 4299
+      "rules": 15,
+      "bytes": 4505
     },
     {
       "name": "uploader",
@@ -720,13 +735,13 @@
     }
   ],
   "bundle": {
-    "bytes": 347710,
-    "rules": 1339,
-    "hash": "sha256:d664133c94f7c7dcba2d22276e0c38529250c9009966c0fa9120e08c4a26e8eb"
+    "bytes": 359495,
+    "rules": 1380,
+    "hash": "sha256:ea49185ef1a2cf9dc928ccee46c267df7276e315c6d56e1e8433e7bedf6578e7"
   },
   "theme": {
-    "bytes": 60793,
-    "variables_kept": 622,
+    "bytes": 60925,
+    "variables_kept": 624,
     "variables_declared": 1354,
     "missing": []
   },

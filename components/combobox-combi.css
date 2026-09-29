@@ -1,0 +1,223 @@
+/* ArrowDS · combobox-combi@1.0.0
+   Сгенерировано tools/build-dist.mjs — руками не править. */
+
+@layer awds {
+
+.cbcombi {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-400);   
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+
+.cbcombi *, .cbcombi *::before, .cbcombi *::after {
+  box-sizing: border-box;
+}
+
+.cbcombi > .icombi {
+  display: flex;
+  inline-size: 100%;
+}
+
+.cbcombi__panel {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: calc(100% + var(--awds-space-1));
+  z-index: var(--awds-zindex-dropdown);
+  display: none;
+  padding: var(--awds-cbcombi-panel-padding);
+  border-radius: var(--awds-cbcombi-panel-rounded);
+  background: rgb(var(--surface-bright));   
+  box-shadow: var(--awds-shadow-elevation-3);
+  overflow: hidden;
+}
+
+.cbcombi:has(> .icombi [aria-expanded="true"]) > .cbcombi__panel {
+  display: block;
+}
+
+.cbcombi__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cbcombi__list > .list-item-transparent[aria-selected="true"] {
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+  --awds-list-item-border:      rgb(var(--secondary-container-core));   
+  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+  --awds-list-item-check:       rgb(var(--primary-core));   
+  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
+}
+
+.cbcombi__match {
+  background: none;
+  color: inherit;
+  font-weight: var(--awds-font-weight-semibold);
+}
+
+.cbcombi__empty {
+  pointer-events: none;
+  cursor: default;
+}
+
+.cbcombi__loading {
+  display: flex;
+  justify-content: center;
+}
+
+.cbcombi--600 .icombi {
+  --awds-icombi-padding:      var(--awds-space-4);   
+  --awds-icombi-icon:         var(--awds-space-5);   
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-600);   
+  --awds-icombi-fs:           var(--awds-control-font-size-600);   
+  --awds-icombi-lh:           var(--awds-control-line-height-600);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-icombi-text-gap:     var(--awds-space-4-5);   
+  --awds-icombi-label-top:    var(--awds-space-2);   
+  --awds-icombi-input-top:    var(--awds-space-6);   
+  --awds-icombi-input-bottom: var(--awds-space-2);   
+  --awds-icombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
+}
+
+.cbcombi--500 .icombi {
+  --awds-icombi-padding:      var(--awds-space-3);   
+  --awds-icombi-icon:         var(--awds-space-5);   
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-500);   
+  --awds-icombi-fs:           var(--awds-control-font-size-600);   
+  --awds-icombi-lh:           var(--awds-control-line-height-600);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
+  --awds-icombi-text-gap:     var(--awds-space-4-5);   
+  --awds-icombi-label-top:    var(--awds-space-1-5);   
+  --awds-icombi-input-top:    var(--awds-space-5-5);   
+  --awds-icombi-input-bottom: var(--awds-space-1-5);   
+  --awds-icombi-label-fs:     var(--awds-control-font-size-200);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
+}
+
+.cbcombi--400 .icombi {
+  --awds-icombi-padding:      var(--awds-space-2-5);   
+  --awds-icombi-icon:         var(--awds-space-5);   
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-400);   
+  --awds-icombi-fs:           var(--awds-control-font-size-400);   
+  --awds-icombi-lh:           var(--awds-control-line-height-400);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-icombi-text-gap:     var(--awds-space-4);   
+  --awds-icombi-label-top:    var(--awds-space-1);   
+  --awds-icombi-input-top:    var(--awds-space-4);   
+  --awds-icombi-input-bottom: var(--awds-space-1);   
+  --awds-icombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-100);
+}
+
+.cbcombi--300 .icombi {
+  --awds-icombi-padding:      var(--awds-space-2);   
+  --awds-icombi-icon:         var(--awds-space-5);   
+  --awds-icombi-rounded:      var(--awds-rounded-border-radius-300);   
+  --awds-icombi-fs:           var(--awds-control-font-size-400);   
+  --awds-icombi-lh:           var(--awds-control-line-height-400);
+  --awds-icombi-ls:           var(--awds-control-letter-spacing-400);
+  --awds-icombi-text-gap:     var(--awds-space-3-5);   
+  --awds-icombi-label-top:    var(--awds-space-0-5);   
+  --awds-icombi-input-top:    var(--awds-space-3-5);   
+  --awds-icombi-input-bottom: var(--awds-space-0-5);   
+  --awds-icombi-label-fs:     var(--awds-control-font-size-100);
+  --awds-icombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-icombi-label-ls:     var(--awds-control-letter-spacing-100);
+}
+
+.cbcombi--600 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-600);
+}
+
+.cbcombi--500 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-500);
+}
+
+.cbcombi--400 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-400);
+}
+
+.cbcombi--300 .cbcombi__panel {
+  --awds-cbcombi-panel-padding: var(--awds-space-1);   
+  --awds-cbcombi-panel-rounded: var(--awds-rounded-border-radius-300);
+}
+
+.cbcombi--600 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-3);   
+  --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-500);   
+  --awds-list-item-text-gap: var(--awds-space-4-5);   
+  --awds-list-item-fs:       var(--awds-control-font-size-600);   
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-400);   
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
+}
+
+.cbcombi--500 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2-5);   
+  --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   
+  --awds-list-item-text-gap: var(--awds-space-4);   
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.cbcombi--400 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2);   
+  --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-300);   
+  --awds-list-item-text-gap: var(--awds-space-3-5);   
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.cbcombi--300 .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2);   
+  --awds-list-item-icon:     var(--awds-space-4);   
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-200);   
+  --awds-list-item-text-gap: var(--awds-space-3-5);   
+  --awds-list-item-fs:       var(--awds-control-font-size-300);   
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-200);   
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.cbcombi:not(.cbcombi--600):not(.cbcombi--500):not(.cbcombi--300) .cbcombi__panel .list-item {
+  --awds-list-item-padding:  var(--awds-space-2);   
+  --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-300);   
+  --awds-list-item-text-gap: var(--awds-space-3-5);   
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+}

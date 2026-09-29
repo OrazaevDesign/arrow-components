@@ -1,4 +1,4 @@
-/* ArrowDS · price@2.0.5
+/* ArrowDS · price@2.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -20,7 +20,6 @@
   font-size: var(--awds-price-fs);
   font-family: var(--awds-font-family-system);
   font-weight: var(--awds-font-weight-semibold);
-  font-variant-numeric: tabular-nums;
   white-space: nowrap;
   -webkit-font-smoothing: antialiased;
 }

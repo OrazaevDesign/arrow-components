@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 622 из 1354 объявленных в теме. */
+   Переменных: 624 из 1354 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -268,10 +268,10 @@
   --awds-layout-section-width-medium-tablet: 900px;
   --awds-layout-section-width-medium-mobile: 900px;
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);
-  --awds-layout-section-gutter-desktop: var(--awds-space-6);
-  --awds-layout-section-gutter-tablet: var(--awds-space-4);
-  --awds-layout-section-gutter-mobile: var(--awds-space-0);
-  --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);
+  --awds-layout-section-gutter-modal-desktop: var(--awds-space-6);
+  --awds-layout-section-gutter-modal-tablet: var(--awds-space-4);
+  --awds-layout-section-gutter-modal-mobile: var(--awds-space-4);
+  --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-desktop);
   --awds-layout-card-product-min-desktop: 170px;
   --awds-layout-card-product-min-tablet: 170px;
   --awds-layout-card-product-min-mobile: 128px;
@@ -395,6 +395,7 @@
   --awds-space-14: 56px;
   --awds-space-16: 64px;
   --awds-space-20: 80px;
+  --awds-zindex-dropdown: 1030;
   --awds-control-font-size-50: 10px;
   --awds-control-font-size-100: 11px;
   --awds-control-font-size-200: 12px;
@@ -620,6 +621,7 @@
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-medium);
   --awds-font-family-system: Onest, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --awds-font-weight-regular: 400;
+  --awds-font-weight-medium: 500;
   --awds-font-weight-semibold: 600;
   --awds-font-weight-bold: 700;
 }
@@ -803,7 +805,7 @@
 }
 .desktop {
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);
-  --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);
+  --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-desktop);
   --awds-layout-card-product-min: var(--awds-layout-card-product-min-desktop);
   --awds-layout-card-product-max: var(--awds-layout-card-product-max-desktop);
   --awds-typography-font-size-200: var(--awds-typography-font-size-200-desktop);
@@ -843,7 +845,7 @@
 @media (max-width: 1067px) {
   :root {
     --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-tablet);
-    --awds-layout-section-gutter: var(--awds-layout-section-gutter-tablet);
+    --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-tablet);
     --awds-layout-card-product-min: var(--awds-layout-card-product-min-tablet);
     --awds-layout-card-product-max: var(--awds-layout-card-product-max-tablet);
     --awds-typography-font-size-200: var(--awds-typography-font-size-200-tablet);
@@ -884,7 +886,7 @@
 @media (max-width: 615px) {
   :root {
     --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-mobile);
-    --awds-layout-section-gutter: var(--awds-layout-section-gutter-mobile);
+    --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-mobile);
     --awds-layout-card-product-min: var(--awds-layout-card-product-min-mobile);
     --awds-layout-card-product-max: var(--awds-layout-card-product-max-mobile);
     --awds-typography-font-size-200: var(--awds-typography-font-size-200-mobile);

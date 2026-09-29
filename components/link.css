@@ -1,4 +1,4 @@
-/* ArrowDS · link@1.0.6
+/* ArrowDS · link@1.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -117,7 +117,10 @@
 }
 
 .lnk-heading {
-  --awds-lnk-color: rgb(var(--surface-on-high));             
+  --awds-lnk-color: rgb(var(--surface-on-high));
+}
+
+.lnk.lnk-heading {
   text-decoration-line: none;
 }
 

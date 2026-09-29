@@ -1,4 +1,4 @@
-/* ArrowDS · progress@2.0.3
+/* ArrowDS · progress@2.0.4
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-progress-value {
@@ -148,7 +148,7 @@
 }
 
 .progress-linear__track {
-  inset-inline: calc(var(--awds-progress-value) * 1% + var(--awds-progress-gap)) 0;
+  inset-inline: calc(var(--awds-progress-value) * 1% + var(--awds-progress-gap) * min(1, var(--awds-progress-value) * 1000)) 0;
   opacity: var(--awds-progress-idle-opacity);
   overflow: clip;
   transition: inset-inline-start 0.3s ease-out;
