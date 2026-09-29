@@ -1,5 +1,9 @@
 # select-combi — журнал версий
 
+## 1.0.28 — 2026-09-29 — PATCH · visual
+Ячейки list/accent-selected/* и list/variation-selected/* перенаправлены в студии с роли primary на роль focus; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: выбранные пункты accent и variation на темах, где focus = primary, без изменений; на shopotam стали синими вместо красного.
+
 ## 1.0.27 — 2026-09-29 — PATCH · visual
 Ячейки состояния Focus перенаправлены в студии с роли primary на новую роль focus (form-control/*-focus, focus-selection/outlineVariant|outlineAccent, tab/selected/border-focus); код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: на темах, где focus = primary, без изменений; на shopotam поле и кольцо в фокусе стали синими вместо красного, чтобы не читаться как ошибка.
