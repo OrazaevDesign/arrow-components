@@ -30,6 +30,8 @@ description: List Item ArrowDS (.list-item).
 
 **Слоты, описание и галочка опциональны.** Минимальная строка — только `__content` с `__title`.
 
+**Иконки слота красятся своей ячейкой, а не цветом текста.** SVG рисуй через `currentColor`: слот получает `color: var(--awds-list-item-icon-color)` от ячейки `icon` варианта, галочка `.list-item__check` — от `icon-check`, шеврон раскрытия `.list-item__chevron` (с 2.1.0, опциональный) — от `chevron`. Встраиваешь list-item в свой компонент и перекрашиваешь пункт подменой аккумуляторов, как `select` у выбранного пункта, — подменяй и `--awds-list-item-icon-color` с `--awds-list-item-chevron`, иначе иконка останется цветом варианта.
+
 **Класс варианта обязателен.** База `.list-item` бесцветна — как `.btn` без `.btn-primary`.
 
 ## Варианты
@@ -57,6 +59,38 @@ description: List Item ArrowDS (.list-item).
 **Варианты ходят парами** — невыбранный и выбранный: `default` / `default-selected`, `tabbar` / `tabbar-selected`, `menu` / `menu-selected`, `variation` / `variation-selected`. Держи пару вместе: смешивать `menu` с `default-selected` значит показывать выбор не тем способом, каким его показывает остальной список.
 
 **Имена нормализованы.** В Figma фреймы называются «Variaton» (опечатка, пропущена `i`) — в CSS это `variation` и `variation-indeterminate`. Точные подписи из макета лежат в `component.meta.json` → `variants[].figma_label`.
+
+## Переключатель в слоте: checkbox и radio
+
+С 29.09.2026. Строка списка с выбором — фильтр каталога, выбор доставки, пункт мультиселекта — собирается не иконкой-галочкой, а настоящим контролом в `__prefix`:
+
+```html
+<label class="list-item list-item-transparent list-item--400">
+  <span class="list-item__prefix">
+    <span class="checkbox">
+      <input class="checkbox__input" type="checkbox" name="brand" value="adidas">
+      <span class="checkbox__box"><!-- обе иконки из awds-component-checkbox --></span>
+    </span>
+  </span>
+  <span class="list-item__content"><span class="list-item__title">Adidas</span></span>
+</label>
+```
+
+Radio — то же с `.radio` из `awds-component-radio`, и у всех строк группы общий `name`.
+
+| Правило | Как сделано | Почему |
+| --- | --- | --- |
+| Корень — `<label>` | клик по любой точке строки переключает инпут | связь без `for`/`id`; `<button>` вокруг инпута — невалидная разметка |
+| Ступень контрола = слот иконки | 600…300 → `square/300` (20px), 200…50 → `square/200` (16px), мостом от `.list-item--{N}` | высота строки и отступ текста совпадают со строкой с иконкой; класс `.checkbox--{N}` внутри строки не нужен и не действует |
+| Выбор не меняет вариант строки | строка остаётся `transparent` / `default` / …, выбор показывает сам контрол | решение владельца 29.09.2026: один язык выбора, без копий правил состояний под `:has(:checked)` |
+| Наведение и нажатие — у строки | `.list-item:hover` передаёт контролу ячейки `check-radio/*-hover`, `:active` — `*-active` | курсор над подписью значит то же, что курсор над боксом |
+| Кольцо фокуса одно — у строки | `:has(input:focus-visible)` рисует кольцо строки и цвета `-focus` варианта, кольцо бокса снято | label не получает фокус сам; два контура вокруг одного выбора лишние |
+| Выключенное — у строки | `:has(input:disabled)` гасит строку на 40%, собственное гашение контрола отменено | иначе 40% от 40% |
+| Галочка суффикса не рисуется | `.list-item__check` скрыт, если в префиксе контрол | два знака выбора в одной строке |
+
+Роли ARIA по-прежнему на контейнере: группа чекбоксов — `<fieldset>` с `<legend>` или `role="group"` с подписью; радио — `role="radiogroup"`. Для `tabbar` переключатель в слоте не предусмотрен.
+
+В макете это набор `prefix-list`, значения `content=checkbox` и `content=radio` на всех семи ступенях: внутри инстанс `checkbox / unselected` или `radio / unselected`, выбранный — свапом на соседний набор.
 
 ## Горизонталь текста — переключается, и не так, как у input
 
@@ -115,7 +149,9 @@ description: List Item ArrowDS (.list-item).
 
 **Кольцо фокуса общее для всех вариантов** — `surface-on-highest`, 2px, как у button / checkbox / radio / switch. Это **не** вариант `input` и `select`, где кольцо своё (`primary-core` при 50%). `outline-offset: var(--awds-focus-offset)` выведен числом: в макете `outline/500 = 9` при `rounded 8`, `outline/600 = 11` при `rounded 10` — радиус кольца ровно `rounded + 1`.
 
-**У трёх вариантов состояний нет вовсе** — `accent-selected`, `menu-selected`, `variation-selected` выглядят одинаково в Rest, Hover, Focus и Active. Строка уже выбрана, подсвечивать нечего. Следствие: на наведение она **не отвечает**, и если по ней можно кликнуть, чтобы снять выбор, сообщи это текстом или иконкой.
+**У каждого варианта четыре правила состояния, и в каждом все семь цветов** — `bg`, `border`, `color`, `description`, `icon-check`, `icon`, `chevron`, у каждого якорь на ячейку своего состояния (`list/{вариант}/{свойство}-{состояние}`). Так с 28.09.2026: ячейки State больше не схлопываются, и правило без строки означало бы, что правка этой ячейки в студии до кода не доедет. Совпадают значения — строки всё равно пишутся.
+
+**У трёх вариантов состояния выглядят одинаково** — `accent-selected`, `menu-selected`, `variation-selected`: ячейки всех четырёх состояний сейчас ведут на те же роли. Строка уже выбрана, подсвечивать нечего. Следствие: на наведение она **не отвечает**, и если по ней можно кликнуть, чтобы снять выбор, сообщи это текстом или иконкой. Развести состояния — правка ячеек в студии, не кода.
 
 ## Откуда берутся значения
 
@@ -124,6 +160,8 @@ description: List Item ArrowDS (.list-item).
 | Цвета состояний | `rgb(var(--*))` inline, своя роль на вариант | `references/list-item-{вариант}.css` |
 | Цвет описания | роль `list/default/description` (см. ниже) | `map.state.*.list` |
 | Цвет галочки | роль `icon-check` варианта | `map.state.*.list.{роль}.icon-check` |
+| Цвет иконок слота | ячейка `icon` варианта → `--awds-list-item-icon-color` на `__prefix` / `__suffix`; не цвет текста | `map.state.*.list.{роль}.icon` |
+| Цвет шеврона | ячейка `chevron` варианта → `--awds-list-item-chevron` на `.list-item__chevron` | `map.state.*.list.{роль}.chevron` |
 | Кольцо фокуса | `var(--awds-focus-*)`, вариант Inside + Accent | слой `awds-component-focus-selection` |
 | Геометрия | `var(--awds-rectangle-{N}-*)` | `map.size.rectangle` |
 | Горизонталь без слота | `var(--awds-rectangle-{N}-text-gap)` | Figma: проп `Padding` у `Content List` |
@@ -221,5 +259,5 @@ ACB зайдёт в Figma по сохранённым ссылкам (см. `com
 
 - **[awds-component-select](../awds-component-select/SKILL.md)** — нативный выпадающий список. Его раскрытая панель построена по тому же макету `◆ / Dropdown`, а пункт внутри — эта же строка на ступень ниже размера контрола; выбранный пункт оформлен как `accent-selected`.
 - **[awds-component-input](../awds-component-input/SKILL.md)** — текстовое поле. Та же shape-шкала `rectangle`, та же высота при равном размере, но горизонталь текста переключается зеркально (см. выше).
-- **[awds-component-checkbox](../awds-component-checkbox/SKILL.md)**, **[awds-component-radio](../awds-component-radio/SKILL.md)** — если в строке нужен настоящий переключатель, он кладётся в слот `__prefix`, а не рисуется иконкой.
+- **[awds-component-checkbox](../awds-component-checkbox/SKILL.md)**, **[awds-component-radio](../awds-component-radio/SKILL.md)** — если в строке нужен настоящий переключатель, он кладётся в слот `__prefix`, а не рисуется иконкой. Как строка с ним работает — раздел «Переключатель в слоте».
 - **[awds-component-table](../awds-component-table/SKILL.md)** — для табличных данных с колонками. Список — это одна колонка смысла, таблица — несколько; не растягивай строку списка до таблицы.

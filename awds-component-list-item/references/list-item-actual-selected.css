@@ -112,7 +112,8 @@
               color 0.15s ease-out;
 }
 
-.list-item:focus-visible {
+.list-item:focus-visible,
+.list-item:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Inside + Accent
      (снято с инстанса FocusSelection в макете): кольцо вписано в бокс и красится
      брендовым плотным цветом. Только ссылки на --awds-focus-*: правка макета меняет
@@ -128,7 +129,8 @@
 }
 
 .list-item:disabled,
-.list-item[aria-disabled="true"] {
+.list-item[aria-disabled="true"],
+.list-item:has(> .list-item__prefix > :is(.checkbox, .radio) > input:disabled) {
   /* Тон гашения слоя State (map.state.rest.opacity.control.disabled), а не литерал
      --awds-opacity-40 в обход слоя. */
   opacity: var(--awds-opacity-40);   /* #cell opacity/control/disabled */
@@ -141,6 +143,9 @@
 .list-item__prefix,
 .list-item__suffix {
   box-sizing: border-box;
+  /* Иконки слота красятся своей ячейкой list/<вариант>/icon-<состояние>, а не цветом текста: с 28.09.2026
+     у каждого состояния своя ячейка, и иконку можно развести с подписью в студии. */
+  color: var(--awds-list-item-icon-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,6 +171,131 @@
    Элемент опциональный: кладётся автором в слот и красится currentColor. */
 .list-item__check {
   color: var(--awds-list-item-check);
+}
+
+/* Шеврон раскрытия — своя ячейка list/<вариант>/chevron-<состояние>. Элемент опциональный. */
+.list-item__chevron {
+  color: var(--awds-list-item-chevron);
+}
+
+/* === Переключатель в слоте ===
+   В __prefix кладётся настоящий checkbox или radio из своих скиллов, а корнем строки
+   становится <label>: клик по любой точке строки переключает инпут, и связывать их
+   через for/id не нужно. Строка при выборе НЕ меняет вариант — выбор показывает сам
+   контрол (решение владельца 29.09.2026). Макет — набор prefix-list, content=checkbox
+   и content=radio.
+
+   Ступень контрола равна слоту иконки, а не ступени строки: на 600…300 слот 20px —
+   square/300, на 200…50 — 16px, square/200. Паддинг слота остаётся rectangle/{N}/padding,
+   поэтому строка с контролом по высоте и отступу текста совпадает со строкой с иконкой.
+   Ступень едет мостом, как у .lbl: .list-item--{N} .checkbox весит (0,3,0) против
+   (0,1,0) у .checkbox--{N}, и класс размера на контроле внутри строки не нужен. */
+
+.list-item .list-item__prefix > .checkbox,
+.list-item--600 .list-item__prefix > .checkbox,
+.list-item--500 .list-item__prefix > .checkbox,
+.list-item--400 .list-item__prefix > .checkbox,
+.list-item--300 .list-item__prefix > .checkbox {
+  --awds-checkbox-padding: var(--awds-space-0);   /* #cell square/300/padding */
+  --awds-checkbox-icon:    var(--awds-space-5);   /* #cell square/300/icon */
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-300);   /* #cell square/300/rounded */
+}
+
+.list-item--200 .list-item__prefix > .checkbox,
+.list-item--100 .list-item__prefix > .checkbox,
+.list-item--50 .list-item__prefix > .checkbox {
+  --awds-checkbox-padding: var(--awds-space-0);   /* #cell square/200/padding */
+  --awds-checkbox-icon:    var(--awds-space-4);   /* #cell square/200/icon */
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-200);   /* #cell square/200/rounded */
+}
+
+.list-item .list-item__prefix > .radio,
+.list-item--600 .list-item__prefix > .radio,
+.list-item--500 .list-item__prefix > .radio,
+.list-item--400 .list-item__prefix > .radio,
+.list-item--300 .list-item__prefix > .radio {
+  --awds-radio-padding: var(--awds-space-0);   /* #cell square/300/padding */
+  --awds-radio-icon:    var(--awds-space-5);   /* #cell square/300/icon */
+}
+
+.list-item--200 .list-item__prefix > .radio,
+.list-item--100 .list-item__prefix > .radio,
+.list-item--50 .list-item__prefix > .radio {
+  --awds-radio-padding: var(--awds-space-0);   /* #cell square/200/padding */
+  --awds-radio-icon:    var(--awds-space-4);   /* #cell square/200/icon */
+}
+
+/* Наведение и нажатие — у строки, а не у контрола: курсор над подписью значит то же,
+   что курсор над боксом. Сам контрол реагирует только на :hover по себе, поэтому
+   состояния передаются ему явно, с теми же ячейками check-radio. Выбранность
+   перечислена в селекторе, иначе правило невыбранного перебило бы выбранный Rest. */
+
+.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+  --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+  --awds-checkbox-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+}
+
+.list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-active */
+  --awds-checkbox-chroma: rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/chroma-active */
+  --awds-checkbox-border: rgb(var(--secondary-container-on-low));   /* #cell check-radio/unselected/border-active */
+}
+
+.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+  --awds-checkbox-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+  --awds-checkbox-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+}
+
+.list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--primary-core));   /* #cell check-radio/selected/bg-active */
+  --awds-checkbox-chroma: rgb(var(--primary-core));   /* #cell check-radio/selected/chroma-active */
+  --awds-checkbox-border: rgb(var(--primary-core));   /* #cell check-radio/selected/border-active */
+}
+
+.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+  --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+  --awds-radio-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+  --awds-radio-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+}
+
+.list-item:active > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+  --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-active */
+  --awds-radio-chroma: rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/chroma-active */
+  --awds-radio-border: rgb(var(--secondary-container-on-low));   /* #cell check-radio/unselected/border-active */
+}
+
+.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+  --awds-radio-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+  --awds-radio-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+}
+
+.list-item:active > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--primary-core));   /* #cell check-radio/selected/bg-active */
+  --awds-radio-chroma: rgb(var(--primary-core));   /* #cell check-radio/selected/chroma-active */
+  --awds-radio-border: rgb(var(--primary-core));   /* #cell check-radio/selected/border-active */
+}
+
+/* Кольцо одно — у строки (см. :has() у .list-item:focus-visible выше). Своё кольцо
+   контрола вокруг бокса внутри уже обведённой строки было бы вторым контуром. */
+.list-item__prefix > .checkbox > .checkbox__input:focus-visible + .checkbox__box,
+.list-item__prefix > .radio > .radio__input:focus-visible + .radio__box {
+  outline: none;
+}
+
+/* Гашение одно — у строки (см. :has() у .list-item:disabled выше). Контрол гасит себя
+   сам на те же 40%, и без отмены вышло бы 40% от 40%. */
+.list-item__prefix > .checkbox:has(> .checkbox__input:disabled),
+.list-item__prefix > .radio:has(> .radio__input:disabled) {
+  opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
+}
+
+/* Два знака выбора в одной строке лишние: при контроле в префиксе галочка суффикса
+   не рисуется, даже если автор её положил. */
+.list-item:has(> .list-item__prefix > :is(.checkbox, .radio)) .list-item__check {
+  display: none;
 }
 
 
@@ -325,24 +455,49 @@
 }
 
 .list-item-actual-selected {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   /* #cell list/actual-selected/bg-rest */
-  --awds-list-item-border:  rgb(var(--secondary-container-on-lowest));   /* #cell list/actual-selected/border */
-  --awds-list-item-color:   rgb(var(--accent-core));   /* #cell list/actual-selected/color */
-  --awds-list-item-desc:    rgb(var(--accent-core));   /* #cell list/actual-selected/description */
-  --awds-list-item-check:   rgb(var(--accent-core));   /* #cell list/actual-selected/icon-check */
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   /* #cell list/actual-selected/bg-rest */
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   /* #cell list/actual-selected/border-rest */
+  --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/actual-selected/color-rest */
+  --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/actual-selected/description-rest */
+  --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/actual-selected/icon-check-rest */
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/actual-selected/icon-rest */
+  --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/actual-selected/chevron-rest */
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--secondary-container-core));   /* #cell list/actual-selected/bg-hover */
+  --awds-list-item-bg:          rgb(var(--secondary-container-core));   /* #cell list/actual-selected/bg-hover */
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   /* #cell list/actual-selected/border-hover */
+  --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/actual-selected/color-hover */
+  --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/actual-selected/description-hover */
+  --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/actual-selected/icon-check-hover */
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/actual-selected/icon-hover */
+  --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/actual-selected/chevron-hover */
+}
+
+.list-item-actual-selected:focus-visible,
+.list-item-actual-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   /* #cell list/actual-selected/bg-focus */
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   /* #cell list/actual-selected/border-focus */
+  --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/actual-selected/color-focus */
+  --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/actual-selected/description-focus */
+  --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/actual-selected/icon-check-focus */
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/actual-selected/icon-focus */
+  --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/actual-selected/chevron-focus */
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-actual-selected:active:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--extended-transparent));   /* #cell list/actual-selected/bg-active */
+  --awds-list-item-bg:          rgb(var(--extended-transparent));   /* #cell list/actual-selected/bg-active */
+  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   /* #cell list/actual-selected/border-active */
+  --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/actual-selected/color-active */
+  --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/actual-selected/description-active */
+  --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/actual-selected/icon-check-active */
+  --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/actual-selected/icon-active */
+  --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/actual-selected/chevron-active */
 }
 
 

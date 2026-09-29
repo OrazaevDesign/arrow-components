@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="../../awds-component-notice/references/notice.css">
+  <link rel="stylesheet" href="../../awds-component-checkbox/references/checkbox.css">
+  <link rel="stylesheet" href="../../awds-component-radio/references/radio.css">
   <link rel="stylesheet" href="./list-item-transparent.css">
   <link rel="stylesheet" href="./list-item-default.css">
   <link rel="stylesheet" href="./list-item-default-selected.css">
@@ -189,6 +191,20 @@
 </p>
 <div class="panel"><ul class="plain" id="ctx"></ul></div>
 
+<h2>Переключатель в слоте: checkbox и radio</h2>
+<p class="note">
+  Строка — <code>&lt;label&gt;</code>, в <code>__prefix</code> настоящий <code>checkbox</code> или <code>radio</code>.
+  Клик по тексту переключает инпут, наведение и нажатие строки передаются контролу, кольцо фокуса одно — у строки.
+  Контрол размером со слот иконки: 600…300 → <code>square/300</code> (20px), 200…50 → <code>square/200</code> (16px).
+  Вариант строки берётся из переключателя «Вариант»; при выборе он не меняется.
+</p>
+<table class="matrix">
+  <thead>
+    <tr><th>Size</th><th>Checkbox</th><th>Checkbox, выбран</th><th>Radio</th><th>Radio, выбран</th><th>Disabled</th></tr>
+  </thead>
+  <tbody id="controls"></tbody>
+</table>
+
 <h2>В контексте: нижняя панель</h2>
 <p class="note">
   <code>tabbar</code> и <code>tabbar-selected</code> — вкладки нижней панели, одна ступень: size-классы на них не
@@ -242,8 +258,27 @@ function item(size, state, variant) {
     description + '</span>' + suffix + '</button>';
 }
 
+const CB_ICONS = '<svg class="checkbox__icon checkbox__icon--check" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2929 7.29289C17.6834 6.90237 18.3164 6.90237 18.7069 7.29289C19.0975 7.68342 19.0975 8.31643 18.7069 8.70696L10.7069 16.707C10.3164 17.0975 9.68342 17.0975 9.29289 16.707L5.29289 12.707C4.90237 12.3164 4.90237 11.6834 5.29289 11.2929C5.68342 10.9024 6.31643 10.9024 6.70696 11.2929L9.99992 14.5859L17.2929 7.29289Z"/></svg>' +
+  '<svg class="checkbox__icon checkbox__icon--indeterminate" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 11C18.5523 11 19 11.4477 19 12C19 12.5523 18.5523 13 18 13H6C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11H18Z"/></svg>';
+const RD_DOT = '<svg class="radio__dot" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>';
+
+function control(size, kind, checked, disabled, variant) {
+  const input = '<input class="' + kind + '__input" type="' + kind + '"' + (kind === 'radio' ? ' name="r-' + size + '-' + (checked ? 'on' : 'off') + '"' : '') +
+    (checked ? ' checked' : '') + (disabled ? ' disabled' : '') + '>';
+  const box = '<span class="' + kind + '__box">' + (kind === 'checkbox' ? CB_ICONS : RD_DOT) + '</span>';
+  return '<label class="list-item list-item-' + variant + ' list-item--' + size + '">' +
+    '<span class="list-item__prefix"><span class="' + kind + '">' + input + box + '</span></span>' +
+    '<span class="list-item__content"><span class="list-item__title">Алматы</span></span></label>';
+}
+
 function render() {
   const v = document.getElementById('t-variant').value;
+
+  document.getElementById('controls').innerHTML = v.startsWith('tabbar')
+    ? '<tr><td colspan="6" class="note">У вкладок нижней панели переключателя в слоте не бывает.</td></tr>'
+    : SIZES.map(s => '<tr><td class="size-label">' + s + '</td>' +
+      [['checkbox', false, false], ['checkbox', true, false], ['radio', false, false], ['radio', true, false], ['checkbox', true, true]]
+        .map(([k, c, d]) => '<td>' + control(s, k, c, d, v) + '</td>').join('') + '</tr>').join('');
 
   document.getElementById('matrix').innerHTML = SIZES.map(s =>
     '<tr><td class="size-label">' + s + '</td>' +

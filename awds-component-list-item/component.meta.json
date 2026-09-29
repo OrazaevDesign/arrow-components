@@ -1,10 +1,10 @@
 {
   "component": "list-item",
-  "version": "2.0.1",
-  "contract_hash": "sha256:b2fcaa459f684782767d4dda5face704c66c30826d0ec1035b666847d58d05cb",
-  "artifact_hash": "sha256:2f5f603be5efb6a8dd87571c696acb17383a94e2c7deef368d9c5a202878dddc",
+  "version": "2.2.1",
+  "contract_hash": "sha256:f5922f3e94a4f38b6612a753ed9ef8f5c0e134b7c497c1406fb6c48a0216eed7",
+  "artifact_hash": "sha256:028914c724c96aa86051156bbe6d99a27155069be4d91d5a1f048b242dfaf88f",
   "visual_change": true,
-  "released_at": "2026-09-28T07:54:41.188Z",
+  "released_at": "2026-09-29T18:28:57.790Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -244,19 +244,28 @@
     "--awds-space-px",
     "--extended-shadow-3",
     "--extended-transparent",
+    "--focus-container-core",
+    "--focus-container-on-high",
+    "--focus-container-on-highest",
+    "--focus-container-on-lowest",
+    "--focus-core",
+    "--primary-chroma",
     "--primary-container-core",
     "--primary-container-on",
     "--primary-container-on-high",
     "--primary-container-on-highest",
-    "--primary-container-on-lowest",
     "--primary-core",
+    "--primary-dim",
+    "--secondary-container-chroma",
     "--secondary-container-core",
     "--secondary-container-dim",
     "--secondary-container-on",
     "--secondary-container-on-high",
     "--secondary-container-on-highest",
+    "--secondary-container-on-low",
     "--secondary-container-on-lowest",
     "--surface-bright",
+    "--surface-on-highest",
     "--surface-surface"
   ],
   "focus_ring_note": "focus-selection/outline (= surface-on-highest), как у button / checkbox / radio / switch — НЕ вариант input и select с собственным кольцом primary-core при 50%. offset 1px выведен числом: outline/500 = 9 при rounded 8, outline/600 = 11 при rounded 10, то есть радиус кольца = rounded + 1.",
@@ -391,7 +400,8 @@
         "a",
         "li",
         "div",
-        "option"
+        "option",
+        "label"
       ]
     },
     "variant": {
@@ -481,10 +491,15 @@
   ],
   "uses": {
     "awds-component-focus-selection": "2.0.3",
-    "awds-component-notice": "2.0.5"
+    "awds-component-notice": "2.0.5",
+    "awds-component-checkbox": "1.0.11",
+    "awds-component-radio": "1.0.11"
   },
   "contract": {
     "classes": [
+      "checkbox",
+      "checkbox__box",
+      "checkbox__input",
       "list-item",
       "list-item--100",
       "list-item--200",
@@ -507,19 +522,24 @@
       "list-item-variation-indeterminate",
       "list-item-variation-selected",
       "list-item__check",
+      "list-item__chevron",
       "list-item__content",
       "list-item__description",
       "list-item__img",
       "list-item__prefix",
       "list-item__suffix",
       "list-item__title",
-      "notice"
+      "notice",
+      "radio",
+      "radio__box",
+      "radio__input"
     ],
     "attributes": [
       "aria-disabled"
     ],
     "elements": [
       "img",
+      "input",
       "svg"
     ],
     "public_vars": [],
