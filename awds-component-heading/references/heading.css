@@ -97,9 +97,9 @@
 }
 
 /* === Раскладка действия по View ===
-   Desktop (≥1068): действие вплотную к заголовку (база: flex + gap 6px → слева).
-   Tablet/Mobile (<1068): действие к правому краю (space-between). */
-@media (max-width: 1067px) {
+   Desktop (≥1024): действие вплотную к заголовку (база: flex + gap 6px → слева).
+   Tablet/Mobile (<1024): действие к правому краю (space-between). */
+@media (max-width: 1023px) {
   .heading {
     justify-content: space-between;
   }

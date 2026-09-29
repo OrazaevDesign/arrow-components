@@ -24,7 +24,7 @@
 
 | Класс | Роль |
 |---|---|
-| `.heading` | Контейнер: flex, `align-items: flex-end`, `gap: 6px`, `width: 100%`. На <1068 — `space-between`. |
+| `.heading` | Контейнер: flex, `align-items: flex-end`, `gap: 6px`, `width: 100%`. На <1024 — `space-between`. |
 | `.heading__title` | Текст заголовка. Размер — от `.heading--h{N}`. Цвет `surface-on-highest`, semibold, `text-wrap: balance`. |
 | `.heading__action` | Действие (опц.) = `awds-component-button-area` (`.btn-area-default --100 --fill-y`). Цвет/размер/состояния/шеврон/полная высота — из button-area. Класс — опц. хук. |
 | `.heading--h1…--h5` | Уровень (размер) заголовка. |
