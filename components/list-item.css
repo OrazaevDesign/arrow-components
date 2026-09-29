@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@2.3.0
+/* ArrowDS · list-item@2.3.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -925,6 +925,20 @@
 
 .list-item-variation-indeterminate.list-item--no-line::after {
   content: none;
+}
+
+.list-item-variation-indeterminate {
+  box-shadow: none;
+}
+
+.list-item-variation-indeterminate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: var(--awds-list-item-border-width) dashed var(--awds-list-item-border);
+  border-radius: inherit;
+  transition: border-color 0.15s ease-out;
 }
 
 .list-item.list-item-variation-selected {
