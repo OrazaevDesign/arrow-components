@@ -104,7 +104,9 @@
   letter-spacing: var(--awds-control-letter-spacing-300);
   /* Figma: Inter Medium (500). В DS нет weight-500 — берём ближайший по семейству
      индикаторов semibold (как у awds-component-notice). */
-  font-weight: var(--awds-font-weight-semibold);
+  /* medium: в макете счётчик привязан к font-weight/medium (до 27.09.2026 стоял
+     semibold, component-figma-check). */
+  font-weight: var(--awds-font-weight-medium);
   color: rgb(var(--surface-on-high));   /* #cell slider/numbs/color */
 
   /* Polish (MIFB): «1/2» — динамические числа, моноширим, чтобы пилюля не «прыгала»

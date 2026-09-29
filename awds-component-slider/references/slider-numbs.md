@@ -20,11 +20,11 @@
 | Padding | `var(--awds-space-1)` |
 | Скругление | `var(--awds-rounded-border-radius-full)` |
 | Цвет текста | `rgb(var(--surface-on-high))` |
-| Типографика | `--awds-control-font-size-300 / -line-height / -letter-spacing`, `--awds-font-weight-semibold` |
+| Типографика | `--awds-control-font-size-300 / -line-height / -letter-spacing`, `--awds-font-weight-medium` |
 | Цифры | `font-variant-numeric: tabular-nums` — не «прыгают» при 1/9 → 1/10 |
 | Минимальная ширина | `var(--awds-space-9)` (36px) + центровка — размер пилюли из макета |
 
-Figma-исходник — Inter Medium (500); в DS нет weight-500, округлено к `semibold` (как у `awds-component-notice`).
+В макете счётчик привязан к `font-weight/medium` (500) — в коде та же ячейка `--awds-font-weight-medium`. До 27.09.2026 здесь стоял semibold с пометкой «в DS нет 500»; ячейка medium в студии есть.
 
 ## Состояния
 

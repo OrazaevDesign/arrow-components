@@ -1,0 +1,59 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Три отдельных компонента без наборов. В макете видны пять точек (List обрезает остальные), активная — третья; подложка пилюли — отдельный слой bg, у dots-mini её нет. У dots-mini List шириной 32 показывает четыре точки — число точек задаёт содержимое, сверяется видимое.",
+  "css": [
+    "slider.css"
+  ],
+  "tag": "div",
+  "attrs": "role=\"group\"",
+  "class": "slider slider-{variant}",
+  "variants": {
+    "dots": {
+      "html": "<span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot slider__dot--active\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot\"></span>"
+    },
+    "dots-mini": {
+      "html": "<span class=\"slider__dot\"></span><span class=\"slider__dot\"></span><span class=\"slider__dot slider__dot--active\"></span><span class=\"slider__dot\"></span>"
+    },
+    "numbs": {
+      "html": "{text}"
+    }
+  },
+  "parts": {
+    "dots": {
+      "bg": {
+        "figma": "bg",
+        "dom": ".slider"
+      },
+      "dot": {
+        "figma": "dot",
+        "dom": ".slider__dot:not(.slider__dot--active)"
+      },
+      "active": {
+        "figma": "dotActive",
+        "dom": ".slider__dot--active"
+      }
+    },
+    "dots-mini": {
+      "dot": {
+        "figma": "dot",
+        "dom": ".slider__dot:not(.slider__dot--active)"
+      },
+      "active": {
+        "figma": "dotActive",
+        "dom": ".slider__dot--active"
+      }
+    },
+    "numbs": {
+      "bg": {
+        "figma": "bg",
+        "dom": ".slider"
+      }
+    }
+  },
+  "exceptions": [
+    {
+      "cells": "^(dots|numbs) ·",
+      "prop": "^фон$",
+      "why": "подложка пилюли в макете — отдельный слой bg (белый 80 %), у самого варианта заливки нет; сверяется частью bg"
+    }
+  ]
+}

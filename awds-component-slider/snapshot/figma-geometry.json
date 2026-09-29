@@ -1,0 +1,185 @@
+{
+ "fileKey": "470rar5EfRm4n14vHMXbpc",
+ "component": "slider",
+ "fetched": "2026-09-27",
+ "cells": [
+  {
+   "variant": "dots",
+   "name": "slider / dots",
+   "props": {},
+   "root": {
+    "w": 60,
+    "h": 14,
+    "r": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "bg": {
+     "x": 0,
+     "y": 0,
+     "w": 60,
+     "h": 14,
+     "op": 0.8,
+     "fill": {
+      "t": "s",
+      "c": [
+       "ffffffff"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    },
+    "dot": {
+     "x": 4,
+     "y": 4,
+     "w": 6,
+     "h": 6,
+     "op": 0.3,
+     "fill": {
+      "t": "s",
+      "c": [
+       "262626ff"
+      ]
+     },
+     "stroke": null,
+     "sw": 1
+    },
+    "dotActive": {
+     "x": 24,
+     "y": 4,
+     "w": 12,
+     "h": 6,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "262626ff"
+      ]
+     },
+     "stroke": null,
+     "sw": 1
+    }
+   }
+  },
+  {
+   "variant": "dots-mini",
+   "name": "slider / dots-mini",
+   "props": {},
+   "root": {
+    "w": 40,
+    "h": 12,
+    "r": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "dot": {
+     "x": 4,
+     "y": 4,
+     "w": 4,
+     "h": 4,
+     "op": 0.3,
+     "fill": {
+      "t": "s",
+      "c": [
+       "262626ff"
+      ]
+     },
+     "stroke": null,
+     "sw": 1
+    },
+    "dotActive": {
+     "x": 20,
+     "y": 4,
+     "w": 8,
+     "h": 4,
+     "op": 1,
+     "fill": {
+      "t": "s",
+      "c": [
+       "262626ff"
+      ]
+     },
+     "stroke": null,
+     "sw": 1
+    }
+   }
+  },
+  {
+   "variant": "numbs",
+   "name": "slider / numbs",
+   "props": {},
+   "root": {
+    "w": 36,
+    "h": 24,
+    "r": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "fill": [],
+    "stroke": null,
+    "op": 1,
+    "fx": []
+   },
+   "texts": [
+    {
+     "x": 4,
+     "y": 4,
+     "w": 28,
+     "h": 16,
+     "chars": "1/2",
+     "fs": 13,
+     "lh": 16,
+     "ls": 0.1,
+     "wt": 500,
+     "fam": "Onest",
+     "c": "6a6a6aff",
+     "auto": "HEIGHT",
+     "align": "CENTER"
+    }
+   ],
+   "gfx": [],
+   "shapes": [],
+   "parts": {
+    "bg": {
+     "x": 0,
+     "y": 0,
+     "w": 36,
+     "h": 24,
+     "op": 0.8,
+     "fill": {
+      "t": "s",
+      "c": [
+       "ffffffff"
+      ]
+     },
+     "stroke": null,
+     "sw": null
+    }
+   }
+  }
+ ]
+}
