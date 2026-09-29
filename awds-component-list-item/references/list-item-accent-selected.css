@@ -456,7 +456,7 @@
 
 .list-item-accent-selected {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   /* #cell list/accent-selected/bg-rest */
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   /* #cell list/accent-selected/border-rest */
+  --awds-list-item-border:      rgb(var(--focus-container-core));   /* #cell list/accent-selected/border-rest */
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/accent-selected/color-rest */
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/description-rest */
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/icon-check-rest */
@@ -469,7 +469,7 @@
    матчится — правило молча перестало бы работать. */
 .list-item-accent-selected:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   /* #cell list/accent-selected/bg-hover */
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   /* #cell list/accent-selected/border-hover */
+  --awds-list-item-border:      rgb(var(--focus-container-core));   /* #cell list/accent-selected/border-hover */
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/accent-selected/color-hover */
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/description-hover */
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/icon-check-hover */
@@ -480,7 +480,7 @@
 .list-item-accent-selected:focus-visible,
 .list-item-accent-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   /* #cell list/accent-selected/bg-focus */
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   /* #cell list/accent-selected/border-focus */
+  --awds-list-item-border:      rgb(var(--focus-container-core));   /* #cell list/accent-selected/border-focus */
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/accent-selected/color-focus */
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/description-focus */
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/icon-check-focus */
@@ -492,7 +492,7 @@
    над строкой, и без этого правила остался бы hover-вид. */
 .list-item-accent-selected:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   /* #cell list/accent-selected/bg-active */
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   /* #cell list/accent-selected/border-active */
+  --awds-list-item-border:      rgb(var(--focus-container-core));   /* #cell list/accent-selected/border-active */
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/accent-selected/color-active */
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/description-active */
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/accent-selected/icon-check-active */
