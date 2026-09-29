@@ -1,0 +1,67 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Ячейка таблицы (td/th) — ставится в настоящую таблицу, корень сверки — сама ячейка. Отступ и типографика — роли WYSIWYG, мод масштаба — small, как у файла компонентов (Р1 плана). light — ячейка таблицы awds-table--light (безрамочная, flush-left).",
+  "html_class": "theme-default theme-light smooth rounded-smooth typo-small",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "table.css",
+    "cell-default.css",
+    "cell-head.css",
+    "cell-light.css"
+  ],
+  "tag": "table",
+  "class": "awds-table",
+  "dom_root": ".cell",
+  "variants": {
+    "light": {
+      "class": "awds-table--light"
+    },
+    "head": {
+      "html": "<thead><tr><th class=\"cell cell-head\" style=\"width:{w}px;box-sizing:border-box\" {st}>{text}</th></tr></thead>"
+    }
+  },
+  "html_all": "<tbody><tr><td class=\"cell cell-{variant}\" style=\"width:{w}px;box-sizing:border-box\" {st}>{text}</td></tr></tbody>",
+  "axes": {
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          {
+            "on": ".cell",
+            "cls": [
+              "hover"
+            ]
+          }
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          {
+            "on": ".cell",
+            "cls": [
+              "focus",
+              "focus-visible"
+            ]
+          }
+        ],
+        "vars": {
+          "st": "tabindex=\"0\""
+        }
+      },
+      "active": {
+        "pseudo": [
+          {
+            "on": ".cell",
+            "cls": [
+              "active"
+            ]
+          }
+        ]
+      },
+      "disabled": {
+        "vars": {
+          "st": "aria-disabled=\"true\""
+        }
+      }
+    }
+  }
+}

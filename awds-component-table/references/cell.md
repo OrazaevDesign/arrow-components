@@ -59,12 +59,12 @@ Active = Rest. Focus = Rest + обводка. Disabled = Rest + `opacity: var(--
 
 Ячейки кладутся в одну из двух раскладок (набор `table`, `76:58116`, ось `cell`):
 
-- `.awds-table--default` — сетка: все ячейки с границей (`border-collapse`), шапка залита. Паддинг равномерный `--awds-space-3`.
-- `.awds-table--light` — безрамочная: только `border-bottom` между строками (`surface-on-lowest`), ячейки прозрачные, первый столбец flush-влево (`padding-inline-start: 0`).
+- `.awds-table--default` — сетка: все ячейки с границей (`border-collapse`), шапка залита. Паддинг `li-top − 1px`: обводка в макете INSIDE и лежит внутри отступа, ячейка 46, шаг сетки 45 (соседние ячейки набора наложены на 1px — модель `border-collapse`).
+- `.awds-table--light` — безрамочная: только `border-bottom` между строками (`surface-on-lowest`), ячейки прозрачные, первый столбец flush-влево (`padding-inline-start: 0`). Разделитель внутри ячейки: нижний паддинг `li-top − 1px`, у последней строки — полный. Рамка hover — inset-тень, чтобы строка не прыгала на пиксель.
 
 Широкую таблицу оборачивай в `.awds-table-scroll` (нативный `overflow-x:auto`).
 
 ## Заметки
 
-- **`cell-head` — semibold** (`--awds-font-weight-semibold`), тело (`cell-light`/`cell-default`) — `regular`. Подтверждено нодой таблицы (head = `Inter:Semi_Bold`).
+- **`cell-head` — semibold** (`--awds-font-weight-semibold`), тело (`cell-light`/`cell-default`) — `regular`. Эталон — набор table=default (головная строка `weight/semibold`); мастер `cell / head` держал `weight/regular` и 27.09.2026 перепривязан на semibold.
 - `cell-default` = белая ячейка (`surface-bright`) с границей `surface-on-lowest`. Старая мис-привязка фрейма к `cell/light` жила в файле «Comp ↪ ³ Cell» и в секции `76:57983` её нет — см. шапку [cell-default.css](cell-default.css).

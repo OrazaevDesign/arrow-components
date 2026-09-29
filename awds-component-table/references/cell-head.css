@@ -29,7 +29,9 @@
   --awds-cell-border:      rgb(var(--surface-on-lowest));   /* #cell cell/head/border */
   --awds-cell-color:       rgb(var(--surface-on-highest));  /* #cell cell/head/color */
   --awds-cell-description: rgb(var(--surface-on-high));     /* #cell cell/head/description */
-  /* Заголовок жирнее тела — в макете текст головной ячейки Semi Bold */
+  /* Заголовок жирнее тела — Semi Bold: так головная строка стоит в наборе table=default
+     (76:58116). Мастер cell / head держал Regular и расходился с таблицей, где вес
+     проставлен переопределением; починен мастер (component-figma-check, 27.09.2026). */
   font-weight: var(--awds-font-weight-semibold);
 }
 
