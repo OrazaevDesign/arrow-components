@@ -233,9 +233,9 @@
    ============================================================================= */
 
 .btn-menu-accent-selected {
-  --awds-btn-menu-bg:      rgb(var(--primary-container-core));   /* #cell list/accent-selected/bg */
-  --awds-btn-menu-border:  rgb(var(--primary-container-on-lowest));   /* #cell list/accent-selected/border */
-  --awds-btn-menu-chevron: rgb(var(--primary-container-on-highest));   /* #cell list/accent-selected/chevron */
+  --awds-btn-menu-bg:      rgb(var(--focus-container-core));   /* #cell list/accent-selected/bg-rest */
+  --awds-btn-menu-border:  rgb(var(--focus-container-on-lowest));   /* #cell list/accent-selected/border-rest */
+  --awds-btn-menu-chevron: rgb(var(--focus-container-on-highest));   /* #cell list/accent-selected/chevron-rest */
 }
 
 /* === Уважение к системной настройке «меньше движения» ===

@@ -1,0 +1,65 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Внутри — эмблема (emblem) и шеврон. Класс эмблемы задаёт ступень кнопки (400 → emb--150, 300 → emb--100, 200 → emb--50), вид — ось content: avatar — фото, flag — emb-icon. Бейдж по умолчанию скрыт (show-badge=false). Графика: фото-эмблема целиком, у флага — иконка внутри emb-icon (в макете у emblem / icon auto-layout, зонд спускается к иконке).",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-emblem/references/emblem.css",
+    "../../awds-component-notice/references/notice.css",
+    "button-menu.css"
+  ],
+  "tag": "button",
+  "attrs": "type=\"button\" aria-haspopup=\"menu\" aria-label=\"menu\"",
+  "class": "btn-menu btn-menu-{variant}",
+  "axes": {
+    "size": {
+      "400": {
+        "class": "btn-menu--400",
+        "vars": {
+          "emb": "emb--150"
+        }
+      },
+      "300": {
+        "class": "btn-menu--300",
+        "vars": {
+          "emb": "emb--100"
+        }
+      },
+      "200": {
+        "class": "btn-menu--200",
+        "vars": {
+          "emb": "emb--50"
+        }
+      }
+    },
+    "content": {
+      "avatar": {
+        "html": "<span class=\"btn-menu__emblem\"><span class=\"emb emb-img {emb}\"><img src=\"data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==\" alt=\"\"></span></span><svg class=\"btn-menu__chevron\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>"
+      },
+      "flag": {
+        "html": "<span class=\"btn-menu__emblem\"><span class=\"emb emb-icon {emb}\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect width=\"24\" height=\"24\" fill=\"currentColor\"/></svg></span></span><svg class=\"btn-menu__chevron\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg>"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      },
+      "disabled": {
+        "attrs": "disabled"
+      }
+    }
+  },
+  "gfx_selector": ".btn-menu__emblem > .emb-img, .emb-icon > svg, .btn-menu__chevron"
+}
