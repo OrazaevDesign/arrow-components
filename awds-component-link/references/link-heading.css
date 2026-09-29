@@ -81,7 +81,14 @@
 
 .lnk-heading {
   --awds-lnk-color: rgb(var(--surface-on-high));             /* #cell link/heading-rest */
-  text-decoration-line: none;   /* заголовки не подчёркиваем */
+}
+
+/* Заголовки не подчёркиваем. Селектор с двумя классами, а не .lnk-heading: базовое правило
+   .lnk с подчёркиванием повторено в файле каждого варианта, и при той же специфичности
+   (0-1-0) линию возвращал тот файл, что подключён позже, — link-muted.css после этого
+   (component-figma-check, 27.09.2026). Порядок секций в блоке не гарантирован. */
+.lnk.lnk-heading {
+  text-decoration-line: none;
 }
 
 .lnk-heading:hover {

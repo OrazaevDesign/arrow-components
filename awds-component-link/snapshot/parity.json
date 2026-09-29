@@ -1,0 +1,48 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Ссылка — текст с подчёркиванием; цвет линии в макете не выражается отдельно (у кода — 30 % от текста), сверяется наличие линии. Ссылка наследует типографику от текста — на проверочной странице задан контекст макета: 14/20 Onest.",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "link-accent.css",
+    "link-contrast.css",
+    "link-default.css",
+    "link-heading.css",
+    "link-muted.css"
+  ],
+  "tag": "a",
+  "attrs": "href=\"#\"",
+  "class": "lnk lnk-{variant}",
+  "axes": {
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ]
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ]
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ]
+      }
+    }
+  },
+  "style": "font-family:var(--awds-font-family-system);font-size:var(--awds-control-font-size-400);line-height:var(--awds-control-line-height-400)",
+  "exceptions": [
+    {
+      "cells": ".",
+      "prop": "^радиус\\[\\d\\]$",
+      "why": "border-radius у ссылки нужен только кольцу фокуса (outline повторяет радиус), фона у ссылки нет"
+    },
+    {
+      "cells": "state=focus",
+      "prop": "^кольцо фокуса$",
+      "why": "в макете у ссылки на фокусе кольца нет; в коде оно оставлено сознательно — без видимого фокуса клавиатурная навигация по ссылкам слепнет (WCAG 2.4.7)"
+    }
+  ]
+}
