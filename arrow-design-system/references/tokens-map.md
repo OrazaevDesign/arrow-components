@@ -19,14 +19,14 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 
 | Коллекция | Токенов | Моды | Группы внутри | Пример имени |
 | --- | --- | --- | --- | --- |
-| **state** | 754 | — | list (144), form-control (128), button (99), badge (68), check-radio (27), cell (24), range (23), tab (21), … +32 | `--awds-state-accordion-collapsed-bg-rest` |
-| **roles** | 298 | light · dark | surface (34), primary (28), secondary (28), tertiary (28), accent (28), addition (28), info (28), success (28), … +3 | `--primary-core-light` |
+| **state** | 951 | — | list (341), form-control (128), button (99), badge (68), check-radio (27), cell (24), range (23), tab (21), … +32 | `--awds-state-accordion-collapsed-bg-rest` |
+| **roles** | 326 | light · dark | surface (34), primary (28), secondary (28), tertiary (28), accent (28), addition (28), info (28), success (28), … +4 | `--primary-core-light` |
 | **typography** | 228 | desktop · tablet · mobile | font-size (57), line-height (57), line-height-compact (57), letter-spacing (57) | `--awds-typography-font-size-50-desktop` |
 | **size** | 217 | — | rectangle (98), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +2 | `--awds-size-rectangle-50-padding` |
 | **wysiwyg** | 138 | medium · small · large | font-size (36), line-height (36), letter-spacing (36), gap (30) | `--awds-wysiwyg-font-size-h1-medium` |
 | **rounded** | 72 | smooth · rounded · none | border-radius (36), outline (36) | `--awds-rounded-border-radius-50-smooth` |
 | **shadow** | 60 | elevation-1 · elevation-2 · elevation-3 · elevation-4 | shadow1 (20), shadow2 (20), shadow3 (20) | `--awds-shadow-shadow1-color-elevation-1` |
-| **layout** | 45 | desktop · tablet · mobile | card (24), section (21) | `--awds-layout-section-width-large-desktop` |
+| **layout** | 51 | desktop · tablet · mobile | section (27), card (24) | `--awds-layout-section-width-large-desktop` |
 | **space** | 39 | — | 0 (1), 1 (1), 2 (1), 3 (1), 4 (1), 5 (1), 6 (1), 7 (1), … +31 | `--awds-space-0` |
 | **control** | 39 | — | font-size (13), line-height (13), letter-spacing (13) | `--awds-control-font-size-50` |
 | **opacity** | 21 | — | 0 (1), 5 (1), 10 (1), 15 (1), 20 (1), 25 (1), 30 (1), 35 (1), … +13 | `--awds-opacity-0` |
@@ -34,7 +34,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **zindex** | 8 | — | dropdown (1), sticky (1), fixed (1), backdrop (1), offcanvas (1), modal (1), popover (1), tooltip (1) | `--awds-zindex-dropdown` |
 | **font** | 8 | — | weight (5), family (3) | `--awds-font-family-system` |
 
-Всего 1936 токенов в 14 коллекциях.
+Всего 2167 токенов в 14 коллекциях.
 
 ## Смысл групп
 
@@ -54,7 +54,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `font` | `family` | Заголовки: Geologica |
 | `font` | `weight` | Начертание medium |
 | `layout` | `card` | Минимальная ширина баннера в половину ряда (два в ряд). |
-| `layout` | `section` | Боковое поле колонки |
+| `layout` | `section` | Боковое поле колонки блока |
 | `opacity` | `—` | Прозрачность 50%. |
 | `rounded` | `border-radius` | Скругление |
 | `rounded` | `outline` | Радиус кольца фокуса |
@@ -94,7 +94,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 
 ## Роли
 
-Групп ролей 12: `accent`, `addition`, `awds`, `error`, `extended`, `info`, `primary`, `secondary`, `success`, `surface`, `tertiary`, `warning`.
+Групп ролей 13: `accent`, `addition`, `awds`, `error`, `extended`, `focus`, `info`, `primary`, `secondary`, `success`, `surface`, `tertiary`, `warning`.
 
 У каждой роли два мода — `light` и `dark`: студия эмитит `--primary-core-light` и
 `--primary-core-dark`, а `--primary-core` ссылается на активный. Переключение — класс

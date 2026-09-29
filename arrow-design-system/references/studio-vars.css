@@ -459,6 +459,48 @@
   --extended-overlay-light: 0 0 0 / 24%;
   --extended-overlay-dark: 0 0 0 / 24%;
   --extended-overlay: var(--extended-overlay-light);
+  --focus-core-light: 111 58 236;
+  --focus-core-dark: 111 58 236;
+  --focus-core: var(--focus-core-light);
+  --focus-chroma-light: 123 74 239;
+  --focus-chroma-dark: 123 74 239;
+  --focus-chroma: var(--focus-chroma-light);
+  --focus-dim-light: 119 68 239;
+  --focus-dim-dark: 119 68 239;
+  --focus-dim: var(--focus-dim-light);
+  --focus-on-light: 255 255 255;
+  --focus-on-dark: 255 255 255;
+  --focus-on: var(--focus-on-light);
+  --focus-on-dim-light: 242 239 251;
+  --focus-on-dim-dark: 242 239 251;
+  --focus-on-dim: var(--focus-on-dim-light);
+  --focus-container-base-light: 249 247 253;
+  --focus-container-base-dark: 38 23 71;
+  --focus-container-base: var(--focus-container-base-light);
+  --focus-container-core-light: 242 239 251;
+  --focus-container-core-dark: 21 13 38;
+  --focus-container-core: var(--focus-container-core-light);
+  --focus-container-chroma-light: 242 239 251;
+  --focus-container-chroma-dark: 21 13 38;
+  --focus-container-chroma: var(--focus-container-chroma-light);
+  --focus-container-dim-light: 249 247 253;
+  --focus-container-dim-dark: 38 23 71;
+  --focus-container-dim: var(--focus-container-dim-light);
+  --focus-container-on-highest-light: 47 29 90;
+  --focus-container-on-highest-dark: 232 226 247;
+  --focus-container-on-highest: var(--focus-container-on-highest-light);
+  --focus-container-on-high-light: 96 54 194;
+  --focus-container-on-high-dark: 185 167 227;
+  --focus-container-on-high: var(--focus-container-on-high-light);
+  --focus-container-on-light: 164 141 217;
+  --focus-container-on-dark: 96 54 194;
+  --focus-container-on: var(--focus-container-on-light);
+  --focus-container-on-low-light: 204 190 236;
+  --focus-container-on-low-dark: 62 36 122;
+  --focus-container-on-low: var(--focus-container-on-low-light);
+  --focus-container-on-lowest-light: 219 210 242;
+  --focus-container-on-lowest-dark: 47 29 90;
+  --focus-container-on-lowest: var(--focus-container-on-lowest-light);
   /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   --awds-breakpoints-desktop-large: 1488px;  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
   /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
@@ -497,6 +539,16 @@
   --awds-layout-section-gutter-tablet: var(--awds-space-4);
   --awds-layout-section-gutter-mobile: var(--awds-space-0);
   --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);  /* Боковое поле колонки: padding-inline на __inner, внутри max-width. Зазор между колонками — section/column-gap. */
+  /* Боковое поле колонки блока: padding-inline на __inner, внутри max-width. На mobile поле сохраняется, в отличие от section/gutter. Зазор между колонками — section/column-gap. */
+  --awds-layout-section-gutter-block-desktop: var(--awds-space-6);
+  --awds-layout-section-gutter-block-tablet: var(--awds-space-4);
+  --awds-layout-section-gutter-block-mobile: var(--awds-space-4);
+  --awds-layout-section-gutter-block: var(--awds-layout-section-gutter-block-desktop);  /* Боковое поле колонки блока: padding-inline на __inner, внутри max-width. На mobile поле сохраняется, в отличие от section/gutter. Зазор между колонками — section/column-gap. */
+  /* Боковое поле содержимого модального окна: padding-inline тела и шапки модалки. Не зависит от поля секции страницы. */
+  --awds-layout-section-gutter-modal-desktop: var(--awds-space-6);
+  --awds-layout-section-gutter-modal-tablet: var(--awds-space-4);
+  --awds-layout-section-gutter-modal-mobile: var(--awds-space-4);
+  --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-desktop);  /* Боковое поле содержимого модального окна: padding-inline тела и шапки модалки. Не зависит от поля секции страницы. */
   /* Зазор между рядами сетки блока: row-gap на __layer. Зазоры внутри карточки — шкала space. */
   --awds-layout-section-row-gap-desktop: var(--awds-space-6);
   --awds-layout-section-row-gap-tablet: var(--awds-space-4);
@@ -1754,6 +1806,20 @@
   --extended-shadow: var(--extended-shadow-light);
   --extended-transparent: var(--extended-transparent-light);
   --extended-overlay: var(--extended-overlay-light);
+  --focus-core: var(--focus-core-light);
+  --focus-chroma: var(--focus-chroma-light);
+  --focus-dim: var(--focus-dim-light);
+  --focus-on: var(--focus-on-light);
+  --focus-on-dim: var(--focus-on-dim-light);
+  --focus-container-base: var(--focus-container-base-light);
+  --focus-container-core: var(--focus-container-core-light);
+  --focus-container-chroma: var(--focus-container-chroma-light);
+  --focus-container-dim: var(--focus-container-dim-light);
+  --focus-container-on-highest: var(--focus-container-on-highest-light);
+  --focus-container-on-high: var(--focus-container-on-high-light);
+  --focus-container-on: var(--focus-container-on-light);
+  --focus-container-on-low: var(--focus-container-on-low-light);
+  --focus-container-on-lowest: var(--focus-container-on-lowest-light);
 }
 
 .theme-dark {
@@ -1906,6 +1972,20 @@
   --extended-shadow: var(--extended-shadow-dark);
   --extended-transparent: var(--extended-transparent-dark);
   --extended-overlay: var(--extended-overlay-dark);
+  --focus-core: var(--focus-core-dark);
+  --focus-chroma: var(--focus-chroma-dark);
+  --focus-dim: var(--focus-dim-dark);
+  --focus-on: var(--focus-on-dark);
+  --focus-on-dim: var(--focus-on-dim-dark);
+  --focus-container-base: var(--focus-container-base-dark);
+  --focus-container-core: var(--focus-container-core-dark);
+  --focus-container-chroma: var(--focus-container-chroma-dark);
+  --focus-container-dim: var(--focus-container-dim-dark);
+  --focus-container-on-highest: var(--focus-container-on-highest-dark);
+  --focus-container-on-high: var(--focus-container-on-high-dark);
+  --focus-container-on: var(--focus-container-on-dark);
+  --focus-container-on-low: var(--focus-container-on-low-dark);
+  --focus-container-on-lowest: var(--focus-container-on-lowest-dark);
 }
 
 .desktop {
@@ -1913,6 +1993,8 @@
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);
   --awds-layout-section-width-small: var(--awds-layout-section-width-small-desktop);
   --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);
+  --awds-layout-section-gutter-block: var(--awds-layout-section-gutter-block-desktop);
+  --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-desktop);
   --awds-layout-section-row-gap: var(--awds-layout-section-row-gap-desktop);
   --awds-layout-section-column-gap: var(--awds-layout-section-column-gap-desktop);
   --awds-layout-section-padding-block: var(--awds-layout-section-padding-block-desktop);
@@ -2007,6 +2089,8 @@
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-tablet);
   --awds-layout-section-width-small: var(--awds-layout-section-width-small-tablet);
   --awds-layout-section-gutter: var(--awds-layout-section-gutter-tablet);
+  --awds-layout-section-gutter-block: var(--awds-layout-section-gutter-block-tablet);
+  --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-tablet);
   --awds-layout-section-row-gap: var(--awds-layout-section-row-gap-tablet);
   --awds-layout-section-column-gap: var(--awds-layout-section-column-gap-tablet);
   --awds-layout-section-padding-block: var(--awds-layout-section-padding-block-tablet);
@@ -2101,6 +2185,8 @@
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-mobile);
   --awds-layout-section-width-small: var(--awds-layout-section-width-small-mobile);
   --awds-layout-section-gutter: var(--awds-layout-section-gutter-mobile);
+  --awds-layout-section-gutter-block: var(--awds-layout-section-gutter-block-mobile);
+  --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-mobile);
   --awds-layout-section-row-gap: var(--awds-layout-section-row-gap-mobile);
   --awds-layout-section-column-gap: var(--awds-layout-section-column-gap-mobile);
   --awds-layout-section-padding-block: var(--awds-layout-section-padding-block-mobile);
