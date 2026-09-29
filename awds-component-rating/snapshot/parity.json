@@ -1,0 +1,53 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Пять звёзд, значение — ось data-value макета, в коде — отмеченный input. Выбранная звезда в макете — .rating__solid, пустая — .rating__ghost (контур .rating__outline того же цвета).",
+  "sets": {
+    "default": "6:850"
+  },
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "rating.css"
+  ],
+  "tag": "fieldset",
+  "class": "rating",
+  "gfx_selector": ".rating__icon",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "rating--{value}"
+      }
+    },
+    "data-value": {
+      "1": {
+        "html": "<label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_1\" value=\"1\" aria-label=\"1\" checked><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_1\" value=\"2\" aria-label=\"2\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_1\" value=\"3\" aria-label=\"3\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_1\" value=\"4\" aria-label=\"4\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_1\" value=\"5\" aria-label=\"5\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label>"
+      },
+      "2": {
+        "html": "<label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_2\" value=\"1\" aria-label=\"1\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_2\" value=\"2\" aria-label=\"2\" checked><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_2\" value=\"3\" aria-label=\"3\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_2\" value=\"4\" aria-label=\"4\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_2\" value=\"5\" aria-label=\"5\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label>"
+      },
+      "3": {
+        "html": "<label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_3\" value=\"1\" aria-label=\"1\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_3\" value=\"2\" aria-label=\"2\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_3\" value=\"3\" aria-label=\"3\" checked><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_3\" value=\"4\" aria-label=\"4\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_3\" value=\"5\" aria-label=\"5\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label>"
+      },
+      "4": {
+        "html": "<label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_4\" value=\"1\" aria-label=\"1\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_4\" value=\"2\" aria-label=\"2\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_4\" value=\"3\" aria-label=\"3\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_4\" value=\"4\" aria-label=\"4\" checked><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_4\" value=\"5\" aria-label=\"5\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label>"
+      },
+      "5": {
+        "html": "<label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_5\" value=\"1\" aria-label=\"1\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_5\" value=\"2\" aria-label=\"2\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_5\" value=\"3\" aria-label=\"3\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_5\" value=\"4\" aria-label=\"4\" ><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label><label class=\"rating__star\"><input class=\"rating__input\" type=\"radio\" name=\"r{w}{h}_5\" value=\"5\" aria-label=\"5\" checked><svg class=\"rating__icon\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"><path class=\"rating__ghost\" d=\"M2 2h16v16H2z\"/><path class=\"rating__outline\" d=\"M1 1h18v18H1z\"/><path class=\"rating__solid\" d=\"M2 2h16v16H2z\"/></svg></label>"
+      }
+    }
+  },
+  "parts": {
+    "default": {
+      "on": {
+        "figma": ". / star-selected",
+        "dom": ".rating__star:first-of-type .rating__solid",
+        "paint": "fill",
+        "paint_only": true
+      },
+      "off": {
+        "figma": ". / star-unselected",
+        "dom": ".rating__star:last-of-type .rating__ghost",
+        "paint": "fill",
+        "paint_only": true
+      }
+    }
+  }
+}

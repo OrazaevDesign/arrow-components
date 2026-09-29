@@ -151,10 +151,12 @@
   transition: opacity 0.15s ease-out, fill 0.15s ease-out;
 }
 
-/* Внутренняя заливка пустой звезды приглушена — так нарисован дуотон в макете.
+/* Пустая звезда в макете — сплошная заливка rating/unselected/bg, без дуотона: контур и
+   внутренность одного цвета. До 27.09.2026 внутренность была приглушена до 30 % (дуотон
+   из прежнего макета) — пустая звезда выходила светлее макетной (component-figma-check).
    fill-opacity, а не opacity: opacity гасила бы слой целиком вместе с переключением. */
 .rating__ghost {
-  fill-opacity: var(--awds-opacity-30);
+  fill-opacity: var(--awds-opacity-100);
 }
 
 .rating__solid {
