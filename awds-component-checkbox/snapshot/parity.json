@@ -1,0 +1,25 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Три набора макета — unselected / selected / indeterminate; в коде это состояние нативного input (:checked, :indeterminate), а не класс. Корень сверки — квадрат: в макете вариант, в коде .checkbox__box. hover и active — на label, focus-visible — на скрытом input, disabled и checked — атрибуты input, indeterminate — только свойством из скрипта.",
+  "sets": { "unselected": "23:2893", "selected": "399:2", "indeterminate": "399:3" },
+  "dom_root": ".checkbox__box",
+  "css": ["../../awds-component-focus-selection/references/focus-selection.css", "checkbox.css"],
+  "tag": "label",
+  "class": "checkbox",
+  "variants": {
+    "selected": { "vars": { "checked": "checked" } },
+    "indeterminate": { "vars": { "ind": "data-ind" } }
+  },
+  "axes": {
+    "size": { "*": { "class": "checkbox--{value}" } },
+    "state": {
+      "rest": {},
+      "hover": { "pseudo": ["hover"] },
+      "focus": { "pseudo": ["focus", "focus-visible"], "pseudo_on": ".checkbox__input" },
+      "active": { "pseudo": ["active"] },
+      "disabled": { "vars": { "disabled": "disabled" } }
+    }
+  },
+  "variants_html": true,
+  "html_all": "<input class=\"checkbox__input\" type=\"checkbox\" {checked} {disabled} {ind}><span class=\"checkbox__box\"><svg class=\"checkbox__icon checkbox__icon--check\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect width=\"24\" height=\"24\" fill=\"currentColor\"/></svg><svg class=\"checkbox__icon checkbox__icon--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect width=\"24\" height=\"24\" fill=\"currentColor\"/></svg></span>",
+  "script": "document.querySelectorAll('input[data-ind]').forEach(function (i) { i.indeterminate = true; });"
+}

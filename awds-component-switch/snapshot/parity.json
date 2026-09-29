@@ -1,0 +1,24 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Два набора макета — unselected / selected; в коде это :checked нативного input с role=switch. Корень сверки — трек: в макете вариант, в коде .switch__track. Бегунок — эллипс Handle в макете против .switch__handle. Наборы switch3 / * (ось origin) в коде не реализованы и не сверяются.",
+  "sets": { "unselected": "23:3738", "selected": "405:51332" },
+  "dom_root": ".switch__track",
+  "css": ["../../awds-component-focus-selection/references/focus-selection.css", "switch.css"],
+  "tag": "label",
+  "class": "switch",
+  "variants": { "selected": { "vars": { "checked": "checked" } } },
+  "axes": {
+    "size": { "*": { "class": "switch--{value}" } },
+    "state": {
+      "rest": {},
+      "hover": { "pseudo": ["hover"] },
+      "focus": { "pseudo": ["focus", "focus-visible"], "pseudo_on": ".switch__input" },
+      "active": { "pseudo": ["active"] },
+      "disabled": { "vars": { "disabled": "disabled" } }
+    }
+  },
+  "html_all": "<input class=\"switch__input\" type=\"checkbox\" role=\"switch\" {checked} {disabled}><span class=\"switch__track\"><span class=\"switch__handle\"></span></span>",
+  "parts": {
+    "unselected": { "handle": { "figma": "Handle", "dom": ".switch__handle" } },
+    "selected": { "handle": { "figma": "Handle", "dom": ".switch__handle" } }
+  }
+}

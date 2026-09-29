@@ -1,0 +1,20 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Два набора макета — unselected / selected; в коде это :checked нативного input. Корень сверки — круг: в макете вариант, в коде .radio__box. hover и active — на label, focus-visible — на скрытом input, disabled и checked — атрибуты input.",
+  "sets": { "unselected": "23:3171", "selected": "401:22206" },
+  "dom_root": ".radio__box",
+  "css": ["../../awds-component-focus-selection/references/focus-selection.css", "radio.css"],
+  "tag": "label",
+  "class": "radio",
+  "variants": { "selected": { "vars": { "checked": "checked" } } },
+  "axes": {
+    "size": { "*": { "class": "radio--{value}" } },
+    "state": {
+      "rest": {},
+      "hover": { "pseudo": ["hover"] },
+      "focus": { "pseudo": ["focus", "focus-visible"], "pseudo_on": ".radio__input" },
+      "active": { "pseudo": ["active"] },
+      "disabled": { "vars": { "disabled": "disabled" } }
+    }
+  },
+  "html_all": "<input class=\"radio__input\" type=\"radio\" {checked} {disabled}><span class=\"radio__box\"><svg class=\"radio__dot\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"5\" fill=\"currentColor\"/></svg></span>"
+}
