@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:60b2fca984081d7e3e42329192061db37aac9b04c4ea7ad845306cbd0064ee20",
+  "snapshot_hash": "sha256:46755f6559e4bb0b4940f5bb434bdc7c96300ea28a19dcb68692cb72cfdc6d29",
   "size": {
     "rectangle": {
       "50": {
@@ -761,7 +761,7 @@
         },
         "accent-selected": {
           "bg": "rgb(var(--focus-container-core))",
-          "border": "rgb(var(--focus-container-on-lowest))",
+          "border": "rgb(var(--focus-container-core))",
           "chevron": "rgb(var(--focus-container-on-highest))",
           "color": "rgb(var(--focus-container-on-highest))",
           "description": "rgb(var(--focus-container-on-high))",
@@ -1340,7 +1340,7 @@
         },
         "accent-selected": {
           "bg": "rgb(var(--focus-container-core))",
-          "border": "rgb(var(--focus-container-on-lowest))",
+          "border": "rgb(var(--focus-container-core))",
           "color": "rgb(var(--focus-container-on-highest))",
           "description": "rgb(var(--focus-container-on-high))",
           "icon-check": "rgb(var(--focus-container-on-high))",
@@ -1928,7 +1928,7 @@
         },
         "accent-selected": {
           "bg": "rgb(var(--focus-container-core))",
-          "border": "rgb(var(--focus-container-on-lowest))",
+          "border": "rgb(var(--focus-container-core))",
           "color": "rgb(var(--focus-container-on-highest))",
           "description": "rgb(var(--focus-container-on-high))",
           "icon-check": "rgb(var(--focus-container-on-high))",
@@ -2499,7 +2499,7 @@
         },
         "accent-selected": {
           "bg": "rgb(var(--focus-container-core))",
-          "border": "rgb(var(--focus-container-on-lowest))",
+          "border": "rgb(var(--focus-container-core))",
           "color": "rgb(var(--focus-container-on-highest))",
           "description": "rgb(var(--focus-container-on-high))",
           "icon-check": "rgb(var(--focus-container-on-high))",
