@@ -235,10 +235,45 @@
     },
     "size": null,
     "native": null,
-    "children": [],
+    "children": [
+      {
+        "class": "content-area__img",
+        "required": true,
+        "when": "content-area-img"
+      },
+      {
+        "class": "content-area__img",
+        "required": true,
+        "when": "content-area-illustration"
+      },
+      {
+        "class": "content-area__video",
+        "required": true,
+        "when": "content-area-video"
+      }
+    ],
     "attrs": [],
-    "container": null,
-    "note": "Вариант задаётся МОДИФИКАТОРОМ (--img / --video), а не суффиксом через дефис. Шкалы размеров нет — размер определяет соотношение сторон (--16-9 и другие) и контейнер."
+    "child_attrs": [
+      {
+        "child": "content-area__img",
+        "attr": "alt",
+        "when": "content-area-img",
+        "why": "картинка без alt немая для скринридера; у декоративной ставится пустой alt=\"\", но атрибут есть всегда"
+      },
+      {
+        "child": "content-area__img",
+        "attr": "alt",
+        "when": "content-area-illustration",
+        "why": "то же правило: у декоративной иллюстрации alt=\"\", но атрибут стоит"
+      },
+      {
+        "child": "content-area__video",
+        "attr": "title",
+        "when": "content-area-video",
+        "why": "title на iframe — единственное имя плеера, скилл называет его обязательным"
+      }
+    ],
+    "note": "Класс варианта обязателен: .content-area сама по себе только бокс с соотношением, тип решает рамку, фон и вписывание. Имя варианта пишется через ОДИН дефис (content-area-img); через два идут хелперы соотношения и вписывания — до 2.0.0 вариант писался content-area--img, и это исправлено. Шкалы размеров нет — размер задаёт соотношение сторон (content-area--16-9 и ещё 38 хелперов, дефолт 16:9) и контейнер; произвольное соотношение приходит инлайн-переменной --awds-content-area-ratio и классом не выражается. Медиа-слой обязателен: .content-area__img у img и illustration, .content-area__video у video — пустой бокс не медиа-область. Вписывание (--fit-cover/contain/fill) и точка привязки необязательны: дефолт cover, а у illustration хелперы --fit-* не действуют вовсе. Гейт видит только наличие alt и title, не их содержимое: осмысленность текста он не проверяет. Вложенность (медиа-слой ИМЕННО внутри бокса) проверке недоступна — потомки ищутся по файлу целиком."
   },
   "questions": [
     {
