@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:8ec876a0a5fe8b2a5eb6a471a2790c604f9f3e2d3b2dbea30f2f24ed2d24f726",
+  "snapshot_hash": "sha256:60b2fca984081d7e3e42329192061db37aac9b04c4ea7ad845306cbd0064ee20",
   "size": {
     "rectangle": {
       "50": {
@@ -760,22 +760,22 @@
           "border": "rgb(var(--secondary-container-core))"
         },
         "accent-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-container-on-lowest))",
-          "chevron": "rgb(var(--primary-container-on-highest))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "icon": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-container-on-lowest))",
+          "chevron": "rgb(var(--focus-container-on-highest))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "icon": "rgb(var(--focus-container-on-highest))"
         },
         "variation-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "icon": "rgb(var(--primary-container-on-highest))",
-          "chevron": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-core))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "icon": "rgb(var(--focus-container-on-highest))",
+          "chevron": "rgb(var(--focus-container-on-highest))"
         },
         "variation-img": {
           "bg": "rgb(var(--surface-bright))",
@@ -1339,22 +1339,22 @@
           "border": "rgb(var(--secondary-container-core))"
         },
         "accent-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-container-on-lowest))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-highest))",
-          "icon": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-container-on-lowest))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "chevron": "rgb(var(--focus-container-on-highest))",
+          "icon": "rgb(var(--focus-container-on-highest))"
         },
         "variation-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "icon": "rgb(var(--primary-container-on-highest))",
-          "chevron": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-core))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "icon": "rgb(var(--focus-container-on-highest))",
+          "chevron": "rgb(var(--focus-container-on-highest))"
         },
         "variation-img": {
           "bg": "rgb(var(--surface-bright))",
@@ -1927,22 +1927,22 @@
           "border": "rgb(var(--secondary-container-core))"
         },
         "accent-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-container-on-lowest))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-highest))",
-          "icon": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-container-on-lowest))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "chevron": "rgb(var(--focus-container-on-highest))",
+          "icon": "rgb(var(--focus-container-on-highest))"
         },
         "variation-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "icon": "rgb(var(--primary-container-on-highest))",
-          "chevron": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-core))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "icon": "rgb(var(--focus-container-on-highest))",
+          "chevron": "rgb(var(--focus-container-on-highest))"
         },
         "variation-img": {
           "bg": "rgb(var(--surface-bright))",
@@ -2498,22 +2498,22 @@
           "border": "rgb(var(--secondary-container-core))"
         },
         "accent-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-container-on-lowest))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "chevron": "rgb(var(--primary-container-on-highest))",
-          "icon": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-container-on-lowest))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "chevron": "rgb(var(--focus-container-on-highest))",
+          "icon": "rgb(var(--focus-container-on-highest))"
         },
         "variation-selected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-core))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "description": "rgb(var(--primary-container-on-high))",
-          "icon-check": "rgb(var(--primary-container-on-high))",
-          "icon": "rgb(var(--primary-container-on-highest))",
-          "chevron": "rgb(var(--primary-container-on-highest))"
+          "bg": "rgb(var(--focus-container-core))",
+          "border": "rgb(var(--focus-core))",
+          "color": "rgb(var(--focus-container-on-highest))",
+          "description": "rgb(var(--focus-container-on-high))",
+          "icon-check": "rgb(var(--focus-container-on-high))",
+          "icon": "rgb(var(--focus-container-on-highest))",
+          "chevron": "rgb(var(--focus-container-on-highest))"
         },
         "variation-img": {
           "bg": "rgb(var(--surface-bright))",
