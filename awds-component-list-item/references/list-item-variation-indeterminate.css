@@ -573,3 +573,30 @@
 .list-item-variation-indeterminate.list-item--no-line::after {
   content: none;
 }
+
+
+/* === Рамка — штриховая ===
+
+   В макете обводка всех 35 ячеек набора — dashPattern [4, 2]: штрих 4, пробел 2, толщина
+   хайрлайн (outline/offset). Inset-тень базы штрих рисовать не умеет, поэтому у этого варианта
+   рамку несёт псевдоэлемент с border-style: dashed; сама тень гасится. Псевдоэлемент не участвует
+   в раскладке — высота строки остаётся 2 × padding + line-height, ради чего база и ушла от border.
+   border-radius наследуется, и рамка следует за модом скругления темы (smooth / rounded / none).
+
+   Узор штриха в CSS не задаётся: длину штриха и пробела браузер выбирает сам (Chromium — около
+   3 × толщины). Точные 4/2 дал бы только SVG-маска с радиусом литералом, а радиус здесь —
+   мод темы, литерал сломал бы rounded и none. Отклонение от макета осознанное. */
+
+.list-item-variation-indeterminate {
+  box-shadow: none;
+}
+
+.list-item-variation-indeterminate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: var(--awds-list-item-border-width) dashed var(--awds-list-item-border);
+  border-radius: inherit;
+  transition: border-color 0.15s ease-out;
+}

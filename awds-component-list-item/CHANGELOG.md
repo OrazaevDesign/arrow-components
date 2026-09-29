@@ -1,5 +1,9 @@
 # list-item — журнал версий
 
+## 2.3.1 — 2026-09-29 — PATCH · visual
+variation-indeterminate: рамка штриховая, как в макете (dashPattern 4/2, хайрлайн) — псевдоэлемент с border dashed вместо inset-тени; узор штриха браузерный, радиус следует за модом темы.
+Потребителю: Ничего делать не нужно. Вид: рамка variation-indeterminate стала пунктирной.
+
 ## 2.3.0 — 2026-09-29 — MINOR · visual
 variation и variation-indeterminate: наведение на роли focus (12 ячеек State перенаправлены с primary); у variation-indeterminate появилась линия из макета — диагональ через строку, хайрлайн, цвет текста при 40%, выключается .list-item--no-line.
 Потребителю: Разметку менять не нужно. Вид: у вариаций строка под курсором красится ролью focus, а не брендом; variation-indeterminate теперь перечёркнут диагональю, как в макете. Убрать линию — класс list-item--no-line.
