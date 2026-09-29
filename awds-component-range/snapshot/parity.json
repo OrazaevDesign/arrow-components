@@ -1,0 +1,75 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Полоса значения: трек, заполнение, бегунок (у double — два). Положение по x задаёт скрипт range.js от значения — на проверочной странице его нет, поэтому у заполнения сверяются высота и цвет, у бегунка — размер, вертикаль и цвет; трек — целиком. Ширина — из макета (303).",
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "range.css"
+  ],
+  "tag": "div",
+  "class": "range range-{variant}",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "range--{value}",
+        "style": "width:{w}px"
+      }
+    },
+    "double": {
+      "off": {
+        "html": "<div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb\"></div><input class=\"range__input\" type=\"range\" min=\"0\" max=\"100\" value=\"60\" aria-label=\"v\">"
+      },
+      "on": {
+        "class": "range--double",
+        "html": "<div class=\"range__track\"><div class=\"range__fill\"></div></div><div class=\"range__thumb range__thumb--from\"></div><div class=\"range__thumb range__thumb--to\"></div><input class=\"range__input\" type=\"range\" min=\"0\" max=\"100\" value=\"25\" aria-label=\"a\"><input class=\"range__input\" type=\"range\" min=\"0\" max=\"100\" value=\"70\" aria-label=\"b\">"
+      }
+    }
+  },
+  "skip_content": true,
+  "parts": {
+    "default": {
+      "track": {
+        "figma": "Container",
+        "dom": ".range__track"
+      },
+      "fill": {
+        "figma": "bar",
+        "dom": ".range__fill",
+        "dims": [
+          "h",
+          "y"
+        ]
+      },
+      "thumb": {
+        "figma": "Handle",
+        "dom": ".range__thumb",
+        "dims": [
+          "w",
+          "h",
+          "y"
+        ]
+      }
+    },
+    "light": {
+      "track": {
+        "figma": "Container",
+        "dom": ".range__track"
+      },
+      "fill": {
+        "figma": "bar",
+        "dom": ".range__fill",
+        "dims": [
+          "h",
+          "y"
+        ]
+      },
+      "thumb": {
+        "figma": "Handle",
+        "dom": ".range__thumb",
+        "dims": [
+          "w",
+          "h",
+          "y"
+        ]
+      }
+    }
+  }
+}
