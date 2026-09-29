@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.1.1",
-  "contract_hash": "sha256:8229b93e2f7de981c57fdd26458032f5b1cf783e4012d2702ca91d55558598c2",
-  "artifact_hash": "sha256:69c2cb737ae4c8080aef9493cf794fb33dbe16ad9e67daea8fa038c7d3d5b578",
+  "version": "1.2.0",
+  "contract_hash": "sha256:3e55eca468b4f2df1fa624f9a58b54cdd06eba0411b33fdcb11dab3301cdc3ae",
+  "artifact_hash": "sha256:a8b4d4f7176ba07b91c8a000414bc34a8b9a91810f2042da4bb66766cb14fd77",
   "visual_change": true,
-  "released_at": "2026-09-29T14:39:10.767Z",
+  "released_at": "2026-09-29T20:03:21.784Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -225,6 +225,7 @@
       "mdl__content",
       "mdl__content--flush",
       "mdl__footer",
+      "mdl__footer--empty",
       "mdl__footer--reverse",
       "mdl__footer--stretch",
       "mdl__header",

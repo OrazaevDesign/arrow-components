@@ -90,6 +90,20 @@
     </div>
 
     <div class="case">
+      <span class="label">dialog · без действий, пустой подвал</span>
+      <dialog class="mdl mdl-dialog" open>
+        <header class="mdl__header">
+          <h2 class="mdl__title">Как это работает</h2>
+          <button class="btn btn-secondary btn--200 mdl__close" type="button" aria-label="Закрыть">✕</button>
+        </header>
+        <div class="mdl__content">
+          <p class="mdl__text">Окну без кнопок подвал нужен как нижнее поле: <code>.mdl__footer--empty</code> высотой в <code>gutter-modal</code>, без верхнего отступа.</p>
+        </div>
+        <footer class="mdl__footer mdl__footer--empty"></footer>
+      </dialog>
+    </div>
+
+    <div class="case">
       <span class="label">dialog · без заголовка, обратный порядок</span>
       <dialog class="mdl mdl-dialog" open>
         <header class="mdl__header">
