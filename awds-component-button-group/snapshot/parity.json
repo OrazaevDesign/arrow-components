@@ -1,0 +1,46 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Группа кнопок: семь наборов — это семь тонов вложенной кнопки (у .btn-group своих классов варианта нет). Ось side задаёт состав: end — текст + иконка, start — иконка + текст, startend — иконка + текст + иконка. Главное у группы — скругления детей: внешние углы есть, внутренние срезаны; сверяются ключом kids.",
+  "sets": {
+    "primary": "8:39314",
+    "secondary": "8:39385",
+    "contrast": "8:39456",
+    "addition": "8:39527",
+    "tertiary": "8:39598",
+    "ghost": "8:39669",
+    "clean": "8:39740"
+  },
+  "kids": true,
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "../../awds-component-button/references/button-primary.css",
+    "../../awds-component-button/references/button-secondary.css",
+    "../../awds-component-button/references/button-contrast.css",
+    "../../awds-component-button/references/button-addition.css",
+    "../../awds-component-button/references/button-tertiary.css",
+    "../../awds-component-button/references/button-ghost.css",
+    "../../awds-component-button/references/button-clean.css",
+    "button-group.css"
+  ],
+  "tag": "div",
+  "class": "btn-group",
+  "axes": {
+    "size": {
+      "*": {
+        "vars": {
+          "size": "{value}"
+        }
+      }
+    },
+    "side": {
+      "end": {
+        "html": "<button class=\"btn btn-{variant} btn--{size}\" type=\"button\">{text}</button><button class=\"btn btn-{variant} btn--{size} btn--icon-only\" type=\"button\" aria-label=\"i\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button>"
+      },
+      "start": {
+        "html": "<button class=\"btn btn-{variant} btn--{size} btn--icon-only\" type=\"button\" aria-label=\"i\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button><button class=\"btn btn-{variant} btn--{size}\" type=\"button\">{text}</button>"
+      },
+      "startend": {
+        "html": "<button class=\"btn btn-{variant} btn--{size} btn--icon-only\" type=\"button\" aria-label=\"i\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button><button class=\"btn btn-{variant} btn--{size}\" type=\"button\">{text}</button><button class=\"btn btn-{variant} btn--{size} btn--icon-only\" type=\"button\" aria-label=\"i\"><svg viewBox=\"0 0 20 20\" aria-hidden=\"true\"><rect width=\"20\" height=\"20\" fill=\"currentColor\"/></svg></button>"
+      }
+    }
+  }
+}
