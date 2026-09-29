@@ -1,4 +1,4 @@
-/* ArrowDS · select@1.0.27
+/* ArrowDS · select@1.0.28
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-select-bg {
@@ -357,7 +357,7 @@
   }
   .select__field option:checked:not(:disabled):not([aria-disabled="true"]) {
     --awds-list-item-bg:     rgb(var(--focus-container-core));   
-    --awds-list-item-border: rgb(var(--focus-container-on-lowest));   
+    --awds-list-item-border: rgb(var(--focus-container-core));   
     --awds-list-item-color:  rgb(var(--focus-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--focus-container-on-high));   
     --awds-list-item-check:  rgb(var(--focus-container-on-high));   

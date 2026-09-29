@@ -1,4 +1,4 @@
-/* ArrowDS · select-combi@1.0.28
+/* ArrowDS · select-combi@1.0.29
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
@@ -371,7 +371,7 @@
   }
   .scombi__field option:checked:not(:disabled):not([aria-disabled="true"]) {
     --awds-list-item-bg:     rgb(var(--focus-container-core));   
-    --awds-list-item-border: rgb(var(--focus-container-on-lowest));   
+    --awds-list-item-border: rgb(var(--focus-container-core));   
     --awds-list-item-color:  rgb(var(--focus-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--focus-container-on-high));   
     --awds-list-item-check:  rgb(var(--focus-container-on-high));   

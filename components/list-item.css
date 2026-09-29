@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@2.2.1
+/* ArrowDS · list-item@2.2.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -304,7 +304,7 @@
 
 .list-item-accent-selected {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-border:      rgb(var(--focus-container-core));   
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   
@@ -314,7 +314,7 @@
 
 .list-item-accent-selected:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-border:      rgb(var(--focus-container-core));   
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   
@@ -324,7 +324,7 @@
 
 .list-item-accent-selected:focus-visible, .list-item-accent-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-border:      rgb(var(--focus-container-core));   
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   
@@ -334,7 +334,7 @@
 
 .list-item-accent-selected:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-container-on-lowest));   
+  --awds-list-item-border:      rgb(var(--focus-container-core));   
   --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
   --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:       rgb(var(--focus-container-on-high));   

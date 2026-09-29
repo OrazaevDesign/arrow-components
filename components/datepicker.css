@@ -1,4 +1,4 @@
-/* ArrowDS · datepicker@1.0.7
+/* ArrowDS · datepicker@1.0.8
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -199,13 +199,13 @@
 
 .dpick__cell--selected {
   --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           
-  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));      
+  --awds-dpick-cell-border: rgb(var(--focus-container-core));      
   --awds-dpick-cell-color:  rgb(var(--focus-container-on-highest));
 }
 
 .dpick__cell--selected:hover {
   --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           
-  --awds-dpick-cell-border: rgb(var(--focus-container-on-lowest));
+  --awds-dpick-cell-border: rgb(var(--focus-container-core));
 }
 
 .dpick__cell:disabled, .dpick__cell[aria-disabled="true"] {

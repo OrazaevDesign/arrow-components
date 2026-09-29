@@ -120,7 +120,7 @@
     },
     {
       "name": "button-menu",
-      "version": "2.0.11",
+      "version": "2.0.12",
       "variants": [
         "default",
         "accent-selected"
@@ -131,7 +131,7 @@
         400
       ],
       "rules": 16,
-      "bytes": 3227
+      "bytes": 3222
     },
     {
       "name": "button-overhung",
@@ -196,7 +196,7 @@
     },
     {
       "name": "datepicker",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "variants": [
         "date",
         "month",
@@ -205,7 +205,7 @@
       ],
       "sizes": null,
       "rules": 27,
-      "bytes": 8122
+      "bytes": 8112
     },
     {
       "name": "emblem",
@@ -360,7 +360,7 @@
     },
     {
       "name": "list-item",
-      "version": "2.2.1",
+      "version": "2.2.2",
       "variants": [
         "transparent",
         "default",
@@ -386,7 +386,7 @@
         600
       ],
       "rules": 136,
-      "bytes": 49611
+      "bytes": 49591
     },
     {
       "name": "modal",
@@ -540,7 +540,7 @@
     },
     {
       "name": "select",
-      "version": "1.0.27",
+      "version": "1.0.28",
       "variants": [
         "default",
         "light",
@@ -559,11 +559,11 @@
         600
       ],
       "rules": 56,
-      "bytes": 26881
+      "bytes": 26876
     },
     {
       "name": "select-combi",
-      "version": "1.0.28",
+      "version": "1.0.29",
       "variants": [
         "default",
         "light",
@@ -579,7 +579,7 @@
         600
       ],
       "rules": 58,
-      "bytes": 27157
+      "bytes": 27152
     },
     {
       "name": "slider",
@@ -735,13 +735,13 @@
     }
   ],
   "bundle": {
-    "bytes": 359495,
+    "bytes": 359450,
     "rules": 1380,
-    "hash": "sha256:ea49185ef1a2cf9dc928ccee46c267df7276e315c6d56e1e8433e7bedf6578e7"
+    "hash": "sha256:b00e4b0f2a6512612ef0d85854f5263f456ea67545e09d96fabcd81b02329014"
   },
   "theme": {
-    "bytes": 60925,
-    "variables_kept": 624,
+    "bytes": 60617,
+    "variables_kept": 621,
     "variables_declared": 1354,
     "missing": []
   },
