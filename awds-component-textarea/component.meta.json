@@ -1,10 +1,10 @@
 {
   "component": "textarea",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "contract_hash": "sha256:194322f4d825655c0b9aed58e54f7ec3fc8ec222c2a6d030bd91b1df3a94c38d",
-  "artifact_hash": "sha256:44af5476623742f96914d034418c838083469992b23b89fcbb3efa3de2a2ed8f",
+  "artifact_hash": "sha256:bc322ba6258044d222aad77a6f053b9703dbc26851550d3e164a0ad5d64dfac9",
   "visual_change": true,
-  "released_at": "2026-09-28T07:54:41.560Z",
+  "released_at": "2026-09-29T15:59:36.177Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -228,10 +228,10 @@
     "--error-container-on-high",
     "--error-container-on-highest",
     "--error-container-on-low",
-    "--primary-container-base",
-    "--primary-container-on-high",
-    "--primary-container-on-highest",
-    "--primary-dim",
+    "--focus-container-base",
+    "--focus-container-on-high",
+    "--focus-container-on-highest",
+    "--focus-dim",
     "--secondary-container-core",
     "--secondary-container-on",
     "--secondary-container-on-high",

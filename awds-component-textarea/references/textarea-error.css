@@ -373,10 +373,10 @@
    и в макете состояние Focus именно про это. Заодно рамка загорается при клике мышью,
    а не только при табе. */
 .txa-error:focus-within {
-  --awds-txa-bg:         rgb(var(--primary-container-base));   /* #cell form-control/error/bg-focus */
-  --awds-txa-border:     rgb(var(--primary-dim));   /* #cell form-control/error/border-focus */
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   /* #cell form-control/error/color-focus */
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   /* #cell form-control/error/placeholder-focus */
+  --awds-txa-bg:         rgb(var(--focus-container-base));   /* #cell form-control/error/bg-focus */
+  --awds-txa-border:     rgb(var(--focus-dim));   /* #cell form-control/error/border-focus */
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   /* #cell form-control/error/color-focus */
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   /* #cell form-control/error/placeholder-focus */
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
