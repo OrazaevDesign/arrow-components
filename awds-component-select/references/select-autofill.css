@@ -666,7 +666,7 @@
      выбранный пункт при переходе по нему стрелками. */
   .select__field option:not(:checked):focus {
     --awds-list-item-bg:     rgb(var(--secondary-container-core));   /* #cell list/default/bg-focus */
-    --awds-list-item-border: rgb(var(--secondary-container-core));   /* #cell list/default/bg-focus */
+    --awds-list-item-border: rgb(var(--secondary-container-core));   /* #cell list/default/border-focus */
   }
 
   /* Выбранный пункт = вариант list-item-accent-selected (роль list/selected-secondary).
@@ -677,11 +677,13 @@
      у list-item hover-правило весит (0,4,0), и без этих двух :not() мост весил бы
      (0,2,1) и проигрывал — выбранный пункт под курсором стал бы серым. */
   .select__field option:checked:not(:disabled):not([aria-disabled="true"]) {
-    --awds-list-item-bg:     rgb(var(--primary-container-core));   /* #cell list/accent-selected/bg */
-    --awds-list-item-border: rgb(var(--primary-container-on-lowest));   /* #cell list/accent-selected/border */
-    --awds-list-item-color:  rgb(var(--primary-container-on-highest));   /* #cell list/accent-selected/color */
-    --awds-list-item-desc:   rgb(var(--primary-container-on-high));   /* #cell list/accent-selected/description */
-    --awds-list-item-check:  rgb(var(--primary-container-on-high));   /* #cell list/accent-selected/icon-check */
+    --awds-list-item-bg:     rgb(var(--primary-container-core));   /* #cell list/accent-selected/bg-rest */
+    --awds-list-item-border: rgb(var(--primary-container-on-lowest));   /* #cell list/accent-selected/border-rest */
+    --awds-list-item-color:  rgb(var(--primary-container-on-highest));   /* #cell list/accent-selected/color-rest */
+    --awds-list-item-desc:   rgb(var(--primary-container-on-high));   /* #cell list/accent-selected/description-rest */
+    --awds-list-item-check:  rgb(var(--primary-container-on-high));   /* #cell list/accent-selected/icon-check-rest */
+    --awds-list-item-icon-color: rgb(var(--primary-container-on-highest));   /* #cell list/accent-selected/icon-rest */
+    --awds-list-item-chevron: rgb(var(--primary-container-on-highest));   /* #cell list/accent-selected/chevron-rest */
   }
 
   .select__field option:disabled {
@@ -727,12 +729,12 @@
 /* :focus-within, а не :focus-visible: у выпадающего списка «сфокусировано» =
    активно, и в макете состояние Focus именно про это. */
 .select-autofill:focus-within {
-  --awds-select-bg:       rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
-  --awds-select-border:   rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/chevron-focus */
-  --awds-select-icon-color: rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/icon-focus */
+  --awds-select-bg:       rgb(var(--focus-container-base));   /* #cell form-control/autofill/bg-focus */
+  --awds-select-border:   rgb(var(--focus-dim));   /* #cell form-control/autofill/border-focus */
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   /* #cell form-control/autofill/color-focus */
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   /* #cell form-control/autofill/chevron-focus */
+  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   /* #cell form-control/autofill/icon-focus */
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
@@ -765,12 +767,12 @@
 
 @supports (appearance: base-select) {
   .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--primary-container-base));   /* #cell form-control/autofill/bg-focus */
-    --awds-select-border:   rgb(var(--primary-dim));   /* #cell form-control/autofill/border-focus */
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/color-focus */
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   /* #cell form-control/autofill/chevron-focus */
-    --awds-select-icon-color: rgb(var(--primary-container-on-highest));   /* #cell form-control/autofill/icon-focus */
+    --awds-select-bg:       rgb(var(--focus-container-base));   /* #cell form-control/autofill/bg-focus */
+    --awds-select-border:   rgb(var(--focus-dim));   /* #cell form-control/autofill/border-focus */
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   /* #cell form-control/autofill/color-focus */
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   /* #cell form-control/autofill/placeholder-focus */
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   /* #cell form-control/autofill/chevron-focus */
+    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   /* #cell form-control/autofill/icon-focus */
 
     /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
        (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
