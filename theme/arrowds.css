@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 604 из 1304 объявленных в теме. */
+   Переменных: 616 из 1354 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -18,9 +18,6 @@
   --primary-on-dim-light: 242 239 251;
   --primary-on-dim-dark: 242 239 251;
   --primary-on-dim: var(--primary-on-dim-light);
-  --primary-container-base-light: 249 247 253;
-  --primary-container-base-dark: 38 23 71;
-  --primary-container-base: var(--primary-container-base-light);
   --primary-container-core-light: 242 239 251;
   --primary-container-core-dark: 21 13 38;
   --primary-container-core: var(--primary-container-core-light);
@@ -246,6 +243,21 @@
   --extended-transparent-light: 255 255 255 / 0%;
   --extended-transparent-dark: 0 0 0 / 0%;
   --extended-transparent: var(--extended-transparent-light);
+  --focus-core-light: 111 58 236;
+  --focus-core-dark: 111 58 236;
+  --focus-core: var(--focus-core-light);
+  --focus-dim-light: 119 68 239;
+  --focus-dim-dark: 119 68 239;
+  --focus-dim: var(--focus-dim-light);
+  --focus-container-base-light: 249 247 253;
+  --focus-container-base-dark: 38 23 71;
+  --focus-container-base: var(--focus-container-base-light);
+  --focus-container-on-highest-light: 47 29 90;
+  --focus-container-on-highest-dark: 232 226 247;
+  --focus-container-on-highest: var(--focus-container-on-highest-light);
+  --focus-container-on-high-light: 96 54 194;
+  --focus-container-on-high-dark: 185 167 227;
+  --focus-container-on-high: var(--focus-container-on-high-light);
   --awds-layout-section-width-medium-desktop: 900px;
   --awds-layout-section-width-medium-tablet: 900px;
   --awds-layout-section-width-medium-mobile: 900px;
@@ -611,7 +623,6 @@
   --primary-dim: var(--primary-dim-light);
   --primary-on: var(--primary-on-light);
   --primary-on-dim: var(--primary-on-dim-light);
-  --primary-container-base: var(--primary-container-base-light);
   --primary-container-core: var(--primary-container-core-light);
   --primary-container-chroma: var(--primary-container-chroma-light);
   --primary-container-on-highest: var(--primary-container-on-highest-light);
@@ -687,6 +698,11 @@
   --extended-shadow-2: var(--extended-shadow-2-light);
   --extended-shadow-3: var(--extended-shadow-3-light);
   --extended-transparent: var(--extended-transparent-light);
+  --focus-core: var(--focus-core-light);
+  --focus-dim: var(--focus-dim-light);
+  --focus-container-base: var(--focus-container-base-light);
+  --focus-container-on-highest: var(--focus-container-on-highest-light);
+  --focus-container-on-high: var(--focus-container-on-high-light);
 }
 .theme-dark {
   --primary-core: var(--primary-core-dark);
@@ -694,7 +710,6 @@
   --primary-dim: var(--primary-dim-dark);
   --primary-on: var(--primary-on-dark);
   --primary-on-dim: var(--primary-on-dim-dark);
-  --primary-container-base: var(--primary-container-base-dark);
   --primary-container-core: var(--primary-container-core-dark);
   --primary-container-chroma: var(--primary-container-chroma-dark);
   --primary-container-on-highest: var(--primary-container-on-highest-dark);
@@ -770,6 +785,11 @@
   --extended-shadow-2: var(--extended-shadow-2-dark);
   --extended-shadow-3: var(--extended-shadow-3-dark);
   --extended-transparent: var(--extended-transparent-dark);
+  --focus-core: var(--focus-core-dark);
+  --focus-dim: var(--focus-dim-dark);
+  --focus-container-base: var(--focus-container-base-dark);
+  --focus-container-on-highest: var(--focus-container-on-highest-dark);
+  --focus-container-on-high: var(--focus-container-on-high-dark);
 }
 .desktop {
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);

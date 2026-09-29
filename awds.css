@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.11, badge@1.1.5, button@2.2.12, button-area@2.0.8, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.9, button-overhung@2.0.17, checkbox@1.0.11, content-area@2.0.4, datepicker@1.0.4, emblem@3.0.7, formfield@1.0.14, heading@1.0.6, input@1.0.15, input-combi@1.0.15, input-inline@1.0.0, label@1.0.9, link@1.0.6, list-item@2.0.1, modal@1.0.2, notice@2.0.5, pagination@1.0.1, popover@1.0.1, price@2.0.5, product-card@1.1.13, progress@2.0.3, radio@1.0.11, range@2.0.12, rating@2.0.9, scrollbar@2.0.6, select@1.0.24, select-combi@1.0.25, slider@1.0.8, switch@1.0.10, tab@1.0.6, tab-group@1.0.4, table@1.0.12, textarea@1.0.16, textarea-combi@1.0.2, toast@1.0.0, tooltip@2.0.2, uploader@2.0.5 */
+   Состав: focus-selection@2.0.13, badge@1.1.5, button@2.2.12, button-area@2.0.8, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.9, button-overhung@2.0.17, checkbox@1.0.11, content-area@2.0.4, datepicker@1.0.4, emblem@3.0.7, formfield@1.0.14, heading@1.0.6, input@1.0.16, input-combi@1.0.16, input-inline@1.0.1, label@1.0.9, link@1.0.6, list-item@2.0.1, modal@1.0.2, notice@2.0.5, pagination@1.0.1, popover@1.0.1, price@2.0.5, product-card@1.1.13, progress@2.0.3, radio@1.0.11, range@2.0.12, rating@2.0.9, scrollbar@2.0.6, select@1.0.26, select-combi@1.0.27, slider@1.0.8, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.12, textarea@1.0.17, textarea-combi@1.0.5, toast@1.0.0, tooltip@2.0.2, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -377,8 +377,8 @@
   --awds-focus-offset: var(--awds-space-px);
   --awds-focus-offset-inside: calc(-1 * var(--awds-focus-width));
   --awds-focus-color: rgb(var(--surface-on-highest));   
-  --awds-focus-color-muted: rgb(var(--primary-core) / var(--awds-opacity-50));   
-  --awds-focus-color-accent: rgb(var(--primary-core));
+  --awds-focus-color-muted: rgb(var(--focus-core) / var(--awds-opacity-50));   
+  --awds-focus-color-accent: rgb(var(--focus-core));
 }
 
 :where(.btn):focus-visible {
@@ -2754,11 +2754,11 @@
 }
 
 .input-autofill:focus-within {
-  --awds-input-bg:         rgb(var(--primary-container-base));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-input-bg:         rgb(var(--focus-container-base));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -2795,10 +2795,10 @@
 }
 
 .input-default:focus-within {
-  --awds-input-bg:        rgb(var(--primary-container-base));   
-  --awds-input-border:    rgb(var(--primary-dim));   
-  --awds-input-color:     rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-input-bg:        rgb(var(--focus-container-base));   
+  --awds-input-border:    rgb(var(--focus-dim));   
+  --awds-input-color:     rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -2820,11 +2820,11 @@
 }
 
 .input-error:focus-within {
-  --awds-input-bg:         rgb(var(--primary-container-base));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-input-bg:         rgb(var(--focus-container-base));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -2840,9 +2840,9 @@
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -2865,10 +2865,10 @@
 
 .input-light:focus-within {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -2918,11 +2918,11 @@
 }
 
 .input-success:focus-within {
-  --awds-input-bg:         rgb(var(--primary-container-base));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-input-bg:         rgb(var(--focus-container-base));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3164,11 +3164,11 @@
 }
 
 .icombi-autofill:focus-within {
-  --awds-icombi-bg:         rgb(var(--primary-container-base));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-icombi-bg:         rgb(var(--focus-container-base));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3206,10 +3206,10 @@
 }
 
 .icombi-default:focus-within {
-  --awds-icombi-bg:        rgb(var(--primary-container-base));   
-  --awds-icombi-border:    rgb(var(--primary-dim));   
-  --awds-icombi-color:     rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-icombi-bg:        rgb(var(--focus-container-base));   
+  --awds-icombi-border:    rgb(var(--focus-dim));   
+  --awds-icombi-color:     rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3231,11 +3231,11 @@
 }
 
 .icombi-error:focus-within {
-  --awds-icombi-bg:         rgb(var(--primary-container-base));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-icombi-bg:         rgb(var(--focus-container-base));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3251,9 +3251,9 @@
 .icombi-ghost:focus-within {
   --awds-icombi-bg:         transparent;
   --awds-icombi-border:     transparent;
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3276,10 +3276,10 @@
 
 .icombi-light:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3329,11 +3329,11 @@
 }
 
 .icombi-success:focus-within {
-  --awds-icombi-bg:         rgb(var(--primary-container-base));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-icombi-bg:         rgb(var(--focus-container-base));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3432,8 +3432,8 @@
 }
 
 .iinline-default:focus {
-  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+  --awds-iinline-color:       rgb(var(--focus-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--focus-container-on-high));
 }
 
 .iinline-default:active:not(:focus):enabled {
@@ -3463,8 +3463,8 @@
 }
 
 .iinline-error:focus {
-  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+  --awds-iinline-color:       rgb(var(--focus-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--focus-container-on-high));
 }
 
 .iinline-error:active:not(:focus):enabled {
@@ -3483,8 +3483,8 @@
 }
 
 .iinline-success:focus {
-  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+  --awds-iinline-color:       rgb(var(--focus-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--focus-container-on-high));
 }
 
 .iinline-success:active:not(:focus):enabled {
@@ -7214,6 +7214,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
     --awds-list-item-check:  rgb(var(--primary-container-on-high));   
+    --awds-list-item-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-list-item-chevron: rgb(var(--primary-container-on-highest));   
   }
   .select__field option:disabled {
     opacity: var(--awds-opacity-40);   
@@ -7239,24 +7241,24 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-autofill:focus-within {
-  --awds-select-bg:       rgb(var(--primary-container-base));   
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-select-bg:       rgb(var(--focus-container-base));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--primary-container-base));   
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-select-bg:       rgb(var(--focus-container-base));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7295,23 +7297,23 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-default:focus-within {
-  --awds-select-bg:      rgb(var(--primary-container-base));   
-  --awds-select-border:  rgb(var(--primary-dim));   
-  --awds-select-color:   rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron: rgb(var(--primary-container-on-high));   
+  --awds-select-bg:      rgb(var(--focus-container-base));   
+  --awds-select-border:  rgb(var(--focus-dim));   
+  --awds-select-color:   rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-default:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:         rgb(var(--primary-container-base));   
-    --awds-select-border:     rgb(var(--primary-dim));   
-    --awds-select-color:      rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder:  rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:    rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-bg:         rgb(var(--focus-container-base));   
+    --awds-select-border:     rgb(var(--focus-dim));   
+    --awds-select-color:      rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder:  rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:    rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7335,24 +7337,24 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-error:focus-within {
-  --awds-select-bg:       rgb(var(--primary-container-base));   
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-select-bg:       rgb(var(--focus-container-base));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-error:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--primary-container-base));   
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-bg:       rgb(var(--focus-container-base));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7368,20 +7370,20 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-ghost:focus-within {
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-ghost:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7405,22 +7407,22 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-light:focus-within {
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-light:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7444,24 +7446,24 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .select-success:focus-within {
-  --awds-select-bg:       rgb(var(--primary-container-base));   
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-select-bg:       rgb(var(--focus-container-base));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-success:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--primary-container-base));   
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-bg:       rgb(var(--focus-container-base));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7809,6 +7811,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
     --awds-list-item-check:  rgb(var(--primary-container-on-high));   
+    --awds-list-item-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-list-item-chevron: rgb(var(--primary-container-on-highest));   
   }
   .scombi__field option:disabled {
     opacity: var(--awds-opacity-40);   
@@ -7834,24 +7838,24 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-autofill:focus-within {
-  --awds-scombi-bg:          rgb(var(--primary-container-base));   
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+  --awds-scombi-bg:          rgb(var(--focus-container-base));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-autofill:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--primary-container-base));   
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+    --awds-scombi-bg:          rgb(var(--focus-container-base));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7891,24 +7895,24 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-default:focus-within {
-  --awds-scombi-bg:         rgb(var(--primary-container-base));   
-  --awds-scombi-border:     rgb(var(--primary-dim));   
-  --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:    rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-scombi-bg:         rgb(var(--focus-container-base));   
+  --awds-scombi-border:     rgb(var(--focus-dim));   
+  --awds-scombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:    rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-default:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:         rgb(var(--primary-container-base));   
-    --awds-scombi-border:     rgb(var(--primary-dim));   
-    --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:    rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-scombi-bg:         rgb(var(--focus-container-base));   
+    --awds-scombi-border:     rgb(var(--focus-dim));   
+    --awds-scombi-color:      rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:  rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:    rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7932,24 +7936,24 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-error:focus-within {
-  --awds-scombi-bg:          rgb(var(--primary-container-base));   
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-scombi-bg:          rgb(var(--focus-container-base));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-error:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--primary-container-base));   
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+    --awds-scombi-bg:          rgb(var(--focus-container-base));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -7965,20 +7969,20 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-ghost:focus-within {
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-ghost:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -8002,22 +8006,22 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-light:focus-within {
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-light:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -8041,24 +8045,24 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .scombi-success:focus-within {
-  --awds-scombi-bg:          rgb(var(--primary-container-base));   
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-scombi-bg:          rgb(var(--focus-container-base));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-success:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--primary-container-base));   
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+    --awds-scombi-bg:          rgb(var(--focus-container-base));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -8432,7 +8436,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tab-selected:focus-visible {
   --awds-tab-bg:     rgb(var(--extended-transparent));   
-  --awds-tab-border: rgb(var(--primary-dim));   
+  --awds-tab-border: rgb(var(--focus-dim));   
   --awds-tab-color:  rgb(var(--surface-on-highest));
 }
 
@@ -8893,10 +8897,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-autofill:focus-within {
-  --awds-txa-bg:         rgb(var(--primary-container-base));   
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:         rgb(var(--focus-container-base));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -8933,10 +8937,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-default:focus-within {
-  --awds-txa-bg:        rgb(var(--primary-container-base));   
-  --awds-txa-border:    rgb(var(--primary-dim));   
-  --awds-txa-color:     rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:        rgb(var(--focus-container-base));   
+  --awds-txa-border:    rgb(var(--focus-dim));   
+  --awds-txa-color:     rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -8957,10 +8961,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-error:focus-within {
-  --awds-txa-bg:         rgb(var(--primary-container-base));   
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:         rgb(var(--focus-container-base));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -8973,8 +8977,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-ghost:focus-within {
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -8995,9 +8999,9 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-light:focus-within {
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9018,10 +9022,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .txa-success:focus-within {
-  --awds-txa-bg:         rgb(var(--primary-container-base));   
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:         rgb(var(--focus-container-base));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9037,6 +9041,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-100);
   box-sizing: border-box;
   position: relative;
   display: block;
@@ -9062,6 +9067,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   font-family: var(--awds-font-family-system);
   font-size: var(--awds-tcombi-label-fs);
   line-height: var(--awds-tcombi-label-lh);
+  letter-spacing: var(--awds-tcombi-label-ls);
   font-weight: var(--awds-font-weight-regular);
   pointer-events: none;
   cursor: text;
@@ -9100,6 +9106,28 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   resize: none;
 }
 
+.tcombi__field::-webkit-resizer {
+  display: none;
+}
+
+.tcombi::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: var(--awds-space-5);
+  height: var(--awds-space-5);
+  background: var(--awds-tcombi-color);
+  opacity: var(--awds-opacity-30);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M14.29289 7.292893C14.68342 6.9023689 15.31643 6.9023689 15.70696 7.292893C16.09748 7.683417 16.09748 8.31643 15.70696 8.70696L8.70696 15.70696C8.31643 16.09748 7.683417 16.09748 7.292893 15.70696C6.9023689 15.31643 6.9023689 14.68342 7.292893 14.29289L14.29289 7.292893Z' fill='%23000'/%3E%3C/svg%3E") center / contain no-repeat;
+  pointer-events: none;
+}
+
+.tcombi--fixed::after {
+  content: none;
+}
+
 .tcombi--300 {
   --awds-tcombi-rounded:      var(--awds-rounded-border-radius-300);   
   --awds-tcombi-text-gap:     var(--awds-space-3-5);   
@@ -9111,6 +9139,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-100);
 }
 
 .tcombi--400 {
@@ -9124,6 +9153,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-400);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-100);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-100);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-100);
 }
 
 .tcombi--500 {
@@ -9137,6 +9167,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-200);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-200);
 }
 
 .tcombi--600 {
@@ -9150,6 +9181,7 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-tcombi-label-fs:     var(--awds-control-font-size-200);
   --awds-tcombi-label-lh:     var(--awds-control-line-height-200);
+  --awds-tcombi-label-ls:     var(--awds-control-letter-spacing-200);
 }
 
 .tcombi-autofill {
@@ -9174,10 +9206,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .tcombi-autofill:focus-within {
-  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
-  --awds-tcombi-border:      rgb(var(--primary-dim));   
-  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  --awds-tcombi-bg:          rgb(var(--focus-container-base));   
+  --awds-tcombi-border:      rgb(var(--focus-dim));   
+  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9220,10 +9252,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .tcombi-default:focus-within {
-  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
-  --awds-tcombi-border:      rgb(var(--primary-dim));   
-  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  --awds-tcombi-bg:          rgb(var(--focus-container-base));   
+  --awds-tcombi-border:      rgb(var(--focus-dim));   
+  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9250,10 +9282,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .tcombi-error:focus-within {
-  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
-  --awds-tcombi-border:      rgb(var(--primary-dim));   
-  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  --awds-tcombi-bg:          rgb(var(--focus-container-base));   
+  --awds-tcombi-border:      rgb(var(--focus-dim));   
+  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9276,8 +9308,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .tcombi-ghost:focus-within {
-  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9305,9 +9337,9 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 
 .tcombi-light:focus-within {
   --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-border:      rgb(var(--primary-dim));   
-  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  --awds-tcombi-border:      rgb(var(--focus-dim));   
+  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9334,10 +9366,10 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .tcombi-success:focus-within {
-  --awds-tcombi-bg:          rgb(var(--primary-container-base));   
-  --awds-tcombi-border:      rgb(var(--primary-dim));   
-  --awds-tcombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--primary-container-on-high));   
+  --awds-tcombi-bg:          rgb(var(--focus-container-base));   
+  --awds-tcombi-border:      rgb(var(--focus-dim));   
+  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9778,8 +9810,8 @@ color: rgb(var(--surface-on-high)); color: rgb(var(--surface-on-high)); .pcard-b
 }
 
 .upl__drop--over .input {
-  --awds-input-border: rgb(var(--primary-dim));   
-  --awds-input-bg:     rgb(var(--primary-container-base));
+  --awds-input-border: rgb(var(--focus-dim));   
+  --awds-input-bg:     rgb(var(--focus-container-base));
 }
 
 .upl__input:focus-visible + .input {

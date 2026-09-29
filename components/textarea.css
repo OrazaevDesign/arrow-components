@@ -1,4 +1,4 @@
-/* ArrowDS · textarea@1.0.16
+/* ArrowDS · textarea@1.0.17
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-txa-bg {
@@ -179,10 +179,10 @@
 }
 
 .txa-autofill:focus-within {
-  --awds-txa-bg:         rgb(var(--primary-container-base));   
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:         rgb(var(--focus-container-base));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -219,10 +219,10 @@
 }
 
 .txa-default:focus-within {
-  --awds-txa-bg:        rgb(var(--primary-container-base));   
-  --awds-txa-border:    rgb(var(--primary-dim));   
-  --awds-txa-color:     rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:        rgb(var(--focus-container-base));   
+  --awds-txa-border:    rgb(var(--focus-dim));   
+  --awds-txa-color:     rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -243,10 +243,10 @@
 }
 
 .txa-error:focus-within {
-  --awds-txa-bg:         rgb(var(--primary-container-base));   
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:         rgb(var(--focus-container-base));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -259,8 +259,8 @@
 }
 
 .txa-ghost:focus-within {
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -281,9 +281,9 @@
 }
 
 .txa-light:focus-within {
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -304,10 +304,10 @@
 }
 
 .txa-success:focus-within {
-  --awds-txa-bg:         rgb(var(--primary-container-base));   
-  --awds-txa-border:     rgb(var(--primary-dim));   
-  --awds-txa-color:      rgb(var(--primary-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--primary-container-on-high));   
+  --awds-txa-bg:         rgb(var(--focus-container-base));   
+  --awds-txa-border:     rgb(var(--focus-dim));   
+  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

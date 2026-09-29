@@ -1,4 +1,4 @@
-/* ArrowDS · input-combi@1.0.15
+/* ArrowDS · input-combi@1.0.16
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-icombi-bg {
@@ -264,11 +264,11 @@
 }
 
 .icombi-autofill:focus-within {
-  --awds-icombi-bg:         rgb(var(--primary-container-base));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-icombi-bg:         rgb(var(--focus-container-base));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -306,10 +306,10 @@
 }
 
 .icombi-default:focus-within {
-  --awds-icombi-bg:        rgb(var(--primary-container-base));   
-  --awds-icombi-border:    rgb(var(--primary-dim));   
-  --awds-icombi-color:     rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-icombi-bg:        rgb(var(--focus-container-base));   
+  --awds-icombi-border:    rgb(var(--focus-dim));   
+  --awds-icombi-color:     rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -331,11 +331,11 @@
 }
 
 .icombi-error:focus-within {
-  --awds-icombi-bg:         rgb(var(--primary-container-base));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-icombi-bg:         rgb(var(--focus-container-base));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -351,9 +351,9 @@
 .icombi-ghost:focus-within {
   --awds-icombi-bg:         transparent;
   --awds-icombi-border:     transparent;
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -376,10 +376,10 @@
 
 .icombi-light:focus-within {
   --awds-icombi-bg:         rgb(var(--surface-bright));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -429,11 +429,11 @@
 }
 
 .icombi-success:focus-within {
-  --awds-icombi-bg:         rgb(var(--primary-container-base));   
-  --awds-icombi-border:     rgb(var(--primary-dim));   
-  --awds-icombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-icombi-bg:         rgb(var(--focus-container-base));   
+  --awds-icombi-border:     rgb(var(--focus-dim));   
+  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

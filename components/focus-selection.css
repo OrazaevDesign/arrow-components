@@ -1,4 +1,4 @@
-/* ArrowDS · focus-selection@2.0.11
+/* ArrowDS · focus-selection@2.0.13
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -8,8 +8,8 @@
   --awds-focus-offset: var(--awds-space-px);
   --awds-focus-offset-inside: calc(-1 * var(--awds-focus-width));
   --awds-focus-color: rgb(var(--surface-on-highest));   
-  --awds-focus-color-muted: rgb(var(--primary-core) / var(--awds-opacity-50));   
-  --awds-focus-color-accent: rgb(var(--primary-core));
+  --awds-focus-color-muted: rgb(var(--focus-core) / var(--awds-opacity-50));   
+  --awds-focus-color-accent: rgb(var(--focus-core));
 }
 
 :where(.btn):focus-visible {

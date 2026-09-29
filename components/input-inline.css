@@ -1,4 +1,4 @@
-/* ArrowDS · input-inline@1.0.0
+/* ArrowDS · input-inline@1.0.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-iinline-color {
@@ -109,8 +109,8 @@
 }
 
 .iinline-default:focus {
-  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+  --awds-iinline-color:       rgb(var(--focus-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--focus-container-on-high));
 }
 
 .iinline-default:active:not(:focus):enabled {
@@ -140,8 +140,8 @@
 }
 
 .iinline-error:focus {
-  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+  --awds-iinline-color:       rgb(var(--focus-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--focus-container-on-high));
 }
 
 .iinline-error:active:not(:focus):enabled {
@@ -160,8 +160,8 @@
 }
 
 .iinline-success:focus {
-  --awds-iinline-color:       rgb(var(--primary-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--primary-container-on-high));
+  --awds-iinline-color:       rgb(var(--focus-container-on-highest));   
+  --awds-iinline-placeholder: rgb(var(--focus-container-on-high));
 }
 
 .iinline-success:active:not(:focus):enabled {

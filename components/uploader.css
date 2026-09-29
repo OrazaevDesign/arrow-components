@@ -1,4 +1,4 @@
-/* ArrowDS · uploader@2.0.5
+/* ArrowDS · uploader@2.0.6
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -200,8 +200,8 @@
 }
 
 .upl__drop--over .input {
-  --awds-input-border: rgb(var(--primary-dim));   
-  --awds-input-bg:     rgb(var(--primary-container-base));
+  --awds-input-border: rgb(var(--focus-dim));   
+  --awds-input-bg:     rgb(var(--focus-container-base));
 }
 
 .upl__input:focus-visible + .input {

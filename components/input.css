@@ -1,4 +1,4 @@
-/* ArrowDS · input@1.0.15
+/* ArrowDS · input@1.0.16
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-input-bg {
@@ -221,11 +221,11 @@
 }
 
 .input-autofill:focus-within {
-  --awds-input-bg:         rgb(var(--primary-container-base));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-input-bg:         rgb(var(--focus-container-base));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -262,10 +262,10 @@
 }
 
 .input-default:focus-within {
-  --awds-input-bg:        rgb(var(--primary-container-base));   
-  --awds-input-border:    rgb(var(--primary-dim));   
-  --awds-input-color:     rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder: rgb(var(--primary-container-on-high));   
+  --awds-input-bg:        rgb(var(--focus-container-base));   
+  --awds-input-border:    rgb(var(--focus-dim));   
+  --awds-input-color:     rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -287,11 +287,11 @@
 }
 
 .input-error:focus-within {
-  --awds-input-bg:         rgb(var(--primary-container-base));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-input-bg:         rgb(var(--focus-container-base));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -307,9 +307,9 @@
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -332,10 +332,10 @@
 
 .input-light:focus-within {
   --awds-input-bg:         rgb(var(--surface-bright));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -385,11 +385,11 @@
 }
 
 .input-success:focus-within {
-  --awds-input-bg:         rgb(var(--primary-container-base));   
-  --awds-input-border:     rgb(var(--primary-dim));   
-  --awds-input-color:      rgb(var(--primary-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-input-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-input-bg:         rgb(var(--focus-container-base));   
+  --awds-input-border:     rgb(var(--focus-dim));   
+  --awds-input-color:      rgb(var(--focus-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-input-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

@@ -1,4 +1,4 @@
-/* ArrowDS · tab@1.0.6
+/* ArrowDS · tab@1.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-tab-bg {
@@ -139,7 +139,7 @@
 
 .tab-selected:focus-visible {
   --awds-tab-bg:     rgb(var(--extended-transparent));   
-  --awds-tab-border: rgb(var(--primary-dim));   
+  --awds-tab-border: rgb(var(--focus-dim));   
   --awds-tab-color:  rgb(var(--surface-on-highest));
 }
 

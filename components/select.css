@@ -1,4 +1,4 @@
-/* ArrowDS · select@1.0.24
+/* ArrowDS · select@1.0.26
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-select-bg {
@@ -361,6 +361,8 @@
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
     --awds-list-item-check:  rgb(var(--primary-container-on-high));   
+    --awds-list-item-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-list-item-chevron: rgb(var(--primary-container-on-highest));   
   }
   .select__field option:disabled {
     opacity: var(--awds-opacity-40);   
@@ -386,24 +388,24 @@
 }
 
 .select-autofill:focus-within {
-  --awds-select-bg:       rgb(var(--primary-container-base));   
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-select-bg:       rgb(var(--focus-container-base));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-autofill:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--primary-container-base));   
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-select-bg:       rgb(var(--focus-container-base));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -442,23 +444,23 @@
 }
 
 .select-default:focus-within {
-  --awds-select-bg:      rgb(var(--primary-container-base));   
-  --awds-select-border:  rgb(var(--primary-dim));   
-  --awds-select-color:   rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron: rgb(var(--primary-container-on-high));   
+  --awds-select-bg:      rgb(var(--focus-container-base));   
+  --awds-select-border:  rgb(var(--focus-dim));   
+  --awds-select-color:   rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-default:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:         rgb(var(--primary-container-base));   
-    --awds-select-border:     rgb(var(--primary-dim));   
-    --awds-select-color:      rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder:  rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:    rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-bg:         rgb(var(--focus-container-base));   
+    --awds-select-border:     rgb(var(--focus-dim));   
+    --awds-select-color:      rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder:  rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:    rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -482,24 +484,24 @@
 }
 
 .select-error:focus-within {
-  --awds-select-bg:       rgb(var(--primary-container-base));   
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-select-bg:       rgb(var(--focus-container-base));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-error:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--primary-container-base));   
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-bg:       rgb(var(--focus-container-base));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -515,20 +517,20 @@
 }
 
 .select-ghost:focus-within {
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-ghost:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -552,22 +554,22 @@
 }
 
 .select-light:focus-within {
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-light:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -591,24 +593,24 @@
 }
 
 .select-success:focus-within {
-  --awds-select-bg:       rgb(var(--primary-container-base));   
-  --awds-select-border:   rgb(var(--primary-dim));   
-  --awds-select-color:    rgb(var(--primary-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-  --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-  --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-select-bg:       rgb(var(--focus-container-base));   
+  --awds-select-border:   rgb(var(--focus-dim));   
+  --awds-select-color:    rgb(var(--focus-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+  --awds-select-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-success:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-bg:       rgb(var(--primary-container-base));   
-    --awds-select-border:   rgb(var(--primary-dim));   
-    --awds-select-color:    rgb(var(--primary-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--primary-container-on-high));   
-    --awds-select-chevron:  rgb(var(--primary-container-on-high));   
-    --awds-select-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-select-bg:       rgb(var(--focus-container-base));   
+    --awds-select-border:   rgb(var(--focus-dim));   
+    --awds-select-color:    rgb(var(--focus-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
+    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
+    --awds-select-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }

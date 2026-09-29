@@ -1,4 +1,4 @@
-/* ArrowDS · select-combi@1.0.25
+/* ArrowDS · select-combi@1.0.27
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
@@ -375,6 +375,8 @@
     --awds-list-item-color:  rgb(var(--primary-container-on-highest));   
     --awds-list-item-desc:   rgb(var(--primary-container-on-high));   
     --awds-list-item-check:  rgb(var(--primary-container-on-high));   
+    --awds-list-item-icon-color: rgb(var(--primary-container-on-highest));   
+    --awds-list-item-chevron: rgb(var(--primary-container-on-highest));   
   }
   .scombi__field option:disabled {
     opacity: var(--awds-opacity-40);   
@@ -400,24 +402,24 @@
 }
 
 .scombi-autofill:focus-within {
-  --awds-scombi-bg:          rgb(var(--primary-container-base));   
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+  --awds-scombi-bg:          rgb(var(--focus-container-base));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-autofill:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--primary-container-base));   
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+    --awds-scombi-bg:          rgb(var(--focus-container-base));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -457,24 +459,24 @@
 }
 
 .scombi-default:focus-within {
-  --awds-scombi-bg:         rgb(var(--primary-container-base));   
-  --awds-scombi-border:     rgb(var(--primary-dim));   
-  --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:    rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color: rgb(var(--primary-container-on-high));   
+  --awds-scombi-bg:         rgb(var(--focus-container-base));   
+  --awds-scombi-border:     rgb(var(--focus-dim));   
+  --awds-scombi-color:      rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:    rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color: rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-default:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:         rgb(var(--primary-container-base));   
-    --awds-scombi-border:     rgb(var(--primary-dim));   
-    --awds-scombi-color:      rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:  rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:    rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color: rgb(var(--primary-container-on-high));   
+    --awds-scombi-bg:         rgb(var(--focus-container-base));   
+    --awds-scombi-border:     rgb(var(--focus-dim));   
+    --awds-scombi-color:      rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:  rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:    rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color: rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -498,24 +500,24 @@
 }
 
 .scombi-error:focus-within {
-  --awds-scombi-bg:          rgb(var(--primary-container-base));   
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-scombi-bg:          rgb(var(--focus-container-base));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-error:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--primary-container-base));   
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+    --awds-scombi-bg:          rgb(var(--focus-container-base));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -531,20 +533,20 @@
 }
 
 .scombi-ghost:focus-within {
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-ghost:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-highest));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -568,22 +570,22 @@
 }
 
 .scombi-light:focus-within {
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-light:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -607,24 +609,24 @@
 }
 
 .scombi-success:focus-within {
-  --awds-scombi-bg:          rgb(var(--primary-container-base));   
-  --awds-scombi-border:      rgb(var(--primary-dim));   
-  --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+  --awds-scombi-bg:          rgb(var(--focus-container-base));   
+  --awds-scombi-border:      rgb(var(--focus-dim));   
+  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-success:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-bg:          rgb(var(--primary-container-base));   
-    --awds-scombi-border:      rgb(var(--primary-dim));   
-    --awds-scombi-color:       rgb(var(--primary-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--primary-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--primary-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--primary-container-on-high));   
+    --awds-scombi-bg:          rgb(var(--focus-container-base));   
+    --awds-scombi-border:      rgb(var(--focus-dim));   
+    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--focus-container-on-high));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
