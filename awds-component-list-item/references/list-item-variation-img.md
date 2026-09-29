@@ -38,7 +38,7 @@
 | Состояние | Подложка | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
 | Rest | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
-| Hover | `surface-bright` | `primary-container-on` | `primary-container-on-highest` | `primary-container-on-high` |
+| Hover | `surface-bright` | `focus-container-on` | `focus-container-on-highest` | `focus-container-on-high` |
 | Focus | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 | Active | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 

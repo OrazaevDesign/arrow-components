@@ -21,7 +21,7 @@
    ЦВЕТА (map.state.*.list.indeterminate-variation):
              фон                     рамка                          текст                         описание
      Rest    surface-bright          secondary-container-on-lowest  secondary-container-on-high   secondary-container-on
-     Hover   primary-container-core  primary-core                   primary-container-on-highest  primary-container-on-high
+     Hover   focus-container-core    focus-container-on             focus-container-on-highest    focus-container-on-high
      Focus   surface-bright          secondary-container-on-lowest  secondary-container-on-high   secondary-container-on
      Active  surface-bright          secondary-container-on-lowest  secondary-container-on-high   secondary-container-on
 
@@ -498,13 +498,13 @@
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
 .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--primary-container-core));   /* #cell list/variation-indeterminate/bg-hover */
-  --awds-list-item-border:      rgb(var(--primary-container-on));   /* #cell list/variation-indeterminate/border-hover */
-  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   /* #cell list/variation-indeterminate/color-hover */
-  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   /* #cell list/variation-indeterminate/description-hover */
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   /* #cell list/variation-indeterminate/bg-hover */
+  --awds-list-item-border:      rgb(var(--focus-container-on));   /* #cell list/variation-indeterminate/border-hover */
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/variation-indeterminate/color-hover */
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/variation-indeterminate/description-hover */
   --awds-list-item-check:       rgb(var(--primary-container-on));   /* #cell list/variation-indeterminate/icon-check-hover */
-  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   /* #cell list/variation-indeterminate/icon-hover */
-  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));   /* #cell list/variation-indeterminate/chevron-hover */
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   /* #cell list/variation-indeterminate/icon-hover */
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   /* #cell list/variation-indeterminate/chevron-hover */
 }
 
 .list-item-variation-indeterminate:focus-visible,
@@ -541,4 +541,35 @@
   .list-item {
     transition: none;
   }
+}
+
+
+/* === Линия (зачёркивание) ===
+
+   В макете у варианта есть слой `line` (булево show-line, по умолчанию on): фрейм поверх всей
+   строки с полями space/1 на все стороны, внутри — диагональ из левого верхнего угла в правый
+   нижний, толщиной в хайрлайн (outline/offset, 1px), с круглыми концами, цветом текста
+   состояния (color-rest / color-hover / …) и прозрачностью opacity/control/disabled.
+
+   Рисуется псевдоэлементом: цвет — currentColor, то есть тот же аккумулятор, что у текста,
+   и он меняется по состоянию вместе с ним; форма — маска из SVG с preserveAspectRatio=none,
+   чтобы диагональ шла из угла в угол при любой ширине строки, а vector-effect=non-scaling-stroke
+   держит толщину в 1 пользовательскую единицу (= 1px, хайрлайн) независимо от растяжения.
+   Переменную темы внутрь data-URI не передать, поэтому толщина здесь — единица SVG, а не
+   var(--awds-list-item-border-width); связь с хайрлайном — по смыслу, см. own_values.
+   Отступ space/1 привязан в макете как шаг шкалы, ячейки Size под него нет. */
+
+.list-item-variation-indeterminate::after {
+  content: "";
+  position: absolute;
+  inset: var(--awds-space-1);
+  pointer-events: none;
+  background: currentColor;
+  opacity: var(--awds-opacity-40);   /* #cell opacity/control/disabled */
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cline x1='0' y1='0' x2='100' y2='100' stroke='black' stroke-width='1' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+/* show-line=off в макете — модификатор на корне (канон props.md, правило 11). */
+.list-item-variation-indeterminate.list-item--no-line::after {
+  content: none;
 }

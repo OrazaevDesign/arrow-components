@@ -11,7 +11,10 @@
 
 Вариация в неопределённом состоянии — когда выбор частичный: часть вложенных опций выбрана, часть нет. Аналог `indeterminate` у чекбокса, только строкой.
 
-От `variation` отличается фоном: белый `surface-bright` вместо серого.
+От `variation` отличается фоном — белый `surface-bright` вместо серого — и **линией**: диагональ
+из левого верхнего угла в правый нижний через всю строку, с полями `space/1`, толщиной в хайрлайн,
+цветом текста состояния при 40% (`opacity/control/disabled`). В макете это слой `line` с булевым
+`show-line`, по умолчанию включён; выключить — модификатор `.list-item--no-line` на корне.
 
 ## HTML
 
@@ -29,7 +32,7 @@
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
 | Rest | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
-| Hover | `primary-container-core` | `primary-container-on` | `primary-container-on-highest` | `primary-container-on-high` |
+| Hover | `focus-container-core` | `focus-container-on` | `focus-container-on-highest` | `focus-container-on-high` |
 | Focus | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 | Active | `surface-bright` | `secondary-container-on-lowest` | `secondary-container-on-high` | `secondary-container-on-high` |
 
@@ -37,7 +40,9 @@
 
 ## Замечания
 
-**Неопределённость передаётся только фоном.** Белая подложка против серой у `variation` — разница тонкая и цветовая. Смысл «выбрано частично» обязан быть в тексте (как в примере выше: «Выбрано 2 из 5»), иначе состояние не прочитается ни глазами, ни экранной читалкой.
+**Неопределённость передаётся фоном и линией, но не текстом.** Белая подложка против серой у `variation` — разница тонкая, линия при 40% — тоже декоративная, и экранная читалка её не увидит. Смысл «выбрано частично» обязан быть в тексте (как в примере выше: «Выбрано 2 из 5»).
+
+**Наведение красится ролью `focus`, не брендом** (29.09.2026, вместе с `variation`): на сайтах с красным брендом строка под курсором читалась как ошибочная.
 
 **Для чтения с экрана** используй `aria-checked="mixed"` на строке с ролью, которая это допускает (`role="menuitemcheckbox"` или `role="option"` в связке с описанием состояния).
 

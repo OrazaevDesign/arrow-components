@@ -226,7 +226,7 @@ Radio — то же с `.radio` из `awds-component-radio`, и у всех ст
 
 ## Три находки в макете и токенах
 
-**1. Описание красится ролью `list/default/description`, а не собственной ролью варианта.** Проверено в четырёх независимых ячейках (Transparent Rest; Variaton Rest, Hover и Focus). Следствие: цвет описания **меняется по состоянию**. С 26.09.2026 у `unselected` он одинаков во всех состояниях (`secondary-container-on-high`), а у `unselected-variation` и `indeterminate-variation` на наведении уходит в брендовый `primary-container-on-high`. Исключение: `variation-selected` использует свои роли. Реализовано как в макете.
+**1. Описание красится ролью `list/default/description`, а не собственной ролью варианта.** Проверено в четырёх независимых ячейках (Transparent Rest; Variaton Rest, Hover и Focus). Следствие: цвет описания **меняется по состоянию**. С 26.09.2026 у `unselected` он одинаков во всех состояниях (`secondary-container-on-high`), а у `unselected-variation` и `indeterminate-variation` на наведении уходит в `focus-container-on-high` (роль `focus`, с 29.09.2026 — не бренд). Исключение: `variation-selected` использует свои роли. Реализовано как в макете.
 
 **2. В репозитории токенов битый алиас.** У `list/default/border` в состоянии Hover стоит `{form-control.secondary.dim}` — такого пути нет, у `form-control` нет варианта `secondary`. Макет рендерит `#ededed`, что ровно равно `role.secondary.dim`: похоже на опечатку неймспейса. Взято по значению; после правки токенов достаточно перегенерировать скилл.
 
