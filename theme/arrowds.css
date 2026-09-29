@@ -24,9 +24,6 @@
   --primary-container-chroma-light: 242 239 251;
   --primary-container-chroma-dark: 21 13 38;
   --primary-container-chroma: var(--primary-container-chroma-light);
-  --primary-container-on-highest-light: 47 29 90;
-  --primary-container-on-highest-dark: 232 226 247;
-  --primary-container-on-highest: var(--primary-container-on-highest-light);
   --primary-container-on-high-light: 96 54 194;
   --primary-container-on-high-dark: 185 167 227;
   --primary-container-on-high: var(--primary-container-on-high-light);
@@ -261,6 +258,9 @@
   --focus-container-on-high-light: 96 54 194;
   --focus-container-on-high-dark: 185 167 227;
   --focus-container-on-high: var(--focus-container-on-high-light);
+  --focus-container-on-light: 164 141 217;
+  --focus-container-on-dark: 96 54 194;
+  --focus-container-on: var(--focus-container-on-light);
   --awds-layout-section-width-medium-desktop: 900px;
   --awds-layout-section-width-medium-tablet: 900px;
   --awds-layout-section-width-medium-mobile: 900px;
@@ -630,7 +630,6 @@
   --primary-on-dim: var(--primary-on-dim-light);
   --primary-container-core: var(--primary-container-core-light);
   --primary-container-chroma: var(--primary-container-chroma-light);
-  --primary-container-on-highest: var(--primary-container-on-highest-light);
   --primary-container-on-high: var(--primary-container-on-high-light);
   --primary-container-on: var(--primary-container-on-light);
   --primary-container-on-lowest: var(--primary-container-on-lowest-light);
@@ -709,6 +708,7 @@
   --focus-container-core: var(--focus-container-core-light);
   --focus-container-on-highest: var(--focus-container-on-highest-light);
   --focus-container-on-high: var(--focus-container-on-high-light);
+  --focus-container-on: var(--focus-container-on-light);
 }
 .theme-dark {
   --primary-core: var(--primary-core-dark);
@@ -718,7 +718,6 @@
   --primary-on-dim: var(--primary-on-dim-dark);
   --primary-container-core: var(--primary-container-core-dark);
   --primary-container-chroma: var(--primary-container-chroma-dark);
-  --primary-container-on-highest: var(--primary-container-on-highest-dark);
   --primary-container-on-high: var(--primary-container-on-high-dark);
   --primary-container-on: var(--primary-container-on-dark);
   --primary-container-on-lowest: var(--primary-container-on-lowest-dark);
@@ -797,6 +796,7 @@
   --focus-container-core: var(--focus-container-core-dark);
   --focus-container-on-highest: var(--focus-container-on-highest-dark);
   --focus-container-on-high: var(--focus-container-on-high-dark);
+  --focus-container-on: var(--focus-container-on-dark);
 }
 .desktop {
   --awds-layout-section-width-medium: var(--awds-layout-section-width-medium-desktop);

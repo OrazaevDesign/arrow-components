@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@2.2.2
+/* ArrowDS · list-item@2.3.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -786,12 +786,12 @@
 
 .list-item-variation-img:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:      rgb(var(--primary-container-on));   
-  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-border:      rgb(var(--focus-container-on));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:   transparent;
-  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 .list-item-variation-img:focus-visible, .list-item-variation-img:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -884,13 +884,13 @@
 }
 
 .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--primary-container-core));   
-  --awds-list-item-border:      rgb(var(--primary-container-on));   
-  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:       rgb(var(--primary-container-on));   
-  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 .list-item-variation-indeterminate:focus-visible, .list-item-variation-indeterminate:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -911,6 +911,20 @@
   --awds-list-item-check:       rgb(var(--primary-container-on));   
   --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
+}
+
+.list-item-variation-indeterminate::after {
+  content: "";
+  position: absolute;
+  inset: var(--awds-space-1);
+  pointer-events: none;
+  background: currentColor;
+  opacity: var(--awds-opacity-40);   
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cline x1='0' y1='0' x2='100' y2='100' stroke='black' stroke-width='1' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+.list-item-variation-indeterminate.list-item--no-line::after {
+  content: none;
 }
 
 .list-item.list-item-variation-selected {
@@ -1046,13 +1060,13 @@
 }
 
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--primary-container-core));   
-  --awds-list-item-border:      rgb(var(--primary-container-on));   
-  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:   transparent;
-  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 .list-item-variation:focus-visible, .list-item-variation:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {

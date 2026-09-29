@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.13, badge@1.2.1, button@2.2.12, button-area@2.0.9, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.12, button-overhung@2.0.17, checkbox@1.0.11, combobox-combi@1.0.0, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@1.0.6, input@1.0.16, input-combi@1.0.16, input-inline@1.0.1, label@1.0.9, link@1.0.7, list-item@2.2.2, modal@1.2.0, notice@2.0.5, pagination@1.0.1, popover@1.0.4, price@2.0.6, product-card@1.2.1, progress@2.0.4, radio@1.0.11, range@2.0.12, rating@2.0.10, scrollbar@2.0.6, select@1.0.28, select-combi@1.0.29, slider@1.0.9, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.17, textarea-combi@1.0.5, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
+   Состав: focus-selection@2.0.13, badge@1.2.1, button@2.2.12, button-area@2.0.9, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.12, button-overhung@2.0.17, checkbox@1.0.11, combobox-combi@1.0.0, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@1.0.6, input@1.0.16, input-combi@1.0.16, input-inline@1.0.1, label@1.0.9, link@1.0.7, list-item@2.3.0, modal@1.2.0, notice@2.0.5, pagination@1.0.1, popover@1.0.4, price@2.0.6, product-card@1.2.1, progress@2.0.4, radio@1.0.11, range@2.0.12, rating@2.0.10, scrollbar@2.0.6, select@1.0.28, select-combi@1.0.29, slider@1.0.9, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.17, textarea-combi@1.0.5, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -4847,12 +4847,12 @@
 
 .list-item-variation-img:hover:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:      rgb(var(--primary-container-on));   
-  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-border:      rgb(var(--focus-container-on));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:   transparent;
-  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 .list-item-variation-img:focus-visible, .list-item-variation-img:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -4945,13 +4945,13 @@
 }
 
 .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--primary-container-core));   
-  --awds-list-item-border:      rgb(var(--primary-container-on));   
-  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:       rgb(var(--primary-container-on));   
-  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 .list-item-variation-indeterminate:focus-visible, .list-item-variation-indeterminate:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -4972,6 +4972,20 @@
   --awds-list-item-check:       rgb(var(--primary-container-on));   
   --awds-list-item-icon-color:  rgb(var(--secondary-container-on));   
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
+}
+
+.list-item-variation-indeterminate::after {
+  content: "";
+  position: absolute;
+  inset: var(--awds-space-1);
+  pointer-events: none;
+  background: currentColor;
+  opacity: var(--awds-opacity-40);   
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cline x1='0' y1='0' x2='100' y2='100' stroke='black' stroke-width='1' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+.list-item-variation-indeterminate.list-item--no-line::after {
+  content: none;
 }
 
 .list-item.list-item-variation-selected {
@@ -5107,13 +5121,13 @@
 }
 
 .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--primary-container-core));   
-  --awds-list-item-border:      rgb(var(--primary-container-on));   
-  --awds-list-item-color:       rgb(var(--primary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--primary-container-on-high));   
+  --awds-list-item-bg:          rgb(var(--focus-container-core));   
+  --awds-list-item-border:      rgb(var(--focus-container-on));   
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
   --awds-list-item-check:   transparent;
-  --awds-list-item-icon-color:  rgb(var(--primary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--primary-container-on-highest));
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
 .list-item-variation:focus-visible, .list-item-variation:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
