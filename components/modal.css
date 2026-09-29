@@ -1,4 +1,4 @@
-/* ArrowDS · modal@1.1.1
+/* ArrowDS · modal@1.2.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -145,6 +145,10 @@
 .mdl__footer--stretch > * {
   flex: 1 1 0;
   min-inline-size: 0;
+}
+
+.mdl__footer--empty {
+  padding-block-start: 0;
 }
 
 @media (max-width: 1067px) {
