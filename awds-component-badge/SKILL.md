@@ -53,7 +53,7 @@ State темы студии. См. скилл `arrow-design-system`.
 | Цвет текста / иконок | `--awds-state-badge-{вариант}-color-rest` |
 | Padding / gap / размер иконки / скругление | shape `rectangle`: `var(--awds-size-rectangle-N-padding / -gap / -icon / -rounded)` |
 | Типографика | `var(--awds-size-rectangle-N-typography)` + `--awds-control-line-height-N / -letter-spacing-N` |
-| Цифры процента | `font-variant-numeric: tabular-nums` (не прыгают при смене значения) |
+| Цифры процента | пропорциональные, как в макете: `tabular-nums` снят 27.09.2026 решением владельца (ширина бейджа при смене процента меняется) |
 
 **Цвет варианта целиком описан студией**, ролью инлайном не задаётся: у бейджа четыре
 свойства на вариант (bg, chroma, border, color), и держать их согласованными должен один
@@ -81,7 +81,7 @@ State темы студии. См. скилл `arrow-design-system`.
 
 - **Лейбл** — `<span class="badge__label">-30%</span>` (overflow/ellipsis не задевает иконки).
 - **Иконки-слоты** — `<svg class="badge__icon">` или прямой `<svg>` ребёнок. Можно prefix (до лейбла), suffix (после), или оба.
-- **Type=Icon** (только иконки) — та же пилюля без `__label`, лейбл просто опускается.
+- **Type=Icon** (только иконка) — пилюля без `__label` и с классом `badge--icon-only`: квадрат с одинаковым отступом со всех сторон. Без класса бейдж шире макета на 4–16px — отступ по бокам у текстового вида больше.
 
 Gap между слотами и горизонтальный padding управляются токенами размера — руками отступы не ставим.
 
@@ -96,7 +96,7 @@ Gap между слотами и горизонтальный padding управ
 1. Разметка (инлайновый `<span>`):
    - только процент: `<span class="badge badge-market-percent badge--400"><span class="badge__label">-30%</span></span>`
    - с иконкой слева: `<span class="badge badge-market-percent badge--400"><svg class="badge__icon" ...></svg><span class="badge__label">-30%</span></span>`
-   - только иконка: `<span class="badge badge-market-percent badge--200"><svg class="badge__icon" ...></svg></span>`
+   - только иконка: `<span class="badge badge-market-percent badge--200 badge--icon-only"><svg class="badge__icon" ...></svg></span>`
 2. Выбери размер `badge--{N}` под контекст (на карточке товара обычно 200–400).
 3. Позиционирование в углу карточки/фото — на стороне потребителя: контейнер `position: relative`, бейдж `position: absolute; top/left`.
 4. Подключи `references/badge.css`. Нужны ячейки слоя State темы (`--awds-state-badge-*`) и базовые токены DS (`--awds-size-rectangle-*`, `--awds-control-*`, `--awds-font-*`).

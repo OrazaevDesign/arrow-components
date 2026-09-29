@@ -27,7 +27,7 @@
 ## CSS
 
 `badge.css` (общий файл компонента):
-- база `.badge` — лейаут (inline-flex, gap, padding), градиентный фон, обводка inset box-shadow, типографика, `tabular-nums`;
+- база `.badge` — лейаут (inline-flex, gap, padding), градиентный фон, обводка inset box-shadow, типографика (цифры пропорциональные, как в макете);
 - слоты `.badge__icon` (или `> svg`) — размер из `--awds-badge-icon`; `.badge__label` — текст с ellipsis;
 - вариант `.badge-market-percent` — заполняет аккумуляторы цвета ролью accent;
 - 7 размеров `.badge--{600..50}` — заполняют аккумуляторы размера из shape `rectangle`.

@@ -151,7 +151,7 @@
         const cls = `badge badge-${v} badge--${size}`;
         const text = `<span class="${cls}"><span class="badge__label">${lbl}</span></span>`;
         const both = `<span class="${cls}">${ICON}<span class="badge__label">${lbl}</span>${ICON}</span>`;
-        const icon = `<span class="${cls}">${ICON}${ICON}</span>`;
+        const icon = `<span class="${cls} badge--icon-only">${ICON}</span>`;
         const tr = document.createElement('tr');
         tr.innerHTML = `<td class="size-label">${size}</td><td>${text}</td><td>${both}</td><td>${icon}</td>`;
         tbody.appendChild(tr);

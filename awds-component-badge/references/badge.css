@@ -76,9 +76,9 @@
   line-height: var(--awds-badge-lh);
   letter-spacing: var(--awds-badge-ls);
   font-weight: var(--awds-font-weight-semibold);
-  /* Polish (MIFB): процент — динамическое число, моноширим цифры, чтобы бейдж
-     не «прыгал» по ширине при смене значения (-5% -> -30% -> -99%). */
-  font-variant-numeric: tabular-nums;
+  /* Цифры пропорциональные, как в макете (решение владельца 27.09.2026). До этого стоял
+     tabular-nums (приём MIFB: процент не «прыгает» по ширине), и «10%» выходил на 3px
+     шире макета — сверка component-figma-check держала это исключением. */
   white-space: nowrap;
   user-select: none;
   -webkit-font-smoothing: antialiased;
@@ -90,6 +90,14 @@
   width: var(--awds-badge-icon);
   height: var(--awds-badge-icon);
   flex-shrink: 0;
+}
+
+/* Только иконка (Figma content=icon) — квадрат: одинаковый отступ со всех сторон, как у
+   .btn--icon-only. Класс явный, а не :has(): надпись законно бывает голым текстом без
+   .badge__label, и селектор по детям принял бы такой бейдж с одной иконкой за
+   квадратный (component-figma-check, 27.09.2026: 119 ячеек были на 4–16px шире). */
+.badge--icon-only {
+  padding: var(--awds-badge-padding);
 }
 
 /* Лейбл — отдельный нод, чтобы overflow/ellipsis не влиял на иконки */

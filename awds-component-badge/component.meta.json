@@ -1,10 +1,10 @@
 {
   "component": "badge",
-  "version": "1.1.5",
-  "contract_hash": "sha256:34461bf9eed407aefe2f5a504c91b2536a068d5c4da1a78d53ec989087602549",
-  "artifact_hash": "sha256:ba5d31eb0ab033eadd4d654789e07195ee6e29f96ff6277964dcc9920f5b95b4",
-  "visual_change": false,
-  "released_at": "2026-09-26T11:02:59.813Z",
+  "version": "1.2.1",
+  "contract_hash": "sha256:be2824ed21ae066b0ebd0a066ceb269e7e7cd9755a9e39d93635a35438f17f7c",
+  "artifact_hash": "sha256:77844c449307de21a066dd22013dde9238bbc5278454ee871a441d8d6c9b0897",
+  "visual_change": true,
+  "released_at": "2026-09-27T15:10:45.401Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -319,13 +319,25 @@
     },
     "size": {
       "pattern": "badge--{size}",
-      "required": true
+      "required": false,
+      "why_optional": "База .badge заполняет аккумуляторы ступенью 400 — скилл прямо говорит «по умолчанию badge--400». Шкала 600…50 есть, но её отсутствие законно."
     },
     "native": null,
-    "children": [],
+    "children": [
+      {
+        "class": "badge__label",
+        "required": false,
+        "when_note": "у текстового вида; Type=Icon законно обходится без лейбла — пилюля с одной иконкой"
+      },
+      {
+        "class": "badge__icon",
+        "required": false,
+        "when_note": "когда нужен слот-иконка (prefix, suffix или оба); допустим и прямой <svg> ребёнком без класса"
+      }
+    ],
     "attrs": [],
     "container": null,
-    "note": "Вариант несёт градиент и цвет метки, размер — кегль и padding."
+    "note": "Вариант обязателен: все четыре цветовых свойства (bg, chroma, border, color) приходят ячейками слоя State из класса варианта, в базе их нет — .badge без .badge-{variant} выйдет бесцветной пилюлей. Ступень необязательна: база несёт дефолт 400. Обязательных потомков нет ни одного — и лейбл, и иконки опциональны, поэтому оба записаны документацией (required:false): требовать их значило бы ловить законный Type=Icon. Атрибутов тоже нет: бейдж статичный и декоративный, состояний, фокуса и ARIA у него не бывает; смысл, если он важен, называет окружающий текст. Не описано, потому что проверка файловая: порядок слотов (prefix до лейбла, suffix после), позиционирование в углу карточки — оно на стороне потребителя (контейнер position: relative, бейдж absolute)."
   },
   "asana": {
     "task_gid": "1218421826211735",
@@ -403,6 +415,7 @@
       "badge--50",
       "badge--500",
       "badge--600",
+      "badge--icon-only",
       "badge-market-brand",
       "badge-market-new",
       "badge-market-percent",

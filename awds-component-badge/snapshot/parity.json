@@ -1,0 +1,25 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Устройство как у кнопки: префикс, надпись, суффикс; в макете обе иконки видны по умолчанию.",
+  "css": [
+    "badge.css"
+  ],
+  "tag": "span",
+  "class": "badge badge-{variant}",
+  "icon": "<svg class=\"badge__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect width=\"24\" height=\"24\" fill=\"currentColor\"/></svg>",
+  "axes": {
+    "size": {
+      "*": {
+        "class": "badge--{value}"
+      }
+    },
+    "content": {
+      "text": {
+        "html": "{icon}<span class=\"badge__label\">{text}</span>{icon}"
+      },
+      "icon": {
+        "class": "badge--icon-only",
+        "html": "{icon}"
+      }
+    }
+  }
+}
