@@ -42,7 +42,7 @@
 | Подложка | `rgb(var(--surface-on-highest) / var(--awds-opacity-50))` — ячейка `modal/backdrop` |
 | Тень | `var(--awds-shadow-elevation-4)` |
 | Скругление | `var(--awds-rounded-border-radius-600)` (10), на мобильном — только сверху |
-| Боковые отступы | `var(--awds-layout-section-gutter)` — 24 / 16 |
+| Боковые поля | `var(--awds-layout-section-gutter-modal)` — у шапки, содержимого и подвала |
 
 ## Состояния
 

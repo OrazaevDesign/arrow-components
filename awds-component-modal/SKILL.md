@@ -38,8 +38,10 @@ description: Modal ArrowDS (.mdl).
 | Часть | Что внутри | Чем управляется |
 |---|---|---|
 | шапка | кнопка «назад», заголовок, крестик | `show-back`, `show-title`, `show-close`, текст `title` |
-| содержимое | слот, текстовый блок, поле формы, полоса прокрутки | `show-swap`, `show-text`, `show-field`, `scrollbar`, слоты `swap` и `field`, ось `padding=on|off` |
-| подвал | слот, две кнопки | `show-swap`, `show-start`, `show-end`, слоты `start` и `end`, ось `reverse=on|off` |
+| содержимое | нативный слот Figma, полоса прокрутки | слот `content` (SLOT: любой контент — текст, форма, список, свои фреймы), `scrollbar`, ось `padding=on|off` |
+| подвал | две кнопки | `show-start`, `show-end`, слоты `start` и `end`, оси `reverse=on|off` и `stretch=on|off` |
+
+**Содержимое — нативный слот с 29.09.2026.** Раньше это была заглушка `. / swap` со свойством замены `swap`: вставить можно было только компонент, и ради каждого нового содержимого приходилось заводить компонент-обёртку. Слот `content` принимает что угодно — текст, форму, список, свои фреймы; по умолчанию в нём текст-заглушка. Заодно сняты `show-swap` и четыре свойства без привязок (`show-text`, `show-field`, `text`, `field`). В коде это ничего не меняет: `.mdl__content` и раньше принимал любую разметку.
 
 До 22.09.2026 части держали 23 ячейки с комбинациями в именах (`title+back`, `text+input`), опечаткой `pozitive`, состоянием `delete-hover` и булевой осью `alter-align=false|true`. Стало 5 ячеек.
 
@@ -51,9 +53,11 @@ description: Modal ArrowDS (.mdl).
 | Подложка | `rgb(var(--surface-on-highest) / var(--awds-opacity-50))` — ячейка `modal/backdrop`, альфа задаётся компонентом |
 | Тень | `var(--awds-shadow-elevation-4)` — у окна четвёртая ступень, не третья |
 | Скругление | `var(--awds-rounded-border-radius-600)` (10) |
-| Боковые отступы | `var(--awds-layout-section-gutter)` — 24 на десктопе, 16 ниже, адаптив внутри темы |
-| Шапка | сверху `--awds-space-8` (32), снизу `--awds-space-2` (8) |
-| Подвал | сверху `--awds-space-2` (8), снизу `--awds-space-6` (24) |
+| Боковые поля шапки, содержимого и подвала | `var(--awds-layout-section-gutter-modal)` — на mobile поле остаётся |
+| Шапка | сверху `--awds-layout-section-gutter-modal`, снизу `--awds-space-2` |
+| Подвал | сверху `--awds-space-2`, снизу `--awds-layout-section-gutter-modal`, между кнопками `--awds-space-3` |
+
+**Поля сверены с привязками макета 29.09.2026.** До этого все бока шли от `section/gutter`, и на mobile у шапки, содержимого и подвала шторки поля не было вовсе, верх шапки стоял на `space/8`, низ подвала — на фиксированном `space/6`, а кнопки подвала разделял тот же `space/2`, что и отбивка. Значения ступеней — в `studio-vars.css`, здесь их нет намеренно.
 | Заголовок | `--awds-typography-font-size-800` + `--awds-typography-line-height-compact-800` (18/22) |
 | Текст | `--awds-control-font-size-400` (14/20) |
 
@@ -83,7 +87,7 @@ description: Modal ArrowDS (.mdl).
 
 Открывается `dialog.showModal()`, закрывается `dialog.close()`. Имя окну даёт заголовок: `<h2 class="mdl__title">` несёт `id`, а `<dialog>` — `aria-labelledby` на него; без этой пары скринридер объявит окно безымянным. Кнопка «назад» — `.mdl__back` первой в шапке, кнопки подвала — обычные `awds-component-button`.
 
-Содержимое во всю ширину (таблица, список, карта) — `.mdl__content--flush`: боковые отступы приносит само содержимое. Порядок кнопок подвала меняет `.mdl__footer--reverse`.
+Содержимое во всю ширину (таблица, список, карта) — `.mdl__content--flush`: боковые отступы приносит само содержимое. Порядок кнопок подвала меняет `.mdl__footer--reverse`. Кнопки во всю ширину, поровну, — `.mdl__footer--stretch` (в макете `stretch=on`); одна кнопка во всю ширину — тот же модификатор без второй кнопки (`show-end=off`). Модификаторы складываются.
 
 ## Поведение
 
@@ -95,7 +99,7 @@ description: Modal ArrowDS (.mdl).
 
 ## CSS
 
-Один файл — `references/modal.css` (база `.mdl` + `.mdl__header` / `__title` / `__content` / `__text` / `__footer` + виды `.mdl-{dialog,sidepage}` + модификаторы `--flush` и `--reverse`). Подключается один раз глобально.
+Один файл — `references/modal.css` (база `.mdl` + `.mdl__header` / `__title` / `__content` / `__text` / `__footer` + виды `.mdl-{dialog,sidepage}` + модификаторы `--flush`, `--reverse` и `--stretch`). Подключается один раз глобально.
 
 Базовый класс **`.mdl`, а не `.modal`**: `.modal` — имя компонента в Bootstrap, почти наверняка занятое у потребителя, а приватные аккумуляторы по контракту зовутся `--awds-{base_class}-*`. Тот же приём, что у `label` → `.lbl`, `datepicker` → `.dpick`.
 

@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.0.2",
-  "contract_hash": "sha256:727392c0ee1d218ec8400b1a70c4dffd9c43452cb57702b7927d6c3fe0dd0b04",
-  "artifact_hash": "sha256:17d637bb2ff2e4fd66ca493d558dc2114d59bd7ee057008596a550bc30e0bd53",
-  "visual_change": false,
-  "released_at": "2026-09-26T16:52:56.039Z",
+  "version": "1.1.1",
+  "contract_hash": "sha256:8229b93e2f7de981c57fdd26458032f5b1cf783e4012d2702ca91d55558598c2",
+  "artifact_hash": "sha256:69c2cb737ae4c8080aef9493cf794fb33dbe16ad9e67daea8fa038c7d3d5b578",
+  "visual_change": true,
+  "released_at": "2026-09-29T14:39:10.767Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -86,8 +86,8 @@
   "snapshot_hash": "sha256:1b9b73e37daa4537e6426f5aec56617c882e0c6a4f3b56527af62b942a310b9e",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
-    "commit": "d251237",
-    "pushed_at": "2026-09-23T19:05:23.000Z",
+    "commit": "6665458",
+    "pushed_at": "2026-09-26T16:59:01.339578Z",
     "github_urls": {
       "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-modal/SKILL.md",
       "storybook": "https://orazaevdesign.github.io/arrow-components/#modal",
@@ -145,7 +145,7 @@
       }
     ],
     "container": null,
-    "note": "Корень — нативный <dialog>, открывается showModal(): ловушку фокуса, Esc и инертность страницы даёт платформа, своего JS потребителю не нужно. Вид обязателен (.mdl-dialog по центру со скруглением, .mdl-sidepage панелью у края без него) — вся геометрия приходит из него. Шкалы размеров нет: ширину задаёт ручка --awds-mdl-width (по умолчанию layout/form/max). Брейкпоинт (ниже 1068px оба вида становятся шторкой снизу) класса не имеет — его отрабатывает медиазапрос. Обязательно только .mdl__content: шапка и подвал собираются булевыми (show-back / show-title / show-close, show-start / show-end) и по отдельности необязательны, поэтому требованиями не записаны — иначе законное окно без подвала читалось бы как ошибка. Порядок частей фиксирован (шапка, содержимое, подвал), но проверке он не виден: Liquid без DOM не даёт вложенности и порядка. Имя окну даёт заголовок <h2 class=\"mdl__title\"> и aria-labelledby на него; требованием это не записано, потому что у окна без заголовка имя приходит через aria-label, а выбор из двух атрибутов гейт не выражает — зато у самого заголовка id требуется всегда. Кнопки шапки и подвала — инстансы button / button-area со своими контрактами; своих цветов компонент им не задаёт. Модификаторы: .mdl__content--flush (содержимое во всю ширину, отступы приносит оно само), .mdl__footer--reverse (обратный порядок кнопок)."
+    "note": "Корень — нативный <dialog>, открывается showModal(): ловушку фокуса, Esc и инертность страницы даёт платформа, своего JS потребителю не нужно. Вид обязателен (.mdl-dialog по центру со скруглением, .mdl-sidepage панелью у края без него) — вся геометрия приходит из него. Шкалы размеров нет: ширину задаёт ручка --awds-mdl-width (по умолчанию layout/form/max). Брейкпоинт (ниже 1068px оба вида становятся шторкой снизу) класса не имеет — его отрабатывает медиазапрос. Обязательно только .mdl__content: шапка и подвал собираются булевыми (show-back / show-title / show-close, show-start / show-end) и по отдельности необязательны, поэтому требованиями не записаны — иначе законное окно без подвала читалось бы как ошибка. Порядок частей фиксирован (шапка, содержимое, подвал), но проверке он не виден: Liquid без DOM не даёт вложенности и порядка. Имя окну даёт заголовок <h2 class=\"mdl__title\"> и aria-labelledby на него; требованием это не записано, потому что у окна без заголовка имя приходит через aria-label, а выбор из двух атрибутов гейт не выражает — зато у самого заголовка id требуется всегда. Кнопки шапки и подвала — инстансы button / button-area со своими контрактами; своих цветов компонент им не задаёт. Модификаторы: .mdl__content--flush (содержимое во всю ширину, отступы приносит оно само), .mdl__footer--reverse (обратный порядок кнопок), .mdl__footer--stretch (кнопки во всю ширину поровну; одна кнопка — тот же модификатор без второй)."
   },
   "questions": [
     {
@@ -190,15 +190,13 @@
     "--awds-control-line-height-400",
     "--awds-font-family-system",
     "--awds-font-weight-bold",
-    "--awds-layout-section-gutter",
+    "--awds-layout-section-gutter-modal",
     "--awds-opacity-50",
     "--awds-rounded-border-radius-600",
     "--awds-shadow-elevation-4",
     "--awds-space-12",
     "--awds-space-2",
     "--awds-space-3",
-    "--awds-space-6",
-    "--awds-space-8",
     "--awds-typography-font-size-800",
     "--awds-typography-letter-spacing-800",
     "--awds-typography-line-height-compact-800",
@@ -228,6 +226,7 @@
       "mdl__content--flush",
       "mdl__footer",
       "mdl__footer--reverse",
+      "mdl__footer--stretch",
       "mdl__header",
       "mdl__text",
       "mdl__title"

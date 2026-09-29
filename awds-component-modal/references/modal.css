@@ -36,8 +36,8 @@
 
    Структура: .mdl > .mdl__header + .mdl__content + .mdl__footer.
    Базовый класс .mdl, а не .modal — см. base_class_note в component.meta.json.
-   Приватные аккумуляторы: --awds-mdl-bg, -backdrop, -rounded, -pad-side, -pad-top,
-     -pad-bottom, -gap, -width, -title-fs, -title-lh, -title-ls.
+   Приватные аккумуляторы: --awds-mdl-bg, -backdrop, -rounded, -pad-side, -content-side,
+     -pad-top, -pad-bottom, -gap, -footer-gap, -width, -title-fs, -title-lh, -title-ls.
    ============================================================================= */
 
 /* === Base === */
@@ -46,10 +46,15 @@
   --awds-mdl-bg:       rgb(var(--surface-bright));   /* #cell modal/bg */
   --awds-mdl-backdrop: rgb(var(--surface-on-highest) / var(--awds-opacity-50));   /* #cell modal/backdrop */
   --awds-mdl-rounded:  var(--awds-rounded-border-radius-600);   /* 10px Smooth */
-  --awds-mdl-pad-side: var(--awds-layout-section-gutter);   /* 24 на десктопе, 16 ниже */
-  --awds-mdl-pad-top:  var(--awds-space-8);   /* 32px — верх шапки */
-  --awds-mdl-gap:      var(--awds-space-2);   /* 8px — отбивка подвала и низ шапки */
-  --awds-mdl-pad-bottom: var(--awds-space-6);   /* 24px — низ подвала */
+  /* Поля окна — по привязкам макета (сверено 29.09.2026): шапка, содержимое и подвал
+     стоят на section/gutter-modal — на mobile поле остаётся. Ручки бокового поля две:
+     содержимое перекрывают отдельно (.mdl__content--flush), шапку и подвал — нет. */
+  --awds-mdl-pad-side:    var(--awds-layout-section-gutter-modal);   /* бока шапки и подвала */
+  --awds-mdl-content-side: var(--awds-layout-section-gutter-modal);   /* бока содержимого */
+  --awds-mdl-pad-top:     var(--awds-layout-section-gutter-modal);   /* верх шапки */
+  --awds-mdl-gap:         var(--awds-space-2);   /* низ шапки, зазор в шапке, верх подвала */
+  --awds-mdl-footer-gap:  var(--awds-space-3);   /* между кнопками подвала */
+  --awds-mdl-pad-bottom:  var(--awds-layout-section-gutter-modal);   /* низ подвала */
   /* Ширина окна: в студии её нет — ни в layout, ни в size группы окна не существует
      (проверено 22.09.2026: в layout/form только gap и group-gap). Литерал объявлен
      ручкой, потребитель перекрывает его под свой случай. */
@@ -179,7 +184,7 @@
   min-block-size: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
-  padding-inline: var(--awds-mdl-pad-side);
+  padding-inline: var(--awds-mdl-content-side);
 }
 
 /* Содержимое во всю ширину — таблица, список, карта: боковые отступы приносит оно само.
@@ -204,7 +209,7 @@
   display: flex;
   flex: none;
   align-items: center;
-  gap: var(--awds-mdl-gap);
+  gap: var(--awds-mdl-footer-gap);
   padding-block: var(--awds-mdl-gap) var(--awds-mdl-pad-bottom);
   padding-inline: var(--awds-mdl-pad-side);
 }
@@ -212,6 +217,14 @@
 /* Порядок кнопок обратный: подтверждение слева. В макете это ось reverse=on|off. */
 .mdl__footer--reverse {
   flex-direction: row-reverse;
+}
+
+/* Кнопки во всю ширину подвала, поровну: в макете ось stretch=on|off, кнопки Fill.
+   Одна кнопка во всю ширину — тот же модификатор, просто без второй кнопки.
+   flex-basis 0, а не auto: иначе ширину делит длина подписи, а в макете доли равные. */
+.mdl__footer--stretch > * {
+  flex: 1 1 0;
+  min-inline-size: 0;
 }
 
 /* === Брейкпоинты ===
