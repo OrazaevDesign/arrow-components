@@ -717,10 +717,10 @@
 /* :focus-within, а не :focus-visible: у выпадающего списка «сфокусировано» =
    активно, и в макете состояние Focus именно про это. */
 .select-ghost:focus-within {
-  --awds-select-color:    rgb(var(--focus-container-on-highest));   /* #cell form-control/ghost/color-focus */
-  --awds-select-placeholder: rgb(var(--focus-container-on-high));   /* #cell form-control/ghost/placeholder-focus */
-  --awds-select-chevron:  rgb(var(--focus-container-on-high));   /* #cell form-control/ghost/chevron-focus */
-  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   /* #cell form-control/ghost/icon-focus */
+  --awds-select-color:    rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/color-focus */
+  --awds-select-placeholder: rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/placeholder-focus */
+  --awds-select-chevron:  rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/chevron-focus */
+  --awds-select-icon-color: rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/icon-focus */
 
   /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
      (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе
@@ -753,10 +753,10 @@
 
 @supports (appearance: base-select) {
   .select.select-ghost:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-color:    rgb(var(--focus-container-on-highest));   /* #cell form-control/ghost/color-focus */
-    --awds-select-placeholder: rgb(var(--focus-container-on-high));   /* #cell form-control/ghost/placeholder-focus */
-    --awds-select-chevron:  rgb(var(--focus-container-on-high));   /* #cell form-control/ghost/chevron-focus */
-    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   /* #cell form-control/ghost/icon-focus */
+    --awds-select-color:    rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/color-focus */
+    --awds-select-placeholder: rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/placeholder-focus */
+    --awds-select-chevron:  rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/chevron-focus */
+    --awds-select-icon-color: rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/icon-focus */
 
     /* Кольцо фокуса — слой awds-component-focus-selection, вариант Outside + Formcontrol
        (снято с инстанса FocusSelection в макете): кольцо брендовое при 50% — рамка поля в фокусе

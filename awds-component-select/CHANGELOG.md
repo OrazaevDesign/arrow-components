@@ -1,5 +1,9 @@
 # select — журнал версий
 
+## 1.0.29 — 2026-09-30 — PATCH · visual
+Ячейки form-control/ghost/{color,placeholder,icon,chevron}-focus перенаправлены в студии: роль focus-container-on-* → secondary-container-on-*; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: у ghost-поля в фокусе текст, плейсхолдер и иконки нейтральные, а не цвета фокуса.
+
 ## 1.0.28 — 2026-09-29 — PATCH · visual
 Ячейки list/accent-selected/border-* перенаправлены в студии на focus/container-core — обводка выбранного пункта accent того же цвета, что фон; код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: у выбранного пункта accent пропала заметная обводка, рамка слилась с фоном.
