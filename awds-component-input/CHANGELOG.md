@@ -1,5 +1,9 @@
 # input — журнал версий
 
+## 1.0.17 — 2026-09-30 — PATCH · visual
+Ячейки form-control/ghost/{color,placeholder,icon,chevron}-focus перенаправлены в студии: роль focus-container-on-* → secondary-container-on-*; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: у ghost-поля в фокусе текст, плейсхолдер и иконки нейтральные, а не цвета фокуса.
+
 ## 1.0.16 — 2026-09-29 — PATCH · visual
 Ячейки состояния Focus перенаправлены в студии с роли primary на новую роль focus (form-control/*-focus, focus-selection/outlineVariant|outlineAccent, tab/selected/border-focus); код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: на темах, где focus = primary, без изменений; на shopotam поле и кольцо в фокусе стали синими вместо красного, чтобы не читаться как ошибка.
