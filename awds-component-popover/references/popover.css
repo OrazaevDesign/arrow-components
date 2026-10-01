@@ -114,6 +114,10 @@
    паддинг, фон и центрирование, — чтобы вид задавала панель, а не UA. Позиционирование
    остаётся за потребителем: anchor positioning вне планки Baseline 2024.
    Правило работает только когда на .pop стоит атрибут popover; без него — не мешает. */
+/* Закрытая панель скрыта: display: inline-block у .pop перебивает правило браузера
+   [popover]:not(:popover-open) { display: none } (найдено 30.09.2026 в шапке awds-header). */
+.pop[popover]:not(:popover-open) { display: none; }
+
 .pop[popover] {
   position: fixed;
   inset: auto;
