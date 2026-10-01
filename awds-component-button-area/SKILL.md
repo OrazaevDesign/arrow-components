@@ -30,6 +30,15 @@ description: Button Area ArrowDS (.btn-area).
   <span class="btn-area__icon"><svg viewBox="0 0 20 20" aria-hidden="true">…</svg></span>
 </button>
 
+<!-- Переключатель <details>: раскрывает список на месте без скрипта -->
+<details>
+  <summary class="btn-area btn-area-default btn-area--500">
+    <span class="btn-area__label">Ещё</span>
+    <span class="btn-area__suffix"><svg viewBox="0 0 20 20" aria-hidden="true">…</svg></span>
+  </summary>
+  …
+</details>
+
 <!-- Растянут по ширине + загрузка -->
 <a class="btn-area btn-area-default btn-area--500 btn-area--fill-x btn-area--loading" href="#">
   <span class="btn-area__label">Загрузка…</span>

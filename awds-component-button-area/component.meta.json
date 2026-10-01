@@ -1,10 +1,10 @@
 {
   "component": "button-area",
-  "version": "2.0.9",
+  "version": "2.0.11",
   "contract_hash": "sha256:20b087a266ab23f2cf7d6e6990d2eecbfadd8132856a03495b35b2d343f90904",
-  "artifact_hash": "sha256:e45dc9c4549b8a8f5c83ceb285a655f5b496dd6ad7bba3bf4bae689adb3d27ce",
-  "visual_change": true,
-  "released_at": "2026-09-27T09:05:22.544Z",
+  "artifact_hash": "sha256:9d5d0f1e9fd1a2e981a75a100936cbfd41ffd059269b42b6af28b77def56ef1d",
+  "visual_change": false,
+  "released_at": "2026-09-30T09:31:29.381Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -313,7 +313,8 @@
       "class": "btn-area",
       "tags": [
         "a",
-        "button"
+        "button",
+        "summary"
       ]
     },
     "variant": {

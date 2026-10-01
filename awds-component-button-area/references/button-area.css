@@ -70,11 +70,21 @@
   letter-spacing: var(--awds-btn-area-ls);
   font-weight: var(--awds-font-weight-regular);
   text-decoration: none;              /* button-area — не inline-ссылка, без подчёркивания */
+  /* На <button> снимаем оформление браузера: без этого область получает серую подложку,
+     рамку outset и поля 1px 6px (найдено 30.09.2026 в шапке awds-header). */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  list-style: none;                   /* на <summary>: без маркера details */
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   /* Polish (MIFB): анимируем только color, прерываемо, 0.15s ease-out */
   transition: color 0.15s ease-out;
 }
+/* На <summary> маркер details в WebKit рисуется псевдоэлементом — снимаем и его. */
+.btn-area::-webkit-details-marker { display: none; }
+
 .btn-area,
 .btn-area *,
 .btn-area *::before,
