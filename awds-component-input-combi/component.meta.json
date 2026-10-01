@@ -1,10 +1,10 @@
 {
   "component": "input-combi",
-  "version": "1.0.16",
+  "version": "1.0.18",
   "contract_hash": "sha256:7c2a2ea3cdb3933b48b3ce1982aff1d09d70e2499a7e80765258712334ee150d",
-  "artifact_hash": "sha256:cc9d6f66e4e663c33822cbafb4d973921db39582eda9232793cde3d1ebbb233a",
+  "artifact_hash": "sha256:f492210f47f5eb86b5e5585efd65e0988f8c9feea9ea8593602b335df25a651d",
   "visual_change": true,
-  "released_at": "2026-09-29T15:59:35.654Z",
+  "released_at": "2026-09-30T22:30:55.041Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -220,7 +220,6 @@
     "--awds-rounded-border-radius-600",
     "--awds-space-0-5",
     "--awds-space-1",
-    "--awds-space-1-5",
     "--awds-space-2",
     "--awds-space-2-5",
     "--awds-space-3",
@@ -228,7 +227,6 @@
     "--awds-space-4",
     "--awds-space-4-5",
     "--awds-space-5",
-    "--awds-space-5-5",
     "--awds-space-6",
     "--awds-space-px",
     "--error-container-core",
@@ -350,7 +348,11 @@
     },
     "size": {
       "pattern": "icombi--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "cbcombi"
+      ],
+      "why_optional": "Внутри combobox-combi ступень поля раздаёт мост .cbcombi--{N}; класс размера на вложенном .icombi там не ставится и не действует (awds-component-combobox-combi, «Ступени»)."
     },
     "native": {
       "tag": "input",

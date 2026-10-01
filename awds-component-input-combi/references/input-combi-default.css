@@ -56,7 +56,7 @@
 
      Size │ padding │ input-top │ input-bottom │ label-top │ fs/lh │ метка  │ высота
      600  │ 16      │ 24        │ 8            │ 8         │ 16/20 │ 12/16  │ 52
-     500  │ 14      │ 22        │ 6            │ 6         │ 16/20 │ 12/16  │ 48
+     500  │ 12      │ 20        │ 4            │ 4         │ 16/20 │ 12/16  │ 44
      400  │ 10      │ 16        │ 4            │ 4         │ 14/20 │ 11/16  │ 40
      300  │ 8       │ 14        │ 2            │ 2         │ 14/20 │ 11/16  │ 36
 
@@ -440,9 +440,9 @@
   --awds-icombi-lh:           var(--awds-control-line-height-600);
   --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-icombi-text-gap:     var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
-  --awds-icombi-label-top:    var(--awds-space-1-5);   /* #cell rectangle/500/combi/label-top */
-  --awds-icombi-input-top:    var(--awds-space-5-5);   /* #cell rectangle/500/combi/input-top */
-  --awds-icombi-input-bottom: var(--awds-space-1-5);   /* #cell rectangle/500/combi/input-bottom */
+  --awds-icombi-label-top:    var(--awds-space-1);   /* #cell rectangle/500/combi/label-top */
+  --awds-icombi-input-top:    var(--awds-space-5);   /* #cell rectangle/500/combi/input-top */
+  --awds-icombi-input-bottom: var(--awds-space-1);   /* #cell rectangle/500/combi/input-bottom */
   --awds-icombi-label-fs:     var(--awds-control-font-size-200);
   --awds-icombi-label-lh:     var(--awds-control-line-height-200);
   --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
