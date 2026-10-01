@@ -92,6 +92,40 @@ Radio — то же с `.radio` из `awds-component-radio`, и у всех ст
 
 В макете это набор `prefix-list`, значения `content=checkbox` и `content=radio` на всех семи ступенях: внутри инстанс `checkbox / unselected` или `radio / unselected`, выбранный — свапом на соседний набор.
 
+## Превью в слоте: картинка на подложке
+
+С 30.09.2026. Логотип бренда, фото товара, картинка рубрики — строка подсказки поиска, где
+пункт узнают по изображению, а не по иконке:
+
+```html
+<a class="list-item list-item-transparent list-item--500" href="/brand/adidas">
+  <span class="list-item__prefix list-item__prefix--content-img" aria-hidden="true">
+    <span class="list-item__preview list-item__preview--bg-light"><img src="…" alt=""></span>
+  </span>
+  <span class="list-item__content">
+    <span class="list-item__title">Adidas</span>
+    <span class="list-item__description">Страница бренда</span>
+  </span>
+</a>
+```
+
+| Ось | Класс | Макет | Что меняет |
+| --- | --- | --- | --- |
+| размер превью | `__prefix--content-img` | `prefix-list` `content=img` | малое превью, ячейка `rectangle/{N}/img`: 44 · 40 · 36 · 32 · 28 · 20 · 16 |
+| | `__prefix--content-preview` | `prefix-list` `content=preview` | крупное превью, ячейка `rectangle/{N}/preview`: 64 · 64 · 56 · 52 · 48 · 40 · 36 |
+| подложка | без модификатора | `preview` `bg=default` | `list/preview/bg-default` → `secondary-container-core`: фото товара |
+| | `__preview--bg-light` | `bg=light` | `list/preview/bg-light` → `surface-bright`: логотип бренда |
+| | `__preview--bg-brand` | `bg=brand` | градиент `surface-chromatic-*` под 45°, как фон шапки |
+
+- **Ячейка слота прижата к верху и к краю**: сверху, снизу и слева `img-padding`, справа —
+  обычный `padding` строки, он же зазор до текста. Высота строки растёт под превью.
+- **Скругление подложки `border-radius/500`, картинки `/300`** на всех ступенях — так в
+  макете, ячейки Size у них нет. Картинка кадрируется `object-fit: cover` (в макете CROP).
+- **Размеры 62 и 66 из первой версии макета округлены к шкале** (решение владельца
+  30.09.2026): 500 и 600 → 64, остальные ступени — к ближайшему шагу вверх. Ячейки
+  `rectangle/{N}/preview` заведены в студии в тот же день.
+- **`alt=""`, слот `aria-hidden`**: имя пункта несёт заголовок, картинка его не дублирует.
+
 ## Горизонталь текста — переключается, и не так, как у input
 
 У `input` и `select` отступ текста задаёт **само поле**: нет иконки — `text-gap`, есть — `padding`. Здесь наоборот: отступ несёт **слот**, у которого паддинг со всех сторон.

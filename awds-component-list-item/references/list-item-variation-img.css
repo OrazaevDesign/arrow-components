@@ -65,6 +65,9 @@
   /* Size accumulator defaults (default_size = 400) */
   --awds-list-item-padding:  var(--awds-space-2-5);   /* #cell rectangle/400/padding */
   --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/400/icon */
+  --awds-list-item-img:      var(--awds-space-9);   /* #cell rectangle/400/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/400/img-padding */
+  --awds-list-item-preview:  var(--awds-space-13-5);   /* #cell rectangle/400/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   /* #cell rectangle/400/rounded */
   --awds-list-item-text-gap: var(--awds-space-4);   /* #cell rectangle/400/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/400/typography */
@@ -303,6 +306,63 @@
 }
 
 
+/* === Превью в слоте ===
+   Картинка на подложке в __prefix: логотип бренда, фото товара, картинка рубрики. В макете
+   это часть prefix-list, значения content=img (малое превью, ячейка rectangle/{N}/img) и
+   content=preview (крупное, rectangle/{N}/preview) на всех семи ступенях.
+
+   Ячейка слота прижата к верху и к левому краю строки: сверху, снизу и слева отступ
+   img-padding, справа — обычный padding строки (он же даёт зазор до текста). Подложка —
+   компонент preview в макете, ось bg: default (без модификатора), brand, light.
+   Скругление подложки border-radius/500, картинки — /300 на всех ступенях: так в макете,
+   ячейки Size у них нет. */
+
+.list-item__prefix--content-img,
+.list-item__prefix--content-preview {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--awds-list-item-img-pad) var(--awds-list-item-padding) var(--awds-list-item-img-pad) var(--awds-list-item-img-pad);
+}
+
+.list-item__preview {
+  display: block;
+  flex-shrink: 0;
+  inline-size: var(--awds-list-item-img);
+  block-size: var(--awds-list-item-img);
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--secondary-container-core));   /* #cell list/preview/bg-default */
+  overflow: hidden;
+}
+
+.list-item__prefix--content-preview > .list-item__preview {
+  inline-size: var(--awds-list-item-preview);
+  block-size: var(--awds-list-item-preview);
+}
+
+.list-item__preview--bg-light {
+  background: rgb(var(--surface-bright));   /* #cell list/preview/bg-light */
+}
+
+/* bg=brand — тот же градиент chromatic, что у фона шапки, под 45° (снизу слева
+   направо вверх), точки из макета. */
+.list-item__preview--bg-brand {
+  background: linear-gradient(45deg,
+    rgb(var(--surface-chromatic-start)) 0%,
+    rgb(var(--surface-chromatic-mid-start)) 30%,
+    rgb(var(--surface-chromatic-mid-end)) 70%,
+    rgb(var(--surface-chromatic-end)) 100%);
+}
+
+/* В макете картинка кадрируется (CROP) по всей подложке. */
+.list-item__preview > img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  border-radius: var(--awds-rounded-border-radius-300);
+}
+
+
 /* === Контент === */
 
 .list-item__content {
@@ -359,6 +419,9 @@
 .list-item--600 {
   --awds-list-item-padding:  var(--awds-space-4);   /* #cell rectangle/600/padding */
   --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/600/icon */
+  --awds-list-item-img:      var(--awds-space-11);   /* #cell rectangle/600/img */
+  --awds-list-item-img-pad:  var(--awds-space-1);   /* #cell rectangle/600/img-padding */
+  --awds-list-item-preview:  var(--awds-space-16-5);   /* #cell rectangle/600/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-600);   /* #cell rectangle/600/rounded */
   --awds-list-item-text-gap: var(--awds-space-4-5);   /* #cell rectangle/600/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/600/typography */
@@ -372,6 +435,9 @@
 .list-item--500 {
   --awds-list-item-padding:  var(--awds-space-3);   /* #cell rectangle/500/padding */
   --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/500/icon */
+  --awds-list-item-img:      var(--awds-space-10);   /* #cell rectangle/500/img */
+  --awds-list-item-img-pad:  var(--awds-space-1);   /* #cell rectangle/500/img-padding */
+  --awds-list-item-preview:  var(--awds-space-15-5);   /* #cell rectangle/500/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-list-item-text-gap: var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
@@ -385,6 +451,9 @@
 .list-item--400 {
   --awds-list-item-padding:  var(--awds-space-2-5);   /* #cell rectangle/400/padding */
   --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/400/icon */
+  --awds-list-item-img:      var(--awds-space-9);   /* #cell rectangle/400/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/400/img-padding */
+  --awds-list-item-preview:  var(--awds-space-13-5);   /* #cell rectangle/400/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   /* #cell rectangle/400/rounded */
   --awds-list-item-text-gap: var(--awds-space-4);   /* #cell rectangle/400/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/400/typography */
@@ -398,6 +467,9 @@
 .list-item--300 {
   --awds-list-item-padding:  var(--awds-space-2);   /* #cell rectangle/300/padding */
   --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/300/icon */
+  --awds-list-item-img:      var(--awds-space-8);   /* #cell rectangle/300/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/300/img-padding */
+  --awds-list-item-preview:  var(--awds-space-12-5);   /* #cell rectangle/300/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-300);   /* #cell rectangle/300/rounded */
   --awds-list-item-text-gap: var(--awds-space-3-5);   /* #cell rectangle/300/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/300/typography */
@@ -411,6 +483,9 @@
 .list-item--200 {
   --awds-list-item-padding:  var(--awds-space-2);   /* #cell rectangle/200/padding */
   --awds-list-item-icon:     var(--awds-space-4);   /* #cell rectangle/200/icon */
+  --awds-list-item-img:      var(--awds-space-7);   /* #cell rectangle/200/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/200/img-padding */
+  --awds-list-item-preview:  var(--awds-space-11-5);   /* #cell rectangle/200/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-200);   /* #cell rectangle/200/rounded */
   --awds-list-item-text-gap: var(--awds-space-3-5);   /* #cell rectangle/200/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-300);   /* #cell rectangle/200/typography */
@@ -424,6 +499,9 @@
 .list-item--100 {
   --awds-list-item-padding:  var(--awds-space-1);   /* #cell rectangle/100/padding */
   --awds-list-item-icon:     var(--awds-space-4);   /* #cell rectangle/100/icon */
+  --awds-list-item-img:      var(--awds-space-5);   /* #cell rectangle/100/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/100/img-padding */
+  --awds-list-item-preview:  var(--awds-space-9-5);   /* #cell rectangle/100/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-100);   /* #cell rectangle/100/rounded */
   --awds-list-item-text-gap: var(--awds-space-2-5);   /* #cell rectangle/100/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-300);   /* #cell rectangle/100/typography */
@@ -437,6 +515,9 @@
 .list-item--50 {
   --awds-list-item-padding:  var(--awds-space-0-5);   /* #cell rectangle/50/padding */
   --awds-list-item-icon:     var(--awds-space-4);   /* #cell rectangle/50/icon */
+  --awds-list-item-img:      var(--awds-space-4);   /* #cell rectangle/50/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/50/img-padding */
+  --awds-list-item-preview:  var(--awds-space-8-5);   /* #cell rectangle/50/preview */
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-50);   /* #cell rectangle/50/rounded */
   --awds-list-item-text-gap: var(--awds-space-2);   /* #cell rectangle/50/text-gap */
   --awds-list-item-fs:       var(--awds-control-font-size-200);   /* #cell rectangle/50/typography */

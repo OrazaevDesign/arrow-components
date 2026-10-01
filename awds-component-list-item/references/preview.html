@@ -205,6 +205,19 @@
   <tbody id="controls"></tbody>
 </table>
 
+<h2>Превью в слоте: картинка на подложке</h2>
+<p class="note">
+  <code>__prefix--content-img</code> — малое превью (<code>rectangle/{N}/img</code>), <code>__prefix--content-preview</code> —
+  крупное (<code>rectangle/{N}/preview</code>). Подложка <code>__preview</code>: без модификатора — <code>default</code>,
+  <code>--bg-light</code>, <code>--bg-brand</code>. Ячейка прижата к верху: сверху, снизу и слева <code>img-padding</code>.
+</p>
+<table class="matrix">
+  <thead>
+    <tr><th>Size</th><th>img · light (бренд)</th><th>img · brand</th><th>preview · default (товар)</th></tr>
+  </thead>
+  <tbody id="previews"></tbody>
+</table>
+
 <h2>В контексте: нижняя панель</h2>
 <p class="note">
   <code>tabbar</code> и <code>tabbar-selected</code> — вкладки нижней панели, одна ступень: size-классы на них не
@@ -271,8 +284,27 @@ function control(size, kind, checked, disabled, variant) {
     '<span class="list-item__content"><span class="list-item__title">Алматы</span></span></label>';
 }
 
+// Заглушка картинки: кроссовок-силуэт на прозрачном фоне, чтобы подложка была видна.
+const PIC = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M6 26c6 0 10-6 14-10 2 3 7 5 14 6v6H6z" fill="#5b3fd0"/><rect x="6" y="28" width="28" height="3" rx="1.5" fill="#2b1d66"/></svg>');
+
+function previewRow(size, kind, bg, variant, title, desc) {
+  const mod = bg === 'default' ? '' : ' list-item__preview--bg-' + bg;
+  return '<a href="#" class="list-item list-item-' + variant + ' list-item--' + size + '">' +
+    '<span class="list-item__prefix list-item__prefix--content-' + kind + '" aria-hidden="true">' +
+    '<span class="list-item__preview' + mod + '"><img src="' + PIC + '" alt=""></span></span>' +
+    '<span class="list-item__content"><span class="list-item__title">' + title + '</span>' +
+    '<span class="list-item__description">' + desc + '</span></span></a>';
+}
+
 function render() {
   const v = document.getElementById('t-variant').value;
+
+  document.getElementById('previews').innerHTML = v.startsWith('tabbar')
+    ? '<tr><td colspan="4" class="note">У вкладок нижней панели превью в слоте не бывает.</td></tr>'
+    : SIZES.map(s => '<tr><td class="size-label">' + s + '</td>' +
+      '<td>' + previewRow(s, 'img', 'light', v, 'Adidas', 'Страница бренда') + '</td>' +
+      '<td>' + previewRow(s, 'img', 'brand', v, 'Кроссовки', 'Обувь') + '</td>' +
+      '<td>' + previewRow(s, 'preview', 'default', v, 'Adidas XF Аксессуары для мужчин', '4 500 ₽') + '</td></tr>').join('');
 
   document.getElementById('controls').innerHTML = v.startsWith('tabbar')
     ? '<tr><td colspan="6" class="note">У вкладок нижней панели переключателя в слоте не бывает.</td></tr>'
