@@ -1,5 +1,13 @@
 # textarea-combi — журнал версий
 
+## 1.0.7 — 2026-09-30 — PATCH · visual
+Ячейки form-control/ghost/{color,placeholder,icon,chevron}-focus перенаправлены в студии: роль focus-container-on-* → secondary-container-on-*; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: у ghost-поля в фокусе текст, плейсхолдер и иконки нейтральные, а не цвета фокуса.
+
+## 1.0.6 — 2026-09-29 — PATCH · visual
+Ячейки rectangle/500/combi/{label-top,input-top,input-bottom} перенаправлены в студии: space/1-5, 5-5, 1-5 → space/1, 5, 1 — считались от отступа 14, а отступ 500 стал 12; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: высота ступени 500 при трёх строках 88 → 84, метка на 4 от верха вместо 6.
+
 ## 1.0.5 — 2026-09-29 — PATCH · visual
 Ячейки состояния Focus перенаправлены в студии с роли primary на новую роль focus (form-control/*-focus, focus-selection/outlineVariant|outlineAccent, tab/selected/border-focus); код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: на темах, где focus = primary, без изменений; на shopotam поле и кольцо в фокусе стали синими вместо красного, чтобы не читаться как ошибка.

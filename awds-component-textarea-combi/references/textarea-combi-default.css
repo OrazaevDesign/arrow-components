@@ -20,7 +20,7 @@
 
      Size │ значение │ метка │ input-top / bottom │ label-top │ высота
      600  │ 16 / 20  │ 12    │ 24 / 8             │ 8         │ 92
-     500  │ 16 / 20  │ 12    │ 22 / 6             │ 6         │ 88
+     500  │ 16 / 20  │ 12    │ 20 / 4             │ 4         │ 84
      400  │ 14 / 20  │ 11    │ 16 / 4             │ 4         │ 80
      300  │ 14 / 20  │ 11    │ 14 / 2             │ 2         │ 76
 
@@ -224,9 +224,9 @@
 .tcombi--500 {
   --awds-tcombi-rounded:      var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   --awds-tcombi-text-gap:     var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
-  --awds-tcombi-input-top:    var(--awds-space-5-5);   /* #cell rectangle/500/combi/input-top */
-  --awds-tcombi-input-bottom: var(--awds-space-1-5);   /* #cell rectangle/500/combi/input-bottom */
-  --awds-tcombi-label-top:    var(--awds-space-1-5);   /* #cell rectangle/500/combi/label-top */
+  --awds-tcombi-input-top:    var(--awds-space-5);   /* #cell rectangle/500/combi/input-top */
+  --awds-tcombi-input-bottom: var(--awds-space-1);   /* #cell rectangle/500/combi/input-bottom */
+  --awds-tcombi-label-top:    var(--awds-space-1);   /* #cell rectangle/500/combi/label-top */
   --awds-tcombi-fs:           var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
   --awds-tcombi-lh:           var(--awds-control-line-height-600);
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
