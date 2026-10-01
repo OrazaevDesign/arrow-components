@@ -92,6 +92,12 @@
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-50));   /* #cell modal/backdrop */
 }
 
+/* Закрытое окно убрано из раскладки: display: flex у .mdl перебивает правило браузера
+   dialog:not([open]) { display: none }, и невидимое окно перехватывало клики поверх
+   страницы (найдено 30.09.2026 в шапке awds-header). Переход закрытия сохраняется:
+   display анимируется через allow-discrete ниже. */
+.mdl:not([open]) { display: none; }
+
 /* Появление: @starting-style внутри планки Baseline 2024. Не сработает — окно просто
    появится без перехода, функция не страдает. */
 @media (prefers-reduced-motion: no-preference) {
@@ -243,7 +249,9 @@
   .mdl-sidepage {
     inline-size: 100%;
     max-inline-size: 100%;
-    block-size: auto;
+    /* fit-content, а не auto: у модального <dialog> inset: 0, и auto растягивал шторку
+       на всю высоту экрана (найдено 30.09.2026 в шапке awds-header). */
+    block-size: fit-content;
     max-block-size: calc(100% - var(--awds-space-12));   /* 48px сверху остаётся видна страница */
     margin: auto 0 0;
     border-start-start-radius: var(--awds-mdl-rounded);
