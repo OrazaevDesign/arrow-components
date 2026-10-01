@@ -501,24 +501,24 @@
   --focus-container-on-lowest-light: 219 210 242;
   --focus-container-on-lowest-dark: 47 29 90;
   --focus-container-on-lowest: var(--focus-container-on-lowest-light);
-  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-desktop-large: 1488px;  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-desktop-medium: 1376px;  /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  /* Граница вьюпорта, desktop small: 1068px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
-  --awds-breakpoints-desktop-small: 1024px;  /* Граница вьюпорта, desktop small: 1068px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
-  /* Граница вьюпорта, tablet large: 1067px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-tablet-large: 1023px;  /* Граница вьюпорта, tablet large: 1067px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-tablet-medium: 816px;  /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  /* Граница вьюпорта, tablet small: 616px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
-  --awds-breakpoints-tablet-small: 616px;  /* Граница вьюпорта, tablet small: 616px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
-  /* Граница вьюпорта, mobile large: 615px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-mobile-large: 615px;  /* Граница вьюпорта, mobile large: 615px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  /* Граница вьюпорта, mobile medium: 430px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-mobile-medium: 430px;  /* Граница вьюпорта, mobile medium: 430px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  /* Граница вьюпорта, mobile small: 320px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
-  --awds-breakpoints-mobile-small: 320px;  /* Граница вьюпорта, mobile small: 320px. Группы: mobile 320/430/615, tablet 616/816/1067, desktop 1068/1376/1488. */
+  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  --awds-breakpoints-desktop-large: 1488px;  /* Граница вьюпорта, desktop large: 1488px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  --awds-breakpoints-desktop-medium: 1376px;  /* Граница вьюпорта, desktop medium: 1376px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  /* Граница вьюпорта, desktop small: 1024px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  --awds-breakpoints-desktop-small: 1024px;  /* Граница вьюпорта, desktop small: 1024px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  /* Граница вьюпорта, tablet large: 1023px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  --awds-breakpoints-tablet-large: 1023px;  /* Граница вьюпорта, tablet large: 1023px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  --awds-breakpoints-tablet-medium: 816px;  /* Граница вьюпорта, tablet medium: 816px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  /* Граница вьюпорта, tablet small: 616px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  --awds-breakpoints-tablet-small: 616px;  /* Граница вьюпорта, tablet small: 616px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. Это нижняя граница группы — на ней блок перестраивается. */
+  /* Граница вьюпорта, mobile large: 615px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  --awds-breakpoints-mobile-large: 615px;  /* Граница вьюпорта, mobile large: 615px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  /* Граница вьюпорта, mobile medium: 430px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  --awds-breakpoints-mobile-medium: 430px;  /* Граница вьюпорта, mobile medium: 430px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  /* Граница вьюпорта, mobile small: 320px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
+  --awds-breakpoints-mobile-small: 320px;  /* Граница вьюпорта, mobile small: 320px. Группы: mobile 320/430/615, tablet 616/816/1023, desktop 1024/1376/1488. */
   /* Максимальная ширина колонки, широкая (616 → 1068 → 1488). Поле «Ширина контента» = large, дефолт структурных блоков. */
   --awds-layout-section-width-large-desktop: 1488px;
   --awds-layout-section-width-large-tablet: 1068px;
@@ -934,6 +934,20 @@
   --awds-space-80: 320px;  /* Шаг шкалы отступов: 320px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
   /* Шаг шкалы отступов: 384px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
   --awds-space-96: 384px;  /* Шаг шкалы отступов: 384px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 34px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-8-5: 34px;  /* Шаг шкалы отступов: 34px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 38px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-9-5: 38px;  /* Шаг шкалы отступов: 38px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 46px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-11-5: 46px;  /* Шаг шкалы отступов: 46px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 50px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-12-5: 50px;  /* Шаг шкалы отступов: 50px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 54px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-13-5: 54px;  /* Шаг шкалы отступов: 54px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 62px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-15-5: 62px;  /* Шаг шкалы отступов: 62px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  /* Шаг шкалы отступов: 66px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
+  --awds-space-16-5: 66px;  /* Шаг шкалы отступов: 66px. Отступы, поля и зазоры блока (padding, margin, gap). Геометрия контрола берётся ступенью Size, а не этой шкалой. */
   /* Слой наложения: 1030. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
   --awds-zindex-dropdown: 1030;  /* Слой наложения: 1030. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */
   /* Слой наложения: 1000. Порядок снизу вверх — sticky 1000, fixed 1020, dropdown 1030, backdrop 1040, offcanvas 1050, modal 1060, popover 1070, tooltip 1080. */

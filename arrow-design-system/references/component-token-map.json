@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:3bc36919366f89f3df30363991a4f1f668924047f999a520d93a1fcbe927f885",
+  "snapshot_hash": "sha256:459a218cea6dd23e6ea5f7985f5a9ac79670b6d45bd0385ca4b03cc68e080cde",
   "size": {
     "rectangle": {
       "50": {
@@ -20,7 +20,8 @@
           "label-bottom": "var(--awds-space-0)",
           "input-top": "var(--awds-space-0)",
           "input-bottom": "var(--awds-space-0)"
-        }
+        },
+        "preview": "var(--awds-space-8-5)"
       },
       "100": {
         "padding": "var(--awds-space-1)",
@@ -38,7 +39,8 @@
           "label-bottom": "var(--awds-space-0)",
           "input-top": "var(--awds-space-0)",
           "input-bottom": "var(--awds-space-0)"
-        }
+        },
+        "preview": "var(--awds-space-9-5)"
       },
       "200": {
         "padding": "var(--awds-space-2)",
@@ -56,7 +58,8 @@
           "label-bottom": "var(--awds-space-0)",
           "input-top": "var(--awds-space-0)",
           "input-bottom": "var(--awds-space-0)"
-        }
+        },
+        "preview": "var(--awds-space-11-5)"
       },
       "300": {
         "padding": "var(--awds-space-2)",
@@ -74,7 +77,8 @@
           "label-bottom": "var(--awds-space-0)",
           "input-top": "var(--awds-space-3-5)",
           "input-bottom": "var(--awds-space-0-5)"
-        }
+        },
+        "preview": "var(--awds-space-12-5)"
       },
       "400": {
         "padding": "var(--awds-space-2-5)",
@@ -92,7 +96,8 @@
           "label-bottom": "var(--awds-space-0)",
           "input-top": "var(--awds-space-4)",
           "input-bottom": "var(--awds-space-1)"
-        }
+        },
+        "preview": "var(--awds-space-13-5)"
       },
       "500": {
         "padding": "var(--awds-space-3)",
@@ -106,11 +111,12 @@
         "notice-gap": "var(--awds-space-2)",
         "rounded": "var(--awds-rounded-border-radius-500)",
         "combi": {
-          "label-top": "var(--awds-space-1-5)",
+          "label-top": "var(--awds-space-1)",
           "label-bottom": "var(--awds-space-0)",
-          "input-top": "var(--awds-space-5-5)",
-          "input-bottom": "var(--awds-space-1-5)"
-        }
+          "input-top": "var(--awds-space-5)",
+          "input-bottom": "var(--awds-space-1)"
+        },
+        "preview": "var(--awds-space-15-5)"
       },
       "600": {
         "padding": "var(--awds-space-4)",
@@ -128,7 +134,8 @@
           "label-bottom": "var(--awds-space-0)",
           "input-top": "var(--awds-space-6)",
           "input-bottom": "var(--awds-space-2)"
-        }
+        },
+        "preview": "var(--awds-space-16-5)"
       }
     },
     "square": {
@@ -785,6 +792,10 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))"
+        },
+        "preview": {
+          "bg-default": "rgb(var(--secondary-container-core))",
+          "bg-light": "rgb(var(--surface-bright))"
         }
       },
       "modal": {
@@ -1364,6 +1375,10 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))"
+        },
+        "preview": {
+          "bg-default": "rgb(var(--secondary-container-core))",
+          "bg-light": "rgb(var(--surface-bright))"
         }
       },
       "modal": {
@@ -1789,10 +1804,10 @@
           "dim": "rgb(var(--focus-container-core))"
         },
         "ghost": {
-          "color": "rgb(var(--focus-container-on-highest))",
-          "placeholder": "rgb(var(--focus-container-on-high))",
-          "icon": "rgb(var(--focus-container-on-highest))",
-          "chevron": "rgb(var(--focus-container-on-high))"
+          "color": "rgb(var(--secondary-container-on-highest))",
+          "placeholder": "rgb(var(--secondary-container-on-high))",
+          "icon": "rgb(var(--secondary-container-on-highest))",
+          "chevron": "rgb(var(--secondary-container-on-high))"
         },
         "autofill": {
           "bg": "rgb(var(--focus-container-base))",
@@ -1952,6 +1967,10 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))"
+        },
+        "preview": {
+          "bg-default": "rgb(var(--secondary-container-core))",
+          "bg-light": "rgb(var(--surface-bright))"
         }
       },
       "modal": {
@@ -2523,6 +2542,10 @@
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
           "color": "rgb(var(--secondary-container-on-highest))"
+        },
+        "preview": {
+          "bg-default": "rgb(var(--secondary-container-core))",
+          "bg-light": "rgb(var(--surface-bright))"
         }
       },
       "modal": {

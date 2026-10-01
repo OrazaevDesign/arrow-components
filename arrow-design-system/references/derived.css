@@ -122,3 +122,36 @@
   src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20260926_e595ef0251769e84.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+/* =============================================================================
+   СОВМЕСТИМОСТЬ С ATLAS — скругления его элементов из шкалы ArrowDS
+
+   Atlas (фронт витрины 4CMS: окно входа, баннер cookies, свои модалки) скругляет
+   элементы своими переменными --rounded-50…900/full/none. На :root они нулевые, а
+   значения включает класс мода на <body> (theme-rounded-smooth / -rounded / -none) —
+   его ставит каркас Atlas. В документе-макете PageCraft каркаса нет, класса нет, и
+   элементы Atlas были квадратными (разбор 30.09.2026 на bjjd.ru/r-awds-stand).
+
+   Решение владельца 30.09.2026: Atlas берёт скругления из нашей шкалы — тот же мод,
+   что у компонентов и блоков, и переключается вместе с ним. Ступени совпадают по
+   именам один в один. Селекторы с классами мода перебивают собственные классы Atlas
+   на обычных страницах; `:root body` — страницы без класса.
+   Цена: и на обычных страницах Atlas получает наши значения (smooth 600: 12 → 10).
+   ========================================================================== */
+:root body,
+body.theme-rounded-smooth,
+body.theme-rounded,
+body.theme-rounded-none {
+  --rounded-50: var(--awds-rounded-border-radius-50);
+  --rounded-100: var(--awds-rounded-border-radius-100);
+  --rounded-200: var(--awds-rounded-border-radius-200);
+  --rounded-300: var(--awds-rounded-border-radius-300);
+  --rounded-400: var(--awds-rounded-border-radius-400);
+  --rounded-500: var(--awds-rounded-border-radius-500);
+  --rounded-600: var(--awds-rounded-border-radius-600);
+  --rounded-700: var(--awds-rounded-border-radius-700);
+  --rounded-800: var(--awds-rounded-border-radius-800);
+  --rounded-900: var(--awds-rounded-border-radius-900);
+  --rounded-full: var(--awds-rounded-border-radius-full);
+  --rounded-none: var(--awds-rounded-border-radius-none);
+}
