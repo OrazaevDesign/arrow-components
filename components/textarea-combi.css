@@ -1,4 +1,4 @@
-/* ArrowDS · textarea-combi@1.0.5
+/* ArrowDS · textarea-combi@1.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-tcombi-bg {
@@ -150,9 +150,9 @@
 .tcombi--500 {
   --awds-tcombi-rounded:      var(--awds-rounded-border-radius-500);   
   --awds-tcombi-text-gap:     var(--awds-space-4-5);   
-  --awds-tcombi-input-top:    var(--awds-space-5-5);   
-  --awds-tcombi-input-bottom: var(--awds-space-1-5);   
-  --awds-tcombi-label-top:    var(--awds-space-1-5);   
+  --awds-tcombi-input-top:    var(--awds-space-5);   
+  --awds-tcombi-input-bottom: var(--awds-space-1);   
+  --awds-tcombi-label-top:    var(--awds-space-1);   
   --awds-tcombi-fs:           var(--awds-control-font-size-600);   
   --awds-tcombi-lh:           var(--awds-control-line-height-600);
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
@@ -299,8 +299,8 @@
 }
 
 .tcombi-ghost:focus-within {
-  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

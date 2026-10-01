@@ -1,4 +1,4 @@
-/* ArrowDS · combobox-combi@1.0.0
+/* ArrowDS · combobox-combi@1.1.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -34,6 +34,25 @@
 }
 
 .cbcombi:has(> .icombi [aria-expanded="true"]) > .cbcombi__panel {
+  display: block;
+}
+
+.cbcombi__panel[popover] {
+  position: fixed;
+  inset: auto;
+  inset-block-start: var(--cbcombi-anchor-top, auto);
+  inset-inline-start: var(--cbcombi-anchor-left, auto);
+  inline-size: var(--cbcombi-anchor-width, auto);
+  margin: 0;
+  border: 0;
+  color: inherit;
+}
+
+.cbcombi:has(> .icombi [aria-expanded]) > .cbcombi__panel[popover]:not(:popover-open) {
+  display: none;
+}
+
+.cbcombi > .cbcombi__panel[popover]:popover-open {
   display: block;
 }
 
@@ -95,9 +114,9 @@
   --awds-icombi-lh:           var(--awds-control-line-height-600);
   --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-icombi-text-gap:     var(--awds-space-4-5);   
-  --awds-icombi-label-top:    var(--awds-space-1-5);   
-  --awds-icombi-input-top:    var(--awds-space-5-5);   
-  --awds-icombi-input-bottom: var(--awds-space-1-5);   
+  --awds-icombi-label-top:    var(--awds-space-1);   
+  --awds-icombi-input-top:    var(--awds-space-5);   
+  --awds-icombi-input-bottom: var(--awds-space-1);   
   --awds-icombi-label-fs:     var(--awds-control-font-size-200);
   --awds-icombi-label-lh:     var(--awds-control-line-height-200);
   --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);

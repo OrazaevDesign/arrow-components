@@ -1,4 +1,4 @@
-/* ArrowDS · modal@1.2.1
+/* ArrowDS · modal@1.2.3
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -39,6 +39,9 @@
 
 .mdl::backdrop {
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-50));
+}
+
+.mdl:not([open]) { display: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -156,7 +159,7 @@
   .mdl-sidepage {
     inline-size: 100%;
     max-inline-size: 100%;
-    block-size: auto;
+    block-size: fit-content;
     max-block-size: calc(100% - var(--awds-space-12));   
     margin: auto 0 0;
     border-start-start-radius: var(--awds-mdl-rounded);

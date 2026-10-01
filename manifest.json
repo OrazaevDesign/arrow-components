@@ -75,7 +75,7 @@
     },
     {
       "name": "button-area",
-      "version": "2.0.9",
+      "version": "2.0.11",
       "variants": [
         "default",
         "muted",
@@ -89,8 +89,8 @@
         400,
         500
       ],
-      "rules": 29,
-      "bytes": 4990
+      "rules": 30,
+      "bytes": 5144
     },
     {
       "name": "button-favorites",
@@ -169,7 +169,7 @@
     },
     {
       "name": "combobox-combi",
-      "version": "1.0.0",
+      "version": "1.1.1",
       "variants": [
         "default"
       ],
@@ -179,8 +179,8 @@
         500,
         600
       ],
-      "rules": 23,
-      "bytes": 9318
+      "rules": 26,
+      "bytes": 9760
     },
     {
       "name": "content-area",
@@ -267,7 +267,7 @@
     },
     {
       "name": "input",
-      "version": "1.0.16",
+      "version": "1.0.17",
       "variants": [
         "default",
         "light",
@@ -287,11 +287,11 @@
         600
       ],
       "rules": 53,
-      "bytes": 13893
+      "bytes": 13905
     },
     {
       "name": "input-combi",
-      "version": "1.0.16",
+      "version": "1.0.18",
       "variants": [
         "default",
         "light",
@@ -308,7 +308,7 @@
         600
       ],
       "rules": 55,
-      "bytes": 16115
+      "bytes": 16121
     },
     {
       "name": "input-inline",
@@ -360,7 +360,7 @@
     },
     {
       "name": "list-item",
-      "version": "2.3.2",
+      "version": "2.4.1",
       "variants": [
         "transparent",
         "default",
@@ -385,19 +385,19 @@
         500,
         600
       ],
-      "rules": 140,
-      "bytes": 50548
+      "rules": 146,
+      "bytes": 53050
     },
     {
       "name": "modal",
-      "version": "1.2.1",
+      "version": "1.2.3",
       "variants": [
         "dialog",
         "sidepage"
       ],
       "sizes": null,
-      "rules": 19,
-      "bytes": 4124
+      "rules": 20,
+      "bytes": 4168
     },
     {
       "name": "notice",
@@ -432,13 +432,13 @@
     },
     {
       "name": "popover",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "variants": [
         "default"
       ],
       "sizes": null,
-      "rules": 12,
-      "bytes": 2565
+      "rules": 13,
+      "bytes": 2618
     },
     {
       "name": "price",
@@ -540,7 +540,7 @@
     },
     {
       "name": "select",
-      "version": "1.0.28",
+      "version": "1.0.29",
       "variants": [
         "default",
         "light",
@@ -559,11 +559,11 @@
         600
       ],
       "rules": 56,
-      "bytes": 26876
+      "bytes": 26908
     },
     {
       "name": "select-combi",
-      "version": "1.0.29",
+      "version": "1.0.31",
       "variants": [
         "default",
         "light",
@@ -579,7 +579,7 @@
         600
       ],
       "rules": 58,
-      "bytes": 27152
+      "bytes": 27178
     },
     {
       "name": "slider",
@@ -652,7 +652,7 @@
     },
     {
       "name": "textarea",
-      "version": "1.0.17",
+      "version": "1.0.18",
       "variants": [
         "default",
         "light",
@@ -671,11 +671,11 @@
         600
       ],
       "rules": 43,
-      "bytes": 11096
+      "bytes": 11104
     },
     {
       "name": "textarea-combi",
-      "version": "1.0.5",
+      "version": "1.0.7",
       "variants": [
         "default",
         "light",
@@ -691,7 +691,7 @@
         600
       ],
       "rules": 43,
-      "bytes": 15302
+      "bytes": 15304
     },
     {
       "name": "toast",
@@ -735,14 +735,14 @@
     }
   ],
   "bundle": {
-    "bytes": 360458,
-    "rules": 1385,
-    "hash": "sha256:84b0c7af24b98519e4a6bbe93ac0157c4edcecfed09b1098d4d1d471f3684e96"
+    "bytes": 363739,
+    "rules": 1397,
+    "hash": "sha256:8a9176605a84c086846217b3474cf8b76e4c3395bac89dc58e79a525d0e58df9"
   },
   "theme": {
-    "bytes": 60538,
-    "variables_kept": 621,
-    "variables_declared": 1354,
+    "bytes": 61899,
+    "variables_kept": 639,
+    "variables_declared": 1373,
     "missing": []
   },
   "skipped_selectors": [

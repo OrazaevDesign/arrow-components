@@ -1,4 +1,4 @@
-/* ArrowDS · input-combi@1.0.16
+/* ArrowDS · input-combi@1.0.18
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-icombi-bg {
@@ -223,9 +223,9 @@
   --awds-icombi-lh:           var(--awds-control-line-height-600);
   --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-icombi-text-gap:     var(--awds-space-4-5);   
-  --awds-icombi-label-top:    var(--awds-space-1-5);   
-  --awds-icombi-input-top:    var(--awds-space-5-5);   
-  --awds-icombi-input-bottom: var(--awds-space-1-5);   
+  --awds-icombi-label-top:    var(--awds-space-1);   
+  --awds-icombi-input-top:    var(--awds-space-5);   
+  --awds-icombi-input-bottom: var(--awds-space-1);   
   --awds-icombi-label-fs:     var(--awds-control-font-size-200);
   --awds-icombi-label-lh:     var(--awds-control-line-height-200);
   --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
@@ -351,9 +351,9 @@
 .icombi-ghost:focus-within {
   --awds-icombi-bg:         transparent;
   --awds-icombi-border:     transparent;
-  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--focus-container-on-highest));   
+  --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

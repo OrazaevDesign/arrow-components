@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.13, badge@1.2.1, button@2.2.12, button-area@2.0.9, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.12, button-overhung@2.0.17, checkbox@1.0.11, combobox-combi@1.0.0, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@1.0.7, input@1.0.16, input-combi@1.0.16, input-inline@1.0.1, label@1.0.9, link@1.0.7, list-item@2.3.2, modal@1.2.1, notice@2.0.5, pagination@1.0.1, popover@1.0.4, price@2.0.6, product-card@1.2.1, progress@2.0.4, radio@1.0.11, range@2.0.12, rating@2.0.10, scrollbar@2.0.6, select@1.0.28, select-combi@1.0.29, slider@1.0.9, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.17, textarea-combi@1.0.5, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
+   Состав: focus-selection@2.0.13, badge@1.2.1, button@2.2.12, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.12, button-overhung@2.0.17, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@1.0.7, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.7, list-item@2.4.1, modal@1.2.3, notice@2.0.5, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@1.2.1, progress@2.0.4, radio@1.0.11, range@2.0.12, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.9, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -1053,9 +1053,17 @@
   letter-spacing: var(--awds-btn-area-ls);
   font-weight: var(--awds-font-weight-regular);
   text-decoration: none;              
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  list-style: none;                   
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: color 0.15s ease-out;
+}
+
+.btn-area::-webkit-details-marker { display: none;
 }
 
 .btn-area, .btn-area *, .btn-area *::before, .btn-area *::after { box-sizing: border-box;
@@ -1795,6 +1803,25 @@
   display: block;
 }
 
+.cbcombi__panel[popover] {
+  position: fixed;
+  inset: auto;
+  inset-block-start: var(--cbcombi-anchor-top, auto);
+  inset-inline-start: var(--cbcombi-anchor-left, auto);
+  inline-size: var(--cbcombi-anchor-width, auto);
+  margin: 0;
+  border: 0;
+  color: inherit;
+}
+
+.cbcombi:has(> .icombi [aria-expanded]) > .cbcombi__panel[popover]:not(:popover-open) {
+  display: none;
+}
+
+.cbcombi > .cbcombi__panel[popover]:popover-open {
+  display: block;
+}
+
 .cbcombi__list {
   display: flex;
   flex-direction: column;
@@ -1853,9 +1880,9 @@
   --awds-icombi-lh:           var(--awds-control-line-height-600);
   --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-icombi-text-gap:     var(--awds-space-4-5);   
-  --awds-icombi-label-top:    var(--awds-space-1-5);   
-  --awds-icombi-input-top:    var(--awds-space-5-5);   
-  --awds-icombi-input-bottom: var(--awds-space-1-5);   
+  --awds-icombi-label-top:    var(--awds-space-1);   
+  --awds-icombi-input-top:    var(--awds-space-5);   
+  --awds-icombi-input-bottom: var(--awds-space-1);   
   --awds-icombi-label-fs:     var(--awds-control-font-size-200);
   --awds-icombi-label-lh:     var(--awds-control-line-height-200);
   --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
@@ -3087,9 +3114,9 @@
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--focus-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
-  --awds-input-icon-color: rgb(var(--focus-container-on-highest));   
+  --awds-input-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -3370,9 +3397,9 @@
   --awds-icombi-lh:           var(--awds-control-line-height-600);
   --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-icombi-text-gap:     var(--awds-space-4-5);   
-  --awds-icombi-label-top:    var(--awds-space-1-5);   
-  --awds-icombi-input-top:    var(--awds-space-5-5);   
-  --awds-icombi-input-bottom: var(--awds-space-1-5);   
+  --awds-icombi-label-top:    var(--awds-space-1);   
+  --awds-icombi-input-top:    var(--awds-space-5);   
+  --awds-icombi-input-bottom: var(--awds-space-1);   
   --awds-icombi-label-fs:     var(--awds-control-font-size-200);
   --awds-icombi-label-lh:     var(--awds-control-line-height-200);
   --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);
@@ -3498,9 +3525,9 @@
 .icombi-ghost:focus-within {
   --awds-icombi-bg:         transparent;
   --awds-icombi-border:     transparent;
-  --awds-icombi-color:      rgb(var(--focus-container-on-highest));   
-  --awds-icombi-placeholder:  rgb(var(--focus-container-on-high));   
-  --awds-icombi-icon-color: rgb(var(--focus-container-on-highest));   
+  --awds-icombi-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-icombi-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-icombi-icon-color: rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -4079,6 +4106,9 @@
 .list-item {
   --awds-list-item-padding:  var(--awds-space-2-5);   
   --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-img:      var(--awds-space-9);   
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   
+  --awds-list-item-preview:  var(--awds-space-13-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   
   --awds-list-item-text-gap: var(--awds-space-4);   
   --awds-list-item-fs:       var(--awds-control-font-size-400);   
@@ -4231,6 +4261,47 @@
   display: none;
 }
 
+.list-item__prefix--content-img, .list-item__prefix--content-preview {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--awds-list-item-img-pad) var(--awds-list-item-padding) var(--awds-list-item-img-pad) var(--awds-list-item-img-pad);
+}
+
+.list-item__preview {
+  display: block;
+  flex-shrink: 0;
+  inline-size: var(--awds-list-item-img);
+  block-size: var(--awds-list-item-img);
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--secondary-container-core));   
+  overflow: hidden;
+}
+
+.list-item__prefix--content-preview > .list-item__preview {
+  inline-size: var(--awds-list-item-preview);
+  block-size: var(--awds-list-item-preview);
+}
+
+.list-item__preview--bg-light {
+  background: rgb(var(--surface-bright));
+}
+
+.list-item__preview--bg-brand {
+  background: linear-gradient(45deg,
+    rgb(var(--surface-chromatic-start)) 0%,
+    rgb(var(--surface-chromatic-mid-start)) 30%,
+    rgb(var(--surface-chromatic-mid-end)) 70%,
+    rgb(var(--surface-chromatic-end)) 100%);
+}
+
+.list-item__preview > img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  border-radius: var(--awds-rounded-border-radius-300);
+}
+
 .list-item__content {
   box-sizing: border-box;
   display: flex;
@@ -4271,6 +4342,9 @@
 .list-item--600 {
   --awds-list-item-padding:  var(--awds-space-4);   
   --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-img:      var(--awds-space-11);   
+  --awds-list-item-img-pad:  var(--awds-space-1);   
+  --awds-list-item-preview:  var(--awds-space-16-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-600);   
   --awds-list-item-text-gap: var(--awds-space-4-5);   
   --awds-list-item-fs:       var(--awds-control-font-size-600);   
@@ -4284,6 +4358,9 @@
 .list-item--500 {
   --awds-list-item-padding:  var(--awds-space-3);   
   --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-img:      var(--awds-space-10);   
+  --awds-list-item-img-pad:  var(--awds-space-1);   
+  --awds-list-item-preview:  var(--awds-space-15-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-500);   
   --awds-list-item-text-gap: var(--awds-space-4-5);   
   --awds-list-item-fs:       var(--awds-control-font-size-600);   
@@ -4297,6 +4374,9 @@
 .list-item--400 {
   --awds-list-item-padding:  var(--awds-space-2-5);   
   --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-img:      var(--awds-space-9);   
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   
+  --awds-list-item-preview:  var(--awds-space-13-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   
   --awds-list-item-text-gap: var(--awds-space-4);   
   --awds-list-item-fs:       var(--awds-control-font-size-400);   
@@ -4310,6 +4390,9 @@
 .list-item--300 {
   --awds-list-item-padding:  var(--awds-space-2);   
   --awds-list-item-icon:     var(--awds-space-5);   
+  --awds-list-item-img:      var(--awds-space-8);   
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   
+  --awds-list-item-preview:  var(--awds-space-12-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-300);   
   --awds-list-item-text-gap: var(--awds-space-3-5);   
   --awds-list-item-fs:       var(--awds-control-font-size-400);   
@@ -4323,6 +4406,9 @@
 .list-item--200 {
   --awds-list-item-padding:  var(--awds-space-2);   
   --awds-list-item-icon:     var(--awds-space-4);   
+  --awds-list-item-img:      var(--awds-space-7);   
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   
+  --awds-list-item-preview:  var(--awds-space-11-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-200);   
   --awds-list-item-text-gap: var(--awds-space-3-5);   
   --awds-list-item-fs:       var(--awds-control-font-size-300);   
@@ -4336,6 +4422,9 @@
 .list-item--100 {
   --awds-list-item-padding:  var(--awds-space-1);   
   --awds-list-item-icon:     var(--awds-space-4);   
+  --awds-list-item-img:      var(--awds-space-5);   
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   
+  --awds-list-item-preview:  var(--awds-space-9-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-100);   
   --awds-list-item-text-gap: var(--awds-space-2-5);   
   --awds-list-item-fs:       var(--awds-control-font-size-300);   
@@ -4349,6 +4438,9 @@
 .list-item--50 {
   --awds-list-item-padding:  var(--awds-space-0-5);   
   --awds-list-item-icon:     var(--awds-space-4);   
+  --awds-list-item-img:      var(--awds-space-4);   
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   
+  --awds-list-item-preview:  var(--awds-space-8-5);   
   --awds-list-item-rounded:  var(--awds-rounded-border-radius-50);   
   --awds-list-item-text-gap: var(--awds-space-2);   
   --awds-list-item-fs:       var(--awds-control-font-size-200);   
@@ -5203,6 +5295,9 @@
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-50));
 }
 
+.mdl:not([open]) { display: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .mdl,
   .mdl::backdrop {
@@ -5318,7 +5413,7 @@
   .mdl-sidepage {
     inline-size: 100%;
     max-inline-size: 100%;
-    block-size: auto;
+    block-size: fit-content;
     max-block-size: calc(100% - var(--awds-space-12));   
     margin: auto 0 0;
     border-start-start-radius: var(--awds-mdl-rounded);
@@ -5577,6 +5672,9 @@
 
 .pop__tail::after {
   background: var(--awds-pop-bg);
+}
+
+.pop[popover]:not(:popover-open) { display: none;
 }
 
 .pop[popover] {
@@ -8068,20 +8166,20 @@
 }
 
 .select-ghost:focus-within {
-  --awds-select-color:    rgb(var(--focus-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
-  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
-  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
+  --awds-select-color:    rgb(var(--secondary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--secondary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-ghost:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-color:    rgb(var(--focus-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
-    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
-    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
+    --awds-select-color:    rgb(var(--secondary-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
+    --awds-select-chevron:  rgb(var(--secondary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--secondary-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -8402,9 +8500,9 @@
   --awds-scombi-lh:           var(--awds-control-line-height-600);
   --awds-scombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-scombi-text-gap:     var(--awds-space-4-5);   
-  --awds-scombi-label-top:    var(--awds-space-1-5);   
-  --awds-scombi-input-top:    var(--awds-space-5-5);   
-  --awds-scombi-input-bottom: var(--awds-space-1-5);   
+  --awds-scombi-label-top:    var(--awds-space-1);   
+  --awds-scombi-input-top:    var(--awds-space-5);   
+  --awds-scombi-input-bottom: var(--awds-space-1);   
   --awds-scombi-label-fs:     var(--awds-control-font-size-200);
   --awds-scombi-label-lh:     var(--awds-control-line-height-200);
   --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
@@ -8667,20 +8765,20 @@
 }
 
 .scombi-ghost:focus-within {
-  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--secondary-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-ghost:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
+    --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--secondary-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--secondary-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }
@@ -9682,8 +9780,8 @@
 }
 
 .txa-ghost:focus-within {
-  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
@@ -9864,9 +9962,9 @@
 .tcombi--500 {
   --awds-tcombi-rounded:      var(--awds-rounded-border-radius-500);   
   --awds-tcombi-text-gap:     var(--awds-space-4-5);   
-  --awds-tcombi-input-top:    var(--awds-space-5-5);   
-  --awds-tcombi-input-bottom: var(--awds-space-1-5);   
-  --awds-tcombi-label-top:    var(--awds-space-1-5);   
+  --awds-tcombi-input-top:    var(--awds-space-5);   
+  --awds-tcombi-input-bottom: var(--awds-space-1);   
+  --awds-tcombi-label-top:    var(--awds-space-1);   
   --awds-tcombi-fs:           var(--awds-control-font-size-600);   
   --awds-tcombi-lh:           var(--awds-control-line-height-600);
   --awds-tcombi-ls:           var(--awds-control-letter-spacing-600);
@@ -10013,8 +10111,8 @@
 }
 
 .tcombi-ghost:focus-within {
-  --awds-tcombi-color:       rgb(var(--focus-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--focus-container-on-high));   
+  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

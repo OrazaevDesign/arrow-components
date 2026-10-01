@@ -1,4 +1,4 @@
-/* ArrowDS · select@1.0.28
+/* ArrowDS · select@1.0.29
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-select-bg {
@@ -517,20 +517,20 @@
 }
 
 .select-ghost:focus-within {
-  --awds-select-color:    rgb(var(--focus-container-on-highest));   
-  --awds-select-placeholder: rgb(var(--focus-container-on-high));   
-  --awds-select-chevron:  rgb(var(--focus-container-on-high));   
-  --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
+  --awds-select-color:    rgb(var(--secondary-container-on-highest));   
+  --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
+  --awds-select-chevron:  rgb(var(--secondary-container-on-high));   
+  --awds-select-icon-color: rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .select.select-ghost:has(> .select__field:open):has(> .select__field:enabled) {
-    --awds-select-color:    rgb(var(--focus-container-on-highest));   
-    --awds-select-placeholder: rgb(var(--focus-container-on-high));   
-    --awds-select-chevron:  rgb(var(--focus-container-on-high));   
-    --awds-select-icon-color: rgb(var(--focus-container-on-highest));   
+    --awds-select-color:    rgb(var(--secondary-container-on-highest));   
+    --awds-select-placeholder: rgb(var(--secondary-container-on-high));   
+    --awds-select-chevron:  rgb(var(--secondary-container-on-high));   
+    --awds-select-icon-color: rgb(var(--secondary-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }

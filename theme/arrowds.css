@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 621 из 1354 объявленных в теме. */
+   Переменных: 639 из 1373 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -213,6 +213,18 @@
   --surface-container-container-light: 237 237 237;
   --surface-container-container-dark: 28 28 28;
   --surface-container-container: var(--surface-container-container-light);
+  --surface-chromatic-start-light: 248 239 251;
+  --surface-chromatic-start-dark: 40 16 47;
+  --surface-chromatic-start: var(--surface-chromatic-start-light);
+  --surface-chromatic-mid-start-light: 242 239 251;
+  --surface-chromatic-mid-start-dark: 25 16 47;
+  --surface-chromatic-mid-start: var(--surface-chromatic-mid-start-light);
+  --surface-chromatic-mid-end-light: 245 238 251;
+  --surface-chromatic-mid-end-dark: 28 15 40;
+  --surface-chromatic-mid-end: var(--surface-chromatic-mid-end-light);
+  --surface-chromatic-end-light: 239 249 251;
+  --surface-chromatic-end-dark: 14 38 42;
+  --surface-chromatic-end: var(--surface-chromatic-end-light);
   --surface-on-highest-light: 38 38 38;
   --surface-on-highest-dark: 250 250 250;
   --surface-on-highest: var(--surface-on-highest-light);
@@ -380,7 +392,6 @@
   --awds-space-4: 16px;
   --awds-space-4-5: 18px;
   --awds-space-5: 20px;
-  --awds-space-5-5: 22px;
   --awds-space-6: 24px;
   --awds-space-7: 28px;
   --awds-space-8: 32px;
@@ -392,6 +403,13 @@
   --awds-space-14: 56px;
   --awds-space-16: 64px;
   --awds-space-20: 80px;
+  --awds-space-8-5: 34px;
+  --awds-space-9-5: 38px;
+  --awds-space-11-5: 46px;
+  --awds-space-12-5: 50px;
+  --awds-space-13-5: 54px;
+  --awds-space-15-5: 62px;
+  --awds-space-16-5: 66px;
   --awds-zindex-dropdown: 1030;
   --awds-control-font-size-50: 10px;
   --awds-control-font-size-100: 11px;
@@ -693,6 +711,10 @@
   --surface-surface: var(--surface-surface-light);
   --surface-dim: var(--surface-dim-light);
   --surface-container-container: var(--surface-container-container-light);
+  --surface-chromatic-start: var(--surface-chromatic-start-light);
+  --surface-chromatic-mid-start: var(--surface-chromatic-mid-start-light);
+  --surface-chromatic-mid-end: var(--surface-chromatic-mid-end-light);
+  --surface-chromatic-end: var(--surface-chromatic-end-light);
   --surface-on-highest: var(--surface-on-highest-light);
   --surface-on-high: var(--surface-on-high-light);
   --surface-on: var(--surface-on-light);
@@ -781,6 +803,10 @@
   --surface-surface: var(--surface-surface-dark);
   --surface-dim: var(--surface-dim-dark);
   --surface-container-container: var(--surface-container-container-dark);
+  --surface-chromatic-start: var(--surface-chromatic-start-dark);
+  --surface-chromatic-mid-start: var(--surface-chromatic-mid-start-dark);
+  --surface-chromatic-mid-end: var(--surface-chromatic-mid-end-dark);
+  --surface-chromatic-end: var(--surface-chromatic-end-dark);
   --surface-on-highest: var(--surface-on-highest-dark);
   --surface-on-high: var(--surface-on-high-dark);
   --surface-on: var(--surface-on-dark);

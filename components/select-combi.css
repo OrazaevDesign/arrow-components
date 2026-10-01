@@ -1,4 +1,4 @@
-/* ArrowDS · select-combi@1.0.29
+/* ArrowDS · select-combi@1.0.31
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
@@ -268,9 +268,9 @@
   --awds-scombi-lh:           var(--awds-control-line-height-600);
   --awds-scombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-scombi-text-gap:     var(--awds-space-4-5);   
-  --awds-scombi-label-top:    var(--awds-space-1-5);   
-  --awds-scombi-input-top:    var(--awds-space-5-5);   
-  --awds-scombi-input-bottom: var(--awds-space-1-5);   
+  --awds-scombi-label-top:    var(--awds-space-1);   
+  --awds-scombi-input-top:    var(--awds-space-5);   
+  --awds-scombi-input-bottom: var(--awds-space-1);   
   --awds-scombi-label-fs:     var(--awds-control-font-size-200);
   --awds-scombi-label-lh:     var(--awds-control-line-height-200);
   --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
@@ -533,20 +533,20 @@
 }
 
 .scombi-ghost:focus-within {
-  --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
-  --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
-  --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
-  --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
+  --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
+  --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
+  --awds-scombi-chevron:     rgb(var(--secondary-container-on-high));   
+  --awds-scombi-icon-color:  rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }
 
 @supports (appearance: base-select) {
   .scombi.scombi-ghost:has(.scombi__field:open):has(.scombi__field:enabled) {
-    --awds-scombi-color:       rgb(var(--focus-container-on-highest));   
-    --awds-scombi-placeholder:   rgb(var(--focus-container-on-high));   
-    --awds-scombi-chevron:     rgb(var(--focus-container-on-high));   
-    --awds-scombi-icon-color:  rgb(var(--focus-container-on-highest));   
+    --awds-scombi-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-scombi-placeholder:   rgb(var(--secondary-container-on-high));   
+    --awds-scombi-chevron:     rgb(var(--secondary-container-on-high));   
+    --awds-scombi-icon-color:  rgb(var(--secondary-container-on-highest));   
     outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
     outline-offset: var(--awds-focus-offset);
   }

@@ -1,4 +1,4 @@
-/* ArrowDS · textarea@1.0.17
+/* ArrowDS · textarea@1.0.18
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-txa-bg {
@@ -259,8 +259,8 @@
 }
 
 .txa-ghost:focus-within {
-  --awds-txa-color:      rgb(var(--focus-container-on-highest));   
-  --awds-txa-placeholder:  rgb(var(--focus-container-on-high));   
+  --awds-txa-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

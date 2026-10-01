@@ -1,4 +1,4 @@
-/* ArrowDS · button-area@2.0.9
+/* ArrowDS · button-area@2.0.11
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -24,9 +24,17 @@
   letter-spacing: var(--awds-btn-area-ls);
   font-weight: var(--awds-font-weight-regular);
   text-decoration: none;              
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  list-style: none;                   
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: color 0.15s ease-out;
+}
+
+.btn-area::-webkit-details-marker { display: none;
 }
 
 .btn-area, .btn-area *, .btn-area *::before, .btn-area *::after { box-sizing: border-box;

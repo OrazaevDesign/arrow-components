@@ -1,4 +1,4 @@
-/* ArrowDS · input@1.0.16
+/* ArrowDS · input@1.0.17
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-input-bg {
@@ -307,9 +307,9 @@
 .input-ghost:focus-within {
   --awds-input-bg:         transparent;
   --awds-input-border:     transparent;
-  --awds-input-color:      rgb(var(--focus-container-on-highest));   
-  --awds-input-placeholder:  rgb(var(--focus-container-on-high));   
-  --awds-input-icon-color: rgb(var(--focus-container-on-highest));   
+  --awds-input-color:      rgb(var(--secondary-container-on-highest));   
+  --awds-input-placeholder:  rgb(var(--secondary-container-on-high));   
+  --awds-input-icon-color: rgb(var(--secondary-container-on-highest));   
   outline: var(--awds-focus-width) solid var(--awds-focus-color-muted);
   outline-offset: var(--awds-focus-offset);
 }

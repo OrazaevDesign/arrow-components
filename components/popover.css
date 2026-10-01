@@ -1,4 +1,4 @@
-/* ArrowDS · popover@1.0.4
+/* ArrowDS · popover@1.0.5
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -51,6 +51,9 @@
 
 .pop__tail::after {
   background: var(--awds-pop-bg);
+}
+
+.pop[popover]:not(:popover-open) { display: none;
 }
 
 .pop[popover] {
