@@ -64,7 +64,7 @@
 
      Size │ padding │ input-top │ input-bottom │ label-top │ fs/lh │ метка  │ высота
      600  │ 16      │ 24        │ 8            │ 8         │ 16/20 │ 12/16  │ 52
-     500  │ 14      │ 22        │ 6            │ 6         │ 16/20 │ 12/16  │ 48
+     500  │ 12      │ 20        │ 4            │ 4         │ 16/20 │ 12/16  │ 44
      400  │ 10      │ 16        │ 4            │ 4         │ 14/20 │ 11/16  │ 40
      300  │ 8       │ 14        │ 2            │ 2         │ 14/20 │ 11/16  │ 36
 
@@ -277,8 +277,8 @@
 
   /* ВЫСОТУ ДЕРЖИТ ТЕЛО, А НЕ ПОЛЕ — иначе пустой контрол схлопывается. У пустого
      варианта (option[value=""]) текста нет вовсе, поэтому content-box у <select>
-     нулевой и от него остаются одни паддинги: замерено 32/28/20/16 вместо
-     52/48/40/36. Слагаемые те же, что у заполненного поля, — то есть высота
+     нулевой и от него остаются одни паддинги: замерено 32/24/20/16 вместо
+     52/44/40/36. Слагаемые те же, что у заполненного поля, — то есть высота
      совпадает с обычным select того же размера и не зависит от того, выбрано
      что-нибудь или нет.
      Ставим именно на теле, а не min-block-size на самом поле: у поля высота
@@ -528,9 +528,9 @@
   --awds-scombi-lh:           var(--awds-control-line-height-600);
   --awds-scombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-scombi-text-gap:     var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
-  --awds-scombi-label-top:    var(--awds-space-1-5);   /* #cell rectangle/500/combi/label-top */
-  --awds-scombi-input-top:    var(--awds-space-5-5);   /* #cell rectangle/500/combi/input-top */
-  --awds-scombi-input-bottom: var(--awds-space-1-5);   /* #cell rectangle/500/combi/input-bottom */
+  --awds-scombi-label-top:    var(--awds-space-1);   /* #cell rectangle/500/combi/label-top */
+  --awds-scombi-input-top:    var(--awds-space-5);   /* #cell rectangle/500/combi/input-top */
+  --awds-scombi-input-bottom: var(--awds-space-1);   /* #cell rectangle/500/combi/input-bottom */
   --awds-scombi-label-fs:     var(--awds-control-font-size-200);
   --awds-scombi-label-lh:     var(--awds-control-line-height-200);
   --awds-scombi-label-ls:     var(--awds-control-letter-spacing-200);
