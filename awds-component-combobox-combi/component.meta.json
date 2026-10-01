@@ -1,10 +1,10 @@
 {
   "component": "combobox-combi",
-  "version": "1.0.0",
-  "contract_hash": "sha256:05d6af20675c97b30dd000204550b9cff4e109e04244cc85f90ed87951fcd6ac",
-  "artifact_hash": "sha256:eacef20969f7afbf16acf2b2ce006ac6647275696ae93997b31b5eb9bb492c64",
+  "version": "1.1.1",
+  "contract_hash": "sha256:75cc90c28221f5116ab0dd30c0e08ce85291308f77899106cb1adbd06750c2ff",
+  "artifact_hash": "sha256:1566cba3a403b5f6fdc25020213f57e69740fc6063151eb6830addf1de4e494d",
   "visual_change": false,
-  "released_at": "2026-09-29T15:58:26.137Z",
+  "released_at": "2026-09-30T08:00:15.979Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -52,7 +52,7 @@
     "combobox-combi-default.css"
   ],
   "variants_note": "Тон один — default: тоны поля (error, success, ghost…) приходят классом input-combi на вложенном .icombi, панели и строкам тона не нужны.",
-  "geometry_note": "Панель абсолютная: отступ от поля 4 (space-1), ширина ровно по полю, лежит поверх соседей и форму не раздвигает — так в макете. Высоту не ограничиваем: сколько подсказок, столько строк; ограничивает число подсказок потребитель.",
+  "geometry_note": "Панель абсолютная: отступ от поля 4 (space-1), ширина ровно по полю, лежит поверх соседей и форму не раздвигает — так в макете. Высоту не ограничиваем: сколько подсказок, столько строк; ограничивает число подсказок потребитель. С 1.1.0 внутри прокручиваемого контейнера (модалка) панель получает атрибут popover=\"manual\" и уходит в top layer; координаты поля — публичные переменные --cbcombi-anchor-top/-left/-width, их ставит скрипт потребителя.",
   "markup": {
     "root": {
       "class": "cbcombi",
@@ -120,7 +120,6 @@
     "--awds-shadow-elevation-3",
     "--awds-space-0-5",
     "--awds-space-1",
-    "--awds-space-1-5",
     "--awds-space-2",
     "--awds-space-2-5",
     "--awds-space-3",
@@ -128,7 +127,6 @@
     "--awds-space-4",
     "--awds-space-4-5",
     "--awds-space-5",
-    "--awds-space-5-5",
     "--awds-space-6",
     "--awds-zindex-dropdown",
     "--primary-core",
@@ -164,8 +162,8 @@
     }
   },
   "uses": {
-    "awds-component-input-combi": "1.0.15",
-    "awds-component-list-item": "2.2.0",
+    "awds-component-input-combi": "1.0.17",
+    "awds-component-list-item": "2.4.0",
     "awds-component-progress": "2.0.4"
   },
   "contract": {
@@ -186,7 +184,8 @@
     ],
     "attributes": [
       "aria-expanded",
-      "aria-selected"
+      "aria-selected",
+      "popover"
     ],
     "elements": [],
     "public_vars": [],

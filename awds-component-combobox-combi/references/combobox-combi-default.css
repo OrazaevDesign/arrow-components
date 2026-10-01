@@ -69,6 +69,41 @@
   display: block;
 }
 
+/* === Панель поверх контейнера: атрибут popover ===
+   С 30.09.2026. Внутри модалки тело прокручивается (overflow-y: auto) и обрезает
+   абсолютную панель: список из четырёх строк не помещается в окно. Решение владельца —
+   панель поверх модалки. Атрибут popover (Baseline 2024) выносит её в top layer, где
+   её не режет ни один предок; anchor positioning вне планки, поэтому координаты поля
+   ставит скрипт потребителя в три публичные переменные на .cbcombi:
+     --cbcombi-anchor-top    нижний край поля + зазор, px от вьюпорта
+     --cbcombi-anchor-left   левый край поля
+     --cbcombi-anchor-width  ширина поля
+   Открытие — showPopover() / hidePopover() вместе с aria-expanded; атрибут
+   popover="manual", чтобы клик по полю не закрывал панель сам. Без атрибута панель
+   остаётся абсолютной, как в шапке. Мосты ступени продолжают действовать: панель
+   остаётся потомком .cbcombi в DOM. */
+
+.cbcombi__panel[popover] {
+  position: fixed;
+  inset: auto;
+  inset-block-start: var(--cbcombi-anchor-top, auto);
+  inset-inline-start: var(--cbcombi-anchor-left, auto);
+  inline-size: var(--cbcombi-anchor-width, auto);
+  margin: 0;
+  border: 0;
+  color: inherit;
+}
+
+/* UA прячет закрытый popover через display: none, а правило показа выше это
+   перебило бы: у popover-панели видимость решает только :popover-open. */
+.cbcombi:has(> .icombi [aria-expanded]) > .cbcombi__panel[popover]:not(:popover-open) {
+  display: none;
+}
+
+.cbcombi > .cbcombi__panel[popover]:popover-open {
+  display: block;
+}
+
 .cbcombi__list {
   display: flex;
   flex-direction: column;
@@ -140,9 +175,9 @@
   --awds-icombi-lh:           var(--awds-control-line-height-600);
   --awds-icombi-ls:           var(--awds-control-letter-spacing-600);
   --awds-icombi-text-gap:     var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
-  --awds-icombi-label-top:    var(--awds-space-1-5);   /* #cell rectangle/500/combi/label-top */
-  --awds-icombi-input-top:    var(--awds-space-5-5);   /* #cell rectangle/500/combi/input-top */
-  --awds-icombi-input-bottom: var(--awds-space-1-5);   /* #cell rectangle/500/combi/input-bottom */
+  --awds-icombi-label-top:    var(--awds-space-1);   /* #cell rectangle/500/combi/label-top */
+  --awds-icombi-input-top:    var(--awds-space-5);   /* #cell rectangle/500/combi/input-top */
+  --awds-icombi-input-bottom: var(--awds-space-1);   /* #cell rectangle/500/combi/input-bottom */
   --awds-icombi-label-fs:     var(--awds-control-font-size-200);
   --awds-icombi-label-lh:     var(--awds-control-line-height-200);
   --awds-icombi-label-ls:     var(--awds-control-letter-spacing-200);

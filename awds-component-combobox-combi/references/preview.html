@@ -36,6 +36,7 @@
     .matrix .cell { min-block-size: 320px; }
     .size-label { font: 600 12px/1 ui-monospace, monospace; color: rgb(var(--surface-on) / 1); padding-top: 14px; }
     .live { inline-size: 320px; min-block-size: 360px; }
+    .clip { inline-size: 320px; block-size: 120px; overflow: hidden; padding: 16px; border-radius: 12px; background: rgb(var(--surface-bright) / 1); box-shadow: 0 0 0 1px rgb(var(--surface-container-high) / 1); }
     code { font-size: 12px; }
   </style>
 </head>
@@ -54,6 +55,12 @@
   <h2>Живой пример</h2>
   <p class="sub">Введите «крас», «мос» или «тро». Стрелки — по строкам, Enter — выбрать, Esc — закрыть. Пустой ввод — список закрыт; нет совпадений — «Ничего не нашлось»; первые 300 мс после ввода — загрузка, как при запросе к серверу.</p>
   <div class="live" id="live"></div>
+
+  <h2>Внутри прокручиваемого контейнера: панель popover</h2>
+  <p class="sub">Контейнер ниже обрезает содержимое (<code>overflow: hidden</code>, 120px) — как тело модалки. У панели
+    атрибут <code>popover="manual"</code>: она выходит в top layer, координаты поля скрипт кладёт в
+    <code>--cbcombi-anchor-*</code>. Введите «крас».</p>
+  <div class="clip" id="clip"></div>
 
   <h2>Ступени × состояния</h2>
   <div class="matrix" id="matrix"></div>
@@ -135,6 +142,40 @@
       e.preventDefault(); input.value = rows[+li.id.split('-').pop()][0]; close();
     });
     input.addEventListener('blur', () => setTimeout(close, 0));
+
+    // Внутри контейнера с обрезкой: то же поведение, панель — popover в top layer.
+    const clip = document.getElementById('clip');
+    clip.innerHTML = box('mcity', '500', '', false, 'list', [], -1);
+    const mroot = clip.firstElementChild, minput = mroot.querySelector('input');
+    const mpanel = () => mroot.querySelector('.cbcombi__panel');
+    // Сторона выбирается при открытии (где места больше) и держится, пока панель открыта.
+    let side = null;
+    const place = () => {
+      const r = mroot.querySelector('.icombi').getBoundingClientRect();
+      const gap = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--awds-space-1')) || 0;
+      if (!side) side = r.top > innerHeight - r.bottom ? 'above' : 'below';
+      const h = mpanel().getBoundingClientRect().height;
+      mroot.style.setProperty('--cbcombi-anchor-top', (side === 'above' ? r.top - gap - h : r.bottom + gap) + 'px');
+      mroot.style.setProperty('--cbcombi-anchor-left', r.left + 'px');
+      mroot.style.setProperty('--cbcombi-anchor-width', r.width + 'px');
+    };
+    const mrender = (content, rowsM) => {
+      const p = mpanel(); const open = p.matches(':popover-open');
+      p.outerHTML = panel('mcity', content, minput.value, rowsM, 0);
+      const np = mpanel(); np.setAttribute('popover', 'manual');
+      if (open || content) { place(); np.showPopover(); place(); }
+    };
+    mpanel().setAttribute('popover', 'manual');
+    minput.addEventListener('input', () => {
+      const q = minput.value.trim();
+      if (!q) { side = null; minput.setAttribute("aria-expanded", "false"); if (mpanel().matches(":popover-open")) mpanel().hidePopover(); return; }
+      minput.setAttribute('aria-expanded', 'true');
+      const rowsM = CITIES.filter(c => c[0].toLowerCase().includes(q.toLowerCase()));
+      mrender(rowsM.length ? 'list' : 'empty', rowsM);
+    });
+    minput.addEventListener("blur", () => setTimeout(() => { side = null; minput.setAttribute('aria-expanded', 'false'); if (mpanel().matches(':popover-open')) mpanel().hidePopover(); }, 0));
+    addEventListener('scroll', () => mpanel().matches(':popover-open') && place(), { passive: true });
+    addEventListener('resize', () => mpanel().matches(':popover-open') && place());
 
     document.getElementById('theme').addEventListener('change', (e) => {
       document.documentElement.classList.remove('theme-light', 'theme-dark');
