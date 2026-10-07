@@ -1,5 +1,9 @@
 # product-card — журнал версий
 
+## 3.0.3 — 2026-10-07 — PATCH
+spec.md: номер версии в шапке спецификации
+Потребителю: Ничего
+
 ## 3.0.2 — 2026-10-07 — PATCH
 Галерея: индикатор, скрытый при запуске (неактивная вкладка, ширина ниже 1024), больше не мельчит все точки — раскладка ждёт ширины (ResizeObserver); spec.md: начальное окно точек и код флага из двух букв
 Потребителю: В wireGallery: в layoutDots выйти при slider.clientWidth === 0; наблюдать .pcard__slider--many через ResizeObserver и звать layoutDots(current), когда ширина > 0. В Liquid: при кадрах > 5 точкам с forloop.index0 >= 4 класс slider__dot--sm; код флага — ISO | downcase | slice: 0, 2
