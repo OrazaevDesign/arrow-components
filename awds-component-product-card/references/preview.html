@@ -422,6 +422,10 @@
     // переключает (hover-зоны убраны решением владельца 07.10.2026); кадр остаётся там, где его
     // оставили, уход курсора с фото его не сбрасывает. Мобила/таблет (тач/перо): свайп влево/вправо листает кадры по одному.
     // Это и есть код, который вписывает потребитель карточки.
+    // Индикатор, скрытый при запуске, раскладываем, когда он получит ширину (баг 08.10.2026).
+    const dotsRO = typeof ResizeObserver === 'function' ? new ResizeObserver((entries) => {
+      entries.forEach((e) => { if (e.contentRect.width > 0 && e.target.__pcardRelayout) e.target.__pcardRelayout(); });
+    }) : null;
     function wireGallery(link) {
       const imgs = [...link.querySelectorAll('.pcard__image')];
       if (imgs.length < 2) return;                       // одиночное фото — листать нечего
@@ -448,6 +452,7 @@
       // корректны при удлинённой активной точке). Крайние точки окна — --sm.
       const layoutDots = (i) => {
         if (!windowed || !track || !dots.length) return;
+        if (!slider.clientWidth) return;                 // индикатор не отрисован — разложит dotsRO
         const cs = getComputedStyle(slider);
         const winW = slider.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
         const x0 = dots[0].offsetLeft;
@@ -507,6 +512,7 @@
       link.addEventListener('pointercancel', () => { dragging = false; axis = ''; });
       link.addEventListener('click', (e) => { if (swiped) { e.preventDefault(); swiped = false; } });
 
+      if (windowed && dotsRO) { slider.__pcardRelayout = () => layoutDots(current); dotsRO.observe(slider); }
       setActive(0);                                              // стартовое окно
     }
     const wireGalleries = (root) => root.querySelectorAll('.pcard__image-link').forEach(wireGallery);

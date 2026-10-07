@@ -144,6 +144,13 @@
 JS-обвязка потребителя (десктоп — стрелки, мобила/таблет — свайп). Эталон — функция `wireGallery` в `blocks/awds-category-product-slider/script.js`; ниже она же, без блоковой обвязки:
 
 ```js
+// Индикатор, скрытый при запуске (неактивная вкладка, ширина ниже 1024), раскладываем, когда он
+// получит ширину: от нулевой ширины окно выходило отрицательным, и все точки уходили в --sm
+// до первого листания (баг 08.10.2026). Один наблюдатель на страницу.
+var dotsRO = typeof ResizeObserver === 'function' ? new ResizeObserver(function (entries) {
+  entries.forEach(function (e) { if (e.contentRect.width > 0 && e.target.__pcardRelayout) e.target.__pcardRelayout(); });
+}) : null;
+
 function wireGallery(link) {
   var imgs = Array.prototype.slice.call(link.querySelectorAll('.pcard__image'));
   if (imgs.length < 2) return;                       // одно фото — листать нечего
@@ -168,6 +175,7 @@ function wireGallery(link) {
   // корректны при удлинённой активной точке); крайние точки окна уменьшаем (--sm).
   function layoutDots(i) {
     if (!many || !track || !dots.length) return;
+    if (!slider.clientWidth) return;                    // индикатор не отрисован — разложит dotsRO
     var cs = getComputedStyle(slider);
     var winW = slider.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
     var x0 = dots[0].offsetLeft;
@@ -220,6 +228,7 @@ function wireGallery(link) {
   link.addEventListener('pointerup', function () { dragging = false; });
   link.addEventListener('pointercancel', function () { dragging = false; axis = ''; });
   link.addEventListener('click', function (e) { if (swiped) { e.preventDefault(); swiped = false; } }, true);
+  if (many && dotsRO) { slider.__pcardRelayout = function () { layoutDots(current); }; dotsRO.observe(slider); }
   setActive(0);
 }
 // Во всех вариантах карточки; селектор ловит любую ссылку-фото. Стрелки функция находит
