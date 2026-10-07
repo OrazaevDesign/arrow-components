@@ -160,7 +160,7 @@
   transition: opacity 0.3s ease-out;
   z-index: 2;                            /* скрим над активным кадром (z-index 1) */
 }
-.pcard-button-price .pcard__image-link:hover::after {
+.pcard-button-price .pcard__media:hover .pcard__image-link::after { /* hover на медиа, а не на ссылке: стрелки лежат рядом со ссылкой, и наведение на них не гасит hover фото */
   opacity: 0;
 }
 
@@ -273,7 +273,7 @@
    стрелки на каждой карточке ряда шумят. Без hover (тач) и в мобильной вью стрелок нет —
    там галерею листает свайп, а в каруселях ниже десктопа листание фото выключено вовсе.
    Появление — въезд из-за края фото, как у Ozon (решение владельца 07.10.2026): в покое
-   кнопка сдвинута за свой край на ширину плюс запас и срезана clip-path обёртки, при
+   кнопка сдвинута за свой край на ширину плюс поле и срезана clip-path обёртки, при
    наведении въезжает за 0.3s ease-out. Прозрачность не трогаем — её держит button-overhung
    (60% → 90% на hover). Сдвиг — свойством translate, а не transform: transform кнопке может
    понадобиться самой, и два transform перетёрли бы друг друга.
@@ -306,10 +306,8 @@
               opacity 0.15s ease-out,
               translate 0.3s ease-out;
 }
-/* Запас space-4, а не поле space-2: тень elevation-1 (кольцо 1px + размытие 4px) иначе
-   выглядывает из-за края тонкой полосой на фото (07.10.2026). */
-.pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-4)) 0; }
-.pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-4)) 0; }
+.pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0; }
+.pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0; }
 @media (hover: hover) {
   .pcard__media:hover .pcard__nav > .obtn,
   .pcard__nav:has(:focus-visible) > .obtn {
