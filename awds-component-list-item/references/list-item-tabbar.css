@@ -351,12 +351,18 @@
     rgb(var(--surface-chromatic-end)) 100%);
 }
 
-/* В макете картинка кадрируется (CROP) по всей подложке. */
+/* Картинка вписывается в подложку целиком, а не кадрируется: в макете (компонент preview,
+   слой img) она по центру с полем около 11% со всех сторон — доля, а не шаг шкалы, поэтому
+   одна на все ступени. Слой img — mix-blend darken: белый фон фото и логотипа уходит в
+   подложку. Ячеек под поле и наложение в студии нет — own_values меты. */
 .list-item__preview > img {
+  box-sizing: border-box;
   display: block;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
+  padding: 11%;
+  object-fit: contain;
+  mix-blend-mode: darken;
   border-radius: var(--awds-rounded-border-radius-300);
 }
 

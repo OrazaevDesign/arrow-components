@@ -1,10 +1,10 @@
 {
   "component": "list-item",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "contract_hash": "sha256:b1b75e9615c1b12a0ea79d6d9daccdbe3633c2294e431577d1e0ce589248d283",
-  "artifact_hash": "sha256:c0a25dcd2f4be9744d8b8b35809e9f9e30e69eeba2353ddc5892006c7a418d4b",
+  "artifact_hash": "sha256:69c1fcab2773cc487aa9cad29b2e1fafe50051f4a59c49b76b3d846dc9980845",
   "visual_change": true,
-  "released_at": "2026-10-01T12:16:54.025Z",
+  "released_at": "2026-10-01T13:01:33.600Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -17,6 +17,18 @@
       "where": "--awds-list-item-check у .list-item-variation",
       "count": 1,
       "why": "галочка невыбранной плитки не рисуется; узла галочки у наборов variation в макете нет вовсе — значение существует только в коде, ячейки под него не будет"
+    },
+    {
+      "value": "11%",
+      "where": "padding у .list-item__preview > img",
+      "count": 13,
+      "why": "поле картинки в подложке превью из макета (компонент preview, слой img ≈ 11% со всех сторон) — доля от подложки, одна на все ступени; ячейки поля картинки в студии нет"
+    },
+    {
+      "value": "darken",
+      "where": "mix-blend-mode у .list-item__preview > img",
+      "count": 13,
+      "why": "режим наложения слоя img в макете: белый фон фото и логотипа уходит в подложку; режим наложения в студии не выражается"
     }
   ],
   "figma": {
