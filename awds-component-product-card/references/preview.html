@@ -66,7 +66,7 @@
 <body>
 
   <h1>product-card / storybook</h1>
-  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — бренд → название → цена → кнопка «В корзину» → рейтинг, по центру, с флагом страны. <code>buy-now</code> и <code>button-price</code> — рейтинг тоже последним, под корзиной; в <code>price-first</code> с включённой корзиной — так же (1.4.2). При 2+ кадрах на десктопе по наведению на фото появляются стрелки галереи (button-overhung secondary 100); кадры листают только они, позиция курсора кадр не переключает. Отзывы «нет отзывов (резерв)» — пустая строка той же высоты. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: скрим уходит, без зума и теней. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель (товарные слайдеры выводят только <code>button</code> и открывают модалку Atlas). Переключи тему / скругление / вариант / корзину.</p>
+  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг; в <code>buy-now</code> под ценой тоже бренд, выравнивание слева, флаг страны. <code>brand-first</code> — бренд → название → цена → кнопка «В корзину» → рейтинг, по центру, с флагом страны. <code>buy-now</code> и <code>button-price</code> — рейтинг тоже последним, под корзиной; в <code>price-first</code> с включённой корзиной — так же (1.4.2). При 2+ кадрах на десктопе по наведению на фото появляются стрелки галереи (button-overhung secondary 100); кадры листают только они, позиция курсора кадр не переключает. Отзывы «нет отзывов (резерв)» — пустая строка той же высоты. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: скрим уходит, без зума и теней. Зона корзины (Figma <code>.addcart</code>) — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>added</code> (товар уже в корзине: кнопка addition со ссылкой на корзину, иконка справа), переключает потребитель (товарные слайдеры выводят только <code>button</code> и открывают модалку Atlas). Переключи тему / скругление / вариант / корзину.</p>
 
   <div class="toolbar">
     <label>Вариант:
@@ -112,7 +112,7 @@
     <label>Корзина:
       <select id="cart">
         <option value="button">button</option>
-        <option value="stepper">stepper</option>
+        <option value="added">added</option>
       </select>
     </label>
     <label>Цена:
@@ -256,15 +256,13 @@
       return `<span class="badge badge-market-percent ${sz}">10%</span><span class="badge badge-market-sale ${sz}">Скидка</span>`;
     };
 
-    // Иконки степпера (ic20): минус / плюс — stroke; корзина — solid (на тёмной addition).
-    const icMinus = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 10h10"/></svg>`;
-    const icPlus  = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M10 5v10M5 10h10"/></svg>`;
+    // Иконка корзины (ic20, solid): слева в «В корзину», справа в состоянии added.
     const icCart  = `<svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 16a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM1.2 2a1 1 0 1 0 0 2h1.6l2.1 9.05a1 1 0 0 0 .98.77h9.02a1 1 0 0 0 .96-.72l1.74-6.05A.85.85 0 0 0 17.78 6H5.07l-.44-1.99A1 1 0 0 0 3.66 2H1.2Z"/></svg>`;
 
-    // Зона корзины (Figma .AddCart): ОБЕ вью (button + stepper) всегда в DOM, сложены
+    // Зона корзины (Figma .addcart, ось cart = button | added): обе вью всегда в DOM, сложены
     // стопкой; активную задаёт data-cart-state, переключение — кросс-фейд (см. CSS).
-    // size: кнопка --400 desktop / --300 mobile, иконка корзины слева;
-    // степпер --400 / --300. Начальное состояние = opts.cart.
+    // button — «В корзину» (primary 400, иконка слева); added — товар уже в корзине:
+    // ссылка на корзину addition 400, иконка справа. Начальное состояние = opts.cart.
     // Кнопка корзины. В button-price (btnPrice задан) подпись — цена: обычная и скидка —
     // иконка + только новая цена (компонент .price, размер от кнопки); без цены —
     // disabled «Нет в наличии» без иконки (решение владельца 07.10.2026).
@@ -279,19 +277,13 @@
     const cartZone = (mobile, cart, btnPrice) => {
       // Зона корзины — размер 400 в обеих вьюхах (макет 07.10.2026).
       const sz = 'btn--400';
-      const szBtn = sz;
-      const state = cart === 'stepper' ? 'stepper' : 'button';
+      const state = cart === 'added' ? 'added' : 'button';
       return `<div class="pcard__cart" data-cart-state="${state}">`
         + `<div class="pcard__cart-view pcard__cart-view--button">`
-        +   cartButton(szBtn, btnPrice)
+        +   cartButton(sz, btnPrice)
         + `</div>`
-        + `<div class="pcard__cart-view pcard__cart-view--stepper">`
-        +   `<div class="pcard__stepper">`
-        +     `<button type="button" class="btn btn-ghost ${sz} btn--icon-only" aria-label="Убрать один">${icMinus}</button>`
-        +     `<span class="pcard__stepper-value" aria-live="polite">1</span>`
-        +     `<button type="button" class="btn btn-ghost ${sz} btn--icon-only" aria-label="Добавить один">${icPlus}</button>`
-        +   `</div>`
-        +   `<button type="button" class="btn btn-addition ${sz} btn--icon-only" aria-label="В корзину">${icCart}</button>`
+        + `<div class="pcard__cart-view pcard__cart-view--added">`
+        +   `<a class="btn btn-addition ${sz}" href="#cart">В корзину${icCart}</a>`
         + `</div>`
         + `</div>`;
     };
@@ -390,6 +382,7 @@
       : '<div class="pcard__slider-spacer" aria-hidden="true"></div>'}
   <div class="pcard__content">
     ${priceBlock(mobile, opts.price)}
+    <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
     ${categoryRow(opts)}
     ${cartRow(mobile, opts)}
@@ -430,8 +423,8 @@
 
     // --- Галерея: перелистывание фото (десктоп — стрелки, тач — свайп) ---
     // Десктоп (мышь): стрелки .pcard__nav листают по кругу; позиция курсора кадр не
-    // переключает (hover-зоны убраны решением владельца 07.10.2026), уход курсора с фото —
-    // возврат к первому. Мобила/таблет (тач/перо): свайп влево/вправо листает кадры по одному.
+    // переключает (hover-зоны убраны решением владельца 07.10.2026); кадр остаётся там, где его
+    // оставили, уход курсора с фото его не сбрасывает. Мобила/таблет (тач/перо): свайп влево/вправо листает кадры по одному.
     // Это и есть код, который вписывает потребитель карточки.
     function wireGallery(link) {
       const imgs = [...link.querySelectorAll('.pcard__image')];
@@ -493,11 +486,6 @@
         });
       });
 
-      // Сброс — по уходу с медиа, а не со ссылки: стрелки лежат рядом со ссылкой.
-      (media || link).addEventListener('pointerleave', (e) => {
-        if (e.pointerType === 'mouse') setActive(0);
-      });
-
       // Мобила/таблет (тач/перо): свайп. touch-action:pan-y (в CSS) отдаёт вертикальный
       // скролл странице, горизонталь приходит сюда. Порог SWIPE листает по одному кадру;
       // ребейз sx позволяет длинному свайпу листать дальше. После свайпа гасим клик по
@@ -527,34 +515,18 @@
     }
     const wireGalleries = (root) => root.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
-    // --- Степпер корзины: переключение button↔stepper и смена количества ---
-    // Это код, который вписывает потребитель. Кросс-фейд состояний — на CSS
-    // (data-cart-state); JS только переключает атрибут и обновляет число.
-    // bump: смену textContent чистый CSS не ловит — ретриггерим @keyframes через
-    // тогл класса --bump с принудительным reflow (см. bumpStepperValue в .md).
-    function wireStepper(cart) {
-      const valueEl = cart.querySelector('.pcard__stepper-value');
-      if (!valueEl) return;
+    // --- Зона корзины: переключение button → added ---
+    // Это код потребителя в минимальном виде: по нажатию «В корзину» товар добавляется,
+    // зона переходит в added (кросс-фейд на CSS по data-cart-state), а кнопка added —
+    // обычная ссылка на корзину. В превью ссылка ведёт на #cart и возвращает зону в button,
+    // чтобы переход можно было посмотреть ещё раз.
+    function wireCart(cart) {
       const primary = cart.querySelector('.pcard__cart-view--button .btn-primary');
-      const addBtn  = cart.querySelector('.pcard__cart-view--stepper .btn-addition');
-      const ghosts  = cart.querySelectorAll('.pcard__stepper .btn-ghost');
-      const minusBtn = ghosts[0], plusBtn = ghosts[1];
-      let qty = parseInt(valueEl.textContent, 10) || 1;
-      const bump = () => {
-        valueEl.classList.remove('pcard__stepper-value--bump');
-        void valueEl.offsetWidth;                    // reflow → рестарт one-shot анимации
-        valueEl.classList.add('pcard__stepper-value--bump');
-      };
-      const setQty = (n) => {
-        if (n <= 0) { cart.dataset.cartState = 'button'; qty = 1; valueEl.textContent = '1'; return; }
-        qty = n; valueEl.textContent = String(n); bump();
-      };
-      primary  && primary.addEventListener('click',  () => { cart.dataset.cartState = 'stepper'; });
-      addBtn   && addBtn.addEventListener('click',    () => setQty(qty + 1));
-      plusBtn  && plusBtn.addEventListener('click',   () => setQty(qty + 1));
-      minusBtn && minusBtn.addEventListener('click',  () => setQty(qty - 1));
+      const added   = cart.querySelector('.pcard__cart-view--added .btn');
+      primary && primary.addEventListener('click', () => { cart.dataset.cartState = 'added'; });
+      added   && added.addEventListener('click', (e) => { e.preventDefault(); cart.dataset.cartState = 'button'; });
     }
-    const wireSteppers = (root) => root.querySelectorAll('.pcard__cart').forEach(wireStepper);
+    const wireCarts = (root) => root.querySelectorAll('.pcard__cart').forEach(wireCart);
 
     function render() {
       const opts = {
@@ -576,12 +548,12 @@
       // В гриде показываем разные состояния цены: default · sale · none · sale
       const priceStates = ['default', 'sale', 'none', 'sale'];
       for (let i = 0; i < 4; i++) {
-        grid.insertAdjacentHTML('beforeend', card('desktop', { variant: opts.variant, fav: i % 2 ? 'on' : 'off', image: 'with', cart: i % 2 ? 'stepper' : 'button', price: priceStates[i], frames: opts.frames, feedback: opts.feedback, category: opts.category, cartRow: opts.cartRow }));
+        grid.insertAdjacentHTML('beforeend', card('desktop', { variant: opts.variant, fav: i % 2 ? 'on' : 'off', image: 'with', cart: i % 2 ? 'added' : 'button', price: priceStates[i], frames: opts.frames, feedback: opts.feedback, category: opts.category, cartRow: opts.cartRow }));
       }
 
-      // Подключаем перелистывание галереи и логику степпера ко всем карточкам
+      // Подключаем перелистывание галереи и переключение зоны корзины ко всем карточкам
       wireGalleries(document);
-      wireSteppers(document);
+      wireCarts(document);
     }
 
     document.querySelector('#theme').addEventListener('change', (e) => {

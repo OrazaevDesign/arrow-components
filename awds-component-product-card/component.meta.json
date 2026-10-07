@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "1.4.3",
-  "contract_hash": "sha256:d873ac094804f594af5539673129a739cebff6fe29afdc43bed4d020d4a6278c",
-  "artifact_hash": "sha256:0c448d6c071ed13377fc7e1cd81702705fb1ac718ef25ef505906c7db7aff96e",
+  "version": "2.0.1",
+  "contract_hash": "sha256:775bfd6ed0cf45dbed9afa8398f74597baa14b4ab942be76ee8521a6d6cb4348",
+  "artifact_hash": "sha256:30eed0eb1a0333591e204599556c07d556b7fca1af66913cacbe1980d2355541",
   "visual_change": false,
-  "released_at": "2026-10-07T16:59:19.253Z",
+  "released_at": "2026-10-07T19:00:10.004Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -100,7 +100,7 @@
   "composes": [
     "awds-component-button-favorites (.btn-favorites — кнопка избранного в .pcard__top; требует button-favorites.css)",
     "awds-component-badge (.badge-market-percent / -sale — маркет-бейджи в .pcard__badges; требует badge.css; --100 desktop / --50 mobile)",
-    "awds-component-button (зона .pcard__cart, brand-first и buy-now; требует button.css; --400 desktop / --300 mobile): .btn-primary — кнопка «В корзину» (состояние A); .btn-ghost.btn--icon-only −/+ и .btn-addition.btn--icon-only корзина — в степпере (состояние B)",
+    "awds-component-button (зона .pcard__cart; требует button-primary.css и button-addition.css; --400 в обеих вью): .btn-primary — кнопка «В корзину» (состояние button); .btn-addition — ссылка на корзину с иконкой справа (состояние added)",
     "awds-component-tooltip (.tooltip на .pcard__tip — подсказка на флаге страны (текст = страна из данных; price-first/buy-now) и на избранном («Добавить в избранное»; все варианты); требует tooltip.css; показ по hover/focus с задержкой 400мс, скрытие мгновенно)",
     "awds-component-slider (.slider.slider-dots-mini.pcard__slider — индикатор галереи фото между .pcard__media и .pcard__content, по центру, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует slider.css; точек = числу кадров, активная задаётся классом .slider__dot--active. Перелистывание — JS потребителя (wireGallery): hover-зоны на десктопе (мышь) + свайп влево/вправо на тач-устройствах (мобила/таблет; ссылка-фото несёт touch-action:pan-y, вертикальный скролл страницы остаётся нативным, клик по ссылке после свайпа подавляется). CSS карточки даёт кроссфейд кадров (.pcard__image--active) и центрирование индикатора. МНОГО кадров (>5): точки в .pcard__slider-track + класс .pcard__slider--many → фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки .slider__dot--sm уменьшены; сдвиг --pcard-dots-shift и edge-классы ставит wireGallery)",
     "awds-component-price (.price.price-{default|sale|none} — цена в .pcard__content, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует price.css; размерного класса НЕТ — размер задаёт сама карточка правилом .pcard .price, переопределяя аккумуляторы --awds-price-fs/-lh/-ls на роли WYSIWYG price-listing/caption; цена едет по .typo-* карточки вместе с брендом и названием, одинакова в обеих вью. До price 2.0.0 это был класс .price--listing внутри price. Три состояния по данным товара: price-default (обычная, surface-on-highest), price-sale (скидка: акцентная + старая зачёркнутая, с бейджем .badge-market-percent), price-none («Нет в наличии», скрыть бейдж скидки). Заменил инлайн .pcard__price* — собственных стилей цены в product-card больше нет)"
@@ -160,7 +160,7 @@
         "label": "Корзина",
         "options": [
           "button",
-          "stepper"
+          "added"
         ]
       },
       {
@@ -198,9 +198,21 @@
   },
   "ds_token_dependencies": [
     "--accent-core",
+    "--awds-control-font-size-100",
+    "--awds-control-font-size-200",
     "--awds-control-font-size-400",
+    "--awds-control-font-size-700",
+    "--awds-control-font-size-850",
+    "--awds-control-letter-spacing-100",
+    "--awds-control-letter-spacing-200",
     "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-700",
+    "--awds-control-letter-spacing-850",
+    "--awds-control-line-height-100",
+    "--awds-control-line-height-200",
     "--awds-control-line-height-400",
+    "--awds-control-line-height-700",
+    "--awds-control-line-height-850",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
@@ -209,8 +221,8 @@
     "--awds-opacity-40",
     "--awds-opacity-5",
     "--awds-rounded-border-radius-200",
-    "--awds-rounded-border-radius-400",
     "--awds-rounded-border-radius-500",
+    "--awds-space-0-5",
     "--awds-space-1",
     "--awds-space-12",
     "--awds-space-2",
@@ -221,41 +233,31 @@
     "--awds-space-px",
     "--awds-wysiwyg-font-size-body",
     "--awds-wysiwyg-font-size-caption",
-    "--awds-wysiwyg-font-size-lead",
-    "--awds-wysiwyg-font-size-price-listing",
     "--awds-wysiwyg-letter-spacing-body",
     "--awds-wysiwyg-letter-spacing-caption",
-    "--awds-wysiwyg-letter-spacing-lead",
-    "--awds-wysiwyg-letter-spacing-price-listing",
     "--awds-wysiwyg-line-height-body",
     "--awds-wysiwyg-line-height-caption",
-    "--awds-wysiwyg-line-height-lead",
-    "--awds-wysiwyg-line-height-price-listing",
-    "--secondary-chroma",
-    "--secondary-core",
-    "--secondary-on",
     "--surface-bright",
     "--surface-on",
     "--surface-on-high",
     "--surface-on-highest",
     "--warning-core"
   ],
-  "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). ТИПОГРАФИКА текста карточки — на РОЛЯХ WYSIWYG-пресетов --awds-type-lead/body/caption-{fs,lh,ls}, а НЕ на жёстком шаге --awds-typography-*: бренд desktop=lead, mobile=body; название=body; фидбэк/рубрика=caption (одинаково во всех вариантах, включая brand-first mobile brand — мигрирован с фикс typography/300 на роль body). Роли масштабируются коллекцией .typo-large/medium/small на секции-предке — карточка едет по той же оси, что типографика блоков (чисто наследует: без .typo-* = :root ≈medium; .typo-small = макет 16/26·14/22·12/19). Прямой --awds-typography-*-400 остался ТОЛЬКО у .pcard__stepper-value (число в поле количества — контрол корзины, не масштабируется). Цену во ВСЕХ вариантах даёт компонент awds-component-price БЕЗ размерного класса: размер задаёт карточка правилом .pcard .price на ролях WYSIWYG price-listing/caption — тоже едет по .typo-* карточки, как текст. Флаг 24×24 object-fit:contain. Зона корзины (.pcard__cart, Figma .AddCart 6130:27738) встроена вручную в brand-first/buy-now: контейнер степпера (Input/Secondary) стилизуется в самом product-card на secondary-core/-chroma + secondary-container-on-high (form-скилла нет); кнопки −/+/корзина — composed из awds-component-button (ghost/addition). Refresh product-card по его component-set эту зону НЕ перегенерирует.",
+  "_dependency_note": "accent-*/primary-* (бейджи) и rectangle-* (бейджи/кнопка) — во внешних компонентах badge.css/button.css/button-favorites.css (см. composes). ТИПОГРАФИКА текста карточки — на РОЛЯХ WYSIWYG-пресетов --awds-type-lead/body/caption-{fs,lh,ls}, а НЕ на жёстком шаге --awds-typography-*: бренд desktop=lead, mobile=body; название=body; фидбэк/рубрика=caption (одинаково во всех вариантах, включая brand-first mobile brand — мигрирован с фикс typography/300 на роль body). Роли масштабируются коллекцией .typo-large/medium/small на секции-предке — карточка едет по той же оси, что типографика блоков (чисто наследует: без .typo-* = :root ≈medium; .typo-small = макет 16/26·14/22·12/19). Прямой --awds-typography-*-400 остался ТОЛЬКО у . Цену во ВСЕХ вариантах даёт компонент awds-component-price БЕЗ размерного класса: размер задаёт карточка правилом .pcard .price на ролях WYSIWYG price-listing/caption — тоже едет по .typo-* карточки, как текст. Флаг 24×24 object-fit:contain. Зона корзины (.pcard__cart, Figma ..addcart 468:59173) — две кнопки awds-component-button: primary (button) и addition (added); своих цветов у зоны нет, степпер удалён в 2.0.0. Refresh product-card по его component-set эту зону НЕ перегенерирует.",
   "add_cart": {
-    "node_id": "6130:27738",
-    "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6130-27738",
-    "figma_label": ".AddCart (⚙️ButtonCart var1)",
+    "node_id": "468:59173",
+    "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59173",
+    "figma_label": ".addcart (ось cart: button | added)",
     "states": [
       "button",
-      "stepper"
+      "added"
     ],
     "views": [
       "desktop",
       "mobile"
     ],
     "composed_from": [
-      "awds-component-button (primary/ghost/addition)",
-      "Input/Secondary (стилизован в product-card)"
+      "awds-component-button (primary — button, addition — added)"
     ]
   },
   "last_synced": "2026-09-18T14:56:47Z",
@@ -377,10 +379,10 @@
         "when": "pcard__cart"
       },
       {
-        "class": "pcard__cart-view--stepper",
+        "class": "pcard__cart-view--added",
         "when": "pcard__cart",
         "required": false,
-        "why": "Блоки с 07.10.2026 открывают модалку Atlas и вью степпера не рендерят; степпер остаётся возможностью компонента"
+        "why": "Состояние added (товар в корзине) — ссылка на корзину .btn-addition.btn--400; блоки его пока не выводят: нужен признак «товар в корзине» в данных SSR"
       },
       {
         "class": "pcard__cart",
@@ -421,7 +423,7 @@
       }
     ],
     "container": null,
-    "note": "Композит: внутри карточки живут инстансы badge, button-favorites, price, slider и tooltip — их требования описаны в их собственных контрактах и здесь намеренно не повторяются. Вариант обязателен, он задаёт порядок контента и состав: price-first (цена → бренд → название → рейтинг), brand-first (бренд → название → рейтинг → цена → корзина, контент по центру, флага страны нет), buy-now (цена → название → рубрика → рейтинг → корзина, контент слева). Шкалы размеров нет — карточка тянется по сетке; .pcard--mobile это вью, а не ступень: она меняет ступени вложенных компонентов (избранное --200, бейджи --50) и кегли бренда. Корень — контейнер, а НЕ ссылка: кликабельны три отдельные ссылки со своим hover и своим фокусом (фото, бренд или рубрика, название), а строка отзывов .pcard__feedback ссылкой не является. Фото или заглушка: внутри .pcard__image-link стоит либо .pcard__image, либо .pcard__media-placeholder — выбор из двух гейт не выражает, поэтому требования на них нет, зато у картинки требуется alt. Оверлеи необязательны и требованиями не записаны: .pcard__top, .pcard__country, .pcard__badges, кнопка избранного, обёртка тултипа .pcard__tip. Индикатор галереи .pcard__slider ставится только при нескольких кадрах (активный кадр — .pcard__image--active, при числе кадров больше пяти точки заворачиваются в .pcard__slider-track и слайдер получает .pcard__slider--many); при одном кадре вместо него ставят пустой .pcard__slider-spacer, чтобы карточки в гриде были одной высоты. Зона корзины .pcard__cart есть у buy-now и brand-first и держит ОБЕ вью в DOM сразу — .pcard__cart-view--button и .pcard__cart-view--stepper сложены grid-stack и кросс-фейдятся; вью, которой нет в разметке, появиться не из чего, поэтому обе обязательны. Активную выбирает data-cart-state=\"button|stepper\", но сам атрибут необязателен: без него работает button. Порядок и вложенность частей проверке не видны — Liquid без DOM их не даёт, а интерполяция класса (.pcard__image с условным --active) гасит проверку потомков по всему файлу блока."
+    "note": "Композит: внутри карточки живут инстансы badge, button-favorites, price, slider и tooltip — их требования описаны в их собственных контрактах и здесь намеренно не повторяются. Вариант обязателен, он задаёт порядок контента и состав: price-first (цена → бренд → название → рейтинг), brand-first (бренд → название → рейтинг → цена → корзина, контент по центру, флага страны нет), buy-now (цена → название → рубрика → рейтинг → корзина, контент слева). Шкалы размеров нет — карточка тянется по сетке; .pcard--mobile это вью, а не ступень: она меняет ступени вложенных компонентов (избранное --200, бейджи --50) и кегли бренда. Корень — контейнер, а НЕ ссылка: кликабельны три отдельные ссылки со своим hover и своим фокусом (фото, бренд или рубрика, название), а строка отзывов .pcard__feedback ссылкой не является. Фото или заглушка: внутри .pcard__image-link стоит либо .pcard__image, либо .pcard__media-placeholder — выбор из двух гейт не выражает, поэтому требования на них нет, зато у картинки требуется alt. Оверлеи необязательны и требованиями не записаны: .pcard__top, .pcard__country, .pcard__badges, кнопка избранного, обёртка тултипа .pcard__tip. Индикатор галереи .pcard__slider ставится только при нескольких кадрах (активный кадр — .pcard__image--active, при числе кадров больше пяти точки заворачиваются в .pcard__slider-track и слайдер получает .pcard__slider--many); при одном кадре вместо него ставят пустой .pcard__slider-spacer, чтобы карточки в гриде были одной высоты. Зона корзины .pcard__cart есть у buy-now и brand-first и держит ОБЕ вью в DOM сразу — .pcard__cart-view--button и .pcard__cart-view--added сложены grid-stack и кросс-фейдятся; вью, которой нет в разметке, появиться не из чего, поэтому обе обязательны. Активную выбирает data-cart-state=\"button|added\", но сам атрибут необязателен: без него работает button. Порядок и вложенность частей проверке не видны — Liquid без DOM их не даёт, а интерполяция класса (.pcard__image с условным --active) гасит проверку потомков по всему файлу блока."
   },
   "questions": [
     {
@@ -509,10 +511,11 @@
       "level": "component",
       "target": "product-card",
       "severity": "minor",
-      "status": "open",
+      "status": "closed",
       "raised_at": "2026-09-19",
       "evidence": "19.09.2026 при возврате шести частей input / secondary с подменённых старых на наши локальные иконки восстанавливались поимённо: значения снимались с прежних узлов, и расхождение между вью было видно в снимке (prefix 400 = ic20-indeterminacy-outline 468:54291, prefix 300 = ic20-minus-outline 468:54077)",
-      "asana_gid": "1218650293455543"
+      "asana_gid": "1218650293455543",
+      "resolution": "Снят 07.10.2026: макет убрал степпер из .addcart (ось cart = button | added), иконок минуса больше нет — product-card 2.0.0"
     },
     {
       "id": "figma-category-binding-and-link-hover",
@@ -535,6 +538,17 @@
       "raised_at": "2026-10-07",
       "evidence": "meta.published.dev_resources_status.button-price = pending; logs/2026/10/07/13-17 - product-card-1-3-3-blocks-published.md",
       "asana_gid": "1219251098773972"
+    },
+    {
+      "id": "cart-added-needs-ssr-in-cart-flag",
+      "text": "Состояние зоны корзины added (товар уже в корзине — ссылка на корзину) есть в компоненте с 2.0.0, но товарные слайдеры его не выводят: в SSR-данных карточки нет признака «товар в корзине». Нужен ли такой признак (поле источника или запрос корзины на клиенте) и показывать ли added в блоках?",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-10-07",
+      "evidence": "07.10.2026 макет заменил степпер на состояние added (ось cart = button | added); блоки после решения от 07.10.2026 выводят только вью button с модалкой Atlas — logs/2026/10/07/21-01 - product-card-2-0-0-mockup-cart-added-price-scale.md",
+      "asana_gid": "1219274236188596"
     }
   ],
   "family": "complex-component",
@@ -576,8 +590,8 @@
       "pcard__brand",
       "pcard__cart",
       "pcard__cart-view",
+      "pcard__cart-view--added",
       "pcard__cart-view--button",
-      "pcard__cart-view--stepper",
       "pcard__category",
       "pcard__content",
       "pcard__country",
@@ -590,6 +604,8 @@
       "pcard__media-placeholder",
       "pcard__name",
       "pcard__nav",
+      "pcard__nav-btn--next",
+      "pcard__nav-btn--prev",
       "pcard__price",
       "pcard__rating-icon",
       "pcard__rating-value",
@@ -599,12 +615,11 @@
       "pcard__slider--many",
       "pcard__slider-spacer",
       "pcard__slider-track",
-      "pcard__stepper",
-      "pcard__stepper-value",
-      "pcard__stepper-value--bump",
       "pcard__tip",
       "pcard__top",
       "price",
+      "price__currency",
+      "price__main",
       "price__old",
       "price__placeholder",
       "slider__dot",

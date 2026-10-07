@@ -6,7 +6,7 @@
    Product Card — button-price
    =============================================================================
    Карточка товара, где цена — подпись кнопки корзины. Контент СЛЕВА, порядок
-     бренд → название → рубрика → рейтинг → кнопка «🛒 12 900 ₽».
+     бренд → название → рубрика → кнопка «🛒 12 900 ₽» → рейтинг.
    Отдельной строки цены нет. Медиа, рубрика, отзывы и зона корзины — как у buy-now,
    бренд — как у price-first. Вариант появился в макете 07.10.2026 (набор 985:30177).
 
@@ -38,10 +38,10 @@
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-border-radius-500)
-     — бренд:  desktop lead 18/29, mobile body 16/26 (как price-first)
+     — бренд:  роль body 16/26 semibold, обе вью (как price-first)
      — название: body 16/26, 1 строка; рубрика: caption 13/21, 1 строка
      — бейджи: .badge--100 desktop / .badge--50 mobile
-     — кнопка корзины и степпер: .btn--400 в обеих вьюхах
+     — кнопка корзины (оба состояния, button и added): .btn--400 в обеих вьюхах
 
    Private vars: --awds-pcard-gap (медиа↔слайдер↔контент = 0, как в макете).
    ============================================================================= */
@@ -272,8 +272,13 @@
    наведении на фото или фокусе с клавиатуры (решение владельца 07.10.2026): постоянные
    стрелки на каждой карточке ряда шумят. Без hover (тач) и в мобильной вью стрелок нет —
    там галерею листает свайп, а в каруселях ниже десктопа листание фото выключено вовсе.
-   Прозрачность самих кнопок (60% → 90% на hover) держит button-overhung; здесь гасится
-   только обёртка, поэтому две прозрачности не спорят. */
+   Появление — въезд из-за края фото, как у Ozon (решение владельца 07.10.2026): в покое
+   кнопка сдвинута за свой край на ширину плюс поле и срезана clip-path обёртки, при
+   наведении въезжает за 0.3s ease-out. Прозрачность не трогаем — её держит button-overhung
+   (60% → 90% на hover). Сдвиг — свойством translate, а не transform: transform кнопке может
+   понадобиться самой, и два transform перетёрли бы друг друга.
+   Фокус — только :focus-visible. :focus-within залипал: после клика мышью кнопка держит
+   фокус, и стрелки оставались на фото, когда курсор уже ушёл (07.10.2026). */
 .pcard__nav {
   position: absolute;
   top: 50%;
@@ -285,17 +290,28 @@
   justify-content: space-between;
   padding: var(--awds-space-2);          /* 8px */
   transform: translateY(-50%);
-  pointer-events: none;                  /* мимо кнопок hover-зоны фото работают как прежде */
-  opacity: 0;
-  transition: opacity 0.15s ease-out;
+  pointer-events: none;                  /* мимо кнопок клик уходит в ссылку-фото */
+  /* Режем только по горизонтали: по вертикали отрицательный отступ оставляет место
+     кольцу фокуса, иначе оно срежется по верху и низу кнопки. */
+  clip-path: inset(-50% 0);
 }
 .pcard__nav > .obtn {
   pointer-events: auto;
+  /* Список перехода базы button-overhung + translate: правило сильнее .obtn-secondary,
+     поэтому список переписывается целиком, иначе цвет и плотность «снапнут». */
+  transition: --awds-obtn-bg 0.15s ease-out,
+              --awds-obtn-chroma 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out,
+              opacity 0.15s ease-out,
+              translate 0.3s ease-out;
 }
+.pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0; }
+.pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0; }
 @media (hover: hover) {
-  .pcard__media:hover .pcard__nav,
-  .pcard__nav:focus-within {
-    opacity: 1;
+  .pcard__media:hover .pcard__nav > .obtn,
+  .pcard__nav:has(:focus-visible) > .obtn {
+    translate: 0 0;
   }
 }
 @media (hover: none) {
@@ -303,7 +319,7 @@
 }
 .pcard--mobile .pcard__nav { display: none; }
 @media (prefers-reduced-motion: reduce) {
-  .pcard__nav { transition: none; }
+  .pcard__nav > .obtn { transition: none; }
 }
 
 /* Резерв строки отзывов (с 07.10.2026). Когда отзывы на сайте включены, строка стоит у
@@ -316,7 +332,7 @@
   line-height: var(--awds-wysiwyg-line-height-caption);
 }
 
-/* === Content (слева): цена → название → рубрика → рейтинг → кнопка ===
+/* === Content (слева): бренд → название → рубрика → кнопка → рейтинг ===
    Зазор между блоками = 0; вертикальный ритм задают line-height и точечные
    padding-top на рейтинге (4px) и зоне корзины (8px), как в макете. */
 
@@ -330,13 +346,14 @@
   padding-inline: var(--awds-space-2);   /* 8px */
 }
 
-/* Бренд (→ бренд), первая строка контента. Одна строка, роль WYSIWYG lead
-   (medium = 18/29), на мобиле — body (16/26). Как в price-first, сверено по макету 07.10.2026. */
+/* Бренд (→ бренд), первая строка контента. Одна строка, роль WYSIWYG body
+   (medium = 16/26), полужирный, обе вью. Как в price-first; до правки макета 07.10.2026 —
+   lead (18/29) на десктопе. */
 .pcard-button-price .pcard__brand {
   margin: 0;
-  font-size: var(--awds-wysiwyg-font-size-lead);                          /* WYSIWYG lead (medium = 18px) */
-  line-height: var(--awds-wysiwyg-line-height-lead);                        /* medium = 29px */
-  letter-spacing: var(--awds-wysiwyg-letter-spacing-lead);
+  font-size: var(--awds-wysiwyg-font-size-body);                          /* WYSIWYG body (medium = 16px) */
+  line-height: var(--awds-wysiwyg-line-height-body);                        /* medium = 26px */
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;
@@ -346,11 +363,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
-}
-.pcard.pcard-button-price.pcard--mobile .pcard__brand {
-  font-size: var(--awds-wysiwyg-font-size-body);                          /* WYSIWYG body (medium = 16px) */
-  line-height: var(--awds-wysiwyg-line-height-body);                        /* medium = 26px */
-  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
 }
 .pcard-button-price .pcard__brand:hover {
   color: rgb(var(--accent-core));       /* #cell link/accent-hover */
@@ -429,6 +441,10 @@
 .pcard-button-price .pcard__feedback {
   display: inline-flex;
   align-items: center;
+  /* Строка отзывов — последней, под зоной корзины, и по центру карточки (макет 07.10.2026):
+     при переносе вторая строка тоже центрируется. */
+  align-self: center;
+  justify-content: center;
   gap: var(--awds-space-1);              /* 4px — и между строками при переносе */
   /* Перенос, как в макете (feedback: WRAP, gap 4 / 4): на узкой карточке (мобильная лента,
      128px) «23 отзыва» уходит на вторую строку, а не обрезается многоточием. Сверено 07.10.2026. */
@@ -471,34 +487,29 @@
 
 /* Зона корзины в button-price ОБЯЗАТЕЛЬНА: цена живёт только в кнопке, свойства
    show-cart у варианта нет. Без цены кнопка disabled с подписью «Нет в наличии». */
-/* === Зона корзины (Figma .AddCart) — awds-component-button + степпер количества ===
-   Два состояния, переключает потребитель (0 в корзине → button; >0 → stepper):
-     • button:  кнопка «В корзину» — awds-component-button (.btn .btn-primary .btn--400, иконка корзины слева).
-     • stepper: поле количества (Input/Secondary) с ghost-кнопками −/+ внутри
-                + отдельная квадратная кнопка корзины (.btn-addition .btn--icon-only).
-   Маппинг (Figma → DS): input bg/sheen/border → secondary-core / secondary-chroma;
-   число → ячейка form-control/secondary/color → secondary-on (значение, а не подсказка); gap зоны → space-2 (8px);
-   скругление инпута → rectangle-400-rounded. Подключи button*.css. pt 8px. */
+/* === Зона корзины (Figma .addcart) — awds-component-button, два состояния ===
+   Ось cart в макете (правка 07.10.2026): button | added. Активное состояние задаёт потребитель
+   атрибутом data-cart-state на .pcard__cart:
+     • button (по умолчанию, атрибут можно опустить) — «В корзину», .btn.btn-primary.btn--400,
+       иконка корзины слева;
+     • added — товар уже в корзине: .btn.btn-addition.btn--400, подпись и иконка корзины справа;
+       кнопка ведёт в корзину, поэтому это ссылка <a href> на страницу корзины.
+   Обе кнопки — на всю ширину зоны (FILL в макете), pt 8px (space/2). До этой правки вторым
+   состоянием был степпер количества (поле −/+ и квадратная кнопка корзины): макет его убрал. */
 
-/* Обе вью (кнопка / степпер) сложены в один слот через grid-stack и КРОСС-ФЕЙДЯТСЯ
-   по data-cart-state (переключает потребитель). Прерываемый transition (MIFB):
-   повторные add/remove мягко реверсятся, без «выскакивания». Дефолт (без атрибута)
-   = состояние button. */
+/* Обе вью сложены в один слот (grid-stack) и кросс-фейдятся по data-cart-state. Прерываемый
+   transition (MIFB): повторное добавление и удаление мягко реверсятся. Скрытая вью убрана из
+   клика, таба и дерева доступности (visibility); появление — 0.3s, скрытие короче (0.15s ease-in)
+   с задержкой visibility до конца затухания. */
 .pcard-button-price .pcard__cart {
   display: grid;
   grid-template-columns: minmax(0, 1fr);   /* одна колонка на всю ширину */
   width: 100%;
   padding-top: var(--awds-space-2);        /* 8px */
 }
-
-/* Обе вью — в одной ячейке (стопкой). Скрытая: убрана из клика/таба/AT (visibility)
-   и мягко гаснет; появление — cross-fade easing из motion.md (0.3s), скрытие
-   короче (0.15s ease-in) с задержкой visibility до конца fade. */
 .pcard-button-price .pcard__cart-view {
   grid-area: 1 / 1;
   display: flex;
-  align-items: center;
-  gap: var(--awds-space-2);                /* 8px */
   min-width: 0;
   opacity: 0;
   visibility: hidden;
@@ -506,74 +517,18 @@
   pointer-events: none;
   transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
 }
-/* Кнопка «В корзину» — на всю ширину зоны, иконка и подпись по центру: в макете
-   07.10.2026 button / primary внутри .addcart растянута (FILL), до этого — по содержимому. */
-.pcard-button-price .pcard__cart-view--button > .btn {
+.pcard-button-price .pcard__cart-view > .btn {
   flex: 1 1 auto;
   min-width: 0;
 }
-
-.pcard-button-price .pcard__cart:not([data-cart-state="stepper"]) .pcard__cart-view--button,
-.pcard-button-price .pcard__cart[data-cart-state="stepper"] .pcard__cart-view--stepper {
+.pcard-button-price .pcard__cart:not([data-cart-state="added"]) .pcard__cart-view--button,
+.pcard-button-price .pcard__cart[data-cart-state="added"] .pcard__cart-view--added {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
   pointer-events: auto;
   transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
 }
-
-/* Контейнер количества — Input/Secondary: sheen-градиент chroma→bg + бордер. */
-.pcard-button-price .pcard__stepper {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(
-    to right,
-    rgb(var(--secondary-chroma)),        /* #cell form-control/secondary/chroma */
-    rgb(var(--secondary-core))           /* #cell form-control/secondary/bg-rest */
-  );
-  /* Обводка внутренняя (INSIDE в макете): кнопки 40px лежат под рамкой, поле 40px. Border
-     добавлял 2px к высоте, и скрытый степпер растягивал грид-строку зоны корзины до 42 —
-     кнопка «Купить» стояла в строке выше себя (component-figma-check, 27.09.2026). */
-  box-shadow: inset 0 0 0 var(--awds-space-px) rgb(var(--secondary-core));   /* 1px · #cell form-control/secondary/bg-rest */
-  border-radius: var(--awds-rounded-border-radius-400);
-  overflow: hidden;                      /* ghost-кнопки не вылезают за скругление */
-}
-/* Мобильная вьюха — тот же размер 400, что на десктопе: с 07.10.2026 в макете зона корзины
-   48px в обеих вьюхах (было 300 / 44px на мобиле), отдельного скругления степпера нет. */
-
-/* Число количества (form-control default placeholder). Динамика → tabular-nums. */
-.pcard-button-price .pcard__stepper-value {
-  flex: 1 1 auto;
-  min-width: 0;
-  text-align: center;
-  /* Шкала control, а не typography: степпер — контрол, в макете число на font-size/400 и
-     line-height/400 контролов (14/20). До 27.09.2026 здесь стояла typography-400 (14/22). */
-  font-size: var(--awds-control-font-size-400);                 /* 14px */
-  line-height: var(--awds-control-line-height-400);             /* 20px */
-  letter-spacing: var(--awds-control-letter-spacing-400);
-  font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--secondary-on));              /* #cell form-control/secondary/color */
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  user-select: none;
-}
-/* Число: мягкий «bump» при смене значения (one-shot → @keyframes). Потребитель
-   ретриггерит анимацию — тогл класса --bump при обновлении textContent (см.
-   bumpStepperValue в .md); чистый CSS смену текста не ловит. tabular-nums уже
-   держит ширину, число не прыгает по горизонтали. */
-.pcard-button-price .pcard__stepper-value--bump {
-  animation: pcard-stepper-bump 0.15s ease-out;
-}
-@keyframes pcard-stepper-bump {
-  0%   { transform: scale(1); }
-  45%  { transform: scale(1.15); }
-  100% { transform: scale(1); }
-}
-
-/* Кнопка «В корзину» (button) и квадратная корзина (addition, stepper) —
-   компоненты awds-component-button, своих стилей не нужно. */
 
 
 /* Polish (MIFB): уважаем prefers-reduced-motion — гасим зум фото и переходы. */
@@ -594,9 +549,6 @@
   .pcard-button-price .pcard__slider--many .slider__dot,
   .pcard-button-price .pcard__cart-view {
     transition: none;
-  }
-  .pcard-button-price .pcard__stepper-value--bump {
-    animation: none;
   }
 }
 
