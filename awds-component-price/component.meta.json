@@ -282,7 +282,11 @@
     },
     "size": {
       "pattern": "price--{size}",
-      "required": true
+      "required": true,
+      "optional_inside": [
+        "pcard"
+      ],
+      "why_optional": "В карточке товара ступень цены задаёт сама карточка (.pcard раздаёт --awds-price-*), эталонный сниппет product-card пишет цену без price--{size}"
     },
     "native": null,
     "children": [
