@@ -45,6 +45,26 @@
    --awds-range-N-... — здесь они не используются; размер ползунка со шкалы square.)
    ============================================================================= */
 
+/* === Аккумуляторы ручки, зарегистрированные для анимации ===
+   Цвета и сила свечения ручки — @property: градиент как значение background браузер не
+   интерполирует, а зарегистрированные переменные внутри него — да. inherits: true —
+   значения задаются на .range-{variant} и читаются потомком .range__thumb. */
+@property --awds-range-thumb-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --awds-range-thumb-chroma {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: transparent;
+}
+@property --awds-range-thumb-glow {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 100%;
+}
+
 /* === Base === */
 
 .range {
@@ -104,7 +124,16 @@
   width: var(--awds-range-size);
   height: var(--awds-range-size);
   border-radius: 50%;
-  background: linear-gradient(to right, var(--awds-range-thumb-chroma, var(--awds-range-thumb-bg)), var(--awds-range-thumb-bg));
+  /* Заливка ручки (макет 07.10.2026, части handle / default и handle / light): снизу
+     сплошной bg, сверху радиальный градиент chroma → bg. Форма эллипса и сила слоя у
+     вариантов свои — приходят переменными варианта. У слоя background своего opacity
+     нет, поэтому прозрачность слоя внесена в стопы через color-mix с transparent.
+     До 07.10.2026 был linear-gradient(to right, chroma, bg) без прозрачности. */
+  background:
+    radial-gradient(var(--awds-range-thumb-glow-shape),
+      color-mix(in srgb, var(--awds-range-thumb-chroma) var(--awds-range-thumb-glow), transparent),
+      color-mix(in srgb, var(--awds-range-thumb-bg) var(--awds-range-thumb-glow), transparent)),
+    var(--awds-range-thumb-bg);
   /* Обводка внутрь плюс подъём: у Light-ручки в макете композит elevation-1 на всех
      состояниях, у Default тени нет — поэтому подъём приходит переменной варианта, а
      не жёстко тут. Fallback `0 0 rgb(0 0 0 / 0)` — «тени нет», чтобы список слоёв
@@ -116,7 +145,10 @@
               var(--awds-range-thumb-elevation, 0 0 rgb(0 0 0 / 0));
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: background 0.15s ease-out, box-shadow 0.15s ease-out;
+  transition: --awds-range-thumb-bg 0.15s ease-out,
+              --awds-range-thumb-chroma 0.15s ease-out,
+              --awds-range-thumb-glow 0.15s ease-out,
+              box-shadow 0.15s ease-out;
 }
 .range__thumb--from { left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-from)); }
 .range__thumb--to   { left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-to)); }
@@ -194,17 +226,24 @@
   --awds-range-thumb-bg:     rgb(var(--primary-core));   /* #cell range/default/bg */
   --awds-range-thumb-chroma: rgb(var(--primary-chroma));   /* #cell range/default/chroma */
   --awds-range-thumb-border: rgb(var(--primary-core));   /* #cell range/default/border */
+  /* Эллипс с gradientTransform части handle / default — тот же, что у кнопки primary:
+     центр у верхнего края, радиусы 110.9% ширины и 100% высоты. Слой градиента 60%. */
+  --awds-range-thumb-glow-shape: 110.9% 100% at 50% 0%;
+  --awds-range-thumb-glow:   var(--awds-opacity-60);   /* слой градиента в Figma: opacity 60% */
 }
 
 .range-default:hover {
   --awds-range-fill-bg:      rgb(var(--primary-dim));   /* #cell range/bg-hover */
   --awds-range-thumb-bg:     rgb(var(--primary-dim));   /* #cell range/default/bg-hover */
   --awds-range-thumb-border: rgb(var(--primary-dim));   /* #cell range/default/border-hover */
+  --awds-range-thumb-glow:   var(--awds-opacity-100);   /* слой градиента в Figma: opacity 100% */
 }
 
 .range-default:active {
   /* Нажатие гасит sheen до цвета заливки — градиент схлопывается в плоский цвет. */
   --awds-range-thumb-chroma: rgb(var(--primary-core));   /* #cell range/default/chroma-active */
+  /* Нажатие идёт под курсором, а :hover поднял слой до 100% — в макете у active снова 60%. */
+  --awds-range-thumb-glow:   var(--awds-opacity-60);
 }
 
 /* === Variant: Light (ползунок — белый с обводкой) === */
@@ -217,12 +256,23 @@
      совпадающий с --awds-shadow-elevation-1 по всем девяти числам (сверено с темой).
      Белая ручка на светлом треке без тени теряет край. */
   --awds-range-thumb-elevation: var(--awds-shadow-elevation-1);
+  /* Эллипс с gradientTransform части handle / light: свечение по центру, радиусы 45.77%
+     ширины и 137.5% высоты. Слой градиента 70%. */
+  --awds-range-thumb-glow-shape: 45.77% 137.5% at 50% 50%;
+  --awds-range-thumb-glow:   var(--awds-opacity-70);   /* слой градиента в Figma: opacity 70% */
 }
 
 .range-light:hover {
   --awds-range-fill-bg:      rgb(var(--primary-dim));   /* #cell range/bg-hover */
   --awds-range-thumb-bg:     rgb(var(--secondary-container-dim));   /* #cell range/light/bg-hover */
   --awds-range-thumb-border: rgb(var(--secondary-container-dim));   /* #cell range/light/border-hover */
+  --awds-range-thumb-glow:   var(--awds-opacity-100);   /* слой градиента в Figma: opacity 100% */
+}
+
+.range-light:active {
+  /* В макете у нажатой Light-ручки фон dim, как на наведении, а слой градиента снова 70%. */
+  --awds-range-thumb-bg:     rgb(var(--secondary-container-dim));   /* #cell range/light/bg-active */
+  --awds-range-thumb-glow:   var(--awds-opacity-70);
 }
 
 /* === Sizes ===

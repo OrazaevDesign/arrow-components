@@ -30,6 +30,7 @@
 | Заливка | `--primary-core` — как у Default |
 | Ползунок | `--secondary-container-core`, наведение `--secondary-container-dim` (+ sheen `--surface-bright`, ячейка `range/light/chroma` — одна на все состояния) |
 | Обводка ползунка | `--secondary-container-dim` |
+| Заливка ручки | сплошной `bg` + радиальный `chroma` → `bg`, эллипс `45.77% 137.5% at 50% 50%` (свечение по центру); слой 70% (`--awds-opacity-70`), на hover 100%; нажатие — фон `--secondary-container-dim`, слой 70%. С 07.10.2026 по части `handle / light`, до того — `linear-gradient(to right, chroma, bg)` |
 | **Тень ползунка** | `var(--awds-shadow-elevation-1)` — из макета, на всех состояниях |
 | фокус | `var(--awds-focus-color-muted)`, только `:focus-visible` |
 

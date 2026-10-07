@@ -1,10 +1,10 @@
 {
   "component": "range",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "contract_hash": "sha256:b5246b2cdd8622a8d81714fe7404c676bd17d401b4c47878982003ec10678a14",
-  "artifact_hash": "sha256:a277d61072269940a4db69188646fd6956e04b98fb20bcebf684404ead192400",
-  "visual_change": false,
-  "released_at": "2026-09-26T11:03:08.500Z",
+  "artifact_hash": "sha256:d2f424ccfb255b2fe44d5df3a8073864ec8335c380b761c1d70f144de11ef8ce",
+  "visual_change": true,
+  "released_at": "2026-10-07T12:58:39.130Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -96,7 +96,10 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-opacity-100",
     "--awds-opacity-40",
+    "--awds-opacity-60",
+    "--awds-opacity-70",
     "--awds-rounded-border-radius-full",
     "--awds-shadow-elevation-1",
     "--awds-space-1",

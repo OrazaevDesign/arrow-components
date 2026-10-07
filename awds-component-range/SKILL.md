@@ -24,8 +24,8 @@ description: Range ArrowDS (.range).
 |---|---|
 | Рельса (track) | `rgb(var(--surface-container-container))`, высота `var(--awds-space-1)` (4px) |
 | Заливка (fill) | `rgb(var(--primary-core))` |
-| Ползунок Default | `rgb(var(--primary-core))` + sheen `rgb(var(--primary-chroma))`, наведение `rgb(var(--primary-dim))` |
-| Ползунок Light | `rgb(var(--secondary-container-core))` + обводка `rgb(var(--secondary-container-dim))`, sheen `rgb(var(--surface-bright))`, тень `var(--awds-shadow-elevation-1)` |
+| Ползунок Default | `rgb(var(--primary-core))` + радиальное свечение `rgb(var(--primary-chroma))` от верхнего края (слой 60%, hover 100%), наведение `rgb(var(--primary-dim))` |
+| Ползунок Light | `rgb(var(--secondary-container-core))` + обводка `rgb(var(--secondary-container-dim))`, радиальное свечение `rgb(var(--surface-bright))` по центру (слой 70%, hover 100%), тень `var(--awds-shadow-elevation-1)` |
 | Размер ползунка | `var(--awds-space-5)` (400 = 20px), `var(--awds-space-6)` (500 = 24px) |
 | Скругление | `var(--awds-rounded-border-radius-full)` (рельса/заливка), `50%` (ползунок) |
 | hover / active | те же роли в других ступенях: `--primary-dim` на наведении, плоская заливка `--primary-core` на нажатии |
