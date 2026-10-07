@@ -33,11 +33,8 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-system-secondary-bg-rest` | `secondary-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-system-secondary-chroma-rest` | `secondary-chroma` |
 | border | `--awds-state-badge-system-secondary-border-rest` | `secondary-core` |
 | color (текст/иконки) | `--awds-state-badge-system-secondary-color-rest` | `secondary-on-dim` |
-
-**Градиента нет:** `core` и `chroma` этой роли в теме совпадают, поэтому заливка выходит плоской. В макете стопы разные — расхождение темы с Figma, чинится в студии.
 
 ## Состояния
 

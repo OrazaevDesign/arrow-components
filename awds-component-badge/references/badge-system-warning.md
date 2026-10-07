@@ -33,7 +33,6 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-system-warning-bg-rest` | `warning-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-system-warning-chroma-rest` | `warning-chroma` |
 | border | `--awds-state-badge-system-warning-border-rest` | `warning-core` |
 | color (текст/иконки) | `--awds-state-badge-system-warning-color-rest` | `warning-on` |
 

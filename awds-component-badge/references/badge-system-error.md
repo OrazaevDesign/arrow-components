@@ -33,13 +33,8 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-system-error-bg-rest` | `error-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-system-error-chroma-rest` | `error-chroma` |
 | border | `--awds-state-badge-system-error-border-rest` | `error-core` |
 | color (текст/иконки) | `--awds-state-badge-system-error-color-rest` | `error-on` |
-
-**Градиента нет:** `core` и `chroma` этой роли в теме совпадают, поэтому заливка выходит плоской. В макете стопы разные — расхождение темы с Figma, чинится в студии.
-
-**Совпадает с accent:** `error-core` в теме равен `accent-core` (211 49 34), поэтому Error и Accent сейчас неразличимы. В макете Error темнее.
 
 ## Состояния
 

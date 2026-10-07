@@ -1,6 +1,6 @@
 # Badge — Market Brand
 
-Маркет-бейдж бренда/нейтральной метки. Градиентная пилюля на роли **secondary** (приглушённый, обычно светло-серый): фон `chroma → core` слева направо, обводка `core`, текст `on`.
+Маркет-бейдж бренда/нейтральной метки. Пилюля со сплошной заливкой на роли **secondary** (приглушённый, обычно светло-серый): фон и обводка `core`, текст `on`.
 
 **Figma:** [Badge / Market Brand](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5331)
 
@@ -33,11 +33,8 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-market-brand-bg-rest` | `secondary-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-market-brand-chroma-rest` | `secondary-chroma` |
 | border | `--awds-state-badge-market-brand-border-rest` | `secondary-core` |
 | color (текст/иконки) | `--awds-state-badge-market-brand-color-rest` | `secondary-on` |
-
-**Градиента нет:** `core` и `chroma` этой роли в теме совпадают, поэтому заливка выходит плоской. В макете стопы разные — расхождение темы с Figma, чинится в студии.
 
 ## Состояния
 

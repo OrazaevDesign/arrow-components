@@ -1,6 +1,6 @@
 # Badge — Market Sale
 
-Маркет-бейдж распродажи. Градиентная пилюля на роли **primary** (брендовый, обычно жёлтый): фон `chroma → core` слева направо, обводка `core`, текст `on` (тёмный, контрастный к яркому фону).
+Маркет-бейдж распродажи. Пилюля со сплошной заливкой на роли **primary** (брендовый, обычно жёлтый): фон и обводка `core`, текст `on` (тёмный, контрастный к яркому фону).
 
 **Figma:** [Badge / Market Sale](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5417)
 
@@ -33,7 +33,6 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-market-sale-bg-rest` | `primary-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-market-sale-chroma-rest` | `primary-chroma` |
 | border | `--awds-state-badge-market-sale-border-rest` | `primary-core` |
 | color (текст/иконки) | `--awds-state-badge-market-sale-color-rest` | `primary-on` |
 ## Состояния

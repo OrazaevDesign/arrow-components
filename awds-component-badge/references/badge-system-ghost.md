@@ -33,11 +33,10 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-system-ghost-bg-rest` | `extended-transparent` |
-| chroma (дрейф градиента) | `--awds-state-badge-system-ghost-chroma-rest` | `extended-transparent` |
 | border | `--awds-state-badge-system-ghost-border-rest` | `extended-transparent` |
 | color (текст/иконки) | `--awds-state-badge-system-ghost-color-rest` | `surface-on-high` |
 
-**Полностью прозрачен:** фон, обводка и градиент ссылаются на `--extended-transparent` (`255 255 255 / 0%` — альфа внутри значения). Отдельного правила не нужно.
+**Полностью прозрачен:** фон и обводка ссылаются на `--extended-transparent` (`255 255 255 / 0%` — альфа внутри значения). Отдельного правила не нужно.
 
 ## Состояния
 

@@ -1,6 +1,6 @@
 # Badge — Market New
 
-Маркет-бейдж новинки. Градиентная пилюля на роли **info** (обычно синий): фон `chroma → core` слева направо, обводка `core`, текст `on` (светлый, контрастный к насыщенному фону).
+Маркет-бейдж новинки. Пилюля со сплошной заливкой на роли **info** (обычно синий): фон и обводка `core`, текст `on` (светлый, контрастный к насыщенному фону).
 
 **Figma:** [Badge / Market New](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5374)
 
@@ -33,7 +33,6 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-market-new-bg-rest` | `info-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-market-new-chroma-rest` | `info-chroma` |
 | border | `--awds-state-badge-market-new-border-rest` | `info-core` |
 | color (текст/иконки) | `--awds-state-badge-market-new-color-rest` | `info-on` |
 ## Состояния

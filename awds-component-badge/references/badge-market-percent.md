@@ -1,6 +1,6 @@
 # Badge — Market Percent
 
-Маркет-бейдж скидки/процента. Градиентная пилюля на роли **accent**: фон `chroma → core` слева направо, обводка `core`, текст `on`.
+Маркет-бейдж скидки/процента. Пилюля со сплошной заливкой на роли **accent**: фон и обводка `core`, текст `on`.
 
 **Figma:** [Badge / Market Precent](https://www.figma.com/design/UCYhMA1JeNUNuVGsxUEne7/%F0%9F%92%A0-Comp-%E2%86%AA-%C2%B9-Elemets?node-id=2093-5286)
 
@@ -27,7 +27,7 @@
 ## CSS
 
 `badge.css` (общий файл компонента):
-- база `.badge` — лейаут (inline-flex, gap, padding), градиентный фон, обводка inset box-shadow, типографика (цифры пропорциональные, как в макете);
+- база `.badge` — лейаут (inline-flex, gap, padding), сплошной фон, обводка inset box-shadow, типографика (цифры пропорциональные, как в макете);
 - слоты `.badge__icon` (или `> svg`) — размер из `--awds-badge-icon`; `.badge__label` — текст с ellipsis;
 - вариант `.badge-market-percent` — заполняет аккумуляторы цвета ролью accent;
 - 7 размеров `.badge--{600..50}` — заполняют аккумуляторы размера из shape `rectangle`.
@@ -39,7 +39,6 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-market-percent-bg-rest` | `accent-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-market-percent-chroma-rest` | `accent-chroma` |
 | border | `--awds-state-badge-market-percent-border-rest` | `accent-core` |
 | color (текст/иконки) | `--awds-state-badge-market-percent-color-rest` | `accent-on` |
 ## Размеры (shape rectangle)
@@ -47,7 +46,7 @@
 | Size | padding | gap | icon | rounded |
 |---|---|---|---|---|
 | 600 | space-4 (16) | space-2 (8) | space-5 (20) | rounded-600 |
-| 500 | space-3-5 (14) | space-1-5 (6) | space-5 (20) | rounded-500 |
+| 500 | space-3 (12) | space-1-5 (6) | space-5 (20) | rounded-500 |
 | 400 | space-2-5 (10) | space-1-5 (6) | space-5 (20) | rounded-400 |
 | 300 | space-2 (8) | space-1-5 (6) | space-5 (20) | rounded-300 |
 | 200 | space-2 (8) | space-1 (4) | space-4 (16) | rounded-200 |

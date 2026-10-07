@@ -33,7 +33,6 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-system-accent-bg-rest` | `accent-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-system-accent-chroma-rest` | `accent-chroma` |
 | border | `--awds-state-badge-system-accent-border-rest` | `accent-core` |
 | color (текст/иконки) | `--awds-state-badge-system-accent-color-rest` | `accent-on` |
 

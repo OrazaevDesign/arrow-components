@@ -33,7 +33,6 @@
 | Свойство | Ячейка State | Резолвится в |
 |---|---|---|
 | bg | `--awds-state-badge-status-paid-bg-rest` | `success-core` |
-| chroma (дрейф градиента) | `--awds-state-badge-status-paid-chroma-rest` | `success-chroma` |
 | border | `--awds-state-badge-status-paid-border-rest` | `success-core` |
 | color (текст/иконки) | `--awds-state-badge-status-paid-color-rest` | `success-on` |
 

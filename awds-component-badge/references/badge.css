@@ -6,7 +6,7 @@
 /* =============================================================================
    Badge — 17 вариантов в трёх семействах
    =============================================================================
-   Градиентная пилюля с опциональными иконками-слотами (prefix / suffix) и текстовым
+   Пилюля со сплошной заливкой, опциональными иконками-слотами (prefix / suffix) и текстовым
    лейблом. Статичный — состояний нет (только Rest). Тип Icon = та же пилюля без
    лейбла (только иконки).
 
@@ -17,8 +17,9 @@
      status  (6)  new, paid, paidclient, inprogress,  — стадия заказа
                   delivered, cancelled
 
-   Цвет каждого варианта задаёт ячейка слоя State — у бейджа четыре свойства
-   (bg, chroma, border, color) на вариант, и держит их студия. Своих значений в
+   Цвет каждого варианта задаёт ячейка слоя State — у бейджа три свойства
+   (bg, border, color) на вариант, и держит их студия. Ячейка chroma в студии
+   осталась, но макет её больше не читает: с 07.10.2026 заливка сплошная. Своих значений в
    вариантах нет вообще: ни одного rgb() с числами.
 
    В КОДЕ СТОИТ ЦЕЛЬ ЯЧЕЙКИ, А НЕ ОНА САМА. State и Size — приватные коллекции
@@ -35,7 +36,7 @@
             --awds-rounded-* и --awds-control-font-size-*. 7 ступеней 600..50,
             по умолчанию 400.
 
-   Приватные аккумуляторы: --awds-badge-bg/-chroma/-border/-color и
+   Приватные аккумуляторы: --awds-badge-bg/-border/-color и
    -padding/-gap/-rounded/-icon/-fs/-lh/-ls. (Не путать с DS shape-токенами
    --awds-rectangle-N-... — у тех всегда есть числовой сегмент размера.)
    ============================================================================= */
@@ -68,7 +69,9 @@
      должно: толщина правится в студии, а не в файле компонента. */
   --awds-badge-border-width: var(--awds-space-px);   /* #cell outline/offset */
   box-shadow: inset 0 0 0 var(--awds-badge-border-width) var(--awds-badge-border);
-  background: linear-gradient(to right, var(--awds-badge-chroma, var(--awds-badge-bg)), var(--awds-badge-bg));
+  /* Сплошная заливка ячейкой bg. До 07.10.2026 был градиент chroma → bg слева направо;
+     в макете его сняли у всех 17 вариантов (component-figma-check). */
+  background: var(--awds-badge-bg);
   color: var(--awds-badge-color);
 
   font-family: var(--awds-font-family-system);
@@ -111,7 +114,6 @@
 
 .badge-market-percent {
   --awds-badge-bg:     rgb(var(--accent-core));   /* #cell badge/market/percent/bg */
-  --awds-badge-chroma: rgb(var(--accent-chroma));   /* #cell badge/market/percent/chroma */
   --awds-badge-border: rgb(var(--accent-core));   /* #cell badge/market/percent/border */
   --awds-badge-color:  rgb(var(--accent-on));   /* #cell badge/market/percent/color */
 }
@@ -120,7 +122,6 @@
 
 .badge-market-sale {
   --awds-badge-bg:     rgb(var(--primary-core));   /* #cell badge/market/sale/bg */
-  --awds-badge-chroma: rgb(var(--primary-chroma));   /* #cell badge/market/sale/chroma */
   --awds-badge-border: rgb(var(--primary-core));   /* #cell badge/market/sale/border */
   --awds-badge-color:  rgb(var(--primary-on));   /* #cell badge/market/sale/color */
 }
@@ -129,7 +130,6 @@
 
 .badge-market-new {
   --awds-badge-bg:     rgb(var(--info-core));   /* #cell badge/market/new/bg */
-  --awds-badge-chroma: rgb(var(--info-chroma));   /* #cell badge/market/new/chroma */
   --awds-badge-border: rgb(var(--info-core));   /* #cell badge/market/new/border */
   --awds-badge-color:  rgb(var(--info-on));   /* #cell badge/market/new/color */
 }
@@ -138,7 +138,6 @@
 
 .badge-market-brand {
   --awds-badge-bg:     rgb(var(--secondary-core));   /* #cell badge/market/brand/bg */
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   /* #cell badge/market/brand/chroma */
   --awds-badge-border: rgb(var(--secondary-core));   /* #cell badge/market/brand/border */
   --awds-badge-color:  rgb(var(--secondary-on));   /* #cell badge/market/brand/color */
 }
@@ -147,21 +146,18 @@
 
 .badge-system-info {
   --awds-badge-bg:     rgb(var(--info-core));   /* #cell badge/system/info/bg */
-  --awds-badge-chroma: rgb(var(--info-chroma));   /* #cell badge/system/info/chroma */
   --awds-badge-border: rgb(var(--info-core));   /* #cell badge/system/info/border */
   --awds-badge-color:  rgb(var(--info-on));   /* #cell badge/system/info/color */
 }
 
 .badge-system-accent {
   --awds-badge-bg:     rgb(var(--accent-core));   /* #cell badge/system/accent/bg */
-  --awds-badge-chroma: rgb(var(--accent-chroma));   /* #cell badge/system/accent/chroma */
   --awds-badge-border: rgb(var(--accent-core));   /* #cell badge/system/accent/border */
   --awds-badge-color:  rgb(var(--accent-on));   /* #cell badge/system/accent/color */
 }
 
 .badge-system-secondary {
   --awds-badge-bg:     rgb(var(--secondary-core));   /* #cell badge/system/secondary/bg */
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   /* #cell badge/system/secondary/chroma */
   --awds-badge-border: rgb(var(--secondary-core));   /* #cell badge/system/secondary/border */
   --awds-badge-color:  rgb(var(--secondary-on-dim));   /* #cell badge/system/secondary/color */
 }
@@ -171,28 +167,24 @@
    rgb(var(…)) даёт полную прозрачность, и бейдж остаётся одним текстом. */
 .badge-system-ghost {
   --awds-badge-bg:     rgb(var(--extended-transparent));   /* #cell badge/system/ghost/bg */
-  --awds-badge-chroma: rgb(var(--extended-transparent));   /* #cell badge/system/ghost/chroma */
   --awds-badge-border: rgb(var(--extended-transparent));   /* #cell badge/system/ghost/border */
   --awds-badge-color:  rgb(var(--surface-on-high));   /* #cell badge/system/ghost/color */
 }
 
 .badge-system-success {
   --awds-badge-bg:     rgb(var(--success-core));   /* #cell badge/system/success/bg */
-  --awds-badge-chroma: rgb(var(--success-chroma));   /* #cell badge/system/success/chroma */
   --awds-badge-border: rgb(var(--success-core));   /* #cell badge/system/success/border */
   --awds-badge-color:  rgb(var(--success-on));   /* #cell badge/system/success/color */
 }
 
 .badge-system-warning {
   --awds-badge-bg:     rgb(var(--warning-core));   /* #cell badge/system/warning/bg */
-  --awds-badge-chroma: rgb(var(--warning-chroma));   /* #cell badge/system/warning/chroma */
   --awds-badge-border: rgb(var(--warning-core));   /* #cell badge/system/warning/border */
   --awds-badge-color:  rgb(var(--warning-on));   /* #cell badge/system/warning/color */
 }
 
 .badge-system-error {
   --awds-badge-bg:     rgb(var(--error-core));   /* #cell badge/system/error/bg */
-  --awds-badge-chroma: rgb(var(--error-chroma));   /* #cell badge/system/error/chroma */
   --awds-badge-border: rgb(var(--error-core));   /* #cell badge/system/error/border */
   --awds-badge-color:  rgb(var(--error-on));   /* #cell badge/system/error/color */
 }
@@ -201,42 +193,36 @@
 
 .badge-status-new {
   --awds-badge-bg:     rgb(var(--info-core));   /* #cell badge/status/new/bg */
-  --awds-badge-chroma: rgb(var(--info-chroma));   /* #cell badge/status/new/chroma */
   --awds-badge-border: rgb(var(--info-core));   /* #cell badge/status/new/border */
   --awds-badge-color:  rgb(var(--info-on));   /* #cell badge/status/new/color */
 }
 
 .badge-status-paid {
   --awds-badge-bg:     rgb(var(--success-core));   /* #cell badge/status/paid/bg */
-  --awds-badge-chroma: rgb(var(--success-chroma));   /* #cell badge/status/paid/chroma */
   --awds-badge-border: rgb(var(--success-core));   /* #cell badge/status/paid/border */
   --awds-badge-color:  rgb(var(--success-on));   /* #cell badge/status/paid/color */
 }
 
 .badge-status-paidclient {
   --awds-badge-bg:     rgb(var(--warning-core));   /* #cell badge/status/paidclient/bg */
-  --awds-badge-chroma: rgb(var(--warning-chroma));   /* #cell badge/status/paidclient/chroma */
   --awds-badge-border: rgb(var(--warning-core));   /* #cell badge/status/paidclient/border */
   --awds-badge-color:  rgb(var(--warning-on));   /* #cell badge/status/paidclient/color */
 }
 
 .badge-status-inprogress {
   --awds-badge-bg:     rgb(var(--info-container-core));   /* #cell badge/status/inprogress/bg */
-  --awds-badge-chroma: rgb(var(--info-container-chroma));   /* #cell badge/status/inprogress/chroma */
   --awds-badge-border: rgb(var(--info-container-core));   /* #cell badge/status/inprogress/border */
   --awds-badge-color:  rgb(var(--info-container-on-high));   /* #cell badge/status/inprogress/color */
 }
 
 .badge-status-delivered {
   --awds-badge-bg:     rgb(var(--secondary-core));   /* #cell badge/status/delivered/bg */
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   /* #cell badge/status/delivered/chroma */
   --awds-badge-border: rgb(var(--secondary-core));   /* #cell badge/status/delivered/border */
   --awds-badge-color:  rgb(var(--secondary-on-dim));   /* #cell badge/status/delivered/color */
 }
 
 .badge-status-cancelled {
   --awds-badge-bg:     rgb(var(--secondary-core));   /* #cell badge/status/cancelled/bg */
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   /* #cell badge/status/cancelled/chroma */
   --awds-badge-border: rgb(var(--secondary-core));   /* #cell badge/status/cancelled/border */
   --awds-badge-color:  rgb(var(--secondary-on-dim));   /* #cell badge/status/cancelled/color */
 }
@@ -254,7 +240,7 @@
 }
 
 .badge--500 {
-  --awds-badge-padding: var(--awds-space-3-5);
+  --awds-badge-padding: var(--awds-space-3);
   --awds-badge-gap:     var(--awds-space-1-5);
   --awds-badge-rounded: var(--awds-rounded-border-radius-500);
   --awds-badge-icon:    var(--awds-space-5);
