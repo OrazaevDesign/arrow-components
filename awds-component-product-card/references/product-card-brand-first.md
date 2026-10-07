@@ -1,6 +1,6 @@
 # Product Card — brand-first
 
-Карточка товара в раскладке **brand-first**: контент **по центру**, порядок **бренд → название → рейтинг → цена → кнопка «В корзину»**. Фото 3:4 с оверлеями (флаг страны слева, избранное справа, маркет-бейджи по центру). До 27.09.2026 здесь стояло «флага страны нет» — решение первичной сборки скилла; текущий макет держит флаг в обеих вьюхах `brand-first`.
+Карточка товара в раскладке **brand-first**: контент **по центру**, порядок **бренд → название → цена → кнопка «В корзину» → рейтинг** (с 1.4.0 отзывы под корзиной, как в макете; до 07.10.2026 рейтинг стоял перед ценой). Фото 3:4 с оверлеями (флаг страны слева, избранное справа, маркет-бейджи по центру). До 27.09.2026 здесь стояло «флага страны нет» — решение первичной сборки скилла; текущий макет держит флаг в обеих вьюхах `brand-first`.
 
 **Figma:** [product-card / brand-first](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59648)
 
@@ -35,6 +35,10 @@
       </span>
     </div>
 
+    <!-- Стрелки галереи — только при 2+ кадрах (разметка и поведение — как в price-first):
+         <div class="pcard__nav"> с двумя button.obtn.obtn-secondary.obtn--100.obtn--icon-only.pcard__nav-btn
+         (--prev «Предыдущее фото» / --next «Следующее фото»). Подключи button-overhung-secondary.css. -->
+
     <!-- Бейджи (по центру) — компонент awds-component-badge. Mobile: .badge--50 -->
     <div class="pcard__badges">
       <span class="badge badge-market-percent badge--100">10%</span>
@@ -52,23 +56,16 @@
     <a class="pcard__brand" href="/brand/nike">Brandname</a>
     <!-- #3 название → товар -->
     <a class="pcard__name" href="/product/123">Название товара которое ложится в строку</a>
-    <!-- отзывы — статичный блок (НЕ ссылка): ★ рейтинг · 💬 счётчик -->
-    <div class="pcard__feedback">
-      <svg class="pcard__rating-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.4 9.9 5.3l4.3.62-3.1 3 .73 4.28L8 11.18 4.17 13.2l.73-4.28-3.1-3 4.3-.62Z"/></svg>
-      <span class="pcard__rating-value">4.9</span>
-      <svg class="pcard__reviews-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2C4.27 2 1.25 4.42 1.25 7.4c0 1.52.8 2.88 2.06 3.86-.13.92-.55 1.72-1.16 2.34 1.2.05 2.4-.32 3.34-1.02.74.22 1.56.34 2.51.34 3.73 0 6.75-2.42 6.75-5.52S11.73 2 8 2Z"/></svg>
-      <span class="pcard__reviews-count">23 отзыва</span>
-    </div>
     <!-- цена — компонент awds-component-price (подключи price.css): размер задаёт карточка (.typo-*) -->
     <div class="pcard__price">
       <span class="price price-default">
         <span class="price__main"><span class="price__current">1 900</span><span class="price__currency">₽</span></span>
       </span>
     </div>
-    <!-- Зона корзины (Figma .AddCart). ОБЕ вью всегда в DOM (сложены стопкой);
-         активную задаёт data-cart-state на .pcard__cart (button | stepper),
-         переключение — плавный кросс-фейд (CSS). Потребитель только меняет
-         атрибут (см. wireStepper ниже). Дефолт без атрибута = button. -->
+    <!-- Зона корзины (Figma .AddCart). Компонент держит ОБЕ вью (button | stepper),
+         активную задаёт data-cart-state, переключение — кросс-фейд (CSS, см. wireStepper).
+         Товарные слайдеры с 07.10.2026 выводят ТОЛЬКО вью button, а кнопка открывает
+         модалку Atlas — см. «Кнопка корзины в блоках» ниже. -->
     <div class="pcard__cart" data-cart-state="button">
       <!-- Вью A — кнопка (товара нет в корзине) -->
       <div class="pcard__cart-view pcard__cart-view--button">
@@ -92,6 +89,15 @@
           <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 16a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM1.2 2a1 1 0 1 0 0 2h1.6l2.1 9.05a1 1 0 0 0 .98.77h9.02a1 1 0 0 0 .96-.72l1.74-6.05A.85.85 0 0 0 17.78 6H5.07l-.44-1.99A1 1 0 0 0 3.66 2H1.2Z"/></svg>
         </button>
       </div>
+    </div>
+    <!-- отзывы — статичный блок (НЕ ссылка): ★ рейтинг · 💬 счётчик. С 1.4.0 — ПОСЛЕДНЯЯ строка,
+         под зоной корзины. Товар без отзывов → пустой резерв:
+         <div class="pcard__feedback pcard__feedback--empty" aria-hidden="true"></div> -->
+    <div class="pcard__feedback">
+      <svg class="pcard__rating-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.4 9.9 5.3l4.3.62-3.1 3 .73 4.28L8 11.18 4.17 13.2l.73-4.28-3.1-3 4.3-.62Z"/></svg>
+      <span class="pcard__rating-value">4.9</span>
+      <svg class="pcard__reviews-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2C4.27 2 1.25 4.42 1.25 7.4c0 1.52.8 2.88 2.06 3.86-.13.92-.55 1.72-1.16 2.34 1.2.05 2.4-.32 3.34-1.02.74.22 1.56.34 2.51.34 3.73 0 6.75-2.42 6.75-5.52S11.73 2 8 2Z"/></svg>
+      <span class="pcard__reviews-count">23 отзыва</span>
     </div>
   </div>
 </div>
@@ -149,17 +155,30 @@
 | Элемент | href / действие | Hover |
 |---|---|---|
 | `.pcard__image-link` (#1) | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · 3%-скрим `opacity → 0` |
-| `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-core` |
-| `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-core` |
+| `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-core` (`link/accent`) |
+| `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-core` (`link/accent`) |
+| `.pcard__category` (если включена) | рубрика | цвет `surface-on-high → accent-core` (`link/heading`; до 1.4.0 — `link/muted`, hover `surface-on-highest`) |
+| `.pcard__nav-btn` | предыдущий / следующий кадр | button-overhung secondary, 60% → 90%; видны на десктопе при наведении на фото, как в price-first |
 | `.pcard__feedback` | — (не ссылка) | статичный: ★ warning · рейтинг surface-on-highest · 💬 иконка surface-on · счётчик surface-on-high |
 | `.pcard__cart` (зона корзины) | добавить / менять кол-во | обе вью (`--button` / `--stepper`) в DOM, активную задаёт `data-cart-state`; переключение — **плавный кросс-фейд** (прерываемый, MIFB) |
 | `.btn-favorites` | избранное | свой компонент (toggle `aria-pressed`) |
 
 Теней нет. Фокус — на каждой ссылке отдельно. Бейджи/флаг не перехватывают hover фото (`pointer-events:none`). Переходы гасятся при `prefers-reduced-motion`.
 
+## Кнопка корзины в блоках
+
+Товарные слайдеры (`awds-category-product-slider-center` и соседи) с 07.10.2026 выводят только вью `button`: кнопка несёт атрибуты штатной мини-карточки Atlas и открывает её модалку быстрого просмотра — выбор вариации, доставка, количество. Свой JS не нужен. Разметка, причина и цена решения — в `SKILL.md`, раздел «Зона корзины».
+
+```html
+<button type="button" class="btn btn-primary btn--400"
+        data-selector="mini-product-card:root"
+        data-product-id="{{ p.id }}"
+        data-product-variation-id="{{ p.variation.id }}">…иконка…В корзину</button>
+```
+
 ## Степпер корзины (JS потребителя)
 
-Идентично `buy-now`. Зона `.pcard__cart` держит **обе** вью (`.pcard__cart-view--button` и `.pcard__cart-view--stepper`) в DOM, сложенные стопкой; активную выбирает `data-cart-state="button|stepper"`. Смена атрибута = **плавный кросс-фейд** (appear 0.3s cross-fade easing, hide 0.15s ease-in — прерываемый `transition`). Число `.pcard__stepper-value` при смене получает мягкий bump (`@keyframes pcard-stepper-bump`), ретриггер — тогл класса `--bump` с reflow. Готовый `wireStepper` см. в [product-card-buy-now.md](product-card-buy-now.md#степпер-корзины-js-потребителя). Карточка даёт визуальные хуки, логику количества подставляет потребитель.
+Возможность компонента; блоки ею не пользуются (см. выше). Идентично `buy-now`. Зона `.pcard__cart` держит **обе** вью (`.pcard__cart-view--button` и `.pcard__cart-view--stepper`) в DOM, сложенные стопкой; активную выбирает `data-cart-state="button|stepper"`. Смена атрибута = **плавный кросс-фейд** (appear 0.3s cross-fade easing, hide 0.15s ease-in — прерываемый `transition`). Число `.pcard__stepper-value` при смене получает мягкий bump (`@keyframes pcard-stepper-bump`), ретриггер — тогл класса `--bump` с reflow. Готовый `wireStepper` см. в [product-card-buy-now.md](product-card-buy-now.md#степпер-корзины-js-потребителя). Карточка даёт визуальные хуки, логику количества подставляет потребитель.
 
 ## Поля для биндинга (PageCraft / SSR)
 
@@ -167,15 +186,16 @@
 |---|---|
 | Ссылка на товар | `.pcard__image-link[href]` + `.pcard__name[href]` |
 | Ссылка на бренд | `.pcard__brand[href]` |
-| Ссылка на отзывы | `.pcard__feedback[href]` |
 | Фото | `.pcard__image[src]` / `.pcard__image-link[aria-label]` |
 | Цена | компонент `.price` (`.price__current` число, `.price__currency` символ); состояния default / sale / none — как в price-first |
 | Бренд / Название | `.pcard__brand` / `.pcard__name` |
 | Рейтинг | `.pcard__rating-value` (число) |
-| Счётчик отзывов | `.pcard__reviews-count` |
+| Счётчик отзывов | `.pcard__reviews-count` — число и склонённое слово: «1 отзыв / 2 отзыва / 5 отзывов» |
+| Отзывов нет | `.pcard__feedback.pcard__feedback--empty[aria-hidden="true"]` — пустой резерв высоты |
 | Галерея фото | несколько `.pcard__image[src]` + `.pcard__slider` (одно фото → `.pcard__slider-spacer`) |
 | Скидка % | `.badge-market-percent` |
-| Корзина | `.pcard__cart[data-cart-state]`: вью `--button` (`.btn-primary`) ↔ вью `--stepper` (`.pcard__stepper-value` = кол-во, `.btn-ghost` −/+, `.btn-addition` = подтвердить); кросс-фейд, см. «Степпер корзины» |
+| Корзина (блоки) | кнопка `.btn-primary` во вью `--button`: `data-selector="mini-product-card:root"`, `data-product-id`, `data-product-variation-id`; нет в наличии → `disabled` без атрибутов |
+| Корзина (возможность компонента) | `.pcard__cart[data-cart-state]`: вью `--button` ↔ вью `--stepper` (`.pcard__stepper-value` = кол-во, `.btn-ghost` −/+, `.btn-addition` = подтвердить); кросс-фейд, см. «Степпер корзины» |
 | Избранное | `.btn-favorites[aria-pressed]` |
 
 **Необязательные строки.** Три строки контента включаются свойствами макета, и в каждом варианте есть все три:
@@ -186,8 +206,8 @@
 | `show-feedback` | `<div class="pcard__feedback">` — рейтинг и отзывы целиком | вкл. |
 | `show-cart` | `<div class="pcard__cart">` — зона корзины (кнопка и степпер) | вкл. |
 
-Выключенное свойство означает, что элемента нет в разметке. Не прячь его через `hidden` или `display:none`: данные останутся в SSR-ответе. CSS править не нужно — у каждой строки свой верхний отступ, соседи от неё не зависят, и карточка просто становится ниже, как в макете. Порядок строк — как в разметке выше; рубрика идёт сразу после названия, зона корзины — последней.
+Выключенное свойство означает, что элемента нет в разметке. Не прячь его через `hidden` или `display:none`: данные останутся в SSR-ответе. CSS править не нужно — у каждой строки свой верхний отступ, соседи от неё не зависят, и карточка просто становится ниже, как в макете. Порядок строк — как в разметке выше: рубрика идёт сразу после названия, отзывы — последними, под зоной корзины (с 1.4.0). Включённые отзывы стоят у каждой карточки: товару без отзывов — пустой резерв `.pcard__feedback--empty` (см. `product-card-price-first.md`).
 
 ## Токены
 
-Все значения — через DS. Цвета: бренд / название `surface-on-highest` (роль `link/accent`); рейтинг «4.9» `surface-on-highest`; 💬 иконка отзывов `surface-on`; счётчик отзывов `surface-on-high`; звезда `warning-core`; фон медиа `surface-bright`; скрим `surface-on-highest` @ `opacity-5` (≈3%); hover ссылок (бренд/название) `accent-core`. Цена — компонент `awds-component-price` (свои токены). Теней нет. Бейджи, кнопки, избранное — внешние компоненты (`badge.css`, `button.css`, `button-favorites.css`). Степпер (Figma `.AddCart`): контейнер-инпут (Input/Secondary) — sheen-градиент `secondary-chroma → secondary-core` + бордер `secondary-core`; число (form-control placeholder) `secondary-container-on-high`; gap зоны `space-2`; скругление инпута `rectangle-400-rounded`. Кнопки −/+ и корзины — `awds-component-button` (ghost / addition, `.btn--icon-only`).
+Все значения — через DS. Цвета: бренд / название `surface-on-highest` (роль `link/accent`); рейтинг «4.9» `surface-on-highest`; 💬 иконка отзывов `surface-on`; счётчик отзывов `surface-on-high`; звезда `warning-core`; фон медиа `surface-bright`; скрим `surface-on-highest` @ `opacity-5` (≈3%); hover ссылок (бренд/название/рубрика) `accent-core`; рубрика в покое `surface-on-high` (`link/heading`). Цена — компонент `awds-component-price` (свои токены). Теней нет. Бейджи, кнопки, избранное — внешние компоненты (`badge.css`, `button.css`, `button-favorites.css`). Степпер (Figma `.AddCart`): контейнер-инпут (Input/Secondary) — sheen-градиент `secondary-chroma → secondary-core` + бордер `secondary-core`; число (form-control placeholder) `secondary-container-on-high`; gap зоны `space-2`; скругление инпута `rectangle-400-rounded`. Кнопки −/+ и корзины — `awds-component-button` (ghost / addition, `.btn--icon-only`).

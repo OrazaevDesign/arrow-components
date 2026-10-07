@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="../../awds-component-button/references/button-primary.css">
   <link rel="stylesheet" href="../../awds-component-button/references/button-ghost.css">
   <link rel="stylesheet" href="../../awds-component-button/references/button-addition.css">
+  <link rel="stylesheet" href="../../awds-component-button-overhung/references/button-overhung-secondary.css">
   <link rel="stylesheet" href="../../awds-component-tooltip/references/tooltip.css">
   <link rel="stylesheet" href="../../awds-component-slider/references/slider.css">
   <link rel="stylesheet" href="../../awds-component-price/references/price.css">
@@ -65,7 +66,7 @@
 <body>
 
   <h1>product-card / storybook</h1>
-  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — рейтинг → бренд → название → цена → кнопка «В корзину» → цвета, по центру, с флагом страны. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: скрим уходит, без зума и теней. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель. Переключи тему / скругление / вариант / корзину.</p>
+  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — бренд → название → цена → кнопка «В корзину» → рейтинг, по центру, с флагом страны. <code>buy-now</code> и <code>button-price</code> — рейтинг тоже последним, под корзиной; в <code>price-first</code> с включённой корзиной — так же (1.4.2). При 2+ кадрах на десктопе по наведению на фото появляются стрелки галереи (button-overhung secondary 100). Отзывы «нет отзывов (резерв)» — пустая строка той же высоты. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: скрим уходит, без зума и теней. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель (товарные слайдеры выводят только <code>button</code> и открывают модалку Atlas). Переключи тему / скругление / вариант / корзину.</p>
 
   <div class="toolbar">
     <label>Вариант:
@@ -124,6 +125,7 @@
     <label>Отзывы:
       <select id="feedback">
         <option value="on" selected>показывать</option>
+        <option value="empty">нет отзывов (резерв)</option>
         <option value="off">скрыть</option>
       </select>
     </label>
@@ -239,6 +241,16 @@
     // Флаг страны: триггер .pcard__country.pcard__tip, текст = страна (из данных карточки)
     const country = (name) =>
       `<span class="pcard__country pcard__tip">${flagDE}${tip(name)}</span>`;
+    // Стрелки галереи (с 1.4.0): компонент button-overhung / secondary 100, только при 2+ кадрах.
+    // Видны на десктопе при наведении на фото; в мобильной вью их прячет CSS карточки.
+    const icPrev = `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg>`;
+    const icNext = `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4l6 6-6 6"/></svg>`;
+    const navArrows = (opts) => (opts.image === 'with' && (opts.frames || 3) > 1)
+      ? `<div class="pcard__nav">`
+        + `<button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--prev" aria-label="Предыдущее фото">${icPrev}</button>`
+        + `<button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--next" aria-label="Следующее фото">${icNext}</button>`
+        + `</div>`
+      : '';
     const badges = (mobile) => {
       const sz = mobile ? 'badge--50' : 'badge--100';
       return `<span class="badge badge-market-percent ${sz}">10%</span><span class="badge badge-market-sale ${sz}">Скидка</span>`;
@@ -285,7 +297,9 @@
     };
 
     // Строка отзывов целиком — свойство show-feedback в макете. Выключено — блока нет в разметке.
+    // empty — товар без отзывов при включённой строке: пустой резерв той же высоты (с 1.4.0).
     const feedbackRow = (show) => show === 'off' ? '' :
+      show === 'empty' ? '<div class="pcard__feedback pcard__feedback--empty" aria-hidden="true"></div>' :
       `<div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>`;
 
     // Рубрика и зона корзины — свойства show-category / show-cart в макете, есть во всех
@@ -312,6 +326,7 @@
       ${country('Германия')}
       ${favBtn(mobile, opts.fav)}
     </div>
+    ${navArrows(opts)}
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
   ${opts.image === 'with' && frames > 1
@@ -322,8 +337,8 @@
     <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в две строки</a>
     ${categoryRow(opts)}
-    ${feedbackRow(opts.feedback)}
     ${cartRow(mobile, opts)}
+    ${feedbackRow(opts.feedback)}
   </div>
 </div>`;
     }
@@ -339,6 +354,7 @@
       ${country('Германия')}
       ${favBtn(mobile, opts.fav)}
     </div>
+    ${navArrows(opts)}
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
   ${opts.image === 'with' && frames > 1
@@ -348,9 +364,9 @@
     <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
     ${categoryRow(opts)}
-    ${feedbackRow(opts.feedback)}
     <div class="pcard__price">${priceBlock(mobile, opts.price)}</div>
     ${cartRow(mobile, opts)}
+    ${feedbackRow(opts.feedback)}
   </div>
 </div>`;
     }
@@ -366,6 +382,7 @@
       ${country('Германия')}
       ${favBtn(mobile, opts.fav)}
     </div>
+    ${navArrows(opts)}
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
   ${opts.image === 'with' && frames > 1
@@ -375,8 +392,8 @@
     ${priceBlock(mobile, opts.price)}
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
     ${categoryRow(opts)}
-    ${feedbackRow(opts.feedback)}
     ${cartRow(mobile, opts)}
+    ${feedbackRow(opts.feedback)}
   </div>
 </div>`;
     }
@@ -392,6 +409,7 @@
       ${country('Германия')}
       ${favBtn(mobile, opts.fav)}
     </div>
+    ${navArrows(opts)}
     <div class="pcard__badges">${badges(mobile)}</div>
   </div>
   ${opts.image === 'with' && frames > 1
@@ -401,8 +419,8 @@
     <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
     ${categoryRow(opts)}
-    ${feedbackRow(opts.feedback)}
     ${cartRow(mobile, opts)}
+    ${feedbackRow(opts.feedback)}
   </div>
 </div>`;
     }
@@ -463,14 +481,28 @@
         layoutDots(current);
       };
 
+      // Стрелки (с 1.4.0): листают по кадру, по кругу. Нажатая стрелка «держит» кадр —
+      // пока курсор на фото, hover-зоны его не перебивают; уход с фото возвращает первый.
+      let manual = false;
+      const media = link.closest('.pcard__media');
+      (media ? media.querySelectorAll('.pcard__nav-btn') : []).forEach((b) => {
+        b.addEventListener('click', (e) => {
+          e.preventDefault();
+          warm();
+          manual = true;
+          setActive((current + (b.classList.contains('pcard__nav-btn--prev') ? -1 : 1) + n) % n);
+        });
+      });
+
       // Десктоп (мышь): hover-зоны.
       link.addEventListener('pointermove', (e) => {
-        if (e.pointerType !== 'mouse') return;
+        if (e.pointerType !== 'mouse' || manual) return;
         const r = link.getBoundingClientRect();
         setActive(Math.floor((e.clientX - r.left) / r.width * n));
       });
-      link.addEventListener('pointerleave', (e) => {
-        if (e.pointerType === 'mouse') setActive(0);
+      // Сброс — по уходу с медиа, а не со ссылки: стрелки лежат рядом со ссылкой.
+      (media || link).addEventListener('pointerleave', (e) => {
+        if (e.pointerType === 'mouse') { manual = false; setActive(0); }
       });
 
       // Мобила/таблет (тач/перо): свайп. touch-action:pan-y (в CSS) отдаёт вертикальный

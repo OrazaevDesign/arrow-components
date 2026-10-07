@@ -1,6 +1,6 @@
 # Product Card — price-first
 
-Карточка товара в раскладке **price-first**: цена → бренд → название → рейтинг. Фото 3:4 с оверлеями (страна-поставщик, избранное, маркет-бейджи).
+Карточка товара в раскладке **price-first**: цена → бренд → название → (рубрика) → (корзина) → рейтинг; отзывы всегда последней строкой, под корзиной, если она включена (с 1.4.2). Фото 3:4 с оверлеями (страна-поставщик, избранное, маркет-бейджи).
 
 **Figma:** [product-card / price-first](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59619)
 
@@ -96,9 +96,10 @@
 
 Если у товара несколько фото — вложи **несколько** `<img class="pcard__image">` в ссылку-фото (первый помечен `.pcard__image--active`) и добавь индикатор `awds-component-slider` (вариант **dots-mini**, подключи `slider.css`) **между `.pcard__media` и `.pcard__content`** (как в макете — по центру, под фото; НЕ оверлеем). Число точек = числу кадров.
 
-Листание работает в двух режимах, оба — через один `wireGallery` (ниже):
+Листание работает в трёх режимах, все — через один `wireGallery` (ниже):
 
-- **Десктоп (мышь)** — наведение делит фото на равные вертикальные зоны по числу кадров: позиция курсора по X выбирает активный кадр и активную точку; уход курсора возвращает к первому.
+- **Десктоп (мышь)** — наведение делит фото на равные вертикальные зоны по числу кадров: позиция курсора по X выбирает активный кадр и активную точку; уход курсора с `.pcard__media` возвращает к первому.
+- **Стрелки** `.pcard__nav` (с 1.4.0) — две кнопки `awds-component-button-overhung` / secondary 100 по краям фото, по центру высоты, поле `space-2` (8px). Клик листает по кадру **по кругу**: `(current ± 1 + n) % n`. После клика hover-зоны выключаются, пока курсор на фото, — иначе первое же движение мыши перебило бы выбранный стрелкой кадр. Видны только на десктопе, при наведении на фото или фокусе внутри; на тач-экранах и в `.pcard--mobile` стрелок нет. Подключи `button-overhung-secondary.css`.
 - **Мобила / таблет (тач)** — **свайп** влево/вправо листает кадры по одному. Вертикальный скролл страницы остаётся нативным (в CSS ссылка-фото несёт `touch-action: pan-y`), горизонтальный жест уходит в JS. Свайп не открывает карточку товара — клик по ссылке после жеста подавляется.
 
 Кадры — кроссфейд (CSS), смена активного — JS потребителя (ниже).
@@ -125,6 +126,12 @@
       <img class="pcard__image" src="/img/123-3.jpg" alt="Название товара — фото 3">
     </a>
     <div class="pcard__top">…</div>
+    <!-- Стрелки галереи — только при 2+ кадрах. Компонент awds-component-button-overhung,
+         secondary 100 (подключи button-overhung-secondary.css). После .pcard__top, перед бейджами. -->
+    <div class="pcard__nav">
+      <button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--prev" aria-label="Предыдущее фото"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg></button>
+      <button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--next" aria-label="Следующее фото"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4l6 6-6 6"/></svg></button>
+    </div>
     <div class="pcard__badges">…</div>
   </div>
 
@@ -140,12 +147,12 @@
 </div>
 ```
 
-JS-обвязка потребителя (десктоп — hover-зоны, мобила/таблет — свайп):
+JS-обвязка потребителя (десктоп — hover-зоны и стрелки, мобила/таблет — свайп). Эталон — функция `wireGallery` в `blocks/awds-category-product-slider/script.js`; ниже она же, без блоковой обвязки:
 
 ```js
 function wireGallery(link) {
-  const imgs = [...link.querySelectorAll('.pcard__image')];
-  if (imgs.length < 2) return;                       // одиночное фото — листать нечего
+  var imgs = Array.prototype.slice.call(link.querySelectorAll('.pcard__image'));
+  if (imgs.length < 2) return;                       // одно фото — листать нечего
   // Прогрев: кадры декодируем заранее, на первое наведение или касание. Иначе новый
   // кадр проявлялся ещё не нарисованным и «вспыхивал», когда браузер его дорисовывал.
   var warmed = false;
@@ -156,82 +163,93 @@ function wireGallery(link) {
   }
   link.addEventListener('pointerenter', warm);
   link.addEventListener('pointerdown', warm);
-  const card = link.closest('.pcard');
-  const slider = card.querySelector('.pcard__slider');
-  const dots = slider ? [...slider.querySelectorAll('.slider__dot')] : [];
-  const track = slider ? slider.querySelector('.pcard__slider-track') : null;
-  const many = slider ? slider.classList.contains('pcard__slider--many') : false;
-  const n = imgs.length;
-  let current = 0;
-
-  // Окно индикатора (много кадров): лента сдвигается, держа активную по центру окна.
-  // Центрируем ПИКСЕЛЬНО (offsetLeft/offsetWidth не зависят от transform и корректны
-  // при удлинённой активной точке). Крайние точки окна уменьшаются (--sm).
-  const layoutDots = (i) => {
+  var pcard = link.closest ? link.closest('.pcard') : null;
+  var slider = pcard ? pcard.querySelector('.pcard__slider') : null;
+  var dots = slider ? Array.prototype.slice.call(slider.querySelectorAll('.slider__dot')) : [];
+  var track = slider ? slider.querySelector('.pcard__slider-track') : null;
+  var many = slider ? slider.classList.contains('pcard__slider--many') : false;
+  var n = imgs.length, current = 0;
+  // Много кадров: индикатор — фикс-окно, лента сдвигается, держа активную точку по
+  // центру. Центрируем пиксельно (offsetLeft/offsetWidth не зависят от transform и
+  // корректны при удлинённой активной точке); крайние точки окна уменьшаем (--sm).
+  function layoutDots(i) {
     if (!many || !track || !dots.length) return;
-    const cs = getComputedStyle(slider);
-    const winW = slider.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
-    const x0 = dots[0].offsetLeft;
-    const center = (d) => (d.offsetLeft - x0) + d.offsetWidth / 2;
-    const trackW = (dots[n - 1].offsetLeft - x0) + dots[n - 1].offsetWidth;
-    let shift = winW / 2 - center(dots[i]);
-    shift = Math.min(0, Math.max(shift, winW - trackW));     // не выходим за края ленты
-    track.style.setProperty('--pcard-dots-shift', `${shift}px`);
-    const moreLeft = shift < -0.5, moreRight = shift > (winW - trackW) + 0.5;
-    dots.forEach((d) => {
-      const c = center(d) + shift;
+    var cs = getComputedStyle(slider);
+    var winW = slider.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
+    var x0 = dots[0].offsetLeft;
+    var center = function (d) { return (d.offsetLeft - x0) + d.offsetWidth / 2; };
+    var trackW = (dots[n - 1].offsetLeft - x0) + dots[n - 1].offsetWidth;
+    var shift = Math.min(0, Math.max(winW / 2 - center(dots[i]), winW - trackW));
+    track.style.setProperty('--pcard-dots-shift', shift + 'px');
+    var moreLeft = shift < -0.5, moreRight = shift > (winW - trackW) + 0.5;
+    dots.forEach(function (d) {
+      var c = center(d) + shift;
       d.classList.toggle('slider__dot--sm', (moreLeft && c < winW * 0.18) || (moreRight && c > winW * 0.82));
     });
-  };
-  const setActive = (i) => {
+  }
+  function setActive(i) {
     current = Math.min(n - 1, Math.max(0, i));
-    imgs.forEach((im, k) => im.classList.toggle('pcard__image--active', k === current));
-    dots.forEach((d, k) => d.classList.toggle('slider__dot--active', k === current));
+    imgs.forEach(function (im, k) { im.classList.toggle('pcard__image--active', k === current); });
+    dots.forEach(function (d, k) { d.classList.toggle('slider__dot--active', k === current); });
     layoutDots(current);
-  };
-
-  // Десктоп (мышь): перелистывание по hover-зонам.
-  link.addEventListener('pointermove', (e) => {
-    if (e.pointerType !== 'mouse') return;
-    const r = link.getBoundingClientRect();
+  }
+  // Стрелки (с 07.10.2026): листают по кадру, по кругу. Нажатая стрелка «держит» кадр —
+  // пока курсор на фото, hover-зоны его не перебивают; уход с фото возвращает первый кадр.
+  var manual = false;
+  var media = link.closest ? link.closest('.pcard__media') : null;
+  Array.prototype.forEach.call(media ? media.querySelectorAll('.pcard__nav-btn') : [], function (b) {
+    b.addEventListener('click', function (e) {
+      e.preventDefault();
+      warm();
+      manual = true;
+      setActive((current + (b.classList.contains('pcard__nav-btn--prev') ? -1 : 1) + n) % n);
+    });
+  });
+  // Десктоп (мышь): hover-зоны.
+  link.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse' || manual) return;
+    var r = link.getBoundingClientRect();
     setActive(Math.floor((e.clientX - r.left) / r.width * n));
   });
-  link.addEventListener('pointerleave', (e) => {
-    if (e.pointerType === 'mouse') setActive(0);
+  // Сброс — по уходу с медиа, а не со ссылки: стрелки лежат рядом со ссылкой, и переход
+  // курсора на стрелку не должен возвращать первый кадр.
+  (media || link).addEventListener('pointerleave', function (e) {
+    if (e.pointerType === 'mouse') { manual = false; setActive(0); }
   });
-
-  // Мобила/таблет (тач/перо): свайп влево/вправо. CSS даёт ссылке touch-action:pan-y —
-  // вертикальный скролл страницы остаётся нативным, горизонталь приходит сюда. Порог
-  // SWIPE листает по одному кадру; ребейз sx позволяет длинному свайпу листать дальше.
-  // После свайпа гасим клик по ссылке, чтобы жест не открыл карточку товара.
-  const SWIPE = 32;                                  // порог, px
-  let sx = 0, sy = 0, axis = '', dragging = false, swiped = false;
-  link.addEventListener('pointerdown', (e) => {
+  // Мобила/таблет (тач/перо): свайп. Порог SWIPE листает по одному кадру; ребейз sx —
+  // длинный свайп листает дальше. После свайпа гасим клик, чтобы жест не открыл товар.
+  var SWIPE = 32, sx = 0, sy = 0, axis = '', dragging = false, swiped = false;
+  link.addEventListener('pointerdown', function (e) {
     if (e.pointerType === 'mouse') return;
-    dragging = true; swiped = false; axis = '';
-    sx = e.clientX; sy = e.clientY;
+    // ниже десктопа точки спрятаны (offsetParent null) — свайп отдаём ленте карусели
+    if (!slider || slider.offsetParent === null) return;
+    dragging = true; swiped = false; axis = ''; sx = e.clientX; sy = e.clientY;
   });
-  link.addEventListener('pointermove', (e) => {
+  link.addEventListener('pointermove', function (e) {
     if (e.pointerType === 'mouse' || !dragging) return;
-    const dx = e.clientX - sx, dy = e.clientY - sy;
-    if (!axis && Math.hypot(dx, dy) > 8) axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    var dx = e.clientX - sx, dy = e.clientY - sy;
+    if (!axis && Math.sqrt(dx * dx + dy * dy) > 8) axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
     if (axis === 'x' && Math.abs(dx) >= SWIPE) {
       setActive(current + (dx < 0 ? 1 : -1));        // влево → следующий, вправо → предыдущий
-      swiped = true;
-      sx = e.clientX;                                // ребейз под следующий шаг того же жеста
+      swiped = true; sx = e.clientX;
     }
   });
-  link.addEventListener('pointerup',     () => { dragging = false; });
-  link.addEventListener('pointercancel', () => { dragging = false; axis = ''; });
-  link.addEventListener('click', (e) => { if (swiped) { e.preventDefault(); swiped = false; } });
-
+  link.addEventListener('pointerup', function () { dragging = false; });
+  link.addEventListener('pointercancel', function () { dragging = false; axis = ''; });
+  link.addEventListener('click', function (e) { if (swiped) { e.preventDefault(); swiped = false; } }, true);
   setActive(0);
 }
-// Свайп/hover — во всех вариантах карточки; селектор ловит любую ссылку-фото.
+// Во всех вариантах карточки; селектор ловит любую ссылку-фото. Стрелки функция находит
+// сама — в .pcard__media той же карточки.
 document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 ```
 
-Одиночное фото (без `.pcard__image--active` и без `.pcard__slider`) работает как прежде — `wireGallery` его пропускает. Мало кадров (≤ окна) — обычные точки без `.pcard__slider--many`/`-track`. Свайп доступен на всех тач-устройствах независимо от числа кадров (≥2).
+Две детали кода, которые легко потерять при переносе:
+
+- **Сброс — по `pointerleave` с `.pcard__media`, а не со ссылки.** Стрелки лежат рядом со ссылкой-фото, не внутри неё. Слушай уход со ссылки — переход курсора на стрелку сбрасывал бы кадр на первый.
+- **Свайп включается, только когда точки видны** (`slider.offsetParent !== null`). Блоки прячут точки ниже десктопа, и тогда свайп по фото листает ленту карусели, а не кадры.
+
+Одиночное фото (без `.pcard__image--active`, без `.pcard__slider` и без `.pcard__nav`) работает как прежде — `wireGallery` его пропускает. Мало кадров (≤ окна) — обычные точки без `.pcard__slider--many`/`-track`. Свайп доступен на всех тач-устройствах независимо от числа кадров (≥2).
 
 **Одно фото — резерв места под индикатор.** Когда кадр один, слайдер не выводят, но вместо него ставят пустую заглушку `<div class="pcard__slider-spacer" aria-hidden="true"></div>` (между `.pcard__media` и `.pcard__content`). Она занимает ровно высоту индикатора dots-mini — карточки с одним и несколькими фото получаются одной высоты, контент (цена/бренд) не сдвигается в гриде. Если в каталоге у всех товаров одно фото — заглушку можно не ставить.
 
@@ -275,6 +293,8 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 | `.pcard__image-link` (#1) | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · 3%-скрим `opacity → 0` |
 | `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-core` |
 | `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-core` |
+| `.pcard__category` (если включена) | рубрика | цвет `surface-on-high → accent-core` (ячейка `link/heading`; до 1.4.0 — `link/muted`, hover `surface-on-highest`) |
+| `.pcard__nav-btn` | предыдущий / следующий кадр | компонент button-overhung secondary: прозрачность 60% → 90%; сама обёртка `.pcard__nav` проявляется при наведении на фото |
 | `.pcard__feedback` | — (не ссылка) | статичный: ★ warning · рейтинг surface-on-highest · 💬 иконка surface-on · счётчик surface-on-high |
 
 Фокус-обводка — на каждой ссылке отдельно (`:focus-visible`). Оверлеи над фото: избранное (`.btn-favorites`) — своя кнопка-тоггл (pointer-events:auto); бейджи — `pointer-events:none`, hover/клик проходят к ссылке-фото. Флаг теперь `pointer-events:auto` (ловит hover для тултипа) — hover фото (скрим) остаётся на остальной площади. Все hover-переходы гасятся при `prefers-reduced-motion: reduce`.
@@ -300,6 +320,7 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 - **`.pcard__badges`** — маркет-бейджи (компонент `awds-component-badge`, подключи `badge.css`): `badge-market-percent` (акцент) для скидки в %, `badge-market-sale` (бренд-primary) для «Скидка». Можно один, оба или ни одного.
 - **`.btn-favorites`** — избранное (компонент `awds-component-button-favorites`, подключи `button-favorites.css`). Нет логики избранного → убери кнопку.
 - **`.pcard__slider`** — индикатор галереи (компонент `awds-component-slider`, dots-mini, подключи `slider.css`). Одно фото → не добавляй (и не нужен `.pcard__image--active`).
+- **`.pcard__nav`** — стрелки галереи (компонент `awds-component-button-overhung`, secondary 100, подключи `button-overhung-secondary.css`). Одно фото → не добавляй.
 
 ## Поля для биндинга (PageCraft / SSR)
 
@@ -314,7 +335,8 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 | Бренд | `.pcard__brand` |
 | Название | `.pcard__name` |
 | Рейтинг | `.pcard__rating-value` (число) |
-| Счётчик отзывов | `.pcard__reviews-count` |
+| Счётчик отзывов | `.pcard__reviews-count` — число и слово, склонённое по числу: «1 отзыв», «2 отзыва», «5 отзывов» (остаток от деления на 10 и на 100, 11–14 → «отзывов») |
+| Отзывов нет | `.pcard__feedback.pcard__feedback--empty[aria-hidden="true"]` без содержимого — резерв высоты строки |
 | Скидка % | `.badge-market-percent` (текст) |
 | Состояние избранного | `.btn-favorites[aria-pressed]` |
 
@@ -326,8 +348,16 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 | `show-feedback` | `<div class="pcard__feedback">` — рейтинг и отзывы целиком | вкл. |
 | `show-cart` | `<div class="pcard__cart">` — зона корзины (кнопка и степпер) | выкл. |
 
-Выключенное свойство означает, что элемента нет в разметке. Не прячь его через `hidden` или `display:none`: данные останутся в SSR-ответе. CSS править не нужно — у каждой строки свой верхний отступ, соседи от неё не зависят, и карточка просто становится ниже, как в макете. Порядок строк — как в разметке выше; рубрика идёт сразу после названия, зона корзины — последней.
+Выключенное свойство означает, что элемента нет в разметке. Не прячь его через `hidden` или `display:none`: данные останутся в SSR-ответе. CSS править не нужно — у каждой строки свой верхний отступ, соседи от неё не зависят, и карточка просто становится ниже, как в макете. Порядок строк — как в разметке выше; рубрика идёт сразу после названия, зона корзины — последней. Порядок price-first в 1.4.0 не менялся: в остальных вариантах отзывы переехали под корзину, здесь — нет.
+
+**Включённые отзывы стоят у каждой карточки.** У товара без отзывов вместо строки ставь пустой резерв — ряд не прыгает:
+
+```html
+<div class="pcard__feedback pcard__feedback--empty" aria-hidden="true"></div>
+```
+
+Высоту даёт `::before` с неразрывным пробелом на строке caption (CSS компонента), так что резерв масштабируется по `.typo-*` вместе с текстом.
 
 ## Токены
 
-Все значения — через DS. Полная карта — в шапке `product-card-price-first.css` и в `SKILL.md`. Цвета: `surface-on-highest` (текст + скрим над фото @ opacity-5), `accent-core` (бренд/название на hover), `surface-on-high` (рейтинг), `surface-bright` (фон медиа = рамка вокруг уменьшенного фото), `warning-core` (звезда). Теней нет. Бейджи и избранное — внешние компоненты (`badge.css`, `button-favorites.css`).
+Все значения — через DS. Полная карта — в шапке `product-card-price-first.css` и в `SKILL.md`. Цвета: `surface-on-highest` (текст + скрим над фото @ opacity-5), `accent-core` (бренд/название/рубрика на hover), `surface-on-high` (рейтинг), `surface-bright` (фон медиа = рамка вокруг уменьшенного фото), `warning-core` (звезда). Теней нет. Бейджи и избранное — внешние компоненты (`badge.css`, `button-favorites.css`).

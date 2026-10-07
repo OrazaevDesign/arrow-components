@@ -271,6 +271,57 @@
 }
 
 
+/* === Стрелки галереи (макет 07.10.2026: .layout / mid-overlays / .tips) ===
+   Две кнопки button-overhung / secondary размера 100 (.obtn.obtn-secondary.obtn--icon-only
+   .obtn--100, подключи button-overhung-secondary.css) по краям фото, по центру высоты, поле
+   space/2 — как в макете. Ставятся только при двух кадрах и больше. Видны на десктопе при
+   наведении на фото или фокусе с клавиатуры (решение владельца 07.10.2026): постоянные
+   стрелки на каждой карточке ряда шумят. Без hover (тач) и в мобильной вью стрелок нет —
+   там галерею листает свайп, а в каруселях ниже десктопа листание фото выключено вовсе.
+   Прозрачность самих кнопок (60% → 90% на hover) держит button-overhung; здесь гасится
+   только обёртка, поэтому две прозрачности не спорят. */
+.pcard__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;                            /* над скримом .pcard__image-link::after */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--awds-space-2);          /* 8px */
+  transform: translateY(-50%);
+  pointer-events: none;                  /* мимо кнопок hover-зоны фото работают как прежде */
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+.pcard__nav > .obtn {
+  pointer-events: auto;
+}
+@media (hover: hover) {
+  .pcard__media:hover .pcard__nav,
+  .pcard__nav:focus-within {
+    opacity: 1;
+  }
+}
+@media (hover: none) {
+  .pcard__nav { display: none; }
+}
+.pcard--mobile .pcard__nav { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .pcard__nav { transition: none; }
+}
+
+/* Резерв строки отзывов (с 07.10.2026). Когда отзывы на сайте включены, строка стоит у
+   каждой карточки: у товара без отзывов — пустая .pcard__feedback--empty (aria-hidden) той же
+   высоты, чтобы карточки в ряду не прыгали. Высоту даёт неразрывный пробел на строке caption,
+   а не число: строка едет по .typo-* вместе с текстом. */
+.pcard__feedback--empty::before {
+  content: "\00a0";
+  font-size: var(--awds-wysiwyg-font-size-caption);
+  line-height: var(--awds-wysiwyg-line-height-caption);
+}
+
 /* === Content (центрированный): бренд → название → рейтинг → цена → корзина ===
    Зазор между блоками = 0; вертикальный ритм задают line-height и точечные
    padding-top на рейтинге / цене / корзине (как в макете). */
@@ -333,7 +384,7 @@
 
 /* Рубрика (→ категория) — необязательная строка, свойство show-category в макете (с 07.10.2026
    есть во всех вариантах). Выключено — элемента нет в разметке. Стиль — как в buy-now, по центру от контента. */
-/* рубрика (→ категория). link/muted = surface-on-high. 1 строка, роль WYSIWYG
+/* рубрика (→ категория). link/heading-rest = surface-on-high, hover — accent-core (до 07.10.2026 link/muted). 1 строка, роль WYSIWYG
    caption (--awds-wysiwyg-*-caption, medium = 13/21), масштабируется с блоками. */
 .pcard-brand-first .pcard__category {
   margin: 0;
@@ -342,7 +393,7 @@
   line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
   letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
   font-weight: var(--awds-font-weight-regular);
-  color: rgb(var(--surface-on-high));           /* #cell link/muted-rest */
+  color: rgb(var(--surface-on-high));           /* #cell link/heading-rest */
   text-decoration: none;
   transition: color 0.15s ease-out;
   display: block;
@@ -352,7 +403,7 @@
 }
 
 .pcard-brand-first .pcard__category:hover {
-  color: rgb(var(--surface-on-highest));        /* #cell link/muted-hover */
+  color: rgb(var(--accent-core));        /* #cell link/heading-hover — макет 07.10.2026: рубрика на ячейке link/heading, была link/muted */
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка): ★ warning + рейтинг surface-on-highest +
