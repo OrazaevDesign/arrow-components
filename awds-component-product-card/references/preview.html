@@ -66,7 +66,7 @@
 <body>
 
   <h1>product-card / storybook</h1>
-  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — бренд → название → цена → кнопка «В корзину» → рейтинг, по центру, с флагом страны. <code>buy-now</code> и <code>button-price</code> — рейтинг тоже последним, под корзиной; в <code>price-first</code> с включённой корзиной — так же (1.4.2). При 2+ кадрах на десктопе по наведению на фото появляются стрелки галереи (button-overhung secondary 100). Отзывы «нет отзывов (резерв)» — пустая строка той же высоты. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: скрим уходит, без зума и теней. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель (товарные слайдеры выводят только <code>button</code> и открывают модалку Atlas). Переключи тему / скругление / вариант / корзину.</p>
+  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — бренд → название → цена → кнопка «В корзину» → рейтинг, по центру, с флагом страны. <code>buy-now</code> и <code>button-price</code> — рейтинг тоже последним, под корзиной; в <code>price-first</code> с включённой корзиной — так же (1.4.2). При 2+ кадрах на десктопе по наведению на фото появляются стрелки галереи (button-overhung secondary 100); кадры листают только они, позиция курсора кадр не переключает. Отзывы «нет отзывов (резерв)» — пустая строка той же высоты. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: скрим уходит, без зума и теней. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель (товарные слайдеры выводят только <code>button</code> и открывают модалку Atlas). Переключи тему / скругление / вариант / корзину.</p>
 
   <div class="toolbar">
     <label>Вариант:
@@ -428,10 +428,10 @@
     const CARDS = { 'brand-first': cardBrandFirst, 'buy-now': cardBuyNow, 'button-price': cardButtonPrice };
     const card = (view, opts) => (CARDS[opts.variant] || cardPriceFirst)(view, opts);
 
-    // --- Галерея: перелистывание фото (десктоп — hover-зоны, тач — свайп) ---
-    // Десктоп (мышь): наведение делит фото на N равных вертикальных зон (N = число
-    // кадров); позиция курсора по X выбирает активный кадр, уход курсора — возврат к
-    // первому. Мобила/таблет (тач/перо): свайп влево/вправо листает кадры по одному.
+    // --- Галерея: перелистывание фото (десктоп — стрелки, тач — свайп) ---
+    // Десктоп (мышь): стрелки .pcard__nav листают по кругу; позиция курсора кадр не
+    // переключает (hover-зоны убраны решением владельца 07.10.2026), уход курсора с фото —
+    // возврат к первому. Мобила/таблет (тач/перо): свайп влево/вправо листает кадры по одному.
     // Это и есть код, который вписывает потребитель карточки.
     function wireGallery(link) {
       const imgs = [...link.querySelectorAll('.pcard__image')];
@@ -481,28 +481,21 @@
         layoutDots(current);
       };
 
-      // Стрелки (с 1.4.0): листают по кадру, по кругу. Нажатая стрелка «держит» кадр —
-      // пока курсор на фото, hover-зоны его не перебивают; уход с фото возвращает первый.
-      let manual = false;
+      // Стрелки (с 1.4.0): листают по кадру, по кругу. На десктопе это единственный способ
+      // листать: переключение кадра позицией курсора (hover-зоны) убрано по решению владельца
+      // 07.10.2026 — со стрелками оно мешало, кадр менялся от простого движения мыши.
       const media = link.closest('.pcard__media');
       (media ? media.querySelectorAll('.pcard__nav-btn') : []).forEach((b) => {
         b.addEventListener('click', (e) => {
           e.preventDefault();
           warm();
-          manual = true;
           setActive((current + (b.classList.contains('pcard__nav-btn--prev') ? -1 : 1) + n) % n);
         });
       });
 
-      // Десктоп (мышь): hover-зоны.
-      link.addEventListener('pointermove', (e) => {
-        if (e.pointerType !== 'mouse' || manual) return;
-        const r = link.getBoundingClientRect();
-        setActive(Math.floor((e.clientX - r.left) / r.width * n));
-      });
       // Сброс — по уходу с медиа, а не со ссылки: стрелки лежат рядом со ссылкой.
       (media || link).addEventListener('pointerleave', (e) => {
-        if (e.pointerType === 'mouse') { manual = false; setActive(0); }
+        if (e.pointerType === 'mouse') setActive(0);
       });
 
       // Мобила/таблет (тач/перо): свайп. touch-action:pan-y (в CSS) отдаёт вертикальный
