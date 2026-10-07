@@ -202,7 +202,7 @@
     // Много кадров (> WINDOW) → лента в обёртке .pcard__slider-track + класс --many (фикс-окно).
     const sliderDots = (n) => {
       let dots = '';
-      for (let i = 0; i < n; i++) dots += `<span class="slider__dot${i === 0 ? ' slider__dot--active' : ''}"></span>`;
+      for (let i = 0; i < n; i++) dots += `<span class="slider__dot${i === 0 ? ' slider__dot--active' : ''}${n > DOTS_WINDOW && i >= DOTS_WINDOW - 1 ? ' slider__dot--sm' : ''}"></span>`;   // начальное окно — разметкой (Р2)
       if (n > DOTS_WINDOW) {
         return `<div class="slider slider-dots-mini pcard__slider pcard__slider--many" aria-hidden="true"><span class="pcard__slider-track">${dots}</span></div>`;
       }
@@ -512,8 +512,9 @@
       link.addEventListener('pointercancel', () => { dragging = false; axis = ''; });
       link.addEventListener('click', (e) => { if (swiped) { e.preventDefault(); swiped = false; } });
 
-      if (windowed && dotsRO) { slider.__pcardRelayout = () => layoutDots(current); dotsRO.observe(slider); }
-      setActive(0);                                              // стартовое окно
+      // Начальное окно выводит разметка (активный первый кадр, при кадрах > 5 точки с пятой — --sm),
+      // поэтому при запуске индикатор не трогаем (план оптимизации, Р2).
+      if (windowed && dotsRO) { slider.__pcardRelayout = () => { if (current !== 0) layoutDots(current); }; dotsRO.observe(slider); }
     }
     const wireGalleries = (root) => root.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
