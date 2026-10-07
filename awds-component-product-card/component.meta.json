@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "contract_hash": "sha256:7c72fd7200850346a1fad30036e6972ab8e6b27574b7986fa2dc9bd78f75a6fc",
-  "artifact_hash": "sha256:ac1ce77c39841ad11c57d034f2d28a367368394240b7a32656cd8959c0ffc737",
+  "artifact_hash": "sha256:8e3b67527bfd010d7559a55f3f1e15b75be22c4667fd114b9afe8f5e38cfdab0",
   "visual_change": true,
-  "released_at": "2026-10-07T10:06:02.148Z",
+  "released_at": "2026-10-07T10:47:34.230Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -511,6 +511,28 @@
       "raised_at": "2026-09-19",
       "evidence": "19.09.2026 при возврате шести частей input / secondary с подменённых старых на наши локальные иконки восстанавливались поимённо: значения снимались с прежних узлов, и расхождение между вью было видно в снимке (prefix 400 = ic20-indeterminacy-outline 468:54291, prefix 300 = ic20-minus-outline 468:54077)",
       "asana_gid": "1218650293455543"
+    },
+    {
+      "id": "figma-category-binding-and-link-hover",
+      "text": "В Figma рубрика в price-first и brand-first привязана к link/heading-rest (слой назван name), в buy-now и button-price — к link/muted-rest; код везде следует muted. Hover-состояний ссылок карточки в макете нет. Перепривязать рубрику на link/muted и завести hover-ячейки ссылок в макете?",
+      "level": "component",
+      "target": "product-card",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-10-07",
+      "evidence": "аудит ховеров 07.10.2026, logs/2026/10/07/13-02 - sliders-loop-step-hover-out-of-stock.md",
+      "asana_gid": "1219251141968790"
+    },
+    {
+      "id": "button-price-figma-link-pending",
+      "text": "Ссылка на опубликованный скилл не вписана в описание набора button-price (985:30177): мост figma-console не отвечал при публикации 1.3.3. Вписать при следующем подключении моста.",
+      "level": "component",
+      "target": "product-card / button-price",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-10-07",
+      "evidence": "meta.published.dev_resources_status.button-price = pending; logs/2026/10/07/13-17 - product-card-1-3-3-blocks-published.md",
+      "asana_gid": "1219251098773972"
     }
   ],
   "family": "complex-component",
