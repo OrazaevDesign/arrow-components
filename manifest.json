@@ -466,15 +466,16 @@
     },
     {
       "name": "product-card",
-      "version": "1.2.1",
+      "version": "1.3.3",
       "variants": [
         "price-first",
         "brand-first",
-        "buy-now"
+        "buy-now",
+        "button-price"
       ],
       "sizes": null,
-      "rules": 153,
-      "bytes": 30703
+      "rules": 212,
+      "bytes": 46420
     },
     {
       "name": "progress",
@@ -735,9 +736,9 @@
     }
   ],
   "bundle": {
-    "bytes": 363739,
-    "rules": 1397,
-    "hash": "sha256:8a9176605a84c086846217b3474cf8b76e4c3395bac89dc58e79a525d0e58df9"
+    "bytes": 379456,
+    "rules": 1456,
+    "hash": "sha256:f3fb145d04e8c500b282dfca3ece98a272367f19465a9503dd7a7fb1b7587d6c"
   },
   "theme": {
     "bytes": 61899,
