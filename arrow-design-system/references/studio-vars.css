@@ -604,6 +604,11 @@
   --awds-layout-card-article-max-tablet: 368px;
   --awds-layout-card-article-max-mobile: 368px;
   --awds-layout-card-article-max: var(--awds-layout-card-article-max-desktop);  /* Максимальная ширина карточки статьи в ленте. */
+  /* Малый зазор между рядами: row-gap плотных сеток и стопок внутри блока (mobile 8 · tablet 8 · desktop 12). Обычный зазор рядов сетки — section/row-gap. */
+  --awds-layout-section-row-gap-mini-desktop: var(--awds-space-3);
+  --awds-layout-section-row-gap-mini-tablet: var(--awds-space-2);
+  --awds-layout-section-row-gap-mini-mobile: var(--awds-space-2);
+  --awds-layout-section-row-gap-mini: var(--awds-layout-section-row-gap-mini-desktop);  /* Малый зазор между рядами: row-gap плотных сеток и стопок внутри блока (mobile 8 · tablet 8 · desktop 12). Обычный зазор рядов сетки — section/row-gap. */
   /* Прозрачность 0%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-0)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
   --awds-opacity-0: 0%;  /* Прозрачность 0%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-0)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
   /* Прозрачность 5%. Для альфы роли: rgb(var(--role) / var(--awds-opacity-5)). Шкала начинается с 5% — более тонкая альфа пишется литералом, ячейки под неё нет. */
@@ -2020,6 +2025,7 @@
   --awds-layout-card-half-max: var(--awds-layout-card-half-max-desktop);
   --awds-layout-card-article-min: var(--awds-layout-card-article-min-desktop);
   --awds-layout-card-article-max: var(--awds-layout-card-article-max-desktop);
+  --awds-layout-section-row-gap-mini: var(--awds-layout-section-row-gap-mini-desktop);
   --awds-typography-font-size-50: var(--awds-typography-font-size-50-desktop);
   --awds-typography-font-size-100: var(--awds-typography-font-size-100-desktop);
   --awds-typography-font-size-200: var(--awds-typography-font-size-200-desktop);
@@ -2116,6 +2122,7 @@
   --awds-layout-card-half-max: var(--awds-layout-card-half-max-tablet);
   --awds-layout-card-article-min: var(--awds-layout-card-article-min-tablet);
   --awds-layout-card-article-max: var(--awds-layout-card-article-max-tablet);
+  --awds-layout-section-row-gap-mini: var(--awds-layout-section-row-gap-mini-tablet);
   --awds-typography-font-size-50: var(--awds-typography-font-size-50-tablet);
   --awds-typography-font-size-100: var(--awds-typography-font-size-100-tablet);
   --awds-typography-font-size-200: var(--awds-typography-font-size-200-tablet);
@@ -2212,6 +2219,7 @@
   --awds-layout-card-half-max: var(--awds-layout-card-half-max-mobile);
   --awds-layout-card-article-min: var(--awds-layout-card-article-min-mobile);
   --awds-layout-card-article-max: var(--awds-layout-card-article-max-mobile);
+  --awds-layout-section-row-gap-mini: var(--awds-layout-section-row-gap-mini-mobile);
   --awds-typography-font-size-50: var(--awds-typography-font-size-50-mobile);
   --awds-typography-font-size-100: var(--awds-typography-font-size-100-mobile);
   --awds-typography-font-size-200: var(--awds-typography-font-size-200-mobile);

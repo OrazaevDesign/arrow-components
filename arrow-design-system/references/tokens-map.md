@@ -54,7 +54,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `font` | `family` | Заголовки: Geologica |
 | `font` | `weight` | Начертание medium |
 | `layout` | `card` | Минимальная ширина баннера в половину ряда (два в ряд). |
-| `layout` | `section` | Боковое поле колонки блока |
+| `layout` | `section` | Боковое поле содержимого модального окна |
 | `opacity` | `—` | Прозрачность 50%. |
 | `rounded` | `border-radius` | Скругление |
 | `rounded` | `outline` | Радиус кольца фокуса |
