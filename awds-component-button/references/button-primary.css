@@ -24,7 +24,7 @@
      Rest    bg=primary-core  chroma=primary-chroma  border=primary-core  color=primary-on
      Hover   bg=primary-dim   chroma=primary-chroma  border=primary-dim   color=primary-on
      Focus   свои ячейки bg/chroma/border-focus + кольцо слоем focus-selection
-     Active  bg=primary-core  chroma=primary-core (плоский градиент)  border=primary-core  color=primary-on
+     Active  bg=primary-core  chroma=primary-core (свечение схлопывается в плоский фон)  border=primary-core  color=primary-on
      Disabled = Rest + opacity 40%
 
    Геометрия из Figma (контейнер px=padding | 3 ячейки py=padding, pl/pr=gap)
@@ -47,6 +47,11 @@
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
+}
+@property --awds-btn-glow {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
 
 /* =============================================================================
@@ -294,6 +299,33 @@
   --awds-btn-color:  rgb(var(--primary-on));   /* #cell button/primary/color-focus */
 }
 
+/* Заливка primary (макет с 07.10.2026). Два слоя: снизу сплошной bg, сверху радиальный
+   градиент chroma → bg. Эллипс снят с gradientTransform ячейки: центр 50% 50%, радиусы
+   45.77% ширины и 137.5% высоты — свечение по центру, к краям уходит в bg. Слой
+   градиента непрозрачен на 70% в rest, focus, active, loading и disabled и на 100% на
+   hover — свечение «разгорается» под курсором. У слоя background своего opacity нет,
+   поэтому прозрачность внесена в стопы через color-mix с transparent.
+   Селектор .btn.btn-primary, а не .btn-primary: в блоке склеены файлы нескольких вариантов, и
+   база .btn из следующего файла с той же специфичностью вернула бы линейный градиент.
+   До 07.10.2026 заливка была linear-gradient(to right, chroma, bg) без прозрачности. */
+.btn.btn-primary {
+  --awds-btn-glow: var(--awds-opacity-70);   /* слой градиента в Figma: opacity 70% */
+  background:
+    radial-gradient(45.77% 137.5% at 50% 50%,
+      color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
+      color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
+    var(--awds-btn-bg);
+  transition: --awds-btn-bg 0.15s ease-out,
+              --awds-btn-chroma 0.15s ease-out,
+              --awds-btn-glow 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out;
+}
+
+.btn.btn-primary:hover {
+  --awds-btn-glow: var(--awds-opacity-100);   /* слой градиента в Figma: opacity 100% */
+}
+
 /* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-primary:active {
   --awds-btn-bg:     rgb(var(--primary-core));   /* #cell button/primary/bg-active */
@@ -311,7 +343,8 @@
    снимается, «дыхание» дуги остаётся. Два разных ответа на один вопрос доступности
    внутри одной системы хуже любого из них по отдельности. */
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn,
+  .btn.btn-primary {
     transition: none;
   }
 }

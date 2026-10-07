@@ -25,7 +25,7 @@
      Rest    bg=addition-core  chroma=addition-chroma  border=addition-core  color=addition-on
      Hover   bg=addition-dim   chroma=addition-chroma  border=addition-dim   color=addition-on
      Focus   свои ячейки bg/chroma/border-focus + кольцо слоем focus-selection
-     Active  bg=addition-core  chroma=addition-core (плоский градиент)  border=addition-core  color=addition-on
+     Active  bg=addition-core  chroma=addition-core (свечение схлопывается в плоский фон)  border=addition-core  color=addition-on
      Disabled = Rest + opacity 40%
 
    Геометрия из Figma (контейнер px=padding | 3 ячейки py=padding, pl/pr=gap)
@@ -51,6 +51,11 @@
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
+}
+@property --awds-btn-glow {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
 
 /* =============================================================================
@@ -298,6 +303,33 @@
   --awds-btn-color:  rgb(var(--addition-on));   /* #cell button/addition/color-focus */
 }
 
+/* Заливка addition (макет с 07.10.2026). Два слоя: снизу сплошной bg, сверху радиальный
+   градиент chroma → bg. Эллипс снят с gradientTransform ячейки: центр 50% 50%, радиусы
+   45.77% ширины и 137.5% высоты — свечение по центру, к краям уходит в bg. Слой
+   градиента непрозрачен на 70% в rest, focus, active, loading и disabled и на 100% на
+   hover — свечение «разгорается» под курсором. У слоя background своего opacity нет,
+   поэтому прозрачность внесена в стопы через color-mix с transparent.
+   Селектор .btn.btn-addition, а не .btn-addition: в блоке склеены файлы нескольких вариантов, и
+   база .btn из следующего файла с той же специфичностью вернула бы линейный градиент.
+   До 07.10.2026 заливка была linear-gradient(to right, chroma, bg) без прозрачности. */
+.btn.btn-addition {
+  --awds-btn-glow: var(--awds-opacity-70);   /* слой градиента в Figma: opacity 70% */
+  background:
+    radial-gradient(45.77% 137.5% at 50% 50%,
+      color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
+      color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
+    var(--awds-btn-bg);
+  transition: --awds-btn-bg 0.15s ease-out,
+              --awds-btn-chroma 0.15s ease-out,
+              --awds-btn-glow 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out;
+}
+
+.btn.btn-addition:hover {
+  --awds-btn-glow: var(--awds-opacity-100);   /* слой градиента в Figma: opacity 100% */
+}
+
 /* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */
 .btn-addition:active {
   --awds-btn-bg:     rgb(var(--addition-core));   /* #cell button/addition/bg-active */
@@ -315,7 +347,8 @@
    снимается, «дыхание» дуги остаётся. Два разных ответа на один вопрос доступности
    внутри одной системы хуже любого из них по отдельности. */
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn,
+  .btn.btn-addition {
     transition: none;
   }
 }

@@ -81,7 +81,7 @@
   padding-inline: calc(var(--awds-btn-padding) + var(--awds-btn-gap));
   gap: var(--awds-btn-gap);
   border-radius: var(--awds-btn-rounded);
-  background: linear-gradient(to right, var(--awds-btn-chroma, var(--awds-btn-bg)), var(--awds-btn-bg));
+  background: linear-gradient(to right, var(--awds-btn-chroma, var(--awds-btn-bg)), var(--awds-btn-bg));   /* база; у primary/addition — радиальное свечение, см. «Заливка» */
   /* border: 0 гасит дефолтный бордер нативного <button> (иначе вылезает UA-обводка
      ~1.7px → дробная высота). Обводку рисуем inset box-shadow — не влияет на размер
      (border при auto-height добавляет к нему). Inside-stroke как в Figma. */
@@ -150,7 +150,9 @@
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 
-В Figma на `Active` `chroma` = `bg` (`--primary-core`) — градиент схлопывается в плоский цвет (сигнал «нажато»).
+**Заливка (с 07.10.2026).** Два слоя: снизу сплошной `bg`, сверху радиальный градиент `chroma` → `bg` — эллипс `45.77% 137.5% at 50% 50%`, свечение по центру кнопки. Слой градиента непрозрачен на 70% (`--awds-opacity-70`) в rest, focus, active, loading и disabled и на 100% (`--awds-opacity-100`) на hover. Прозрачность внесена в стопы через `color-mix(… transparent)`, потому что у слоя `background` своего `opacity` нет; аккумулятор `--awds-btn-glow` зарегистрирован `@property` как `<percentage>` и анимируется вместе с цветами. Правило висит на `.btn.btn-primary`: в блоке склеены файлы нескольких вариантов, и база `.btn` следующего файла перебила бы заливку. До 07.10.2026 был `linear-gradient(to right, chroma, bg)` без прозрачности.
+
+В Figma на `Active` `chroma` = `bg` (`--primary-core`) — свечение схлопывается в плоский цвет (сигнал «нажато»).
 
 ---
 
@@ -168,7 +170,7 @@ Figma раскладывает кнопку на контейнер + 3 ячей
 
 ## Полировка (MIFB)
 
-- **Плавная смена состояний.** `--awds-btn-bg` / `--awds-btn-chroma` зарегистрированы через `@property` как `<color>`, поэтому фон-градиент интерполируется при hover/active (а не «снапает»). Переходы — `0.15s ease-out` по конкретным свойствам (не `transition: all`), прерываемые. Спиннер — `@keyframes` + `will-change: transform` (единственный валидный loop-кейс).
+- **Плавная смена состояний.** `--awds-btn-bg` / `--awds-btn-chroma` зарегистрированы через `@property` как `<color>`, поэтому фон-градиент интерполируется при hover/active (у primary/addition ещё и `--awds-btn-glow` как `<percentage>`) (а не «снапает»). Переходы — `0.15s ease-out` по конкретным свойствам (не `transition: all`), прерываемые. Спиннер — `@keyframes` + `will-change: transform` (единственный валидный loop-кейс).
 - **Живые числа в кнопке** (цена, счётчик корзины: «Оплатить 1 990 ₽», «Корзина (3)») — оберни число в `<span style="font-variant-numeric: tabular-nums">`, чтобы цифры не «прыгали» при обновлении. На обычный текстовый лейбл `tabular-nums` не вешаем — моноширинность там не нужна (MIFB-принцип 5).
 - **Радиусы** — из макета (`--awds-rounded-*` по размеру), концентрию руками не считаем: есть Figma.
 
