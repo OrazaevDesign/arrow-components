@@ -28,7 +28,7 @@ Link — **color-only** компонент: DS задаёт только цве�
 
 Скриптом это `setRangeFills(start, end, [paint])`, где у paint есть `boundVariables.color`; `setRangeBoundVariable` для `fills` не работает — он принимает только поля типографики (`fontFamily`, `fontSize`, `fontStyle`, `fontWeight`, `letterSpacing`, `lineHeight`, `paragraphSpacing`, `paragraphIndent`).
 
-**Набор нужен для отдельно стоящей ссылки** — «Все →», ссылка в футере, заголовок карточки. Секция [↪ link](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-28) держит пять наборов, по одному на вариант, с осью `state` внутри — та же манера, что у `badge` и `notice`. Покой и наведение стоят в одной колонке нарочно: в покое `accent` и `contrast` дают один цвет, `muted` и `heading` тоже, и различить их можно только по наведению.
+**Набор нужен для отдельно стоящей ссылки** — «Все →», ссылка в футере, заголовок карточки. Секция [↪ link](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-28) держит пять наборов, по одному на вариант, с осью `state` внутри — та же манера, что у `badge` и `notice`. У `default`, `muted`, `contrast` и `accent` с 02.10.2026 есть вторая ось `underline=on / off`: `off` — ссылка без подчёркивания во всех состояниях, в коде `.lnk--ul-none`. Она для навигационных списков — футер, меню; у `heading` оси нет, он без подчёркивания всегда. Покой и наведение стоят в одной колонке нарочно: в покое `accent` и `contrast` дают один цвет, `muted` и `heading` тоже, и различить их можно только по наведению.
 
 Чего в макете **нет** и почему (подробно — в `snapshot/figma.json`):
 
