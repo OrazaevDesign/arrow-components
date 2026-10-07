@@ -103,19 +103,19 @@
   <style>
     /* ─── Зеркала псевдо-классов: копия правил из button-menu.css ─── */
     .btn-menu-default.is-hover {
-      --awds-btn-menu-bg:      rgb(var(--awds-state-list-unselected-bg-hover));
-      --awds-btn-menu-border:  rgb(var(--awds-state-list-unselected-border-hover));
-      --awds-btn-menu-chevron: rgb(var(--awds-state-list-unselected-chevron-hover));
+      --awds-btn-menu-bg:      rgb(var(--secondary-container-dim));
+      --awds-btn-menu-border:  rgb(var(--secondary-container-dim));
+      --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));
     }
     .btn-menu-default.is-focus {
-      --awds-btn-menu-bg:      rgb(var(--awds-state-list-unselected-bg-focus));
-      --awds-btn-menu-border:  rgb(var(--awds-state-list-unselected-border-focus));
-      --awds-btn-menu-chevron: rgb(var(--awds-state-list-unselected-chevron-focus));
+      --awds-btn-menu-bg:      rgb(var(--secondary-container-core));
+      --awds-btn-menu-border:  rgb(var(--secondary-container-core));
+      --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));
     }
     .btn-menu-default.is-active {
-      --awds-btn-menu-bg:      rgb(var(--awds-state-list-unselected-bg-active));
-      --awds-btn-menu-border:  rgb(var(--awds-state-list-unselected-border-active));
-      --awds-btn-menu-chevron: rgb(var(--awds-state-list-unselected-chevron-active));
+      --awds-btn-menu-bg:      rgb(var(--secondary-container-core));
+      --awds-btn-menu-border:  rgb(var(--secondary-container-core));
+      --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));
     }
     /* accent-selected по состояниям не меняется: в теме у rest/hover/focus/active
        одно значение, поэтому зеркал у него нет — только кольцо фокуса. */
@@ -124,7 +124,7 @@
       outline-offset: var(--awds-focus-offset);
     }
     .btn-menu.is-disabled {
-      opacity: var(--awds-state-opacity-control-disabled);
+      opacity: var(--awds-opacity-40);
       pointer-events: none;
     }
   </style>
