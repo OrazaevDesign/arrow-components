@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "1.2.1",
-  "contract_hash": "sha256:5676ad9475d59c8df576be6801e9ac603015a291b9ada751126db1017642948b",
-  "artifact_hash": "sha256:bc67ad9e65e6411ff08880d42601d2b34327a5d60cd6307ff3fd9ab69d91b62c",
+  "version": "1.3.3",
+  "contract_hash": "sha256:7c72fd7200850346a1fad30036e6972ab8e6b27574b7986fa2dc9bd78f75a6fc",
+  "artifact_hash": "sha256:ac1ce77c39841ad11c57d034f2d28a367368394240b7a32656cd8959c0ffc737",
   "visual_change": true,
-  "released_at": "2026-09-27T15:10:45.577Z",
+  "released_at": "2026-10-07T10:06:02.148Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -69,6 +69,11 @@
       "node_id": "468:59681",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59681",
       "figma_label": "product-card / buy-now"
+    },
+    "button-price": {
+      "node_id": "985:30177",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=985-30177",
+      "figma_label": "product-card / button-price"
     }
   },
   "shape": null,
@@ -89,7 +94,8 @@
   "css_files": [
     "product-card-price-first.css",
     "product-card-brand-first.css",
-    "product-card-buy-now.css"
+    "product-card-buy-now.css",
+    "product-card-button-price.css"
   ],
   "composes": [
     "awds-component-button-favorites (.btn-favorites — кнопка избранного в .pcard__top; требует button-favorites.css)",
@@ -203,7 +209,6 @@
     "--awds-opacity-40",
     "--awds-opacity-5",
     "--awds-rounded-border-radius-200",
-    "--awds-rounded-border-radius-300",
     "--awds-rounded-border-radius-400",
     "--awds-rounded-border-radius-500",
     "--awds-space-1",
@@ -330,7 +335,8 @@
       },
       {
         "class": "pcard__feedback",
-        "required": true
+        "required": false,
+        "when_note": "show-feedback в макете, необязателен во всех вариантах: выключено — элемента нет в разметке"
       },
       {
         "class": "pcard__brand",
@@ -341,36 +347,34 @@
         "when": "pcard-brand-first"
       },
       {
+        "class": "pcard__brand",
+        "when": "pcard-button-price"
+      },
+      {
         "class": "pcard__price",
         "when": "pcard-brand-first"
       },
       {
         "class": "pcard__category",
-        "when": "pcard-buy-now"
+        "required": false,
+        "when_note": "show-category в макете, есть во всех вариантах: выключено — элемента нет в разметке"
       },
       {
         "class": "pcard__cart",
-        "when": "pcard-buy-now"
+        "required": false,
+        "when_note": "show-cart в макете, есть во всех вариантах; в pcard-button-price обязательна — цена живёт в кнопке"
+      },
+      {
+        "class": "pcard__cart-view--button",
+        "when": "pcard__cart"
+      },
+      {
+        "class": "pcard__cart-view--stepper",
+        "when": "pcard__cart"
       },
       {
         "class": "pcard__cart",
-        "when": "pcard-brand-first"
-      },
-      {
-        "class": "pcard__cart-view--button",
-        "when": "pcard-buy-now"
-      },
-      {
-        "class": "pcard__cart-view--button",
-        "when": "pcard-brand-first"
-      },
-      {
-        "class": "pcard__cart-view--stepper",
-        "when": "pcard-buy-now"
-      },
-      {
-        "class": "pcard__cart-view--stepper",
-        "when": "pcard-brand-first"
+        "when": "pcard-button-price"
       }
     ],
     "attrs": [],
@@ -527,10 +531,12 @@
   },
   "contract": {
     "classes": [
+      "btn",
       "btn-favorites",
       "pcard",
       "pcard--mobile",
       "pcard-brand-first",
+      "pcard-button-price",
       "pcard-buy-now",
       "pcard-price-first",
       "pcard__badges",
@@ -564,6 +570,7 @@
       "pcard__tip",
       "pcard__top",
       "price",
+      "price__old",
       "price__placeholder",
       "slider__dot",
       "slider__dot--sm",
@@ -579,6 +586,7 @@
     "public_vars": [],
     "variants": [
       "brand-first",
+      "button-price",
       "buy-now",
       "price-first"
     ],

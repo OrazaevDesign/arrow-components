@@ -4,7 +4,7 @@
 
 **Figma:** [product-card / brand-first](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=468-59648)
 
-Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер задаёт карточка — цена едет по `.typo-*` вместе с брендом и названием), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), hover-модель фото (`scale(0.9) → scale(1)`, 3%-скрим, без теней). Подключи `price.css` и `slider.css` дополнительно.
+Отличия от `price-first`: центрированный контент, бейджи по центру снизу фото, есть кнопка корзины (компонент `awds-component-button`). Общее с price-first: цена — компонент `awds-component-price` (размер задаёт карточка — цена едет по `.typo-*` вместе с брендом и названием), строка отзывов `★ рейтинг 💬 счётчик` (статичная, не ссылка), галерея фото со слайдером (`awds-component-slider` dots-mini, окно при многих кадрах; листание — hover-зоны на десктопе + **свайп на мобиле/таблете**, см. `wireGallery` в price-first), hover-модель фото (3%-скрим гаснет, без зума и теней). Подключи `price.css` и `slider.css` дополнительно.
 
 ## HTML
 
@@ -72,7 +72,10 @@
     <div class="pcard__cart" data-cart-state="button">
       <!-- Вью A — кнопка (товара нет в корзине) -->
       <div class="pcard__cart-view pcard__cart-view--button">
-        <button type="button" class="btn btn-primary btn--400">В корзину</button>
+        <button type="button" class="btn btn-primary btn--400">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 16a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM1.2 2a1 1 0 1 0 0 2h1.6l2.1 9.05a1 1 0 0 0 .98.77h9.02a1 1 0 0 0 .96-.72l1.74-6.05A.85.85 0 0 0 17.78 6H5.07l-.44-1.99A1 1 0 0 0 3.66 2H1.2Z"/></svg>
+          В корзину
+        </button>
       </div>
       <!-- Вью B — степпер (товар в корзине; кол-во регулируется) -->
       <div class="pcard__cart-view pcard__cart-view--stepper">
@@ -110,7 +113,7 @@
 
 ### Mobile
 
-Добавь `.pcard--mobile` корню; избранному — `.btn--200`; бейджам — `.badge--50`; всем кнопкам зоны корзины (`btn-primary` / `btn-ghost` / `btn-addition`) — `.btn--300` вместо `.btn--400` (скругление инпута степпера подтянется само через `.pcard--mobile`):
+Добавь `.pcard--mobile` корню; избранному — `.btn--200`; бейджам — `.badge--50`; зона корзины остаётся `.btn--400`, как на десктопе (с 07.10.2026 зона 48px в обеих вьюхах):
 
 ```html
 <div class="pcard pcard-brand-first pcard--mobile">
@@ -125,15 +128,15 @@
   <!-- Зона корзины: обе вью, --300 вместо --400 -->
   <div class="pcard__cart" data-cart-state="button">
     <div class="pcard__cart-view pcard__cart-view--button">
-      <button type="button" class="btn btn-primary btn--300">В корзину</button>
+      <button type="button" class="btn btn-primary btn--400"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M6 16a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm9 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM1.2 2a1 1 0 1 0 0 2h1.6l2.1 9.05a1 1 0 0 0 .98.77h9.02a1 1 0 0 0 .96-.72l1.74-6.05A.85.85 0 0 0 17.78 6H5.07l-.44-1.99A1 1 0 0 0 3.66 2H1.2Z"/></svg>В корзину</button>
     </div>
     <div class="pcard__cart-view pcard__cart-view--stepper">
       <div class="pcard__stepper">
-        <button type="button" class="btn btn-ghost btn--300 btn--icon-only" aria-label="Убрать один">…</button>
+        <button type="button" class="btn btn-ghost btn--400 btn--icon-only" aria-label="Убрать один">…</button>
         <span class="pcard__stepper-value" aria-live="polite">1</span>
-        <button type="button" class="btn btn-ghost btn--300 btn--icon-only" aria-label="Добавить один">…</button>
+        <button type="button" class="btn btn-ghost btn--400 btn--icon-only" aria-label="Добавить один">…</button>
       </div>
-      <button type="button" class="btn btn-addition btn--300 btn--icon-only" aria-label="В корзину">…</button>
+      <button type="button" class="btn btn-addition btn--400 btn--icon-only" aria-label="В корзину">…</button>
     </div>
   </div>
 </div>
@@ -145,7 +148,7 @@
 
 | Элемент | href / действие | Hover |
 |---|---|---|
-| `.pcard__image-link` (#1) | товар | фото `scale(0.9) → scale(1)` · 3%-скрим `opacity → 0` |
+| `.pcard__image-link` (#1) | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · 3%-скрим `opacity → 0` |
 | `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-core` |
 | `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-core` |
 | `.pcard__feedback` | — (не ссылка) | статичный: ★ warning · рейтинг surface-on-highest · 💬 иконка surface-on · счётчик surface-on-high |
@@ -175,6 +178,16 @@
 | Корзина | `.pcard__cart[data-cart-state]`: вью `--button` (`.btn-primary`) ↔ вью `--stepper` (`.pcard__stepper-value` = кол-во, `.btn-ghost` −/+, `.btn-addition` = подтвердить); кросс-фейд, см. «Степпер корзины» |
 | Избранное | `.btn-favorites[aria-pressed]` |
 
+**Необязательные строки.** Три строки контента включаются свойствами макета, и в каждом варианте есть все три:
+
+| Свойство в макете | Строка в коде | По умолчанию в brand-first |
+|---|---|---|
+| `show-category` | `<a class="pcard__category">` — рубрика товара | выкл. |
+| `show-feedback` | `<div class="pcard__feedback">` — рейтинг и отзывы целиком | вкл. |
+| `show-cart` | `<div class="pcard__cart">` — зона корзины (кнопка и степпер) | вкл. |
+
+Выключенное свойство означает, что элемента нет в разметке. Не прячь его через `hidden` или `display:none`: данные останутся в SSR-ответе. CSS править не нужно — у каждой строки свой верхний отступ, соседи от неё не зависят, и карточка просто становится ниже, как в макете. Порядок строк — как в разметке выше; рубрика идёт сразу после названия, зона корзины — последней.
+
 ## Токены
 
-Все значения — через DS. Цвета: бренд / название `surface-on-highest` (роль `link/accent`); рейтинг «4.9» `surface-on-highest`; 💬 иконка отзывов `surface-on`; счётчик отзывов `surface-on-high`; звезда `warning-core`; фон медиа `surface-bright`; скрим `surface-on-highest` @ `opacity-5` (≈3%); hover ссылок (бренд/название) `accent-core`. Цена — компонент `awds-component-price` (свои токены). Теней нет. Бейджи, кнопки, избранное — внешние компоненты (`badge.css`, `button.css`, `button-favorites.css`). Степпер (Figma `.AddCart`): контейнер-инпут (Input/Secondary) — sheen-градиент `secondary-chroma → secondary-core` + бордер `secondary-core`; число (form-control placeholder) `secondary-container-on-high`; gap зоны `space-2`; скругление инпута `rectangle-400/300-rounded`. Кнопки −/+ и корзины — `awds-component-button` (ghost / addition, `.btn--icon-only`).
+Все значения — через DS. Цвета: бренд / название `surface-on-highest` (роль `link/accent`); рейтинг «4.9» `surface-on-highest`; 💬 иконка отзывов `surface-on`; счётчик отзывов `surface-on-high`; звезда `warning-core`; фон медиа `surface-bright`; скрим `surface-on-highest` @ `opacity-5` (≈3%); hover ссылок (бренд/название) `accent-core`. Цена — компонент `awds-component-price` (свои токены). Теней нет. Бейджи, кнопки, избранное — внешние компоненты (`badge.css`, `button.css`, `button-favorites.css`). Степпер (Figma `.AddCart`): контейнер-инпут (Input/Secondary) — sheen-градиент `secondary-chroma → secondary-core` + бордер `secondary-core`; число (form-control placeholder) `secondary-container-on-high`; gap зоны `space-2`; скругление инпута `rectangle-400-rounded`. Кнопки −/+ и корзины — `awds-component-button` (ghost / addition, `.btn--icon-only`).

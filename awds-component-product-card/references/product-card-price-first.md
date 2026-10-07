@@ -146,6 +146,16 @@ JS-обвязка потребителя (десктоп — hover-зоны, м�
 function wireGallery(link) {
   const imgs = [...link.querySelectorAll('.pcard__image')];
   if (imgs.length < 2) return;                       // одиночное фото — листать нечего
+  // Прогрев: кадры декодируем заранее, на первое наведение или касание. Иначе новый
+  // кадр проявлялся ещё не нарисованным и «вспыхивал», когда браузер его дорисовывал.
+  var warmed = false;
+  function warm() {
+    if (warmed) return;
+    warmed = true;
+    imgs.forEach(function (im) { im.loading = 'eager'; if (im.decode) im.decode().catch(function () {}); });
+  }
+  link.addEventListener('pointerenter', warm);
+  link.addEventListener('pointerdown', warm);
   const card = link.closest('.pcard');
   const slider = card.querySelector('.pcard__slider');
   const dots = slider ? [...slider.querySelectorAll('.slider__dot')] : [];
@@ -262,12 +272,12 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
 | Ссылка | href | Поведение по `:hover` |
 |---|---|---|
-| `.pcard__image-link` (#1) | товар | фото `scale(0.9) → scale(1)` (0.4s) — раскрывается до 100% · 3%-скрим `opacity → 0` |
+| `.pcard__image-link` (#1) | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · 3%-скрим `opacity → 0` |
 | `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-core` |
 | `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-core` |
 | `.pcard__feedback` | — (не ссылка) | статичный: ★ warning · рейтинг surface-on-highest · 💬 иконка surface-on · счётчик surface-on-high |
 
-Фокус-обводка — на каждой ссылке отдельно (`:focus-visible`). Оверлеи над фото: избранное (`.btn-favorites`) — своя кнопка-тоггл (pointer-events:auto); бейджи — `pointer-events:none`, hover/клик проходят к ссылке-фото. Флаг теперь `pointer-events:auto` (ловит hover для тултипа) — зум фото остаётся на остальной площади. Все hover-переходы гасятся при `prefers-reduced-motion: reduce` (зум фото отключается).
+Фокус-обводка — на каждой ссылке отдельно (`:focus-visible`). Оверлеи над фото: избранное (`.btn-favorites`) — своя кнопка-тоггл (pointer-events:auto); бейджи — `pointer-events:none`, hover/клик проходят к ссылке-фото. Флаг теперь `pointer-events:auto` (ловит hover для тултипа) — hover фото (скрим) остаётся на остальной площади. Все hover-переходы гасятся при `prefers-reduced-motion: reduce`.
 
 ### Тултипы (компонент `awds-component-tooltip`, подключи `tooltip.css`)
 
@@ -307,6 +317,16 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 | Счётчик отзывов | `.pcard__reviews-count` |
 | Скидка % | `.badge-market-percent` (текст) |
 | Состояние избранного | `.btn-favorites[aria-pressed]` |
+
+**Необязательные строки.** Три строки контента включаются свойствами макета, и в каждом варианте есть все три:
+
+| Свойство в макете | Строка в коде | По умолчанию в price-first |
+|---|---|---|
+| `show-category` | `<a class="pcard__category">` — рубрика товара | выкл. |
+| `show-feedback` | `<div class="pcard__feedback">` — рейтинг и отзывы целиком | вкл. |
+| `show-cart` | `<div class="pcard__cart">` — зона корзины (кнопка и степпер) | выкл. |
+
+Выключенное свойство означает, что элемента нет в разметке. Не прячь его через `hidden` или `display:none`: данные останутся в SSR-ответе. CSS править не нужно — у каждой строки свой верхний отступ, соседи от неё не зависят, и карточка просто становится ниже, как в макете. Порядок строк — как в разметке выше; рубрика идёт сразу после названия, зона корзины — последней.
 
 ## Токены
 

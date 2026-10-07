@@ -11,9 +11,10 @@ description: Product Card ArrowDS (.pcard).
 
 | Вариант | Reference | Порядок контента | Особое |
 |---|---|---|---|
-| **price-first** | `references/product-card-price-first.md` ✅ | Цена → бренд → название → рейтинг | база: контент слева, флаг страны, корзины нет |
-| **brand-first** | `references/product-card-brand-first.md` ✅ | Бренд → название → рейтинг → цена → корзина | контент по центру, бейджи по центру, флаг страны слева сверху |
-| **buy-now** | `references/product-card-buy-now.md` ✅ | Цена → название → рубрика → рейтинг → корзина | контент слева, вместо бренда ссылка на рубрику `.pcard__category` |
+| **price-first** | `references/product-card-price-first.md` ✅ | Цена → бренд → название → (рубрика) → рейтинг → (корзина) | база: контент слева, флаг страны; рубрика и корзина по умолчанию выключены |
+| **brand-first** | `references/product-card-brand-first.md` ✅ | Бренд → название → (рубрика) → рейтинг → цена → корзина | контент по центру, бейджи по центру, флаг страны слева сверху |
+| **buy-now** | `references/product-card-buy-now.md` ✅ | Цена → название → рубрика → рейтинг → корзина | контент слева, бренда нет, рубрика по умолчанию включена |
+| **button-price** | `references/product-card-button-price.md` ✅ | Бренд → название → (рубрика) → рейтинг → корзина | цена — подпись кнопки корзины; без цены — disabled «Нет в наличии»; зона корзины обязательна |
 
 > Имя варианта = порядок контента. Класс варианта обязателен: `.pcard-price-first` / `.pcard-brand-first` / `.pcard-buy-now` — он задаёт порядок и состав частей. Новая раскладка в Figma — это новый вариант того же скилла, не новый скилл.
 
@@ -62,10 +63,13 @@ description: Product Card ArrowDS (.pcard).
 │       └ одно фото → вместо слайдера .pcard__slider-spacer (резерв высоты, без сдвига)
 └── .pcard__content
     ├── .price.price-{default|sale|none}  ← awds-component-price (default / скидка / нет в наличии; размер задаёт карточка, едет по .typo-*)
-    ├── a.pcard__brand[href]   ← ссылка #2 → бренд (в buy-now вместо неё a.pcard__category[href] → рубрика)
-    ├── a.pcard__name[href]    ← ссылка #3 → товар (clamp 2 строки)
-    ├── .pcard__feedback ( .pcard__rating-icon + .pcard__rating-value + .pcard__reviews-icon + .pcard__reviews-count ) — статичный блок, не ссылка
-    └── .pcard__cart           ← только brand-first / buy-now (см. «Зона корзины»)
+    ├── a.pcard__brand[href]   ← ссылка #2 → бренд (в buy-now бренда нет)
+    ├── a.pcard__name[href]    ← ссылка #3 → товар (1 строка с многоточием)
+    ├── a.pcard__category[href] ← рубрика, необязательна (`show-category`)
+    ├── .pcard__feedback ( .pcard__rating-icon + .pcard__rating-value + .pcard__reviews-icon + .pcard__reviews-count ) — статичный блок, не ссылка, необязателен (`show-feedback`)
+    └── .pcard__cart           ← зона корзины, необязательна (`show-cart`, см. «Зона корзины»)
+
+С 07.10.2026 рубрика, отзывы и зона корзины есть во **всех** вариантах и включаются по отдельности. Выключено — элемента нет в разметке. Значения по умолчанию и порядок строк — в `{variant}.md`, раздел «Необязательные строки».
 ```
 
 **Корень — контейнер, а не `<a>`.** Кликабельны три отдельные ссылки: фото, бренд (или рубрика) и название, у каждой свой hover и свой фокус. Обернуть всю карточку в `<a>` нельзя: внутри живут кнопка избранного и кнопка корзины, а интерактивный элемент внутри ссылки — невалидная разметка, и клавиатура до него не доберётся.
@@ -86,12 +90,12 @@ description: Product Card ArrowDS (.pcard).
 
 ## Зона корзины (buy-now / brand-first)
 
-Варианты `buy-now` и `brand-first` несут зону корзины `.pcard__cart` (Figma `.AddCart`) с **двумя вью**. Обе вью держатся в DOM (сложены в один слот через grid-stack), активную выбирает атрибут `data-cart-state="button|stepper"`; переключение — **плавный кросс-фейд** (прерываемый `transition`, MIFB), а не подмена DOM. Меняет атрибут потребитель:
+Любой вариант может нести зону корзины (по умолчанию она включена в `buy-now` и `brand-first`) `.pcard__cart` (Figma `.AddCart`) с **двумя вью**. Обе вью держатся в DOM (сложены в один слот через grid-stack), активную выбирает атрибут `data-cart-state="button|stepper"`; переключение — **плавный кросс-фейд** (прерываемый `transition`, MIFB), а не подмена DOM. Меняет атрибут потребитель:
 
-- **button** (нет в корзине): `.pcard__cart-view--button` → `<button class="btn btn-primary btn--400/300">В корзину</button>` — компонент `awds-component-button`.
+- **button** (нет в корзине): `.pcard__cart-view--button` → `<button class="btn btn-primary btn--400">В корзину</button>` — компонент `awds-component-button`.
 - **stepper** (в корзине): `.pcard__cart-view--stepper` → поле количества `.pcard__stepper` (Input/Secondary) с ghost-кнопками `−`/`+` внутри + квадратная кнопка корзины `.btn-addition`. Кнопки — `awds-component-button` (ghost / addition, `.btn--icon-only`); стилизуется тут только контейнер-инпут и число (`.pcard__stepper-value`, `tabular-nums`). Число при смене получает мягкий bump (`@keyframes pcard-stepper-bump`, ретриггер класса `.pcard__stepper-value--bump`). Готовый `wireStepper` — в `product-card-buy-now.md`.
 
-Контейнер степпера стилизован в самом product-card на ролях `secondary-core` / `secondary-chroma` (sheen-градиент и внутренняя обводка — inset-тень, как INSIDE в макете: поле 40px, кнопки под рамкой) и `secondary-on` (число, ячейка `form-control/secondary/color` — значение, а не подсказка). Число — шкала control 400 (14/20), как у контролов. Размеры: `rectangle-400/300-rounded`, gap `space-2`. Подключи дополнительно `button-ghost.css` + `button-addition.css`. Разметка и mobile — в `product-card-buy-now.md` / `product-card-brand-first.md`.
+Контейнер степпера стилизован в самом product-card на ролях `secondary-core` / `secondary-chroma` (sheen-градиент и внутренняя обводка — inset-тень, как INSIDE в макете: поле 40px, кнопки под рамкой) и `secondary-on` (число, ячейка `form-control/secondary/color` — значение, а не подсказка). Число — шкала control 400 (14/20), как у контролов. Размеры: `rectangle-400-rounded`, gap `space-2`. Подключи дополнительно `button-ghost.css` + `button-addition.css`. Разметка и mobile — в `product-card-buy-now.md` / `product-card-brand-first.md`.
 
 ## Словарь частей в макете
 

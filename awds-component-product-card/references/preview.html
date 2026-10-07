@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="./product-card-price-first.css">
   <link rel="stylesheet" href="./product-card-brand-first.css">
   <link rel="stylesheet" href="./product-card-buy-now.css">
+  <link rel="stylesheet" href="./product-card-button-price.css">
 
   <style>
     body {
@@ -64,7 +65,7 @@
 <body>
 
   <h1>product-card / storybook</h1>
-  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — рейтинг → бренд → название → цена → кнопка «В корзину» → цвета, по центру, с флагом страны. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: <code>scale(0.9)→1</code>, скрим уходит, теней нет. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель. Переключи тему / скругление / вариант / корзину.</p>
+  <p class="sub">Карточка товара. <code>price-first</code> — цена → бренд → название → рейтинг, выравнивание слева, флаг страны. <code>brand-first</code> — рейтинг → бренд → название → цена → кнопка «В корзину» → цвета, по центру, с флагом страны. Две вьюхи: <code>.pcard</code> (Desktop-Tablet) и <code>.pcard--mobile</code>. Hover фото: скрим уходит, без зума и теней. Зона корзины (Figma <code>.AddCart</code>) в <code>brand-first</code>/<code>buy-now</code> — два состояния: <code>button</code> (кнопка «В корзину») ↔ <code>stepper</code> (поле количества <code>−/+</code> + кнопка корзины), переключает потребитель. Переключи тему / скругление / вариант / корзину.</p>
 
   <div class="toolbar">
     <label>Вариант:
@@ -72,6 +73,7 @@
         <option value="price-first">price-first</option>
         <option value="brand-first">brand-first</option>
         <option value="buy-now">buy-now</option>
+        <option value="button-price">button-price</option>
       </select>
     </label>
     <label>Тема:
@@ -117,6 +119,26 @@
         <option value="default">default</option>
         <option value="sale">sale (скидка)</option>
         <option value="none">none (нет в наличии)</option>
+      </select>
+    </label>
+    <label>Отзывы:
+      <select id="feedback">
+        <option value="on" selected>показывать</option>
+        <option value="off">скрыть</option>
+      </select>
+    </label>
+    <label>Рубрика:
+      <select id="category">
+        <option value="auto" selected>как в варианте</option>
+        <option value="on">показывать</option>
+        <option value="off">скрыть</option>
+      </select>
+    </label>
+    <label>Зона корзины:
+      <select id="cartRow">
+        <option value="auto" selected>как в варианте</option>
+        <option value="on">показывать</option>
+        <option value="off">скрыть</option>
       </select>
     </label>
     <label>Кадры:
@@ -229,13 +251,27 @@
 
     // Зона корзины (Figma .AddCart): ОБЕ вью (button + stepper) всегда в DOM, сложены
     // стопкой; активную задаёт data-cart-state, переключение — кросс-фейд (см. CSS).
-    // size: --400 desktop / --300 mobile. Начальное состояние = opts.cart.
-    const cartZone = (mobile, cart) => {
-      const sz = mobile ? 'btn--300' : 'btn--400';
+    // size: кнопка --400 desktop / --300 mobile, иконка корзины слева;
+    // степпер --400 / --300. Начальное состояние = opts.cart.
+    // Кнопка корзины. В button-price (btnPrice задан) подпись — цена: обычная и скидка —
+    // иконка + только новая цена (компонент .price, размер от кнопки); без цены —
+    // disabled «Нет в наличии» без иконки (решение владельца 07.10.2026).
+    const cartButton = (szBtn, btnPrice) => {
+      if (!btnPrice) return `<button type="button" class="btn btn-primary ${szBtn}">${icCart}В корзину</button>`;
+      if (btnPrice === 'none') return `<button type="button" class="btn btn-primary ${szBtn}" disabled>Нет в наличии</button>`;
+      const value = btnPrice === 'sale' ? '11 900' : '12 900';
+      return `<button type="button" class="btn btn-primary ${szBtn}" aria-label="В корзину, ${value} ₽">${icCart}`
+        + `<span class="price price-${btnPrice}"><span class="price__main"><span class="price__current">${value}</span><span class="price__currency">₽</span></span></span></button>`;
+    };
+
+    const cartZone = (mobile, cart, btnPrice) => {
+      // Зона корзины — размер 400 в обеих вьюхах (макет 07.10.2026).
+      const sz = 'btn--400';
+      const szBtn = sz;
       const state = cart === 'stepper' ? 'stepper' : 'button';
       return `<div class="pcard__cart" data-cart-state="${state}">`
         + `<div class="pcard__cart-view pcard__cart-view--button">`
-        +   `<button type="button" class="btn btn-primary ${sz}">В корзину</button>`
+        +   cartButton(szBtn, btnPrice)
         + `</div>`
         + `<div class="pcard__cart-view pcard__cart-view--stepper">`
         +   `<div class="pcard__stepper">`
@@ -247,6 +283,23 @@
         + `</div>`
         + `</div>`;
     };
+
+    // Строка отзывов целиком — свойство show-feedback в макете. Выключено — блока нет в разметке.
+    const feedbackRow = (show) => show === 'off' ? '' :
+      `<div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>`;
+
+    // Рубрика и зона корзины — свойства show-category / show-cart в макете, есть во всех
+    // вариантах. «auto» — значение по умолчанию варианта (как у инстанса без переопределений).
+    const ROW_DEFAULTS = {
+      'price-first': { category: 'off', cartRow: 'off' },
+      'brand-first': { category: 'off', cartRow: 'on' },
+      'buy-now':     { category: 'on',  cartRow: 'on' },
+      'button-price': { category: 'on', cartRow: 'on' },
+    };
+    const rowOn = (opts, key) => (opts.variant === 'button-price' && key === 'cartRow') || (opts[key] && opts[key] !== 'auto' ? opts[key] : (ROW_DEFAULTS[opts.variant] || ROW_DEFAULTS['price-first'])[key]) === 'on';
+    const categoryRow = (opts) => rowOn(opts, 'category') ? '<a class="pcard__category" href="#">Ссылка на рубрику товара</a>' : '';
+    const cartRow = (mobile, opts) => rowOn(opts, 'cartRow') ? cartZone(mobile, opts.cart, opts.variant === 'button-price' ? opts.price : null) : '';
+    // button-price: зона корзины обязательна (цена живёт только в кнопке), свойства show-cart нет.
 
     function cardPriceFirst(view, opts) {
       const mobile = view === 'mobile';
@@ -268,7 +321,9 @@
     ${priceBlock(mobile, opts.price)}
     <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в две строки</a>
-    <div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>
+    ${categoryRow(opts)}
+    ${feedbackRow(opts.feedback)}
+    ${cartRow(mobile, opts)}
   </div>
 </div>`;
     }
@@ -292,9 +347,10 @@
   <div class="pcard__content">
     <a class="pcard__brand" href="#">Brandname</a>
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
-    <div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>
+    ${categoryRow(opts)}
+    ${feedbackRow(opts.feedback)}
     <div class="pcard__price">${priceBlock(mobile, opts.price)}</div>
-    ${cartZone(mobile, opts.cart)}
+    ${cartRow(mobile, opts)}
   </div>
 </div>`;
     }
@@ -318,14 +374,40 @@
   <div class="pcard__content">
     ${priceBlock(mobile, opts.price)}
     <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
-    <a class="pcard__category" href="#">Ссылка на рубрику товара</a>
-    <div class="pcard__feedback">${starSolid}<span class="pcard__rating-value">4.9</span>${chatIcon}<span class="pcard__reviews-count">23 отзыва</span></div>
-    ${cartZone(mobile, opts.cart)}
+    ${categoryRow(opts)}
+    ${feedbackRow(opts.feedback)}
+    ${cartRow(mobile, opts)}
   </div>
 </div>`;
     }
 
-    const CARDS = { 'brand-first': cardBrandFirst, 'buy-now': cardBuyNow };
+    function cardButtonPrice(view, opts) {
+      const mobile = view === 'mobile';
+      const frames = opts.frames || 3;
+      return `
+<div class="pcard pcard-button-price${mobile ? ' pcard--mobile' : ''}">
+  <div class="pcard__media">
+    <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
+    <div class="pcard__top">
+      ${country('Германия')}
+      ${favBtn(mobile, opts.fav)}
+    </div>
+    <div class="pcard__badges">${badges(mobile)}</div>
+  </div>
+  ${opts.image === 'with' && frames > 1
+      ? sliderDots(frames)
+      : '<div class="pcard__slider-spacer" aria-hidden="true"></div>'}
+  <div class="pcard__content">
+    <a class="pcard__brand" href="#">Brandname</a>
+    <a class="pcard__name" href="#">Название товара которое ложится в строку</a>
+    ${categoryRow(opts)}
+    ${feedbackRow(opts.feedback)}
+    ${cartRow(mobile, opts)}
+  </div>
+</div>`;
+    }
+
+    const CARDS = { 'brand-first': cardBrandFirst, 'buy-now': cardBuyNow, 'button-price': cardButtonPrice };
     const card = (view, opts) => (CARDS[opts.variant] || cardPriceFirst)(view, opts);
 
     // --- Галерея: перелистывание фото (десктоп — hover-зоны, тач — свайп) ---
@@ -336,6 +418,16 @@
     function wireGallery(link) {
       const imgs = [...link.querySelectorAll('.pcard__image')];
       if (imgs.length < 2) return;                       // одиночное фото — листать нечего
+      // Прогрев: кадры декодируем заранее, на первое наведение или касание. Иначе новый
+      // кадр проявлялся ещё не нарисованным и «вспыхивал», когда браузер его дорисовывал.
+      var warmed = false;
+      function warm() {
+        if (warmed) return;
+        warmed = true;
+        imgs.forEach(function (im) { im.loading = 'eager'; if (im.decode) im.decode().catch(function () {}); });
+      }
+      link.addEventListener('pointerenter', warm);
+      link.addEventListener('pointerdown', warm);
       const card = link.closest('.pcard');               // слайдер — сосед .pcard__media в карточке
       const slider = card ? card.querySelector('.pcard__slider') : null;
       const dots = slider ? [...slider.querySelectorAll('.slider__dot')] : [];
@@ -447,6 +539,9 @@
         cart:  document.querySelector('#cart').value,
         price: document.querySelector('#price').value,
         frames: parseInt(document.querySelector('#frames').value, 10),
+        feedback: document.querySelector('#feedback').value,
+        category: document.querySelector('#category').value,
+        cartRow: document.querySelector('#cartRow').value,
       };
       document.querySelector('#slot-desktop').innerHTML = card('desktop', opts);
       document.querySelector('#slot-mobile').innerHTML  = card('mobile', opts);
@@ -456,7 +551,7 @@
       // В гриде показываем разные состояния цены: default · sale · none · sale
       const priceStates = ['default', 'sale', 'none', 'sale'];
       for (let i = 0; i < 4; i++) {
-        grid.insertAdjacentHTML('beforeend', card('desktop', { variant: opts.variant, fav: i % 2 ? 'on' : 'off', image: 'with', cart: i % 2 ? 'stepper' : 'button', price: priceStates[i], frames: opts.frames }));
+        grid.insertAdjacentHTML('beforeend', card('desktop', { variant: opts.variant, fav: i % 2 ? 'on' : 'off', image: 'with', cart: i % 2 ? 'stepper' : 'button', price: priceStates[i], frames: opts.frames, feedback: opts.feedback, category: opts.category, cartRow: opts.cartRow }));
       }
 
       // Подключаем перелистывание галереи и логику степпера ко всем карточкам
@@ -484,6 +579,9 @@
     document.querySelector('#cart').addEventListener('change', render);
     document.querySelector('#price').addEventListener('change', render);
     document.querySelector('#frames').addEventListener('change', render);
+    document.querySelector('#feedback').addEventListener('change', render);
+    document.querySelector('#category').addEventListener('change', render);
+    document.querySelector('#cartRow').addEventListener('change', render);
 
     render();
   </script>
