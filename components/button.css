@@ -1,4 +1,4 @@
-/* ArrowDS · button@2.2.12
+/* ArrowDS · button@2.2.13
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -11,6 +11,12 @@
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
+}
+
+@property --awds-btn-glow {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
 }
 
 @layer awds {
@@ -186,6 +192,24 @@
   --awds-btn-color:  rgb(var(--addition-on));
 }
 
+.btn.btn-addition {
+  --awds-btn-glow: var(--awds-opacity-70);   
+  background:
+    radial-gradient(45.77% 137.5% at 50% 50%,
+      color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
+      color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
+    var(--awds-btn-bg);
+  transition: --awds-btn-bg 0.15s ease-out,
+              --awds-btn-chroma 0.15s ease-out,
+              --awds-btn-glow 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out;
+}
+
+.btn.btn-addition:hover {
+  --awds-btn-glow: var(--awds-opacity-100);
+}
+
 .btn-addition:active {
   --awds-btn-bg:     rgb(var(--addition-core));   
   --awds-btn-chroma: rgb(var(--addition-core));   
@@ -194,7 +218,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .btn {
+  .btn,
+  .btn.btn-addition {
     transition: none;
   }
 }
@@ -225,6 +250,12 @@
   --awds-btn-bg:     rgb(var(--surface-surface));   
   --awds-btn-border: rgb(var(--surface-bright));   
   --awds-btn-color:  rgb(var(--surface-on-highest));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
 }
 
 .btn-contrast {
@@ -332,11 +363,36 @@
   --awds-btn-color:  rgb(var(--primary-on));
 }
 
+.btn.btn-primary {
+  --awds-btn-glow: var(--awds-opacity-70);   
+  background:
+    radial-gradient(45.77% 137.5% at 50% 50%,
+      color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
+      color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
+    var(--awds-btn-bg);
+  transition: --awds-btn-bg 0.15s ease-out,
+              --awds-btn-chroma 0.15s ease-out,
+              --awds-btn-glow 0.15s ease-out,
+              box-shadow 0.15s ease-out,
+              color 0.15s ease-out;
+}
+
+.btn.btn-primary:hover {
+  --awds-btn-glow: var(--awds-opacity-100);
+}
+
 .btn-primary:active {
   --awds-btn-bg:     rgb(var(--primary-core));   
   --awds-btn-chroma: rgb(var(--primary-core));   
   --awds-btn-border: rgb(var(--primary-core));   
   --awds-btn-color:  rgb(var(--primary-on));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn.btn-primary {
+    transition: none;
+  }
 }
 
 .btn-secondary {
