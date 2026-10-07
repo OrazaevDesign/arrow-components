@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 621 из 1377 объявленных в теме. */
+   Переменных: 586 из 1365 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -36,9 +36,6 @@
   --secondary-core-light: 245 245 245;
   --secondary-core-dark: 28 28 28;
   --secondary-core: var(--secondary-core-light);
-  --secondary-chroma-light: 245 245 245;
-  --secondary-chroma-dark: 28 28 28;
-  --secondary-chroma: var(--secondary-chroma-light);
   --secondary-dim-light: 226 226 226;
   --secondary-dim-dark: 33 33 33;
   --secondary-dim: var(--secondary-dim-light);
@@ -488,14 +485,6 @@
   --awds-typography-line-height-700-tablet: 27px;
   --awds-typography-line-height-700-mobile: 27px;
   --awds-typography-line-height-700: var(--awds-typography-line-height-700-desktop);
-  --awds-typography-line-height-800-desktop: 29px;
-  --awds-typography-line-height-800-tablet: 29px;
-  --awds-typography-line-height-800-mobile: 29px;
-  --awds-typography-line-height-800: var(--awds-typography-line-height-800-desktop);
-  --awds-typography-line-height-900-desktop: 32px;
-  --awds-typography-line-height-900-tablet: 32px;
-  --awds-typography-line-height-900-mobile: 30px;
-  --awds-typography-line-height-900: var(--awds-typography-line-height-900-desktop);
   --awds-typography-line-height-compact-50-desktop: 12px;
   --awds-typography-line-height-compact-50-tablet: 12px;
   --awds-typography-line-height-compact-50-mobile: 12px;
@@ -564,10 +553,6 @@
   --awds-typography-letter-spacing-920-tablet: -0.3px;
   --awds-typography-letter-spacing-920-mobile: -0.3px;
   --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-desktop);
-  --awds-wysiwyg-font-size-lead-medium: var(--awds-typography-font-size-800);
-  --awds-wysiwyg-font-size-lead-small: var(--awds-typography-font-size-600);
-  --awds-wysiwyg-font-size-lead-large: var(--awds-typography-font-size-900);
-  --awds-wysiwyg-font-size-lead: var(--awds-wysiwyg-font-size-lead-medium);
   --awds-wysiwyg-font-size-body-medium: var(--awds-typography-font-size-600);
   --awds-wysiwyg-font-size-body-small: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-body-large: var(--awds-typography-font-size-700);
@@ -576,14 +561,6 @@
   --awds-wysiwyg-font-size-caption-small: var(--awds-typography-font-size-200);
   --awds-wysiwyg-font-size-caption-large: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);
-  --awds-wysiwyg-font-size-price-listing-medium: var(--awds-typography-font-size-910);
-  --awds-wysiwyg-font-size-price-listing-small: var(--awds-typography-font-size-900);
-  --awds-wysiwyg-font-size-price-listing-large: var(--awds-typography-font-size-920);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-medium);
-  --awds-wysiwyg-line-height-lead-medium: var(--awds-typography-line-height-800);
-  --awds-wysiwyg-line-height-lead-small: var(--awds-typography-line-height-600);
-  --awds-wysiwyg-line-height-lead-large: var(--awds-typography-line-height-900);
-  --awds-wysiwyg-line-height-lead: var(--awds-wysiwyg-line-height-lead-medium);
   --awds-wysiwyg-line-height-body-medium: var(--awds-typography-line-height-600);
   --awds-wysiwyg-line-height-body-small: var(--awds-typography-line-height-400);
   --awds-wysiwyg-line-height-body-large: var(--awds-typography-line-height-700);
@@ -592,14 +569,6 @@
   --awds-wysiwyg-line-height-caption-small: var(--awds-typography-line-height-200);
   --awds-wysiwyg-line-height-caption-large: var(--awds-typography-line-height-400);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);
-  --awds-wysiwyg-line-height-price-listing-medium: var(--awds-typography-line-height-compact-910);
-  --awds-wysiwyg-line-height-price-listing-small: var(--awds-typography-line-height-compact-900);
-  --awds-wysiwyg-line-height-price-listing-large: var(--awds-typography-line-height-compact-920);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-medium);
-  --awds-wysiwyg-letter-spacing-lead-medium: var(--awds-typography-letter-spacing-800);
-  --awds-wysiwyg-letter-spacing-lead-small: var(--awds-typography-letter-spacing-600);
-  --awds-wysiwyg-letter-spacing-lead-large: var(--awds-typography-letter-spacing-900);
-  --awds-wysiwyg-letter-spacing-lead: var(--awds-wysiwyg-letter-spacing-lead-medium);
   --awds-wysiwyg-letter-spacing-body-medium: var(--awds-typography-letter-spacing-600);
   --awds-wysiwyg-letter-spacing-body-small: var(--awds-typography-letter-spacing-400);
   --awds-wysiwyg-letter-spacing-body-large: var(--awds-typography-letter-spacing-700);
@@ -608,10 +577,6 @@
   --awds-wysiwyg-letter-spacing-caption-small: var(--awds-typography-letter-spacing-200);
   --awds-wysiwyg-letter-spacing-caption-large: var(--awds-typography-letter-spacing-400);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-medium);
-  --awds-wysiwyg-letter-spacing-price-listing-medium: var(--awds-typography-letter-spacing-910);
-  --awds-wysiwyg-letter-spacing-price-listing-small: var(--awds-typography-letter-spacing-900);
-  --awds-wysiwyg-letter-spacing-price-listing-large: var(--awds-typography-letter-spacing-920);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-medium);
   --awds-wysiwyg-gap-li-top-medium: var(--awds-typography-line-height-compact-200);
   --awds-wysiwyg-gap-li-top-small: var(--awds-typography-line-height-compact-50);
   --awds-wysiwyg-gap-li-top-large: var(--awds-typography-line-height-compact-300);
@@ -634,7 +599,6 @@
   --primary-container-on: var(--primary-container-on-light);
   --primary-container-on-lowest: var(--primary-container-on-lowest-light);
   --secondary-core: var(--secondary-core-light);
-  --secondary-chroma: var(--secondary-chroma-light);
   --secondary-dim: var(--secondary-dim-light);
   --secondary-on: var(--secondary-on-light);
   --secondary-on-dim: var(--secondary-on-dim-light);
@@ -720,7 +684,6 @@
   --primary-container-on: var(--primary-container-on-dark);
   --primary-container-on-lowest: var(--primary-container-on-lowest-dark);
   --secondary-core: var(--secondary-core-dark);
-  --secondary-chroma: var(--secondary-chroma-dark);
   --secondary-dim: var(--secondary-dim-dark);
   --secondary-on: var(--secondary-on-dark);
   --secondary-on-dim: var(--secondary-on-dim-dark);
@@ -813,8 +776,6 @@
   --awds-typography-line-height-400: var(--awds-typography-line-height-400-desktop);
   --awds-typography-line-height-600: var(--awds-typography-line-height-600-desktop);
   --awds-typography-line-height-700: var(--awds-typography-line-height-700-desktop);
-  --awds-typography-line-height-800: var(--awds-typography-line-height-800-desktop);
-  --awds-typography-line-height-900: var(--awds-typography-line-height-900-desktop);
   --awds-typography-line-height-compact-50: var(--awds-typography-line-height-compact-50-desktop);
   --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-desktop);
   --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-desktop);
@@ -853,8 +814,6 @@
     --awds-typography-line-height-400: var(--awds-typography-line-height-400-tablet);
     --awds-typography-line-height-600: var(--awds-typography-line-height-600-tablet);
     --awds-typography-line-height-700: var(--awds-typography-line-height-700-tablet);
-    --awds-typography-line-height-800: var(--awds-typography-line-height-800-tablet);
-    --awds-typography-line-height-900: var(--awds-typography-line-height-900-tablet);
     --awds-typography-line-height-compact-50: var(--awds-typography-line-height-compact-50-tablet);
     --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-tablet);
     --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-tablet);
@@ -894,8 +853,6 @@
     --awds-typography-line-height-400: var(--awds-typography-line-height-400-mobile);
     --awds-typography-line-height-600: var(--awds-typography-line-height-600-mobile);
     --awds-typography-line-height-700: var(--awds-typography-line-height-700-mobile);
-    --awds-typography-line-height-800: var(--awds-typography-line-height-800-mobile);
-    --awds-typography-line-height-900: var(--awds-typography-line-height-900-mobile);
     --awds-typography-line-height-compact-50: var(--awds-typography-line-height-compact-50-mobile);
     --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-mobile);
     --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-mobile);
@@ -949,48 +906,30 @@
   --awds-rounded-border-radius-full: var(--awds-rounded-border-radius-full-none);
 }
 .typo-medium {
-  --awds-wysiwyg-font-size-lead: var(--awds-wysiwyg-font-size-lead-medium);
   --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-medium);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-medium);
-  --awds-wysiwyg-line-height-lead: var(--awds-wysiwyg-line-height-lead-medium);
   --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-medium);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-medium);
-  --awds-wysiwyg-letter-spacing-lead: var(--awds-wysiwyg-letter-spacing-lead-medium);
   --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-medium);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-medium);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-medium);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-medium);
 }
 .typo-small {
-  --awds-wysiwyg-font-size-lead: var(--awds-wysiwyg-font-size-lead-small);
   --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-small);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-small);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-small);
-  --awds-wysiwyg-line-height-lead: var(--awds-wysiwyg-line-height-lead-small);
   --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-small);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-small);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-small);
-  --awds-wysiwyg-letter-spacing-lead: var(--awds-wysiwyg-letter-spacing-lead-small);
   --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-small);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-small);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-small);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-small);
 }
 .typo-large {
-  --awds-wysiwyg-font-size-lead: var(--awds-wysiwyg-font-size-lead-large);
   --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-large);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-large);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-large);
-  --awds-wysiwyg-line-height-lead: var(--awds-wysiwyg-line-height-lead-large);
   --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-large);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-large);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-large);
-  --awds-wysiwyg-letter-spacing-lead: var(--awds-wysiwyg-letter-spacing-lead-large);
   --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-large);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-large);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-large);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-large);
 }
 :root {

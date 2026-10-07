@@ -346,7 +346,7 @@
     },
     {
       "name": "link",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "variants": [
         "default",
         "muted",
@@ -360,7 +360,7 @@
     },
     {
       "name": "list-item",
-      "version": "2.4.1",
+      "version": "2.4.2",
       "variants": [
         "transparent",
         "default",
@@ -386,7 +386,7 @@
         600
       ],
       "rules": 146,
-      "bytes": 53050
+      "bytes": 53120
     },
     {
       "name": "modal",
@@ -466,7 +466,7 @@
     },
     {
       "name": "product-card",
-      "version": "1.4.3",
+      "version": "2.0.1",
       "variants": [
         "price-first",
         "brand-first",
@@ -474,8 +474,8 @@
         "button-price"
       ],
       "sizes": null,
-      "rules": 223,
-      "bytes": 47743
+      "rules": 224,
+      "bytes": 45805
     },
     {
       "name": "progress",
@@ -584,7 +584,7 @@
     },
     {
       "name": "slider",
-      "version": "1.0.9",
+      "version": "1.0.10",
       "variants": [
         "dots",
         "dots-mini",
@@ -592,7 +592,7 @@
       ],
       "sizes": null,
       "rules": 7,
-      "bytes": 1756
+      "bytes": 1751
     },
     {
       "name": "switch",
@@ -736,14 +736,14 @@
     }
   ],
   "bundle": {
-    "bytes": 382202,
-    "rules": 1478,
-    "hash": "sha256:3049c9181f672247e1155162c7fd1df55ae45678a1514bf6eb1724a225f4c35b"
+    "bytes": 380329,
+    "rules": 1479,
+    "hash": "sha256:804647c5b303a2d904b0ab131d66ffa518b3ffec1a6ff65ebf19f03cc83e64db"
   },
   "theme": {
-    "bytes": 60568,
-    "variables_kept": 621,
-    "variables_declared": 1377,
+    "bytes": 55625,
+    "variables_kept": 586,
+    "variables_declared": 1365,
     "missing": []
   },
   "skipped_selectors": [

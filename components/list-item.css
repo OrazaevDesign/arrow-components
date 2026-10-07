@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@2.4.1
+/* ArrowDS · list-item@2.4.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -207,10 +207,13 @@
 }
 
 .list-item__preview > img {
+  box-sizing: border-box;
   display: block;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
+  padding: 11%;
+  object-fit: contain;
+  mix-blend-mode: darken;
   border-radius: var(--awds-rounded-border-radius-300);
 }
 

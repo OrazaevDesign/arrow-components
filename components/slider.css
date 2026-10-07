@@ -1,4 +1,4 @@
-/* ArrowDS · slider@1.0.9
+/* ArrowDS · slider@1.0.10
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -22,13 +22,13 @@
   width: var(--awds-slider-dot-size);
   height: var(--awds-slider-dot-size);
   border-radius: var(--awds-rounded-border-radius-full);
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-30));   
+  background: rgb(var(--surface-on-high) / var(--awds-opacity-30));   
   transition: width 0.15s ease-out, background-color 0.15s ease-out;
 }
 
 .slider__dot--active {
   width: var(--awds-slider-dot-active-w);
-  background: rgb(var(--surface-on-highest));
+  background: rgb(var(--surface-on-high));
 }
 
 .slider-dots {
