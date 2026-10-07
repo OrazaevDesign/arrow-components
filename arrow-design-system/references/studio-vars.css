@@ -138,89 +138,89 @@
   --tertiary-container-on-lowest-light: 210 215 242;
   --tertiary-container-on-lowest-dark: 29 38 90;
   --tertiary-container-on-lowest: var(--tertiary-container-on-lowest-light);
-  --accent-core-light: 189 33 233;
-  --accent-core-dark: 189 33 233;
+  --accent-core-light: 202 33 233;
+  --accent-core-dark: 202 33 233;
   --accent-core: var(--accent-core-light);
-  --accent-chroma-light: 236 65 151;
-  --accent-chroma-dark: 236 65 151;
+  --accent-chroma-light: 236 65 220;
+  --accent-chroma-dark: 236 65 220;
   --accent-chroma: var(--accent-chroma-light);
-  --accent-dim-light: 195 51 237;
-  --accent-dim-dark: 195 51 237;
+  --accent-dim-light: 208 51 237;
+  --accent-dim-dark: 208 51 237;
   --accent-dim: var(--accent-dim-light);
   --accent-on-light: 255 255 255;
   --accent-on-dark: 255 255 255;
   --accent-on: var(--accent-on-light);
-  --accent-on-dim-light: 248 239 251;
-  --accent-on-dim-dark: 248 239 251;
+  --accent-on-dim-light: 249 239 251;
+  --accent-on-dim-dark: 249 239 251;
   --accent-on-dim: var(--accent-on-dim-light);
   --accent-container-base-light: 252 248 253;
-  --accent-container-base-dark: 60 23 71;
+  --accent-container-base-dark: 64 23 71;
   --accent-container-base: var(--accent-container-base-light);
-  --accent-container-core-light: 248 239 251;
-  --accent-container-core-dark: 40 16 47;
+  --accent-container-core-light: 249 239 251;
+  --accent-container-core-dark: 42 16 47;
   --accent-container-core: var(--accent-container-core-light);
-  --accent-container-chroma-light: 248 239 251;
-  --accent-container-chroma-dark: 40 16 47;
+  --accent-container-chroma-light: 249 239 251;
+  --accent-container-chroma-dark: 42 16 47;
   --accent-container-chroma: var(--accent-container-chroma-light);
   --accent-container-dim-light: 252 248 253;
-  --accent-container-dim-dark: 60 23 71;
+  --accent-container-dim-dark: 64 23 71;
   --accent-container-dim: var(--accent-container-dim-light);
-  --accent-container-on-highest-light: 161 32 198;
-  --accent-container-on-highest-dark: 202 73 239;
+  --accent-container-on-highest-light: 172 32 198;
+  --accent-container-on-highest-dark: 213 73 239;
   --accent-container-on-highest: var(--accent-container-on-highest-light);
-  --accent-container-on-high-light: 189 33 233;
-  --accent-container-on-high-dark: 207 93 240;
+  --accent-container-on-high-light: 202 33 233;
+  --accent-container-on-high-dark: 217 93 240;
   --accent-container-on-high: var(--accent-container-on-high-light);
-  --accent-container-on-light: 192 123 211;
-  --accent-container-on-dark: 140 47 166;
+  --accent-container-on-light: 197 123 211;
+  --accent-container-on-dark: 148 47 166;
   --accent-container-on: var(--accent-container-on-light);
-  --accent-container-on-low-light: 220 177 232;
-  --accent-container-on-low-dark: 107 38 127;
+  --accent-container-on-low-light: 223 177 232;
+  --accent-container-on-low-dark: 113 38 127;
   --accent-container-on-low: var(--accent-container-on-low-light);
-  --accent-container-on-lowest-light: 235 210 242;
-  --accent-container-on-lowest-dark: 81 30 96;
+  --accent-container-on-lowest-light: 237 210 242;
+  --accent-container-on-lowest-dark: 86 30 96;
   --accent-container-on-lowest: var(--accent-container-on-lowest-light);
-  --addition-core-light: 189 33 233;
-  --addition-core-dark: 189 33 233;
+  --addition-core-light: 202 33 233;
+  --addition-core-dark: 202 33 233;
   --addition-core: var(--addition-core-light);
-  --addition-chroma-light: 236 65 151;
-  --addition-chroma-dark: 236 65 151;
+  --addition-chroma-light: 236 65 220;
+  --addition-chroma-dark: 236 65 220;
   --addition-chroma: var(--addition-chroma-light);
-  --addition-dim-light: 195 51 237;
-  --addition-dim-dark: 195 51 237;
+  --addition-dim-light: 208 51 237;
+  --addition-dim-dark: 208 51 237;
   --addition-dim: var(--addition-dim-light);
   --addition-on-light: 255 255 255;
   --addition-on-dark: 255 255 255;
   --addition-on: var(--addition-on-light);
-  --addition-on-dim-light: 248 239 251;
-  --addition-on-dim-dark: 248 239 251;
+  --addition-on-dim-light: 249 239 251;
+  --addition-on-dim-dark: 249 239 251;
   --addition-on-dim: var(--addition-on-dim-light);
   --addition-container-base-light: 252 248 253;
-  --addition-container-base-dark: 60 23 71;
+  --addition-container-base-dark: 64 23 71;
   --addition-container-base: var(--addition-container-base-light);
-  --addition-container-core-light: 248 239 251;
-  --addition-container-core-dark: 40 16 47;
+  --addition-container-core-light: 249 239 251;
+  --addition-container-core-dark: 42 16 47;
   --addition-container-core: var(--addition-container-core-light);
-  --addition-container-chroma-light: 248 239 251;
-  --addition-container-chroma-dark: 40 16 47;
+  --addition-container-chroma-light: 249 239 251;
+  --addition-container-chroma-dark: 42 16 47;
   --addition-container-chroma: var(--addition-container-chroma-light);
   --addition-container-dim-light: 252 248 253;
-  --addition-container-dim-dark: 60 23 71;
+  --addition-container-dim-dark: 64 23 71;
   --addition-container-dim: var(--addition-container-dim-light);
-  --addition-container-on-highest-light: 161 32 198;
-  --addition-container-on-highest-dark: 202 73 239;
+  --addition-container-on-highest-light: 172 32 198;
+  --addition-container-on-highest-dark: 213 73 239;
   --addition-container-on-highest: var(--addition-container-on-highest-light);
-  --addition-container-on-high-light: 189 33 233;
-  --addition-container-on-high-dark: 207 93 240;
+  --addition-container-on-high-light: 202 33 233;
+  --addition-container-on-high-dark: 217 93 240;
   --addition-container-on-high: var(--addition-container-on-high-light);
-  --addition-container-on-light: 192 123 211;
-  --addition-container-on-dark: 140 47 166;
+  --addition-container-on-light: 197 123 211;
+  --addition-container-on-dark: 148 47 166;
   --addition-container-on: var(--addition-container-on-light);
-  --addition-container-on-low-light: 220 177 232;
-  --addition-container-on-low-dark: 107 38 127;
+  --addition-container-on-low-light: 223 177 232;
+  --addition-container-on-low-dark: 113 38 127;
   --addition-container-on-low: var(--addition-container-on-low-light);
-  --addition-container-on-lowest-light: 235 210 242;
-  --addition-container-on-lowest-dark: 81 30 96;
+  --addition-container-on-lowest-light: 237 210 242;
+  --addition-container-on-lowest-dark: 86 30 96;
   --addition-container-on-lowest: var(--addition-container-on-lowest-light);
   --info-core-light: 55 82 237;
   --info-core-dark: 55 82 237;
@@ -414,8 +414,8 @@
   --surface-container-highest-light: 213 213 213;
   --surface-container-highest-dark: 20 20 20;
   --surface-container-highest: var(--surface-container-highest-light);
-  --surface-chromatic-start-light: 248 239 251;
-  --surface-chromatic-start-dark: 40 16 47;
+  --surface-chromatic-start-light: 249 239 251;
+  --surface-chromatic-start-dark: 42 16 47;
   --surface-chromatic-start: var(--surface-chromatic-start-light);
   --surface-chromatic-mid-start-light: 242 239 251;
   --surface-chromatic-mid-start-dark: 25 16 47;
@@ -713,52 +713,52 @@
   --awds-rounded-border-radius-none: var(--awds-rounded-border-radius-none-smooth);  /* Нулевое скругление во всех модах: явный прямой угол. */
   /* Радиус кольца фокуса ступени 50: smooth 5px, rounded 26px, none 0px. На 1px больше border-radius/50 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-50-smooth: 5px;
-  --awds-rounded-outline-50-rounded: 26px;
+  --awds-rounded-outline-50-rounded: 27px;
   --awds-rounded-outline-50-none: 0px;
   --awds-rounded-outline-50: var(--awds-rounded-outline-50-smooth);  /* Радиус кольца фокуса ступени 50: smooth 5px, rounded 26px, none 0px. На 1px больше border-radius/50 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 100: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/100 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-100-smooth: 7px;
-  --awds-rounded-outline-100-rounded: 26px;
+  --awds-rounded-outline-100-rounded: 27px;
   --awds-rounded-outline-100-none: 0px;
   --awds-rounded-outline-100: var(--awds-rounded-outline-100-smooth);  /* Радиус кольца фокуса ступени 100: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/100 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 200: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/200 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-200-smooth: 7px;
-  --awds-rounded-outline-200-rounded: 26px;
+  --awds-rounded-outline-200-rounded: 27px;
   --awds-rounded-outline-200-none: 0px;
   --awds-rounded-outline-200: var(--awds-rounded-outline-200-smooth);  /* Радиус кольца фокуса ступени 200: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/200 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 300: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/300 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-300-smooth: 7px;
-  --awds-rounded-outline-300-rounded: 26px;
+  --awds-rounded-outline-300-rounded: 27px;
   --awds-rounded-outline-300-none: 0px;
   --awds-rounded-outline-300: var(--awds-rounded-outline-300-smooth);  /* Радиус кольца фокуса ступени 300: smooth 7px, rounded 26px, none 0px. На 1px больше border-radius/300 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 400: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/400 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-400-smooth: 9px;
-  --awds-rounded-outline-400-rounded: 26px;
+  --awds-rounded-outline-400-rounded: 27px;
   --awds-rounded-outline-400-none: 0px;
   --awds-rounded-outline-400: var(--awds-rounded-outline-400-smooth);  /* Радиус кольца фокуса ступени 400: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/400 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 500: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/500 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-500-smooth: 9px;
-  --awds-rounded-outline-500-rounded: 26px;
+  --awds-rounded-outline-500-rounded: 27px;
   --awds-rounded-outline-500-none: 0px;
   --awds-rounded-outline-500: var(--awds-rounded-outline-500-smooth);  /* Радиус кольца фокуса ступени 500: smooth 9px, rounded 26px, none 0px. На 1px больше border-radius/500 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 600: smooth 11px, rounded 26px, none 0px. На 1px больше border-radius/600 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-600-smooth: 11px;
-  --awds-rounded-outline-600-rounded: 26px;
+  --awds-rounded-outline-600-rounded: 27px;
   --awds-rounded-outline-600-none: 0px;
   --awds-rounded-outline-600: var(--awds-rounded-outline-600-smooth);  /* Радиус кольца фокуса ступени 600: smooth 11px, rounded 26px, none 0px. На 1px больше border-radius/600 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 700: smooth 13px, rounded 26px, none 0px. На 1px больше border-radius/700 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-700-smooth: 13px;
-  --awds-rounded-outline-700-rounded: 26px;
+  --awds-rounded-outline-700-rounded: 27px;
   --awds-rounded-outline-700-none: 0px;
   --awds-rounded-outline-700: var(--awds-rounded-outline-700-smooth);  /* Радиус кольца фокуса ступени 700: smooth 13px, rounded 26px, none 0px. На 1px больше border-radius/700 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 800: smooth 17px, rounded 26px, none 0px. На 1px больше border-radius/800 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-800-smooth: 17px;
-  --awds-rounded-outline-800-rounded: 26px;
+  --awds-rounded-outline-800-rounded: 27px;
   --awds-rounded-outline-800-none: 0px;
   --awds-rounded-outline-800: var(--awds-rounded-outline-800-smooth);  /* Радиус кольца фокуса ступени 800: smooth 17px, rounded 26px, none 0px. На 1px больше border-radius/800 — кольцо рисуется снаружи рамки. */
   /* Радиус кольца фокуса ступени 900: smooth 21px, rounded 26px, none 0px. На 1px больше border-radius/900 — кольцо рисуется снаружи рамки. */
   --awds-rounded-outline-900-smooth: 21px;
-  --awds-rounded-outline-900-rounded: 26px;
+  --awds-rounded-outline-900-rounded: 27px;
   --awds-rounded-outline-900-none: 0px;
   --awds-rounded-outline-900: var(--awds-rounded-outline-900-smooth);  /* Радиус кольца фокуса ступени 900: smooth 21px, rounded 26px, none 0px. На 1px больше border-radius/900 — кольцо рисуется снаружи рамки. */
   /* Полное скругление кольца фокуса (600px) — пара к border-radius/full. */
