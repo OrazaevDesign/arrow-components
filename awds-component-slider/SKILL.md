@@ -20,8 +20,8 @@ description: Slider ArrowDS (.slider).
 | Что | Источник |
 |---|---|
 | Фон пилюли (Dots, Numbs) | `rgb(var(--surface-bright) / var(--awds-opacity-80))` + `backdrop-filter: blur(3px)` |
-| Точка неактивная | `rgb(var(--surface-on-highest) / var(--awds-opacity-30))` |
-| Точка активная | `rgb(var(--surface-on-highest))` (opacity 100) |
+| Точка неактивная | `rgb(var(--surface-on-high) / var(--awds-opacity-30))` |
+| Точка активная | `rgb(var(--surface-on-high))` (opacity 100) |
 | Текст Numbs | `rgb(var(--surface-on-high))`, типографика `--awds-control-300-*`, medium |
 | Padding / gap | `var(--awds-space-1)` |
 | Скругление | `var(--awds-rounded-border-radius-full)` (всегда пилюля) |

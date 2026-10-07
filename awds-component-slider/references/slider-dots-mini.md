@@ -25,8 +25,8 @@
 | Фон | `transparent` (без заливки) |
 | Размытие подложки | `backdrop-filter: blur(3px)` |
 | Padding / gap | `var(--awds-space-1)` |
-| Точка | `var(--awds-space-1)` (4px), `rgb(var(--surface-on-highest) / var(--awds-opacity-30))` |
-| Активная точка | `var(--awds-space-2)`×4 (8×4), `rgb(var(--surface-on-highest))` |
+| Точка | `var(--awds-space-1)` (4px), `rgb(var(--surface-on-high) / var(--awds-opacity-30))` |
+| Активная точка | `var(--awds-space-2)`×4 (8×4), `rgb(var(--surface-on-high))` |
 
 ## Когда
 

@@ -15,9 +15,9 @@
      rounded                  border-radius/full → var(--awds-rounded-border-radius-full)
      фон пилюли               surface/bright @ opacity/80
                               → rgb(var(--surface-bright) / var(--awds-opacity-80))
-     точка неактивная         surface/on-highest @ opacity/30
-                              → rgb(var(--surface-on-highest) / var(--awds-opacity-30))
-     точка активная           surface/on-highest @ opacity/100 → rgb(var(--surface-on-highest))
+     точка неактивная         surface/on-high    @ opacity/30
+                              → rgb(var(--surface-on-high) / var(--awds-opacity-30))
+     точка активная           surface/on-high    @ opacity/100 → rgb(var(--surface-on-high))
      текст Numbs              surface/on-high    → rgb(var(--surface-on-high))
      типографика Numbs        Web/Control/300-Medium → --awds-control-300-*
 
@@ -61,7 +61,7 @@
   width: var(--awds-slider-dot-size);
   height: var(--awds-slider-dot-size);
   border-radius: var(--awds-rounded-border-radius-full);
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-30));   /* #cell slider/dot/bg */
+  background: rgb(var(--surface-on-high) / var(--awds-opacity-30));   /* #cell slider/dot/bg */
   /* Polish (MIFB): прерываемый transition, явные свойства (не transition: all).
      При перелистывании активная точка плавно «вытягивается». */
   transition: width 0.15s ease-out, background-color 0.15s ease-out;
@@ -69,7 +69,7 @@
 
 .slider__dot--active {
   width: var(--awds-slider-dot-active-w);
-  background: rgb(var(--surface-on-highest));   /* #cell slider/dot/bg */
+  background: rgb(var(--surface-on-high));   /* #cell slider/dot/bg */
 }
 
 /* === Variant: Dots (фон + точки 6px) === */
