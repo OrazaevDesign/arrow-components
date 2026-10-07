@@ -1,4 +1,4 @@
-/* ArrowDS · badge@1.2.1
+/* ArrowDS · badge@1.2.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -22,7 +22,7 @@
   border-radius: var(--awds-badge-rounded);
   --awds-badge-border-width: var(--awds-space-px);   
   box-shadow: inset 0 0 0 var(--awds-badge-border-width) var(--awds-badge-border);
-  background: linear-gradient(to right, var(--awds-badge-chroma, var(--awds-badge-bg)), var(--awds-badge-bg));
+  background: var(--awds-badge-bg);
   color: var(--awds-badge-color);
   font-family: var(--awds-font-family-system);
   font-size: var(--awds-badge-fs);
@@ -52,119 +52,102 @@
 
 .badge-market-percent {
   --awds-badge-bg:     rgb(var(--accent-core));   
-  --awds-badge-chroma: rgb(var(--accent-chroma));   
   --awds-badge-border: rgb(var(--accent-core));   
   --awds-badge-color:  rgb(var(--accent-on));
 }
 
 .badge-market-sale {
   --awds-badge-bg:     rgb(var(--primary-core));   
-  --awds-badge-chroma: rgb(var(--primary-chroma));   
   --awds-badge-border: rgb(var(--primary-core));   
   --awds-badge-color:  rgb(var(--primary-on));
 }
 
 .badge-market-new {
   --awds-badge-bg:     rgb(var(--info-core));   
-  --awds-badge-chroma: rgb(var(--info-chroma));   
   --awds-badge-border: rgb(var(--info-core));   
   --awds-badge-color:  rgb(var(--info-on));
 }
 
 .badge-market-brand {
   --awds-badge-bg:     rgb(var(--secondary-core));   
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   
   --awds-badge-border: rgb(var(--secondary-core));   
   --awds-badge-color:  rgb(var(--secondary-on));
 }
 
 .badge-system-info {
   --awds-badge-bg:     rgb(var(--info-core));   
-  --awds-badge-chroma: rgb(var(--info-chroma));   
   --awds-badge-border: rgb(var(--info-core));   
   --awds-badge-color:  rgb(var(--info-on));
 }
 
 .badge-system-accent {
   --awds-badge-bg:     rgb(var(--accent-core));   
-  --awds-badge-chroma: rgb(var(--accent-chroma));   
   --awds-badge-border: rgb(var(--accent-core));   
   --awds-badge-color:  rgb(var(--accent-on));
 }
 
 .badge-system-secondary {
   --awds-badge-bg:     rgb(var(--secondary-core));   
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   
   --awds-badge-border: rgb(var(--secondary-core));   
   --awds-badge-color:  rgb(var(--secondary-on-dim));
 }
 
 .badge-system-ghost {
   --awds-badge-bg:     rgb(var(--extended-transparent));   
-  --awds-badge-chroma: rgb(var(--extended-transparent));   
   --awds-badge-border: rgb(var(--extended-transparent));   
   --awds-badge-color:  rgb(var(--surface-on-high));
 }
 
 .badge-system-success {
   --awds-badge-bg:     rgb(var(--success-core));   
-  --awds-badge-chroma: rgb(var(--success-chroma));   
   --awds-badge-border: rgb(var(--success-core));   
   --awds-badge-color:  rgb(var(--success-on));
 }
 
 .badge-system-warning {
   --awds-badge-bg:     rgb(var(--warning-core));   
-  --awds-badge-chroma: rgb(var(--warning-chroma));   
   --awds-badge-border: rgb(var(--warning-core));   
   --awds-badge-color:  rgb(var(--warning-on));
 }
 
 .badge-system-error {
   --awds-badge-bg:     rgb(var(--error-core));   
-  --awds-badge-chroma: rgb(var(--error-chroma));   
   --awds-badge-border: rgb(var(--error-core));   
   --awds-badge-color:  rgb(var(--error-on));
 }
 
 .badge-status-new {
   --awds-badge-bg:     rgb(var(--info-core));   
-  --awds-badge-chroma: rgb(var(--info-chroma));   
   --awds-badge-border: rgb(var(--info-core));   
   --awds-badge-color:  rgb(var(--info-on));
 }
 
 .badge-status-paid {
   --awds-badge-bg:     rgb(var(--success-core));   
-  --awds-badge-chroma: rgb(var(--success-chroma));   
   --awds-badge-border: rgb(var(--success-core));   
   --awds-badge-color:  rgb(var(--success-on));
 }
 
 .badge-status-paidclient {
   --awds-badge-bg:     rgb(var(--warning-core));   
-  --awds-badge-chroma: rgb(var(--warning-chroma));   
   --awds-badge-border: rgb(var(--warning-core));   
   --awds-badge-color:  rgb(var(--warning-on));
 }
 
 .badge-status-inprogress {
   --awds-badge-bg:     rgb(var(--info-container-core));   
-  --awds-badge-chroma: rgb(var(--info-container-chroma));   
   --awds-badge-border: rgb(var(--info-container-core));   
   --awds-badge-color:  rgb(var(--info-container-on-high));
 }
 
 .badge-status-delivered {
   --awds-badge-bg:     rgb(var(--secondary-core));   
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   
   --awds-badge-border: rgb(var(--secondary-core));   
   --awds-badge-color:  rgb(var(--secondary-on-dim));
 }
 
 .badge-status-cancelled {
   --awds-badge-bg:     rgb(var(--secondary-core));   
-  --awds-badge-chroma: rgb(var(--secondary-chroma));   
   --awds-badge-border: rgb(var(--secondary-core));   
   --awds-badge-color:  rgb(var(--secondary-on-dim));
 }
@@ -180,7 +163,7 @@
 }
 
 .badge--500 {
-  --awds-badge-padding: var(--awds-space-3-5);
+  --awds-badge-padding: var(--awds-space-3);
   --awds-badge-gap:     var(--awds-space-1-5);
   --awds-badge-rounded: var(--awds-rounded-border-radius-500);
   --awds-badge-icon:    var(--awds-space-5);

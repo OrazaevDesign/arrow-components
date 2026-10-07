@@ -1,4 +1,4 @@
-/* ArrowDS · button@2.2.13
+/* ArrowDS · button@2.2.14
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -193,9 +193,9 @@
 }
 
 .btn.btn-addition {
-  --awds-btn-glow: var(--awds-opacity-70);   
+  --awds-btn-glow: var(--awds-opacity-60);   
   background:
-    radial-gradient(45.77% 137.5% at 50% 50%,
+    radial-gradient(110.9% 100% at 50% 0%,
       color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
       color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
     var(--awds-btn-bg);
@@ -364,9 +364,9 @@
 }
 
 .btn.btn-primary {
-  --awds-btn-glow: var(--awds-opacity-70);   
+  --awds-btn-glow: var(--awds-opacity-60);   
   background:
-    radial-gradient(45.77% 137.5% at 50% 50%,
+    radial-gradient(110.9% 100% at 50% 0%,
       color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
       color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
     var(--awds-btn-bg);

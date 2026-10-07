@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 639 из 1377 объявленных в теме. */
+   Переменных: 621 из 1377 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -99,9 +99,6 @@
   --accent-core-light: 202 33 233;
   --accent-core-dark: 202 33 233;
   --accent-core: var(--accent-core-light);
-  --accent-chroma-light: 236 65 220;
-  --accent-chroma-dark: 236 65 220;
-  --accent-chroma: var(--accent-chroma-light);
   --accent-on-light: 255 255 255;
   --accent-on-dark: 255 255 255;
   --accent-on: var(--accent-on-light);
@@ -123,27 +120,18 @@
   --info-core-light: 55 82 237;
   --info-core-dark: 55 82 237;
   --info-core: var(--info-core-light);
-  --info-chroma-light: 97 119 242;
-  --info-chroma-dark: 97 119 242;
-  --info-chroma: var(--info-chroma-light);
   --info-on-light: 255 255 255;
   --info-on-dark: 255 255 255;
   --info-on: var(--info-on-light);
   --info-container-core-light: 239 241 251;
   --info-container-core-dark: 16 21 47;
   --info-container-core: var(--info-container-core-light);
-  --info-container-chroma-light: 239 241 251;
-  --info-container-chroma-dark: 16 21 47;
-  --info-container-chroma: var(--info-container-chroma-light);
   --info-container-on-high-light: 54 75 194;
   --info-container-on-high-dark: 157 167 224;
   --info-container-on-high: var(--info-container-on-high-light);
   --success-core-light: 39 189 100;
   --success-core-dark: 39 189 100;
   --success-core: var(--success-core-light);
-  --success-chroma-light: 36 213 108;
-  --success-chroma-dark: 36 213 108;
-  --success-chroma: var(--success-chroma-light);
   --success-on-light: 14 27 19;
   --success-on-dark: 14 27 19;
   --success-on: var(--success-on-light);
@@ -165,9 +153,6 @@
   --warning-core-light: 244 141 23;
   --warning-core-dark: 244 141 23;
   --warning-core: var(--warning-core-light);
-  --warning-chroma-light: 248 157 54;
-  --warning-chroma-dark: 248 157 54;
-  --warning-chroma: var(--warning-chroma-light);
   --warning-dim-light: 246 147 34;
   --warning-dim-dark: 246 147 34;
   --warning-dim: var(--warning-dim-light);
@@ -177,9 +162,6 @@
   --error-core-light: 228 55 39;
   --error-core-dark: 228 55 39;
   --error-core: var(--error-core-light);
-  --error-chroma-light: 236 79 65;
-  --error-chroma-dark: 236 79 65;
-  --error-chroma: var(--error-chroma-light);
   --error-on-light: 255 255 255;
   --error-on-dark: 255 255 255;
   --error-on: var(--error-on-light);
@@ -673,7 +655,6 @@
   --tertiary-container-on: var(--tertiary-container-on-light);
   --tertiary-container-on-low: var(--tertiary-container-on-low-light);
   --accent-core: var(--accent-core-light);
-  --accent-chroma: var(--accent-chroma-light);
   --accent-on: var(--accent-on-light);
   --accent-container-on-high: var(--accent-container-on-high-light);
   --addition-core: var(--addition-core-light);
@@ -681,13 +662,10 @@
   --addition-dim: var(--addition-dim-light);
   --addition-on: var(--addition-on-light);
   --info-core: var(--info-core-light);
-  --info-chroma: var(--info-chroma-light);
   --info-on: var(--info-on-light);
   --info-container-core: var(--info-container-core-light);
-  --info-container-chroma: var(--info-container-chroma-light);
   --info-container-on-high: var(--info-container-on-high-light);
   --success-core: var(--success-core-light);
-  --success-chroma: var(--success-chroma-light);
   --success-on: var(--success-on-light);
   --success-container-core: var(--success-container-core-light);
   --success-container-on-highest: var(--success-container-on-highest-light);
@@ -695,11 +673,9 @@
   --success-container-on: var(--success-container-on-light);
   --success-container-on-low: var(--success-container-on-low-light);
   --warning-core: var(--warning-core-light);
-  --warning-chroma: var(--warning-chroma-light);
   --warning-dim: var(--warning-dim-light);
   --warning-on: var(--warning-on-light);
   --error-core: var(--error-core-light);
-  --error-chroma: var(--error-chroma-light);
   --error-on: var(--error-on-light);
   --error-container-core: var(--error-container-core-light);
   --error-container-dim: var(--error-container-dim-light);
@@ -765,7 +741,6 @@
   --tertiary-container-on: var(--tertiary-container-on-dark);
   --tertiary-container-on-low: var(--tertiary-container-on-low-dark);
   --accent-core: var(--accent-core-dark);
-  --accent-chroma: var(--accent-chroma-dark);
   --accent-on: var(--accent-on-dark);
   --accent-container-on-high: var(--accent-container-on-high-dark);
   --addition-core: var(--addition-core-dark);
@@ -773,13 +748,10 @@
   --addition-dim: var(--addition-dim-dark);
   --addition-on: var(--addition-on-dark);
   --info-core: var(--info-core-dark);
-  --info-chroma: var(--info-chroma-dark);
   --info-on: var(--info-on-dark);
   --info-container-core: var(--info-container-core-dark);
-  --info-container-chroma: var(--info-container-chroma-dark);
   --info-container-on-high: var(--info-container-on-high-dark);
   --success-core: var(--success-core-dark);
-  --success-chroma: var(--success-chroma-dark);
   --success-on: var(--success-on-dark);
   --success-container-core: var(--success-container-core-dark);
   --success-container-on-highest: var(--success-container-on-highest-dark);
@@ -787,11 +759,9 @@
   --success-container-on: var(--success-container-on-dark);
   --success-container-on-low: var(--success-container-on-low-dark);
   --warning-core: var(--warning-core-dark);
-  --warning-chroma: var(--warning-chroma-dark);
   --warning-dim: var(--warning-dim-dark);
   --warning-on: var(--warning-on-dark);
   --error-core: var(--error-core-dark);
-  --error-chroma: var(--error-chroma-dark);
   --error-on: var(--error-on-dark);
   --error-container-core: var(--error-container-core-dark);
   --error-container-dim: var(--error-container-dim-dark);

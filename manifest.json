@@ -16,7 +16,7 @@
     },
     {
       "name": "badge",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "variants": [
         "market-percent",
         "market-sale",
@@ -46,11 +46,11 @@
         600
       ],
       "rules": 28,
-      "bytes": 8445
+      "bytes": 7442
     },
     {
       "name": "button",
-      "version": "2.2.13",
+      "version": "2.2.14",
       "variants": [
         "primary",
         "secondary",
@@ -71,7 +71,7 @@
         600
       ],
       "rules": 62,
-      "bytes": 13717
+      "bytes": 13711
     },
     {
       "name": "button-area",
@@ -401,7 +401,7 @@
     },
     {
       "name": "notice",
-      "version": "2.0.5",
+      "version": "2.0.6",
       "variants": [
         "accent",
         "secondary",
@@ -416,7 +416,7 @@
         600
       ],
       "rules": 10,
-      "bytes": 4118
+      "bytes": 3872
     },
     {
       "name": "pagination",
@@ -505,7 +505,7 @@
     },
     {
       "name": "range",
-      "version": "2.0.12",
+      "version": "2.0.13",
       "variants": [
         "default",
         "light"
@@ -514,8 +514,8 @@
         400,
         500
       ],
-      "rules": 23,
-      "bytes": 4751
+      "rules": 27,
+      "bytes": 5919
     },
     {
       "name": "rating",
@@ -736,13 +736,13 @@
     }
   ],
   "bundle": {
-    "bytes": 381448,
-    "rules": 1467,
-    "hash": "sha256:47fdbadbc658143d4526f8ecbdab4efc8765466a921856b73b7b4de4fddf03f1"
+    "bytes": 381361,
+    "rules": 1471,
+    "hash": "sha256:e01505fb16303b8d6d410e8d4a0adc66b107db68e538e054b4f0bba92b7ef21f"
   },
   "theme": {
-    "bytes": 61899,
-    "variables_kept": 639,
+    "bytes": 60568,
+    "variables_kept": 621,
     "variables_declared": 1377,
     "missing": []
   },
