@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@2.0.2
+/* ArrowDS · product-card@2.0.3
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -88,7 +88,7 @@
   z-index: 2;
 }
 
-.pcard-brand-first .pcard__image-link:hover::after {
+.pcard-brand-first .pcard__media:hover .pcard__image-link::after { 
   opacity: 0;
 }
 
@@ -216,10 +216,10 @@
               translate 0.3s ease-out;
 }
 
-.pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-4)) 0;
+.pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0;
 }
 
-.pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-4)) 0;
+.pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0;
 }
 
 @media (hover: hover) {
@@ -558,7 +558,7 @@
   z-index: 2;
 }
 
-.pcard-button-price .pcard__image-link:hover::after {
+.pcard-button-price .pcard__media:hover .pcard__image-link::after { 
   opacity: 0;
 }
 
@@ -945,7 +945,7 @@
   z-index: 2;
 }
 
-.pcard-buy-now .pcard__image-link:hover::after {
+.pcard-buy-now .pcard__media:hover .pcard__image-link::after { 
   opacity: 0;
 }
 
@@ -1402,7 +1402,7 @@
   z-index: 2;
 }
 
-.pcard__image-link:hover::after {
+.pcard__media:hover .pcard__image-link::after { 
   opacity: 0;
 }
 
