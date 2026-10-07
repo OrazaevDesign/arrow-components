@@ -17,7 +17,7 @@
    В КОДЕ СТОЯТ ЦЕЛИ ЯЧЕЕК, А НЕ ОНИ САМИ. State и Size приватны с 03.09.2026: в
    опубликованную тему их имена не едут, и ссылка на ячейку в CSS не резолвится
    вовсе. Поэтому вариант читает роль, на которую ячейка ссылается:
-     .notice-accent     ← badge/system/accent/*     → accent-core / -chroma / -on
+     .notice-accent     ← badge/system/accent/*     → accent-core / -on
      .notice-secondary  ← badge/system/secondary/*  → secondary-*
      .notice-ghost      ← badge/system/ghost/*      → surface-* и transparent
    Адрес ячейки остаётся рычагом дизайнера и записан в снапшоте.
@@ -28,7 +28,11 @@
    и свои классы, общий только набор ячеек в студии, поэтому `uses` пуст.
    То же подтверждает макет: наборы `notice / *` привязаны к тем же ячейкам.
 
-   Приватные аккумуляторы компонента: --awds-notice-bg/-chroma/-border/-color и
+   ФОН СПЛОШНОЙ. До 07.10.2026 фон шёл линейным градиентом chroma → bg (ячейка
+   badge/system/{variant}/chroma). В макете Кирилл заменил его сплошной заливкой ячейки
+   bg во всех 18 ячейках, chroma больше ни к чему не привязана — снята и здесь.
+
+   Приватные аккумуляторы компонента: --awds-notice-bg/-border/-color и
    -size/-pad-h/-pad-v/-fs/-lh/-ls. (Не путать с DS shape-токенами
    --awds-notice-N-... — у тех всегда есть числовой сегмент размера.)
    ============================================================================= */
@@ -55,7 +59,7 @@
   padding-inline: var(--awds-notice-pad-h);    /* 2+ цифры → пилюля */
   border-radius: var(--awds-rounded-border-radius-full);     /* всегда скруглён в пилюлю/круг */
 
-  background: linear-gradient(to right, var(--awds-notice-chroma, var(--awds-notice-bg)), var(--awds-notice-bg));
+  background: var(--awds-notice-bg);   /* сплошной, без градиента chroma (07.10.2026) */
   /* Толщина обводки — ячейка size/outline/offset (1px). Литерала тут быть не
      должно: толщина правится в студии, а не в файле компонента. */
   --awds-notice-border-width: var(--awds-space-px);   /* #cell outline/offset */
@@ -81,7 +85,6 @@
 
 .notice-accent {
   --awds-notice-bg:     rgb(var(--accent-core));   /* #cell badge/system/accent/bg */
-  --awds-notice-chroma: rgb(var(--accent-chroma));   /* #cell badge/system/accent/chroma */
   --awds-notice-border: rgb(var(--accent-core));   /* #cell badge/system/accent/border */
   --awds-notice-color:  rgb(var(--accent-on));   /* #cell badge/system/accent/color */
 }
@@ -90,7 +93,6 @@
 
 .notice-secondary {
   --awds-notice-bg:     rgb(var(--secondary-core));   /* #cell badge/system/secondary/bg */
-  --awds-notice-chroma: rgb(var(--secondary-chroma));   /* #cell badge/system/secondary/chroma */
   --awds-notice-border: rgb(var(--secondary-core));   /* #cell badge/system/secondary/border */
   --awds-notice-color:  rgb(var(--secondary-on-dim));   /* #cell badge/system/secondary/color */
 }
@@ -100,7 +102,6 @@
 .notice-ghost {
   /* прозрачность даёт ячейка (extended-transparent), не литерал transparent */
   --awds-notice-bg:     rgb(var(--extended-transparent));   /* #cell badge/system/ghost/bg */
-  --awds-notice-chroma: rgb(var(--extended-transparent));   /* #cell badge/system/ghost/chroma */
   --awds-notice-border: rgb(var(--extended-transparent));   /* #cell badge/system/ghost/border */
   --awds-notice-color:  rgb(var(--surface-on-high));   /* #cell badge/system/ghost/color */
 }

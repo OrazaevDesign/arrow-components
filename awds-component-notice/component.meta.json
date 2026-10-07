@@ -1,10 +1,10 @@
 {
   "component": "notice",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "contract_hash": "sha256:bb930a389b20ff35f20dda5945f2a67375d108da0dce776686b012988bc63a8d",
-  "artifact_hash": "sha256:fc0921542674337b09ba11dc660a340a7de55bd14e72b105fbfc4395c55c7ff5",
+  "artifact_hash": "sha256:ec18d83139098edc3bfbad78786aa3766235850de17672797270ea09a71497c9",
   "visual_change": true,
-  "released_at": "2026-09-27T08:48:38.652Z",
+  "released_at": "2026-10-07T13:02:45.153Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -45,7 +45,6 @@
   ],
   "color_tokens": [
     "bg",
-    "chroma",
     "border",
     "color"
   ],
@@ -93,7 +92,6 @@
     ]
   },
   "ds_token_dependencies": [
-    "--accent-chroma",
     "--accent-core",
     "--accent-on",
     "--awds-control-font-size-100",
@@ -127,7 +125,6 @@
     "--awds-space-7",
     "--awds-space-px",
     "--extended-transparent",
-    "--secondary-chroma",
     "--secondary-core",
     "--secondary-on-dim",
     "--surface-on-high"

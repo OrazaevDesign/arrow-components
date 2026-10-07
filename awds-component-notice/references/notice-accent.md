@@ -28,7 +28,7 @@
 
 | Свойство | Роль |
 |---|---|
-| Фон | `accent-core` (+ sheen `accent-chroma`) |
+| Фон | `accent-core`, сплошной (sheen `accent-chroma` снят 07.10.2026 по макету) |
 | Цвет числа | `accent-on` |
 
 ## Размеры

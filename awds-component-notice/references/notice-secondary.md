@@ -17,7 +17,7 @@
 
 | Свойство | Роль |
 |---|---|
-| Фон | `secondary-core` (+ sheen `secondary-chroma`) |
+| Фон | `secondary-core`, сплошной (sheen `secondary-chroma` снят 07.10.2026 по макету) |
 | Цвет числа | `secondary-on-dim` |
 
 ## Размеры

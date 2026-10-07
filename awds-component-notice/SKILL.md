@@ -19,7 +19,7 @@ description: Notice ArrowDS (.notice).
 
 | Что | Источник |
 |---|---|
-| Фон + sheen | `rgb(var(--accent-core))` / `rgb(var(--secondary-core))` / `transparent` + `*-chroma` |
+| Фон (сплошной, без sheen с 07.10.2026) | `rgb(var(--accent-core))` / `rgb(var(--secondary-core))` / `rgb(var(--extended-transparent))` |
 | Цвет числа | `rgb(var(--accent-on))` / `rgb(var(--secondary-on-dim))` / `rgb(var(--surface-on-high))` |
 | Диаметр / padding / шрифт | shape `notice`: `var(--awds-notice-N-size / -padding-h / -padding-v / -typography-*)` |
 | Скругление | `var(--awds-rounded-border-radius-full)` (всегда пилюля) |
