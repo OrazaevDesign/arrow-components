@@ -668,33 +668,3 @@
     transition: none;
   }
 }
-
-
-/* === Тултипы на оверлеях (компонент awds-component-tooltip; подключи tooltip.css) ===
-   Триггер .pcard__tip: флаг страны (текст = страна из данных карточки) и обёртка
-   избранного («Добавить в избранное»). Показ по hover/focus с задержкой 400мс,
-   скрытие мгновенно (спека tooltip). Сам тултип — contrast / compact / side top (сверху от элемента). */
-.pcard__tip { position: relative; }
-/* Флаг ловит hover для тултипа (у .pcard__top pointer-events:none — иначе событие
-   ушло бы к ссылке-фото); зум фото остаётся на остальной площади медиа. */
-.pcard__country.pcard__tip { pointer-events: auto; }
-.pcard__tip > .tooltip {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: var(--awds-space-1);   /* зазор над остриё */
-  z-index: 3;                        /* над бейджами и скримом */
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  /* скрытие — почти мгновенно */
-  transition: opacity 0.12s ease-out, visibility 0s linear 0.12s;
-}
-.pcard__tip:hover > .tooltip,
-.pcard__tip:focus-within > .tooltip {
-  opacity: 1;
-  visibility: visible;
-  /* показ — задержка 400мс (без моргания при движении курсора) */
-  transition: opacity 0.15s ease-out 0.4s, visibility 0s linear 0.4s;
-}

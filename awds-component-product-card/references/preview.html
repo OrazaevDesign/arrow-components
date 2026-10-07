@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="../../awds-component-button/references/button-ghost.css">
   <link rel="stylesheet" href="../../awds-component-button/references/button-addition.css">
   <link rel="stylesheet" href="../../awds-component-button-overhung/references/button-overhung-secondary.css">
-  <link rel="stylesheet" href="../../awds-component-tooltip/references/tooltip.css">
   <link rel="stylesheet" href="../../awds-component-slider/references/slider.css">
   <link rel="stylesheet" href="../../awds-component-price/references/price.css">
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
@@ -232,15 +231,12 @@
         .map((src, i) => `<img class="pcard__image${i === 0 ? ' pcard__image--active' : ''}" src="${src}" alt="Название товара — фото ${i + 1}">`)
         .join('');
     };
-    // Тултип (компонент awds-component-tooltip): contrast / compact / снизу
-    const tip = (text) =>
-      `<span class="tooltip tooltip-contrast tooltip--compact tooltip--top" role="tooltip"><span class="tooltip__tail"></span><span class="tooltip__bubble">${text}</span></span>`;
-    // Избранное обёрнуто в .pcard__tip с тултипом «Добавить в избранное»
+    // Избранное и флаг без тултипов (с 3.0.0, решение владельца 08.10.2026). Страну флага
+    // называет aria-label: подсказки при наведении больше нет.
     const favBtn = (mobile, fav) =>
-      `<span class="pcard__tip"><button type="button" class="btn btn-favorites btn--icon-only${mobile ? ' btn--200' : ''}" aria-pressed="${fav === 'on'}" aria-label="В избранное">${favIcon}</button>${tip('Добавить в избранное')}</span>`;
-    // Флаг страны: триггер .pcard__country.pcard__tip, текст = страна (из данных карточки)
+      `<button type="button" class="btn btn-favorites btn--icon-only${mobile ? ' btn--200' : ''}" aria-pressed="${fav === 'on'}" aria-label="В избранное">${favIcon}</button>`;
     const country = (name) =>
-      `<span class="pcard__country pcard__tip">${flagDE}${tip(name)}</span>`;
+      `<span class="pcard__country" role="img" aria-label="${name}">${flagDE}</span>`;
     // Стрелки галереи (с 1.4.0): компонент button-overhung / secondary 100, только при 2+ кадрах.
     // Видны на десктопе при наведении на фото; в мобильной вью их прячет CSS карточки.
     const icPrev = `<svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg>`;

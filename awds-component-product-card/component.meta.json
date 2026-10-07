@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "2.0.3",
-  "contract_hash": "sha256:775bfd6ed0cf45dbed9afa8398f74597baa14b4ab942be76ee8521a6d6cb4348",
-  "artifact_hash": "sha256:14470468e1d36c444f7f21f32cfcf443c21f1eac77aa6e858a7bd91a9e895d4c",
-  "visual_change": true,
-  "released_at": "2026-10-07T20:37:50.207Z",
+  "version": "3.0.1",
+  "contract_hash": "sha256:47834ac1b9a1edb292d8e005dc1e11b90f1cb28a739d08dc1ea006cfad6c6e4e",
+  "artifact_hash": "sha256:e42dcdfa0d0f73370811714d6f3caa5208e141d71376a39d89ecf947466922cc",
+  "visual_change": false,
+  "released_at": "2026-10-07T21:07:13.435Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -101,7 +101,6 @@
     "awds-component-button-favorites (.btn-favorites — кнопка избранного в .pcard__top; требует button-favorites.css)",
     "awds-component-badge (.badge-market-percent / -sale — маркет-бейджи в .pcard__badges; требует badge.css; --100 desktop / --50 mobile)",
     "awds-component-button (зона .pcard__cart; требует button-primary.css и button-addition.css; --400 в обеих вью): .btn-primary — кнопка «В корзину» (состояние button); .btn-addition — ссылка на корзину с иконкой справа (состояние added)",
-    "awds-component-tooltip (.tooltip на .pcard__tip — подсказка на флаге страны (текст = страна из данных; price-first/buy-now) и на избранном («Добавить в избранное»; все варианты); требует tooltip.css; показ по hover/focus с задержкой 400мс, скрытие мгновенно)",
     "awds-component-slider (.slider.slider-dots-mini.pcard__slider — индикатор галереи фото между .pcard__media и .pcard__content, по центру, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует slider.css; точек = числу кадров, активная задаётся классом .slider__dot--active. Перелистывание — JS потребителя (wireGallery): hover-зоны на десктопе (мышь) + свайп влево/вправо на тач-устройствах (мобила/таблет; ссылка-фото несёт touch-action:pan-y, вертикальный скролл страницы остаётся нативным, клик по ссылке после свайпа подавляется). CSS карточки даёт кроссфейд кадров (.pcard__image--active) и центрирование индикатора. МНОГО кадров (>5): точки в .pcard__slider-track + класс .pcard__slider--many → фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки .slider__dot--sm уменьшены; сдвиг --pcard-dots-shift и edge-классы ставит wireGallery)",
     "awds-component-price (.price.price-{default|sale|none} — цена в .pcard__content, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует price.css; размерного класса НЕТ — размер задаёт сама карточка правилом .pcard .price, переопределяя аккумуляторы --awds-price-fs/-lh/-ls на роли WYSIWYG price-listing/caption; цена едет по .typo-* карточки вместе с брендом и названием, одинакова в обеих вью. До price 2.0.0 это был класс .price--listing внутри price. Три состояния по данным товара: price-default (обычная, surface-on-highest), price-sale (скидка: акцентная + старая зачёркнутая, с бейджем .badge-market-percent), price-none («Нет в наличии», скрыть бейдж скидки). Заменил инлайн .pcard__price* — собственных стилей цены в product-card больше нет)"
   ],
@@ -423,7 +422,7 @@
       }
     ],
     "container": null,
-    "note": "Композит: внутри карточки живут инстансы badge, button-favorites, price, slider и tooltip — их требования описаны в их собственных контрактах и здесь намеренно не повторяются. Вариант обязателен, он задаёт порядок контента и состав: price-first (цена → бренд → название → рейтинг), brand-first (бренд → название → рейтинг → цена → корзина, контент по центру, флага страны нет), buy-now (цена → название → рубрика → рейтинг → корзина, контент слева). Шкалы размеров нет — карточка тянется по сетке; .pcard--mobile это вью, а не ступень: она меняет ступени вложенных компонентов (избранное --200, бейджи --50) и кегли бренда. Корень — контейнер, а НЕ ссылка: кликабельны три отдельные ссылки со своим hover и своим фокусом (фото, бренд или рубрика, название), а строка отзывов .pcard__feedback ссылкой не является. Фото или заглушка: внутри .pcard__image-link стоит либо .pcard__image, либо .pcard__media-placeholder — выбор из двух гейт не выражает, поэтому требования на них нет, зато у картинки требуется alt. Оверлеи необязательны и требованиями не записаны: .pcard__top, .pcard__country, .pcard__badges, кнопка избранного, обёртка тултипа .pcard__tip. Индикатор галереи .pcard__slider ставится только при нескольких кадрах (активный кадр — .pcard__image--active, при числе кадров больше пяти точки заворачиваются в .pcard__slider-track и слайдер получает .pcard__slider--many); при одном кадре вместо него ставят пустой .pcard__slider-spacer, чтобы карточки в гриде были одной высоты. Зона корзины .pcard__cart есть у buy-now и brand-first и держит ОБЕ вью в DOM сразу — .pcard__cart-view--button и .pcard__cart-view--added сложены grid-stack и кросс-фейдятся; вью, которой нет в разметке, появиться не из чего, поэтому обе обязательны. Активную выбирает data-cart-state=\"button|added\", но сам атрибут необязателен: без него работает button. Порядок и вложенность частей проверке не видны — Liquid без DOM их не даёт, а интерполяция класса (.pcard__image с условным --active) гасит проверку потомков по всему файлу блока."
+    "note": "Композит: внутри карточки живут инстансы badge, button-favorites, price и slider — их требования описаны в их собственных контрактах и здесь намеренно не повторяются. Вариант обязателен, он задаёт порядок контента и состав: price-first (цена → бренд → название → рейтинг), brand-first (бренд → название → рейтинг → цена → корзина, контент по центру, флага страны нет), buy-now (цена → название → рубрика → рейтинг → корзина, контент слева). Шкалы размеров нет — карточка тянется по сетке; .pcard--mobile это вью, а не ступень: она меняет ступени вложенных компонентов (избранное --200, бейджи --50) и кегли бренда. Корень — контейнер, а НЕ ссылка: кликабельны три отдельные ссылки со своим hover и своим фокусом (фото, бренд или рубрика, название), а строка отзывов .pcard__feedback ссылкой не является. Фото или заглушка: внутри .pcard__image-link стоит либо .pcard__image, либо .pcard__media-placeholder — выбор из двух гейт не выражает, поэтому требования на них нет, зато у картинки требуется alt. Оверлеи необязательны и требованиями не записаны: .pcard__top, .pcard__country, .pcard__badges, кнопка избранного. Индикатор галереи .pcard__slider ставится только при нескольких кадрах (активный кадр — .pcard__image--active, при числе кадров больше пяти точки заворачиваются в .pcard__slider-track и слайдер получает .pcard__slider--many); при одном кадре вместо него ставят пустой .pcard__slider-spacer, чтобы карточки в гриде были одной высоты. Зона корзины .pcard__cart есть у buy-now и brand-first и держит ОБЕ вью в DOM сразу — .pcard__cart-view--button и .pcard__cart-view--added сложены grid-stack и кросс-фейдятся; вью, которой нет в разметке, появиться не из чего, поэтому обе обязательны. Активную выбирает data-cart-state=\"button|added\", но сам атрибут необязателен: без него работает button. Порядок и вложенность частей проверке не видны — Liquid без DOM их не даёт, а интерполяция класса (.pcard__image с условным --active) гасит проверку потомков по всему файлу блока."
   },
   "questions": [
     {
@@ -572,8 +571,7 @@
     "awds-component-button-favorites": "1.0.5",
     "awds-component-focus-selection": "2.0.3",
     "awds-component-price": "2.0.1",
-    "awds-component-slider": "1.0.4",
-    "awds-component-tooltip": "1.0.3"
+    "awds-component-slider": "1.0.4"
   },
   "contract": {
     "classes": [
@@ -615,7 +613,6 @@
       "pcard__slider--many",
       "pcard__slider-spacer",
       "pcard__slider-track",
-      "pcard__tip",
       "pcard__top",
       "price",
       "price__currency",
@@ -623,8 +620,7 @@
       "price__old",
       "price__placeholder",
       "slider__dot",
-      "slider__dot--sm",
-      "tooltip"
+      "slider__dot--sm"
     ],
     "attributes": [
       "data-cart-state"
