@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@2.0.1
+/* ArrowDS · product-card@2.0.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -216,10 +216,10 @@
               translate 0.3s ease-out;
 }
 
-.pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0;
+.pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-4)) 0;
 }
 
-.pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0;
+.pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-4)) 0;
 }
 
 @media (hover: hover) {
