@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@1.3.4
+/* ArrowDS · product-card@1.4.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes pcard-stepper-bump {
@@ -197,6 +197,50 @@
   transform: scale(0.5);
 }
 
+.pcard__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;                            
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--awds-space-2);          
+  transform: translateY(-50%);
+  pointer-events: none;                  
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.pcard__nav > .obtn {
+  pointer-events: auto;
+}
+
+@media (hover: hover) {
+  .pcard__media:hover .pcard__nav,
+  .pcard__nav:focus-within {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .pcard__nav { display: none; }
+}
+
+.pcard--mobile .pcard__nav { display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard__nav { transition: none; }
+}
+
+.pcard__feedback--empty::before {
+  content: "\00a0";
+  font-size: var(--awds-wysiwyg-font-size-caption);
+  line-height: var(--awds-wysiwyg-line-height-caption);
+}
+
 .pcard-brand-first .pcard__content {
   display: flex;
   flex-direction: column;
@@ -260,7 +304,7 @@
 }
 
 .pcard-brand-first .pcard__category:hover {
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--accent-core));
 }
 
 .pcard-brand-first .pcard__feedback {
@@ -713,7 +757,7 @@
 }
 
 .pcard-button-price .pcard__category:hover {
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--accent-core));
 }
 
 .pcard-button-price .pcard__feedback {
@@ -1117,7 +1161,7 @@
 }
 
 .pcard-buy-now .pcard__category:hover {
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--accent-core));
 }
 
 .pcard-buy-now .pcard__feedback {
@@ -1555,7 +1599,7 @@
 }
 
 .pcard-price-first .pcard__category:hover {
-  color: rgb(var(--surface-on-highest));
+  color: rgb(var(--accent-core));
 }
 
 .pcard__feedback {
