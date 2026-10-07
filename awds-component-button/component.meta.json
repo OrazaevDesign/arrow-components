@@ -1,10 +1,10 @@
 {
   "component": "button",
-  "version": "2.2.13",
+  "version": "2.2.14",
   "contract_hash": "sha256:b1178d242f4d390a44850a8af06ba94ba17a603fa9f5972dd379f67a9d0e87e0",
-  "artifact_hash": "sha256:3a1d723f7d9f86dedc54b6685855aa8d1d6fb399aef785deb444654de5bb16d1",
+  "artifact_hash": "sha256:205414af5cc89cca3b552bc3f6f0003bf5168e570ea26346a81eabfbfd006874",
   "visual_change": true,
-  "released_at": "2026-10-07T12:03:18.826Z",
+  "released_at": "2026-10-07T12:53:25.396Z",
   "own_values": [
     {
       "value": "0.15s",
@@ -175,7 +175,7 @@
     "--awds-font-weight-semibold",
     "--awds-opacity-100",
     "--awds-opacity-40",
-    "--awds-opacity-70",
+    "--awds-opacity-60",
     "--awds-rounded-border-radius-100",
     "--awds-rounded-border-radius-200",
     "--awds-rounded-border-radius-300",
@@ -404,6 +404,30 @@
       "answer": "Вопрос задан по незнанию уже принятого решения и закрыт в тот же день. 14.09.2026 ось loading у button была убрана НАМЕРЕННО, загрузка стала шестым значением оси state (лог 2026/09/14/15-41). Причина техническая и проверена до правки: владелец сперва согласовал перевод loading в булево свойство, но в ячейке загрузки спиннер виден, а . / prefix, . / text и . / suffix гасятся opacity: 0 ради сохранения ширины кнопки, — а BOOLEAN в Figma управляет только visible слоя и инверсии не имеет. Секция сжалась с 1120 ячеек до 672; из 542 инстансов с осью loading значение on не стояло ни у одного, поэтому удаление 448 ячеек ничего не осиротило. Моя оценка «цена приведения +448 ячеек» описывала не приведение к канону, а откат этого решения. Остаток расхождения — на стороне button-overhung, где ось loading=off|on ещё отдельная; приводится в его заходе. Канон props.md обновлён 15.09.2026: loading — законное шестое значение state.",
       "asana_gid": "1218498584589096",
       "answered_at": "2026-09-15"
+    },
+    {
+      "id": "addition-chroma-library-not-accepted",
+      "text": "В файле компонентов button/addition рисует свечение старым fuchsia/60 (#ca49ef), а студия и код — pink/60 (#ec4197): библиотека «📜 tokens ↪ studio» не опубликована или обновление не принято. 70 ячеек сверки расходятся. Опубликовать библиотеку и принять обновление в файле компонентов.",
+      "level": "component",
+      "target": "button / addition",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-10-07",
+      "evidence": "logs/2026/10/07/15-08 - button-radial-fill-from-mockup.md",
+      "asana_gid": "1219253482921626"
+    },
+    {
+      "id": "pills-focus-ring-outer-radius",
+      "text": "Сверка button: у pills в состоянии focus внешний радиус кольца — макет 28, код 603 (2 ячейки, size 600). Визуально border-radius клампится, но расхождение не разобрано: ошибка сверки или кольцо в коде иначе считает радиус?",
+      "level": "component",
+      "target": "button / pills",
+      "severity": "polish",
+      "status": "answered",
+      "raised_at": "2026-10-07",
+      "evidence": "logs/2026/10/07/15-08 - button-radial-fill-from-mockup.md",
+      "asana_gid": "1219253451129323",
+      "answer": "Ошибка токена, не кода: в студии rounded-коллекция outline/50…900 в режиме rounded была 26 (= border-radius), а по описанию токена кольцо на 1px больше радиуса (в smooth так и есть: 600 → 10/11). Кольцо pills 600 высотой 54 с радиусом 26 выходило сплюснутым (внешний 28 вместо 29). 07.10.2026 значения rounded-мода исправлены на 27 в студии (тема 21, форки унаследовали) и в «📜 tokens ↪ studio». В коде outline токен не читает — браузер сам ведёт кольцо по border-radius, сайт не менялся. Сверка сойдётся после публикации библиотеки и приёма обновления в файле компонентов.",
+      "answered_at": "2026-10-07"
     }
   ],
   "uses": {

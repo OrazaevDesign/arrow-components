@@ -304,18 +304,19 @@
 }
 
 /* Заливка addition (макет с 07.10.2026). Два слоя: снизу сплошной bg, сверху радиальный
-   градиент chroma → bg. Эллипс снят с gradientTransform ячейки: центр 50% 50%, радиусы
-   45.77% ширины и 137.5% высоты — свечение по центру, к краям уходит в bg. Слой
-   градиента непрозрачен на 70% в rest, focus, active, loading и disabled и на 100% на
+   градиент chroma → bg. Эллипс снят с gradientTransform ячейки: центр 50% 0% (верхний край), радиусы
+   110.9% ширины и 100% высоты — свечение сверху, к нижнему краю уходит в bg (правка макета 07.10.2026: было
+   45.77% 137.5% at 50% 50%, свечение по центру; слой 70%). Слой
+   градиента непрозрачен на 60% в rest, focus, active, loading и disabled и на 100% на
    hover — свечение «разгорается» под курсором. У слоя background своего opacity нет,
    поэтому прозрачность внесена в стопы через color-mix с transparent.
    Селектор .btn.btn-addition, а не .btn-addition: в блоке склеены файлы нескольких вариантов, и
    база .btn из следующего файла с той же специфичностью вернула бы линейный градиент.
    До 07.10.2026 заливка была linear-gradient(to right, chroma, bg) без прозрачности. */
 .btn.btn-addition {
-  --awds-btn-glow: var(--awds-opacity-70);   /* слой градиента в Figma: opacity 70% */
+  --awds-btn-glow: var(--awds-opacity-60);   /* слой градиента в Figma: opacity 60% */
   background:
-    radial-gradient(45.77% 137.5% at 50% 50%,
+    radial-gradient(110.9% 100% at 50% 0%,
       color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
       color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
     var(--awds-btn-bg);
