@@ -1482,11 +1482,6 @@
   --awds-wysiwyg-font-size-caption-small: var(--awds-typography-font-size-200);
   --awds-wysiwyg-font-size-caption-large: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);  /* Кегль роли текста caption. Ступени typography по модам масштаба: small → font-size/200, medium → font-size/300, large → font-size/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
-  /* Кегль роли текста price-listing. Ступени typography по модам масштаба: small → font-size/900, medium → font-size/910, large → font-size/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
-  --awds-wysiwyg-font-size-price-listing-medium: var(--awds-typography-font-size-910);
-  --awds-wysiwyg-font-size-price-listing-small: var(--awds-typography-font-size-900);
-  --awds-wysiwyg-font-size-price-listing-large: var(--awds-typography-font-size-920);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-medium);  /* Кегль роли текста price-listing. Ступени typography по модам масштаба: small → font-size/900, medium → font-size/910, large → font-size/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   /* Интерлиньяж роли текста h1. Ступени typography по модам масштаба: small → line-height-compact/920, medium → line-height-compact/920, large → line-height-compact/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-line-height-h1-medium: var(--awds-typography-line-height-compact-920);
   --awds-wysiwyg-line-height-h1-small: var(--awds-typography-line-height-compact-920);
@@ -1542,11 +1537,6 @@
   --awds-wysiwyg-line-height-caption-small: var(--awds-typography-line-height-200);
   --awds-wysiwyg-line-height-caption-large: var(--awds-typography-line-height-400);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);  /* Интерлиньяж роли текста caption. Ступени typography по модам масштаба: small → line-height/200, medium → line-height/300, large → line-height/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
-  /* Интерлиньяж роли текста price-listing. Ступени typography по модам масштаба: small → line-height-compact/900, medium → line-height-compact/910, large → line-height-compact/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
-  --awds-wysiwyg-line-height-price-listing-medium: var(--awds-typography-line-height-compact-910);
-  --awds-wysiwyg-line-height-price-listing-small: var(--awds-typography-line-height-compact-900);
-  --awds-wysiwyg-line-height-price-listing-large: var(--awds-typography-line-height-compact-920);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-medium);  /* Интерлиньяж роли текста price-listing. Ступени typography по модам масштаба: small → line-height-compact/900, medium → line-height-compact/910, large → line-height-compact/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   /* Межбуквенный интервал роли текста h1. Ступени typography по модам масштаба: small → letter-spacing/920, medium → letter-spacing/920, large → letter-spacing/940. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   --awds-wysiwyg-letter-spacing-h1-medium: var(--awds-typography-letter-spacing-920);
   --awds-wysiwyg-letter-spacing-h1-small: var(--awds-typography-letter-spacing-920);
@@ -1602,11 +1592,6 @@
   --awds-wysiwyg-letter-spacing-caption-small: var(--awds-typography-letter-spacing-200);
   --awds-wysiwyg-letter-spacing-caption-large: var(--awds-typography-letter-spacing-400);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-medium);  /* Межбуквенный интервал роли текста caption. Ступени typography по модам масштаба: small → letter-spacing/200, medium → letter-spacing/300, large → letter-spacing/400. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
-  /* Межбуквенный интервал роли текста price-listing. Ступени typography по модам масштаба: small → letter-spacing/900, medium → letter-spacing/910, large → letter-spacing/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
-  --awds-wysiwyg-letter-spacing-price-listing-medium: var(--awds-typography-letter-spacing-910);
-  --awds-wysiwyg-letter-spacing-price-listing-small: var(--awds-typography-letter-spacing-900);
-  --awds-wysiwyg-letter-spacing-price-listing-large: var(--awds-typography-letter-spacing-920);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-medium);  /* Межбуквенный интервал роли текста price-listing. Ступени typography по модам масштаба: small → letter-spacing/900, medium → letter-spacing/910, large → letter-spacing/920. В блоке брать эту роль, а не ступень typography — там номера, а не смысл. */
   /* Отступ сверху у блока внутри текста (таблица, список, цитата). По модам масштаба: small → typography/line-height-compact/920, medium → typography/line-height-compact/930, large → typography/line-height-compact/940. */
   --awds-wysiwyg-gap-block-top-medium: var(--awds-typography-line-height-compact-930);
   --awds-wysiwyg-gap-block-top-small: var(--awds-typography-line-height-compact-920);
@@ -2463,7 +2448,6 @@
   --awds-wysiwyg-font-size-code: var(--awds-wysiwyg-font-size-code-medium);
   --awds-wysiwyg-font-size-quote: var(--awds-wysiwyg-font-size-quote-medium);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-medium);
   --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-medium);
   --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-medium);
   --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-medium);
@@ -2475,7 +2459,6 @@
   --awds-wysiwyg-line-height-code: var(--awds-wysiwyg-line-height-code-medium);
   --awds-wysiwyg-line-height-quote: var(--awds-wysiwyg-line-height-quote-medium);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-medium);
   --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-medium);
   --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-medium);
   --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-medium);
@@ -2487,7 +2470,6 @@
   --awds-wysiwyg-letter-spacing-code: var(--awds-wysiwyg-letter-spacing-code-medium);
   --awds-wysiwyg-letter-spacing-quote: var(--awds-wysiwyg-letter-spacing-quote-medium);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-medium);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-medium);
   --awds-wysiwyg-gap-block-top: var(--awds-wysiwyg-gap-block-top-medium);
   --awds-wysiwyg-gap-typo-top: var(--awds-wysiwyg-gap-typo-top-medium);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-medium);
@@ -2512,7 +2494,6 @@
   --awds-wysiwyg-font-size-code: var(--awds-wysiwyg-font-size-code-small);
   --awds-wysiwyg-font-size-quote: var(--awds-wysiwyg-font-size-quote-small);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-small);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-small);
   --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-small);
   --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-small);
   --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-small);
@@ -2524,7 +2505,6 @@
   --awds-wysiwyg-line-height-code: var(--awds-wysiwyg-line-height-code-small);
   --awds-wysiwyg-line-height-quote: var(--awds-wysiwyg-line-height-quote-small);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-small);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-small);
   --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-small);
   --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-small);
   --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-small);
@@ -2536,7 +2516,6 @@
   --awds-wysiwyg-letter-spacing-code: var(--awds-wysiwyg-letter-spacing-code-small);
   --awds-wysiwyg-letter-spacing-quote: var(--awds-wysiwyg-letter-spacing-quote-small);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-small);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-small);
   --awds-wysiwyg-gap-block-top: var(--awds-wysiwyg-gap-block-top-small);
   --awds-wysiwyg-gap-typo-top: var(--awds-wysiwyg-gap-typo-top-small);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-small);
@@ -2561,7 +2540,6 @@
   --awds-wysiwyg-font-size-code: var(--awds-wysiwyg-font-size-code-large);
   --awds-wysiwyg-font-size-quote: var(--awds-wysiwyg-font-size-quote-large);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-large);
-  --awds-wysiwyg-font-size-price-listing: var(--awds-wysiwyg-font-size-price-listing-large);
   --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-large);
   --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-large);
   --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-large);
@@ -2573,7 +2551,6 @@
   --awds-wysiwyg-line-height-code: var(--awds-wysiwyg-line-height-code-large);
   --awds-wysiwyg-line-height-quote: var(--awds-wysiwyg-line-height-quote-large);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-large);
-  --awds-wysiwyg-line-height-price-listing: var(--awds-wysiwyg-line-height-price-listing-large);
   --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-large);
   --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-large);
   --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-large);
@@ -2585,7 +2562,6 @@
   --awds-wysiwyg-letter-spacing-code: var(--awds-wysiwyg-letter-spacing-code-large);
   --awds-wysiwyg-letter-spacing-quote: var(--awds-wysiwyg-letter-spacing-quote-large);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-large);
-  --awds-wysiwyg-letter-spacing-price-listing: var(--awds-wysiwyg-letter-spacing-price-listing-large);
   --awds-wysiwyg-gap-block-top: var(--awds-wysiwyg-gap-block-top-large);
   --awds-wysiwyg-gap-typo-top: var(--awds-wysiwyg-gap-typo-top-large);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-large);

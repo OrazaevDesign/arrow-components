@@ -23,7 +23,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **roles** | 326 | light · dark | surface (34), primary (28), secondary (28), tertiary (28), accent (28), addition (28), info (28), success (28), … +4 | `--primary-core-light` |
 | **typography** | 228 | desktop · tablet · mobile | font-size (57), line-height (57), line-height-compact (57), letter-spacing (57) | `--awds-typography-font-size-50-desktop` |
 | **size** | 224 | — | rectangle (105), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +2 | `--awds-size-rectangle-50-padding` |
-| **wysiwyg** | 138 | medium · small · large | font-size (36), line-height (36), letter-spacing (36), gap (30) | `--awds-wysiwyg-font-size-h1-medium` |
+| **wysiwyg** | 129 | medium · small · large | font-size (33), line-height (33), letter-spacing (33), gap (30) | `--awds-wysiwyg-font-size-h1-medium` |
 | **rounded** | 72 | smooth · rounded · none | border-radius (36), outline (36) | `--awds-rounded-border-radius-50-smooth` |
 | **shadow** | 60 | elevation-1 · elevation-2 · elevation-3 · elevation-4 | shadow1 (20), shadow2 (20), shadow3 (20) | `--awds-shadow-shadow1-color-elevation-1` |
 | **layout** | 54 | desktop · tablet · mobile | section (30), card (24) | `--awds-layout-section-width-large-desktop` |
@@ -34,7 +34,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **zindex** | 8 | — | dropdown (1), sticky (1), fixed (1), backdrop (1), offcanvas (1), modal (1), popover (1), tooltip (1) | `--awds-zindex-dropdown` |
 | **font** | 8 | — | weight (5), family (3) | `--awds-font-family-system` |
 
-Всего 2186 токенов в 14 коллекциях.
+Всего 2177 токенов в 14 коллекциях.
 
 ## Смысл групп
 
@@ -66,10 +66,10 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `typography` | `letter-spacing` | Межбуквенный интервал |
 | `typography` | `line-height-compact` | Плотный интерлиньяж |
 | `typography` | `line-height` | Интерлиньяж |
-| `wysiwyg` | `font-size` | Кегль роли текста lead. |
+| `wysiwyg` | `font-size` | Кегль роли текста h6. |
 | `wysiwyg` | `gap` | Отступ сверху у заголовка h2. |
-| `wysiwyg` | `letter-spacing` | Межбуквенный интервал роли текста lead. |
-| `wysiwyg` | `line-height` | Интерлиньяж роли текста lead. |
+| `wysiwyg` | `letter-spacing` | Межбуквенный интервал роли текста h6. |
+| `wysiwyg` | `line-height` | Интерлиньяж роли текста h6. |
 | `zindex` | `—` | Слой наложения: 1050 |
 
 ## Как из токена получается имя CSS-переменной

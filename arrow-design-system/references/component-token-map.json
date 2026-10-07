@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:459a218cea6dd23e6ea5f7985f5a9ac79670b6d45bd0385ca4b03cc68e080cde",
+  "snapshot_hash": "sha256:ea3aad87cea977e2c105dc1d163f7c71ce1daf893ce81d548e6b68eb49116d33",
   "size": {
     "rectangle": {
       "50": {
@@ -927,7 +927,7 @@
       },
       "slider": {
         "dot": {
-          "bg": "rgb(var(--surface-on-highest))"
+          "bg": "rgb(var(--surface-on-high))"
         },
         "dots": {
           "bg": "rgb(var(--surface-bright))"
@@ -1510,7 +1510,7 @@
       },
       "slider": {
         "dot": {
-          "bg": "rgb(var(--surface-on-highest))"
+          "bg": "rgb(var(--surface-on-high))"
         },
         "dots": {
           "bg": "rgb(var(--surface-bright))"
@@ -2100,7 +2100,7 @@
       },
       "slider": {
         "dot": {
-          "bg": "rgb(var(--surface-on-highest))"
+          "bg": "rgb(var(--surface-on-high))"
         },
         "dots": {
           "bg": "rgb(var(--surface-bright))"
@@ -2675,7 +2675,7 @@
       },
       "slider": {
         "dot": {
-          "bg": "rgb(var(--surface-on-highest))"
+          "bg": "rgb(var(--surface-on-high))"
         },
         "dots": {
           "bg": "rgb(var(--surface-bright))"
