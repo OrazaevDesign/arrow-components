@@ -1,5 +1,9 @@
 # button-overhung — журнал версий
 
+## 2.0.18 — 2026-10-07 — PATCH
+Storybook (preview.html): зеркала состояний .is-hover/.is-focus/.is-active и боковая панель ссылались на приватные --awds-state-overhung-* и --awds-size-* (с 03.09.2026 не выходят в тему) — в превью у hover/focus/active пропадал градиент chroma → bg и цвет текста. Ссылки заменены целями ячеек (роли surface-*, шаги space/control/opacity); CSS компонента не менялся.
+Потребителю: Ничего делать не нужно: правка только storybook, CSS компонента прежний.
+
 ## 2.0.17 — 2026-09-28 — PATCH · visual
 Ячейка rectangle/500/padding перенаправлена в студии: space-3-5 (14px) → space-3 (12px); код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: у ступени 500 внутренний отступ 14px → 12px, контрол ниже на 4px.

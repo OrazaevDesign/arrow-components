@@ -23,49 +23,49 @@
        :active правил из button-overhung-{variant}.css, чтобы матрица показывала все
        состояния без интерактива. Тень elevation постоянна (в .obtn base). ─── */
     .obtn-primary.is-hover {
-      --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg));
-      --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-hover));
-      --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border));
-      --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-hover));
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-dim));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on-highest));
     }
     .obtn-primary.is-focus {
-      --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg));
-      --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-focus));
-      --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border));
-      --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-focus));
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-bright));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on-high));
       outline: var(--awds-focus-width) solid var(--awds-focus-color);
       outline-offset: var(--awds-focus-offset);
     }
     .obtn-primary.is-active {
-      --awds-obtn-bg:     rgb(var(--awds-state-overhung-primary-bg));
-      --awds-obtn-chroma: rgb(var(--awds-state-overhung-primary-chroma-active));
-      --awds-obtn-border: rgb(var(--awds-state-overhung-primary-border));
-      --awds-obtn-color:  rgb(var(--awds-state-overhung-primary-color-active));
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-bright));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on-high));
     }
 
     /* ─── Secondary: те же роли, но кнопка приглушена opacity 60% → 90% на hover/focus/active.
        Rest (60%) задаёт сам .obtn-secondary; зеркала уплотняют до 90%. ─── */
     .obtn-secondary.is-hover {
-      --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg));
-      --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-hover));
-      --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border));
-      --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-hover));
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-dim));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on-highest));
       opacity: var(--awds-opacity-90);
     }
     .obtn-secondary.is-focus {
-      --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg));
-      --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-focus));
-      --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border));
-      --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-focus));
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-bright));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on-high));
       opacity: var(--awds-opacity-90);
       outline: var(--awds-focus-width) solid var(--awds-focus-color);
       outline-offset: var(--awds-focus-offset);
     }
     .obtn-secondary.is-active {
-      --awds-obtn-bg:     rgb(var(--awds-state-overhung-secondary-bg));
-      --awds-obtn-chroma: rgb(var(--awds-state-overhung-secondary-chroma-active));
-      --awds-obtn-border: rgb(var(--awds-state-overhung-secondary-border));
-      --awds-obtn-color:  rgb(var(--awds-state-overhung-secondary-color-active));
+      --awds-obtn-bg:     rgb(var(--surface-surface));
+      --awds-obtn-chroma: rgb(var(--surface-bright));
+      --awds-obtn-border: rgb(var(--surface-surface));
+      --awds-obtn-color:  rgb(var(--surface-on-high));
       opacity: var(--awds-opacity-90);
     }
 
@@ -201,7 +201,7 @@
 <body>
 
   <h1>button-overhung / storybook</h1>
-  <p class="sub">«Парящая» кнопка: постоянная тень <code>var(--awds-shadow-elevation-1)</code> + светлый фон из ячеек <code>--awds-state-overhung-{variant}-{prop}-{state}</code>. Размеры — shape-токены <code>var(--awds-size-rectangle-{N}-*)</code>, радиус общий — <code>var(--awds-rounded-border-radius-full)</code> (таблетка на всех ступенях). Тень одинакова во всех состояниях; меняется только chroma/текст на hover. Переключи тему — подтянется из DS; режим скругления на overhung не влияет.</p>
+  <p class="sub">«Парящая» кнопка: постоянная тень <code>var(--awds-shadow-elevation-1)</code> + светлый фон с градиентом chroma → bg на ролях <code>surface-*</code> (ячейки <code>overhung/{variant}/*</code> приватны и резолвятся в роль при сборке). Размеры — шаги <code>--awds-space-*</code> и <code>--awds-control-*</code> по ступени Size, радиус общий — <code>var(--awds-rounded-border-radius-full)</code> (таблетка на всех ступенях). Тень одинакова во всех состояниях; меняется только chroma/текст на hover. Переключи тему — подтянется из DS; режим скругления на overhung не влияет.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -355,11 +355,11 @@
 
     /* size 400 → семантические shape-токены (зеркало .obtn--400, map.size.rectangle.400). */
     const SIZE_400 = [
-      ['padding', '--awds-size-rectangle-400-padding'],
-      ['gap', '--awds-size-rectangle-400-gap'],
+      ['padding', '--awds-space-2-5'],
+      ['gap', '--awds-space-1-5'],
       ['rounded (общий, не от размера)', '--awds-rounded-border-radius-full'],
-      ['icon', '--awds-size-rectangle-400-icon'],
-      ['font-size', '--awds-size-rectangle-400-typography'],
+      ['icon', '--awds-space-5'],
+      ['font-size', '--awds-control-font-size-400'],
       ['line-height', '--awds-control-line-height-400'],
       ['letter-spacing', '--awds-control-letter-spacing-400'],
     ];
@@ -409,7 +409,7 @@
     const OTHER = [
       ['--awds-shadow-elevation-1', 'value'],
       ['--surface-on-highest', 'color'],
-      ['--awds-state-opacity-control-disabled', 'value'],
+      ['--awds-opacity-40', 'value'],
       ['--awds-opacity-60', 'value'],
       ['--awds-opacity-90', 'value'],
       ['--awds-font-family-system', 'value'],
