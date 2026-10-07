@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@1.3.3
+/* ArrowDS · product-card@1.3.4
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes pcard-stepper-bump {
@@ -67,6 +67,10 @@
   display: block;
   transform: scale(0.9);
   transition: opacity 0.2s ease-out;
+}
+
+.pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
 }
 
 .pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
@@ -495,6 +499,10 @@
   transition: opacity 0.2s ease-out;
 }
 
+.pcard-button-price .pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
+}
+
 .pcard-button-price .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
   transition: opacity 0s linear 0.3s;
@@ -920,6 +928,10 @@
   transition: opacity 0.2s ease-out;
 }
 
+.pcard-buy-now .pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
+}
+
 .pcard-buy-now .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
   transition: opacity 0s linear 0.3s;
@@ -1325,6 +1337,10 @@
   display: block;
   transform: scale(0.9);
   transition: opacity 0.2s ease-out;
+}
+
+.pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
 }
 
 .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {

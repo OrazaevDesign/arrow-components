@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.13, badge@1.2.1, button@2.2.12, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.12, button-overhung@2.0.17, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@1.0.7, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.7, list-item@2.4.1, modal@1.2.3, notice@2.0.5, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@1.3.3, progress@2.0.4, radio@1.0.11, range@2.0.12, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.9, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
+   Состав: focus-selection@2.0.13, badge@1.2.1, button@2.2.12, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.12, button-overhung@2.0.17, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@1.0.7, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.7, list-item@2.4.1, modal@1.2.3, notice@2.0.5, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@1.3.4, progress@2.0.4, radio@1.0.11, range@2.0.12, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.9, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -5969,6 +5969,10 @@
   transition: opacity 0.2s ease-out;
 }
 
+.pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
+}
+
 .pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
   transition: opacity 0s linear 0.3s;
@@ -6393,6 +6397,10 @@
   display: block;
   transform: scale(0.9);                 
   transition: opacity 0.2s ease-out;
+}
+
+.pcard-button-price .pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
 }
 
 .pcard-button-price .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
@@ -6820,6 +6828,10 @@
   transition: opacity 0.2s ease-out;
 }
 
+.pcard-buy-now .pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
+}
+
 .pcard-buy-now .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
   transition: opacity 0s linear 0.3s;
@@ -7225,6 +7237,10 @@
   display: block;
   transform: scale(0.9);
   transition: opacity 0.2s ease-out;
+}
+
+.pcard__image-link:has(.pcard__image--active) .pcard__image {
+  background: rgb(var(--surface-bright));
 }
 
 .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
