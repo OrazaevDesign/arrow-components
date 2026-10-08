@@ -429,6 +429,16 @@
       "bytes": 3872
     },
     {
+      "name": "page-title",
+      "version": "1.0.0",
+      "variants": [
+        "default"
+      ],
+      "sizes": null,
+      "rules": 1,
+      "bytes": 250
+    },
+    {
       "name": "pagination",
       "version": "1.0.1",
       "variants": [
@@ -746,9 +756,9 @@
     }
   ],
   "bundle": {
-    "bytes": 379090,
-    "rules": 1472,
-    "hash": "sha256:21af59892d7dbfbcc864e4358654669f52d8ed3718adcfec1110104667996f93"
+    "bytes": 379248,
+    "rules": 1473,
+    "hash": "sha256:47ca222cbef83b1c5903b0600d49658c4f0d6b2e5e1ce730055a24eb9d184994"
   },
   "theme": {
     "bytes": 67664,
