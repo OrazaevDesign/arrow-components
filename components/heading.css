@@ -1,21 +1,23 @@
-/* ArrowDS · heading@1.0.7
+/* ArrowDS · heading@2.0.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
 
 .heading {
-  --awds-heading-fs: var(--awds-typography-font-size-910);
-  --awds-heading-lh: var(--awds-typography-line-height-compact-910);
-  --awds-heading-ls: var(--awds-typography-letter-spacing-910);
+  --awds-heading-fs: var(--awds-wysiwyg-font-size-h2);
+  --awds-heading-lh: var(--awds-wysiwyg-line-height-h2);
+  --awds-heading-ls: var(--awds-wysiwyg-letter-spacing-h2);
   display: flex;
+  flex-wrap: wrap;                   
   align-items: flex-end;             
-  gap: var(--awds-space-1-5);        
+  gap: var(--awds-space-2);          
   width: 100%;                       
   font-family: var(--awds-font-family-system);
 }
 
 .heading__title {
   margin: 0;
+  min-width: 0;                      
   font-size: var(--awds-heading-fs);
   line-height: var(--awds-heading-lh);
   letter-spacing: var(--awds-heading-ls);
@@ -24,39 +26,47 @@
   text-wrap: balance;
 }
 
+.heading__action {
+  flex: none;
+}
+
 .heading--h1 {
-  --awds-heading-fs: var(--awds-typography-font-size-920);
-  --awds-heading-lh: var(--awds-typography-line-height-compact-920);
-  --awds-heading-ls: var(--awds-typography-letter-spacing-920);
+  --awds-heading-fs: var(--awds-wysiwyg-font-size-h1);
+  --awds-heading-lh: var(--awds-wysiwyg-line-height-h1);
+  --awds-heading-ls: var(--awds-wysiwyg-letter-spacing-h1);
 }
 
 .heading--h2 {
-  --awds-heading-fs: var(--awds-typography-font-size-910);
-  --awds-heading-lh: var(--awds-typography-line-height-compact-910);
-  --awds-heading-ls: var(--awds-typography-letter-spacing-910);
+  --awds-heading-fs: var(--awds-wysiwyg-font-size-h2);
+  --awds-heading-lh: var(--awds-wysiwyg-line-height-h2);
+  --awds-heading-ls: var(--awds-wysiwyg-letter-spacing-h2);
 }
 
 .heading--h3 {
-  --awds-heading-fs: var(--awds-typography-font-size-900);
-  --awds-heading-lh: var(--awds-typography-line-height-compact-900);
-  --awds-heading-ls: var(--awds-typography-letter-spacing-900);
+  --awds-heading-fs: var(--awds-wysiwyg-font-size-h3);
+  --awds-heading-lh: var(--awds-wysiwyg-line-height-h3);
+  --awds-heading-ls: var(--awds-wysiwyg-letter-spacing-h3);
 }
 
 .heading--h4 {
-  --awds-heading-fs: var(--awds-typography-font-size-800);
-  --awds-heading-lh: var(--awds-typography-line-height-compact-800);
-  --awds-heading-ls: var(--awds-typography-letter-spacing-800);
+  --awds-heading-fs: var(--awds-wysiwyg-font-size-h4);
+  --awds-heading-lh: var(--awds-wysiwyg-line-height-h4);
+  --awds-heading-ls: var(--awds-wysiwyg-letter-spacing-h4);
 }
 
 .heading--h5 {
-  --awds-heading-fs: var(--awds-typography-font-size-600);
-  --awds-heading-lh: var(--awds-typography-line-height-compact-600);
-  --awds-heading-ls: var(--awds-typography-letter-spacing-600);
+  --awds-heading-fs: var(--awds-wysiwyg-font-size-h5);
+  --awds-heading-lh: var(--awds-wysiwyg-line-height-h5);
+  --awds-heading-ls: var(--awds-wysiwyg-letter-spacing-h5);
 }
 
 @media (max-width: 1023px) {
   .heading {
+    flex-wrap: nowrap;
     justify-content: space-between;
+  }
+  .heading__title {
+    flex: 1 1 0;
   }
 }
 

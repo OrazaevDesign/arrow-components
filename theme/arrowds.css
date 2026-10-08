@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 586 из 1365 объявленных в теме. */
+   Переменных: 674 из 1365 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -465,6 +465,14 @@
   --awds-typography-font-size-920-tablet: 24px;
   --awds-typography-font-size-920-mobile: 22px;
   --awds-typography-font-size-920: var(--awds-typography-font-size-920-desktop);
+  --awds-typography-font-size-930-desktop: 34px;
+  --awds-typography-font-size-930-tablet: 28px;
+  --awds-typography-font-size-930-mobile: 24px;
+  --awds-typography-font-size-930: var(--awds-typography-font-size-930-desktop);
+  --awds-typography-font-size-940-desktop: 40px;
+  --awds-typography-font-size-940-tablet: 34px;
+  --awds-typography-font-size-940-mobile: 28px;
+  --awds-typography-font-size-940: var(--awds-typography-font-size-940-desktop);
   --awds-typography-line-height-200-desktop: 19px;
   --awds-typography-line-height-200-tablet: 19px;
   --awds-typography-line-height-200-mobile: 19px;
@@ -501,6 +509,10 @@
   --awds-typography-line-height-compact-600-tablet: 19px;
   --awds-typography-line-height-compact-600-mobile: 19px;
   --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-desktop);
+  --awds-typography-line-height-compact-700-desktop: 20px;
+  --awds-typography-line-height-compact-700-tablet: 20px;
+  --awds-typography-line-height-compact-700-mobile: 20px;
+  --awds-typography-line-height-compact-700: var(--awds-typography-line-height-compact-700-desktop);
   --awds-typography-line-height-compact-800-desktop: 22px;
   --awds-typography-line-height-compact-800-tablet: 22px;
   --awds-typography-line-height-compact-800-mobile: 22px;
@@ -517,6 +529,14 @@
   --awds-typography-line-height-compact-920-tablet: 29px;
   --awds-typography-line-height-compact-920-mobile: 26px;
   --awds-typography-line-height-compact-920: var(--awds-typography-line-height-compact-920-desktop);
+  --awds-typography-line-height-compact-930-desktop: 41px;
+  --awds-typography-line-height-compact-930-tablet: 34px;
+  --awds-typography-line-height-compact-930-mobile: 29px;
+  --awds-typography-line-height-compact-930: var(--awds-typography-line-height-compact-930-desktop);
+  --awds-typography-line-height-compact-940-desktop: 48px;
+  --awds-typography-line-height-compact-940-tablet: 41px;
+  --awds-typography-line-height-compact-940-mobile: 34px;
+  --awds-typography-line-height-compact-940: var(--awds-typography-line-height-compact-940-desktop);
   --awds-typography-letter-spacing-200-desktop: 0.1px;
   --awds-typography-letter-spacing-200-tablet: 0.1px;
   --awds-typography-letter-spacing-200-mobile: 0.1px;
@@ -553,6 +573,34 @@
   --awds-typography-letter-spacing-920-tablet: -0.3px;
   --awds-typography-letter-spacing-920-mobile: -0.3px;
   --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-desktop);
+  --awds-typography-letter-spacing-930-desktop: -0.4px;
+  --awds-typography-letter-spacing-930-tablet: -0.4px;
+  --awds-typography-letter-spacing-930-mobile: -0.4px;
+  --awds-typography-letter-spacing-930: var(--awds-typography-letter-spacing-930-desktop);
+  --awds-typography-letter-spacing-940-desktop: -0.5px;
+  --awds-typography-letter-spacing-940-tablet: -0.5px;
+  --awds-typography-letter-spacing-940-mobile: -0.5px;
+  --awds-typography-letter-spacing-940: var(--awds-typography-letter-spacing-940-desktop);
+  --awds-wysiwyg-font-size-h1-medium: var(--awds-typography-font-size-930);
+  --awds-wysiwyg-font-size-h1-small: var(--awds-typography-font-size-920);
+  --awds-wysiwyg-font-size-h1-large: var(--awds-typography-font-size-940);
+  --awds-wysiwyg-font-size-h1: var(--awds-wysiwyg-font-size-h1-medium);
+  --awds-wysiwyg-font-size-h2-medium: var(--awds-typography-font-size-920);
+  --awds-wysiwyg-font-size-h2-small: var(--awds-typography-font-size-910);
+  --awds-wysiwyg-font-size-h2-large: var(--awds-typography-font-size-930);
+  --awds-wysiwyg-font-size-h2: var(--awds-wysiwyg-font-size-h2-medium);
+  --awds-wysiwyg-font-size-h3-medium: var(--awds-typography-font-size-910);
+  --awds-wysiwyg-font-size-h3-small: var(--awds-typography-font-size-900);
+  --awds-wysiwyg-font-size-h3-large: var(--awds-typography-font-size-920);
+  --awds-wysiwyg-font-size-h3: var(--awds-wysiwyg-font-size-h3-medium);
+  --awds-wysiwyg-font-size-h4-medium: var(--awds-typography-font-size-900);
+  --awds-wysiwyg-font-size-h4-small: var(--awds-typography-font-size-800);
+  --awds-wysiwyg-font-size-h4-large: var(--awds-typography-font-size-910);
+  --awds-wysiwyg-font-size-h4: var(--awds-wysiwyg-font-size-h4-medium);
+  --awds-wysiwyg-font-size-h5-medium: var(--awds-typography-font-size-700);
+  --awds-wysiwyg-font-size-h5-small: var(--awds-typography-font-size-600);
+  --awds-wysiwyg-font-size-h5-large: var(--awds-typography-font-size-800);
+  --awds-wysiwyg-font-size-h5: var(--awds-wysiwyg-font-size-h5-medium);
   --awds-wysiwyg-font-size-body-medium: var(--awds-typography-font-size-600);
   --awds-wysiwyg-font-size-body-small: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-body-large: var(--awds-typography-font-size-700);
@@ -561,6 +609,26 @@
   --awds-wysiwyg-font-size-caption-small: var(--awds-typography-font-size-200);
   --awds-wysiwyg-font-size-caption-large: var(--awds-typography-font-size-400);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);
+  --awds-wysiwyg-line-height-h1-medium: var(--awds-typography-line-height-compact-920);
+  --awds-wysiwyg-line-height-h1-small: var(--awds-typography-line-height-compact-920);
+  --awds-wysiwyg-line-height-h1-large: var(--awds-typography-line-height-compact-940);
+  --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-medium);
+  --awds-wysiwyg-line-height-h2-medium: var(--awds-typography-line-height-compact-920);
+  --awds-wysiwyg-line-height-h2-small: var(--awds-typography-line-height-compact-910);
+  --awds-wysiwyg-line-height-h2-large: var(--awds-typography-line-height-compact-930);
+  --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-medium);
+  --awds-wysiwyg-line-height-h3-medium: var(--awds-typography-line-height-compact-910);
+  --awds-wysiwyg-line-height-h3-small: var(--awds-typography-line-height-compact-900);
+  --awds-wysiwyg-line-height-h3-large: var(--awds-typography-line-height-compact-920);
+  --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-medium);
+  --awds-wysiwyg-line-height-h4-medium: var(--awds-typography-line-height-compact-900);
+  --awds-wysiwyg-line-height-h4-small: var(--awds-typography-line-height-compact-800);
+  --awds-wysiwyg-line-height-h4-large: var(--awds-typography-line-height-compact-910);
+  --awds-wysiwyg-line-height-h4: var(--awds-wysiwyg-line-height-h4-medium);
+  --awds-wysiwyg-line-height-h5-medium: var(--awds-typography-line-height-compact-700);
+  --awds-wysiwyg-line-height-h5-small: var(--awds-typography-line-height-compact-600);
+  --awds-wysiwyg-line-height-h5-large: var(--awds-typography-line-height-compact-800);
+  --awds-wysiwyg-line-height-h5: var(--awds-wysiwyg-line-height-h5-medium);
   --awds-wysiwyg-line-height-body-medium: var(--awds-typography-line-height-600);
   --awds-wysiwyg-line-height-body-small: var(--awds-typography-line-height-400);
   --awds-wysiwyg-line-height-body-large: var(--awds-typography-line-height-700);
@@ -569,6 +637,26 @@
   --awds-wysiwyg-line-height-caption-small: var(--awds-typography-line-height-200);
   --awds-wysiwyg-line-height-caption-large: var(--awds-typography-line-height-400);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);
+  --awds-wysiwyg-letter-spacing-h1-medium: var(--awds-typography-letter-spacing-920);
+  --awds-wysiwyg-letter-spacing-h1-small: var(--awds-typography-letter-spacing-920);
+  --awds-wysiwyg-letter-spacing-h1-large: var(--awds-typography-letter-spacing-940);
+  --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-medium);
+  --awds-wysiwyg-letter-spacing-h2-medium: var(--awds-typography-letter-spacing-920);
+  --awds-wysiwyg-letter-spacing-h2-small: var(--awds-typography-letter-spacing-910);
+  --awds-wysiwyg-letter-spacing-h2-large: var(--awds-typography-letter-spacing-930);
+  --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-medium);
+  --awds-wysiwyg-letter-spacing-h3-medium: var(--awds-typography-letter-spacing-910);
+  --awds-wysiwyg-letter-spacing-h3-small: var(--awds-typography-letter-spacing-900);
+  --awds-wysiwyg-letter-spacing-h3-large: var(--awds-typography-letter-spacing-920);
+  --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-medium);
+  --awds-wysiwyg-letter-spacing-h4-medium: var(--awds-typography-letter-spacing-900);
+  --awds-wysiwyg-letter-spacing-h4-small: var(--awds-typography-letter-spacing-800);
+  --awds-wysiwyg-letter-spacing-h4-large: var(--awds-typography-letter-spacing-910);
+  --awds-wysiwyg-letter-spacing-h4: var(--awds-wysiwyg-letter-spacing-h4-medium);
+  --awds-wysiwyg-letter-spacing-h5-medium: var(--awds-typography-letter-spacing-700);
+  --awds-wysiwyg-letter-spacing-h5-small: var(--awds-typography-letter-spacing-600);
+  --awds-wysiwyg-letter-spacing-h5-large: var(--awds-typography-letter-spacing-800);
+  --awds-wysiwyg-letter-spacing-h5: var(--awds-wysiwyg-letter-spacing-h5-medium);
   --awds-wysiwyg-letter-spacing-body-medium: var(--awds-typography-letter-spacing-600);
   --awds-wysiwyg-letter-spacing-body-small: var(--awds-typography-letter-spacing-400);
   --awds-wysiwyg-letter-spacing-body-large: var(--awds-typography-letter-spacing-700);
@@ -771,6 +859,8 @@
   --awds-typography-font-size-900: var(--awds-typography-font-size-900-desktop);
   --awds-typography-font-size-910: var(--awds-typography-font-size-910-desktop);
   --awds-typography-font-size-920: var(--awds-typography-font-size-920-desktop);
+  --awds-typography-font-size-930: var(--awds-typography-font-size-930-desktop);
+  --awds-typography-font-size-940: var(--awds-typography-font-size-940-desktop);
   --awds-typography-line-height-200: var(--awds-typography-line-height-200-desktop);
   --awds-typography-line-height-300: var(--awds-typography-line-height-300-desktop);
   --awds-typography-line-height-400: var(--awds-typography-line-height-400-desktop);
@@ -780,10 +870,13 @@
   --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-desktop);
   --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-desktop);
   --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-desktop);
+  --awds-typography-line-height-compact-700: var(--awds-typography-line-height-compact-700-desktop);
   --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-desktop);
   --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-desktop);
   --awds-typography-line-height-compact-910: var(--awds-typography-line-height-compact-910-desktop);
   --awds-typography-line-height-compact-920: var(--awds-typography-line-height-compact-920-desktop);
+  --awds-typography-line-height-compact-930: var(--awds-typography-line-height-compact-930-desktop);
+  --awds-typography-line-height-compact-940: var(--awds-typography-line-height-compact-940-desktop);
   --awds-typography-letter-spacing-200: var(--awds-typography-letter-spacing-200-desktop);
   --awds-typography-letter-spacing-300: var(--awds-typography-letter-spacing-300-desktop);
   --awds-typography-letter-spacing-400: var(--awds-typography-letter-spacing-400-desktop);
@@ -793,6 +886,8 @@
   --awds-typography-letter-spacing-900: var(--awds-typography-letter-spacing-900-desktop);
   --awds-typography-letter-spacing-910: var(--awds-typography-letter-spacing-910-desktop);
   --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-desktop);
+  --awds-typography-letter-spacing-930: var(--awds-typography-letter-spacing-930-desktop);
+  --awds-typography-letter-spacing-940: var(--awds-typography-letter-spacing-940-desktop);
 }
 @media (max-width: 1023px) {
   :root {
@@ -809,6 +904,8 @@
     --awds-typography-font-size-900: var(--awds-typography-font-size-900-tablet);
     --awds-typography-font-size-910: var(--awds-typography-font-size-910-tablet);
     --awds-typography-font-size-920: var(--awds-typography-font-size-920-tablet);
+    --awds-typography-font-size-930: var(--awds-typography-font-size-930-tablet);
+    --awds-typography-font-size-940: var(--awds-typography-font-size-940-tablet);
     --awds-typography-line-height-200: var(--awds-typography-line-height-200-tablet);
     --awds-typography-line-height-300: var(--awds-typography-line-height-300-tablet);
     --awds-typography-line-height-400: var(--awds-typography-line-height-400-tablet);
@@ -818,10 +915,13 @@
     --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-tablet);
     --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-tablet);
     --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-tablet);
+    --awds-typography-line-height-compact-700: var(--awds-typography-line-height-compact-700-tablet);
     --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-tablet);
     --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-tablet);
     --awds-typography-line-height-compact-910: var(--awds-typography-line-height-compact-910-tablet);
     --awds-typography-line-height-compact-920: var(--awds-typography-line-height-compact-920-tablet);
+    --awds-typography-line-height-compact-930: var(--awds-typography-line-height-compact-930-tablet);
+    --awds-typography-line-height-compact-940: var(--awds-typography-line-height-compact-940-tablet);
     --awds-typography-letter-spacing-200: var(--awds-typography-letter-spacing-200-tablet);
     --awds-typography-letter-spacing-300: var(--awds-typography-letter-spacing-300-tablet);
     --awds-typography-letter-spacing-400: var(--awds-typography-letter-spacing-400-tablet);
@@ -831,6 +931,8 @@
     --awds-typography-letter-spacing-900: var(--awds-typography-letter-spacing-900-tablet);
     --awds-typography-letter-spacing-910: var(--awds-typography-letter-spacing-910-tablet);
     --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-tablet);
+    --awds-typography-letter-spacing-930: var(--awds-typography-letter-spacing-930-tablet);
+    --awds-typography-letter-spacing-940: var(--awds-typography-letter-spacing-940-tablet);
   }
 }
 @media (max-width: 615px) {
@@ -848,6 +950,8 @@
     --awds-typography-font-size-900: var(--awds-typography-font-size-900-mobile);
     --awds-typography-font-size-910: var(--awds-typography-font-size-910-mobile);
     --awds-typography-font-size-920: var(--awds-typography-font-size-920-mobile);
+    --awds-typography-font-size-930: var(--awds-typography-font-size-930-mobile);
+    --awds-typography-font-size-940: var(--awds-typography-font-size-940-mobile);
     --awds-typography-line-height-200: var(--awds-typography-line-height-200-mobile);
     --awds-typography-line-height-300: var(--awds-typography-line-height-300-mobile);
     --awds-typography-line-height-400: var(--awds-typography-line-height-400-mobile);
@@ -857,10 +961,13 @@
     --awds-typography-line-height-compact-200: var(--awds-typography-line-height-compact-200-mobile);
     --awds-typography-line-height-compact-300: var(--awds-typography-line-height-compact-300-mobile);
     --awds-typography-line-height-compact-600: var(--awds-typography-line-height-compact-600-mobile);
+    --awds-typography-line-height-compact-700: var(--awds-typography-line-height-compact-700-mobile);
     --awds-typography-line-height-compact-800: var(--awds-typography-line-height-compact-800-mobile);
     --awds-typography-line-height-compact-900: var(--awds-typography-line-height-compact-900-mobile);
     --awds-typography-line-height-compact-910: var(--awds-typography-line-height-compact-910-mobile);
     --awds-typography-line-height-compact-920: var(--awds-typography-line-height-compact-920-mobile);
+    --awds-typography-line-height-compact-930: var(--awds-typography-line-height-compact-930-mobile);
+    --awds-typography-line-height-compact-940: var(--awds-typography-line-height-compact-940-mobile);
     --awds-typography-letter-spacing-200: var(--awds-typography-letter-spacing-200-mobile);
     --awds-typography-letter-spacing-300: var(--awds-typography-letter-spacing-300-mobile);
     --awds-typography-letter-spacing-400: var(--awds-typography-letter-spacing-400-mobile);
@@ -870,6 +977,8 @@
     --awds-typography-letter-spacing-900: var(--awds-typography-letter-spacing-900-mobile);
     --awds-typography-letter-spacing-910: var(--awds-typography-letter-spacing-910-mobile);
     --awds-typography-letter-spacing-920: var(--awds-typography-letter-spacing-920-mobile);
+    --awds-typography-letter-spacing-930: var(--awds-typography-letter-spacing-930-mobile);
+    --awds-typography-letter-spacing-940: var(--awds-typography-letter-spacing-940-mobile);
   }
 }
 .rounded-smooth {
@@ -906,28 +1015,73 @@
   --awds-rounded-border-radius-full: var(--awds-rounded-border-radius-full-none);
 }
 .typo-medium {
+  --awds-wysiwyg-font-size-h1: var(--awds-wysiwyg-font-size-h1-medium);
+  --awds-wysiwyg-font-size-h2: var(--awds-wysiwyg-font-size-h2-medium);
+  --awds-wysiwyg-font-size-h3: var(--awds-wysiwyg-font-size-h3-medium);
+  --awds-wysiwyg-font-size-h4: var(--awds-wysiwyg-font-size-h4-medium);
+  --awds-wysiwyg-font-size-h5: var(--awds-wysiwyg-font-size-h5-medium);
   --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-medium);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-medium);
+  --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-medium);
+  --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-medium);
+  --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-medium);
+  --awds-wysiwyg-line-height-h4: var(--awds-wysiwyg-line-height-h4-medium);
+  --awds-wysiwyg-line-height-h5: var(--awds-wysiwyg-line-height-h5-medium);
   --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-medium);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-medium);
+  --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-medium);
+  --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-medium);
+  --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-medium);
+  --awds-wysiwyg-letter-spacing-h4: var(--awds-wysiwyg-letter-spacing-h4-medium);
+  --awds-wysiwyg-letter-spacing-h5: var(--awds-wysiwyg-letter-spacing-h5-medium);
   --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-medium);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-medium);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-medium);
 }
 .typo-small {
+  --awds-wysiwyg-font-size-h1: var(--awds-wysiwyg-font-size-h1-small);
+  --awds-wysiwyg-font-size-h2: var(--awds-wysiwyg-font-size-h2-small);
+  --awds-wysiwyg-font-size-h3: var(--awds-wysiwyg-font-size-h3-small);
+  --awds-wysiwyg-font-size-h4: var(--awds-wysiwyg-font-size-h4-small);
+  --awds-wysiwyg-font-size-h5: var(--awds-wysiwyg-font-size-h5-small);
   --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-small);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-small);
+  --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-small);
+  --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-small);
+  --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-small);
+  --awds-wysiwyg-line-height-h4: var(--awds-wysiwyg-line-height-h4-small);
+  --awds-wysiwyg-line-height-h5: var(--awds-wysiwyg-line-height-h5-small);
   --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-small);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-small);
+  --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-small);
+  --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-small);
+  --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-small);
+  --awds-wysiwyg-letter-spacing-h4: var(--awds-wysiwyg-letter-spacing-h4-small);
+  --awds-wysiwyg-letter-spacing-h5: var(--awds-wysiwyg-letter-spacing-h5-small);
   --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-small);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-small);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-small);
 }
 .typo-large {
+  --awds-wysiwyg-font-size-h1: var(--awds-wysiwyg-font-size-h1-large);
+  --awds-wysiwyg-font-size-h2: var(--awds-wysiwyg-font-size-h2-large);
+  --awds-wysiwyg-font-size-h3: var(--awds-wysiwyg-font-size-h3-large);
+  --awds-wysiwyg-font-size-h4: var(--awds-wysiwyg-font-size-h4-large);
+  --awds-wysiwyg-font-size-h5: var(--awds-wysiwyg-font-size-h5-large);
   --awds-wysiwyg-font-size-body: var(--awds-wysiwyg-font-size-body-large);
   --awds-wysiwyg-font-size-caption: var(--awds-wysiwyg-font-size-caption-large);
+  --awds-wysiwyg-line-height-h1: var(--awds-wysiwyg-line-height-h1-large);
+  --awds-wysiwyg-line-height-h2: var(--awds-wysiwyg-line-height-h2-large);
+  --awds-wysiwyg-line-height-h3: var(--awds-wysiwyg-line-height-h3-large);
+  --awds-wysiwyg-line-height-h4: var(--awds-wysiwyg-line-height-h4-large);
+  --awds-wysiwyg-line-height-h5: var(--awds-wysiwyg-line-height-h5-large);
   --awds-wysiwyg-line-height-body: var(--awds-wysiwyg-line-height-body-large);
   --awds-wysiwyg-line-height-caption: var(--awds-wysiwyg-line-height-caption-large);
+  --awds-wysiwyg-letter-spacing-h1: var(--awds-wysiwyg-letter-spacing-h1-large);
+  --awds-wysiwyg-letter-spacing-h2: var(--awds-wysiwyg-letter-spacing-h2-large);
+  --awds-wysiwyg-letter-spacing-h3: var(--awds-wysiwyg-letter-spacing-h3-large);
+  --awds-wysiwyg-letter-spacing-h4: var(--awds-wysiwyg-letter-spacing-h4-large);
+  --awds-wysiwyg-letter-spacing-h5: var(--awds-wysiwyg-letter-spacing-h5-large);
   --awds-wysiwyg-letter-spacing-body: var(--awds-wysiwyg-letter-spacing-body-large);
   --awds-wysiwyg-letter-spacing-caption: var(--awds-wysiwyg-letter-spacing-caption-large);
   --awds-wysiwyg-gap-li-top: var(--awds-wysiwyg-gap-li-top-large);

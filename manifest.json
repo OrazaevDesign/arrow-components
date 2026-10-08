@@ -251,7 +251,7 @@
     },
     {
       "name": "heading",
-      "version": "1.0.7",
+      "version": "2.0.0",
       "variants": [
         "heading"
       ],
@@ -262,8 +262,8 @@
         "h4",
         "h5"
       ],
-      "rules": 8,
-      "bytes": 1893
+      "rules": 9,
+      "bytes": 1949
     },
     {
       "name": "input",
@@ -736,13 +736,13 @@
     }
   ],
   "bundle": {
-    "bytes": 377879,
-    "rules": 1463,
-    "hash": "sha256:909021b84c156995ce12550038cc2546b3d2d0806a5d08e10cef06b1bea2cb97"
+    "bytes": 377935,
+    "rules": 1464,
+    "hash": "sha256:55ba56deb5ae29da857b5559a7fdaf00d1f63894dd3f795b195c2acaa0aa5d69"
   },
   "theme": {
-    "bytes": 55625,
-    "variables_kept": 586,
+    "bytes": 67664,
+    "variables_kept": 674,
     "variables_declared": 1365,
     "missing": []
   },
