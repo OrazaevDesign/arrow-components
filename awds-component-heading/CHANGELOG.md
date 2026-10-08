@@ -1,5 +1,9 @@
 # heading — журнал версий
 
+## 2.0.0 — 2026-10-08 — MAJOR · visual
+Refresh под новый макет 💠 arrow ↪ components (node 1050:139087), Figma в мете перепривязана. Размер уровней — роли WYSIWYG --awds-wysiwyg-{font-size,line-height,letter-spacing}-h{N} вместо ступеней typography 920/910/900/800/600: заголовок следует масштабу .typo-* (h1 на десктопе 34/34 вместо 28/34). h4/h5 сохранены, хотя в макете только h1–h3. Действие «Все» — awds-component-button (.btn.btn-tertiary.btn--100.btn--pill + иконка-ссылка file-link_3-regular) вместо button-area. Зазор заголовок ↔ действие 8px (space-2) вместо 6px, на десктопе строка переносится (flex-wrap). Расхождение «макет не прав»: ячейка h2 в одном из прочтений стояла на line-height-compact/910 и letter-spacing/910 — код берёт роли h2 целиком по решению владельца 09.10.2026; в снимке 09.10 ячейка уже на ролях h2 (28/34/-0.3).
+Потребителю: Править разметку действия: <a class="btn-area btn-area-default btn-area--100 btn-area--fill-y heading__action"> с __label/__suffix → <a class="btn btn-tertiary btn--100 btn--pill heading__action">Все<svg …иконка-ссылка 16×16, fill currentColor/></a>; вместо button-area.css подключить button-tertiary.css. Классы .heading/.heading--h{N}/.heading__title прежние, но размеры заголовков выросли — проверить вёрстку блоков (awds-breadcrumbs, awds-article-slider).
+
 ## 1.0.7 — 2026-09-29 — PATCH · visual
 Граница tablet → desktop переехала на 1024 (было 1068): медиазапрос @media (max-width: 1023px). Решение владельца 29.09.2026, единая граница с токенами темы и блоками.
 Потребителю: Ничего делать не нужно. Вид: десктопная раскладка включается с 1024px, а не с 1068px.

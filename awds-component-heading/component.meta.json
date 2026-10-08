@@ -1,22 +1,30 @@
 {
   "component": "heading",
-  "version": "1.0.7",
-  "contract_hash": "sha256:18eff919cc75ef8133d7db571a94ccab6fbda27b75d6221280b87adf19c8c9fd",
-  "artifact_hash": "sha256:d6be1b8a9ab428906eb9fe19ee1bce990a56680eb4635eb5ad017ca923a377e4",
+  "version": "2.0.0",
+  "contract_hash": "sha256:4a69718caabe89e754258d48f48caf605a20415ce23f02aaa09a1bc6c511a5d9",
+  "artifact_hash": "sha256:76fea5a2658bc42ad21f0bbdfd4a458621ffa09b5c89bd7fb0b5eb4d6a8c0460",
   "visual_change": true,
-  "released_at": "2026-09-29T20:44:24.586Z",
+  "released_at": "2026-10-08T22:25:18.993Z",
   "own_values": [],
   "figma": {
-    "file_key": "fgXw7Tlrdfz0gCUi2xbZDt",
-    "file_name": "🔶 B2C ↪ ¹ Componets",
-    "primary_node_id": "6128:6392",
-    "primary_url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6128-6392"
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "1050:139087",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139087"
   },
   "variants": {
     "heading": {
-      "node_id": "6128:6392",
-      "url": "https://www.figma.com/design/fgXw7Tlrdfz0gCUi2xbZDt/%F0%9F%94%B6-B2C-%E2%86%AA-%C2%B9-Componets?node-id=6128-6392",
-      "figma_label": "Heading / Heading + Button"
+      "node_id": "1050:139087",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139087",
+      "figma_label": "heading",
+      "cells": {
+        "view=desktop, heading=h1": "1050:139088",
+        "view=mobile, heading=h1": "1050:139091",
+        "view=desktop, heading=h2": "1050:139094",
+        "view=mobile, heading=h2": "1050:139097",
+        "view=desktop, heading=h3": "1050:139100",
+        "view=mobile, heading=h3": "1050:139103"
+      }
     }
   },
   "modifiers": {
@@ -35,14 +43,15 @@
         "h4": "heading--h4",
         "h5": "heading--h5"
       },
-      "default": "h2"
+      "default": "h2",
+      "note": "В макете 1050:139087 нарисованы h1–h3; h4/h5 сохранены решением владельца 09.10.2026 — роли WYSIWYG h4/h5 в теме есть."
     },
     "action": {
       "values": [
         "none",
-        "button-area"
+        "button"
       ],
-      "note": "Опциональное действие «Все ›» — композиция awds-component-button-area (.btn-area.btn-area-default.btn-area--100.btn-area--fill-y + суффикс-шеврон). В Figma — инстанс Button Area/Default."
+      "note": "Опциональное действие «Все» — композиция awds-component-button (.btn.btn-tertiary.btn--100.btn--pill + иконка-ссылка file-link_3-regular 16×16 справа). В Figma — инстанс button / tertiary, size=100, скругление 26 = пилюля."
     }
   },
   "shape": null,
@@ -53,32 +62,8 @@
     "h4",
     "h5"
   ],
-  "level_typography_map": {
-    "_note": "level → АДАПТИВНЫЙ примитив typography (--awds-typography-{font-size,line-height-compact,letter-spacing}-{N}). Примитив сам растёт по брейкпоинту (@media в css-global), давая значения Figma для View Desktop/Tablet/Mobile. Сматчено по px из get_variable_defs (WYSIWYG/h{N}).",
-    "h1": {
-      "typography": 920,
-      "px": "22/24/28 (M/T/D)"
-    },
-    "h2": {
-      "typography": 910,
-      "px": "20/20/24"
-    },
-    "h3": {
-      "typography": 900,
-      "px": "19 (фикс)"
-    },
-    "h4": {
-      "typography": 800,
-      "px": "18 (фикс)"
-    },
-    "h5": {
-      "typography": 600,
-      "px": "16 (фикс)"
-    }
-  },
   "views": [
     "desktop",
-    "tablet",
     "mobile"
   ],
   "states": [
@@ -91,7 +76,7 @@
     "heading.css"
   ],
   "composes": [
-    "awds-component-button-area (.btn-area.btn-area-default.btn-area--100.btn-area--fill-y — действие «Все ›» в .heading__action; требует button-area.css). В Figma действие heading-а и есть инстанс Button Area/Default. Button Area держит цвет (default → tertiary-container-on-high), размер (control-300 13/16), состояния, суффикс-шеврон и полную высоту (--fill-y). Опционально: заголовок без действия — просто .heading > .heading__title."
+    "awds-component-button (.btn.btn-tertiary.btn--100.btn--pill — действие «Все» в .heading__action; требует button-tertiary.css и focus-selection.css). В Figma действие heading-а — инстанс button / tertiary size=100. Button держит цвет (tertiary), размер (ступень 100, control-300 13/16), скругление (пилюля), состояния и фокус. Опционально: заголовок без действия — просто .heading > .heading__title."
   ],
   "preview": {
     "base_class": "heading",
@@ -119,6 +104,15 @@
         ]
       },
       {
+        "id": "scale",
+        "label": "Масштаб",
+        "options": [
+          "medium",
+          "small",
+          "large"
+        ]
+      },
+      {
         "id": "action",
         "label": "Действие",
         "options": [
@@ -138,8 +132,8 @@
     ],
     "html_samples": [
       {
-        "label": "H1 + действие (button-area)",
-        "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn-area btn-area-default btn-area--100 btn-area--fill-y heading__action\" href=\"#\"><span class=\"btn-area__label\">Все</span><span class=\"btn-area__suffix\"><svg viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M6 4l4 4-4 4\"/></svg></span></a></div>"
+        "label": "H1 + действие (button tertiary)",
+        "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn btn-tertiary btn--100 btn--pill heading__action\" href=\"#\">Все<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M8 6C8.36819 6 8.66699 6.2988 8.66699 6.66699C8.66682 7.03503 8.36808 7.33301 8 7.33301C6.89554 7.33301 6.00018 8.22859 6 9.33301C6 10.4376 6.89543 11.333 8 11.333H12C13.1046 11.333 14 10.4376 14 9.33301C13.9999 8.40232 13.3634 7.61869 12.501 7.39648C12.1446 7.30476 11.9291 6.94135 12.0205 6.58496C12.1123 6.22846 12.4765 6.01285 12.833 6.10449C14.2703 6.47454 15.3329 7.77912 15.333 9.33301C15.333 11.174 13.8409 12.667 12 12.667H8C6.15905 12.667 4.66699 11.174 4.66699 9.33301C4.66717 7.49221 6.15916 6 8 6ZM8 3.33301C9.84095 3.33301 11.333 4.82604 11.333 6.66699C11.3328 8.50779 9.84084 10 8 10C7.63181 10 7.33301 9.7012 7.33301 9.33301C7.33318 8.96497 7.63192 8.66699 8 8.66699C9.10446 8.66699 9.99982 7.77141 10 6.66699C10 5.56242 9.10457 4.66699 8 4.66699H4C2.89543 4.66699 2 5.56242 2 6.66699C2.00015 7.59768 2.63662 8.38131 3.49902 8.60352C3.85541 8.69524 4.0709 9.05865 3.97949 9.41504C3.88774 9.77154 3.5235 9.98715 3.16699 9.89551C1.72966 9.52546 0.667141 8.22088 0.666992 6.66699C0.666992 4.82604 2.15905 3.33301 4 3.33301H8Z\"/></svg></a></div>"
       },
       {
         "label": "H3 без действия",
@@ -150,28 +144,28 @@
   "ds_token_dependencies": [
     "--awds-font-family-system",
     "--awds-font-weight-semibold",
-    "--awds-space-1-5",
-    "--awds-typography-font-size-600",
-    "--awds-typography-font-size-800",
-    "--awds-typography-font-size-900",
-    "--awds-typography-font-size-910",
-    "--awds-typography-font-size-920",
-    "--awds-typography-letter-spacing-600",
-    "--awds-typography-letter-spacing-800",
-    "--awds-typography-letter-spacing-900",
-    "--awds-typography-letter-spacing-910",
-    "--awds-typography-letter-spacing-920",
-    "--awds-typography-line-height-compact-600",
-    "--awds-typography-line-height-compact-800",
-    "--awds-typography-line-height-compact-900",
-    "--awds-typography-line-height-compact-910",
-    "--awds-typography-line-height-compact-920",
+    "--awds-space-2",
+    "--awds-wysiwyg-font-size-h1",
+    "--awds-wysiwyg-font-size-h2",
+    "--awds-wysiwyg-font-size-h3",
+    "--awds-wysiwyg-font-size-h4",
+    "--awds-wysiwyg-font-size-h5",
+    "--awds-wysiwyg-letter-spacing-h1",
+    "--awds-wysiwyg-letter-spacing-h2",
+    "--awds-wysiwyg-letter-spacing-h3",
+    "--awds-wysiwyg-letter-spacing-h4",
+    "--awds-wysiwyg-letter-spacing-h5",
+    "--awds-wysiwyg-line-height-h1",
+    "--awds-wysiwyg-line-height-h2",
+    "--awds-wysiwyg-line-height-h3",
+    "--awds-wysiwyg-line-height-h4",
+    "--awds-wysiwyg-line-height-h5",
     "--surface-on-highest"
   ],
-  "_dependency_note": "Заголовок — адаптивные примитивы typography (920/910/900/800/600), View Desktop/Tablet/Mobile зашит в их @media. Действие «Все ›» — внешний awds-component-button-area (button-area.css): цвет/размер/состояния/полную высоту держит он сам, heading.css своих стилей действия больше не имеет. Раскладка по View: desktop — действие вплотную к заголовку (gap space-1-5), tablet/mobile — space-between (@media max-width 1067).",
-  "last_synced": "2026-06-30T16:34:41Z",
+  "_dependency_note": "Заголовок — роли WYSIWYG h1–h5 (мод масштаба × брейкпоинт внутри роли). Действие «Все» — внешний awds-component-button (button-tertiary.css): цвет/размер/скругление/состояния/фокус держит он, heading.css задаёт действию только flex: none. Раскладка по View: desktop ≥1024 — действие вплотную к заголовку (gap space-2, flex-wrap), ниже — space-between.",
+  "last_synced": "2026-10-08T22:24:16Z",
   "last_synced_by": "claude",
-  "snapshot_hash": "sha256:a21e3a5fce1daf8a7088081ea45af274ec16996bd602e2eda549758663634a05",
+  "snapshot_hash": "sha256:a2fea7841839c02d8822163c316d0c00b8d3970708fe49dc5a9e7fb5490f1002",
   "published": {
     "repo": "OrazaevDesign/arrow-components",
     "commit": "69a1048ebc2abd80c2e6f8060dbd4395c0ffac72",
@@ -214,7 +208,7 @@
     ],
     "attrs": [],
     "container": null,
-    "note": "Размер — это уровень h1…h5: он задаёт адаптивную типографику, а тег заголовка внутри выбирается по структуре документа, а не по уровню (<h2 class=\"heading__title\"> внутри .heading--h1 законен). Уровень требуется писать явно, хотя база .heading подставляет ступень 910 (h2): молчаливый дефолт делает раскладку случайной, и все сниппеты скилла уровень пишут. Класса варианта нет — вариант в мете один и класса не имеет, требовать его значило бы гарантированный ложный сигнал. Обязателен только .heading__title. Действие «Все ›» необязательно и целиком принадлежит awds-component-button-area (.btn-area .btn-area-default .btn-area--100 .btn-area--fill-y) — цвет, размер, состояния, суффикс-шеврон и полную высоту держит он, а .heading__action это хук без собственных стилей, поэтому требований на него здесь нет. Раскладка действия по брейкпоинту (вплотную к заголовку на десктопе, к правому краю ниже 1068px) зашита в @media, класса под неё нет. Вертикальный отступ над заголовком в компонент не заложен: это ритм контекста, его задаёт потребитель."
+    "note": "Размер — это уровень h1…h5: он задаёт роли WYSIWYG, а тег заголовка внутри выбирается по структуре документа, а не по уровню (<h2 class=\"heading__title\"> внутри .heading--h1 законен). Уровень требуется писать явно, хотя база .heading подставляет роль h2: молчаливый дефолт делает раскладку случайной, и все сниппеты скилла уровень пишут. Класса варианта нет — вариант в мете один и класса не имеет. Обязателен только .heading__title. Действие «Все» необязательно и целиком принадлежит awds-component-button (.btn .btn-tertiary .btn--100 .btn--pill + иконка-ссылка): цвет, размер, скругление, состояния и фокус держит он, а .heading__action задаёт лишь flex: none, поэтому требований на него здесь нет. Раскладка действия по брейкпоинту (вплотную к заголовку с 1024px, к правому краю ниже) зашита в @media, класса под неё нет. Вертикальный отступ над заголовком в компонент не заложен: это ритм контекста, его задаёт потребитель."
   },
   "questions": [
     {
@@ -232,7 +226,7 @@
     }
   ],
   "family": "complex-component",
-  "summary": "Заголовок секции H1–H5 с опциональным действием «Все ›»",
+  "summary": "Заголовок секции H1–H5 с опциональным действием «Все» (button tertiary)",
   "aliases": [
     "заголовок",
     "заголовок секции",
@@ -246,8 +240,31 @@
     "parent_task": "💠 1 · core",
     "primary": true
   },
+  "level_role_map": {
+    "_note": "level → роли WYSIWYG --awds-wysiwyg-{font-size,line-height,letter-spacing}-h{N}. Роль выбирает ступень typography по моду масштаба (.typo-*), ступень растёт по брейкпоинту. Значения сверены по get_variable_defs (мод medium, desktop). h2 — роли h2 целиком: решение владельца 09.10.2026, ячейка на ступени 910 считается ошибкой макета.",
+    "h1": {
+      "role": "h1",
+      "px": "34/34/-0.3 (desktop, medium)"
+    },
+    "h2": {
+      "role": "h2",
+      "px": "28/34/-0.3 (desktop, medium)"
+    },
+    "h3": {
+      "role": "h3",
+      "px": "24/29/-0.2 (desktop, medium)"
+    },
+    "h4": {
+      "role": "h4",
+      "px": "в макете нет"
+    },
+    "h5": {
+      "role": "h5",
+      "px": "в макете нет"
+    }
+  },
   "uses": {
-    "awds-component-button-area": "1.0.4"
+    "awds-component-button": "2.2.15"
   },
   "contract": {
     "classes": [
@@ -257,6 +274,7 @@
       "heading--h3",
       "heading--h4",
       "heading--h5",
+      "heading__action",
       "heading__title"
     ],
     "attributes": [],
