@@ -228,7 +228,7 @@
     const galleryMedia = (image, count) => {
       if (image !== 'with') return imgPlaceholder;
       return galleryPhotos(count)
-        .map((src, i) => `<img class="pcard__image${i === 0 ? ' pcard__image--active' : ''}" src="${src}" alt="Название товара — фото ${i + 1}">`)
+        .map((src, i) => `<img class="pcard__image${i === 0 ? ' pcard__image--active' : ''}" ${i === 0 ? 'src' : 'data-src'}="${src}" alt="Название товара — фото ${i + 1}">`)
         .join('');
     };
     // Избранное и флаг без тултипов (с 3.0.0, решение владельца 08.10.2026). Страну флага
@@ -435,7 +435,7 @@
       function warm() {
         if (warmed) return;
         warmed = true;
-        imgs.forEach(function (im) { im.loading = 'eager'; if (im.decode) im.decode().catch(function () {}); });
+        imgs.forEach(function (im) { im.loading = 'eager'; if (im.dataset.src) { im.src = im.dataset.src; im.removeAttribute('data-src'); } if (im.decode) im.decode().catch(function () {}); });
       }
       link.addEventListener('pointerenter', warm);
       link.addEventListener('pointerdown', warm);

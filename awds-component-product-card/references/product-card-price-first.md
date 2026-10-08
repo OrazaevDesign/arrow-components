@@ -88,7 +88,7 @@
 
 ### Галерея фото (несколько кадров + слайдер)
 
-Если у товара несколько фото — вложи **несколько** `<img class="pcard__image">` в ссылку-фото (первый помечен `.pcard__image--active`) и добавь индикатор `awds-component-slider` (вариант **dots-mini**, подключи `slider.css`) **между `.pcard__media` и `.pcard__content`** (как в макете — по центру, под фото; НЕ оверлеем). Число точек = числу кадров.
+Если у товара несколько фото — вложи **несколько** `<img class="pcard__image">` в ссылку-фото (первый помечен `.pcard__image--active`) и добавь индикатор `awds-component-slider` (вариант **dots-mini**, подключи `slider.css`) **между `.pcard__media` и `.pcard__content`** (как в макете — по центру, под фото; НЕ оверлеем). Число точек = числу кадров. **Кадры со второго — без `src`:** адрес в `data-src` (и `data-srcset`), подставляет его прогрев `wireGallery` на первом наведении или касании. Кадры лежат стопкой в одном прямоугольнике, и `loading="lazy"` с настоящим `src` грузил их все вместе с первым.
 
 Листание работает в двух режимах, оба — через один `wireGallery` (ниже):
 
@@ -116,8 +116,8 @@
   <div class="pcard__media">
     <a class="pcard__image-link" href="/product/123" aria-label="Название товара">
       <img class="pcard__image pcard__image--active" src="/img/123-1.jpg" alt="Название товара — фото 1">
-      <img class="pcard__image" src="/img/123-2.jpg" alt="Название товара — фото 2">
-      <img class="pcard__image" src="/img/123-3.jpg" alt="Название товара — фото 3">
+      <img class="pcard__image" data-src="/img/123-2.jpg" alt="Название товара — фото 2">
+      <img class="pcard__image" data-src="/img/123-3.jpg" alt="Название товара — фото 3">
     </a>
     <div class="pcard__top">…</div>
     <!-- Стрелки галереи — только при 2+ кадрах. Компонент awds-component-button-overhung,
@@ -156,11 +156,18 @@ function wireGallery(link) {
   if (imgs.length < 2) return;                       // одно фото — листать нечего
   // Прогрев: кадры декодируем заранее, на первое наведение или касание. Иначе новый
   // кадр проявлялся ещё не нарисованным и «вспыхивал», когда браузер его дорисовывал.
+  // Кадры со второго приходят без src (адрес в data-src): у стопки кадров один прямоугольник,
+  // и lazy грузил их все вместе с первым — на телефоне 10 МБ фото, которых не видно (08.10.2026).
   var warmed = false;
   function warm() {
     if (warmed) return;
     warmed = true;
-    imgs.forEach(function (im) { im.loading = 'eager'; if (im.decode) im.decode().catch(function () {}); });
+    imgs.forEach(function (im) {
+    im.loading = 'eager';
+    if (im.dataset.srcset) { im.srcset = im.dataset.srcset; im.removeAttribute('data-srcset'); }
+    if (im.dataset.src) { im.src = im.dataset.src; im.removeAttribute('data-src'); }
+    if (im.decode) im.decode().catch(function () {});
+  });
   }
   link.addEventListener('pointerenter', warm);
   link.addEventListener('pointerdown', warm);
