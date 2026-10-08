@@ -159,7 +159,25 @@
   "last_synced": "2026-10-08T22:23:13Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:7c4ea9c9f296f6f3da9fa6e97eaa30af717840eba6412f613d89441a23fe8163",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "785917b374325523fb1d9504c0373e6bf927c0ef",
+    "pushed_at": "2026-10-08T22:36:10Z",
+    "github_urls": {
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-breadcrumbs/references/breadcrumbs.md",
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-breadcrumbs/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#breadcrumbs",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/breadcrumbs.css"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "1050:139593",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-breadcrumbs/SKILL.md"
+      }
+    }
+  },
   "uses": {
     "awds-component-button-area": "2.0.11",
     "awds-component-focus-selection": "2.0.13"
