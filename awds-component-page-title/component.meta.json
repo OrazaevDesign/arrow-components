@@ -1,0 +1,162 @@
+{
+  "component": "page-title",
+  "version": "1.0.0",
+  "contract_hash": "sha256:eea44316d2d2ae2681707ee9ec6584cda655541ccf1ecfa448815a1739ca5670",
+  "artifact_hash": "sha256:78b67f314edd1391f753daf40298ce73929340428c389f4f69df7010d5084893",
+  "visual_change": false,
+  "released_at": "2026-10-08T22:30:31.444Z",
+  "own_values": [],
+  "family": "complex-component",
+  "summary": "Заголовок страницы: хлебные крошки над h1, зазор space-3; цвета и шрифты — у вложенных компонентов",
+  "aliases": [
+    "заголовок страницы",
+    "шапка страницы",
+    "крошки с заголовком",
+    "h1 с крошками",
+    "title"
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "1050:139853",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139853"
+  },
+  "variants": {
+    "default": {
+      "node_id": "1050:139853",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139853",
+      "figma_label": "page-title"
+    }
+  },
+  "variants_note": "В макете один компонент без осей: инстанс breadcrumbs сверху, инстанс heading (heading=h1, view=desktop, действие скрыто) снизу, auto-layout колонкой с gap space/3. Булево свойство показа крошек — не вариант, а необязательная часть разметки. Класса варианта нет.",
+  "base_class_note": "Базовый класс .ptitle, а не .page-title и не .title. Имя .page-title — обиходное, оно встречается в темах CMS, WordPress и Bootstrap-шаблонах и почти наверняка занято у потребителя; .title ещё общее и к тому же синоним heading. Короткий свой корень не пересекается ни с ними, ни с .heading, и приватные переменные --awds-ptitle-* (если появятся) читаются как внутренность одного компонента, а не как слой дизайн-системы. Тот же приём, что breadcrumbs → .crumbs, pagination → .pgn, modal → .mdl, formfield → .fld.",
+  "composition_note": "Компонент ничего не рисует сам: крошки — awds-component-breadcrumbs (.crumbs целиком), заголовок — awds-component-heading (.heading.heading--h1 с <h1 class=\"heading__title\">). Своё — только колонка, растяжение частей (Fill в макете) и зазор space-3. Уровень h1 задаётся классом .heading--h1 в разметке, а не мостом: мост, как у formfield, раздаёт ступень, которую выбирает потребитель, а здесь уровень один и у heading для него есть публичный класс; мост писал бы в приватные --awds-heading-* чужого компонента и молча отвалился бы при их переименовании.",
+  "shape": null,
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров нет: уровень заголовка один (h1), ступень крошек одна (btn-area--100). Кегль h1 адаптируется внутри роли WYSIWYG по брейкпоинту и моду .typo-*.",
+  "states": [],
+  "states_note": "Своих состояний нет. Наведение и фокус — у ссылок крошек (button-area), заголовок статичен.",
+  "color_tokens": [],
+  "css_files": [
+    "references/page-title.css"
+  ],
+  "markup": {
+    "root": {
+      "class": "ptitle",
+      "tags": [
+        "div",
+        "header"
+      ]
+    },
+    "variant": null,
+    "size": null,
+    "native": null,
+    "children": [
+      {
+        "class": "heading",
+        "required": true,
+        "why": "заголовок страницы — обязательная часть; крошки без заголовка — это просто breadcrumbs"
+      },
+      {
+        "class": "heading--h1",
+        "required": true,
+        "why": "уровень h1 задаётся публичным классом heading, моста нет: без класса заголовок молча встаёт на дефолтную роль h2"
+      },
+      {
+        "class": "heading__title",
+        "required": true,
+        "within": "heading"
+      },
+      {
+        "class": "crumbs",
+        "required": false,
+        "when_note": "когда у страницы есть путь; на главной крошек нет, свойство показа крошек в макете булево"
+      }
+    ],
+    "attrs": [],
+    "note": "Заголовок — тег <h1>: это заголовок страницы, а не секции, и на странице он один. Проверка тег не видит (Liquid без DOM), поэтому требование записано здесь и в SKILL.md. Корень — <div>; <header> только внутри <main>/<article>, иначе он становится ориентиром banner и спорит с шапкой сайта. Крошки — разметка awds-component-breadcrumbs целиком (nav[aria-label] > ol.crumbs__list), их требования проверяет его контракт. Действия «Все» у заголовка нет: в инстансе макета оно скрыто. Вертикальный отступ снаружи задаёт потребитель."
+  },
+  "preview": {
+    "base_class": "ptitle",
+    "default_size": null,
+    "matrix_states": null,
+    "matrix_sizes": null,
+    "toggles": [
+      {
+        "id": "theme",
+        "label": "Тема",
+        "options": [
+          "light",
+          "dark"
+        ]
+      },
+      {
+        "id": "scale",
+        "label": "Масштаб",
+        "options": [
+          "medium",
+          "small",
+          "large"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Эталон из макета",
+        "html": "<div class=\"ptitle\"><nav class=\"crumbs\" aria-label=\"Хлебные крошки\"><ol class=\"crumbs__list\"><li class=\"crumbs__item\"><a class=\"btn-area btn-area-muted btn-area--100\" href=\"/\"><span class=\"btn-area__label\">Главная</span></a></li><li class=\"crumbs__sep\" aria-hidden=\"true\"><svg viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"…\" fill=\"currentColor\"/></svg></li><li class=\"crumbs__item\"><span class=\"crumbs__current\" aria-current=\"page\">Рубрика</span></li></ol></nav><div class=\"heading heading--h1\"><h1 class=\"heading__title\">Рубрика</h1></div></div>"
+      },
+      {
+        "label": "Без крошек",
+        "html": "<div class=\"ptitle\"><div class=\"heading heading--h1\"><h1 class=\"heading__title\">Товары для дома</h1></div></div>"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "page-title-mobile-cell",
+      "text": "В макете page-title одна ячейка — desktop (heading view=desktop). Зазор крошки ↔ заголовок на планшете и мобиле тот же space-3 (12), или нужна мобильная ячейка с другим зазором?",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": null
+    },
+    {
+      "id": "page-title-figma-prop-name",
+      "text": "Булево свойство показа крошек в макете названо showBreadcrumbs — props.md, правило 12, требует дефис и нижний регистр: show-breadcrumbs. Переименовать в Figma?",
+      "level": "component",
+      "target": null,
+      "severity": "polish",
+      "status": "open",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": null
+    }
+  ],
+  "ds_token_dependencies": [
+    "--awds-space-3"
+  ],
+  "last_synced": "2026-10-08T22:27:54Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:d25c7e19bff50773ef54a119a1f854a87bf9d6061cc89159c118aaf6aa832da0",
+  "published": null,
+  "uses": {
+    "awds-component-breadcrumbs": "1.0.0",
+    "awds-component-heading": "2.0.0"
+  },
+  "contract": {
+    "classes": [
+      "ptitle"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "default"
+    ],
+    "sizes": [],
+    "states": []
+  }
+}
