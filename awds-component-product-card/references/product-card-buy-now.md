@@ -185,6 +185,19 @@ document.querySelectorAll('.pcard__cart').forEach(wireCart);
 
 Начальное состояние — выставь `data-cart-state` при рендере (товар уже в корзине → `added`) или опусти атрибут (→ `button`). До 2.0.0 вторым состоянием был степпер количества; макет 07.10.2026 заменил его кнопкой перехода в корзину.
 
+## Карточка из данных в браузере (`renderCard`)
+
+Когда товары приходят не из SSR, а из метода `/api/product-carousel/preset` (вкладки 2–6 товарных
+слайдеров, 08.10.2026), карточку собирает функция `renderCard(product, {showCountry, showFeedback})`.
+Эталон — `blocks/awds-category-product-slider-buynow/script.js`, между маркерами
+`// renderCard:start` и `// renderCard:end`. Формат товара в ответе метода совпадает с SSR-слотом
+`catalog.products` (поля ниже). Разметка обязана совпадать с Liquid-шаблоном блока:
+`node scripts/pcard-render-parity.mjs <блок>` сравнивает нормализованный DOM на 48 товарах
+(`scripts/fixtures/pcard-parity-products.json`), ноль расхождений — условие публикации.
+
+Текст названия, бренда и рубрики выводится с экранированием (`| escape` в Liquid, `esc()` в JS):
+название с `<` без экранирования превращалось в тег и ломало карточку — нашла проверка паритета.
+
 ## Поля для биндинга (PageCraft / SSR)
 
 | Слот | Куда |
