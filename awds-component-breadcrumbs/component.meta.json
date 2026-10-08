@@ -1,0 +1,187 @@
+{
+  "component": "breadcrumbs",
+  "version": "1.0.0",
+  "contract_hash": "sha256:a5b5809184fb14127c35b791e040af0730cc255e868925c6ce6da0193e7d6bdf",
+  "artifact_hash": "sha256:5d2b81224f949847a7a9f833dcd90429bc66c5b6cec22c3c7f9041fb7bf58954",
+  "visual_change": false,
+  "released_at": "2026-10-08T22:25:51.551Z",
+  "own_values": [],
+  "family": "navigation",
+  "summary": "Путь от главной к текущей странице: ссылки-шаги через шеврон, последний шаг — текст",
+  "aliases": [
+    "хлебные крошки",
+    "крошки",
+    "путь",
+    "навигационная цепочка",
+    "breadcrumbs"
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "primary_node_id": "1050:139593",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139593"
+  },
+  "variants": {
+    "default": {
+      "node_id": "1050:139593",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139593",
+      "figma_label": "breadcrumbs"
+    }
+  },
+  "variants_note": "В макете один компонент без осей: слот list с инстансами button-area / muted (size=100) и шевроном ic-a. Модификатора варианта в CSS нет — .crumbs единственный вид.",
+  "base_class_note": "Базовый класс .crumbs, а не .breadcrumbs и не .breadcrumb. Во-первых, .breadcrumb — имя компонента в Bootstrap, а .breadcrumbs встречается в темах CMS и почти наверняка занято у потребителя: короткий свой корень не пересекается с ними. Во-вторых, приватные переменные по контракту зовутся --awds-{base_class}-*, и при base_class = breadcrumbs они читались бы как слой дизайн-системы, а не как внутренность одного компонента. Сейчас приватных переменных у крошек нет вовсе, но корень выбирается на будущее. Тот же приём, что у pagination → .pgn, modal → .mdl, label → .lbl.",
+  "shape": null,
+  "size_scale": null,
+  "size_scale_note": "Шкалы размеров нет: ступень одна — пункты btn-area--100 (control-300, иконка space-4). Как у pagination и link.",
+  "states": [],
+  "states_note": "Своих состояний нет. Наведение, фокус и нажатие живут в button-area; у текущей страницы и разделителя состояний не бывает — текущая страница не ссылка (решение владельца 09.10.2026).",
+  "color_tokens": [
+    "sep-color",
+    "current-color"
+  ],
+  "css_files": [
+    "references/breadcrumbs.css"
+  ],
+  "markup": {
+    "root": {
+      "class": "crumbs",
+      "tags": [
+        "nav"
+      ]
+    },
+    "variant": null,
+    "size": null,
+    "native": null,
+    "children": [
+      {
+        "class": "crumbs__list",
+        "required": true,
+        "why": "путь — упорядоченный список <ol>: скринридер объявляет «список из N», порядок шагов значим"
+      },
+      {
+        "class": "crumbs__item",
+        "required": true,
+        "within": "crumbs__list",
+        "why": "каждый шаг — <li>: даёт пункту min-width 0, без него длинное название распирает строку вместо многоточия"
+      },
+      {
+        "class": "crumbs__sep",
+        "required": false,
+        "when_note": "между шагами, когда их больше одного; у одиночного шага («Главная») разделителя нет"
+      },
+      {
+        "class": "crumbs__current",
+        "required": false,
+        "when_note": "последний шаг, когда шагов больше одного; одиночный шаг рисуется ссылкой, а не мёртвым текстом"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "aria-label",
+        "required": true,
+        "tags": [
+          "nav"
+        ],
+        "why": "на странице несколько <nav> (шапка, каталог, крошки, пагинация) — без имени ориентиры неразличимы"
+      }
+    ],
+    "child_attrs": [
+      {
+        "child": "crumbs__sep",
+        "attr": "aria-hidden",
+        "why": "шеврон — оформление: без aria-hidden пункт-разделитель читается пустым элементом списка и сбивает счёт шагов"
+      },
+      {
+        "child": "crumbs__current",
+        "attr": "aria-current",
+        "why": "текущая страница объявляется атрибутом, а не только тем, что она не ссылка: aria-current=\"page\" сообщает, где пользователь стоит"
+      }
+    ],
+    "note": "Шаги-ссылки — awds-component-button-area: .btn-area.btn-area-muted.btn-area--100 на <a href>. Свой CSS их не повторяет, button-area.css и focus-selection.css подключаются рядом. Текущая страница — <span class=\"crumbs__current\" aria-current=\"page\">, не ссылка: вид пункта muted в покое, без наведения и фокуса. Разделитель — отдельный <li aria-hidden> с инлайн-SVG шеврона ic-a, как в слоте макета и в блоке awds-breadcrumbs; aria-hidden выводит его из дерева доступности, и список считается по шагам. Свёртки на мобильном в компоненте нет — макет её не рисует."
+  },
+  "preview": {
+    "base_class": "crumbs",
+    "default_size": null,
+    "matrix_states": null,
+    "matrix_sizes": null,
+    "toggles": [],
+    "html_samples": [
+      {
+        "label": "Путь из макета",
+        "html": "<nav class=\"crumbs\" aria-label=\"Хлебные крошки\"><ol class=\"crumbs__list\"><li class=\"crumbs__item\"><a class=\"btn-area btn-area-muted btn-area--100\" href=\"/\"><span class=\"btn-area__label\">Главная</span></a></li><li class=\"crumbs__sep\" aria-hidden=\"true\"><svg viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"…\" fill=\"currentColor\"/></svg></li><li class=\"crumbs__item\"><span class=\"crumbs__current\" aria-current=\"page\">Рубрика</span></li></ol></nav>"
+      }
+    ]
+  },
+  "questions": [
+    {
+      "id": "breadcrumbs-mobile-collapse",
+      "text": "Нужна ли свёртка длинного пути на мобильном («‹ родитель», как в блоке awds-breadcrumbs)? В макете компонента её нет — сейчас цепочка только переносится",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": null
+    },
+    {
+      "id": "breadcrumbs-block-divergence",
+      "text": "Блок awds-breadcrumbs расходится с макетом компонента: шеврон surface-on-low (макет — link/muted-rest = surface-on-high), текущая страница surface-on и переносится целиком (макет — surface-on-high, одна строка с многоточием), шаги — lnk с пунктирным подчёркиванием (макет — button-area без подчёркивания). При переводе блока на компонент вид поменяется — какой источник верный?",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": null
+    },
+    {
+      "id": "breadcrumbs-sep-dangling-on-wrap",
+      "text": "При переносе длинной цепочки шеврон может остаться последним на верхней строке: разделитель — отдельный li. Макет перенос не рисует — оставить или прятать висящий шеврон?",
+      "level": "component",
+      "target": null,
+      "severity": "polish",
+      "status": "open",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": null
+    }
+  ],
+  "ds_token_dependencies": [
+    "--awds-control-font-size-300",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-line-height-300",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-space-4",
+    "--surface-on-high"
+  ],
+  "last_synced": "2026-10-08T22:23:13Z",
+  "last_synced_by": "claude",
+  "snapshot_hash": "sha256:7c4ea9c9f296f6f3da9fa6e97eaa30af717840eba6412f613d89441a23fe8163",
+  "published": null,
+  "uses": {
+    "awds-component-button-area": "2.0.11",
+    "awds-component-focus-selection": "2.0.13"
+  },
+  "contract": {
+    "classes": [
+      "btn-area",
+      "crumbs",
+      "crumbs__current",
+      "crumbs__item",
+      "crumbs__list",
+      "crumbs__sep"
+    ],
+    "attributes": [],
+    "elements": [
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "default"
+    ],
+    "sizes": [],
+    "states": []
+  }
+}

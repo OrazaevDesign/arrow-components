@@ -1,0 +1,52 @@
+{
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "file_name": "💠 arrow ↪ components",
+  "fetched_at": "2026-10-08T22:23:13Z",
+  "node_id": "1050:139593",
+  "metadata": {
+    "symbol": { "id": "1050:139593", "name": "breadcrumbs", "width": 120, "height": 16 },
+    "children": [
+      { "type": "slot", "id": "1050:139716", "name": "list", "width": 120, "height": 16,
+        "children": [
+          { "type": "instance", "id": "1050:139550", "name": "button-area / muted", "x": 0, "width": 51, "height": 16, "text": "Главная", "main": "content=text, size=100, state=rest (8:30079)" },
+          { "type": "instance", "id": "1050:139582", "name": "ic-a", "x": 51, "width": 16, "height": 16, "main": "arrow-right_small-light (1050:139586)" },
+          { "type": "instance", "id": "1050:139604", "name": "button-area / muted", "x": 67, "width": 53, "height": 16, "text": "Рубрика", "main": "content=text, size=100, state=rest (8:30079)" }
+        ] }
+    ]
+  },
+  "auto_layout": {
+    "list": { "display": "flex", "wrap": "wrap", "gap": 0, "align_items": "start", "align_content": "start", "sizing": "fill-x" },
+    "button-area / muted": { "display": "flex", "align_items": "center", "justify": "center", "sizing": "hug" },
+    "text": { "overflow": "hidden", "text_overflow": "ellipsis", "white_space": "nowrap" },
+    "ic-a": { "size": 16 }
+  },
+  "variable_defs": {
+    "1050:139593": {
+      "opacity/control/enabled": "100",
+      "link/muted-rest": "#6a6a6a",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "family/system": "Onest",
+      "line-height/300": "16",
+      "weight/regular": "400",
+      "rectangle/100/icon": "16"
+    },
+    "1050:139582": {
+      "link/muted-rest": "#6a6a6a",
+      "rectangle/100/icon": "16"
+    }
+  },
+  "icon_svg": {
+    "ic-a": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\"><path d=\"M6.97958 5.76055C7.17476 5.56543 7.49134 5.56557 7.68661 5.76055L9.57235 7.6463C9.76759 7.84154 9.76756 8.15806 9.57235 8.35333L7.68661 10.2391C7.49134 10.4343 7.17481 10.4343 6.97958 10.2391C6.78447 10.0438 6.78443 9.72726 6.97958 9.53204L8.5118 7.99981L6.97958 6.46758C6.78458 6.2723 6.7844 5.95573 6.97958 5.76055Z\" fill=\"#6A6A6A\"/></svg>"
+  },
+  "resolution": {
+    "font-size/300": "var(--awds-control-font-size-300)",
+    "line-height/300": "var(--awds-control-line-height-300)",
+    "letter-spacing/300": "var(--awds-control-letter-spacing-300)",
+    "weight/regular": "var(--awds-font-weight-regular)",
+    "family/system": "var(--awds-font-family-system)",
+    "link/muted-rest": "rgb(var(--surface-on-high))",
+    "rectangle/100/icon": "var(--awds-space-4)",
+    "button-area size": "btn-area--100 (control-300 + icon space-4)"
+  }
+}
