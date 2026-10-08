@@ -1,4 +1,4 @@
-/* ArrowDS components — 44 компонентов.
+/* ArrowDS components — 45 компонентов.
    Сгенерировано tools/build-dist.mjs — руками не править.
 
    Правила лежат в @layer awds: код потребителя вне слоёв сильнее любого правила
@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.13, badge@1.2.2, button@2.2.14, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.13, button-overhung@2.0.18, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@2.0.0, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.8, list-item@2.4.2, modal@1.2.3, notice@2.0.6, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.1.3, progress@2.0.4, radio@1.0.11, range@2.0.13, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.10, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
+   Состав: focus-selection@2.0.13, badge@1.2.2, breadcrumbs@1.0.0, button@2.2.14, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.13, button-overhung@2.0.18, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@2.0.0, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.8, list-item@2.4.2, modal@1.2.3, notice@2.0.6, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.1.3, progress@2.0.4, radio@1.0.11, range@2.0.13, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.10, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -651,6 +651,64 @@
   --awds-badge-fs:      var(--awds-control-font-size-200);
   --awds-badge-lh:      var(--awds-control-line-height-200);
   --awds-badge-ls:      var(--awds-control-letter-spacing-200);
+}
+
+.crumbs {
+  display: block;
+  min-width: 0;
+  font-family: var(--awds-font-family-system);
+}
+
+.crumbs, .crumbs *, .crumbs *::before, .crumbs *::after { box-sizing: border-box;
+}
+
+.crumbs__list {
+  display: flex;
+  flex-wrap: wrap;          
+  align-items: center;      
+  gap: 0;                   
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.crumbs__item {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.crumbs__item > .btn-area {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.crumbs__sep {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;           
+  color: rgb(var(--surface-on-high));
+}
+
+.crumbs__sep > svg {
+  display: block;
+  width: var(--awds-space-4);    
+  height: var(--awds-space-4);
+}
+
+.crumbs__current {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;      
+  color: rgb(var(--surface-on-high));   
+  font-size: var(--awds-control-font-size-300);
+  line-height: var(--awds-control-line-height-300);
+  letter-spacing: var(--awds-control-letter-spacing-300);
+  font-weight: var(--awds-font-weight-regular);
+  cursor: default;
 }
 
 .btn {

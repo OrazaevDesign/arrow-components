@@ -49,6 +49,16 @@
       "bytes": 7442
     },
     {
+      "name": "breadcrumbs",
+      "version": "1.0.0",
+      "variants": [
+        "default"
+      ],
+      "sizes": null,
+      "rules": 8,
+      "bytes": 1247
+    },
+    {
       "name": "button",
       "version": "2.2.14",
       "variants": [
@@ -736,9 +746,9 @@
     }
   ],
   "bundle": {
-    "bytes": 377935,
-    "rules": 1464,
-    "hash": "sha256:55ba56deb5ae29da857b5559a7fdaf00d1f63894dd3f795b195c2acaa0aa5d69"
+    "bytes": 379090,
+    "rules": 1472,
+    "hash": "sha256:21af59892d7dbfbcc864e4358654669f52d8ed3718adcfec1110104667996f93"
   },
   "theme": {
     "bytes": 67664,
