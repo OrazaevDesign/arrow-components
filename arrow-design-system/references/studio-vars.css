@@ -536,7 +536,7 @@
   --awds-layout-section-width-small: var(--awds-layout-section-width-small-desktop);  /* Максимальная ширина колонки, узкая (600). Поле блока «Ширина контента» = small. */
   /* Боковое поле колонки: padding-inline на __inner, внутри max-width. Зазор между колонками — section/column-gap. */
   --awds-layout-section-gutter-desktop: var(--awds-space-6);
-  --awds-layout-section-gutter-tablet: var(--awds-space-4);
+  --awds-layout-section-gutter-tablet: var(--awds-space-0);
   --awds-layout-section-gutter-mobile: var(--awds-space-0);
   --awds-layout-section-gutter: var(--awds-layout-section-gutter-desktop);  /* Боковое поле колонки: padding-inline на __inner, внутри max-width. Зазор между колонками — section/column-gap. */
   /* Боковое поле колонки блока: padding-inline на __inner, внутри max-width. На mobile поле сохраняется, в отличие от section/gutter. Зазор между колонками — section/column-gap. */
