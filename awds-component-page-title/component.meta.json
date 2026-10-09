@@ -141,7 +141,24 @@
   "last_synced": "2026-10-08T22:27:54Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:d25c7e19bff50773ef54a119a1f854a87bf9d6061cc89159c118aaf6aa832da0",
-  "published": null,
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "c1f670fc4532bd19086334cfc615839819813622",
+    "pushed_at": "2026-10-08T22:36:52Z",
+    "github_urls": {
+      "default": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-page-title/references/page-title.md",
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-page-title/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#page-title",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/page-title.css"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "manual_fallback",
+        "reason": "MCP-сервер claude.ai Figma отключён во время публикации; описание ноды 1050:139853 вписать вручную",
+        "node_id": "1050:139853"
+      }
+    }
+  },
   "uses": {
     "awds-component-breadcrumbs": "1.0.0",
     "awds-component-heading": "2.0.0"
