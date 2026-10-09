@@ -1,4 +1,4 @@
-/* ArrowDS · page-title@1.0.0
+/* ArrowDS · page-title@1.1.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -7,8 +7,15 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;          
-  gap: var(--awds-space-3);      
   min-width: 0;
+}
+
+.ptitle > * + * {
+  margin-block-start: var(--awds-space-3);
+}
+
+.ptitle > .heading + .heading__count {
+  margin-block-start: var(--awds-space-1-5);
 }
 
 }
