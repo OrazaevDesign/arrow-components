@@ -47,7 +47,8 @@
 <p class="sub">
   Заголовок страницы: крошки (<code>awds-component-breadcrumbs</code>) над
   <code>&lt;h1&gt;</code> (<code>awds-component-heading</code>, <code>.heading--h1</code>),
-  зазор <code>space-3</code>. Своих цветов и шрифтов нет. Кегль h1 зависит от ширины окна
+  зазор <code>space-3</code>; под заголовком — необязательный счётчик
+  <code>.heading__count</code> (элемент <code>heading</code>, текст, не ссылка), зазор <code>space-1-5</code>. Своих цветов и шрифтов нет. Кегль h1 зависит от ширины окна
   и масштаба <code>.typo-*</code> — эталон 34/34 сверяется на десктопе (≥1024) в моде medium.
 </p>
 <div class="toolbar">
@@ -61,11 +62,12 @@
 
 <p class="pg-h2">Эталон из макета</p>
 <div class="case">
-  <div class="cap">page-title · 1050:139853 · ширина 351 · Главная › Рубрика / Heading</div>
+  <div class="cap">page-title · 1050:139853 · ширина 351 · Главная › Рубрика / Heading / 200 товаров</div>
   <div class="w351">
     <div class="ptitle" id="case-figma">
       <nav class="crumbs" aria-label="Хлебные крошки" data-trail="Главная|Рубрика"></nav>
       <div class="heading heading--h1"><h1 class="heading__title">Heading</h1></div>
+      <p class="heading__count">200 товаров</p>
     </div>
   </div>
 </div>
@@ -77,6 +79,18 @@
   <div class="ptitle" id="case-narrow">
     <nav class="crumbs" aria-label="Хлебные крошки — узкая колонка" data-trail="Главная|Каталог|Дом и сад|Текстиль для спальни и гостиной|Пледы и покрывала"></nav>
     <div class="heading heading--h1"><p class="heading__title">Пледы и покрывала из хлопка и шерсти</p></div>
+  </div>
+</div>
+
+<p class="pg-h2">Без счётчика</p>
+<p class="note">Счётчик необязателен: крошки и заголовок, как в 1.0.0.</p>
+<div class="case">
+  <div class="cap">крошки + заголовок</div>
+  <div class="w351">
+    <div class="ptitle" id="case-nocount">
+      <nav class="crumbs" aria-label="Хлебные крошки — без счётчика" data-trail="Главная|Рубрика"></nav>
+      <div class="heading heading--h1"><p class="heading__title">Heading</p></div>
+    </div>
   </div>
 </div>
 
@@ -96,11 +110,12 @@
   <div class="ptitle">
     <nav class="crumbs" aria-label="Хлебные крошки — тёмный островок" data-trail="Главная|Каталог|Рубрика"></nav>
     <div class="heading heading--h1"><p class="heading__title">Рубрика</p></div>
+    <p class="heading__count">1 284 товара</p>
   </div>
 </div>
 
 <p class="pg-h2">Самопроверка числами</p>
-<p class="note">Сверяется с макетом (эталонный кейс): зазор 12, крошки 16, h1 34/34/−0.3 и 600 на десктопе в моде medium, высота 62, обе части на всю ширину. Размеры h1 сверяются только при ширине окна ≥1024 и масштабе medium.</p>
+<p class="note">Сверяется с макетом (эталонный кейс): зазор 12, крошки 16, счётчик под заголовком через 6, 13/16/0.1, 400, коробка 16; h1 34/34/−0.3 и 600 на десктопе в моде medium, высота 84 (без счётчика 62), части на всю ширину. Размеры h1 сверяются только при ширине окна ≥1024 и масштабе medium.</p>
 <table class="check" id="check"></table>
 
 <script>
@@ -146,6 +161,8 @@
     const title = root.querySelector('.heading__title');
     const solo = document.getElementById('case-solo');
     const narrow = document.getElementById('case-narrow');
+    const count = root.querySelector('.heading__count');
+    const nocount = document.getElementById('case-nocount');
     const cs = (el) => getComputedStyle(el);
     const px = (el, p) => parseFloat(cs(el)[p]);
     const r = (el) => el.getBoundingClientRect();
@@ -157,16 +174,24 @@
       ['ширина крошек = ширина компонента', Math.round(r(crumbs).width), Math.round(r(root).width)],
       ['ширина заголовка = ширина компонента', Math.round(r(heading).width), Math.round(r(root).width)],
       ['высота без крошек = высота заголовка', Math.round(r(solo).height), Math.round(r(solo.querySelector('.heading')).height)],
+      ['зазор заголовок ↔ счётчик', Math.round(r(count).top - r(heading).bottom), 6],
+      ['счётчик кегль', px(count, 'fontSize'), 13],
+      ['счётчик интерлиньяж', px(count, 'lineHeight'), 16],
+      ['счётчик трекинг', px(count, 'letterSpacing'), 0.1],
+      ['счётчик насыщенность', px(count, 'fontWeight'), 400],
+      ['высота коробки счётчика', Math.round(r(count).height), 16],
     ];
     if (desktopMedium) rows.push(
       ['h1 кегль', px(title, 'fontSize'), 34],
       ['h1 интерлиньяж', px(title, 'lineHeight'), 34],
       ['h1 трекинг', px(title, 'letterSpacing'), -0.3],
       ['h1 насыщенность', px(title, 'fontWeight'), 600],
-      ['высота компонента', Math.round(r(root).height), 62],
+      ['высота компонента', Math.round(r(root).height), 84],
+      ['высота без счётчика', Math.round(r(nocount).height), 62],
     );
     const same = [
       ['тег заголовка', title.tagName, 'H1'],
+      ['цвет счётчика = surface-on-high', cs(count).color.replace(/\s/g, ''), 'rgb(' + getComputedStyle(html).getPropertyValue('--surface-on-high').trim().split(/\s+/).join(',') + ')'],
     ];
     const t = document.getElementById('check');
     t.innerHTML = '<tr><th>Что</th><th>Факт</th><th>Макет</th><th>Сходится</th></tr>' +

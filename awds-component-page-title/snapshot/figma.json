@@ -1,54 +1,126 @@
 {
   "file_key": "470rar5EfRm4n14vHMXbpc",
   "file_name": "💠 arrow ↪ components",
-  "fetched_at": "2026-10-08T22:27:54Z",
+  "fetched_at": "2026-10-09T08:26:25Z",
   "node_id": "1050:139853",
   "metadata": {
-    "symbol": { "id": "1050:139853", "name": "page-title", "width": 351, "height": 62 },
+    "symbol": {
+      "id": "1050:139853",
+      "name": "page-title",
+      "width": 351,
+      "height": 84
+    },
     "children": [
-      { "type": "instance", "id": "1050:139786", "name": "breadcrumbs", "x": 0, "y": 0, "width": 351, "height": 16,
+      {
+        "type": "instance",
+        "id": "1050:139786",
+        "name": "breadcrumbs",
+        "x": 0,
+        "y": 0,
+        "width": 351,
+        "height": 16,
         "children": [
-          { "type": "slot", "id": "I1050:139786;1050:139716", "name": "list", "width": 351, "height": 16,
+          {
+            "type": "slot",
+            "id": "I1050:139786;1050:139716",
+            "name": "list",
+            "width": 351,
+            "height": 16,
             "children": [
-              { "type": "instance", "id": "I1050:139786;1050:139550", "name": "button-area / muted", "x": 0, "width": 51, "height": 16, "text": "Главная" },
-              { "type": "instance", "id": "I1050:139786;1050:139582", "name": "ic-a", "x": 51, "width": 16, "height": 16 },
-              { "type": "instance", "id": "I1050:139786;1050:139604", "name": "button-area / muted", "x": 67, "width": 53, "height": 16, "text": "Рубрика" }
-            ] }
-        ] },
-      { "type": "instance", "id": "1050:139474", "name": "heading", "x": 0, "y": 28, "width": 351, "height": 34,
-        "main": "heading=h1, view=desktop (1050:139088)", "props": { "heading": "h1", "view": "desktop", "showAction": false, "text": "Heading" } }
+              {
+                "type": "instance",
+                "id": "I1050:139786;1050:139550",
+                "name": "button-area / muted",
+                "x": 0,
+                "width": 51,
+                "height": 16,
+                "text": "Главная"
+              },
+              {
+                "type": "instance",
+                "id": "I1050:139786;1050:139582",
+                "name": "ic-a",
+                "x": 51,
+                "width": 16,
+                "height": 16
+              },
+              {
+                "type": "instance",
+                "id": "I1050:139786;1050:139604",
+                "name": "button-area / muted",
+                "x": 67,
+                "width": 53,
+                "height": 16,
+                "text": "Рубрика"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "frame",
+        "id": "1057:45304",
+        "name": "div",
+        "x": 0,
+        "y": 28,
+        "width": 351,
+        "height": 56,
+        "children": [
+          {
+            "type": "instance",
+            "id": "1050:139474",
+            "name": "heading / action",
+            "x": 0,
+            "y": 0,
+            "width": 351,
+            "height": 34
+          },
+          {
+            "type": "instance",
+            "id": "1057:28399",
+            "name": "button-area / muted",
+            "x": 0,
+            "y": 40,
+            "width": 80,
+            "height": 16,
+            "text": "200 товаров"
+          }
+        ]
+      }
     ]
   },
   "component_properties": {
-    "showBreadcrumbs": { "type": "BOOLEAN", "default": true, "note": "имя нарушает props.md правило 12 (CamelCase) — канон show-breadcrumbs" }
-  },
-  "auto_layout": {
-    "page-title": { "display": "flex", "direction": "column", "gap": "var(--3) = 12", "align_items": "start", "width": "fixed 351" },
-    "breadcrumbs": { "sizing": "fill-x (w-full)", "height": 16 },
-    "heading": { "sizing": "fill-x (w-full)", "display": "flex", "wrap": "wrap", "gap": "var(--2) = 8", "align_items": "end", "action": "hidden (showAction=false)" }
-  },
-  "variable_defs": {
-    "1050:139853": {
-      "2": "8",
-      "3": "12",
-      "opacity/control/enabled": "100",
-      "link/muted-rest": "#6a6a6a",
-      "letter-spacing/300": "0.10000000149011612",
-      "font-size/300": "13",
-      "family/system": "Onest",
-      "line-height/300": "16",
-      "weight/regular": "400",
-      "rectangle/100/icon": "16",
-      "surface/on-highest": "#262626",
-      "letter-spacing/h1": "-0.30000001192092896",
-      "font-size/h1": "34",
-      "line-height/h1": "34",
-      "weight/semibold": "600"
+    "showBreadcrumbs": {
+      "type": "BOOLEAN",
+      "default": true,
+      "note": "имя нарушает props.md правило 12 (CamelCase) — канон show-breadcrumbs"
     }
   },
+  "auto_layout": {
+    "root": "flex-col gap var(--3)=12 items-start; дети w-full",
+    "wrap_1057_45304": "flex-col gap var(--1-5)=6 items-start w-full: heading / action (showAction=false) w-full, button-area / muted (Hug)"
+  },
+  "variable_defs": {
+    "2": "8",
+    "3": "12",
+    "opacity/control/enabled": "100",
+    "link/muted-rest": "#6a6a6a",
+    "letter-spacing/300": "0.10000000149011612",
+    "font-size/300": "13",
+    "family/system": "Onest",
+    "line-height/300": "16",
+    "weight/regular": "400",
+    "rectangle/100/icon": "16",
+    "surface/on-highest": "#262626",
+    "letter-spacing/h1": "-0.30000001192092896",
+    "font-size/h1": "34",
+    "line-height/h1": "34",
+    "weight/semibold": "600",
+    "1-5": "6"
+  },
   "resolution": {
-    "3": "--awds-space-3 (12, фикс)",
     "2": "gap heading (8) — принадлежит heading.css, не page-title",
+    "3": "--awds-space-3 (12, фикс)",
     "font-size|line-height|letter-spacing/300, weight/regular, link/muted-rest, rectangle/100/icon": "принадлежат breadcrumbs.css / button-area.css",
     "font-size|line-height|letter-spacing/h1, weight/semibold, surface/on-highest": "принадлежат heading.css (.heading--h1)"
   }

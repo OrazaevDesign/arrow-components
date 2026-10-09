@@ -1,13 +1,13 @@
 {
   "component": "page-title",
-  "version": "1.0.0",
-  "contract_hash": "sha256:eea44316d2d2ae2681707ee9ec6584cda655541ccf1ecfa448815a1739ca5670",
-  "artifact_hash": "sha256:78b67f314edd1391f753daf40298ce73929340428c389f4f69df7010d5084893",
+  "version": "1.1.0",
+  "contract_hash": "sha256:aee376f4e481ae4b8f5ee32741c58c52947b97d35cd3e5903b1428f0628fcba7",
+  "artifact_hash": "sha256:5bb491e5c43ffb529c9c21e60548ff7822558c9e1310b4ed929794c69323b43e",
   "visual_change": false,
-  "released_at": "2026-10-08T22:30:31.444Z",
+  "released_at": "2026-10-09T08:26:40.940Z",
   "own_values": [],
   "family": "complex-component",
-  "summary": "Заголовок страницы: хлебные крошки над h1, зазор space-3; цвета и шрифты — у вложенных компонентов",
+  "summary": "Заголовок страницы: крошки над h1 (space-3), под ним необязательный счётчик товаров (space-1-5); цвета и шрифты — у вложенных компонентов",
   "aliases": [
     "заголовок страницы",
     "шапка страницы",
@@ -28,9 +28,9 @@
       "figma_label": "page-title"
     }
   },
-  "variants_note": "В макете один компонент без осей: инстанс breadcrumbs сверху, инстанс heading (heading=h1, view=desktop, действие скрыто) снизу, auto-layout колонкой с gap space/3. Булево свойство показа крошек — не вариант, а необязательная часть разметки. Класса варианта нет.",
+  "variants_note": "В макете один компонент без осей: инстанс breadcrumbs сверху, затем обёртка «div» (1057:45304, gap space/1-5) с инстансом heading / action (heading=h1, view=desktop, действие скрыто) и счётчиком «200 товаров» (инстанс button-area / muted 80×16), auto-layout колонкой с gap space/3. Булево свойство показа крошек — не вариант, а необязательная часть разметки. Класса варианта нет.",
   "base_class_note": "Базовый класс .ptitle, а не .page-title и не .title. Имя .page-title — обиходное, оно встречается в темах CMS, WordPress и Bootstrap-шаблонах и почти наверняка занято у потребителя; .title ещё общее и к тому же синоним heading. Короткий свой корень не пересекается ни с ними, ни с .heading, и приватные переменные --awds-ptitle-* (если появятся) читаются как внутренность одного компонента, а не как слой дизайн-системы. Тот же приём, что breadcrumbs → .crumbs, pagination → .pgn, modal → .mdl, formfield → .fld.",
-  "composition_note": "Компонент ничего не рисует сам: крошки — awds-component-breadcrumbs (.crumbs целиком), заголовок — awds-component-heading (.heading.heading--h1 с <h1 class=\"heading__title\">). Своё — только колонка, растяжение частей (Fill в макете) и зазор space-3. Уровень h1 задаётся классом .heading--h1 в разметке, а не мостом: мост, как у formfield, раздаёт ступень, которую выбирает потребитель, а здесь уровень один и у heading для него есть публичный класс; мост писал бы в приватные --awds-heading-* чужого компонента и молча отвалился бы при их переименовании.",
+  "composition_note": "Компонент ничего не рисует сам: крошки — awds-component-breadcrumbs (.crumbs целиком), заголовок — awds-component-heading (.heading.heading--h1 с <h1 class=\"heading__title\">). Своё — только колонка, растяжение частей (Fill в макете) и зазор space-3. Уровень h1 задаётся классом .heading--h1 в разметке, а не мостом: мост, как у formfield, раздаёт ступень, которую выбирает потребитель, а здесь уровень один и у heading для него есть публичный класс; мост писал бы в приватные --awds-heading-* чужого компонента и молча отвалился бы при их переименовании. Счётчик под заголовком — элемент .heading__count из awds-component-heading, а не свой .ptitle__count: вид (цвет, шрифт) описан один раз в heading, ptitle задаёт только место (зазор space-1-5 правилом .ptitle > .heading + .heading__count). Свой класс повторил бы пять объявлений, и правка вида в heading не дошла бы до заголовка страницы.",
   "shape": null,
   "size_scale": null,
   "size_scale_note": "Шкалы размеров нет: уровень заголовка один (h1), ступень крошек одна (btn-area--100). Кегль h1 адаптируется внутри роли WYSIWYG по брейкпоинту и моду .typo-*.",
@@ -71,10 +71,15 @@
         "class": "crumbs",
         "required": false,
         "when_note": "когда у страницы есть путь; на главной крошек нет, свойство показа крошек в макете булево"
+      },
+      {
+        "class": "heading__count",
+        "required": false,
+        "when_note": "счётчик товаров под заголовком — прямой ребёнок .ptitle после .heading; просто текст (<p>), не ссылка"
       }
     ],
     "attrs": [],
-    "note": "Заголовок — тег <h1>: это заголовок страницы, а не секции, и на странице он один. Проверка тег не видит (Liquid без DOM), поэтому требование записано здесь и в SKILL.md. Корень — <div>; <header> только внутри <main>/<article>, иначе он становится ориентиром banner и спорит с шапкой сайта. Крошки — разметка awds-component-breadcrumbs целиком (nav[aria-label] > ol.crumbs__list), их требования проверяет его контракт. Действия «Все» у заголовка нет: в инстансе макета оно скрыто. Вертикальный отступ снаружи задаёт потребитель."
+    "note": "Заголовок — тег <h1>: это заголовок страницы, а не секции, и на странице он один. Проверка тег не видит (Liquid без DOM), поэтому требование записано здесь и в SKILL.md. Корень — <div>; <header> только внутри <main>/<article>, иначе он становится ориентиром banner и спорит с шапкой сайта. Крошки — разметка awds-component-breadcrumbs целиком (nav[aria-label] > ol.crumbs__list), их требования проверяет его контракт. Действия «Все» у заголовка нет: в инстансе макета оно скрыто. Счётчик .heading__count (элемент heading) необязателен и стоит после .heading: просто текст, без ссылки. Вертикальный отступ снаружи задаёт потребитель."
   },
   "preview": {
     "base_class": "ptitle",
@@ -103,6 +108,10 @@
     "html_samples": [
       {
         "label": "Эталон из макета",
+        "html": "<div class=\"ptitle\"><nav class=\"crumbs\" aria-label=\"Хлебные крошки\"><ol class=\"crumbs__list\"><li class=\"crumbs__item\"><a class=\"btn-area btn-area-muted btn-area--100\" href=\"/\"><span class=\"btn-area__label\">Главная</span></a></li><li class=\"crumbs__sep\" aria-hidden=\"true\"><svg viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"…\" fill=\"currentColor\"/></svg></li><li class=\"crumbs__item\"><span class=\"crumbs__current\" aria-current=\"page\">Рубрика</span></li></ol></nav><div class=\"heading heading--h1\"><h1 class=\"heading__title\">Рубрика</h1></div><p class=\"heading__count\">200 товаров</p></div>"
+      },
+      {
+        "label": "Без счётчика",
         "html": "<div class=\"ptitle\"><nav class=\"crumbs\" aria-label=\"Хлебные крошки\"><ol class=\"crumbs__list\"><li class=\"crumbs__item\"><a class=\"btn-area btn-area-muted btn-area--100\" href=\"/\"><span class=\"btn-area__label\">Главная</span></a></li><li class=\"crumbs__sep\" aria-hidden=\"true\"><svg viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\"><path d=\"…\" fill=\"currentColor\"/></svg></li><li class=\"crumbs__item\"><span class=\"crumbs__current\" aria-current=\"page\">Рубрика</span></li></ol></nav><div class=\"heading heading--h1\"><h1 class=\"heading__title\">Рубрика</h1></div></div>"
       },
       {
@@ -133,9 +142,33 @@
       "asana_gid": null,
       "raised_at": "2026-10-09",
       "answer": null
+    },
+    {
+      "id": "page-title-count-is-text",
+      "text": "Под заголовком страницы инстанс button-area / muted «200 товаров» (1057:28399) — кликабельная область. Счётчик никуда не ведёт; код ставит текст .heading__count. Заменить в макете на текст на роли surface/on-high?",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": "Решение владельца 09.10.2026: просто текст, не ссылка; макет не прав.",
+      "answered_at": "2026-10-09"
+    },
+    {
+      "id": "page-title-count-gap",
+      "text": "Зазор заголовок ↔ счётчик: в постановке space-3 (12), в макете (снимок 09.10.2026) обёртка 1057:45304 с gap = переменная 1-5 (6), компонент 351×84. Код идёт за макетом — space-1-5. Подтвердить 6 или поправить макет на 12?",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": null
     }
   ],
   "ds_token_dependencies": [
+    "--awds-space-1-5",
     "--awds-space-3"
   ],
   "last_synced": "2026-10-08T22:27:54Z",
@@ -169,10 +202,12 @@
   },
   "uses": {
     "awds-component-breadcrumbs": "1.0.0",
-    "awds-component-heading": "2.0.0"
+    "awds-component-heading": "2.1.0"
   },
   "contract": {
     "classes": [
+      "heading",
+      "heading__count",
       "ptitle"
     ],
     "attributes": [],
