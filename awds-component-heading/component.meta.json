@@ -1,10 +1,10 @@
 {
   "component": "heading",
-  "version": "2.0.0",
-  "contract_hash": "sha256:4a69718caabe89e754258d48f48caf605a20415ce23f02aaa09a1bc6c511a5d9",
-  "artifact_hash": "sha256:76fea5a2658bc42ad21f0bbdfd4a458621ffa09b5c89bd7fb0b5eb4d6a8c0460",
+  "version": "2.1.0",
+  "contract_hash": "sha256:0542f288aa53356af5942dececd157fa3f27c8f2d148f4c48b5be194ee566faf",
+  "artifact_hash": "sha256:33dd75c2bf789fd62a954e8adfbf16f43945a5e30a0580dddc31ea6a90d4314d",
   "visual_change": true,
-  "released_at": "2026-10-08T22:25:18.993Z",
+  "released_at": "2026-10-09T08:26:40.829Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -16,7 +16,7 @@
     "heading": {
       "node_id": "1050:139087",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139087",
-      "figma_label": "heading",
+      "figma_label": "heading / action",
       "cells": {
         "view=desktop, heading=h1": "1050:139088",
         "view=mobile, heading=h1": "1050:139091",
@@ -25,6 +25,20 @@
         "view=desktop, heading=h3": "1050:139100",
         "view=mobile, heading=h3": "1050:139103"
       }
+    },
+    "goods": {
+      "node_id": "1057:28891",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1057-28891",
+      "figma_label": "heading / goods",
+      "cells": {
+        "view=desktop, heading=h1": "1057:28892",
+        "view=mobile, heading=h1": "1057:28896",
+        "view=desktop, heading=h2": "1057:28900",
+        "view=mobile, heading=h2": "1057:28904",
+        "view=desktop, heading=h3": "1057:28908",
+        "view=mobile, heading=h3": "1057:28912"
+      },
+      "note": "Второй набор макета: справа от заголовка вместо «Все» — счётчик «200 товаров». Класса набора нет: это необязательный элемент .heading__count, а не ось-класс (решение владельца 09.10.2026). Раскладка та же, что у action."
     }
   },
   "modifiers": {
@@ -51,7 +65,17 @@
         "none",
         "button"
       ],
-      "note": "Опциональное действие «Все» — композиция awds-component-button (.btn.btn-tertiary.btn--100.btn--pill + иконка-ссылка file-link_3-regular 16×16 справа). В Figma — инстанс button / tertiary, size=100, скругление 26 = пилюля."
+      "note": "Опциональное действие «Все» — композиция awds-component-button (.btn.btn-tertiary.btn--100.btn--pill, только текст). Иконка-ссылка убрана из макета 09.10.2026 (в variable_defs пропал rectangle/100/icon) и из эталонной разметки в 2.1.0. В Figma — инстанс button / tertiary, size=100, скругление 26 = пилюля."
+    },
+    "count": {
+      "values": [
+        "none",
+        "count"
+      ],
+      "class": {
+        "count": "heading__count"
+      },
+      "note": "Опциональный счётчик «200 товаров» (набор heading / goods, 1057:28891) — элемент <span class=\"heading__count\">, НЕ ось-класс. Просто текст, не ссылка: surface-on-high (= link/muted-rest в покое), control 300 13/16/0.1, regular, tabular-nums. Раскладка как у .heading__action. В макете — инстанс button-area / muted 80×24: «макет не прав», решение владельца 09.10.2026."
     }
   },
   "shape": null,
@@ -76,7 +100,7 @@
     "heading.css"
   ],
   "composes": [
-    "awds-component-button (.btn.btn-tertiary.btn--100.btn--pill — действие «Все» в .heading__action; требует button-tertiary.css и focus-selection.css). В Figma действие heading-а — инстанс button / tertiary size=100. Button держит цвет (tertiary), размер (ступень 100, control-300 13/16), скругление (пилюля), состояния и фокус. Опционально: заголовок без действия — просто .heading > .heading__title."
+    "awds-component-button (.btn.btn-tertiary.btn--100.btn--pill — действие «Все» в .heading__action; требует button-tertiary.css и focus-selection.css). В Figma действие heading-а — инстанс button / tertiary size=100. Button держит цвет (tertiary), размер (ступень 100, control-300 13/16), скругление (пилюля), состояния и фокус. Опционально: заголовок без действия — просто .heading > .heading__title; со счётчиком — .heading__count (свой текст, не компонент)."
   ],
   "preview": {
     "base_class": "heading",
@@ -114,9 +138,10 @@
       },
       {
         "id": "action",
-        "label": "Действие",
+        "label": "Справа",
         "options": [
           "link",
+          "count",
           "none"
         ]
       },
@@ -133,7 +158,11 @@
     "html_samples": [
       {
         "label": "H1 + действие (button tertiary)",
-        "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn btn-tertiary btn--100 btn--pill heading__action\" href=\"#\">Все<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M8 6C8.36819 6 8.66699 6.2988 8.66699 6.66699C8.66682 7.03503 8.36808 7.33301 8 7.33301C6.89554 7.33301 6.00018 8.22859 6 9.33301C6 10.4376 6.89543 11.333 8 11.333H12C13.1046 11.333 14 10.4376 14 9.33301C13.9999 8.40232 13.3634 7.61869 12.501 7.39648C12.1446 7.30476 11.9291 6.94135 12.0205 6.58496C12.1123 6.22846 12.4765 6.01285 12.833 6.10449C14.2703 6.47454 15.3329 7.77912 15.333 9.33301C15.333 11.174 13.8409 12.667 12 12.667H8C6.15905 12.667 4.66699 11.174 4.66699 9.33301C4.66717 7.49221 6.15916 6 8 6ZM8 3.33301C9.84095 3.33301 11.333 4.82604 11.333 6.66699C11.3328 8.50779 9.84084 10 8 10C7.63181 10 7.33301 9.7012 7.33301 9.33301C7.33318 8.96497 7.63192 8.66699 8 8.66699C9.10446 8.66699 9.99982 7.77141 10 6.66699C10 5.56242 9.10457 4.66699 8 4.66699H4C2.89543 4.66699 2 5.56242 2 6.66699C2.00015 7.59768 2.63662 8.38131 3.49902 8.60352C3.85541 8.69524 4.0709 9.05865 3.97949 9.41504C3.88774 9.77154 3.5235 9.98715 3.16699 9.89551C1.72966 9.52546 0.667141 8.22088 0.666992 6.66699C0.666992 4.82604 2.15905 3.33301 4 3.33301H8Z\"/></svg></a></div>"
+        "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn btn-tertiary btn--100 btn--pill heading__action\" href=\"#\">Все</a></div>"
+      },
+      {
+        "label": "H1 + счётчик (heading / goods)",
+        "html": "<div class=\"heading heading--h1\"><h1 class=\"heading__title\">Heading</h1><span class=\"heading__count\">200 товаров</span></div>"
       },
       {
         "label": "H3 без действия",
@@ -142,8 +171,13 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-control-font-size-300",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-line-height-300",
     "--awds-font-family-system",
+    "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
+    "--awds-space-1",
     "--awds-space-2",
     "--awds-wysiwyg-font-size-h1",
     "--awds-wysiwyg-font-size-h2",
@@ -160,9 +194,10 @@
     "--awds-wysiwyg-line-height-h3",
     "--awds-wysiwyg-line-height-h4",
     "--awds-wysiwyg-line-height-h5",
+    "--surface-on-high",
     "--surface-on-highest"
   ],
-  "_dependency_note": "Заголовок — роли WYSIWYG h1–h5 (мод масштаба × брейкпоинт внутри роли). Действие «Все» — внешний awds-component-button (button-tertiary.css): цвет/размер/скругление/состояния/фокус держит он, heading.css задаёт действию только flex: none. Раскладка по View: desktop ≥1024 — действие вплотную к заголовку (gap space-2, flex-wrap), ниже — space-between.",
+  "_dependency_note": "Заголовок — роли WYSIWYG h1–h5 (мод масштаба × брейкпоинт внутри роли). Действие «Все» — внешний awds-component-button (button-tertiary.css): цвет/размер/скругление/состояния/фокус держит он, heading.css задаёт действию только flex: none. Счётчик .heading__count — свой текст: surface-on-high, control 300, regular, в строке заголовка padding-block space-1 (коробка 24 как у пилюли). Раскладка по View: desktop ≥1024 — действие/счётчик вплотную к заголовку (gap space-2, flex-wrap), ниже — space-between.",
   "last_synced": "2026-10-08T22:24:16Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:a2fea7841839c02d8822163c316d0c00b8d3970708fe49dc5a9e7fb5490f1002",
@@ -204,11 +239,16 @@
       {
         "class": "heading__title",
         "required": true
+      },
+      {
+        "class": "heading__count",
+        "required": false,
+        "when_note": "счётчик товаров справа от заголовка (heading / goods) или под заголовком в page-title; просто текст — <span>/<p>, не <a> и не <button>"
       }
     ],
     "attrs": [],
     "container": null,
-    "note": "Размер — это уровень h1…h5: он задаёт роли WYSIWYG, а тег заголовка внутри выбирается по структуре документа, а не по уровню (<h2 class=\"heading__title\"> внутри .heading--h1 законен). Уровень требуется писать явно, хотя база .heading подставляет роль h2: молчаливый дефолт делает раскладку случайной, и все сниппеты скилла уровень пишут. Класса варианта нет — вариант в мете один и класса не имеет. Обязателен только .heading__title. Действие «Все» необязательно и целиком принадлежит awds-component-button (.btn .btn-tertiary .btn--100 .btn--pill + иконка-ссылка): цвет, размер, скругление, состояния и фокус держит он, а .heading__action задаёт лишь flex: none, поэтому требований на него здесь нет. Раскладка действия по брейкпоинту (вплотную к заголовку с 1024px, к правому краю ниже) зашита в @media, класса под неё нет. Вертикальный отступ над заголовком в компонент не заложен: это ритм контекста, его задаёт потребитель."
+    "note": "Размер — это уровень h1…h5: он задаёт роли WYSIWYG, а тег заголовка внутри выбирается по структуре документа, а не по уровню (<h2 class=\"heading__title\"> внутри .heading--h1 законен). Уровень требуется писать явно, хотя база .heading подставляет роль h2: молчаливый дефолт делает раскладку случайной, и все сниппеты скилла уровень пишут. Класса варианта нет — вариант в мете один и класса не имеет. Обязателен только .heading__title. Действие «Все» необязательно и целиком принадлежит awds-component-button (.btn .btn-tertiary .btn--100 .btn--pill + иконка-ссылка): цвет, размер, скругление, состояния и фокус держит он, а .heading__action задаёт лишь flex: none, поэтому требований на него здесь нет. Счётчик .heading__count необязателен и стоит на месте действия — просто текст, без ссылки и фокуса. Раскладка действия и счётчика по брейкпоинту (вплотную к заголовку с 1024px, к правому краю ниже) зашита в @media, класса под неё нет. Вертикальный отступ над заголовком в компонент не заложен: это ритм контекста, его задаёт потребитель."
   },
   "questions": [
     {
@@ -223,10 +263,22 @@
       "evidence": "перепроверено 28.08.2026: ячеек State у этих семи 0, инлайнов ролей 53; в реестре было 70 — notice закрыт полностью, product-card уменьшился с 41 до 25",
       "answer": "Заводим группы. 15.09.2026 в слое State темы 21 созданы 27 ячеек для семи компонентов (product-card 7, emblem 6, slider 4, tooltip 4, price 3, content-area 2, heading 1), все приватные, и зеркалированы в файл токенов Figma. Срезов -rest/-hover/-focus/-active у них нет: замер показал, что ни у одного из семи цвет не меняется по состоянию. Код на ячейки НЕ переходит — он остаётся на ролях, это направление всего прохода; ячейка нужна как имя в макете и в студии, чтобы словарь компонентов был полным, а не 27 групп из 34. Заодно приватизированы 94 ячейки State, публиковавшиеся вопреки договорённости 03.09 (в том числе 24 у button): State и Size теперь дают ноль объявлений в CSS темы.",
       "answered_at": "2026-09-15"
+    },
+    {
+      "id": "heading-goods-count-is-text",
+      "text": "Набор heading / goods: справа от заголовка инстанс button-area / muted 80×24 «200 товаров» — кликабельная область. Счётчик никуда не ведёт; код ставит текст .heading__count. Заменить в макете инстанс на текст на роли surface/on-high (то же в page-title, 1057:28399)?",
+      "level": "component",
+      "target": null,
+      "severity": "minor",
+      "status": "answered",
+      "asana_gid": null,
+      "raised_at": "2026-10-09",
+      "answer": "Решение владельца 09.10.2026: счётчик — просто текст, не ссылка; макет не прав, в Figma заменить инстанс на текст.",
+      "answered_at": "2026-10-09"
     }
   ],
   "family": "complex-component",
-  "summary": "Заголовок секции H1–H5 с опциональным действием «Все» (button tertiary)",
+  "summary": "Заголовок секции H1–H5 с опциональным действием «Все» (button tertiary) или счётчиком товаров",
   "aliases": [
     "заголовок",
     "заголовок секции",
@@ -241,7 +293,7 @@
     "primary": true
   },
   "level_role_map": {
-    "_note": "level → роли WYSIWYG --awds-wysiwyg-{font-size,line-height,letter-spacing}-h{N}. Роль выбирает ступень typography по моду масштаба (.typo-*), ступень растёт по брейкпоинту. Значения сверены по get_variable_defs (мод medium, desktop). h2 — роли h2 целиком: решение владельца 09.10.2026, ячейка на ступени 910 считается ошибкой макета.",
+    "_note": "level → роли WYSIWYG --awds-wysiwyg-{font-size,line-height,letter-spacing}-h{N}. Роль выбирает ступень typography по моду масштаба (.typo-*), ступень растёт по брейкпоинту. Значения сверены по get_variable_defs (мод medium, desktop). h2 — роли h2 целиком; расхождение «ячейка на ступени 910» снято 09.10.2026: макет на ролях h2.",
     "h1": {
       "role": "h1",
       "px": "34/34/-0.3 (desktop, medium)"
@@ -275,12 +327,14 @@
       "heading--h4",
       "heading--h5",
       "heading__action",
+      "heading__count",
       "heading__title"
     ],
     "attributes": [],
     "elements": [],
     "public_vars": [],
     "variants": [
+      "goods",
       "heading"
     ],
     "sizes": [

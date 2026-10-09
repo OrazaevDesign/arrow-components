@@ -1,9 +1,19 @@
 {
-  "_note": "Сырые ответы Figma MCP для awds-component-heading. file_key 470rar5EfRm4n14vHMXbpc («💠 arrow ↪ components»), node 1050:139087 (heading). get_variable_defs по пяти ячейкам из шести (m h2 и m h3 вместо d h3 — значения уровня от view не зависят); auto-layout по d h1 и m h1 из get_design_context.",
+  "_note": "Сырые ответы Figma MCP для awds-component-heading. file_key 470rar5EfRm4n14vHMXbpc («💠 arrow ↪ components»). Наборы: heading / action (1050:139087) и heading / goods (1057:28891). Снимок 09.10.2026: у действия пропала иконка-ссылка (нет rectangle/100/icon), h2 на ролях h2. Desktop-ячейки несут \"2\"=8 (gap), mobile — нет (space-between).",
   "component_set": {
     "node_id": "1050:139087",
     "name": "heading",
-    "axes": { "view": ["desktop", "mobile"], "heading": ["h1", "h2", "h3"] },
+    "axes": {
+      "view": [
+        "desktop",
+        "mobile"
+      ],
+      "heading": [
+        "h1",
+        "h2",
+        "h3"
+      ]
+    },
     "cells": {
       "view=desktop, heading=h1": "1050:139088",
       "view=mobile, heading=h1": "1050:139091",
@@ -12,17 +22,210 @@
       "view=desktop, heading=h3": "1050:139100",
       "view=mobile, heading=h3": "1050:139103"
     },
-    "children": { "text": "TEXT", "action": "INSTANCE button / tertiary (content=text, size=100, state=rest), suffix icon file-link_3-regular 1050:138947" }
+    "children": {
+      "text": "TEXT",
+      "action": "INSTANCE button / tertiary (content=text, size=100, state=rest), без иконки с 09.10.2026"
+    }
   },
   "variable_defs": {
-    "view=desktop, heading=h1 (1050:139088)": {"2":"8","surface/on-highest":"#262626","letter-spacing/h1":"-0.30000001192092896","font-size/h1":"34","family/system":"Onest","line-height/h1":"34","weight/semibold":"600","opacity/control/enabled":"100","button/tertiary/color-rest":"#2541df","letter-spacing/300":"0.10000000149011612","font-size/300":"13","line-height/300":"16","rectangle/100/gap":"2","rectangle/100/padding":"4","rectangle/100/icon":"16","border-radius/200":"26","rectangle/100/rounded":"26","outline/offset":"1","button/tertiary/bg-rest":"#eff1fb","button/tertiary/border-rest":"#eff1fb"},
-    "view=mobile, heading=h1 (1050:139091)": {"surface/on-highest":"#262626","letter-spacing/h1":"-0.30000001192092896","font-size/h1":"34","family/system":"Onest","line-height/h1":"34","weight/semibold":"600","opacity/control/enabled":"100","button/tertiary/color-rest":"#2541df","letter-spacing/300":"0.10000000149011612","font-size/300":"13","line-height/300":"16","rectangle/100/gap":"2","rectangle/100/padding":"4","rectangle/100/icon":"16","border-radius/200":"26","rectangle/100/rounded":"26","outline/offset":"1","button/tertiary/bg-rest":"#eff1fb","button/tertiary/border-rest":"#eff1fb"},
-    "view=desktop, heading=h2 (1050:139094)": {"2":"8","surface/on-highest":"#262626","letter-spacing/h2":"-0.30000001192092896","font-size/h2":"28","family/system":"Onest","line-height/h2":"34","weight/semibold":"600","opacity/control/enabled":"100","button/tertiary/color-rest":"#2541df","letter-spacing/300":"0.10000000149011612","font-size/300":"13","line-height/300":"16","rectangle/100/gap":"2","rectangle/100/padding":"4","rectangle/100/icon":"16","border-radius/200":"26","rectangle/100/rounded":"26","outline/offset":"1","button/tertiary/bg-rest":"#eff1fb","button/tertiary/border-rest":"#eff1fb"},
-    "view=mobile, heading=h2 (1050:139097)": {"surface/on-highest":"#262626","letter-spacing/h2":"-0.30000001192092896","font-size/h2":"28","family/system":"Onest","line-height/h2":"34","weight/semibold":"600","opacity/control/enabled":"100","button/tertiary/color-rest":"#2541df","letter-spacing/300":"0.10000000149011612","font-size/300":"13","line-height/300":"16","rectangle/100/gap":"2","rectangle/100/padding":"4","rectangle/100/icon":"16","border-radius/200":"26","rectangle/100/rounded":"26","outline/offset":"1","button/tertiary/bg-rest":"#eff1fb","button/tertiary/border-rest":"#eff1fb"},
-    "view=mobile, heading=h3 (1050:139103)": {"surface/on-highest":"#262626","letter-spacing/h3":"-0.20000000298023224","font-size/h3":"24","family/system":"Onest","line-height/h3":"29","weight/semibold":"600","opacity/control/enabled":"100","button/tertiary/color-rest":"#2541df","letter-spacing/300":"0.10000000149011612","font-size/300":"13","line-height/300":"16","rectangle/100/gap":"2","rectangle/100/padding":"4","rectangle/100/icon":"16","border-radius/200":"26","rectangle/100/rounded":"26","outline/offset":"1","button/tertiary/bg-rest":"#eff1fb","button/tertiary/border-rest":"#eff1fb"}
+    "action view=desktop, heading=h1 (1050:139088)": {
+      "2": "8",
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "button/tertiary/color-rest": "#2541df",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "rectangle/100/gap": "2",
+      "rectangle/100/padding": "4",
+      "rectangle/100/rounded": "26",
+      "outline/offset": "1",
+      "button/tertiary/bg-rest": "#eff1fb",
+      "button/tertiary/border-rest": "#eff1fb",
+      "letter-spacing/h1": "-0.30000001192092896",
+      "font-size/h1": "34",
+      "line-height/h1": "34"
+    },
+    "action view=mobile, heading=h1 (1050:139091)": {
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "button/tertiary/color-rest": "#2541df",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "rectangle/100/gap": "2",
+      "rectangle/100/padding": "4",
+      "rectangle/100/rounded": "26",
+      "outline/offset": "1",
+      "button/tertiary/bg-rest": "#eff1fb",
+      "button/tertiary/border-rest": "#eff1fb",
+      "letter-spacing/h1": "-0.30000001192092896",
+      "font-size/h1": "34",
+      "line-height/h1": "34"
+    },
+    "action view=desktop, heading=h2 (1050:139094)": {
+      "2": "8",
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "button/tertiary/color-rest": "#2541df",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "rectangle/100/gap": "2",
+      "rectangle/100/padding": "4",
+      "rectangle/100/rounded": "26",
+      "outline/offset": "1",
+      "button/tertiary/bg-rest": "#eff1fb",
+      "button/tertiary/border-rest": "#eff1fb",
+      "letter-spacing/h2": "-0.30000001192092896",
+      "font-size/h2": "28",
+      "line-height/h2": "34"
+    },
+    "action view=desktop, heading=h3 (1050:139100)": {
+      "2": "8",
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "button/tertiary/color-rest": "#2541df",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "rectangle/100/gap": "2",
+      "rectangle/100/padding": "4",
+      "rectangle/100/rounded": "26",
+      "outline/offset": "1",
+      "button/tertiary/bg-rest": "#eff1fb",
+      "button/tertiary/border-rest": "#eff1fb",
+      "letter-spacing/h3": "-0.20000000298023224",
+      "font-size/h3": "24",
+      "line-height/h3": "29"
+    },
+    "goods view=desktop, heading=h1 (1057:28892)": {
+      "2": "8",
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "link/muted-rest": "#6a6a6a",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "weight/regular": "400",
+      "letter-spacing/h1": "-0.30000001192092896",
+      "font-size/h1": "34",
+      "line-height/h1": "34"
+    },
+    "goods view=mobile, heading=h1 (1057:28896)": {
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "link/muted-rest": "#6a6a6a",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "weight/regular": "400",
+      "letter-spacing/h1": "-0.30000001192092896",
+      "font-size/h1": "34",
+      "line-height/h1": "34"
+    },
+    "goods view=desktop, heading=h2 (1057:28900)": {
+      "2": "8",
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "link/muted-rest": "#6a6a6a",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "weight/regular": "400",
+      "letter-spacing/h2": "-0.30000001192092896",
+      "font-size/h2": "28",
+      "line-height/h2": "34"
+    },
+    "goods view=mobile, heading=h2 (1057:28904)": {
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "link/muted-rest": "#6a6a6a",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "weight/regular": "400",
+      "letter-spacing/h2": "-0.30000001192092896",
+      "font-size/h2": "28",
+      "line-height/h2": "34"
+    },
+    "goods view=desktop, heading=h3 (1057:28908)": {
+      "2": "8",
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "link/muted-rest": "#6a6a6a",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "weight/regular": "400",
+      "letter-spacing/h3": "-0.20000000298023224",
+      "font-size/h3": "24",
+      "line-height/h3": "29"
+    },
+    "goods view=mobile, heading=h3 (1057:28912)": {
+      "surface/on-highest": "#262626",
+      "family/system": "Onest",
+      "weight/semibold": "600",
+      "opacity/control/enabled": "100",
+      "link/muted-rest": "#6a6a6a",
+      "letter-spacing/300": "0.10000000149011612",
+      "font-size/300": "13",
+      "line-height/300": "16",
+      "weight/regular": "400",
+      "letter-spacing/h3": "-0.20000000298023224",
+      "font-size/h3": "24",
+      "line-height/h3": "29"
+    }
   },
   "auto_layout": {
     "view=desktop": "root: flex flex-wrap gap var(--2)=8 items-end content-end; text: whitespace-nowrap shrink-0; action: shrink-0 (не self-stretch)",
-    "view=mobile": "root: flex items-end justify-between (gap не привязан); text: flex-[1_0_0] min-w-px; action: shrink-0"
+    "view=mobile": "root: flex items-end justify-between (gap не привязан); text: flex-[1_0_0] min-w-px; action: shrink-0",
+    "goods view=desktop": "root: flex flex-wrap gap var(--2)=8 items-end content-end; text: whitespace-nowrap shrink-0; count: button-area h-[24px] shrink-0 items-center",
+    "goods view=mobile": "root: flex items-end justify-between; text: flex-[1_0_0] min-w-px; count: button-area h-[24px] shrink-0"
+  },
+  "goods_set": {
+    "node_id": "1057:28891",
+    "name": "heading / goods",
+    "axes": {
+      "view": [
+        "desktop",
+        "mobile"
+      ],
+      "heading": [
+        "h1",
+        "h2",
+        "h3"
+      ]
+    },
+    "cells": {
+      "view=desktop, heading=h1": "1057:28892",
+      "view=mobile, heading=h1": "1057:28896",
+      "view=desktop, heading=h2": "1057:28900",
+      "view=mobile, heading=h2": "1057:28904",
+      "view=desktop, heading=h3": "1057:28908",
+      "view=mobile, heading=h3": "1057:28912"
+    },
+    "children": {
+      "text": "TEXT",
+      "count": "INSTANCE button-area / muted, h-24 fixed, text 13/16 link/muted-rest regular, «200 товаров»"
+    }
   }
 }
