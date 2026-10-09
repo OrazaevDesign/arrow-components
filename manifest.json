@@ -261,9 +261,10 @@
     },
     {
       "name": "heading",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "variants": [
-        "heading"
+        "heading",
+        "goods"
       ],
       "sizes": [
         "h1",
@@ -272,8 +273,8 @@
         "h4",
         "h5"
       ],
-      "rules": 9,
-      "bytes": 1949
+      "rules": 11,
+      "bytes": 2488
     },
     {
       "name": "input",
@@ -756,9 +757,9 @@
     }
   ],
   "bundle": {
-    "bytes": 379248,
-    "rules": 1473,
-    "hash": "sha256:47ca222cbef83b1c5903b0600d49658c4f0d6b2e5e1ce730055a24eb9d184994"
+    "bytes": 379787,
+    "rules": 1475,
+    "hash": "sha256:87d97662924aa9225d7466f393d67c0d43547e64e93cd1c92977a8dabc4db4e6"
   },
   "theme": {
     "bytes": 67664,
