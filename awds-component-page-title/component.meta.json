@@ -153,9 +153,10 @@
     },
     "dev_resources_status": {
       "default": {
-        "status": "manual_fallback",
-        "reason": "MCP-сервер claude.ai Figma отключён во время публикации; описание ноды 1050:139853 вписать вручную",
-        "node_id": "1050:139853"
+        "status": "linked",
+        "node_id": "1050:139853",
+        "method": "component_description",
+        "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/?node-id=1050-139853"
       }
     }
   },
