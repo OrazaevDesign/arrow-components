@@ -1,34 +1,36 @@
 {
   "component": "page-title",
-  "version": "1.1.0",
-  "contract_hash": "sha256:aee376f4e481ae4b8f5ee32741c58c52947b97d35cd3e5903b1428f0628fcba7",
-  "artifact_hash": "sha256:5bb491e5c43ffb529c9c21e60548ff7822558c9e1310b4ed929794c69323b43e",
-  "visual_change": false,
-  "released_at": "2026-10-09T08:26:40.940Z",
+  "version": "1.2.0",
+  "contract_hash": "sha256:f7a3b1399272f9edda9a8f79bc00ce09b86c7d88dad6f6b0a59a9d807d2c9e2d",
+  "artifact_hash": "sha256:01cab81f021a4de0b8ba8351dd40200b1693ba04700c966bf293a43baf3a8b55",
+  "visual_change": true,
+  "released_at": "2026-10-10T19:32:25.942Z",
   "own_values": [],
   "family": "complex-component",
-  "summary": "Заголовок страницы: крошки над h1 (space-3), под ним необязательный счётчик товаров (space-1-5); цвета и шрифты — у вложенных компонентов",
+  "summary": "Заголовок страницы: крошки над h1 (space-3), под ним необязательный счётчик (space-1-5); ниже 1024 вместо крошек «Назад» со шторкой «Вернуться»; цвета и шрифты — у вложенных компонентов",
   "aliases": [
     "заголовок страницы",
     "шапка страницы",
     "крошки с заголовком",
     "h1 с крошками",
-    "title"
+    "title",
+    "кнопка назад",
+    "вернуться к разделу"
   ],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
-    "primary_node_id": "1050:139853",
-    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139853"
+    "primary_node_id": "1073:761",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1073-761"
   },
   "variants": {
     "default": {
-      "node_id": "1050:139853",
-      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139853",
-      "figma_label": "page-title"
+      "node_id": "1073:761",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1073-761",
+      "figma_label": "page-title (view=desktop 1050:139853 · view=mobile 1073:787)"
     }
   },
-  "variants_note": "В макете один компонент без осей: инстанс breadcrumbs сверху, затем обёртка «div» (1057:45304, gap space/1-5) с инстансом heading / action (heading=h1, view=desktop, действие скрыто) и счётчиком «200 товаров» (инстанс button-area / muted 80×16), auto-layout колонкой с gap space/3. Булево свойство показа крошек — не вариант, а необязательная часть разметки. Класса варианта нет.",
+  "variants_note": "С 10.10.2026 в макете набор page-title (1073:761) с осью view=desktop|mobile. Ось — брейкпоинт, а не вариант (правило 10 props.md): класса нет, ниже 1024 медиазапрос прячет крошки и показывает «Назад» (button / pills 100 с иконкой arrow-left). Шторка — отдельный компонент макета back-sheet (1073:2928): modal / dialog с заголовком «Вернуться», в слоте содержимого list-item / transparent 400 с иконкой arrow-back_2. desktop: инстанс breadcrumbs сверху, обёртка «div» (gap space/1-5) с heading h1 и счётчиком, колонка gap space/3; mobile — то же, вместо крошек «Назад».",
   "base_class_note": "Базовый класс .ptitle, а не .page-title и не .title. Имя .page-title — обиходное, оно встречается в темах CMS, WordPress и Bootstrap-шаблонах и почти наверняка занято у потребителя; .title ещё общее и к тому же синоним heading. Короткий свой корень не пересекается ни с ними, ни с .heading, и приватные переменные --awds-ptitle-* (если появятся) читаются как внутренность одного компонента, а не как слой дизайн-системы. Тот же приём, что breadcrumbs → .crumbs, pagination → .pgn, modal → .mdl, formfield → .fld.",
   "composition_note": "Компонент ничего не рисует сам: крошки — awds-component-breadcrumbs (.crumbs целиком), заголовок — awds-component-heading (.heading.heading--h1 с <h1 class=\"heading__title\">). Своё — только колонка, растяжение частей (Fill в макете) и зазор space-3. Уровень h1 задаётся классом .heading--h1 в разметке, а не мостом: мост, как у formfield, раздаёт ступень, которую выбирает потребитель, а здесь уровень один и у heading для него есть публичный класс; мост писал бы в приватные --awds-heading-* чужого компонента и молча отвалился бы при их переименовании. Счётчик под заголовком — элемент .heading__count из awds-component-heading, а не свой .ptitle__count: вид (цвет, шрифт) описан один раз в heading, ptitle задаёт только место (зазор space-1-5 правилом .ptitle > .heading + .heading__count). Свой класс повторил бы пять объявлений, и правка вида в heading не дошла бы до заголовка страницы.",
   "shape": null,
@@ -76,10 +78,26 @@
         "class": "heading__count",
         "required": false,
         "when_note": "счётчик товаров под заголовком — прямой ребёнок .ptitle после .heading; просто текст (<p>), не ссылка"
+      },
+      {
+        "class": "ptitle__back",
+        "required": false,
+        "when_note": "когда у страницы есть путь: ссылка на ближайший раздел выше, сразу после .crumbs; классы кнопки btn btn-pills btn--100 btn--pill и атрибут data-ptitle-back"
+      },
+      {
+        "class": "ptitle__sheet",
+        "required": false,
+        "when_note": "вместе с .ptitle__back: dialog.mdl.mdl-dialog последним ребёнком .ptitle, атрибут data-ptitle-sheet, aria-labelledby на .mdl__title"
+      },
+      {
+        "class": "ptitle__list",
+        "required": false,
+        "within": "ptitle__sheet",
+        "when_note": "ul внутри .mdl__content шторки; пункты — a.list-item.list-item-transparent.list-item--400 с иконкой в __prefix"
       }
     ],
     "attrs": [],
-    "note": "Заголовок — тег <h1>: это заголовок страницы, а не секции, и на странице он один. Проверка тег не видит (Liquid без DOM), поэтому требование записано здесь и в SKILL.md. Корень — <div>; <header> только внутри <main>/<article>, иначе он становится ориентиром banner и спорит с шапкой сайта. Крошки — разметка awds-component-breadcrumbs целиком (nav[aria-label] > ol.crumbs__list), их требования проверяет его контракт. Действия «Все» у заголовка нет: в инстансе макета оно скрыто. Счётчик .heading__count (элемент heading) необязателен и стоит после .heading: просто текст, без ссылки. Вертикальный отступ снаружи задаёт потребитель."
+    "note": "Заголовок — тег <h1>: это заголовок страницы, а не секции, и на странице он один. Проверка тег не видит (Liquid без DOM), поэтому требование записано здесь и в SKILL.md. Корень — <div>; <header> только внутри <main>/<article>, иначе он становится ориентиром banner и спорит с шапкой сайта. Крошки — разметка awds-component-breadcrumbs целиком (nav[aria-label] > ol.crumbs__list), их требования проверяет его контракт. Действия «Все» у заголовка нет: в инстансе макета оно скрыто. Счётчик .heading__count (элемент heading) необязателен и стоит после .heading: просто текст, без ссылки. Вертикальный отступ снаружи задаёт потребитель. С 1.2.0: ниже 1024 вместо крошек «Назад» — <a>, а не <button>: без скрипта это переход на ближайший раздел выше; page-title.js ставит role=button и открывает шторку showModal(). Шторка — <dialog> внутри .ptitle (CSS блока в @scope не достаёт до вынесенного окна); id заголовка шторки уникален на странице. В шторке разделы выше текущего, от «Главной», текущей страницы нет."
   },
   "preview": {
     "base_class": "ptitle",
@@ -127,10 +145,11 @@
       "level": "component",
       "target": null,
       "severity": "minor",
-      "status": "open",
+      "status": "answered",
       "asana_gid": null,
       "raised_at": "2026-10-09",
-      "answer": null
+      "answer": "Макет 10.10.2026: мобильная ячейка view=mobile (1073:787) — вместо крошек «Назад», зазор до заголовка тот же space-3 (12); на планшете и мобиле, шторка back-sheet (1073:2928).",
+      "answered_at": "2026-10-10"
     },
     {
       "id": "page-title-figma-prop-name",
@@ -164,6 +183,17 @@
       "status": "open",
       "asana_gid": null,
       "raised_at": "2026-10-09",
+      "answer": null
+    },
+    {
+      "id": "page-title-modal-header-height",
+      "text": "Шапка шторки в коде 56 против 46 в макете: в modal / dialog крестик стоит абсолютно и высоты шапке не добавляет, в коде modal он в потоке. Править modal (крестик поверх, шапка 46) для всех окон?",
+      "level": "component",
+      "target": "awds-component-modal",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": null,
+      "raised_at": "2026-10-10",
       "answer": null
     }
   ],
@@ -200,15 +230,24 @@
     "parent_task": "💠 1 · core",
     "primary": true
   },
+  "js_files": [
+    "page-title.js"
+  ],
   "uses": {
     "awds-component-breadcrumbs": "1.0.0",
-    "awds-component-heading": "2.1.0"
+    "awds-component-heading": "2.2.0",
+    "awds-component-button": "2.2.15",
+    "awds-component-modal": "1.3.1",
+    "awds-component-list-item": "2.4.2"
   },
   "contract": {
     "classes": [
+      "crumbs",
       "heading",
       "heading__count",
-      "ptitle"
+      "ptitle",
+      "ptitle__back",
+      "ptitle__list"
     ],
     "attributes": [],
     "elements": [],

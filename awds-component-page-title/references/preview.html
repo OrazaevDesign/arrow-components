@@ -10,7 +10,10 @@
   <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
   <link rel="stylesheet" href="../../awds-component-button-area/references/button-area.css">
-  <link rel="stylesheet" href="../../awds-component-button/references/button-tertiary.css">
+  <link rel="stylesheet" href="../../awds-component-button/references/button-pills.css">
+  <link rel="stylesheet" href="../../awds-component-button/references/button-ghost.css">
+  <link rel="stylesheet" href="../../awds-component-list-item/references/list-item-transparent.css">
+  <link rel="stylesheet" href="../../awds-component-modal/references/modal.css">
   <link rel="stylesheet" href="../../awds-component-breadcrumbs/references/breadcrumbs.css">
   <link rel="stylesheet" href="../../awds-component-heading/references/heading.css">
   <link rel="stylesheet" href="./page-title.css">
@@ -49,7 +52,7 @@
   <code>&lt;h1&gt;</code> (<code>awds-component-heading</code>, <code>.heading--h1</code>),
   зазор <code>space-3</code>; под заголовком — необязательный счётчик
   <code>.heading__count</code> (элемент <code>heading</code>, текст, не ссылка), зазор <code>space-1-5</code>. Своих цветов и шрифтов нет. Кегль h1 зависит от ширины окна
-  и масштаба <code>.typo-*</code> — эталон 34/34 сверяется на десктопе (≥1024) в моде medium.
+  и масштаба <code>.typo-*</code> — эталон 34/34 сверяется на десктопе (≥1024) в моде medium. Ниже 1024 вместо крошек — кнопка «Назад» (<code>button / pills</code> 100), по нажатию шторка <code>modal</code> «Вернуться» со списком разделов (<code>list-item / transparent</code> 400): сузьте окно.
 </p>
 <div class="toolbar">
   <label>Тема: <select id="theme"><option value="light">light</option><option value="dark">dark</option></select></label>
@@ -62,12 +65,14 @@
 
 <p class="pg-h2">Эталон из макета</p>
 <div class="case">
-  <div class="cap">page-title · 1050:139853 · ширина 351 · Главная › Рубрика / Heading / 200 товаров</div>
+  <div class="cap">page-title · desktop 1050:139853 / mobile 1073:787 · ширина 351 · ≥1024 крошки, ниже — «Назад» со шторкой «Вернуться» (1073:2928)</div>
   <div class="w351">
     <div class="ptitle" id="case-figma">
       <nav class="crumbs" aria-label="Хлебные крошки" data-trail="Главная|Рубрика"></nav>
+      <a class="btn btn-pills btn--100 btn--pill ptitle__back" href="#" data-ptitle-back><svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M9.29996 3.75734C9.56031 3.49709 9.98203 3.49705 10.2423 3.75734C10.5027 4.01766 10.5026 4.43936 10.2423 4.69972L6.94254 7.99952L10.2423 11.2993C10.5027 11.5597 10.5027 11.9823 10.2423 12.2427C9.98206 12.5028 9.56028 12.5028 9.29996 12.2427L5.52848 8.4712C5.26821 8.2109 5.2683 7.78917 5.52848 7.52882L9.29996 3.75734Z" fill="currentColor"/></svg>Назад</a>
       <div class="heading heading--h1"><h1 class="heading__title">Heading</h1></div>
       <p class="heading__count">200 товаров</p>
+      <dialog class="mdl mdl-dialog ptitle__sheet" aria-labelledby="pt-sheet-title" data-ptitle-sheet><header class="mdl__header"><h2 class="mdl__title" id="pt-sheet-title">Вернуться</h2><button class="btn btn-ghost btn--200 btn--icon-only mdl__close" type="button" aria-label="Закрыть" data-ptitle-close><svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M11.7711 3.28618C12.0313 3.02611 12.4531 3.02622 12.7135 3.28618C12.9738 3.54653 12.9738 3.96919 12.7135 4.22954L8.94199 8.00005L12.7135 11.7715C12.9738 12.0319 12.9738 12.4536 12.7135 12.7139C12.4531 12.9743 12.0314 12.9743 11.7711 12.7139L7.9996 8.94243L4.2291 12.7149C3.96879 12.975 3.54604 12.975 3.28574 12.7149C3.02545 12.4546 3.02555 12.0319 3.28574 11.7715L7.05722 8.00005L3.28574 4.22954C3.02539 3.96919 3.02539 3.54653 3.28574 3.28618C3.54609 3.02583 3.96875 3.02583 4.2291 3.28618L7.9996 7.05767L11.7711 3.28618Z" fill="currentColor"/></svg></button></header><div class="mdl__content"><ul class="ptitle__list"><li><a class="list-item list-item-transparent list-item--400" href="#"><span class="list-item__prefix" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M10.4168 5C14.789 5.00013 18.3338 8.54482 18.3338 12.917C18.3336 13.377 17.9599 13.7499 17.4998 13.75C17.0398 13.7499 16.667 13.377 16.6668 12.917C16.6668 9.46529 13.8685 6.66712 10.4168 6.66699C8.12483 6.66699 6.1199 7.90112 5.03205 9.74219L8.4217 9.14453C8.87465 9.065 9.30655 9.3674 9.38654 9.82031C9.46635 10.2735 9.16297 10.7062 8.70978 10.7861L3.81721 11.6475C3.78206 11.6549 3.74595 11.6602 3.70978 11.6631C3.70147 11.6638 3.6927 11.6637 3.68439 11.6641C3.66869 11.6648 3.65236 11.6662 3.63654 11.666C3.62119 11.6659 3.60593 11.665 3.59064 11.6641C3.57874 11.6633 3.56645 11.6634 3.55451 11.6621C3.53612 11.6602 3.51802 11.6565 3.49982 11.6533C3.49224 11.652 3.48396 11.651 3.47638 11.6494C3.36528 11.6269 3.25857 11.5819 3.16388 11.5156C2.98318 11.3889 2.85956 11.1958 2.82111 10.9785L1.95295 6.05371C1.8732 5.60061 2.17566 5.16884 2.62873 5.08887C3.08183 5.00901 3.51349 5.31162 3.59357 5.76465L4.0301 8.23926C5.47045 6.27584 7.79395 5 10.4168 5Z" fill="currentColor"/></svg></span><span class="list-item__content"><span class="list-item__title">Главная</span></span></a></li><li><a class="list-item list-item-transparent list-item--400" href="#"><span class="list-item__prefix" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><path d="M10.4168 5C14.789 5.00013 18.3338 8.54482 18.3338 12.917C18.3336 13.377 17.9599 13.7499 17.4998 13.75C17.0398 13.7499 16.667 13.377 16.6668 12.917C16.6668 9.46529 13.8685 6.66712 10.4168 6.66699C8.12483 6.66699 6.1199 7.90112 5.03205 9.74219L8.4217 9.14453C8.87465 9.065 9.30655 9.3674 9.38654 9.82031C9.46635 10.2735 9.16297 10.7062 8.70978 10.7861L3.81721 11.6475C3.78206 11.6549 3.74595 11.6602 3.70978 11.6631C3.70147 11.6638 3.6927 11.6637 3.68439 11.6641C3.66869 11.6648 3.65236 11.6662 3.63654 11.666C3.62119 11.6659 3.60593 11.665 3.59064 11.6641C3.57874 11.6633 3.56645 11.6634 3.55451 11.6621C3.53612 11.6602 3.51802 11.6565 3.49982 11.6533C3.49224 11.652 3.48396 11.651 3.47638 11.6494C3.36528 11.6269 3.25857 11.5819 3.16388 11.5156C2.98318 11.3889 2.85956 11.1958 2.82111 10.9785L1.95295 6.05371C1.8732 5.60061 2.17566 5.16884 2.62873 5.08887C3.08183 5.00901 3.51349 5.31162 3.59357 5.76465L4.0301 8.23926C5.47045 6.27584 7.79395 5 10.4168 5Z" fill="currentColor"/></svg></span><span class="list-item__content"><span class="list-item__title">Выбор покупателей</span></span></a></li></ul></div><footer class="mdl__footer mdl__footer--empty"></footer></dialog>
     </div>
   </div>
 </div>
@@ -166,12 +171,24 @@
     const cs = (el) => getComputedStyle(el);
     const px = (el, p) => parseFloat(cs(el)[p]);
     const r = (el) => el.getBoundingClientRect();
-    const desktopMedium = innerWidth >= 1024 && html.classList.contains('typo-medium');
-    const rows = [
+    const back = root.querySelector('.ptitle__back');
+    const desktop = innerWidth >= 1024;
+    const desktopMedium = desktop && html.classList.contains('typo-medium');
+    const rows = desktop ? [
       ['зазор крошки ↔ заголовок', Math.round(r(heading).top - r(crumbs).bottom), 12],
       ['зазор в узкой колонке', Math.round(r(narrow.querySelector('.heading')).top - r(narrow.querySelector('.crumbs')).bottom), 12],
       ['высота крошек', Math.round(r(crumbs).height), 16],
       ['ширина крошек = ширина компонента', Math.round(r(crumbs).width), Math.round(r(root).width)],
+      ['«Назад» скрыта (высота)', Math.round(r(back).height), 0],
+    ] : [
+      ['крошки скрыты (высота)', Math.round(r(crumbs).height), 0],
+      ['«Назад» высота', Math.round(r(back).height), 24],
+      ['«Назад» прижата влево', Math.round(r(back).left - r(root).left), 0],
+      ['зазор «Назад» ↔ заголовок', Math.round(r(heading).top - r(back).bottom), 12],
+      ['«Назад» кегль', px(back, 'fontSize'), 13],
+      ['«Назад» иконка', Math.round(r(back.querySelector('svg')).width), 16],
+    ];
+    rows.push(
       ['ширина заголовка = ширина компонента', Math.round(r(heading).width), Math.round(r(root).width)],
       ['высота без крошек = высота заголовка', Math.round(r(solo).height), Math.round(r(solo.querySelector('.heading')).height)],
       ['зазор заголовок ↔ счётчик', Math.round(r(count).top - r(heading).bottom), 6],
@@ -180,7 +197,9 @@
       ['счётчик трекинг', px(count, 'letterSpacing'), 0.1],
       ['счётчик насыщенность', px(count, 'fontWeight'), 400],
       ['высота коробки счётчика', Math.round(r(count).height), 16],
-    ];
+    );
+    // Ниже 1024 h1 уменьшается внутри роли, поэтому высота сверяется суммой частей: «Назад» 24 + 12 + h1 + 6 + 16.
+    if (!desktop) rows.push(['высота компонента = «Назад» + 12 + h1 + 6 + счётчик', Math.round(r(root).height), Math.round(r(back).height + 12 + r(heading).height + 6 + r(count).height)]);
     if (desktopMedium) rows.push(
       ['h1 кегль', px(title, 'fontSize'), 34],
       ['h1 интерлиньяж', px(title, 'lineHeight'), 34],
@@ -205,7 +224,9 @@
       (desktopMedium ? '' : '<tr><td colspan="4">h1 34/34 сверяется только на десктопе (≥1024) в моде medium</td></tr>');
   }
   check();
+  addEventListener('resize', check);
 </script>
+<script src="./page-title.js"></script>
 
 </body>
 </html>
