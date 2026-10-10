@@ -1,4 +1,4 @@
-/* ArrowDS · page-title@1.1.0
+/* ArrowDS · page-title@1.2.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -10,12 +10,30 @@
   min-width: 0;
 }
 
-.ptitle > * + * {
+.ptitle > :is(.crumbs, .ptitle__back) ~ .heading {
   margin-block-start: var(--awds-space-3);
 }
 
 .ptitle > .heading + .heading__count {
   margin-block-start: var(--awds-space-1-5);
+}
+
+.ptitle__back {
+  align-self: flex-start;
+}
+
+.ptitle__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .ptitle > .ptitle__back { display: none; }
+}
+
+@media (max-width: 1023px) {
+  .ptitle > .crumbs { display: none; }
 }
 
 }
