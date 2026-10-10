@@ -77,6 +77,19 @@
   </div>
 </div>
 
+<p class="pg-h2">Выше только «Главная»</p>
+<p class="note">Шторки нет: «Назад» — обычная ссылка на главную, скрипт её не трогает (видно ниже 1024).</p>
+<div class="case">
+  <div class="cap">Главная › Каталог — без &lt;dialog&gt;</div>
+  <div class="w351">
+    <div class="ptitle" id="case-home">
+      <nav class="crumbs" aria-label="Хлебные крошки — выше только главная" data-trail="Главная|Каталог"></nav>
+      <a class="btn btn-pills btn--100 btn--pill ptitle__back" href="/" data-ptitle-back><svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M9.29996 3.75734C9.56031 3.49709 9.98203 3.49705 10.2423 3.75734C10.5027 4.01766 10.5026 4.43936 10.2423 4.69972L6.94254 7.99952L10.2423 11.2993C10.5027 11.5597 10.5027 11.9823 10.2423 12.2427C9.98206 12.5028 9.56028 12.5028 9.29996 12.2427L5.52848 8.4712C5.26821 8.2109 5.2683 7.78917 5.52848 7.52882L9.29996 3.75734Z" fill="currentColor"/></svg>Назад</a>
+      <div class="heading heading--h1"><p class="heading__title">Каталог</p></div>
+    </div>
+  </div>
+</div>
+
 <p class="pg-h2">Длинный путь и длинный заголовок в узкой колонке</p>
 <p class="note">Крошки переносятся по правилу <code>breadcrumbs</code>, заголовок — <code>text-wrap: balance</code> по правилу <code>heading</code>. Зазор между ними остаётся 12.</p>
 <div class="case narrow">
@@ -187,6 +200,7 @@
       ['зазор «Назад» ↔ заголовок', Math.round(r(heading).top - r(back).bottom), 12],
       ['«Назад» кегль', px(back, 'fontSize'), 13],
       ['«Назад» иконка', Math.round(r(back.querySelector('svg')).width), 16],
+      ['выше только «Главная»: «Назад» осталась ссылкой (role)', document.querySelector('#case-home .ptitle__back').getAttribute('role') === null ? 1 : 0, 1],
     ];
     rows.push(
       ['ширина заголовка = ширина компонента', Math.round(r(heading).width), Math.round(r(root).width)],
