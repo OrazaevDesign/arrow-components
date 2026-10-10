@@ -548,6 +548,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  /* Зона нажатия не ниже 24 px (WCAG 2.5.8): строка caption 21 px стоит вплотную к названию,
+     и тап попадал то в рубрику, то в товар (iPhone, 09.10.2026). Поле снизу продлевает ссылку
+     в пустой верх следующей строки, отрицательное поле возвращает раскладку макета; position
+     поднимает ссылку над соседом — иначе его бокс перехватил бы нажатие. */
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-price-first .pcard__category:hover {
@@ -670,4 +677,52 @@
   .pcard-price-first .pcard__cart-view {
     transition: none;
   }
+}
+
+/* =============================================================================
+   Скелетон (state=skeleton, макет 10.10.2026: секция ↪ product-card, ячейки state=skeleton)
+   =============================================================================
+   Силуэт карточки, пока её данные грузятся. Разметка — каркас настоящей карточки
+   (.pcard__media, .pcard__slider-spacer, .pcard__content, .pcard__cart, .pcard__feedback),
+   а каждая плашка несёт класс своей строки (.price, .pcard__brand, .pcard__name,
+   .pcard__category) и неразрывный пробел внутри. Высоту строки поэтому задают те же правила,
+   что у карточки, — и правки потребителя тоже: блок, поднявший бренд на роль выше, получит
+   скелетон той же высоты. В макете rest = skeleton до пикселя; проверено в превью.
+
+   Своё у скелетона: текст прозрачен, ширина — шаг space из макета (16/20/32/24/16 =
+   64/80/128/96/64, не шире контента), заливка во ::before — уже строки на space-1 сверху и
+   снизу, чтобы строки не слипались в ступеньку. Заливка surface-container-low, скругление
+   border-radius-100; у кнопки — плашка высотой кнопки 400 (space-10) со скруглением кнопки.
+   Мерцания нет. Скелетон декоративный: aria-hidden ставит разметка. */
+.pcard.pcard-price-first.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--price    { width: var(--awds-space-16); height: var(--awds-price-lh); }  /* высоту цены держит её число, а не .price — берём ту же переменную */
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--brand    { width: var(--awds-space-20); }
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--name     { width: var(--awds-space-32); }
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24); }
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16); }
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }

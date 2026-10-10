@@ -157,6 +157,14 @@
     <figure class="frame-mobile"><div id="slot-mobile"></div><figcaption>Mobile (.pcard--mobile)</figcaption></figure>
   </div>
 
+  <h2>Скелетон (state=skeleton) рядом с карточкой</h2>
+  <p style="font-size:13px;opacity:.7;margin:0 0 12px">Состав плашек повторяет настройки карточки (рубрика, корзина, отзывы). Высота скелетона должна равняться высоте карточки той же вью — строка ниже.</p>
+  <div class="stage">
+    <figure class="frame-desktop"><div id="slot-sk-desktop" style="display:flex;gap:16px;align-items:flex-start"></div><figcaption>Desktop-Tablet: rest · skeleton</figcaption></figure>
+    <figure class="frame-mobile"><div id="slot-sk-mobile" style="display:flex;gap:16px;align-items:flex-start"></div><figcaption>Mobile: rest · skeleton</figcaption></figure>
+  </div>
+  <p id="sk-check" style="font:13px/1.4 ui-monospace,monospace"></p>
+
   <h2>В маркет-гриде (Desktop-Tablet)</h2>
   <div class="grid" id="grid"></div>
 
@@ -416,6 +424,23 @@
 
     const CARDS = { 'brand-first': cardBrandFirst, 'buy-now': cardBuyNow, 'button-price': cardButtonPrice };
     const card = (view, opts) => (CARDS[opts.variant] || cardPriceFirst)(view, opts);
+    // Скелетон: каркас карточки + плашки .pcard__skel в порядке строк варианта (SKILL.md, «Скелетон»).
+    const SK_ORDER = {
+      'price-first':  ['price', 'brand', 'name', 'category', 'cart', 'feedback'],
+      'brand-first':  ['brand', 'name', 'category', 'price', 'cart', 'feedback'],
+      'buy-now':      ['price', 'brand', 'name', 'category', 'cart', 'feedback'],
+      'button-price': ['brand', 'name', 'category', 'cart', 'feedback'],
+    };
+    function skeleton(view, opts) {
+      const rows = (SK_ORDER[opts.variant] || SK_ORDER['price-first']).map((r) => {
+        if (r === 'category') return rowOn(opts, 'category') ? '<span class="pcard__category pcard__skel pcard__skel--category">&nbsp;</span>' : '';
+        if (r === 'cart') return rowOn(opts, 'cartRow') ? '<div class="pcard__cart"><span class="pcard__skel pcard__skel--button"></span></div>' : '';
+        if (r === 'feedback') return opts.feedback === 'off' ? '' : '<div class="pcard__feedback"><span class="pcard__reviews-count pcard__skel pcard__skel--feedback">&nbsp;</span></div>';
+        if (r === 'price' && opts.variant === 'brand-first') return '<div class="pcard__price"><span class="price pcard__skel pcard__skel--price">&nbsp;</span></div>';
+        return `<span class="${({price:'price ',brand:'pcard__brand ',name:'pcard__name '})[r] || ''}pcard__skel pcard__skel--${r}">&nbsp;</span>`;
+      }).join('');
+      return `<div class="pcard pcard-${opts.variant}${view === 'mobile' ? ' pcard--mobile' : ''} pcard--skeleton" aria-hidden="true"><div class="pcard__media"></div><div class="pcard__slider-spacer"></div><div class="pcard__content">${rows}</div></div>`;
+    }
 
     // --- Галерея: перелистывание фото (десктоп — стрелки, тач — свайп) ---
     // Десктоп (мышь): стрелки .pcard__nav листают по кругу; позиция курсора кадр не
@@ -545,6 +570,17 @@
       };
       document.querySelector('#slot-desktop').innerHTML = card('desktop', opts);
       document.querySelector('#slot-mobile').innerHTML  = card('mobile', opts);
+      const skOpts = Object.assign({}, opts, { frames: 1 });
+      document.querySelector('#slot-sk-desktop').innerHTML = card('desktop', skOpts) + skeleton('desktop', skOpts);
+      document.querySelector('#slot-sk-mobile').innerHTML  = card('mobile', skOpts) + skeleton('mobile', skOpts);
+      requestAnimationFrame(() => {
+        const out = ['desktop', 'mobile'].map((v) => {
+          const [c, k] = document.querySelectorAll(`#slot-sk-${v} .pcard`);
+          const hc = Math.round(c.getBoundingClientRect().height), hk = Math.round(k.getBoundingClientRect().height);
+          return `${v}: карточка ${hc} · скелетон ${hk} — ${Math.abs(hc - hk) <= 1 ? 'сходится' : 'НЕ СХОДИТСЯ'}`;
+        });
+        document.querySelector('#sk-check').textContent = out.join('   |   ');
+      });
 
       const grid = document.querySelector('#grid');
       grid.innerHTML = '';
