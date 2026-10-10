@@ -1,4 +1,4 @@
-/* ArrowDS · heading@2.1.0
+/* ArrowDS · heading@2.2.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -18,6 +18,7 @@
 .heading__title {
   margin: 0;
   min-width: 0;                      
+  font-family: var(--awds-font-family-heading);   
   font-size: var(--awds-heading-fs);
   line-height: var(--awds-heading-lh);
   letter-spacing: var(--awds-heading-ls);
