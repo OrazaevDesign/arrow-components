@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.13, badge@1.2.2, breadcrumbs@1.0.0, button@2.2.14, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.13, button-overhung@2.0.18, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@2.2.0, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.8, list-item@2.4.2, modal@1.2.3, notice@2.0.6, page-title@1.2.1, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.1.3, progress@2.0.4, radio@1.0.11, range@2.0.13, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.10, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
+   Состав: focus-selection@2.0.13, badge@1.2.2, breadcrumbs@1.0.0, button@2.2.14, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.13, button-overhung@2.0.18, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@2.2.0, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.8, list-item@2.4.2, modal@1.2.3, notice@2.0.6, page-title@1.2.1, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.2.0, progress@2.0.4, radio@1.0.11, range@2.0.13, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.10, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -6383,6 +6383,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-brand-first .pcard__category:hover {
@@ -6523,6 +6526,53 @@
   .pcard-brand-first .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 .pcard.pcard-button-price {
@@ -6786,6 +6836,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-button-price .pcard__name:hover {
@@ -6885,6 +6938,53 @@
   .pcard-button-price .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 .pcard.pcard-buy-now {
@@ -7171,6 +7271,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-buy-now .pcard__name:hover {
@@ -7270,6 +7373,53 @@
   .pcard-buy-now .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 .pcard {
@@ -7569,6 +7719,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-price-first .pcard__category:hover {
@@ -7665,6 +7818,53 @@
   .pcard-price-first .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 .progress {

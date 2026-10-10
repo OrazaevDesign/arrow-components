@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@3.1.3
+/* ArrowDS · product-card@3.2.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -307,6 +307,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-brand-first .pcard__category:hover {
@@ -447,6 +450,53 @@
   .pcard-brand-first .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 .pcard.pcard-button-price {
@@ -710,6 +760,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-button-price .pcard__name:hover {
@@ -809,6 +862,53 @@
   .pcard-button-price .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-button-price.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 .pcard.pcard-buy-now {
@@ -1095,6 +1195,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-buy-now .pcard__name:hover {
@@ -1194,6 +1297,53 @@
   .pcard-buy-now .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-buy-now.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 .pcard {
@@ -1493,6 +1643,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
+  padding-block-end: var(--awds-space-1);
+  margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
 .pcard-price-first .pcard__category:hover {
@@ -1589,6 +1742,53 @@
   .pcard-price-first .pcard__cart-view {
     transition: none;
   }
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__media {
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  color: transparent;
+  pointer-events: none;
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel::before {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block: var(--awds-space-1);
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-low));
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--price { width: var(--awds-space-16); height: var(--awds-price-lh);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--brand { width: var(--awds-space-20);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--name { width: var(--awds-space-32);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--category { width: var(--awds-space-24);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--feedback { width: var(--awds-space-16);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--button {
+  width: 100%;
+  height: var(--awds-space-10);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__skel--button::before {
+  inset-block: 0;
+  border-radius: var(--awds-rounded-border-radius-400);
 }
 
 }

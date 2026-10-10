@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 675 из 1369 объявленных в теме. */
+   Переменных: 680 из 1369 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -189,6 +189,9 @@
   --surface-dim-light: 245 245 245;
   --surface-dim-dark: 28 28 28;
   --surface-dim: var(--surface-dim-light);
+  --surface-container-low-light: 245 245 245;
+  --surface-container-low-dark: 33 33 33;
+  --surface-container-low: var(--surface-container-low-light);
   --surface-container-container-light: 237 237 237;
   --surface-container-container-dark: 28 28 28;
   --surface-container-container: var(--surface-container-container-light);
@@ -382,6 +385,8 @@
   --awds-space-14: 56px;
   --awds-space-16: 64px;
   --awds-space-20: 80px;
+  --awds-space-24: 96px;
+  --awds-space-32: 128px;
   --awds-space-8-5: 34px;
   --awds-space-9-5: 38px;
   --awds-space-11-5: 46px;
@@ -739,6 +744,7 @@
   --surface-bright: var(--surface-bright-light);
   --surface-surface: var(--surface-surface-light);
   --surface-dim: var(--surface-dim-light);
+  --surface-container-low: var(--surface-container-low-light);
   --surface-container-container: var(--surface-container-container-light);
   --surface-chromatic-start: var(--surface-chromatic-start-light);
   --surface-chromatic-mid-start: var(--surface-chromatic-mid-start-light);
@@ -824,6 +830,7 @@
   --surface-bright: var(--surface-bright-dark);
   --surface-surface: var(--surface-surface-dark);
   --surface-dim: var(--surface-dim-dark);
+  --surface-container-low: var(--surface-container-low-dark);
   --surface-container-container: var(--surface-container-container-dark);
   --surface-chromatic-start: var(--surface-chromatic-start-dark);
   --surface-chromatic-mid-start: var(--surface-chromatic-mid-start-dark);
