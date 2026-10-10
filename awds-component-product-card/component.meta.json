@@ -1,48 +1,11 @@
 {
   "component": "product-card",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "contract_hash": "sha256:67104186bb34fce7f56064d154bef35e80898521c19ed0a05197002c78f8c2a9",
-  "artifact_hash": "sha256:352b50be409fd329fbf05ec3d921dba3be93a3eaecb5f85404616afb41f30d17",
+  "artifact_hash": "sha256:03a2f47768cda55a7ea06e78fc249ee3a8df016ef4deb7a2cbbbfd8c18dc6c58",
   "visual_change": true,
-  "released_at": "2026-10-10T21:30:42.866Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 24,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "0.4s",
-      "where": "transition",
-      "count": 9,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "0.3s",
-      "where": "transition",
-      "count": 7,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "0.2s",
-      "where": "transition",
-      "count": 6,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "0.12s",
-      "where": "transition",
-      "count": 6,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    },
-    {
-      "value": "0.15s",
-      "where": "animation",
-      "count": 2,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "released_at": "2026-10-10T21:39:53.915Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -217,8 +180,18 @@
     "--awds-font-weight-semibold",
     "--awds-layout-card-product-max",
     "--awds-layout-card-product-min",
+    "--awds-motion-duration-enter",
+    "--awds-motion-duration-pulse",
+    "--awds-motion-duration-quick",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-exit",
+    "--awds-motion-ease-linear",
+    "--awds-motion-ease-state",
+    "--awds-motion-ease-swap",
+    "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-opacity-5",
+    "--awds-opacity-50",
     "--awds-rounded-border-radius-100",
     "--awds-rounded-border-radius-200",
     "--awds-rounded-border-radius-400",

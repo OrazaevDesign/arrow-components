@@ -124,7 +124,7 @@
   /* Фото уменьшено на 10% (видна рамка surface-bright). Зум по hover убран в 1.3.2.
      opacity — для кроссфейда кадров галереи (см. ниже). */
   transform: scale(0.9);
-  transition: opacity 0.2s ease-out;
+  transition: opacity var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 /* Галерея: несколько кадров стопкой, активный проявлен (кроссфейд). :not(--active)
@@ -142,12 +142,12 @@
   /* transition-delay кадра: уходящий гаснет мгновенно, но только после того, как новый
      закрыл его целиком (0.3s). Симметричный кроссфейд давал провал: в середине оба кадра
      полупрозрачны, сквозь них просвечивал фон — фото мигало при листании. */
-  transition: opacity 0s linear 0.3s;
+  transition: opacity 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-enter);
 }
 .pcard-brand-first .pcard__image--active {
   opacity: 1;
   z-index: 1;                            /* новый кадр проявляется поверх уходящего */
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 
 /* 3% тёмный скрим над фото в покое, убирается по hover (opacity-5 ≈ округление 3%) */
@@ -157,7 +157,7 @@
   inset: 0;
   pointer-events: none;
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); /* #cell product-card/media/overlay */
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
   z-index: 2;                            /* скрим над активным кадром (z-index 1) */
 }
 .pcard-brand-first .pcard__media:hover .pcard__image-link::after { /* hover на медиа, а не на ссылке: стрелки лежат рядом со ссылкой, и наведение на них не гасит hover фото */
@@ -261,10 +261,10 @@
   align-items: center;
   gap: var(--awds-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
-  transition: transform 0.2s ease-out;
+  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 .pcard-brand-first .pcard__slider--many .slider__dot {
-  transition: transform 0.15s ease-out, width 0.15s ease-out, background-color 0.15s ease-out;
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 .pcard-brand-first .pcard__slider--many .slider__dot--sm {
   transform: scale(0.5);
@@ -308,12 +308,12 @@
   pointer-events: auto;
   /* Список перехода базы button-overhung + translate: правило сильнее .obtn-secondary,
      поэтому список переписывается целиком, иначе цвет и плотность «снапнут». */
-  transition: --awds-obtn-bg 0.15s ease-out,
-              --awds-obtn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out,
-              opacity 0.15s ease-out,
-              translate 0.3s ease-out;
+  transition: --awds-obtn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-obtn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              translate var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 .pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0; }
 .pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0; }
@@ -368,7 +368,7 @@
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -386,7 +386,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -411,7 +411,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));           /* #cell link/heading-rest */
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -561,7 +561,7 @@
   visibility: hidden;
   transform: scale(0.96);
   pointer-events: none;
-  transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-exit), transform var(--awds-motion-duration-state) var(--awds-motion-ease-exit), visibility 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-state);
 }
 .pcard-brand-first .pcard__cart-view > .btn {
   flex: 1 1 auto;
@@ -573,7 +573,7 @@
   visibility: visible;
   transform: scale(1);
   pointer-events: auto;
-  transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-swap), transform var(--awds-motion-duration-enter) var(--awds-motion-ease-swap);
 }
 
 /* Polish (MIFB): уважаем prefers-reduced-motion — гасим зум фото и переходы. */
@@ -611,7 +611,8 @@
    64/80/128/96/64, не шире контента), заливка во ::before — уже строки на space-1 сверху и
    снизу, чтобы строки не слипались в ступеньку. Заливка surface-container-low, скругление
    border-radius-100; у кнопки — плашка высотой кнопки 400 (space-10) со скруглением кнопки.
-   Мерцания нет. Скелетон декоративный: aria-hidden ставит разметка. */
+   Пульс — прозрачность 100 → 50 за --awds-motion-duration-pulse туда и обратно, один на все
+   скелетоны библиотеки (решение 11.10.2026); при reduced-motion плашки стоят. Скелетон декоративный: aria-hidden ставит разметка. */
 .pcard.pcard-brand-first.pcard--skeleton .pcard__media {
   border-radius: var(--awds-rounded-border-radius-500);
   background: rgb(var(--surface-container-low));
@@ -643,4 +644,16 @@
 .pcard.pcard-brand-first.pcard--skeleton .pcard__skel--button::before {
   inset-block: 0;
   border-radius: var(--awds-rounded-border-radius-400);
+}
+.pcard.pcard-brand-first.pcard--skeleton .pcard__media,
+.pcard.pcard-brand-first.pcard--skeleton .pcard__skel::before {
+  animation: pcard-brand-first-skel-pulse var(--awds-motion-duration-pulse) var(--awds-motion-ease-linear) infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pcard.pcard-brand-first.pcard--skeleton .pcard__media,
+  .pcard.pcard-brand-first.pcard--skeleton .pcard__skel::before { animation: none; }
+}
+@keyframes pcard-brand-first-skel-pulse {
+  from { opacity: var(--awds-opacity-100); }
+  to   { opacity: var(--awds-opacity-50); }
 }
