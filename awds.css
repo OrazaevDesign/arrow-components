@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.13, badge@1.2.2, breadcrumbs@1.0.0, button@2.2.14, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.13, button-overhung@2.0.18, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@2.2.0, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.8, list-item@2.4.2, modal@1.2.3, notice@2.0.6, page-title@1.2.1, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.2.0, progress@2.0.4, radio@1.0.11, range@2.0.13, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.10, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
+   Состав: focus-selection@2.0.13, badge@1.2.2, breadcrumbs@1.0.0, button@2.2.14, button-area@2.0.11, button-favorites@2.0.3, button-group@1.0.3, button-menu@2.0.13, button-overhung@2.0.18, checkbox@1.0.11, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.8, emblem@3.0.8, formfield@1.0.14, heading@2.2.0, input@1.0.17, input-combi@1.0.18, input-inline@1.0.1, label@1.0.9, link@1.0.8, list-item@2.4.2, modal@1.2.3, notice@2.0.6, page-title@1.2.1, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.3.0, progress@2.0.4, radio@1.0.11, range@2.0.13, rating@2.0.10, scrollbar@2.0.6, select@1.0.29, select-combi@1.0.31, slider@1.0.10, switch@1.0.10, tab@1.0.7, tab-group@1.0.4, table@1.0.13, textarea@1.0.18, textarea-combi@1.0.7, toast@1.0.1, tooltip@2.0.3, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -145,6 +145,26 @@
   syntax: "<color>";
   inherits: false;
   initial-value: transparent;
+}
+
+@keyframes pcard-brand-first-skel-pulse {
+  from { opacity: var(--awds-opacity-100); }
+  to   { opacity: var(--awds-opacity-50); }
+}
+
+@keyframes pcard-button-price-skel-pulse {
+  from { opacity: var(--awds-opacity-100); }
+  to   { opacity: var(--awds-opacity-50); }
+}
+
+@keyframes pcard-buy-now-skel-pulse {
+  from { opacity: var(--awds-opacity-100); }
+  to   { opacity: var(--awds-opacity-50); }
+}
+
+@keyframes pcard-price-first-skel-pulse {
+  from { opacity: var(--awds-opacity-100); }
+  to   { opacity: var(--awds-opacity-50); }
 }
 
 @property --awds-progress-value {
@@ -6136,7 +6156,7 @@
   object-fit: contain;                   
   display: block;
   transform: scale(0.9);
-  transition: opacity 0.2s ease-out;
+  transition: opacity var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image {
@@ -6145,13 +6165,13 @@
 
 .pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
-  transition: opacity 0s linear 0.3s;
+  transition: opacity 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-enter);
 }
 
 .pcard-brand-first .pcard__image--active {
   opacity: 1;
   z-index: 1;                            
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 
 .pcard-brand-first .pcard__image-link::after {
@@ -6160,7 +6180,7 @@
   inset: 0;
   pointer-events: none;
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); 
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
   z-index: 2;
 }
 
@@ -6256,11 +6276,11 @@
   align-items: center;
   gap: var(--awds-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
-  transition: transform 0.2s ease-out;
+  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard-brand-first .pcard__slider--many .slider__dot {
-  transition: transform 0.15s ease-out, width 0.15s ease-out, background-color 0.15s ease-out;
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .pcard-brand-first .pcard__slider--many .slider__dot--sm {
@@ -6285,12 +6305,12 @@
 
 .pcard__nav > .obtn {
   pointer-events: auto;
-  transition: --awds-obtn-bg 0.15s ease-out,
-              --awds-obtn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out,
-              opacity 0.15s ease-out,
-              translate 0.3s ease-out;
+  transition: --awds-obtn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-obtn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              translate var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 
 .pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0;
@@ -6342,7 +6362,7 @@
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6358,7 +6378,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6378,7 +6398,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));           
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6492,7 +6512,7 @@
   visibility: hidden;
   transform: scale(0.96);
   pointer-events: none;
-  transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-exit), transform var(--awds-motion-duration-state) var(--awds-motion-ease-exit), visibility 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-state);
 }
 
 .pcard-brand-first .pcard__cart-view > .btn {
@@ -6505,7 +6525,7 @@
   visibility: visible;
   transform: scale(1);
   pointer-events: auto;
-  transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-swap), transform var(--awds-motion-duration-enter) var(--awds-motion-ease-swap);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6575,6 +6595,15 @@
   border-radius: var(--awds-rounded-border-radius-400);
 }
 
+.pcard.pcard-brand-first.pcard--skeleton .pcard__media, .pcard.pcard-brand-first.pcard--skeleton .pcard__skel::before {
+  animation: pcard-brand-first-skel-pulse var(--awds-motion-duration-pulse) var(--awds-motion-ease-linear) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard.pcard-brand-first.pcard--skeleton .pcard__media,
+  .pcard.pcard-brand-first.pcard--skeleton .pcard__skel::before { animation: none; }
+}
+
 .pcard.pcard-button-price {
   --awds-pcard-gap: 0;                    
   box-sizing: border-box;
@@ -6632,7 +6661,7 @@
   object-fit: contain;                   
   display: block;
   transform: scale(0.9);                 
-  transition: opacity 0.2s ease-out;
+  transition: opacity var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard-button-price .pcard__image-link:has(.pcard__image--active) .pcard__image {
@@ -6641,13 +6670,13 @@
 
 .pcard-button-price .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
-  transition: opacity 0s linear 0.3s;
+  transition: opacity 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-enter);
 }
 
 .pcard-button-price .pcard__image--active {
   opacity: 1;
   z-index: 1;                            
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 
 .pcard-button-price .pcard__image-link::after {
@@ -6656,7 +6685,7 @@
   inset: 0;
   pointer-events: none;
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); 
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
   z-index: 2;
 }
 
@@ -6751,11 +6780,11 @@
   align-items: center;
   gap: var(--awds-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
-  transition: transform 0.2s ease-out;
+  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard-button-price .pcard__slider--many .slider__dot {
-  transition: transform 0.15s ease-out, width 0.15s ease-out, background-color 0.15s ease-out;
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .pcard-button-price .pcard__slider--many .slider__dot--sm {
@@ -6779,7 +6808,7 @@
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6815,7 +6844,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6831,7 +6860,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));           
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6904,7 +6933,7 @@
   visibility: hidden;
   transform: scale(0.96);
   pointer-events: none;
-  transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-exit), transform var(--awds-motion-duration-state) var(--awds-motion-ease-exit), visibility 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-state);
 }
 
 .pcard-button-price .pcard__cart-view > .btn {
@@ -6917,7 +6946,7 @@
   visibility: visible;
   transform: scale(1);
   pointer-events: auto;
-  transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-swap), transform var(--awds-motion-duration-enter) var(--awds-motion-ease-swap);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6987,6 +7016,15 @@
   border-radius: var(--awds-rounded-border-radius-400);
 }
 
+.pcard.pcard-button-price.pcard--skeleton .pcard__media, .pcard.pcard-button-price.pcard--skeleton .pcard__skel::before {
+  animation: pcard-button-price-skel-pulse var(--awds-motion-duration-pulse) var(--awds-motion-ease-linear) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard.pcard-button-price.pcard--skeleton .pcard__media,
+  .pcard.pcard-button-price.pcard--skeleton .pcard__skel::before { animation: none; }
+}
+
 .pcard.pcard-buy-now {
   --awds-pcard-gap: 0;                    
   box-sizing: border-box;
@@ -7044,7 +7082,7 @@
   object-fit: contain;                   
   display: block;
   transform: scale(0.9);                 
-  transition: opacity 0.2s ease-out;
+  transition: opacity var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard-buy-now .pcard__image-link:has(.pcard__image--active) .pcard__image {
@@ -7053,13 +7091,13 @@
 
 .pcard-buy-now .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
-  transition: opacity 0s linear 0.3s;
+  transition: opacity 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-enter);
 }
 
 .pcard-buy-now .pcard__image--active {
   opacity: 1;
   z-index: 1;                            
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 
 .pcard-buy-now .pcard__image-link::after {
@@ -7068,7 +7106,7 @@
   inset: 0;
   pointer-events: none;
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); 
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
   z-index: 2;
 }
 
@@ -7163,11 +7201,11 @@
   align-items: center;
   gap: var(--awds-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
-  transition: transform 0.2s ease-out;
+  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard-buy-now .pcard__slider--many .slider__dot {
-  transition: transform 0.15s ease-out, width 0.15s ease-out, background-color 0.15s ease-out;
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .pcard-buy-now .pcard__slider--many .slider__dot--sm {
@@ -7230,7 +7268,7 @@
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7250,7 +7288,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7266,7 +7304,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));           
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7339,7 +7377,7 @@
   visibility: hidden;
   transform: scale(0.96);
   pointer-events: none;
-  transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-exit), transform var(--awds-motion-duration-state) var(--awds-motion-ease-exit), visibility 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-state);
 }
 
 .pcard-buy-now .pcard__cart-view > .btn {
@@ -7352,7 +7390,7 @@
   visibility: visible;
   transform: scale(1);
   pointer-events: auto;
-  transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-swap), transform var(--awds-motion-duration-enter) var(--awds-motion-ease-swap);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -7422,6 +7460,15 @@
   border-radius: var(--awds-rounded-border-radius-400);
 }
 
+.pcard.pcard-buy-now.pcard--skeleton .pcard__media, .pcard.pcard-buy-now.pcard--skeleton .pcard__skel::before {
+  animation: pcard-buy-now-skel-pulse var(--awds-motion-duration-pulse) var(--awds-motion-ease-linear) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard.pcard-buy-now.pcard--skeleton .pcard__media,
+  .pcard.pcard-buy-now.pcard--skeleton .pcard__skel::before { animation: none; }
+}
+
 .pcard {
   --awds-pcard-gap: var(--awds-space-2-5);   
   box-sizing: border-box;
@@ -7487,7 +7534,7 @@
   object-fit: contain;                       
   display: block;
   transform: scale(0.9);
-  transition: opacity 0.2s ease-out;
+  transition: opacity var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard__image-link:has(.pcard__image--active) .pcard__image {
@@ -7496,13 +7543,13 @@
 
 .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
   opacity: 0;
-  transition: opacity 0s linear 0.3s;
+  transition: opacity 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-enter);
 }
 
 .pcard__image--active {
   opacity: 1;
   z-index: 1;                            
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 
 .pcard__slider {
@@ -7526,11 +7573,11 @@
   align-items: center;
   gap: var(--awds-space-1);
   transform: translateX(var(--pcard-dots-shift, 0px));
-  transition: transform 0.2s ease-out;
+  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
 }
 
 .pcard__slider--many .slider__dot {
-  transition: transform 0.15s ease-out, width 0.15s ease-out, background-color 0.15s ease-out;
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .pcard__slider--many .slider__dot--sm {
@@ -7550,7 +7597,7 @@
   inset: 0;
   pointer-events: none;
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); 
-  transition: opacity 0.3s ease-out;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
   z-index: 2;
 }
 
@@ -7677,7 +7724,7 @@
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;                                        
-  transition: color 0.15s ease-out;                             
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);                             
   display: block;                                               
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7693,7 +7740,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));        
   text-decoration: none;                                        
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   width: 100%;
   overflow: hidden;
@@ -7714,7 +7761,7 @@
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));           
   text-decoration: none;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7786,7 +7833,7 @@
   visibility: hidden;
   transform: scale(0.96);
   pointer-events: none;
-  transition: opacity 0.15s ease-in, transform 0.15s ease-in, visibility 0s linear 0.15s;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-exit), transform var(--awds-motion-duration-state) var(--awds-motion-ease-exit), visibility 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-state);
 }
 
 .pcard-price-first .pcard__cart-view > .btn {
@@ -7799,7 +7846,7 @@
   visibility: visible;
   transform: scale(1);
   pointer-events: auto;
-  transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1), transform 0.3s cubic-bezier(0.2, 0, 0, 1);
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-swap), transform var(--awds-motion-duration-enter) var(--awds-motion-ease-swap);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -7865,6 +7912,15 @@
 .pcard.pcard-price-first.pcard--skeleton .pcard__skel--button::before {
   inset-block: 0;
   border-radius: var(--awds-rounded-border-radius-400);
+}
+
+.pcard.pcard-price-first.pcard--skeleton .pcard__media, .pcard.pcard-price-first.pcard--skeleton .pcard__skel::before {
+  animation: pcard-price-first-skel-pulse var(--awds-motion-duration-pulse) var(--awds-motion-ease-linear) infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pcard.pcard-price-first.pcard--skeleton .pcard__media,
+  .pcard.pcard-price-first.pcard--skeleton .pcard__skel::before { animation: none; }
 }
 
 .progress {

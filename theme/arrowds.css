@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 680 из 1369 объявленных в теме. */
+   Переменных: 688 из 1369 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -1098,4 +1098,12 @@
   --awds-shadow-elevation-1: var(--awds-shadow-shadow1-offset-x-elevation-1) var(--awds-shadow-shadow1-offset-y-elevation-1) var(--awds-shadow-shadow1-blur-radius-elevation-1) var(--awds-shadow-shadow1-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow1-color-elevation-1)), var(--awds-shadow-shadow2-offset-x-elevation-1) var(--awds-shadow-shadow2-offset-y-elevation-1) var(--awds-shadow-shadow2-blur-radius-elevation-1) var(--awds-shadow-shadow2-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow2-color-elevation-1)), var(--awds-shadow-shadow3-offset-x-elevation-1) var(--awds-shadow-shadow3-offset-y-elevation-1) var(--awds-shadow-shadow3-blur-radius-elevation-1) var(--awds-shadow-shadow3-spread-radius-elevation-1) rgb(var(--awds-shadow-shadow3-color-elevation-1));
   --awds-shadow-elevation-3: var(--awds-shadow-shadow1-offset-x-elevation-3) var(--awds-shadow-shadow1-offset-y-elevation-3) var(--awds-shadow-shadow1-blur-radius-elevation-3) var(--awds-shadow-shadow1-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow1-color-elevation-3)), var(--awds-shadow-shadow2-offset-x-elevation-3) var(--awds-shadow-shadow2-offset-y-elevation-3) var(--awds-shadow-shadow2-blur-radius-elevation-3) var(--awds-shadow-shadow2-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow2-color-elevation-3)), var(--awds-shadow-shadow3-offset-x-elevation-3) var(--awds-shadow-shadow3-offset-y-elevation-3) var(--awds-shadow-shadow3-blur-radius-elevation-3) var(--awds-shadow-shadow3-spread-radius-elevation-3) rgb(var(--awds-shadow-shadow3-color-elevation-3));
   --awds-shadow-elevation-4: var(--awds-shadow-shadow1-offset-x-elevation-4) var(--awds-shadow-shadow1-offset-y-elevation-4) var(--awds-shadow-shadow1-blur-radius-elevation-4) var(--awds-shadow-shadow1-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow1-color-elevation-4)), var(--awds-shadow-shadow2-offset-x-elevation-4) var(--awds-shadow-shadow2-offset-y-elevation-4) var(--awds-shadow-shadow2-blur-radius-elevation-4) var(--awds-shadow-shadow2-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow2-color-elevation-4)), var(--awds-shadow-shadow3-offset-x-elevation-4) var(--awds-shadow-shadow3-offset-y-elevation-4) var(--awds-shadow-shadow3-blur-radius-elevation-4) var(--awds-shadow-shadow3-spread-radius-elevation-4) rgb(var(--awds-shadow-shadow3-color-elevation-4));
+  --awds-motion-duration-state: 0.15s;
+  --awds-motion-duration-quick: 0.2s;
+  --awds-motion-duration-enter: 0.3s;
+  --awds-motion-duration-pulse: 2s;
+  --awds-motion-ease-state: ease-out;
+  --awds-motion-ease-exit: ease-in;
+  --awds-motion-ease-linear: linear;
+  --awds-motion-ease-swap: cubic-bezier(0.2, 0, 0, 1);
 }
