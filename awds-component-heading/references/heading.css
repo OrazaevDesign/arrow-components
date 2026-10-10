@@ -28,8 +28,8 @@
    Цвета (роли с сайта, инлайн):
      заголовок            surface-on-highest
      действие «Все»       ВНЕШНИЙ компонент awds-component-button
-                          (.btn.btn-tertiary.btn--100.btn--pill, только текст, без иконки;
-                          подключи button-tertiary.css). В Figma это инстанс button / tertiary,
+                          (.btn.btn-pills.btn--100.btn--pill, только текст, без иконки;
+                          подключи button-pills.css). В Figma это инстанс button / pills,
                           size=100, скругление 26 = пилюля. Цвет/размер/состояния/фокус держит button.
      счётчик «200 товаров» surface-on-high = link/muted-rest в покое (#6a6a6a), control 300
                           13/16/0.1, regular. Просто текст, не ссылка: в макете инстанс
@@ -60,6 +60,7 @@
 .heading__title {
   margin: 0;
   min-width: 0;                      /* длинное слово не распирает строку */
+  font-family: var(--awds-font-family-heading);   /* #cell family/heading — заголовок шрифтом заголовков, «Все» и счётчик — системным от .heading */
   font-size: var(--awds-heading-fs);
   line-height: var(--awds-heading-lh);
   letter-spacing: var(--awds-heading-ls);
@@ -69,7 +70,7 @@
 }
 
 /* Действие «Все» — ОПЦИОНАЛЬНО. Это композиция awds-component-button
-   (.btn.btn-tertiary.btn--100.btn--pill + иконка-ссылка 16×16 справа). Цвет, размер,
+   (.btn.btn-pills.btn--100.btn--pill + иконка-ссылка 16×16 справа). Цвет, размер,
    скругление, состояния и фокус задаёт button; heading только не даёт ему сжиматься
    (shrink-0 в макете) — пилюля по высоте своя, по нижней линии заголовка. */
 .heading__action {

@@ -1,10 +1,10 @@
 {
   "component": "heading",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "contract_hash": "sha256:0542f288aa53356af5942dececd157fa3f27c8f2d148f4c48b5be194ee566faf",
-  "artifact_hash": "sha256:33dd75c2bf789fd62a954e8adfbf16f43945a5e30a0580dddc31ea6a90d4314d",
+  "artifact_hash": "sha256:610d57c8aa5721677fec225c8119b10d83cf8738a40d449fda93ebee0e9f7cdd",
   "visual_change": true,
-  "released_at": "2026-10-09T08:26:40.829Z",
+  "released_at": "2026-10-10T19:08:44.151Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -65,7 +65,7 @@
         "none",
         "button"
       ],
-      "note": "Опциональное действие «Все» — композиция awds-component-button (.btn.btn-tertiary.btn--100.btn--pill, только текст). Иконка-ссылка убрана из макета 09.10.2026 (в variable_defs пропал rectangle/100/icon) и из эталонной разметки в 2.1.0. В Figma — инстанс button / tertiary, size=100, скругление 26 = пилюля."
+      "note": "Опциональное действие «Все» — композиция awds-component-button (.btn.btn-pills.btn--100.btn--pill, только текст). Иконка-ссылка убрана из макета 09.10.2026 (в variable_defs пропал rectangle/100/icon) и из эталонной разметки в 2.1.0. В Figma — инстанс button / pills, size=100, скругление 26 = пилюля. С 2.2.0 (10.10.2026) вариант pills вместо tertiary."
     },
     "count": {
       "values": [
@@ -100,7 +100,7 @@
     "heading.css"
   ],
   "composes": [
-    "awds-component-button (.btn.btn-tertiary.btn--100.btn--pill — действие «Все» в .heading__action; требует button-tertiary.css и focus-selection.css). В Figma действие heading-а — инстанс button / tertiary size=100. Button держит цвет (tertiary), размер (ступень 100, control-300 13/16), скругление (пилюля), состояния и фокус. Опционально: заголовок без действия — просто .heading > .heading__title; со счётчиком — .heading__count (свой текст, не компонент)."
+    "awds-component-button (.btn.btn-pills.btn--100.btn--pill — действие «Все» в .heading__action; требует button-pills.css и focus-selection.css). В Figma действие heading-а — инстанс button / pills size=100. Button держит цвет (pills), размер (ступень 100, control-300 13/16), скругление (пилюля), состояния и фокус. Опционально: заголовок без действия — просто .heading > .heading__title; со счётчиком — .heading__count (свой текст, не компонент)."
   ],
   "preview": {
     "base_class": "heading",
@@ -157,8 +157,8 @@
     ],
     "html_samples": [
       {
-        "label": "H1 + действие (button tertiary)",
-        "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn btn-tertiary btn--100 btn--pill heading__action\" href=\"#\">Все</a></div>"
+        "label": "H1 + действие (button pills)",
+        "html": "<div class=\"heading heading--h1\"><h2 class=\"heading__title\">Heading</h2><a class=\"btn btn-pills btn--100 btn--pill heading__action\" href=\"#\">Все</a></div>"
       },
       {
         "label": "H1 + счётчик (heading / goods)",
@@ -174,6 +174,7 @@
     "--awds-control-font-size-300",
     "--awds-control-letter-spacing-300",
     "--awds-control-line-height-300",
+    "--awds-font-family-heading",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
@@ -197,7 +198,7 @@
     "--surface-on-high",
     "--surface-on-highest"
   ],
-  "_dependency_note": "Заголовок — роли WYSIWYG h1–h5 (мод масштаба × брейкпоинт внутри роли). Действие «Все» — внешний awds-component-button (button-tertiary.css): цвет/размер/скругление/состояния/фокус держит он, heading.css задаёт действию только flex: none. Счётчик .heading__count — свой текст: surface-on-high, control 300, regular, в строке заголовка padding-block space-1 (коробка 24 как у пилюли). Раскладка по View: desktop ≥1024 — действие/счётчик вплотную к заголовку (gap space-2, flex-wrap), ниже — space-between.",
+  "_dependency_note": "Заголовок — роли WYSIWYG h1–h5 (мод масштаба × брейкпоинт внутри роли). Действие «Все» — внешний awds-component-button (button-pills.css): цвет/размер/скругление/состояния/фокус держит он, heading.css задаёт действию только flex: none. Счётчик .heading__count — свой текст: surface-on-high, control 300, regular, в строке заголовка padding-block space-1 (коробка 24 как у пилюли). Раскладка по View: desktop ≥1024 — действие/счётчик вплотную к заголовку (gap space-2, flex-wrap), ниже — space-between.",
   "last_synced": "2026-10-08T22:24:16Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:a2fea7841839c02d8822163c316d0c00b8d3970708fe49dc5a9e7fb5490f1002",
@@ -255,7 +256,7 @@
     ],
     "attrs": [],
     "container": null,
-    "note": "Размер — это уровень h1…h5: он задаёт роли WYSIWYG, а тег заголовка внутри выбирается по структуре документа, а не по уровню (<h2 class=\"heading__title\"> внутри .heading--h1 законен). Уровень требуется писать явно, хотя база .heading подставляет роль h2: молчаливый дефолт делает раскладку случайной, и все сниппеты скилла уровень пишут. Класса варианта нет — вариант в мете один и класса не имеет. Обязателен только .heading__title. Действие «Все» необязательно и целиком принадлежит awds-component-button (.btn .btn-tertiary .btn--100 .btn--pill + иконка-ссылка): цвет, размер, скругление, состояния и фокус держит он, а .heading__action задаёт лишь flex: none, поэтому требований на него здесь нет. Счётчик .heading__count необязателен и стоит на месте действия — просто текст, без ссылки и фокуса. Раскладка действия и счётчика по брейкпоинту (вплотную к заголовку с 1024px, к правому краю ниже) зашита в @media, класса под неё нет. Вертикальный отступ над заголовком в компонент не заложен: это ритм контекста, его задаёт потребитель."
+    "note": "Размер — это уровень h1…h5: он задаёт роли WYSIWYG, а тег заголовка внутри выбирается по структуре документа, а не по уровню (<h2 class=\"heading__title\"> внутри .heading--h1 законен). Уровень требуется писать явно, хотя база .heading подставляет роль h2: молчаливый дефолт делает раскладку случайной, и все сниппеты скилла уровень пишут. Класса варианта нет — вариант в мете один и класса не имеет. Обязателен только .heading__title. Действие «Все» необязательно и целиком принадлежит awds-component-button (.btn .btn-pills .btn--100 .btn--pill + иконка-ссылка): цвет, размер, скругление, состояния и фокус держит он, а .heading__action задаёт лишь flex: none, поэтому требований на него здесь нет. Счётчик .heading__count необязателен и стоит на месте действия — просто текст, без ссылки и фокуса. Раскладка действия и счётчика по брейкпоинту (вплотную к заголовку с 1024px, к правому краю ниже) зашита в @media, класса под неё нет. Вертикальный отступ над заголовком в компонент не заложен: это ритм контекста, его задаёт потребитель."
   },
   "questions": [
     {
@@ -285,7 +286,7 @@
     }
   ],
   "family": "complex-component",
-  "summary": "Заголовок секции H1–H5 с опциональным действием «Все» (button tertiary) или счётчиком товаров",
+  "summary": "Заголовок секции H1–H5 с опциональным действием «Все» (button pills) или счётчиком товаров",
   "aliases": [
     "заголовок",
     "заголовок секции",

@@ -22,7 +22,7 @@ description: Heading ArrowDS (.heading).
 <!-- Заголовок + действие «Все» -->
 <div class="heading heading--h1">
   <h2 class="heading__title">Heading</h2>
-  <a class="btn btn-tertiary btn--100 btn--pill heading__action" href="/all">Все</a>
+  <a class="btn btn-pills btn--100 btn--pill heading__action" href="/all">Все</a>
 </div>
 
 <!-- Заголовок + счётчик (набор heading / goods) -->
@@ -38,7 +38,7 @@ description: Heading ArrowDS (.heading).
 ```
 
 - **Семантика vs визуал.** Тег (`<h1>…<h6>`) выбирай по структуре документа; визуальный размер задаёт класс `.heading--h{N}` — они независимы (можно `<h2 class="heading__title">` в `.heading--h1`).
-- **Действие** «Все» — опционально, это композиция **`awds-component-button`**: `.btn.btn-tertiary.btn--100.btn--pill`, только текст. Иконки-ссылки с 2.1.0 нет: в макете её убрали (в `variable_defs` пропал `rectangle/100/icon`). Подключи `button-tertiary.css` и слой фокуса `focus-selection.css`. В Figma действие — инстанс `button / tertiary`, size=100, скругление 26 (пилюля). Цвет, размер, скругление, состояния и фокус держит button; `.heading__action` только запрещает пилюле сжиматься.
+- **Действие** «Все» — опционально, это композиция **`awds-component-button`**: `.btn.btn-pills.btn--100.btn--pill`, только текст. Иконки-ссылки с 2.1.0 нет: в макете её убрали (в `variable_defs` пропал `rectangle/100/icon`). Подключи `button-pills.css` и слой фокуса `focus-selection.css`. В Figma действие — инстанс `button / pills`, size=100, скругление 26 (пилюля). Цвет, размер, скругление, состояния и фокус держит button; `.heading__action` только запрещает пилюле сжиматься.
 - **Счётчик** «200 товаров» — опционально, `<span class="heading__count">`, вместо действия. **Просто текст, не ссылка**: без hover и фокуса, цвет `surface-on-high` (покой `link/muted-rest`), шрифт control 300 13/16/0.1, regular, `tabular-nums`. Стоит там же, где «Все»: коробка 24 по высоте (`padding-block: space-1`), поэтому нижняя линия у счётчика и пилюли одна. Склонение («1 товар», «2 товара», «5 товаров») — забота потребителя.
 
 ## Уровни (размер) и адаптив
@@ -66,7 +66,7 @@ description: Heading ArrowDS (.heading).
 | Размер заголовка | `var(--awds-wysiwyg-font-size-h{N})` + `-line-height-h{N}` + `-letter-spacing-h{N}` |
 | Цвет заголовка | `rgb(var(--surface-on-highest))` |
 | Вес | `var(--awds-font-weight-semibold)` |
-| Действие «Все» | внешний `awds-component-button` (`.btn-tertiary .btn--100 .btn--pill`) — цвет tertiary, размер control-300 13/16, паддинг/зазор/иконка ступени 100, состояния, фокус |
+| Действие «Все» | внешний `awds-component-button` (`.btn-pills .btn--100 .btn--pill`) — цвет pills, размер control-300 13/16, паддинг/зазор/иконка ступени 100, состояния, фокус |
 | Счётчик | `rgb(var(--surface-on-high))`, `var(--awds-control-{font-size,line-height,letter-spacing}-300)`, `var(--awds-font-weight-regular)`, `padding-block: var(--awds-space-1)` в строке заголовка |
 | Зазор заголовок ↔ действие | `var(--awds-space-2)` (8px, макет `space/2`) |
 | Перенос заголовка | `text-wrap: balance` (MIFB — без сирот) |
@@ -82,7 +82,7 @@ description: Heading ArrowDS (.heading).
 
 ## CSS
 
-Один файл — `references/heading.css` (база `.heading` + `.heading__title` + `.heading__action` + `.heading__count` + уровни `.heading--h{1..5}` + раскладка по View через `@media`). Для действия дополнительно нужны `button-tertiary.css` (`awds-component-button`) и `focus-selection.css`.
+Один файл — `references/heading.css` (база `.heading` + `.heading__title` + `.heading__action` + `.heading__count` + уровни `.heading--h{1..5}` + раскладка по View через `@media`). Для действия дополнительно нужны `button-pills.css` (`awds-component-button`) и `focus-selection.css`.
 
 Визуальный QA — `references/preview.html` (storybook, `file://`): все уровни, переключатели Тема / Масштаб / Справа (действие / счётчик / ничего) / View (View меняет ширину iframe → срабатывает `@media`).
 
@@ -90,11 +90,12 @@ description: Heading ArrowDS (.heading).
 
 | Компонент | Зачем |
 |---|---|
-| `awds-component-button` (`.btn-tertiary` `--100` `--pill`) | Действие «Все» целиком. В Figma — инстанс `button / tertiary`. Heading лишь раскладывает его по View. |
+| `awds-component-button` (`.btn-pills` `--100` `--pill`) | Действие «Все» целиком. В Figma — инстанс `button / pills`. Heading лишь раскладывает его по View. |
 
 ## Заметки
 
 - **Вертикальный отступ над заголовком** в компонент НЕ заложен: это flow-ритм контекста, его задаёт потребитель (например, `gap` контейнера секции).
 - Компонент `shape: null` — размер идёт через роли WYSIWYG, без ступеней Size.
-- **Миграция с 2.0:** из разметки «Все» убрать `<svg>` иконки-ссылки — `<a class="btn btn-tertiary btn--100 btn--pill heading__action" href>Все</a>`. Не убрать — не сломается, но разойдётся с макетом.
-- **Миграция с 1.x:** `btn-area btn-area-default btn-area--100 btn-area--fill-y` с `__label`/`__suffix` → `btn btn-tertiary btn--100 btn--pill` с текстом и иконкой-ссылкой прямо в `<a>`; `button-area.css` заменить на `button-tertiary.css`. Размеры уровней выросли: h1 теперь роль h1 (34 на десктопе вместо 28).
+- **Миграция с 2.1:** у «Все» вариант кнопки `btn-tertiary` → `btn-pills` (макет 1050:139087, 10.10.2026: в Figma `button / pills`, size=100, только текст). В блоке подключи вариант `pills` секции `button` вместо `tertiary`. Не заменить — не сломается, но цвет и рамка разойдутся с макетом.
+- **Миграция с 2.0:** из разметки «Все» убрать `<svg>` иконки-ссылки — `<a class="btn btn-pills btn--100 btn--pill heading__action" href>Все</a>`. Не убрать — не сломается, но разойдётся с макетом.
+- **Миграция с 1.x:** `btn-area btn-area-default btn-area--100 btn-area--fill-y` с `__label`/`__suffix` → `btn btn-pills btn--100 btn--pill` с текстом и иконкой-ссылкой прямо в `<a>`; `button-area.css` заменить на `button-pills.css`. Размеры уровней выросли: h1 теперь роль h1 (34 на десктопе вместо 28).

@@ -9,7 +9,7 @@
 ```html
 <div class="heading heading--h1">
   <h2 class="heading__title">Heading</h2>
-  <a class="btn btn-tertiary btn--100 btn--pill heading__action" href="/all">Все</a>
+  <a class="btn btn-pills btn--100 btn--pill heading__action" href="/all">Все</a>
 </div>
 ```
 
@@ -34,7 +34,7 @@
 |---|---|
 | `.heading` | Контейнер: flex, `flex-wrap`, `align-items: flex-end`, `gap: space-2` (8px), `width: 100%`. Ниже 1024 — без переноса, `space-between`. |
 | `.heading__title` | Текст заголовка. Размер — от `.heading--h{N}`. Цвет `surface-on-highest`, semibold, `text-wrap: balance`. Ниже 1024 — `flex: 1 1 0`. |
-| `.heading__action` | Действие (опц.) = `awds-component-button` (`.btn-tertiary .btn--100 .btn--pill`). Heading задаёт только `flex: none`. |
+| `.heading__action` | Действие (опц.) = `awds-component-button` (`.btn-pills .btn--100 .btn--pill`). Heading задаёт только `flex: none`. |
 | `.heading__count` | Счётчик (опц.), текст: `surface-on-high`, control 300 13/16/0.1, regular, `tabular-nums`, `nowrap`. В строке заголовка — `padding-block: space-1` (коробка 24, как у пилюли). Раскладка — как у действия. |
 | `.heading--h1…--h5` | Уровень (размер) заголовка — роль WYSIWYG `h{N}`. |
 
@@ -51,5 +51,5 @@
 ## Зависимости
 
 - `heading.css` — сам компонент.
-- `button-tertiary.css` (`awds-component-button`) и `focus-selection.css` — если есть действие «Все».
+- `button-pills.css` (`awds-component-button`) и `focus-selection.css` — если есть действие «Все».
 - Тема студии: роли цвета, роли WYSIWYG, шкала `space`.

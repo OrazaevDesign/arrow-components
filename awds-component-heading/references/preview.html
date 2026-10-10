@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
   <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
   <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
-  <link rel="stylesheet" href="../../awds-component-button/references/button-tertiary.css">
+  <link rel="stylesheet" href="../../awds-component-button/references/button-pills.css">
   <link rel="stylesheet" href="./heading.css">
 
   <style>
@@ -47,7 +47,7 @@
 <body>
 
   <h1 class="pg">heading / storybook</h1>
-  <p class="sub">Заголовок секции <code>H1–H5</code> с опциональной ссылкой-действием <code>«Все»</code> (композиция <code>awds-component-button</code>: <code>.btn-tertiary .btn--100 .btn--pill</code>, без иконки) или счётчиком <code>.heading__count</code> «200 товаров» (текст, не ссылка). Размер — роли WYSIWYG <code>h{N}</code>: зависит от масштаба (<code>.typo-*</code>) и ширины окна. Раскладка: <code>Desktop ≥1024</code> — действие или счётчик вплотную к заголовку, ниже — у правого края. Переключи тему и масштаб — значения подтянутся из темы.</p>
+  <p class="sub">Заголовок секции <code>H1–H5</code> с опциональной ссылкой-действием <code>«Все»</code> (композиция <code>awds-component-button</code>: <code>.btn-pills .btn--100 .btn--pill</code>, без иконки) или счётчиком <code>.heading__count</code> «200 товаров» (текст, не ссылка). Размер — роли WYSIWYG <code>h{N}</code>: зависит от масштаба (<code>.typo-*</code>) и ширины окна. Раскладка: <code>Desktop ≥1024</code> — действие или счётчик вплотную к заголовку, ниже — у правого края. Переключи тему и масштаб — значения подтянутся из темы.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -97,7 +97,7 @@
 
 
     function action() {
-      if (actionSel.value === 'link') return '<a class="btn btn-tertiary btn--100 btn--pill heading__action" href="#">Все</a>';
+      if (actionSel.value === 'link') return '<a class="btn btn-pills btn--100 btn--pill heading__action" href="#">Все</a>';
       if (actionSel.value === 'count') return '<span class="heading__count">200 товаров</span>';
       return '';
     }
@@ -114,7 +114,7 @@
         <link rel="stylesheet" href="../../arrow-design-system/references/studio-vars.css">
         <link rel="stylesheet" href="../../arrow-design-system/references/derived.css">
         <link rel="stylesheet" href="../../awds-component-focus-selection/references/focus-selection.css">
-        <link rel="stylesheet" href="../../awds-component-button/references/button-tertiary.css">
+        <link rel="stylesheet" href="../../awds-component-button/references/button-pills.css">
         <link rel="stylesheet" href="./heading.css">
         <style>body{margin:0;padding:20px 24px;background:rgb(var(--surface-bright)/1);color:rgb(var(--surface-on-highest)/1);display:flex;flex-direction:column;gap:20px;}</style>
         </head><body>${rows()}</body></html>`;
