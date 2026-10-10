@@ -565,9 +565,9 @@
   --awds-layout-section-padding-block-mobile: var(--awds-space-9);
   --awds-layout-section-padding-block: var(--awds-layout-section-padding-block-desktop);  /* Вертикальный отступ секции блока: padding-block на корне. Боковых полей не несёт — они на __inner. */
   /* Минимальная ширина карточки товара в ленте: min-width элемента слайдера или сетки. */
-  --awds-layout-card-product-min-desktop: 170px;
-  --awds-layout-card-product-min-tablet: 170px;
-  --awds-layout-card-product-min-mobile: 128px;
+  --awds-layout-card-product-min-desktop: 184px;
+  --awds-layout-card-product-min-tablet: 184px;
+  --awds-layout-card-product-min-mobile: 144px;
   --awds-layout-card-product-min: var(--awds-layout-card-product-min-desktop);  /* Минимальная ширина карточки товара в ленте: min-width элемента слайдера или сетки. */
   /* Максимальная ширина карточки товара в ленте: max-width элемента слайдера или сетки. */
   --awds-layout-card-product-max-desktop: 368px;
@@ -577,7 +577,7 @@
   /* Минимальная ширина баннера в четверть ряда (четыре в ряд). */
   --awds-layout-card-quarter-min-desktop: 184px;
   --awds-layout-card-quarter-min-tablet: 162px;
-  --awds-layout-card-quarter-min-mobile: 128px;
+  --awds-layout-card-quarter-min-mobile: 144px;
   --awds-layout-card-quarter-min: var(--awds-layout-card-quarter-min-desktop);  /* Минимальная ширина баннера в четверть ряда (четыре в ряд). */
   /* Максимальная ширина баннера в четверть ряда (четыре в ряд). */
   --awds-layout-card-quarter-max-desktop: 388px;
