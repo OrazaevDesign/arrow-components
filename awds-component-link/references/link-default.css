@@ -54,11 +54,13 @@
 
   /* Polish (MIFB): прерываемые transition; линия анимируется через text-decoration-color
      (гашение/появление), цвет — через color. Стандарт 0.15s ease-out. */
-  transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state), text-decoration-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Тип 1 (по умолчанию): линия есть → гаснет по hover */
-.lnk:hover { text-decoration-color: transparent; }
+@media (hover: hover) and (pointer: fine) {
+  .lnk:hover { text-decoration-color: transparent; }
+}
 
 /* Ось «стиль линии» (комбинируется с поведением) */
 .lnk--ul-solid  { --awds-lnk-ul-style: solid; }
@@ -67,7 +69,9 @@
 
 /* Тип 2: линии нет → появляется по hover */
 .lnk--ul-hover       { text-decoration-color: transparent; }
-.lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent); }
+@media (hover: hover) and (pointer: fine) {
+  .lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent); }
+}
 
 /* Тип 3: без подчёркивания */
 .lnk--ul-none { text-decoration-line: none; }
@@ -94,8 +98,10 @@
   --awds-lnk-color: rgb(var(--tertiary-on));   /* #cell link/default-rest */
 }
 
-.lnk-default:hover {
-  --awds-lnk-color: rgb(var(--accent-core));   /* #cell link/default-hover */
+@media (hover: hover) and (pointer: fine) {
+  .lnk-default:hover {
+    --awds-lnk-color: rgb(var(--accent-core));   /* #cell link/default-hover */
+  }
 }
 
 .lnk-default:focus-visible {
