@@ -1,18 +1,11 @@
 {
   "component": "toast",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "contract_hash": "sha256:c29f85c0014c1dfa4030d9c4b0467699ebb35f17264fd5413bb0a63819b32b5c",
-  "artifact_hash": "sha256:92fb425a47d3598a8a482527097bc90e64ffa7cd4a096d31a0d40bc3a3c4c6dc",
+  "artifact_hash": "sha256:5a04935243dc975f97c2499a6e746a75cbd4913a7e5c3f9dea1959131949b459",
   "visual_change": true,
-  "released_at": "2026-09-27T09:57:28.295Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 1,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "released_at": "2026-10-12T13:29:43.671Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -206,6 +199,8 @@
     "--awds-font-family-system",
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-20",
     "--awds-rounded-border-radius-400",
     "--awds-shadow-elevation-3",

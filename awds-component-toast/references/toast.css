@@ -200,12 +200,14 @@
 .toast__action {
   font-weight: var(--awds-font-weight-semibold);
   /* Перечисляем свойства поимённо: transition: all цепляет и то, что меняться не должно. */
-  transition: background-color 0.15s ease-out;
+  transition: background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
-.toast__action:hover,
-.toast__close:hover {
-  background: rgb(var(--awds-toast-color) / var(--awds-toast-hover));
+@media (hover: hover) and (pointer: fine) {
+  .toast__action:hover,
+  .toast__close:hover {
+    background: rgb(var(--awds-toast-color) / var(--awds-toast-hover));
+  }
 }
 
 .toast__action:focus-visible,
