@@ -64,7 +64,7 @@
   background: rgb(var(--surface-on-high) / var(--awds-opacity-30));   /* #cell slider/dot/bg */
   /* Polish (MIFB): прерываемый transition, явные свойства (не transition: all).
      При перелистывании активная точка плавно «вытягивается». */
-  transition: width 0.15s ease-out, background-color 0.15s ease-out;
+  transition: width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .slider__dot--active {
