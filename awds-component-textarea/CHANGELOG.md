@@ -1,5 +1,9 @@
 # textarea — журнал версий
 
+## 1.0.19 — 2026-10-12 — PATCH · visual
+Hover под гейтом @media (hover: hover) and (pointer: fine): на таче состояние больше не залипает после тапа; transition на токенах движения вместо 0.15s ease-out; десктоп без изменений
+Потребителю: Секции в блоках догоняются пересборкой (component-rollout); на сайте ничего не меняется до перепубликации блоков
+
 ## 1.0.18 — 2026-09-30 — PATCH · visual
 Ячейки form-control/ghost/{color,placeholder,icon,chevron}-focus перенаправлены в студии: роль focus-container-on-* → secondary-container-on-*; код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: у ghost-поля в фокусе текст, плейсхолдер и иконки нейтральные, а не цвета фокуса.

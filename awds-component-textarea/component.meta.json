@@ -1,18 +1,11 @@
 {
   "component": "textarea",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "contract_hash": "sha256:194322f4d825655c0b9aed58e54f7ec3fc8ec222c2a6d030bd91b1df3a94c38d",
-  "artifact_hash": "sha256:2039177b7e4e9cb9423006dad5bcf6871381b4fee9c6b5ba4e7de34d7470aff6",
+  "artifact_hash": "sha256:37d1e12263b115563b7639fa777dff151bf441cd05671e3abee5323d3f3260ed",
   "visual_change": true,
-  "released_at": "2026-09-30T22:30:55.413Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 24,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "released_at": "2026-10-12T13:29:43.558Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -203,6 +196,8 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-100",
     "--awds-opacity-30",
     "--awds-opacity-40",

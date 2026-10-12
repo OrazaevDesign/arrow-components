@@ -166,10 +166,10 @@
   /* Polish (MIFB): смену состояний анимируем явными свойствами — не transition: all.
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: --awds-txa-bg 0.15s ease-out,
-              --awds-txa-color 0.15s ease-out,
-              --awds-txa-placeholder 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-txa-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-txa-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-txa-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 

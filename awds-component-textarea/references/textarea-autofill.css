@@ -166,10 +166,10 @@
   /* Polish (MIFB): смену состояний анимируем явными свойствами — не transition: all.
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: --awds-txa-bg 0.15s ease-out,
-              --awds-txa-color 0.15s ease-out,
-              --awds-txa-placeholder 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-txa-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-txa-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-txa-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -357,8 +357,10 @@
 }
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение. */
-.txa-autofill:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--tertiary-container-on));   /* #cell form-control/autofill/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .txa-autofill:hover:not(:focus-within):has(.txa__field:enabled) {
+    --awds-txa-border:     rgb(var(--tertiary-container-on));   /* #cell form-control/autofill/border-hover */
+  }
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при нажатии
