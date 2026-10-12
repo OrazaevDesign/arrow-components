@@ -1,18 +1,11 @@
 {
   "component": "input",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "contract_hash": "sha256:103a13e9ef85dad3cc0d0722ed0f96ee02ba5d5b320bca538155bdfbc75628c4",
-  "artifact_hash": "sha256:d9649d6c09fb35df8e426776506021626701067bd6d345f8d9c49ec73a395d60",
+  "artifact_hash": "sha256:b42c108a9462145d4263a1f4e7587d81dfab02af229f99525ac89214baeb8eea",
   "visual_change": true,
-  "released_at": "2026-09-30T22:30:54.953Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 35,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "released_at": "2026-10-12T13:29:42.374Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -204,6 +197,8 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-100",

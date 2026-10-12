@@ -174,11 +174,11 @@
      CSS transition прерываем (interruptible). Фон и перекраска едут через
      @property-аккумуляторы. Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-color 0.15s ease-out,
-              --awds-input-placeholder 0.15s ease-out,
-              --awds-input-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-input-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -399,8 +399,10 @@
 
 /* :has(:enabled) — отключённое поле не реагирует на наведение.
    :not(:focus-within) — на сфокусированном поле hover не применяется (см. выше). */
-.input-default:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--secondary-container-on));   /* #cell form-control/default/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .input-default:hover:not(:focus-within):has(> .input__field:enabled) {
+    --awds-input-border: rgb(var(--secondary-container-on));   /* #cell form-control/default/border-hover */
+  }
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при

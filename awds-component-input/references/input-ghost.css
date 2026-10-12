@@ -178,11 +178,11 @@
      CSS transition прерываем (interruptible). Фон и перекраска едут через
      @property-аккумуляторы. Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-color 0.15s ease-out,
-              --awds-input-placeholder 0.15s ease-out,
-              --awds-input-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-input-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
