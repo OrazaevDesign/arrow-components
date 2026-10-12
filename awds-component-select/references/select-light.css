@@ -210,12 +210,12 @@
   /* Polish (MIFB): смену состояний анимируем явными свойствами — не transition: all.
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: --awds-select-bg 0.15s ease-out,
-              --awds-select-color 0.15s ease-out,
-              --awds-select-placeholder 0.15s ease-out,
-              --awds-select-chevron 0.15s ease-out,
-              --awds-select-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-select-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-chevron var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -716,8 +716,10 @@
 
 /* :has(:enabled) — отключённый контрол не реагирует на наведение.
    :not(:focus-within) — на сфокусированном hover не применяется (см. выше). */
-.select-light:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--secondary-container-on));   /* #cell form-control/light/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .select-light:hover:not(:focus-within):has(> .select__field:enabled) {
+    --awds-select-border:   rgb(var(--secondary-container-on));   /* #cell form-control/light/border-hover */
+  }
 }
 
 /* Active в макете совпадает с Rest. Правило нужно именно поэтому: при нажатии
