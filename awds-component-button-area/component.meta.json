@@ -1,18 +1,11 @@
 {
   "component": "button-area",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "contract_hash": "sha256:20b087a266ab23f2cf7d6e6990d2eecbfadd8132856a03495b35b2d343f90904",
-  "artifact_hash": "sha256:9d5d0f1e9fd1a2e981a75a100936cbfd41ffd059269b42b6af28b77def56ef1d",
-  "visual_change": false,
-  "released_at": "2026-09-30T09:31:29.381Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 1,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "artifact_hash": "sha256:f99d33cfc5379fbe66895994f4611fc856ee5e907e8de1b698fdadcaa74fba06",
+  "visual_change": true,
+  "released_at": "2026-10-12T13:29:41.971Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -241,6 +234,8 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-100",
     "--awds-rounded-border-radius-400",
