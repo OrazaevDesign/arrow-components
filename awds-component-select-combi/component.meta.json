@@ -1,18 +1,11 @@
 {
   "component": "select-combi",
-  "version": "1.0.31",
+  "version": "1.0.32",
   "contract_hash": "sha256:601ae457dffd96b328670437c9500a7eb2fed5bc7359c4610f056ed23cca15d6",
-  "artifact_hash": "sha256:b9107bf529dd81e3306a047eb6294079a3b264fee983d788b55fee42b205597b",
+  "artifact_hash": "sha256:9f00200a1e0d4489f5425aaa38d25a0deb32116fb75a3c9cf13896d309d3b271",
   "visual_change": true,
-  "released_at": "2026-09-30T22:30:55.329Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 66,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "released_at": "2026-10-12T13:29:43.334Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -205,6 +198,8 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-200",
