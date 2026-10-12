@@ -148,7 +148,7 @@
   fill: var(--awds-rating-off);
   /* Полировка (MIFB): перечисляем свойства явно, transition вместо keyframes — это
      интерактивная смена, её должно быть можно перебить на полпути. */
-  transition: opacity 0.15s ease-out, fill 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state), fill var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Пустая звезда в макете — сплошная заливка rating/unselected/bg, без дуотона: контур и
@@ -161,7 +161,7 @@
 
 .rating__solid {
   fill: var(--awds-rating-on);
-  transition: opacity 0.15s ease-out, fill 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state), fill var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Видимость слоёв ведёт одна переменная, а не пять правил на каждый слой. */
@@ -201,7 +201,7 @@
 /* ── Наведение — предпросмотр оценки ─────────────────────────────────────────
    Перебивает текущий выбор: пока курсор на третьей звезде, показываем «будет 3».
    Работает и когда выбора ещё нет. */
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   /* Условие на звезду, а не на контейнер: пока курсор не над конкретной звездой,
      предпросмотра нет и виден текущий выбор.
 
