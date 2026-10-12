@@ -155,11 +155,11 @@
      текущей точки. Стандарт PageCraft — 0.15s ease-out. box-shadow перечислен
      рядом с аккумулятором намеренно: там, где @property не поддержан,
      подчёркивание всё равно анимируется. */
-  transition: --awds-tab-bg 0.15s ease-out,
-              --awds-tab-border 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out,
-              opacity 0.15s ease-out;
+  transition: --awds-tab-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-tab-border var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .tab:focus-visible {
@@ -239,10 +239,12 @@
   --awds-tab-color:  rgb(var(--surface-on-high));   /* #cell tab/unselected/color-rest */
 }
 
-.tab-unselected:hover {
-  --awds-tab-bg:     rgb(var(--extended-transparent));   /* #cell tab/unselected/bg */
-  --awds-tab-border: rgb(var(--surface-on-low));   /* #cell tab/unselected/border-hover */
-  --awds-tab-color:  rgb(var(--surface-on-highest));   /* #cell tab/unselected/color-hover */
+@media (hover: hover) and (pointer: fine) {
+  .tab-unselected:hover {
+    --awds-tab-bg:     rgb(var(--extended-transparent));   /* #cell tab/unselected/bg */
+    --awds-tab-border: rgb(var(--surface-on-low));   /* #cell tab/unselected/border-hover */
+    --awds-tab-color:  rgb(var(--surface-on-highest));   /* #cell tab/unselected/color-hover */
+  }
 }
 
 .tab-unselected:focus-visible {
@@ -266,10 +268,12 @@
   --awds-tab-color:  rgb(var(--surface-on-highest));   /* #cell tab/selected/color-rest */
 }
 
-.tab-selected:hover {
-  --awds-tab-bg:     rgb(var(--extended-transparent));   /* #cell tab/selected/bg */
-  --awds-tab-border: rgb(var(--primary-dim));   /* #cell tab/selected/border-hover */
-  --awds-tab-color:  rgb(var(--surface-on-high));   /* #cell tab/selected/color-hover */
+@media (hover: hover) and (pointer: fine) {
+  .tab-selected:hover {
+    --awds-tab-bg:     rgb(var(--extended-transparent));   /* #cell tab/selected/bg */
+    --awds-tab-border: rgb(var(--primary-dim));   /* #cell tab/selected/border-hover */
+    --awds-tab-color:  rgb(var(--surface-on-high));   /* #cell tab/selected/color-hover */
+  }
 }
 
 .tab-selected:focus-visible {

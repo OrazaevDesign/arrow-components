@@ -1,5 +1,9 @@
 # tab — журнал версий
 
+## 1.0.8 — 2026-10-12 — PATCH · visual
+Hover под гейтом @media (hover: hover) and (pointer: fine): на таче состояние больше не залипает после тапа; transition на токенах движения вместо 0.15s ease-out; десктоп без изменений
+Потребителю: Секции в блоках догоняются пересборкой (component-rollout); на сайте ничего не меняется до перепубликации блоков
+
 ## 1.0.7 — 2026-09-29 — PATCH · visual
 Ячейки состояния Focus перенаправлены в студии с роли primary на новую роль focus (form-control/*-focus, focus-selection/outlineVariant|outlineAccent, tab/selected/border-focus); код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: на темах, где focus = primary, без изменений; на shopotam поле и кольцо в фокусе стали синими вместо красного, чтобы не читаться как ошибка.
