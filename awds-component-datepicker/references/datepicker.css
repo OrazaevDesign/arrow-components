@@ -170,8 +170,10 @@
 .dpick__nav--prev::before { rotate: 90deg; }
 .dpick__nav--next::before { rotate: -90deg; }
 
-.dpick__nav:hover {
-  color: rgb(var(--surface-on-highest));                                  /* #cell button/ghost/color-hover */
+@media (hover: hover) and (pointer: fine) {
+  .dpick__nav:hover {
+    color: rgb(var(--surface-on-highest));                                  /* #cell button/ghost/color-hover */
+  }
 }
 
 .dpick__nav:focus-visible,
@@ -269,9 +271,11 @@
   opacity: var(--awds-opacity-100);                                       /* #cell opacity/control/enabled */
 }
 
-.dpick__cell:hover {
-  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/transparent/bg-hover */
-  --awds-dpick-cell-border: rgb(var(--secondary-container-core));         /* #cell list/transparent/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell:hover {
+    --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/transparent/bg-hover */
+    --awds-dpick-cell-border: rgb(var(--secondary-container-core));         /* #cell list/transparent/border-hover */
+  }
 }
 
 /* Сегодня. Красный текст и серая рамка — ячейка остаётся невыбранной:
@@ -281,9 +285,11 @@
   --awds-dpick-cell-color:  rgb(var(--accent-core));              /* #cell list/actual-selected/color-rest */
 }
 
-.dpick__cell--today:hover {
-  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/actual-selected/bg-hover */
-  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell--today:hover {
+    --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         /* #cell list/actual-selected/bg-hover */
+    --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border-hover */
+  }
 }
 
 /* Внутри выбранного периода. Своя группа ячеек, не hover — см. шапку файла. */
@@ -301,9 +307,11 @@
   --awds-dpick-cell-color:  rgb(var(--focus-container-on-highest));     /* #cell list/accent-selected/color-rest */
 }
 
-.dpick__cell--selected:hover {
-  --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           /* #cell list/accent-selected/bg-hover */
-  --awds-dpick-cell-border: rgb(var(--focus-container-core));      /* #cell list/accent-selected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell--selected:hover {
+    --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           /* #cell list/accent-selected/bg-hover */
+    --awds-dpick-cell-border: rgb(var(--focus-container-core));      /* #cell list/accent-selected/border-hover */
+  }
 }
 
 /* Ячейка соседнего месяца и дата вне допустимого диапазона. Гашение — то же
@@ -314,8 +322,10 @@
   cursor: default;
 }
 
-.dpick__cell:disabled:hover,
-.dpick__cell[aria-disabled="true"]:hover {
-  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg-rest */
-  --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border-rest */
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell:disabled:hover,
+  .dpick__cell[aria-disabled="true"]:hover {
+    --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             /* #cell list/transparent/bg-rest */
+    --awds-dpick-cell-border: rgb(var(--extended-transparent));             /* #cell list/transparent/border-rest */
+  }
 }
