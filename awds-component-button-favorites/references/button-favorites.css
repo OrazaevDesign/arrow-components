@@ -134,10 +134,10 @@
   /* Polish (MIFB): смену состояний анимируем явными свойствами, не transition: all.
      Фон-градиент анимируется через @property-аккумуляторы. Стандарт PageCraft —
      0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: --awds-btn-bg 0.15s ease-out,
-              --awds-btn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-btn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .btn:disabled,
@@ -263,8 +263,8 @@
   --awds-btn-fav-stroke: rgb(var(--surface-on-high));   /* #cell favorites/unselected/stroke-rest */
 
   /* Polish (MIFB): press-feedback transform (GPU), явное свойство. */
-  transition: transform 0.12s ease-out,
-              color 0.15s ease-out;
+  transition: transform 0.12s var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Стек из двух слоёв: заливка под контуром. grid + place-items:center кладёт оба в
@@ -283,7 +283,7 @@
   width: 100%;
   height: 100%;
   /* Polish (MIFB): перекраску слоёв анимируем явно. */
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 /* Оба слоя fill-based (вектор Figma ic20-favourites): solid = залитое сердце,
    outline = залитое кольцо (fill-rule evenodd). Цвет несёт fill=currentColor. */
@@ -291,10 +291,12 @@
 .btn-favorites__outline { color: var(--awds-btn-fav-stroke); }
 
 /* Hover — не в избранном */
-.btn-favorites:hover {
-  --awds-btn-color:      rgb(var(--surface-on-highest));   /* #cell button/ghost/color-hover */
-  --awds-btn-fav-fill:   rgb(var(--error-container-dim));   /* #cell favorites/unselected/fill-hover */
-  --awds-btn-fav-stroke: rgb(var(--error-core));   /* #cell favorites/unselected/stroke-hover */
+@media (hover: hover) and (pointer: fine) {
+  .btn-favorites:hover {
+    --awds-btn-color:      rgb(var(--surface-on-highest));   /* #cell button/ghost/color-hover */
+    --awds-btn-fav-fill:   rgb(var(--error-container-dim));   /* #cell favorites/unselected/fill-hover */
+    --awds-btn-fav-stroke: rgb(var(--error-core));   /* #cell favorites/unselected/stroke-hover */
+  }
 }
 
 /* Focus — цвет сердца тот же, что в покое: кольцо рисует слой focus-selection
