@@ -87,7 +87,11 @@
 }
 
 /* Окно на нативном <dialog>: ловушка фокуса, Esc и инертность страницы приходят от
-   платформы (showModal), а не из скрипта потребителя. Подложка — ::backdrop. */
+   платформы (showModal), а не из скрипта потребителя. Подложка — ::backdrop: своей
+   разметки у неё нет, браузер рисует её на весь вьюпорт под окном. В макете ей
+   соответствует компонент modal / backdrop (1034:1314) — тот же цвет ячейки
+   modal/backdrop и та же opacity/50. Значение записано здесь напрямую, а не через
+   аккумулятор --awds-mdl-backdrop: поведение не меняли. */
 .mdl::backdrop {
   background: rgb(var(--surface-on-highest) / var(--awds-opacity-50));   /* #cell modal/backdrop */
 }
@@ -103,7 +107,7 @@
 @media (prefers-reduced-motion: no-preference) {
   .mdl,
   .mdl::backdrop {
-    transition: opacity 0.2s ease-out, translate 0.2s ease-out, overlay 0.2s allow-discrete,
+    transition: opacity 0.2s var(--awds-motion-ease-state), translate 0.2s var(--awds-motion-ease-state), overlay 0.2s allow-discrete,
                 display 0.2s allow-discrete;
   }
 
@@ -161,7 +165,7 @@
   font-size: var(--awds-mdl-title-fs);
   line-height: var(--awds-mdl-title-lh);
   letter-spacing: var(--awds-mdl-title-ls);
-  font-weight: var(--awds-font-weight-bold);
+  font-weight: var(--awds-font-weight-semibold);
   /* Короткий заголовок не должен ломаться «сиротой» (MIFB). */
   text-wrap: balance;
 }
@@ -231,6 +235,29 @@
 .mdl__footer--stretch > * {
   flex: 1 1 0;
   min-inline-size: 0;
+}
+
+/* Кнопки в столбик: каждая во всю ширину подвала, первая в разметке — сверху. В макете
+   ось direction=row|column, ячейка direction=column (stretch=on: в столбик кнопки всегда
+   во всю ширину). Нужен, когда подписи не помещаются в ряд: на шторке 360 «Показать
+   1 108 товаров» рядом со «Сбросить» обрезается. Зазор между кнопками — тот же, что у
+   ряда (--awds-mdl-footer-gap). Включается явно, а не по ширине окна: влезет ли ряд,
+   решает длина подписей, а не ширина — «Да» и «Нет» в ряд помещаются и на 320.
+   flex: none снимает долю ряда, если рядом стоит --stretch: в столбике основная ось
+   вертикальная, и flex-basis 0 делил бы высоту, а не ширину. */
+.mdl__footer--column {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.mdl__footer--column > * {
+  flex: none;
+  min-inline-size: 0;
+}
+
+/* Обратный порядок в столбике: вторая в разметке кнопка — сверху. */
+.mdl__footer--column.mdl__footer--reverse {
+  flex-direction: column-reverse;
 }
 
 /* Пустой подвал: окну без действий всё равно нужно нижнее поле, иначе содержимое

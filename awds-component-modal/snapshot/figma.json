@@ -62,20 +62,46 @@
     "footer": {
       "node_id": "77:60845",
       "type": "COMPONENT_SET",
-      "axis": "reverse=on|off",
+      "axes": [
+        "reverse=off|on",
+        "stretch=off|on",
+        "content=buttons|empty",
+        "direction=row|column"
+      ],
+      "cells": {
+        "reverse=off, stretch=off, content=buttons, direction=row": "77:60846",
+        "reverse=on, stretch=off, content=buttons, direction=row": "637:464",
+        "reverse=off, stretch=on, content=buttons, direction=row": "907:356",
+        "reverse=on, stretch=on, content=buttons, direction=row": "907:370",
+        "reverse=off, stretch=off, content=empty, direction=row": "937:132431",
+        "reverse=off, stretch=on, content=buttons, direction=column": "1034:49075"
+      },
       "props": [
-        "show-swap (false)",
         "show-start (true)",
         "show-end (true)",
-        "start (INSTANCE_SWAP)",
-        "end (INSTANCE_SWAP)",
-        "swap (INSTANCE_SWAP)"
+        "start (INSTANCE_SWAP, button / primary)",
+        "end (INSTANCE_SWAP, button / secondary)"
       ],
-      "geometry": "padding 8 сверху, 24 снизу, по бокам layout/section/side; в reverse=on порядок кнопок в ButtonGroup обратный"
+      "bindings": {
+        "padding": "top space/2 (2), right/bottom/left section/gutter-modal",
+        "fill": "surface/bright",
+        "ButtonGroup.itemSpacing": "space/3 — у ряда и столбика одна переменная"
+      },
+      "geometry": "ButtonGroup HORIZONTAL у direction=row, VERTICAL у direction=column (кнопки Fill по ширине, Hug по высоте, start=primary сверху); снято 08.10.2026"
     },
     "swap": {
       "node_id": "77:60774",
       "note": "Часть-заглушка слота, общая для файла: её же держит popover. Живёт в этой секции."
+    },
+    "backdrop": {
+      "node_id": "1034:1314",
+      "type": "COMPONENT",
+      "name": "modal / backdrop",
+      "fills": "state/modal/backdrop → roles/surface/on-highest (38 38 38 в light)",
+      "opacity": "opacity/50 (слой целиком)",
+      "constraints_note": "constraints инстанс от мастера не наследует (замер 08.10.2026: MIN/MIN) — ставятся на месте",
+      "code": "::backdrop у <dialog>, rgb(var(--surface-on-highest) / var(--awds-opacity-50))",
+      "created": "2026-10-08"
     }
   },
   "axes": {
@@ -138,5 +164,6 @@
     "Инстансы кнопок и полей внутри модалки держат 119 привязок к старым библиотекам (Size, Rounded, Opacity, Roles, Typography) — это долги мастеров в секциях ↪ button, ↪ button-area и ↪ formfield, не модалки.",
     "Полоса прокрутки в содержимом — инстанс ЧУЖОГО remote-компонента Scrollbar (6 штук), а не нашего scrollbar: у нашего своей разметки нет, он красит нативную полосу.",
     "Строка «Удалить» из ячеек delete / delete-hover снята вместе с двумя инстансами чужого remote-набора Invest. Такое действие собирается кнопкой button-area с иконкой."
-  ]
+  ],
+  "fetched_at_parts_2026_10_08": "footer и backdrop сняты 08.10.2026 через use_figma"
 }

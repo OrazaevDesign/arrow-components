@@ -39,10 +39,21 @@
 | Свойство | Значение |
 |---|---|
 | Фон | `rgb(var(--surface-bright))` — ячейка `modal/bg` |
-| Подложка | `rgb(var(--surface-on-highest) / var(--awds-opacity-50))` — ячейка `modal/backdrop` |
+| Подложка | `rgb(var(--surface-on-highest) / var(--awds-opacity-50))` — ячейка `modal/backdrop`; в коде `::backdrop`, в макете компонент `modal / backdrop` |
 | Тень | `var(--awds-shadow-elevation-4)` |
 | Скругление | `var(--awds-rounded-border-radius-600)` (10), на мобильном — только сверху |
 | Боковые поля | `var(--awds-layout-section-gutter-modal)` — у шапки, содержимого и подвала |
+
+## Подвал на шторке
+
+На мобильной шторке длинная подпись primary рядом со вторичной кнопкой обрезается. Тогда подвал ставят в столбик — `.mdl__footer--column`, primary первой в разметке (в макете `/ footer` `direction=column`):
+
+```html
+<footer class="mdl__footer mdl__footer--column">
+  <button class="btn btn-primary btn--300" type="button">Показать 1 108 товаров</button>
+  <button class="btn btn-secondary btn--300" type="button">Сбросить</button>
+</footer>
+```
 
 ## Состояния
 

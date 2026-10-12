@@ -52,13 +52,22 @@
     }
     .filler { padding: 12px 0; color: rgb(var(--surface-on) / 1); }
     .rows { display: grid; }
+    /* Сцена: статичная копия подложки. Живая подложка — ::backdrop у окна, открытого
+       кнопкой в панели; здесь тот же цвет ячейки modal/backdrop, чтобы видеть его рядом с окном. */
+    .scene { position: relative; inline-size: 360px; padding: 16px; border-radius: 12px; overflow: hidden;
+      background: rgb(var(--surface-container-low) / 1); }
+    .scene__page { display: grid; gap: 8px; }
+    .scene__page span { block-size: 20px; border-radius: 6px; background: rgb(var(--surface-container-high) / 1); }
+    .scene__backdrop { position: absolute; inset: 0; background: rgb(var(--surface-on-highest) / var(--awds-opacity-50)); }
+    .scene .mdl { position: absolute; inset: auto 0 0 0; inline-size: 100%; }
+    .stage .mdl-narrow { inline-size: 360px; max-inline-size: none; }
     .rows > div { padding: 12px var(--awds-layout-section-side); border-top: 1px solid rgb(var(--surface-container-high) / 1); }
   </style>
 </head>
 <body>
 
   <h1>modal / storybook</h1>
-  <p class="sub">Окно поверх страницы: шапка, прокручиваемое содержимое, подвал. Вид — имя набора: <code>modal / dialog</code> (по центру, скруглён) и <code>modal / sidepage</code> (панель у края, без скруглений). Ось <code>view</code> из макета — брейкпоинт, а не вариант: класса под неё нет, ниже 1068px оба вида становятся шторкой снизу. Окна на странице показаны статично; кнопка ниже открывает настоящий <code>&lt;dialog&gt;</code> со всем поведением платформы.</p>
+  <p class="sub">Окно поверх страницы: шапка, прокручиваемое содержимое, подвал. Вид — имя набора: <code>modal / dialog</code> (по центру, скруглён) и <code>modal / sidepage</code> (панель у края, без скруглений). Ось <code>view</code> из макета — брейкпоинт, а не вариант: класса под неё нет, ниже 1024px оба вида становятся шторкой снизу. Окна на странице показаны статично; кнопка ниже открывает настоящий <code>&lt;dialog&gt;</code> со всем поведением платформы.</p>
 
   <div class="toolbar">
     <label>Тема:
@@ -146,6 +155,53 @@
           <button class="btn btn-primary btn--300" type="button">Удалить</button>
         </footer>
       </dialog>
+    </div>
+
+    <div class="case">
+      <span class="label">шторка 360 · кнопки в столбик (--column)</span>
+      <dialog class="mdl mdl-dialog mdl-narrow" open>
+        <header class="mdl__header">
+          <h2 class="mdl__title">Фильтры</h2>
+          <button class="btn btn-secondary btn--200 mdl__close" type="button" aria-label="Закрыть">✕</button>
+        </header>
+        <div class="mdl__content">
+          <p class="mdl__text">Длинная подпись рядом со второй кнопкой не помещается: подвал ставит кнопки в столбик, primary сверху.</p>
+        </div>
+        <footer class="mdl__footer mdl__footer--column">
+          <button class="btn btn-primary btn--300" type="button">Показать 1 108 товаров</button>
+          <button class="btn btn-secondary btn--300" type="button">Сбросить</button>
+        </footer>
+      </dialog>
+    </div>
+
+    <div class="case">
+      <span class="label">шторка 360 · тот же подвал в ряд (было)</span>
+      <dialog class="mdl mdl-dialog mdl-narrow" open>
+        <div class="mdl__content">
+          <p class="mdl__text">Ряд с --stretch: подписи режутся.</p>
+        </div>
+        <footer class="mdl__footer mdl__footer--stretch">
+          <button class="btn btn-primary btn--300" type="button">Показать 1 108 товаров</button>
+          <button class="btn btn-secondary btn--300" type="button">Сбросить</button>
+        </footer>
+      </dialog>
+    </div>
+
+    <div class="case">
+      <span class="label">подложка · modal / backdrop под шторкой</span>
+      <div class="scene">
+        <div class="scene__page"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="scene__backdrop"></div>
+        <dialog class="mdl mdl-dialog" open>
+          <div class="mdl__content">
+            <p class="mdl__text">Под окном — подложка: ячейка modal/backdrop под opacity-50.</p>
+          </div>
+          <footer class="mdl__footer mdl__footer--column">
+            <button class="btn btn-primary btn--300" type="button">Показать</button>
+            <button class="btn btn-secondary btn--300" type="button">Сбросить</button>
+          </footer>
+        </dialog>
+      </div>
     </div>
 
     <div class="case">

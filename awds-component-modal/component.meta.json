@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.2.3",
-  "contract_hash": "sha256:3e55eca468b4f2df1fa624f9a58b54cdd06eba0411b33fdcb11dab3301cdc3ae",
-  "artifact_hash": "sha256:c7668822e5792ad2b772f2bf694d097eab8d4db2926bab5cd7989a638dfe654b",
-  "visual_change": true,
-  "released_at": "2026-09-30T08:53:58.848Z",
+  "version": "1.3.2",
+  "contract_hash": "sha256:2fb8dd417032f8208905ea72f8a5c22f838cfea95f84981572b2a2481f9d4ad8",
+  "artifact_hash": "sha256:4445a2afbbdd3950550cf53bd13afdda9adcecbceca3bb47cdb242898bd9f3a8",
+  "visual_change": false,
+  "released_at": "2026-10-12T13:29:42.784Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -77,10 +77,14 @@
       {
         "label": "Sidepage · содержимое во всю ширину",
         "html": "<dialog class=\"mdl mdl-sidepage\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Фильтры</h2><button class=\"btn btn-ghost btn--200 mdl__close\" type=\"button\" aria-label=\"Закрыть\"></button></header><div class=\"mdl__content mdl__content--flush\"></div><footer class=\"mdl__footer mdl__footer--reverse\"><button class=\"btn btn-primary btn--300\" type=\"button\">Показать</button><button class=\"btn btn-secondary btn--300\" type=\"button\">Сбросить</button></footer></dialog>"
+      },
+      {
+        "label": "Шторка · кнопки в столбик",
+        "html": "<dialog class=\"mdl mdl-dialog\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Фильтры</h2><button class=\"btn btn-ghost btn--200 mdl__close\" type=\"button\" aria-label=\"Закрыть\"></button></header><div class=\"mdl__content\"></div><footer class=\"mdl__footer mdl__footer--column\"><button class=\"btn btn-primary btn--300\" type=\"button\">Показать 1 108 товаров</button><button class=\"btn btn-secondary btn--300\" type=\"button\">Сбросить</button></footer></dialog>"
       }
     ]
   },
-  "notes": "Вид — имя набора (modal / dialog и modal / sidepage), различаются только геометрией: диалог скруглён и стоит по центру, панель прижата к краю без скруглений; ниже 1068px оба становятся шторкой снизу. Ось view=desktop|tablet|mobile в макете — брейкпоинт, а не вариант (правило 10): класса нет, адаптив даёт медиазапрос и адаптивный токен layout/section/side. Компонент строится на нативном <dialog>: ловушка фокуса, Esc и инертность страницы приходят от showModal(), подложка — ::backdrop. Части макета (шапка, содержимое, подвал) 22.09.2026 разобраны с 23 ячеек до 5: комбинации в именах вариантов заменены булевыми show-*, опечатка pozitive и состояние delete-hover сняты, булева ось alter-align=false|true стала reverse=on|off. Заголовок переведён со старой роли title/t5 (18/22 десктоп, 17/20 ниже) на фикс typography-800 + line-height-compact-800 (18/22) — решение владельца.",
+  "notes": "Вид — имя набора (modal / dialog и modal / sidepage), различаются только геометрией: диалог скруглён и стоит по центру, панель прижата к краю без скруглений; ниже 1068px оба становятся шторкой снизу. Ось view=desktop|tablet|mobile в макете — брейкпоинт, а не вариант (правило 10): класса нет, адаптив даёт медиазапрос и адаптивный токен layout/section/side. Компонент строится на нативном <dialog>: ловушка фокуса, Esc и инертность страницы приходят от showModal(), подложка — ::backdrop. Части макета (шапка, содержимое, подвал) 22.09.2026 разобраны с 23 ячеек до 5: комбинации в именах вариантов заменены булевыми show-*, опечатка pozitive и состояние delete-hover сняты, булева ось alter-align=false|true стала reverse=on|off. Заголовок переведён со старой роли title/t5 (18/22 десктоп, 17/20 ниже) на фикс typography-800 + line-height-compact-800 (18/22) — решение владельца. 08.10.2026: у / footer ось direction=row|column (ячейка direction=column при stretch=on → .mdl__footer--column), в набор добавлен компонент modal / backdrop (1034:1314) — подложка для макетов страниц, в коде её роль играет ::backdrop.",
   "last_synced": "2026-09-22T09:40:00Z",
   "last_synced_by": "claude",
   "snapshot_hash": "sha256:1b9b73e37daa4537e6426f5aec56617c882e0c6a4f3b56527af62b942a310b9e",
@@ -145,7 +149,7 @@
       }
     ],
     "container": null,
-    "note": "Корень — нативный <dialog>, открывается showModal(): ловушку фокуса, Esc и инертность страницы даёт платформа, своего JS потребителю не нужно. Вид обязателен (.mdl-dialog по центру со скруглением, .mdl-sidepage панелью у края без него) — вся геометрия приходит из него. Шкалы размеров нет: ширину задаёт ручка --awds-mdl-width (по умолчанию layout/form/max). Брейкпоинт (ниже 1068px оба вида становятся шторкой снизу) класса не имеет — его отрабатывает медиазапрос. Обязательно только .mdl__content: шапка и подвал собираются булевыми (show-back / show-title / show-close, show-start / show-end) и по отдельности необязательны, поэтому требованиями не записаны — иначе законное окно без подвала читалось бы как ошибка. Порядок частей фиксирован (шапка, содержимое, подвал), но проверке он не виден: Liquid без DOM не даёт вложенности и порядка. Имя окну даёт заголовок <h2 class=\"mdl__title\"> и aria-labelledby на него; требованием это не записано, потому что у окна без заголовка имя приходит через aria-label, а выбор из двух атрибутов гейт не выражает — зато у самого заголовка id требуется всегда. Кнопки шапки и подвала — инстансы button / button-area со своими контрактами; своих цветов компонент им не задаёт. Модификаторы: .mdl__content--flush (содержимое во всю ширину, отступы приносит оно само), .mdl__footer--reverse (обратный порядок кнопок), .mdl__footer--stretch (кнопки во всю ширину поровну; одна кнопка — тот же модификатор без второй)."
+    "note": "Корень — нативный <dialog>, открывается showModal(): ловушку фокуса, Esc и инертность страницы даёт платформа, своего JS потребителю не нужно. Вид обязателен (.mdl-dialog по центру со скруглением, .mdl-sidepage панелью у края без него) — вся геометрия приходит из него. Шкалы размеров нет: ширину задаёт ручка --awds-mdl-width (по умолчанию layout/form/max). Брейкпоинт (ниже 1068px оба вида становятся шторкой снизу) класса не имеет — его отрабатывает медиазапрос. Обязательно только .mdl__content: шапка и подвал собираются булевыми (show-back / show-title / show-close, show-start / show-end) и по отдельности необязательны, поэтому требованиями не записаны — иначе законное окно без подвала читалось бы как ошибка. Порядок частей фиксирован (шапка, содержимое, подвал), но проверке он не виден: Liquid без DOM не даёт вложенности и порядка. Имя окну даёт заголовок <h2 class=\"mdl__title\"> и aria-labelledby на него; требованием это не записано, потому что у окна без заголовка имя приходит через aria-label, а выбор из двух атрибутов гейт не выражает — зато у самого заголовка id требуется всегда. Кнопки шапки и подвала — инстансы button / button-area со своими контрактами; своих цветов компонент им не задаёт. Модификаторы: .mdl__content--flush (содержимое во всю ширину, отступы приносит оно само), .mdl__footer--reverse (обратный порядок кнопок), .mdl__footer--stretch (кнопки во всю ширину поровну; одна кнопка — тот же модификатор без второй), .mdl__footer--column (кнопки в столбик, каждая во всю ширину, первая в разметке — сверху; включается явно, не по ширине). Подложка — ::backdrop нативного <dialog>, своей разметки нет; в макете ей соответствует компонент modal / backdrop."
   },
   "questions": [
     {
@@ -189,8 +193,9 @@
     "--awds-control-letter-spacing-400",
     "--awds-control-line-height-400",
     "--awds-font-family-system",
-    "--awds-font-weight-bold",
+    "--awds-font-weight-semibold",
     "--awds-layout-section-gutter-modal",
+    "--awds-motion-ease-state",
     "--awds-opacity-50",
     "--awds-rounded-border-radius-600",
     "--awds-shadow-elevation-4",
@@ -225,6 +230,7 @@
       "mdl__content",
       "mdl__content--flush",
       "mdl__footer",
+      "mdl__footer--column",
       "mdl__footer--empty",
       "mdl__footer--reverse",
       "mdl__footer--stretch",
