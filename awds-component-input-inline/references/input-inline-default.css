@@ -85,8 +85,8 @@
 
   /* Polish (MIFB): анимируем явными свойствами, не transition: all.
      Стандарт PageCraft — 0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: --awds-iinline-color 0.15s ease-out,
-              --awds-iinline-placeholder 0.15s ease-out;
+  transition: --awds-iinline-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-iinline-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .iinline::placeholder {
@@ -162,9 +162,11 @@
   --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));   /* #cell form-control/default/placeholder-rest */
 }
 
-.iinline-default:hover:enabled {
-  --awds-iinline-color:       rgb(var(--secondary-container-on-highest));   /* #cell form-control/default/color-hover */
-  --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));   /* #cell form-control/default/placeholder-hover */
+@media (hover: hover) and (pointer: fine) {
+  .iinline-default:hover:enabled {
+    --awds-iinline-color:       rgb(var(--secondary-container-on-highest));   /* #cell form-control/default/color-hover */
+    --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));   /* #cell form-control/default/placeholder-hover */
+  }
 }
 
 /* :focus-within у поля без обёртки не нужен — состояние держит сам <input>. */
