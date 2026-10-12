@@ -195,11 +195,11 @@
   /* Polish (MIFB): смену состояний анимируем явными свойствами — не transition: all.
      CSS transition прерываем (interruptible). Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: --awds-icombi-bg 0.15s ease-out,
-              --awds-icombi-color 0.15s ease-out,
-              --awds-icombi-placeholder 0.15s ease-out,
-              --awds-icombi-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-icombi-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -302,11 +302,11 @@
      transition (прерываемый), а не @keyframes. transform: scale() здесь НЕ подходит,
      хотя был бы дешевле: у мелкой метки в макете своё letter-spacing (0.1–0.2%), а
      масштабирование растянуло бы межбуквенное вместе с кеглем и разошлось с макетом. */
-  transition: top 0.15s ease-out,
-              font-size 0.15s ease-out,
-              line-height 0.15s ease-out,
-              letter-spacing 0.15s ease-out,
-              --awds-icombi-placeholder 0.15s ease-out;
+  transition: top var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              font-size var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              line-height var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              letter-spacing var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Метка уехала: поле в фокусе ИЛИ в нём есть значение.
@@ -494,8 +494,10 @@
 /* :has(:enabled) — отключённое поле не реагирует на наведение.
    Селектор потомка, а не прямого ребёнка: поле лежит внутри .icombi__body.
    :not(:focus-within) — на сфокусированном поле hover не применяется (см. выше). */
-.icombi-error:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--error-container-on));   /* #cell form-control/error/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .icombi-error:hover:not(:focus-within):has(.icombi__field:enabled) {
+    --awds-icombi-border: rgb(var(--error-container-on));   /* #cell form-control/error/border-hover */
+  }
 }
 
 /* В макете значения Active совпадают с Rest. Правило нужно именно поэтому: при
