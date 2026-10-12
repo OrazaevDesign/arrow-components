@@ -264,8 +264,10 @@
   transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
   z-index: 2;                            /* скрим над активным кадром (z-index 1) */
 }
-.pcard__media:hover .pcard__image-link::after { /* hover на медиа, а не на ссылке: стрелки лежат рядом со ссылкой, и наведение на них не гасит hover фото */
-  opacity: 0;
+@media (hover: hover) and (pointer: fine) {
+  .pcard__media:hover .pcard__image-link::after { /* hover на медиа, а не на ссылке: стрелки лежат рядом со ссылкой, и наведение на них не гасит hover фото */
+    opacity: 0;
+  }
 }
 
 /* Плейсхолдер, когда фото нет (внутри ссылки-фото) */
@@ -395,13 +397,15 @@
 }
 .pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0; }
 .pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0; }
-@media (hover: hover) {
-  .pcard__media:hover .pcard__nav > .obtn,
-  .pcard__nav:has(:focus-visible) > .obtn {
+@media (hover: hover) and (pointer: fine) {
+  .pcard__media:hover .pcard__nav > .obtn {
     translate: 0 0;
   }
 }
-@media (hover: none) {
+.pcard__nav:has(:focus-visible) > .obtn {
+  translate: 0 0;
+}
+@media not ((hover: hover) and (pointer: fine)) {
   .pcard__nav { display: none; }
 }
 .pcard--mobile .pcard__nav { display: none; }
@@ -525,9 +529,11 @@
 
 /* #2, #3 — бренд (→ бренд) и название (→ товар) = отдельные ссылки link/accent.
    Hover срабатывает на самой ссылке: rest surface-on-highest → hover accent-core. */
-.pcard__brand:hover,
-.pcard__name:hover {
-  color: rgb(var(--accent-core));       /* #cell link/accent-hover */
+@media (hover: hover) and (pointer: fine) {
+  .pcard__brand:hover,
+  .pcard__name:hover {
+    color: rgb(var(--accent-core));       /* #cell link/accent-hover */
+  }
 }
 
 /* Рубрика (→ категория) — необязательная строка, свойство show-category в макете (с 07.10.2026
@@ -557,8 +563,10 @@
   margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
-.pcard-price-first .pcard__category:hover {
-  color: rgb(var(--accent-core));        /* #cell link/heading-hover — макет 07.10.2026: рубрика на ячейке link/heading, была link/muted */
+@media (hover: hover) and (pointer: fine) {
+  .pcard-price-first .pcard__category:hover {
+    color: rgb(var(--accent-core));        /* #cell link/heading-hover — макет 07.10.2026: рубрика на ячейке link/heading, была link/muted */
+  }
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка, как в макете). Кластер из 4 элементов:

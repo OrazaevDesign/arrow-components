@@ -160,8 +160,10 @@
   transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
   z-index: 2;                            /* скрим над активным кадром (z-index 1) */
 }
-.pcard-button-price .pcard__media:hover .pcard__image-link::after { /* hover на медиа, а не на ссылке: стрелки лежат рядом со ссылкой, и наведение на них не гасит hover фото */
-  opacity: 0;
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__media:hover .pcard__image-link::after { /* hover на медиа, а не на ссылке: стрелки лежат рядом со ссылкой, и наведение на них не гасит hover фото */
+    opacity: 0;
+  }
 }
 
 /* Плейсхолдер, когда фото нет */
@@ -311,13 +313,15 @@
 }
 .pcard__nav > .pcard__nav-btn--prev { translate: calc(-100% - var(--awds-space-2)) 0; }
 .pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0; }
-@media (hover: hover) {
-  .pcard__media:hover .pcard__nav > .obtn,
-  .pcard__nav:has(:focus-visible) > .obtn {
+@media (hover: hover) and (pointer: fine) {
+  .pcard__media:hover .pcard__nav > .obtn {
     translate: 0 0;
   }
 }
-@media (hover: none) {
+.pcard__nav:has(:focus-visible) > .obtn {
+  translate: 0 0;
+}
+@media not ((hover: hover) and (pointer: fine)) {
   .pcard__nav { display: none; }
 }
 .pcard--mobile .pcard__nav { display: none; }
@@ -367,8 +371,10 @@
   white-space: nowrap;
   max-width: 100%;
 }
-.pcard-button-price .pcard__brand:hover {
-  color: rgb(var(--accent-core));       /* #cell link/accent-hover */
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__brand:hover {
+    color: rgb(var(--accent-core));       /* #cell link/accent-hover */
+  }
 }
 
 /* Цена в кнопке — компонент awds-component-price (подключи price.css) внутри
@@ -438,12 +444,16 @@
   margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
-.pcard-button-price .pcard__name:hover {
-  color: rgb(var(--accent-core));       /* #cell link/accent-hover */
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__name:hover {
+    color: rgb(var(--accent-core));       /* #cell link/accent-hover */
+  }
 }
 
-.pcard-button-price .pcard__category:hover {
-  color: rgb(var(--accent-core));        /* #cell link/heading-hover — макет 07.10.2026: рубрика на ячейке link/heading, была link/muted */
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__category:hover {
+    color: rgb(var(--accent-core));        /* #cell link/heading-hover — макет 07.10.2026: рубрика на ячейке link/heading, была link/muted */
+  }
 }
 
 /* Отзывы — СТАТИЧНЫЙ блок (НЕ ссылка): ★ warning + рейтинг surface-on-highest +
