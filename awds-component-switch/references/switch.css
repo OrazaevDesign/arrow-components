@@ -196,11 +196,11 @@
      handle/icon-color транзишеним ЗДЕСЬ (там, где они задаются) — бегунок
      наследует уже анимированное значение. Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: --awds-switch-bg 0.15s ease-out,
-              --awds-switch-chroma 0.15s ease-out,
-              --awds-switch-handle 0.15s ease-out,
-              --awds-switch-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-switch-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-switch-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-switch-handle var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-switch-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -224,7 +224,7 @@
   /* Polish (MIFB): ход бегунка — transform (GPU-композитируемое свойство), явно
      перечислен. will-change не ставим: анимация разовая и короткая, постоянный
      слой памяти не оправдан. */
-  transition: transform 0.15s ease-out;
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .switch__icon {
@@ -233,7 +233,7 @@
   height: 100%;
   opacity: 0;
   /* Polish (MIFB): явное свойство, а не transition: all. */
-  transition: opacity 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Var=Icon, Unselected: крестик виден по умолчанию. */
@@ -287,12 +287,14 @@
 /* === Type: Unselected (Hover / Active) ===
    :enabled — чтобы отключённый тумблер не реагировал на наведение и нажатие. */
 
-.switch:hover > .switch__input:enabled + .switch__track {
-  --awds-switch-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
-  --awds-switch-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
-  --awds-switch-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
-  /* иконка выбита цветом фона — следует за bg */
-  --awds-switch-icon-color: rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+@media (hover: hover) and (pointer: fine) {
+  .switch:hover > .switch__input:enabled + .switch__track {
+    --awds-switch-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+    --awds-switch-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+    --awds-switch-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+    /* иконка выбита цветом фона — следует за bg */
+    --awds-switch-icon-color: rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+  }
 }
 
 .switch:active > .switch__input:enabled + .switch__track {
@@ -315,11 +317,13 @@
   --awds-switch-icon-color: rgb(var(--primary-core));   /* #cell check-radio/selected/bg-rest */
 }
 
-.switch:hover > .switch__input:enabled:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
-  --awds-switch-chroma:     rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
-  --awds-switch-border:     rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
-  --awds-switch-icon-color: rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+@media (hover: hover) and (pointer: fine) {
+  .switch:hover > .switch__input:enabled:checked + .switch__track {
+    --awds-switch-bg:         rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+    --awds-switch-chroma:     rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+    --awds-switch-border:     rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+    --awds-switch-icon-color: rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+  }
 }
 
 .switch:active > .switch__input:enabled:checked + .switch__track {
