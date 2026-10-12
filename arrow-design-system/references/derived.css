@@ -48,15 +48,16 @@
   --awds-motion-duration-pulse: 2s;      /* пульс индикатора и скелетона, loop. 3 */
 
   /* кривые */
-  --awds-motion-ease-state: ease-out;                  /* вход в состояние. 504 */
-  --awds-motion-ease-exit: ease-in;                    /* уход состояния, exit короче enter. 6 */
+  --awds-motion-ease-state: cubic-bezier(0.23, 1, 0.32, 1); /* вход в состояние: сильная ease-out — встроенная слабая, отклик читался вялым (12.10.2026) */
+  --awds-motion-ease-exit: cubic-bezier(0.23, 1, 0.32, 1);  /* уход состояния, exit короче enter, не ease-in — медленный старт тянул выход (12.10.2026) */
   --awds-motion-ease-linear: linear;                   /* loop: спиннер, полоса прогресса. 146 */
   --awds-motion-ease-swap: cubic-bezier(0.2, 0, 0, 1); /* подмена иконки, канон motion.md. 4 */
 }
 
 
 /* =============================================================================
-   ВЕБШРИФТЫ — Onest (основной текст) и Geologica (заголовки)
+   ВЕБШРИФТЫ — Onest (основной текст), Geologica (заголовки),
+   Libre Franklin (заголовки shopotam)
 
    Роли font/family/* называют эти гарнитуры, но имя само по себе ничего не
    грузит: без @font-face браузер берёт следующий шаг стека и рисует system-ui.
@@ -73,6 +74,11 @@
 
    Нарезка по алфавитам: кириллица и латиница врозь, лишний алфавит браузер не
    скачает. Всего 88 КБ на четыре файла.
+
+   Libre Franklin объявлен для всех, а включён только у shopotam: форк 54
+   переопределяет font/family/heading. Браузер качает файл лишь тогда, когда
+   гарнитуру реально берёт какой-то текст, поэтому на остальных сайтах
+   объявление ничего не грузит. Залит 12.10.2026, 45 КБ на два файла.
 
    Хранилище — S3 PageCraft: отдаёт font/woff2 и CORS на любой origin,
    проверено 26.09.2026 с bjjd.ru и thehomestudio.ru. Шрифт с чужого origin
@@ -120,6 +126,26 @@
   font-weight: 100 900;
   font-display: swap;
   src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20260926_e595ef0251769e84.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Libre Franklin · cyrillic */
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20261012_187a55e57239ba99.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* Libre Franklin · latin */
+@font-face {
+  font-family: 'Libre Franklin';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(https://5db59f4b-034a-4aec-9e93-93c5c493aa5a.selstorage.ru/uploads/20261012_6a8b61f25d79e704.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
