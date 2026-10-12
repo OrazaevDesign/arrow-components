@@ -1,17 +1,11 @@
 {
   "component": "list-item",
-  "version": "2.4.2",
+  "version": "2.4.3",
   "contract_hash": "sha256:b1b75e9615c1b12a0ea79d6d9daccdbe3633c2294e431577d1e0ce589248d283",
-  "artifact_hash": "sha256:69c1fcab2773cc487aa9cad29b2e1fafe50051f4a59c49b76b3d846dc9980845",
+  "artifact_hash": "sha256:e31b83aafb2c00bced0ca5ef3438c713c31694247229856c6b5db5007e9bb9aa",
   "visual_change": true,
-  "released_at": "2026-10-01T13:01:33.600Z",
+  "released_at": "2026-10-12T13:29:42.743Z",
   "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 39,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    },
     {
       "value": "transparent",
       "where": "--awds-list-item-check у .list-item-variation",
@@ -232,6 +226,8 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-regular",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-100",

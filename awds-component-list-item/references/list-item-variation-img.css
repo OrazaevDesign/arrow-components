@@ -114,9 +114,9 @@
 
   /* Polish (MIFB): перечисляем свойства явно, никакого transition: all.
      Переход прерываемый. Стандарт PageCraft — 0.15s ease-out. */
-  transition: --awds-list-item-bg 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-list-item-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .list-item:focus-visible,
@@ -237,10 +237,12 @@
    состояния передаются ему явно, с теми же ячейками check-radio. Выбранность
    перечислена в селекторе, иначе правило невыбранного перебило бы выбранный Rest. */
 
-.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
-  --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
-  --awds-checkbox-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+    --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+    --awds-checkbox-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+  }
 }
 
 .list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
@@ -249,10 +251,12 @@
   --awds-checkbox-border: rgb(var(--secondary-container-on-low));   /* #cell check-radio/unselected/border-active */
 }
 
-.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
-  --awds-checkbox-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
-  --awds-checkbox-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+    --awds-checkbox-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+    --awds-checkbox-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+  }
 }
 
 .list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
@@ -261,10 +265,12 @@
   --awds-checkbox-border: rgb(var(--primary-core));   /* #cell check-radio/selected/border-active */
 }
 
-.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
-  --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
-  --awds-radio-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
-  --awds-radio-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+    --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+    --awds-radio-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+    --awds-radio-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+  }
 }
 
 .list-item:active > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
@@ -273,10 +279,12 @@
   --awds-radio-border: rgb(var(--secondary-container-on-low));   /* #cell check-radio/unselected/border-active */
 }
 
-.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
-  --awds-radio-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
-  --awds-radio-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+    --awds-radio-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+    --awds-radio-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+    --awds-radio-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+  }
 }
 
 .list-item:active > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
@@ -554,14 +562,16 @@
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
    :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
-.list-item-variation-img:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-bright));   /* #cell list/variation-img/bg */
-  --awds-list-item-border:      rgb(var(--focus-container-on));   /* #cell list/variation/border-hover */
-  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/variation/color-hover */
-  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/variation/description-hover */
-  --awds-list-item-check:   transparent;
-  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   /* #cell list/variation/icon-hover */
-  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   /* #cell list/variation/chevron-hover */
+@media (hover: hover) and (pointer: fine) {
+  .list-item-variation-img:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:      rgb(var(--surface-bright));   /* #cell list/variation-img/bg */
+    --awds-list-item-border:      rgb(var(--focus-container-on));   /* #cell list/variation/border-hover */
+    --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/variation/color-hover */
+    --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/variation/description-hover */
+    --awds-list-item-check:   transparent;
+    --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   /* #cell list/variation/icon-hover */
+    --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   /* #cell list/variation/chevron-hover */
+  }
 }
 
 .list-item-variation-img:focus-visible,
