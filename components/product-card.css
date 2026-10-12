@@ -1,4 +1,4 @@
-/* ArrowDS · product-card@3.3.0
+/* ArrowDS · product-card@3.3.1
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @keyframes pcard-brand-first-skel-pulse {
@@ -108,8 +108,10 @@
   z-index: 2;
 }
 
-.pcard-brand-first .pcard__media:hover .pcard__image-link::after { 
-  opacity: 0;
+@media (hover: hover) and (pointer: fine) {
+  .pcard-brand-first .pcard__media:hover .pcard__image-link::after { 
+    opacity: 0;
+  }
 }
 
 .pcard-brand-first .pcard__media-placeholder {
@@ -243,14 +245,17 @@
 .pcard__nav > .pcard__nav-btn--next { translate: calc(100% + var(--awds-space-2)) 0;
 }
 
-@media (hover: hover) {
-  .pcard__media:hover .pcard__nav > .obtn,
-  .pcard__nav:has(:focus-visible) > .obtn {
+@media (hover: hover) and (pointer: fine) {
+  .pcard__media:hover .pcard__nav > .obtn {
     translate: 0 0;
   }
 }
 
-@media (hover: none) {
+.pcard__nav:has(:focus-visible) > .obtn {
+  translate: 0 0;
+}
+
+@media not ((hover: hover) and (pointer: fine)) {
   .pcard__nav { display: none; }
 }
 
@@ -309,8 +314,11 @@
   white-space: nowrap;
 }
 
-.pcard-brand-first .pcard__brand:hover, .pcard-brand-first .pcard__name:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-brand-first .pcard__brand:hover,
+  .pcard-brand-first .pcard__name:hover {
+    color: rgb(var(--accent-core));       
+  }
 }
 
 .pcard-brand-first .pcard__category {
@@ -332,8 +340,10 @@
   margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
-.pcard-brand-first .pcard__category:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-brand-first .pcard__category:hover {
+    color: rgb(var(--accent-core));        
+  }
 }
 
 .pcard-brand-first .pcard__feedback {
@@ -613,8 +623,10 @@
   z-index: 2;
 }
 
-.pcard-button-price .pcard__media:hover .pcard__image-link::after { 
-  opacity: 0;
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__media:hover .pcard__image-link::after { 
+    opacity: 0;
+  }
 }
 
 .pcard-button-price .pcard__media-placeholder {
@@ -740,8 +752,10 @@
   max-width: 100%;
 }
 
-.pcard-button-price .pcard__brand:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__brand:hover {
+    color: rgb(var(--accent-core));       
+  }
 }
 
 .pcard-button-price .pcard__cart-view--button .price {
@@ -794,12 +808,16 @@
   margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
-.pcard-button-price .pcard__name:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__name:hover {
+    color: rgb(var(--accent-core));       
+  }
 }
 
-.pcard-button-price .pcard__category:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-button-price .pcard__category:hover {
+    color: rgb(var(--accent-core));        
+  }
 }
 
 .pcard-button-price .pcard__feedback {
@@ -1034,8 +1052,10 @@
   z-index: 2;
 }
 
-.pcard-buy-now .pcard__media:hover .pcard__image-link::after { 
-  opacity: 0;
+@media (hover: hover) and (pointer: fine) {
+  .pcard-buy-now .pcard__media:hover .pcard__image-link::after { 
+    opacity: 0;
+  }
 }
 
 .pcard-buy-now .pcard__media-placeholder {
@@ -1199,8 +1219,10 @@
   white-space: nowrap;
 }
 
-.pcard-buy-now .pcard__brand:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-buy-now .pcard__brand:hover {
+    color: rgb(var(--accent-core));       
+  }
 }
 
 .pcard-buy-now .pcard__name {
@@ -1238,12 +1260,16 @@
   margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
-.pcard-buy-now .pcard__name:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-buy-now .pcard__name:hover {
+    color: rgb(var(--accent-core));       
+  }
 }
 
-.pcard-buy-now .pcard__category:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-buy-now .pcard__category:hover {
+    color: rgb(var(--accent-core));        
+  }
 }
 
 .pcard-buy-now .pcard__feedback {
@@ -1525,8 +1551,10 @@
   z-index: 2;
 }
 
-.pcard__media:hover .pcard__image-link::after { 
-  opacity: 0;
+@media (hover: hover) and (pointer: fine) {
+  .pcard__media:hover .pcard__image-link::after { 
+    opacity: 0;
+  }
 }
 
 .pcard__media-placeholder {
@@ -1672,8 +1700,11 @@
   white-space: nowrap;
 }
 
-.pcard__brand:hover, .pcard__name:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard__brand:hover,
+  .pcard__name:hover {
+    color: rgb(var(--accent-core));       
+  }
 }
 
 .pcard-price-first .pcard__category {
@@ -1695,8 +1726,10 @@
   margin-block-end: calc(-1 * var(--awds-space-1));
 }
 
-.pcard-price-first .pcard__category:hover {
-  color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .pcard-price-first .pcard__category:hover {
+    color: rgb(var(--accent-core));        
+  }
 }
 
 .pcard__feedback {

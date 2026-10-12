@@ -1,4 +1,4 @@
-/* ArrowDS · input-combi@1.0.18
+/* ArrowDS · input-combi@1.0.19
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-icombi-bg {
@@ -53,11 +53,11 @@
   color: var(--awds-icombi-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
-  transition: --awds-icombi-bg 0.15s ease-out,
-              --awds-icombi-color 0.15s ease-out,
-              --awds-icombi-placeholder 0.15s ease-out,
-              --awds-icombi-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-icombi-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .icombi__body {
@@ -114,11 +114,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: top 0.15s ease-out,
-              font-size 0.15s ease-out,
-              line-height 0.15s ease-out,
-              letter-spacing 0.15s ease-out,
-              --awds-icombi-placeholder 0.15s ease-out;
+  transition: top var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              font-size var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              line-height var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              letter-spacing var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-icombi-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .icombi:focus-within .icombi__label, .icombi__field:not(:placeholder-shown) + .icombi__label {
@@ -255,8 +255,10 @@
   --awds-icombi-icon-color: rgb(var(--tertiary-container-on-high));
 }
 
-.icombi-autofill:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--tertiary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .icombi-autofill:hover:not(:focus-within):has(.icombi__field:enabled) {
+    --awds-icombi-border: rgb(var(--tertiary-container-on));   
+  }
 }
 
 .icombi-autofill:active:not(:focus-within):has(.icombi__field:enabled) {
@@ -297,8 +299,10 @@
   --awds-icombi-icon-color: rgb(var(--secondary-container-on-high));
 }
 
-.icombi-default:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .icombi-default:hover:not(:focus-within):has(.icombi__field:enabled) {
+    --awds-icombi-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .icombi-default:active:not(:focus-within):has(.icombi__field:enabled) {
@@ -322,8 +326,10 @@
   --awds-icombi-icon-color: rgb(var(--error-container-on-high));
 }
 
-.icombi-error:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--error-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .icombi-error:hover:not(:focus-within):has(.icombi__field:enabled) {
+    --awds-icombi-border: rgb(var(--error-container-on));   
+  }
 }
 
 .icombi-error:active:not(:focus-within):has(.icombi__field:enabled) {
@@ -366,8 +372,10 @@
   --awds-icombi-icon-color: rgb(var(--secondary-container-on-high));
 }
 
-.icombi-light:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .icombi-light:hover:not(:focus-within):has(.icombi__field:enabled) {
+    --awds-icombi-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .icombi-light:active:not(:focus-within):has(.icombi__field:enabled) {
@@ -392,9 +400,11 @@
   --awds-icombi-icon-color: rgb(var(--secondary-on));
 }
 
-.icombi-secondary:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-bg:     rgb(var(--secondary-dim));   
-  --awds-icombi-border: rgb(var(--secondary-dim));
+@media (hover: hover) and (pointer: fine) {
+  .icombi-secondary:hover:not(:focus-within):has(.icombi__field:enabled) {
+    --awds-icombi-bg:     rgb(var(--secondary-dim));   
+    --awds-icombi-border: rgb(var(--secondary-dim));   
+  }
 }
 
 .icombi-secondary:active:not(:focus-within):has(.icombi__field:enabled) {
@@ -420,8 +430,10 @@
   --awds-icombi-icon-color: rgb(var(--success-container-on-high));
 }
 
-.icombi-success:hover:not(:focus-within):has(.icombi__field:enabled) {
-  --awds-icombi-border: rgb(var(--success-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .icombi-success:hover:not(:focus-within):has(.icombi__field:enabled) {
+    --awds-icombi-border: rgb(var(--success-container-on));   
+  }
 }
 
 .icombi-success:active:not(:focus-within):has(.icombi__field:enabled) {

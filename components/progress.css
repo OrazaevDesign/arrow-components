@@ -1,4 +1,4 @@
-/* ArrowDS · progress@2.0.4
+/* ArrowDS · progress@2.0.5
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-progress-value {
@@ -102,11 +102,11 @@
   stroke-linecap: round;
   stroke-dasharray: var(--awds-progress-value) 100;
   stroke-opacity: min(1, calc(var(--awds-progress-value) * 1000));
-  transition: stroke-dasharray 0.3s ease-out;
+  transition: stroke-dasharray 0.3s var(--awds-motion-ease-state);
 }
 
 .progress-circular.progress--indeterminate {
-  animation: progress-circular-spin var(--awds-progress-spin-duration) linear infinite;
+  animation: progress-circular-spin var(--awds-progress-spin-duration) var(--awds-motion-ease-linear) infinite;
 }
 
 .progress-circular.progress--indeterminate .progress-circular__arc {
@@ -144,14 +144,14 @@
 .progress-linear__active {
   inset-inline-start: 0;
   inline-size: calc(var(--awds-progress-value) * 1%);
-  transition: inline-size 0.3s ease-out;
+  transition: inline-size 0.3s var(--awds-motion-ease-state);
 }
 
 .progress-linear__track {
   inset-inline: calc(var(--awds-progress-value) * 1% + var(--awds-progress-gap) * min(1, var(--awds-progress-value) * 1000)) 0;
   opacity: var(--awds-progress-idle-opacity);
   overflow: clip;
-  transition: inset-inline-start 0.3s ease-out;
+  transition: inset-inline-start 0.3s var(--awds-motion-ease-state);
 }
 
 .progress-linear__stop {

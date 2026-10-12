@@ -1,4 +1,4 @@
-/* ArrowDS · tab@1.0.7
+/* ArrowDS · tab@1.0.8
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-tab-bg {
@@ -50,11 +50,11 @@
   text-decoration: none;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  transition: --awds-tab-bg 0.15s ease-out,
-              --awds-tab-border 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out,
-              opacity 0.15s ease-out;
+  transition: --awds-tab-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-tab-border var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .tab:focus-visible {
@@ -107,10 +107,12 @@
   --awds-tab-color:  rgb(var(--surface-on-high));
 }
 
-.tab-unselected:hover {
-  --awds-tab-bg:     rgb(var(--extended-transparent));   
-  --awds-tab-border: rgb(var(--surface-on-low));   
-  --awds-tab-color:  rgb(var(--surface-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .tab-unselected:hover {
+    --awds-tab-bg:     rgb(var(--extended-transparent));   
+    --awds-tab-border: rgb(var(--surface-on-low));   
+    --awds-tab-color:  rgb(var(--surface-on-highest));   
+  }
 }
 
 .tab-unselected:focus-visible {
@@ -131,10 +133,12 @@
   --awds-tab-color:  rgb(var(--surface-on-highest));
 }
 
-.tab-selected:hover {
-  --awds-tab-bg:     rgb(var(--extended-transparent));   
-  --awds-tab-border: rgb(var(--primary-dim));   
-  --awds-tab-color:  rgb(var(--surface-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .tab-selected:hover {
+    --awds-tab-bg:     rgb(var(--extended-transparent));   
+    --awds-tab-border: rgb(var(--primary-dim));   
+    --awds-tab-color:  rgb(var(--surface-on-high));   
+  }
 }
 
 .tab-selected:focus-visible {

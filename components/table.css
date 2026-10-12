@@ -1,4 +1,4 @@
-/* ArrowDS · table@1.0.13
+/* ArrowDS · table@1.0.14
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -10,9 +10,11 @@
   --awds-cell-description: rgb(var(--surface-on-high));
 }
 
-.cell-default:hover {
-  --awds-cell-bg:     rgb(var(--surface-surface));     
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+@media (hover: hover) and (pointer: fine) {
+  .cell-default:hover {
+    --awds-cell-bg:     rgb(var(--surface-surface));     
+    --awds-cell-border: rgb(var(--surface-on-lowest));   
+  }
 }
 
 .cell-default:focus-visible {
@@ -33,9 +35,11 @@
   font-weight: var(--awds-font-weight-semibold);
 }
 
-.cell-head:hover {
-  --awds-cell-bg:     rgb(var(--surface-dim));         
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+@media (hover: hover) and (pointer: fine) {
+  .cell-head:hover {
+    --awds-cell-bg:     rgb(var(--surface-dim));         
+    --awds-cell-border: rgb(var(--surface-on-lowest));   
+  }
 }
 
 .cell-head:focus-visible {
@@ -55,9 +59,11 @@
   --awds-cell-description: rgb(var(--surface-on-high));
 }
 
-.cell-light:hover {
-  --awds-cell-bg:     rgb(var(--surface-surface));     
-  --awds-cell-border: rgb(var(--surface-on-lowest));
+@media (hover: hover) and (pointer: fine) {
+  .cell-light:hover {
+    --awds-cell-bg:     rgb(var(--surface-surface));     
+    --awds-cell-border: rgb(var(--surface-on-lowest));   
+  }
 }
 
 .cell-light:focus-visible {
@@ -118,10 +124,10 @@
   letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
   text-wrap: pretty;
-  transition: background-color 0.15s ease-out,
-              border-color 0.15s ease-out,
-              color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              border-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .cell:focus-visible {

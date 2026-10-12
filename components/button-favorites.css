@@ -1,4 +1,4 @@
-/* ArrowDS · button-favorites@2.0.3
+/* ArrowDS · button-favorites@2.0.4
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -34,8 +34,8 @@
   --awds-btn-color:  rgb(var(--surface-on-high));   
   --awds-btn-fav-fill:   rgb(var(--surface-bright));   
   --awds-btn-fav-stroke: rgb(var(--surface-on-high));   
-  transition: transform 0.12s ease-out,
-              color 0.15s ease-out;
+  transition: transform 0.12s var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .btn-favorites__icon {
@@ -51,7 +51,7 @@
   grid-area: 1 / 1;
   width: 100%;
   height: 100%;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .btn-favorites__solid { color: var(--awds-btn-fav-fill);
@@ -60,10 +60,12 @@
 .btn-favorites__outline { color: var(--awds-btn-fav-stroke);
 }
 
-.btn-favorites:hover {
-  --awds-btn-color:      rgb(var(--surface-on-highest));   
-  --awds-btn-fav-fill:   rgb(var(--error-container-dim));   
-  --awds-btn-fav-stroke: rgb(var(--error-core));
+@media (hover: hover) and (pointer: fine) {
+  .btn-favorites:hover {
+    --awds-btn-color:      rgb(var(--surface-on-highest));   
+    --awds-btn-fav-fill:   rgb(var(--error-container-dim));   
+    --awds-btn-fav-stroke: rgb(var(--error-core));   
+  }
 }
 
 .btn-favorites:focus-visible {

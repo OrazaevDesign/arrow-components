@@ -1,4 +1,4 @@
-/* ArrowDS · select@1.0.29
+/* ArrowDS · select@1.0.30
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-select-bg {
@@ -65,12 +65,12 @@
   color: var(--awds-select-color);
   cursor: pointer;
   opacity: var(--awds-opacity-100);   
-  transition: --awds-select-bg 0.15s ease-out,
-              --awds-select-color 0.15s ease-out,
-              --awds-select-placeholder 0.15s ease-out,
-              --awds-select-chevron 0.15s ease-out,
-              --awds-select-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-select-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-chevron var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-select-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .select::after {
@@ -379,8 +379,10 @@
   --awds-select-icon-color: rgb(var(--tertiary-container-on-high));
 }
 
-.select-autofill:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--tertiary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .select-autofill:hover:not(:focus-within):has(> .select__field:enabled) {
+    --awds-select-border:   rgb(var(--tertiary-container-on));   
+  }
 }
 
 .select-autofill:active:not(:focus-within):has(> .select__field:enabled) {
@@ -435,8 +437,10 @@
   --awds-select-icon-color: rgb(var(--secondary-container-on-high));
 }
 
-.select-default:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .select-default:hover:not(:focus-within):has(> .select__field:enabled) {
+    --awds-select-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .select-default:active:not(:focus-within):has(> .select__field:enabled) {
@@ -475,8 +479,10 @@
   --awds-select-icon-color: rgb(var(--error-container-on-high));
 }
 
-.select-error:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--error-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .select-error:hover:not(:focus-within):has(> .select__field:enabled) {
+    --awds-select-border:   rgb(var(--error-container-on));   
+  }
 }
 
 .select-error:active:not(:focus-within):has(> .select__field:enabled) {
@@ -545,8 +551,10 @@
   --awds-select-icon-color: rgb(var(--secondary-container-on-high));
 }
 
-.select-light:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .select-light:hover:not(:focus-within):has(> .select__field:enabled) {
+    --awds-select-border:   rgb(var(--secondary-container-on));   
+  }
 }
 
 .select-light:active:not(:focus-within):has(> .select__field:enabled) {
@@ -584,8 +592,10 @@
   --awds-select-icon-color: rgb(var(--success-container-on-high));
 }
 
-.select-success:hover:not(:focus-within):has(> .select__field:enabled) {
-  --awds-select-border:   rgb(var(--success-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .select-success:hover:not(:focus-within):has(> .select__field:enabled) {
+    --awds-select-border:   rgb(var(--success-container-on));   
+  }
 }
 
 .select-success:active:not(:focus-within):has(> .select__field:enabled) {

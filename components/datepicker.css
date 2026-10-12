@@ -1,4 +1,4 @@
-/* ArrowDS · datepicker@1.0.8
+/* ArrowDS · datepicker@1.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -97,8 +97,10 @@
 .dpick__nav--next::before { rotate: -90deg;
 }
 
-.dpick__nav:hover {
-  color: rgb(var(--surface-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .dpick__nav:hover {
+    color: rgb(var(--surface-on-highest));                                  
+  }
 }
 
 .dpick__nav:focus-visible, .dpick__title:focus-visible, .dpick__cell:focus-visible {
@@ -176,9 +178,11 @@
   opacity: var(--awds-opacity-100);
 }
 
-.dpick__cell:hover {
-  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         
-  --awds-dpick-cell-border: rgb(var(--secondary-container-core));
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell:hover {
+    --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         
+    --awds-dpick-cell-border: rgb(var(--secondary-container-core));         
+  }
 }
 
 .dpick__cell--today {
@@ -186,9 +190,11 @@
   --awds-dpick-cell-color:  rgb(var(--accent-core));
 }
 
-.dpick__cell--today:hover {
-  --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         
-  --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell--today:hover {
+    --awds-dpick-cell-bg:     rgb(var(--secondary-container-core));         
+    --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    
+  }
 }
 
 .dpick__cell--range {
@@ -203,9 +209,11 @@
   --awds-dpick-cell-color:  rgb(var(--focus-container-on-highest));
 }
 
-.dpick__cell--selected:hover {
-  --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           
-  --awds-dpick-cell-border: rgb(var(--focus-container-core));
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell--selected:hover {
+    --awds-dpick-cell-bg:     rgb(var(--focus-container-core));           
+    --awds-dpick-cell-border: rgb(var(--focus-container-core));      
+  }
 }
 
 .dpick__cell:disabled, .dpick__cell[aria-disabled="true"] {
@@ -213,9 +221,12 @@
   cursor: default;
 }
 
-.dpick__cell:disabled:hover, .dpick__cell[aria-disabled="true"]:hover {
-  --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             
-  --awds-dpick-cell-border: rgb(var(--extended-transparent));
+@media (hover: hover) and (pointer: fine) {
+  .dpick__cell:disabled:hover,
+  .dpick__cell[aria-disabled="true"]:hover {
+    --awds-dpick-cell-bg:     rgb(var(--extended-transparent));             
+    --awds-dpick-cell-border: rgb(var(--extended-transparent));             
+  }
 }
 
 }

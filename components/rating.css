@@ -1,4 +1,4 @@
-/* ArrowDS · rating@2.0.10
+/* ArrowDS · rating@2.0.11
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-rating-picked {
@@ -65,7 +65,7 @@
 
 .rating__ghost, .rating__outline {
   fill: var(--awds-rating-off);
-  transition: opacity 0.15s ease-out, fill 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state), fill var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .rating__ghost {
@@ -74,7 +74,7 @@
 
 .rating__solid {
   fill: var(--awds-rating-on);
-  transition: opacity 0.15s ease-out, fill 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state), fill var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .rating__solid {
@@ -101,7 +101,7 @@
   cursor: pointer;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .rating:has(.rating__star:hover) .rating__star {
     --awds-rating-picked: 1;
     --awds-rating-on: var(--awds-rating-on-hover);

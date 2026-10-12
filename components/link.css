@@ -1,4 +1,4 @@
-/* ArrowDS · link@1.0.8
+/* ArrowDS · link@1.0.9
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -13,10 +13,11 @@
   text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);  
   text-underline-offset: var(--awds-space-0-5);
   border-radius: var(--awds-rounded-border-radius-200);
-  transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state), text-decoration-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
-.lnk:hover { text-decoration-color: transparent;
+@media (hover: hover) and (pointer: fine) {
+  .lnk:hover { text-decoration-color: transparent; }
 }
 
 .lnk--ul-solid { --awds-lnk-ul-style: solid;
@@ -31,7 +32,8 @@
 .lnk--ul-hover { text-decoration-color: transparent;
 }
 
-.lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);
+@media (hover: hover) and (pointer: fine) {
+  .lnk--ul-hover:hover { text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent); }
 }
 
 .lnk--ul-none { text-decoration-line: none;
@@ -53,8 +55,10 @@
   --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
-.lnk-accent:hover {
-  --awds-lnk-color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .lnk-accent:hover {
+    --awds-lnk-color: rgb(var(--accent-core));         
+  }
 }
 
 .lnk-accent:focus-visible {
@@ -75,8 +79,10 @@
   --awds-lnk-color: rgb(var(--surface-on-highest));
 }
 
-.lnk-contrast:hover {
-  --awds-lnk-color: rgb(var(--surface-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .lnk-contrast:hover {
+    --awds-lnk-color: rgb(var(--surface-on-high));             
+  }
 }
 
 .lnk-contrast:focus-visible {
@@ -97,15 +103,17 @@
   text-decoration-color: color-mix(in srgb, currentColor var(--awds-opacity-30), transparent);  
   text-underline-offset: var(--awds-space-0-5);
   border-radius: var(--awds-rounded-border-radius-200);       
-  transition: color 0.15s ease-out, text-decoration-color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state), text-decoration-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .lnk-default {
   --awds-lnk-color: rgb(var(--tertiary-on));
 }
 
-.lnk-default:hover {
-  --awds-lnk-color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .lnk-default:hover {
+    --awds-lnk-color: rgb(var(--accent-core));   
+  }
 }
 
 .lnk-default:focus-visible {
@@ -124,8 +132,10 @@
   text-decoration-line: none;
 }
 
-.lnk-heading:hover {
-  --awds-lnk-color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .lnk-heading:hover {
+    --awds-lnk-color: rgb(var(--accent-core));         
+  }
 }
 
 .lnk-heading:focus-visible {
@@ -140,8 +150,10 @@
   --awds-lnk-color: rgb(var(--surface-on-high));
 }
 
-.lnk-muted:hover {
-  --awds-lnk-color: rgb(var(--surface-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .lnk-muted:hover {
+    --awds-lnk-color: rgb(var(--surface-on-highest));          
+  }
 }
 
 .lnk-muted:focus-visible {

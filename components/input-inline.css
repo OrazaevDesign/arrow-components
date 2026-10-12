@@ -1,4 +1,4 @@
-/* ArrowDS · input-inline@1.0.1
+/* ArrowDS · input-inline@1.0.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-iinline-color {
@@ -37,8 +37,8 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: --awds-iinline-color 0.15s ease-out,
-              --awds-iinline-placeholder 0.15s ease-out;
+  transition: --awds-iinline-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-iinline-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .iinline::placeholder {
@@ -103,9 +103,11 @@
   --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));
 }
 
-.iinline-default:hover:enabled {
-  --awds-iinline-color:       rgb(var(--secondary-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .iinline-default:hover:enabled {
+    --awds-iinline-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-iinline-placeholder: rgb(var(--secondary-container-on-high));   
+  }
 }
 
 .iinline-default:focus {
@@ -134,9 +136,11 @@
   --awds-iinline-placeholder: rgb(var(--error-container-on-high));
 }
 
-.iinline-error:hover:enabled {
-  --awds-iinline-color:       rgb(var(--error-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--error-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .iinline-error:hover:enabled {
+    --awds-iinline-color:       rgb(var(--error-container-on-highest));   
+    --awds-iinline-placeholder: rgb(var(--error-container-on-high));   
+  }
 }
 
 .iinline-error:focus {
@@ -154,9 +158,11 @@
   --awds-iinline-placeholder: rgb(var(--success-container-on-high));
 }
 
-.iinline-success:hover:enabled {
-  --awds-iinline-color:       rgb(var(--success-container-on-highest));   
-  --awds-iinline-placeholder: rgb(var(--success-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .iinline-success:hover:enabled {
+    --awds-iinline-color:       rgb(var(--success-container-on-highest));   
+    --awds-iinline-placeholder: rgb(var(--success-container-on-high));   
+  }
 }
 
 .iinline-success:focus {

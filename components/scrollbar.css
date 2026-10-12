@@ -1,4 +1,4 @@
-/* ArrowDS · scrollbar@2.0.6
+/* ArrowDS · scrollbar@2.0.7
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -32,9 +32,11 @@
   background-clip: content-box;
 }
 
-.scrollbar:hover::-webkit-scrollbar-thumb {
-  background: var(--awds-scrollbar-thumb-hover);
-  background-clip: content-box;
+@media (hover: hover) and (pointer: fine) {
+  .scrollbar:hover::-webkit-scrollbar-thumb {
+    background: var(--awds-scrollbar-thumb-hover);
+    background-clip: content-box;
+  }
 }
 
 .scrollbar::-webkit-scrollbar-corner {
@@ -46,8 +48,10 @@
     scrollbar-width: thin;
     scrollbar-color: var(--awds-scrollbar-thumb) var(--awds-scrollbar-track);
   }
-  .scrollbar:hover {
-    scrollbar-color: var(--awds-scrollbar-thumb-hover) var(--awds-scrollbar-track);
+  @media (hover: hover) and (pointer: fine) {
+    .scrollbar:hover {
+      scrollbar-color: var(--awds-scrollbar-thumb-hover) var(--awds-scrollbar-track);
+    }
   }
 }
 

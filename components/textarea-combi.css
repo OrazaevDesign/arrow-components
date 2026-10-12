@@ -1,4 +1,4 @@
-/* ArrowDS · textarea-combi@1.0.7
+/* ArrowDS · textarea-combi@1.0.8
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-tcombi-bg {
@@ -44,10 +44,10 @@
   color: var(--awds-tcombi-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
-  transition: --awds-tcombi-bg 0.15s ease-out,
-              --awds-tcombi-color 0.15s ease-out,
-              --awds-tcombi-label 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-tcombi-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-tcombi-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-tcombi-label var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .tcombi__label {
@@ -182,11 +182,13 @@
   --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
 }
 
-.tcombi-autofill:hover:not(:focus-within):has(> .tcombi__field:enabled) {
-  --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
-  --awds-tcombi-border:      rgb(var(--tertiary-container-on));   
-  --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .tcombi-autofill:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+    --awds-tcombi-bg:          rgb(var(--tertiary-container-core));   
+    --awds-tcombi-border:      rgb(var(--tertiary-container-on));   
+    --awds-tcombi-color:       rgb(var(--tertiary-container-on-highest));   
+    --awds-tcombi-label:       rgb(var(--tertiary-container-on-high));   
+  }
 }
 
 .tcombi-autofill:active:not(:focus-within):has(> .tcombi__field:enabled) {
@@ -228,11 +230,13 @@
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
 }
 
-.tcombi-default:hover:not(:focus-within):has(> .tcombi__field:enabled) {
-  --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
-  --awds-tcombi-border:      rgb(var(--secondary-container-on));   
-  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .tcombi-default:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+    --awds-tcombi-bg:          rgb(var(--secondary-container-core));   
+    --awds-tcombi-border:      rgb(var(--secondary-container-on));   
+    --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   
+  }
 }
 
 .tcombi-default:active:not(:focus-within):has(> .tcombi__field:enabled) {
@@ -258,11 +262,13 @@
   --awds-tcombi-label:       rgb(var(--error-container-on-high));
 }
 
-.tcombi-error:hover:not(:focus-within):has(> .tcombi__field:enabled) {
-  --awds-tcombi-bg:          rgb(var(--error-container-core));   
-  --awds-tcombi-border:      rgb(var(--error-container-on));   
-  --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--error-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .tcombi-error:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+    --awds-tcombi-bg:          rgb(var(--error-container-core));   
+    --awds-tcombi-border:      rgb(var(--error-container-on));   
+    --awds-tcombi-color:       rgb(var(--error-container-on-highest));   
+    --awds-tcombi-label:       rgb(var(--error-container-on-high));   
+  }
 }
 
 .tcombi-error:active:not(:focus-within):has(> .tcombi__field:enabled) {
@@ -288,9 +294,11 @@
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
 }
 
-.tcombi-ghost:hover:not(:focus-within):has(> .tcombi__field:enabled) {
-  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .tcombi-ghost:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+    --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   
+  }
 }
 
 .tcombi-ghost:active:not(:focus-within):has(> .tcombi__field:enabled) {
@@ -312,11 +320,13 @@
   --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
 }
 
-.tcombi-light:hover:not(:focus-within):has(> .tcombi__field:enabled) {
-  --awds-tcombi-bg:          rgb(var(--surface-bright));   
-  --awds-tcombi-border:      rgb(var(--secondary-container-on));   
-  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .tcombi-light:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+    --awds-tcombi-bg:          rgb(var(--surface-bright));   
+    --awds-tcombi-border:      rgb(var(--secondary-container-on));   
+    --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   
+  }
 }
 
 .tcombi-light:active:not(:focus-within):has(> .tcombi__field:enabled) {
@@ -342,11 +352,13 @@
   --awds-tcombi-label:       rgb(var(--success-container-on-high));
 }
 
-.tcombi-success:hover:not(:focus-within):has(> .tcombi__field:enabled) {
-  --awds-tcombi-bg:          rgb(var(--success-container-core));   
-  --awds-tcombi-border:      rgb(var(--success-container-on));   
-  --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
-  --awds-tcombi-label:       rgb(var(--success-container-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .tcombi-success:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+    --awds-tcombi-bg:          rgb(var(--success-container-core));   
+    --awds-tcombi-border:      rgb(var(--success-container-on));   
+    --awds-tcombi-color:       rgb(var(--success-container-on-highest));   
+    --awds-tcombi-label:       rgb(var(--success-container-on-high));   
+  }
 }
 
 .tcombi-success:active:not(:focus-within):has(> .tcombi__field:enabled) {

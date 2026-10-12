@@ -1,4 +1,4 @@
-/* ArrowDS · textarea@1.0.18
+/* ArrowDS · textarea@1.0.19
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-txa-bg {
@@ -39,10 +39,10 @@
   color: var(--awds-txa-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
-  transition: --awds-txa-bg 0.15s ease-out,
-              --awds-txa-color 0.15s ease-out,
-              --awds-txa-placeholder 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-txa-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-txa-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-txa-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .txa__field {
@@ -170,8 +170,10 @@
   --awds-txa-placeholder:  rgb(var(--tertiary-container-on-high));
 }
 
-.txa-autofill:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--tertiary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .txa-autofill:hover:not(:focus-within):has(.txa__field:enabled) {
+    --awds-txa-border:     rgb(var(--tertiary-container-on));   
+  }
 }
 
 .txa-autofill:active:not(:focus-within):has(.txa__field:enabled) {
@@ -210,8 +212,10 @@
   --awds-txa-placeholder: rgb(var(--secondary-container-on-high));
 }
 
-.txa-default:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .txa-default:hover:not(:focus-within):has(.txa__field:enabled) {
+    --awds-txa-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .txa-default:active:not(:focus-within):has(.txa__field:enabled) {
@@ -234,8 +238,10 @@
   --awds-txa-placeholder:  rgb(var(--error-container-on-high));
 }
 
-.txa-error:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--error-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .txa-error:hover:not(:focus-within):has(.txa__field:enabled) {
+    --awds-txa-border:     rgb(var(--error-container-on));   
+  }
 }
 
 .txa-error:active:not(:focus-within):has(.txa__field:enabled) {
@@ -272,8 +278,10 @@
   --awds-txa-placeholder:  rgb(var(--secondary-container-on-high));
 }
 
-.txa-light:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .txa-light:hover:not(:focus-within):has(.txa__field:enabled) {
+    --awds-txa-border:     rgb(var(--secondary-container-on));   
+  }
 }
 
 .txa-light:active:not(:focus-within):has(.txa__field:enabled) {
@@ -295,8 +303,10 @@
   --awds-txa-placeholder:  rgb(var(--success-container-on-high));
 }
 
-.txa-success:hover:not(:focus-within):has(.txa__field:enabled) {
-  --awds-txa-border:     rgb(var(--success-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .txa-success:hover:not(:focus-within):has(.txa__field:enabled) {
+    --awds-txa-border:     rgb(var(--success-container-on));   
+  }
 }
 
 .txa-success:active:not(:focus-within):has(.txa__field:enabled) {

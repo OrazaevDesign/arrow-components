@@ -1,4 +1,4 @@
-/* ArrowDS · select-combi@1.0.31
+/* ArrowDS · select-combi@1.0.32
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-scombi-bg {
@@ -71,12 +71,12 @@
   color: var(--awds-scombi-color);
   cursor: pointer;
   opacity: var(--awds-opacity-100);   
-  transition: --awds-scombi-bg 0.15s ease-out,
-              --awds-scombi-color 0.15s ease-out,
-              --awds-scombi-placeholder 0.15s ease-out,
-              --awds-scombi-chevron 0.15s ease-out,
-              --awds-scombi-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-scombi-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-scombi-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-scombi-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-scombi-chevron var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-scombi-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .scombi::after {
@@ -146,11 +146,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: top 0.15s ease-out,
-              font-size 0.15s ease-out,
-              line-height 0.15s ease-out,
-              letter-spacing 0.15s ease-out,
-              --awds-scombi-placeholder 0.15s ease-out;
+  transition: top var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              font-size var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              line-height var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              letter-spacing var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-scombi-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .scombi__field:has(option[value=""]:checked) + .scombi__label {
@@ -393,8 +393,10 @@
   --awds-scombi-icon-color:  rgb(var(--tertiary-container-on-high));
 }
 
-.scombi-autofill:hover:not(:focus-within):has(.scombi__field:enabled) {
-  --awds-scombi-border:      rgb(var(--tertiary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .scombi-autofill:hover:not(:focus-within):has(.scombi__field:enabled) {
+    --awds-scombi-border:      rgb(var(--tertiary-container-on));   
+  }
 }
 
 .scombi-autofill:active:not(:focus-within):has(.scombi__field:enabled) {
@@ -450,8 +452,10 @@
   --awds-scombi-icon-color: rgb(var(--secondary-container-on-high));
 }
 
-.scombi-default:hover:not(:focus-within):has(.scombi__field:enabled) {
-  --awds-scombi-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .scombi-default:hover:not(:focus-within):has(.scombi__field:enabled) {
+    --awds-scombi-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .scombi-default:active:not(:focus-within):has(.scombi__field:enabled) {
@@ -491,8 +495,10 @@
   --awds-scombi-icon-color:  rgb(var(--error-container-on-high));
 }
 
-.scombi-error:hover:not(:focus-within):has(.scombi__field:enabled) {
-  --awds-scombi-border:      rgb(var(--error-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .scombi-error:hover:not(:focus-within):has(.scombi__field:enabled) {
+    --awds-scombi-border:      rgb(var(--error-container-on));   
+  }
 }
 
 .scombi-error:active:not(:focus-within):has(.scombi__field:enabled) {
@@ -561,8 +567,10 @@
   --awds-scombi-icon-color:  rgb(var(--secondary-container-on-high));
 }
 
-.scombi-light:hover:not(:focus-within):has(.scombi__field:enabled) {
-  --awds-scombi-border:      rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .scombi-light:hover:not(:focus-within):has(.scombi__field:enabled) {
+    --awds-scombi-border:      rgb(var(--secondary-container-on));   
+  }
 }
 
 .scombi-light:active:not(:focus-within):has(.scombi__field:enabled) {
@@ -600,8 +608,10 @@
   --awds-scombi-icon-color:  rgb(var(--success-container-on-high));
 }
 
-.scombi-success:hover:not(:focus-within):has(.scombi__field:enabled) {
-  --awds-scombi-border:      rgb(var(--success-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .scombi-success:hover:not(:focus-within):has(.scombi__field:enabled) {
+    --awds-scombi-border:      rgb(var(--success-container-on));   
+  }
 }
 
 .scombi-success:active:not(:focus-within):has(.scombi__field:enabled) {

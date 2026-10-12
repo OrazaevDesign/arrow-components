@@ -1,6 +1,6 @@
 /* Значения темы ArrowDS — только то, что потребляют компоненты.
    Сгенерировано tools/build-dist.mjs — руками не править.
-   Переменных: 688 из 1369 объявленных в теме. */
+   Переменных: 689 из 1369 объявленных в теме. */
 
 :root {
   --primary-core-light: 111 58 236;
@@ -271,6 +271,7 @@
   --awds-layout-card-product-max-tablet: 368px;
   --awds-layout-card-product-max-mobile: 256px;
   --awds-layout-card-product-max: var(--awds-layout-card-product-max-desktop);
+  --awds-opacity-0: 0%;
   --awds-opacity-5: 5%;
   --awds-opacity-20: 20%;
   --awds-opacity-30: 30%;
@@ -1102,8 +1103,8 @@
   --awds-motion-duration-quick: 0.2s;
   --awds-motion-duration-enter: 0.3s;
   --awds-motion-duration-pulse: 2s;
-  --awds-motion-ease-state: ease-out;
-  --awds-motion-ease-exit: ease-in;
+  --awds-motion-ease-state: cubic-bezier(0.23, 1, 0.32, 1);
+  --awds-motion-ease-exit: cubic-bezier(0.23, 1, 0.32, 1);
   --awds-motion-ease-linear: linear;
   --awds-motion-ease-swap: cubic-bezier(0.2, 0, 0, 1);
 }

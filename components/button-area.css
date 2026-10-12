@@ -1,4 +1,4 @@
-/* ArrowDS · button-area@2.0.11
+/* ArrowDS · button-area@2.0.12
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -31,7 +31,7 @@
   list-style: none;                   
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .btn-area::-webkit-details-marker { display: none;
@@ -102,31 +102,36 @@
 .btn-area-default { --awds-btn-area-color: rgb(var(--tertiary-on));
 }
 
-.btn-area-default:hover { --awds-btn-area-color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .btn-area-default:hover  { --awds-btn-area-color: rgb(var(--accent-core));    }
 }
 
 .btn-area-muted { --awds-btn-area-color: rgb(var(--surface-on-high));
 }
 
-.btn-area-muted:hover { --awds-btn-area-color: rgb(var(--surface-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .btn-area-muted:hover    { --awds-btn-area-color: rgb(var(--surface-on-highest));    }
 }
 
 .btn-area-contrast { --awds-btn-area-color: rgb(var(--surface-on-highest));
 }
 
-.btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--surface-on-high));
+@media (hover: hover) and (pointer: fine) {
+  .btn-area-contrast:hover { --awds-btn-area-color: rgb(var(--surface-on-high));    }
 }
 
 .btn-area-accent { --awds-btn-area-color: rgb(var(--surface-on-highest));
 }
 
-.btn-area-accent:hover { --awds-btn-area-color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .btn-area-accent:hover   { --awds-btn-area-color: rgb(var(--accent-core));    }
 }
 
 .btn-area-heading { --awds-btn-area-color: rgb(var(--surface-on-high));
 }
 
-.btn-area-heading:hover { --awds-btn-area-color: rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .btn-area-heading:hover  { --awds-btn-area-color: rgb(var(--accent-core));    }
 }
 
 .btn-area:focus-visible {

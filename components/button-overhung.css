@@ -1,4 +1,4 @@
-/* ArrowDS · button-overhung@2.0.18
+/* ArrowDS · button-overhung@2.0.20
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-obtn-bg {
@@ -50,10 +50,10 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
-  transition: --awds-obtn-bg 0.15s ease-out,
-              --awds-obtn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-obtn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-obtn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .obtn:focus-visible {
@@ -91,7 +91,7 @@
 }
 
 .obtn--loading .obtn__content {
-  visibility: hidden;
+  opacity: var(--awds-opacity-0);
 }
 
 .obtn .obtn__progress {
@@ -173,11 +173,13 @@
   --awds-obtn-color:  rgb(var(--surface-on-high));
 }
 
-.obtn-primary:hover {
-  --awds-obtn-bg:     rgb(var(--surface-surface));   
-  --awds-obtn-chroma: rgb(var(--surface-dim));   
-  --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .obtn-primary:hover {
+    --awds-obtn-bg:     rgb(var(--surface-surface));   
+    --awds-obtn-chroma: rgb(var(--surface-dim));   
+    --awds-obtn-border: rgb(var(--surface-surface));   
+    --awds-obtn-color:  rgb(var(--surface-on-highest));   
+  }
 }
 
 .obtn-primary:focus-visible {
@@ -210,19 +212,21 @@
   --awds-obtn-border: rgb(var(--surface-surface));   
   --awds-obtn-color:  rgb(var(--surface-on-high));   
   opacity: var(--awds-opacity-60);   
-  transition: --awds-obtn-bg 0.15s ease-out,
-              --awds-obtn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out,
-              opacity 0.15s ease-out;
+  transition: --awds-obtn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-obtn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
-.obtn-secondary:hover {
-  --awds-obtn-bg:     rgb(var(--surface-surface));   
-  --awds-obtn-chroma: rgb(var(--surface-dim));   
-  --awds-obtn-border: rgb(var(--surface-surface));   
-  --awds-obtn-color:  rgb(var(--surface-on-highest));   
-  opacity: var(--awds-opacity-90);
+@media (hover: hover) and (pointer: fine) {
+  .obtn-secondary:hover {
+    --awds-obtn-bg:     rgb(var(--surface-surface));   
+    --awds-obtn-chroma: rgb(var(--surface-dim));   
+    --awds-obtn-border: rgb(var(--surface-surface));   
+    --awds-obtn-color:  rgb(var(--surface-on-highest));   
+    opacity: var(--awds-opacity-90);   
+  }
 }
 
 .obtn-secondary:focus-visible {

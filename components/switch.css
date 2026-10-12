@@ -1,4 +1,4 @@
-/* ArrowDS · switch@1.0.10
+/* ArrowDS · switch@1.0.11
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-switch-bg {
@@ -75,11 +75,11 @@
   border-radius: var(--awds-rounded-border-radius-full);
   box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-switch-border);
   background: linear-gradient(to right, var(--awds-switch-chroma, var(--awds-switch-bg)), var(--awds-switch-bg));
-  transition: --awds-switch-bg 0.15s ease-out,
-              --awds-switch-chroma 0.15s ease-out,
-              --awds-switch-handle 0.15s ease-out,
-              --awds-switch-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-switch-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-switch-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-switch-handle var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-switch-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .switch__handle {
@@ -93,7 +93,7 @@
   border-radius: var(--awds-rounded-border-radius-full);
   background: var(--awds-switch-handle);
   color: var(--awds-switch-icon-color);
-  transition: transform 0.15s ease-out;
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .switch__icon {
@@ -101,7 +101,7 @@
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .switch__icon--off {
@@ -143,11 +143,13 @@
   --awds-switch-gap:     var(--awds-space-2);
 }
 
-.switch:hover > .switch__input:enabled + .switch__track {
-  --awds-switch-bg:     rgb(var(--secondary-container-dim));   
-  --awds-switch-chroma: rgb(var(--secondary-container-chroma));   
-  --awds-switch-border: rgb(var(--secondary-container-on));   
-  --awds-switch-icon-color: rgb(var(--secondary-container-dim));
+@media (hover: hover) and (pointer: fine) {
+  .switch:hover > .switch__input:enabled + .switch__track {
+    --awds-switch-bg:     rgb(var(--secondary-container-dim));   
+    --awds-switch-chroma: rgb(var(--secondary-container-chroma));   
+    --awds-switch-border: rgb(var(--secondary-container-on));   
+    --awds-switch-icon-color: rgb(var(--secondary-container-dim));   
+  }
 }
 
 .switch:active > .switch__input:enabled + .switch__track {
@@ -165,11 +167,13 @@
   --awds-switch-icon-color: rgb(var(--primary-core));
 }
 
-.switch:hover > .switch__input:enabled:checked + .switch__track {
-  --awds-switch-bg:         rgb(var(--primary-dim));   
-  --awds-switch-chroma:     rgb(var(--primary-chroma));   
-  --awds-switch-border:     rgb(var(--primary-dim));   
-  --awds-switch-icon-color: rgb(var(--primary-dim));
+@media (hover: hover) and (pointer: fine) {
+  .switch:hover > .switch__input:enabled:checked + .switch__track {
+    --awds-switch-bg:         rgb(var(--primary-dim));   
+    --awds-switch-chroma:     rgb(var(--primary-chroma));   
+    --awds-switch-border:     rgb(var(--primary-dim));   
+    --awds-switch-icon-color: rgb(var(--primary-dim));   
+  }
 }
 
 .switch:active > .switch__input:enabled:checked + .switch__track {

@@ -1,4 +1,4 @@
-/* ArrowDS · input@1.0.17
+/* ArrowDS · input@1.0.18
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-input-bg {
@@ -47,11 +47,11 @@
   color: var(--awds-input-color);
   cursor: text;
   opacity: var(--awds-opacity-100);   
-  transition: --awds-input-bg 0.15s ease-out,
-              --awds-input-color 0.15s ease-out,
-              --awds-input-placeholder 0.15s ease-out,
-              --awds-input-icon-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-input-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-placeholder var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-input-icon-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .input__field {
@@ -212,8 +212,10 @@
   --awds-input-icon-color: rgb(var(--tertiary-container-on-high));
 }
 
-.input-autofill:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--tertiary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .input-autofill:hover:not(:focus-within):has(> .input__field:enabled) {
+    --awds-input-border: rgb(var(--tertiary-container-on));   
+  }
 }
 
 .input-autofill:active:not(:focus-within):has(> .input__field:enabled) {
@@ -253,8 +255,10 @@
   --awds-input-icon-color: rgb(var(--secondary-container-on-high));
 }
 
-.input-default:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .input-default:hover:not(:focus-within):has(> .input__field:enabled) {
+    --awds-input-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .input-default:active:not(:focus-within):has(> .input__field:enabled) {
@@ -278,8 +282,10 @@
   --awds-input-icon-color: rgb(var(--error-container-on-high));
 }
 
-.input-error:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--error-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .input-error:hover:not(:focus-within):has(> .input__field:enabled) {
+    --awds-input-border: rgb(var(--error-container-on));   
+  }
 }
 
 .input-error:active:not(:focus-within):has(> .input__field:enabled) {
@@ -322,8 +328,10 @@
   --awds-input-icon-color: rgb(var(--secondary-container-on-high));
 }
 
-.input-light:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .input-light:hover:not(:focus-within):has(> .input__field:enabled) {
+    --awds-input-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .input-light:active:not(:focus-within):has(> .input__field:enabled) {
@@ -348,9 +356,11 @@
   --awds-input-icon-color: rgb(var(--secondary-on));
 }
 
-.input-secondary:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-bg:     rgb(var(--secondary-dim));   
-  --awds-input-border: rgb(var(--secondary-dim));
+@media (hover: hover) and (pointer: fine) {
+  .input-secondary:hover:not(:focus-within):has(> .input__field:enabled) {
+    --awds-input-bg:     rgb(var(--secondary-dim));   
+    --awds-input-border: rgb(var(--secondary-dim));   
+  }
 }
 
 .input-secondary:active:not(:focus-within):has(> .input__field:enabled) {
@@ -376,8 +386,10 @@
   --awds-input-icon-color: rgb(var(--success-container-on-high));
 }
 
-.input-success:hover:not(:focus-within):has(> .input__field:enabled) {
-  --awds-input-border: rgb(var(--success-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .input-success:hover:not(:focus-within):has(> .input__field:enabled) {
+    --awds-input-border: rgb(var(--success-container-on));   
+  }
 }
 
 .input-success:active:not(:focus-within):has(> .input__field:enabled) {

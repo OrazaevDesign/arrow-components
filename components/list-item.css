@@ -1,4 +1,4 @@
-/* ArrowDS · list-item@2.4.2
+/* ArrowDS · list-item@2.4.3
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-list-item-bg {
@@ -50,9 +50,9 @@
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
   opacity: var(--awds-opacity-100);   
-  transition: --awds-list-item-bg 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-list-item-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .list-item:focus-visible, .list-item:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -113,10 +113,12 @@
   --awds-radio-icon:    var(--awds-space-4);
 }
 
-.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   
-  --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   
-  --awds-checkbox-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   
+    --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   
+    --awds-checkbox-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
@@ -125,10 +127,12 @@
   --awds-checkbox-border: rgb(var(--secondary-container-on-low));
 }
 
-.list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--primary-dim));   
-  --awds-checkbox-chroma: rgb(var(--primary-chroma));   
-  --awds-checkbox-border: rgb(var(--primary-dim));
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--primary-dim));   
+    --awds-checkbox-chroma: rgb(var(--primary-chroma));   
+    --awds-checkbox-border: rgb(var(--primary-dim));   
+  }
 }
 
 .list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
@@ -137,10 +141,12 @@
   --awds-checkbox-border: rgb(var(--primary-core));
 }
 
-.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
-  --awds-radio-bg:     rgb(var(--secondary-container-dim));   
-  --awds-radio-chroma: rgb(var(--secondary-container-chroma));   
-  --awds-radio-border: rgb(var(--secondary-container-on));
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+    --awds-radio-bg:     rgb(var(--secondary-container-dim));   
+    --awds-radio-chroma: rgb(var(--secondary-container-chroma));   
+    --awds-radio-border: rgb(var(--secondary-container-on));   
+  }
 }
 
 .list-item:active > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
@@ -149,10 +155,12 @@
   --awds-radio-border: rgb(var(--secondary-container-on-low));
 }
 
-.list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--primary-dim));   
-  --awds-radio-chroma: rgb(var(--primary-chroma));   
-  --awds-radio-border: rgb(var(--primary-dim));
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+    --awds-radio-bg:     rgb(var(--primary-dim));   
+    --awds-radio-chroma: rgb(var(--primary-chroma));   
+    --awds-radio-border: rgb(var(--primary-dim));   
+  }
 }
 
 .list-item:active > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
@@ -380,14 +388,16 @@
   --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
-.list-item-accent-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-container-core));   
-  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
-  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
-  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
-  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-accent-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--focus-container-core));   
+    --awds-list-item-border:      rgb(var(--focus-container-core));   
+    --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+    --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+    --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+    --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   
+  }
 }
 
 .list-item-accent-selected:focus-visible, .list-item-accent-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -430,14 +440,16 @@
   --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
-.list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
-  --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
-  --awds-list-item-color:       rgb(var(--accent-core));   
-  --awds-list-item-desc:        rgb(var(--accent-core));   
-  --awds-list-item-check:       rgb(var(--accent-core));   
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   
-  --awds-list-item-chevron:     rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-actual-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+    --awds-list-item-border:      rgb(var(--secondary-container-on-lowest));   
+    --awds-list-item-color:       rgb(var(--accent-core));   
+    --awds-list-item-desc:        rgb(var(--accent-core));   
+    --awds-list-item-check:       rgb(var(--accent-core));   
+    --awds-list-item-icon-color:  rgb(var(--accent-core));   
+    --awds-list-item-chevron:     rgb(var(--accent-core));   
+  }
 }
 
 .list-item-actual-selected:focus-visible, .list-item-actual-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -474,14 +486,16 @@
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
-.list-item-default-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--secondary-container-dim));   
-  --awds-list-item-border:      rgb(var(--secondary-container-dim));   
-  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:       rgb(var(--secondary-container-on));   
-  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-default-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--secondary-container-dim));   
+    --awds-list-item-border:      rgb(var(--secondary-container-dim));   
+    --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+    --awds-list-item-check:       rgb(var(--secondary-container-on));   
+    --awds-list-item-icon-color:  rgb(var(--secondary-container-on-highest));   
+    --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));   
+  }
 }
 
 .list-item-default-selected:focus-visible, .list-item-default-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -514,14 +528,16 @@
   --awds-list-item-chevron:     rgb(var(--surface-on-highest));
 }
 
-.list-item-default:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--secondary-container-dim));   
-  --awds-list-item-border:      rgb(var(--secondary-container-dim));   
-  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:       rgb(var(--primary-core));   
-  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-default:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--secondary-container-dim));   
+    --awds-list-item-border:      rgb(var(--secondary-container-dim));   
+    --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+    --awds-list-item-check:       rgb(var(--primary-core));   
+    --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+    --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));   
+  }
 }
 
 .list-item-default:focus-visible, .list-item-default:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -558,14 +574,16 @@
   --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
-.list-item-menu-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
-  --awds-list-item-border:      rgb(var(--secondary-container-core));   
-  --awds-list-item-color:       rgb(var(--accent-core));   
-  --awds-list-item-desc:        rgb(var(--accent-core));   
-  --awds-list-item-check:       rgb(var(--accent-core));   
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   
-  --awds-list-item-chevron:     rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-menu-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+    --awds-list-item-border:      rgb(var(--secondary-container-core));   
+    --awds-list-item-color:       rgb(var(--accent-core));   
+    --awds-list-item-desc:        rgb(var(--accent-core));   
+    --awds-list-item-check:       rgb(var(--accent-core));   
+    --awds-list-item-icon-color:  rgb(var(--accent-core));   
+    --awds-list-item-chevron:     rgb(var(--accent-core));   
+  }
 }
 
 .list-item-menu-selected:focus-visible, .list-item-menu-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -598,14 +616,16 @@
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
-.list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--surface-surface));   
-  --awds-list-item-border:      rgb(var(--surface-surface));   
-  --awds-list-item-color:       rgb(var(--accent-core));   
-  --awds-list-item-desc:        rgb(var(--accent-core));   
-  --awds-list-item-check:       rgb(var(--accent-core));   
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   
-  --awds-list-item-chevron:     rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-menu:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--surface-surface));   
+    --awds-list-item-border:      rgb(var(--surface-surface));   
+    --awds-list-item-color:       rgb(var(--accent-core));   
+    --awds-list-item-desc:        rgb(var(--accent-core));   
+    --awds-list-item-check:       rgb(var(--accent-core));   
+    --awds-list-item-icon-color:  rgb(var(--accent-core));   
+    --awds-list-item-chevron:     rgb(var(--accent-core));   
+  }
 }
 
 .list-item-menu:focus-visible, .list-item-menu:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -685,14 +705,16 @@
   --awds-list-item-chevron:     rgb(var(--accent-core));
 }
 
-.list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--extended-transparent));   
-  --awds-list-item-border:      rgb(var(--extended-transparent));   
-  --awds-list-item-color:       rgb(var(--accent-core));   
-  --awds-list-item-desc:        rgb(var(--accent-core));   
-  --awds-list-item-check:       rgb(var(--accent-core));   
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   
-  --awds-list-item-chevron:     rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--extended-transparent));   
+    --awds-list-item-border:      rgb(var(--extended-transparent));   
+    --awds-list-item-color:       rgb(var(--accent-core));   
+    --awds-list-item-desc:        rgb(var(--accent-core));   
+    --awds-list-item-check:       rgb(var(--accent-core));   
+    --awds-list-item-icon-color:  rgb(var(--accent-core));   
+    --awds-list-item-chevron:     rgb(var(--accent-core));   
+  }
 }
 
 .list-item-tabbar-selected:focus-visible, .list-item-tabbar-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -772,14 +794,16 @@
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
-.list-item-tabbar:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--extended-transparent));   
-  --awds-list-item-border:      rgb(var(--extended-transparent));   
-  --awds-list-item-color:       rgb(var(--accent-core));   
-  --awds-list-item-desc:        rgb(var(--accent-core));   
-  --awds-list-item-check:       rgb(var(--accent-core));   
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   
-  --awds-list-item-chevron:     rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-tabbar:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--extended-transparent));   
+    --awds-list-item-border:      rgb(var(--extended-transparent));   
+    --awds-list-item-color:       rgb(var(--accent-core));   
+    --awds-list-item-desc:        rgb(var(--accent-core));   
+    --awds-list-item-check:       rgb(var(--accent-core));   
+    --awds-list-item-icon-color:  rgb(var(--accent-core));   
+    --awds-list-item-chevron:     rgb(var(--accent-core));   
+  }
 }
 
 .list-item-tabbar:focus-visible, .list-item-tabbar:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -812,14 +836,16 @@
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
 }
 
-.list-item-transparent:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--secondary-container-core));   
-  --awds-list-item-border:      rgb(var(--secondary-container-core));   
-  --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
-  --awds-list-item-check:       rgb(var(--primary-core));   
-  --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-transparent:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--secondary-container-core));   
+    --awds-list-item-border:      rgb(var(--secondary-container-core));   
+    --awds-list-item-color:       rgb(var(--secondary-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--secondary-container-on-high));   
+    --awds-list-item-check:       rgb(var(--primary-core));   
+    --awds-list-item-icon-color:  rgb(var(--secondary-container-on-high));   
+    --awds-list-item-chevron:     rgb(var(--secondary-container-on-highest));   
+  }
 }
 
 .list-item-transparent:focus-visible, .list-item-transparent:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -852,14 +878,16 @@
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
-.list-item-variation-img:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:      rgb(var(--surface-bright));   
-  --awds-list-item-border:      rgb(var(--focus-container-on));   
-  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
-  --awds-list-item-check:   transparent;
-  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-variation-img:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:      rgb(var(--surface-bright));   
+    --awds-list-item-border:      rgb(var(--focus-container-on));   
+    --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+    --awds-list-item-check:   transparent;
+    --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+    --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   
+  }
 }
 
 .list-item-variation-img:focus-visible, .list-item-variation-img:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -951,14 +979,16 @@
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
-.list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-container-on));   
-  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
-  --awds-list-item-check:       rgb(var(--primary-container-on));   
-  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-variation-indeterminate:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--focus-container-core));   
+    --awds-list-item-border:      rgb(var(--focus-container-on));   
+    --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+    --awds-list-item-check:       rgb(var(--primary-container-on));   
+    --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+    --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   
+  }
 }
 
 .list-item-variation-indeterminate:focus-visible, .list-item-variation-indeterminate:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -1007,7 +1037,7 @@
   pointer-events: none;
   border: var(--awds-list-item-border-width) dashed var(--awds-list-item-border-dashed);
   border-radius: inherit;
-  transition: border-color 0.15s ease-out;
+  transition: border-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .list-item.list-item-variation-selected {
@@ -1063,14 +1093,16 @@
   --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
 }
 
-.list-item-variation-selected:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-core));   
-  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
-  --awds-list-item-check:       rgb(var(--focus-container-on-high));   
-  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
-  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-variation-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--focus-container-core));   
+    --awds-list-item-border:      rgb(var(--focus-core));   
+    --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+    --awds-list-item-check:       rgb(var(--focus-container-on-high));   
+    --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   
+    --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   
+  }
 }
 
 .list-item-variation-selected:focus-visible, .list-item-variation-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
@@ -1142,14 +1174,16 @@
   --awds-list-item-chevron:     rgb(var(--secondary-container-on-high));
 }
 
-.list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-list-item-bg:          rgb(var(--focus-container-core));   
-  --awds-list-item-border:      rgb(var(--focus-container-on));   
-  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
-  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
-  --awds-list-item-check:   transparent;
-  --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
-  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .list-item-variation:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--focus-container-core));   
+    --awds-list-item-border:      rgb(var(--focus-container-on));   
+    --awds-list-item-color:       rgb(var(--focus-container-on-highest));   
+    --awds-list-item-desc:        rgb(var(--focus-container-on-high));   
+    --awds-list-item-check:   transparent;
+    --awds-list-item-icon-color:  rgb(var(--focus-container-on-high));   
+    --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   
+  }
 }
 
 .list-item-variation:focus-visible, .list-item-variation:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {

@@ -1,4 +1,4 @@
-/* ArrowDS · button@2.2.14
+/* ArrowDS · button@2.2.16
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-btn-bg {
@@ -55,10 +55,10 @@
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
-  transition: --awds-btn-bg 0.15s ease-out,
-              --awds-btn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-btn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .btn:disabled, .btn[aria-disabled="true"] {
@@ -84,8 +84,12 @@
 }
 
 .btn--loading .btn__content {
-  display: contents;
-  visibility: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--awds-btn-gap);
+  opacity: var(--awds-opacity-0);
+  pointer-events: none;
+  user-select: none;
 }
 
 .btn .btn__progress {
@@ -178,11 +182,13 @@
   --awds-btn-color:  rgb(var(--addition-on));
 }
 
-.btn-addition:hover {
-  --awds-btn-bg:     rgb(var(--addition-dim));   
-  --awds-btn-chroma: rgb(var(--addition-chroma));   
-  --awds-btn-border: rgb(var(--addition-dim));   
-  --awds-btn-color:  rgb(var(--addition-on));
+@media (hover: hover) and (pointer: fine) {
+  .btn-addition:hover {
+    --awds-btn-bg:     rgb(var(--addition-dim));   
+    --awds-btn-chroma: rgb(var(--addition-chroma));   
+    --awds-btn-border: rgb(var(--addition-dim));   
+    --awds-btn-color:  rgb(var(--addition-on));   
+  }
 }
 
 .btn-addition:focus-visible {
@@ -199,15 +205,17 @@
       color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
       color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
     var(--awds-btn-bg);
-  transition: --awds-btn-bg 0.15s ease-out,
-              --awds-btn-chroma 0.15s ease-out,
-              --awds-btn-glow 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-btn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-glow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
-.btn.btn-addition:hover {
-  --awds-btn-glow: var(--awds-opacity-100);
+@media (hover: hover) and (pointer: fine) {
+  .btn.btn-addition:hover {
+    --awds-btn-glow: var(--awds-opacity-100);   
+  }
 }
 
 .btn-addition:active {
@@ -234,10 +242,12 @@
   background: var(--awds-btn-bg);
 }
 
-.btn-clean:hover {
-  --awds-btn-bg:     rgb(var(--surface-surface));   
-  --awds-btn-border: rgb(var(--surface-bright));   
-  --awds-btn-color:  rgb(var(--surface-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .btn-clean:hover {
+    --awds-btn-bg:     rgb(var(--surface-surface));   
+    --awds-btn-border: rgb(var(--surface-bright));   
+    --awds-btn-color:  rgb(var(--surface-on-highest));   
+  }
 }
 
 .btn-clean:focus-visible {
@@ -268,10 +278,12 @@
   background: var(--awds-btn-bg);
 }
 
-.btn-contrast:hover {
-  --awds-btn-bg:     rgb(var(--secondary-on-dim));   
-  --awds-btn-border: rgb(var(--secondary-on-dim));   
-  --awds-btn-color:  rgb(var(--secondary-core));
+@media (hover: hover) and (pointer: fine) {
+  .btn-contrast:hover {
+    --awds-btn-bg:     rgb(var(--secondary-on-dim));   
+    --awds-btn-border: rgb(var(--secondary-on-dim));   
+    --awds-btn-color:  rgb(var(--secondary-core));   
+  }
 }
 
 .btn-contrast:focus-visible {
@@ -293,11 +305,13 @@
   --awds-btn-color:  rgb(var(--surface-on-high));
 }
 
-.btn-ghost:hover {
-  --awds-btn-bg:     rgb(var(--extended-transparent));   
-  --awds-btn-chroma: rgb(var(--extended-transparent));   
-  --awds-btn-border: rgb(var(--extended-transparent));   
-  --awds-btn-color:  rgb(var(--surface-on-highest));
+@media (hover: hover) and (pointer: fine) {
+  .btn-ghost:hover {
+    --awds-btn-bg:     rgb(var(--extended-transparent));   
+    --awds-btn-chroma: rgb(var(--extended-transparent));   
+    --awds-btn-border: rgb(var(--extended-transparent));   
+    --awds-btn-color:  rgb(var(--surface-on-highest));   
+  }
 }
 
 .btn-ghost:focus-visible {
@@ -324,10 +338,12 @@
   background: var(--awds-btn-bg);
 }
 
-.btn-pills:hover {
-  --awds-btn-bg:     rgb(var(--secondary-dim));   
-  --awds-btn-border: rgb(var(--secondary-dim));   
-  --awds-btn-color:  rgb(var(--accent-core));
+@media (hover: hover) and (pointer: fine) {
+  .btn-pills:hover {
+    --awds-btn-bg:     rgb(var(--secondary-dim));   
+    --awds-btn-border: rgb(var(--secondary-dim));   
+    --awds-btn-color:  rgb(var(--accent-core));   
+  }
 }
 
 .btn-pills:focus-visible {
@@ -349,11 +365,13 @@
   --awds-btn-color:  rgb(var(--primary-on));
 }
 
-.btn-primary:hover {
-  --awds-btn-bg:     rgb(var(--primary-dim));   
-  --awds-btn-chroma: rgb(var(--primary-chroma));   
-  --awds-btn-border: rgb(var(--primary-dim));   
-  --awds-btn-color:  rgb(var(--primary-on));
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    --awds-btn-bg:     rgb(var(--primary-dim));   
+    --awds-btn-chroma: rgb(var(--primary-chroma));   
+    --awds-btn-border: rgb(var(--primary-dim));   
+    --awds-btn-color:  rgb(var(--primary-on));   
+  }
 }
 
 .btn-primary:focus-visible {
@@ -370,15 +388,17 @@
       color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
       color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
     var(--awds-btn-bg);
-  transition: --awds-btn-bg 0.15s ease-out,
-              --awds-btn-chroma 0.15s ease-out,
-              --awds-btn-glow 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-btn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-glow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
-.btn.btn-primary:hover {
-  --awds-btn-glow: var(--awds-opacity-100);
+@media (hover: hover) and (pointer: fine) {
+  .btn.btn-primary:hover {
+    --awds-btn-glow: var(--awds-opacity-100);   
+  }
 }
 
 .btn-primary:active {
@@ -405,10 +425,12 @@
   background: var(--awds-btn-bg);
 }
 
-.btn-secondary:hover {
-  --awds-btn-bg:     rgb(var(--secondary-dim));   
-  --awds-btn-border: rgb(var(--secondary-dim));   
-  --awds-btn-color:  rgb(var(--secondary-on));
+@media (hover: hover) and (pointer: fine) {
+  .btn-secondary:hover {
+    --awds-btn-bg:     rgb(var(--secondary-dim));   
+    --awds-btn-border: rgb(var(--secondary-dim));   
+    --awds-btn-color:  rgb(var(--secondary-on));   
+  }
 }
 
 .btn-secondary:focus-visible {
@@ -433,10 +455,12 @@
   background: var(--awds-btn-bg);
 }
 
-.btn-tertiary:hover {
-  --awds-btn-bg:     rgb(var(--tertiary-dim));   
-  --awds-btn-border: rgb(var(--tertiary-dim));   
-  --awds-btn-color:  rgb(var(--tertiary-on));
+@media (hover: hover) and (pointer: fine) {
+  .btn-tertiary:hover {
+    --awds-btn-bg:     rgb(var(--tertiary-dim));   
+    --awds-btn-border: rgb(var(--tertiary-dim));   
+    --awds-btn-color:  rgb(var(--tertiary-on));   
+  }
 }
 
 .btn-tertiary:focus-visible {

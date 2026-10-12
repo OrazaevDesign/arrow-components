@@ -1,4 +1,4 @@
-/* ArrowDS · range@2.0.13
+/* ArrowDS · range@2.0.14
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @property --awds-range-thumb-bg {
@@ -55,7 +55,7 @@
   border-radius: var(--awds-rounded-border-radius-full);
   background: var(--awds-range-fill-bg);
   pointer-events: none;
-  transition: background 0.15s ease-out;
+  transition: background var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .range:not(.range--double) .range__fill { left: 0;
@@ -78,10 +78,10 @@
               var(--awds-range-thumb-elevation, 0 0 rgb(0 0 0 / 0));
   transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: --awds-range-thumb-bg 0.15s ease-out,
-              --awds-range-thumb-chroma 0.15s ease-out,
-              --awds-range-thumb-glow 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-range-thumb-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-range-thumb-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-range-thumb-glow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .range__thumb--from { left: calc(var(--awds-range-size) / 2 + (100% - var(--awds-range-size)) * var(--range-from));
@@ -150,11 +150,13 @@
   --awds-range-thumb-glow:   var(--awds-opacity-60);
 }
 
-.range-default:hover {
-  --awds-range-fill-bg:      rgb(var(--primary-dim));   
-  --awds-range-thumb-bg:     rgb(var(--primary-dim));   
-  --awds-range-thumb-border: rgb(var(--primary-dim));   
-  --awds-range-thumb-glow:   var(--awds-opacity-100);
+@media (hover: hover) and (pointer: fine) {
+  .range-default:hover {
+    --awds-range-fill-bg:      rgb(var(--primary-dim));   
+    --awds-range-thumb-bg:     rgb(var(--primary-dim));   
+    --awds-range-thumb-border: rgb(var(--primary-dim));   
+    --awds-range-thumb-glow:   var(--awds-opacity-100);   
+  }
 }
 
 .range-default:active {
@@ -171,11 +173,13 @@
   --awds-range-thumb-glow:   var(--awds-opacity-70);
 }
 
-.range-light:hover {
-  --awds-range-fill-bg:      rgb(var(--primary-dim));   
-  --awds-range-thumb-bg:     rgb(var(--secondary-container-dim));   
-  --awds-range-thumb-border: rgb(var(--secondary-container-dim));   
-  --awds-range-thumb-glow:   var(--awds-opacity-100);
+@media (hover: hover) and (pointer: fine) {
+  .range-light:hover {
+    --awds-range-fill-bg:      rgb(var(--primary-dim));   
+    --awds-range-thumb-bg:     rgb(var(--secondary-container-dim));   
+    --awds-range-thumb-border: rgb(var(--secondary-container-dim));   
+    --awds-range-thumb-glow:   var(--awds-opacity-100);   
+  }
 }
 
 .range-light:active {

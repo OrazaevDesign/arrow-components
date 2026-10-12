@@ -1,4 +1,4 @@
-/* ArrowDS · toast@1.0.1
+/* ArrowDS · toast@1.0.2
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -112,11 +112,14 @@
 
 .toast__action {
   font-weight: var(--awds-font-weight-semibold);
-  transition: background-color 0.15s ease-out;
+  transition: background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
-.toast__action:hover, .toast__close:hover {
-  background: rgb(var(--awds-toast-color) / var(--awds-toast-hover));
+@media (hover: hover) and (pointer: fine) {
+  .toast__action:hover,
+  .toast__close:hover {
+    background: rgb(var(--awds-toast-color) / var(--awds-toast-hover));
+  }
 }
 
 .toast__action:focus-visible, .toast__close:focus-visible {
