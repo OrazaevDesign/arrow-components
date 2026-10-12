@@ -83,9 +83,11 @@
 
 /* Наведение считается по КОНТЕЙНЕРУ, а не по самому ползунку: в макете State=Hover —
    состояние всей полосы, да и попасть курсором в 4px, чтобы «разбудить» её, нельзя. */
-.scrollbar:hover::-webkit-scrollbar-thumb {
-  background: var(--awds-scrollbar-thumb-hover);
-  background-clip: content-box;
+@media (hover: hover) and (pointer: fine) {
+  .scrollbar:hover::-webkit-scrollbar-thumb {
+    background: var(--awds-scrollbar-thumb-hover);
+    background-clip: content-box;
+  }
 }
 
 /* Угол между горизонтальной и вертикальной полосой: по умолчанию браузер красит его
@@ -103,7 +105,9 @@
     scrollbar-color: var(--awds-scrollbar-thumb) var(--awds-scrollbar-track);
   }
 
-  .scrollbar:hover {
-    scrollbar-color: var(--awds-scrollbar-thumb-hover) var(--awds-scrollbar-track);
+  @media (hover: hover) and (pointer: fine) {
+    .scrollbar:hover {
+      scrollbar-color: var(--awds-scrollbar-thumb-hover) var(--awds-scrollbar-track);
+    }
   }
 }
