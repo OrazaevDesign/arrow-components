@@ -158,10 +158,10 @@
      подхватывается с текущей точки. Фон-градиент анимируется через @property-аккумуляторы
      (--awds-checkbox-bg/-chroma зарегистрированы как <color> выше). Стандарт PageCraft
      для интерактивных смен — 0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: --awds-checkbox-bg 0.15s ease-out,
-              --awds-checkbox-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-checkbox-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-checkbox-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Иконки check и dash стекаются в одну grid-ячейку и переключаются opacity.
@@ -172,7 +172,7 @@
   height: var(--awds-checkbox-icon);
   opacity: 0;
   /* Polish (MIFB): явное свойство, а не transition: all. */
-  transition: opacity 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -210,10 +210,12 @@
 /* === Type: Unselected (Hover / Active) ===
    :enabled — чтобы отключённый чекбокс не реагировал на наведение и нажатие. */
 
-.checkbox:hover > .checkbox__input:enabled + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
-  --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
-  --awds-checkbox-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .checkbox:hover > .checkbox__input:enabled + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+    --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+    --awds-checkbox-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+  }
 }
 
 .checkbox:active > .checkbox__input:enabled + .checkbox__box {
@@ -236,12 +238,14 @@
   --awds-checkbox-color:  rgb(var(--primary-on));   /* #cell check-radio/selected/color */
 }
 
-.checkbox:hover > .checkbox__input:enabled:checked + .checkbox__box,
-.checkbox:hover > .checkbox__input:enabled:indeterminate + .checkbox__box {
-  --awds-checkbox-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
-  --awds-checkbox-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
-  --awds-checkbox-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
-  --awds-checkbox-color:  rgb(var(--primary-on));   /* #cell check-radio/selected/color */
+@media (hover: hover) and (pointer: fine) {
+  .checkbox:hover > .checkbox__input:enabled:checked + .checkbox__box,
+  .checkbox:hover > .checkbox__input:enabled:indeterminate + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+    --awds-checkbox-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+    --awds-checkbox-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+    --awds-checkbox-color:  rgb(var(--primary-on));   /* #cell check-radio/selected/color */
+  }
 }
 
 .checkbox:active > .checkbox__input:enabled:checked + .checkbox__box,

@@ -1,18 +1,11 @@
 {
   "component": "checkbox",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "contract_hash": "sha256:3d8db9e39568dd60d4cc9b9a1625534db7470beb28e750ee3fde9555a05620d3",
-  "artifact_hash": "sha256:35e3d8f7db0565a04743ce174dd57bfcbb756540943e9b3f9a2bc067148a4adf",
-  "visual_change": false,
-  "released_at": "2026-09-26T16:58:02.904Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 5,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "artifact_hash": "sha256:7791cce6b901f1573a0d6887576d1817dd76be4b106cae9527184a3654099f9b",
+  "visual_change": true,
+  "released_at": "2026-10-12T13:29:42.228Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -102,6 +95,8 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-200",
@@ -174,9 +169,16 @@
         "lbl--500",
         "fld--300",
         "fld--400",
-        "fld--500"
+        "fld--500",
+        "list-item--50",
+        "list-item--100",
+        "list-item--200",
+        "list-item--300",
+        "list-item--400",
+        "list-item--500",
+        "list-item--600"
       ],
-      "why_optional": "ступень раздаёт мост родителя: .lbl--{N} .checkbox и .fld--{N} .lbl .checkbox кормят size-аккумуляторы сами, и скиллы label и formfield прямо запрещают ставить размерный класс вложенному контролу"
+      "why_optional": "ступень раздаёт мост родителя: .lbl--{N} .checkbox и .fld--{N} .lbl .checkbox кормят size-аккумуляторы сами, и скиллы label и formfield прямо запрещают ставить размерный класс вложенному контролу; .list-item--{N} > .list-item__prefix > .checkbox — ступень раздаёт строка списка (awds-component-list-item, «Переключатель в слоте»), класс размера внутри строки не действует"
     },
     "native": {
       "tag": "input",
@@ -210,9 +212,10 @@
         "required": true,
         "unless_child_any": [
           "checkbox__label",
-          "lbl__text"
+          "lbl__text",
+          "list-item__title"
         ],
-        "why": "без видимой подписи у контрола нет имени; подпись даёт либо свой .checkbox__label, либо текст .lbl__text, когда чекбокс стоит внутри компонента label"
+        "why": "без видимой подписи у контрола нет имени; подпись даёт либо свой .checkbox__label, либо текст .lbl__text, когда чекбокс стоит внутри компонента label; в строке списка имя даёт .list-item__title внутри корневого <label class=\"list-item\">"
       }
     ],
     "container": {
