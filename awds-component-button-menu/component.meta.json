@@ -1,18 +1,11 @@
 {
   "component": "button-menu",
-  "version": "2.0.13",
+  "version": "2.0.14",
   "contract_hash": "sha256:88352d4eb8c0722178e0a80f6ff5d5d6660935ba8f2998721b73f155fd4eb80f",
-  "artifact_hash": "sha256:0435860e1403645cb986dd8aa6ed014b2039096502c7b9e5eabf8a9bf5ff4999",
-  "visual_change": false,
-  "released_at": "2026-10-07T17:04:56.902Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 3,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "artifact_hash": "sha256:e9a812db28b1a1edb6e72ff53817e22f40f3c1d96fb0f80130ae5d004fa79b71",
+  "visual_change": true,
+  "released_at": "2026-10-12T13:29:42.102Z",
+  "own_values": [],
   "family": "buttons",
   "summary": "Кнопка меню: эмблема с аватаром или флагом, шеврон, точка непрочитанных",
   "aliases": [
@@ -111,6 +104,8 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-full",
     "--awds-space-0-5",

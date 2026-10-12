@@ -97,8 +97,8 @@
 
   /* Polish (MIFB): перечисляем свойства явно, не transition: all.
      Стандарт PageCraft — 0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: background-color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .btn-menu,
@@ -144,7 +144,7 @@
   width: var(--awds-btn-menu-icon);
   height: var(--awds-btn-menu-icon);
   color: var(--awds-btn-menu-chevron);
-  transition: color 0.15s ease-out;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* =============================================================================
@@ -198,10 +198,12 @@
 /* Выключенная кнопка не реагирует на наведение и нажатие. Отсекаем через :not(),
    а не через :enabled: корнем может быть <a>, а :enabled на не-form-элементах не
    матчится — правило молча перестало бы работать. */
-.btn-menu-default:hover:not(:disabled):not([aria-disabled="true"]) {
-  --awds-btn-menu-bg:      rgb(var(--secondary-container-dim));   /* #cell list/default/bg-hover */
-  --awds-btn-menu-border:  rgb(var(--secondary-container-dim));   /* #cell list/default/border-hover */
-  --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));   /* #cell list/default/chevron-hover */
+@media (hover: hover) and (pointer: fine) {
+  .btn-menu-default:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-btn-menu-bg:      rgb(var(--secondary-container-dim));   /* #cell list/default/bg-hover */
+    --awds-btn-menu-border:  rgb(var(--secondary-container-dim));   /* #cell list/default/border-hover */
+    --awds-btn-menu-chevron: rgb(var(--secondary-container-on-highest));   /* #cell list/default/chevron-hover */
+  }
 }
 
 .btn-menu-default:focus-visible {
