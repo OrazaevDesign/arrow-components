@@ -112,10 +112,10 @@
      CSS transition прерываем. Фон-градиент анимируется через @property-аккумуляторы
      (--awds-btn-bg/-chroma зарегистрированы как <color> выше). Стандарт PageCraft —
      0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: --awds-btn-bg 0.15s ease-out,
-              --awds-btn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-btn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -128,8 +128,9 @@
   cursor: default;
 }
 
-/* Загрузка — не гашение. По контракту разметки у загружающейся кнопки стоит disabled
-   (иначе она продолжает нажиматься), и без этого правила она тускнела до 40 %. В макете
+/* Загрузка — не гашение. По контракту разметки у загружающейся кнопки стоит
+   aria-disabled="true" (или disabled) — иначе она продолжает нажиматься, — и без этого
+   правила она тускнела до 40 %. В макете
    state=loading держит opacity/control/enabled — 100 %, как у кнопки в покое
    (component-figma-check, 27.09.2026: 112 ячеек). */
 .btn.btn--loading:disabled,
@@ -152,8 +153,8 @@
 }
 
 /* =============================================================================
-   Loading (Figma loading=on): контент скрыт visibility:hidden (ширина
-   сохраняется), поверх центрируется кольцо awds-component-progress.
+   Loading (Figma state=loading): подпись погашена opacity (ширина и доступное
+   имя сохраняются), поверх центрируется кольцо awds-component-progress.
    =============================================================================
    Своего спиннера у кнопки нет. В макете в загрузку вложен инстанс
    progress / circular — в коде так же: те же классы вешаются на тот же <svg>, а
@@ -167,12 +168,22 @@
    ============================================================================= */
 
 .btn--loading .btn__content {
-  /* display: contents — иконки и текст внутри остаются флекс-детьми кнопки со своими
-     зазорами. Обычный inline-span собирал их в одну строку: пропадали оба gap, а
-     высота росла по базовой линии svg — кнопка с иконками прыгала при входе в загрузку
-     (400: 45 вместо 40). visibility: hidden детям наследуется. */
-  display: contents;
-  visibility: hidden;
+  /* Подпись гасится opacity, а не visibility: hidden. visibility выкидывает текст из
+     дерева доступности, и у кнопки на время загрузки не остаётся имени; opacity держит
+     и габарит, и имя. В макете слои . / prefix, . / text, . / suffix ячейки
+     state=loading гасятся тем же opacity 0.
+     Обёртка — флекс-бокс со своим gap, а не display: contents: у элемента без бокса
+     opacity не применяется, а голый текст внутри обёртки не выбрать селектором
+     потомка. inline-flex + align-items: center повторяет раскладку кнопки — зазоры
+     между иконками и текстом те же, высота не растёт по базовой линии svg (обычный
+     inline-span давал 45 вместо 40 на ступени 400). */
+  display: inline-flex;
+  align-items: center;
+  gap: var(--awds-btn-gap);
+  opacity: var(--awds-opacity-0);
+  /* Погашенная подпись не должна ни ловить курсор, ни выделяться сквозь кольцо. */
+  pointer-events: none;
+  user-select: none;
 }
 
 .btn .btn__progress {
@@ -285,11 +296,13 @@
   --awds-btn-color:  rgb(var(--primary-on));   /* #cell button/primary/color-rest */
 }
 
-.btn-primary:hover {
-  --awds-btn-bg:     rgb(var(--primary-dim));   /* #cell button/primary/bg-hover */
-  --awds-btn-chroma: rgb(var(--primary-chroma));   /* #cell button/primary/chroma-hover */
-  --awds-btn-border: rgb(var(--primary-dim));   /* #cell button/primary/border-hover */
-  --awds-btn-color:  rgb(var(--primary-on));   /* #cell button/primary/color-hover */
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    --awds-btn-bg:     rgb(var(--primary-dim));   /* #cell button/primary/bg-hover */
+    --awds-btn-chroma: rgb(var(--primary-chroma));   /* #cell button/primary/chroma-hover */
+    --awds-btn-border: rgb(var(--primary-dim));   /* #cell button/primary/border-hover */
+    --awds-btn-color:  rgb(var(--primary-on));   /* #cell button/primary/color-hover */
+  }
 }
 
 .btn-primary:focus-visible {
@@ -316,15 +329,17 @@
       color-mix(in srgb, var(--awds-btn-chroma) var(--awds-btn-glow), transparent),
       color-mix(in srgb, var(--awds-btn-bg) var(--awds-btn-glow), transparent)),
     var(--awds-btn-bg);
-  transition: --awds-btn-bg 0.15s ease-out,
-              --awds-btn-chroma 0.15s ease-out,
-              --awds-btn-glow 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-btn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-btn-glow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
-.btn.btn-primary:hover {
-  --awds-btn-glow: var(--awds-opacity-100);   /* слой градиента в Figma: opacity 100% */
+@media (hover: hover) and (pointer: fine) {
+  .btn.btn-primary:hover {
+    --awds-btn-glow: var(--awds-opacity-100);   /* слой градиента в Figma: opacity 100% */
+  }
 }
 
 /* Active: chroma схлопывается в core → плоский градиент (визуальный сигнал «нажато») */

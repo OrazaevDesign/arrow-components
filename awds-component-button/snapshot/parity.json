@@ -61,7 +61,7 @@
       },
       "loading": {
         "class": "btn--loading",
-        "attrs": "disabled aria-busy=\"true\"",
+        "attrs": "aria-busy=\"true\" aria-disabled=\"true\"",
         "wrap": "<span class=\"btn__content\">{html}</span><svg class=\"btn__progress progress progress-circular progress--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle class=\"progress-circular__arc\" cx=\"12\" cy=\"12\" r=\"10\" pathLength=\"100\"/></svg>"
       }
     }

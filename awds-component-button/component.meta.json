@@ -1,18 +1,11 @@
 {
   "component": "button",
-  "version": "2.2.14",
+  "version": "2.2.16",
   "contract_hash": "sha256:b1178d242f4d390a44850a8af06ba94ba17a603fa9f5972dd379f67a9d0e87e0",
-  "artifact_hash": "sha256:205414af5cc89cca3b552bc3f6f0003bf5168e570ea26346a81eabfbfd006874",
+  "artifact_hash": "sha256:5cc7ff45c7e14fbd3c9032394420ac4a28138979748f609af6f6d191f9220b94",
   "visual_change": true,
-  "released_at": "2026-10-07T12:53:25.396Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 32,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "released_at": "2026-10-12T13:29:41.898Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -149,7 +142,7 @@
       },
       {
         "label": "Загрузка",
-        "html": "<button class=\"btn btn-primary btn--400 btn--loading\" type=\"button\" disabled aria-busy=\"true\"><span class=\"btn__content\">Загрузка…</span><svg class=\"btn__progress progress progress-circular progress--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle class=\"progress-circular__arc\" cx=\"12\" cy=\"12\" r=\"10\" pathLength=\"100\"/></svg></button>"
+        "html": "<button class=\"btn btn-primary btn--400 btn--loading\" type=\"button\" aria-busy=\"true\" aria-disabled=\"true\"><span class=\"btn__content\">Загрузка…</span><svg class=\"btn__progress progress progress-circular progress--indeterminate\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle class=\"progress-circular__arc\" cx=\"12\" cy=\"12\" r=\"10\" pathLength=\"100\"/></svg></button>"
       }
     ]
   },
@@ -173,6 +166,9 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-semibold",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
+    "--awds-opacity-0",
     "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-opacity-60",
@@ -356,13 +352,13 @@
         "why": "кольцо декоративное (aria-hidden), о занятости сообщает атрибут"
       },
       {
-        "attr": "disabled",
-        "when": "btn--loading",
-        "tags": [
-          "button"
+        "any_of": [
+          "aria-disabled",
+          "disabled"
         ],
+        "when": "btn--loading",
         "required": true,
-        "why": "класс .btn--loading только прячет контент (visibility: hidden), pointer-events он не снимает — без атрибута кнопка в загрузке продолжает нажиматься и мышью, и с клавиатуры"
+        "why": "pointer-events класс .btn--loading не снимает — без атрибута кнопка в загрузке продолжает нажиматься. Эталон — aria-disabled=\"true\": кнопка остаётся в фокусе, а disabled уносит фокус с кнопки, которую только что нажали с клавиатуры. disabled законен, когда фокус после нажатия не важен (форма отправляется, окно закрывается). Enter и Space на <button> с aria-disabled по-прежнему вызывают click — обработчик обязан выйти сам"
       },
       {
         "attr": "type",
@@ -374,7 +370,7 @@
       }
     ],
     "container": null,
-    "note": "Класс варианта обязателен: .btn без .btn-{variant} даёт бесцветную кнопку — цвета инлайнятся ролями в вариантных селекторах, в базе их нет. Класс ступени НЕ обязателен: база .btn уже несёт дефолты 400, и скилл разрешает их не писать; внутри .tab-group--{400|300} ступень вообще запрещена — её раздаёт мост группы. .btn-group и .pgn__list мостом НЕ являются: своих --awds-btn-* они не заполняют, и скилл button-group требует ступень на КАЖДОЙ кнопке. aria-label у icon-only — единственное имя кнопки, текста внутри нет. Загрузка: контент обязан лежать в .btn__content (иначе visibility: hidden прятать нечего), рядом — disabled и aria-busy. Спиннера у кнопки своего нет: в слоте .btn__progress живёт кольцо awds-component-progress — на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate, иначе индикатор не крутится, а стоит. Не описано, потому что проверка файловая и без DOM: вложенность слотов, наличие <svg> у icon-only, сочетание .btn--pill с любым вариантом и ступенью (независимая ось, не требование)."
+    "note": "Класс варианта обязателен: .btn без .btn-{variant} даёт бесцветную кнопку — цвета инлайнятся ролями в вариантных селекторах, в базе их нет. Класс ступени НЕ обязателен: база .btn уже несёт дефолты 400, и скилл разрешает их не писать; внутри .tab-group--{400|300} ступень вообще запрещена — её раздаёт мост группы. .btn-group и .pgn__list мостом НЕ являются: своих --awds-btn-* они не заполняют, и скилл button-group требует ступень на КАЖДОЙ кнопке. aria-label у icon-only — единственное имя кнопки, текста внутри нет. Загрузка: контент обязан лежать в .btn__content (иначе гасить opacity нечего: подпись гасится opacity 0, а не visibility, чтобы у кнопки осталось доступное имя), рядом — aria-busy и aria-disabled (или disabled). Спиннера у кнопки своего нет: в слоте .btn__progress живёт кольцо awds-component-progress — на том же <svg> обязаны стоять классы progress progress-circular progress--indeterminate, иначе индикатор не крутится, а стоит. Не описано, потому что проверка файловая и без DOM: вложенность слотов, наличие <svg> у icon-only, сочетание .btn--pill с любым вариантом и ступенью (независимая ось, не требование)."
   },
   "asana": {
     "task_gid": "1218422992693893",

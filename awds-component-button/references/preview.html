@@ -428,19 +428,28 @@
           </button>
         </div>
         <div class="row" data-label="Загрузка (loading=on)">
-          <button class="btn btn-primary btn--600 btn--loading" type="button" disabled aria-busy="true">
+          <button class="btn btn-primary btn--600 btn--loading" type="button" aria-busy="true" aria-disabled="true">
             <span class="btn__content">Загрузка…</span>
             <svg class="btn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
               <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
             </svg>
           </button>
-          <button class="btn btn-primary btn--400 btn--loading" type="button" disabled aria-busy="true">
+          <button class="btn btn-primary btn--400 btn--loading" type="button" aria-busy="true" aria-disabled="true">
             <span class="btn__content">Загрузка…</span>
             <svg class="btn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
               <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
             </svg>
           </button>
-          <button class="btn btn-primary btn--400 btn--icon-only btn--loading" type="button" disabled aria-busy="true" aria-label="Загрузка">
+          <button class="btn btn-primary btn--400 btn--loading" type="button" aria-busy="true" aria-disabled="true">
+            <span class="btn__content">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              Добавить
+            </span>
+            <svg class="btn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true">
+              <circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/>
+            </svg>
+          </button>
+          <button class="btn btn-primary btn--400 btn--icon-only btn--loading" type="button" aria-busy="true" aria-disabled="true" aria-label="Загрузка">
             <span class="btn__content">
               <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
             </span>

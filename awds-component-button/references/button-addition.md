@@ -44,10 +44,10 @@
 
 ### Состояние загрузки
 
-Контент в `.btn__content` (скрывается через `visibility: hidden` — сохраняет ширину). Поверх абсолютно центрируется кольцо `awds-component-progress`: классы компонента вешаются на тот же `<svg>`, что и слот `.btn__progress`. Кнопка сообщает ему только размер и цвет (`--awds-progress-size` = `--awds-btn-icon`, `--awds-progress-color` = `--awds-btn-color`) — своего спиннера у неё нет.
+Контент в `.btn__content` гасится `opacity: 0` (`--awds-opacity-0`), а не `visibility: hidden`: ширина кнопки и её доступное имя сохраняются, `visibility` выкинул бы подпись из дерева доступности. Погашенная подпись не ловит курсор и не выделяется (`pointer-events: none`, `user-select: none`). Поверх абсолютно центрируется кольцо `awds-component-progress`: классы компонента вешаются на тот же `<svg>`, что и слот `.btn__progress`. Кнопка сообщает ему только размер и цвет (`--awds-progress-size` = `--awds-btn-icon`, `--awds-progress-color` = `--awds-btn-color`) — своего спиннера у неё нет.
 
 ```html
-<button class="btn btn-addition btn--400 btn--loading" type="button" disabled aria-busy="true">
+<button class="btn btn-addition btn--400 btn--loading" type="button" aria-busy="true" aria-disabled="true">
   <span class="btn__content">Оформляем…</span>
   <svg class="btn__progress progress progress-circular progress--indeterminate"
        viewBox="0 0 24 24" aria-hidden="true">
@@ -55,6 +55,17 @@
   </svg>
 </button>
 ```
+
+**`aria-disabled`, а не `disabled`.** `disabled` уносит фокус с кнопки, которую только что нажали с клавиатуры: фокус падает на `<body>`, и после ответа пользователь начинает обход страницы сначала. `aria-disabled="true"` оставляет кнопку в фокусе и в порядке обхода, а скринридер объявляет её недоступной и занятой (`aria-busy`). Клик мышью отсекает CSS (`.btn[aria-disabled="true"]` → `pointer-events: none`), но Enter и Space на `<button>` по-прежнему вызывают `click` — обработчик обязан сам выйти, пока кнопка занята:
+
+```js
+btn.addEventListener("click", (e) => {
+  if (btn.getAttribute("aria-disabled") === "true") return;
+  // …
+});
+```
+
+Нативный `disabled` допустим, когда фокус после нажатия не важен: форма отправляется и страница уходит, окно закрывается, фокус всё равно переедет. Вид у обоих вариантов одинаковый — правило загрузки держит непрозрачность 100 % и при `:disabled`, и при `[aria-disabled="true"]`.
 
 ### Как ссылка
 ```html
@@ -106,7 +117,7 @@
 | Focus   | `--addition-core` | `--addition-chroma` | `--addition-core` | `--addition-on` |
 | Active  | `--addition-core` | `--addition-core`   | `--addition-core` | `--addition-on` |
 | Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
-| Loading | Rest + контент `visibility: hidden`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
+| Loading | Rest + контент `opacity: 0`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)` — роль `surface-on-highest` (из `focus-selection/outline`), общая для всех интерактивных элементов сайта.
 
