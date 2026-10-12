@@ -49,12 +49,12 @@
 </button>
 ```
 
-Состояние загрузки (Figma `loading=on`): контент скрывается, поверх — кольцо
+Состояние загрузки (Figma `loading=on`): подпись гасится `opacity` (габарит и доступное имя остаются), поверх — кольцо
 `awds-component-progress`. Своего спиннера у кнопки нет: классы компонента вешаются на
 тот же `<svg>`, что и слот `.obtn__progress`, а кнопка сообщает ему размер и цвет.
 
 ```html
-<button class="obtn obtn-primary obtn--400 obtn--loading" type="button" disabled aria-busy="true">
+<button class="obtn obtn-primary obtn--400 obtn--loading" type="button" aria-busy="true" aria-disabled="true">
   <span class="obtn__content">Загрузка…</span>
   <svg class="obtn__progress progress progress-circular progress--indeterminate"
        viewBox="0 0 24 24" aria-hidden="true">
@@ -62,6 +62,11 @@
   </svg>
 </button>
 ```
+
+`aria-disabled`, а не `disabled`: `disabled` уносит фокус с нажатой кнопки на `<body>`. Клик мышью
+отсекает CSS (`pointer-events: none`), Enter и Space на `<button>` по-прежнему дают `click` —
+обработчик выходит сам, пока `aria-disabled="true"`. Подробно — `awds-component-button`,
+`button-primary.md`.
 
 Как ссылка:
 

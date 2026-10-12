@@ -133,10 +133,10 @@
      (--awds-obtn-bg/-chroma зарегистрированы как <color> выше). box-shadow в списке —
      elevation постоянна, меняется только inset-stroke (border). Стандарт PageCraft —
      0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: --awds-obtn-bg 0.15s ease-out,
-              --awds-obtn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-obtn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-obtn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .obtn:focus-visible {
@@ -154,7 +154,7 @@
   pointer-events: none;
 }
 
-/* Загрузка — не гашение. По контракту у загружающейся кнопки стоит disabled, и без этого
+/* Загрузка — не гашение. По контракту у загружающейся кнопки стоит aria-disabled (или disabled), и без этого
    правила она тускнела до 40 %. В макете state=loading держит прозрачность покоя: 100 %
    у primary (opacity/control/enabled) — component-figma-check, 27.09.2026. */
 .obtn.obtn--loading:disabled,
@@ -189,8 +189,8 @@
 }
 
 /* =============================================================================
-   Loading (Figma loading=on): контент скрыт visibility:hidden (ширина
-   сохраняется), поверх центрируется кольцо awds-component-progress.
+   Loading (Figma loading=on): контент гасится opacity (ширина и доступное
+   имя сохраняются), поверх центрируется кольцо awds-component-progress.
    =============================================================================
    Своего спиннера у кнопки нет. В макете в загрузку вложен инстанс
    progress / circular — в коде так же: те же классы вешаются на тот же <svg>, а
@@ -204,7 +204,10 @@
    ============================================================================= */
 
 .obtn--loading .obtn__content {
-  visibility: hidden;
+  /* opacity, а не visibility: hidden — visibility выкидывает подпись из дерева
+     доступности, и у кнопки на время загрузки не остаётся имени (как у button 2.2.15).
+     .obtn__content уже inline-flex: у элемента с боксом opacity применяется. */
+  opacity: var(--awds-opacity-0);
 }
 
 .obtn .obtn__progress {
@@ -300,11 +303,13 @@
 }
 
 /* Hover: chroma темнеет (surface-dim), текст контрастнее (surface-on-highest) */
-.obtn-primary:hover {
-  --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/primary/bg */
-  --awds-obtn-chroma: rgb(var(--surface-dim));   /* #cell overhung/primary/chroma-hover */
-  --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/primary/border */
-  --awds-obtn-color:  rgb(var(--surface-on-highest));   /* #cell overhung/primary/color-hover */
+@media (hover: hover) and (pointer: fine) {
+  .obtn-primary:hover {
+    --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/primary/bg */
+    --awds-obtn-chroma: rgb(var(--surface-dim));   /* #cell overhung/primary/chroma-hover */
+    --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/primary/border */
+    --awds-obtn-color:  rgb(var(--surface-on-highest));   /* #cell overhung/primary/color-hover */
+  }
 }
 
 .obtn-primary:focus-visible {

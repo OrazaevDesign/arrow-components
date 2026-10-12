@@ -121,10 +121,10 @@
 
   /* Polish (MIFB): смену состояний анимируем явными свойствами, не transition: all.
      CSS transition прерываем. Стандарт PageCraft — 0.15s ease-out. */
-  transition: --awds-obtn-bg 0.15s ease-out,
-              --awds-obtn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-obtn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-obtn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .obtn:focus-visible {
@@ -142,7 +142,7 @@
   pointer-events: none;
 }
 
-/* Загрузка — не гашение. По контракту у загружающейся кнопки стоит disabled, и без этого
+/* Загрузка — не гашение. По контракту у загружающейся кнопки стоит aria-disabled (или disabled), и без этого
    правила она тускнела до 40 %. В макете state=loading держит прозрачность покоя: 100 %
    у primary (opacity/control/enabled) — component-figma-check, 27.09.2026. */
 .obtn.obtn--loading:disabled,
@@ -184,8 +184,8 @@
 }
 
 /* =============================================================================
-   Loading (Figma loading=on): контент скрыт visibility:hidden (ширина
-   сохраняется), поверх центрируется кольцо awds-component-progress.
+   Loading (Figma loading=on): контент гасится opacity (ширина и доступное
+   имя сохраняются), поверх центрируется кольцо awds-component-progress.
    =============================================================================
    Своего спиннера у кнопки нет. В макете в загрузку вложен инстанс
    progress / circular — в коде так же: те же классы вешаются на тот же <svg>, а
@@ -199,7 +199,10 @@
    ============================================================================= */
 
 .obtn--loading .obtn__content {
-  visibility: hidden;
+  /* opacity, а не visibility: hidden — visibility выкидывает подпись из дерева
+     доступности, и у кнопки на время загрузки не остаётся имени (как у button 2.2.15).
+     .obtn__content уже inline-flex: у элемента с боксом opacity применяется. */
+  opacity: var(--awds-opacity-0);
 }
 
 .obtn .obtn__progress {
@@ -294,20 +297,22 @@
   opacity: var(--awds-opacity-60);   /* #cell opacity/overhung/secondary-rest */
   /* Дописываем opacity к списку перехода базы (он перечисляет свойства явно,
      не transition: all) — иначе уплотнение 60→90% «снапнет». */
-  transition: --awds-obtn-bg 0.15s ease-out,
-              --awds-obtn-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out,
-              opacity 0.15s ease-out;
+  transition: --awds-obtn-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-obtn-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Hover: chroma темнеет (surface-dim), текст контрастнее, кнопка уплотняется до 90% */
-.obtn-secondary:hover {
-  --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
-  --awds-obtn-chroma: rgb(var(--surface-dim));   /* #cell overhung/secondary/chroma-hover */
-  --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
-  --awds-obtn-color:  rgb(var(--surface-on-highest));   /* #cell overhung/secondary/color-hover */
-  opacity: var(--awds-opacity-90);   /* #cell opacity/overhung/secondary-hover */
+@media (hover: hover) and (pointer: fine) {
+  .obtn-secondary:hover {
+    --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
+    --awds-obtn-chroma: rgb(var(--surface-dim));   /* #cell overhung/secondary/chroma-hover */
+    --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
+    --awds-obtn-color:  rgb(var(--surface-on-highest));   /* #cell overhung/secondary/color-hover */
+    opacity: var(--awds-opacity-90);   /* #cell opacity/overhung/secondary-hover */
+  }
 }
 
 .obtn-secondary:focus-visible {

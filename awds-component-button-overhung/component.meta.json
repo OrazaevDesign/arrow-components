@@ -1,18 +1,11 @@
 {
   "component": "button-overhung",
-  "version": "2.0.18",
+  "version": "2.0.20",
   "contract_hash": "sha256:734b4e05e7eed9c113df4e28601577eb5812a9cd6b08f0826a83433219589058",
-  "artifact_hash": "sha256:6d95bd5564b14232920c7a4f81081d4f1c525529937a0c7dbec7f11a477f9b0a",
-  "visual_change": false,
-  "released_at": "2026-10-07T17:04:52.601Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 13,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "artifact_hash": "sha256:4fc137a7e57b6a50926e1c421d9ba50b4dd65746763855199ed54d79ba9d8b93",
+  "visual_change": true,
+  "released_at": "2026-10-12T13:29:42.170Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -120,6 +113,9 @@
     "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-semibold",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
+    "--awds-opacity-0",
     "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-opacity-60",
@@ -239,13 +235,13 @@
         "why": "кольцо декоративное (aria-hidden), о занятости сообщает атрибут"
       },
       {
-        "attr": "disabled",
-        "when": "obtn--loading",
-        "tags": [
-          "button"
+        "any_of": [
+          "aria-disabled",
+          "disabled"
         ],
+        "when": "obtn--loading",
         "required": true,
-        "why": "класс .obtn--loading только прячет контент, pointer-events он не снимает — без атрибута кнопка в загрузке продолжает нажиматься"
+        "why": "pointer-events класс .obtn--loading не снимает — без атрибута кнопка в загрузке продолжает нажиматься. Эталон — aria-disabled=\"true\", как у button: кнопка остаётся в фокусе, а disabled уносит фокус с кнопки, которую только что нажали с клавиатуры. disabled законен, когда фокус после нажатия не важен. Enter и Space на <button> с aria-disabled по-прежнему вызывают click — обработчик обязан выйти сам"
       },
       {
         "attr": "type",
