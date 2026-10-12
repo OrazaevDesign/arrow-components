@@ -170,10 +170,10 @@
      подхватывается с текущей точки. Фон-градиент анимируется через @property-аккумуляторы
      (--awds-radio-bg/-chroma зарегистрированы как <color> выше). Стандарт PageCraft
      для интерактивных смен — 0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: --awds-radio-bg 0.15s ease-out,
-              --awds-radio-chroma 0.15s ease-out,
-              box-shadow 0.15s ease-out,
-              color 0.15s ease-out;
+  transition: --awds-radio-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-radio-chroma var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Точка (Figma ic24-radio-outline): круг Ø10 в центре иконки 24 → в viewBox 24
@@ -185,7 +185,7 @@
   height: var(--awds-radio-icon);
   opacity: 0;
   /* Polish (MIFB): явное свойство, а не transition: all. */
-  transition: opacity 0.15s ease-out;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 
@@ -220,10 +220,12 @@
 /* === Набор unselected (Hover / Active) ===
    :enabled — чтобы отключённая радиокнопка не реагировала на наведение и нажатие. */
 
-.radio:hover > .radio__input:enabled + .radio__box {
-  --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
-  --awds-radio-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
-  --awds-radio-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .radio:hover > .radio__input:enabled + .radio__box {
+    --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+    --awds-radio-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+    --awds-radio-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+  }
 }
 
 .radio:active > .radio__input:enabled + .radio__box {
@@ -244,11 +246,13 @@
   --awds-radio-color:  rgb(var(--primary-on));   /* #cell check-radio/selected/color */
 }
 
-.radio:hover > .radio__input:enabled:checked + .radio__box {
-  --awds-radio-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
-  --awds-radio-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
-  --awds-radio-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
-  --awds-radio-color:  rgb(var(--primary-on));   /* #cell check-radio/selected/color */
+@media (hover: hover) and (pointer: fine) {
+  .radio:hover > .radio__input:enabled:checked + .radio__box {
+    --awds-radio-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+    --awds-radio-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+    --awds-radio-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+    --awds-radio-color:  rgb(var(--primary-on));   /* #cell check-radio/selected/color */
+  }
 }
 
 .radio:active > .radio__input:enabled:checked + .radio__box {

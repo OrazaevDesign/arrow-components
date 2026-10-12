@@ -1,18 +1,11 @@
 {
   "component": "radio",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "contract_hash": "sha256:2a1517d2bd3f783b554ceb88f46e9a814c046055cdc538b74d7415e2526dcbca",
-  "artifact_hash": "sha256:f92866f410f6efab621d6471d86a66f0c8d96852fc045105b16c4259fd389bf2",
-  "visual_change": false,
-  "released_at": "2026-09-26T16:58:02.983Z",
-  "own_values": [
-    {
-      "value": "0.15s",
-      "where": "transition",
-      "count": 5,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    }
-  ],
+  "artifact_hash": "sha256:91a70d856c68699eace34d000bd239292fee3cdb33509c3105cf6a4b1c3e3c98",
+  "visual_change": true,
+  "released_at": "2026-10-12T13:29:42.918Z",
+  "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
     "file_name": "💠 arrow ↪ components",
@@ -111,6 +104,8 @@
     ]
   },
   "ds_token_dependencies": [
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
     "--awds-opacity-100",
     "--awds-opacity-40",
     "--awds-rounded-border-radius-full",
@@ -180,9 +175,16 @@
         "lbl--500",
         "fld--300",
         "fld--400",
-        "fld--500"
+        "fld--500",
+        "list-item--50",
+        "list-item--100",
+        "list-item--200",
+        "list-item--300",
+        "list-item--400",
+        "list-item--500",
+        "list-item--600"
       ],
-      "why_optional": "ступень раздаёт мост родителя: .lbl--{N} .radio и .fld--{N} .lbl .radio кормят size-аккумуляторы сами, и скиллы label и formfield прямо запрещают ставить размерный класс вложенному контролу"
+      "why_optional": "ступень раздаёт мост родителя: .lbl--{N} .radio и .fld--{N} .lbl .radio кормят size-аккумуляторы сами, и скиллы label и formfield прямо запрещают ставить размерный класс вложенному контролу; .list-item--{N} > .list-item__prefix > .radio — ступень раздаёт строка списка (awds-component-list-item, «Переключатель в слоте»), класс размера внутри строки не действует"
     },
     "native": {
       "tag": "input",
@@ -206,9 +208,10 @@
         "required": true,
         "unless_child_any": [
           "radio__label",
-          "lbl__text"
+          "lbl__text",
+          "list-item__title"
         ],
-        "why": "без видимой подписи у контрола нет имени; подпись даёт либо свой .radio__label, либо текст .lbl__text, когда радиокнопка стоит внутри компонента label"
+        "why": "без видимой подписи у контрола нет имени; подпись даёт либо свой .radio__label, либо текст .lbl__text, когда радиокнопка стоит внутри компонента label; в строке списка имя даёт .list-item__title внутри корневого <label class=\"list-item\">"
       }
     ],
     "child_attrs": [
