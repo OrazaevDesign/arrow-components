@@ -1,10 +1,10 @@
 {
   "component": "progress",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "contract_hash": "sha256:0771c062e92cb622f2ee25ba0ea8399bbf4bdc3978ce7d1faa4fb98dedb7f838",
-  "artifact_hash": "sha256:d052b2bf9153b6bacd910b6afd631d300d4766a1cc75b4dbb4f0e3658a7e0da4",
-  "visual_change": true,
-  "released_at": "2026-09-27T08:43:57.200Z",
+  "artifact_hash": "sha256:109ce646dc9604f029fd989cda04749c20e95da7b00f6fdb6d01d1507d1441f9",
+  "visual_change": false,
+  "released_at": "2026-10-12T13:29:42.879Z",
   "own_values": [
     {
       "value": "0.3s",
@@ -23,6 +23,71 @@
       "where": "--awds-progress-spin-duration",
       "count": 2,
       "why": "период кольца: вращение и протяжка дуги идут ОДНИМ периодом, иначе момент раскрытия дуги каждый оборот приходится в новую точку и читается как случайный сбой"
+    },
+    {
+      "value": "cubic-bezier(0.5, 0, 0.701732, 0.495819)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.302435, 0.381352, 0.55, 0.956352)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.334731, 0.12482, 0.785844, 1)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.06, 0.11, 0.6, 1)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.15, 0, 0.515058, 0.409685)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.31033, 0.284058, 0.8, 0.733712)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.4, 0.627035, 0.6, 0.902026)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.205028, 0.057051, 0.57661, 0.453971)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.152313, 0.196432, 0.648374, 1.004315)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "cubic-bezier(0.257759, -0.003163, 0.211762, 1.38179)",
+      "where": "animation-timing-function",
+      "why": "разложенная кривая анимации неопределённой полосы material-web: сегменты по ключевым кадрам, токен движения её не выражает"
+    },
+    {
+      "value": "ease-in-out",
+      "where": "animation",
+      "why": "ease-in-out пульса и дуги спиннера: симметричное движение по кругу, токена ease-in-out в слое движения нет"
+    },
+    {
+      "value": "ease-in-out",
+      "where": "animation-timing-function",
+      "why": "ease-in-out пульса и дуги спиннера: симметричное движение по кругу, токена ease-in-out в слое движения нет"
+    },
+    {
+      "value": "linear",
+      "where": "animation",
+      "why": "шорткат неопределённой полосы material-web: linear — основа, настоящая кривая приходит покадрово через animation-timing-function"
     }
   ],
   "figma": {
@@ -180,6 +245,8 @@
     "note": "Шкалы размеров нет: в макете один размер, ступеней Size у прогресса в теме тоже нет — толщина и диаметр переопределяются переменными (--awds-progress-size / -track), .progress--{N} появится только после того, как дизайнер заведёт ступени в студии. Класс варианта обязателен, и он же решает тег корня: linear это <div> с двумя <span>, circular это <svg> с <circle class=\"progress-circular__arc\">. Тег корня со вариантом контракт связать не умеет — tags перечисляет оба, и linear на <svg> гейт не поймает. Значение приходит числом 0…100 в --awds-progress-value (круговому оно нужно для stroke-dasharray при pathLength=100), но инлайн-стиль проверке недоступен. Требования, помеченные required:false, — документация: условие у них «determinate», то есть ОТСУТСТВИЕ класса progress--indeterminate, а «нет класса» полем when не записывается. Исключение по role и aria-label — кольцо в слоте кнопки (.btn__progress с aria-hidden=\"true\"): имя там несёт сама кнопка, и это единственный законный безымянный инстанс. Снято оно файловым unless_child_any, поэтому в блоке, где рядом стоят спиннер кнопки и самостоятельный индикатор, пропущенный aria-label у второго не заметится — цена той же файловой проверки, что у потомков."
   },
   "ds_token_dependencies": [
+    "--awds-motion-ease-linear",
+    "--awds-motion-ease-state",
     "--awds-opacity-20",
     "--awds-rounded-border-radius-full",
     "--awds-space-0-5",

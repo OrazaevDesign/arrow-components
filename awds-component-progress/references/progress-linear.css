@@ -140,7 +140,7 @@
   /* Полировка (MIFB): анимируем ширину явно, а не через transition: all. Значение
      меняется скачками (ответ сервера), поэтому переход, а не keyframes: новое
      значение перехватывает движение с текущей точки. */
-  transition: inline-size 0.3s ease-out;
+  transition: inline-size 0.3s var(--awds-motion-ease-state);
 }
 
 /* Трек: остаток пути. Начинается после активной части плюс зазор — поэтому при
@@ -154,7 +154,7 @@
   inset-inline: calc(var(--awds-progress-value) * 1% + var(--awds-progress-gap) * min(1, var(--awds-progress-value) * 1000)) 0;
   opacity: var(--awds-progress-idle-opacity);
   overflow: clip;
-  transition: inset-inline-start 0.3s ease-out;
+  transition: inset-inline-start 0.3s var(--awds-motion-ease-state);
 }
 
 .progress-linear__stop {

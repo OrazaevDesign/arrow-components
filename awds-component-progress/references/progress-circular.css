@@ -87,7 +87,7 @@
      и без JS: 0 → 0, любое положительное → 1. */
   stroke-opacity: min(1, calc(var(--awds-progress-value) * 1000));
   /* Значение меняется скачками — переход, а не keyframes (motion.md). */
-  transition: stroke-dasharray 0.3s ease-out;
+  transition: stroke-dasharray 0.3s var(--awds-motion-ease-state);
 }
 
 /* =============================================================================
@@ -98,7 +98,7 @@
    ============================================================================= */
 
 .progress-circular.progress--indeterminate {
-  animation: progress-circular-spin var(--awds-progress-spin-duration) linear infinite;
+  animation: progress-circular-spin var(--awds-progress-spin-duration) var(--awds-motion-ease-linear) infinite;
 }
 
 .progress-circular.progress--indeterminate .progress-circular__arc {
