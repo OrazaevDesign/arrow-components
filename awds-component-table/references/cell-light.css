@@ -29,9 +29,11 @@
   --awds-cell-description: rgb(var(--surface-on-high));        /* #cell cell/light/description */
 }
 
-.cell-light:hover {
-  --awds-cell-bg:     rgb(var(--surface-surface));     /* #cell cell/light/bg-hover */
-  --awds-cell-border: rgb(var(--surface-on-lowest));   /* #cell cell/light/border-hover */
+@media (hover: hover) and (pointer: fine) {
+  .cell-light:hover {
+    --awds-cell-bg:     rgb(var(--surface-surface));     /* #cell cell/light/bg-hover */
+    --awds-cell-border: rgb(var(--surface-on-lowest));   /* #cell cell/light/border-hover */
+  }
 }
 
 .cell-light:focus-visible {

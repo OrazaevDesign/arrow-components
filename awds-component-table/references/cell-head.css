@@ -35,9 +35,11 @@
   font-weight: var(--awds-font-weight-semibold);
 }
 
-.cell-head:hover {
-  --awds-cell-bg:     rgb(var(--surface-dim));         /* #cell cell/head/bg-hover */
-  --awds-cell-border: rgb(var(--surface-on-lowest));   /* #cell cell/head/border */
+@media (hover: hover) and (pointer: fine) {
+  .cell-head:hover {
+    --awds-cell-bg:     rgb(var(--surface-dim));         /* #cell cell/head/bg-hover */
+    --awds-cell-border: rgb(var(--surface-on-lowest));   /* #cell cell/head/border */
+  }
 }
 
 .cell-head:focus-visible {

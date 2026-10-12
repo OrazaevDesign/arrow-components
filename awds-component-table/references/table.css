@@ -153,10 +153,10 @@
      Фон — плоский цвет (без градиента/chroma у cell), анимируется background-color
      напрямую, @property не нужен. Стандарт PageCraft — 0.15s ease-out
      (arrow-design-system/references/motion.md). */
-  transition: background-color 0.15s ease-out,
-              border-color 0.15s ease-out,
-              color 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              border-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .cell:focus-visible {

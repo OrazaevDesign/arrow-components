@@ -33,9 +33,11 @@
   --awds-cell-description: rgb(var(--surface-on-high));    /* #cell cell/default/description */
 }
 
-.cell-default:hover {
-  --awds-cell-bg:     rgb(var(--surface-surface));     /* #cell cell/default/bg-hover */
-  --awds-cell-border: rgb(var(--surface-on-lowest));   /* #cell cell/default/border */
+@media (hover: hover) and (pointer: fine) {
+  .cell-default:hover {
+    --awds-cell-bg:     rgb(var(--surface-surface));     /* #cell cell/default/bg-hover */
+    --awds-cell-border: rgb(var(--surface-on-lowest));   /* #cell cell/default/border */
+  }
 }
 
 .cell-default:focus-visible {
