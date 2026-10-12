@@ -92,10 +92,10 @@
   opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
 
   /* Стандарт PageCraft — 0.15s ease-out (arrow-design-system/references/motion.md). */
-  transition: --awds-tcombi-bg 0.15s ease-out,
-              --awds-tcombi-color 0.15s ease-out,
-              --awds-tcombi-label 0.15s ease-out,
-              box-shadow 0.15s ease-out;
+  transition: --awds-tcombi-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-tcombi-color var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              --awds-tcombi-label var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 /* Метка стоит НАД полем и не плавает — см. шапку.
@@ -269,9 +269,11 @@
 
 /* :has(:enabled) — выключенное поле не реагирует на наведение;
    :not(:focus-within) — на сфокусированном hover не применяется. */
-.tcombi-ghost:hover:not(:focus-within):has(> .tcombi__field:enabled) {
-  --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/color-hover */
-  --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/placeholder-hover */
+@media (hover: hover) and (pointer: fine) {
+  .tcombi-ghost:hover:not(:focus-within):has(> .tcombi__field:enabled) {
+    --awds-tcombi-color:       rgb(var(--secondary-container-on-highest));   /* #cell form-control/ghost/color-hover */
+    --awds-tcombi-label:       rgb(var(--secondary-container-on-high));   /* #cell form-control/ghost/placeholder-hover */
+  }
 }
 
 .tcombi-ghost:active:not(:focus-within):has(> .tcombi__field:enabled) {
