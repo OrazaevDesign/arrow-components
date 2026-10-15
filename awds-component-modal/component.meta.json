@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.3.2",
-  "contract_hash": "sha256:2fb8dd417032f8208905ea72f8a5c22f838cfea95f84981572b2a2481f9d4ad8",
-  "artifact_hash": "sha256:4445a2afbbdd3950550cf53bd13afdda9adcecbceca3bb47cdb242898bd9f3a8",
-  "visual_change": false,
-  "released_at": "2026-10-12T13:29:42.784Z",
+  "version": "1.4.0",
+  "contract_hash": "sha256:94be2173e19a6c82add80b0eaeee230807682995744d8b7ddb4495c89d37b5e2",
+  "artifact_hash": "sha256:7a93ce5ee1ca4f9055a186ff6318477812d2bc82f74f533a299437091fec64c7",
+  "visual_change": true,
+  "released_at": "2026-10-15T20:05:30.958Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -13,10 +13,10 @@
       "why": "длительность анимации: коллекции движения в студии нет"
     },
     {
-      "value": "480px",
+      "value": "320px",
       "where": "--awds-mdl-width",
       "count": 1,
-      "why": "ширина окна: группы окна нет ни в layout, ни в size — в layout/form только gap и group-gap; ручка перекрывается потребителем"
+      "why": "ширина окна: группы окна нет ни в layout, ни в size — в layout/form только gap и group-gap; ручка перекрывается потребителем; 320 — ширина всех ячеек макета с 1.3.3"
     }
   ],
   "figma": {
@@ -39,7 +39,7 @@
   },
   "shape": "rectangle",
   "size_scale": null,
-  "size_scale_note": "Шкалы размеров нет: ширину задаёт потребитель ручкой --awds-mdl-width (по умолчанию layout/form/max). Ось view=desktop|tablet|mobile в макете — брейкпоинт, а не ступень: правило 10 канона props.md, класса под неё нет.",
+  "size_scale_note": "Шкалы размеров нет: ширину задаёт потребитель ручкой --awds-mdl-width (по умолчанию 320 — ширина всех ячеек макета, с 1.3.3). Ось view=desktop|tablet|mobile в макете — брейкпоинт, а не ступень: правило 10 канона props.md, класса под неё нет.",
   "states": [
     "rest"
   ],
@@ -173,6 +173,16 @@
       "raised_at": "2026-09-22",
       "evidence": "замер 22.09.2026: инстансы Scrollbar (Type=Vertical, Style=Clear, State=Rest) remote=true; в коде модалки полосы нет вовсе — прокрутка нативная, красится компонентом scrollbar",
       "asana_gid": "1218731381722490"
+    },
+    {
+      "id": "modal-tablet-dialog-not-sheet",
+      "text": "В макете ячейки view=tablet у modal / dialog скруглены со всех сторон (окно по центру), у sidepage — панель; шторкой нарисованы только view=mobile. В коде шторка включается ниже 1024 (решение 29.09.2026), и на неё же завязан порог «Назад» в page-title. Переносим шторку на мобильную границу темы (≤615) или правим ячейку tablet в макете?",
+      "level": "component",
+      "target": "modal",
+      "severity": "minor",
+      "status": "open",
+      "raised_at": "2026-10-15",
+      "evidence": "замер 15.10.2026 (use_figma): 77:60785 dialog/tablet radius 10 на всех углах, 77:60789 sidepage/tablet radius 0, 77:60793/77:60797 mobile — 10/10/0/0; тема переключает дорожки на 1023 и 615"
     }
   ],
   "family": "popups",
@@ -202,6 +212,7 @@
     "--awds-space-12",
     "--awds-space-2",
     "--awds-space-3",
+    "--awds-space-8",
     "--awds-typography-font-size-800",
     "--awds-typography-letter-spacing-800",
     "--awds-typography-line-height-compact-800",
@@ -223,6 +234,7 @@
   "contract": {
     "classes": [
       "mdl",
+      "mdl--fullscreen",
       "mdl-dialog",
       "mdl-sidepage",
       "mdl__back",
