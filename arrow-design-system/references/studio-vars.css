@@ -545,7 +545,7 @@
   --awds-layout-section-gutter-block-mobile: var(--awds-space-4);
   --awds-layout-section-gutter-block: var(--awds-layout-section-gutter-block-desktop);  /* Боковое поле колонки блока: padding-inline на __inner, внутри max-width. На mobile поле сохраняется, в отличие от section/gutter. Зазор между колонками — section/column-gap. */
   /* Боковое поле содержимого модального окна: padding-inline тела и шапки модалки. Не зависит от поля секции страницы. */
-  --awds-layout-section-gutter-modal-desktop: var(--awds-space-6);
+  --awds-layout-section-gutter-modal-desktop: var(--awds-space-9);
   --awds-layout-section-gutter-modal-tablet: var(--awds-space-4);
   --awds-layout-section-gutter-modal-mobile: var(--awds-space-4);
   --awds-layout-section-gutter-modal: var(--awds-layout-section-gutter-modal-desktop);  /* Боковое поле содержимого модального окна: padding-inline тела и шапки модалки. Не зависит от поля секции страницы. */
@@ -1649,8 +1649,8 @@
   --awds-wysiwyg-gap-h6: var(--awds-wysiwyg-gap-h6-medium);  /* Отступ сверху у заголовка h6. По модам масштаба: small → typography/line-height-compact/400, medium → typography/line-height-compact/600, large → typography/line-height-compact/700. Вертикальный ритм текста задаётся здесь, а не в блоке. */
   /* Основной текст интерфейса: Onest, дальше системный стек. Onest не системный — если сайт не подключил вебшрифт, текст упадёт на system-ui, и это будет выглядеть как «шрифт не поменялся». */
   --awds-font-family-system: Onest, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Основной текст интерфейса: Onest, дальше системный стек. Onest не системный — если сайт не подключил вебшрифт, текст упадёт на system-ui, и это будет выглядеть как «шрифт не поменялся». */
-  /* Заголовки: Geologica, дальше системный стек. Geologica не системный — без подключённого вебшрифта заголовок отрисуется системным и от основного текста не отличится. */
-  --awds-font-family-heading: Geologica, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Заголовки: Geologica, дальше системный стек. Geologica не системный — без подключённого вебшрифта заголовок отрисуется системным и от основного текста не отличится. */
+  /* Заголовки: Libre Franklin, дальше системный стек. Не системный — файл даёт @font-face в styles темы; без него заголовок отрисуется system-ui. У bjjd (форк 53) переопределено на Geologica. */
+  --awds-font-family-heading: "Libre Franklin", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;  /* Заголовки: Libre Franklin, дальше системный стек. Не системный — файл даёт @font-face в styles темы; без него заголовок отрисуется system-ui. У bjjd (форк 53) переопределено на Geologica. */
   /* Системный стек шрифтов для моноширинного текста и кода. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
   --awds-font-family-code: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;  /* Системный стек шрифтов для моноширинного текста и кода. Вебшрифты тема не подключает: стек рассчитан на шрифт операционной системы. */
   /* Начертание light: 300. Своих файлов шрифта у темы нет — работает то, что есть в системном стеке. */

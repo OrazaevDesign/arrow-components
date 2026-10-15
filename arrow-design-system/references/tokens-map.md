@@ -51,7 +51,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `control` | `font-size` | Кегль текста контрола |
 | `control` | `letter-spacing` | Межбуквенный интервал контрола |
 | `control` | `line-height` | Интерлиньяж контрола |
-| `font` | `family` | Заголовки: Geologica |
+| `font` | `family` | Заголовки: Libre Franklin |
 | `font` | `weight` | Начертание medium |
 | `layout` | `card` | Минимальная ширина баннера в половину ряда (два в ряд). |
 | `layout` | `section` | Боковое поле содержимого модального окна |
