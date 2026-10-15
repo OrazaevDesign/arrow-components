@@ -401,14 +401,14 @@
     },
     {
       "name": "modal",
-      "version": "1.3.2",
+      "version": "1.4.0",
       "variants": [
         "dialog",
         "sidepage"
       ],
       "sizes": null,
-      "rules": 23,
-      "bytes": 4437
+      "rules": 24,
+      "bytes": 4842
     },
     {
       "name": "notice",
@@ -431,7 +431,7 @@
     },
     {
       "name": "page-title",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "variants": [
         "default"
       ],
@@ -757,12 +757,12 @@
     }
   ],
   "bundle": {
-    "bytes": 404768,
-    "rules": 1537,
-    "hash": "sha256:be6437f9014a52c4d184c4b5d546bbae7061e1626ca2d7cfb79fecfc2a30b081"
+    "bytes": 405173,
+    "rules": 1538,
+    "hash": "sha256:59bc8ad3a5641af2443b8d612704751b10905fe27fd606908076f679388b5916"
   },
   "theme": {
-    "bytes": 68494,
+    "bytes": 68501,
     "variables_kept": 689,
     "variables_declared": 1369,
     "missing": []

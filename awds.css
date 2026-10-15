@@ -7,7 +7,7 @@
    Нужен слой значений: dist/theme/arrowds.css (или CSS темы Design Studio) и
    составной класс темы на <html>: class="theme-default theme-light".
 
-   Состав: focus-selection@2.0.13, badge@1.2.2, breadcrumbs@1.0.0, button@2.2.16, button-area@2.0.12, button-favorites@2.0.4, button-group@1.0.3, button-menu@2.0.14, button-overhung@2.0.20, checkbox@1.0.12, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.9, emblem@3.0.9, formfield@1.0.14, heading@2.2.0, input@1.0.18, input-combi@1.0.19, input-inline@1.0.2, label@1.0.9, link@1.0.9, list-item@2.4.3, modal@1.3.2, notice@2.0.6, page-title@1.2.1, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.3.1, progress@2.0.5, radio@1.0.12, range@2.0.14, rating@2.0.11, scrollbar@2.0.7, select@1.0.30, select-combi@1.0.32, slider@1.0.11, switch@1.0.11, tab@1.0.8, tab-group@1.0.4, table@1.0.14, textarea@1.0.19, textarea-combi@1.0.8, toast@1.0.2, tooltip@2.0.3, uploader@2.0.6 */
+   Состав: focus-selection@2.0.13, badge@1.2.2, breadcrumbs@1.0.0, button@2.2.16, button-area@2.0.12, button-favorites@2.0.4, button-group@1.0.3, button-menu@2.0.14, button-overhung@2.0.20, checkbox@1.0.12, combobox-combi@1.1.1, content-area@2.0.4, datepicker@1.0.9, emblem@3.0.9, formfield@1.0.14, heading@2.2.0, input@1.0.18, input-combi@1.0.19, input-inline@1.0.2, label@1.0.9, link@1.0.9, list-item@2.4.3, modal@1.4.0, notice@2.0.6, page-title@1.2.2, pagination@1.0.1, popover@1.0.5, price@2.0.6, product-card@3.3.1, progress@2.0.5, radio@1.0.12, range@2.0.14, rating@2.0.11, scrollbar@2.0.7, select@1.0.30, select-combi@1.0.32, slider@1.0.11, switch@1.0.11, tab@1.0.8, tab-group@1.0.4, table@1.0.14, textarea@1.0.19, textarea-combi@1.0.8, toast@1.0.2, tooltip@2.0.3, uploader@2.0.6 */
 
 @property --awds-btn-bg {
   syntax: "<color>";
@@ -5556,7 +5556,7 @@
   --awds-mdl-gap:         var(--awds-space-2);   
   --awds-mdl-footer-gap:  var(--awds-space-3);   
   --awds-mdl-pad-bottom:  var(--awds-layout-section-gutter-modal);   
-  --awds-mdl-width:    480px;
+  --awds-mdl-width:    320px;
   --awds-mdl-title-fs: var(--awds-typography-font-size-800);            
   --awds-mdl-title-lh: var(--awds-typography-line-height-compact-800);  
   --awds-mdl-title-ls: var(--awds-typography-letter-spacing-800);
@@ -5623,6 +5623,7 @@
 }
 
 .mdl__header {
+  position: relative;   
   display: flex;
   flex: none;
   align-items: flex-start;
@@ -5642,17 +5643,18 @@
   text-wrap: balance;
 }
 
-.mdl__header::before {
-  content: "";
-  flex: 1 1 auto;
-}
-
-.mdl__header:has(.mdl__title)::before {
-  content: none;
-}
-
-.mdl__back, .mdl__close {
+.mdl__back {
   flex: none;
+}
+
+.mdl__close {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+}
+
+.mdl__header:has(> .mdl__close) > .mdl__title {
+  padding-inline-end: calc(var(--awds-space-8) - var(--awds-mdl-pad-side));
 }
 
 .mdl__content {
@@ -5723,6 +5725,19 @@
     border-start-end-radius: var(--awds-mdl-rounded);
     border-end-start-radius: 0;
     border-end-end-radius: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mdl.mdl--fullscreen {
+    inline-size: 100%;
+    max-inline-size: 100%;
+    block-size: 100%;
+    block-size: 100dvh;
+    max-block-size: none;
+    margin: 0;
+    border-radius: 0;
+    padding-block: env(safe-area-inset-top, 0) env(safe-area-inset-bottom, 0);
   }
 }
 

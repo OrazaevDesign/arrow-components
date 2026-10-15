@@ -1,4 +1,4 @@
-/* ArrowDS · modal@1.3.2
+/* ArrowDS · modal@1.4.0
    Сгенерировано tools/build-dist.mjs — руками не править. */
 
 @layer awds {
@@ -13,7 +13,7 @@
   --awds-mdl-gap:         var(--awds-space-2);   
   --awds-mdl-footer-gap:  var(--awds-space-3);   
   --awds-mdl-pad-bottom:  var(--awds-layout-section-gutter-modal);   
-  --awds-mdl-width:    480px;
+  --awds-mdl-width:    320px;
   --awds-mdl-title-fs: var(--awds-typography-font-size-800);            
   --awds-mdl-title-lh: var(--awds-typography-line-height-compact-800);  
   --awds-mdl-title-ls: var(--awds-typography-letter-spacing-800);
@@ -80,6 +80,7 @@
 }
 
 .mdl__header {
+  position: relative;   
   display: flex;
   flex: none;
   align-items: flex-start;
@@ -99,17 +100,18 @@
   text-wrap: balance;
 }
 
-.mdl__header::before {
-  content: "";
-  flex: 1 1 auto;
-}
-
-.mdl__header:has(.mdl__title)::before {
-  content: none;
-}
-
-.mdl__back, .mdl__close {
+.mdl__back {
   flex: none;
+}
+
+.mdl__close {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+}
+
+.mdl__header:has(> .mdl__close) > .mdl__title {
+  padding-inline-end: calc(var(--awds-space-8) - var(--awds-mdl-pad-side));
 }
 
 .mdl__content {
@@ -180,6 +182,19 @@
     border-start-end-radius: var(--awds-mdl-rounded);
     border-end-start-radius: 0;
     border-end-end-radius: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mdl.mdl--fullscreen {
+    inline-size: 100%;
+    max-inline-size: 100%;
+    block-size: 100%;
+    block-size: 100dvh;
+    max-block-size: none;
+    margin: 0;
+    border-radius: 0;
+    padding-block: env(safe-area-inset-top, 0) env(safe-area-inset-bottom, 0);
   }
 }
 
