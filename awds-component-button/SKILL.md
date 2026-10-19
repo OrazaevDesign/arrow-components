@@ -32,7 +32,7 @@ description: Button ArrowDS (.btn).
 | **Addition** | `references/button-addition.md` ✅ | Финальные действия: корзина, оплата |
 | **Contrast** | `references/button-contrast.md` ✅ | Тёмная кнопка / инверсия на светлом фоне |
 | **Clean** | `references/button-clean.md` ✅ | Белая кнопка для цветных секций |
-| **Pills** | `references/button-pills.md` ✅ | Как Secondary, но текст краснеет (accent) на hover — для чипов/фильтров |
+| **Pills** | `references/button-pills.md` ✅ | Как Secondary, но текст краснеет (accent) на hover — кнопка действия в форме пилюли («Показать все», «Сбросить»). Фильтр, который помнит, включён ли он, — не кнопка, а компонент `awds-component-chip` |
 
 Новые варианты добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта): он вытащит роли каждого состояния и сгенерирует `references/{variant}.css` с inline-ссылками `var(--color-{role}-*)`. Вручную блок `.btn-primary` не копируем.
 
@@ -59,7 +59,7 @@ description: Button ArrowDS (.btn).
 В макете под пилюлю нарисован набор `button / pills`, поэтому его канонический вид — `btn btn-pills btn--pill`. Форма не вшита в тон намеренно: `pills` отличается от `secondary` только акцентным текстом на hover, и имя варианта уже обещает больше, чем даёт.
 
 ```html
-<button class="btn btn-pills btn--400 btn--pill" type="button">Фильтр</button>
+<button class="btn btn-pills btn--400 btn--pill" type="button">Показать все</button>
 ```
 
 ## CSS-файлы
