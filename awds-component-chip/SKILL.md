@@ -12,11 +12,28 @@ description: Chip ArrowDS (.chip).
 **Figma:** секция [↪ chip](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-30),
 страница «4 · elements»: наборы `chip / unselected` и `chip / selected`, 35 ячеек в
 каждом (`size` 600…50 × `state` rest · hover · focus · active · disabled), булевы
-`show-prefix` и `show-suffix` — как у кнопки, по умолчанию включены. Части
-`. / prefix` и `. / suffix` те же, что у кнопки: у экземпляра доступны их вложенные
-свойства (`ic-a`, `ic-b`, `show-ic-*`, `show-notice`). В суффиксе по умолчанию стоит
-крестик `system-close-regular`, его цвет — ячейка `icon-remove`; в коде это
-`.chip__remove`.
+`show-prefix` (по умолчанию выключен) и `show-suffix` (включён).
+
+## Части
+
+Части общие с кнопкой, секция «↪ parts» страницы «4 · elements». Зазор между иконкой и
+краем у `. / prefix` и `. / suffix` — не внутренний отступ, а отдельный фрейм `gap`
+шириной `rectangle/{N}/gap` на внешней стороне части. Его включает булево `show-gap`, по
+умолчанию `true` (кнопки выглядят как раньше).
+
+| Часть | Как стоит в чипсе | В коде |
+| --- | --- | --- |
+| `. / prefix` | `show-gap` = on, иконка — слот `ic-a` | `<svg>` первым ребёнком, цвет — цвет текста |
+| `. / text` | подпись, отступы `rectangle/{N}/gap` с обеих сторон | текст |
+| `. / suffix` | `show-gap` = **off**, `ic-a` = `system-close_circle-filled`, остальные слоты выключены | `.chip__remove` последним ребёнком, цвет — ячейка `icon-remove` |
+
+**У крестика справа нет `gap`.** Поэтому у чипса с крестиком правый край — только
+`padding` ступени (16 · 12 · 10 · 8 · 8 · 4 · 2 на 600…50), а не `padding + gap`, как у
+чипса без крестика. В CSS это одно правило `.chip:has(> .chip__remove:last-child)`:
+разметка потребителя не меняется, класс-модификатор не нужен.
+
+До 19.10.2026 под это существовала отдельная часть `. / suffix-chips` (1128:7697); её
+сменил `show-gap` у общего суффикса, и часть удалена.
 
 ## Когда брать
 
@@ -61,7 +78,7 @@ description: Chip ArrowDS (.chip).
 <!-- применённый фильтр: весь чипс — кнопка «убрать» -->
 <button type="button" class="chip chip-selected chip--400" aria-label="Убрать фильтр: Красный">
   Красный
-  <svg class="chip__remove" viewBox="0 0 24 24" aria-hidden="true"><!-- system-close --></svg>
+  <svg class="chip__remove" viewBox="0 0 20 20" aria-hidden="true"><!-- system-close_circle-filled --></svg>
 </button>
 ```
 

@@ -1,10 +1,10 @@
 {
   "component": "chip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "contract_hash": "sha256:7ab5f03d7ca3113e478b69094a0cdfb57a6a4f874e19d216ed4b3cf4ca323da1",
-  "artifact_hash": "sha256:bdd972aa5fddda829218a154b0bff6deb6f56eb76e19a2ac251d4ce407eff070",
+  "artifact_hash": "sha256:6d8a7dc51ccc073cdb2aa3b48c705d4c33b80022355e08358791ca22332874b1",
   "visual_change": true,
-  "released_at": "2026-10-19T10:28:27.694Z",
+  "released_at": "2026-10-19T13:21:57.052Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -12,7 +12,21 @@
     "page": "4 · elements",
     "section_node_id": "5:30",
     "primary_node_id": "1109:4149",
-    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-30"
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-30",
+    "parts": {
+      "suffix": {
+        "node_id": "8:4650",
+        "section": "↪ parts",
+        "show_gap": false,
+        "icon": "system-close_circle-filled",
+        "note": "общий суффикс кнопки; show-gap = off убирает фрейм-распорку rectangle/{N}/gap справа от крестика"
+      },
+      "prefix": {
+        "node_id": "8:4607",
+        "section": "↪ parts",
+        "show_gap": true
+      }
+    }
   },
   "variants": {
     "unselected": {
@@ -101,7 +115,7 @@
       },
       {
         "label": "Применённый фильтр с крестиком",
-        "html": "<button type=\"button\" class=\"chip chip-selected chip--400\" aria-label=\"Убрать фильтр: Красный\">Красный<svg class=\"chip__remove\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"></svg></button>"
+        "html": "<button type=\"button\" class=\"chip chip-selected chip--400\" aria-label=\"Убрать фильтр: Красный\">Красный<svg class=\"chip__remove\" viewBox=\"0 0 20 20\" aria-hidden=\"true\"></svg></button>"
       }
     ]
   },

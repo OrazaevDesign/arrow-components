@@ -4,17 +4,121 @@
   "sets": {
     "chip / unselected": {
       "node_id": "1109:4149",
-      "axes": {"size": ["600","500","400","300","200","100","50"], "state": ["rest","hover","focus","active","disabled"]},
-      "booleans": ["show-prefix", "show-suffix"], "booleans_default": true,
+      "axes": {
+        "size": [
+          "600",
+          "500",
+          "400",
+          "300",
+          "200",
+          "100",
+          "50"
+        ],
+        "state": [
+          "rest",
+          "hover",
+          "focus",
+          "active",
+          "disabled"
+        ]
+      },
+      "booleans": [
+        "show-prefix",
+        "show-suffix"
+      ],
+      "booleans_default": true,
       "built_from": "button / pills (8:8412), content=text",
-      "variable_defs": {"opacity/control/enabled":"100","chip/unselected/color-rest":"#6a6a6a","chip/unselected/bg-rest":"#f5f5f5","chip/unselected/border-rest":"#fafafa","chip/unselected/color-hover":"#2f1d5a","chip/unselected/bg-hover":"#f2effb","chip/unselected/border-hover":"#6f3aec","chip/unselected/icon-remove":"bound on hidden suffix (system-close-regular)","focus-selection/outline":"#262626","outline/width":"2","outline/offset":"1","opacity/control/disabled":"40","rectangle/600/padding":"16","rectangle/600/gap":"8","rectangle/500/padding":"12","rectangle/500/gap":"6","rectangle/400/padding":"10","rectangle/400/gap":"6","rectangle/300/padding":"8","rectangle/300/gap":"6","rectangle/200/padding":"8","rectangle/200/gap":"4","rectangle/100/padding":"4","rectangle/100/gap":"2","rectangle/50/padding":"2","rectangle/50/gap":"2","rectangle/*/rounded":"26 (mode Rounded)","font-size/600":"16","font-size/400":"14","font-size/300":"13","font-size/200":"12","weight/semibold":"600","family/system":"Onest"}
+      "variable_defs": {
+        "opacity/control/enabled": "100",
+        "chip/unselected/color-rest": "#6a6a6a",
+        "chip/unselected/bg-rest": "#f5f5f5",
+        "chip/unselected/border-rest": "#fafafa",
+        "chip/unselected/color-hover": "#2f1d5a",
+        "chip/unselected/bg-hover": "#f2effb",
+        "chip/unselected/border-hover": "#6f3aec",
+        "chip/unselected/icon-remove": "bound on hidden suffix (system-close-regular)",
+        "focus-selection/outline": "#262626",
+        "outline/width": "2",
+        "outline/offset": "1",
+        "opacity/control/disabled": "40",
+        "rectangle/600/padding": "16",
+        "rectangle/600/gap": "8",
+        "rectangle/500/padding": "12",
+        "rectangle/500/gap": "6",
+        "rectangle/400/padding": "10",
+        "rectangle/400/gap": "6",
+        "rectangle/300/padding": "8",
+        "rectangle/300/gap": "6",
+        "rectangle/200/padding": "8",
+        "rectangle/200/gap": "4",
+        "rectangle/100/padding": "4",
+        "rectangle/100/gap": "2",
+        "rectangle/50/padding": "2",
+        "rectangle/50/gap": "2",
+        "rectangle/*/rounded": "26 (mode Rounded)",
+        "font-size/600": "16",
+        "font-size/400": "14",
+        "font-size/300": "13",
+        "font-size/200": "12",
+        "weight/semibold": "600",
+        "family/system": "Onest"
+      },
+      "suffix": ". / suffix (show-gap = off)",
+      "show_prefix_default": false
     },
     "chip / selected": {
       "node_id": "1109:50780",
-      "axes": {"size": ["600","500","400","300","200","100","50"], "state": ["rest","hover","focus","active","disabled"]},
-      "booleans": ["show-prefix", "show-suffix"], "booleans_default": true,
+      "axes": {
+        "size": [
+          "600",
+          "500",
+          "400",
+          "300",
+          "200",
+          "100",
+          "50"
+        ],
+        "state": [
+          "rest",
+          "hover",
+          "focus",
+          "active",
+          "disabled"
+        ]
+      },
+      "booleans": [
+        "show-prefix",
+        "show-suffix"
+      ],
+      "booleans_default": true,
       "built_from": "button / pills (8:8412), content=text",
-      "variable_defs": {"chip/selected/color":"#ffffff","chip/selected/bg-rest":"#6f3aec","chip/selected/border":"#6f3aec","chip/selected/bg-hover":"#7744ef","chip/selected/icon-remove":"bound on hidden suffix (system-close-regular)","focus-selection/outline":"#262626","opacity/control/disabled":"40","rectangle/*":"same as unselected"}
+      "variable_defs": {
+        "chip/selected/color": "#ffffff",
+        "chip/selected/bg-rest": "#6f3aec",
+        "chip/selected/border": "#6f3aec",
+        "chip/selected/bg-hover": "#7744ef",
+        "chip/selected/icon-remove": "bound on hidden suffix (system-close-regular)",
+        "focus-selection/outline": "#262626",
+        "opacity/control/disabled": "40",
+        "rectangle/*": "same as unselected"
+      },
+      "suffix": ". / suffix (show-gap = off)",
+      "show_prefix_default": false
+    }
+  },
+  "parts": {
+    ". / suffix": {
+      "node_id": "8:4650",
+      "in_chip": {
+        "show-gap": false,
+        "ic-a": "system-close_circle-filled (key f26536bc9ccefb71aa39fb900d3f7d211d05afea)",
+        "other slots": "off"
+      },
+      "gap": "фрейм gap, width = rectangle/{N}/gap, visible = show-gap (default true)"
+    },
+    ". / prefix": {
+      "node_id": "8:4607",
+      "gap": "фрейм gap слева, width = rectangle/{N}/gap, visible = show-gap (default true)"
     }
   }
 }

@@ -35,7 +35,7 @@
 | active | как rest | | | своих ячеек нет |
 | disabled | как rest, `opacity/control/disabled` | | | |
 
-Крестик (`.chip__remove`) — `secondary-container-on` во всех состояниях.
+Крестик (`.chip__remove`, часть `. / suffix` с `show-gap` = off, иконка `system-close_circle-filled`) — `secondary-container-on` во всех состояниях.
 
 ## Переключение
 

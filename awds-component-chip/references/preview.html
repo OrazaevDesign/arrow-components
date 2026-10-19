@@ -126,8 +126,10 @@
     const STATES = ['rest', 'hover', 'focus', 'active', 'disabled'];
     /* Высоты ячеек макета (наборы 1109:4149 и 1109:50780). */
     const EXPECTED_HEIGHT = { 600: 52, 500: 44, 400: 40, 300: 36, 200: 32, 100: 24, 50: 20 };
+    /* . / suffix с show-gap = off: справа от крестика только rectangle/{N}/padding. */
+    const EXPECTED_REMOVE_END = { 600: 16, 500: 12, 400: 10, 300: 8, 200: 8, 100: 4, 50: 2 };
 
-    const ICON_CLOSE = '<svg class="chip__remove" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.7 5.3 12 10.6l5.3-5.3 1.4 1.4-5.3 5.3 5.3 5.3-1.4 1.4-5.3-5.3-5.3 5.3-1.4-1.4 5.3-5.3-5.3-5.3z"/></svg>';
+    const ICON_CLOSE = '<svg class="chip__remove" viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 1.667a8.333 8.333 0 1 1 0 16.666 8.333 8.333 0 0 1 0-16.666Zm2.946 5.387a.833.833 0 0 0-1.178 0L10 8.821 8.232 7.054a.833.833 0 1 0-1.178 1.178L8.821 10l-1.767 1.768a.833.833 0 1 0 1.178 1.178L10 11.179l1.768 1.767a.833.833 0 1 0 1.178-1.178L11.179 10l1.767-1.768a.833.833 0 0 0 0-1.178Z"/></svg>'; /* system-close_circle-filled, слот ic-a части . / suffix (show-gap = off) */
     const ICON_PREFIX = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg>';
 
     const on = (id) => document.getElementById(id).value === 'on';
@@ -185,11 +187,19 @@
         for (const size of SIZES) {
           const el = document.querySelector(`.chip--${size}`);
           const h = Math.round(el.getBoundingClientRect().height);
-          if (h !== EXPECTED_HEIGHT[size]) bad.push(`${size}: ${h} вместо ${EXPECTED_HEIGHT[size]}`);
+          if (h !== EXPECTED_HEIGHT[size]) bad.push(`${size}: высота ${h} вместо ${EXPECTED_HEIGHT[size]}`);
+          /* . / suffix, show-gap = off: справа после крестика только padding ступени. */
+          const x = el.querySelector('.chip__remove');
+          if (x) {
+            const right = Math.round(el.getBoundingClientRect().right - x.getBoundingClientRect().right);
+            const want = EXPECTED_REMOVE_END[size];
+            if (right !== want) bad.push(`${size}: справа от крестика ${right} вместо ${want}`);
+          }
         }
         document.getElementById('measure').innerHTML = bad.length
-          ? `<span class="bad">РАСХОЖДЕНИЕ высоты</span> — ${bad.join('; ')}`
-          : `замер высоты по семи ступеням: <b>совпадает с макетом</b> (52 · 44 · 40 · 36 · 32 · 24 · 20)`;
+          ? `<span class="bad">РАСХОЖДЕНИЕ</span> — ${bad.join('; ')}`
+          : `замер по семи ступеням: <b>совпадает с макетом</b> — высота 52 · 44 · 40 · 36 · 32 · 24 · 20` +
+            (on('remove') ? `, справа от крестика 16 · 12 · 10 · 8 · 8 · 4 · 2` : '');
       });
     }
 

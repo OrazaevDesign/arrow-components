@@ -111,9 +111,17 @@
 
 /* Крестик — индикатор «убрать», а не отдельная цель нажатия: вложить кнопку в кнопку
    разметка не даёт, поэтому чипс с крестиком целиком и есть кнопка удаления. Цвет —
-   своя ячейка icon-remove, приглушённее текста. */
+   своя ячейка icon-remove, приглушённее текста.
+
+   В макете это общий `. / suffix` с show-gap = off: фрейм-распорка gap
+   (rectangle/{N}/gap) выключен, иконка system-close_circle-filled. Поэтому у чипса с
+   крестиком правый край — только padding ступени, а не padding + gap, как у текста. */
 .chip .chip__remove {
   color: var(--awds-chip-icon-remove);
+}
+
+.chip:has(> .chip__remove:last-child) {
+  padding-inline-end: var(--awds-chip-padding);
 }
 
 /* Кольцо фокуса — слой awds-component-focus-selection, вариант

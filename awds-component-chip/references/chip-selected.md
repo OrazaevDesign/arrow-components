@@ -23,7 +23,7 @@
 ```html
 <button type="button" class="chip chip-selected chip--400" aria-label="Убрать фильтр: Красный">
   Красный
-  <svg class="chip__remove" viewBox="0 0 24 24" aria-hidden="true"><!-- system-close --></svg>
+  <svg class="chip__remove" viewBox="0 0 20 20" aria-hidden="true"><!-- system-close_circle-filled --></svg>
 </button>
 ```
 
@@ -37,4 +37,4 @@
 | active | как rest | | | своих ячеек нет |
 | disabled | как rest, `opacity/control/disabled` | | | |
 
-Крестик (`.chip__remove`) — `primary-on-dim` во всех состояниях.
+Крестик (`.chip__remove`, часть `. / suffix` с `show-gap` = off, иконка `system-close_circle-filled`) — `primary-on-dim` во всех состояниях.
