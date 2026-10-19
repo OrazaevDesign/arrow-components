@@ -20,11 +20,11 @@
 
    Маппинг variant × state → роль (component-token-map.json, map.state.*.chip):
      unselected
-       rest/focus/active  bg=secondary-container-core  border=secondary-container-dim
+       rest/focus/active  bg=secondary-container-core  border=secondary-container-core (в цвет фона)
                           color=secondary-container-on-high
-       hover              bg=primary-container-core    border=primary-core
+       hover              bg=primary-container-core    border=primary-container-core (в цвет фона)
                           color=primary-container-on-highest
-       icon-remove        secondary-container-on (во всех состояниях)
+       icon-remove        rest/focus/active secondary-container-on · hover primary-container-on
      selected
        rest/focus/active  bg=primary-core  border=primary-core  color=primary-on
        hover              bg=primary-dim   border=primary-core  color=primary-on
@@ -118,6 +118,8 @@
    крестиком правый край — только padding ступени, а не padding + gap, как у текста. */
 .chip .chip__remove {
   color: var(--awds-chip-icon-remove);
+  /* Polish (MIFB): крестик меняет цвет вместе с фоном на hover — тем же движением. */
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
 
 .chip:has(> .chip__remove:last-child) {
@@ -205,16 +207,18 @@
 
 .chip-unselected {
   --awds-chip-bg:          rgb(var(--secondary-container-core));   /* #cell chip/unselected/bg-rest */
-  --awds-chip-border:      rgb(var(--secondary-container-dim));   /* #cell chip/unselected/border-rest */
+  --awds-chip-border:      rgb(var(--secondary-container-core));   /* #cell chip/unselected/border-rest */
   --awds-chip-color:       rgb(var(--secondary-container-on-high));   /* #cell chip/unselected/color-rest */
-  --awds-chip-icon-remove: rgb(var(--secondary-container-on));   /* #cell chip/unselected/icon-remove */
+  --awds-chip-icon-remove: rgb(var(--secondary-container-on));   /* #cell chip/unselected/icon-remove-rest */
 }
 
 @media (hover: hover) and (pointer: fine) {
   .chip-unselected:hover {
     --awds-chip-bg:     rgb(var(--primary-container-core));   /* #cell chip/unselected/bg-hover */
-    --awds-chip-border: rgb(var(--primary-core));   /* #cell chip/unselected/border-hover */
+    --awds-chip-border: rgb(var(--primary-container-core));   /* #cell chip/unselected/border-hover */
     --awds-chip-color:  rgb(var(--primary-container-on-highest));   /* #cell chip/unselected/color-hover */
+    /* Крестик на hover — пара к фону primary-container: on-вариант того же контейнера. */
+    --awds-chip-icon-remove: rgb(var(--primary-container-on));   /* #cell chip/unselected/icon-remove-hover */
   }
 }
 
@@ -238,7 +242,8 @@
 /* === Уважение к системной настройке «меньше движения» ===
    Гасим движение, а не информацию: состояние различимо, меняется мгновенно. */
 @media (prefers-reduced-motion: reduce) {
-  .chip {
+  .chip,
+  .chip .chip__remove {
     transition: none;
   }
 }

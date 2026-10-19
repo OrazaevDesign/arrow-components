@@ -1,5 +1,9 @@
 # chip — журнал версий
 
+## 1.0.2 — 2026-10-19 — PATCH · visual
+unselected: обводка в цвет фона (rest secondary-container-core, hover primary-container-core); крестик на hover — primary-container-on, ячейки icon-remove-rest / icon-remove-hover; переход цвета крестика
+Потребителю: Пересобрать копию chip.css в блоках; разметка не меняется
+
 ## 1.0.1 — 2026-10-19 — PATCH · visual
 Крестик «убрать» — system-close_circle-filled на общем суффиксе с show-gap = off: справа от крестика только padding ступени, без gap
 Потребителю: Пересобрать копию chip.css в блоках; в разметке крестика заменить иконку на system-close_circle-filled (viewBox 0 0 20 20)

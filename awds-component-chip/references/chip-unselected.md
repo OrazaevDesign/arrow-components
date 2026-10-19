@@ -29,13 +29,13 @@
 
 | Состояние | bg | border | color | Ячейка |
 | --- | --- | --- | --- | --- |
-| rest | `secondary-container-core` | `secondary-container-dim` | `secondary-container-on-high` | `chip/unselected/*-rest` |
-| hover | `primary-container-core` | `primary-core` | `primary-container-on-highest` | `chip/unselected/*-hover` |
+| rest | `secondary-container-core` | `secondary-container-core` (в цвет фона) | `secondary-container-on-high` | `chip/unselected/*-rest` |
+| hover | `primary-container-core` | `primary-container-core` (в цвет фона) | `primary-container-on-highest` | `chip/unselected/*-hover` |
 | focus | как rest + кольцо `--awds-focus-*` | | | своих ячеек нет |
 | active | как rest | | | своих ячеек нет |
 | disabled | как rest, `opacity/control/disabled` | | | |
 
-Крестик (`.chip__remove`, часть `. / suffix` с `show-gap` = off, иконка `system-close_circle-filled`) — `secondary-container-on` во всех состояниях.
+Крестик (`.chip__remove`, часть `. / suffix` с `show-gap` = off, иконка `system-close_circle-filled`) — `secondary-container-on` (ячейка `icon-remove-rest`), на hover — `primary-container-on` (`icon-remove-hover`): on-вариант к фону `primary-container-core`.
 
 ## Переключение
 
