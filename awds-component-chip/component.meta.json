@@ -1,0 +1,262 @@
+{
+  "component": "chip",
+  "version": "1.0.0",
+  "contract_hash": "sha256:7ab5f03d7ca3113e478b69094a0cdfb57a6a4f874e19d216ed4b3cf4ca323da1",
+  "artifact_hash": "sha256:bdd972aa5fddda829218a154b0bff6deb6f56eb76e19a2ac251d4ce407eff070",
+  "visual_change": true,
+  "released_at": "2026-10-19T10:28:27.694Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "page": "4 · elements",
+    "section_node_id": "5:30",
+    "primary_node_id": "1109:4149",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-30"
+  },
+  "variants": {
+    "unselected": {
+      "node_id": "1109:4149",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1109-4149",
+      "figma_label": "chip / unselected",
+      "token_role": "chip/unselected"
+    },
+    "selected": {
+      "node_id": "1109:50780",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1109-50780",
+      "figma_label": "chip / selected",
+      "token_role": "chip/selected"
+    }
+  },
+  "css_note": "Файл один на оба варианта (chip.css), как у tab: в ряду фильтров выбранные и невыбранные чипсы живут одновременно и переключаются на лету — разложить их по двум файлам значило бы заставить потребителя подключать оба и дважды получить одну базу.",
+  "shape": "rectangle",
+  "shape_note": "Шкала rectangle, как у button: наборы в макете собраны клонами ячеек button / pills (решение владельца 13.10.2026 — «на основе кнопок»), поэтому чипс N одной высоты с кнопкой N. Форма — всегда пилюля: ячейки стоят в моде скругления Rounded, в коде --awds-rounded-border-radius-full; отдельной оси формы нет (решение владельца 13.10.2026).",
+  "size_scale": [
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active",
+    "disabled"
+  ],
+  "color_tokens": [
+    "bg",
+    "border",
+    "color",
+    "icon-remove"
+  ],
+  "preview": {
+    "base_class": "chip",
+    "default_size": 400,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active",
+      "disabled"
+    ],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300,
+      200,
+      100,
+      50
+    ],
+    "toggles": [
+      {
+        "id": "prefix",
+        "label": "Иконка слева",
+        "options": [
+          "off",
+          "on"
+        ]
+      },
+      {
+        "id": "remove",
+        "label": "Крестик",
+        "options": [
+          "off",
+          "on"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Переключатель",
+        "html": "<button type=\"button\" class=\"chip chip-unselected chip--400\" aria-pressed=\"false\">Со скидкой</button>"
+      },
+      {
+        "label": "Включённый переключатель",
+        "html": "<button type=\"button\" class=\"chip chip-selected chip--400\" aria-pressed=\"true\">В наличии</button>"
+      },
+      {
+        "label": "Применённый фильтр с крестиком",
+        "html": "<button type=\"button\" class=\"chip chip-selected chip--400\" aria-label=\"Убрать фильтр: Красный\">Красный<svg class=\"chip__remove\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"></svg></button>"
+      }
+    ]
+  },
+  "color_scheme": "rgb-triplet",
+  "map_source": "arrow-design-system/references/component-token-map.json",
+  "focus_layer": {
+    "component": "awds-component-focus-selection",
+    "variants": [
+      "radius=400 · offset=outside · tone=default"
+    ],
+    "css": "references/focus-selection.css подключается на страницу до этого компонента",
+    "note": "Кольцо фокуса не инлайнится: .chip:focus-visible ссылается на --awds-focus-*. Вариант снят с инстанса focus-selection в ячейках state=focus."
+  },
+  "base_class_note": "Базовый класс .chip — полное имя, сокращения у него нет (правило 5 канона имён). Цена записана: .chip объявляют Materialize и ряд тем, коллизия у потребителя проявится молча — правилом, которое не применилось. Переименование после публикации стоит MAJOR.",
+  "markup": {
+    "root": {
+      "class": "chip",
+      "tags": [
+        "button"
+      ]
+    },
+    "variant": {
+      "pattern": "chip-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "chip--{size}",
+      "required": false
+    },
+    "native": null,
+    "children": [],
+    "attrs": [
+      {
+        "attr": "type",
+        "tags": [
+          "button"
+        ],
+        "required": true,
+        "why": "без type нативная кнопка внутри формы фильтров отправляет её"
+      },
+      {
+        "any_of": [
+          "aria-pressed",
+          "aria-label"
+        ],
+        "required": true,
+        "why": "переключатель сообщает включённость атрибутом aria-pressed — класс варианта до скринридера не доезжает; чипс с крестиком — это кнопка «убрать», и имя ей даёт aria-label с видимым текстом внутри"
+      }
+    ],
+    "container": null,
+    "note": "Корень — <button type=\"button\">: чипс меняет состояние на месте, а не ведёт по адресу. Класс варианта обязателен: цвета живут в .chip-{variant}, база бесцветна. Класс ступени не обязателен — база несёт дефолты 400. Крестик .chip__remove — индикатор, а не цель: кнопку в кнопку разметка не вкладывает, поэтому чипс с крестиком целиком и есть кнопка удаления. Выключенный чипс обязан нести нативный disabled: pointer-events: none гасит мышь, но не клавиатуру; гейт это не проверяет, условие выражается только нативным состоянием."
+  },
+  "family": "buttons",
+  "summary": "Чипс-фильтр на геометрии кнопки: выбранный и невыбранный, с крестиком «убрать»",
+  "aliases": [
+    "чипс",
+    "чип",
+    "чипсы фильтров",
+    "фильтр-пилюля",
+    "тег фильтра",
+    "применённый фильтр",
+    "быстрый фильтр",
+    "chips"
+  ],
+  "questions": [],
+  "ds_token_dependencies": [
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
+    "--awds-opacity-100",
+    "--awds-opacity-40",
+    "--awds-rounded-border-radius-full",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-2-5",
+    "--awds-space-3",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-px",
+    "--primary-container-core",
+    "--primary-container-on-highest",
+    "--primary-core",
+    "--primary-dim",
+    "--primary-on",
+    "--primary-on-dim",
+    "--secondary-container-core",
+    "--secondary-container-dim",
+    "--secondary-container-on",
+    "--secondary-container-on-high"
+  ],
+  "asana": {
+    "task_gid": "1218436374093302",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218436374093302",
+    "task_name": "💠 chip",
+    "parent_task": "💠 4 · elements",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-focus-selection": "2.0.13"
+  },
+  "contract": {
+    "classes": [
+      "chip",
+      "chip--100",
+      "chip--200",
+      "chip--300",
+      "chip--400",
+      "chip--50",
+      "chip--500",
+      "chip--600",
+      "chip-selected",
+      "chip-unselected",
+      "chip__remove"
+    ],
+    "attributes": [
+      "aria-disabled"
+    ],
+    "elements": [
+      "svg"
+    ],
+    "public_vars": [],
+    "variants": [
+      "selected",
+      "unselected"
+    ],
+    "sizes": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "50",
+      "500",
+      "600"
+    ],
+    "states": [
+      "active",
+      "disabled",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}
