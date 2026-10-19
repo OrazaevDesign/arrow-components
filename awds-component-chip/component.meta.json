@@ -214,6 +214,32 @@
     "parent_task": "💠 4 · elements",
     "primary": true
   },
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "b9046fa3b7a250b1fad6203b21f86a5e4addb509",
+    "pushed_at": "2026-10-19T10:34:15Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-chip/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#chip",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/chip.css",
+      "unselected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-chip/references/chip-unselected.md",
+      "selected": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-chip/references/chip-selected.md"
+    },
+    "dev_resources_status": {
+      "unselected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "1109:4149",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-chip/SKILL.md"
+      },
+      "selected": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "1109:50780",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-chip/SKILL.md"
+      }
+    }
+  },
   "uses": {
     "awds-component-focus-selection": "2.0.13"
   },
