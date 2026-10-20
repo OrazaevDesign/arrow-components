@@ -31,10 +31,10 @@
 
 | Состояние | bg | border | color | Ячейка |
 | --- | --- | --- | --- | --- |
-| rest | `primary-core` | `primary-core` | `primary-on` | `chip/selected/bg-rest`, `border`, `color` |
-| hover | `primary-dim` | `primary-core` | `primary-on` | `chip/selected/bg-hover` |
-| focus | как rest + кольцо `--awds-focus-*` | | | своих ячеек нет |
-| active | как rest | | | своих ячеек нет |
+| rest | `primary-core` | `primary-core` | `primary-on` | `chip/selected/*-rest` |
+| hover | `primary-dim` | `primary-core` | `primary-on` | `chip/selected/*-hover` |
+| focus | как rest + кольцо `--awds-focus-*` | | | `chip/selected/*-focus` |
+| active | как rest | | | `chip/selected/*-active` |
 | disabled | как rest, `opacity/control/disabled` | | | |
 
-Крестик (`.chip__remove`, часть `. / suffix` с `show-gap` = off, иконка `system-close_circle-filled`) — `primary-on-dim` во всех состояниях.
+Крестик (`.chip__remove`, часть `. / suffix` с `show-gap` = off, иконка `system-close_circle-filled`) — `primary-on-dim` во всех состояниях, ячейки `icon-remove-rest/-hover/-focus/-active`.

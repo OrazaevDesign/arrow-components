@@ -52,7 +52,7 @@ description: Chip ArrowDS (.chip).
 
 | Вариант | Reference | Когда |
 | --- | --- | --- |
-| **Unselected** | `references/chip-unselected.md` | фильтр выключен; серая поверхность, на hover подсвечивается primary-контейнером |
+| **Unselected** | `references/chip-unselected.md` | фильтр выключен; серая поверхность, на hover и нажатии подсвечивается accent-контейнером |
 | **Selected** | `references/chip-selected.md` | фильтр включён или применён; заливка primary |
 
 Выбранность — **класс варианта**, а не ось состояния: так её называет слой State

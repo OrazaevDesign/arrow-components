@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:c4af593e0f696cc40b3eca68b409fd67bcbc8da43aa6208d12ae81cc7d9f6ed8",
+  "snapshot_hash": "sha256:d0f1c3c766ea8565ac5b593ae8ed41f029b776c14ec9a9b4601d9ab9bb9b75fc",
   "size": {
     "rectangle": {
       "50": {
@@ -1098,8 +1098,8 @@
           "border": "rgb(var(--surface-bright))"
         },
         "pills": {
-          "bg": "rgb(var(--secondary-dim))",
-          "border": "rgb(var(--secondary-dim))",
+          "bg": "rgb(var(--accent-container-core))",
+          "border": "rgb(var(--accent-container-core))",
           "color": "rgb(var(--accent-core))"
         }
       },
@@ -1140,10 +1140,10 @@
       },
       "chip": {
         "unselected": {
-          "bg": "rgb(var(--primary-container-core))",
-          "border": "rgb(var(--primary-container-core))",
-          "color": "rgb(var(--primary-container-on-highest))",
-          "icon-remove": "rgb(var(--primary-container-on))"
+          "bg": "rgb(var(--accent-container-core))",
+          "border": "rgb(var(--accent-container-core))",
+          "color": "rgb(var(--accent-core))",
+          "icon-remove": "rgb(var(--accent-core))"
         },
         "selected": {
           "bg": "rgb(var(--primary-dim))",
@@ -1720,7 +1720,14 @@
         }
       },
       "chip": {
+        "unselected": {
+          "bg": "rgb(var(--secondary-container-core))",
+          "border": "rgb(var(--secondary-container-core))",
+          "color": "rgb(var(--secondary-container-on-high))",
+          "icon-remove": "rgb(var(--secondary-container-on))"
+        },
         "selected": {
+          "bg": "rgb(var(--primary-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-on))",
           "icon-remove": "rgb(var(--primary-on-dim))"
@@ -2265,9 +2272,9 @@
           "border": "rgb(var(--surface-bright))"
         },
         "pills": {
-          "bg": "rgb(var(--secondary-core))",
-          "border": "rgb(var(--secondary-core))",
-          "color": "rgb(var(--secondary-on))"
+          "bg": "rgb(var(--accent-container-dim))",
+          "border": "rgb(var(--accent-container-dim))",
+          "color": "rgb(var(--accent-dim))"
         }
       },
       "cell": {
@@ -2306,7 +2313,14 @@
         }
       },
       "chip": {
+        "unselected": {
+          "bg": "rgb(var(--accent-container-dim))",
+          "border": "rgb(var(--accent-container-dim))",
+          "color": "rgb(var(--accent-dim))",
+          "icon-remove": "rgb(var(--accent-dim))"
+        },
         "selected": {
+          "bg": "rgb(var(--primary-core))",
           "border": "rgb(var(--primary-core))",
           "color": "rgb(var(--primary-on))",
           "icon-remove": "rgb(var(--primary-on-dim))"

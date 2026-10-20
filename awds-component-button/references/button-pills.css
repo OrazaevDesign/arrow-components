@@ -309,11 +309,11 @@
   background: var(--awds-btn-bg);
 }
 
-/* Hover: текст краснеет (accent-container-on), фон темнеет до secondary-dim */
+/* Hover: фон и обводка в accent-container-core, текст accent-core; active — accent-container-dim и accent-dim */
 @media (hover: hover) and (pointer: fine) {
   .btn-pills:hover {
-    --awds-btn-bg:     rgb(var(--secondary-dim));   /* #cell button/pills/bg-hover */
-    --awds-btn-border: rgb(var(--secondary-dim));   /* #cell button/pills/border-hover */
+    --awds-btn-bg:     rgb(var(--accent-container-core));   /* #cell button/pills/bg-hover */
+    --awds-btn-border: rgb(var(--accent-container-core));   /* #cell button/pills/border-hover */
     --awds-btn-color:  rgb(var(--accent-core));   /* #cell button/pills/color-hover */
   }
 }
@@ -325,9 +325,9 @@
 }
 
 .btn-pills:active {
-  --awds-btn-bg:     rgb(var(--secondary-core));   /* #cell button/pills/bg-active */
-  --awds-btn-border: rgb(var(--secondary-core));   /* #cell button/pills/border-active */
-  --awds-btn-color:  rgb(var(--secondary-on));   /* #cell button/pills/color-active */
+  --awds-btn-bg:     rgb(var(--accent-container-dim));   /* #cell button/pills/bg-active */
+  --awds-btn-border: rgb(var(--accent-container-dim));   /* #cell button/pills/border-active */
+  --awds-btn-color:  rgb(var(--accent-dim));   /* #cell button/pills/color-active */
 }
 
 

@@ -1,10 +1,10 @@
 {
   "component": "button",
-  "version": "2.2.17",
+  "version": "2.2.18",
   "contract_hash": "sha256:b1178d242f4d390a44850a8af06ba94ba17a603fa9f5972dd379f67a9d0e87e0",
-  "artifact_hash": "sha256:d75222b0c87b8d80a06a564e1084a7fe60e665a1db6eb9e102f943aa36e19769",
-  "visual_change": false,
-  "released_at": "2026-10-19T10:32:55.628Z",
+  "artifact_hash": "sha256:e2076e0a4765485bc9302bf8aa91cd50e282478314092e8821b5bac652f8b7b6",
+  "visual_change": true,
+  "released_at": "2026-10-19T16:53:04.138Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -147,7 +147,10 @@
     ]
   },
   "ds_token_dependencies": [
+    "--accent-container-core",
+    "--accent-container-dim",
     "--accent-core",
+    "--accent-dim",
     "--addition-chroma",
     "--addition-core",
     "--addition-dim",

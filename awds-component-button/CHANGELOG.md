@@ -1,5 +1,9 @@
 # button — журнал версий
 
+## 2.2.18 — 2026-10-19 — PATCH · visual
+Ячейки button/pills hover и active перенаправлены в студии на accent: hover bg/border secondary-dim → accent-container-core; active bg/border secondary-core → accent-container-dim, текст secondary-on → accent-dim; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: btn-pills на наведении и нажатии в акцентном контейнере, а не в сером.
+
 ## 2.2.17 — 2026-10-19 — PATCH
 Описание варианта pills: это кнопка действия в форме пилюли, а не чипс; фильтр с выбранностью — новый компонент awds-component-chip
 Потребителю: ничего: правка только в документации, CSS и вид не изменились

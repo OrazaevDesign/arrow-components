@@ -32,7 +32,7 @@ description: Button ArrowDS (.btn).
 | **Addition** | `references/button-addition.md` ✅ | Финальные действия: корзина, оплата |
 | **Contrast** | `references/button-contrast.md` ✅ | Тёмная кнопка / инверсия на светлом фоне |
 | **Clean** | `references/button-clean.md` ✅ | Белая кнопка для цветных секций |
-| **Pills** | `references/button-pills.md` ✅ | Как Secondary, но текст краснеет (accent) на hover — кнопка действия в форме пилюли («Показать все», «Сбросить»). Фильтр, который помнит, включён ли он, — не кнопка, а компонент `awds-component-chip` |
+| **Pills** | `references/button-pills.md` ✅ | Как Secondary, но на hover и нажатии уходит в акцентный контейнер (`accent-container-*`, текст `accent-*`) — кнопка действия в форме пилюли («Показать все», «Сбросить»). Фильтр, который помнит, включён ли он, — не кнопка, а компонент `awds-component-chip` |
 
 Новые варианты добавляются через `arrow-components-builder` (Bootstrap по Figma-ноде варианта): он вытащит роли каждого состояния и сгенерирует `references/{variant}.css` с inline-ссылками `var(--color-{role}-*)`. Вручную блок `.btn-primary` не копируем.
 
@@ -56,7 +56,7 @@ description: Button ArrowDS (.btn).
 
 `.btn--pill` делает кнопку пилюлей. Это **независимая ось**: сочетается с любым вариантом и любым размером — `btn-primary btn--500 btn--pill` работает так же, как `btn-ghost btn--200 btn--pill`.
 
-В макете под пилюлю нарисован набор `button / pills`, поэтому его канонический вид — `btn btn-pills btn--pill`. Форма не вшита в тон намеренно: `pills` отличается от `secondary` только акцентным текстом на hover, и имя варианта уже обещает больше, чем даёт.
+В макете под пилюлю нарисован набор `button / pills`, поэтому его канонический вид — `btn btn-pills btn--pill`. Форма не вшита в тон намеренно: `pills` отличается от `secondary` только акцентом на hover и нажатии, и имя варианта уже обещает больше, чем даёт.
 
 ```html
 <button class="btn btn-pills btn--400 btn--pill" type="button">Показать все</button>
@@ -73,7 +73,7 @@ description: Button ArrowDS (.btn).
 | Tertiary | `references/button-tertiary.css` | `.btn` base + все размеры + `.btn-tertiary` со всеми состояниями (inline `rgb(var(--tertiary-*))`) |
 | Ghost | `references/button-ghost.css` | `.btn` base + все размеры + `.btn-ghost` (фон/обводка `transparent`, текст `rgb(var(--surface-on-high/-highest))`) |
 | Clean | `references/button-clean.css` | `.btn` base + все размеры + `.btn-clean` (белый фон `surface-bright`, обводка `surface-bright` — в покое сливается с фоном, в ховере светлый кант, текст `surface-on-high/-highest`) |
-| Pills | `references/button-pills.css` | `.btn` base + все размеры + `.btn-pills` (= Secondary; на hover текст `rgb(var(--accent-container-on))`) |
+| Pills | `references/button-pills.css` | `.btn` base + все размеры + `.btn-pills` (= Secondary; hover и active — `accent-container-*`, текст `accent-*`) |
 
 Визуальный QA всех вариантов/размеров/состояний — `references/preview.html` (storybook, открывается через `file://`).
 

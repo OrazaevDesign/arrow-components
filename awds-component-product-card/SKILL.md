@@ -96,7 +96,7 @@ description: Product Card ArrowDS (.pcard).
   <div class="pcard__media"></div>
   <div class="pcard__slider-spacer"></div>
   <div class="pcard__content">
-    <span class="price pcard__skel pcard__skel--price">&nbsp;</span>
+    <span class="price price-default pcard__skel pcard__skel--price">&nbsp;</span>
     <span class="pcard__brand pcard__skel pcard__skel--brand">&nbsp;</span>
     <span class="pcard__name pcard__skel pcard__skel--name">&nbsp;</span>
     <span class="pcard__category pcard__skel pcard__skel--category">&nbsp;</span>

@@ -2,7 +2,7 @@
 
 **Figma:** [470rar5EfRm4n14vHMXbpc → node 8:8412](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-8412)
 
-По данным Figma вариант повторяет **Secondary** (серая поверхность, стандартное скругление), но на **hover текст становится акцентным** (`accent-core`, красный) — и спиннер тоже. Это кнопка действия в форме пилюли («Показать все», «Сбросить»), где наведение сигналит акцентное действие.
+По данным Figma вариант повторяет **Secondary** (серая поверхность, стандартное скругление), но на **hover и нажатии уходит в акцентный контейнер**: фон `accent-container-*`, текст `accent-core` / `accent-dim` — и спиннер тоже. Это кнопка действия в форме пилюли («Показать все», «Сбросить»), где наведение сигналит акцентное действие.
 
 > **Не чипс.** Выбранности у варианта нет, цвета — из группы State `button`. Фильтр, который включают и выключают на месте или убирают крестиком, — компонент [`awds-component-chip`](../../awds-component-chip/SKILL.md): у него варианты `selected` / `unselected`, `aria-pressed` и своя группа цветов `chip`.
 
@@ -10,7 +10,7 @@
 >
 > `.btn--pill` сочетается с любым вариантом — пилюльный `primary` или `ghost` делаются тем же классом. Скругление берётся из `--awds-rounded-border-radius-full`; в макете мод даёт 26px, но браузер клампит радиус до половины меньшей стороны (самая высокая кнопка — 52px), поэтому результат совпадает пиксель в пиксель.
 
-Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-core))` (hover-текст) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`.
+Всё на токенах. Цвета → роли `rgb(var(--secondary-*))` + `rgb(var(--accent-*))` (hover и active) inline; размеры → семантические shape-токены `var(--awds-rectangle-{N}-*)`; фокус → `rgb(var(--surface-on-highest))`; disabled → `var(--awds-state-opacity-control-disabled)`.
 
 Геометрия, base-механика, loading, icon-only — общие с Primary; `button-pills.css` самодостаточен (содержит base + sizes), отличается только блоком цветовых ролей варианта.
 
@@ -92,9 +92,9 @@ btn.addEventListener("click", (e) => {
 ```css
 .btn.btn-pills           { background: var(--awds-btn-bg); } /* плоская заливка вместо градиента базы */
 .btn-pills               { --awds-btn-bg: rgb(var(--secondary-core)); --awds-btn-color: rgb(var(--secondary-on)); }
-.btn-pills:hover         { --awds-btn-bg: rgb(var(--secondary-dim));  --awds-btn-color: rgb(var(--accent-core)); /* текст краснеет */ }
+.btn-pills:hover         { --awds-btn-bg: rgb(var(--accent-container-core)); --awds-btn-color: rgb(var(--accent-core)); }
 .btn-pills:focus-visible { --awds-btn-bg: rgb(var(--secondary-core)); --awds-btn-color: rgb(var(--secondary-on)); }
-.btn-pills:active        { --awds-btn-bg: rgb(var(--secondary-core)); }
+.btn-pills:active        { --awds-btn-bg: rgb(var(--accent-container-dim)); --awds-btn-color: rgb(var(--accent-dim)); }
 ```
 
 ---
@@ -118,17 +118,17 @@ btn.addEventListener("click", (e) => {
 ## Состояния
 
 | Состояние | `--awds-btn-bg` | `--awds-btn-border` | `--awds-btn-color` |
-|---|---|---|---|---|
+|---|---|---|---|
 | Rest    | `--secondary-core` | `--secondary-core` | `--secondary-on` |
-| Hover   | `--secondary-dim`  | `--secondary-dim`  | **`--accent-core`** (красный) |
+| Hover   | `--accent-container-core` | `--accent-container-core` | **`--accent-core`** |
 | Focus   | `--secondary-core` | `--secondary-core` | `--secondary-on` |
-| Active  | `--secondary-core` | `--secondary-core`   | `--secondary-core` | `--secondary-on` |
+| Active  | `--accent-container-dim` | `--accent-container-dim` | `--accent-dim` |
 | Disabled| Rest + `opacity: var(--awds-state-opacity-control-disabled)` (= 40%) | | | |
 | Loading | Rest + контент `opacity: 0`, поверх кольцо `progress--indeterminate` в слоте `.btn__progress` | | | |
 
 Фокус-обводка: `outline: var(--awds-focus-width) solid var(--awds-focus-color); outline-offset: var(--awds-focus-offset)`.
 
-Главное отличие от Secondary — **акцентный (красный) цвет текста на hover** (`accent-core`); в остальном идентично.
+Главное отличие от Secondary — **hover и нажатие в акцентном контейнере**: фон и обводка `accent-container-core` / `accent-container-dim`, текст `accent-core` / `accent-dim`. Rest и focus идентичны Secondary.
 
 Фон варианта — **плоская заливка**, без градиента (правка 25.09.2026, макет 8:8412): база `.btn` красит фон
 `linear-gradient(to right, chroma, bg)`, а `.btn.btn-pills` переопределяет его на `var(--awds-btn-bg)`. Два класса

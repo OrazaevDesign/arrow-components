@@ -19,7 +19,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 
 | Коллекция | Токенов | Моды | Группы внутри | Пример имени |
 | --- | --- | --- | --- | --- |
-| **state** | 953 | — | list (343), form-control (128), button (99), badge (68), check-radio (27), cell (24), range (23), tab (21), … +32 | `--awds-state-accordion-collapsed-bg-rest` |
+| **state** | 973 | — | list (343), form-control (128), button (99), badge (68), chip (32), check-radio (27), cell (24), range (23), … +32 | `--awds-state-accordion-collapsed-bg-rest` |
 | **roles** | 326 | light · dark | surface (34), primary (28), secondary (28), tertiary (28), accent (28), addition (28), info (28), success (28), … +4 | `--primary-core-light` |
 | **typography** | 228 | desktop · tablet · mobile | font-size (57), line-height (57), line-height-compact (57), letter-spacing (57) | `--awds-typography-font-size-50-desktop` |
 | **size** | 224 | — | rectangle (105), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +2 | `--awds-size-rectangle-50-padding` |
@@ -34,7 +34,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **zindex** | 8 | — | dropdown (1), sticky (1), fixed (1), backdrop (1), offcanvas (1), modal (1), popover (1), tooltip (1) | `--awds-zindex-dropdown` |
 | **font** | 8 | — | weight (5), family (3) | `--awds-font-family-system` |
 
-Всего 2180 токенов в 14 коллекциях.
+Всего 2200 токенов в 14 коллекциях.
 
 ## Смысл групп
 

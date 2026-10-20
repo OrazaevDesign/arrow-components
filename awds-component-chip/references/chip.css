@@ -20,18 +20,21 @@
 
    Маппинг variant × state → роль (component-token-map.json, map.state.*.chip):
      unselected
-       rest/focus/active  bg=secondary-container-core  border=secondary-container-core (в цвет фона)
+       rest/focus         bg=secondary-container-core  border=secondary-container-core (в цвет фона)
                           color=secondary-container-on-high
-       hover              bg=primary-container-core    border=primary-container-core (в цвет фона)
-                          color=primary-container-on-highest
-       icon-remove        rest/focus/active secondary-container-on · hover primary-container-on
+       hover              bg=accent-container-core     border=accent-container-core (в цвет фона)
+                          color=accent-core
+       active             bg=accent-container-dim      border=accent-container-dim (в цвет фона)
+                          color=accent-dim
+       icon-remove        rest/focus secondary-container-on · hover accent-core · active accent-dim
      selected
        rest/focus/active  bg=primary-core  border=primary-core  color=primary-on
        hover              bg=primary-dim   border=primary-core  color=primary-on
        icon-remove        primary-on-dim (во всех состояниях)
      disabled = rest + opacity/control/disabled
-   Своих ячеек focus и active у группы нет: в студии они совпадают с rest, макет
-   привязывает к ним ячейки -rest. Кольцо фокуса — слой focus-selection.
+   Сетка ячеек как у кнопки: каждое свойство × rest/hover/focus/active
+   (канон State 28.09.2026, ячейки не схлопываются). У selected focus и
+   active пока совпадают с rest. Кольцо фокуса — слой focus-selection.
 
    Форма — всегда пилюля. В макете на ячейках выставлен мод скругления Rounded
    (border-radius ступени = 26 px); здесь --awds-rounded-border-radius-full: браузер
@@ -214,12 +217,26 @@
 
 @media (hover: hover) and (pointer: fine) {
   .chip-unselected:hover {
-    --awds-chip-bg:     rgb(var(--primary-container-core));   /* #cell chip/unselected/bg-hover */
-    --awds-chip-border: rgb(var(--primary-container-core));   /* #cell chip/unselected/border-hover */
-    --awds-chip-color:  rgb(var(--primary-container-on-highest));   /* #cell chip/unselected/color-hover */
-    /* Крестик на hover — пара к фону primary-container: on-вариант того же контейнера. */
-    --awds-chip-icon-remove: rgb(var(--primary-container-on));   /* #cell chip/unselected/icon-remove-hover */
+    --awds-chip-bg:     rgb(var(--accent-container-core));   /* #cell chip/unselected/bg-hover */
+    --awds-chip-border: rgb(var(--accent-container-core));   /* #cell chip/unselected/border-hover */
+    --awds-chip-color:  rgb(var(--accent-core));   /* #cell chip/unselected/color-hover */
+    /* Крестик на hover — в цвет текста: accent-core на фоне accent-container. */
+    --awds-chip-icon-remove: rgb(var(--accent-core));   /* #cell chip/unselected/icon-remove-hover */
   }
+}
+
+.chip-unselected:focus-visible {
+  --awds-chip-bg:          rgb(var(--secondary-container-core));   /* #cell chip/unselected/bg-focus */
+  --awds-chip-border:      rgb(var(--secondary-container-core));   /* #cell chip/unselected/border-focus */
+  --awds-chip-color:       rgb(var(--secondary-container-on-high));   /* #cell chip/unselected/color-focus */
+  --awds-chip-icon-remove: rgb(var(--secondary-container-on));   /* #cell chip/unselected/icon-remove-focus */
+}
+
+.chip-unselected:active {
+  --awds-chip-bg:          rgb(var(--accent-container-dim));   /* #cell chip/unselected/bg-active */
+  --awds-chip-border:      rgb(var(--accent-container-dim));   /* #cell chip/unselected/border-active */
+  --awds-chip-color:       rgb(var(--accent-dim));   /* #cell chip/unselected/color-active */
+  --awds-chip-icon-remove: rgb(var(--accent-dim));   /* #cell chip/unselected/icon-remove-active */
 }
 
 /* =============================================================================
@@ -228,15 +245,32 @@
 
 .chip-selected {
   --awds-chip-bg:          rgb(var(--primary-core));   /* #cell chip/selected/bg-rest */
-  --awds-chip-border:      rgb(var(--primary-core));   /* #cell chip/selected/border */
-  --awds-chip-color:       rgb(var(--primary-on));   /* #cell chip/selected/color */
-  --awds-chip-icon-remove: rgb(var(--primary-on-dim));   /* #cell chip/selected/icon-remove */
+  --awds-chip-border:      rgb(var(--primary-core));   /* #cell chip/selected/border-rest */
+  --awds-chip-color:       rgb(var(--primary-on));   /* #cell chip/selected/color-rest */
+  --awds-chip-icon-remove: rgb(var(--primary-on-dim));   /* #cell chip/selected/icon-remove-rest */
 }
 
 @media (hover: hover) and (pointer: fine) {
   .chip-selected:hover {
-    --awds-chip-bg: rgb(var(--primary-dim));   /* #cell chip/selected/bg-hover */
+    --awds-chip-bg:          rgb(var(--primary-dim));   /* #cell chip/selected/bg-hover */
+    --awds-chip-border:      rgb(var(--primary-core));   /* #cell chip/selected/border-hover */
+    --awds-chip-color:       rgb(var(--primary-on));   /* #cell chip/selected/color-hover */
+    --awds-chip-icon-remove: rgb(var(--primary-on-dim));   /* #cell chip/selected/icon-remove-hover */
   }
+}
+
+.chip-selected:focus-visible {
+  --awds-chip-bg:          rgb(var(--primary-core));   /* #cell chip/selected/bg-focus */
+  --awds-chip-border:      rgb(var(--primary-core));   /* #cell chip/selected/border-focus */
+  --awds-chip-color:       rgb(var(--primary-on));   /* #cell chip/selected/color-focus */
+  --awds-chip-icon-remove: rgb(var(--primary-on-dim));   /* #cell chip/selected/icon-remove-focus */
+}
+
+.chip-selected:active {
+  --awds-chip-bg:          rgb(var(--primary-core));   /* #cell chip/selected/bg-active */
+  --awds-chip-border:      rgb(var(--primary-core));   /* #cell chip/selected/border-active */
+  --awds-chip-color:       rgb(var(--primary-on));   /* #cell chip/selected/color-active */
+  --awds-chip-icon-remove: rgb(var(--primary-on-dim));   /* #cell chip/selected/icon-remove-active */
 }
 
 /* === Уважение к системной настройке «меньше движения» ===

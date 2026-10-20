@@ -436,7 +436,7 @@
         if (r === 'category') return rowOn(opts, 'category') ? '<span class="pcard__category pcard__skel pcard__skel--category">&nbsp;</span>' : '';
         if (r === 'cart') return rowOn(opts, 'cartRow') ? '<div class="pcard__cart"><span class="pcard__skel pcard__skel--button"></span></div>' : '';
         if (r === 'feedback') return opts.feedback === 'off' ? '' : '<div class="pcard__feedback"><span class="pcard__reviews-count pcard__skel pcard__skel--feedback">&nbsp;</span></div>';
-        if (r === 'price' && opts.variant === 'brand-first') return '<div class="pcard__price"><span class="price pcard__skel pcard__skel--price">&nbsp;</span></div>';
+        if (r === 'price' && opts.variant === 'brand-first') return '<div class="pcard__price"><span class="price price-default pcard__skel pcard__skel--price">&nbsp;</span></div>';
         return `<span class="${({price:'price ',brand:'pcard__brand ',name:'pcard__name '})[r] || ''}pcard__skel pcard__skel--${r}">&nbsp;</span>`;
       }).join('');
       return `<div class="pcard pcard-${opts.variant}${view === 'mobile' ? ' pcard--mobile' : ''} pcard--skeleton" aria-hidden="true"><div class="pcard__media"></div><div class="pcard__slider-spacer"></div><div class="pcard__content">${rows}</div></div>`;
