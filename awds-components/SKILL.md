@@ -162,7 +162,7 @@ Figma.
 | Компонент | Что это | Как называют | Состав · входит в | Версия | Ссылки |
 | --- | --- | --- | --- | --- | --- |
 | [breadcrumbs](../awds-component-breadcrumbs/SKILL.md) | Путь от главной к текущей странице: ссылки-шаги через шеврон, последний шаг — текст | хлебные крошки, крошки, путь, навигационная цепочка, breadcrumbs | внутри: button-area, focus-selection · входит в: page-title | 1.0.0 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1050-139593) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218436374101527) |
-| [pagination](../awds-component-pagination/SKILL.md) | Лента страниц с прокруткой: номера, стрелки листания и подпись «сколько из скольких» | пагинация, страницы, постраничная навигация, листалка, переключение страниц, номера страниц | внутри: button, focus-selection | 1.0.2 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=78-47712) · [задача](https://app.asana.com/1/15638570680505/task/1218422992809185) |
+| [pagination](../awds-component-pagination/SKILL.md) | Лента страниц с прокруткой: номера, стрелки листания и подпись «сколько из скольких» | пагинация, страницы, постраничная навигация, листалка, переключение страниц, номера страниц | внутри: button, focus-selection | 1.0.3 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=78-47712) · [задача](https://app.asana.com/1/15638570680505/task/1218422992809185) |
 
 <!-- /generated -->
 

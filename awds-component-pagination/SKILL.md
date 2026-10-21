@@ -19,7 +19,7 @@ description: Pagination ArrowDS (.pgn).
 |---|---|
 | номер страницы | `.btn.btn-secondary.btn--300` |
 | текущая страница | `.btn.btn-primary.btn--300` + `aria-current="page"` |
-| стрелки листания | `.btn.btn-ghost.btn--300.btn--icon-only` |
+| стрелки листания | `.btn.btn-ghost.btn--300.btn--icon-only`, иконки MGC 20: `arrow-arrow_to_left-regular`, `arrow-left-regular`, `arrow-right-regular`, `arrow-arrow_to_right-regular` — «в начало» и «в конец» стрелка к черте, не двойной шеврон (до 1.0.3 превью рисовало шевроны руками) |
 
 **Не верстать кнопки заново.** Рядом подключаются `button-secondary.css`,
 `button-primary.css` и `button-ghost.css`, а `pagination.css` добавляет поверх раскладку,
