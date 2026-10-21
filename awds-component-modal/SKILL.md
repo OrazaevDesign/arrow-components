@@ -94,6 +94,26 @@ description: Modal ArrowDS (.mdl).
 
 **Почему модификатор, а не автоматическая перестройка по ширине.** Влезет ли ряд, решает длина подписей, а не ширина окна: «Да» и «Нет» помещаются в ряд и на 320, «Показать 1 108 товаров» не помещается и на 400. Container query по ширине перестроил бы и те подвалы, которым ряд подходит, — в том числе у единственного потребителя, `awds-header`: в его окне выбора города подвал `--stretch` с короткими подписями на мобильном стал бы столбиком. Выбор остаётся за тем, кто знает подписи.
 
+### Кнопки подвала — `modal / footer / primary` и `/ secondary` (1.6.0)
+
+В макете кнопки подвала — две части окна поверх `button / primary` и `button / secondary` с
+осями `view=desktop|mobile` и `stretch=off|on`:
+
+| Ось | Значение | Кнопка |
+| --- | --- | --- |
+| `view=desktop` | окно шире 1024 | `size=500`, высота 44 |
+| `view=mobile` | окно ниже 1024 (ячейки `view=tablet` и `view=mobile`) | `size=600`, высота 52 |
+| `stretch=on` | доля ряда | то же, что `.mdl__footer--stretch` |
+
+В разметке кнопка подвала — **`.btn--500`**. Ниже 1024 окно само переставляет её на
+ступень 600: на шторке зона нажатия 52. Классом это не выразить: размер кнопки один на все
+ширины, а переопределять кнопку в блоке нельзя (`project-rules.md` §5) — поэтому ступень
+переключает компонент окна, на той же границе 1024, где окно становится шторкой. Ось
+`view` — брейкпоинт, а не вариант (правило 10 `props.md`), класса под неё нет.
+
+До 1.6.0 в примерах компонента стоял `.btn--300` — расходилось с макетом (500); блоки уже
+ставили `.btn--500`.
+
 ## Подложка
 
 В коде подложка — `::backdrop` нативного `<dialog>`: браузер рисует её сам на весь вьюпорт под окном, открытым через `showModal()`, своей разметки у неё нет. Цвет — `rgb(var(--surface-on-highest) / var(--awds-opacity-50))`, то есть ячейка `modal/backdrop` (она ссылается на роль `surface/on-highest`) под `opacity/50`.
@@ -155,8 +175,8 @@ description: Modal ArrowDS (.mdl).
   </div>
 
   <footer class="mdl__footer">
-    <button class="btn btn-secondary btn--300" type="button">Отмена</button>
-    <button class="btn btn-primary btn--300" type="button">Удалить</button>
+    <button class="btn btn-secondary btn--500" type="button">Отмена</button>
+    <button class="btn btn-primary btn--500" type="button">Удалить</button>
   </footer>
 </dialog>
 ```
@@ -167,8 +187,8 @@ description: Modal ArrowDS (.mdl).
 
 ```html
 <footer class="mdl__footer mdl__footer--column">
-  <button class="btn btn-primary btn--300" type="button">Показать 1 108 товаров</button>
-  <button class="btn btn-secondary btn--300" type="button">Сбросить</button>
+  <button class="btn btn-primary btn--500" type="button">Показать 1 108 товаров</button>
+  <button class="btn btn-secondary btn--500" type="button">Сбросить</button>
 </footer>
 ```
 

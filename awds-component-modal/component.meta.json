@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.5.0",
-  "contract_hash": "sha256:94be2173e19a6c82add80b0eaeee230807682995744d8b7ddb4495c89d37b5e2",
-  "artifact_hash": "sha256:b9da3d8b1e0d3cf4245dc25eaca727068401dc42fad569ec78cd171b521c6a4f",
-  "visual_change": false,
-  "released_at": "2026-10-21T12:21:00.989Z",
+  "version": "1.6.0",
+  "contract_hash": "sha256:eba22e89a2a4c48eda3c35b3c842836258802473928e15c269b7c569a41cebd4",
+  "artifact_hash": "sha256:beeb8c46d0f809ee0a3cc213d9d7e0408428d304a39fe1a5407f5e4533376bc4",
+  "visual_change": true,
+  "released_at": "2026-10-21T12:45:48.840Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -200,8 +200,11 @@
   "uses_note": "Кнопки шапки и подвала — инстансы button и button-area: своих цветов и размеров модалка им не задаёт, только место в раскладке. Полосу прокрутки в содержимом красит scrollbar.",
   "ds_token_dependencies": [
     "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
     "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
     "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
     "--awds-font-family-system",
     "--awds-font-weight-semibold",
     "--awds-layout-section-gutter-modal",
@@ -212,6 +215,8 @@
     "--awds-space-12",
     "--awds-space-2",
     "--awds-space-3",
+    "--awds-space-4",
+    "--awds-space-5",
     "--awds-space-8",
     "--awds-typography-font-size-800",
     "--awds-typography-letter-spacing-800",
@@ -236,6 +241,7 @@
   },
   "contract": {
     "classes": [
+      "btn",
       "mdl",
       "mdl--fullscreen",
       "mdl-dialog",

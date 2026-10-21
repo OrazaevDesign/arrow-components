@@ -18,8 +18,8 @@
     <!-- список фильтров во всю ширину: отступы приносит он сам -->
   </div>
   <footer class="mdl__footer mdl__footer--reverse">
-    <button class="btn btn-primary btn--300" type="button">Показать 240</button>
-    <button class="btn btn-secondary btn--300" type="button">Сбросить</button>
+    <button class="btn btn-primary btn--500" type="button">Показать 240</button>
+    <button class="btn btn-secondary btn--500" type="button">Сбросить</button>
   </footer>
 </dialog>
 ```

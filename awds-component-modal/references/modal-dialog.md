@@ -18,8 +18,8 @@
     <p class="mdl__text">Адрес пропадёт из списка доставки. Это нельзя отменить.</p>
   </div>
   <footer class="mdl__footer">
-    <button class="btn btn-secondary btn--300" type="button">Отмена</button>
-    <button class="btn btn-primary btn--300" type="button">Удалить</button>
+    <button class="btn btn-secondary btn--500" type="button">Отмена</button>
+    <button class="btn btn-primary btn--500" type="button">Удалить</button>
   </footer>
 </dialog>
 ```
@@ -50,8 +50,8 @@
 
 ```html
 <footer class="mdl__footer mdl__footer--column">
-  <button class="btn btn-primary btn--300" type="button">Показать 1 108 товаров</button>
-  <button class="btn btn-secondary btn--300" type="button">Сбросить</button>
+  <button class="btn btn-primary btn--500" type="button">Показать 1 108 товаров</button>
+  <button class="btn btn-secondary btn--500" type="button">Сбросить</button>
 </footer>
 ```
 
