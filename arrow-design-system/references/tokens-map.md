@@ -25,8 +25,8 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **size** | 224 | — | rectangle (105), square (40), notice (30), nav (15), dropdown (14), tabs (10), range (3), profile-button (3), … +2 | `--awds-size-rectangle-50-padding` |
 | **wysiwyg** | 129 | medium · small · large | font-size (33), line-height (33), letter-spacing (33), gap (30) | `--awds-wysiwyg-font-size-h1-medium` |
 | **rounded** | 72 | smooth · rounded · none | border-radius (36), outline (36) | `--awds-rounded-border-radius-50-smooth` |
+| **layout** | 60 | desktop · tablet · mobile | section (36), card (24) | `--awds-layout-section-width-large-desktop` |
 | **shadow** | 60 | elevation-1 · elevation-2 · elevation-3 · elevation-4 | shadow1 (20), shadow2 (20), shadow3 (20) | `--awds-shadow-shadow1-color-elevation-1` |
-| **layout** | 57 | desktop · tablet · mobile | section (33), card (24) | `--awds-layout-section-width-large-desktop` |
 | **space** | 46 | — | 0 (1), 1 (1), 2 (1), 3 (1), 4 (1), 5 (1), 6 (1), 7 (1), … +38 | `--awds-space-0` |
 | **control** | 39 | — | font-size (13), line-height (13), letter-spacing (13) | `--awds-control-font-size-50` |
 | **opacity** | 21 | — | 0 (1), 5 (1), 10 (1), 15 (1), 20 (1), 25 (1), 30 (1), 35 (1), … +13 | `--awds-opacity-0` |
@@ -34,7 +34,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | **zindex** | 8 | — | dropdown (1), sticky (1), fixed (1), backdrop (1), offcanvas (1), modal (1), popover (1), tooltip (1) | `--awds-zindex-dropdown` |
 | **font** | 8 | — | weight (5), family (3) | `--awds-font-family-system` |
 
-Всего 2200 токенов в 14 коллекциях.
+Всего 2203 токенов в 14 коллекциях.
 
 ## Смысл групп
 
@@ -54,7 +54,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | `font` | `family` | Заголовки: Libre Franklin |
 | `font` | `weight` | Начертание medium |
 | `layout` | `card` | Минимальная ширина баннера в половину ряда (два в ряд). |
-| `layout` | `section` | Боковое поле содержимого модального окна |
+| `layout` | `section` | Зазор между рядами сетки блока |
 | `opacity` | `—` | Прозрачность 50%. |
 | `rounded` | `border-radius` | Скругление |
 | `rounded` | `outline` | Радиус кольца фокуса |

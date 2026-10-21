@@ -213,10 +213,17 @@
   padding-inline: var(--awds-mdl-content-side);
 }
 
-/* Содержимое во всю ширину — таблица, список, карта: боковые отступы приносит оно само.
-   В макете это ячейка padding=off. */
+/* Боковые поля содержимого — ось gutter=default|mini|off части / content (до 21.10.2026 — padding=on|off).
+   default — section/gutter-modal (без класса). off — содержимое во всю ширину: таблица, список, карта,
+   боковые отступы приносит оно само; класс --flush остался с прежней оси, переименование стоило бы MAJOR.
+   mini (1.8.0) — узкие поля section/gutter-modal-mini (12 на десктопе, 8 ниже 1024): содержимое, которому
+   обычное поле окна велико, — плотный список, сетка карточек. */
 .mdl__content--flush {
   padding-inline: 0;
+}
+
+.mdl__content--mini {
+  padding-inline: var(--awds-layout-section-gutter-modal-mini);
 }
 
 /* Текстовый блок внутри содержимого: свои вертикальные отступы и зазор между абзацем
