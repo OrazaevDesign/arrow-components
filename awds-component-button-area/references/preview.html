@@ -33,6 +33,10 @@
     .fillbox { margin-top: 8px; border: 1px dashed rgb(var(--surface-container-high) / 1); border-radius: 10px; background: rgb(var(--surface-container-lowest) / 1); }
     .fillbox.x { width: 420px; }
     .fillbox.y { height: 96px; display: flex; width: 200px; }
+    .fillbox.padx { display: inline-flex; height: 44px; }
+    .fillbox.padx .btn-area { align-self: stretch; --awds-btn-area-padding: 0 var(--awds-space-3); }
+    .fillbox.pady { display: inline-flex; margin-left: 8px; }
+    .fillbox.pady .btn-area { --awds-btn-area-padding: var(--awds-space-2) var(--awds-space-4); }
   </style>
 </head>
 <body>
@@ -51,6 +55,9 @@
 
   <h2 class="pg">Растяжение hit-области (контент центрирован)</h2>
   <div id="fills"></div>
+
+  <h2 class="pg">Поля области — <code>--awds-btn-area-padding</code></h2>
+  <div id="pads"></div>
 
   <script>
     const VARIANTS = ['default','muted','contrast','accent','heading'];
@@ -85,6 +92,9 @@
       document.querySelector('#fills').innerHTML =
         `<div class="fillbox x">${btn('default','500','btn-area--fill-x')}</div>` +
         `<div class="fillbox y">${btn('accent','500','btn-area--fill')}</div>`;
+      document.querySelector('#pads').innerHTML =
+        `<div class="fillbox padx">${btn('default','500')}</div>` +
+        `<div class="fillbox pady">${btn('muted','400')}</div>`;
     }
     [typeSel, progSel].forEach(el => el.addEventListener('change', render));
     render();

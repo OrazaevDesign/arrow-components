@@ -41,6 +41,7 @@
       50: gap space-0-5 / icon space-4 / control-200 (12/16)
 
    Приватные аккумуляторы: --awds-btn-area-{gap,icon,fs,lh,ls,rounded,color}.
+   Вход потребителя: --awds-btn-area-padding — поля области (по умолчанию 0).
    ============================================================================= */
 
 /* === Base (= размер 500 по умолчанию) === */
@@ -55,6 +56,11 @@
   --awds-btn-area-rounded: var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
   /* color — заполняет вариант (.btn-area-*) */
   --awds-btn-area-color:   currentColor;
+  /* Поля области (2.1.0) — вход для потребителя, а не ступень размера: по умолчанию полей нет,
+     область равна контенту. Любое значение шортхенда padding из шкалы space — 1–4 стороны:
+     `.место .btn-area { --awds-btn-area-padding: 0 var(--awds-space-3); }`. Поля — часть зоны
+     нажатия и кольца фокуса; в макете это поля экземпляра (header-mobile: «Отменить» 0/12). */
+  --awds-btn-area-padding: 0;
 
   box-sizing: border-box;
   position: relative;
@@ -73,7 +79,7 @@
   /* На <button> снимаем оформление браузера: без этого область получает серую подложку,
      рамку outset и поля 1px 6px (найдено 30.09.2026 в шапке awds-header). */
   margin: 0;
-  padding: 0;
+  padding: var(--awds-btn-area-padding);
   border: 0;
   background: none;
   list-style: none;                   /* на <summary>: без маркера details */
