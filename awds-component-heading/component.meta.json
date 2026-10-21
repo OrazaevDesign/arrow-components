@@ -1,10 +1,10 @@
 {
   "component": "heading",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "contract_hash": "sha256:0542f288aa53356af5942dececd157fa3f27c8f2d148f4c48b5be194ee566faf",
-  "artifact_hash": "sha256:610d57c8aa5721677fec225c8119b10d83cf8738a40d449fda93ebee0e9f7cdd",
+  "artifact_hash": "sha256:3b71a2bddbcacaacd2100161b9d59b1a2164aa4458ffaf5ad167892b725db3f0",
   "visual_change": true,
-  "released_at": "2026-10-10T19:08:44.151Z",
+  "released_at": "2026-10-21T10:53:12.033Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -75,7 +75,7 @@
       "class": {
         "count": "heading__count"
       },
-      "note": "Опциональный счётчик «200 товаров» (набор heading / goods, 1057:28891) — элемент <span class=\"heading__count\">, НЕ ось-класс. Просто текст, не ссылка: surface-on-high (= link/muted-rest в покое), control 300 13/16/0.1, regular, tabular-nums. Раскладка как у .heading__action. В макете — инстанс button-area / muted 80×24: «макет не прав», решение владельца 09.10.2026."
+      "note": "Опциональный счётчик «200 товаров» (набор heading / goods, 1057:28891) — элемент <span class=\"heading__count\">, НЕ ось-класс. Просто текст, не ссылка: surface-on-high (= link/muted-rest в покое), control 300 13/16/0.1, regular, цифры пропорциональные (с 2.2.1). Раскладка как у .heading__action. В макете — инстанс button-area / muted 80×24: «макет не прав», решение владельца 09.10.2026."
     }
   },
   "shape": null,
