@@ -233,6 +233,7 @@
     </header>
     <div class="mdl__content">
       <p class="mdl__text">Открыто через <code>showModal()</code>: фокус заперт внутри, Esc закрывает, страница под окном инертна. Ничего из этого компонент не программирует — это платформа.</p>
+      <p class="mdl__text">«Назад» браузера или жест закрывает окно и не уводит со страницы (<code>modal.js</code>, 1.5.0). <button type="button" id="open-nested">Открыть окно поверх</button> — «назад» закроет сначала верхнее. <a href="?from=modal" id="nested-link">Ссылка из окна</a> заменяет запись истории.</p>
       <p class="filler">Прокрутка живёт только в содержимом: шапка и подвал остаются на месте.</p>
       <p class="filler">Строка для объёма. Строка для объёма. Строка для объёма.</p>
       <p class="filler">Строка для объёма. Строка для объёма. Строка для объёма.</p>
@@ -255,7 +256,9 @@
     <footer class="mdl__footer mdl__footer--empty"></footer>
   </dialog>
 
+  <script src="modal.js"></script>
   <script>
+    document.querySelector('#open-nested').addEventListener('click', () => document.querySelector('#live-full').showModal());
     const liveFull = document.querySelector('#live-full');
     document.querySelector('#open-full').addEventListener('click', () => liveFull.showModal());
     liveFull.querySelectorAll('[data-close]').forEach(b => b.addEventListener('click', () => liveFull.close()));

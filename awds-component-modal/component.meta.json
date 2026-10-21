@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "contract_hash": "sha256:94be2173e19a6c82add80b0eaeee230807682995744d8b7ddb4495c89d37b5e2",
-  "artifact_hash": "sha256:7a93ce5ee1ca4f9055a186ff6318477812d2bc82f74f533a299437091fec64c7",
-  "visual_change": true,
-  "released_at": "2026-10-15T20:05:30.958Z",
+  "artifact_hash": "sha256:b9da3d8b1e0d3cf4245dc25eaca727068401dc42fad569ec78cd171b521c6a4f",
+  "visual_change": false,
+  "released_at": "2026-10-21T12:21:00.989Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -226,6 +226,9 @@
     "parent_task": "💠 7 · popups",
     "primary": true
   },
+  "js_files": [
+    "modal.js"
+  ],
   "uses": {
     "awds-component-button": "2.2.3",
     "awds-component-button-area": "2.0.6",
