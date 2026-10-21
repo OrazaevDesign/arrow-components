@@ -57,7 +57,6 @@ description: Pagination ArrowDS (.pgn).
 | Подпись | `pagination/caption/color` → `surface/on`, кегль `control/300` | там же |
 | Зазор ленты и стрелок | `--awds-space-1-5` | там же |
 | Отступ шторки, до подписи | `--awds-space-3` | там же |
-| Отступ сверху | `--awds-space-12` | там же |
 | Предел ширины | `--awds-layout-section-width-medium` (900px) | там же |
 | Кнопки и кольцо фокуса | `awds-component-button`, `awds-component-focus-selection` | свои файлы |
 
