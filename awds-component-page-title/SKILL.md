@@ -22,7 +22,7 @@ description: Page Title ArrowDS (.ptitle).
 | заголовок страницы | [awds-component-heading](../awds-component-heading/SKILL.md) | `.heading.heading--h1` + `<h1 class="heading__title">` |
 | счётчик (снизу, необязателен) | [awds-component-heading](../awds-component-heading/SKILL.md), элемент `.heading__count` | `<p class="heading__count">200 товаров</p>` — прямой ребёнок `.ptitle`, после `.heading` |
 | «Назад» (ниже 1024, вместо крошек) | [awds-component-button](../awds-component-button/SKILL.md) `pills`, 100, пилюля, иконка слева | `a.btn.btn-pills.btn--100.btn--pill.ptitle__back[data-ptitle-back]` |
-| шторка «Вернуться» | [awds-component-modal](../awds-component-modal/SKILL.md) `dialog` (ниже 1024 — шторка снизу) | `dialog.mdl.mdl-dialog.ptitle__sheet[data-ptitle-sheet]`, крестик `btn-ghost btn--200 btn--icon-only mdl__close` |
+| шторка «Вернуться» | [awds-component-modal](../awds-component-modal/SKILL.md) `dialog` (ниже 1024 — шторка снизу) | `dialog.mdl.mdl-dialog.ptitle__sheet[data-ptitle-sheet]`, крестик `btn-ghost btn--500 btn--icon-only mdl__close` с иконкой `close_circle-filled` (modal 1.9.0) |
 | пункты шторки | [awds-component-list-item](../awds-component-list-item/SKILL.md) `transparent`, 400, иконка `arrow-back_2` | `ul.ptitle__list > li > a.list-item.list-item-transparent.list-item--400` |
 
 **Не верстать части заново.** На страницу подключаются `focus-selection.css`,
@@ -64,7 +64,7 @@ description: Page Title ArrowDS (.ptitle).
   <dialog class="mdl mdl-dialog ptitle__sheet" aria-labelledby="ptitle-sheet-title" data-ptitle-sheet>
     <header class="mdl__header">
       <h2 class="mdl__title" id="ptitle-sheet-title">Вернуться</h2>
-      <button class="btn btn-ghost btn--200 btn--icon-only mdl__close" type="button" aria-label="Закрыть" data-ptitle-close><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><!-- system-close-regular --></svg></button>
+      <button class="btn btn-ghost btn--500 btn--icon-only mdl__close" type="button" aria-label="Закрыть" data-ptitle-close><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><!-- system-close_circle-filled --></svg></button>
     </header>
     <div class="mdl__content">
       <ul class="ptitle__list">

@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.8.0",
+  "version": "1.10.1",
   "contract_hash": "sha256:7446f0ab4e57e69775a5063ff27de675d549fa52d69f4c6ef02fb5647bd846d3",
-  "artifact_hash": "sha256:bd2124e865808576a12fd41a07cb13d479fb1dc1f553cfb3b8658a73435c083a",
-  "visual_change": false,
-  "released_at": "2026-10-21T15:51:35.157Z",
+  "artifact_hash": "sha256:e27fdfa5a2cd00e3a17b0efe255bd052ccfe11f764a01e452954965f7cb3d7d0",
+  "visual_change": true,
+  "released_at": "2026-10-22T13:16:10.304Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -72,15 +72,15 @@
     "html_samples": [
       {
         "label": "Dialog · заголовок и две кнопки",
-        "html": "<dialog class=\"mdl mdl-dialog\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Удалить адрес?</h2><button class=\"btn btn-ghost btn--200 mdl__close\" type=\"button\" aria-label=\"Закрыть\"></button></header><div class=\"mdl__content\"><p class=\"mdl__text\">Это нельзя отменить.</p></div><footer class=\"mdl__footer\"><button class=\"btn btn-secondary btn--300\" type=\"button\">Отмена</button><button class=\"btn btn-primary btn--300\" type=\"button\">Удалить</button></footer></dialog>"
+        "html": "<dialog class=\"mdl mdl-dialog\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Удалить адрес?</h2><button class=\"btn btn-ghost btn--500 mdl__close\" type=\"button\" aria-label=\"Закрыть\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 1.667a8.333 8.333 0 1 1 0 16.666 8.333 8.333 0 0 1 0-16.666Zm2.946 5.387a.833.833 0 0 0-1.178 0L10 8.821 8.232 7.054a.833.833 0 1 0-1.178 1.178L8.821 10l-1.767 1.768a.833.833 0 1 0 1.178 1.178L10 11.179l1.768 1.767a.833.833 0 1 0 1.178-1.178L11.179 10l1.767-1.768a.833.833 0 0 0 0-1.178Z\" fill=\"currentColor\"/></svg></button></header><div class=\"mdl__content\"><p class=\"mdl__text\">Это нельзя отменить.</p></div><footer class=\"mdl__footer\"><button class=\"btn btn-secondary btn--300\" type=\"button\">Отмена</button><button class=\"btn btn-primary btn--300\" type=\"button\">Удалить</button></footer></dialog>"
       },
       {
         "label": "Sidepage · содержимое во всю ширину",
-        "html": "<dialog class=\"mdl mdl-sidepage\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Фильтры</h2><button class=\"btn btn-ghost btn--200 mdl__close\" type=\"button\" aria-label=\"Закрыть\"></button></header><div class=\"mdl__content mdl__content--flush\"></div><footer class=\"mdl__footer mdl__footer--reverse\"><button class=\"btn btn-primary btn--300\" type=\"button\">Показать</button><button class=\"btn btn-secondary btn--300\" type=\"button\">Сбросить</button></footer></dialog>"
+        "html": "<dialog class=\"mdl mdl-sidepage\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Фильтры</h2><button class=\"btn btn-ghost btn--500 mdl__close\" type=\"button\" aria-label=\"Закрыть\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 1.667a8.333 8.333 0 1 1 0 16.666 8.333 8.333 0 0 1 0-16.666Zm2.946 5.387a.833.833 0 0 0-1.178 0L10 8.821 8.232 7.054a.833.833 0 1 0-1.178 1.178L8.821 10l-1.767 1.768a.833.833 0 1 0 1.178 1.178L10 11.179l1.768 1.767a.833.833 0 1 0 1.178-1.178L11.179 10l1.767-1.768a.833.833 0 0 0 0-1.178Z\" fill=\"currentColor\"/></svg></button></header><div class=\"mdl__content mdl__content--flush\"></div><footer class=\"mdl__footer mdl__footer--reverse\"><button class=\"btn btn-primary btn--300\" type=\"button\">Показать</button><button class=\"btn btn-secondary btn--300\" type=\"button\">Сбросить</button></footer></dialog>"
       },
       {
         "label": "Шторка · кнопки в столбик",
-        "html": "<dialog class=\"mdl mdl-dialog\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Фильтры</h2><button class=\"btn btn-ghost btn--200 mdl__close\" type=\"button\" aria-label=\"Закрыть\"></button></header><div class=\"mdl__content\"></div><footer class=\"mdl__footer mdl__footer--column\"><button class=\"btn btn-primary btn--300\" type=\"button\">Показать 1 108 товаров</button><button class=\"btn btn-secondary btn--300\" type=\"button\">Сбросить</button></footer></dialog>"
+        "html": "<dialog class=\"mdl mdl-dialog\"><header class=\"mdl__header\"><h2 class=\"mdl__title\">Фильтры</h2><button class=\"btn btn-ghost btn--500 mdl__close\" type=\"button\" aria-label=\"Закрыть\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 1.667a8.333 8.333 0 1 1 0 16.666 8.333 8.333 0 0 1 0-16.666Zm2.946 5.387a.833.833 0 0 0-1.178 0L10 8.821 8.232 7.054a.833.833 0 1 0-1.178 1.178L8.821 10l-1.767 1.768a.833.833 0 1 0 1.178 1.178L10 11.179l1.768 1.767a.833.833 0 1 0 1.178-1.178L11.179 10l1.767-1.768a.833.833 0 0 0 0-1.178Z\" fill=\"currentColor\"/></svg></button></header><div class=\"mdl__content\"></div><footer class=\"mdl__footer mdl__footer--column\"><button class=\"btn btn-primary btn--300\" type=\"button\">Показать 1 108 товаров</button><button class=\"btn btn-secondary btn--300\" type=\"button\">Сбросить</button></footer></dialog>"
       }
     ]
   },
@@ -205,6 +205,7 @@
     "--awds-control-letter-spacing-600",
     "--awds-control-line-height-400",
     "--awds-control-line-height-600",
+    "--awds-font-family-heading",
     "--awds-font-family-system",
     "--awds-font-weight-semibold",
     "--awds-layout-section-gutter-modal",
@@ -212,16 +213,19 @@
     "--awds-motion-ease-state",
     "--awds-opacity-50",
     "--awds-rounded-border-radius-600",
+    "--awds-rounded-border-radius-800",
+    "--awds-rounded-border-radius-900",
     "--awds-shadow-elevation-4",
+    "--awds-space-0",
+    "--awds-space-11",
     "--awds-space-12",
     "--awds-space-2",
     "--awds-space-3",
     "--awds-space-4",
     "--awds-space-5",
-    "--awds-space-8",
-    "--awds-typography-font-size-800",
-    "--awds-typography-letter-spacing-800",
-    "--awds-typography-line-height-compact-800",
+    "--awds-wysiwyg-font-size-h3",
+    "--awds-wysiwyg-letter-spacing-h3",
+    "--awds-wysiwyg-line-height-h3",
     "--surface-bright",
     "--surface-on-highest"
   ],
