@@ -163,3 +163,70 @@
     }
   };
 })();
+
+/* Блокировка прокрутки под открытым окном (1.11.0).
+
+   Страница под модальным окном не прокручивается. Полоса прокрутки уходит вместе со своим
+   местом, а её ширина возвращается отступом справа, чтобы страница не сдвигалась вбок. Место
+   полосы снимается явно (scrollbar-gutter: auto): витрина держит на <html>
+   scrollbar-gutter: stable, при overflow: hidden место оставалось пустым, и затемнение под него
+   не ложилось — справа белая полоса 8 px (независимая проверка листинга, 26.10.2026). Ширина
+   компенсации — разница clientWidth после и до, а не innerWidth − clientWidth: при stable они
+   расходятся с раскладкой. Её же получает переменная --awds-scroll-lock-gap: fixed-слои,
+   которые считаются от окна, вычитают её в CSS.
+
+   Держателей несколько (окно поверх окна, каталог шапки), блокировка снимается с последним.
+   Модальные dialog.mdl держат её сами; не-окна (popover, развёрнутый поиск) — через
+   window.awdsScrollLock.hold(ключ) / release(ключ). Окно гаснет после close ещё 0.2 с:
+   полосу возвращаем, когда закончились его переходы и ::backdrop, иначе гаснущее окно дёрнется
+   вбок на полширины полосы. Модуль ставится своей проверкой, отдельно от истории: старая копия
+   modal из другого блока, занявшая awdsModalHistory первой, не должна оставить страницу без
+   блокировки. До 1.11.0 блокировку держал каждый блок сам, и копии спорили за стили <html>. */
+(function () {
+  if (window.awdsScrollLock || !window.MutationObserver) return;
+  var holders = [], saved = null;
+  function set(key, on) {
+    var html = document.documentElement, i = holders.indexOf(key);
+    if (on && i < 0) holders.push(key);
+    if (!on && i >= 0) holders.splice(i, 1);
+    if (holders.length && !saved) {
+      // Ширина полосы — по <body>: при scrollbar-gutter: stable clientWidth у <html> в Chromium не
+      // меняется (замер 26.10.2026: 1800 до и после при полосе 8), а содержимое расширяется. Берём
+      // большее из двух — в браузере, где меняется <html>, сработает он.
+      var body = document.body, wb = body ? body.getBoundingClientRect().width : 0;
+      var before = html.clientWidth, pad = parseFloat(getComputedStyle(html).paddingRight) || 0;
+      saved = { o: html.style.overflow, g: html.style.scrollbarGutter, p: html.style.paddingRight };
+      html.style.overflow = 'hidden';
+      html.style.scrollbarGutter = 'auto';
+      var gap = Math.max(html.clientWidth - before, body ? body.getBoundingClientRect().width - wb : 0, 0);
+      if (gap) {
+        html.style.paddingRight = (pad + gap) + 'px';
+        html.style.setProperty('--awds-scroll-lock-gap', gap + 'px');
+      }
+    } else if (!holders.length && saved) {
+      html.style.overflow = saved.o; html.style.scrollbarGutter = saved.g; html.style.paddingRight = saved.p;
+      html.style.removeProperty('--awds-scroll-lock-gap');
+      saved = null;
+    }
+  }
+  function release(dialog) {
+    if (holders.indexOf(dialog) < 0) return;
+    if (!dialog.getAnimations) { set(dialog, false); return; }
+    requestAnimationFrame(function () {
+      var running = dialog.getAnimations({ subtree: true }).map(function (a) { return a.finished.catch(function () {}); });
+      Promise.all(running).then(function () { if (!dialog.open) set(dialog, false); });
+    });
+  }
+  new MutationObserver(function (records) {
+    for (var i = 0; i < records.length; i++) {
+      var d = records[i].target;
+      if (d.tagName !== 'DIALOG' || !d.classList.contains('mdl')) continue;
+      if (d.open && d.matches(':modal')) set(d, true);
+      else if (!d.open) release(d);
+    }
+  }).observe(document.documentElement, { subtree: true, attributes: true, attributeFilter: ['open'] });
+  window.awdsScrollLock = {
+    hold: function (key) { set(key, true); },
+    release: function (key) { set(key, false); }
+  };
+})();

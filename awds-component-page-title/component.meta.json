@@ -1,10 +1,10 @@
 {
   "component": "page-title",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "contract_hash": "sha256:f7a3b1399272f9edda9a8f79bc00ce09b86c7d88dad6f6b0a59a9d807d2c9e2d",
-  "artifact_hash": "sha256:32c595d4895c55c317bbc1db567be948aea69d999220014f0596bf188e97537f",
-  "visual_change": true,
-  "released_at": "2026-10-22T12:57:00.435Z",
+  "artifact_hash": "sha256:3a0bb861a0903810694644839f0af8179a4198f2821be77d52c1f268029e64fc",
+  "visual_change": false,
+  "released_at": "2026-10-26T20:18:49.829Z",
   "own_values": [],
   "family": "complex-component",
   "summary": "Заголовок страницы: крошки над h1 (space-3), под ним необязательный счётчик (space-1-5); ниже 1024 вместо крошек «Назад» со шторкой «Вернуться»; цвета и шрифты — у вложенных компонентов",
@@ -158,7 +158,7 @@
       "target": null,
       "severity": "polish",
       "status": "open",
-      "asana_gid": null,
+      "asana_gid": "1219874173643598",
       "raised_at": "2026-10-09",
       "answer": null
     },
@@ -181,7 +181,7 @@
       "target": null,
       "severity": "minor",
       "status": "open",
-      "asana_gid": null,
+      "asana_gid": "1219874178484707",
       "raised_at": "2026-10-09",
       "answer": null
     },
@@ -192,7 +192,7 @@
       "target": "awds-component-modal",
       "severity": "minor",
       "status": "open",
-      "asana_gid": null,
+      "asana_gid": "1219874366106042",
       "raised_at": "2026-10-10",
       "answer": null
     }

@@ -1,5 +1,9 @@
 # page-title — журнал версий
 
+## 1.2.4 — 2026-10-26 — PATCH
+page-title.js без своей блокировки прокрутки: её держит modal.js (modal ≥ 1.11.0)
+Потребителю: Пересобрать копию page-title.js в script.js; на странице должен быть modal.js ≥ 1.11.0
+
 ## 1.2.3 — 2026-10-22 — PATCH · visual
 Шторка «Вернуться» на modal 1.9.0: крестик ghost 500 с иконкой close_circle-filled вместо ghost 200 и close-regular
 Потребителю: Крестик шторки: .btn--200 → .btn--500, иконка close_circle-filled; секция modal 1.9.0

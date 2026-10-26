@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.10.1",
+  "version": "1.11.1",
   "contract_hash": "sha256:7446f0ab4e57e69775a5063ff27de675d549fa52d69f4c6ef02fb5647bd846d3",
-  "artifact_hash": "sha256:e27fdfa5a2cd00e3a17b0efe255bd052ccfe11f764a01e452954965f7cb3d7d0",
-  "visual_change": true,
-  "released_at": "2026-10-22T13:16:10.304Z",
+  "artifact_hash": "sha256:514d5f17791aa9dafeb1dba872f69331e93fa0f78198bb9e7c314ca5a83d1b60",
+  "visual_change": false,
+  "released_at": "2026-10-26T20:21:23.560Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -182,7 +182,8 @@
       "severity": "minor",
       "status": "open",
       "raised_at": "2026-10-15",
-      "evidence": "замер 15.10.2026 (use_figma): 77:60785 dialog/tablet radius 10 на всех углах, 77:60789 sidepage/tablet radius 0, 77:60793/77:60797 mobile — 10/10/0/0; тема переключает дорожки на 1023 и 615"
+      "evidence": "замер 15.10.2026 (use_figma): 77:60785 dialog/tablet radius 10 на всех углах, 77:60789 sidepage/tablet radius 0, 77:60793/77:60797 mobile — 10/10/0/0; тема переключает дорожки на 1023 и 615",
+      "asana_gid": "1219874366807462"
     }
   ],
   "family": "popups",

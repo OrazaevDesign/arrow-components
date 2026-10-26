@@ -90,3 +90,18 @@ body.theme-rounded-none {
   --rounded-full: var(--awds-rounded-border-radius-full);
   --rounded-none: var(--awds-rounded-border-radius-none);
 }
+
+/* --- Подписи на акцентных плашках Atlas: временно цвет ядра роли ---------------
+   Atlas красит подписи и иконки акцентных элементов через --accent-container-on,
+   а в ролях ArrowDS это подпись на контейнере (контрастная к плашке, не к фону).
+   Решение владельца 26.10.2026: пока страницы Atlas не переведены на новые блоки,
+   --accent-container-on = --accent-core во всех темах — правило лежит в мастер-теме
+   21 и наследуется каждым форком, в форках отдельно не дублируется.
+   Селекторы те же три, что у компилятора студии; styles идёт позже и побеждает.
+   Цена: новый блок с подписью через --accent-container-on на accent-container-*
+   получит низкий контраст. Снять, когда атласных страниц не останется. */
+:root,
+.theme-light,
+.theme-dark {
+  --accent-container-on: var(--accent-core);
+}

@@ -7,14 +7,14 @@
    клик открывает <dialog> через showModal(). Клик с модификатором (новая вкладка) и
    средней кнопкой остаётся переходом.
    Закрытие: крестик [data-ptitle-close], Esc (платформа), клик по подложке (нажатие и
-   отпускание снаружи окна). Прокрутка страницы под окном блокируется на <html> —
-   CSS блока в @scope до него не достаёт.
+   отпускание снаружи окна). Прокрутку страницы под окном с 1.2.4 блокирует modal.js
+   компонента modal (≥ 1.11.0, window.awdsScrollLock): своя блокировка ставила только
+   overflow: hidden, оставляла пустым место полосы прокрутки и спорила с модулем за стили
+   <html> — он запоминал её hidden и возвращал после закрытия.
 
    Подключить один раз; блок, вставленный в DOM позже, подхватывает MutationObserver.
    Для ручного вызова — window.awdsPageTitleInit(root). */
 (function () {
-  function lock(on) { document.documentElement.style.overflow = on ? 'hidden' : ''; }
-
   function init(root) {
     if (root.hasAttribute('data-ptitle-ready')) return;
     var back = root.querySelector('[data-ptitle-back]');
@@ -24,7 +24,7 @@
 
     back.setAttribute('role', 'button');
     back.setAttribute('aria-haspopup', 'dialog');
-    function open() { lock(true); sheet.showModal(); }
+    function open() { sheet.showModal(); }
     back.addEventListener('click', function (e) {
       if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       e.preventDefault();
@@ -34,7 +34,7 @@
       if (e.key === ' ') { e.preventDefault(); open(); }
     });
 
-    sheet.addEventListener('close', function () { lock(false); back.focus(); });
+    sheet.addEventListener('close', function () { back.focus(); });
     Array.prototype.forEach.call(sheet.querySelectorAll('[data-ptitle-close]'), function (b) {
       b.addEventListener('click', function () { sheet.close(); });
     });
