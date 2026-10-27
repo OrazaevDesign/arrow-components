@@ -37,7 +37,7 @@
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-border-radius-500)
-     — цена:   компонент .price.price-default, размер от карточки: control 850/200 (desktop/tablet), 700/100 (mobile)
+     — цена:   компонент .price.price-default, размер от карточки: control 850/200 (desktop/tablet), 600/100 (mobile)
      — название: 14/22 (typography 400 + line-height 400), 1 строка
      — рубрика:  12/19 (typography 200 + line-height 200, caption), 1 строка
      — рейтинг: caption 12/19 semibold, звезда/иконки 14px
@@ -360,7 +360,7 @@
 
 /* Размер цены — по вью, шкала control (часть .price макета, правка 07.10.2026):
      desktop/tablet — число control 850 (20/28), валюта и старая цена control 200 (12/16);
-     mobile         — число control 700 (17/24), валюта и старая цена control 100 (11/16).
+     mobile         — число control 600 (16/20), валюта и старая цена control 100 (11/16).
    До этой правки число было control 600 (16/20)
    на обеих вью, а валюта — ролью caption. */
 .pcard-buy-now .price {
@@ -373,9 +373,9 @@
   --awds-price-ls-sec: var(--awds-control-letter-spacing-200);
 }
 .pcard.pcard-buy-now.pcard--mobile .price {
-  --awds-price-fs:     var(--awds-control-font-size-700);
-  --awds-price-lh:     var(--awds-control-line-height-700);
-  --awds-price-ls:     var(--awds-control-letter-spacing-700);
+  --awds-price-fs:     var(--awds-control-font-size-600);
+  --awds-price-lh:     var(--awds-control-line-height-600);
+  --awds-price-ls:     var(--awds-control-letter-spacing-600);
   --awds-price-fs-sec: var(--awds-control-font-size-100);
   --awds-price-lh-sec: var(--awds-control-line-height-100);
   --awds-price-ls-sec: var(--awds-control-letter-spacing-100);

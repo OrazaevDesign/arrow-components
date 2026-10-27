@@ -195,6 +195,10 @@
      поля — без иконок. Со слотом сторона переключается на padding, см. ниже. */
   padding-block: var(--awds-input-padding);
   padding-inline: var(--awds-input-text-gap);
+  /* Высота задана явно той же суммой, из которой и выводится. Без неё WebKit берёт строку
+     текста не по line-height, а по метрикам шрифта, и поле выходит на 1 px выше:
+     45 вместо 44 в шапке на iPhone (независимая проверка 22–23.10.2026). */
+  block-size: calc(var(--awds-input-lh) + 2 * var(--awds-input-padding));
 
   /* Гасим UA-оформление: фон и рамку несёт контейнер. */
   appearance: none;
