@@ -62,6 +62,25 @@ description: Button ArrowDS (.btn).
 <button class="btn btn-pills btn--400 btn--pill" type="button">Показать все</button>
 ```
 
+## Часть без распорки
+
+У частей `. / prefix` и `. / suffix` в макете есть булево `show-gap`: распорка `rectangle/{N}/gap`
+с внешней стороны части. По умолчанию она включена, и у края с иконкой стоит поле ступени плюс
+распорка, как у края с текстом. Дизайнер выключил `show-gap` у части — поставь модификатор этой
+части, и у её края останется только поле ступени:
+
+| В макете | Класс |
+|---|---|
+| `. / prefix` · `show-gap = off` | `.btn--prefix-gapless` |
+| `. / suffix` · `show-gap = off` | `.btn--suffix-gapless` |
+
+Модификаторы независимы друг от друга, от варианта, ступени и `.btn--pill`. Смотреть надо на
+свойство части в макете, а не на картинку: на ступени 300 разница всего 6 px.
+
+```html
+<button class="btn btn-pills btn--300 btn--suffix-gapless" type="button"><span>Популярные</span><svg width="20" height="20" aria-hidden="true"></svg></button>
+```
+
 ## CSS-файлы
 
 | Вариант | CSS | Что внутри |

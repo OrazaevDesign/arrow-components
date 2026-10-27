@@ -1,5 +1,13 @@
 # button — журнал версий
 
+## 2.3.1 — 2026-10-27 — PATCH
+Модификаторы *-gapless — селектором .btn.btn--…: база .btn из секции button-favorites, идущей в блоке позже, перебивала одиночный класс
+Потребителю: Секции догоняются рассылкой
+
+## 2.3.0 — 2026-10-27 — MINOR
+Модификаторы .btn--prefix-gapless и .btn--suffix-gapless — части prefix/suffix со show-gap = off: у края с иконкой только поле ступени, без распорки gap
+Потребителю: Ничего обязательного. Где в макете у части prefix или suffix выключено show-gap — добавить модификатор этой части; секции догоняются рассылкой
+
 ## 2.2.18 — 2026-10-19 — PATCH · visual
 Ячейки button/pills hover и active перенаправлены в студии на accent: hover bg/border secondary-dim → accent-container-core; active bg/border secondary-core → accent-container-dim, текст secondary-on → accent-dim; код догнал (arrow-studio-sync).
 Потребителю: Ничего делать не нужно. Вид: btn-pills на наведении и нажатии в акцентном контейнере, а не в сером.
