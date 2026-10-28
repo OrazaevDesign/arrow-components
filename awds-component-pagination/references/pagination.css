@@ -100,8 +100,16 @@
    стороны, где она есть (на первой странице левой нет, на последней — правой): иначе в сжатом ряду
    крайние номера оказались бы под стрелками. Длинной ленте отступ не мешает — он лишь даёт докрутить
    первую и последнюю страницу из-под затухания. */
-.pgn__controls:has(> .pgn__edge--start) > .pgn__list { padding-inline-start: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring)); }
-.pgn__controls:has(> .pgn__edge--end) > .pgn__list { padding-inline-end: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring)); }
+/* scroll-padding (1.1.2) — та же ширина шторки для браузера: фокус с клавиатуры прокручивает ленту к номеру,
+   и без него номер вставал у самого края — под стрелками (WCAG 2.4.11, независимая проверка 28.10.2026). */
+.pgn__controls:has(> .pgn__edge--start) > .pgn__list {
+  padding-inline-start: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring));
+  scroll-padding-inline-start: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring));
+}
+.pgn__controls:has(> .pgn__edge--end) > .pgn__list {
+  padding-inline-end: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring));
+  scroll-padding-inline-end: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring));
+}
 
 /* Элемент ленты — обёртка вокруг кнопки; своих стилей у неё нет. */
 .pgn__item { display: contents; }
