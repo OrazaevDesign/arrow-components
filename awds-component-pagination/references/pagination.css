@@ -68,9 +68,15 @@
   gap: var(--awds-space-1-5);
   flex: 1;
   min-width: 0;
-  margin: 0;
-  padding: 0;
   list-style: none;
+
+  /* Поле под кольцо фокуса (1.1.1): overflow-x: auto делает и overflow-y прокручиваемым и обрезает всё, что
+     выходит за бокс ленты, — кольцо номера (width + offset, 3px) срезалось сверху и снизу, у первой страницы
+     и слева (независимая проверка листинга 28.10.2026). Поле внутри, такое же отрицательное снаружи: кольцу
+     есть место, раскладка не сдвигается. */
+  --awds-pgn-ring: calc(var(--awds-focus-width) + var(--awds-focus-offset));
+  padding: var(--awds-pgn-ring);
+  margin: calc(-1 * var(--awds-pgn-ring));
 
   /* Лента длиннее ряда — прокручивается. Полосу прокрутки прячем: края и так
      размечены шторками. Если браузер не поймёт — появится полоса, и это всё,
@@ -94,8 +100,8 @@
    стороны, где она есть (на первой странице левой нет, на последней — правой): иначе в сжатом ряду
    крайние номера оказались бы под стрелками. Длинной ленте отступ не мешает — он лишь даёт докрутить
    первую и последнюю страницу из-под затухания. */
-.pgn__controls:has(> .pgn__edge--start) > .pgn__list { padding-inline-start: var(--awds-pgn-edge); }
-.pgn__controls:has(> .pgn__edge--end) > .pgn__list { padding-inline-end: var(--awds-pgn-edge); }
+.pgn__controls:has(> .pgn__edge--start) > .pgn__list { padding-inline-start: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring)); }
+.pgn__controls:has(> .pgn__edge--end) > .pgn__list { padding-inline-end: calc(var(--awds-pgn-edge) + var(--awds-pgn-ring)); }
 
 /* Элемент ленты — обёртка вокруг кнопки; своих стилей у неё нет. */
 .pgn__item { display: contents; }
