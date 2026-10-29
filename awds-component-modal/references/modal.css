@@ -338,13 +338,11 @@
 /* === Кнопки подвала (1.6.0) ===
    Размер кнопок подвала задаёт окно, а не тот, кто его открывает: в макете кнопки подвала —
    части modal / footer / primary и modal / footer / secondary с осью view=desktop|mobile.
-   desktop — button size=500 (44), mobile — size=600 (52); ячейки окна и панели view=tablet
-   и view=mobile стоят на mobile (правка макета владельцем 21.10.2026). Граница — та же
-   1024, на которой окно становится шторкой: на телефоне кнопка шторки получает зону
-   нажатия 52.
-   В разметке кнопка подвала — .btn--500. Ниже 1024 окно переставляет её размерные
-   переменные на ступень 600 кнопки (rectangle/600 → цели из карты токенов, как в
-   button-*.css). Ось stretch=on|off — модификатор .mdl__footer--stretch, он и раньше
+   С 1.11.2 (макет 29.10.2026) обе — button size=600 (52); до этого desktop стоял на 500 (44),
+   и окно переставляло ступень только ниже 1024, где становится шторкой.
+   В разметке кнопка подвала — .btn--500 (класс в контракте и у потребителей). Окно на всех
+   ширинах переставляет её размерные переменные на ступень 600 кнопки (rectangle/600 → цели
+   из карты токенов, как в button-*.css). Ось stretch=on|off — модификатор .mdl__footer--stretch, он и раньше
    делил ряд поровну.
    .mdl__action (1.7.0) — кнопка действия, которую окно держит в содержимом, а не в подвале:
    у полноэкранного окна с полем и списком подсказок (город, регион в awds-header) кнопка
@@ -352,17 +350,15 @@
    владельца 21.10.2026: «саму кнопку в подвал не переносим, но смена размеров такая же»).
    Отдельный класс, а не любая .btn в .mdl__content: в содержимом бывают чипсы, строки
    списков и свои кнопки, их размер окно не трогает. */
-@media (max-width: 1023px) {
-  .mdl__footer > .btn,
-  .mdl__action.btn {
-    --awds-btn-padding: var(--awds-space-4);   /* #cell rectangle/600/padding */
-    --awds-btn-gap:     var(--awds-space-2);   /* #cell rectangle/600/gap */
-    --awds-btn-rounded: var(--awds-rounded-border-radius-600);   /* #cell rectangle/600/rounded */
-    --awds-btn-icon:    var(--awds-space-5);   /* #cell rectangle/600/icon */
-    --awds-btn-fs:      var(--awds-control-font-size-600);   /* #cell rectangle/600/typography */
-    --awds-btn-lh:      var(--awds-control-line-height-600);
-    --awds-btn-ls:      var(--awds-control-letter-spacing-600);
-  }
+.mdl__footer > .btn,
+.mdl__action.btn {
+  --awds-btn-padding: var(--awds-space-4);   /* #cell rectangle/600/padding */
+  --awds-btn-gap:     var(--awds-space-2);   /* #cell rectangle/600/gap */
+  --awds-btn-rounded: var(--awds-rounded-border-radius-600);   /* #cell rectangle/600/rounded */
+  --awds-btn-icon:    var(--awds-space-5);   /* #cell rectangle/600/icon */
+  --awds-btn-fs:      var(--awds-control-font-size-600);   /* #cell rectangle/600/typography */
+  --awds-btn-lh:      var(--awds-control-line-height-600);
+  --awds-btn-ls:      var(--awds-control-letter-spacing-600);
 }
 
 /* === Полноэкранное окно (1.4.0) ===

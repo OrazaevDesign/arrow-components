@@ -10,7 +10,7 @@
 <dialog class="mdl mdl-dialog" aria-labelledby="mdl-title">
   <header class="mdl__header">
     <h2 class="mdl__title" id="mdl-title">Удалить адрес?</h2>
-    <button class="btn btn-ghost btn--500 mdl__close" type="button" aria-label="Закрыть">
+    <button class="btn btn-ghost btn--500 btn--icon-only mdl__close" type="button" aria-label="Закрыть">
       <svg viewBox="0 0 20 20" aria-hidden="true"></svg>
     </button>
   </header>

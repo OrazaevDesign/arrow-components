@@ -565,7 +565,7 @@
   --awds-layout-section-padding-block-mobile: var(--awds-space-9);
   --awds-layout-section-padding-block: var(--awds-layout-section-padding-block-desktop);  /* Вертикальный отступ секции блока: padding-block на корне. Боковых полей не несёт — они на __inner. */
   /* Минимальная ширина карточки товара в ленте: min-width элемента слайдера или сетки. */
-  --awds-layout-card-product-min-desktop: 184px;
+  --awds-layout-card-product-min-desktop: 176px;
   --awds-layout-card-product-min-tablet: 184px;
   --awds-layout-card-product-min-mobile: 144px;
   --awds-layout-card-product-min: var(--awds-layout-card-product-min-desktop);  /* Минимальная ширина карточки товара в ленте: min-width элемента слайдера или сетки. */
