@@ -1,10 +1,10 @@
 {
   "component": "table",
-  "version": "1.0.14",
-  "contract_hash": "sha256:712d664d5b944b411f15559c62a866a3b7096883819ceaba6c1a8fc51afc0a58",
-  "artifact_hash": "sha256:24ff5f37efaedf5e89f277f66e53a0acc720b06af6c713f79dcbb5b62128028c",
-  "visual_change": true,
-  "released_at": "2026-10-12T13:29:43.495Z",
+  "version": "1.1.1",
+  "contract_hash": "sha256:a563662ad3710d194816e87af8d7eb743ec3142df6503cf56b0f73b96225ec64",
+  "artifact_hash": "sha256:727c631b1bbd51502176d048a0c878b05737d7c8cd058797ac93f2b598863038",
+  "visual_change": false,
+  "released_at": "2026-11-09T11:31:50.312Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -35,14 +35,18 @@
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58117",
       "class": "awds-table--light",
       "label": "Безрамочная (разделители строк)",
-      "figma_label": "table / cell=light"
+      "figma_label": "table / cell=light, width=fill",
+      "hug_node_id": "1302:686",
+      "hug_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1302-686"
     },
     "default": {
       "node_id": "76:58156",
       "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=76-58156",
       "class": "awds-table--default",
       "label": "Сетка (залитая шапка)",
-      "figma_label": "table / cell=default"
+      "figma_label": "table / cell=default, width=fill",
+      "hug_node_id": "1302:725",
+      "hug_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1302-725"
     }
   },
   "shape": null,
@@ -110,6 +114,10 @@
       {
         "label": "Таблица — безрамочная (light)",
         "html": "<div class=\"awds-table-scroll\"><table class=\"awds-table awds-table--light\"><tbody><tr><td class=\"cell cell-light\">Typography / Body</td><td class=\"cell cell-light\">Small</td></tr><tr><td class=\"cell cell-light\">600</td><td class=\"cell cell-light\">24</td></tr></tbody></table></div>"
+      },
+      {
+        "label": "Таблица по содержимому (hug)",
+        "html": "<div class=\"awds-table-scroll\"><table class=\"awds-table awds-table--default awds-table--hug\"><thead><tr><th class=\"cell cell-head\" scope=\"col\">Размер</th><th class=\"cell cell-head cell--numeric\" scope=\"col\">Кегль</th></tr></thead><tbody><tr><td class=\"cell cell-default\">600</td><td class=\"cell cell-default cell--numeric\">24</td></tr></tbody></table></div>"
       }
     ]
   },
@@ -210,7 +218,7 @@
           }
         ],
         "attrs": [],
-        "note": "Обёртка таблицы: border-collapse, ширина 100%, разлиновка и раскладка строк. Класс раскладки обязателен — база .awds-table общая на две раскладки, и без .awds-table--light / --default таблица остаётся без границ и без залитой шапки. Раскладка записана как variant, хотя пишется через два дефиса: это имя из макета (набор table, ось cell), и pattern хранится целиком, а не собирается из базы. Обёртка без ячеек бессмысленна, поэтому .cell объявлен обязательным потомком. Скролл-обёртка .awds-table-scroll опциональна: она нужна только таблице шире контейнера."
+        "note": "Обёртка таблицы: border-collapse, ширина (по умолчанию 100%, с .awds-table--hug — по содержимому, см. modifiers.width), разлиновка и раскладка строк. Класс раскладки обязателен — база .awds-table общая на две раскладки, и без .awds-table--light / --default таблица остаётся без границ и без залитой шапки. Раскладка записана как variant, хотя пишется через два дефиса: это имя из макета (набор table, ось cell), и pattern хранится целиком, а не собирается из базы. Обёртка без ячеек бессмысленна, поэтому .cell объявлен обязательным потомком. Скролл-обёртка .awds-table-scroll опциональна: она нужна только таблице шире контейнера."
       }
     ],
     "variant": {
@@ -312,12 +320,28 @@
       "answer": null
     }
   ],
+  "modifiers": {
+    "width": {
+      "values": [
+        "fill",
+        "hug"
+      ],
+      "class": {
+        "hug": "awds-table--hug"
+      },
+      "default": "fill",
+      "root": "awds-table",
+      "figma": "набор table, ось width",
+      "note": "Ширина таблицы. fill — во всю ширину контейнера, колонки поровну (table-layout: fixed), класса нет. hug — по содержимому: колонка по самому длинному тексту, таблица не шире контейнера, текст переносится. Независимая ось: ставится вместе с раскладкой --light / --default. В макете у hug-ячеек набора нет полосы прокрутки: такая таблица не вылезает за контейнер. Решение владельца 09.11.2026."
+    }
+  },
   "uses": {
     "awds-component-focus-selection": "2.0.3"
   },
   "contract": {
     "classes": [
       "awds-table",
+      "awds-table--hug",
       "awds-table--light",
       "awds-table-scroll",
       "cell",

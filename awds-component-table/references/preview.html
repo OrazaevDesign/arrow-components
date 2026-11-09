@@ -36,7 +36,9 @@
       border: 1px solid rgb(var(--surface-container-high) / 1);
       background: rgb(var(--surface-container-lowest) / 1); color: inherit; cursor: pointer;
     }
-    .layout { display: grid; grid-template-columns: 1fr 320px; gap: var(--awds-space-8); }
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--awds-space-8); }
+    @media (max-width: 1100px) { .layout { grid-template-columns: minmax(0, 1fr); } }
+    .matrix-scroll { overflow-x: auto; }
     h2 { font-size: var(--awds-typography-font-size-600); margin: 0 0 var(--awds-space-4); }
     section + section { margin-top: var(--awds-space-10); }
 
@@ -96,7 +98,7 @@
     <div>
       <section>
         <h2>Варианты × состояния</h2>
-        <table class="matrix" id="matrix"><thead></thead><tbody></tbody></table>
+        <div class="matrix-scroll"><table class="matrix" id="matrix"><thead></thead><tbody></tbody></table></div>
       </section>
 
       <section>
@@ -131,6 +133,34 @@
               <tr><td class="cell cell-light">600</td><td class="cell cell-light cell--numeric">24</td><td class="cell cell-light cell--numeric">32</td><td class="cell cell-light cell--numeric">40</td></tr>
               <tr><td class="cell cell-light">500</td><td class="cell cell-light cell--numeric">22</td><td class="cell cell-light cell--numeric">28</td><td class="cell cell-light cell--numeric">36</td></tr>
               <tr><td class="cell cell-light">400</td><td class="cell cell-light cell--numeric">20</td><td class="cell cell-light cell--numeric">24</td><td class="cell cell-light cell--numeric">32</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Ширина по содержимому (.awds-table--hug)</h2>
+        <div class="awds-table-scroll" style="max-width:520px">
+          <table class="awds-table awds-table--default awds-table--hug" id="hug-default">
+            <thead>
+              <tr>
+                <th class="cell cell-head" scope="col">Typography / Body</th>
+                <th class="cell cell-head" scope="col">Small</th>
+                <th class="cell cell-head" scope="col">Medium</th>
+                <th class="cell cell-head" scope="col">Large</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="cell cell-default">600</td><td class="cell cell-default cell--numeric">24</td><td class="cell cell-default cell--numeric">32</td><td class="cell cell-default cell--numeric">40</td></tr>
+              <tr><td class="cell cell-default">500</td><td class="cell cell-default cell--numeric">22</td><td class="cell cell-default cell--numeric">28</td><td class="cell cell-default cell--numeric">36</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="awds-table-scroll" style="max-width:520px;margin-top:var(--awds-space-6)">
+          <table class="awds-table awds-table--light awds-table--hug" id="hug-light">
+            <tbody>
+              <tr><td class="cell cell-light">Срок доставки</td><td class="cell cell-light">2–5 дней</td></tr>
+              <tr><td class="cell cell-light">Возврат</td><td class="cell cell-light">14 дней с момента получения, если товар не был в употреблении и сохранил товарный вид, пломбы и ярлыки</td></tr>
             </tbody>
           </table>
         </div>
