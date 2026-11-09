@@ -7,7 +7,7 @@ description: Page Title ArrowDS (.ptitle).
 
 Заголовок страницы: хлебные крошки сверху, `<h1>` под ними, под заголовком — необязательный
 счётчик «200 товаров». На планшете и мобиле (ниже 1024) вместо крошек — кнопка «Назад»,
-она открывает шторку «Вернуться» со списком разделов выше текущего. Составной компонент — готовые части одной колонкой: крошки ↔
+она открывает шторку «Вернуться на» со списком разделов выше текущего. Составной компонент — готовые части одной колонкой: крошки ↔
 заголовок `space-3`, заголовок ↔ счётчик `space-1-5`. Своих цветов, шрифтов и состояний нет:
 их держат вложенные компоненты. См. `arrow-design-system` за общей картиной токенов и
 `arrow-components-builder` за регенерацией скилла из Figma.
@@ -21,15 +21,16 @@ description: Page Title ArrowDS (.ptitle).
 | крошки (сверху, необязательны) | [awds-component-breadcrumbs](../awds-component-breadcrumbs/SKILL.md) | `nav.crumbs` целиком по его скиллу |
 | заголовок страницы | [awds-component-heading](../awds-component-heading/SKILL.md) | `.heading.heading--h1` + `<h1 class="heading__title">` |
 | счётчик (снизу, необязателен) | [awds-component-heading](../awds-component-heading/SKILL.md), элемент `.heading__count` | `<p class="heading__count">200 товаров</p>` — прямой ребёнок `.ptitle`, после `.heading` |
-| «Назад» (ниже 1024, вместо крошек) | [awds-component-button](../awds-component-button/SKILL.md) `pills`, 100, пилюля, иконка слева | `a.btn.btn-pills.btn--100.btn--pill.ptitle__back[data-ptitle-back]` |
-| шторка «Вернуться» | [awds-component-modal](../awds-component-modal/SKILL.md) `dialog` (ниже 1024 — шторка снизу) | `dialog.mdl.mdl-dialog.ptitle__sheet[data-ptitle-sheet]`, крестик `btn-ghost btn--500 btn--icon-only mdl__close` с иконкой `close_circle-filled` (modal 1.9.0) |
-| пункты шторки | [awds-component-list-item](../awds-component-list-item/SKILL.md) `transparent`, 400, иконка `arrow-back_2` | `ul.ptitle__list > li > a.list-item.list-item-transparent.list-item--400` |
+| «Назад» (ниже 1024, вместо крошек) | [awds-component-button](../awds-component-button/SKILL.md) `pills`, 200, пилюля, иконка слева без распорки (`show-gap` выключен) | `a.btn.btn-pills.btn--200.btn--pill.btn--prefix-gapless.ptitle__back[data-ptitle-back]` |
+| шторка «Вернуться на» | [awds-component-modal](../awds-component-modal/SKILL.md) `dialog` (ниже 1024 — шторка снизу) | `dialog.mdl.mdl-dialog.ptitle__sheet[data-ptitle-sheet]`, крестик `btn-ghost btn--500 btn--icon-only mdl__close` с иконкой `close_circle-filled` (modal 1.9.0) |
+| пункты шторки | [awds-component-list-item](../awds-component-list-item/SKILL.md) `transparent`, 400, без иконки | `ul.ptitle__list > li > a.list-item.list-item-transparent.list-item--400` |
 
 **Не верстать части заново.** На страницу подключаются `focus-selection.css`,
 `button-area.css`, `breadcrumbs.css`, `heading.css`, для мобильной ячейки — `button-pills.css`,
 `button-ghost.css` (или секция `button` с вариантами `pills,ghost` и ступенями `100,200`),
 `modal.css`, `list-item-transparent.css`, затем `page-title.css` (колонка, зазоры, кто показан
-на какой ширине) и `page-title.js` (открытие шторки).
+на какой ширине), `modal.js` (≥ 1.11.0: блокировка прокрутки под окном, системное «Назад»
+закрывает шторку, а не уводит со страницы) и `page-title.js` (открытие шторки).
 
 ## Разметка
 
@@ -55,7 +56,7 @@ description: Page Title ArrowDS (.ptitle).
 ```html
 <div class="ptitle">
   <nav class="crumbs" aria-label="Хлебные крошки">…Главная › Выбор покупателей › Спорт…</nav>
-  <a class="btn btn-pills btn--100 btn--pill ptitle__back" href="/r-vybor-pokupateley" data-ptitle-back>
+  <a class="btn btn-pills btn--200 btn--pill btn--prefix-gapless ptitle__back" href="/r-vybor-pokupateley" data-ptitle-back>
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M9.29996 3.75734C9.56031 3.49709 9.98203 3.49705 10.2423 3.75734C10.5027 4.01766 10.5026 4.43936 10.2423 4.69972L6.94254 7.99952L10.2423 11.2993C10.5027 11.5597 10.5027 11.9823 10.2423 12.2427C9.98206 12.5028 9.56028 12.5028 9.29996 12.2427L5.52848 8.4712C5.26821 8.2109 5.2683 7.78917 5.52848 7.52882L9.29996 3.75734Z" fill="currentColor"/></svg>Назад
   </a>
   <div class="heading heading--h1">
@@ -63,13 +64,12 @@ description: Page Title ArrowDS (.ptitle).
   </div>
   <dialog class="mdl mdl-dialog ptitle__sheet" aria-labelledby="ptitle-sheet-title" data-ptitle-sheet>
     <header class="mdl__header">
-      <h2 class="mdl__title" id="ptitle-sheet-title">Вернуться</h2>
+      <h2 class="mdl__title" id="ptitle-sheet-title">Вернуться на</h2>
       <button class="btn btn-ghost btn--500 btn--icon-only mdl__close" type="button" aria-label="Закрыть" data-ptitle-close><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><!-- system-close_circle-filled --></svg></button>
     </header>
     <div class="mdl__content">
       <ul class="ptitle__list">
         <li><a class="list-item list-item-transparent list-item--400" href="/">
-          <span class="list-item__prefix" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false"><!-- arrow-back_2-regular, путь — references/page-title.md --></svg></span>
           <span class="list-item__content"><span class="list-item__title">Главная</span></span>
         </a></li>
         <li><a class="list-item list-item-transparent list-item--400" href="/r-vybor-pokupateley">…Выбор покупателей…</a></li>
@@ -163,9 +163,9 @@ description: Page Title ArrowDS (.ptitle).
 | Крошки: 13/16/0.1, `link/muted-rest`, шеврон 16 | — | `awds-component-breadcrumbs` |
 | Заголовок: 34/34/−0.3, semibold, `surface/on-highest` | роли `h1` (desktop, мод medium) | `awds-component-heading`, роли WYSIWYG h1 |
 | «Назад» ↔ заголовок | `space/3` = 12 (view=mobile 1073:787) | `var(--awds-space-3)` — тот же зазор, что у крошек |
-| «Назад»: pills 100, 13/16 600, иконка 16 | инстанс `button / pills`, Hug | `awds-component-button`; `align-self: flex-start` |
-| Шторка: заголовок 18/22 600, поля `gutter-modal`, пустой подвал 16 | инстанс `modal / dialog` (back-sheet 1073:2928) | `awds-component-modal`, `.mdl__footer--empty` |
-| Пункт: 14/20, строка 40, иконка 20 цветом `list/transparent/icon` | инстанс `list-item / transparent` 400 | `awds-component-list-item` |
+| «Назад»: pills 200, 80×32, 13/16 600, иконка 16, у иконки `show-gap` выключен | инстанс `button / pills`, Hug | `awds-component-button`, `.btn--prefix-gapless` (поле слева 8, а не 12); `align-self: flex-start` |
+| Шторка: заголовок «Вернуться на» роли h3, поля `gutter-modal`, пустой подвал 16 | инстанс `modal / dialog` (back-sheet 1073:2928) | `awds-component-modal`, `.mdl__footer--empty` |
+| Пункт: 14/20, строка 40, без иконки (`show-prefix` выключен) | инстанс `list-item / transparent` 400 | `awds-component-list-item` |
 
 Кегль заголовка растёт по брейкпоинту и масштабу `.typo-*` внутри роли h1 — компонент
 это не трогает. Зазоры `space-3` и `space-1-5` от ширины окна не зависят.

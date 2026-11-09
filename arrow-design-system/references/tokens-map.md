@@ -1,14 +1,14 @@
 # Карта темы студии: что где искать
 
 <!-- СГЕНЕРИРОВАНО scripts/build-tokens-map.mjs — руками не правь.
-     Источник: token-snapshot/theme-tokens.json (снимок tokens/export темы 21). -->
+     Источник: token-snapshot/theme-tokens.json (снимок tokens/export темы 2 локальной студии). -->
 
 **Значений здесь нет и не будет.** Карта отвечает на «в какой коллекции искать и какие там
 группы»; само значение смотрится в снапшоте переменных или в живой теме:
 
 ```bash
 grep -n "awds-size-rectangle-600" .claude/skills/arrow-design-system/references/studio-vars.css
-node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format css --raw | grep …
+node .agents/skills/design-studio-api/scripts/variables-public.mjs 2 --format css --raw | grep …
 ```
 
 Причина: справочники со значениями уже сгнили один раз — были написаны на именах, которых
@@ -139,7 +139,7 @@ node .agents/skills/design-studio-api/scripts/variables-public.mjs 21 --format c
 | --- | --- | --- |
 | `references/studio-vars.css` | офлайн-снапшот `vars` темы, обновляется `scripts/sync-studio-vars.mjs` | обычное чтение, греп |
 | `references/derived.css` | слой производных: композит тени и движение (`--awds-motion-*`) | когда переменной нет в снапшоте |
-| `GET /themes/21/compiled` | **эталон**: одна компиляция, разная упаковка | спор о значении, сверка |
+| `GET /themes/2/compiled` | **эталон**: одна компиляция, разная упаковка | спор о значении, сверка |
 | `token-snapshot/theme-tokens.json` | состояние под git, история значений | «что поехало» — `scripts/token-diff.mjs` |
 
 Правила сверки (контракт от разработчика студии): эталон — `compiled`; цвет сравнивается

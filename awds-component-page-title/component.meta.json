@@ -1,13 +1,13 @@
 {
   "component": "page-title",
-  "version": "1.2.4",
+  "version": "1.2.6",
   "contract_hash": "sha256:f7a3b1399272f9edda9a8f79bc00ce09b86c7d88dad6f6b0a59a9d807d2c9e2d",
-  "artifact_hash": "sha256:3a0bb861a0903810694644839f0af8179a4198f2821be77d52c1f268029e64fc",
+  "artifact_hash": "sha256:cec5d3bdb616878adf4e6654067aaad748f7e94633de38ea034356eee172d5dd",
   "visual_change": false,
-  "released_at": "2026-10-26T20:18:49.829Z",
+  "released_at": "2026-11-06T14:45:20.697Z",
   "own_values": [],
   "family": "complex-component",
-  "summary": "Заголовок страницы: крошки над h1 (space-3), под ним необязательный счётчик (space-1-5); ниже 1024 вместо крошек «Назад» со шторкой «Вернуться»; цвета и шрифты — у вложенных компонентов",
+  "summary": "Заголовок страницы: крошки над h1 (space-3), под ним необязательный счётчик (space-1-5); ниже 1024 вместо крошек «Назад» со шторкой «Вернуться на»; цвета и шрифты — у вложенных компонентов",
   "aliases": [
     "заголовок страницы",
     "шапка страницы",
@@ -30,7 +30,7 @@
       "figma_label": "page-title (view=desktop 1050:139853 · view=mobile 1073:787)"
     }
   },
-  "variants_note": "С 10.10.2026 в макете набор page-title (1073:761) с осью view=desktop|mobile. Ось — брейкпоинт, а не вариант (правило 10 props.md): класса нет, ниже 1024 медиазапрос прячет крошки и показывает «Назад» (button / pills 100 с иконкой arrow-left). Шторка — отдельный компонент макета back-sheet (1073:2928): modal / dialog с заголовком «Вернуться», в слоте содержимого list-item / transparent 400 с иконкой arrow-back_2. desktop: инстанс breadcrumbs сверху, обёртка «div» (gap space/1-5) с heading h1 и счётчиком, колонка gap space/3; mobile — то же, вместо крошек «Назад».",
+  "variants_note": "С 10.10.2026 в макете набор page-title (1073:761) с осью view=desktop|mobile. Ось — брейкпоинт, а не вариант (правило 10 props.md): класса нет, ниже 1024 медиазапрос прячет крошки и показывает «Назад» (button / pills 200 с иконкой arrow-left, у части prefix show-gap выключен → .btn--prefix-gapless; макет 06.11.2026, до того pills 100). Шторка — отдельный компонент макета back-sheet (1073:2928): modal / dialog с заголовком «Вернуться на», в слоте содержимого list-item / transparent 400 без иконки (show-prefix выключен с 06.11.2026, до того arrow-back_2). desktop: инстанс breadcrumbs сверху, обёртка «div» (gap space/1-5) с heading h1 и счётчиком, колонка gap space/3; mobile — то же, вместо крошек «Назад».",
   "base_class_note": "Базовый класс .ptitle, а не .page-title и не .title. Имя .page-title — обиходное, оно встречается в темах CMS, WordPress и Bootstrap-шаблонах и почти наверняка занято у потребителя; .title ещё общее и к тому же синоним heading. Короткий свой корень не пересекается ни с ними, ни с .heading, и приватные переменные --awds-ptitle-* (если появятся) читаются как внутренность одного компонента, а не как слой дизайн-системы. Тот же приём, что breadcrumbs → .crumbs, pagination → .pgn, modal → .mdl, formfield → .fld.",
   "composition_note": "Компонент ничего не рисует сам: крошки — awds-component-breadcrumbs (.crumbs целиком), заголовок — awds-component-heading (.heading.heading--h1 с <h1 class=\"heading__title\">). Своё — только колонка, растяжение частей (Fill в макете) и зазор space-3. Уровень h1 задаётся классом .heading--h1 в разметке, а не мостом: мост, как у formfield, раздаёт ступень, которую выбирает потребитель, а здесь уровень один и у heading для него есть публичный класс; мост писал бы в приватные --awds-heading-* чужого компонента и молча отвалился бы при их переименовании. Счётчик под заголовком — элемент .heading__count из awds-component-heading, а не свой .ptitle__count: вид (цвет, шрифт) описан один раз в heading, ptitle задаёт только место (зазор space-1-5 правилом .ptitle > .heading + .heading__count). Свой класс повторил бы пять объявлений, и правка вида в heading не дошла бы до заголовка страницы.",
   "shape": null,
@@ -82,7 +82,7 @@
       {
         "class": "ptitle__back",
         "required": false,
-        "when_note": "когда у страницы есть путь: ссылка на ближайший раздел выше, сразу после .crumbs; классы кнопки btn btn-pills btn--100 btn--pill и атрибут data-ptitle-back"
+        "when_note": "когда у страницы есть путь: ссылка на ближайший раздел выше, сразу после .crumbs; классы кнопки btn btn-pills btn--200 btn--pill btn--prefix-gapless и атрибут data-ptitle-back"
       },
       {
         "class": "ptitle__sheet",
@@ -93,7 +93,7 @@
         "class": "ptitle__list",
         "required": false,
         "within": "ptitle__sheet",
-        "when_note": "ul внутри .mdl__content шторки; пункты — a.list-item.list-item-transparent.list-item--400 с иконкой в __prefix"
+        "when_note": "ul внутри .mdl__content шторки; пункты — a.list-item.list-item-transparent.list-item--400 без __prefix (иконки в пунктах нет с 06.11.2026)"
       }
     ],
     "attrs": [],
@@ -191,9 +191,21 @@
       "level": "component",
       "target": "awds-component-modal",
       "severity": "minor",
-      "status": "open",
+      "status": "answered",
       "asana_gid": "1219874366106042",
       "raised_at": "2026-10-10",
+      "answer": "Снято в modal 1.3.3: крестик стоит абсолютно в углу окна. Замер 06.11.2026 на modal 1.11.2: шапка шторки 48 при ширине 360 — как в макете (заголовок h3 20/24, поля 16 и 8).",
+      "answered_at": "2026-11-06"
+    },
+    {
+      "id": "page-title-sheet-items-flush",
+      "text": "В шторке back-sheet (1073:2928) у пунктов list-item / transparent 400 выключен show-prefix, а у content-list осталось padding=off — текст стоит вплотную к краю строки, на 16 от края окна вровень с заголовком. Код list-item без слота даёт поле text-gap 16 (текст на 32), как велит его SKILL.md: без поля текст касается края подсветки при наведении. Включить в макете padding=on у content-list или нужен пункт без поля?",
+      "level": "component",
+      "target": "awds-component-list-item",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1220298887528821",
+      "raised_at": "2026-11-06",
       "answer": null
     }
   ],
@@ -235,10 +247,10 @@
   ],
   "uses": {
     "awds-component-breadcrumbs": "1.0.0",
-    "awds-component-heading": "2.2.0",
-    "awds-component-button": "2.2.18",
-    "awds-component-modal": "1.3.1",
-    "awds-component-list-item": "2.4.2"
+    "awds-component-heading": "2.2.1",
+    "awds-component-button": "2.3.1",
+    "awds-component-modal": "1.11.2",
+    "awds-component-list-item": "2.4.3"
   },
   "contract": {
     "classes": [
