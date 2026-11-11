@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:799baf34a2c94d180ea6b64bc1d1cb188c8415bcf108993192935c653ccfcb3f",
+  "snapshot_hash": "sha256:7a288e7f6ca01a2b0e713c88bd9b4c4e5337287454df045a8e03a99b7f0ea773",
   "size": {
     "rectangle": {
       "50": {
@@ -543,7 +543,7 @@
         "unselected": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
-          "color": "rgb(var(--secondary-container-on-high))",
+          "color": "rgb(var(--secondary-container-on-highest))",
           "icon-remove": "rgb(var(--secondary-container-on))"
         },
         "selected": {
@@ -1723,7 +1723,7 @@
         "unselected": {
           "bg": "rgb(var(--secondary-container-core))",
           "border": "rgb(var(--secondary-container-core))",
-          "color": "rgb(var(--secondary-container-on-high))",
+          "color": "rgb(var(--secondary-container-on-highest))",
           "icon-remove": "rgb(var(--secondary-container-on))"
         },
         "selected": {

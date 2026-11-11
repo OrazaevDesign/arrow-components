@@ -1,5 +1,9 @@
 # chip — журнал версий
 
+## 1.1.2 — 2026-11-11 — PATCH · visual
+Ячейка chip/unselected/color-rest и color-focus перенаправлены в студии: secondary-container-on-high → secondary-container-on-highest; код догнал (arrow-studio-sync).
+Потребителю: Ничего делать не нужно. Вид: текст невыбранного чипса из серого стал почти чёрным.
+
 ## 1.1.1 — 2026-11-11 — PATCH
 Контракт разметки: чипс «Все», раскрывающий ряд ссылок, — кнопка с aria-expanded; текущая страница в ряду ссылок не выводится (если выводится — chip-selected с aria-current="page"). CSS не менялся
 Потребителю: Ничего делать не нужно

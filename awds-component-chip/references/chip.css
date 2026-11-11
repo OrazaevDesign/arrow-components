@@ -21,7 +21,7 @@
    Маппинг variant × state → роль (component-token-map.json, map.state.*.chip):
      unselected
        rest/focus         bg=secondary-container-core  border=secondary-container-core (в цвет фона)
-                          color=secondary-container-on-high
+                          color=secondary-container-on-highest
        hover              bg=accent-container-core     border=accent-container-core (в цвет фона)
                           color=accent-core
        active             bg=accent-container-dim      border=accent-container-dim (в цвет фона)
@@ -211,7 +211,7 @@
 .chip-unselected {
   --awds-chip-bg:          rgb(var(--secondary-container-core));   /* #cell chip/unselected/bg-rest */
   --awds-chip-border:      rgb(var(--secondary-container-core));   /* #cell chip/unselected/border-rest */
-  --awds-chip-color:       rgb(var(--secondary-container-on-high));   /* #cell chip/unselected/color-rest */
+  --awds-chip-color:       rgb(var(--secondary-container-on-highest));   /* #cell chip/unselected/color-rest */
   --awds-chip-icon-remove: rgb(var(--secondary-container-on));   /* #cell chip/unselected/icon-remove-rest */
 }
 
@@ -228,7 +228,7 @@
 .chip-unselected:focus-visible {
   --awds-chip-bg:          rgb(var(--secondary-container-core));   /* #cell chip/unselected/bg-focus */
   --awds-chip-border:      rgb(var(--secondary-container-core));   /* #cell chip/unselected/border-focus */
-  --awds-chip-color:       rgb(var(--secondary-container-on-high));   /* #cell chip/unselected/color-focus */
+  --awds-chip-color:       rgb(var(--secondary-container-on-highest));   /* #cell chip/unselected/color-focus */
   --awds-chip-icon-remove: rgb(var(--secondary-container-on));   /* #cell chip/unselected/icon-remove-focus */
 }
 

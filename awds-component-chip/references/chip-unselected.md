@@ -29,7 +29,7 @@
 
 | Состояние | bg | border | color | Ячейка |
 | --- | --- | --- | --- | --- |
-| rest | `secondary-container-core` | `secondary-container-core` (в цвет фона) | `secondary-container-on-high` | `chip/unselected/*-rest` |
+| rest | `secondary-container-core` | `secondary-container-core` (в цвет фона) | `secondary-container-on-highest` | `chip/unselected/*-rest` |
 | hover | `accent-container-core` | `accent-container-core` (в цвет фона) | `accent-core` | `chip/unselected/*-hover` |
 | focus | как rest + кольцо `--awds-focus-*` | | | `chip/unselected/*-focus` |
 | active | `accent-container-dim` | `accent-container-dim` (в цвет фона) | `accent-dim` | `chip/unselected/*-active` |
