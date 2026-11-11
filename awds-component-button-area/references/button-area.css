@@ -41,7 +41,8 @@
       50: gap space-0-5 / icon space-4 / control-200 (12/16)
 
    Приватные аккумуляторы: --awds-btn-area-{gap,icon,fs,lh,ls,rounded,color}.
-   Вход потребителя: --awds-btn-area-padding — поля области (по умолчанию 0).
+   Вход потребителя: --awds-btn-area-padding — поля области (по умолчанию 0);
+   --awds-btn-area-justify — выравнивание контента вдоль области (по умолчанию center).
    ============================================================================= */
 
 /* === Base (= размер 500 по умолчанию) === */
@@ -61,12 +62,20 @@
      `.место .btn-area { --awds-btn-area-padding: 0 var(--awds-space-3); }`. Поля — часть зоны
      нажатия и кольца фокуса; в макете это поля экземпляра (header-mobile: «Отменить» 0/12). */
   --awds-btn-area-padding: 0;
+  /* Выравнивание контента (2.2.0) — вход для потребителя: в растянутой области контент по умолчанию
+     по центру, а экземпляр в макете бывает прижат к началу (дерево категорий листинга: Fill + align left,
+     categoty-desktop 9711:74618). `.место .btn-area { --awds-btn-area-justify: flex-start; }` */
+  --awds-btn-area-justify: center;
+  /* Перенос подписи (2.3.0) — вход для потребителя: по умолчанию одна строка с эллипсисом; normal — подпись
+     переносится на следующие строки, область растёт по высоте (дерево категорий листинга: длинное название
+     рубрики в две-три строки, categoty 9711:74618). `.место .btn-area { --awds-btn-area-wrap: normal; }` */
+  --awds-btn-area-wrap: nowrap;
 
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
   align-items: center;
-  justify-content: center;            /* контент по центру → при растяжении области остаётся центрированным */
+  justify-content: var(--awds-btn-area-justify);   /* по умолчанию center: при растяжении контент по центру */
   gap: var(--awds-btn-area-gap);
 
   color: var(--awds-btn-area-color);
@@ -96,12 +105,13 @@
 .btn-area *::before,
 .btn-area *::after { box-sizing: border-box; }
 
-/* Текстовый лейбл — одна строка с эллипсисом (область может быть уже контента) */
+/* Текстовый лейбл — одна строка с эллипсисом (область может быть уже контента); с --awds-btn-area-wrap: normal
+   подпись переносится, эллипсис не нужен */
 .btn-area__label {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: var(--awds-btn-area-wrap);
 }
 
 /* Слоты иконок (префикс/суффикс). Зазор до текста даёт gap контейнера. */

@@ -69,6 +69,21 @@ description: Button Area ArrowDS (.btn-area).
 
   Поля входят в зону нажатия и в кольцо фокуса. В макете это поля экземпляра `button-area` — у самого
   компонента их нет. Растяжение `--fill*` с полями совместимо: контент остаётся по центру.
+- **Выравнивание контента** — переменная `--awds-btn-area-justify` (с 2.2.0), по умолчанию `center`.
+  Нужна растянутой области, у которой контент в макете прижат к началу: экземпляр `Fill` с
+  выравниванием влево (дерево категорий листинга, `categoty-desktop` 9711:74618). Ставится на сам
+  экземпляр классом места, как и поля:
+
+  ```css
+  .block__tree .btn-area { --awds-btn-area-justify: flex-start; }
+  ```
+- **Перенос подписи** — переменная `--awds-btn-area-wrap` (с 2.3.0), по умолчанию `nowrap`: подпись в одну
+  строку с эллипсисом. `normal` — подпись переносится, область растёт по высоте. Нужна там, где в макете
+  текст экземпляра `Fill` складывается в несколько строк (дерево категорий листинга, `categoty` 9711:74618):
+
+  ```css
+  .block__tree .btn-area { --awds-btn-area-wrap: normal; }
+  ```
 - **Загрузка** — `.btn-area--loading`: контент погашен (место сохраняется), по центру кольцо
   `awds-component-progress`, клики гасятся. Своего спиннера у области нет: в слоте
   `.btn-area__progress` живёт тот же `<svg>`, что и в макете, — на нём обязаны стоять классы
@@ -84,7 +99,7 @@ description: Button Area ArrowDS (.btn-area).
 | Кольцо фокуса | слой `awds-component-focus-selection`, вариант **Outside + Default**: кольцо на 1px снаружи бокса, как у инстансов в макете (до 27.09.2026 здесь был Inside — макет сменил вариант) |
 | Disabled | `opacity: var(--awds-state-opacity-control-disabled)` + `pointer-events: none` |
 | Индикатор загрузки | компонент `awds-component-progress`, вариант circular indeterminate; область задаёт ему только `--awds-progress-size` (своя ступень) и `--awds-progress-color` (свой цвет текста) |
-| Растяжение | `width/height: 100%` + `align-self: stretch`, контент по центру (`justify-content/align-items: center`) |
+| Растяжение | `width/height: 100%` + `align-self: stretch`, контент по центру (`align-items: center`, `justify-content: var(--awds-btn-area-justify)` — по умолчанию `center`) |
 
 ## CSS
 
