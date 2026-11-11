@@ -84,6 +84,14 @@ description: Button Area ArrowDS (.btn-area).
   ```css
   .block__tree .btn-area { --awds-btn-area-wrap: normal; }
   ```
+- **Выравнивание поперёк** — переменная `--awds-btn-area-align` (с 2.4.0), по умолчанию `center`. С переносом
+  подписи иконка должна стоять у первой строки, а не посередине абзаца (стрелка у раздела выше в дереве категорий,
+  `categoty` 9711:42616): `flex-start`. Слот иконки высотой не ниже строки подписи (`min-height: 1lh`), поэтому
+  иконка встаёт по центру первой строки:
+
+  ```css
+  .block__tree .btn-area { --awds-btn-area-wrap: normal; --awds-btn-area-align: flex-start; }
+  ```
 - **Загрузка** — `.btn-area--loading`: контент погашен (место сохраняется), по центру кольцо
   `awds-component-progress`, клики гасятся. Своего спиннера у области нет: в слоте
   `.btn-area__progress` живёт тот же `<svg>`, что и в макете, — на нём обязаны стоять классы

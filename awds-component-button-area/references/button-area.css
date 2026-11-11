@@ -70,11 +70,16 @@
      переносится на следующие строки, область растёт по высоте (дерево категорий листинга: длинное название
      рубрики в две-три строки, categoty 9711:74618). `.место .btn-area { --awds-btn-area-wrap: normal; }` */
   --awds-btn-area-wrap: nowrap;
+  /* Выравнивание поперёк (2.4.0) — вход для потребителя: по умолчанию иконки и подпись по центру по высоте. С переносом
+     подписи иконка должна стоять у первой строки, а не посередине абзаца (дерево категорий листинга, стрелка у раздела
+     выше в две строки, categoty 9711:42616). `.место .btn-area { --awds-btn-area-align: flex-start; }` — слот иконки
+     высотой в строку, поэтому иконка встаёт по центру первой строки. */
+  --awds-btn-area-align: center;
 
   box-sizing: border-box;
   position: relative;
   display: inline-flex;
-  align-items: center;
+  align-items: var(--awds-btn-area-align);
   justify-content: var(--awds-btn-area-justify);   /* по умолчанию center: при растяжении контент по центру */
   gap: var(--awds-btn-area-gap);
 
@@ -122,6 +127,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  /* Не ниже строки подписи (2.4.0): при --awds-btn-area-align: flex-start иконка — по центру первой строки. В одну
+     строку при выравнивании по центру ничего не меняется. Без поддержки lh свойство отбрасывается — иконка у верха строки. */
+  min-height: 1lh;
 }
 .btn-area__prefix > svg,
 .btn-area__suffix > svg,
