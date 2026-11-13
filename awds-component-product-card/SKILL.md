@@ -50,6 +50,7 @@ description: Product Card ArrowDS (.pcard).
 | Скругление медиа | `var(--awds-rounded-border-radius-500)` (8px Smooth) |
 | Бренд / название / фидбэк | **Роли WYSIWYG-пресетов** `--awds-wysiwyg-*-body/caption-{fs,lh,ls}` (НЕ жёсткий шаг `--awds-typography-*`). Бренд = `body` полужирный (обе вью, с правки макета 07.10.2026; до неё desktop стоял на `lead`); название = `body`; фидбэк/рубрика = `caption`. Роли масштабируются коллекцией `.typo-large/medium/small` на секции-предке — карточка едет по той же оси, что типографика блоков. **Макет стоит в моде Medium, а это и есть дефолт `:root`** (body 16/26, caption 13/21) — отдельный класс для совпадения с макетом не нужен; `.typo-small` и `.typo-large` дают соседние ступени. До переезда в новый файл витрина стояла на Small, отсюда прежняя формулировка «`.typo-small` = макет». Цена по этой оси НЕ едет: она на шкале control, размер по вью задаёт карточка правилом `.pcard-{вариант} .price` |
 | Иконки | флаг 20px (`space-5`, как иконка избранного), звезда 16px (`space-4`); сердце — в компоненте button-favorites |
+| Логотип бренда (с 3.4.0) | плашка: поле `space-1-5`, скругление `rounded-border-radius-400`, фон `rgb(var(--surface-bright))`; логотип 48×28 (`space-12` × `space-7`), на мобиле 36×20 (`space-9` × `space-5`), `object-fit: contain`. Ставится вместо флага; правила — `references/spec.md`, «Логотип бренда» |
 
 ## Структура и классы
 
@@ -60,7 +61,8 @@ description: Product Card ArrowDS (.pcard).
 │   │   └── .pcard__image[alt] [.pcard__image--active]  |  .pcard__media-placeholder
 │   │       (несколько .pcard__image = галерея; листание: стрелки .pcard__nav на десктопе, свайп на тач)
 │   ├── .pcard__top
-│   │   ├── .pcard__country  (<img>/<svg> флаг 24px)
+│   │   ├── .pcard__country  (<img>/<svg> флаг 24px)  — или, с 3.4.0, вместо него:
+│   │   ├── .pcard__brand-logo  (<img alt=""> логотип бренда в плашке 60×40 / 48×32, украшение)
 │   │   └── .btn.btn-favorites.btn--icon-only   ← компонент awds-component-button-favorites
 │   │       └── .btn-favorites__icon (solid + outline heart; aria-pressed)
 │   ├── .pcard__nav                             ← стрелки галереи, только при 2+ кадрах (с 1.4.0)

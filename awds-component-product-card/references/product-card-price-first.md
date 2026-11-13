@@ -21,6 +21,11 @@
       <span class="pcard__country">
         <img src="/flags/de.svg" alt="Германия">
       </span>
+      <!-- …или логотип бренда (с 3.4.0) — на том же месте, вместо флага, не вместе с ним.
+           Украшение: alt пустой, бренд назван подписью .pcard__brand. Нет логотипа — плашку не выводить.
+      <span class="pcard__brand-logo">
+        <img src="/brands/logo.webp" alt="">
+      </span> -->
       <!-- Избранное (awds-component-button-favorites) -->
       <button type="button" class="btn btn-favorites btn--icon-only" aria-pressed="false" aria-label="В избранное">
         <span class="btn-favorites__icon">
@@ -50,9 +55,9 @@
     <a class="pcard__name" href="/product/123">Название товара которое ложится в две строки</a>
     <!-- Отзывы — статичный блок (НЕ ссылка): ★ рейтинг · 💬 счётчик -->
     <div class="pcard__feedback">
-      <svg class="pcard__rating-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1.4 9.9 5.3l4.3.62-3.1 3 .73 4.28L8 11.18 4.17 13.2l.73-4.28-3.1-3 4.3-.62Z"/></svg>
+      <svg class="pcard__rating-icon" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M6.37038 1.38338C6.65165 0.900473 7.34888 0.900473 7.63015 1.38338L9.261 4.1822L12.427 4.86775C12.9729 4.98622 13.1879 5.64935 12.8157 6.06599L10.6575 8.48201L10.9837 11.7047C11.04 12.2607 10.4755 12.6712 9.96413 12.4459L7.00026 11.1392L4.03542 12.4459C3.5241 12.671 2.9596 12.2606 3.01589 11.7047L3.34206 8.48201L1.18386 6.06599C0.811887 5.64925 1.02746 4.986 1.5735 4.86775L4.73952 4.1822L6.37038 1.38338Z"/></svg>
       <span class="pcard__rating-value">4.9</span>
-      <svg class="pcard__reviews-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2C4.27 2 1.25 4.42 1.25 7.4c0 1.52.8 2.88 2.06 3.86-.13.92-.55 1.72-1.16 2.34 1.2.05 2.4-.32 3.34-1.02.74.22 1.56.34 2.51.34 3.73 0 6.75-2.42 6.75-5.52S11.73 2 8 2Z"/></svg>
+      <svg class="pcard__reviews-icon" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true"><path d="M7 1.16699C10.2217 1.16699 12.833 3.77834 12.833 7C12.833 10.2217 10.2217 12.833 7 12.833H2.33301C1.68893 12.8328 1.16717 12.3111 1.16699 11.667V7C1.16699 3.77834 3.77834 1.16699 7 1.16699ZM5.25 8.16699C4.92783 8.16699 4.66699 8.42783 4.66699 8.75C4.66699 9.07217 4.92783 9.33301 5.25 9.33301H7C7.32217 9.33301 7.58301 9.07217 7.58301 8.75C7.58301 8.42783 7.32217 8.16699 7 8.16699H5.25ZM5.25 5.83301C4.92783 5.83301 4.66699 6.09483 4.66699 6.41699C4.66717 6.73901 4.92794 7 5.25 7H8.75C9.07206 7 9.33283 6.73901 9.33301 6.41699C9.33301 6.09483 9.07217 5.83301 8.75 5.83301H5.25Z"/></svg>
       <span class="pcard__reviews-count">23 отзыва</span>
     </div>
   </div>
@@ -123,8 +128,8 @@
     <!-- Стрелки галереи — только при 2+ кадрах. Компонент awds-component-button-overhung,
          secondary 100 (подключи button-overhung-secondary.css). После .pcard__top, перед бейджами. -->
     <div class="pcard__nav">
-      <button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--prev" aria-label="Предыдущее фото"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l-6 6 6 6"/></svg></button>
-      <button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--next" aria-label="Следующее фото"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4l6 6-6 6"/></svg></button>
+      <button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--prev" aria-label="Предыдущее фото"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M9.30011 3.75745C9.56045 3.4972 9.98217 3.49716 10.2425 3.75745C10.5028 4.01777 10.5027 4.43947 10.2425 4.69983L6.94269 7.99964L10.2425 11.2994C10.5028 11.5598 10.5028 11.9825 10.2425 12.2428C9.9822 12.5029 9.56042 12.5029 9.30011 12.2428L5.52862 8.47132C5.26836 8.21102 5.26844 7.78929 5.52862 7.52893L9.30011 3.75745Z"/></svg></button>
+      <button type="button" class="obtn obtn-secondary obtn--100 obtn--icon-only pcard__nav-btn pcard__nav-btn--next" aria-label="Следующее фото"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M5.75753 3.75745C6.01785 3.49717 6.43957 3.49719 6.69991 3.75745L10.4714 7.52893C10.7316 7.78928 10.7316 8.21102 10.4714 8.47132L6.69991 12.2428C6.4396 12.5029 6.01782 12.5029 5.75753 12.2428C5.49718 11.9825 5.49718 11.5598 5.75753 11.2994L9.05733 7.99964L5.75753 4.69983C5.49725 4.43948 5.4972 4.01777 5.75753 3.75745Z"/></svg></button>
     </div>
     <div class="pcard__badges">…</div>
   </div>
@@ -306,6 +311,7 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 Любой оверлей можно убрать — карточка не сломается:
 
 - **`.pcard__country`** — флаг страны-поставщика. Бокс 24×24px, флаг вписан с сохранением пропорций (`object-fit: contain` — не обрезается). Нет страны → убери блок.
+- **`.pcard__brand-logo`** — логотип бренда на месте флага (с 3.4.0, часть `.brand` макета): плашка `surface-bright` с полем `space-1-5` и скруглением `rounded-400`, 60×40 (на мобиле 48×32), логотип вписан целиком (`object-fit: contain`). Ставится вместо `.pcard__country`, а не рядом; что показать, решает потребитель. Нет логотипа у бренда → не выводи плашку, угол остаётся пустым.
 - **`.pcard__badges`** — маркет-бейджи (компонент `awds-component-badge`, подключи `badge.css`): `badge-market-percent` (акцент) для скидки в %, `badge-market-sale` (бренд-primary) для «Скидка». Можно один, оба или ни одного.
 - **`.btn-favorites`** — избранное (компонент `awds-component-button-favorites`, подключи `button-favorites.css`). Нет логики избранного → убери кнопку.
 - **`.pcard__slider`** — индикатор галереи (компонент `awds-component-slider`, dots-mini, подключи `slider.css`). Одно фото → не добавляй (и не нужен `.pcard__image--active`).
@@ -320,6 +326,7 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 | Фото | `.pcard__image[src]` / `.pcard__image-link[aria-label]` |
 | Галерея фото | несколько `.pcard__image[src]` + `.pcard__slider` точек по числу кадров |
 | Флаг страны | `.pcard__country img[src]` |
+| Логотип бренда (вместо флага, с 3.4.0) | `.pcard__brand-logo img[src]`, `alt=""` |
 | Цена | компонент `.price` (`.price__current` число, `.price__currency` символ) |
 | Бренд | `.pcard__brand` |
 | Название | `.pcard__name` |

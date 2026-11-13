@@ -181,7 +181,7 @@
   height: var(--awds-space-12);
 }
 
-/* Верхний оверлей: страна (слева) ↔ избранное (справа), как в price-first и buy-now.
+/* Верхний оверлей: страна или логотип бренда (слева) ↔ избранное (справа), как в price-first и buy-now.
    До 27.09.2026 здесь было «только избранное, флага страны в brand-first нет» — решение
    первичной сборки скилла. Текущий макет держит флаг в обеих вьюхах brand-first
    (component-figma-check: слой .country видим, 40/32 — как у остальных вариантов). */
@@ -221,6 +221,27 @@
 .pcard.pcard-brand-first.pcard--mobile .pcard__country > svg {
   width: var(--awds-space-4);            /* 16px · #cell rectangle/200/icon */
   height: var(--awds-space-4);
+}
+
+/* Логотип бренда — на месте флага страны, выбор у потребителя (с 3.4.0). Часть .brand
+   макета: плашка в углу фото вплотную, как бокс избранного (60×40 / 48×32 = логотип + поля).
+   Украшение, не ссылка: на бренд ведёт подпись .pcard__brand, клик по углу уходит к фото
+   (pointer-events: none у .pcard__top). Нет логотипа — плашки нет, угол пустой. */
+.pcard-brand-first .pcard__brand-logo {
+  display: inline-flex;
+  padding: var(--awds-space-1-5);                        /* 6px · .brand padding 1-5 */
+  border-radius: var(--awds-rounded-border-radius-400);  /* .brand border-radius/400 */
+  background: rgb(var(--surface-bright));                /* .brand surface/bright */
+}
+.pcard-brand-first .pcard__brand-logo > img {
+  display: block;
+  width: var(--awds-space-12);           /* 48px · .brand-logo view=desktop-tablet */
+  height: var(--awds-space-7);           /* 28px — плашка 60×40 */
+  object-fit: contain;                   /* логотип вписан целиком (FIT в макете) */
+}
+.pcard.pcard-brand-first.pcard--mobile .pcard__brand-logo > img {
+  width: var(--awds-space-9);            /* 36px · .brand-logo view=mobile */
+  height: var(--awds-space-5);           /* 20px — плашка 48×32 */
 }
 
 /* Нижний оверлей: маркет-бейджи (компонент awds-component-badge), ПО ЦЕНТРУ.

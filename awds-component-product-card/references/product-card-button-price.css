@@ -181,7 +181,7 @@
   height: var(--awds-space-12);
 }
 
-/* Верхний оверлей: страна (слева) ↔ избранное (справа) */
+/* Верхний оверлей: страна или логотип бренда (слева) ↔ избранное (справа) */
 .pcard-button-price .pcard__top {
   position: absolute;
   top: 0;
@@ -218,6 +218,27 @@
 .pcard.pcard-button-price.pcard--mobile .pcard__country > svg {
   width: var(--awds-space-4);            /* 16px · #cell rectangle/200/icon */
   height: var(--awds-space-4);
+}
+
+/* Логотип бренда — на месте флага страны, выбор у потребителя (с 3.4.0). Часть .brand
+   макета: плашка в углу фото вплотную, как бокс избранного (60×40 / 48×32 = логотип + поля).
+   Украшение, не ссылка: на бренд ведёт подпись .pcard__brand, клик по углу уходит к фото
+   (pointer-events: none у .pcard__top). Нет логотипа — плашки нет, угол пустой. */
+.pcard-button-price .pcard__brand-logo {
+  display: inline-flex;
+  padding: var(--awds-space-1-5);                        /* 6px · .brand padding 1-5 */
+  border-radius: var(--awds-rounded-border-radius-400);  /* .brand border-radius/400 */
+  background: rgb(var(--surface-bright));                /* .brand surface/bright */
+}
+.pcard-button-price .pcard__brand-logo > img {
+  display: block;
+  width: var(--awds-space-12);           /* 48px · .brand-logo view=desktop-tablet */
+  height: var(--awds-space-7);           /* 28px — плашка 60×40 */
+  object-fit: contain;                   /* логотип вписан целиком (FIT в макете) */
+}
+.pcard.pcard-button-price.pcard--mobile .pcard__brand-logo > img {
+  width: var(--awds-space-9);            /* 36px · .brand-logo view=mobile */
+  height: var(--awds-space-5);           /* 20px — плашка 48×32 */
 }
 
 /* Нижний оверлей: маркет-бейджи (компонент awds-component-badge), слева снизу */

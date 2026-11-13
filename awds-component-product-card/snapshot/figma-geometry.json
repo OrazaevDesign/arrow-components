@@ -1,1869 +1,2225 @@
 {
- "fileKey": "470rar5EfRm4n14vHMXbpc",
- "component": "product-card",
- "fetched": "2026-10-07",
- "cells": [
-  {
-   "variant": "price-first",
-   "name": "view=desktop-tablet",
-   "props": {
-    "view": "desktop-tablet"
-   },
-   "root": {
-    "w": 174,
-    "h": 349,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
+  "fileKey": "470rar5EfRm4n14vHMXbpc",
+  "component": "product-card",
+  "fetched": "2026-11-13",
+  "cells": [
     {
-     "x": 14,
-     "y": 204,
-     "w": 26,
-     "h": 16,
-     "chars": "10%",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "price-first",
+      "name": "view=desktop-tablet, state=rest",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 362.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 14,
+          "y": 217,
+          "w": 26,
+          "h": 16,
+          "chars": "10%",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 56,
+          "y": 217,
+          "w": 48,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 60,
+          "h": 28,
+          "chars": "12 900",
+          "fs": 20,
+          "lh": 28,
+          "ls": -0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 70,
+          "y": 265.33,
+          "w": 9,
+          "h": 16,
+          "chars": "₽",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 285.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 311.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 26,
+          "y": 341.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 69,
+          "y": 341.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 8,
+          "y": 344.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 51,
+          "y": 344.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 48,
+          "h": 28,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
     },
     {
-     "x": 56,
-     "y": 204,
-     "w": 48,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "price-first",
+      "name": "view=mobile, state=rest",
+      "props": {
+        "view": "mobile",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 354.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 12,
+          "y": 219,
+          "w": 24,
+          "h": 16,
+          "chars": "10%",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 48,
+          "y": 219,
+          "w": 44,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 49,
+          "h": 20,
+          "chars": "12 900",
+          "fs": 16,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 59,
+          "y": 260.33,
+          "w": 8,
+          "h": 16,
+          "chars": "₽",
+          "fs": 11,
+          "lh": 16,
+          "ls": 0.2,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 277.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 303.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 26,
+          "y": 333.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 69,
+          "y": 333.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 8,
+          "y": 336.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 51,
+          "y": 336.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 36,
+          "h": 20,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
     },
     {
-     "x": 8,
-     "y": 244,
-     "w": 60,
-     "h": 28,
-     "chars": "12 900",
-     "fs": 20,
-     "lh": 28,
-     "ls": -0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "price-first",
+      "name": "view=desktop-tablet, state=skeleton",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 362.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [],
+      "parts": {}
     },
     {
-     "x": 70,
-     "y": 252,
-     "w": 9,
-     "h": 16,
-     "chars": "₽",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "price-first",
+      "name": "view=mobile, state=skeleton",
+      "props": {
+        "view": "mobile",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 358.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [],
+      "parts": {}
     },
     {
-     "x": 8,
-     "y": 272,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "brand-first",
+      "name": "view=desktop-tablet, state=rest",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 414.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 47,
+          "y": 217,
+          "w": 26,
+          "h": 16,
+          "chars": "10%",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 89,
+          "y": 217,
+          "w": 48,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "CENTER",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 283.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "CENTER",
+          "deco": "NONE"
+        },
+        {
+          "x": 56.5,
+          "y": 313.33,
+          "w": 60,
+          "h": 28,
+          "chars": "12 900",
+          "fs": 20,
+          "lh": 28,
+          "ls": -0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 118.5,
+          "y": 321.33,
+          "w": 9,
+          "h": 16,
+          "chars": "₽",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 70,
+          "y": 359.33,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 45.5,
+          "y": 393.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 88.5,
+          "y": 393.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 44,
+          "y": 359.33,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        },
+        {
+          "x": 27.5,
+          "y": 396.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 70.5,
+          "y": 396.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 48,
+          "h": 28,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
     },
     {
-     "x": 8,
-     "y": 298,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "brand-first",
+      "name": "view=mobile, state=rest",
+      "props": {
+        "view": "mobile",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 406.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 52,
+          "y": 219,
+          "w": 24,
+          "h": 16,
+          "chars": "10%",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 88,
+          "y": 219,
+          "w": 44,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "CENTER",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 283.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "CENTER",
+          "deco": "NONE"
+        },
+        {
+          "x": 62.5,
+          "y": 313.33,
+          "w": 49,
+          "h": 20,
+          "chars": "12 900",
+          "fs": 16,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 113.5,
+          "y": 316.33,
+          "w": 8,
+          "h": 16,
+          "chars": "₽",
+          "fs": 11,
+          "lh": 16,
+          "ls": 0.2,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 70,
+          "y": 351.33,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 45.5,
+          "y": 385.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 88.5,
+          "y": 385.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 44,
+          "y": 351.33,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        },
+        {
+          "x": 27.5,
+          "y": 388.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 70.5,
+          "y": 388.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 36,
+          "h": 20,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
     },
     {
-     "x": 26,
-     "y": 328,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "brand-first",
+      "name": "view=desktop-tablet, state=skeleton",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 414.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [
+        {
+          "x": 8,
+          "y": 349.33,
+          "w": 168,
+          "h": 40,
+          "name": "button",
+          "r": 8,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
     },
     {
-     "x": 69,
-     "y": 328,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
+      "variant": "brand-first",
+      "name": "view=mobile, state=skeleton",
+      "props": {
+        "view": "mobile",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 410.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [
+        {
+          "x": 8,
+          "y": 345.33,
+          "w": 168,
+          "h": 40,
+          "name": "button",
+          "r": 8,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "buy-now",
+      "name": "view=desktop-tablet, state=rest",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 431.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 14,
+          "y": 217,
+          "w": 26,
+          "h": 16,
+          "chars": "10%",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 56,
+          "y": 217,
+          "w": 48,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 60,
+          "h": 28,
+          "chars": "12 900",
+          "fs": 20,
+          "lh": 28,
+          "ls": -0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 70,
+          "y": 265.33,
+          "w": 9,
+          "h": 16,
+          "chars": "₽",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 285.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 311.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 337.33,
+          "w": 168,
+          "h": 21,
+          "chars": "Ссылка на рубрику товара",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 70,
+          "y": 376.33,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 45.5,
+          "y": 410.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 88.5,
+          "y": 410.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 44,
+          "y": 376.33,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        },
+        {
+          "x": 27.5,
+          "y": 413.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 70.5,
+          "y": 413.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 48,
+          "h": 28,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "buy-now",
+      "name": "view=mobile, state=rest",
+      "props": {
+        "view": "mobile",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 423.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 12,
+          "y": 219,
+          "w": 24,
+          "h": 16,
+          "chars": "10%",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 48,
+          "y": 219,
+          "w": 44,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 49,
+          "h": 20,
+          "chars": "12 900",
+          "fs": 16,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 59,
+          "y": 260.33,
+          "w": 8,
+          "h": 16,
+          "chars": "₽",
+          "fs": 11,
+          "lh": 16,
+          "ls": 0.2,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 277.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 303.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 329.33,
+          "w": 168,
+          "h": 21,
+          "chars": "Ссылка на рубрику товара",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 70,
+          "y": 368.33,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 45.5,
+          "y": 402.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 88.5,
+          "y": 402.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 44,
+          "y": 368.33,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        },
+        {
+          "x": 27.5,
+          "y": 405.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 70.5,
+          "y": 405.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 36,
+          "h": 20,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "buy-now",
+      "name": "view=desktop-tablet, state=skeleton",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 431.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [
+        {
+          "x": 8,
+          "y": 366.33,
+          "w": 168,
+          "h": 40,
+          "name": "button",
+          "r": 8,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "buy-now",
+      "name": "view=mobile, state=skeleton",
+      "props": {
+        "view": "mobile",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 427.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [
+        {
+          "x": 8,
+          "y": 362.33,
+          "w": 168,
+          "h": 40,
+          "name": "button",
+          "r": 8,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "button-price",
+      "name": "view=desktop-tablet, state=rest",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 403.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 14,
+          "y": 217,
+          "w": 26,
+          "h": 16,
+          "chars": "10%",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 56,
+          "y": 217,
+          "w": 48,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 13,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 283.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 309.33,
+          "w": 168,
+          "h": 21,
+          "chars": "Ссылка на рубрику товара",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 78,
+          "y": 348.33,
+          "w": 54,
+          "h": 20,
+          "chars": "12 900 ₽",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 45.5,
+          "y": 382.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 88.5,
+          "y": 382.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 154,
+          "y": 10,
+          "w": 20,
+          "h": 20,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 52,
+          "y": 348.33,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        },
+        {
+          "x": 27.5,
+          "y": 385.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 70.5,
+          "y": 385.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 48,
+          "h": 28,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "button-price",
+      "name": "view=mobile, state=rest",
+      "props": {
+        "view": "mobile",
+        "state": "rest"
+      },
+      "root": {
+        "w": 184,
+        "h": 403.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 12,
+          "y": 219,
+          "w": 24,
+          "h": 16,
+          "chars": "10%",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 48,
+          "y": 219,
+          "w": 44,
+          "h": 16,
+          "chars": "Скидка",
+          "fs": 12,
+          "lh": 16,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 257.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Brandname",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 283.33,
+          "w": 168,
+          "h": 26,
+          "chars": "Название товара, которое ложится в две строки",
+          "fs": 16,
+          "lh": 26,
+          "ls": 0,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 8,
+          "y": 309.33,
+          "w": 168,
+          "h": 21,
+          "chars": "Ссылка на рубрику товара",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 400,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 78,
+          "y": 348.33,
+          "w": 54,
+          "h": 20,
+          "chars": "12 900 ₽",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 45.5,
+          "y": 382.33,
+          "w": 21,
+          "h": 21,
+          "chars": "4.9",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "262626ff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        },
+        {
+          "x": 88.5,
+          "y": 382.33,
+          "w": 68,
+          "h": 21,
+          "chars": "23 отзыва",
+          "fs": 13,
+          "lh": 21,
+          "ls": 0.1,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "6a6a6aff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-filled"
+        },
+        {
+          "x": 160,
+          "y": 8,
+          "w": 16,
+          "h": 16,
+          "name": "shape-heart-regular"
+        },
+        {
+          "x": 52,
+          "y": 348.33,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        },
+        {
+          "x": 27.5,
+          "y": 385.83,
+          "w": 14,
+          "h": 14,
+          "name": "shape-star-filled"
+        },
+        {
+          "x": 70.5,
+          "y": 385.83,
+          "w": 14,
+          "h": 14,
+          "name": "contact-chat_1-filled"
+        }
+      ],
+      "shapes": [
+        {
+          "x": 6,
+          "y": 6,
+          "w": 36,
+          "h": 20,
+          "name": "brand-logo",
+          "r": 0,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "button-price",
+      "name": "view=desktop-tablet, state=skeleton",
+      "props": {
+        "view": "desktop-tablet",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 403.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [
+        {
+          "x": 8,
+          "y": 338.33,
+          "w": 168,
+          "h": 40,
+          "name": "button",
+          "r": 8,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "button-price",
+      "name": "view=mobile, state=skeleton",
+      "props": {
+        "view": "mobile",
+        "state": "skeleton"
+      },
+      "root": {
+        "w": 184,
+        "h": 403.33,
+        "r": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [],
+      "gfx": [],
+      "shapes": [
+        {
+          "x": 8,
+          "y": 338.33,
+          "w": 168,
+          "h": 40,
+          "name": "button",
+          "r": 8,
+          "op": 1,
+          "fills": 1,
+          "stroke": null,
+          "sw": 1,
+          "align": "INSIDE"
+        }
+      ],
+      "parts": {}
+    },
+    {
+      "variant": "addcart",
+      "name": "view=desktop-tablet, cart=button",
+      "props": {
+        "view": "desktop-tablet",
+        "cart": "button"
+      },
+      "root": {
+        "w": 186,
+        "h": 48,
+        "r": [
+          10,
+          10,
+          10,
+          10
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 71,
+          "y": 18,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 45,
+          "y": 18,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        }
+      ],
+      "shapes": [],
+      "parts": {}
+    },
+    {
+      "variant": "addcart",
+      "name": "view=mobile, cart=button",
+      "props": {
+        "view": "mobile",
+        "cart": "button"
+      },
+      "root": {
+        "w": 186,
+        "h": 48,
+        "r": [
+          10,
+          10,
+          10,
+          10
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 71,
+          "y": 18,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 45,
+          "y": 18,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        }
+      ],
+      "shapes": [],
+      "parts": {}
+    },
+    {
+      "variant": "addcart",
+      "name": "view=desktop-tablet, cart=added",
+      "props": {
+        "view": "desktop-tablet",
+        "cart": "added"
+      },
+      "root": {
+        "w": 186,
+        "h": 48,
+        "r": [
+          10,
+          10,
+          10,
+          10
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 45,
+          "y": 18,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 121,
+          "y": 18,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        }
+      ],
+      "shapes": [],
+      "parts": {}
+    },
+    {
+      "variant": "addcart",
+      "name": "view=mobile, cart=added",
+      "props": {
+        "view": "mobile",
+        "cart": "added"
+      },
+      "root": {
+        "w": 186,
+        "h": 48,
+        "r": [
+          10,
+          10,
+          10,
+          10
+        ],
+        "fill": [],
+        "stroke": null,
+        "op": 1,
+        "fx": []
+      },
+      "texts": [
+        {
+          "x": 45,
+          "y": 18,
+          "w": 70,
+          "h": 20,
+          "chars": "В корзину",
+          "fs": 14,
+          "lh": 20,
+          "ls": 0,
+          "wt": 600,
+          "fam": "Onest",
+          "c": "ffffffff",
+          "auto": "WIDTH_AND_HEIGHT",
+          "align": "LEFT",
+          "deco": "NONE"
+        }
+      ],
+      "gfx": [
+        {
+          "x": 121,
+          "y": 18,
+          "w": 20,
+          "h": 20,
+          "name": "ic-a"
+        }
+      ],
+      "shapes": [],
+      "parts": {}
     }
-   ],
-   "gfx": [
-    {
-     "x": 10,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "flag"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 8,
-     "y": 331.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 51,
-     "y": 331.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "price-first",
-   "name": "view=mobile",
-   "props": {
-    "view": "mobile"
-   },
-   "root": {
-    "w": 174,
-    "h": 345,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 12,
-     "y": 206,
-     "w": 24,
-     "h": 16,
-     "chars": "10%",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 48,
-     "y": 206,
-     "w": 44,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 244,
-     "w": 52,
-     "h": 24,
-     "chars": "12 900",
-     "fs": 17,
-     "lh": 24,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 62,
-     "y": 251,
-     "w": 8,
-     "h": 16,
-     "chars": "₽",
-     "fs": 11,
-     "lh": 16,
-     "ls": 0.2,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 268,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 294,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 26,
-     "y": 324,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 69,
-     "y": 324,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 8,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "flag"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 8,
-     "y": 327.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 51,
-     "y": 327.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "brand-first",
-   "name": "view=desktop-tablet",
-   "props": {
-    "view": "desktop-tablet"
-   },
-   "root": {
-    "w": 174,
-    "h": 401,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 42,
-     "y": 204,
-     "w": 26,
-     "h": 16,
-     "chars": "10%",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 84,
-     "y": 204,
-     "w": 48,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 244,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "CENTER",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 270,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "CENTER",
-     "deco": "NONE"
-    },
-    {
-     "x": 51.5,
-     "y": 300,
-     "w": 60,
-     "h": 28,
-     "chars": "12 900",
-     "fs": 20,
-     "lh": 28,
-     "ls": -0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 113.5,
-     "y": 308,
-     "w": 9,
-     "h": 16,
-     "chars": "₽",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 65,
-     "y": 346,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 40.5,
-     "y": 380,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 83.5,
-     "y": 380,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 10,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "flag"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 39,
-     "y": 346,
-     "w": 20,
-     "h": 20,
-     "name": "ic-a"
-    },
-    {
-     "x": 22.5,
-     "y": 383.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 65.5,
-     "y": 383.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "brand-first",
-   "name": "view=mobile",
-   "props": {
-    "view": "mobile"
-   },
-   "root": {
-    "w": 174,
-    "h": 397,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 47,
-     "y": 206,
-     "w": 24,
-     "h": 16,
-     "chars": "10%",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 83,
-     "y": 206,
-     "w": 44,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 244,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "CENTER",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 270,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "CENTER",
-     "deco": "NONE"
-    },
-    {
-     "x": 56,
-     "y": 300,
-     "w": 52,
-     "h": 24,
-     "chars": "12 900",
-     "fs": 17,
-     "lh": 24,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 110,
-     "y": 307,
-     "w": 8,
-     "h": 16,
-     "chars": "₽",
-     "fs": 11,
-     "lh": 16,
-     "ls": 0.2,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 65,
-     "y": 342,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 40.5,
-     "y": 376,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 83.5,
-     "y": 376,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 8,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "flag"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 39,
-     "y": 342,
-     "w": 20,
-     "h": 20,
-     "name": "business-shopping_cart_2-filled"
-    },
-    {
-     "x": 22.5,
-     "y": 379.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 65.5,
-     "y": 379.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "buy-now",
-   "name": "view=desktop-tablet",
-   "props": {
-    "view": "desktop-tablet"
-   },
-   "root": {
-    "w": 174,
-    "h": 418,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 14,
-     "y": 204,
-     "w": 26,
-     "h": 16,
-     "chars": "10%",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 56,
-     "y": 204,
-     "w": 48,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 244,
-     "w": 60,
-     "h": 28,
-     "chars": "12 900",
-     "fs": 20,
-     "lh": 28,
-     "ls": -0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 70,
-     "y": 252,
-     "w": 9,
-     "h": 16,
-     "chars": "₽",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 272,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 298,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 324,
-     "w": 158,
-     "h": 21,
-     "chars": "Ссылка на рубрику товара",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 65,
-     "y": 363,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 40.5,
-     "y": 397,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 83.5,
-     "y": 397,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 10,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "flag"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 39,
-     "y": 363,
-     "w": 20,
-     "h": 20,
-     "name": "ic-a"
-    },
-    {
-     "x": 22.5,
-     "y": 400.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 65.5,
-     "y": 400.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "buy-now",
-   "name": "view=mobile",
-   "props": {
-    "view": "mobile"
-   },
-   "root": {
-    "w": 174,
-    "h": 414,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 12,
-     "y": 206,
-     "w": 24,
-     "h": 16,
-     "chars": "10%",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 48,
-     "y": 206,
-     "w": 44,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 244,
-     "w": 52,
-     "h": 24,
-     "chars": "12 900",
-     "fs": 17,
-     "lh": 24,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 62,
-     "y": 251,
-     "w": 8,
-     "h": 16,
-     "chars": "₽",
-     "fs": 11,
-     "lh": 16,
-     "ls": 0.2,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 268,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 294,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 320,
-     "w": 158,
-     "h": 21,
-     "chars": "Ссылка на рубрику товара",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 65,
-     "y": 359,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 40.5,
-     "y": 393,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 83.5,
-     "y": 393,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 8,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "flag"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 39,
-     "y": 359,
-     "w": 20,
-     "h": 20,
-     "name": "business-shopping_cart_2-filled"
-    },
-    {
-     "x": 22.5,
-     "y": 396.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 65.5,
-     "y": 396.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "button-price",
-   "name": "view=desktop-tablet",
-   "props": {
-    "view": "desktop-tablet"
-   },
-   "root": {
-    "w": 174,
-    "h": 390,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 14,
-     "y": 204,
-     "w": 26,
-     "h": 16,
-     "chars": "10%",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 56,
-     "y": 204,
-     "w": 48,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 13,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 244,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 270,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 296,
-     "w": 158,
-     "h": 21,
-     "chars": "Ссылка на рубрику товара",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 73,
-     "y": 335,
-     "w": 54,
-     "h": 20,
-     "chars": "12 900 ₽",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 40.5,
-     "y": 369,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 83.5,
-     "y": 369,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 10,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "flag"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 144,
-     "y": 10,
-     "w": 20,
-     "h": 20,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 47,
-     "y": 335,
-     "w": 20,
-     "h": 20,
-     "name": "ic-a"
-    },
-    {
-     "x": 22.5,
-     "y": 372.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 65.5,
-     "y": 372.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "button-price",
-   "name": "view=mobile",
-   "props": {
-    "view": "mobile"
-   },
-   "root": {
-    "w": 174,
-    "h": 390,
-    "r": [
-     0,
-     0,
-     0,
-     0
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 12,
-     "y": 206,
-     "w": 24,
-     "h": 16,
-     "chars": "10%",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 48,
-     "y": 206,
-     "w": 44,
-     "h": 16,
-     "chars": "Скидка",
-     "fs": 12,
-     "lh": 16,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 244,
-     "w": 158,
-     "h": 26,
-     "chars": "Brandname",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 270,
-     "w": 158,
-     "h": 26,
-     "chars": "Название товара которое ложиться в две строки",
-     "fs": 16,
-     "lh": 26,
-     "ls": 0,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 8,
-     "y": 296,
-     "w": 158,
-     "h": 21,
-     "chars": "Ссылка на рубрику товара",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 400,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 73,
-     "y": 335,
-     "w": 54,
-     "h": 20,
-     "chars": "12 900 ₽",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 40.5,
-     "y": 369,
-     "w": 21,
-     "h": 21,
-     "chars": "4.9",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "262626ff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    },
-    {
-     "x": 83.5,
-     "y": 369,
-     "w": 68,
-     "h": 21,
-     "chars": "23 отзыва",
-     "fs": 13,
-     "lh": 21,
-     "ls": 0.1,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "6a6a6aff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 8,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "flag"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-filled"
-    },
-    {
-     "x": 150,
-     "y": 8,
-     "w": 16,
-     "h": 16,
-     "name": "shape-heart-regular"
-    },
-    {
-     "x": 47,
-     "y": 335,
-     "w": 20,
-     "h": 20,
-     "name": "business-shopping_cart_2-filled"
-    },
-    {
-     "x": 22.5,
-     "y": 372.5,
-     "w": 14,
-     "h": 14,
-     "name": "shape-star-filled"
-    },
-    {
-     "x": 65.5,
-     "y": 372.5,
-     "w": 14,
-     "h": 14,
-     "name": "contact-chat_1-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "addcart",
-   "name": "view=desktop-tablet, cart=button",
-   "props": {
-    "view": "desktop-tablet",
-    "cart": "button"
-   },
-   "root": {
-    "w": 186,
-    "h": 48,
-    "r": [
-     10,
-     10,
-     10,
-     10
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 71,
-     "y": 18,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 45,
-     "y": 18,
-     "w": 20,
-     "h": 20,
-     "name": "ic-a"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "addcart",
-   "name": "view=mobile, cart=button",
-   "props": {
-    "view": "mobile",
-    "cart": "button"
-   },
-   "root": {
-    "w": 186,
-    "h": 48,
-    "r": [
-     10,
-     10,
-     10,
-     10
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 71,
-     "y": 18,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 45,
-     "y": 18,
-     "w": 20,
-     "h": 20,
-     "name": "business-shopping_cart_2-filled"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "addcart",
-   "name": "view=desktop-tablet, cart=added",
-   "props": {
-    "view": "desktop-tablet",
-    "cart": "added"
-   },
-   "root": {
-    "w": 186,
-    "h": 48,
-    "r": [
-     10,
-     10,
-     10,
-     10
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 45,
-     "y": 18,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 121,
-     "y": 18,
-     "w": 20,
-     "h": 20,
-     "name": "ic-a"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  },
-  {
-   "variant": "addcart",
-   "name": "view=mobile, cart=added",
-   "props": {
-    "view": "mobile",
-    "cart": "added"
-   },
-   "root": {
-    "w": 186,
-    "h": 48,
-    "r": [
-     10,
-     10,
-     10,
-     10
-    ],
-    "fill": [],
-    "stroke": null,
-    "op": 1,
-    "fx": []
-   },
-   "texts": [
-    {
-     "x": 45,
-     "y": 18,
-     "w": 70,
-     "h": 20,
-     "chars": "В корзину",
-     "fs": 14,
-     "lh": 20,
-     "ls": 0,
-     "wt": 600,
-     "fam": "Onest",
-     "c": "ffffffff",
-     "auto": "WIDTH_AND_HEIGHT",
-     "align": "LEFT",
-     "deco": "NONE"
-    }
-   ],
-   "gfx": [
-    {
-     "x": 121,
-     "y": 18,
-     "w": 20,
-     "h": 20,
-     "name": "ic-a"
-    }
-   ],
-   "shapes": [],
-   "parts": {}
-  }
- ]
+  ]
 }
