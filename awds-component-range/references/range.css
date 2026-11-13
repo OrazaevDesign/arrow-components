@@ -75,6 +75,10 @@
   /* size accumulators (default = 400). Цель ячейки square/400/handle — space-5 (20px). */
   --awds-range-size:    var(--awds-space-5);   /* 20px */
   --awds-range-track-h: var(--awds-space-1);
+  /* Зона нажатия ручки — не меньше 24px (WCAG 2.5.8, уровень AA), даже когда ручка
+     нарисована меньше: на ступени 400 видно 20px, а хватается 24px. Ступень 500 уже 24px,
+     у неё зона совпадает с ручкой. Вид не меняется — зона прозрачная (с 2.0.15). */
+  --awds-range-hit:     max(var(--awds-range-size), var(--awds-space-6));
 
   /* fill — одинаков у обоих вариантов */
   --awds-range-fill-bg:     rgb(var(--primary-core));   /* #cell range/bg */
@@ -159,20 +163,25 @@
   -webkit-appearance: none;
   appearance: none;
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  /* Слой выше и шире компонента на разницу зоны и ручки: по высоте — чтобы зона нажатия
+     была 24px при ручке 20px, по ширине — по половине разницы с каждой стороны, чтобы
+     центр нативной ручки ходил от size/2 до 100% − size/2, как у визуальной. */
+  top: 50%;
+  left: calc((var(--awds-range-size) - var(--awds-range-hit)) / 2);
+  width: calc(100% + var(--awds-range-hit) - var(--awds-range-size));
+  height: var(--awds-range-hit);
+  translate: 0 -50%;
   margin: 0;
   background: transparent;
   pointer-events: none;     /* трек кликов не ловит; ловит только thumb (ниже) */
 }
 .range__input:focus { outline: none; }
 
-/* Хит-зона = размер визуального ползунка, сам нативный thumb прозрачный. */
+/* Хит-зона — --awds-range-hit (не меньше 24px), сам нативный thumb прозрачный. */
 .range__input::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: var(--awds-range-size);
-  height: var(--awds-range-size);
+  width: var(--awds-range-hit);
+  height: var(--awds-range-hit);
   border: 0;
   border-radius: 50%;
   background: transparent;
@@ -181,8 +190,8 @@
 }
 .range__input::-webkit-slider-thumb:active { cursor: grabbing; }
 .range__input::-moz-range-thumb {
-  width: var(--awds-range-size);
-  height: var(--awds-range-size);
+  width: var(--awds-range-hit);
+  height: var(--awds-range-hit);
   border: 0;
   border-radius: 50%;
   background: transparent;
