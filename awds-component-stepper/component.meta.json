@@ -1,0 +1,165 @@
+{
+  "component": "stepper",
+  "version": "1.0.1",
+  "contract_hash": "sha256:c6a346b015492e38f757894212487940ab90ec90afbe88eb03a860a641d61489",
+  "artifact_hash": "sha256:51d06d5e4cd8b2492e2c5239a00c5ee7e134a969fbfb96ab0af8b70b7ba191cb",
+  "visual_change": true,
+  "released_at": "2026-11-20T21:43:00.139Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "section_node_id": "1413:55917",
+    "primary_node_id": "1413:56439",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1413-56439"
+  },
+  "variants": {
+    "secondary": {
+      "node_id": "1413:56439",
+      "figma_label": "stepper · view=secondary",
+      "token_role": "button/secondary (rest)",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1413-56439"
+    },
+    "addition": {
+      "node_id": "1413:56439",
+      "figma_label": "stepper · view=addition",
+      "token_role": "button/addition (rest)",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1413-56439"
+    }
+  },
+  "variants_note": "Ось view набора stepper — вид вложенных кнопок. Подложка и цвет числа — ячейки покоя button/{вид}; состояния приходят с кнопок, своей оси state нет. Ось at-min (off|on) в коде не класс: на единице меняются иконка и aria-label кнопки «−».",
+  "shape": "rectangle",
+  "size_scale": [
+    300,
+    400,
+    500,
+    600
+  ],
+  "states": [],
+  "js": false,
+  "js_note": "Своего JS нет: число и пределы ведёт потребитель (мини-карточка — по quantity вариации и корзине).",
+  "preview": {
+    "base_class": "stepper",
+    "default_size": 600,
+    "matrix_states": [],
+    "matrix_sizes": [
+      600,
+      500,
+      400,
+      300
+    ]
+  },
+  "markup": {
+    "root": {
+      "class": "stepper",
+      "tags": [
+        "div"
+      ]
+    },
+    "variant": {
+      "pattern": "stepper-{variant}",
+      "required": true
+    },
+    "size": {
+      "pattern": "stepper--{size}",
+      "required": true
+    },
+    "native": null,
+    "children": [
+      {
+        "class": "btn",
+        "required": true,
+        "why": "«−» и «+» — кнопки того же вида и ступени; их состояния и есть состояния степпера"
+      },
+      {
+        "class": "stepper__value",
+        "required": true,
+        "why": "число между кнопками; <output aria-live=polite>, чтобы новое значение озвучивалось"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "role",
+        "required": true,
+        "why": "корень группирует три элемента под одной подписью «Количество»"
+      },
+      {
+        "attr": "aria-label",
+        "required": true,
+        "why": "подпись группы: экранная читалка называет, что меняется"
+      }
+    ],
+    "container": null
+  },
+  "family": "buttons",
+  "summary": "Степпер количества: «−», число, «+» на подложке кнопки; на единице «−» становится корзиной",
+  "aliases": [
+    "степпер",
+    "счётчик количества",
+    "количество",
+    "плюс-минус",
+    "изменить количество",
+    "кол-во в корзине"
+  ],
+  "questions": [],
+  "ds_token_dependencies": [
+    "--addition-chroma",
+    "--addition-core",
+    "--addition-on",
+    "--awds-control-font-size-400",
+    "--awds-control-font-size-600",
+    "--awds-control-letter-spacing-400",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-line-height-400",
+    "--awds-control-line-height-600",
+    "--awds-font-family-system",
+    "--awds-font-weight-semibold",
+    "--awds-rounded-border-radius-300",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-10",
+    "--awds-space-11",
+    "--awds-space-13",
+    "--awds-space-9",
+    "--secondary-core",
+    "--secondary-on"
+  ],
+  "asana": {
+    "task_gid": "1218436374081808",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218436374081808",
+    "task_name": "💠 quantity-stepper",
+    "parent_task": "💠 3 · forms",
+    "primary": true
+  },
+  "uses": {
+    "awds-component-button": "2.3.2"
+  },
+  "contract": {
+    "classes": [
+      "btn",
+      "stepper",
+      "stepper--300",
+      "stepper--400",
+      "stepper--500",
+      "stepper--600",
+      "stepper-addition",
+      "stepper-secondary",
+      "stepper__value"
+    ],
+    "attributes": [],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "addition",
+      "secondary"
+    ],
+    "sizes": [
+      "300",
+      "400",
+      "500",
+      "600"
+    ],
+    "states": []
+  }
+}
