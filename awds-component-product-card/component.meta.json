@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "3.4.6",
-  "contract_hash": "sha256:8e1d08ac8fb899576aefc7883310b40a825fe17ba1c81c62fcf10a5eac860cb9",
-  "artifact_hash": "sha256:db63ef04bddeba4917d64e9b24439eeda04337fcde333bc9d2c3a8b7f3fadac9",
+  "version": "4.0.0",
+  "contract_hash": "sha256:38439c5a2dfea2e58c773574ffc201dabf8bfb8c4040e89ca1c3bf00329aa41a",
+  "artifact_hash": "sha256:f5137668b1cec2d7d8f9f58962b42bb6ff619c86553e2827e72dc2ac2d3b4921",
   "visual_change": false,
-  "released_at": "2026-11-20T20:19:53.427Z",
+  "released_at": "2026-11-20T23:08:17.564Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -64,7 +64,7 @@
     "awds-component-button-favorites (.btn-favorites — кнопка избранного в .pcard__top; требует button-favorites.css)",
     "awds-component-badge (.badge-market-percent / -sale — маркет-бейджи в .pcard__badges; требует badge.css; --100 desktop / --50 mobile)",
     "awds-component-button (зона .pcard__cart; требует button-primary.css и button-addition.css; --400 в обеих вью): .btn-primary — кнопка «В корзину» (состояние button); .btn-addition — ссылка на корзину с иконкой справа (состояние added)",
-    "awds-component-slider (.slider.slider-dots-mini.pcard__slider — индикатор галереи фото между .pcard__media и .pcard__content, по центру, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует slider.css; точек = числу кадров, активная задаётся классом .slider__dot--active. Перелистывание — JS потребителя (wireGallery): hover-зоны на десктопе (мышь) + свайп влево/вправо на тач-устройствах (мобила/таблет; ссылка-фото несёт touch-action:pan-y, вертикальный скролл страницы остаётся нативным, клик по ссылке после свайпа подавляется). CSS карточки даёт кроссфейд кадров (.pcard__image--active) и центрирование индикатора. МНОГО кадров (>5): точки в .pcard__slider-track + класс .pcard__slider--many → фикс-окно из 5 точек, лента сдвигается (активная по центру), крайние точки .slider__dot--sm уменьшены; сдвиг --pcard-dots-shift и edge-классы ставит wireGallery)",
+    "awds-component-slider (.slider.slider-dots-mini.pcard__slider — индикатор галереи фото между .pcard__media и .pcard__content, по центру, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует slider.css; точек = числу кадров, активная задаётся классом .slider__dot--active. Перелистывание — JS потребителя (wireGallery): стрелки .pcard__nav на десктопе (мышь) + свайп влево/вправо на тач-устройствах (мобила/таблет; ссылка-фото несёт touch-action:pan-y, вертикальный скролл страницы остаётся нативным, клик по ссылке после свайпа подавляется). CSS карточки даёт кроссфейд кадров (.pcard__image--active) и центрирование индикатора. МНОГО кадров (>5): окно из пяти точек самого слайдера (с 4.0.0, slider ≥ 1.1.0) — корню .slider--window, точки в ленту .slider__track, лента сдвигается (активная по центру), крайние точки .slider__dot--sm уменьшены; сдвиг --awds-slider-shift и edge-классы ставит wireGallery по эталону layoutSliderWindow)",
     "awds-component-price (.price.price-{default|sale|none} — цена в .pcard__content, во ВСЕХ вариантах (price-first / brand-first / buy-now); требует price.css; размерного класса НЕТ — размер задаёт сама карточка правилом .pcard .price, переопределяя аккумуляторы --awds-price-fs/-lh/-ls на роли WYSIWYG price-listing/caption; цена едет по .typo-* карточки вместе с брендом и названием, одинакова в обеих вью. До price 2.0.0 это был класс .price--listing внутри price. Три состояния по данным товара: price-default (обычная, surface-on-highest), price-sale (скидка: акцентная + старая зачёркнутая, с бейджем .badge-market-percent), price-none («Нет в наличии», скрыть бейдж скидки). Заменил инлайн .pcard__price* — собственных стилей цены в product-card больше нет)"
   ],
   "preview": {
@@ -625,7 +625,7 @@
     "awds-component-button-favorites": "1.0.5",
     "awds-component-focus-selection": "2.0.3",
     "awds-component-price": "2.0.1",
-    "awds-component-slider": "1.0.4"
+    "awds-component-slider": "1.1.1"
   },
   "contract": {
     "classes": [
@@ -673,17 +673,13 @@
       "pcard__skel--name",
       "pcard__skel--price",
       "pcard__slider",
-      "pcard__slider--many",
       "pcard__slider-spacer",
-      "pcard__slider-track",
       "pcard__top",
       "price",
       "price__currency",
       "price__main",
       "price__old",
-      "price__placeholder",
-      "slider__dot",
-      "slider__dot--sm"
+      "price__placeholder"
     ],
     "attributes": [
       "data-cart-state"

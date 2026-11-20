@@ -103,15 +103,18 @@
 
 Кадры — кроссфейд (CSS), смена активного — JS потребителя (ниже).
 
-**Много кадров (например 10).** Чтобы индикатор не растягивался, при числе кадров больше окна (`DOTS_WINDOW = 5`) точки оборачивают в `.pcard__slider-track` и добавляют классу слайдера `.pcard__slider--many` — это включает **фикс-окно**: лента точек сдвигается, держа активную по центру, крайние точки окна уменьшаются (`.slider__dot--sm`, намёк, что есть ещё кадры). Сдвиг и edge-классы выставляет тот же `wireGallery` (ниже). **Начальное окно выводит разметка** (с 3.0.4): у первой точки `slider__dot--active`, при кадрах больше пяти точки с пятой по последнюю получают `slider__dot--sm`, сдвиг ленты 0 — так при первом кадре раскладывает `layoutDots` (замер 08.10.2026 на 6, 7, 8, 10, 15 кадрах, обе вью). В Liquid: `{% if n > 5 and forloop.index0 >= 4 %} slider__dot--sm{% endif %}`. Скрипт при запуске индикатор не трогает.
+**Много кадров (например 10).** Чтобы индикатор не растягивался, при числе кадров больше пяти включают **окно из пяти точек самого слайдера** (с 4.0.0, slider 1.1.0): корню индикатора — класс `.slider--window`, точки — в ленту `.slider__track`. Лента сдвигается, держа активную точку по центру, крайние точки окна уменьшаются (`.slider__dot--sm`, намёк, что есть ещё кадры). Сдвиг пишется в `--awds-slider-shift` на ленте, его и edge-классы выставляет тот же `wireGallery` (ниже) по эталону `layoutSliderWindow` из SKILL слайдера. Своих правил окна у карточки нет; до 4.0.0 они были (`.pcard__slider--many`, `.pcard__slider-track`, `--pcard-dots-shift`). **Начальное окно выводит разметка** (с 3.0.4): у первой точки `slider__dot--active`, при кадрах больше пяти точки с пятой по последнюю получают `slider__dot--sm`, сдвиг ленты 0 — так при первом кадре раскладывает `layoutDots` (замер 08.10.2026 на 6, 7, 8, 10, 15 кадрах, обе вью). В Liquid: `{% if n > 5 and forloop.index0 >= 4 %} slider__dot--sm{% endif %}`. Скрипт при запуске индикатор не трогает.
 
 ```html
-<!-- Много кадров: лента в .pcard__slider-track + класс .pcard__slider--many -->
-<div class="slider slider-dots-mini pcard__slider pcard__slider--many" aria-hidden="true">
-  <span class="pcard__slider-track">
+<!-- Много кадров: окно слайдера — .slider--window + лента .slider__track -->
+<div class="slider slider-dots-mini slider--window pcard__slider" aria-hidden="true">
+  <span class="slider__track">
     <span class="slider__dot slider__dot--active"></span>
     <span class="slider__dot"></span>
-    <!-- … все N точек … -->
+    <span class="slider__dot"></span>
+    <span class="slider__dot"></span>
+    <span class="slider__dot slider__dot--sm"></span>
+    <!-- … все N точек, у всех с пятой — slider__dot--sm … -->
   </span>
 </div>
 ```
@@ -179,25 +182,35 @@ function wireGallery(link) {
   var pcard = link.closest ? link.closest('.pcard') : null;
   var slider = pcard ? pcard.querySelector('.pcard__slider') : null;
   var dots = slider ? Array.prototype.slice.call(slider.querySelectorAll('.slider__dot')) : [];
-  var track = slider ? slider.querySelector('.pcard__slider-track') : null;
-  var many = slider ? slider.classList.contains('pcard__slider--many') : false;
+  var track = slider ? slider.querySelector('.slider__track') : null;
+  var many = slider ? slider.classList.contains('slider--window') : false;
   var n = imgs.length, current = 0;
-  // Много кадров: индикатор — фикс-окно, лента сдвигается, держа активную точку по
-  // центру. Центрируем пиксельно (offsetLeft/offsetWidth не зависят от transform и
-  // корректны при удлинённой активной точке); крайние точки окна уменьшаем (--sm).
+  // Много кадров: окно из пяти точек компонента slider (.slider--window, с slider 1.1.0).
+  // Лента держит активную точку по центру, крайние точки окна уменьшены (--sm). Расчёт —
+  // эталон layoutSliderWindow из SKILL слайдера: раскладка конечная, а не та, что на экране.
+  // Только что активная точка ещё вытягивается анимацией, и замер по ней сдвигал окно на
+  // 1–3 px; сумма ширин точек при этом постоянна, поэтому ширина ленты верна всегда.
+  // offsetLeft/offsetWidth не зависят от transform уменьшенных точек.
   function layoutDots(i) {
     if (!many || !track || !dots.length) return;
-    if (!slider.clientWidth) return;                    // индикатор не отрисован — разложит dotsRO
+    if (!slider.clientWidth) return;                  // индикатор не отрисован — разложит dotsRO
     var cs = getComputedStyle(slider);
     var winW = slider.clientWidth - (parseFloat(cs.paddingLeft) || 0) - (parseFloat(cs.paddingRight) || 0);
-    var x0 = dots[0].offsetLeft;
-    var center = function (d) { return (d.offsetLeft - x0) + d.offsetWidth / 2; };
-    var trackW = (dots[n - 1].offsetLeft - x0) + dots[n - 1].offsetWidth;
-    var shift = Math.min(0, Math.max(winW / 2 - center(dots[i]), winW - trackW));
-    track.style.setProperty('--pcard-dots-shift', shift + 'px');
+    var g = parseFloat(getComputedStyle(track).columnGap) || 0;
+    var s = Infinity;                                 // обычная точка — самая узкая
+    dots.forEach(function (d) { s = Math.min(s, d.offsetWidth); });
+    var trackW = (dots[n - 1].offsetLeft - dots[0].offsetLeft) + dots[n - 1].offsetWidth;
+    var a = trackW - (n - 1) * (s + g);               // ширина активной точки
+    var center = function (k) {
+      return k < i ? k * (s + g) + s / 2
+           : k === i ? i * (s + g) + a / 2
+           : (k - 1) * (s + g) + a + g + s / 2;
+    };
+    var shift = Math.min(0, Math.max(winW / 2 - center(i), winW - trackW));
+    track.style.setProperty('--awds-slider-shift', shift + 'px');
     var moreLeft = shift < -0.5, moreRight = shift > (winW - trackW) + 0.5;
-    dots.forEach(function (d) {
-      var c = center(d) + shift;
+    dots.forEach(function (d, k) {
+      var c = center(k) + shift;
       d.classList.toggle('slider__dot--sm', (moreLeft && c < winW * 0.18) || (moreRight && c > winW * 0.82));
     });
   }
@@ -255,7 +268,7 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
 - **Свайп включается, только когда точки видны** (`slider.offsetParent !== null`). Блоки прячут точки ниже десктопа, и тогда свайп по фото листает ленту карусели, а не кадры.
 
-Одиночное фото (без `.pcard__image--active`, без `.pcard__slider` и без `.pcard__nav`) работает как прежде — `wireGallery` его пропускает. Мало кадров (≤ окна) — обычные точки без `.pcard__slider--many`/`-track`. Свайп доступен на всех тач-устройствах независимо от числа кадров (≥2).
+Одиночное фото (без `.pcard__image--active`, без `.pcard__slider` и без `.pcard__nav`) работает как прежде — `wireGallery` его пропускает. Мало кадров (≤ окна) — обычные точки без `.slider--window` и ленты `.slider__track`. Свайп доступен на всех тач-устройствах независимо от числа кадров (≥2).
 
 **Одно фото — резерв места под индикатор.** Когда кадр один, слайдер не выводят, но вместо него ставят пустую заглушку `<div class="pcard__slider-spacer" aria-hidden="true"></div>` (между `.pcard__media` и `.pcard__content`). Она занимает ровно высоту индикатора dots-mini — карточки с одним и несколькими фото получаются одной высоты, контент (цена/бренд) не сдвигается в гриде. Если в каталоге у всех товаров одно фото — заглушку можно не ставить.
 

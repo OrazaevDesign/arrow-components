@@ -268,34 +268,17 @@
 
 
 /* === Индикатор галереи (awds-component-slider, dots-mini) ===
-   Flow-элемент между медиа и контентом, по центру. Много кадров (>5) → фикс-окно
-   (.pcard__slider--many + .pcard__slider-track), как в price-first. Одно фото →
-   слайдера нет, но место резервирует .pcard__slider-spacer. */
+   Flow-элемент между медиа и контентом, по центру. Много кадров (>5) → окно из пяти
+   точек самого слайдера (.slider--window + .slider__track, slider 1.1.0), своих правил
+   окна у карточки нет с 4.0.0. Одно фото → .pcard__slider-spacer. max-width индикатору
+   не ставим: он перебил бы ширину окна (max-inline-size — то же свойство). */
 .pcard-brand-first .pcard__slider {
   align-self: center;
-  max-width: 100%;
 }
 .pcard-brand-first .pcard__slider-spacer {
   align-self: center;
   height: calc(3 * var(--awds-space-1)); /* = высота dots-mini (12px), без сдвига контента */
   flex-shrink: 0;
-}
-.pcard-brand-first .pcard__slider--many {
-  overflow: hidden;
-  max-width: calc(13 * var(--awds-space-1));   /* окно ~5 точек + удлинённая активная */
-}
-.pcard-brand-first .pcard__slider-track {
-  display: flex;
-  align-items: center;
-  gap: var(--awds-space-1);
-  transform: translateX(var(--pcard-dots-shift, 0px));
-  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
-}
-.pcard-brand-first .pcard__slider--many .slider__dot {
-  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
-}
-.pcard-brand-first .pcard__slider--many .slider__dot--sm {
-  transform: scale(0.5);
 }
 
 
@@ -642,8 +625,6 @@
   .pcard-brand-first .pcard__brand,
   .pcard-brand-first .pcard__name,
   .pcard-brand-first .pcard__category,
-  .pcard-brand-first .pcard__slider-track,
-  .pcard-brand-first .pcard__slider--many .slider__dot,
   .pcard-brand-first .pcard__cart-view {
     transition: none;
   }

@@ -1,5 +1,9 @@
 # product-card — журнал версий
 
+## 4.0.0 — 2026-11-20 — MAJOR
+Окно из пяти точек галереи — компонента slider (1.1.0+): .slider--window и лента .slider__track вместо своих .pcard__slider--many и .pcard__slider-track, сдвиг --awds-slider-shift вместо --pcard-dots-shift; свои правила окна сняты. wireGallery раскладывает окно по конечной геометрии (эталон layoutSliderWindow), а не посреди анимации ширины — окно больше не ошибается на 1–3 px. У .pcard__slider снят max-width: 100%, иначе он перебивал ширину окна
+Потребителю: Разметка индикатора при кадрах > 5: .slider.slider-dots-mini.slider--window.pcard__slider с лентой .slider__track; wireGallery по references/product-card-price-first.md. Подтянуть секцию slider ≥ 1.1.0 рядом с секцией карточки (component-rollout slider и product-card). Вид не меняется: окно те же 52 px
+
 ## 3.4.6 — 2026-11-20 — PATCH
 Стенд превью: ряды «карточка + скелетон» переносятся, страница стенда больше не прокручивается по горизонтали на 320 / 615 / 616 px (+16 / +1 / +80 px).
 Потребителю: Ничего: правка только в preview.html, CSS карточки не менялся, рассылать нечего.

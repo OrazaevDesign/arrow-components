@@ -203,10 +203,13 @@
 /* Индикатор-слайдер: компонент awds-component-slider, вариант dots-mini
    (.slider.slider-dots-mini, подключи slider.css). В макете — НЕ оверлей на фото, а
    flow-элемент между медиа и контентом, по центру (родитель — колонка карточки).
-   Геометрия точек и frosted-blur — в самом slider.css. */
+   Геометрия точек и frosted-blur — в самом slider.css.
+   Много кадров (>5) — окно из пяти точек самого слайдера (.slider--window + лента
+   .slider__track, с slider 1.1.0); своих правил окна у карточки нет с 4.0.0.
+   max-width у индикатора не ставим: он перебил бы ширину окна .slider--window
+   (max-inline-size — то же свойство), а пять точек и так уже любой карточки. */
 .pcard__slider {
   align-self: center;                    /* центр по горизонтали в колонке карточки */
-  max-width: 100%;
 }
 
 /* Заглушка под индикатор: одно фото → слайдер не выводится, но место под него
@@ -217,39 +220,6 @@
   align-self: center;
   height: calc(3 * var(--awds-space-1));
   flex-shrink: 0;
-}
-
-/* === Много кадров: динамические точки (фикс-окно) ===
-   Когда кадров больше окна, индикатор НЕ растёт в ширину: показывает фикс-окно,
-   лента (.pcard__slider-track) сдвигается, держа активную точку по центру; крайние
-   точки окна уменьшены (.slider__dot--sm, намёк, что есть ещё кадры за краем).
-   Активная точка — удлинённая пилюля (как в dots-mini, ширина из slider.css).
-   Сдвиг ленты (--pcard-dots-shift) и edge-классы выставляет JS галереи: центрирует
-   активную пиксельно (по offsetLeft/offsetWidth — устойчиво к разной ширине точек),
-   см. wireGallery в product-card-price-first.md. */
-.pcard__slider--many {
-  overflow: hidden;
-  /* окно ~5 точек + удлинённая активная + зазоры + padding пилюли */
-  max-width: calc(13 * var(--awds-space-1));   /* 52px (border-box, padding включён) */
-}
-.pcard__slider-track {
-  display: flex;
-  align-items: center;
-  gap: var(--awds-space-1);
-  transform: translateX(var(--pcard-dots-shift, 0px));
-  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);         /* MIFB: плавный сдвиг ленты */
-}
-.pcard__slider--many .slider__dot {
-  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
-}
-.pcard__slider--many .slider__dot--sm {
-  transform: scale(0.5);                        /* крайняя точка окна — уменьшена */
-}
-@media (prefers-reduced-motion: reduce) {
-  .pcard__slider-track,
-  .pcard__slider--many .slider__dot {
-    transition: none;
-  }
 }
 
 /* #4 — тёмный скрим поверх фото в покое, убирается при hover фото («раскрывается»).
