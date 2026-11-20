@@ -242,6 +242,7 @@
   width: 100%;                           /* .brand-logo FILL × FILL */
   height: 100%;
   object-fit: contain;                   /* логотип вписан целиком (FIT в макете) */
+  mix-blend-mode: darken;                /* слой brand-logo, blend DARKEN: белый фон логотипа сливается с плашкой surface/dim (с 3.4.5) */
 }
 .pcard.pcard-buy-now.pcard--mobile .pcard__brand-logo {
   height: var(--awds-space-7);           /* 28px · .brand view=mobile, 48×28 */
