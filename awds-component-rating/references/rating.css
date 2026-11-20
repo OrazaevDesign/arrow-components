@@ -193,6 +193,11 @@
 .rating__input {
   position: absolute;
   inset: 0;
+  /* Размеры явно и без нативного вида: WebKit не растягивает радиокнопку по inset и
+     оставлял её 12×12 в углу звезды — зона клика и фокуса сжималась (QA 20.11.2026). */
+  inline-size: 100%;
+  block-size: 100%;
+  appearance: none;
   margin: 0;
   opacity: 0;
   cursor: pointer;
