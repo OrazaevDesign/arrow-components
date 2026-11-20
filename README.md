@@ -21,7 +21,7 @@ MAJOR — править разметку, MINOR — ничего, PATCH — п�
 
 **Начните отсюда:** [awds-components](awds-components/) — карта библиотеки: что уже есть и как это называется по-русски.
 
-Компонентов: 47. Таблицу собирает `scripts/build-components-readme.mjs` в arrowdesign — правки здесь затрутся.
+Компонентов: 48. Таблицу собирает `scripts/build-components-readme.mjs` в arrowdesign — правки здесь затрутся.
 
 | Компонент | Версия | Варианты | Figma |
 |---|---|---|---|
@@ -49,7 +49,7 @@ MAJOR — править разметку, MINOR — ничего, PATCH — п�
 | [awds-component-range](awds-component-range/) | 2.0.15 | default · light | [default](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-732) · [light](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-771) |
 | [awds-component-rating](awds-component-rating/) | 2.0.12 | Оценка звёздами: пять звёзд, выбор и режим показа | [open](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=5-36) |
 | [awds-component-scrollbar](awds-component-scrollbar/) | 2.0.7 | default · transparent | [default](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1375) · [transparent](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1404) |
-| [awds-component-slider](awds-component-slider/) | 1.0.11 | dots · dots-mini · numbs | [dots](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1441) · [dots-mini](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1455) · [numbs](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1468) |
+| [awds-component-slider](awds-component-slider/) | 1.1.0 | dots · dots-mini · numbs | [dots](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1441) · [dots-mini](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1455) · [numbs](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=6-1468) |
 | [awds-component-checkbox](awds-component-checkbox/) | 1.0.12 | default | [default](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=23-2893) |
 | [awds-component-combobox-combi](awds-component-combobox-combi/) | 1.1.1 | default | [default](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=926-49427) |
 | [awds-component-datepicker](awds-component-datepicker/) | 1.0.10 | date · month · year · range | [date](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90182) · [month](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90234) · [year](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90252) · [range](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=44-90270) |

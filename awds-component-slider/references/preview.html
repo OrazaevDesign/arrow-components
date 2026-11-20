@@ -102,6 +102,26 @@
     <div class="cell"><div class="slider slider-numbs" id="v-numbs" role="group"></div><span class="name">slider-numbs</span></div>
   </div>
 
+
+  <h2>Окно из пяти точек · 10 кадров (.slider--window)</h2>
+  <div class="grid" id="window-demo">
+    <div class="cell">
+      <div class="slider slider-dots slider--window" id="w-dots" role="group" aria-label="Фото 1 из 10"></div>
+      <span class="name">slider-dots · slider--window</span>
+    </div>
+    <div class="cell" style="background:#3a3f5c;">
+      <div class="slider slider-dots-mini slider--window" id="w-mini" role="group" aria-label="Фото 1 из 10"></div>
+      <span class="name" style="color:#cfd3e6;">slider-dots-mini · slider--window</span>
+    </div>
+    <div class="cell">
+      <div style="display:flex;gap:8px;">
+        <button type="button" id="w-prev" style="font:inherit;padding:6px 12px;border-radius:6px;border:1px solid rgb(var(--surface-container-high) / 1);background:rgb(var(--surface-container-lowest) / 1);color:inherit;cursor:pointer;">← кадр</button>
+        <button type="button" id="w-next" style="font:inherit;padding:6px 12px;border-radius:6px;border:1px solid rgb(var(--surface-container-high) / 1);background:rgb(var(--surface-container-lowest) / 1);color:inherit;cursor:pointer;">кадр →</button>
+      </div>
+      <span class="name" id="w-pos">кадр 1 из 10</span>
+    </div>
+  </div>
+
   <h2>Поверх фото (frosted blur)</h2>
   <div class="photo">
     <div class="slider slider-dots" id="p-dots" role="group"></div>
@@ -182,6 +202,62 @@
     });
 
     render();
+  </script>
+
+  <script>
+    // Окно из пяти точек: начальную раскладку выводит разметка (активна первая, с пятой — --sm),
+    // дальше окно раскладывает эталонная функция из SKILL.md.
+    function layoutSliderWindow(slider, i) {
+      var track = slider.querySelector('.slider__track');
+      var dots = track ? track.querySelectorAll('.slider__dot') : [];
+      var n = dots.length;
+      if (!n || !slider.clientWidth) return;
+      var cs = getComputedStyle(slider);
+      var winW = slider.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      // Раскладку считаем конечную, а не ту, что на экране: только что активная точка
+      // ещё вытягивается анимацией, и замер по ней сдвигал окно на 1–3px.
+      // Сумма ширин точек при этом постоянна, поэтому ширина ленты верна всегда.
+      var g = parseFloat(getComputedStyle(track).columnGap) || 0;
+      var s = Infinity;                                // обычная точка — самая узкая
+      Array.prototype.forEach.call(dots, function (d) { s = Math.min(s, d.offsetWidth); });
+      var trackW = (dots[n - 1].offsetLeft - dots[0].offsetLeft) + dots[n - 1].offsetWidth;
+      var a = trackW - (n - 1) * (s + g);              // ширина активной точки
+      var center = function (k) {
+        return k < i ? k * (s + g) + s / 2
+             : k === i ? i * (s + g) + a / 2
+             : (k - 1) * (s + g) + a + g + s / 2;
+      };
+      var shift = Math.min(0, Math.max(winW / 2 - center(i), winW - trackW));
+      track.style.setProperty('--awds-slider-shift', shift + 'px');
+      var moreLeft = shift < -0.5, moreRight = shift > (winW - trackW) + 0.5;
+      Array.prototype.forEach.call(dots, function (d, k) {
+        var c = center(k) + shift;
+        d.classList.toggle('slider__dot--sm', (moreLeft && c < winW * 0.18) || (moreRight && c > winW * 0.82));
+      });
+    }
+    (function () {
+      var N = 10, cur = 0, ids = ['w-dots', 'w-mini'];
+      ids.forEach(function (id) {
+        var el = document.getElementById(id), html = '<span class="slider__track">';
+        for (var k = 0; k < N; k++) html += '<span class="slider__dot' + (k === 0 ? ' slider__dot--active' : '') + (k >= 4 ? ' slider__dot--sm' : '') + '"' + (k === 0 ? ' aria-current="true"' : '') + '></span>';
+        el.innerHTML = html + '</span>';
+      });
+      function go(i) {
+        cur = (i + N) % N;
+        ids.forEach(function (id) {
+          var el = document.getElementById(id);
+          el.querySelectorAll('.slider__dot').forEach(function (d, k) {
+            d.classList.toggle('slider__dot--active', k === cur);
+            if (k === cur) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+          });
+          el.setAttribute('aria-label', 'Фото ' + (cur + 1) + ' из ' + N);
+          layoutSliderWindow(el, cur);
+        });
+        document.getElementById('w-pos').textContent = 'кадр ' + (cur + 1) + ' из ' + N;
+      }
+      document.getElementById('w-prev').addEventListener('click', function () { go(cur - 1); });
+      document.getElementById('w-next').addEventListener('click', function () { go(cur + 1); });
+    })();
   </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
  "fileKey": "470rar5EfRm4n14vHMXbpc",
  "component": "slider",
- "fetched": "2026-09-27",
+ "fetched": "2026-11-21",
  "cells": [
   {
    "variant": "dots",
@@ -19,11 +19,34 @@
     "fill": [],
     "stroke": null,
     "op": 1,
-    "fx": []
+    "fx": [
+     {
+      "t": "BACKGROUND_BLUR",
+      "r": 6,
+      "s": 0,
+      "x": 0,
+      "y": 0,
+      "c": null
+     }
+    ]
    },
    "texts": [],
    "gfx": [],
-   "shapes": [],
+   "shapes": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 60,
+     "h": 14,
+     "name": "bg",
+     "r": 600,
+     "op": 0.8,
+     "fills": 1,
+     "stroke": null,
+     "sw": null,
+     "align": "INSIDE"
+    }
+   ],
    "parts": {
     "bg": {
      "x": 0,
@@ -49,7 +72,7 @@
      "fill": {
       "t": "s",
       "c": [
-       "262626ff"
+       "6a6a6aff"
       ]
      },
      "stroke": null,
@@ -64,7 +87,7 @@
      "fill": {
       "t": "s",
       "c": [
-       "262626ff"
+       "6a6a6aff"
       ]
      },
      "stroke": null,
@@ -88,7 +111,16 @@
     "fill": [],
     "stroke": null,
     "op": 1,
-    "fx": []
+    "fx": [
+     {
+      "t": "BACKGROUND_BLUR",
+      "r": 6,
+      "s": 0,
+      "x": 0,
+      "y": 0,
+      "c": null
+     }
+    ]
    },
    "texts": [],
    "gfx": [],
@@ -103,7 +135,7 @@
      "fill": {
       "t": "s",
       "c": [
-       "262626ff"
+       "6a6a6aff"
       ]
      },
      "stroke": null,
@@ -118,7 +150,7 @@
      "fill": {
       "t": "s",
       "c": [
-       "262626ff"
+       "6a6a6aff"
       ]
      },
      "stroke": null,
@@ -142,7 +174,16 @@
     "fill": [],
     "stroke": null,
     "op": 1,
-    "fx": []
+    "fx": [
+     {
+      "t": "BACKGROUND_BLUR",
+      "r": 6,
+      "s": 0,
+      "x": 0,
+      "y": 0,
+      "c": null
+     }
+    ]
    },
    "texts": [
     {
@@ -158,11 +199,26 @@
      "fam": "Onest",
      "c": "6a6a6aff",
      "auto": "HEIGHT",
-     "align": "CENTER"
+     "align": "CENTER",
+     "deco": "NONE"
     }
    ],
    "gfx": [],
-   "shapes": [],
+   "shapes": [
+    {
+     "x": 0,
+     "y": 0,
+     "w": 36,
+     "h": 24,
+     "name": "bg",
+     "r": 600,
+     "op": 0.8,
+     "fills": 1,
+     "stroke": null,
+     "sw": null,
+     "align": "INSIDE"
+    }
+   ],
    "parts": {
     "bg": {
      "x": 0,

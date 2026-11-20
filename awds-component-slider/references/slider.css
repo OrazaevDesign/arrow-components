@@ -115,9 +115,49 @@
   white-space: nowrap;
 }
 
-/* Polish (MIFB): уважаем prefers-reduced-motion — гасим «вытягивание» точки. */
+/* === Окно из пяти точек (.slider--window, с 1.1.0) ===
+   Галерея с кадрами больше пяти: индикатор не растёт, а показывает окно на пять
+   точек. Точки лежат в ленте .slider__track, лента сдвигается, держа активную точку
+   по центру, крайние точки окна уменьшены (.slider__dot--sm) — намёк, что за краем
+   есть ещё кадры. Сдвиг ленты (--awds-slider-shift) и классы --sm выставляет скрипт
+   потребителя, эталон — SKILL.md, «Окно из пяти точек».
+
+   Перенесено из product-card (.pcard__slider--many, .pcard__slider-track) 21.11.2026,
+   чтобы окно брали и другие галереи: первой — мини-карточка товара.
+
+   Ширина окна считается из геометрии варианта, поэтому окно годится и для dots,
+   и для dots-mini: четыре точки + удлинённая активная + зазоры и поля пилюли
+   (шесть по space-1) + ещё один зазор запаса, чтобы уменьшенная крайняя точка не
+   прилипала к краю. У dots-mini выходит 52px — ровно окно карточки товара. */
+.slider--window {
+  overflow: hidden;
+  max-inline-size: calc(4 * var(--awds-slider-dot-size) + var(--awds-slider-dot-active-w) + 7 * var(--awds-space-1));
+}
+
+.slider__track {
+  display: flex;
+  align-items: center;
+  gap: var(--awds-space-1);
+  transform: translateX(var(--awds-slider-shift, 0));
+  /* Polish (MIFB): плавный сдвиг ленты, прерываемый transition. */
+  transition: transform var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
+}
+
+.slider--window .slider__dot {
+  transition: transform var(--awds-motion-duration-state) var(--awds-motion-ease-state), width var(--awds-motion-duration-state) var(--awds-motion-ease-state), background-color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
+}
+
+/* Крайняя точка окна. scale, а не width: размер точки не меняет раскладку ленты,
+   и скрипту не нужно пересчитывать сдвиг после смены класса. */
+.slider--window .slider__dot--sm {
+  transform: scale(0.5);
+}
+
+/* Polish (MIFB): уважаем prefers-reduced-motion — гасим «вытягивание» точки и сдвиг ленты. */
 @media (prefers-reduced-motion: reduce) {
-  .slider__dot {
+  .slider__dot,
+  .slider__track,
+  .slider--window .slider__dot {
     transition: none;
   }
 }

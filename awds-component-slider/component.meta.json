@@ -1,10 +1,10 @@
 {
   "component": "slider",
-  "version": "1.0.11",
-  "contract_hash": "sha256:79d611ccb9a7bde0baf14ce84e859bc121735f7bff4d7ca70e2356304c06f925",
-  "artifact_hash": "sha256:600b1b2c533d2be5798fd507e01e5d58cb8bf13ad5c21129c67a78d867c9acf6",
+  "version": "1.1.0",
+  "contract_hash": "sha256:2a721cbb3028c6d81823a9d5ec66785634ac060d18d6a0fdd7bf596b5efd13dd",
+  "artifact_hash": "sha256:5d3666004ecae2b8f24b619b4cec67e9ee8c2147e1a7946e3ed54c396620d5e3",
   "visual_change": false,
-  "released_at": "2026-10-12T13:29:43.373Z",
+  "released_at": "2026-11-20T22:47:20.383Z",
   "own_values": [
     {
       "value": "3px",
@@ -102,6 +102,7 @@
     "--awds-control-line-height-300",
     "--awds-font-family-system",
     "--awds-font-weight-medium",
+    "--awds-motion-duration-quick",
     "--awds-motion-duration-state",
     "--awds-motion-ease-state",
     "--awds-opacity-30",
@@ -195,6 +196,21 @@
         "required": true,
         "when": "slider-dots-mini",
         "unless_attr": "data-dots"
+      },
+      {
+        "class": "slider__track",
+        "required": true,
+        "when": "slider--window"
+      },
+      {
+        "class": "slider__dot",
+        "required": true,
+        "when": "slider--window"
+      },
+      {
+        "class": "slider__dot--active",
+        "required": true,
+        "when": "slider--window"
       }
     ],
     "attrs": [
@@ -225,7 +241,7 @@
         "why": "то же: без aria-current активная точка видна только глазами"
       }
     ],
-    "note": "Индикатор позиции слайда, не регулятор — регулятор это range. Шкалы размеров нет: вариант (точки / мини-точки / счётчик) задаёт и геометрию, ширину решает число точек. Состав по варианту: у slider-dots и slider-dots-mini по одному .slider__dot на слайд и ровно один из них с .slider__dot--active; у slider-numbs потомков нет вовсе — текст «1/2» лежит прямо в контейнере. Количество точек и единственность активной проверке недоступны: потомки ищутся по файлу целиком, без DOM. Порог «точек не больше семи» — правило подбора варианта, а не разметки. Кликабельность необязательна: базовый компонент статичен, но <span class=\"slider__dot\"> законно заменяется на <button class=\"slider__dot\" aria-label=\"Слайд N\">. Два законных случая, когда требования снимаются, и оба записаны через unless_attr, а не ослаблением: (1) aria-hidden=\"true\" на инстансе — декоративный индикатор внутри карточки товара, где число кадров уже названо соседней разметкой; role и aria-label на элементе вне дерева доступности не озвучивает ничто, и требовать их значит требовать мёртвую разметку; (2) data-dots на контейнере — точки досыпает скрипт, потому что их число зависит от ширины вьюпорта и на сервере неизвестно (awds-category-slider-icon). Цена второго: в блоке, где точки и в разметке, и под data-dots (awds-gallery-fullscreen), состав не проверяется — держится на авторе."
+    "note": "Индикатор позиции слайда, не регулятор — регулятор это range. Шкалы размеров нет: вариант (точки / мини-точки / счётчик) задаёт и геометрию, ширину решает число точек. Состав по варианту: у slider-dots и slider-dots-mini по одному .slider__dot на слайд и ровно один из них с .slider__dot--active; у slider-numbs потомков нет вовсе — текст «1/2» лежит прямо в контейнере. Количество точек и единственность активной проверке недоступны: потомки ищутся по файлу целиком, без DOM. Порог «точек не больше семи» — правило подбора варианта, а не разметки. Кликабельность необязательна: базовый компонент статичен, но <span class=\"slider__dot\"> законно заменяется на <button class=\"slider__dot\" aria-label=\"Слайд N\">. Два законных случая, когда требования снимаются, и оба записаны через unless_attr, а не ослаблением: (1) aria-hidden=\"true\" на инстансе — декоративный индикатор внутри карточки товара, где число кадров уже названо соседней разметкой; role и aria-label на элементе вне дерева доступности не озвучивает ничто, и требовать их значит требовать мёртвую разметку; (2) data-dots на контейнере — точки досыпает скрипт, потому что их число зависит от ширины вьюпорта и на сервере неизвестно (awds-category-slider-icon). Цена второго: в блоке, где точки и в разметке, и под data-dots (awds-gallery-fullscreen), состав не проверяется — держится на авторе. Окно из пяти точек (с 1.1.0): модификатор slider--window на корне у dots и dots-mini, точки лежат в ленте .slider__track, крайние точки окна несут slider__dot--sm; сдвиг ленты — публичная переменная --awds-slider-shift, её пишет скрипт потребителя (эталон layoutSliderWindow в SKILL.md)."
   },
   "asana": {
     "task_gid": "1218421798695713",
@@ -272,11 +288,14 @@
   "contract": {
     "classes": [
       "slider",
+      "slider--window",
       "slider-dots",
       "slider-dots-mini",
       "slider-numbs",
       "slider__dot",
-      "slider__dot--active"
+      "slider__dot--active",
+      "slider__dot--sm",
+      "slider__track"
     ],
     "attributes": [],
     "elements": [],
