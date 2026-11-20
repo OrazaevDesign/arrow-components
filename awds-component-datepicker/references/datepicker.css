@@ -282,7 +282,7 @@
    выделение сегодняшнего дня не значит, что его выбрали. */
 .dpick__cell--today {
   --awds-dpick-cell-border: rgb(var(--secondary-container-on-lowest));    /* #cell list/actual-selected/border-rest */
-  --awds-dpick-cell-color:  rgb(var(--accent-core));              /* #cell list/actual-selected/color-rest */
+  --awds-dpick-cell-color:  rgb(var(--accent-container-on-highest));              /* #cell list/actual-selected/color-rest */
 }
 
 @media (hover: hover) and (pointer: fine) {

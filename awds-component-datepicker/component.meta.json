@@ -1,10 +1,10 @@
 {
   "component": "datepicker",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "contract_hash": "sha256:7c095f252b9db71ce9c0b845e58bfc4120462d25f788e041f30511d0ca216aa0",
-  "artifact_hash": "sha256:bce4c108636ab4412e52bb591c4131752c86ecce6db2955049442235526b503f",
+  "artifact_hash": "sha256:4f619d08643a3d3ec3d25f274c1b8fdd72c4a3125e1b14baf2980365789878b3",
   "visual_change": true,
-  "released_at": "2026-10-12T13:29:42.289Z",
+  "released_at": "2026-11-20T19:59:58.133Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -235,7 +235,7 @@
     "primary": true
   },
   "ds_token_dependencies": [
-    "--accent-core",
+    "--accent-container-on-highest",
     "--awds-control-font-size-300",
     "--awds-control-font-size-400",
     "--awds-control-font-size-600",
