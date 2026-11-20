@@ -161,7 +161,9 @@
 <button type="button" class="btn btn-primary btn--400"
         data-selector="mini-product-card:root"
         data-product-id="{{ p.id }}"
-        data-product-variation-id="{{ p.variation.id }}">…иконка…В корзину</button>
+        data-product-variation-id="{{ p.variation.id }}"
+        aria-label="В корзину, доставка с 9 декабря">…иконка…с 9 декабря</button>
+<!-- подпись — дата доставки (SKILL.md, «Дата доставки на кнопке»); без даты — «В корзину» без aria-label -->
 ```
 
 ## Состояние added (JS потребителя)

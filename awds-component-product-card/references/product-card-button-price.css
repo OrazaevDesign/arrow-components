@@ -221,24 +221,28 @@
 }
 
 /* Логотип бренда — на месте флага страны, выбор у потребителя (с 3.4.0). Часть .brand
-   макета: плашка в углу фото вплотную, как бокс избранного (60×40 / 48×32 = логотип + поля).
+   макета: белая плашка в пропорции логотипа платформы (240×140, у всех брендов один холст),
+   2px от угла фото (с 3.4.3). Логотип вписан целиком в плашку за вычетом полей.
    Украшение, не ссылка: на бренд ведёт подпись .pcard__brand, клик по углу уходит к фото
    (pointer-events: none у .pcard__top). Нет логотипа — плашки нет, угол пустой. */
 .pcard-button-price .pcard__brand-logo {
-  display: inline-flex;
+  box-sizing: border-box;
+  display: block;
+  height: var(--awds-space-9);                           /* 36px · .brand view=desktop-tablet, 62×36 */
+  aspect-ratio: 240 / 140;                               /* .brand: пропорция зафиксирована 240:140 */
+  margin: var(--awds-space-0-5);                         /* 2px от угла · .brand padding 0-5 */
   padding: var(--awds-space-1-5);                        /* 6px · .brand padding 1-5 */
-  border-radius: var(--awds-rounded-border-radius-400);  /* .brand border-radius/400 */
-  background: rgb(var(--surface-bright));                /* .brand surface/bright */
+  border-radius: var(--awds-rounded-border-radius-300);  /* .brand border-radius/300 */
+  background: rgb(var(--surface-dim));                   /* .brand surface/dim (макет 20.11.2026) */
 }
 .pcard-button-price .pcard__brand-logo > img {
   display: block;
-  width: var(--awds-space-12);           /* 48px · .brand-logo view=desktop-tablet */
-  height: var(--awds-space-7);           /* 28px — плашка 60×40 */
+  width: 100%;                           /* .brand-logo FILL × FILL */
+  height: 100%;
   object-fit: contain;                   /* логотип вписан целиком (FIT в макете) */
 }
-.pcard.pcard-button-price.pcard--mobile .pcard__brand-logo > img {
-  width: var(--awds-space-9);            /* 36px · .brand-logo view=mobile */
-  height: var(--awds-space-5);           /* 20px — плашка 48×32 */
+.pcard.pcard-button-price.pcard--mobile .pcard__brand-logo {
+  height: var(--awds-space-7);           /* 28px · .brand view=mobile, 48×28 */
 }
 
 /* Нижний оверлей: маркет-бейджи (компонент awds-component-badge), слева снизу */
@@ -374,14 +378,14 @@
   padding-inline: var(--awds-space-2);   /* 8px */
 }
 
-/* Бренд (→ бренд), первая строка контента. Одна строка, роль WYSIWYG body
-   (medium = 16/26), полужирный, обе вью. Как в price-first; до правки макета 07.10.2026 —
-   lead (18/29) на десктопе. */
+/* Бренд (→ бренд), первая строка контента. Одна строка, control 600
+   (16/20) / 400 (14/20) на mobile, полужирный. Как в price-first; с 07.10 по 18.11.2026 — роль
+   body (16/26), до 07.10.2026 — lead (18/29) на десктопе. */
 .pcard-button-price .pcard__brand {
   margin: 0;
-  font-size: var(--awds-wysiwyg-font-size-body);                          /* WYSIWYG body (medium = 16px) */
-  line-height: var(--awds-wysiwyg-line-height-body);                        /* medium = 26px */
-  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
+  font-size: var(--awds-control-font-size-600);                       /* control 600: 16px, фикс */
+  line-height: var(--awds-control-line-height-600);                   /* control 600: 20px, фикс */
+  letter-spacing: var(--awds-control-letter-spacing-600);             /* control 600: 0, фикс */
   font-weight: var(--awds-font-weight-semibold);
   color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;
@@ -391,6 +395,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
+  padding-block: var(--awds-space-px);                                /* 1px — поле строки desktop-tablet (space/px), макет 18.11.2026 */
 }
 @media (hover: hover) and (pointer: fine) {
   .pcard-button-price .pcard__brand:hover {
@@ -420,14 +425,14 @@
 }
 
 
-/* название (→ товар). link/accent = surface-on-highest. 1 строка, роль WYSIWYG
-   body (--awds-wysiwyg-*-body, medium = 16/26), масштабируется с блоками. */
+/* название (→ товар). link/accent = surface-on-highest. 1 строка, control 600 (16/20)
+   на desktop-tablet, control 400 (14/20) на mobile; фикс, по .typo-* не едет (до 18.11.2026 — роль body 16/26). */
 .pcard-button-price .pcard__name {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-wysiwyg-font-size-body);                      /* WYSIWYG body (medium = 16px) */
-  line-height: var(--awds-wysiwyg-line-height-body);                    /* medium = 26px */
-  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
+  font-size: var(--awds-control-font-size-600);                       /* control 600: 16px, фикс */
+  line-height: var(--awds-control-line-height-600);                   /* control 600: 20px, фикс */
+  letter-spacing: var(--awds-control-letter-spacing-600);             /* control 600: 0, фикс */
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-highest));        /* #cell link/accent-rest */
   text-decoration: none;
@@ -436,18 +441,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-block: var(--awds-space-px);                                /* 1px — поле строки desktop-tablet (space/px), макет 18.11.2026 */
 }
 
 /* Рубрика (→ категория) — необязательная строка, свойство show-category в макете (с 07.10.2026
    есть во всех вариантах). Выключено — элемента нет в разметке. */
-/* #3 рубрика (→ категория). link/heading-rest = surface-on-high, hover — accent-core (до 07.10.2026 link/muted). 1 строка, роль WYSIWYG
-   caption (--awds-wysiwyg-*-caption, medium = 13/21), масштабируется с блоками. */
+/* #3 рубрика (→ категория). link/heading-rest = surface-on-high, hover — accent-core (до 07.10.2026 link/muted). 1 строка, control 300
+   (13/16, фикс; до 18.11.2026 — роль WYSIWYG caption 13/21). */
 .pcard-button-price .pcard__category {
   margin: 0;
   width: 100%;
-  font-size: var(--awds-wysiwyg-font-size-caption);                   /* WYSIWYG caption (medium = 13px) */
-  line-height: var(--awds-wysiwyg-line-height-caption);                 /* medium = 21px */
-  letter-spacing: var(--awds-wysiwyg-letter-spacing-caption);
+  font-size: var(--awds-control-font-size-300);                       /* control 300: 13px, фикс */
+  line-height: var(--awds-control-line-height-300);                   /* control 300: 16px, фикс */
+  letter-spacing: var(--awds-control-letter-spacing-300);             /* control 300: 0.1px, фикс */
   font-weight: var(--awds-font-weight-regular);
   color: rgb(var(--surface-on-high));           /* #cell link/heading-rest */
   text-decoration: none;
@@ -456,13 +462,29 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  /* Зона нажатия не ниже 24 px (WCAG 2.5.8): строка caption 21 px стоит вплотную к названию,
+  /* Зона нажатия не ниже 24 px (WCAG 2.5.8): строка 16 px (control 300) стоит вплотную к названию,
      и тап попадал то в рубрику, то в товар (iPhone, 09.10.2026). Поле снизу продлевает ссылку
      в пустой верх следующей строки, отрицательное поле возвращает раскладку макета; position
      поднимает ссылку над соседом — иначе его бокс перехватил бы нажатие. */
   position: relative;
-  padding-block-end: var(--awds-space-1);
-  margin-block-end: calc(-1 * var(--awds-space-1));
+  padding-block-start: var(--awds-space-px);                          /* 1px — поле строки desktop-tablet */
+  padding-block-end: calc(var(--awds-space-px) + var(--awds-space-1-5)); /* 1 + 6: строка 16 + поля = 24 */
+  margin-block-end: calc(-1 * var(--awds-space-1-5));
+}
+
+/* Mobile: бренд и название на control 400 (14/20), без поля строки; рубрика без поля строки,
+   зона нажатия добирается до 24 px полем снизу 8 px (16 + 8). Макет 18.11.2026. */
+.pcard.pcard-button-price.pcard--mobile .pcard__brand,
+.pcard.pcard-button-price.pcard--mobile .pcard__name {
+  font-size: var(--awds-control-font-size-400);                       /* control 400: 14px, фикс */
+  line-height: var(--awds-control-line-height-400);                   /* control 400: 20px, фикс */
+  letter-spacing: var(--awds-control-letter-spacing-400);
+  padding-block: 0;
+}
+.pcard.pcard-button-price.pcard--mobile .pcard__category {
+  padding-block-start: 0;
+  padding-block-end: var(--awds-space-2);                             /* 8px */
+  margin-block-end: calc(-1 * var(--awds-space-2));
 }
 
 @media (hover: hover) and (pointer: fine) {

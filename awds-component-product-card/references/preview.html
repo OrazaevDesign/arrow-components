@@ -285,7 +285,7 @@
     // иконка + только новая цена (компонент .price, размер от кнопки); без цены —
     // disabled «Нет в наличии» без иконки (решение владельца 07.10.2026).
     const cartButton = (szBtn, btnPrice) => {
-      if (!btnPrice) return `<button type="button" class="btn btn-primary ${szBtn}">${icCart}В корзину</button>`;
+      if (!btnPrice) return `<button type="button" class="btn btn-primary ${szBtn}" aria-label="В корзину, доставка с 9 декабря">${icCart}с 9 декабря</button>`;   // подпись — дата доставки (SKILL.md, «Дата доставки на кнопке»)
       if (btnPrice === 'none') return `<button type="button" class="btn btn-primary ${szBtn}" disabled>Нет в наличии</button>`;
       const value = btnPrice === 'sale' ? '11 900' : '12 900';
       return `<button type="button" class="btn btn-primary ${szBtn}" aria-label="В корзину, ${value} ₽">${icCart}`
