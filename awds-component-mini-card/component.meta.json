@@ -126,6 +126,24 @@
     "--surface-on-high",
     "--surface-on-highest"
   ],
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "fad1991d47367766f11374e17c5dd9027bfdcf47",
+    "pushed_at": "2026-11-21T00:58:10Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-mini-card/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#mini-card",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/mini-card.css"
+    },
+    "dev_resources_status": {
+      "default": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "9983:75782",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-mini-card/SKILL.md"
+      }
+    }
+  },
   "uses": {
     "awds-component-modal": "1.13.0",
     "awds-component-stepper": "1.0.1",
