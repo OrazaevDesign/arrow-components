@@ -45,7 +45,7 @@
     }
     .stage .mdl { position: static; display: flex; inline-size: 360px; max-block-size: none; }
     .stage .mdl-sidepage { block-size: 320px; }
-    .stage .mdl:has(> .mdl__header--overlay) { position: relative; }   /* статичная копия окна: опора для шапки поверх содержимого */
+    .stage .mdl:has(> .mdl__header--overlay, > .mdl__footer--overlay) { position: relative; }   /* статичная копия окна: опора для шапки поверх содержимого */
     .case { display: flex; flex-direction: column; gap: 8px; }
     .case .label {
       font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em;
@@ -169,6 +169,25 @@
         <footer class="mdl__footer mdl__footer--reverse">
           <button class="btn btn-primary btn--500" type="button">Сохранить</button>
           <button class="btn btn-secondary btn--500" type="button">Отмена</button>
+        </footer>
+      </dialog>
+    </div>
+
+    <div class="case">
+      <span class="label">sidepage · подвал поверх содержимого (overlay=on, stretch=on): содержимое прокручивается под кнопками</span>
+      <dialog class="mdl mdl-sidepage" open>
+        <header class="mdl__header">
+          <h2 class="mdl__title">Кроссовки</h2>
+          <button class="btn btn-ghost btn--500 btn--icon-only mdl__close" type="button" aria-label="Закрыть"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 1.667a8.333 8.333 0 1 1 0 16.666 8.333 8.333 0 0 1 0-16.666ZM7.845 6.667a.833.833 0 0 0-1.178 1.178L8.822 10l-2.155 2.155a.833.833 0 1 0 1.178 1.178L10 11.178l2.155 2.155a.833.833 0 1 0 1.178-1.178L11.178 10l2.155-2.155a.833.833 0 1 0-1.178-1.178L10 8.822 7.845 6.667Z" fill="currentColor"/></svg></button>
+        </header>
+        <div class="mdl__content">
+          <p class="mdl__text">Подвал не занимает места: кнопки висят над нижним краем содержимого, текст уходит под них при прокрутке.</p>
+          <p class="mdl__text">Снизу у содержимого отступ на высоту подвала, поэтому последнюю строку можно докрутить до места над кнопками.</p>
+          <p class="mdl__text">Третий абзац, чтобы появилась прокрутка. Ещё строка текста, и ещё одна, и ещё.</p>
+          <p class="mdl__text">Последняя строка содержимого.</p>
+        </div>
+        <footer class="mdl__footer mdl__footer--stretch mdl__footer--overlay">
+          <button class="btn btn-primary btn--500" type="button">В корзину</button>
         </footer>
       </dialog>
     </div>

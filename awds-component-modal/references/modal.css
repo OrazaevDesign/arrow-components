@@ -361,6 +361,42 @@
   padding-block-start: 0;
 }
 
+/* Подвал поверх содержимого — .mdl__footer--overlay (с 1.14.0; ось overlay=on|off).
+   Пара к шапке .mdl__header--overlay: подвал места не занимает и фона не имеет, кнопки
+   висят над нижним краем содержимого, а содержимое прокручивается под ними (решение
+   владельца 21.11.2026, под мини-карточку товара). Поля и кнопки те же, что у обычного
+   подвала, поэтому кнопки стоят на том же месте. Ось overlay независима от stretch,
+   direction и reverse. Клики сквозь пустую часть подвала проходят к содержимому, ловят
+   их только кнопки. Контраст кнопок с содержимым под ними компонент не обеспечивает:
+   у кнопок свой фон (решение владельца 21.11.2026 — без подложки, как у шапки).
+   В макете то же выражено подвалом нулевой высоты, из которого ряд кнопок выходит вверх. */
+.mdl__footer--overlay {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: 1;
+  background: none;
+  pointer-events: none;
+}
+.mdl__footer--overlay > * {
+  pointer-events: auto;
+}
+
+/* Конец содержимого не прячется под кнопками навсегда: снизу у содержимого отступ на
+   высоту подвала — верхнее поле, кнопка ступени 600 (2 × padding + строка), нижнее поле.
+   Последнюю строку можно докрутить до места над кнопками (решение владельца 21.11.2026).
+   Опора — само окно: модальный <dialog> позиционирован браузером. */
+.mdl:has(> .mdl__footer--overlay) {
+  --awds-mdl-overlay-btn: calc(2 * var(--awds-space-4) + var(--awds-control-line-height-600));   /* #cell rectangle/600/padding + typography */
+}
+.mdl:has(> .mdl__footer--overlay) > .mdl__content {
+  padding-block-end: calc(var(--awds-mdl-gap) + var(--awds-mdl-overlay-btn) + var(--awds-mdl-pad-bottom));
+}
+/* В столбик кнопок две: к отступу прибавляется вторая кнопка и зазор между ними. */
+.mdl:has(> .mdl__footer--overlay.mdl__footer--column) > .mdl__content {
+  padding-block-end: calc(var(--awds-mdl-gap) + 2 * var(--awds-mdl-overlay-btn) + var(--awds-mdl-footer-gap) + var(--awds-mdl-pad-bottom));
+}
+
 /* === Брейкпоинты (1.10.0, по ячейкам view набора) ===
    Планшет (616–1023): dialog — шторка снизу во всю ширину, верхние углы border-radius/800 (в ячейке
    view=tablet нарисовано 900, владелец 22.10.2026 решил 16, как на телефоне);

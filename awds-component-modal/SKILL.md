@@ -72,7 +72,7 @@ description: Modal ArrowDS (.mdl).
 |---|---|---|
 | шапка | заголовок, крестик в углу (в коде ещё кнопка «назад») | `show-title`, `show-close`, текст `title`; ось `content=title\|close\|overlay` (с 1.13.0): `close` — только крестик, без полей, высота 44 = квадрат крестика, класс `.mdl__header--close`; `overlay` — кнопки поверх содержимого, шапка места не занимает и фона не имеет, класс `.mdl__header--overlay`; слева «назад» (`show-back`, закрывает окно), справа слот `actions`, крестика нет |
 | содержимое | нативный слот Figma, полоса прокрутки | слот `content` (SLOT: любой контент — текст, форма, список, свои фреймы), `scrollbar`, ось `gutter=default\|mini\|off` (до 1.8.0 — `padding=on\|off`) |
-| подвал | две кнопки или пустое поле | `show-start`, `show-end`, слоты `start` и `end`, оси `reverse=on|off`, `stretch=on|off`, `content=buttons|empty` и `direction=row|column` |
+| подвал | две кнопки или пустое поле | `show-start`, `show-end`, слоты `start` и `end`, оси `reverse=on|off`, `stretch=on|off`, `content=buttons|empty`, `direction=row|column` и `overlay=off|on` (с 1.14.0) |
 
 **Содержимое — нативный слот с 29.09.2026.** Раньше это была заглушка `. / swap` со свойством замены `swap`: вставить можно было только компонент, и ради каждого нового содержимого приходилось заводить компонент-обёртку. Слот `content` принимает что угодно — текст, форму, список, свои фреймы; по умолчанию в нём текст-заглушка. Заодно сняты `show-swap` и четыре свойства без привязок (`show-text`, `show-field`, `text`, `field`). В коде это ничего не меняет: `.mdl__content` и раньше принимал любую разметку.
 
@@ -90,6 +90,15 @@ description: Modal ArrowDS (.mdl).
 | `direction=row, reverse=on, stretch=on` | `--reverse` + `--stretch` |
 | `direction=row, content=empty` | `.mdl__footer--empty` |
 | `direction=column, reverse=off, stretch=on` | `.mdl__footer--column` |
+| `overlay=on` (к любой ячейке с кнопками) | + `.mdl__footer--overlay` |
+
+**Подвал поверх содержимого** (`overlay=on`, `.mdl__footer--overlay`, 1.14.0, решение владельца 21.11.2026) — пара к шапке `content=overlay`. Подвал не занимает места и не имеет фона: кнопки висят над нижним краем содержимого, а содержимое прокручивается под ними. Поля и кнопки те же, что у обычного подвала, кнопки стоят на том же месте. Ось независима от `stretch`, `direction`, `reverse`: модификатор добавляется к любому из них, в макете у каждой ячейки с кнопками есть пара `overlay=on`. Чтобы конец содержимого не прятался под кнопками навсегда, у `.mdl__content` снизу отступ на высоту подвала: верхнее поле + кнопка 600 + нижнее поле (96 на десктопе), в столбик ещё вторая кнопка и зазор. Подложки нет: у кнопок свой фон, контраст с тем, что под ними, компонент не обеспечивает. Сделан под мини-карточку товара. В макете подвал нулевой высоты, ряд кнопок выходит из него вверх; в ячейках `modal / dialog` и `modal / sidepage` порядок наложения «первый сверху» (ради шапки `overlay`), поэтому подвал `overlay=on` там оказывается под содержимым — показывать его в макете окна надо поверх собранного экземпляра.
+
+```html
+<footer class="mdl__footer mdl__footer--stretch mdl__footer--overlay">
+  <button class="btn btn-primary btn--500" type="button">В корзину</button>
+</footer>
+```
 
 **Подвал в столбик** (`direction=column`, 08.10.2026) — кнопки одна под другой, каждая во всю ширину подвала, первая в разметке — сверху: primary, под ней вторичная. Зазор между кнопками и поля подвала те же, что у ряда (`space/3`, `space/2` сверху, `gutter-modal` снизу и по бокам). Нужен, когда подписи не помещаются в ряд: на шторке 360 «Показать 1 108 товаров» рядом со «Сбросить» обрезается (замер в storybook: в ряд со `--stretch` primary получает 150px и режет подпись, в столбик — 312px). В макете ячейка одна — `stretch=on`, потому что в столбике кнопки всегда во всю ширину; `reverse` в столбике не нарисован: вторичная кнопка над главной — не наш сценарий. В коде `.mdl__footer--column.mdl__footer--reverse` всё же работает (`column-reverse`), чтобы складка модификаторов не давала неожиданного.
 
@@ -350,7 +359,7 @@ modal из другого блока, занявшая `awdsModalHistory` пер
 
 ## CSS
 
-Один файл — `references/modal.css` (база `.mdl` + `.mdl__header` / `__title` / `__content` / `__text` / `__footer` + виды `.mdl-{dialog,sidepage}` + модификаторы `.mdl__header--close`, `.mdl__header--overlay`, `--flush`, `--reverse`, `--stretch`, `--column`, `--empty`, `.mdl--side-start` и полноэкранный `.mdl--fullscreen`; подложка — `::backdrop`). Подключается один раз глобально.
+Один файл — `references/modal.css` (база `.mdl` + `.mdl__header` / `__title` / `__content` / `__text` / `__footer` + виды `.mdl-{dialog,sidepage}` + модификаторы `.mdl__header--close`, `.mdl__header--overlay`, `--flush`, `--reverse`, `--stretch`, `--column`, `--empty`, `.mdl__footer--overlay`, `.mdl--side-start` и полноэкранный `.mdl--fullscreen`; подложка — `::backdrop`). Подключается один раз глобально.
 
 Базовый класс **`.mdl`, а не `.modal`**: `.modal` — имя компонента в Bootstrap, почти наверняка занятое у потребителя, а приватные аккумуляторы по контракту зовутся `--awds-{base_class}-*`. Тот же приём, что у `label` → `.lbl`, `datepicker` → `.dpick`.
 
