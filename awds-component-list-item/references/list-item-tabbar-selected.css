@@ -532,6 +532,22 @@
 }
 
 
+/* === Ширина: ось width (fill | hug) ===
+
+   fill — по умолчанию: строка во всю ширину контейнера (width: 100% в базе).
+   hug  — .list-item--hug: по содержимому, как экземпляр с шириной hug в макете. Так стоят
+   плитки размера в ряду: «38» шириной в текст и поля text-gap, а не в весь ряд.
+   fit-content, а не auto: auto у блочного родителя снова растянет строку. Заведено
+   20.11.2026 для мини-карточки товара, имя оси — как у table (.awds-table--hug). */
+
+.list-item.list-item--hug {
+  inline-size: fit-content;
+}
+.list-item.list-item--hug > .list-item__content {
+  flex: 0 0 auto;
+}
+
+
 /* === Variant: tabbar-selected === */
 
 /* Раскладка столбцом: иконка над подписью. Два класса — (0,2,0): база .list-item и
@@ -595,11 +611,11 @@
 .list-item-tabbar-selected {
   --awds-list-item-bg:          rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/bg-rest */
   --awds-list-item-border:      rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/border-rest */
-  --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/color-rest */
-  --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/tabbar-selected/description-rest */
-  --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-check-rest */
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-rest */
-  --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/tabbar-selected/chevron-rest */
+  --awds-list-item-color:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/color-rest */
+  --awds-list-item-desc:        rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/description-rest */
+  --awds-list-item-check:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-check-rest */
+  --awds-list-item-icon-color:  rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-rest */
+  --awds-list-item-chevron:     rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/chevron-rest */
 }
 
 /* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
@@ -609,11 +625,11 @@
   .list-item-tabbar-selected:hover:not(:disabled):not([aria-disabled="true"]) {
     --awds-list-item-bg:          rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/bg-hover */
     --awds-list-item-border:      rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/border-hover */
-    --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/color-hover */
-    --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/tabbar-selected/description-hover */
-    --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-check-hover */
-    --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-hover */
-    --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/tabbar-selected/chevron-hover */
+    --awds-list-item-color:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/color-hover */
+    --awds-list-item-desc:        rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/description-hover */
+    --awds-list-item-check:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-check-hover */
+    --awds-list-item-icon-color:  rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-hover */
+    --awds-list-item-chevron:     rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/chevron-hover */
   }
 }
 
@@ -621,11 +637,11 @@
 .list-item-tabbar-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
   --awds-list-item-bg:          rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/bg-focus */
   --awds-list-item-border:      rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/border-focus */
-  --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/color-focus */
-  --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/tabbar-selected/description-focus */
-  --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-check-focus */
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-focus */
-  --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/tabbar-selected/chevron-focus */
+  --awds-list-item-color:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/color-focus */
+  --awds-list-item-desc:        rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/description-focus */
+  --awds-list-item-check:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-check-focus */
+  --awds-list-item-icon-color:  rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-focus */
+  --awds-list-item-chevron:     rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/chevron-focus */
 }
 
 /* :active перекрывает всё, что менял :hover — при нажатии курсор всё ещё висит
@@ -633,11 +649,11 @@
 .list-item-tabbar-selected:active:not(:disabled):not([aria-disabled="true"]) {
   --awds-list-item-bg:          rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/bg-active */
   --awds-list-item-border:      rgb(var(--extended-transparent));   /* #cell list/tabbar-selected/border-active */
-  --awds-list-item-color:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/color-active */
-  --awds-list-item-desc:        rgb(var(--accent-core));   /* #cell list/tabbar-selected/description-active */
-  --awds-list-item-check:       rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-check-active */
-  --awds-list-item-icon-color:  rgb(var(--accent-core));   /* #cell list/tabbar-selected/icon-active */
-  --awds-list-item-chevron:     rgb(var(--accent-core));   /* #cell list/tabbar-selected/chevron-active */
+  --awds-list-item-color:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/color-active */
+  --awds-list-item-desc:        rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/description-active */
+  --awds-list-item-check:       rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-check-active */
+  --awds-list-item-icon-color:  rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/icon-active */
+  --awds-list-item-chevron:     rgb(var(--accent-container-on-highest));   /* #cell list/tabbar-selected/chevron-active */
 }
 
 

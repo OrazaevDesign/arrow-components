@@ -1,10 +1,10 @@
 {
   "component": "list-item",
-  "version": "2.4.3",
-  "contract_hash": "sha256:b1b75e9615c1b12a0ea79d6d9daccdbe3633c2294e431577d1e0ce589248d283",
-  "artifact_hash": "sha256:e31b83aafb2c00bced0ca5ef3438c713c31694247229856c6b5db5007e9bb9aa",
+  "version": "2.5.2",
+  "contract_hash": "sha256:54a2aa7cbe9648e173823a1760652a8f49048175d98af134e71ca98d9d707c38",
+  "artifact_hash": "sha256:e6f5f2b2e5c1dfe5493437224c7e158acc1e4c0235f3a5161093dbfdda998655",
   "visual_change": true,
-  "released_at": "2026-10-12T13:29:42.743Z",
+  "released_at": "2026-11-20T20:12:32.736Z",
   "own_values": [
     {
       "value": "transparent",
@@ -111,6 +111,13 @@
       "figma_label": "list-item / variation-img",
       "token_role": "list/variation + list/variation-img",
       "note": "Перенесён 26.09.2026 из awds-component-tab-product (вариант img). В макете пять состояний без ступеней размера — как было у tab-product; код несёт всю лестницу семьи."
+    },
+    "variation-img-selected": {
+      "node_id": "1408:23",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1408-23",
+      "figma_label": "list-item / variation-img-selected",
+      "token_role": "list/variation-selected + list/variation-img",
+      "note": "Заведён 20.11.2026 парой к variation-img: выбранную фото-плитку рисовали состоянием active (нажатие). В макете пять состояний без ступеней размера, как у variation-img."
     }
   },
   "shape": "rectangle",
@@ -208,6 +215,7 @@
     "default_variant": "transparent"
   },
   "ds_token_dependencies": [
+    "--accent-container-on-highest",
     "--accent-core",
     "--awds-control-font-size-100",
     "--awds-control-font-size-200",
@@ -528,6 +536,7 @@
       "list-item--50",
       "list-item--500",
       "list-item--600",
+      "list-item--hug",
       "list-item--no-line",
       "list-item-accent-selected",
       "list-item-actual-selected",
@@ -540,6 +549,7 @@
       "list-item-transparent",
       "list-item-variation",
       "list-item-variation-img",
+      "list-item-variation-img-selected",
       "list-item-variation-indeterminate",
       "list-item-variation-selected",
       "list-item__check",
@@ -581,6 +591,7 @@
       "transparent",
       "variation",
       "variation-img",
+      "variation-img-selected",
       "variation-indeterminate",
       "variation-selected"
     ],

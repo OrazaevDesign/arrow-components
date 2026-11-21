@@ -1,0 +1,657 @@
+/* Source: Figma node 470rar5EfRm4n14vHMXbpc/1408:23 (list-item / variation-img-selected), 20.11.2026.
+   Собран из двух соседей: база и фото — от variation-img, тон выбора — от variation-selected. */
+
+/* =============================================================================
+   List-item — variation-img-selected variant   (роли list/variation-selected + list/variation-img)
+   =============================================================================
+
+   Выбранная вариация с фотографией, пара к variation-img — как variation-selected к
+   variation. Заведена 20.11.2026: до этого выбранную фото-плитку рисовали состоянием
+   active, а active — это нажатие, в коде такая плитка выглядела бы нажатой.
+
+   ЦВЕТА (map.state.*.list.variation-selected + list/variation-img):
+     Фон — подложка под фото (list/variation-img/bg), от состояния не зависит.
+     Рамка 2px (outline/width) и текст — от выбранной вариации, во всех состояниях одни:
+             фон              рамка        текст                       описание
+     Все     surface-bright   focus-core   focus-container-on-highest  focus-container-on-high
+
+   Всё остальное — геометрия, слоты, типографика, фокус — общее для семьи и
+   описано в SKILL.md. Ниже база повторяется в каждом файле варианта, чтобы
+   один вариант можно было подключить отдельно.
+   ============================================================================= */
+
+/* Polish (MIFB): регистрируем цветовые аккумуляторы как <color>, чтобы смена
+   состояния ИНТЕРПОЛИРОВАЛАСЬ, а не «снапала». inherits: false — оба значения
+   потребляются самим элементом. Без поддержки @property — graceful degradation
+   в мгновенную смену. */
+@property --awds-list-item-bg {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+@property --awds-list-item-border {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
+
+/* === Base ===
+
+   АНАТОМИЯ (auto-layout из макета): корень flex + align-items: flex-start,
+   каждый слот центрует себя сам своим паддингом. Пока описания нет, слот и
+   контент одной высоты и это читается как центрирование; с описанием контент
+   вырастает, а слот остаётся прижат к верху — так в макете.
+
+   ВЫСОТА не задаётся явно: 2 x padding + line-height
+   (52/48/40/36/32/24/20; с описанием +2 +line-height описания). */
+
+.list-item {
+  /* Size accumulator defaults (default_size = 400) */
+  --awds-list-item-padding:  var(--awds-space-2-5);   /* #cell rectangle/400/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/400/icon */
+  --awds-list-item-img:      var(--awds-space-9);   /* #cell rectangle/400/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/400/img-padding */
+  --awds-list-item-preview:  var(--awds-space-13-5);   /* #cell rectangle/400/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   /* #cell rectangle/400/rounded */
+  --awds-list-item-text-gap: var(--awds-space-4);   /* #cell rectangle/400/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/400/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   /* #cell rectangle/400/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+
+  /* Рамку рисуем inset box-shadow, а не border: border при auto-height ВСЕГДА
+     добавляет к высоте, и строка перестала бы быть 2 x padding + line-height.
+     Это inside-stroke, как в Figma. */
+  appearance: none;
+  border: 0;
+  border-radius: var(--awds-list-item-rounded);
+  /* Толщина рамки — ячейка size/outline/offset (1px), хайрлайн. Литерала тут быть
+     не должно: толщина правится в студии, а не в файле компонента. */
+  --awds-list-item-border-width: var(--awds-space-px);   /* #cell outline/offset */
+  box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
+  background: var(--awds-list-item-bg);
+  color: var(--awds-list-item-color);
+
+  font-family: var(--awds-font-family-system);
+  font-weight: var(--awds-font-weight-regular);
+  text-align: left;
+
+  /* Reset. padding: 0 — гасим UA-паддинг нативной <button> (1px 6px): он
+     добавлялся к высоте (52 -> 54) и сдвигал текст по горизонтали на 6px.
+     Отступы дают слоты и контент. */
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  /* Тон слоя State: в макете opacity/control/enabled привязан на всех негашёных
+     ячейках (100%), парный opacity/control/disabled (40%) — на выключенной. */
+  opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
+
+  /* Polish (MIFB): перечисляем свойства явно, никакого transition: all.
+     Переход прерываемый. Стандарт PageCraft — 0.15s ease-out. */
+  transition: --awds-list-item-bg var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              box-shadow var(--awds-motion-duration-state) var(--awds-motion-ease-state),
+              color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
+}
+
+.list-item:focus-visible,
+.list-item:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  /* Кольцо фокуса — слой awds-component-focus-selection, вариант Inside + Accent
+     (снято с инстанса FocusSelection в макете): кольцо вписано в бокс и красится
+     брендовым плотным цветом. Только ссылки на --awds-focus-*: правка макета меняет
+     один файл слоя.
+
+     Кольцо рисуется outline, а не inset-тенью, хотя радиус строки ненулевой и внешний
+     радиус кольца выходит на толщину offset меньше (CSS считает его как
+     border-radius + outline-offset). Две причины: box-shadow у строки уже занят
+     рамкой — он не складывается, и вторая декларация стёрла бы её; и тени не
+     рисуются в forced-colors, где кольцо обязано остаться видимым. */
+  outline: var(--awds-focus-width) solid var(--awds-focus-color-accent);
+  outline-offset: var(--awds-focus-offset-inside);
+}
+
+.list-item:disabled,
+.list-item[aria-disabled="true"],
+.list-item:has(> .list-item__prefix > :is(.checkbox, .radio) > input:disabled) {
+  /* Тон гашения слоя State (map.state.rest.opacity.control.disabled), а не литерал
+     --awds-opacity-40 в обход слоя. */
+  opacity: var(--awds-opacity-40);   /* #cell opacity/control/disabled */
+  pointer-events: none;
+}
+
+
+/* === Слоты === */
+
+.list-item__prefix,
+.list-item__suffix {
+  box-sizing: border-box;
+  /* Иконки слота красятся своей ячейкой list/<вариант>/icon-<состояние>, а не цветом текста: с 28.09.2026
+     у каждого состояния своя ячейка, и иконку можно развести с подписью в студии. */
+  color: var(--awds-list-item-icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* Паддинг со всех сторон — он же задаёт горизонтальный отступ текста от края,
+     поэтому у контента с этой стороны паддинга нет (см. ниже). */
+  padding: var(--awds-list-item-padding);
+  /* Иконок в слоте может быть несколько — в макете боксы идут вплотную. */
+  gap: 0;
+}
+
+.list-item__prefix > svg,
+.list-item__suffix > svg,
+.list-item__prefix > img,
+.list-item__suffix > img {
+  display: block;
+  width: var(--awds-list-item-icon);
+  height: var(--awds-list-item-icon);
+  flex-shrink: 0;
+}
+
+/* Галочка выбранного пункта — роль icon-check, у каждого варианта своя.
+   Элемент опциональный: кладётся автором в слот и красится currentColor. */
+.list-item__check {
+  color: var(--awds-list-item-check);
+}
+
+/* Шеврон раскрытия — своя ячейка list/<вариант>/chevron-<состояние>. Элемент опциональный. */
+.list-item__chevron {
+  color: var(--awds-list-item-chevron);
+}
+
+/* === Переключатель в слоте ===
+   В __prefix кладётся настоящий checkbox или radio из своих скиллов, а корнем строки
+   становится <label>: клик по любой точке строки переключает инпут, и связывать их
+   через for/id не нужно. Строка при выборе НЕ меняет вариант — выбор показывает сам
+   контрол (решение владельца 29.09.2026). Макет — набор prefix-list, content=checkbox
+   и content=radio.
+
+   Ступень контрола равна слоту иконки, а не ступени строки: на 600…300 слот 20px —
+   square/300, на 200…50 — 16px, square/200. Паддинг слота остаётся rectangle/{N}/padding,
+   поэтому строка с контролом по высоте и отступу текста совпадает со строкой с иконкой.
+   Ступень едет мостом, как у .lbl: .list-item--{N} .checkbox весит (0,3,0) против
+   (0,1,0) у .checkbox--{N}, и класс размера на контроле внутри строки не нужен. */
+
+.list-item .list-item__prefix > .checkbox,
+.list-item--600 .list-item__prefix > .checkbox,
+.list-item--500 .list-item__prefix > .checkbox,
+.list-item--400 .list-item__prefix > .checkbox,
+.list-item--300 .list-item__prefix > .checkbox {
+  --awds-checkbox-padding: var(--awds-space-0);   /* #cell square/300/padding */
+  --awds-checkbox-icon:    var(--awds-space-5);   /* #cell square/300/icon */
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-300);   /* #cell square/300/rounded */
+}
+
+.list-item--200 .list-item__prefix > .checkbox,
+.list-item--100 .list-item__prefix > .checkbox,
+.list-item--50 .list-item__prefix > .checkbox {
+  --awds-checkbox-padding: var(--awds-space-0);   /* #cell square/200/padding */
+  --awds-checkbox-icon:    var(--awds-space-4);   /* #cell square/200/icon */
+  --awds-checkbox-rounded: var(--awds-rounded-border-radius-200);   /* #cell square/200/rounded */
+}
+
+.list-item .list-item__prefix > .radio,
+.list-item--600 .list-item__prefix > .radio,
+.list-item--500 .list-item__prefix > .radio,
+.list-item--400 .list-item__prefix > .radio,
+.list-item--300 .list-item__prefix > .radio {
+  --awds-radio-padding: var(--awds-space-0);   /* #cell square/300/padding */
+  --awds-radio-icon:    var(--awds-space-5);   /* #cell square/300/icon */
+}
+
+.list-item--200 .list-item__prefix > .radio,
+.list-item--100 .list-item__prefix > .radio,
+.list-item--50 .list-item__prefix > .radio {
+  --awds-radio-padding: var(--awds-space-0);   /* #cell square/200/padding */
+  --awds-radio-icon:    var(--awds-space-4);   /* #cell square/200/icon */
+}
+
+/* Наведение и нажатие — у строки, а не у контрола: курсор над подписью значит то же,
+   что курсор над боксом. Сам контрол реагирует только на :hover по себе, поэтому
+   состояния передаются ему явно, с теми же ячейками check-radio. Выбранность
+   перечислена в селекторе, иначе правило невыбранного перебило бы выбранный Rest. */
+
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+    --awds-checkbox-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+    --awds-checkbox-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+  }
+}
+
+.list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:not(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-active */
+  --awds-checkbox-chroma: rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/chroma-active */
+  --awds-checkbox-border: rgb(var(--secondary-container-on-low));   /* #cell check-radio/unselected/border-active */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+    --awds-checkbox-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+    --awds-checkbox-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+    --awds-checkbox-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+  }
+}
+
+.list-item:active > .list-item__prefix > .checkbox > .checkbox__input:enabled:is(:checked, :indeterminate) + .checkbox__box {
+  --awds-checkbox-bg:     rgb(var(--primary-core));   /* #cell check-radio/selected/bg-active */
+  --awds-checkbox-chroma: rgb(var(--primary-core));   /* #cell check-radio/selected/chroma-active */
+  --awds-checkbox-border: rgb(var(--primary-core));   /* #cell check-radio/selected/border-active */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+    --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-hover */
+    --awds-radio-chroma: rgb(var(--secondary-container-chroma));   /* #cell check-radio/unselected/chroma-hover */
+    --awds-radio-border: rgb(var(--secondary-container-on));   /* #cell check-radio/unselected/border-hover */
+  }
+}
+
+.list-item:active > .list-item__prefix > .radio > .radio__input:enabled:not(:checked) + .radio__box {
+  --awds-radio-bg:     rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/bg-active */
+  --awds-radio-chroma: rgb(var(--secondary-container-dim));   /* #cell check-radio/unselected/chroma-active */
+  --awds-radio-border: rgb(var(--secondary-container-on-low));   /* #cell check-radio/unselected/border-active */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .list-item:hover > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+    --awds-radio-bg:     rgb(var(--primary-dim));   /* #cell check-radio/selected/bg-hover */
+    --awds-radio-chroma: rgb(var(--primary-chroma));   /* #cell check-radio/selected/chroma-hover */
+    --awds-radio-border: rgb(var(--primary-dim));   /* #cell check-radio/selected/border-hover */
+  }
+}
+
+.list-item:active > .list-item__prefix > .radio > .radio__input:enabled:checked + .radio__box {
+  --awds-radio-bg:     rgb(var(--primary-core));   /* #cell check-radio/selected/bg-active */
+  --awds-radio-chroma: rgb(var(--primary-core));   /* #cell check-radio/selected/chroma-active */
+  --awds-radio-border: rgb(var(--primary-core));   /* #cell check-radio/selected/border-active */
+}
+
+/* Кольцо одно — у строки (см. :has() у .list-item:focus-visible выше). Своё кольцо
+   контрола вокруг бокса внутри уже обведённой строки было бы вторым контуром. */
+.list-item__prefix > .checkbox > .checkbox__input:focus-visible + .checkbox__box,
+.list-item__prefix > .radio > .radio__input:focus-visible + .radio__box {
+  outline: none;
+}
+
+/* Гашение одно — у строки (см. :has() у .list-item:disabled выше). Контрол гасит себя
+   сам на те же 40%, и без отмены вышло бы 40% от 40%. */
+.list-item__prefix > .checkbox:has(> .checkbox__input:disabled),
+.list-item__prefix > .radio:has(> .radio__input:disabled) {
+  opacity: var(--awds-opacity-100);   /* #cell opacity/control/enabled */
+}
+
+/* Два знака выбора в одной строке лишние: при контроле в префиксе галочка суффикса
+   не рисуется, даже если автор её положил. */
+.list-item:has(> .list-item__prefix > :is(.checkbox, .radio)) .list-item__check {
+  display: none;
+}
+
+
+/* === Превью в слоте ===
+   Картинка на подложке в __prefix: логотип бренда, фото товара, картинка рубрики. В макете
+   это часть prefix-list, значения content=img (малое превью, ячейка rectangle/{N}/img) и
+   content=preview (крупное, rectangle/{N}/preview) на всех семи ступенях.
+
+   Ячейка слота прижата к верху и к левому краю строки: сверху, снизу и слева отступ
+   img-padding, справа — обычный padding строки (он же даёт зазор до текста). Подложка —
+   компонент preview в макете, ось bg: default (без модификатора), brand, light.
+   Скругление подложки border-radius/500, картинки — /300 на всех ступенях: так в макете,
+   ячейки Size у них нет. */
+
+.list-item__prefix--content-img,
+.list-item__prefix--content-preview {
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--awds-list-item-img-pad) var(--awds-list-item-padding) var(--awds-list-item-img-pad) var(--awds-list-item-img-pad);
+}
+
+.list-item__preview {
+  display: block;
+  flex-shrink: 0;
+  inline-size: var(--awds-list-item-img);
+  block-size: var(--awds-list-item-img);
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--secondary-container-core));   /* #cell list/preview/bg-default */
+  overflow: hidden;
+}
+
+.list-item__prefix--content-preview > .list-item__preview {
+  inline-size: var(--awds-list-item-preview);
+  block-size: var(--awds-list-item-preview);
+}
+
+.list-item__preview--bg-light {
+  background: rgb(var(--surface-bright));   /* #cell list/preview/bg-light */
+}
+
+/* bg=brand — тот же градиент chromatic, что у фона шапки, под 45° (снизу слева
+   направо вверх), точки из макета. */
+.list-item__preview--bg-brand {
+  background: linear-gradient(45deg,
+    rgb(var(--surface-chromatic-start)) 0%,
+    rgb(var(--surface-chromatic-mid-start)) 30%,
+    rgb(var(--surface-chromatic-mid-end)) 70%,
+    rgb(var(--surface-chromatic-end)) 100%);
+}
+
+/* Картинка вписывается в подложку целиком, а не кадрируется: в макете (компонент preview,
+   слой img) она по центру с полем около 11% со всех сторон — доля, а не шаг шкалы, поэтому
+   одна на все ступени. Слой img — mix-blend darken: белый фон фото и логотипа уходит в
+   подложку. Ячеек под поле и наложение в студии нет — own_values меты. */
+.list-item__preview > img {
+  box-sizing: border-box;
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 11%;
+  object-fit: contain;
+  mix-blend-mode: darken;
+  border-radius: var(--awds-rounded-border-radius-300);
+}
+
+
+/* === Контент === */
+
+.list-item__content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* flex: 1 + min-width: 0 — иначе длинный заголовок распирает строку и ломает
+     перенос (flex-item по умолчанию не уже min-content). */
+  flex: 1 1 0;
+  min-width: 0;
+  /* Зазор заголовок-описание — ФИКС 2px на всех размерах. Это НЕ
+     rectangle-{N}-gap: тот идёт 2/2/4/6/6/6/8 и на 600 дал бы 8 вместо 2. */
+  gap: var(--awds-space-0-5);
+
+  padding-block: var(--awds-list-item-padding);
+  /* Горизонталь по умолчанию — text-gap. Ниже сбрасывается в 0 с той стороны,
+     где стоит слот: там отступ уже дал сам слот. Направление ОБРАТНОЕ
+     input/select, где отступ несёт само поле. */
+  padding-inline: var(--awds-list-item-text-gap);
+}
+
+.list-item:has(> .list-item__prefix) .list-item__content {
+  padding-left: 0;
+}
+
+.list-item:has(> .list-item__suffix) .list-item__content {
+  padding-right: 0;
+}
+
+.list-item__title {
+  font-size: var(--awds-list-item-fs);
+  line-height: var(--awds-list-item-lh);
+  letter-spacing: var(--awds-list-item-ls);
+  /* В макете у текста word-break: break-word — длинный заголовок переносится.
+     Polish (MIFB): pretty убирает висячее слово на последней строке. */
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+.list-item__description {
+  font-size: var(--awds-list-item-desc-fs);
+  line-height: var(--awds-list-item-desc-lh);
+  letter-spacing: var(--awds-list-item-desc-ls);
+  color: var(--awds-list-item-desc);
+  overflow-wrap: anywhere;
+  text-wrap: pretty;
+}
+
+
+/* === Sizes ===
+   Семантические shape-токены из map.size.rectangle.{N}. */
+
+.list-item--600 {
+  --awds-list-item-padding:  var(--awds-space-4);   /* #cell rectangle/600/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/600/icon */
+  --awds-list-item-img:      var(--awds-space-11);   /* #cell rectangle/600/img */
+  --awds-list-item-img-pad:  var(--awds-space-1);   /* #cell rectangle/600/img-padding */
+  --awds-list-item-preview:  var(--awds-space-16-5);   /* #cell rectangle/600/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-600);   /* #cell rectangle/600/rounded */
+  --awds-list-item-text-gap: var(--awds-space-4-5);   /* #cell rectangle/600/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/600/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-400);   /* #cell rectangle/600/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
+}
+
+.list-item--500 {
+  --awds-list-item-padding:  var(--awds-space-3);   /* #cell rectangle/500/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/500/icon */
+  --awds-list-item-img:      var(--awds-space-10);   /* #cell rectangle/500/img */
+  --awds-list-item-img-pad:  var(--awds-space-1);   /* #cell rectangle/500/img-padding */
+  --awds-list-item-preview:  var(--awds-space-15-5);   /* #cell rectangle/500/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
+  --awds-list-item-text-gap: var(--awds-space-4-5);   /* #cell rectangle/500/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-600);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-600);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-400);   /* #cell rectangle/500/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-400);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-400);
+}
+
+.list-item--400 {
+  --awds-list-item-padding:  var(--awds-space-2-5);   /* #cell rectangle/400/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/400/icon */
+  --awds-list-item-img:      var(--awds-space-9);   /* #cell rectangle/400/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/400/img-padding */
+  --awds-list-item-preview:  var(--awds-space-13-5);   /* #cell rectangle/400/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-400);   /* #cell rectangle/400/rounded */
+  --awds-list-item-text-gap: var(--awds-space-4);   /* #cell rectangle/400/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/400/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   /* #cell rectangle/400/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.list-item--300 {
+  --awds-list-item-padding:  var(--awds-space-2);   /* #cell rectangle/300/padding */
+  --awds-list-item-icon:     var(--awds-space-5);   /* #cell rectangle/300/icon */
+  --awds-list-item-img:      var(--awds-space-8);   /* #cell rectangle/300/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/300/img-padding */
+  --awds-list-item-preview:  var(--awds-space-12-5);   /* #cell rectangle/300/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-300);   /* #cell rectangle/300/rounded */
+  --awds-list-item-text-gap: var(--awds-space-3-5);   /* #cell rectangle/300/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-400);   /* #cell rectangle/300/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-400);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-400);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-300);   /* #cell rectangle/300/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-300);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-300);
+}
+
+.list-item--200 {
+  --awds-list-item-padding:  var(--awds-space-2);   /* #cell rectangle/200/padding */
+  --awds-list-item-icon:     var(--awds-space-4);   /* #cell rectangle/200/icon */
+  --awds-list-item-img:      var(--awds-space-7);   /* #cell rectangle/200/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/200/img-padding */
+  --awds-list-item-preview:  var(--awds-space-11-5);   /* #cell rectangle/200/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-200);   /* #cell rectangle/200/rounded */
+  --awds-list-item-text-gap: var(--awds-space-3-5);   /* #cell rectangle/200/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-300);   /* #cell rectangle/200/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-200);   /* #cell rectangle/200/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.list-item--100 {
+  --awds-list-item-padding:  var(--awds-space-1);   /* #cell rectangle/100/padding */
+  --awds-list-item-icon:     var(--awds-space-4);   /* #cell rectangle/100/icon */
+  --awds-list-item-img:      var(--awds-space-5);   /* #cell rectangle/100/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/100/img-padding */
+  --awds-list-item-preview:  var(--awds-space-9-5);   /* #cell rectangle/100/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-100);   /* #cell rectangle/100/rounded */
+  --awds-list-item-text-gap: var(--awds-space-2-5);   /* #cell rectangle/100/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-300);   /* #cell rectangle/100/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-300);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-300);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-200);   /* #cell rectangle/100/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-200);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-200);
+}
+
+.list-item--50 {
+  --awds-list-item-padding:  var(--awds-space-0-5);   /* #cell rectangle/50/padding */
+  --awds-list-item-icon:     var(--awds-space-4);   /* #cell rectangle/50/icon */
+  --awds-list-item-img:      var(--awds-space-4);   /* #cell rectangle/50/img */
+  --awds-list-item-img-pad:  var(--awds-space-0-5);   /* #cell rectangle/50/img-padding */
+  --awds-list-item-preview:  var(--awds-space-8-5);   /* #cell rectangle/50/preview */
+  --awds-list-item-rounded:  var(--awds-rounded-border-radius-50);   /* #cell rectangle/50/rounded */
+  --awds-list-item-text-gap: var(--awds-space-2);   /* #cell rectangle/50/text-gap */
+  --awds-list-item-fs:       var(--awds-control-font-size-200);   /* #cell rectangle/50/typography */
+  --awds-list-item-lh:       var(--awds-control-line-height-200);
+  --awds-list-item-ls:       var(--awds-control-letter-spacing-200);
+  --awds-list-item-desc-fs:  var(--awds-control-font-size-100);   /* #cell rectangle/50/description */
+  --awds-list-item-desc-lh:  var(--awds-control-line-height-100);
+  --awds-list-item-desc-ls:  var(--awds-control-letter-spacing-100);
+}
+
+
+/* === Ширина: ось width (fill | hug) ===
+
+   fill — по умолчанию: строка во всю ширину контейнера (width: 100% в базе).
+   hug  — .list-item--hug: по содержимому, как экземпляр с шириной hug в макете. Так стоят
+   плитки размера в ряду: «38» шириной в текст и поля text-gap, а не в весь ряд.
+   fit-content, а не auto: auto у блочного родителя снова растянет строку. Заведено
+   20.11.2026 для мини-карточки товара, имя оси — как у table (.awds-table--hug). */
+
+.list-item.list-item--hug {
+  inline-size: fit-content;
+}
+.list-item.list-item--hug > .list-item__content {
+  flex: 0 0 auto;
+}
+
+
+/* === Variant: variation-img-selected === */
+
+/* Выбранная плитка обведена жирно — ячейка outline/width (2px), как у variation-selected.
+   Два класса: база .list-item повторена в файле каждого варианта, и при той же
+   специфичности толщину решал бы порядок подключения. */
+.list-item.list-item-variation-img-selected {
+  --awds-list-item-border-width: var(--awds-space-0-5);   /* #cell outline/width */
+}
+
+.list-item-variation-img-selected {
+  --awds-list-item-bg:          rgb(var(--surface-bright));   /* #cell list/variation-img/bg */
+  --awds-list-item-border:      rgb(var(--focus-core));   /* #cell list/variation-selected/border-rest */
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/color-rest */
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/description-rest */
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/icon-check-rest */
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/icon-rest */
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/chevron-rest */
+}
+
+/* Выключенный пункт не реагирует на наведение. Отсекаем через :not(), а не через
+   :enabled: корнем может быть <li> или <a>, а :enabled на не-form-элементах не
+   матчится — правило молча перестало бы работать. */
+@media (hover: hover) and (pointer: fine) {
+  .list-item-variation-img-selected:hover:not(:disabled):not([aria-disabled="true"]) {
+    --awds-list-item-bg:          rgb(var(--surface-bright));   /* #cell list/variation-img/bg */
+    --awds-list-item-border:      rgb(var(--focus-core));   /* #cell list/variation-selected/border-hover */
+    --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/color-hover */
+    --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/description-hover */
+    --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/icon-check-hover */
+    --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/icon-hover */
+    --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/chevron-hover */
+  }
+}
+
+.list-item-variation-img-selected:focus-visible,
+.list-item-variation-img-selected:has(> .list-item__prefix > :is(.checkbox, .radio) > input:focus-visible) {
+  --awds-list-item-bg:          rgb(var(--surface-bright));   /* #cell list/variation-img/bg */
+  --awds-list-item-border:      rgb(var(--focus-core));   /* #cell list/variation-selected/border-focus */
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/color-focus */
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/description-focus */
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/icon-check-focus */
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/icon-focus */
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/chevron-focus */
+}
+
+/* :active перекрывает всё, что менял :hover. */
+.list-item-variation-img-selected:active:not(:disabled):not([aria-disabled="true"]) {
+  --awds-list-item-bg:          rgb(var(--surface-bright));   /* #cell list/variation-img/bg */
+  --awds-list-item-border:      rgb(var(--focus-core));   /* #cell list/variation-selected/border-active */
+  --awds-list-item-color:       rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/color-active */
+  --awds-list-item-desc:        rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/description-active */
+  --awds-list-item-check:       rgb(var(--focus-container-on-high));   /* #cell list/variation-selected/icon-check-active */
+  --awds-list-item-icon-color:  rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/icon-active */
+  --awds-list-item-chevron:     rgb(var(--focus-container-on-highest));   /* #cell list/variation-selected/chevron-active */
+}
+
+
+/* === Фото и завеса ===
+
+   Подложка под фото — своя ячейка list/variation-img/bg: тон вариации фоном не
+   участвует, от него у плитки с фото только обводка и текст.
+
+   Завеса — псевдоэлемент, а не отдельный узел: она лежит поверх фото на всей
+   площади плитки и не должна перехватывать клики. */
+
+.list-item-variation-img-selected {
+  position: relative;
+}
+
+.list-item-variation-img-selected::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: rgb(var(--extended-shadow-3));   /* #cell list/variation-img/veil */
+  pointer-events: none;
+}
+
+/* Рамка поверх фото. Базовая рамка — inset-тень на корне, а <img> лежит над ней и
+   закрывает её целиком: на замере 20.11.2026 у выбранной плитки не было видно ни
+   пикселя обводки 2px. Рамку повторяем псевдоэлементом поверх кадра и завесы. */
+.list-item-variation-img-selected::after {
+  content: "";
+  /* @property с inherits: false не доходит до псевдоэлемента сам — тянем явно. */
+  --awds-list-item-border: inherit;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
+  pointer-events: none;
+}
+
+.list-item__img {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  /* cover, а не contain: фото заполняет плитку целиком, как в макете tab-product. */
+  object-fit: cover;
+}
+
+/* === Уважение к системной настройке «меньше движения» ===
+
+   prefers-reduced-motion: reduce — системный тумблер пользователя. Гасим
+   ДВИЖЕНИЕ, но не ИНФОРМАЦИЮ: подсветка строки остаётся, просто применяется
+   мгновенно. Непрерывных индикаторов у компонента нет. */
+
+@media (prefers-reduced-motion: reduce) {
+  .list-item {
+    transition: none;
+  }
+}

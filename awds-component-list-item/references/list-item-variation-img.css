@@ -543,6 +543,22 @@
 }
 
 
+/* === Ширина: ось width (fill | hug) ===
+
+   fill — по умолчанию: строка во всю ширину контейнера (width: 100% в базе).
+   hug  — .list-item--hug: по содержимому, как экземпляр с шириной hug в макете. Так стоят
+   плитки размера в ряду: «38» шириной в текст и поля text-gap, а не в весь ряд.
+   fit-content, а не auto: auto у блочного родителя снова растянет строку. Заведено
+   20.11.2026 для мини-карточки товара, имя оси — как у table (.awds-table--hug). */
+
+.list-item.list-item--hug {
+  inline-size: fit-content;
+}
+.list-item.list-item--hug > .list-item__content {
+  flex: 0 0 auto;
+}
+
+
 /* === Variant: variation-img === */
 
 .list-item-variation-img {
@@ -616,6 +632,20 @@
   inset: 0;
   border-radius: inherit;
   background-color: rgb(var(--extended-shadow-3));   /* #cell list/variation-img/veil */
+  pointer-events: none;
+}
+
+/* Рамка поверх фото. Базовая рамка — inset-тень на корне, а <img> лежит над ней и
+   закрывает её целиком: на замере 20.11.2026 у выбранной плитки не было видно ни
+   пикселя обводки 2px. Рамку повторяем псевдоэлементом поверх кадра и завесы. */
+.list-item-variation-img::after {
+  content: "";
+  /* @property с inherits: false не доходит до псевдоэлемента сам — тянем явно. */
+  --awds-list-item-border: inherit;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 var(--awds-list-item-border-width) var(--awds-list-item-border);
   pointer-events: none;
 }
 

@@ -49,14 +49,23 @@ description: List Item ArrowDS (.list-item).
 | `list-item-tabbar-selected` | `tabbar-selected` | Tabbar-selected | Активная вкладка нижней панели |
 | `list-item-menu` | `menu` | Menu | Пункт меню: при наведении подложка + акцентный текст |
 | `list-item-menu-selected` | `menu-selected` | Menu-selected | Текущий пункт меню |
-| `list-item-variation` | `variation` | Variaton | Плитка вариации товара, **всегда с описанием** |
+| `list-item-variation` | `variation` | Variaton | Плитка вариации товара: размер, цвет, комплектация; описание по желанию |
 | `list-item-variation-img` | `variation` + `variation-img` | Variation-img | Вариация, которую узнают по фотографии: расцветка, принт, комплект |
+| `list-item-variation-img-selected` | `variation-selected` + `variation-img` | Variation-img-selected | Выбранная фото-вариация: обводка 2px цвета выбора |
 | `list-item-variation-selected` | `variation-selected` | Variation-selected | Выбранная вариация: брендовая заливка и брендовая обводка |
-| `list-item-variation-indeterminate` | `variation-indeterminate` | Variaton-indeterminate | Вариация выбрана частично |
+| `list-item-variation-indeterminate` | `variation-indeterminate` | Variaton-indeterminate | Вариация есть, но не в выбранном сочетании (размер не в этом цвете) или выбрана частично |
 
-Полная таблица цветов по состояниям, когда брать и чего избегать — в reference каждого варианта: [transparent](references/list-item-transparent.md), [default](references/list-item-default.md), [default-selected](references/list-item-default-selected.md), [actual-selected](references/list-item-actual-selected.md), [accent-selected](references/list-item-accent-selected.md), [tabbar](references/list-item-tabbar.md), [tabbar-selected](references/list-item-tabbar-selected.md), [menu](references/list-item-menu.md), [menu-selected](references/list-item-menu-selected.md), [variation](references/list-item-variation.md), [variation-img](references/list-item-variation-img.md), [variation-selected](references/list-item-variation-selected.md), [variation-indeterminate](references/list-item-variation-indeterminate.md).
+Полная таблица цветов по состояниям, когда брать и чего избегать — в reference каждого варианта: [transparent](references/list-item-transparent.md), [default](references/list-item-default.md), [default-selected](references/list-item-default-selected.md), [actual-selected](references/list-item-actual-selected.md), [accent-selected](references/list-item-accent-selected.md), [tabbar](references/list-item-tabbar.md), [tabbar-selected](references/list-item-tabbar-selected.md), [menu](references/list-item-menu.md), [menu-selected](references/list-item-menu-selected.md), [variation](references/list-item-variation.md), [variation-img](references/list-item-variation-img.md), [variation-img-selected](references/list-item-variation-img-selected.md), [variation-selected](references/list-item-variation-selected.md), [variation-indeterminate](references/list-item-variation-indeterminate.md).
 
-**Варианты ходят парами** — невыбранный и выбранный: `default` / `default-selected`, `tabbar` / `tabbar-selected`, `menu` / `menu-selected`, `variation` / `variation-selected`. Держи пару вместе: смешивать `menu` с `default-selected` значит показывать выбор не тем способом, каким его показывает остальной список.
+**Варианты ходят парами** — невыбранный и выбранный: `default` / `default-selected`, `tabbar` / `tabbar-selected`, `menu` / `menu-selected`, `variation` / `variation-selected`, `variation-img` / `variation-img-selected`. Держи пару вместе: смешивать `menu` с `default-selected` значит показывать выбор не тем способом, каким его показывает остальной список.
+
+**Ширина — ось `width` (fill | hug), с 20.11.2026.** По умолчанию строка во всю ширину контейнера (`fill`). Модификатор `.list-item--hug` даёт ширину по содержимому — так стоят плитки размера в ряду мини-карточки товара: «38» шириной 49 px, а не во весь ряд. В Figma это не ось набора, а ширина hug у экземпляра. Имя — как у `table` (`.awds-table--hug`).
+
+```html
+<button type="button" role="radio" aria-checked="false" class="list-item list-item-variation list-item--400 list-item--hug">
+  <span class="list-item__content"><span class="list-item__title">38</span></span>
+</button>
+```
 
 **Имена нормализованы.** В Figma фреймы называются «Variaton» (опечатка, пропущена `i`) — в CSS это `variation` и `variation-indeterminate`. Точные подписи из макета лежат в `component.meta.json` → `variants[].figma_label`.
 
@@ -112,7 +121,7 @@ Radio — то же с `.radio` из `awds-component-radio`, и у всех ст
 | Ось | Класс | Макет | Что меняет |
 | --- | --- | --- | --- |
 | размер превью | `__prefix--content-img` | `prefix-list` `content=img` | малое превью, ячейка `rectangle/{N}/img`: 44 · 40 · 36 · 32 · 28 · 20 · 16 |
-| | `__prefix--content-preview` | `prefix-list` `content=preview` | крупное превью, ячейка `rectangle/{N}/preview`: 64 · 64 · 56 · 52 · 48 · 40 · 36 |
+| | `__prefix--content-preview` | `prefix-list` `content=preview` | крупное превью, ячейка `rectangle/{N}/preview`: 66 · 62 · 54 · 50 · 46 · 38 · 34 |
 | подложка | без модификатора | `preview` `bg=default` | `list/preview/bg-default` → `secondary-container-core`: фото товара |
 | | `__preview--bg-light` | `bg=light` | `list/preview/bg-light` → `surface-bright`: логотип бренда |
 | | `__preview--bg-brand` | `bg=brand` | градиент `surface-chromatic-*` под 45°, как фон шапки |
@@ -124,6 +133,9 @@ Radio — то же с `.radio` из `awds-component-radio`, и у всех ст
 - **Размеры 62 и 66 из первой версии макета округлены к шкале** (решение владельца
   30.09.2026): 500 и 600 → 64, остальные ступени — к ближайшему шагу вверх. Ячейки
   `rectangle/{N}/preview` заведены в студии в тот же день.
+  С 01.10.2026 (2.4.1) ячейки перенаправлены на полушаги `space-16-5…8-5`: канон размеров —
+  часть `suffix-list` в макете. По тем же ячейкам с 2.5.2 стоит образец в слоте вариаций
+  ([variation](references/list-item-variation.md)).
 - **`alt=""`, слот `aria-hidden`**: имя пункта несёт заголовок, картинка его не дублирует.
 
 ## Горизонталь текста — переключается, и не так, как у input
@@ -245,7 +257,13 @@ Radio — то же с `.radio` из `awds-component-radio`, и у всех ст
 
 | Вариант | Что | Контраст |
 |---|---|---|
-| `actual-selected` | заголовок и описание на hover, `accent-core` на `secondary-container-core` | **4.23:1** |
+| — | с 20.11.2026 выбранные варианты проходят, см. ниже | — |
+
+**20.11.2026:** текст, описание, иконки, галочка и шеврон `menu-selected`, `tabbar-selected` и
+`actual-selected` переведены в студии с `accent-core` на `accent-container-on-highest`. Было 3.93
+(корень) и 4.12 (shopotam) на `secondary-container-core`, 4.28 и 4.49 на белом; стало 5.10–5.70.
+Тёмный островок shopotam — 4.45. Замер и причина — `references/list-item-actual-selected.md`, «Контраст».
+Абзац ниже — замеры 25.09.2026, до этой правки.
 
 Что теперь проходит: заголовок `default` в Rest — **4.96:1** (роль уехала на `secondary-container-on-high`),
 описание `transparent` и `variation-indeterminate` — **5.41:1** (та же причина), `actual-selected` в Rest

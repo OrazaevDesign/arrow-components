@@ -24,6 +24,8 @@
   <link rel="stylesheet" href="./list-item-variation.css">
   <link rel="stylesheet" href="./list-item-variation-selected.css">
   <link rel="stylesheet" href="./list-item-variation-indeterminate.css">
+  <link rel="stylesheet" href="./list-item-variation-img.css">
+  <link rel="stylesheet" href="./list-item-variation-img-selected.css">
 
   <style>
     body {
@@ -131,7 +133,7 @@
 </head>
 <body>
 
-<h1>List-item — 12 вариантов</h1>
+<h1>List-item — 14 вариантов</h1>
 <p class="sub">
   Строка списка ArrowDS: слот слева, текст (заголовок + опциональное описание), слот справа.
   Высота не задаётся явно и равна <code>2 × padding + line-height</code>. Горизонтальный отступ
@@ -217,6 +219,24 @@
   </thead>
   <tbody id="previews"></tbody>
 </table>
+
+<h2>Вариации товара: размер и цвет</h2>
+<p class="note">
+  Так плитки стоят в мини-карточке товара. Размеры — <code>variation</code> без описания, одной строкой:
+  обычный, выбранный (<code>variation-selected</code>) и недоступный в этом цвете
+  (<code>variation-indeterminate</code>). Цвет — пара <code>variation-img</code> / <code>variation-img-selected</code>,
+  плитка 76 × 95 задана контейнером.
+</p>
+<div class="variation-demo" role="radiogroup" aria-label="Размер" style="display:flex;flex-wrap:wrap;gap:var(--awds-space-2)">
+  <button type="button" role="radio" aria-checked="false" class="list-item list-item-variation list-item--400 list-item--hug"><span class="list-item__content"><span class="list-item__title">36</span></span></button>
+  <button type="button" role="radio" aria-checked="true" class="list-item list-item-variation-selected list-item--400 list-item--hug"><span class="list-item__content"><span class="list-item__title">37</span></span></button>
+  <button type="button" role="radio" aria-checked="false" class="list-item list-item-variation list-item--400 list-item--hug"><span class="list-item__content"><span class="list-item__title">38</span></span></button>
+  <button type="button" role="radio" aria-checked="false" aria-description="нет в этом цвете" class="list-item list-item-variation-indeterminate list-item--400 list-item--hug"><span class="list-item__content"><span class="list-item__title">41</span></span></button>
+</div>
+<div class="variation-demo" role="radiogroup" aria-label="Цвет" style="display:flex;gap:var(--awds-space-2);margin-top:var(--awds-space-4)">
+  <button type="button" role="radio" aria-checked="true" class="list-item list-item-variation-img-selected list-item--400" style="inline-size:76px;block-size:95px;padding:0;overflow:hidden"><img class="list-item__img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 95'%3E%3Crect width='76' height='95' fill='%23ededed'/%3E%3Cellipse cx='38' cy='60' rx='26' ry='9' fill='%23222'/%3E%3C/svg%3E" alt="Чёрный"></button>
+  <button type="button" role="radio" aria-checked="false" class="list-item list-item-variation-img list-item--400" style="inline-size:76px;block-size:95px;padding:0;overflow:hidden"><img class="list-item__img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 95'%3E%3Crect width='76' height='95' fill='%23ededed'/%3E%3Cellipse cx='38' cy='60' rx='26' ry='9' fill='%23a0522d'/%3E%3C/svg%3E" alt="Коричневый"></button>
+</div>
 
 <h2>В контексте: нижняя панель</h2>
 <p class="note">

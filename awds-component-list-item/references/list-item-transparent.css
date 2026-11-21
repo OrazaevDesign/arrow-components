@@ -538,6 +538,22 @@
 }
 
 
+/* === Ширина: ось width (fill | hug) ===
+
+   fill — по умолчанию: строка во всю ширину контейнера (width: 100% в базе).
+   hug  — .list-item--hug: по содержимому, как экземпляр с шириной hug в макете. Так стоят
+   плитки размера в ряду: «38» шириной в текст и поля text-gap, а не в весь ряд.
+   fit-content, а не auto: auto у блочного родителя снова растянет строку. Заведено
+   20.11.2026 для мини-карточки товара, имя оси — как у table (.awds-table--hug). */
+
+.list-item.list-item--hug {
+  inline-size: fit-content;
+}
+.list-item.list-item--hug > .list-item__content {
+  flex: 0 0 auto;
+}
+
+
 /* === Variant: transparent === */
 
 .list-item-transparent {

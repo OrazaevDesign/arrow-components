@@ -31,7 +31,7 @@
 
 | Состояние | Фон | Рамка | Подпись и иконка |
 |---|---|---|---|
-| Все | `transparent` | `transparent` | `accent-core` |
+| Все | `transparent` | `transparent` | `accent-container-on-highest` |
 | Disabled | | | прозрачность 40% |
 
 Ячейки `list/tabbar-selected/*` в студии без состояний. Жирной рамки 2px, как у прежней выбранной вкладки, больше нет.

@@ -28,25 +28,29 @@
 
 | Состояние | Фон | Рамка | Заголовок | Описание |
 |---|---|---|---|---|
-| Rest | `transparent` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
-| Hover | `secondary-container-core` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
-| Focus | `transparent` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
-| Active | `transparent` | `secondary-container-on-lowest` | `accent-core` | `accent-core` |
+| Rest | `transparent` | `secondary-container-on-lowest` | `accent-container-on-highest` | `accent-container-on-highest` |
+| Hover | `secondary-container-core` | `secondary-container-on-lowest` | `accent-container-on-highest` | `accent-container-on-highest` |
+| Focus | `transparent` | `secondary-container-on-lowest` | `accent-container-on-highest` | `accent-container-on-highest` |
+| Active | `transparent` | `secondary-container-on-lowest` | `accent-container-on-highest` | `accent-container-on-highest` |
 
-Галочка (`.list-item__check`): `accent-core` в покое.
+Галочка (`.list-item__check`): `accent-container-on-highest` в покое.
 
 ## Замечания
 
 **Меняется только фон при наведении** — обводка и текст остаются на месте. Строка не «загорается», а лишь показывает, что она кликабельна.
 
-**Акцентный текст здесь не значит «ошибка».** Роль `accent-core` в этой палитре красная, но семантика у неё — «актуальное, текущее». Под ошибку берётся роль `error-*`, и такого варианта в этом Component Set нет.
+**Акцентный текст здесь не значит «ошибка».** Роль `accent-container-on-highest` — тёмный тон акцента, в палитре shopotam красный, но семантика у неё — «актуальное, текущее». Под ошибку берётся роль `error-*`, и такого варианта в этом Component Set нет.
 
 ## Контраст
 
-- Описание в состоянии **Rest**: `accent-core` (#eea28b) на `transparent` (фон страницы, взят белый) — **2.06:1** при норме 4.5:1.
-- Описание в состоянии **Hover**: `accent-core` (#eea28b) на `secondary-container-core` (#f7f7f7) — **1.93:1** при норме 4.5:1.
+С 20.11.2026 текст, описание, иконки, галочка и шеврон трёх выбранных вариантов (`menu-selected`, `tabbar-selected`, `actual-selected`) идут на `accent-container-on-highest`, а не на `accent-core`. Замер по локальной студии, светлая тема:
 
-Это свойство ролей дизайн-системы, а не вёрстки — чинится в токенах, не здесь.
+| Фон | `accent-core` (было) | `accent-container-on-highest` (стало) |
+|---|---|---|
+| `secondary-container-core` (наведение, `menu-selected`) | 3.93 корень · 4.12 shopotam | 5.10 · 5.23 |
+| белый фон страницы (`transparent`) | 4.28 · 4.49 | 5.56 · 5.70 |
+
+Норма 4.5:1. В тёмном островке новая роль даёт 4.89 на корне и 4.45 на shopotam — сайты сейчас живут в светлой теме. Поводом стала проверка рамки справки `awds-doc-layout` на shopotam: пункт дерева давал 4.02:1.
 
 ## Геометрия, состояния, слоты
 
