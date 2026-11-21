@@ -10,7 +10,7 @@
 
 ```html
 <div class="pcard pcard-price-first">
-  <div class="pcard__media">
+  <div class="pcard__media theme-default theme-light">
     <!-- #1 фото → карточка товара (aria-label, т.к. ссылка без текста) -->
     <a class="pcard__image-link" href="/product/123" aria-label="Название товара">
       <img class="pcard__image" src="/img/123.jpg" alt="Название товара">
@@ -121,7 +121,7 @@
 
 ```html
 <div class="pcard pcard-price-first">
-  <div class="pcard__media">
+  <div class="pcard__media theme-default theme-light">
     <a class="pcard__image-link" href="/product/123" aria-label="Название товара">
       <img class="pcard__image pcard__image--active" src="/img/123-1.jpg" alt="Название товара — фото 1">
       <img class="pcard__image" data-src="/img/123-2.jpg" alt="Название товара — фото 2">
@@ -309,7 +309,7 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
 | Ссылка | href | Поведение по `:hover` |
 |---|---|---|
-| `.pcard__image-link` (#1) | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · 3%-скрим `opacity → 0` |
+| `.pcard__image-link` (#1) | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · плашка `surface-container-lowest → surface-bright` |
 | `.pcard__brand` (#2) | бренд | цвет `surface-on-highest → accent-core` |
 | `.pcard__name` (#3) | товар | цвет `surface-on-highest → accent-core` |
 | `.pcard__category` (если включена) | рубрика | цвет `surface-on-high → accent-core` (ячейка `link/heading`; до 1.4.0 — `link/muted`, hover `surface-on-highest`) |
@@ -355,7 +355,7 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 |---|---|---|
 | `show-category` | `<a class="pcard__category">` — рубрика товара | выкл. |
 | `show-feedback` | `<div class="pcard__feedback">` — рейтинг и отзывы целиком | вкл. |
-| `show-cart` | `<div class="pcard__cart">` — зона корзины (состояния button и added) | выкл. |
+| `show-cart` | `<div class="pcard__cart">` — зона корзины (состояния button и added; added — счётчик в кнопке с 4.2.0, как в buy-now) | выкл. |
 
 Выключенное свойство означает, что элемента нет в разметке. Не прячь его через `hidden` или `display:none`: данные останутся в SSR-ответе. CSS править не нужно — у каждой строки свой верхний отступ, соседи от неё не зависят, и карточка просто становится ниже, как в макете. Порядок строк — как в разметке выше; рубрика идёт сразу после названия, зона корзины — последней. Порядок price-first в 1.4.0 не менялся: в остальных вариантах отзывы переехали под корзину, здесь — нет.
 
@@ -369,4 +369,4 @@ document.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
 ## Токены
 
-Все значения — через DS. Полная карта — в шапке `product-card-price-first.css` и в `SKILL.md`. Цвета: `surface-on-highest` (текст + скрим над фото @ opacity-5), `accent-core` (бренд/название/рубрика на hover), `surface-on-high` (рейтинг), `surface-bright` (фон медиа = рамка вокруг уменьшенного фото), `warning-core` (звезда). Теней нет. Бейджи и избранное — внешние компоненты (`badge.css`, `button-favorites.css`).
+Все значения — через DS. Полная карта — в шапке `product-card-price-first.css` и в `SKILL.md`. Цвета: `surface-on-highest` (текст), `accent-core` (бренд/название/рубрика на hover), `surface-on-high` (рейтинг), `surface-container-lowest` (плашка медиа, фото умножается на неё; по hover `surface-bright`), `warning-core` (звезда). Теней нет. Бейджи и избранное — внешние компоненты (`badge.css`, `button-favorites.css`).

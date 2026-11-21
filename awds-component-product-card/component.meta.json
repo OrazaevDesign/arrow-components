@@ -1,10 +1,10 @@
 {
   "component": "product-card",
-  "version": "4.0.0",
-  "contract_hash": "sha256:38439c5a2dfea2e58c773574ffc201dabf8bfb8c4040e89ca1c3bf00329aa41a",
-  "artifact_hash": "sha256:f5137668b1cec2d7d8f9f58962b42bb6ff619c86553e2827e72dc2ac2d3b4921",
-  "visual_change": false,
-  "released_at": "2026-11-20T23:08:17.564Z",
+  "version": "4.2.0",
+  "contract_hash": "sha256:3a6ad688f1024985fa486e87fb79a1f4f51f081939f43c58487fdca83a7d51b8",
+  "artifact_hash": "sha256:5468483bc79a5e63c45c49588472aade59e080e64beed8d168d4a04ac493d48c",
+  "visual_change": true,
+  "released_at": "2026-11-21T16:37:18.562Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -193,7 +193,6 @@
     "--awds-motion-ease-swap",
     "--awds-opacity-100",
     "--awds-opacity-40",
-    "--awds-opacity-5",
     "--awds-opacity-50",
     "--awds-rounded-border-radius-100",
     "--awds-rounded-border-radius-200",
@@ -224,6 +223,7 @@
     "--awds-wysiwyg-line-height-caption",
     "--surface-bright",
     "--surface-container-low",
+    "--surface-container-lowest",
     "--surface-dim",
     "--surface-on",
     "--surface-on-high",
@@ -619,11 +619,15 @@
     "parent_task": "💠 1 · core",
     "primary": true
   },
+  "js_files": [
+    "product-card-cart.js"
+  ],
   "uses": {
     "awds-component-badge": "1.1.1",
     "awds-component-button": "2.0.2",
     "awds-component-button-favorites": "1.0.5",
     "awds-component-focus-selection": "2.0.3",
+    "awds-component-notice": "2.0.6",
     "awds-component-price": "2.0.1",
     "awds-component-slider": "1.1.1"
   },
@@ -643,6 +647,7 @@
       "pcard__brand",
       "pcard__brand-logo",
       "pcard__cart",
+      "pcard__cart-count",
       "pcard__cart-view",
       "pcard__cart-view--added",
       "pcard__cart-view--button",
@@ -679,7 +684,9 @@
       "price__currency",
       "price__main",
       "price__old",
-      "price__placeholder"
+      "price__placeholder",
+      "theme-dark",
+      "theme-light"
     ],
     "attributes": [
       "data-cart-state"

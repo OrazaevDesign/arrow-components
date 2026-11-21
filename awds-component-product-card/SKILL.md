@@ -42,7 +42,7 @@ description: Product Card ArrowDS (.pcard).
 | Рубрика `.pcard__category` | ячейка `link/heading`: rest `surface-on-high`, hover `accent-core`. До 1.4.0 была `link/muted` с hover `surface-on-highest` — макет 07.10.2026 перевёл рубрику на `link/heading` |
 | Бренд / название — hover | ячейка `link/accent`: rest `surface-on-highest`, hover `accent-core` (без изменений) |
 | Стрелки галереи | компонент `awds-component-button-overhung` / secondary 100 — свои цвета, тень и прозрачность 60% → 90% |
-| Фон медиа | `rgb(var(--surface-bright))` |
+| Фон медиа | плашка `rgb(var(--surface-container-lowest))`, ссылка-фото на ней `mix-blend-mode: multiply`; hover — `rgb(var(--surface-bright))` (с 4.1.0). Тёмная тема — островок `theme-default theme-light` на `.pcard__media` |
 | Звезда рейтинга | `rgb(var(--warning-core))` (`rating/selected`) |
 | Бейдж **percent** | bg `accent-core` / sheen `accent-chroma` / border `accent-core` / текст `accent-on` |
 | Бейдж **sale** | bg `primary-core` / sheen `primary-chroma` / border `primary-core` / текст `primary-on` |
@@ -57,7 +57,7 @@ description: Product Card ArrowDS (.pcard).
 
 ```
 .pcard  .pcard-price-first  [.pcard--mobile]        ← корень: контейнер <div>/<article>, НЕ ссылка
-├── .pcard__media                                   ← фото 3:4 + оверлеи
+├── .pcard__media.theme-default.theme-light        ← фото 3:4 + оверлеи; светлый островок темы (с 4.1.0)
 │   ├── a.pcard__image-link[href][aria-label]       ← ссылка #1 → товар (фото без текста, отсюда aria-label)
 │   │   └── .pcard__image[alt] [.pcard__image--active]  |  .pcard__media-placeholder
 │   │       (несколько .pcard__image = галерея; листание: стрелки .pcard__nav на десктопе, свайп на тач)
@@ -80,7 +80,7 @@ description: Product Card ArrowDS (.pcard).
     ├── a.pcard__brand[href]   ← ссылка #2 → бренд (с 07.10.2026 есть во всех вариантах)
     ├── a.pcard__name[href]    ← ссылка #3 → товар (1 строка с многоточием)
     ├── a.pcard__category[href] ← рубрика, необязательна (`show-category`)
-    ├── .pcard__cart[data-cart-state="button|added"]  ← зона корзины, необязательна (`show-cart`, см. «Зона корзины»)
+    ├── .pcard__cart[data-cart-state="button|added"]  ← зона корзины, необязательна (`show-cart`, см. «Зона корзины»); в кнопке — .notice.pcard__cart-count (с 4.2.0)
     └── .pcard__feedback ( .pcard__rating-icon + .pcard__rating-value + .pcard__reviews-icon + .pcard__reviews-count ) — статичный блок, не ссылка, необязателен (`show-feedback`)
         └ товар без отзывов → пустая .pcard__feedback.pcard__feedback--empty[aria-hidden] (резерв высоты строки)
 
@@ -127,7 +127,7 @@ description: Product Card ArrowDS (.pcard).
 
 **Резерв строки отзывов.** Когда строка отзывов включена, она стоит у каждой карточки ряда. У товара без отзывов вместо неё пустая `<div class="pcard__feedback pcard__feedback--empty" aria-hidden="true"></div>`: высоту ей даёт `::before` с неразрывным пробелом на строке caption, поэтому резерв едет по `.typo-*` вместе с текстом. Без резерва карточки без отзывов были бы ниже, и ряд прыгал бы. Счётчик склоняется по числу — «1 отзыв / 2 отзыва / 5 отзывов» (остатки от деления на 10 и 100), зашитого «отзыва» больше нет.
 
-**Стрелки галереи.** `.pcard__nav` лежит внутри `.pcard__media`, после `.pcard__top` и перед `.pcard__badges`; ставится только при двух кадрах и больше. Кнопки по краям фото, по центру его высоты, поле `space-2` (8px). Видны только на десктопе: при наведении на фото (`@media (hover: hover)` + `.pcard__media:hover`) въезжают из-за края, с клавиатуры — по `:focus-visible` (не `:focus-within`: после клика мышью он залипал). Наведение на стрелку не возвращает скрим фото: hover держит `.pcard__media` (с 2.0.3). На тач-экранах (`hover: none`) и в `.pcard--mobile` стрелок нет. Почему так (решение владельца 07.10.2026): постоянные стрелки на каждой карточке ряда шумят, а на таче галерею и так листает свайп. Обёртка гасится целиком (`opacity 0 → 1`), прозрачность самих кнопок 60% → 90% держит button-overhung, так что две прозрачности не спорят. На десктопе стрелки — единственный способ листать: переключение кадра позицией курсора (hover-зоны) убрано решением владельца 07.10.2026 — со стрелками оно мешало, кадр менялся от простого движения мыши. Кадр остаётся там, где его оставили: уход курсора с фото его не сбрасывает (решение владельца 07.10.2026, с 2.0.1). CSS — раздел «Стрелки галереи» в каждом `product-card-*.css`, JS — `wireGallery` (`references/product-card-price-first.md`).
+**Стрелки галереи.** `.pcard__nav` лежит внутри `.pcard__media`, после `.pcard__top` и перед `.pcard__badges`; ставится только при двух кадрах и больше. Кнопки по краям фото, по центру его высоты, поле `space-2` (8px). Видны только на десктопе: при наведении на фото (`@media (hover: hover)` + `.pcard__media:hover`) въезжают из-за края, с клавиатуры — по `:focus-visible` (не `:focus-within`: после клика мышью он залипал). Наведение на стрелку не возвращает плашку фото в покой: hover держит `.pcard__media` (с 2.0.3). На тач-экранах (`hover: none`) и в `.pcard--mobile` стрелок нет. Почему так (решение владельца 07.10.2026): постоянные стрелки на каждой карточке ряда шумят, а на таче галерею и так листает свайп. Обёртка гасится целиком (`opacity 0 → 1`), прозрачность самих кнопок 60% → 90% держит button-overhung, так что две прозрачности не спорят. На десктопе стрелки — единственный способ листать: переключение кадра позицией курсора (hover-зоны) убрано решением владельца 07.10.2026 — со стрелками оно мешало, кадр менялся от простого движения мыши. Кадр остаётся там, где его оставили: уход курсора с фото его не сбрасывает (решение владельца 07.10.2026, с 2.0.1). CSS — раздел «Стрелки галереи» в каждом `product-card-*.css`, JS — `wireGallery` (`references/product-card-price-first.md`).
 
 **Корень — контейнер, а не `<a>`.** Кликабельны отдельные ссылки: фото, бренд, название и рубрика, у каждой свой hover и свой фокус. Обернуть всю карточку в `<a>` нельзя: внутри живут кнопка избранного и кнопка корзины, а интерактивный элемент внутри ссылки — невалидная разметка, и клавиатура до него не доберётся.
 
@@ -146,6 +146,8 @@ description: Product Card ArrowDS (.pcard).
 5. Подключи `references/product-card-{вариант}.css` **и** CSS используемых компонентов: `awds-component-button-favorites/.../button-favorites.css` (избранное), `awds-component-price/.../price.css` (цена), `awds-component-badge/.../badge.css` (бейджи), `awds-component-slider/.../slider.css` (индикатор галереи), `awds-component-button-overhung/.../button-overhung-secondary.css` (стрелки галереи; без него `.obtn` не получит ни формы, ни прозрачности). Нужны `css-variables.css` сайта (роли) и базовые токены DS (`--awds-space-*`, `--awds-typography-*`, `--awds-rounded-*`, `--awds-shadow-*`, `--awds-font-*`).
 
 ## Зона корзины (buy-now / brand-first / button-price)
+
+**Счётчик «в корзине» (с 4.2.0, макет 21.11.2026).** Товар уже в корзине — в кнопке справа от подписи появляется `notice / accent` 400 с числом штук по всем вариантам товара; нажатие то же. Узел `<span class="notice notice-accent notice--400 pcard__cart-count" aria-hidden="true"></span>` — последний ребёнок кнопки, число и `data-cart-state` ставит `references/product-card-cart.js` (`js_files`, в блоки через `sync-component-js.mjs`), нужен `notice.css`. Подробно — `product-card-buy-now.md`, «Счётчик «в корзине»». Вью `--added` (ссылка на корзину) устарела.
 
 **Как её собирают блоки (с 07.10.2026).** Товарные слайдеры выводят только вью `button`, а кнопка «В корзину» открывает модалку быстрого просмотра Atlas — ту же, что у штатной мини-карточки витрины:
 

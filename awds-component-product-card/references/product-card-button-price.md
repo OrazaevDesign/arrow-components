@@ -12,7 +12,7 @@
 
 ```html
 <div class="pcard pcard-button-price">
-  <div class="pcard__media">
+  <div class="pcard__media theme-default theme-light">
     <!-- #1 фото → карточка товара -->
     <a class="pcard__image-link" href="/product/123" aria-label="Название товара">
       <img class="pcard__image" src="/img/123.jpg" alt="Название товара">
@@ -61,7 +61,7 @@
     <!-- рубрика → категория (link/heading: hover accent-core), необязательна: show-category -->
     <a class="pcard__category" href="/catalog/sneakers">Ссылка на рубрику товара</a>
     <!-- Зона корзины (Figma .addcart, ось cart = button | added). Компонент держит ОБЕ вью,
-         активную задаёт data-cart-state, переключение — кросс-фейд (CSS, wireCart в buy-now).
+         с 4.2.0 added — та же кнопка со счётчиком .pcard__cart-count (product-card-cart.js, см. buy-now).
          Товарный слайдер с 07.10.2026 выводит ТОЛЬКО вью button, а кнопка открывает
          модалку Atlas — см. «Кнопка корзины в блоке» ниже. -->
     <div class="pcard__cart" data-cart-state="button">
@@ -70,14 +70,8 @@
         <button type="button" class="btn btn-primary btn--400" aria-label="В корзину, 12 900 ₽">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M15.0506 2.5C15.9306 2.50006 16.6587 3.18425 16.7137 4.0625L17.4432 15.7295C17.5031 16.6888 16.7412 17.4998 15.7801 17.5H4.22056C3.25922 17.5 2.49756 16.6889 2.55747 15.7295L3.28598 4.0625C3.34098 3.1842 4.07 2.5 4.95005 2.5H15.0506ZM12.4999 5.83301C12.0397 5.83309 11.6668 6.2068 11.6668 6.66699C11.6667 7.58732 10.9202 8.33301 9.99985 8.33301C9.07955 8.33293 8.33304 7.58727 8.33286 6.66699C8.33286 6.20675 7.96009 5.83301 7.49985 5.83301C7.03968 5.83309 6.66684 6.2068 6.66684 6.66699C6.66702 8.50774 8.15908 9.99992 9.99985 10C11.8407 10 13.3327 8.50779 13.3329 6.66699C13.3329 6.20675 12.9601 5.83301 12.4999 5.83301Z"/></svg>
           <span class="price price-default"><span class="price__main"><span class="price__current">12 900</span><span class="price__currency">₽</span></span></span>
+          <span class="notice notice-accent notice--400 pcard__cart-count" aria-hidden="true"></span>
         </button>
-      </div>
-      <!-- Вью added — товар уже в корзине: ссылка на корзину, иконка справа -->
-      <div class="pcard__cart-view pcard__cart-view--added">
-        <a class="btn btn-addition btn--400" href="/cart">
-          В корзину
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M8.71958 2.73464C9.38587 1.93511 10.6138 1.93521 11.2801 2.73464L14.5565 6.66628H17.0438C17.7757 6.66628 18.3646 7.29913 18.2811 8.04616C18.1848 8.90833 17.9356 10.8618 17.4754 12.7024C17.0276 14.4937 16.3296 15.9512 15.9647 16.6438C15.675 17.1934 15.1101 17.5002 14.5292 17.5003H5.46177C4.89126 17.5002 4.32992 17.204 4.03794 16.6604C3.67426 15.9832 2.99035 14.5626 2.52524 12.7024C2.04685 10.7888 1.80691 8.88558 1.71567 8.03932C1.6351 7.29193 2.22608 6.66628 2.95298 6.66628H5.44321L8.71958 2.73464ZM8.32212 10.6965C8.24647 10.2426 7.81704 9.93545 7.36314 10.011C6.90929 10.0866 6.60217 10.5162 6.67759 10.97L7.09458 13.47C7.17024 13.9239 7.59964 14.2311 8.05357 14.1555C8.50745 14.0799 8.8146 13.6504 8.73911 13.1965L8.32212 10.6965ZM12.6366 10.011C12.1828 9.93563 11.7532 10.2427 11.6776 10.6965L11.2616 13.1965C11.186 13.6504 11.4923 14.0798 11.9461 14.1555C12.4001 14.2312 12.8295 13.924 12.9051 13.47L13.3221 10.97C13.3976 10.5161 13.0904 10.0866 12.6366 10.011ZM7.61216 6.66628H12.3875L9.99985 3.80202L7.61216 6.66628Z"/></svg>
-        </a>
       </div>
     </div>
     <!-- отзывы — статичный блок (НЕ ссылка), необязателен: show-feedback. С 1.4.0 — ПОСЛЕДНЯЯ
@@ -155,7 +149,7 @@
 
 | Элемент | href / действие | Hover |
 |---|---|---|
-| `.pcard__image-link` | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · 3%-скрим `opacity → 0` |
+| `.pcard__image-link` | товар | фото без зума (`scale(0.9)` всегда, зум убран в 1.3.2) · плашка `surface-container-lowest → surface-bright` |
 | `.pcard__brand` | бренд | `surface-on-highest → accent-core` (link/accent) |
 | `.pcard__name` | товар | `surface-on-highest → accent-core` (link/accent) |
 | `.pcard__category` | рубрика | `surface-on-high → accent-core` (`link/heading`; до 1.4.0 — `link/muted`, hover `surface-on-highest`) |
@@ -164,7 +158,7 @@
 | `.pcard__cart` | в блоке — открыть модалку Atlas; в компоненте — добавить / перейти в корзину (`added`) | компонент держит обе вью, активную задаёт `data-cart-state`, кросс-фейд; блок выводит только `--button` |
 | `.btn-favorites` | избранное | свой компонент (toggle `aria-pressed`) |
 
-Теней нет. Фокус — на каждой ссылке отдельно. Переходы гасятся при `prefers-reduced-motion`. Состояние `added` и `wireCart` — [product-card-buy-now.md](product-card-buy-now.md#состояние-added-js-потребителя).
+Теней нет. Фокус — на каждой ссылке отдельно. Переходы гасятся при `prefers-reduced-motion`. Состояние `added` (счётчик «в корзине», с 4.2.0) — [product-card-buy-now.md](product-card-buy-now.md), раздел «Счётчик «в корзине»».
 
 ## Поля для биндинга (PageCraft / SSR)
 
@@ -184,7 +178,7 @@
 | Галерея фото | несколько `.pcard__image[src]` + `.pcard__slider` (одно фото → `.pcard__slider-spacer`) |
 | Скидка % | `.badge-market-percent` |
 | Корзина (блок) | кнопка во вью `--button`: `data-selector="mini-product-card:root"`, `data-product-id`, `data-product-variation-id` |
-| Корзина (возможность компонента) | `.pcard__cart[data-cart-state]`: вью `--button` ↔ вью `--added` (`a.btn-addition[href]` = ссылка на корзину) |
+| Корзина (возможность компонента) | `.pcard__cart[data-cart-state]`: `button` ↔ `added` — та же кнопка со счётчиком `.pcard__cart-count` (с 4.2.0; вью `--added` устарела) |
 | Избранное | `.btn-favorites[aria-pressed]` |
 
 **Необязательные строки.** Две строки контента включаются свойствами макета:
@@ -198,4 +192,4 @@
 
 ## Токены
 
-Все значения — через DS. Цвета: бренд и название `surface-on-highest` (link/accent) → hover `accent-core`; рубрика `surface-on-high` (`link/heading`) → hover `accent-core`; рейтинг «4.9» `surface-on-highest`; 💬 `surface-on`; счётчик `surface-on-high`; звезда `warning-core`; фон медиа `surface-bright`; скрим `surface-on-highest` @ `opacity-5`. Цена в кнопке — `awds-component-price` на шкале `--awds-control-*-400` и `currentColor` кнопки. Степпер — как в `buy-now`. Теней нет.
+Все значения — через DS. Цвета: бренд и название `surface-on-highest` (link/accent) → hover `accent-core`; рубрика `surface-on-high` (`link/heading`) → hover `accent-core`; рейтинг «4.9» `surface-on-highest`; 💬 `surface-on`; счётчик `surface-on-high`; звезда `warning-core`; плашка медиа `surface-container-lowest`, фото на ней `mix-blend-mode: multiply`, по hover `surface-bright` (с 4.1.0). Цена в кнопке — `awds-component-price` на шкале `--awds-control-*-400` и `currentColor` кнопки. Степпер — как в `buy-now`. Теней нет.

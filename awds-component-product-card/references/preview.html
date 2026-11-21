@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="./product-card-brand-first.css">
   <link rel="stylesheet" href="./product-card-buy-now.css">
   <link rel="stylesheet" href="./product-card-button-price.css">
+  <link rel="stylesheet" href="../../awds-component-notice/references/notice.css">
 
   <style>
     body {
@@ -284,24 +285,25 @@
     // Кнопка корзины. В button-price (btnPrice задан) подпись — цена: обычная и скидка —
     // иконка + только новая цена (компонент .price, размер от кнопки); без цены —
     // disabled «Нет в наличии» без иконки (решение владельца 07.10.2026).
+    // Счётчик «в корзине» (с 4.2.0) — notice / accent 400 последним ребёнком кнопки; число и
+    // data-cart-state ставит product-card-cart.js, в превью — wireCart ниже.
+    const cartCount = '<span class="notice notice-accent notice--400 pcard__cart-count" aria-hidden="true"></span>';
     const cartButton = (szBtn, btnPrice) => {
-      if (!btnPrice) return `<button type="button" class="btn btn-primary ${szBtn}" aria-label="В корзину, доставка с 9 декабря">${icCart}с 9 декабря</button>`;   // подпись — дата доставки (SKILL.md, «Дата доставки на кнопке»)
+      if (!btnPrice) return `<button type="button" class="btn btn-primary ${szBtn}" aria-label="В корзину, доставка с 9 декабря">${icCart}с 9 декабря${cartCount}</button>`;   // подпись — дата доставки (SKILL.md, «Дата доставки на кнопке»)
       if (btnPrice === 'none') return `<button type="button" class="btn btn-primary ${szBtn}" disabled>Нет в наличии</button>`;
       const value = btnPrice === 'sale' ? '11 900' : '12 900';
       return `<button type="button" class="btn btn-primary ${szBtn}" aria-label="В корзину, ${value} ₽">${icCart}`
-        + `<span class="price price-${btnPrice}"><span class="price__main"><span class="price__current">${value}</span><span class="price__currency">₽</span></span></span></button>`;
+        + `<span class="price price-${btnPrice}"><span class="price__main"><span class="price__current">${value}</span><span class="price__currency">₽</span></span></span>${cartCount}</button>`;
     };
 
     const cartZone = (mobile, cart, btnPrice) => {
       // Зона корзины — размер 400 в обеих вьюхах (макет 07.10.2026).
       const sz = 'btn--400';
       const state = cart === 'added' ? 'added' : 'button';
-      return `<div class="pcard__cart" data-cart-state="${state}">`
+      // С 4.2.0 вью --added нет: added — та же кнопка со счётчиком (макет 21.11.2026).
+      return `<div class="pcard__cart" data-cart-state="${state}" data-cart-count-label="в корзине: {n}">`
         + `<div class="pcard__cart-view pcard__cart-view--button">`
         +   cartButton(sz, btnPrice)
-        + `</div>`
-        + `<div class="pcard__cart-view pcard__cart-view--added">`
-        +   `<a class="btn btn-addition ${sz}" href="#cart">В корзину${icBasket}</a>`
         + `</div>`
         + `</div>`;
     };
@@ -330,7 +332,7 @@
       const frames = opts.frames || 3;
       return `
 <div class="pcard pcard-price-first${mobile ? ' pcard--mobile' : ''}">
-  <div class="pcard__media">
+  <div class="pcard__media theme-default theme-light">
     <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
     <div class="pcard__top">
       ${topMark(opts)}
@@ -358,7 +360,7 @@
       const frames = opts.frames || 3;
       return `
 <div class="pcard pcard-brand-first${mobile ? ' pcard--mobile' : ''}">
-  <div class="pcard__media">
+  <div class="pcard__media theme-default theme-light">
     <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
     <div class="pcard__top">
       ${topMark(opts)}
@@ -386,7 +388,7 @@
       const frames = opts.frames || 3;
       return `
 <div class="pcard pcard-buy-now${mobile ? ' pcard--mobile' : ''}">
-  <div class="pcard__media">
+  <div class="pcard__media theme-default theme-light">
     <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
     <div class="pcard__top">
       ${topMark(opts)}
@@ -414,7 +416,7 @@
       const frames = opts.frames || 3;
       return `
 <div class="pcard pcard-button-price${mobile ? ' pcard--mobile' : ''}">
-  <div class="pcard__media">
+  <div class="pcard__media theme-default theme-light">
     <a class="pcard__image-link" href="#" aria-label="Название товара">${galleryMedia(opts.image, frames)}</a>
     <div class="pcard__top">
       ${topMark(opts)}
@@ -561,16 +563,18 @@
     }
     const wireGalleries = (root) => root.querySelectorAll('.pcard__image-link').forEach(wireGallery);
 
-    // --- Зона корзины: переключение button → added ---
-    // Это код потребителя в минимальном виде: по нажатию «В корзину» товар добавляется,
-    // зона переходит в added (кросс-фейд на CSS по data-cart-state), а кнопка added —
-    // обычная ссылка на корзину. В превью ссылка ведёт на #cart и возвращает зону в button,
-    // чтобы переход можно было посмотреть ещё раз.
+    // --- Зона корзины: счётчик «в корзине» ---
+    // На витрине число из корзины ставит product-card-cart.js. В превью корзины нет, поэтому
+    // каждое нажатие добавляет штуку: 0 → 1 → 2 …; после 3 — снова 0, чтобы посмотреть оба вида.
+    // Карточка, созданная в состоянии added, стартует с 2.
     function wireCart(cart) {
       const primary = cart.querySelector('.pcard__cart-view--button .btn-primary');
-      const added   = cart.querySelector('.pcard__cart-view--added .btn');
-      primary && primary.addEventListener('click', () => { cart.dataset.cartState = 'added'; });
-      added   && added.addEventListener('click', (e) => { e.preventDefault(); cart.dataset.cartState = 'button'; });
+      const badge   = cart.querySelector('.pcard__cart-count');
+      if (!primary || !badge) return;
+      let n = cart.dataset.cartState === 'added' ? 2 : 0;
+      const show = () => { badge.textContent = n ? String(n) : ''; cart.dataset.cartState = n ? 'added' : 'button'; };
+      show();
+      primary.addEventListener('click', () => { n = n >= 3 ? 0 : n + 1; show(); });
     }
     const wireCarts = (root) => root.querySelectorAll('.pcard__cart').forEach(wireCart);
 

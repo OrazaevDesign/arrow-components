@@ -1,5 +1,13 @@
 # product-card — журнал версий
 
+## 4.2.0 — 2026-11-21 — MINOR · visual
+Счётчик «в корзине» по макету 21.11.2026: товар в корзине — в основной кнопке notice accent 400 с числом штук по всем вариантам; число и data-cart-state ставит новый product-card-cart.js (корзина /my/shopping-cart/new-data, обновление по awds:cart-change). Вью --added устарела
+Потребителю: В кнопку вью button последним ребёнком <span class="notice notice-accent notice--400 pcard__cart-count" aria-hidden="true"></span>, подключить notice.css и скрипт product-card-cart.js (маркеры awds:component-js product-card); data-cart-count-label на .pcard__cart — фраза для имени кнопки
+
+## 4.1.0 — 2026-11-21 — MINOR · visual
+Фон фото: плашка surface-container-lowest под фото и mix-blend-mode: multiply на ссылке-фото вместо скрима 5% поверх (цвет товара 98% против 95,6%, оттенок не сдвигается); hover светлит плашку до surface-bright; медиа — островок theme-light
+Потребителю: Добавить на .pcard__media классы theme-default theme-light и обновить копию CSS. Без островка в тёмной теме фото остаётся белым листом на тёмной плашке, как в 4.0.0
+
 ## 4.0.0 — 2026-11-20 — MAJOR
 Окно из пяти точек галереи — компонента slider (1.1.0+): .slider--window и лента .slider__track вместо своих .pcard__slider--many и .pcard__slider-track, сдвиг --awds-slider-shift вместо --pcard-dots-shift; свои правила окна сняты. wireGallery раскладывает окно по конечной геометрии (эталон layoutSliderWindow), а не посреди анимации ширины — окно больше не ошибается на 1–3 px. У .pcard__slider снят max-width: 100%, иначе он перебивал ширину окна
 Потребителю: Разметка индикатора при кадрах > 5: .slider.slider-dots-mini.slider--window.pcard__slider с лентой .slider__track; wireGallery по references/product-card-price-first.md. Подтянуть секцию slider ≥ 1.1.0 рядом с секцией карточки (component-rollout slider и product-card). Вид не меняется: окно те же 52 px

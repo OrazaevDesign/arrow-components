@@ -15,8 +15,8 @@
    странице подключается один файл варианта.
 
    Карточка — контейнер (<div>), НЕ один <a>. Теней НЕТ. Поэлементные ссылки/hover:
-     1. .pcard__image-link (фото → товар): в покое фото scale(0.9) + 3%-скрим;
-        по hover скрим → 0; зума фото нет (убран в 1.3.2).
+     1. .pcard__image-link (фото → товар): в покое фото scale(0.9), multiply на светлую
+        плашку медиа; по hover плашка → surface-bright; зума фото нет (убран в 1.3.2).
      2. .pcard__brand (→ бренд): ячейка State link/accent (rest → hover).
      3. .pcard__name  (→ товар): ячейка State link/accent (rest → hover).
      Строка отзывов .pcard__feedback — статичный блок (НЕ ссылка), как в макете.
@@ -29,7 +29,7 @@
      — цена:                            компонент awds-component-price (surface-on-highest)
      — рейтинг «4.9»:                   surface-on-highest · звезда ячейка rating/selected/bg-rest → warning-core
      — 💬 иконка отзывов:                surface-on · счётчик surface-on-high
-     — фон медиа:                       surface-bright · скрим (3%→opacity-5) surface-on-highest
+     — плашка медиа:                       surface-container-lowest, фото multiply; hover → surface-bright
 
    Размеры:
      — медиа-скругление:  var(--awds-rounded-border-radius-500)
@@ -93,10 +93,21 @@
 
 /* === Media (фото 3:4 + оверлеи) === */
 
+/* Медиа — светлая плашка фото; ссылка-фото умножается на неё (multiply, с 4.1.0) —
+   устройство и причины в product-card-price-first.css, метод — arrow-design-system/
+   references/media-on-surface.md. Тёмная тема — островок theme-default theme-light на
+   .pcard__media в разметке. */
 .pcard-brand-first .pcard__media {
   position: relative;
   width: 100%;
   aspect-ratio: 3 / 4;
+  border-radius: var(--awds-rounded-border-radius-500);
+  background: rgb(var(--surface-container-lowest));             /* #cell product-card/media/bg */
+  isolation: isolate;                    /* multiply ссылки видит только плашку, не фон под карточкой */
+  transition: background-color var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
+}
+@media (hover: hover) and (pointer: fine) {
+  .pcard-brand-first .pcard__media:hover { background: rgb(var(--surface-bright)); }
 }
 
 /* #1 ссылка-фото → товар. Кликабельная поверхность; теней нет. */
@@ -104,9 +115,10 @@
   position: absolute;
   inset: 0;
   display: block;
-  overflow: hidden;                          /* клипает фото и скрим в скруглении */
+  overflow: hidden;                          /* клипает фото в скруглении */
   border-radius: var(--awds-rounded-border-radius-500);
-  background: rgb(var(--surface-bright));                       /* #cell product-card/media/bg */
+  background: rgb(var(--surface-bright));    /* белый — нейтральный для multiply: поле вокруг фото = плашка */
+  mix-blend-mode: multiply;              /* на ссылке целиком, не на кадре: кадры галереи перекрывают друг друга как раньше */
   text-decoration: none;
   /* Свайп галереи на тач-устройствах: вертикаль — нативному скроллу, горизонталь — JS галереи. */
   touch-action: pan-y;
@@ -121,7 +133,7 @@
   object-fit: contain;                   /* фото товара вписывается целиком, без обрезки */
   display: block;
 
-  /* Фото уменьшено на 10% (видна рамка surface-bright). Зум по hover убран в 1.3.2.
+  /* Фото уменьшено на 10% (видно поле плашки). Зум по hover убран в 1.3.2.
      opacity — для кроссфейда кадров галереи (см. ниже). */
   transform: scale(0.9);
   transition: opacity var(--awds-motion-duration-quick) var(--awds-motion-ease-state);
@@ -131,10 +143,10 @@
    обязателен — иначе правило перебьёт по специфичности отметку активного кадра. */
 /* Подложка кадра галереи: фото товара часто с прозрачным или белым фоном, и без
    подложки новый кадр не закрывал старый — оба силуэта были видны весь переход.
-   Непрозрачный фон медиа (тот же surface-bright, что у ссылки-фото) делает каждый
+   Непрозрачный белый фон (тот же surface-bright, что у ссылки-фото) делает каждый
    кадр «листом»: входящий закрывает уходящий целиком. Одиночное фото не затронуто. */
 .pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image {
-  background: rgb(var(--surface-bright));                     /* #cell product-card/media/bg */
+  background: rgb(var(--surface-bright));                     /* белое уходит в плашку через multiply ссылки */
 }
 
 .pcard-brand-first .pcard__image-link:has(.pcard__image--active) .pcard__image:not(.pcard__image--active) {
@@ -150,20 +162,10 @@
   transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
 
-/* 3% тёмный скрим над фото в покое, убирается по hover (opacity-5 ≈ округление 3%) */
-.pcard-brand-first .pcard__image-link::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-5)); /* #cell product-card/media/overlay */
-  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
-  z-index: 2;                            /* скрим над активным кадром (z-index 1) */
-}
-@media (hover: hover) and (pointer: fine) {
-  .pcard-brand-first .pcard__media:hover .pcard__image-link::after { /* hover на медиа, а не на ссылке: стрелки лежат рядом со ссылкой, и наведение на них не гасит hover фото */
-    opacity: 0;
-  }
+/* Скрим поверх фото убран в 4.1.0: серый фон даёт плашка под фото (см. price-first).
+   Страховка тёмной темы без островка theme-light: смешивание выключено, фото белым листом. */
+.theme-dark .pcard-brand-first .pcard__media:not(.theme-light, .theme-light .pcard__media) .pcard__image-link {
+  mix-blend-mode: normal;
 }
 
 /* Плейсхолдер, когда фото нет (внутри ссылки-фото) */
@@ -190,7 +192,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;                  /* над скримом */
+  z-index: 1;                  /* над ссылкой-фото */
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -301,7 +303,7 @@
   top: 50%;
   left: 0;
   right: 0;
-  z-index: 1;                            /* над скримом .pcard__image-link::after */
+  z-index: 1;                            /* над ссылкой-фото */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -603,12 +605,27 @@
   min-width: 0;
 }
 .pcard-brand-first .pcard__cart:not([data-cart-state="added"]) .pcard__cart-view--button,
+.pcard-brand-first .pcard__cart[data-cart-state="added"]:not(:has(.pcard__cart-view--added)) .pcard__cart-view--button,
 .pcard-brand-first .pcard__cart[data-cart-state="added"] .pcard__cart-view--added {
   opacity: 1;
   visibility: visible;
   transform: scale(1);
   pointer-events: auto;
   transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-swap), transform var(--awds-motion-duration-enter) var(--awds-motion-ease-swap);
+}
+
+/* Счётчик «в корзине» (макет 21.11.2026, часть .addcart cart=added): та же основная кнопка
+   с компонентом notice / accent 400 в суффиксе — сколько штук товара уже в корзине по всем
+   его вариантам. Узел .notice.notice-accent.notice--400.pcard__cart-count лежит в кнопке
+   вью button последним ребёнком; виден только при data-cart-state="added". Число и состояние
+   ставит references/product-card-cart.js. Вью --added (ссылка на корзину, до 4.2.0) не
+   выводится, если её нет в разметке: тогда added показывает вью button со счётчиком (:has —
+   Baseline 2023). Старая разметка с обеими вью работает как раньше. */
+.pcard-brand-first .pcard__cart-count {
+  flex-shrink: 0;                          /* «99+» не сжимается текстом кнопки */
+}
+.pcard-brand-first .pcard__cart:not([data-cart-state="added"]) .pcard__cart-count {
+  display: none;
 }
 
 /* Polish (MIFB): уважаем prefers-reduced-motion — гасим зум фото и переходы. */
@@ -621,7 +638,7 @@
     transition: none;
   }
   .pcard-brand-first .pcard__image-link,
-  .pcard-brand-first .pcard__image-link::after,
+  .pcard-brand-first .pcard__media,
   .pcard-brand-first .pcard__brand,
   .pcard-brand-first .pcard__name,
   .pcard-brand-first .pcard__category,
