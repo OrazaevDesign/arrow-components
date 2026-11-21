@@ -188,18 +188,22 @@
   /* Страница не должна сдвигаться по вертикали. Пока полоса снимается и возвращается, ширина
      содержимого на миг меняется, текст переносится иначе, и привязка прокрутки браузера
      (scroll anchoring) подкручивала страницу: замер 21.11.2026 на shopotam — +2 px на каждое
-     открытие окна, и назад не возвращалось. На время перестановки привязка выключена, а
-     прокрутка возвращается на место, где была. */
+     открытие окна, и назад не возвращалось. Привязка выключена всё время, пока страница
+     заблокирована (прокручивать её всё равно нельзя), и включается через два кадра после
+     снятия блокировки; прокрутка после перестановки возвращается туда, где была. */
   function keepY(html) {
     if (anchor === null) anchor = html.style.overflowAnchor;
     html.style.overflowAnchor = 'none';
     return window.scrollY;
   }
-  function backY(html, y) {
+  function backY(html, y, release) {
+    void html.offsetHeight;                                   // раскладка до замера, иначе scrollY старый
     if (window.scrollY !== y) window.scrollTo(window.scrollX, y);
+    if (!release) return;
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
-        if (anchor !== null) { html.style.overflowAnchor = anchor; anchor = null; }
+        if (saved || anchor === null) return;                 // страницу уже снова заблокировали
+        html.style.overflowAnchor = anchor; anchor = null;
       });
     });
   }
@@ -228,7 +232,7 @@
       html.style.overflow = saved.o; html.style.scrollbarGutter = saved.g; html.style.paddingRight = saved.p;
       html.style.removeProperty('--awds-scroll-lock-gap');
       saved = null;
-      backY(html, y2);
+      backY(html, y2, true);
     }
   }
   function release(dialog) {
