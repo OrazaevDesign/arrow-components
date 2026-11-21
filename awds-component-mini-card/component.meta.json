@@ -1,10 +1,10 @@
 {
   "component": "mini-card",
-  "version": "1.0.1",
-  "contract_hash": "sha256:d3798e209727e167d60100ab05ff166e3906dededc56e82d0b11ec5da1804154",
-  "artifact_hash": "sha256:25a5104c52df94193f1c8d3239ec58025eaff1f14bc5857b4fdf08cf8e9b8726",
+  "version": "1.1.0",
+  "contract_hash": "sha256:16423e60decf74d4a4e30886c46b426a937fc2ebc59d34ee8cf2e48d66b177a8",
+  "artifact_hash": "sha256:1cf2d12305250b5f122169f8c4a60f19f105e0e85a87e79671643ffe4b501e5a",
   "visual_change": true,
-  "released_at": "2026-11-21T00:55:39.621Z",
+  "released_at": "2026-11-21T10:23:05.028Z",
   "own_values": [],
   "figma": {
     "file_key": "Ka13CUzLUGk47hSRV1lwQ8",
@@ -104,10 +104,13 @@
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
     "--awds-layout-section-gutter-modal",
+    "--awds-motion-duration-enter",
+    "--awds-motion-ease-linear",
+    "--awds-motion-ease-state",
+    "--awds-opacity-5",
     "--awds-rounded-border-radius-600",
     "--awds-space-0-5",
     "--awds-space-1",
-    "--awds-space-12",
     "--awds-space-13",
     "--awds-space-16",
     "--awds-space-2",
@@ -121,7 +124,8 @@
     "--awds-wysiwyg-font-size-lead",
     "--awds-wysiwyg-letter-spacing-lead",
     "--awds-wysiwyg-line-height-lead",
-    "--surface-container-low",
+    "--awds-zindex-offcanvas",
+    "--surface-bright",
     "--surface-dim",
     "--surface-on-high",
     "--surface-on-highest"
@@ -163,6 +167,7 @@
       "list-item",
       "list-item__img",
       "mcard",
+      "mcard--under",
       "mcard__aspect",
       "mcard__aspect-label",
       "mcard__aspect-value",
@@ -178,6 +183,7 @@
       "mcard__duty",
       "mcard__error",
       "mcard__frame",
+      "mcard__frame--active",
       "mcard__frames",
       "mcard__gallery",
       "mcard__info",
@@ -194,12 +200,15 @@
       "mcard__tiles",
       "mcard__title",
       "mdl",
+      "mdl__back",
       "mdl__footer--stretch",
       "price"
     ],
     "attributes": [
+      "data-mc-ring",
       "data-state",
-      "hidden"
+      "hidden",
+      "open"
     ],
     "elements": [
       "img"

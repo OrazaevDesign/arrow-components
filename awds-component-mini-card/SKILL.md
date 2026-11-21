@@ -21,7 +21,7 @@ description: Mini Card ArrowDS (.mcard).
 | --- | --- | --- |
 | окно, панель справа; ≤ 615 — шторка снизу | `modal` | `.mdl.mdl-sidepage.mcard`, ширина 480 — ручка `--awds-mdl-width` |
 | шапка поверх фото: «Закрыть» и избранное | `modal`, `button`, `button-favorites` | `.mdl__header--overlay`, `.mdl__back`, `.btn-favorites.btn--500` |
-| галерея: кадры 3:4, стрелки, точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
+| галерея: квадрат, кадры стопкой с кроссфейдом, фото 90% на подложке и скрим 5% (как в product-card), стрелки, точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
 | плашки скидки, цена | `badge` market-percent / market-sale 100, `price` | `.mcard__price .price` — цена 28/28, валюта 12 (аккумуляторы price) |
 | название — ссылка на товар, две строки | `link` accent | `.mcard__title > .lnk` |
 | вариации | `list-item` variation(-selected, -indeterminate) 400 hug; variation-img(-selected) 76 × 95 | `.mcard__aspect`, `.mcard__tiles` |
@@ -44,7 +44,7 @@ description: Mini Card ArrowDS (.mcard).
   <div class="mdl__content mdl__content--flush">
     <div class="mcard__body" data-state="loading">
       <div class="mcard__gallery">
-        <div class="mcard__frames"><img class="mcard__frame" src="…" alt="Название товара"></div>
+        <div class="mcard__frames"><img class="mcard__frame mcard__frame--active" src="…" alt="Название товара"><img class="mcard__frame" data-src="…" alt=""></div>
         <button class="obtn obtn-secondary obtn--400 obtn--icon-only mcard__nav mcard__nav--prev" type="button" aria-label="Предыдущее фото">…</button>
         <button class="obtn obtn-secondary obtn--400 obtn--icon-only mcard__nav mcard__nav--next" type="button" aria-label="Следующее фото">…</button>
         <div class="slider slider-dots mcard__dots" aria-hidden="true">…</div>
@@ -84,7 +84,7 @@ description: Mini Card ArrowDS (.mcard).
 
 | `state` | Что видно |
 | --- | --- |
-| `loading` (сразу при открытии) | фото, цена, название и бренд из карточки листинга; на месте вариаций кольцо; пошлина и доставка скрыты; «Купить сейчас» и кнопка подвала выключены |
+| `loading` (сразу при открытии) | фото, цена, название и бренд из карточки листинга; на месте вариаций кольцо в поле высотой с одну группу вариаций (64), чтобы кнопки ниже не прыгали после ответа; пошлина и доставка скрыты; «Купить сейчас» и кнопка подвала выключены |
 | `default` (нет атрибута) | всё по ответу `product-variation-offers` |
 | `error` | на месте вариаций строка «Не загрузились размеры и доставка» и «Повторить»; кнопки выключены |
 
@@ -97,7 +97,7 @@ description: Mini Card ArrowDS (.mcard).
 ## Вьюхи
 
 `view=mobile` — окно ≤ 615 (та же граница, на которой sidepage становится шторкой): нет стрелок
-галереи, листание пальцем; ряд плиток прокручивается вбок без переноса, выбранная плитка
+галереи, листание свайпом; ряд плиток прокручивается вбок без переноса, выбранная плитка
 подкручивается в поле зрения. `view=desktop` — стрелки, плитки переносятся.
 
 ## Подключение в блоке
@@ -139,7 +139,10 @@ description: Mini Card ArrowDS (.mcard).
 - **Бренд** — имя и ссылка из ответа, логотип — из карточки листинга (в ответе offers логотипа нет):
   выключен логотип в блоке — в окне только имя.
 - **Избранное** — нажатием кнопки карточки (`[data-cps-fav]`): запрос, вход гостя и откат уже там;
-  окно отражает её `aria-pressed`. Гостю окно закрывается, чтобы не перекрыть окно входа.
+  окно отражает её `aria-pressed`. Гостю витрина открывает окно входа Atlas (обычный слой в
+  `<body>`, z-index 1060): на это время наше окно становится немодальным (`.mcard--under`,
+  z-index 1050) и остаётся на месте под входом; окно входа закрыли — наше снова модальное, фокус
+  на избранном. Вошёл — Atlas перезагружает страницу.
 - **Корзина** — `GET /my/shopping-cart/{variationId}/set-quantity/{qty}` с `X-Requested-With`, успех —
   `status: "success"`, `dataLayer` ответа уходит в `window.dataLayer`. Изменение оптимистичное,
   ошибка — откат и сообщение для читалки. После успеха — событие `awds:cart-change` на `document`
@@ -149,7 +152,11 @@ description: Mini Card ArrowDS (.mcard).
   `summary.checkoutUrl` из `new-data`. Остальные товары остаются в корзине без галок.
 - **Адреса** — из карты эндпоинтов Atlas (`body[data-endpoint]`, `endpoints.*`); нет карты —
   адреса по умолчанию, те же, что зашиты в Atlas.
-- **Фокус** при открытии — на «Закрыть» (первая кнопка шапки); после перерисовки подвала фокус
+- **Галерея** — как в product-card: кадры лежат стопкой, новый проявляется поверх уходящего;
+  стрелки листают по кругу, на таче свайп (порог 32 px, вертикаль отдана прокрутке). Кадры со
+  второго приходят в `data-src` и грузятся на наведение, касание или первое листание.
+- **Фокус** при открытии — на «Закрыть» (первая кнопка шапки) с видимым кольцом, даже если окно
+  открыли мышью (атрибут `data-mc-ring` до потери фокуса); после перерисовки подвала фокус
   остаётся у нажатой кнопки. Закрывают «Закрыть», Esc, клик по подложке, «назад» браузера
   (`modal.js`). Прокрутку страницы держит `modal.js`.
 

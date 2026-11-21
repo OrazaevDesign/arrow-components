@@ -18,8 +18,12 @@
 
    Различие видов — только геометрия:
      dialog   — скругление со всех сторон (rounded-900), окно по центру экрана
-     sidepage — без скругления, панель прижата к краю во всю высоту
-     планшет (616–1023) — dialog шторкой снизу (верх rounded-800), sidepage остаётся панелью
+     sidepage — панель прижата к краю во всю высоту; скруглена только грань, обращённая
+                к странице (rounded-900), у края экрана углы прямые (с 1.12.0). Сторона —
+                ось side=end|start: end (база, справа) скругляет начало строки, start
+                (.mdl--side-start, слева) — конец строки
+     планшет (616–1023) — dialog шторкой снизу (верх rounded-800), sidepage остаётся панелью,
+                внутренняя грань rounded-800
      телефон (≤615) — оба шторкой снизу: скруглены только верхние углы (rounded-800)
 
    Маппинг (Figma → DS), сверен замером 22.09.2026:
@@ -44,7 +48,7 @@
 
    Структура: .mdl > .mdl__header + .mdl__content + .mdl__footer.
    Базовый класс .mdl, а не .modal — см. base_class_note в component.meta.json.
-   Приватные аккумуляторы: --awds-mdl-bg, -backdrop, -rounded, -sheet-rounded, -pad-side, -content-side,
+   Приватные аккумуляторы: --awds-mdl-bg, -backdrop, -rounded, -sheet-rounded, -edge-rounded, -pad-side, -content-side,
      -pad-top, -pad-bottom, -gap, -footer-gap, -width, -title-fs, -title-lh, -title-ls.
    ============================================================================= */
 
@@ -147,9 +151,17 @@
 }
 
 /* === Вид: Sidepage (панель у края) ===
-   Панель прижата к краю во всю высоту, поэтому скругления нет: у края экрана его
-   нечем показать. Сторона задаётся потребителем — по умолчанию правая. */
+   Панель прижата к краю во всю высоту. Углы у края экрана прямые — там скругление
+   нечем показать; грань, обращённая к странице, скруглена (с 1.12.0, решение владельца
+   20.11.2026: панель справа скругляется слева, панель слева — справа). Стороны
+   логические, как margin-inline: на странице с письмом справа налево панель и её
+   скругление отражаются сами.
+   Ось side (макет modal / sidepage, side=end|start):
+     end   — база, класса нет: панель у конца строки (справа), скруглено начало строки
+     start — .mdl--side-start: панель у начала строки (слева), скруглён конец строки
+   До 1.12.0 левая панель задавалась инлайн-стилем margin-inline: 0 auto и скругления не имела. */
 .mdl-sidepage {
+  --awds-mdl-edge-rounded: var(--awds-mdl-rounded);   /* внутренняя грань: 900 (20) на десктопе */
   inline-size: var(--awds-mdl-width);
   max-inline-size: calc(100% - var(--awds-mdl-pad-side));
   block-size: 100%;
@@ -157,6 +169,14 @@
   margin-block: 0;
   margin-inline: auto 0;
   border-radius: 0;
+  border-start-start-radius: var(--awds-mdl-edge-rounded);
+  border-end-start-radius: var(--awds-mdl-edge-rounded);
+}
+.mdl-sidepage.mdl--side-start {
+  margin-inline: 0 auto;
+  border-radius: 0;
+  border-start-end-radius: var(--awds-mdl-edge-rounded);
+  border-end-end-radius: var(--awds-mdl-edge-rounded);
 }
 
 /* === Шапка === */
@@ -209,6 +229,47 @@
    не было вовсе. */
 .mdl__header:has(> .mdl__close) > .mdl__title {
   padding-inline-end: max(var(--awds-space-0), var(--awds-space-11) - var(--awds-mdl-pad-side));
+}
+
+/* Шапка только с крестиком — .mdl__header--close (с 1.13.0; в макете / header, ось
+   content=title|close, ячейка content=close). Полей нет, высота — ровно квадрат крестика 44
+   (button / ghost 500, space-11) на всех ширинах. Без модификатора шапка без заголовка
+   держит поля: 36 + 8 = 44 на десктопе и 16 + 8 = 24 ниже 1024 — совпадение с крестиком
+   было только на десктопе. Решение владельца 20.11.2026 закрывает вопрос 22.09.2026
+   «оставляем унифицированную геометрию или заводим ось под шапку с крестиком в углу». */
+.mdl__header--close {
+  padding: 0;
+  min-block-size: var(--awds-space-11);
+}
+
+/* Шапка поверх содержимого — .mdl__header--overlay (с 1.13.0; ячейка content=overlay).
+   Места не занимает и фона не имеет: содержимое начинается от верха окна, кнопки лежат
+   поверх него (фото товара в мини-карточке — решение владельца 20.11.2026). Шапка — слой во всю
+   ширину высотой с кнопку (44); клики сквозь неё проходят к содержимому, ловят их только
+   кнопки. В макете то же выражено шапкой нулевой высоты, из которой ряд кнопок выходит вниз,
+   и порядком наложения «первый сверху» у окна. Опора для шапки — само окно: модальный
+   <dialog> позиционирован (fixed) браузером. */
+.mdl__header--overlay {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  z-index: 1;
+  /* Кнопки — ряд во всю ширину: «назад» (.mdl__back, show-back) у начала строки, слот
+     действий (в макете SLOT actions — например, button-favorites) у конца. Крестика в этой
+     шапке нет: окно закрывает «назад» (решение владельца 20.11.2026). Зазор между кнопками
+     слота — тот же, что в обычной шапке. */
+  justify-content: flex-end;
+  padding: 0;
+  min-block-size: var(--awds-space-11);
+  background: none;
+  pointer-events: none;
+}
+.mdl__header--overlay > * {
+  pointer-events: auto;
+}
+/* «Назад» уходит к началу строки, кнопки слота остаются у конца — и когда слот пуст. */
+.mdl__header--overlay > .mdl__back {
+  margin-inline-end: auto;
 }
 
 /* === Содержимое ===
@@ -303,10 +364,14 @@
 /* === Брейкпоинты (1.10.0, по ячейкам view набора) ===
    Планшет (616–1023): dialog — шторка снизу во всю ширину, верхние углы border-radius/800 (в ячейке
    view=tablet нарисовано 900, владелец 22.10.2026 решил 16, как на телефоне);
-   sidepage остаётся панелью у края без скругления, как на десктопе.
-   Телефон (≤615): шторкой становятся оба вида, верхние углы border-radius/800.
+   sidepage остаётся панелью у края, внутренняя грань border-radius/800 — как шторка на планшете
+   (с 1.12.0; до того без скругления).
+   Телефон (≤615): шторкой становятся оба вида, верхние углы border-radius/800 — при любой стороне.
    До 1.10.0 шторкой оба вида становились уже ниже 1024 и скругление было одно. */
 @media (max-width: 1023px) {
+  .mdl-sidepage {
+    --awds-mdl-edge-rounded: var(--awds-mdl-sheet-rounded);
+  }
   .mdl-dialog {
     inline-size: 100%;
     max-inline-size: 100%;
@@ -322,7 +387,8 @@
   }
 }
 @media (max-width: 615px) {
-  .mdl-sidepage {
+  .mdl-sidepage,
+  .mdl-sidepage.mdl--side-start {
     inline-size: 100%;
     max-inline-size: 100%;
     block-size: fit-content;

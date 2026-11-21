@@ -184,7 +184,25 @@
    блокировки. До 1.11.0 блокировку держал каждый блок сам, и копии спорили за стили <html>. */
 (function () {
   if (window.awdsScrollLock || !window.MutationObserver) return;
-  var holders = [], saved = null;
+  var holders = [], saved = null, anchor = null;
+  /* Страница не должна сдвигаться по вертикали. Пока полоса снимается и возвращается, ширина
+     содержимого на миг меняется, текст переносится иначе, и привязка прокрутки браузера
+     (scroll anchoring) подкручивала страницу: замер 21.11.2026 на shopotam — +2 px на каждое
+     открытие окна, и назад не возвращалось. На время перестановки привязка выключена, а
+     прокрутка возвращается на место, где была. */
+  function keepY(html) {
+    if (anchor === null) anchor = html.style.overflowAnchor;
+    html.style.overflowAnchor = 'none';
+    return window.scrollY;
+  }
+  function backY(html, y) {
+    if (window.scrollY !== y) window.scrollTo(window.scrollX, y);
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        if (anchor !== null) { html.style.overflowAnchor = anchor; anchor = null; }
+      });
+    });
+  }
   function set(key, on) {
     var html = document.documentElement, i = holders.indexOf(key);
     if (on && i < 0) holders.push(key);
@@ -196,6 +214,7 @@
       var body = document.body, wb = body ? body.getBoundingClientRect().width : 0;
       var before = html.clientWidth, pad = parseFloat(getComputedStyle(html).paddingRight) || 0;
       saved = { o: html.style.overflow, g: html.style.scrollbarGutter, p: html.style.paddingRight };
+      var y = keepY(html);
       html.style.overflow = 'hidden';
       html.style.scrollbarGutter = 'auto';
       var gap = Math.max(html.clientWidth - before, body ? body.getBoundingClientRect().width - wb : 0, 0);
@@ -203,10 +222,13 @@
         html.style.paddingRight = (pad + gap) + 'px';
         html.style.setProperty('--awds-scroll-lock-gap', gap + 'px');
       }
+      backY(html, y);
     } else if (!holders.length && saved) {
+      var y2 = keepY(html);
       html.style.overflow = saved.o; html.style.scrollbarGutter = saved.g; html.style.paddingRight = saved.p;
       html.style.removeProperty('--awds-scroll-lock-gap');
       saved = null;
+      backY(html, y2);
     }
   }
   function release(dialog) {

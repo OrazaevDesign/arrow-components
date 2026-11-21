@@ -1,10 +1,10 @@
 {
   "component": "modal",
-  "version": "1.11.2",
-  "contract_hash": "sha256:7446f0ab4e57e69775a5063ff27de675d549fa52d69f4c6ef02fb5647bd846d3",
-  "artifact_hash": "sha256:39d05b4cc2da2d60c64b0407673e0ca6cac920004173626e62e479837a2285f1",
-  "visual_change": true,
-  "released_at": "2026-10-29T11:29:50.983Z",
+  "version": "1.13.1",
+  "contract_hash": "sha256:5f6481bdc83345e644eb88f10d29e450e069966a9aad8f7994f74c49ca622964",
+  "artifact_hash": "sha256:f82203215ac7f68dbb6041fc4792e49a0db262d44ce98346d8dd9a4367d48da1",
+  "visual_change": false,
+  "released_at": "2026-11-21T10:23:05.079Z",
   "own_values": [
     {
       "value": "0.2s",
@@ -158,10 +158,11 @@
       "level": "component",
       "target": "modal",
       "severity": "minor",
-      "status": "open",
+      "status": "answered",
       "raised_at": "2026-09-22",
       "evidence": "замер 22.09.2026: ячейки variant=close|empty|back имели padding 32/0/0/0, ячейки с заголовком — 32/24/8/24; у подвала variant=empty было 0/24/32/24 против 8/24/24/24 у остальных. В коде различие снимает :has()",
-      "asana_gid": "1218731217740780"
+      "asana_gid": "1218731217740780",
+      "answer": "Заводим ось: / header content=title|close|overlay (решение владельца 20.11.2026, modal 1.13.0). close — только крестик, без полей, высота 44; overlay — поверх содержимого, «назад» слева закрывает окно, справа слот действий."
     },
     {
       "id": "modal-scrollbar-on-foreign-master",
@@ -250,6 +251,7 @@
       "btn",
       "mdl",
       "mdl--fullscreen",
+      "mdl--side-start",
       "mdl-dialog",
       "mdl-sidepage",
       "mdl__action",
@@ -264,6 +266,8 @@
       "mdl__footer--reverse",
       "mdl__footer--stretch",
       "mdl__header",
+      "mdl__header--close",
+      "mdl__header--overlay",
       "mdl__text",
       "mdl__title"
     ],

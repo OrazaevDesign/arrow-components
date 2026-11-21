@@ -193,7 +193,7 @@
       '<div class="mdl__content mdl__content--flush">' +
         '<div class="mcard__body" data-state="loading">' +
           '<div class="mcard__gallery">' +
-            '<div class="mcard__frames" data-mc-frames tabindex="-1"></div>' +
+            '<div class="mcard__frames" data-mc-frames></div>' +
             '<button class="obtn obtn-secondary obtn--400 obtn--icon-only mcard__nav mcard__nav--prev" type="button" data-mc-prev aria-label="' + esc(L.t('card.photo_prev')) + '" hidden>' + ICON.prev + '</button>' +
             '<button class="obtn obtn-secondary obtn--400 obtn--icon-only mcard__nav mcard__nav--next" type="button" data-mc-next aria-label="' + esc(L.t('card.photo_next')) + '" hidden>' + ICON.next + '</button>' +
             '<div class="slider slider-dots mcard__dots" data-mc-dots aria-hidden="true" hidden></div>' +
@@ -264,8 +264,8 @@
       var t = e.target;
       if (t === d) { d.close(); return; }                                   // клик по подложке
       if (t.closest('[data-mc-close]')) { d.close(); return; }
-      if (t.closest('[data-mc-prev]')) { self.go(self.frameIndex - 1); return; }
-      if (t.closest('[data-mc-next]')) { self.go(self.frameIndex + 1); return; }
+      if (t.closest('[data-mc-prev]')) { self.go(-1); return; }
+      if (t.closest('[data-mc-next]')) { self.go(1); return; }
       if (t.closest('[data-mc-retry]')) { self.load(); return; }
       if (t.closest('[data-mc-buy]')) { self.buy(); return; }
       if (t.closest('[data-mc-add]')) { self.setQty(1); return; }
@@ -275,17 +275,32 @@
       var tile = t.closest('[data-mc-param]');
       if (tile) self.pick(tile.getAttribute('data-mc-aspect'), tile.getAttribute('data-mc-param'));
     });
-    var raf = 0;
-    frames.addEventListener('scroll', function () {
-      if (raf) return;
-      raf = requestAnimationFrame(function () {
-        raf = 0;
-        var w = frames.clientWidth;
-        if (w) self.setFrame(Math.round(Math.abs(frames.scrollLeft) / w), false);
-      });
-    }, { passive: true });
+    // Свайп — как у галереи product-card (wireGallery): порог 32 px листает на кадр, длинный
+    // свайп листает дальше; вертикальный жест отдаётся прокрутке окна (touch-action: pan-y).
+    var SWIPE = 32, sx = 0, sy = 0, axis = '', dragging = false;
+    frames.addEventListener('pointerdown', function (e) {
+      self.warm();
+      if (e.pointerType === 'mouse' || (self.frameCount || 0) < 2) return;
+      dragging = true; axis = ''; sx = e.clientX; sy = e.clientY;
+    });
+    frames.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - sx, dy = e.clientY - sy;
+      if (!axis && Math.sqrt(dx * dx + dy * dy) > 8) axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+      if (axis === 'x' && Math.abs(dx) >= SWIPE) {
+        var rtl = getComputedStyle(frames).direction === 'rtl';
+        self.go((dx < 0) !== rtl ? 1 : -1);                               // влево → следующий
+        sx = e.clientX;
+      }
+    });
+    var stop = function () { dragging = false; };
+    frames.addEventListener('pointerup', stop);
+    frames.addEventListener('pointercancel', stop);
+    this.q('.mcard__gallery').addEventListener('pointerenter', function () { self.warm(); });
     d.addEventListener('close', function () {
+      if (d.open) return;                                                // окно лишь сменило режим (вход гостя)
       if (self.favObserver) { self.favObserver.disconnect(); self.favObserver = null; }
+      self.stopAuthWatch();
       self.busy = false;
     });
   };
@@ -312,10 +327,23 @@
     this.syncFav();
     this.setState('loading');
     if (!d.open) d.showModal();
-    var close = this.q('[data-mc-close]');
-    if (close) close.focus();                                             // фокус на «Закрыть» (решение 01-33, п. 10)
-    this.q('[data-mc-frames]').scrollLeft = 0;
+    this.focusClose();
     this.load();
+  };
+
+  /* Фокус на «Закрыть» (решение 01-33, п. 10). Окно открывают мышью, и после щелчка браузер
+     программный фокус кольцом не показывает: покупатель не видел, где фокус, и Tab уводил
+     его на избранное. Кольцо держит атрибут data-mc-ring, пока кнопка не потеряет фокус
+     (решение владельца 21.11.2026). */
+  P.focusClose = function () {
+    var close = this.q('[data-mc-close]');
+    if (!close) return;
+    close.setAttribute('data-mc-ring', '');
+    if (!close.__mcRing) {
+      close.__mcRing = true;
+      close.addEventListener('blur', function () { close.removeAttribute('data-mc-ring'); });
+    }
+    try { close.focus({ preventScroll: true }); } catch (e) { close.focus(); }
   };
 
   P.setState = function (s) {
@@ -515,13 +543,19 @@
   };
 
   /* ── галерея ───────────────────────────────────────────────────────────────────────── */
+  /* Галерея — как в product-card: кадры лежат стопкой, активный проявляется поверх уходящего
+     (кроссфейд в CSS), стрелки листают по кругу, на таче — свайп. До 1.0.2 была лента с
+     прокруткой и снапом: стрелки и точки догоняли прокрутку, листание дёргалось. Кадры со
+     второго — без src (адрес в data-src): у стопки один прямоугольник, и lazy грузил бы их
+     все сразу. Прогрев — на наведение, касание или первое листание. */
   P.renderFrames = function (frames, name) {
     var box = this.q('[data-mc-frames]');
     box.innerHTML = frames.map(function (f, i) {
-      return '<img class="mcard__frame" src="' + esc(f.src) + '"' + (has(f.srcset) ? ' srcset="' + esc(f.srcset) + '"' : '') +
-        ' alt="' + (i === 0 ? esc(name) : '') + '"' + (i === 0 ? '' : ' loading="lazy"') + ' decoding="async">';
+      var set = has(f.srcset) ? ' ' + (i === 0 ? '' : 'data-') + 'srcset="' + esc(f.srcset) + '"' : '';
+      return '<img class="mcard__frame" ' + (i === 0 ? '' : 'data-') + 'src="' + esc(f.src) + '"' + set +
+        ' alt="' + (i === 0 ? esc(name) : '') + '" decoding="async">';
     }).join('');
-    box.scrollLeft = 0;
+    this.warmed = false;
     var n = frames.length;
     this.frameCount = n;
     var dots = this.q('[data-mc-dots]');
@@ -533,26 +567,38 @@
     this.q('[data-mc-prev]').hidden = n < 2;
     this.q('[data-mc-next]').hidden = n < 2;
     this.frameIndex = -1;
-    this.setFrame(0, false);
+    this.setFrame(0);
   };
-  P.setFrame = function (i, scroll) {
+  P.warm = function () {
+    if (this.warmed) return;
+    this.warmed = true;
+    Array.prototype.forEach.call(this.q('[data-mc-frames]').querySelectorAll('.mcard__frame'), function (im) {
+      if (im.dataset.srcset) { im.srcset = im.dataset.srcset; im.removeAttribute('data-srcset'); }
+      if (im.dataset.src) { im.src = im.dataset.src; im.removeAttribute('data-src'); }
+      if (im.decode) im.decode().catch(function () {});
+    });
+  };
+  P.setFrame = function (i) {
     var n = this.frameCount || 0;
     if (!n) return;
     i = Math.max(0, Math.min(n - 1, i));
-    if (scroll) {
-      var box = this.q('[data-mc-frames]');
-      var dir = getComputedStyle(box).direction === 'rtl' ? -1 : 1;
-      box.scrollTo({ left: dir * i * box.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-    }
     if (i === this.frameIndex) return;
     this.frameIndex = i;
+    var many = n > 1;
+    Array.prototype.forEach.call(this.q('[data-mc-frames]').querySelectorAll('.mcard__frame'), function (im, k) {
+      im.classList.toggle('mcard__frame--active', many && k === i);
+    });
     var dots = this.q('[data-mc-dots]');
     Array.prototype.forEach.call(dots.querySelectorAll('.slider__dot'), function (d, k) { d.classList.toggle('slider__dot--active', k === i); });
     if (n > 5) layoutSliderWindow(dots, i);
-    this.q('[data-mc-prev]').disabled = i === 0;
-    this.q('[data-mc-next]').disabled = i === n - 1;
   };
-  P.go = function (i) { this.setFrame(i, true); };
+  /* Шаг по кругу, как стрелки product-card: с последнего кадра — на первый. */
+  P.go = function (step) {
+    var n = this.frameCount || 0;
+    if (n < 2) return;
+    this.warm();
+    this.setFrame((this.frameIndex + step + n) % n);
+  };
 
   /* ── подвал и корзина ──────────────────────────────────────────────────────────────── */
   P.renderFooter = function () {
@@ -631,12 +677,51 @@
       this.favObserver.observe(src, { attributes: true, attributeFilter: ['aria-pressed'] });
     }
   };
+  /* Гостю витрина открывает окно входа (модуль Atlas authTrigger по [data-auth]). Его окно —
+     обычный слой в <body> (z-index 1060), а наше модальное лежит в верхнем слое браузера и
+     делает остальную страницу инертной: вход оказался бы под нами и не нажимался. До 1.0.2
+     окно просто закрывалось. Теперь на время входа оно переходит в немодальный режим —
+     остаётся на месте ниже слоя входа (.mcard--under, z-index offcanvas 1050), — а когда
+     окно входа исчезло, снова становится модальным. Вошёл — Atlas перезагрузит страницу. */
   P.toggleFav = function () {
     var src = this.src.fav;
     if (!src) return;
-    // Гостю витрина открывает окно входа — наше окно его закрыло бы, поэтому сначала уходим.
-    if (src.hasAttribute('data-auth')) this.dialog.close();
+    if (src.hasAttribute('data-auth')) this.underAuth();
     src.click();
+  };
+  P.underAuth = function () {
+    var self = this, d = this.dialog;
+    if (!d.open || !d.matches(':modal')) return;
+    d.classList.add('mcard--under');
+    d.close();                                                           // синхронно: событие close придёт уже открытому окну
+    d.show();
+    var seen = false, gone = 0, waited = 0;
+    var atlasModal = function () {
+      var list = document.querySelectorAll('.z-modal');
+      for (var i = 0; i < list.length; i++) if (!d.contains(list[i]) && list[i].getAttribute('aria-hidden') !== 'true') return true;
+      return false;
+    };
+    this.stopAuthWatch();
+    this.authTimer = setInterval(function () {
+      waited += 250;
+      if (atlasModal()) { seen = true; gone = 0; return; }
+      // Окно входа не появилось за 10 с (модуля нет — гость уходит на страницу входа) или
+      // закрылось (два замера подряд: между прелоадером и окном бывает пустой кадр).
+      if ((seen && ++gone >= 2) || (!seen && waited >= 10000)) self.backFromAuth();
+    }, 250);
+  };
+  P.stopAuthWatch = function () {
+    if (this.authTimer) { clearInterval(this.authTimer); this.authTimer = 0; }
+  };
+  P.backFromAuth = function () {
+    var d = this.dialog;
+    this.stopAuthWatch();
+    d.classList.remove('mcard--under');
+    if (!d.open || d.matches(':modal')) return;
+    d.close();
+    d.showModal();
+    var fav = this.q('[data-mc-fav]');
+    if (fav && !fav.hidden) fav.focus();
   };
 
   /* ── вход ──────────────────────────────────────────────────────────────────────────── */

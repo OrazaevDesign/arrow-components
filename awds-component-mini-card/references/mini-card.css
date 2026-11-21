@@ -33,26 +33,59 @@
 /* ── галерея ─────────────────────────────────────────────────────────────────────────── */
 .mcard__gallery {
   position: relative;
-  aspect-ratio: 3 / 4;                              /* 408 × 544 / 343 × 457 */
-  background: rgb(var(--surface-container-low));
+  aspect-ratio: 1 / 1;                              /* квадрат (решение владельца 21.11.2026; в макете 3:4) */
+  background: rgb(var(--surface-bright));           /* как фото product-card (#cell product-card/media/bg) */
   overflow: hidden;
 }
-/* Лента кадров — прокрутка со снапом: на таче листается пальцем, стрелки и точки едут за ней. */
+/* Кадры стопкой, как в галерее product-card: активный проявляется поверх уходящего. Листают
+   стрелки и свайп (JS); вертикальный жест отдан прокрутке окна. */
 .mcard__frames {
-  display: flex;
+  position: relative;
   block-size: 100%;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  touch-action: pan-y;
+  isolation: isolate;                               /* z-index кадров живёт внутри ленты */
 }
-.mcard__frames::-webkit-scrollbar { display: none; }
 .mcard__frame {
-  flex: 0 0 100%;
+  position: absolute;
+  inset: 0;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: contain;                              /* как фото в product-card: кадр целиком */
-  scroll-snap-align: start;
+  object-fit: contain;                              /* кадр вписан целиком, без обрезки */
+  display: block;
+  transform: scale(0.9);                            /* как в product-card: вокруг фото поле подложки */
+}
+/* Скрим поверх фото, как в product-card: 5% в покое, гаснет при наведении на галерею.
+   Стрелки и точки лежат рядом с лентой, а не в ней, поэтому остаются над скримом. */
+.mcard__frames::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgb(var(--surface-on-highest) / var(--awds-opacity-5));   /* #cell product-card/media/overlay */
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
+  z-index: 2;                                       /* над активным кадром (z-index 1) */
+}
+@media (hover: hover) and (pointer: fine) {
+  .mcard__gallery:hover .mcard__frames::after { opacity: 0; }
+}
+/* Подложка кадра: фото часто на прозрачном фоне, и без неё сквозь новый кадр был бы виден
+   уходящий. Уходящий гаснет мгновенно, но после того, как новый закрыл его целиком —
+   симметричный кроссфейд давал провал посередине (приём product-card). */
+.mcard__frames:has(.mcard__frame--active) .mcard__frame {
+  background: rgb(var(--surface-bright));
+}
+.mcard__frames:has(.mcard__frame--active) .mcard__frame:not(.mcard__frame--active) {
+  opacity: 0;
+  transition: opacity 0s var(--awds-motion-ease-linear) var(--awds-motion-duration-enter);
+}
+.mcard__frame--active {
+  opacity: 1;
+  z-index: 1;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mcard__frame,
+  .mcard__frames::after { transition: none !important; }
 }
 .mcard__nav {
   position: absolute;
@@ -175,10 +208,14 @@
   block-size: 100%;
 }
 
+/* Высота места загрузки — одна группа вариаций с текстовыми плитками (подпись 20 + 8 + плитка
+   36 = 64): у большинства товаров одна такая группа, и после ответа offers кнопки и бренд ниже
+   не прыгают (решение владельца 21.11.2026; в макете кольцо с полями 48 сверху и снизу). */
 .mcard__loading {
   display: none;
   justify-content: center;
-  padding-block: var(--awds-space-12);
+  align-items: center;
+  block-size: var(--awds-space-16);
 }
 .mcard__error {
   display: none;
@@ -229,6 +266,23 @@
   list-style: none;
 }
 .mcard__delivery:empty { display: none; }
+
+/* ── фокус при открытии ──────────────────────────────────────────────────────────────── */
+/* Кольцо на «Закрыть» сразу при открытии, даже если окно открыли мышью: браузер программный
+   фокус после щелчка кольцом не показывает. Атрибут снимается при потере фокуса (JS). */
+.mcard .mdl__back[data-mc-ring]:focus {
+  outline: var(--awds-focus-width) solid var(--awds-focus-color);
+  outline-offset: var(--awds-focus-offset);
+}
+
+/* ── окно входа витрины поверх ───────────────────────────────────────────────────────── */
+/* На время входа гостя окно немодальное (JS, toggleFav): верхнего слоя и подложки у него нет,
+   поэтому место и слой задаются здесь — ниже окна входа Atlas (z-modal 1060). */
+.mdl.mcard--under[open] {
+  position: fixed;
+  inset: 0;
+  z-index: var(--awds-zindex-offcanvas);
+}
 
 /* ── состояния тела ──────────────────────────────────────────────────────────────────── */
 /* loading: вариации, пошлина и доставка скрыты, на месте вариаций кольцо, «Купить сейчас» выключена.
