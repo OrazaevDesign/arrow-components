@@ -34,7 +34,7 @@ description: Button Favorites ArrowDS (.btn-favorites).
 
 | Состояние | CSS | Дуотон (заливка / контур) |
 |---|---|---|
-| **Rest** (не в избранном) | `.btn-favorites` | `surface-bright` (белый) / `surface-on-high` (серый) |
+| **Rest** (не в избранном) | `.btn-favorites` | `surface-bright` (белый) / `surface-on-highest` (тёмно-серый; с 21.11.2026, было `surface-on-high`) |
 | **Hover** | `.btn-favorites:hover` | `error-container-dim` (розовый) / `error-core` (красный) |
 | **Focus** | `:focus-visible` | как Rest; кольцо рисует слой `focus-selection` |
 | **Press** | `:active` | как Hover, плюс `transform: scale(0.9)` |

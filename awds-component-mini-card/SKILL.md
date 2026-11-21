@@ -20,8 +20,8 @@ description: Mini Card ArrowDS (.mcard).
 | Часть | Компонент | Класс |
 | --- | --- | --- |
 | окно, панель справа; ≤ 615 — шторка снизу | `modal` | `.mdl.mdl-sidepage.mcard`, ширина 480 — ручка `--awds-mdl-width` |
-| шапка поверх фото: «Закрыть» и избранное | `modal`, `button`, `button-favorites` | `.mdl__header--overlay`, `.mdl__back`, `.btn-favorites.btn--500` |
-| галерея: квадрат, кадры стопкой с кроссфейдом, фото 90% на подложке и скрим 5% (как в product-card), стрелки, точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
+| шапка поверх фото: «Закрыть», избранное, «поделиться» | `modal` (слоты `start` / `end`), `button-overhung` secondary 400 (сердце `.obtn__fav`), `toast` normal | `.mdl__header--overlay`, `.mdl__back`, `[data-mc-share]`, `.mcard__toast` |
+| галерея: квадрат, кадры стопкой с кроссфейдом, фото 90% умножается (multiply) на светлую плашку `surface-container-lowest`, островок `theme-light` в тёмной теме (как в product-card 4.1.0), стрелки, точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
 | плашки скидки, цена | `badge` market-percent / market-sale 100, `price` | `.mcard__price .price` — цена 28/28, валюта 12 (аккумуляторы price) |
 | название — ссылка на товар, две строки | `link` accent | `.mcard__title > .lnk` |
 | вариации | `list-item` variation(-selected, -indeterminate) 400 hug; variation-img(-selected) 76 × 95 | `.mcard__aspect`, `.mcard__tiles` |
@@ -38,12 +38,13 @@ description: Mini Card ArrowDS (.mcard).
 ```html
 <dialog class="mdl mdl-sidepage mcard" aria-labelledby="awds-mc-1-title">
   <header class="mdl__header mdl__header--overlay">
-    <button class="btn btn-ghost btn--500 btn--icon-only mdl__back" type="button" aria-label="Закрыть">…</button>
-    <button class="btn btn-favorites btn--500 btn--icon-only" type="button" aria-pressed="false" aria-label="В избранное">…</button>
+    <button class="obtn obtn-secondary obtn--400 obtn--icon-only mdl__back" type="button" aria-label="Закрыть">…arrow_left…</button>
+    <button class="obtn obtn-secondary obtn--400 obtn--icon-only" type="button" aria-pressed="false" aria-label="В избранное"><span class="obtn__fav" aria-hidden="true">…</span></button>
+    <button class="obtn obtn-secondary obtn--400 obtn--icon-only" type="button" aria-label="Поделиться">…share_2…</button>
   </header>
   <div class="mdl__content mdl__content--flush">
     <div class="mcard__body" data-state="loading">
-      <div class="mcard__gallery">
+      <div class="mcard__gallery theme-default theme-light">
         <div class="mcard__frames"><img class="mcard__frame mcard__frame--active" src="…" alt="Название товара"><img class="mcard__frame" data-src="…" alt=""></div>
         <button class="obtn obtn-secondary obtn--400 obtn--icon-only mcard__nav mcard__nav--prev" type="button" aria-label="Предыдущее фото">…</button>
         <button class="obtn obtn-secondary obtn--400 obtn--icon-only mcard__nav mcard__nav--next" type="button" aria-label="Следующее фото">…</button>
@@ -106,8 +107,10 @@ description: Mini Card ArrowDS (.mcard).
 
 1. `style.css` — секции компонентов: `mini-card`, `modal`, `stepper`, `list-item` (transparent,
    variation, variation-selected, variation-indeterminate, variation-img, variation-img-selected; 300,
-   400), `progress` circular, `button` (primary, secondary, ghost; 400, 500, 600), `button-favorites`
-   500, `button-overhung` secondary 400, `slider` dots, `link` accent, `price`, `badge`.
+   400), `progress` circular, `button` (primary, secondary; 400, 500, 600), `button-overhung`
+   secondary 400 (с 1.3.0 — и кнопки шапки с сердцем `.obtn__fav`), `toast` normal (тост «Ссылка
+   скопирована», с 1.3.0), `slider` dots, `link` accent, `price`, `badge`. Секции `button` ghost 500 и
+   `button-favorites` 500 шапке больше не нужны; у блока они могут остаться для своих элементов.
 2. `script.js` — секции `// awds:component-js modal@…` и `// awds:component-js mini-card@…` на
    верхнем уровне файла; в коде блока после словаря строк одна строка:
    ```js
@@ -138,6 +141,12 @@ description: Mini Card ArrowDS (.mcard).
 - **Доставка** — `shipping_data` вариации: способ (`post`) с датой, если она есть, и цена (`price`).
 - **Бренд** — имя и ссылка из ответа, логотип — из карточки листинга (в ответе offers логотипа нет):
   выключен логотип в блоке — в окне только имя.
+- **«Поделиться»** (21.11.2026) — системное меню (`navigator.share`: телефоны, Safari, Chrome на
+  Windows) со ссылкой на товар из карточки; где меню нет — ссылка в буфер и тост `toast` normal
+  «Ссылка скопирована» на 3 с по центру над подвалом (`.mcard__toast`, высоту подвала скрипт кладёт в
+  `--mcard-toast-offset`). Отмена меню — не ошибка. Не скопировалось — тост «Не удалось скопировать
+  ссылку». Нет ссылки у карточки — нет и кнопки. Строки — `mini.share`, `mini.link_copied`,
+  `mini.share_error`.
 - **Избранное** — нажатием кнопки карточки (`[data-cps-fav]`): запрос, вход гостя и откат уже там;
   окно отражает её `aria-pressed`. Гостю витрина открывает окно входа Atlas (обычный слой в
   `<body>`, z-index 1060): на это время наше окно становится немодальным (`.mcard--under`,

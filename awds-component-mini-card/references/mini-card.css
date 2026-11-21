@@ -34,8 +34,14 @@
 .mcard__gallery {
   position: relative;
   aspect-ratio: 1 / 1;                              /* квадрат (решение владельца 21.11.2026; в макете 3:4) */
-  background: rgb(var(--surface-bright));           /* как фото product-card (#cell product-card/media/bg) */
+  background: rgb(var(--surface-container-lowest)); /* плашка фото, как в product-card. #cell product-card/media/bg */
   overflow: hidden;
+  isolation: isolate;                               /* multiply ленты видит только плашку */
+  transition: background-color var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
+}
+/* Наведение на галерею светлит плашку (до 1.2.0 гас скрим поверх фото). */
+@media (hover: hover) and (pointer: fine) {
+  .mcard__gallery:hover { background: rgb(var(--surface-bright)); }
 }
 /* Кадры стопкой, как в галерее product-card: активный проявляется поверх уходящего. Листают
    стрелки и свайп (JS); вертикальный жест отдан прокрутке окна. */
@@ -44,6 +50,11 @@
   block-size: 100%;
   touch-action: pan-y;
   isolation: isolate;                               /* z-index кадров живёт внутри ленты */
+  /* Лента целиком умножается на плашку галереи: белый фон снимка становится цветом плашки,
+     цвета товара не разбавляются. Multiply на ленте, а не на кадре — кадры перекрывают друг
+     друга обычным образом, и уходящий не просвечивает сквозь входящий. Метод и замеры —
+     arrow-design-system/references/media-on-surface.md. */
+  mix-blend-mode: multiply;
 }
 .mcard__frame {
   position: absolute;
@@ -52,27 +63,19 @@
   block-size: 100%;
   object-fit: contain;                              /* кадр вписан целиком, без обрезки */
   display: block;
-  transform: scale(0.9);                            /* как в product-card: вокруг фото поле подложки */
+  transform: scale(0.9);                            /* как в product-card: вокруг фото поле плашки */
 }
-/* Скрим поверх фото, как в product-card: 5% в покое, гаснет при наведении на галерею.
-   Стрелки и точки лежат рядом с лентой, а не в ней, поэтому остаются над скримом. */
-.mcard__frames::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background: rgb(var(--surface-on-highest) / var(--awds-opacity-5));   /* #cell product-card/media/overlay */
-  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
-  z-index: 2;                                       /* над активным кадром (z-index 1) */
-}
-@media (hover: hover) and (pointer: fine) {
-  .mcard__gallery:hover .mcard__frames::after { opacity: 0; }
+/* Скрим поверх фото убран вслед за product-card 4.1.0: он гасил цвет товара, серый фон теперь
+   даёт плашка под фото. Тёмная тема — островок theme-default theme-light на .mcard__gallery;
+   без него смешивание выключено, фото белым листом на тёмной плашке. */
+.theme-dark .mcard__gallery:not(.theme-light, .theme-light .mcard__gallery) .mcard__frames {
+  mix-blend-mode: normal;
 }
 /* Подложка кадра: фото часто на прозрачном фоне, и без неё сквозь новый кадр был бы виден
    уходящий. Уходящий гаснет мгновенно, но после того, как новый закрыл его целиком —
    симметричный кроссфейд давал провал посередине (приём product-card). */
 .mcard__frames:has(.mcard__frame--active) .mcard__frame {
-  background: rgb(var(--surface-bright));
+  background: rgb(var(--surface-bright));           /* белое уходит в плашку через multiply ленты */
 }
 .mcard__frames:has(.mcard__frame--active) .mcard__frame:not(.mcard__frame--active) {
   opacity: 0;
@@ -85,7 +88,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .mcard__frame,
-  .mcard__frames::after { transition: none !important; }
+  .mcard__gallery { transition: none !important; }
 }
 .mcard__nav {
   position: absolute;
@@ -327,4 +330,20 @@
   overflow: hidden;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+/* Тост «Ссылка скопирована» (кнопка «поделиться», 21.11.2026) — экземпляр awds-component-toast
+   normal; здесь только его место: по центру окна над подвалом. Высоту подвала (кнопка или
+   степпер) кладёт в --mcard-toast-offset скрипт в момент показа, зазор — space-2.
+   [hidden] возвращается явно: .toast задаёт display и перебивает правило браузера. */
+.mcard__toast {
+  position: absolute;
+  inset-inline: var(--awds-layout-section-gutter-modal-mini);
+  inset-block-end: calc(var(--mcard-toast-offset, var(--awds-space-0)) + var(--awds-space-2));
+  z-index: 2;
+  inline-size: fit-content;
+  margin-inline: auto;
+}
+.mcard__toast[hidden] {
+  display: none;
 }

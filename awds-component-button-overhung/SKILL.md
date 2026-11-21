@@ -71,16 +71,38 @@ description: Button Overhung ArrowDS (.obtn).
 
 Тень `elevation-1` постоянна во всех состояниях (так в макете — нажатие не «придавливает» кнопку). Меняется только заливка/текст:
 
-- **Rest / Focus / Active** — одинаковы: фон `surface-surface`, sheen-градиент к `surface-bright`, текст `surface-on-high`. Focus добавляет обводку `surface-on-highest`.
+- **Rest / Focus / Active** — одинаковы: фон `surface-surface`, sheen-градиент к `surface-bright`, текст `surface-on-highest` (с 21.11.2026; было `surface-on-high`). Focus добавляет обводку `surface-on-highest`.
 - **Hover** — chroma темнеет до `surface-dim`, текст контрастнее (`surface-on-highest`).
 - **Disabled** — Rest + `opacity: 40%`.
+
+## Сердце «в избранное» (secondary, с 2.1.0)
+
+Круглая кнопка поверх фото с сердцем-переключателем — в шапке окна карточки товара (modal,
+шапка поверх содержимого; решение владельца 21.11.2026). В макете — часть `. / favorites-unselected`
+внутри `button-overhung / secondary` (свойство `show-favorites`). Устройство как у
+`awds-component-button-favorites`: в `.obtn__fav` два слоя, `.obtn__fav-solid` (заливка) под
+`.obtn__fav-outline` (контур), цвета из ячеек `favorites/*`. «В избранном» — `aria-pressed="true"`
+(часть `. / favorites-selected`, сплошное `error-core`); `:active` остаётся нажатием. Сердце не
+меняет цвет на наведение и нажатие — так в макете: откликается сама кнопка. Переключать
+`aria-pressed` и подпись — забота потребителя.
+
+```html
+<button class="obtn obtn-secondary obtn--400 obtn--icon-only" type="button" aria-pressed="false" aria-label="В избранное">
+  <span class="obtn__fav" aria-hidden="true">
+    <svg class="obtn__fav-solid" viewBox="0 0 20 20" fill="currentColor">…сердце…</svg>
+    <svg class="obtn__fav-outline" viewBox="0 0 20 20" fill="currentColor">…контур, fill-rule="evenodd"…</svg>
+  </span>
+</button>
+```
+
+Векторы сердца — те же, что в `awds-component-button-favorites/references/button-favorites.md`.
 
 ## CSS-файлы
 
 | Вариант | CSS | Что внутри |
 |---|---|---|
 | Primary | `references/button-overhung-primary.css` | `.obtn` base (с elevation-тенью) + все размеры + `.obtn-primary` со всеми состояниями (inline `rgb(var(--surface-*))`) |
-| Secondary | `references/button-overhung-secondary.css` | `.obtn` base + все размеры + `.obtn-secondary` (те же роли, плюс `opacity` 60%→90% по состояниям) |
+| Secondary | `references/button-overhung-secondary.css` | `.obtn` base + все размеры + `.obtn-secondary` (те же роли, плюс `opacity` 60%→90% по состояниям) + сердце `.obtn__fav` |
 
 Визуальный QA — `references/preview.html` (storybook, открывается через `file://`).
 

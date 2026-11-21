@@ -1,10 +1,10 @@
 {
   "component": "button-overhung",
-  "version": "2.0.20",
-  "contract_hash": "sha256:734b4e05e7eed9c113df4e28601577eb5812a9cd6b08f0826a83433219589058",
-  "artifact_hash": "sha256:4fc137a7e57b6a50926e1c421d9ba50b4dd65746763855199ed54d79ba9d8b93",
+  "version": "2.1.0",
+  "contract_hash": "sha256:0f18b82a0a5e8ac9c956e144a1975193e809510528253d90c6e86d294fb0d614",
+  "artifact_hash": "sha256:61eda9e44ff37de54f7c03edc907d16776b2b43cc3dbee09c66d8d60af6754d2",
   "visual_change": true,
-  "released_at": "2026-10-12T13:29:42.170Z",
+  "released_at": "2026-11-21T16:33:44.660Z",
   "own_values": [],
   "figma": {
     "file_key": "470rar5EfRm4n14vHMXbpc",
@@ -131,6 +131,7 @@
     "--awds-space-4",
     "--awds-space-5",
     "--awds-space-px",
+    "--error-core",
     "--surface-bright",
     "--surface-dim",
     "--surface-on-high",
@@ -324,10 +325,14 @@
       "obtn-primary",
       "obtn-secondary",
       "obtn__content",
+      "obtn__fav",
+      "obtn__fav-outline",
+      "obtn__fav-solid",
       "obtn__progress"
     ],
     "attributes": [
-      "aria-disabled"
+      "aria-disabled",
+      "aria-pressed"
     ],
     "elements": [
       "svg"

@@ -1,5 +1,9 @@
 # button-favorites — журнал версий
 
+## 2.0.5 — 2026-11-21 — PATCH · visual
+Контур сердца в покое и фокусе: ячейки favorites/unselected/stroke-rest|focus перенаправлены в студии surface-on-high → surface-on-highest; код догнал (arrow-studio-sync)
+Потребителю: Ничего делать не нужно. Вид: серый контур невыбранного сердца темнее
+
 ## 2.0.4 — 2026-10-12 — PATCH · visual
 Hover под гейтом @media (hover: hover) and (pointer: fine): на таче состояние больше не залипает после тапа; transition на токенах движения вместо 0.15s ease-out; десктоп без изменений
 Потребителю: Секции в блоках догоняются пересборкой (component-rollout); на сайте ничего не меняется до перепубликации блоков

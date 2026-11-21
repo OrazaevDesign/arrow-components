@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:1fc819d69677bb684eb078d8cf0f602cace80ba47703ef27ae12defcfc731ffb",
+  "snapshot_hash": "sha256:1f3e6283d39542177cc3fb6611bd9a8d3365a45536bc4e4e85b3390ac0f0a082",
   "size": {
     "rectangle": {
       "50": {
@@ -580,7 +580,7 @@
       "favorites": {
         "unselected": {
           "fill": "rgb(var(--surface-bright))",
-          "stroke": "rgb(var(--surface-on-high))"
+          "stroke": "rgb(var(--surface-on-highest))"
         },
         "selected": {
           "fill": "rgb(var(--error-core))",
@@ -830,7 +830,7 @@
         },
         "secondary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on-high))",
+          "color": "rgb(var(--surface-on-highest))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         }
@@ -876,7 +876,7 @@
       "product-card": {
         "text": "rgb(var(--surface-on-highest))",
         "media": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--surface-container-lowest))",
           "overlay": "rgb(var(--surface-on-highest))",
           "placeholder": "rgb(var(--surface-on-high))"
         },
@@ -1459,7 +1459,7 @@
       "product-card": {
         "text": "rgb(var(--surface-on-highest))",
         "media": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--surface-container-lowest))",
           "overlay": "rgb(var(--surface-on-highest))",
           "placeholder": "rgb(var(--surface-on-high))"
         },
@@ -1760,7 +1760,7 @@
       "favorites": {
         "unselected": {
           "fill": "rgb(var(--surface-bright))",
-          "stroke": "rgb(var(--surface-on-high))"
+          "stroke": "rgb(var(--surface-on-highest))"
         },
         "selected": {
           "fill": "rgb(var(--error-core))",
@@ -2009,7 +2009,7 @@
         },
         "secondary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on-high))",
+          "color": "rgb(var(--surface-on-highest))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         }
@@ -2053,7 +2053,7 @@
       "product-card": {
         "text": "rgb(var(--surface-on-highest))",
         "media": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--surface-container-lowest))",
           "overlay": "rgb(var(--surface-on-highest))",
           "placeholder": "rgb(var(--surface-on-high))"
         },
@@ -2588,7 +2588,7 @@
         },
         "secondary": {
           "chroma": "rgb(var(--surface-bright))",
-          "color": "rgb(var(--surface-on-high))",
+          "color": "rgb(var(--surface-on-highest))",
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-surface))"
         }
@@ -2632,7 +2632,7 @@
       "product-card": {
         "text": "rgb(var(--surface-on-highest))",
         "media": {
-          "bg": "rgb(var(--surface-bright))",
+          "bg": "rgb(var(--surface-container-lowest))",
           "overlay": "rgb(var(--surface-on-highest))",
           "placeholder": "rgb(var(--surface-on-high))"
         },

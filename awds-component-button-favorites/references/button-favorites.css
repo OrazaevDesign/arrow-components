@@ -260,7 +260,7 @@
 
   /* Дуотон Rest — «не в избранном» */
   --awds-btn-fav-fill:   rgb(var(--surface-bright));   /* #cell favorites/unselected/fill-rest */
-  --awds-btn-fav-stroke: rgb(var(--surface-on-high));   /* #cell favorites/unselected/stroke-rest */
+  --awds-btn-fav-stroke: rgb(var(--surface-on-highest));   /* #cell favorites/unselected/stroke-rest */
 
   /* Polish (MIFB): press-feedback transform (GPU), явное свойство. */
   transition: transform 0.12s var(--awds-motion-ease-state),
@@ -304,7 +304,7 @@
 .btn-favorites:focus-visible {
   --awds-btn-color:      rgb(var(--surface-on-highest));   /* #cell button/ghost/color-focus */
   --awds-btn-fav-fill:   rgb(var(--surface-bright));   /* #cell favorites/unselected/fill-focus */
-  --awds-btn-fav-stroke: rgb(var(--surface-on-high));   /* #cell favorites/unselected/stroke-focus */
+  --awds-btn-fav-stroke: rgb(var(--surface-on-highest));   /* #cell favorites/unselected/stroke-focus */
 }
 
 /* Нажатие — не в избранном. Здесь же press-feedback: масштаб на GPU. */

@@ -1,5 +1,9 @@
 # button-overhung — журнал версий
 
+## 2.1.0 — 2026-11-21 — MINOR · visual
+Сердце «в избранное» у secondary: .obtn__fav (слои solid/outline, ячейки favorites/*, выбор aria-pressed); цвет текста и иконок rest/focus/active surface-on-high → surface-on-highest (ячейки overhung/secondary/color-* в студии); контур сердца favorites/unselected/stroke-rest|focus → surface-on-highest
+Потребителю: Разметка прежняя. Вид: иконки и текст secondary темнее в покое, фокусе и нажатии. Сердце — новая разметка .obtn__fav по SKILL.md
+
 ## 2.0.20 — 2026-10-12 — PATCH · visual
 Hover под гейтом @media (hover: hover) and (pointer: fine): на таче состояние больше не залипает после тапа; transition на токенах движения вместо 0.15s ease-out; десктоп без изменений
 Потребителю: Секции в блоках догоняются пересборкой (component-rollout); на сайте ничего не меняется до перепубликации блоков

@@ -293,7 +293,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/secondary/chroma-rest */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
-  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/secondary/color-rest */
+  --awds-obtn-color:  rgb(var(--surface-on-highest));   /* #cell overhung/secondary/color-rest */
   opacity: var(--awds-opacity-60);   /* #cell opacity/overhung/secondary-rest */
   /* Дописываем opacity к списку перехода базы (он перечисляет свойства явно,
      не transition: all) — иначе уплотнение 60→90% «снапнет». */
@@ -319,7 +319,7 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/secondary/chroma-focus */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
-  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/secondary/color-focus */
+  --awds-obtn-color:  rgb(var(--surface-on-highest));   /* #cell overhung/secondary/color-focus */
   opacity: var(--awds-opacity-90);   /* #cell opacity/overhung/secondary-focus */
 }
 
@@ -328,9 +328,43 @@
   --awds-obtn-bg:     rgb(var(--surface-surface));   /* #cell overhung/secondary/bg */
   --awds-obtn-chroma: rgb(var(--surface-bright));   /* #cell overhung/secondary/chroma-active */
   --awds-obtn-border: rgb(var(--surface-surface));   /* #cell overhung/secondary/border */
-  --awds-obtn-color:  rgb(var(--surface-on-high));   /* #cell overhung/secondary/color-active */
+  --awds-obtn-color:  rgb(var(--surface-on-highest));   /* #cell overhung/secondary/color-active */
   opacity: var(--awds-opacity-90);   /* #cell opacity/overhung/secondary-active */
 }
+
+/* === Сердце «в избранное» (с 2.1.0) ===
+   Кнопка поверх фото с сердцем-переключателем: в шапке окна карточки товара (modal
+   header overlay, решение владельца 21.11.2026). В макете это часть «. / favorites-unselected»
+   внутри button-overhung / secondary, свойство show-favorites. Устройство — как у
+   awds-component-button-favorites: два слоя сердца стопкой, заливка под контуром, цвета из
+   ячеек favorites/*. Выбранность — aria-pressed="true" (в макете часть «. / favorites-selected»),
+   :active отдан нажатию. Сердце в макете стоит в состоянии rest во всех состояниях кнопки:
+   на наведение и нажатие откликается сама кнопка (подсветка и прозрачность), а не сердце —
+   в отличие от ghost-кнопки .btn-favorites, где у кнопки нет своего фона. */
+.obtn-secondary {
+  --awds-obtn-fav-fill:   rgb(var(--surface-bright));   /* #cell favorites/unselected/fill-rest */
+  --awds-obtn-fav-stroke: rgb(var(--surface-on-highest));   /* #cell favorites/unselected/stroke-rest */
+}
+.obtn-secondary[aria-pressed="true"] {
+  --awds-obtn-fav-fill:   rgb(var(--error-core));   /* #cell favorites/selected/fill */
+  --awds-obtn-fav-stroke: rgb(var(--error-core));   /* #cell favorites/selected/stroke */
+}
+/* Стек из двух слоёв в одной ячейке грида: оба центрированы, размер ведёт ступень иконки. */
+.obtn__fav {
+  display: grid;
+  place-items: center;
+  width: var(--awds-obtn-icon);
+  height: var(--awds-obtn-icon);
+  flex-shrink: 0;
+}
+.obtn .obtn__fav svg {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  transition: color var(--awds-motion-duration-state) var(--awds-motion-ease-state);
+}
+.obtn__fav-solid   { color: var(--awds-obtn-fav-fill); }
+.obtn__fav-outline { color: var(--awds-obtn-fav-stroke); }
 
 
 /* === Уважение к системной настройке «меньше движения» ===
@@ -341,7 +375,8 @@
    снимается, «дыхание» дуги остаётся. Два разных ответа на один вопрос доступности
    внутри одной системы хуже любого из них по отдельности. */
 @media (prefers-reduced-motion: reduce) {
-  .obtn {
+  .obtn,
+  .obtn .obtn__fav svg {
     transition: none;
   }
 }

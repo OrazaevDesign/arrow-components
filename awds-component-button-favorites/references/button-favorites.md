@@ -61,7 +61,7 @@ CSS сам перекрашивает дуотон по `aria-pressed` — ме�
 
 | Состояние | Триггер | Заливка / контур сердца | Подпись |
 |---|---|---|---|
-| Rest | по умолчанию | `surface-bright` / `surface-on-high` | `surface-on-high` |
+| Rest | по умолчанию | `surface-bright` / `surface-on-highest` (с 21.11.2026; было `surface-on-high`) | `surface-on-high` |
 | Hover | `:hover` (не выбрано) | `error-container-dim` / `error-core` | `surface-on-highest` |
 | Focus | `:focus-visible` | как Rest | `surface-on-highest` |
 | Press | `:active` | как Hover, плюс `transform: scale(0.9)` | `surface-on-highest` |

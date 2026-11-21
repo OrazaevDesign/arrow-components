@@ -1,10 +1,10 @@
 {
   "component": "mini-card",
-  "version": "1.1.0",
-  "contract_hash": "sha256:16423e60decf74d4a4e30886c46b426a937fc2ebc59d34ee8cf2e48d66b177a8",
-  "artifact_hash": "sha256:1cf2d12305250b5f122169f8c4a60f19f105e0e85a87e79671643ffe4b501e5a",
+  "version": "1.3.0",
+  "contract_hash": "sha256:40ff0ac06ddf7c6314caac4a2691976b6deb9f1eb0fe9129c635408badf4096d",
+  "artifact_hash": "sha256:a27696168f18a4052f717471b7241f359e11c584a54ea205c61f8d0a1a027c10",
   "visual_change": true,
-  "released_at": "2026-11-21T10:23:05.028Z",
+  "released_at": "2026-11-21T16:33:44.887Z",
   "own_values": [],
   "figma": {
     "file_key": "Ka13CUzLUGk47hSRV1lwQ8",
@@ -104,11 +104,12 @@
     "--awds-font-weight-regular",
     "--awds-font-weight-semibold",
     "--awds-layout-section-gutter-modal",
+    "--awds-layout-section-gutter-modal-mini",
     "--awds-motion-duration-enter",
     "--awds-motion-ease-linear",
     "--awds-motion-ease-state",
-    "--awds-opacity-5",
     "--awds-rounded-border-radius-600",
+    "--awds-space-0",
     "--awds-space-0-5",
     "--awds-space-1",
     "--awds-space-13",
@@ -126,6 +127,7 @@
     "--awds-wysiwyg-line-height-lead",
     "--awds-zindex-offcanvas",
     "--surface-bright",
+    "--surface-container-lowest",
     "--surface-dim",
     "--surface-on-high",
     "--surface-on-highest"
@@ -149,18 +151,18 @@
     }
   },
   "uses": {
-    "awds-component-modal": "1.13.0",
-    "awds-component-stepper": "1.0.1",
+    "awds-component-modal": "1.14.1",
+    "awds-component-stepper": "1.0.2",
     "awds-component-list-item": "2.5.2",
     "awds-component-button": "2.3.2",
-    "awds-component-button-favorites": "2.0.4",
-    "awds-component-button-overhung": "2.0.20",
+    "awds-component-button-overhung": "2.1.0",
     "awds-component-slider": "1.1.1",
     "awds-component-price": "2.0.6",
     "awds-component-badge": "1.2.2",
     "awds-component-progress": "2.0.5",
     "awds-component-link": "1.0.9",
-    "awds-component-focus-selection": "2.0.13"
+    "awds-component-focus-selection": "2.0.13",
+    "awds-component-toast": "1.0.2"
   },
   "contract": {
     "classes": [
@@ -199,10 +201,13 @@
       "mcard__tile-img",
       "mcard__tiles",
       "mcard__title",
+      "mcard__toast",
       "mdl",
       "mdl__back",
       "mdl__footer--stretch",
-      "price"
+      "price",
+      "theme-dark",
+      "theme-light"
     ],
     "attributes": [
       "data-mc-ring",
