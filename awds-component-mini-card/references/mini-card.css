@@ -1,0 +1,276 @@
+/* ─── mini-card · мини-карточка товара (быстрый просмотр из листинга) ──────────────────────
+   Макет: Figma «🔶 arrow ↪ system» (Ka13CUzLUGk47hSRV1lwQ8), страница «5 · listing», секция
+   mini-card: тело — набор `mini-card / body` 9983:75782 (оси view=desktop|mobile,
+   state=default|loading|error), окно — экземпляр `modal / sidepage` (демо 9992:2760, 9992:2963,
+   «· in-cart» 10013:379, 10013:1738).
+
+   Композит. Окно, шапка поверх фото и подвал — компонент modal (.mdl-sidepage,
+   .mdl__header--overlay, .mdl__content--flush, .mdl__footer--stretch); количество — stepper;
+   плитки вариаций — list-item (variation, variation-img); стрелки — button-overhung; точки —
+   slider (dots, окно из пяти точек); цена — price; плашки — badge; строки доставки и ошибки —
+   list-item transparent; загрузка — progress circular; ссылки — link accent. Этот файл держит
+   только раскладку тела и место экземпляров в ней: цвета и шрифты вложенных — у них самих.
+
+   Вьюха view=mobile — ширина шторки модалки (≤ 615): та же граница, на которой sidepage
+   становится шторкой. Выше — view=desktop: стрелки галереи, плитки переносятся.
+
+   Состояние тела — атрибут data-state на .mcard__body: default (нет атрибута) · loading · error.
+   ──────────────────────────────────────────────────────────────────────────────────────── */
+
+/* Окно: ширина панели 480 (макет modal / sidepage view=desktop у мини-карточки). Ручка окна,
+   а не правка компонента: --awds-mdl-width modal отдаёт потребителю. */
+.mdl.mcard {
+  --awds-mdl-width: calc(var(--awds-space-20) * 6);
+}
+
+.mcard__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-8);                         /* view=desktop: itemSpacing 32 */
+  padding-block-end: var(--awds-space-6);           /* последний блок не упирается в подвал */
+}
+
+/* ── галерея ─────────────────────────────────────────────────────────────────────────── */
+.mcard__gallery {
+  position: relative;
+  aspect-ratio: 3 / 4;                              /* 408 × 544 / 343 × 457 */
+  background: rgb(var(--surface-container-low));
+  overflow: hidden;
+}
+/* Лента кадров — прокрутка со снапом: на таче листается пальцем, стрелки и точки едут за ней. */
+.mcard__frames {
+  display: flex;
+  block-size: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.mcard__frames::-webkit-scrollbar { display: none; }
+.mcard__frame {
+  flex: 0 0 100%;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;                              /* как фото в product-card: кадр целиком */
+  scroll-snap-align: start;
+}
+.mcard__nav {
+  position: absolute;
+  inset-block-start: 50%;
+  translate: 0 -50%;
+}
+.mcard__nav--prev { inset-inline-start: var(--awds-space-4); }
+.mcard__nav--next { inset-inline-end: var(--awds-space-4); }
+.mcard__nav[hidden] { display: none; }
+.mcard__dots {
+  position: absolute;
+  inset-block-end: var(--awds-space-3);
+  inset-inline-start: 50%;
+  translate: -50% 0;
+}
+.mcard__dots[hidden] { display: none; }
+
+/* ── колонка данных ──────────────────────────────────────────────────────────────────── */
+.mcard__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-6);
+  padding-inline: var(--awds-layout-section-gutter-modal);
+}
+
+.mcard__price-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-1);
+}
+.mcard__price-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--awds-space-2);
+}
+.mcard__badges {
+  display: flex;
+  gap: var(--awds-space-1);
+}
+.mcard__badges:empty { display: none; }
+/* Цена крупнее карточной: 28 / 28 у текущей, 12 у валюты и старой (макет .price). Ступень
+   price такой пары не даёт, поэтому — аккумуляторы price, как у product-card. */
+.mcard__price .price {
+  --awds-price-gap:    var(--awds-space-0-5);
+  --awds-price-fs:     var(--awds-control-font-size-950);
+  --awds-price-lh:     var(--awds-control-line-height-850);
+  --awds-price-ls:     var(--awds-control-letter-spacing-850);
+  --awds-price-fs-sec: var(--awds-control-font-size-200);
+  --awds-price-lh-sec: var(--awds-control-line-height-200);
+  --awds-price-ls-sec: var(--awds-control-letter-spacing-200);
+}
+.mcard__duty {
+  margin: 0;
+  color: rgb(var(--surface-on-high));
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-control-font-size-300);
+  line-height: var(--awds-control-line-height-300);
+  letter-spacing: var(--awds-control-letter-spacing-300);
+  font-weight: var(--awds-font-weight-regular);
+}
+
+.mcard__details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-3);
+}
+.mcard__title {
+  margin: 0;
+  padding-block: var(--awds-space-px);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-wysiwyg-font-size-lead);
+  line-height: var(--awds-wysiwyg-line-height-lead);
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-lead);
+  font-weight: var(--awds-font-weight-regular);
+  /* Две строки, дальше многоточие (решение владельца 21.11.2026, «пока что»). */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.mcard__aspect {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-2);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.mcard__aspect-label {
+  display: flex;
+  gap: var(--awds-space-1);
+  margin: 0;
+  padding: 0;
+  color: rgb(var(--surface-on-high));
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-control-font-size-300);
+  line-height: var(--awds-control-line-height-300);
+  letter-spacing: var(--awds-control-letter-spacing-300);
+  font-weight: var(--awds-font-weight-regular);
+}
+.mcard__aspect-value { color: rgb(var(--surface-on-highest)); }
+.mcard__tiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--awds-space-2);
+}
+/* Плитка с фото — кадр 4:5 (76 × 95 в макете), без подписи: цвет узнают по фото. Форму кадра
+   list-item отдаёт потребителю (list-item-variation-img.md, «Пропорция 4:5 не перенесена»). */
+.mcard__tile-img {
+  inline-size: calc(var(--awds-space-16) + var(--awds-space-3));   /* 76 */
+  aspect-ratio: 4 / 5;
+  padding: 0;
+}
+.mcard__tile-img > .list-item__img {
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.mcard__loading {
+  display: none;
+  justify-content: center;
+  padding-block: var(--awds-space-12);
+}
+.mcard__error {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--awds-space-3);
+}
+.mcard__error > .list-item { align-self: stretch; }
+
+.mcard__buy { align-self: stretch; }
+
+.mcard__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--awds-space-2);
+  text-decoration: none;
+}
+.mcard__brand-logo {
+  display: flex;
+  flex: none;
+  inline-size: var(--awds-space-13);
+  block-size: var(--awds-space-13);
+  padding: var(--awds-space-0-5);
+  border-radius: var(--awds-rounded-border-radius-600);
+  background: rgb(var(--surface-dim));
+}
+.mcard__brand-logo > img {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: contain;
+  mix-blend-mode: darken;                           /* белая подложка логотипа уходит в плашку, как в product-card */
+}
+.mcard__brand-logo[hidden] { display: none; }
+.mcard__brand-name {
+  padding-block: var(--awds-space-px);
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-control-font-size-600);
+  line-height: var(--awds-control-line-height-600);
+  letter-spacing: var(--awds-control-letter-spacing-600);
+  font-weight: var(--awds-font-weight-semibold);
+}
+
+.mcard__delivery {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mcard__delivery:empty { display: none; }
+
+/* ── состояния тела ──────────────────────────────────────────────────────────────────── */
+/* loading: вариации, пошлина и доставка скрыты, на месте вариаций кольцо, «Купить сейчас» выключена.
+   error: то же, на месте вариаций строка ошибки и «Повторить». */
+.mcard__body[data-state="loading"] .mcard__loading { display: flex; }
+.mcard__body[data-state="error"] .mcard__error { display: flex; }
+.mcard__body:is([data-state="loading"], [data-state="error"]) :is(.mcard__aspect, .mcard__duty, .mcard__delivery) {
+  display: none;
+}
+
+/* ── подвал: «в корзине» ─────────────────────────────────────────────────────────────── */
+/* Степпер по ширине содержимого, «В корзину» забирает остаток ряда (макет: /footer stretch=on,
+   у степпера stretch=off). */
+.mdl__footer--stretch > .mcard__qty { flex: none; }
+
+/* ── view=mobile (≤ 615, окно — шторка) ──────────────────────────────────────────────── */
+@media (max-width: 615px) {
+  .mcard__body { gap: var(--awds-space-5); }       /* itemSpacing 20 */
+  .mcard__nav { display: none; }
+  /* Ряд плиток прокручивается вбок, без переноса (решение владельца 21.11.2026). */
+  .mcard__tiles {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    margin-inline: calc(var(--awds-layout-section-gutter-modal) * -1);
+    padding-inline: var(--awds-layout-section-gutter-modal);
+    scroll-padding-inline: var(--awds-layout-section-gutter-modal);
+  }
+  .mcard__tiles::-webkit-scrollbar { display: none; }
+  .mcard__tiles > * { flex: none; }
+}
+
+/* Сообщение об ошибке корзины — только для экранной читалки: в макете места под него нет,
+   окно откатывает кнопки к прежнему виду, а читалка слышит, почему. */
+.mcard__status {
+  position: absolute;
+  inline-size: var(--awds-space-px);
+  block-size: var(--awds-space-px);
+  margin: calc(var(--awds-space-px) * -1);
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

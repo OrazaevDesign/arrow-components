@@ -1,0 +1,196 @@
+{
+  "component": "mini-card",
+  "version": "1.0.0",
+  "contract_hash": "sha256:d3798e209727e167d60100ab05ff166e3906dededc56e82d0b11ec5da1804154",
+  "artifact_hash": "sha256:8b90f2db2e42891c224d869c32a7cc14610f42083663b5127944a97ef122e327",
+  "visual_change": false,
+  "released_at": "2026-11-21T00:45:55.887Z",
+  "own_values": [],
+  "figma": {
+    "file_key": "Ka13CUzLUGk47hSRV1lwQ8",
+    "file_name": "🔶 arrow ↪ system",
+    "section_node_id": "9983:75153",
+    "primary_node_id": "9983:75782",
+    "primary_url": "https://www.figma.com/design/Ka13CUzLUGk47hSRV1lwQ8/%F0%9F%94%B6-arrow-%E2%86%AA-system?node-id=9983-75782"
+  },
+  "variants": {
+    "default": {
+      "node_id": "9983:75782",
+      "figma_label": "mini-card / body · state=default|loading|error, view=desktop|mobile",
+      "token_role": "композит: modal, stepper, list-item, button, price, badge, slider",
+      "url": "https://www.figma.com/design/Ka13CUzLUGk47hSRV1lwQ8/%F0%9F%94%B6-arrow-%E2%86%AA-system?node-id=9983-75782"
+    }
+  },
+  "variants_note": "Ось state набора mini-card / body — атрибут data-state на .mcard__body (default без атрибута, loading, error). Ось view — брейкпоинт окна (≤ 615 — шторка), класса нет. «В корзине» — состояние подвала modal, а не тела: демо «· in-cart».",
+  "shape": null,
+  "size_scale": [],
+  "states": [],
+  "js": true,
+  "js_files": [
+    "mini-card.js"
+  ],
+  "css_files": [
+    "mini-card.css"
+  ],
+  "js_note": "Окно целиком на скрипте: открытие по кнопке карточки (перехват раньше Atlas), product-variation-offers, вариации, галерея, корзина, «Купить сейчас». Блок подключает window.awdsMiniCard.attach(ROOT, i18n).",
+  "preview": {
+    "base_class": "mcard",
+    "default_size": null,
+    "matrix_states": [],
+    "matrix_sizes": null
+  },
+  "markup": {
+    "root": {
+      "class": "mcard",
+      "tags": [
+        "dialog"
+      ]
+    },
+    "variant": null,
+    "size": null,
+    "native": "dialog",
+    "children": [
+      {
+        "class": "mcard__body",
+        "required": true,
+        "why": "тело окна; data-state — ось state макета"
+      },
+      {
+        "class": "mcard__gallery",
+        "required": true,
+        "why": "кадры 3:4, стрелки и точки"
+      },
+      {
+        "class": "mcard__info",
+        "required": true,
+        "why": "колонка данных на полях gutter-modal"
+      }
+    ],
+    "attrs": [
+      {
+        "attr": "aria-labelledby",
+        "required": true,
+        "why": "имя окна — заголовок с названием товара"
+      }
+    ],
+    "container": null
+  },
+  "family": "complex-component",
+  "summary": "Мини-карточка товара: быстрый просмотр из листинга — фото, цена, вариации, доставка, корзина и «Купить сейчас»",
+  "aliases": [
+    "мини-карточка",
+    "быстрый просмотр",
+    "quick view",
+    "окно товара",
+    "модалка товара",
+    "попап товара",
+    "выбор размера перед покупкой"
+  ],
+  "questions": [],
+  "ds_token_dependencies": [
+    "--awds-control-font-size-200",
+    "--awds-control-font-size-300",
+    "--awds-control-font-size-600",
+    "--awds-control-font-size-950",
+    "--awds-control-letter-spacing-200",
+    "--awds-control-letter-spacing-300",
+    "--awds-control-letter-spacing-600",
+    "--awds-control-letter-spacing-850",
+    "--awds-control-line-height-200",
+    "--awds-control-line-height-300",
+    "--awds-control-line-height-600",
+    "--awds-control-line-height-850",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-font-weight-semibold",
+    "--awds-layout-section-gutter-modal",
+    "--awds-rounded-border-radius-600",
+    "--awds-space-0-5",
+    "--awds-space-1",
+    "--awds-space-12",
+    "--awds-space-13",
+    "--awds-space-16",
+    "--awds-space-2",
+    "--awds-space-20",
+    "--awds-space-3",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-8",
+    "--awds-space-px",
+    "--awds-wysiwyg-font-size-lead",
+    "--awds-wysiwyg-letter-spacing-lead",
+    "--awds-wysiwyg-line-height-lead",
+    "--surface-container-low",
+    "--surface-dim",
+    "--surface-on-high",
+    "--surface-on-highest"
+  ],
+  "uses": {
+    "awds-component-modal": "1.13.0",
+    "awds-component-stepper": "1.0.1",
+    "awds-component-list-item": "2.5.2",
+    "awds-component-button": "2.3.2",
+    "awds-component-button-favorites": "2.0.4",
+    "awds-component-button-overhung": "2.0.20",
+    "awds-component-slider": "1.1.1",
+    "awds-component-price": "2.0.6",
+    "awds-component-badge": "1.2.2",
+    "awds-component-progress": "2.0.5",
+    "awds-component-link": "1.0.9",
+    "awds-component-focus-selection": "2.0.13"
+  },
+  "contract": {
+    "classes": [
+      "list-item",
+      "list-item__img",
+      "mcard",
+      "mcard__aspect",
+      "mcard__aspect-label",
+      "mcard__aspect-value",
+      "mcard__badges",
+      "mcard__body",
+      "mcard__brand",
+      "mcard__brand-logo",
+      "mcard__brand-name",
+      "mcard__buy",
+      "mcard__delivery",
+      "mcard__details",
+      "mcard__dots",
+      "mcard__duty",
+      "mcard__error",
+      "mcard__frame",
+      "mcard__frames",
+      "mcard__gallery",
+      "mcard__info",
+      "mcard__loading",
+      "mcard__nav",
+      "mcard__nav--next",
+      "mcard__nav--prev",
+      "mcard__price",
+      "mcard__price-block",
+      "mcard__price-row",
+      "mcard__qty",
+      "mcard__status",
+      "mcard__tile-img",
+      "mcard__tiles",
+      "mcard__title",
+      "mdl",
+      "mdl__footer--stretch",
+      "price"
+    ],
+    "attributes": [
+      "data-state",
+      "hidden"
+    ],
+    "elements": [
+      "img"
+    ],
+    "public_vars": [],
+    "variants": [
+      "default"
+    ],
+    "sizes": [],
+    "states": []
+  }
+}
