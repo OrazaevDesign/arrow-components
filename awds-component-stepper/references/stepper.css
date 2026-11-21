@@ -14,9 +14,10 @@
    кнопки: своих состояний у степпера нет, оси state в макете нет.
 
    ОСИ ИЗ МАКЕТА:
-     size  — 600 | 500 | 400 | 300 → .stepper--{N}: скругление подложки и ширина числа.
-     view  — secondary | addition → .stepper-{вид}: подложка и цвет числа = ячейки
-             button/{вид}/*-rest, то есть та же поверхность, что у кнопки этого вида.
+     size  — 600 | 500 | 400 | 300 → .stepper--{N}: скругление подложки, ширина и
+             боковые отступы числа, кегль числа.
+     view  — secondary | addition → .stepper-{вид}: подложка, обводка и цвет числа =
+             ячейки button/{вид}/*-rest, то есть та же поверхность, что у кнопки этого вида.
      at-min — off | on: на единице «−» становится корзиной. В коде это иконка и
              aria-label кнопки, а не класс: разметка и так меняется, класс повторял бы
              её словами (тот же довод, что у оси side= в button-group).
@@ -25,14 +26,19 @@
    рисовала каждая кнопка, на стыках градиент начинался бы заново (в макете так и
    было до 21.11: три полосы вместо одной). Поэтому кнопки в покое прозрачны, а свой
    фон показывают только при наведении и нажатии — это и есть отклик на действие.
+
+   Число в макете — часть кнопки «. / text» (правка макета 21.11.2026): уже иконочной
+   кнопки, с боковыми отступами rectangle/N/gap. До 1.0.2 число держало ширину кнопки
+   той же ступени (52 / 44 / 40 / 36), и степпер выходил шире макета на 16 / 12 / 8 / 4 px.
    ============================================================================= */
 
 .stepper {
   /* Ступень по умолчанию — 600, как у кнопки в макете мини-карточки. */
   --awds-stepper-rounded: var(--awds-rounded-border-radius-600);   /* #cell rectangle/600/rounded */
-  /* Ширина числа = ширина иконочной кнопки той же ступени (2 × padding + icon),
-     чтобы три сегмента стояли ровной сеткой: 52 / 44 / 40 / 36. */
-  --awds-stepper-value: var(--awds-space-13);
+  /* Наименьшая ширина числа: min-width части «. / text» в макете — 36 на 600, 32 ниже.
+     Трёхзначное число её превышает и раздвигает степпер, отступы держат его от кнопок. */
+  --awds-stepper-value: var(--awds-space-9);
+  --awds-stepper-value-px: var(--awds-space-2);   /* #cell rectangle/600/gap */
   --awds-stepper-fs: var(--awds-control-font-size-600);   /* #cell rectangle/600/typography */
   --awds-stepper-lh: var(--awds-control-line-height-600);
   --awds-stepper-ls: var(--awds-control-letter-spacing-600);
@@ -43,51 +49,65 @@
   align-items: center;
   border-radius: var(--awds-stepper-rounded);
   background: var(--awds-stepper-bg);
+  /* Обводка как у кнопки: inset box-shadow, а не border — border менял бы высоту
+     подложки на 2px против кнопок внутри. */
+  box-shadow: inset 0 0 0 var(--awds-space-px) var(--awds-stepper-border);   /* #cell outline/offset */
   color: var(--awds-stepper-color);
 }
 
 .stepper--600 {
   --awds-stepper-rounded: var(--awds-rounded-border-radius-600);   /* #cell rectangle/600/rounded */
-  --awds-stepper-value: var(--awds-space-13);
+  --awds-stepper-value: var(--awds-space-9);
+  --awds-stepper-value-px: var(--awds-space-2);   /* #cell rectangle/600/gap */
   --awds-stepper-fs: var(--awds-control-font-size-600);   /* #cell rectangle/600/typography */
   --awds-stepper-lh: var(--awds-control-line-height-600);
   --awds-stepper-ls: var(--awds-control-letter-spacing-600);
 }
 .stepper--500 {
   --awds-stepper-rounded: var(--awds-rounded-border-radius-500);   /* #cell rectangle/500/rounded */
-  --awds-stepper-value: var(--awds-space-11);
+  --awds-stepper-value: var(--awds-space-8);
+  --awds-stepper-value-px: var(--awds-space-1-5);   /* #cell rectangle/500/gap */
   --awds-stepper-fs: var(--awds-control-font-size-600);   /* #cell rectangle/500/typography */
   --awds-stepper-lh: var(--awds-control-line-height-600);
   --awds-stepper-ls: var(--awds-control-letter-spacing-600);
 }
 .stepper--400 {
   --awds-stepper-rounded: var(--awds-rounded-border-radius-400);   /* #cell rectangle/400/rounded */
-  --awds-stepper-value: var(--awds-space-10);
+  --awds-stepper-value: var(--awds-space-8);
+  --awds-stepper-value-px: var(--awds-space-1-5);   /* #cell rectangle/400/gap */
   --awds-stepper-fs: var(--awds-control-font-size-400);   /* #cell rectangle/400/typography */
   --awds-stepper-lh: var(--awds-control-line-height-400);
   --awds-stepper-ls: var(--awds-control-letter-spacing-400);
 }
 .stepper--300 {
   --awds-stepper-rounded: var(--awds-rounded-border-radius-300);   /* #cell rectangle/300/rounded */
-  --awds-stepper-value: var(--awds-space-9);
+  --awds-stepper-value: var(--awds-space-8);
+  --awds-stepper-value-px: var(--awds-space-1-5);   /* #cell rectangle/300/gap */
   --awds-stepper-fs: var(--awds-control-font-size-400);   /* #cell rectangle/300/typography */
   --awds-stepper-lh: var(--awds-control-line-height-400);
   --awds-stepper-ls: var(--awds-control-letter-spacing-400);
 }
 
-/* === Вид: подложка и цвет числа — ячейки покоя кнопки того же вида === */
+/* === Вид: подложка, обводка и цвет числа — ячейки покоя кнопки того же вида === */
 
 .stepper-secondary {
-  --awds-stepper-bg:    rgb(var(--secondary-core));   /* #cell button/secondary/bg-rest */
-  --awds-stepper-color: rgb(var(--secondary-on));   /* #cell button/secondary/color-rest */
+  --awds-stepper-bg:     rgb(var(--secondary-core));   /* #cell button/secondary/bg-rest */
+  --awds-stepper-border: rgb(var(--secondary-core));   /* #cell button/secondary/border-rest */
+  --awds-stepper-color:  rgb(var(--secondary-on));   /* #cell button/secondary/color-rest */
 }
 
 .stepper-addition {
-  /* Градиент как у .btn-addition: от chroma к bg слева направо. */
-  --awds-stepper-bg: linear-gradient(to right,
-    rgb(var(--addition-chroma)),   /* #cell button/addition/chroma-rest */
-    rgb(var(--addition-core)));   /* #cell button/addition/bg-rest */
-  --awds-stepper-color: rgb(var(--addition-on));   /* #cell button/addition/color-rest */
+  /* Заливка как у .btn.btn-addition в покое: снизу сплошной bg, сверху радиальный
+     градиент chroma → bg, слой 60%. Эллипс в макете тот же, что у кнопки (центр у
+     верхнего края), проценты считаются от бокса степпера. Прозрачность слоя внесена
+     в стопы через color-mix: своего opacity у слоя background нет. */
+  --awds-stepper-bg:
+    radial-gradient(110.9% 100% at 50% 0%,
+      color-mix(in srgb, rgb(var(--addition-chroma)) var(--awds-opacity-60), transparent),   /* #cell button/addition/chroma-rest */
+      color-mix(in srgb, rgb(var(--addition-core)) var(--awds-opacity-60), transparent)),
+    rgb(var(--addition-core));   /* #cell button/addition/bg-rest */
+  --awds-stepper-border: rgb(var(--addition-core));   /* #cell button/addition/border-rest */
+  --awds-stepper-color:  rgb(var(--addition-on));   /* #cell button/addition/color-rest */
 }
 
 /* === Число === */
@@ -95,6 +115,7 @@
 .stepper__value {
   box-sizing: border-box;
   min-inline-size: var(--awds-stepper-value);
+  padding-inline: var(--awds-stepper-value-px);
   text-align: center;
   font-family: var(--awds-font-family-system);
   font-weight: var(--awds-font-weight-semibold);
