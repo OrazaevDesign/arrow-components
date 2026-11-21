@@ -497,7 +497,9 @@
     var price = sd.filter(function (s) { return s.icon === 'price'; })[0];
     if (post) {
       var method = (post.data && post.data.method) || strip(post.text);
-      var date = (post.data && (post.data.dateFrom || post.data.date)) || ctx.deliveryDate || '';
+      // Дата — как у Atlas: последний день срока словами («12 декабря»), а не dateFrom (ISO «2026-12-01»).
+      var pd = post.data || {}, strong = /<strong>([^<]+)<\/strong>/i.exec(String(post.text || ''));
+      var date = pd.dateToFormatted || pd.dateFormatted || (strong ? strong[1].trim() : '') || ctx.deliveryDate || '';
       rows.push([ICON.truck, has(date) ? L.t('mini.delivery_date', { date: date }) : L.t('mini.delivery'), method]);
     }
     if (price) {
