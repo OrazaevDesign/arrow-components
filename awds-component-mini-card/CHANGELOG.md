@@ -1,5 +1,9 @@
 # mini-card — журнал версий
 
+## 2.0.0 — 2026-11-23 — MAJOR · visual
+Тело окна по макету 23.11.2026: цена на плашке market-percent с процентом и пошлиной бейджами, порядок цена → вариации → название и бренд («100% оригинал») → «Купить сейчас» → доставка; фото без наложений, стрелки по фокусу; в loading кнопка с btn--loading и скелетон доставки, в error кнопка выключена
+Потребителю: Разметку собирает mini-card.js — обновить секции mini-card (CSS и JS) и badge (market-sale, market-brand 100) рассылкой; в словарь блока — ключ mini.original и новый текст mini.duty (sync-block-i18n); card.sale окну больше не нужен
+
 ## 1.3.0 — 2026-11-21 — MINOR · visual
 Шапка по макету: «Закрыть», избранное (сердце .obtn__fav) и новая «поделиться» — button-overhung secondary 400; «поделиться» — navigator.share, иначе копия ссылки и тост toast normal «Ссылка скопирована» (.mcard__toast)
 Потребителю: Обновить CSS и JS; в блок добавить секцию toast normal и строки mini.share, mini.link_copied, mini.share_error (sync-block-i18n)

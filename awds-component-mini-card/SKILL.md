@@ -21,14 +21,14 @@ description: Mini Card ArrowDS (.mcard).
 | --- | --- | --- |
 | окно, панель справа; ≤ 615 — шторка снизу | `modal` | `.mdl.mdl-sidepage.mcard`, ширина 480 — ручка `--awds-mdl-width` |
 | шапка поверх фото: «Закрыть», избранное, «поделиться» | `modal` (слоты `start` / `end`), `button-overhung` secondary 400 (сердце `.obtn__fav`), `toast` normal | `.mdl__header--overlay`, `.mdl__back`, `[data-mc-share]`, `.mcard__toast` |
-| галерея: квадрат, кадры стопкой с кроссфейдом, фото 90% умножается (multiply) на светлую плашку `surface-container-lowest`, островок `theme-light` в тёмной теме (как в product-card 4.1.0), стрелки, точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
-| плашки скидки, цена | `badge` market-percent / market-sale 100, `price` | `.mcard__price .price` — цена 28/28, валюта 12 (аккумуляторы price) |
-| название — ссылка на товар, две строки | `link` accent | `.mcard__title > .lnk` |
-| вариации | `list-item` variation(-selected, -indeterminate) 400 hug; variation-img(-selected) 76 × 95 | `.mcard__aspect`, `.mcard__tiles` |
+| галерея: квадрат, кадры стопкой с кроссфейдом, фото на всю площадь (cover) без наложений поверх плашки `surface-container-low`; стрелки видны при наведении и фокусе внутри галереи; точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
+| цена: при скидке число на плашке цвета badge market-percent, старая цена рядом; ниже процент и пошлина | `price`, `badge` market-sale / market-brand 100 | `.mcard__price .price` — 24/32, валюта и старая 12; `.mcard__tips`, `.mcard__duty` |
+| вариации | `list-item` variation(-selected, -indeterminate) 400 hug; variation-img(-selected) 76 × 95 | `.mcard__aspects`, `.mcard__aspect`, `.mcard__tiles` |
 | загрузка / ошибка на месте вариаций | `progress` circular; `list-item` transparent 300 + `button` secondary 400 | `.mcard__loading`, `.mcard__error` |
-| «Купить сейчас» | `button` secondary 600 | `.mcard__buy` |
-| бренд с логотипом | — (плашка логотипа как в product-card) | `.mcard__brand`, `.mcard__brand-logo` |
-| доставка | `list-item` transparent 300, иконки truck и wallet | `.mcard__delivery` |
+| название — ссылка на товар, две строки, кегль body | `link` accent | `.mcard__title > .lnk` |
+| бренд с логотипом и подписью «100% оригинал» | — (плашка логотипа как в product-card) | `.mcard__brand`, `.mcard__brand-logo`, `.mcard__brand-note` |
+| «Купить сейчас»; в loading — состояние загрузки кнопки | `button` secondary 600 (`btn--loading`) | `.mcard__buy` |
+| доставка; в loading и error — скелетон двух строк | `list-item` transparent 300, иконки truck и wallet | `.mcard__delivery`, `.mcard__skeleton` |
 | подвал: «Добавить в корзину» / степпер + «В корзину» | `modal` footer `--stretch`, `stepper` secondary 600, `button` primary | `.mcard__qty` — степпер по ширине содержимого |
 
 ## Разметка
@@ -52,23 +52,30 @@ description: Mini Card ArrowDS (.mcard).
       </div>
       <div class="mcard__info">
         <div class="mcard__price-block">
-          <div class="mcard__price-row"><div class="mcard__badges">…</div><div class="mcard__price"><span class="price price-sale">…</span></div></div>
-          <p class="mcard__duty">≈ 763 ₽ пошлина не входит в стоимость</p>
+          <div class="mcard__price"><span class="price price-sale">…</span></div>
+          <div class="mcard__tips"><span class="mcard__badges"><span class="badge badge--100 badge-market-sale">10%</span></span><span class="badge badge--100 badge-market-brand mcard__duty">≈ 763 ₽ таможенный платёж</span></div>
         </div>
         <div class="mcard__details">
-          <h2 class="mcard__title" id="awds-mc-1-title"><a class="lnk lnk-accent lnk--ul-hover" href="…">Название товара</a></h2>
+          <div class="mcard__aspects">
           <div class="mcard__aspect" role="radiogroup" aria-labelledby="…">
             <p class="mcard__aspect-label"><span>Размер:</span><span class="mcard__aspect-value">37</span></p>
             <div class="mcard__tiles">
               <button class="list-item list-item-variation-selected list-item--400 list-item--hug" type="button" role="radio" aria-checked="true">…</button>
             </div>
           </div>
+          </div>
           <div class="mcard__loading">…progress circular…</div>
           <div class="mcard__error" role="alert">…list-item transparent… <button class="btn btn-secondary btn--400" type="button">Повторить</button></div>
         </div>
-        <button class="btn btn-secondary btn--600 mcard__buy" type="button">Купить сейчас</button>
-        <a class="mcard__brand" href="…"><span class="mcard__brand-logo"><img src="…" alt=""></span><span class="lnk lnk-accent lnk--ul-hover mcard__brand-name">Бренд</span></a>
-        <ul class="mcard__delivery"><li class="list-item list-item-transparent list-item--300">…</li></ul>
+        <div class="mcard__main">
+          <div class="mcard__head">
+            <h2 class="mcard__title" id="awds-mc-1-title"><a class="lnk lnk-accent lnk--ul-hover" href="…">Название товара</a></h2>
+            <a class="mcard__brand" href="…"><span class="mcard__brand-logo"><img src="…" alt=""></span><span class="mcard__brand-text"><span class="lnk lnk-accent lnk--ul-hover mcard__brand-name">Бренд</span><span class="mcard__brand-note">100% оригинал</span></span></a>
+          </div>
+          <button class="btn btn-secondary btn--600 mcard__buy" type="button"><span class="btn__content">Купить сейчас</span></button>
+          <ul class="mcard__delivery"><li class="list-item list-item-transparent list-item--300">…</li></ul>
+          <div class="mcard__skeleton" aria-hidden="true">…две строки-плашки…</div>
+        </div>
       </div>
     </div>
   </div>
@@ -85,9 +92,9 @@ description: Mini Card ArrowDS (.mcard).
 
 | `state` | Что видно |
 | --- | --- |
-| `loading` (сразу при открытии) | фото, цена, название и бренд из карточки листинга; на месте вариаций кольцо в поле высотой с одну группу вариаций (64), чтобы кнопки ниже не прыгали после ответа; пошлина и доставка скрыты; «Купить сейчас» и кнопка подвала выключены |
+| `loading` (сразу при открытии) | фото, цена, процент скидки, название и бренд из карточки листинга; строка бейджей держит место под пошлину; на месте вариаций кольцо в поле высотой с две группы вариаций (цвет с фото и размер, 199), как в макете; доставку держит скелетон двух строк; «Купить сейчас» в состоянии загрузки (`btn--loading`), кнопка подвала выключена |
 | `default` (нет атрибута) | всё по ответу `product-variation-offers` |
-| `error` | на месте вариаций строка «Не загрузились размеры и доставка» и «Повторить»; кнопки выключены |
+| `error` | на месте вариаций строка «Не загрузились размеры и доставка» и «Повторить»; скелетон доставки; «Купить сейчас» и кнопка подвала выключены |
 
 Кнопка подвала выключена, пока окно не знает корзину: `set-quantity` пишет число, а не прибавляет,
 и «1» поверх лежащего в корзине товара уменьшила бы количество.
@@ -99,7 +106,7 @@ description: Mini Card ArrowDS (.mcard).
 
 `view=mobile` — окно ≤ 615 (та же граница, на которой sidepage становится шторкой): нет стрелок
 галереи, листание свайпом; ряд плиток прокручивается вбок без переноса, выбранная плитка
-подкручивается в поле зрения. `view=desktop` — стрелки, плитки переносятся.
+подкручивается в поле зрения. `view=desktop` — стрелки при наведении на галерею и при фокусе внутри неё, плитки переносятся.
 
 ## Подключение в блоке
 
@@ -109,7 +116,8 @@ description: Mini Card ArrowDS (.mcard).
    variation, variation-selected, variation-indeterminate, variation-img, variation-img-selected; 300,
    400), `progress` circular, `button` (primary, secondary; 400, 500, 600), `button-overhung`
    secondary 400 (с 1.3.0 — и кнопки шапки с сердцем `.obtn__fav`), `toast` normal (тост «Ссылка
-   скопирована», с 1.3.0), `slider` dots, `link` accent, `price`, `badge`. Секции `button` ghost 500 и
+   скопирована», с 1.3.0), `slider` dots, `link` accent, `price`, `badge` (market-sale и market-brand 100 —
+   с 1.4.0, бейджи процента и пошлины). Секции `button` ghost 500 и
    `button-favorites` 500 шапке больше не нужны; у блока они могут остаться для своих элементов.
 2. `script.js` — секции `// awds:component-js modal@…` и `// awds:component-js mini-card@…` на
    верхнем уровне файла; в коде блока после словаря строк одна строка:
@@ -117,7 +125,7 @@ description: Mini Card ArrowDS (.mcard).
    if (window.awdsMiniCard) window.awdsMiniCard.attach(ROOT, i18n);
    ```
    `ROOT` — класс корня блока, `i18n(root)` — его словарь (`card.fav`, `card.photo_prev`,
-   `card.photo_next`, `card.sale`, `card.out_of_stock`, `action.retry` и все `mini.*` из
+   `card.photo_next`, `card.out_of_stock`, `action.retry` и все `mini.*` из
    `ui-strings.json` — в `awds:i18n` и `awds:i18n-js` блока).
 3. Кнопка «В корзину» карточки остаётся с атрибутами Atlas: `data-selector="mini-product-card:root"`,
    `data-product-id`, `data-product-variation-id`.

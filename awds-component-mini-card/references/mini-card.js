@@ -181,10 +181,15 @@
       brandUrl: brand ? brand.getAttribute('href') : '',
       logo: logo ? logo.getAttribute('src') : '',
       priceHtml: price ? price.outerHTML : '',
-      badgesHtml: q('.pcard__badges') ? q('.pcard__badges').innerHTML : '',
+      badgesHtml: pctBadge(q('.pcard__badges .badge-market-percent')),
       fav: q('[data-cps-fav]')
     };
   }
+
+  /* Строка-скелетон доставки: держит место двух строк list-item transparent 300, пока ответа
+     offers нет или он упал (решение владельца 23.11.2026). Своего скелетона в ArrowDS нет —
+     плашки повторяют иконку и две строки текста. */
+  var SKELETON_ROW = '<span class="mcard__skeleton-row"><span class="mcard__skeleton-icon"></span><span class="mcard__skeleton-lines"><span></span><span></span></span></span>';
 
   /* ── разметка ──────────────────────────────────────────────────────────────────────── */
   function shell(L, id) {
@@ -203,12 +208,11 @@
           '</div>' +
           '<div class="mcard__info">' +
             '<div class="mcard__price-block">' +
-              '<div class="mcard__price-row"><div class="mcard__badges" data-mc-badges></div><div class="mcard__price" data-mc-price></div></div>' +
-              '<p class="mcard__duty" data-mc-duty hidden></p>' +
+              '<div class="mcard__price" data-mc-price></div>' +
+              '<div class="mcard__tips"><span class="mcard__badges" data-mc-badges></span><span class="badge badge--100 badge-market-brand mcard__duty" data-mc-duty hidden></span></div>' +
             '</div>' +
             '<div class="mcard__details">' +
-              '<h2 class="mcard__title" id="' + id + '-title"><a class="lnk lnk-accent lnk--ul-hover" data-mc-name href="#"></a></h2>' +
-              '<div data-mc-aspects></div>' +
+              '<div class="mcard__aspects" data-mc-aspects></div>' +
               '<div class="mcard__loading"><svg class="progress progress-circular progress--indeterminate" viewBox="0 0 48 48" role="progressbar" aria-label="' + esc(L.t('mini.loading')) + '"><circle class="progress-circular__arc" cx="24" cy="24" r="23" pathLength="100"/></svg></div>' +
               '<div class="mcard__error" role="alert">' +
                 '<div class="list-item list-item-transparent list-item--300"><span class="list-item__prefix" aria-hidden="true">' + ICON.warn + '</span>' +
@@ -216,9 +220,16 @@
                 '<button class="btn btn-secondary btn--400" type="button" data-mc-retry>' + esc(L.t('action.retry')) + '</button>' +
               '</div>' +
             '</div>' +
-            '<button class="btn btn-secondary btn--600 mcard__buy" type="button" data-mc-buy disabled>' + esc(L.t('mini.buy_now')) + '</button>' +
-            '<a class="mcard__brand" data-mc-brand href="#" hidden><span class="mcard__brand-logo" data-mc-logo hidden><img alt="" loading="lazy" decoding="async"></span><span class="lnk lnk-accent lnk--ul-hover mcard__brand-name" data-mc-brand-name></span></a>' +
-            '<ul class="mcard__delivery" data-mc-delivery></ul>' +
+            '<div class="mcard__main">' +
+              '<div class="mcard__head">' +
+                '<h2 class="mcard__title" id="' + id + '-title"><a class="lnk lnk-accent lnk--ul-hover" data-mc-name href="#"></a></h2>' +
+                '<a class="mcard__brand" data-mc-brand href="#" hidden><span class="mcard__brand-logo" data-mc-logo hidden><img alt="" loading="lazy" decoding="async"></span>' +
+                  '<span class="mcard__brand-text"><span class="lnk lnk-accent lnk--ul-hover mcard__brand-name" data-mc-brand-name></span><span class="mcard__brand-note">' + esc(L.t('mini.original')) + '</span></span></a>' +
+              '</div>' +
+              '<button class="btn btn-secondary btn--600 mcard__buy" type="button" data-mc-buy disabled><span class="btn__content">' + esc(L.t('mini.buy_now')) + '</span></button>' +
+              '<ul class="mcard__delivery" data-mc-delivery></ul>' +
+              '<div class="mcard__skeleton" aria-hidden="true">' + SKELETON_ROW + SKELETON_ROW + '</div>' +
+            '</div>' +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -244,7 +255,31 @@
     if (!(o > p && p > 0)) return '';
     var pct = Math.round((o - p) / o * 100);
     if (pct < 1) return '';
-    return '<span class="badge badge--100 badge-market-percent">' + pct + '%</span><span class="badge badge--100 badge-market-sale">' + esc(L.t('card.sale')) + '</span>';
+    return '<span class="badge badge--100 badge-market-sale">' + pct + '%</span>';
+  }
+
+  /* Процент из карточки листинга — до ответа offers. В карточке это бейдж market-percent, в окне
+     тот же процент стоит бейджем market-sale рядом с пошлиной (макет price · .tips, 23.11.2026). */
+  function pctBadge(el) {
+    var t = el ? el.textContent.trim() : '';
+    return t ? '<span class="badge badge--100 badge-market-sale">' + esc(t) + '</span>' : '';
+  }
+
+  /* Загрузка кнопки — состояние btn--loading компонента button: подпись гаснет, поверх кольцо
+     progress. aria-disabled держит кнопку ненажимаемой, aria-busy говорит читалке «ждём». */
+  var BTN_PROGRESS = '<svg class="btn__progress progress progress-circular progress--indeterminate" viewBox="0 0 24 24" aria-hidden="true"><circle class="progress-circular__arc" cx="12" cy="12" r="10" pathLength="100"/></svg>';
+  function setBusy(btn, on) {
+    var ring = btn.querySelector('.btn__progress');
+    btn.classList.toggle('btn--loading', on);
+    if (on) {
+      btn.setAttribute('aria-busy', 'true');
+      btn.setAttribute('aria-disabled', 'true');
+      if (!ring) btn.insertAdjacentHTML('beforeend', BTN_PROGRESS);
+    } else {
+      btn.removeAttribute('aria-busy');
+      btn.removeAttribute('aria-disabled');
+      if (ring) ring.remove();
+    }
   }
 
   /* ── окно ──────────────────────────────────────────────────────────────────────────── */
@@ -357,7 +392,9 @@
     var body = this.q('.mcard__body');
     if (s === 'default') body.removeAttribute('data-state'); else body.setAttribute('data-state', s);
     this.state = s;
-    this.q('[data-mc-buy]').disabled = s !== 'default' || !this.inStock();
+    var buy = this.q('[data-mc-buy]');
+    setBusy(buy, s === 'loading');
+    buy.disabled = s !== 'default' || !this.inStock();
     this.renderFooter();
   };
 
@@ -663,11 +700,11 @@
     if (!v || !this.available(v) || this.busy) return;
     this.busy = true;
     btn.disabled = true;
-    btn.setAttribute('aria-busy', 'true');
+    setBusy(btn, true);
     buyNow(String(v.id), this.qty()).catch(function () {
       self.busy = false;
       btn.disabled = false;
-      btn.removeAttribute('aria-busy');
+      setBusy(btn, false);
       self.q('[data-mc-status]').textContent = self.L.t('mini.cart_error');
     });
   };

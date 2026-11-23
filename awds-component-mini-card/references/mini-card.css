@@ -26,22 +26,18 @@
 .mcard__body {
   display: flex;
   flex-direction: column;
-  gap: var(--awds-space-8);                         /* view=desktop: itemSpacing 32 */
   padding-block-end: var(--awds-space-6);           /* последний блок не упирается в подвал */
 }
 
 /* ── галерея ─────────────────────────────────────────────────────────────────────────── */
+/* Фото без наложений (решение владельца 23.11.2026): ни скрима, ни multiply, ни плашки, которая
+   светлеет при наведении. Кадр закрывает квадрат целиком, как заливка FILL в макете; плашка
+   surface-container-low видна, только пока кадр не загрузился. */
 .mcard__gallery {
   position: relative;
-  aspect-ratio: 1 / 1;                              /* квадрат (решение владельца 21.11.2026; в макете 3:4) */
-  background: rgb(var(--surface-container-lowest)); /* плашка фото, как в product-card. #cell product-card/media/bg */
+  aspect-ratio: 1 / 1;                              /* квадрат (решение владельца 21.11.2026) */
+  background: rgb(var(--surface-container-low));    /* макет: gallery fills = surface/container-low */
   overflow: hidden;
-  isolation: isolate;                               /* multiply ленты видит только плашку */
-  transition: background-color var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
-}
-/* Наведение на галерею светлит плашку (до 1.2.0 гас скрим поверх фото). */
-@media (hover: hover) and (pointer: fine) {
-  .mcard__gallery:hover { background: rgb(var(--surface-bright)); }
 }
 /* Кадры стопкой, как в галерее product-card: активный проявляется поверх уходящего. Листают
    стрелки и свайп (JS); вертикальный жест отдан прокрутке окна. */
@@ -50,32 +46,21 @@
   block-size: 100%;
   touch-action: pan-y;
   isolation: isolate;                               /* z-index кадров живёт внутри ленты */
-  /* Лента целиком умножается на плашку галереи: белый фон снимка становится цветом плашки,
-     цвета товара не разбавляются. Multiply на ленте, а не на кадре — кадры перекрывают друг
-     друга обычным образом, и уходящий не просвечивает сквозь входящий. Метод и замеры —
-     arrow-design-system/references/media-on-surface.md. */
-  mix-blend-mode: multiply;
 }
 .mcard__frame {
   position: absolute;
   inset: 0;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: contain;                              /* кадр вписан целиком, без обрезки */
+  object-fit: cover;                                /* макет: IMAGE scaleMode FILL */
   display: block;
-  transform: scale(0.9);                            /* как в product-card: вокруг фото поле плашки */
 }
-/* Скрим поверх фото убран вслед за product-card 4.1.0: он гасил цвет товара, серый фон теперь
-   даёт плашка под фото. Тёмная тема — островок theme-default theme-light на .mcard__gallery;
-   без него смешивание выключено, фото белым листом на тёмной плашке. */
-.theme-dark .mcard__gallery:not(.theme-light, .theme-light .mcard__gallery) .mcard__frames {
-  mix-blend-mode: normal;
-}
-/* Подложка кадра: фото часто на прозрачном фоне, и без неё сквозь новый кадр был бы виден
+/* Подложка кадра: фото бывает на прозрачном фоне, и без неё сквозь новый кадр был бы виден
    уходящий. Уходящий гаснет мгновенно, но после того, как новый закрыл его целиком —
-   симметричный кроссфейд давал провал посередине (приём product-card). */
+   симметричный кроссфейд давал провал посередине (приём product-card). Подложка — цвет
+   плашки, чтобы прозрачное фото выглядело так же, как до загрузки. */
 .mcard__frames:has(.mcard__frame--active) .mcard__frame {
-  background: rgb(var(--surface-bright));           /* белое уходит в плашку через multiply ленты */
+  background: rgb(var(--surface-container-low));
 }
 .mcard__frames:has(.mcard__frame--active) .mcard__frame:not(.mcard__frame--active) {
   opacity: 0;
@@ -86,18 +71,27 @@
   z-index: 1;
   transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
-@media (prefers-reduced-motion: reduce) {
-  .mcard__frame,
-  .mcard__gallery { transition: none !important; }
-}
+/* Стрелки появляются по фокусу (решение владельца 23.11.2026): при наведении на галерею
+   мышью и при фокусе с клавиатуры внутри неё. В покое фото чистое. Скрыты прозрачностью, а не
+   display: кнопка остаётся в порядке табуляции, и Tab до неё доходит. */
 .mcard__nav {
   position: absolute;
   inset-block-start: 50%;
   translate: 0 -50%;
+  opacity: 0;
+  transition: opacity var(--awds-motion-duration-state) var(--awds-motion-ease-state);
 }
+@media (hover: hover) and (pointer: fine) {
+  .mcard__gallery:hover .mcard__nav { opacity: 1; }
+}
+.mcard__gallery:has(:focus-visible) .mcard__nav { opacity: 1; }
 .mcard__nav--prev { inset-inline-start: var(--awds-space-4); }
 .mcard__nav--next { inset-inline-end: var(--awds-space-4); }
 .mcard__nav[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .mcard__frame,
+  .mcard__nav { transition: none !important; }
+}
 .mcard__dots {
   position: absolute;
   inset-block-end: var(--awds-space-3);
@@ -107,62 +101,90 @@
 .mcard__dots[hidden] { display: none; }
 
 /* ── колонка данных ──────────────────────────────────────────────────────────────────── */
+/* Порядок по макету 23.11.2026: цена → вариации → название и бренд → «Купить сейчас» →
+   доставка. Отступы — макетные: info padding-top = gutter-modal, вариации padding-top 16 и gap
+   16, нижняя группа padding-top 20 и gap 16. */
 .mcard__info {
   display: flex;
   flex-direction: column;
-  gap: var(--awds-space-6);
+  padding-block-start: var(--awds-layout-section-gutter-modal);
   padding-inline: var(--awds-layout-section-gutter-modal);
 }
 
+/* Цена (макет: набор price 10031:84005). Текущая цена при скидке — на плашке цвета бейджа
+   market-percent, старая — рядом, по нижнему краю; без скидки — просто цена. Строкой ниже —
+   процент бейджем market-sale и пошлина бейджем market-brand. */
 .mcard__price-block {
   display: flex;
   flex-direction: column;
-  gap: var(--awds-space-1);
-}
-.mcard__price-row {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  gap: var(--awds-space-2);
-}
-.mcard__badges {
-  display: flex;
   gap: var(--awds-space-1);
 }
-.mcard__badges:empty { display: none; }
-/* Цена крупнее карточной: 28 / 28 у текущей, 12 у валюты и старой (макет .price). Ступень
+/* Кегль 24 / 32 у числа, 12 у валюты и старой цены (макет .price: font-size/900, /200). Ступень
    price такой пары не даёт, поэтому — аккумуляторы price, как у product-card. */
 .mcard__price .price {
-  --awds-price-gap:    var(--awds-space-0-5);
-  --awds-price-fs:     var(--awds-control-font-size-950);
-  --awds-price-lh:     var(--awds-control-line-height-850);
-  --awds-price-ls:     var(--awds-control-letter-spacing-850);
+  --awds-price-gap:    var(--awds-space-1);
+  --awds-price-fs:     var(--awds-control-font-size-900);
+  --awds-price-lh:     var(--awds-control-line-height-900);
+  --awds-price-ls:     var(--awds-control-letter-spacing-900);
   --awds-price-fs-sec: var(--awds-control-font-size-200);
   --awds-price-lh-sec: var(--awds-control-line-height-200);
   --awds-price-ls-sec: var(--awds-control-letter-spacing-200);
 }
-.mcard__duty {
-  margin: 0;
-  color: rgb(var(--surface-on-high));
-  font-family: var(--awds-font-family-system);
-  font-size: var(--awds-control-font-size-300);
-  line-height: var(--awds-control-line-height-300);
-  letter-spacing: var(--awds-control-letter-spacing-300);
-  font-weight: var(--awds-font-weight-regular);
+.mcard__price .price-sale .price__main {
+  gap: var(--awds-space-0-5);
+  padding-inline: var(--awds-space-1-5);
+  border-radius: var(--awds-rounded-border-radius-100);         /* map.size.rectangle.100.rounded */
+  background: rgb(var(--accent-core));                         /* #cell badge/market/percent/bg */
+  color: rgb(var(--accent-on));                                /* #cell badge/market/percent/color */
+}
+.mcard__price .price__old { gap: var(--awds-space-0-5); }
+.mcard__tips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--awds-space-1);
+}
+.mcard__badges { display: contents; }
+.mcard__tips:has(> .mcard__badges:empty):has(> .mcard__duty[hidden]) { display: none; }
+/* До ответа offers пошлины ещё нет, но строка под неё держится (макет state=loading): иначе
+   после ответа вариации и кнопки съезжают вниз на высоту бейджа. */
+.mcard__body:is([data-state="loading"], [data-state="error"]) .mcard__tips {
+  display: flex;
+  min-block-size: var(--awds-space-6);                         /* высота badge 100 */
 }
 
 .mcard__details {
   display: flex;
   flex-direction: column;
-  gap: var(--awds-space-3);
+  gap: var(--awds-space-4);
+  padding-block-start: var(--awds-space-4);
+}
+.mcard__aspects {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-4);
+}
+.mcard__aspects:empty { display: none; }
+
+.mcard__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-4);
+  padding-block-start: var(--awds-space-5);
+}
+.mcard__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-1-5);
 }
 .mcard__title {
   margin: 0;
   padding-block: var(--awds-space-px);
   font-family: var(--awds-font-family-system);
-  font-size: var(--awds-wysiwyg-font-size-lead);
-  line-height: var(--awds-wysiwyg-line-height-lead);
-  letter-spacing: var(--awds-wysiwyg-letter-spacing-lead);
+  font-size: var(--awds-wysiwyg-font-size-body);              /* макет: font-size/body */
+  line-height: var(--awds-wysiwyg-line-height-body);
+  letter-spacing: var(--awds-wysiwyg-letter-spacing-body);
   font-weight: var(--awds-font-weight-regular);
   /* Две строки, дальше многоточие (решение владельца 21.11.2026, «пока что»). */
   display: -webkit-box;
@@ -211,14 +233,19 @@
   block-size: 100%;
 }
 
-/* Высота места загрузки — одна группа вариаций с текстовыми плитками (подпись 20 + 8 + плитка
-   36 = 64): у большинства товаров одна такая группа, и после ответа offers кнопки и бренд ниже
-   не прыгают (решение владельца 21.11.2026; в макете кольцо с полями 48 сверху и снизу). */
+/* Высота места загрузки — две группы вариаций, как в макете (state=loading, 23.11.2026): цвет
+   с плитками-фото (подпись 16 + 8 + плитка 95) и размер с текстовыми плитками (16 + 8 + 40),
+   между ними 16. До 1.4.0 место было на одну текстовую группу (64). */
 .mcard__loading {
   display: none;
   justify-content: center;
   align-items: center;
-  block-size: var(--awds-space-16);
+  block-size: calc(
+    2 * (var(--awds-control-line-height-300) + var(--awds-space-2))
+    + (var(--awds-space-16) + var(--awds-space-3)) * 5 / 4
+    + var(--awds-space-10)
+    + var(--awds-space-4)
+  );
 }
 .mcard__error {
   display: none;
@@ -252,8 +279,21 @@
   mix-blend-mode: darken;                           /* белая подложка логотипа уходит в плашку, как в product-card */
 }
 .mcard__brand-logo[hidden] { display: none; }
+.mcard__brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--awds-space-0-5);
+  min-inline-size: 0;
+}
+.mcard__brand-note {
+  color: rgb(var(--surface-on-high));
+  font-family: var(--awds-font-family-system);
+  font-size: var(--awds-control-font-size-300);
+  line-height: var(--awds-control-line-height-300);
+  letter-spacing: var(--awds-control-letter-spacing-300);
+  font-weight: var(--awds-font-weight-regular);
+}
 .mcard__brand-name {
-  padding-block: var(--awds-space-px);
   font-family: var(--awds-font-family-system);
   font-size: var(--awds-control-font-size-600);
   line-height: var(--awds-control-line-height-600);
@@ -269,6 +309,41 @@
   list-style: none;
 }
 .mcard__delivery:empty { display: none; }
+
+/* Скелетон доставки — место двух строк list-item transparent 300 (поле 8, иконка 20, подпись
+   20 и описание 16 с зазором 2: строка 54, как в макете). Плашки неподвижны: в error загрузки
+   уже нет, а мерцание обещало бы её. */
+.mcard__skeleton { display: none; flex-direction: column; }
+.mcard__skeleton-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--awds-space-3-5);
+  padding: var(--awds-space-2);
+}
+.mcard__skeleton-icon,
+.mcard__skeleton-lines > span {
+  border-radius: var(--awds-rounded-border-radius-100);
+  background: rgb(var(--surface-container-high));
+}
+.mcard__skeleton-icon {
+  flex: none;
+  inline-size: var(--awds-space-5);
+  block-size: var(--awds-space-5);
+}
+.mcard__skeleton-lines {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--awds-space-0-5);
+}
+.mcard__skeleton-lines > span {
+  block-size: var(--awds-control-line-height-400);           /* подпись list-item 300 */
+  inline-size: 60%;
+}
+.mcard__skeleton-lines > span + span {
+  block-size: var(--awds-control-line-height-300);           /* описание */
+  inline-size: 40%;
+}
 
 /* ── фокус при открытии ──────────────────────────────────────────────────────────────── */
 /* Кольцо на «Закрыть» сразу при открытии, даже если окно открыли мышью: браузер программный
@@ -288,13 +363,15 @@
 }
 
 /* ── состояния тела ──────────────────────────────────────────────────────────────────── */
-/* loading: вариации, пошлина и доставка скрыты, на месте вариаций кольцо, «Купить сейчас» выключена.
-   error: то же, на месте вариаций строка ошибки и «Повторить». */
+/* loading: вариации и пошлина скрыты, на месте вариаций кольцо, доставку держит скелетон,
+   «Купить сейчас» — в загрузке (btn--loading). error: то же, на месте вариаций строка ошибки и
+   «Повторить», «Купить сейчас» выключена. */
 .mcard__body[data-state="loading"] .mcard__loading { display: flex; }
 .mcard__body[data-state="error"] .mcard__error { display: flex; }
-.mcard__body:is([data-state="loading"], [data-state="error"]) :is(.mcard__aspect, .mcard__duty, .mcard__delivery) {
+.mcard__body:is([data-state="loading"], [data-state="error"]) :is(.mcard__aspects, .mcard__duty, .mcard__delivery) {
   display: none;
 }
+.mcard__body:is([data-state="loading"], [data-state="error"]) .mcard__skeleton { display: flex; }
 
 /* ── подвал: «в корзине» ─────────────────────────────────────────────────────────────── */
 /* Степпер по ширине содержимого, «В корзину» забирает остаток ряда (макет: /footer stretch=on,
@@ -303,7 +380,6 @@
 
 /* ── view=mobile (≤ 615, окно — шторка) ──────────────────────────────────────────────── */
 @media (max-width: 615px) {
-  .mcard__body { gap: var(--awds-space-5); }       /* itemSpacing 20 */
   .mcard__nav { display: none; }
   /* Ряд плиток прокручивается вбок, без переноса (решение владельца 21.11.2026). */
   .mcard__tiles {
