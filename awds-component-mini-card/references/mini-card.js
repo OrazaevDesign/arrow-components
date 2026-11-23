@@ -543,7 +543,7 @@
         var s1 = im.large_url || im.full_url || im.preview_url, s2 = im.large_url_2x || im.full_url_2x;
         return { src: s1, srcset: s2 ? s1 + ' 1x, ' + s2 + ' 2x' : '' };
       }).filter(function (f) { return has(f.src); });
-      if (frames.length) this.renderFrames(frames, name);
+      if (frames.length) this.renderFrames(frames, name, true);
     }
     this.renderAspects();
     this.q('[data-mc-buy]').disabled = this.state !== 'default' || !this.available(v);
@@ -595,15 +595,31 @@
      прокруткой и снапом: стрелки и точки догоняли прокрутку, листание дёргалось. Кадры со
      второго — без src (адрес в data-src): у стопки один прямоугольник, и lazy грузил бы их
      все сразу. Прогрев — на наведение, касание или первое листание. */
-  P.renderFrames = function (frames, name) {
-    var box = this.q('[data-mc-frames]');
-    box.innerHTML = frames.map(function (f, i) {
+  /* smooth — замена кадров после ответа offers: первое фото карточки остаётся на месте, пока новое
+     первое фото не загружено и не раскодировано (не дольше 1,5 с). Иначе при открытии окно на миг
+     пустело и фото «прыгало» (замечание владельца 23.11.2026). */
+  P.renderFrames = function (frames, name, smooth) {
+    var self = this, box = this.q('[data-mc-frames]'), token = this.framesToken = {};
+    var html = frames.map(function (f, i) {
       var set = has(f.srcset) ? ' ' + (i === 0 ? '' : 'data-') + 'srcset="' + esc(f.srcset) + '"' : '';
-      return '<img class="mcard__frame" ' + (i === 0 ? '' : 'data-') + 'src="' + esc(f.src) + '"' + set +
+      return '<img class="mcard__frame" draggable="false" ' + (i === 0 ? '' : 'data-') + 'src="' + esc(f.src) + '"' + set +
         ' alt="' + (i === 0 ? esc(name) : '') + '" decoding="async">';
     }).join('');
+    var cur = box.querySelector('.mcard__frame');
+    if (smooth && cur && frames[0] && cur.getAttribute('src') !== frames[0].src) {
+      var pre = new Image(), done = false;
+      var go = function () { if (done) return; done = true; if (self.framesToken === token) self.putFrames(box, html, frames.length); };
+      if (has(frames[0].srcset)) pre.srcset = frames[0].srcset;
+      pre.src = frames[0].src;
+      (pre.decode ? pre.decode() : Promise.reject()).then(go, go);
+      setTimeout(go, 1500);
+      return;
+    }
+    this.putFrames(box, html, frames.length);
+  };
+  P.putFrames = function (box, html, n) {
+    box.innerHTML = html;
     this.warmed = false;
-    var n = frames.length;
     this.frameCount = n;
     var dots = this.q('[data-mc-dots]');
     dots.hidden = n < 2;
@@ -659,13 +675,13 @@
       f.innerHTML = '<div class="stepper stepper-secondary stepper--600 mcard__qty" role="group" aria-label="' + esc(L.t('mini.qty')) + '">' + dec +
         '<output class="stepper__value" aria-live="polite">' + q + '</output>' +
         '<button class="btn btn-secondary btn--600 btn--icon-only" type="button" data-mc-inc aria-label="' + esc(L.t('mini.qty_inc')) + '"' + (q >= max ? ' disabled' : '') + '>' + ICON.add + '</button></div>' +
-        '<a class="btn btn-primary btn--500" data-mc-cart href="' + esc(this.cartUrl || DEFAULTS.pageCart) + '">' + esc(L.t('mini.to_cart')) + '</a>';
+        '<a class="btn btn-addition btn--600" data-mc-cart href="' + esc(this.cartUrl || DEFAULTS.pageCart) + '">' + esc(L.t('mini.to_cart')) + '</a>';   // макет in-cart: button / addition 600
     } else if (ready && !this.available(this.variation)) {
-      f.innerHTML = '<button class="btn btn-primary btn--500" type="button" disabled>' + esc(L.t('card.out_of_stock')) + '</button>';
+      f.innerHTML = '<button class="btn btn-primary btn--600" type="button" disabled>' + esc(L.t('card.out_of_stock')) + '</button>';
     } else {
       // Пока окно не знает корзину (загрузка, ошибка), кнопка выключена: set-quantity пишет число,
       // а не прибавляет, и «1» поверх товара, который уже лежит в корзине, уменьшила бы количество.
-      f.innerHTML = '<button class="btn btn-primary btn--500" type="button" data-mc-add' + (ready ? '' : ' disabled') + '>' + esc(L.t('mini.add_to_cart')) + '</button>';
+      f.innerHTML = '<button class="btn btn-primary btn--600" type="button" data-mc-add' + (ready ? '' : ' disabled') + '>' + esc(L.t('mini.add_to_cart')) + '</button>';
     }
   };
 
