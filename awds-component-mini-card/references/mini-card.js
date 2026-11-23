@@ -912,7 +912,8 @@
   };
   /* ── пояснение к строке доставки ───────────────────────────────────────────────────────
      Окно modal dialog поверх мини-карточки: заголовок — подпись строки, текст — из настройки
-     блока (абзацы по пустой строке), ссылка «Подробнее в справке», если блок её дал. Окно одно
+     блока (абзацы по пустой строке), ссылка «Подробнее в справке», если блок её дал, внизу кнопка
+     «Понятно» во всю ширину — закрывает окно, как крестик (решение владельца 23.11.2026). Окно одно
      на корень блока и живёт в нём, рядом с мини-карточкой: CSS блока в @scope. */
   P.openInfo = function (kind, from) {
     var L = this.L, text = this.info[kind];
@@ -927,7 +928,8 @@
         '<button class="btn btn-ghost btn--500 btn--icon-only mdl__close" type="button" data-mc-info-close aria-label="' + esc(L.t('mini.close')) + '">' + ICON.close + '</button></header>' +
         '<div class="mdl__content"><div class="mcard-info__text" data-mc-info-text></div>' +
         '<a class="lnk lnk-accent lnk--ul-none mcard-info__more" data-mc-info-more href="#" hidden>' + esc(L.t('mini.help_more')) + '</a></div>' +
-        '<footer class="mdl__footer mdl__footer--empty"></footer>';
+        '<footer class="mdl__footer mdl__footer--stretch"><button class="btn btn-primary btn--600" type="button" data-mc-info-close>' +
+        '<span class="btn__content">' + esc(L.t('mini.help_ok')) + '</span></button></footer>';
       this.rootEl.appendChild(dlg);
       dlg.addEventListener('click', function (e) {
         if (e.target === dlg || (e.target.closest && e.target.closest('[data-mc-info-close]'))) dlg.close();
