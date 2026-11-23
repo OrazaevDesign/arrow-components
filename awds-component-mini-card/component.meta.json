@@ -1,10 +1,10 @@
 {
   "component": "mini-card",
-  "version": "2.0.0",
-  "contract_hash": "sha256:4c5f8dae3321f79d98ce62d03b18e965ea875ffe9f432767fb2956b4dbfd78e0",
-  "artifact_hash": "sha256:f638d3e158c2ecccb4e7f81897902c156a99dc113d96873836d647410308f5b4",
+  "version": "2.1.0",
+  "contract_hash": "sha256:5d0657e67a3e6729bcfee36e4c6e6a4bfb5c328a341ced400afc1b64378a0af0",
+  "artifact_hash": "sha256:1407dbc193d772b852a1dd372d34999436c4e3811a6d6ba8f0305e98cfc112de",
   "visual_change": true,
-  "released_at": "2026-11-23T13:58:52.275Z",
+  "released_at": "2026-11-23T15:01:43.164Z",
   "own_values": [],
   "figma": {
     "file_key": "Ka13CUzLUGk47hSRV1lwQ8",
@@ -219,7 +219,6 @@
       "mcard__title",
       "mcard__toast",
       "mdl",
-      "mdl__back",
       "mdl__footer--stretch",
       "price",
       "price-sale",
@@ -227,7 +226,6 @@
       "price__old"
     ],
     "attributes": [
-      "data-mc-ring",
       "data-state",
       "hidden",
       "open"

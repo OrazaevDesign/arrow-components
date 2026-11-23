@@ -174,6 +174,10 @@
       card: card,
       productId: btn.getAttribute('data-product-id'),
       variationId: btn.getAttribute('data-product-variation-id'),
+      // Дата доставки из данных листинга (variation.deliveryDate.formatted): блок кладёт её на кнопку
+      // карточки атрибутом. Ответ вариаций дату часто не несёт (shopotam, 23.11.2026), а срок —
+      // «сегодня + срок сайта», один для всех вариаций в наличии.
+      deliveryDate: btn.getAttribute('data-delivery-date') || '',
       frames: frames,
       name: name ? name.textContent.trim() : '',
       url: name ? name.getAttribute('href') : '',
@@ -373,19 +377,14 @@
     this.load();
   };
 
-  /* Фокус на «Закрыть» (решение 01-33, п. 10). Окно открывают мышью, и после щелчка браузер
-     программный фокус кольцом не показывает: покупатель не видел, где фокус, и Tab уводил
-     его на избранное. Кольцо держит атрибут data-mc-ring, пока кнопка не потеряет фокус
-     (решение владельца 21.11.2026). */
+  /* Фокус при открытии — на само окно, без кольца (решение владельца 23.11.2026; до 2.0.1 кольцо
+     стояло на «Закрыть»). Фокус внутри окна нужен: Tab и читалка начинают с него, Esc закрывает.
+     Окно с tabindex="-1" фокусируется скриптом, но в порядок табуляции не входит; первый Tab ведёт
+     на «Закрыть». Кольца у окна нет — это не элемент управления. */
   P.focusClose = function () {
-    var close = this.q('[data-mc-close]');
-    if (!close) return;
-    close.setAttribute('data-mc-ring', '');
-    if (!close.__mcRing) {
-      close.__mcRing = true;
-      close.addEventListener('blur', function () { close.removeAttribute('data-mc-ring'); });
-    }
-    try { close.focus({ preventScroll: true }); } catch (e) { close.focus(); }
+    var d = this.dialog;
+    if (!d.hasAttribute('tabindex')) d.setAttribute('tabindex', '-1');
+    try { d.focus({ preventScroll: true }); } catch (e) { d.focus(); }
   };
 
   P.setState = function (s) {
@@ -468,7 +467,9 @@
         var img = a.type === 'image' ? (pm.preview_url_2x || pm.preview_url || pm.image_url || self.imageForParam(aid, pid)) : '';
         var attrs = ' type="button" role="radio" aria-checked="' + (sel ? 'true' : 'false') + '" tabindex="' + (sel ? '0' : '-1') + '" data-mc-aspect="' + esc(aid) + '" data-mc-param="' + esc(pid) + '"';
         if (img) {
-          html += '<button class="list-item list-item-variation-img' + (sel ? ' list-item-variation-img-selected' : '') + ' list-item--400 mcard__tile-img"' + attrs +
+          // Один класс варианта, как в эталоне list-item: с двумя классами в блоке побеждала секция
+          // variation-img, идущая в style.css позже, и выбранная плитка выглядела невыбранной.
+          html += '<button class="list-item ' + (sel ? 'list-item-variation-img-selected' : 'list-item-variation-img') + ' list-item--400 mcard__tile-img"' + attrs +
             (fits ? '' : ' aria-description="' + esc(L.t('mini.not_in_combo')) + '"') + '><img class="list-item__img" src="' + esc(img) + '" alt="' + esc(pm.name) + '" loading="lazy" decoding="async"></button>';
         } else {
           var cls = sel ? 'list-item-variation-selected' : (fits ? 'list-item-variation' : 'list-item-variation-indeterminate');
@@ -572,7 +573,9 @@
       // Дата — как у Atlas: последний день срока словами («12 декабря»), а не dateFrom (ISO «2026-12-01»).
       var pd = post.data || {}, strong = /<strong>([^<]+)<\/strong>/i.exec(String(post.text || ''));
       var date = pd.dateToFormatted || pd.dateFormatted || (strong ? strong[1].trim() : '') || ctx.deliveryDate || '';
-      rows.push([ICON.truck, has(date) ? L.t('mini.delivery_date', { date: date }) : L.t('mini.delivery'), method]);
+      var from = !has(date) && this.src && has(this.src.deliveryDate) ? this.src.deliveryDate : '';
+      rows.push([ICON.truck, has(date) ? L.t('mini.delivery_date', { date: date })
+        : has(from) ? L.t('mini.delivery_from', { date: from }) : L.t('mini.delivery'), method]);
     }
     if (price) {
       var plain = strip(price.text);

@@ -23,7 +23,7 @@ description: Mini Card ArrowDS (.mcard).
 | шапка поверх фото: «Закрыть», избранное, «поделиться» | `modal` (слоты `start` / `end`), `button-overhung` secondary 400 (сердце `.obtn__fav`), `toast` normal | `.mdl__header--overlay`, `.mdl__back`, `[data-mc-share]`, `.mcard__toast` |
 | галерея: квадрат, кадры стопкой с кроссфейдом, фото на всю площадь (cover) без наложений поверх плашки `surface-container-low`; стрелки видны при наведении и фокусе внутри галереи; точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
 | цена: при скидке число на плашке цвета badge market-percent, старая цена рядом; ниже процент и пошлина | `price`, `badge` market-sale / market-brand 100 | `.mcard__price .price` — 24/32, валюта и старая 12; `.mcard__tips`, `.mcard__duty` |
-| вариации | `list-item` variation(-selected, -indeterminate) 400 hug; variation-img(-selected) 76 × 95 | `.mcard__aspects`, `.mcard__aspect`, `.mcard__tiles` |
+| вариации | `list-item` variation(-selected, -indeterminate) 400 hug; variation-img(-selected) 76 × 95 — у плитки один класс варианта, `variation-img` или `variation-img-selected`, не оба | `.mcard__aspects`, `.mcard__aspect`, `.mcard__tiles` |
 | загрузка / ошибка на месте вариаций | `progress` circular; `list-item` transparent 300 + `button` secondary 400 | `.mcard__loading`, `.mcard__error` |
 | название — ссылка на товар, две строки, кегль body | `link` accent | `.mcard__title > .lnk` |
 | бренд с логотипом и подписью «100% оригинал» | — (плашка логотипа как в product-card) | `.mcard__brand`, `.mcard__brand-logo`, `.mcard__brand-note` |
@@ -129,6 +129,10 @@ description: Mini Card ArrowDS (.mcard).
    `ui-strings.json` — в `awds:i18n` и `awds:i18n-js` блока).
 3. Кнопка «В корзину» карточки остаётся с атрибутами Atlas: `data-selector="mini-product-card:root"`,
    `data-product-id`, `data-product-variation-id`.
+   С 2.1.0 кнопка несёт и `data-delivery-date` — дату доставки из данных листинга
+   (`variation.deliveryDate.formatted`, «9 декабря»). Окно берёт её, когда в ответе вариаций даты нет
+   (так на shopotam, 23.11.2026), и пишет «Доставка с 9 декабря» (`mini.delivery_from`). Дата одна на
+   все вариации в наличии: это «сегодня + срок сайта». Атрибута нет — строка «Доставка» без даты.
 
 Окно создаётся один раз на корень блока и живёт внутри него: CSS блока в `@scope`, а модальный
 `<dialog>` всё равно рисуется в верхнем слое.
@@ -172,8 +176,8 @@ description: Mini Card ArrowDS (.mcard).
 - **Галерея** — как в product-card: кадры лежат стопкой, новый проявляется поверх уходящего;
   стрелки листают по кругу, на таче свайп (порог 32 px, вертикаль отдана прокрутке). Кадры со
   второго приходят в `data-src` и грузятся на наведение, касание или первое листание.
-- **Фокус** при открытии — на «Закрыть» (первая кнопка шапки) с видимым кольцом, даже если окно
-  открыли мышью (атрибут `data-mc-ring` до потери фокуса); после перерисовки подвала фокус
+- **Фокус** при открытии — на самом окне (`tabindex="-1"`), без кольца (с 2.1.0, решение владельца
+  23.11.2026; раньше — кольцо на «Закрыть»). Первый Tab ведёт на «Закрыть»; после перерисовки подвала фокус
   остаётся у нажатой кнопки. Закрывают «Закрыть», Esc, клик по подложке, «назад» браузера
   (`modal.js`). Прокрутку страницы держит `modal.js`.
 
