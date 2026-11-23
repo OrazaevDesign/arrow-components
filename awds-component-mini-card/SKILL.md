@@ -28,7 +28,7 @@ description: Mini Card ArrowDS (.mcard).
 | название — ссылка на товар, две строки, кегль body | `link` accent, без подчёркивания (`lnk--ul-none`, решение владельца 23.11.2026) | `.mcard__title > .lnk` |
 | бренд с логотипом и подписью «100% оригинал» | — (плашка логотипа как в product-card) | `.mcard__brand`, `.mcard__brand-logo`, `.mcard__brand-note` |
 | «Купить сейчас»; в loading — состояние загрузки кнопки | `button` secondary 600 (`btn--loading`) | `.mcard__buy` |
-| доставка; в loading и error — скелетон двух строк; строка с пояснением из настроек блока — кнопка, открывает окно `.mcard-info` | `list-item` transparent 300; иконки — логотип перевозчика (СДЭК) и флаг страны (RU), иначе truck и wallet; окно — `modal` dialog | `.mcard__delivery`, `.mcard__delivery-row`, `.mcard__skeleton`, `.mcard-info` |
+| доставка; в loading и error — скелетон двух строк; строка с пояснением из настроек блока — кнопка, открывает окно `.mcard-info` | `list-item` transparent 300; иконки — логотип службы доставки (18 из библиотеки «4partners»: СДЭК, Почта России, EMS, Яндекс, Boxberry, DPD, 5Post, Ozon, DHL, Казпочта и др., подбор по названию способа) и флаг страны (RU), иначе truck и wallet; окно — `modal` dialog | `.mcard__delivery`, `.mcard__delivery-row`, `.mcard__skeleton`, `.mcard-info` |
 | подвал: «Добавить в корзину» / степпер + «В корзину» | `modal` footer `--stretch`, `stepper` secondary 600, `button` primary 600 / addition 600 (товар в корзине, макет in-cart) | `.mcard__qty` — степпер по ширине содержимого |
 
 ## Разметка
