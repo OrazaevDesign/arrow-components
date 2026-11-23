@@ -21,14 +21,14 @@ description: Mini Card ArrowDS (.mcard).
 | --- | --- | --- |
 | окно, панель справа; ≤ 615 — шторка снизу | `modal` | `.mdl.mdl-sidepage.mcard`, ширина 480 — ручка `--awds-mdl-width` |
 | шапка поверх фото: «Закрыть», избранное, «поделиться» | `modal` (слоты `start` / `end`), `button-overhung` secondary 400 (сердце `.obtn__fav`), `toast` normal | `.mdl__header--overlay`, `.mdl__back`, `[data-mc-share]`, `.mcard__toast` |
-| галерея: квадрат, кадры стопкой с кроссфейдом, фото вписано целиком (contain) без наложений, поле — плашка `surface-container-low`; текст в галерее не выделяется; стрелки видны при наведении и фокусе внутри галереи; точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
+| галерея: квадрат, кадры стопкой с кроссфейдом, фото вписано целиком (contain) без наложений, поле белое (`surface-bright`, островок `theme-light`); текст в галерее не выделяется; до ответа offers превью из карточки размыто, большое фото сменяет его растворением (`.mcard__ghost`); стрелки видны при наведении и фокусе внутри галереи; точки | `button-overhung` secondary 400, `slider` dots | `.mcard__gallery`, `.mcard__frame(--active)`, `.mcard__nav`, `.slider.slider-dots(.slider--window)` |
 | цена: при скидке число на плашке цвета badge market-percent, старая цена рядом; ниже процент и пошлина | `price`, `badge` market-sale / market-brand 100 | `.mcard__price .price` — 24/32, валюта и старая 12; `.mcard__tips`, `.mcard__duty` |
 | вариации | `list-item` variation(-selected, -indeterminate) 400 hug; variation-img(-selected) 76 × 95 — у плитки один класс варианта, `variation-img` или `variation-img-selected`, не оба | `.mcard__aspects`, `.mcard__aspect`, `.mcard__tiles` |
 | загрузка / ошибка на месте вариаций | `progress` circular; `list-item` transparent 300 + `button` secondary 400 | `.mcard__loading`, `.mcard__error` |
-| название — ссылка на товар, две строки, кегль body | `link` accent | `.mcard__title > .lnk` |
+| название — ссылка на товар, две строки, кегль body | `link` accent, без подчёркивания (`lnk--ul-none`, решение владельца 23.11.2026) | `.mcard__title > .lnk` |
 | бренд с логотипом и подписью «100% оригинал» | — (плашка логотипа как в product-card) | `.mcard__brand`, `.mcard__brand-logo`, `.mcard__brand-note` |
 | «Купить сейчас»; в loading — состояние загрузки кнопки | `button` secondary 600 (`btn--loading`) | `.mcard__buy` |
-| доставка; в loading и error — скелетон двух строк | `list-item` transparent 300, иконки truck и wallet | `.mcard__delivery`, `.mcard__skeleton` |
+| доставка; в loading и error — скелетон двух строк; строка с пояснением из настроек блока — кнопка, открывает окно `.mcard-info` | `list-item` transparent 300; иконки — логотип перевозчика (СДЭК) и флаг страны (RU), иначе truck и wallet; окно — `modal` dialog | `.mcard__delivery`, `.mcard__delivery-row`, `.mcard__skeleton`, `.mcard-info` |
 | подвал: «Добавить в корзину» / степпер + «В корзину» | `modal` footer `--stretch`, `stepper` secondary 600, `button` primary 600 / addition 600 (товар в корзине, макет in-cart) | `.mcard__qty` — степпер по ширине содержимого |
 
 ## Разметка
@@ -69,8 +69,8 @@ description: Mini Card ArrowDS (.mcard).
         </div>
         <div class="mcard__main">
           <div class="mcard__head">
-            <h2 class="mcard__title" id="awds-mc-1-title"><a class="lnk lnk-accent lnk--ul-hover" href="…">Название товара</a></h2>
-            <a class="mcard__brand" href="…"><span class="mcard__brand-logo"><img src="…" alt=""></span><span class="mcard__brand-text"><span class="lnk lnk-accent lnk--ul-hover mcard__brand-name">Бренд</span><span class="mcard__brand-note">100% оригинал</span></span></a>
+            <h2 class="mcard__title" id="awds-mc-1-title"><a class="lnk lnk-accent lnk--ul-none" href="…">Название товара</a></h2>
+            <a class="mcard__brand" href="…"><span class="mcard__brand-logo"><img src="…" alt=""></span><span class="mcard__brand-text"><span class="lnk lnk-accent lnk--ul-none mcard__brand-name">Бренд</span><span class="mcard__brand-note">100% оригинал</span></span></a>
           </div>
           <button class="btn btn-secondary btn--600 mcard__buy" type="button"><span class="btn__content">Купить сейчас</span></button>
           <ul class="mcard__delivery"><li class="list-item list-item-transparent list-item--300">…</li></ul>
@@ -129,6 +129,11 @@ description: Mini Card ArrowDS (.mcard).
    `ui-strings.json` — в `awds:i18n` и `awds:i18n-js` блока).
 3. Кнопка «В корзину» карточки остаётся с атрибутами Atlas: `data-selector="mini-product-card:root"`,
    `data-product-id`, `data-product-variation-id`.
+   С 2.2.0 блок кладёт на элемент внутри корня (`__inner`) пояснения к строкам доставки из своих
+   настроек (вкладка «Мини-карточка»): `data-mc-delivery-info`, `data-mc-cost-info` — текст окна,
+   абзацы через пустую строку; `data-mc-delivery-url`, `data-mc-cost-url` — ссылка «Подробнее в
+   справке» (`mini.help_more`). Пусто — строка не нажимается. Справка у каждого сайта своя, поэтому
+   текст в настройках блока, а не в словаре (решение владельца 23.11.2026).
    С 2.1.0 кнопка несёт и `data-delivery-date` — дату доставки из данных листинга
    (`variation.deliveryDate.formatted`, «9 декабря»). Окно берёт её, когда в ответе вариаций даты нет
    (так на shopotam, 23.11.2026), и пишет «Доставка с 9 декабря» (`mini.delivery_from`). Дата одна на

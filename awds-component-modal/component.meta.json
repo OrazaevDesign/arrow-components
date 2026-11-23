@@ -1,17 +1,11 @@
 {
   "component": "modal",
-  "version": "1.14.1",
+  "version": "1.15.0",
   "contract_hash": "sha256:222bc576f5070f2ffc829265be99615dfbba2605fd5daa2c8e2b9b611b6ce8aa",
-  "artifact_hash": "sha256:727478d2c93bbb57d2443006872011e9025449d43331773ba3d4456aac4d62c4",
+  "artifact_hash": "sha256:d99d05bb68476ef26ac71782b9324456f2df8e1def82afa35daa35d605d274b2",
   "visual_change": true,
-  "released_at": "2026-11-21T16:33:44.804Z",
+  "released_at": "2026-11-23T16:47:51.840Z",
   "own_values": [
-    {
-      "value": "0.2s",
-      "where": "transition",
-      "count": 4,
-      "why": "длительность анимации: коллекции движения в студии нет"
-    },
     {
       "value": "320px",
       "where": "--awds-mdl-width",
@@ -212,6 +206,8 @@
     "--awds-font-weight-semibold",
     "--awds-layout-section-gutter-modal",
     "--awds-layout-section-gutter-modal-mini",
+    "--awds-motion-duration-enter",
+    "--awds-motion-duration-quick",
     "--awds-motion-ease-state",
     "--awds-opacity-50",
     "--awds-rounded-border-radius-600",

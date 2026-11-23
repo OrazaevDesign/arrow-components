@@ -36,6 +36,7 @@
   /* Иконки — из макета (Figma Ka13CUzLUGk47hSRV1lwQ8, экспорт 21.11.2026); «назад» и «поделиться» — из шапки modal
      (470rar5EfRm4n14vHMXbpc, / header content=overlay, 21.11.2026); сердце — как у button-favorites, слои .obtn__fav. */
   var ICON = {
+    close: '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false"><path d="M10 1.667a8.333 8.333 0 1 1 0 16.666 8.333 8.333 0 0 1 0-16.666Zm2.946 5.387a.833.833 0 0 0-1.178 0L10 8.821 8.232 7.054a.833.833 0 1 0-1.178 1.178L8.821 10l-1.767 1.768a.833.833 0 1 0 1.178 1.178L10 11.179l1.768 1.767a.833.833 0 1 0 1.178-1.178L11.179 10l1.767-1.768a.833.833 0 0 0 0-1.178Z"/></svg>',
     back: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.29364 5.63628C9.68418 5.24594 10.3172 5.24581 10.7077 5.63628C11.0978 6.02677 11.0979 6.65992 10.7077 7.05034L6.75751 11.0005H20.0007C20.5527 11.0009 21.0007 11.4485 21.0007 12.0005C21.0004 12.5524 20.5525 13.0002 20.0007 13.0005H6.75751L10.7077 16.9498C11.0979 17.3402 11.0978 17.9733 10.7077 18.3638C10.3173 18.7543 9.68418 18.7541 9.29364 18.3638L3.63641 12.7076C3.24595 12.3171 3.24608 11.684 3.63641 11.2935L9.29364 5.63628Z"/></svg>',
     share: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.5 2C20.433 2 22 3.567 22 5.5C22 7.433 20.433 9 18.5 9C17.5889 9 16.7594 8.65154 16.1367 8.08105L11.7324 10.3887C11.9046 10.8945 12 11.436 12 12C12 12.5633 11.9051 13.1042 11.7334 13.6094L16.1367 15.918C16.7594 15.3477 17.5891 15 18.5 15C20.433 15 22 16.567 22 18.5C22 20.433 20.433 22 18.5 22C16.567 22 15 20.433 15 18.5C15 18.2021 15.0374 17.9129 15.1074 17.6367L10.7217 15.3379C9.80629 16.3578 8.47837 17 7 17C4.23858 17 2 14.7614 2 12C2 9.23858 4.23858 7 7 7C8.47811 7 9.80631 7.64149 10.7217 8.66113L15.1074 6.3623C15.0375 6.08644 15 5.7976 15 5.5C15 3.567 16.567 2 18.5 2ZM18.5 17C17.6716 17 17 17.6716 17 18.5C17 19.3284 17.6716 20 18.5 20C19.3284 20 20 19.3284 20 18.5C20 17.6716 19.3284 17 18.5 17ZM7 9C5.34315 9 4 10.3431 4 12C4 13.6569 5.34315 15 7 15C8.65685 15 10 13.6569 10 12C10 10.3431 8.65685 9 7 9ZM18.5 4C17.6716 4 17 4.67157 17 5.5C17 6.32843 17.6716 7 18.5 7C19.3284 7 20 6.32843 20 5.5C20 4.67157 19.3284 4 18.5 4Z"/></svg>',
     prev: '<svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.2441 7.05371C10.5695 6.72831 11.0974 6.72839 11.4229 7.05371C11.7483 7.37915 11.7483 7.90699 11.4229 8.23242L9.65527 10L11.4229 11.7676C11.7483 12.093 11.7482 12.6208 11.4229 12.9463C11.0974 13.2717 10.5696 13.2717 10.2441 12.9463L7.8877 10.5898C7.56226 10.2644 7.56226 9.73657 7.8877 9.41113L10.2441 7.05371Z"/></svg>',
@@ -190,10 +191,25 @@
     };
   }
 
+  /* Логотипы перевозчиков и флаги стран строк доставки (макет 9983:75154: 4partners-cdek-color,
+     4partners-FlagEuropeRussiaRU-color). Цвета — фирменные цвета логотипа и флага, не роли темы:
+     это картинка, а не интерфейс. Перевозчика или страны нет в наборе — нынешняя иконка
+     (решение владельца 23.11.2026). */
+  var CARRIER = [[/сдэк|cdek/i, '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M14.744 1.672H5.257a3.59 3.59 0 0 0-3.59 3.59v9.487a3.59 3.59 0 0 0 3.59 3.59h9.487a3.59 3.59 0 0 0 3.59-3.59V5.262a3.59 3.59 0 0 0-3.59-3.59Z" fill="#1AB248"/><path d="M4.70586 11.1H4.04057C3.00272 11.1 3.75672 8.89572 4.63046 8.89572H5.68162C5.85015 8.89572 6.14732 8.92677 6.29369 8.50985L6.51988 7.8623H5.07842C4.29782 7.8623 3.69019 8.13729 3.2511 8.59856C2.49267 9.38803 2.23543 10.621 2.41727 11.2109C2.59025 11.7565 3.06038 12.1157 3.79663 12.1246L4.36878 12.129H5.07398L5.24696 11.6101C5.37558 11.242 5.08729 11.1 4.70586 11.1ZM12.8046 10.1864L13.0219 9.48118H10.7023C10.3165 9.48118 10.1435 9.58762 10.077 9.80938L9.85963 10.5146H12.1793C12.5651 10.5146 12.7381 10.4081 12.8046 10.1864ZM9.51368 11.4283L9.29635 12.1335H11.616C11.9974 12.1335 12.1748 12.027 12.2414 11.8053L12.4587 11.1H10.1391C9.75762 11.1 9.58464 11.2065 9.51368 11.4283ZM13.3457 8.57195L13.5631 7.86674H11.2434C10.8576 7.86674 10.6846 7.97319 10.6181 8.19495L10.4007 8.90015H12.7204C13.1018 8.90015 13.2748 8.79371 13.3457 8.57195ZM9.84189 8.71387C9.74431 8.05746 9.39392 7.86674 8.54235 7.86674H6.99002L6.08523 10.5146H6.65737C6.99889 10.5146 7.17187 10.519 7.35371 10.0311L7.73071 8.89572H8.30729C8.79961 8.89572 8.68872 9.51222 8.44034 10.111C8.21859 10.6388 7.83272 11.1045 7.36701 11.1045H6.40457C6.0187 11.1045 5.84129 11.2109 5.77032 11.4327L5.53082 12.1379H6.23603L6.92793 12.1335C7.53999 12.129 8.04117 12.0847 8.62663 11.5569C9.24756 10.9936 9.96608 9.5477 9.84189 8.71387ZM17.6391 7.8623H16.2952L15.0312 9.20619C14.8847 9.36142 14.734 9.51665 14.5876 9.6985H14.5743L15.2041 7.8623H14.1086L12.6317 12.1335H13.7272L14.1973 10.7896L14.6851 10.3771L15.0711 11.5924C15.1908 11.9693 15.315 12.1335 15.5812 12.1335H16.4194L15.5589 9.74729L17.6391 7.8623Z" fill="#fff"/></svg>']];   // i18n-ok: разбор имени перевозчика из ответа витрины
+  var FLAG = { ru: '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M.833 6.18a3.056 3.056 0 0 1 3.056-3.055h12.222a3.056 3.056 0 0 1 3.056 3.055v7.64a3.056 3.056 0 0 1-3.056 3.055H3.89A3.056 3.056 0 0 1 .833 13.82V6.18Z" fill="#fff"/><path d="M16.1108 3.88889C17.3764 3.88889 18.4025 4.9149 18.4025 6.18056V13.8194C18.4025 15.0851 17.3764 16.1111 16.1108 16.1111H3.88856C2.62291 16.1111 1.5969 15.0851 1.5969 13.8194V6.18056C1.5969 4.9149 2.62291 3.88889 3.88856 3.88889H16.1108ZM3.88856 3.125C2.20103 3.125 0.833008 4.49302 0.833008 6.18056V13.8194C0.833008 15.507 2.20103 16.875 3.88856 16.875H16.1108C17.7983 16.875 19.1663 15.507 19.1663 13.8194V6.18056C19.1663 4.49302 17.7983 3.125 16.1108 3.125H3.88856Z" fill="#E6E6E6"/><path d="M.833 12.291h18.333V7.708H.833v4.583Z" fill="#1A47B8"/><path d="M.833 12.292v1.528a3.056 3.056 0 0 0 3.056 3.055h12.222a3.056 3.056 0 0 0 3.056-3.055v-1.528H.833Z" fill="#F93939"/></svg>' };
+  function carrierIcon(method) {
+    for (var i = 0; i < CARRIER.length; i++) if (CARRIER[i][0].test(method || '')) return CARRIER[i][1];
+    return ICON.truck;
+  }
+
   /* Строка-скелетон доставки: держит место двух строк list-item transparent 300, пока ответа
      offers нет или он упал (решение владельца 23.11.2026). Своего скелетона в ArrowDS нет —
      плашки повторяют иконку и две строки текста. */
   var SKELETON_ROW = '<span class="mcard__skeleton-row"><span class="mcard__skeleton-icon"></span><span class="mcard__skeleton-lines"><span></span><span></span></span></span>';
+
+  function reduceMotion() {
+    return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  }
 
   /* ── разметка ──────────────────────────────────────────────────────────────────────── */
   function shell(L, id) {
@@ -226,9 +242,9 @@
             '</div>' +
             '<div class="mcard__main">' +
               '<div class="mcard__head">' +
-                '<h2 class="mcard__title" id="' + id + '-title"><a class="lnk lnk-accent lnk--ul-hover" data-mc-name href="#"></a></h2>' +
+                '<h2 class="mcard__title" id="' + id + '-title"><a class="lnk lnk-accent lnk--ul-none" data-mc-name href="#"></a></h2>' +
                 '<a class="mcard__brand" data-mc-brand href="#" hidden><span class="mcard__brand-logo" data-mc-logo hidden><img alt="" loading="lazy" decoding="async"></span>' +
-                  '<span class="mcard__brand-text"><span class="lnk lnk-accent lnk--ul-hover mcard__brand-name" data-mc-brand-name></span><span class="mcard__brand-note">' + esc(L.t('mini.original')) + '</span></span></a>' +
+                  '<span class="mcard__brand-text"><span class="lnk lnk-accent lnk--ul-none mcard__brand-name" data-mc-brand-name></span><span class="mcard__brand-note">' + esc(L.t('mini.original')) + '</span></span></a>' +
               '</div>' +
               '<button class="btn btn-secondary btn--600 mcard__buy" type="button" data-mc-buy disabled><span class="btn__content">' + esc(L.t('mini.buy_now')) + '</span></button>' +
               '<ul class="mcard__delivery" data-mc-delivery></ul>' +
@@ -296,6 +312,16 @@
     d.innerHTML = shell(L, this.id);
     rootEl.appendChild(d);
     this.q = function (s) { return d.querySelector(s); };
+    // Пояснения к строкам доставки — из настроек блока (у каждого сайта своя справка): атрибуты
+    // data-mc-* на корне или на элементе внутри него (корень блока рисует платформа).
+    var cfg = rootEl.hasAttribute('data-mc-delivery-info') ? rootEl : (rootEl.querySelector('[data-mc-delivery-info]') || rootEl);
+    this.info = {
+      delivery: (cfg.getAttribute('data-mc-delivery-info') || '').trim(),
+      cost: (cfg.getAttribute('data-mc-cost-info') || '').trim(),
+      deliveryUrl: (cfg.getAttribute('data-mc-delivery-url') || '').trim(),
+      costUrl: (cfg.getAttribute('data-mc-cost-url') || '').trim()
+    };
+    this.rootEl = rootEl;
     this.frameIndex = 0;
     this.bind();
   }
@@ -316,6 +342,8 @@
       if (t.closest('[data-mc-dec]')) { self.setQty(self.qty() - 1); return; }
       if (t.closest('[data-mc-fav]')) { self.toggleFav(); return; }
       if (t.closest('[data-mc-share]')) { self.share(); return; }
+      var row = t.closest('[data-mc-info]');
+      if (row) { self.openInfo(row.getAttribute('data-mc-info'), row); return; }
       var tile = t.closest('[data-mc-param]');
       if (tile) self.pick(tile.getAttribute('data-mc-aspect'), tile.getAttribute('data-mc-param'));
     });
@@ -343,6 +371,7 @@
     this.q('.mcard__gallery').addEventListener('pointerenter', function () { self.warm(); });
     d.addEventListener('close', function () {
       if (d.open) return;                                                // окно лишь сменило режим (вход гостя)
+      if (self.infoDialog && self.infoDialog.open) self.infoDialog.close();
       if (self.favObserver) { self.favObserver.disconnect(); self.favObserver = null; }
       clearTimeout(self.toastTimer); self.q('[data-mc-toast]').hidden = true;
       self.stopAuthWatch();
@@ -359,6 +388,7 @@
     var d = this.dialog;
     // данные карточки — сразу
     this.renderFrames(src.frames, src.name);
+    this.setPreview(true);
     this.q('[data-mc-badges]').innerHTML = src.badgesHtml;
     this.q('[data-mc-price]').innerHTML = src.priceHtml;
     var nm = this.q('[data-mc-name]');
@@ -391,6 +421,7 @@
     var body = this.q('.mcard__body');
     if (s === 'default') body.removeAttribute('data-state'); else body.setAttribute('data-state', s);
     this.state = s;
+    if (s === 'error') this.setPreview(false);
     var buy = this.q('[data-mc-buy]');
     setBusy(buy, s === 'loading');
     buy.disabled = s !== 'default' || !this.inStock();
@@ -543,7 +574,7 @@
         var s1 = im.large_url || im.full_url || im.preview_url, s2 = im.large_url_2x || im.full_url_2x;
         return { src: s1, srcset: s2 ? s1 + ' 1x, ' + s2 + ' 2x' : '' };
       }).filter(function (f) { return has(f.src); });
-      if (frames.length) this.renderFrames(frames, name, true);
+      if (frames.length) this.renderFrames(frames, name, true); else this.setPreview(false);
     }
     this.renderAspects();
     this.q('[data-mc-buy]').disabled = this.state !== 'default' || !this.available(v);
@@ -574,18 +605,24 @@
       var pd = post.data || {}, strong = /<strong>([^<]+)<\/strong>/i.exec(String(post.text || ''));
       var date = pd.dateToFormatted || pd.dateFormatted || (strong ? strong[1].trim() : '') || ctx.deliveryDate || '';
       var from = !has(date) && this.src && has(this.src.deliveryDate) ? this.src.deliveryDate : '';
-      rows.push([ICON.truck, has(date) ? L.t('mini.delivery_date', { date: date })
-        : has(from) ? L.t('mini.delivery_from', { date: from }) : L.t('mini.delivery'), method]);
+      rows.push([carrierIcon(method), has(date) ? L.t('mini.delivery_date', { date: date })
+        : has(from) ? L.t('mini.delivery_from', { date: from }) : L.t('mini.delivery'), method, 'delivery']);
     }
     if (price) {
       var plain = strip(price.text);
       var m = /заказа\s+(.+)$/i.exec(plain);  // i18n-ok: разбор текста ответа витрины, не строка интерфейса
-      rows.push(m ? [ICON.wallet, L.t('mini.delivery') + ' ' + m[1], L.t('mini.delivery_cost')] : [ICON.wallet, plain, '']);
+      var flag = FLAG[String((price.data && price.data.countryIso) || '').toLowerCase()] || ICON.wallet;
+      rows.push(m ? [flag, L.t('mini.delivery') + ' ' + m[1], L.t('mini.delivery_cost'), 'cost'] : [flag, plain, '', 'cost']);
     }
+    var info = this.info || {};
     this.q('[data-mc-delivery]').innerHTML = rows.map(function (r) {
-      return '<li class="list-item list-item-transparent list-item--300"><span class="list-item__prefix" aria-hidden="true">' + r[0] + '</span>' +
+      var inner = '<span class="list-item__prefix" aria-hidden="true">' + r[0] + '</span>' +
         '<span class="list-item__content"><span class="list-item__title">' + esc(r[1]) + '</span>' +
-        (has(r[2]) ? '<span class="list-item__description">' + esc(r[2]) + '</span>' : '') + '</span></li>';
+        (has(r[2]) ? '<span class="list-item__description">' + esc(r[2]) + '</span>' : '') + '</span>';
+      // Строка с текстом из настроек блока — кнопка, открывает окно с пояснением (решение владельца 23.11.2026).
+      return has(info[r[3]])
+        ? '<li><button class="list-item list-item-transparent list-item--300 mcard__delivery-row" type="button" data-mc-info="' + r[3] + '" aria-haspopup="dialog">' + inner + '</button></li>'
+        : '<li class="list-item list-item-transparent list-item--300">' + inner + '</li>';
     }).join('');
   };
 
@@ -595,9 +632,14 @@
      прокруткой и снапом: стрелки и точки догоняли прокрутку, листание дёргалось. Кадры со
      второго — без src (адрес в data-src): у стопки один прямоугольник, и lazy грузил бы их
      все сразу. Прогрев — на наведение, касание или первое листание. */
-  /* smooth — замена кадров после ответа offers: первое фото карточки остаётся на месте, пока новое
-     первое фото не загружено и не раскодировано (не дольше 1,5 с). Иначе при открытии окно на миг
-     пустело и фото «прыгало» (замечание владельца 23.11.2026). */
+  /* Превью из карточки листинга и большое фото из ответа offers — разные нарезки CDN (list 220
+     против large 561, с другими полями), и прямая подмена давала прыжок товара. Поэтому превью
+     показывается размытым (mcard__frames--preview), а когда первое большое фото загружено и
+     раскодировано (не дольше 1,5 с), оно встаёт резким, а размытое превью гаснет поверх него
+     (решение владельца 23.11.2026). */
+  P.setPreview = function (on) {
+    this.q('[data-mc-frames]').classList.toggle('mcard__frames--preview', !!on);
+  };
   P.renderFrames = function (frames, name, smooth) {
     var self = this, box = this.q('[data-mc-frames]'), token = this.framesToken = {};
     var html = frames.map(function (f, i) {
@@ -605,10 +647,14 @@
       return '<img class="mcard__frame" draggable="false" ' + (i === 0 ? '' : 'data-') + 'src="' + esc(f.src) + '"' + set +
         ' alt="' + (i === 0 ? esc(name) : '') + '" decoding="async">';
     }).join('');
-    var cur = box.querySelector('.mcard__frame');
+    var cur = box.querySelector('.mcard__frame--active') || box.querySelector('.mcard__frame');
     if (smooth && cur && frames[0] && cur.getAttribute('src') !== frames[0].src) {
       var pre = new Image(), done = false;
-      var go = function () { if (done) return; done = true; if (self.framesToken === token) self.putFrames(box, html, frames.length); };
+      var go = function () {
+        if (done) return; done = true;
+        if (self.framesToken !== token) return;
+        self.crossfade(box, cur, html, frames.length);
+      };
       if (has(frames[0].srcset)) pre.srcset = frames[0].srcset;
       pre.src = frames[0].src;
       (pre.decode ? pre.decode() : Promise.reject()).then(go, go);
@@ -616,6 +662,30 @@
       return;
     }
     this.putFrames(box, html, frames.length);
+    this.setPreview(false);
+  };
+  /* Размытое превью уходит слоем поверх новых кадров и гаснет: подмена без прыжка. */
+  P.crossfade = function (box, old, html, n) {
+    var wasPreview = box.classList.contains('mcard__frames--preview');
+    var ghost = null;
+    if (wasPreview && old && !reduceMotion()) {
+      ghost = document.createElement('div');
+      ghost.className = 'mcard__ghost';
+      ghost.setAttribute('aria-hidden', 'true');
+      var im = old.cloneNode(false);
+      im.className = 'mcard__frame';
+      im.removeAttribute('alt');
+      ghost.appendChild(im);
+      box.insertAdjacentElement('afterend', ghost);
+    }
+    this.putFrames(box, html, n);
+    this.setPreview(false);
+    if (!ghost) return;
+    var drop = function () { if (ghost && ghost.parentNode) ghost.parentNode.removeChild(ghost); ghost = null; };
+    ghost.addEventListener('transitionend', drop);
+    setTimeout(drop, 1000);
+    // кадр с полной непрозрачностью отрисован — только потом гасим
+    requestAnimationFrame(function () { requestAnimationFrame(function () { if (ghost) ghost.classList.add('mcard__ghost--out'); }); });
   };
   P.putFrames = function (box, html, n) {
     box.innerHTML = html;
@@ -818,6 +888,50 @@
   P.stopAuthWatch = function () {
     if (this.authTimer) { clearInterval(this.authTimer); this.authTimer = 0; }
   };
+  /* ── пояснение к строке доставки ───────────────────────────────────────────────────────
+     Окно modal dialog поверх мини-карточки: заголовок — подпись строки, текст — из настройки
+     блока (абзацы по пустой строке), ссылка «Подробнее в справке», если блок её дал. Окно одно
+     на корень блока и живёт в нём, рядом с мини-карточкой: CSS блока в @scope. */
+  P.openInfo = function (kind, from) {
+    var L = this.L, text = this.info[kind];
+    if (!has(text)) return;
+    var dlg = this.infoDialog;
+    if (!dlg) {
+      var tid = this.id + '-info-title';
+      dlg = this.infoDialog = document.createElement('dialog');
+      dlg.className = 'mdl mdl-dialog mcard-info';
+      dlg.setAttribute('aria-labelledby', tid);
+      dlg.innerHTML = '<header class="mdl__header"><h2 class="mdl__title" id="' + tid + '" data-mc-info-title></h2>' +
+        '<button class="btn btn-ghost btn--500 btn--icon-only mdl__close" type="button" data-mc-info-close aria-label="' + esc(L.t('mini.close')) + '">' + ICON.close + '</button></header>' +
+        '<div class="mdl__content"><div class="mcard-info__text" data-mc-info-text></div>' +
+        '<a class="lnk lnk-accent lnk--ul-none mcard-info__more" data-mc-info-more href="#" hidden>' + esc(L.t('mini.help_more')) + '</a></div>' +
+        '<footer class="mdl__footer mdl__footer--empty"></footer>';
+      this.rootEl.appendChild(dlg);
+      dlg.addEventListener('click', function (e) {
+        if (e.target === dlg || (e.target.closest && e.target.closest('[data-mc-info-close]'))) dlg.close();
+      });
+      dlg.addEventListener('close', function () {
+        var back = dlg.__from;
+        dlg.__from = null;
+        if (back && back.isConnected) { try { back.focus({ preventScroll: true }); } catch (e) { back.focus(); } }
+      });
+    }
+    dlg.__from = from || null;
+    dlg.querySelector('[data-mc-info-title]').textContent = kind === 'cost' ? L.t('mini.delivery_cost') : L.t('mini.delivery');
+    dlg.querySelector('[data-mc-info-text]').innerHTML = text.split(/\n\s*\n/).map(function (p) {
+      return '<p class="mdl__text">' + esc(p.trim()).replace(/\n/g, '<br>') + '</p>';
+    }).join('');
+    var more = dlg.querySelector('[data-mc-info-more]'), url = this.info[kind + 'Url'];
+    more.hidden = !has(url);
+    if (has(url)) more.setAttribute('href', url);
+    if (!dlg.open) {
+      dlg.showModal();
+      // Фокус — на окне, без кольца на крестике (как у самой мини-карточки); первый Tab — на крестик.
+      if (!dlg.hasAttribute('tabindex')) dlg.setAttribute('tabindex', '-1');
+      try { dlg.focus({ preventScroll: true }); } catch (e) { dlg.focus(); }
+    }
+  };
+
   P.backFromAuth = function () {
     var d = this.dialog;
     this.stopAuthWatch();

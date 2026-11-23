@@ -121,24 +121,64 @@
 .mdl:not([open]) { display: none; }
 
 /* Появление: @starting-style внутри планки Baseline 2024. Не сработает — окно просто
-   появится без перехода, функция не страдает. */
+   появится без перехода, функция не страдает.
+   С 1.15.0 окно не только проявляется, но и приходит со своей стороны (решение владельца
+   23.11.2026, «небольшая анимация и плавность»): диалог по центру поднимается на space-4 из 97 %,
+   панель выезжает от своего края, шторка — снизу. Появление — duration-enter, закрытие быстрее —
+   duration-quick: переход берётся из правила конечного состояния, поэтому у [open] и у
+   :not([open]) длительности разные. */
 @media (prefers-reduced-motion: no-preference) {
   .mdl,
   .mdl::backdrop {
-    transition: opacity 0.2s var(--awds-motion-ease-state), translate 0.2s var(--awds-motion-ease-state), overlay 0.2s allow-discrete,
-                display 0.2s allow-discrete;
+    transition-property: opacity, translate, scale, overlay, display;
+    transition-duration: var(--awds-motion-duration-quick);
+    transition-timing-function: var(--awds-motion-ease-state);
+    transition-behavior: allow-discrete;
+  }
+  .mdl[open],
+  .mdl[open]::backdrop {
+    transition-duration: var(--awds-motion-duration-enter);
   }
 
   .mdl:not([open]),
   .mdl:not([open])::backdrop {
     opacity: 0;
   }
+  .mdl-dialog:not([open]) { translate: 0 var(--awds-space-4); scale: 0.97; }
+  .mdl-sidepage:not([open]) { translate: 100% 0; }
+  .mdl-sidepage.mdl--side-start:not([open]) { translate: -100% 0; }
+  .mdl-sidepage:dir(rtl):not([open]) { translate: -100% 0; }
+  .mdl-sidepage.mdl--side-start:dir(rtl):not([open]) { translate: 100% 0; }
 
   @starting-style {
     .mdl[open],
     .mdl[open]::backdrop {
       opacity: 0;
     }
+    .mdl-dialog[open] { translate: 0 var(--awds-space-4); scale: 0.97; }
+    .mdl-sidepage[open] { translate: 100% 0; }
+    .mdl-sidepage.mdl--side-start[open] { translate: -100% 0; }
+    .mdl-sidepage:dir(rtl)[open] { translate: -100% 0; }
+    .mdl-sidepage.mdl--side-start:dir(rtl)[open] { translate: 100% 0; }
+  }
+}
+/* Шторка (диалог ниже 1024, панель ниже 616) выезжает снизу, без масштаба. */
+@media (prefers-reduced-motion: no-preference) and (max-width: 1023px) {
+  .mdl-dialog:not(.mdl--fullscreen):not([open]) { translate: 0 100%; scale: 1; }
+  @starting-style {
+    .mdl-dialog:not(.mdl--fullscreen)[open] { translate: 0 100%; scale: 1; }
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (max-width: 615px) {
+  .mdl-sidepage:not([open]),
+  .mdl-sidepage.mdl--side-start:not([open]),
+  .mdl-sidepage:dir(rtl):not([open]),
+  .mdl-sidepage.mdl--side-start:dir(rtl):not([open]) { translate: 0 100%; }
+  @starting-style {
+    .mdl-sidepage[open],
+    .mdl-sidepage.mdl--side-start[open],
+    .mdl-sidepage:dir(rtl)[open],
+    .mdl-sidepage.mdl--side-start:dir(rtl)[open] { translate: 0 100%; }
   }
 }
 

@@ -31,12 +31,13 @@
 
 /* ── галерея ─────────────────────────────────────────────────────────────────────────── */
 /* Фото без наложений (решение владельца 23.11.2026): ни скрима, ни multiply, ни плашки, которая
-   светлеет при наведении. Кадр закрывает квадрат целиком, как заливка FILL в макете; плашка
-   surface-container-low видна, только пока кадр не загрузился. */
+   светлеет при наведении. Кадр вписан целиком; поле вокруг — белое surface-bright, как фон
+   снимков (решение владельца 23.11.2026; в макете surface/container-low). Галерея — островок
+   theme-light (JS), поэтому поле белое и в тёмной теме. */
 .mcard__gallery {
   position: relative;
   aspect-ratio: 1 / 1;                              /* квадрат (решение владельца 21.11.2026) */
-  background: rgb(var(--surface-container-low));    /* макет: gallery fills = surface/container-low */
+  background: rgb(var(--surface-bright));            /* решение владельца 23.11.2026 */
   overflow: hidden;
   /* Быстрое листание стрелками или щелчками по фото браузер читает как двойной щелчок и выделяет
      ближайшее слово — первую группу цифр цены под галереей (замечание владельца 23.11.2026).
@@ -66,7 +67,7 @@
    симметричный кроссфейд давал провал посередине (приём product-card). Подложка — цвет
    плашки, чтобы прозрачное фото выглядело так же, как до загрузки. */
 .mcard__frames:has(.mcard__frame--active) .mcard__frame {
-  background: rgb(var(--surface-container-low));
+  background: rgb(var(--surface-bright));
 }
 .mcard__frames:has(.mcard__frame--active) .mcard__frame:not(.mcard__frame--active) {
   opacity: 0;
@@ -77,6 +78,22 @@
   z-index: 1;
   transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
 }
+/* Превью из карточки — другая нарезка CDN, чем большое фото из ответа, поэтому до ответа оно
+   размыто, а потом гаснет слоем .mcard__ghost поверх резких кадров (JS, crossfade; решение
+   владельца 23.11.2026). Масштаб 1.1 прячет мягкий край размытия за overflow галереи. */
+.mcard__frames--preview .mcard__frame,
+.mcard__ghost > .mcard__frame {
+  filter: blur(var(--awds-space-3));
+  transform: scale(1.1);
+}
+.mcard__ghost {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity var(--awds-motion-duration-enter) var(--awds-motion-ease-state);
+}
+.mcard__ghost--out { opacity: 0; }
+
 /* Стрелки появляются по фокусу (решение владельца 23.11.2026): при наведении на галерею
    мышью и при фокусе с клавиатуры внутри неё. В покое фото чистое. Скрыты прозрачностью, а не
    display: кнопка остаётся в порядке табуляции, и Tab до неё доходит. */
@@ -96,6 +113,7 @@
 .mcard__nav[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .mcard__frame,
+  .mcard__ghost,
   .mcard__nav { transition: none !important; }
 }
 .mcard__dots {
@@ -315,6 +333,19 @@
   list-style: none;
 }
 .mcard__delivery:empty { display: none; }
+/* Строка с пояснением из настроек блока — кнопка list-item transparent во всю ширину колонки,
+   открывает окно .mcard-info (решение владельца 23.11.2026). */
+.mcard__delivery-row { inline-size: 100%; }
+
+/* Окно пояснения — modal dialog; здесь только раскладка текста и ссылки «Подробнее в справке».
+   Расстояние между абзацами даёт сам .mdl__text (поля 12 сверху и снизу), своего зазора нет. */
+.mcard-info__text > .mdl__text { margin: 0; }
+.mcard-info__more {
+  display: inline-block;
+  margin-block-start: var(--awds-space-1);
+}
+.mdl.mcard-info:focus { outline: none; }
+.mcard-info__more[hidden] { display: none; }
 
 /* Скелетон доставки — место двух строк list-item transparent 300 (поле 8, иконка 20, подпись
    20 и описание 16 с зазором 2: строка 54, как в макете). Плашки неподвижны: в error загрузки
