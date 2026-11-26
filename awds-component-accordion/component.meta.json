@@ -264,6 +264,32 @@
     "--surface-surface"
   ],
   "snapshot_hash": "sha256:b1f2469da06c6836cc641e0d1b1ccdf4e9364ec8e8d5312e15e622f413802c05",
+  "published": {
+    "repo": "OrazaevDesign/arrow-components",
+    "commit": "d7ca42ad9da39981988052917f803b1ed6120f0a",
+    "pushed_at": "2026-11-26T17:33:58Z",
+    "github_urls": {
+      "skill": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-accordion/SKILL.md",
+      "storybook": "https://orazaevdesign.github.io/arrow-components/#accordion",
+      "dist": "https://github.com/OrazaevDesign/arrow-components/blob/dist/components/accordion.css",
+      "collapsed": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-accordion/references/accordion-collapsed.md",
+      "expanded": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-accordion/references/accordion-expanded.md"
+    },
+    "dev_resources_status": {
+      "collapsed": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "1470:155749",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-accordion/SKILL.md"
+      },
+      "expanded": {
+        "status": "linked",
+        "method": "component_description",
+        "node_id": "1470:156090",
+        "url": "https://raw.githubusercontent.com/OrazaevDesign/arrow-components/main/awds-component-accordion/SKILL.md"
+      }
+    }
+  },
   "uses": {
     "awds-component-focus-selection": "2.0.14"
   },
