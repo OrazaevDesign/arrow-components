@@ -1,7 +1,7 @@
 {
   "_generated_by": "scripts/build-component-map.mjs",
   "_note": "Карта для arrow-components-builder. Имена CSS-переменных берутся из tokens/export (поле $extensions[\"io.designstudio\"].cssVar), а не выводятся правилами склейки. State и Size приватны (03.09.2026): size и state отдают ЦЕЛЬ ячейки — роль или шаг публичной шкалы, mode-less имя. Ветка state_cell удалена 21.09.2026. НЕ ПРАВЬ ВРУЧНУЮ: node scripts/build-component-map.mjs",
-  "snapshot_hash": "sha256:1f3e6283d39542177cc3fb6611bd9a8d3365a45536bc4e4e85b3390ac0f0a082",
+  "snapshot_hash": "sha256:ae3ee7c4c6280078d2e906ade3251928e709c0623adbafd5fea4a1a93bfa25d6",
   "size": {
     "rectangle": {
       "50": {
@@ -341,7 +341,8 @@
           "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on-highest))",
-          "chevron": "rgb(var(--surface-on-highest))"
+          "chevron": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
         }
       },
       "areabutton": {
@@ -483,10 +484,10 @@
           "border": "rgb(var(--addition-core))",
           "color": "rgb(var(--addition-on))"
         },
-        "tertiary": {
-          "bg": "rgb(var(--tertiary-core))",
-          "border": "rgb(var(--tertiary-core))",
-          "color": "rgb(var(--tertiary-on))"
+        "soft": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-core))",
+          "color": "rgb(var(--primary-container-on-high))"
         },
         "contrast": {
           "bg": "rgb(var(--secondary-on))",
@@ -1050,7 +1051,8 @@
           "bg": "rgb(var(--surface-surface))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on-highest))",
-          "chevron": "rgb(var(--surface-on-highest))"
+          "chevron": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
         }
       },
       "areabutton": {
@@ -1082,10 +1084,10 @@
           "border": "rgb(var(--addition-dim))",
           "color": "rgb(var(--addition-on))"
         },
-        "tertiary": {
-          "bg": "rgb(var(--tertiary-dim))",
-          "border": "rgb(var(--tertiary-dim))",
-          "color": "rgb(var(--tertiary-on))"
+        "soft": {
+          "bg": "rgb(var(--primary-container-dim))",
+          "border": "rgb(var(--primary-container-dim))",
+          "color": "rgb(var(--primary-container-on-high))"
         },
         "contrast": {
           "bg": "rgb(var(--secondary-on-dim))",
@@ -1624,14 +1626,17 @@
     "focus": {
       "accordion": {
         "collapsed": {
+          "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on-highest))",
           "chevron": "rgb(var(--surface-on-high))"
         },
         "expanded": {
+          "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on-highest))",
-          "chevron": "rgb(var(--surface-on-highest))"
+          "chevron": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
         }
       },
       "areabutton": {
@@ -1663,10 +1668,10 @@
           "border": "rgb(var(--addition-core))",
           "color": "rgb(var(--addition-on))"
         },
-        "tertiary": {
-          "bg": "rgb(var(--tertiary-core))",
-          "border": "rgb(var(--tertiary-core))",
-          "color": "rgb(var(--tertiary-on))"
+        "soft": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-core))",
+          "color": "rgb(var(--primary-container-on-high))"
         },
         "contrast": {
           "bg": "rgb(var(--secondary-on-dim))",
@@ -2217,14 +2222,17 @@
     "active": {
       "accordion": {
         "collapsed": {
+          "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on-highest))",
           "chevron": "rgb(var(--surface-on-high))"
         },
         "expanded": {
+          "bg": "rgb(var(--extended-transparent))",
           "border": "rgb(var(--surface-on-lowest))",
           "color": "rgb(var(--surface-on-highest))",
-          "chevron": "rgb(var(--surface-on-highest))"
+          "chevron": "rgb(var(--surface-on-highest))",
+          "description": "rgb(var(--surface-on-high))"
         }
       },
       "areabutton": {
@@ -2256,10 +2264,10 @@
           "border": "rgb(var(--addition-core))",
           "color": "rgb(var(--addition-on))"
         },
-        "tertiary": {
-          "bg": "rgb(var(--tertiary-core))",
-          "border": "rgb(var(--tertiary-core))",
-          "color": "rgb(var(--tertiary-on))"
+        "soft": {
+          "bg": "rgb(var(--primary-container-core))",
+          "border": "rgb(var(--primary-container-core))",
+          "color": "rgb(var(--primary-container-on-high))"
         },
         "contrast": {
           "bg": "rgb(var(--secondary-on))",

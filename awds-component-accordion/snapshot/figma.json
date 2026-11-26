@@ -1,0 +1,62 @@
+{
+  "_about": "Снимок макета аккордеона 26.11.2026: наборы, оси, свойства, привязки ячеек State. Геометрия по ячейкам — figma-geometry.json.",
+  "file_key": "470rar5EfRm4n14vHMXbpc",
+  "section": "5:42",
+  "sets": {
+    "accordion / collapsed": "1470:155749",
+    "accordion / expanded": "1470:156090"
+  },
+  "axes": {
+    "view": [
+      "outline",
+      "divider",
+      "raised"
+    ],
+    "heading": [
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "body"
+    ],
+    "state": [
+      "rest",
+      "hover",
+      "focus",
+      "active"
+    ]
+  },
+  "text_props": {
+    "collapsed": [
+      "title"
+    ],
+    "expanded": [
+      "title",
+      "description"
+    ]
+  },
+  "bindings": {
+    "fills": "state/accordion/{collapsed|expanded}/bg-{state}",
+    "strokes": "state/accordion/{…}/border-{state}",
+    "title": "state/accordion/{…}/color-{state}",
+    "chevron": "state/accordion/{…}/chevron-{state}",
+    "description": "state/accordion/expanded/description-{state}",
+    "opacity": "state/opacity/control/enabled",
+    "stroke_weight": "size/outline/offset",
+    "radius": "rounded/border-radius/{600|500|400|none}",
+    "padding": "space/*",
+    "typography": "wysiwyg/{font-size|line-height|letter-spacing}/{h3…body}",
+    "font": "font/family/{heading|system}, font/weight/{semibold|regular}"
+  },
+  "bindings_note": "С 26.11.2026 после публикации «📜 tokens ↪ studio» каждая ячейка набора привязана к ячейке State своего состояния: 360 заливок (bg, border, color, chevron, у expanded ещё description), проверено обходом — расхождений 0.",
+  "focus_selection": "radius=<скругление пункта>, offset=inside, tone=accent",
+  "chevron": {
+    "component": "arrow-down_small-regular",
+    "key": "68bc141cd9f46fe3b8f5aaf8260de093b5756e98",
+    "size": "wysiwyg/line-height/{heading}",
+    "expanded_rotation": 180,
+    "chevron_svg": "<svg viewBox=\"0 0 24 24\"><path d=\"M14.1217 10.2925C14.5122 9.90219 15.1453 9.90204 15.5358 10.2925C15.9261 10.6829 15.926 11.316 15.5358 11.7065L12.7067 14.5357C12.3161 14.9257 11.683 14.926 11.2926 14.5357L8.46447 11.7065C8.07406 11.316 8.07398 10.683 8.46447 10.2925C8.85496 9.90204 9.48801 9.90209 9.87853 10.2925L11.9996 12.4136L14.1217 10.2925Z\"/></svg>"
+  },
+  "cells": 120,
+  "raised": "view=raised (с 1.1.0): клоны ячеек outline, fills — state/surface/raised/bg (hover — accordion/*/bg-hover), без контура, effects — три DROP_SHADOW коллекции shadow (elevation-1), как у button-overhung"
+}

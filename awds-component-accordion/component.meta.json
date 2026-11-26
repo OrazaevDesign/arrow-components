@@ -1,0 +1,303 @@
+{
+  "component": "accordion",
+  "version": "1.1.0",
+  "contract_hash": "sha256:a14928afbfd61026c3be132d030fe8eb376304b5a7b175676f27d476d35049c8",
+  "artifact_hash": "sha256:342ec9ec32392ec781e4f96e4b104383e7cc75afa75c3932a203c43b93f0adbb",
+  "visual_change": false,
+  "released_at": "2026-11-26T15:55:51.191Z",
+  "own_values": [],
+  "family": "lists",
+  "summary": "Раскрывающийся пункт «вопрос — ответ» на нативном details: бокс с контуром, строка с линией или карточка с тенью",
+  "aliases": [
+    "аккордеон",
+    "раскрывающийся список",
+    "спойлер",
+    "FAQ",
+    "вопрос-ответ",
+    "частые вопросы",
+    "раскрывашка",
+    "сворачиваемый блок",
+    "details"
+  ],
+  "figma": {
+    "file_key": "470rar5EfRm4n14vHMXbpc",
+    "file_name": "💠 arrow ↪ components",
+    "page": "5 · lists",
+    "section_node_id": "5:42",
+    "primary_node_id": "1470:155749",
+    "primary_url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1470-155749"
+  },
+  "variants": {
+    "collapsed": {
+      "node_id": "1470:155749",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1470-155749",
+      "figma_label": "accordion / collapsed",
+      "token_role": "accordion/collapsed"
+    },
+    "expanded": {
+      "node_id": "1470:156090",
+      "url": "https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1470-156090",
+      "figma_label": "accordion / expanded",
+      "token_role": "accordion/expanded"
+    }
+  },
+  "css_note": "Файл один на оба варианта (accordion.css), как у tab: свёрнутый и раскрытый — один и тот же элемент в разные моменты, вариант переключает пользователь кликом. Вариант выражен нативным атрибутом [open], а не классом .accordion-collapsed / -expanded: класс пришлось бы переключать скриптом, а script.js блока на витрине может не отработать.",
+  "shape": null,
+  "shape_note": "Ступеней Size нет: группы size/accordion в теме нет, а оси size у аккордеона нет по решению владельца 26.11.2026 — заголовок пункта набирается ролью WYSIWYG (ось heading=h3|h4|h5|h6|body, как у heading), отступы и скругление идут за ролью. Значения — шаги публичных шкал space и rounded; заводить ли для них группу size/accordion — вопрос size-accordion-group.",
+  "size_scale": null,
+  "heading_scale": [
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+    "body"
+  ],
+  "views": [
+    "outline",
+    "divider",
+    "raised"
+  ],
+  "states": [
+    "rest",
+    "hover",
+    "focus",
+    "active"
+  ],
+  "states_note": "disabled нет: в группе State accordion его ячеек нет, а выключенный пункт «вопрос — ответ» не встречается ни в одном потребителе (FAQ, справка, подвал, страницы Тильды). Появится — отдельным решением с ячейкой гашения.",
+  "color_tokens": [
+    "bg",
+    "border",
+    "color",
+    "chevron",
+    "description"
+  ],
+  "preview": {
+    "base_class": "accordion",
+    "default_size": null,
+    "matrix_states": [
+      "rest",
+      "hover",
+      "focus",
+      "active"
+    ],
+    "matrix_sizes": [],
+    "toggles": [
+      {
+        "id": "variant",
+        "label": "Вариант",
+        "options": [
+          "collapsed",
+          "expanded"
+        ]
+      },
+      {
+        "id": "view",
+        "label": "Вид",
+        "options": [
+          "outline",
+          "divider",
+          "raised"
+        ]
+      },
+      {
+        "id": "heading",
+        "label": "Заголовок",
+        "options": [
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "body"
+        ]
+      }
+    ],
+    "html_samples": [
+      {
+        "label": "Свёрнутый, бокс, h4",
+        "html": "<details class=\"accordion accordion-outline accordion--h4\"><summary class=\"accordion__summary\"><span class=\"accordion__title\">Сколько идёт доставка?</span><span class=\"accordion__chevron\" aria-hidden=\"true\"></span></summary><div class=\"accordion__answer\">От 7 до 14 дней.</div></details>"
+      },
+      {
+        "label": "Раскрытый, строка с линией, h5",
+        "html": "<details class=\"accordion accordion-divider accordion--h5\" open><summary class=\"accordion__summary\"><span class=\"accordion__title\">Как оплатить заказ?</span><span class=\"accordion__chevron\" aria-hidden=\"true\"></span></summary><div class=\"accordion__answer\">Картой на сайте или по счёту.</div></details>"
+      },
+      {
+        "label": "Вопрос — заголовок h3, один открытый из группы",
+        "html": "<details class=\"accordion accordion-outline accordion--h4\" name=\"faq\"><summary class=\"accordion__summary\"><h3 class=\"accordion__title\">Можно ли вернуть товар?</h3><span class=\"accordion__chevron\" aria-hidden=\"true\"></span></summary><div class=\"accordion__answer\"><p>Да, в течение 14 дней.</p></div></details>"
+      },
+      {
+        "label": "Карточка на цветной подложке, h4",
+        "html": "<details class=\"accordion accordion-raised accordion--h4\"><summary class=\"accordion__summary\"><span class=\"accordion__title\">Товары оригинальные?</span><span class=\"accordion__chevron\" aria-hidden=\"true\"></span></summary><div class=\"accordion__answer\">Да, мы работаем с дистрибьюторами брендов.</div></details>"
+      }
+    ]
+  },
+  "base_class_note": "Базовый класс .accordion — полное имя сущности. Сокращать нечем: .acc читается как account, а правило 5 канона запрещает сокращения, которые не говорят сами за себя. Цена записана: .accordion объявляет Bootstrap 5, но только как контейнер с переменными --bs-accordion-*; его элементы называются .accordion-item, .accordion-button, .accordion-body и с нашими .accordion__* и .accordion-outline / -divider не пересекаются. Коллизия возможна лишь на сайте с Bootstrap, где у .accordion задан свой фон — проявится молча.",
+  "markup": {
+    "root": {
+      "class": "accordion",
+      "tags": [
+        "details"
+      ]
+    },
+    "variant": {
+      "pattern": "accordion-{variant}",
+      "required": true,
+      "why": "Классом варианта здесь служит ВИД: outline | divider. Collapsed/expanded — нативный атрибут open, его ставит браузер; без класса вида пункт рисуется как outline, но вид должен читаться в разметке."
+    },
+    "size": {
+      "pattern": "accordion--{size}",
+      "required": false,
+      "why_optional": "Ось heading: h3 | h4 | h5 | h6 | body. Без класса — h4, как у заголовка пункта в FAQ."
+    },
+    "native": "details",
+    "children": [
+      {
+        "class": "accordion__summary",
+        "required": true,
+        "why": "первый ребёнок <details> — <summary>: только он даёт раскрытие кликом и с клавиатуры без скрипта"
+      },
+      {
+        "class": "accordion__title",
+        "required": true,
+        "why": "вопрос; набирается ролью WYSIWYG уровня"
+      },
+      {
+        "class": "accordion__chevron",
+        "required": true,
+        "why": "шеврон маской, его цвет — ячейка chevron"
+      },
+      {
+        "class": "accordion__answer",
+        "required": true,
+        "why": "ответ; его цвет — ячейка description, отступы — от уровня"
+      }
+    ],
+    "attrs": [],
+    "note": "Корень — <details>, первый ребёнок — <summary class=\"accordion__summary\">: только так браузер даёт раскрытие кликом и с клавиатуры, aria-expanded и роль кнопки без скрипта. Вопрос — .accordion__title; если пункту нужен заголовок в оглавлении документа, тегом служит h2–h6 внутри summary (модель содержимого summary это разрешает), визуальный уровень всё равно задаёт класс .accordion--h{N}. Шеврон — пустой <span class=\"accordion__chevron\" aria-hidden=\"true\">: форма приходит маской из CSS, состояние «раскрыто» скринридер узнаёт от <details>, а не от иконки. Ответ — <div class=\"accordion__answer\"> сразу после summary, внутри можно абзацы и списки. Атрибут open ставится, если пункт должен быть раскрыт при загрузке; name=\"…\" одинаковый у пунктов группы — открыт только один.",
+    "child_attrs": [
+      {
+        "child": "accordion__chevron",
+        "attr": "aria-hidden",
+        "required": true,
+        "why": "знак декоративный: «раскрыто/свёрнуто» скринридер узнаёт от <details>, а не от иконки"
+      }
+    ]
+  },
+  "uses_note": "focus-selection — слой кольца фокуса (tone=accent, offset=inside). Других вложенных компонентов нет: шеврон — маска с формой иконки arrow-down_small-regular из макета, не компонент.",
+  "questions": [
+    {
+      "id": "size-accordion-group",
+      "text": "Отступы, зазор и скругление аккордеона берутся прямо из шкал space и rounded по уровню заголовка (h4: space-6 / space-8 / space-3 / rounded-600): группы size/accordion в теме нет. Заводим группу size/accordion/{h3…body}/{padding-block, padding-inline, gap, rounded}, чтобы геометрию правили в студии, или прямые шаги шкалы остаются каноном",
+      "level": "token",
+      "target": "Size",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1220931008532051",
+      "raised_at": "2026-11-26",
+      "answer": null
+    },
+    {
+      "id": "accordion-chevron-small-glyph",
+      "text": "Шеврон — библиотечный arrow-down_small-regular, бокс равен межстрочному вопроса (h4: 24 px), сам знак внутри ~8×5 px. Рядом с полужирным вопросом 19–24 px он выглядит мелким. Оставить единый шеврон библиотеки (842 экземпляра в селектах и списках) или взять для аккордеона крупный знак (arrow-down-light, 13×7 в том же боксе)",
+      "level": "component",
+      "target": "макет",
+      "severity": "minor",
+      "status": "open",
+      "asana_gid": "1220930803032470",
+      "raised_at": "2026-11-26",
+      "answer": null
+    }
+  ],
+  "asana": {
+    "task_gid": "1218422992795055",
+    "task_url": "https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992795055",
+    "task_name": "💠 accordion",
+    "parent_task": "💠 5 · lists",
+    "primary": true
+  },
+  "last_synced": "2026-11-26T17:33:10Z",
+  "last_synced_by": "claude",
+  "ds_token_dependencies": [
+    "--awds-font-family-heading",
+    "--awds-font-family-system",
+    "--awds-font-weight-regular",
+    "--awds-font-weight-semibold",
+    "--awds-motion-duration-enter",
+    "--awds-motion-duration-quick",
+    "--awds-motion-duration-state",
+    "--awds-motion-ease-state",
+    "--awds-motion-ease-swap",
+    "--awds-opacity-100",
+    "--awds-rounded-border-radius-400",
+    "--awds-rounded-border-radius-500",
+    "--awds-rounded-border-radius-600",
+    "--awds-rounded-border-radius-none",
+    "--awds-shadow-elevation-1",
+    "--awds-space-1-5",
+    "--awds-space-2",
+    "--awds-space-3",
+    "--awds-space-4",
+    "--awds-space-5",
+    "--awds-space-6",
+    "--awds-space-7",
+    "--awds-space-8",
+    "--awds-space-px",
+    "--awds-wysiwyg-font-size-body",
+    "--awds-wysiwyg-font-size-h3",
+    "--awds-wysiwyg-font-size-h4",
+    "--awds-wysiwyg-font-size-h5",
+    "--awds-wysiwyg-font-size-h6",
+    "--awds-wysiwyg-letter-spacing-body",
+    "--awds-wysiwyg-letter-spacing-h3",
+    "--awds-wysiwyg-letter-spacing-h4",
+    "--awds-wysiwyg-letter-spacing-h5",
+    "--awds-wysiwyg-letter-spacing-h6",
+    "--awds-wysiwyg-line-height-body",
+    "--awds-wysiwyg-line-height-h3",
+    "--awds-wysiwyg-line-height-h4",
+    "--awds-wysiwyg-line-height-h5",
+    "--awds-wysiwyg-line-height-h6",
+    "--extended-transparent",
+    "--surface-bright",
+    "--surface-on-high",
+    "--surface-on-highest",
+    "--surface-on-lowest",
+    "--surface-surface"
+  ],
+  "snapshot_hash": "sha256:b1f2469da06c6836cc641e0d1b1ccdf4e9364ec8e8d5312e15e622f413802c05",
+  "uses": {
+    "awds-component-focus-selection": "2.0.14"
+  },
+  "contract": {
+    "classes": [
+      "accordion",
+      "accordion--body",
+      "accordion--h3",
+      "accordion--h4",
+      "accordion--h5",
+      "accordion--h6",
+      "accordion-divider",
+      "accordion-outline",
+      "accordion-raised",
+      "accordion__answer",
+      "accordion__chevron",
+      "accordion__summary",
+      "accordion__title"
+    ],
+    "attributes": [
+      "open"
+    ],
+    "elements": [],
+    "public_vars": [],
+    "variants": [
+      "collapsed",
+      "expanded"
+    ],
+    "sizes": [],
+    "states": [
+      "active",
+      "focus",
+      "hover",
+      "rest"
+    ]
+  }
+}

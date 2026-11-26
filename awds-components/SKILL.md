@@ -150,7 +150,8 @@ Figma.
 
 | Компонент | Что это | Как называют | Состав · входит в | Версия | Ссылки |
 | --- | --- | --- | --- | --- | --- |
-| [list-item](../awds-component-list-item/SKILL.md) | Строка списка: пункт меню, пункт выпадающего списка, вкладка таббара, плитка вариации | пункт списка, строка списка, пункт меню, вкладка таббара, элемент списка | внутри: focus-selection, notice, checkbox, radio · входит в: combobox-combi, mini-card, page-title, select, select-combi | 2.5.2 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59676) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992787788) |
+| [accordion](../awds-component-accordion/SKILL.md) | Раскрывающийся пункт «вопрос — ответ» на нативном details: бокс с контуром, строка с линией или карточка с тенью | аккордеон, раскрывающийся список, спойлер, FAQ, вопрос-ответ, частые вопросы, раскрывашка, сворачиваемый блок, details | внутри: focus-selection | 1.1.0 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=1470-155749) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992795055) |
+| [list-item](../awds-component-list-item/SKILL.md) | Строка списка: пункт меню, пункт выпадающего списка, вкладка таббара, плитка вариации | пункт списка, строка списка, пункт меню, вкладка таббара, элемент списка | внутри: focus-selection, notice, checkbox, radio · входит в: combobox-combi, mini-card, page-title, select, select-combi | 2.5.3 | [макет](https://www.figma.com/design/470rar5EfRm4n14vHMXbpc/%F0%9F%92%A0-arrow-%E2%86%AA-components?node-id=8-59676) · [задача](https://app.asana.com/1/15638570680505/project/1203198440472196/task/1218422992787788) |
 
 <!-- /generated -->
 

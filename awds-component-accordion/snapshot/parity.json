@@ -1,0 +1,65 @@
+{
+  "_about": "Карта для scripts/component-figma-check.mjs. Пункт — нативный <details>; collapsed/expanded — атрибут open, а не класс. Состояния включаются на summary (pseudo_on), красится весь пункт через :has(). Контур в макете — обводка INSIDE (у divider только снизу), в коде — inset-тень; сверяется по сторонам. Кольцо фокуса — слой focus-selection (outline на корне). В свёрнутом пункте разметки ответа на проверочной странице нет: в макете её нет, а в живом пункте она скрыта самим <details>. Шеврон — span с маской, графика ищется по gfx_selector.",
+  "sets": {
+    "collapsed": "1470:155749",
+    "expanded": "1470:156090"
+  },
+  "css": [
+    "../../awds-component-focus-selection/references/focus-selection.css",
+    "accordion.css"
+  ],
+  "tag": "details",
+  "class": "accordion",
+  "style": "width:{w}px",
+  "variants": {
+    "collapsed": {
+      "html": "<summary class=\"accordion__summary\"><span class=\"accordion__title\">{text}</span><span class=\"accordion__chevron\" aria-hidden=\"true\"></span></summary>"
+    },
+    "expanded": {
+      "attrs": "open",
+      "html": "<summary class=\"accordion__summary\"><span class=\"accordion__title\">{text}</span><span class=\"accordion__chevron\" aria-hidden=\"true\"></span></summary><div class=\"accordion__answer\">Обычно от 7 до 14 дней: срок зависит от страны отправки и таможни. Точную дату покажем в корзине перед оплатой.</div>"
+    }
+  },
+  "axes": {
+    "view": {
+      "*": {
+        "class": "accordion-{value}"
+      }
+    },
+    "heading": {
+      "*": {
+        "class": "accordion--{value}"
+      }
+    },
+    "state": {
+      "rest": {},
+      "hover": {
+        "pseudo": [
+          "hover"
+        ],
+        "pseudo_on": ".accordion__summary"
+      },
+      "focus": {
+        "pseudo": [
+          "focus",
+          "focus-visible"
+        ],
+        "pseudo_on": ".accordion__summary"
+      },
+      "active": {
+        "pseudo": [
+          "active"
+        ],
+        "pseudo_on": ".accordion__summary"
+      }
+    }
+  },
+  "exceptions": [
+    {
+      "cells": "heading=h3",
+      "prop": "^(высота|рядов раскладки|текст\\[1\\] верх)$",
+      "why": "метрика шрифта, не вёрстка: с 26.11.2026 заголовок набирается Unbounded, на машине проверки его нет (fc-list), браузер берёт запасной узкий шрифт, и вопрос h3 «Сколько идёт доставка из-за рубежа?» на 560 px не переносится, а в Figma переносится на вторую строку. Остальные уровни и все цвета, отступы, радиусы сверяются без исключений"
+    }
+  ],
+  "gfx_selector": ".accordion__chevron"
+}
